@@ -39,4 +39,3 @@ Keep the final prompt directly usable. Do not add camera or style flourishes tha
 - Preserve source links when adapting a cataloged case.
 - Do not infer unpublished prompt text from a video.
 - Flag third-party likeness, copyrighted characters, logos, voices, or footage that may require permission.
-

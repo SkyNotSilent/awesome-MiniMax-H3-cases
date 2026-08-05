@@ -9,4 +9,3 @@
 ## Notes
 
 Explain anything that a reviewer cannot verify from the source alone.
-

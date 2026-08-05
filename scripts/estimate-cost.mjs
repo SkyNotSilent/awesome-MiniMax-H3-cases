@@ -24,4 +24,3 @@ console.log(`Text classification: $${textCost.toFixed(4)}`)
 console.log(`Video review:       $${videoCost.toFixed(4)}`)
 console.log(`Total:              $${(textCost + videoCost).toFixed(4)}`)
 console.log('Video tokens are a planning estimate; actual usage depends on duration, fps, resolution, and audio.')
-

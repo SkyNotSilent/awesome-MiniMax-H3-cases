@@ -59,4 +59,3 @@ Describe only the requested changes in temporal order. Put spoken text in <d>[La
 ```
 
 Checklist: unchanged regions are named; voice reference and copied audio are distinguished; dialogue ending has a stable visual state.
-

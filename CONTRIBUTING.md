@@ -15,4 +15,3 @@ Set `verified` to `false` when the model, prompt, or authorship still needs conf
 ## Removal requests
 
 Creators can open an Issue with the source URL. Maintainers should remove disputed content promptly while the request is reviewed.
-
