@@ -1,0 +1,4 @@
+interface:
+  display_name: "MiniMax H3 Prompt Library"
+  short_description: "Choose H3 video prompt patterns from verified cases"
+  default_prompt: "Use $minimax-h3-prompt-library to turn my video idea into a structured MiniMax H3 prompt."

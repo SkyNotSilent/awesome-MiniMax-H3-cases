@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "H3 Field Notes case",
+  "type": "object",
+  "required": [
+    "id", "title", "model", "mode", "prompt", "sourceUrl", "author", "posterUrl",
+    "category", "styles", "scenes", "inputTypes", "promptProvenance", "verified"
+  ],
+  "properties": {
+    "id": { "type": "string", "minLength": 3 },
+    "title": { "type": "string" },
+    "model": { "type": "string" },
+    "mode": { "enum": ["T2VA", "FL2VA", "Ref2VA"] },
+    "prompt": { "type": "string" },
+    "sourceUrl": { "type": "string", "format": "uri" },
+    "posterUrl": { "type": "string", "minLength": 1 },
+    "author": { "type": "string" },
+    "category": { "type": "string" },
+    "styles": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "scenes": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "inputTypes": {
+      "type": "array",
+      "items": { "enum": ["text", "image", "video", "audio"] },
+      "uniqueItems": true
+    },
+    "promptProvenance": {
+      "enum": ["official-verbatim", "official-adapted", "creator-verbatim", "reconstructed"]
+    },
+    "verified": { "type": "boolean" }
+  }
+}

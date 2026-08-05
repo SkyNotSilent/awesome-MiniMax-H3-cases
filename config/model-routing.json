@@ -1,0 +1,31 @@
+{
+  "textExtraction": {
+    "provider": "xiaomi-mimo",
+    "model": "mimo-v2.5-pro",
+    "thinking": "disabled",
+    "maxOutputTokens": 900,
+    "priceUsdPerMillion": { "input": 0, "cachedInput": 0, "output": 0 }
+  },
+  "videoReview": {
+    "provider": "xiaomi-mimo",
+    "model": "mimo-v2.5",
+    "thinking": "disabled",
+    "fps": 0.5,
+    "mediaResolution": "default",
+    "maxOutputTokens": 800,
+    "priceUsdPerMillion": { "input": 0, "cachedInput": 0, "output": 0 }
+  },
+  "complexEscalation": {
+    "provider": "xiaomi-mimo",
+    "model": "mimo-v2.5-pro",
+    "thinking": "enabled",
+    "maxOutputTokens": 1600,
+    "priceUsdPerMillion": { "input": 0, "cachedInput": 0, "output": 0 }
+  },
+  "dailyLimits": {
+    "maxDiscoveredPosts": 200,
+    "maxTextCandidates": 80,
+    "maxVideoReviews": 20,
+    "maxEscalations": 3
+  }
+}

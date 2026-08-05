@@ -1,0 +1,27 @@
+# H3 Field Notes / Awesome MiniMax H3
+
+> A source-attributed library of MiniMax H3 / Hailuo 3.0 AI video prompts, examples, reusable templates, and reproducible workflows.
+
+Canonical website: https://h3-field-notes-production.up.railway.app/
+Public repository: https://github.com/SkyNotSilent/awesome-minimax-h3
+Primary language: Chinese; English metadata and documentation are available.
+
+## Core resources
+
+- /: searchable visual MiniMax H3 video case library
+- /cases/official-t2va-starship/: verified T2VA text-to-video example with synchronized audio
+- /cases/official-fl2va-ramen/: verified FL2VA first-frame video example with rack focus
+- /cases/official-ref2va-lamb/: verified Ref2VA multimodal video editing example with voice reference
+- https://github.com/SkyNotSilent/awesome-minimax-h3/blob/main/data/cases.json: machine-readable verified cases
+- https://github.com/SkyNotSilent/awesome-minimax-h3/blob/main/data/templates.json: reusable Prompt-as-Code templates
+
+## Terminology
+
+- MiniMax H3 and Hailuo 3.0 refer to the model family documented by this community project.
+- T2VA: text-to-video with audio.
+- FL2VA: first/last-frame conditioned video with audio.
+- Ref2VA: multimodal reference-to-video with audio.
+- Every public case includes source attribution and prompt provenance.
+- Unverified X discoveries remain in a private review queue and are not public cases.
+
+This project is not affiliated with MiniMax. Original media and prompts remain subject to their owners and source-platform terms.

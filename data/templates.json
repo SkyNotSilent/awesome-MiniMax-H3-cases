@@ -1,0 +1,32 @@
+[
+  {
+    "id": "T01",
+    "title": "定时电影节拍",
+    "titleEn": "Timed Cinematic Beat",
+    "mode": "T2VA",
+    "useWhen": "纯文字生成，并且需要一次明确的转场、冲击或情绪峰值。",
+    "sourceCaseId": "official-t2va-starship",
+    "sections": ["镜头建立", "定时转场", "物理反应", "环境声弧线", "配乐断点"],
+    "template": "[Shot 1, 00:00–{cut_time}]\n{framing_and_camera}. Establish {subject}, {environment}, {pose}, and {building_process}.\n\n[Shot 2, at {cut_time}]\n{transition}. Show {physical_impact}, then end on {stable_end_state}.\n\noverall_soundscape:\n{baseline} → {rising_sound} → {impact} → {residual_tone}.\n\nnon_diegetic_music:\n{instrumentation}, {tempo}, {emotional_arc}, ending with {music_transition}."
+  },
+  {
+    "id": "F01",
+    "title": "静态构图焦点转移",
+    "titleEn": "Static Rack Focus",
+    "mode": "FL2VA",
+    "useWhen": "用首帧锁定构图，同时让注意力从前景平滑转向背景。",
+    "sourceCaseId": "official-fl2va-ramen",
+    "sections": ["首帧约束", "前景细节", "连续微动", "焦点迁移", "背景群像"],
+    "template": "At 0.00 seconds, fully reference <Picture 1>.\n\nHold a static {shot_type} for {duration}. Begin with {foreground} in crisp focus and {background} softly blurred. {continuous_foreground_motion}. Gradually rack focus deeper: the foreground softens while the background resolves. With focus locked behind, {background_actions}.\n\noverall_soundscape:\n{foreground_ambience}, gradually revealing {background_activity}."
+  },
+  {
+    "id": "R01",
+    "title": "身份保持型多模态编辑",
+    "titleEn": "Identity-Preserving Edit",
+    "mode": "Ref2VA",
+    "useWhen": "已有视频需要增加对白、替换声音或局部动作，同时保留人物和镜头。",
+    "sourceCaseId": "official-ref2va-lamb",
+    "sections": ["主体定义", "素材角色", "保留分析", "目标修改", "对白结束状态"],
+    "template": "subject_definitions:\n<Subject 1> is {identity_and_appearance} in <Video 1>.\n<Video 1> is the source video.\n<Audio 1> is {reuse_purpose}.\n<Audio 2> is {voice_reference_purpose}.\n\nretention_analysis:\n<Subject 1>: fully_preserved — {identity_clothing_props}.\n<Video 1>: fully_preserved — {framing_lighting_environment}.\n\ndetailed_description:\n{requested_changes_in_time_order}. <Subject 1> says <d>[{language}] {dialogue}</d>. When speech ends, {stable_mouth_and_body_state}."
+  }
+]
