@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" role="img" aria-labelledby="title desc">
+  <title id="title">MiniMax H3 community case</title>
+  <desc id="desc">A dark editorial placeholder linking to the original X video.</desc>
+  <defs>
+    <radialGradient id="glow" cx="18%" cy="18%" r="90%">
+      <stop offset="0" stop-color="#26310f"/>
+      <stop offset=".45" stop-color="#11140d"/>
+      <stop offset="1" stop-color="#080907"/>
+    </radialGradient>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0V64" fill="none" stroke="#d9ff43" stroke-opacity=".08"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="800" fill="url(#glow)"/>
+  <rect width="1280" height="800" fill="url(#grid)"/>
+  <path d="M80 88h1120M80 712h1120" stroke="#d9ff43" stroke-opacity=".28"/>
+  <text x="80" y="155" fill="#d9ff43" font-family="monospace" font-size="22" letter-spacing="5">X COMMUNITY SOURCE / H3 FIELD NOTES</text>
+  <text x="72" y="455" fill="#f0f0e8" font-family="Arial Black, sans-serif" font-size="210" font-weight="900" letter-spacing="-14">H3</text>
+  <text x="455" y="455" fill="none" stroke="#586047" font-family="Arial Black, sans-serif" font-size="210" font-weight="900" letter-spacing="-14">CASE</text>
+  <text x="82" y="650" fill="#8e9288" font-family="monospace" font-size="25" letter-spacing="2">ORIGINAL VIDEO REMAINS ON X  ↗</text>
+  <circle cx="1164" cy="126" r="14" fill="#d9ff43"/>
+</svg>

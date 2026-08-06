@@ -14,12 +14,14 @@ Awesome MiniMax H3 是一个带来源追踪的开源 AI 视频提示词案例库
 
 项目由四部分组成：可筛选的网站、Prompt-as-Code 模板、机器可读数据，以及使用 Mac 登录态浏览器自动发现 X 案例的审核工作流。公开案例都保留原始来源和提示词来源类型；不确定内容只进入候选队列，不会超时自动发布。
 
+当前共有 9 个公开案例：3 个 MiniMax 官方可复现案例，以及 6 个经人工批准的 X 社区案例。社区视频仍保留在 X，本项目只发布结构化记录和原帖入口，不重托管媒体。
+
 ## 核心内容
 
 | 资源 | 用途 |
 | --- | --- |
 | [可视化案例库](https://h3-field-notes-production.up.railway.app/) | 按生成模式、分类、风格、场景和关键词筛选 |
-| [`data/cases.json`](./data/cases.json) | 已核验的结构化视频案例与提示词 |
+| [`data/cases.json`](./data/cases.json) | 带来源与核验状态的结构化视频案例和提示词记录 |
 | [`data/templates.json`](./data/templates.json) | 从已核验案例提炼的可复用提示词模板 |
 | [`CATALOG.md`](./CATALOG.md) | GitHub 原生案例索引 |
 | [`agents/skills/minimax-h3-prompt-library`](./agents/skills/minimax-h3-prompt-library/) | 用于检索和改写提示词的 Agent Skill |

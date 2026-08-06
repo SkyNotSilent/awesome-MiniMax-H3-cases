@@ -18,7 +18,7 @@ import type { CaseMode, VideoCase } from './types'
 
 const cases = rawCases as VideoCase[]
 const templates = rawTemplates as PromptTemplate[]
-const modes: Array<'ALL' | CaseMode> = ['ALL', 'T2VA', 'FL2VA', 'Ref2VA']
+const modes: Array<'ALL' | CaseMode> = ['ALL', 'T2VA', 'FL2VA', 'Ref2VA', 'Unknown']
 const allCategories = [...new Set(cases.map((item) => item.category))]
 const allStyles = [...new Set(cases.flatMap((item) => item.styles))]
 const allScenes = [...new Set(cases.flatMap((item) => item.scenes))]
@@ -39,6 +39,7 @@ const modeCopy: Record<(typeof modes)[number], string> = {
   T2VA: '文字生视频',
   FL2VA: '首尾帧',
   Ref2VA: '全模态参考',
+  Unknown: '模式待确认',
 }
 
 function App() {
@@ -101,7 +102,7 @@ function App() {
             MiniMax H3 的社区实验档案。收录真实视频、完整提示词、输入方式与可复现工作流。
           </p>
           <div className="hero-stats" aria-label="项目统计">
-            <Stat value={String(cases.length).padStart(2, '0')} label="已核验案例" />
+            <Stat value={String(cases.length).padStart(2, '0')} label="公开案例" />
             <Stat value={String(templates.length).padStart(2, '0')} label="提示词模板" />
             <Stat value="24" label="帧 / 秒" />
           </div>
@@ -244,7 +245,11 @@ function CaseCard({
   return (
     <article className="case-card" style={{ '--order': index } as React.CSSProperties}>
       <button className="media" onClick={onOpen} aria-label={`查看 ${item.title} 详情`}>
-        <video src={item.mediaUrl} poster={item.posterUrl} muted loop playsInline preload="metadata" />
+        {item.mediaUrl ? (
+          <video src={item.mediaUrl} poster={item.posterUrl} muted loop playsInline preload="metadata" />
+        ) : (
+          <img src={item.posterUrl} alt="" />
+        )}
         <span className="media-scan" aria-hidden="true" />
         <span className="case-number">{String(index + 1).padStart(2, '0')}</span>
         <span className="duration">
@@ -260,6 +265,11 @@ function CaseCard({
           {item.verified && (
             <span className="verified">
               <Check size={11} /> 官方可复现
+            </span>
+          )}
+          {!item.verified && item.sourceType === 'x' && (
+            <span className="verified community-source">
+              <ArrowUpRight size={11} /> X 社区
             </span>
           )}
         </div>
@@ -392,7 +402,14 @@ function CaseDialog({ item, onClose }: { item: VideoCase; onClose: () => void })
           <X size={19} />
         </button>
         <div className="dialog-video">
-          <video src={item.mediaUrl} poster={item.posterUrl} controls autoPlay playsInline />
+          {item.mediaUrl ? (
+            <video src={item.mediaUrl} poster={item.posterUrl} controls autoPlay playsInline />
+          ) : (
+            <a className="external-media" href={item.sourceUrl} target="_blank" rel="noreferrer">
+              <img src={item.posterUrl} alt={`${item.title} 社区案例封面`} />
+              <span>在 X 查看原始视频 <ArrowUpRight size={16} /></span>
+            </a>
+          )}
         </div>
         <div className="dialog-copy">
           <div className="dialog-eyebrow">
@@ -404,7 +421,7 @@ function CaseDialog({ item, onClose }: { item: VideoCase; onClose: () => void })
           <h2 id="dialog-title">{item.title}</h2>
           <p className="summary">{item.summary}</p>
           <div className="prompt-heading">
-            <span>提示词摘要 / ADAPTED PROMPT · {item.promptProvenance}</span>
+            <span>提示词记录 / PROMPT RECORD · {item.promptProvenance}</span>
             <button onClick={copyPrompt}>
               {copied ? <Check size={14} /> : <Clipboard size={14} />}
               {copied ? '已复制' : '复制'}

@@ -1,4 +1,4 @@
-export type CaseMode = 'T2VA' | 'FL2VA' | 'Ref2VA'
+export type CaseMode = 'T2VA' | 'FL2VA' | 'Ref2VA' | 'Unknown'
 
 export interface VideoCase {
   id: string
@@ -12,7 +12,7 @@ export interface VideoCase {
   sourceLabel: string
   author: string
   publishedAt: string
-  mediaUrl: string
+  mediaUrl?: string | null
   posterUrl: string
   duration: number
   aspectRatio: string
@@ -22,7 +22,7 @@ export interface VideoCase {
   styles: string[]
   scenes: string[]
   inputTypes: Array<'text' | 'image' | 'video' | 'audio'>
-  promptProvenance: 'official-verbatim' | 'official-adapted' | 'creator-verbatim' | 'reconstructed'
+  promptProvenance: 'official-verbatim' | 'official-adapted' | 'creator-verbatim' | 'reconstructed' | 'unknown'
   sourceType: 'official' | 'x' | 'community'
   verified: boolean
 }

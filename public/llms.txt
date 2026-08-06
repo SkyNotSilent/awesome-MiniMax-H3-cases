@@ -12,7 +12,13 @@ Primary language: Chinese; English metadata and documentation are available.
 - /cases/official-t2va-starship/: verified T2VA text-to-video example with synchronized audio
 - /cases/official-fl2va-ramen/: verified FL2VA first-frame video example with rack focus
 - /cases/official-ref2va-lamb/: verified Ref2VA multimodal video editing example with voice reference
-- https://github.com/SkyNotSilent/awesome-minimax-h3/blob/main/data/cases.json: machine-readable verified cases
+- /cases/x-icreat-time-freeze-diner/: creator-verbatim cinematic time-freeze and reverse-motion prompt
+- /cases/x-yangtze-textbook-recreation/: image-guided textbook-scene recreation
+- /cases/x-tapehead-composition-mv/: Suno, Midjourney, and MiniMax H3 music-video workflow
+- /cases/x-pollo-commercial-comparison/: same-prompt MiniMax H3 and Seedance commercial comparison
+- /cases/x-mayii-ugc-commercial/: localized UGC advertising workflow using HyperFrames and MiniMax H3
+- /cases/x-soylab-person-replacement/: ComfyUI person-replacement experiment
+- https://github.com/SkyNotSilent/awesome-minimax-h3/blob/main/data/cases.json: machine-readable public cases with source and verification status
 - https://github.com/SkyNotSilent/awesome-minimax-h3/blob/main/data/templates.json: reusable Prompt-as-Code templates
 
 ## Terminology
@@ -22,6 +28,7 @@ Primary language: Chinese; English metadata and documentation are available.
 - FL2VA: first/last-frame conditioned video with audio.
 - Ref2VA: multimodal reference-to-video with audio.
 - Every public case includes source attribution and prompt provenance.
-- Unverified X discoveries remain in a private review queue and are not public cases.
+- X discoveries remain in a review queue until a human explicitly approves publication.
+- Community videos remain on X; the catalog stores attribution, public prompt evidence, and source links without re-hosting media.
 
 This project is not affiliated with MiniMax. Original media and prompts remain subject to their owners and source-platform terms.
