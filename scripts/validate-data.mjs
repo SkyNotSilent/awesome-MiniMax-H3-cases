@@ -4,8 +4,8 @@ import { resolve } from 'node:path'
 const root = resolve(import.meta.dirname, '..')
 const cases = JSON.parse(await readFile(resolve(root, 'data/cases.json'), 'utf8'))
 const templates = JSON.parse(await readFile(resolve(root, 'data/templates.json'), 'utf8'))
-const modes = new Set(['T2VA', 'FL2VA', 'Ref2VA'])
-const provenance = new Set(['official-verbatim', 'official-adapted', 'creator-verbatim', 'reconstructed'])
+const modes = new Set(['T2VA', 'FL2VA', 'Ref2VA', 'Unknown'])
+const provenance = new Set(['official-verbatim', 'official-adapted', 'creator-verbatim', 'reconstructed', 'unknown'])
 const ids = new Set()
 const errors = []
 
@@ -23,7 +23,7 @@ for (const [index, item] of cases.entries()) {
   }
   try {
     new URL(item.sourceUrl)
-    new URL(item.mediaUrl)
+    if (item.mediaUrl) new URL(item.mediaUrl)
   } catch {
     errors.push(`${at} contains an invalid URL`)
   }
