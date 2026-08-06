@@ -7,15 +7,26 @@
 | 案例 | 输出 | 标签 |
 | --- | --- | --- |
 | [舰桥上的跃迁余震](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-t2va-request.sh) | 10s · 768p · 16:9 | `电影感` `运镜` `立体声` `多镜头` |
+| [餐厅时间冻结与逆向复原](https://x.com/icreat_ai/status/2085297962977227011) | 15s · 原帖 · 原帖 | `时间冻结` `逆向运动` `液体物理` `完整提示词` |
+| [同提示词广告模型对比](https://x.com/__spence_r/status/2085281251183747482) | 30s · 原帖 · 原帖 | `模型对比` `商业广告` `付费合作` `同提示词` |
 
 ## FL2VA
 
 | 案例 | 输出 | 标签 |
 | --- | --- | --- |
 | [拉面与家庭晚餐](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-fl2va-request.sh) | 8s · 768p · Auto | `首帧` `焦点转移` `群像` `环境音` |
+| [小学课本场景复刻](https://x.com/Yangtze_Seventh/status/2085305008602652971) | 15s · 原帖 · 原帖 | `图片定风格` `课本复刻` `音乐叙事` `工作流` |
 
 ## Ref2VA
 
 | 案例 | 输出 | 标签 |
 | --- | --- | --- |
 | [粉色西装与黑色羔羊](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-ref2va-request.sh) | 5s · 768p · Auto | `视频编辑` `声音参考` `口型` `角色一致性` |
+| [人物替换实验](https://x.com/soy_lab/status/2085305126001225909) | 14s · 原帖 · 原帖 | `人物替换` `ComfyUI` `视频编辑` `版权角色` |
+
+## Unknown
+
+| 案例 | 输出 | 标签 |
+| --- | --- | --- |
+| [分层构图音乐视频](https://x.com/tapehead_Lab/status/2085304883847258179) | 107s · 原帖 · 原帖 | `音乐视频` `分层构图` `Midjourney` `Suno` |
+| [跨平台 UGC 种草短片](https://x.com/Mayii0205/status/2085305063405220214) | 15s · 原帖 · 原帖 | `UGC` `种草视频` `本地化` `混合工作流` |
