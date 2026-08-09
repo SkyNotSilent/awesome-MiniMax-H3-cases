@@ -2,7 +2,7 @@
 
 # Awesome MiniMax H3
 
-### MiniMax H3 / 海螺 Hailuo 3.0 视频案例、提示词记录与可复现工作流
+### MiniMax H3 / 海螺 Hailuo 3.0 真实视频案例与公开 Prompt 原文
 
 [在线案例库](https://h3-field-notes-production.up.railway.app/) · [工具链](https://h3-field-notes-production.up.railway.app/toolkit/) · [常见问题](https://h3-field-notes-production.up.railway.app/faq/) · [English](./README.md) · [参与贡献](./CONTRIBUTING.md)
 
@@ -10,20 +10,20 @@
 
 ![H3 Field Notes 网站](./public/og-image.jpg)
 
-Awesome MiniMax H3 是一个带来源追踪的开源 AI 视频提示词案例库，覆盖 **MiniMax H3**、**Hailuo 3.0**、文字生视频、首尾帧视频、全模态参考视频、视频编辑、原生音频、运镜、对白、口型与角色一致性等高意图检索词。
+Awesome MiniMax H3 是一个带来源追踪的开源 AI 视频案例库，覆盖 **MiniMax H3**、**Hailuo 3.0**、文字生视频、首尾帧视频、全模态参考视频、视频编辑、原生音频、运镜、对白、口型与角色一致性等高意图检索词。
 
-项目由三部分组成：案例优先的中英双语网站、机器可读数据，以及使用 Mac 登录态浏览器自动发现 X 案例的审核工作流。公开案例都保留原始来源和提示词来源类型；不确定内容只进入候选队列，不会超时自动发布。
+项目由三部分组成：案例优先的中英双语网站、机器可读数据，以及使用 Mac 登录态浏览器自动发现 X 案例的审核流程。公开案例都保留原始来源。只有原作者或官方公开脚本逐字发布了 Prompt，网站才呈现该原文；原帖未公开时会明确标注没有公开 Prompt。项目绝不根据视频生成、改写、重建、反推或拆解提示词。不确定内容只进入候选队列，不会超时自动发布。
 
-当前共有 25 个公开案例：3 个 MiniMax 官方可复现案例，以及 22 个经人工批准的 X 社区案例，覆盖完整提示词、本地 ComfyUI 性能测试、图片与多模态参考、模型对比、音乐视频、多镜头短片、原生音频和后期工作流。X 案例通过官方嵌入播放器在站内直接播放；确实无法嵌入时，可在留存许可记录后启用自托管兜底。
+当前共有 25 个公开案例：3 个来自 MiniMax 官方公开脚本的案例，以及 22 个经人工批准的 X 社区案例，覆盖公开 Prompt 原文、本地 ComfyUI 性能测试、图片与多模态参考、模型对比、音乐视频、多镜头短片、原生音频和后期工作流。X 案例通过官方嵌入播放器在站内直接播放；确实无法嵌入时，可在留存许可记录后启用自托管兜底。
 
 ## 核心内容
 
 | 资源 | 用途 |
 | --- | --- |
 | [可视化案例库](https://h3-field-notes-production.up.railway.app/) | 按生成模式、分类、风格、场景和关键词筛选 |
-| [`data/cases.json`](./data/cases.json) | 带来源与核验状态的结构化视频案例和提示词记录 |
+| [`data/cases.json`](./data/cases.json) | 带来源与核验状态的视频案例、公开 Prompt 原文记录和元数据 |
 | [`CATALOG.md`](./CATALOG.md) | GitHub 原生案例索引 |
-| [`agents/skills/minimax-h3-prompt-library`](./agents/skills/minimax-h3-prompt-library/) | 用于检索和改写提示词的 Agent Skill |
+| [`agents/skills/minimax-h3-prompt-library`](./agents/skills/minimax-h3-prompt-library/) | 用于检索案例与公开 Prompt 原文的 Agent Skill；不负责写提示词 |
 
 ## H3 工具链与部署入口
 
@@ -34,7 +34,7 @@ Awesome MiniMax H3 是一个带来源追踪的开源 AI 视频提示词案例库
 | ComfyUI H3 Motion Context | 多片段续接，延续上一段的画面运动与音频上下文 | [NikoDemon80/ComfyUI-H3-Motion-Context](https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context) |
 | MiniMax H3 Audio T8 | 原生 H3 音频条件、双时钟采样、混音、裁切、预检与 Ref2VA 工作流 | [T8mars/comfyui-minimax-h3-audio-T8](https://github.com/T8mars/comfyui-minimax-h3-audio-T8) |
 
-实践路线优先尝试 **Turbo LoRA + SageAttention**。EasyCache 更适合原生 20 步链路，不建议和 4 步 Turbo 叠加；采样步数的缩短也不等于端到端等比例加速，VAE 解码和视频封装仍会占用时间。下一阶段路线图是：`Agent + h3-prompt-writing → ComfyUI API → Remotion`，完成从提示词、生成到剪辑交付的自动化链路。
+实践路线优先尝试 **Turbo LoRA + SageAttention**。EasyCache 更适合原生 20 步链路，不建议和 4 步 Turbo 叠加；采样步数的缩短也不等于端到端等比例加速，VAE 解码和视频封装仍会占用时间。这些外部部署资源与案例档案分开维护；案例库不会从收录视频中派生提示词或制作流程。
 
 ## 自动采集路线
 
@@ -45,7 +45,7 @@ X 登录态浏览器搜索
         ↓
 规则去重与初筛
         ↓
-MiMo V2.5 Pro 文本提取 / 分类
+MiMo V2.5 Pro 公开文本分类
         ↓
 仅入围视频 → MiMo V2.5 低 FPS 核验
         ↓
@@ -56,14 +56,14 @@ data/candidates.json
 data/cases.json → 网站 / GitHub / Agent Skill
 ```
 
-这条路线不需要 X API Token，但需要 Mac 上现有的 X 登录态。任务不会绕过登录限制或直接公开候选案例；发现阶段只记元数据，发布阶段优先使用官方 X 嵌入，无法嵌入时才进入许可明确的媒体兜底流程。详细规则见 [`docs/DISCOVERY_WORKFLOW.md`](./docs/DISCOVERY_WORKFLOW.md)。
+这条路线不需要 X API Token，但需要 Mac 上现有的 X 登录态。任务不会绕过登录限制或直接公开候选案例；发现阶段只记录公开元数据，只有原帖逐字展示 Prompt 时才复制原文，绝不让模型补写或反推。发布阶段优先使用官方 X 嵌入，无法嵌入时才进入许可明确的媒体兜底流程。详细规则见 [`docs/DISCOVERY_WORKFLOW.md`](./docs/DISCOVERY_WORKFLOW.md)。
 
 ## 模型与密钥
 
 只使用现有小米 MiMo Token Plan：
 
-- `mimo-v2.5-pro`：提示词提取、分类和文本推理；
-- `mimo-v2.5`：入围视频与音频的多模态核验。
+- `mimo-v2.5-pro`：对原帖公开文本和元数据做分类，不生成、不改写、不推断 Prompt；
+- `mimo-v2.5`：对入围视频与音频做有限核验，不用于重建提示词或拆解工作流。
 
 真实密钥只放本机 `.env` 或受保护的服务端 Secret；不会写进前端、GitHub 仓库或构建产物。公开网站本身完全不需要 API Key。
 
@@ -95,7 +95,8 @@ npm run catalog
 ## 数据与版权原则
 
 - 只收录能追溯原作者与原始链接的案例；
-- 不推断私有提示词，重构内容必须标注 `reconstructed`；
+- Prompt 仅在原作者或官方公开脚本逐字发布时收录，并保持原文不变；
+- 原帖未公开 Prompt 时不生成、不补全、不翻译成原文、不改写、不重建、不反推、不拆解，明确标注为未公开；
 - 默认使用官方 X 嵌入；只有许可记录明确且嵌入不可用时才重托管创作者视频；
 - 不确定项始终留在审核队列；
 - 创作者可通过 Issue 请求纠错或移除。

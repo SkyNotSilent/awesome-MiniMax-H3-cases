@@ -16,13 +16,13 @@ const pageDefinitions = [
     copy: {
       'zh-CN': {
         title: 'MiniMax H3 视频案例库 — H3 Field Notes',
-        description: '可筛选、可追溯的 MiniMax H3 / Hailuo 3.0 视频案例库，保留视频封面、提示词记录、输入方式与原始来源。',
-        keywords: 'MiniMax H3 视频案例,Hailuo 3.0,海螺 3.0,AI 视频提示词,T2VA,FL2VA,Ref2VA',
+        description: '可筛选、可追溯、可站内观看的 MiniMax H3 / Hailuo 3.0 真实视频案例库；Prompt 仅在来源公开时按原文呈现。',
+        keywords: 'MiniMax H3 视频案例,Hailuo 3.0,海螺 3.0,AI 视频案例,公开 Prompt,T2VA,FL2VA,Ref2VA',
       },
       en: {
         title: 'MiniMax H3 Video Case Library — H3 Field Notes',
-        description: 'A searchable, source-attributed library of MiniMax H3 and Hailuo 3.0 video examples, prompt records, input modes, and original sources.',
-        keywords: 'MiniMax H3 video examples,Hailuo 3.0,AI video prompts,T2VA,FL2VA,Ref2VA',
+        description: 'A searchable, source-attributed library of real MiniMax H3 and Hailuo 3.0 video examples. Prompts appear only when published by the source.',
+        keywords: 'MiniMax H3 video examples,Hailuo 3.0,AI video cases,published prompts,T2VA,FL2VA,Ref2VA',
       },
     },
   },
@@ -50,12 +50,12 @@ const pageDefinitions = [
     copy: {
       'zh-CN': {
         title: 'MiniMax H3 视频案例库常见问题 — H3 Field Notes',
-        description: '关于 MiniMax H3、Hailuo 3.0、视频生成模式、案例来源与人工审核流程的常见问题。',
+        description: '关于 MiniMax H3 视频案例来源、公开 Prompt 边界与人工审核流程的常见问题。',
         keywords: 'MiniMax H3 常见问题,Hailuo 3.0,海螺 3.0,T2VA,FL2VA,Ref2VA,AI 视频案例',
       },
       en: {
         title: 'MiniMax H3 Video Library FAQ — H3 Field Notes',
-        description: 'Frequently asked questions about MiniMax H3, Hailuo 3.0, video generation modes, case sources, and human review.',
+        description: 'Frequently asked questions about MiniMax H3 video sources, published-prompt boundaries, and human review.',
         keywords: 'MiniMax H3 FAQ,Hailuo 3.0,T2VA,FL2VA,Ref2VA,AI video examples',
       },
     },
@@ -86,8 +86,10 @@ const ui = {
     output: '输出',
     tags: '标签',
     provenance: '提示词来源',
-    promptHeading: 'MiniMax H3 提示词记录',
-    promptNotice: '提示词保留来源原文。',
+    promptHeading: '原始 Prompt',
+    promptNotice: '以下为来源公开的原文 Prompt，未翻译、改写或补全。',
+    promptUnavailableTitle: '来源未公开 Prompt',
+    promptUnavailableDetail: '本页仅展示视频和可核对的公开信息；不根据视频反推或补写 Prompt。',
     source: '查看原始来源',
     siteDescription: 'MiniMax H3 视频案例库',
   },
@@ -114,8 +116,10 @@ const ui = {
     output: 'Output',
     tags: 'Tags',
     provenance: 'Prompt provenance',
-    promptHeading: 'MiniMax H3 prompt record',
-    promptNotice: 'Prompt text is shown in English; creator-verbatim English is preserved as published.',
+    promptHeading: 'Original Prompt',
+    promptNotice: 'Verbatim prompt as published by the source; not translated, rewritten, or completed.',
+    promptUnavailableTitle: 'Prompt not published by the source',
+    promptUnavailableDetail: 'This page only shows the video and verifiable public information. It does not infer or complete a prompt from the video.',
     source: 'View original source',
     siteDescription: 'MiniMax H3 video case library',
   },
@@ -124,17 +128,13 @@ const ui = {
 const provenanceLabels = {
   'zh-CN': {
     'official-verbatim': '官方原文',
-    'official-adapted': '官方内容改写',
     'creator-verbatim': '创作者原文',
-    reconstructed: '根据公开信息重建',
-    unknown: '来源未披露',
+    'not-published': '来源未公开',
   },
   en: {
     'official-verbatim': 'Official, verbatim',
-    'official-adapted': 'Official, adapted',
     'creator-verbatim': 'Creator, verbatim',
-    reconstructed: 'Reconstructed from public information',
-    unknown: 'Not disclosed',
+    'not-published': 'Not published by the source',
   },
 }
 
@@ -153,7 +153,8 @@ const otherLocale = (locale) => locale === 'en' ? 'zh-CN' : 'en'
 const casePath = (locale, id) => `${locale === 'en' ? '/en' : ''}/cases/${encodeURIComponent(id)}/`
 
 function assertLanguageIsolation(html, locale, path) {
-  if (locale === 'en' && /[\u3400-\u9fff]/u.test(html)) {
+  const interfaceOnly = html.replace(/<pre data-verbatim-prompt>[\s\S]*?<\/pre>/g, '')
+  if (locale === 'en' && /[\u3400-\u9fff]/u.test(interfaceOnly)) {
     throw new Error(`English page ${path} contains CJK text; refusing to generate a mixed-language route.`)
   }
 }
@@ -202,15 +203,11 @@ function localizedCase(item, locale) {
   if (!item.summaryEn) {
     throw new Error(`Case ${item.id} is missing summaryEn; refusing to generate a mixed-language English page.`)
   }
-  const prompt = item.promptEn ?? item.prompt
-  if (/[\u3400-\u9fff]/u.test(prompt)) {
-    throw new Error(`Case ${item.id} is missing an English prompt record; refusing to generate a mixed-language English page.`)
-  }
 
   return {
     title: item.titleEn,
     summary: item.summaryEn,
-    prompt,
+    prompt: item.prompt,
     author: englishAuthor(item),
     model: englishModel(item.model),
     sourceLabel: englishSourceLabel(item),
@@ -357,9 +354,15 @@ function renderCasePage(item, locale) {
     ? `<video controls playsinline preload="metadata" poster="${escapeHtml(poster)}" src="${escapeHtml(item.mediaUrl)}"></video>`
     : embedded.markup
   const provenance = provenanceLabels[locale][item.promptProvenance] ?? item.promptProvenance
+  const hasPrompt = typeof copy.prompt === 'string' && copy.prompt.trim().length > 0
+  const promptMarkup = hasPrompt
+    ? `<h2>${escapeHtml(labels.promptHeading)}</h2>
+  <p class="prompt-notice">${escapeHtml(labels.promptNotice)}</p>
+  <pre data-verbatim-prompt>${escapeHtml(copy.prompt)}</pre>`
+    : `<p class="prompt-notice prompt-unavailable"><strong>${escapeHtml(labels.promptUnavailableTitle)}</strong><br>${escapeHtml(labels.promptUnavailableDetail)}</p>`
   const localeTitleSuffix = locale === 'en'
-    ? 'MiniMax H3 / Hailuo 3.0 video prompt'
-    : 'MiniMax H3 / Hailuo 3.0 视频提示词'
+    ? 'MiniMax H3 / Hailuo 3.0 video case'
+    : 'MiniMax H3 / Hailuo 3.0 视频案例'
 
   return `<!doctype html>
 <html lang="${locale}">
@@ -396,9 +399,7 @@ ${videoMeta}
   <p class="summary">${escapeHtml(copy.summary)}</p>
   ${mediaMarkup}
   <dl><dt>${escapeHtml(labels.mode)}</dt><dd>${escapeHtml(item.mode)}</dd><dt>${escapeHtml(labels.model)}</dt><dd>${escapeHtml(copy.model)}</dd><dt>${escapeHtml(labels.output)}</dt><dd>${item.duration}s · ${escapeHtml(copy.resolution)} · ${escapeHtml(copy.aspectRatio)}</dd><dt>${escapeHtml(labels.tags)}</dt><dd>${escapeHtml(copy.tags.join(' · '))}</dd><dt>${escapeHtml(labels.provenance)}</dt><dd>${escapeHtml(provenance)}</dd></dl>
-  <h2>${escapeHtml(labels.promptHeading)}</h2>
-  <p class="prompt-notice">${escapeHtml(labels.promptNotice)}</p>
-  <pre>${escapeHtml(copy.prompt)}</pre>
+  ${promptMarkup}
   <p><a href="${escapeHtml(item.sourceUrl)}" rel="nofollow noopener">${escapeHtml(labels.source)} · ${escapeHtml(copy.sourceLabel)}</a></p>
 </main>${embedded?.script ?? ''}</body></html>`
 }
