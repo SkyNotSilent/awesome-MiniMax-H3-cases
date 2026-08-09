@@ -6,6 +6,7 @@
     "model": "MiniMax H3 Base FL2VA",
     "mode": "T2VA",
     "summary": "从星舰舰桥的中广景切至舰长面部特写，以原生立体声同步表现舰队跃迁、空间冲击与骤然安静的余波。",
+    "summaryEn": "Moves from a medium-wide view of a starship bridge to a close-up of the captain, using native stereo audio to synchronize the fleet jump, spatial shock, and the suddenly quiet aftermath.",
     "prompt": "[Shot 1] Cinematic medium-wide shot, pushing in slowly. A female captain stands in the dimly lit bridge of a starship, silhouetted against a massive observation window. Outside, an armada of dreadnoughts hovers against a deep purple nebula as their rear thrusters begin to glow blue. [Shot 2] At 00:04.500, cut to a close-up of the captain's face as the bridge shakes strongly. A blinding flash floods the window when the fleet jumps to hyperspace. The force jolts the bridge; she staggers, braces, then slowly closes her eyes as the light fades. Sound: low ship hum, escalating electronic whine, bass-heavy boom, metallic rattling, then a hollow room tone. Music: mournful French horn and sustained strings building to a peak before snapping into silence.",
     "sourceUrl": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-t2va-request.sh",
     "sourceLabel": "MiniMax 官方复现脚本",
@@ -46,6 +47,7 @@
     "model": "MiniMax H3 Base FL2VA",
     "mode": "FL2VA",
     "summary": "以拉面首帧为约束，通过缓慢焦点转移让前景蒸汽虚化、背景家庭成员逐渐清晰，考验景深和群像动作。",
+    "summaryEn": "Uses a ramen image as the opening-frame constraint, then gradually racks focus so the foreground steam softens while the family in the background comes into view, testing depth of field and ensemble motion.",
     "prompt": "Reference Picture 1 fully at 0.00 seconds. Hold a perfectly static cinematic shot in a traditional Japanese dining room. Begin with a blue-and-white ceramic bowl of ramen in crisp foreground focus: golden broth, noodles, chashu, scallions and nori. Thick white steam rises continuously. Gradually rack focus deeper into the room so the bowl becomes soft while a family of seven around the table resolves into sharp detail. Family members smile, gesture, use chopsticks and converse naturally as steam forms a translucent veil. Sound: broth hiss, ceramic and chopstick clinks, clothing movement. Music: gentle acoustic guitar with subtle koto.",
     "sourceUrl": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-fl2va-request.sh",
     "sourceLabel": "MiniMax 官方复现脚本",
@@ -87,6 +89,7 @@
     "model": "MiniMax H3 Base Ref2VA",
     "mode": "Ref2VA",
     "summary": "同时引用视频、原背景音乐和额外人声音色，让角色新增英语对白并保持身份、服装、镜头与环境稳定。",
+    "summaryEn": "References a source video, its original background music, and an additional voice timbre to add English dialogue while preserving character identity, wardrobe, framing, and setting.",
     "prompt": "Edit Video 1 while preserving the young man with wavy blonde hair, bright pink suit, white shirt and the black lamb in his arms. Preserve the original framing, golden-hour pasture and background lambs. Reuse Audio 1 as background music and reference the calm male timbre of Audio 2. Animate the subject's mouth naturally as he says: ‘Follow the wind, live free. Leave worries behind, enjoy the moment.’ When speech ends, his lips meet in a relaxed smile; he looks toward the horizon and gently strokes the lamb while the camera holds.",
     "sourceUrl": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-ref2va-request.sh",
     "sourceLabel": "MiniMax 官方复现脚本",
@@ -128,6 +131,7 @@
     "model": "MiniMax H3（创作者标注）",
     "mode": "T2VA",
     "summary": "1950 年代餐厅里，碰撞飞散的咖啡、餐盘与食物在空中冻结，镜头环绕后让整个世界逆向复原；原帖公开了分段运镜与动作提示词，但展示视频为 15 秒、提示词时间轴为 30 秒。",
+    "summaryEn": "Inside a 1950s diner, coffee, dishes, and food freeze in mid-air after a collision. The camera circles the scene before the entire world rewinds to its starting state. The original post includes a segmented camera-and-action prompt, although the displayed video lasts 15 seconds while the prompt timeline spans 30 seconds.",
     "prompt": "Photorealistic cinematic 1950s American diner, chrome stools, red vinyl, neon glow and checkerboard floor, shot with modern lived-in realism and soft natural window light. Subtle handheld texture, warm practicals, rich period detail, heavy film grain. 0-4s: [Medium Wide] A striking young woman in her early 20s sits alone at the counter, calm and slightly amused, slowly sipping a tall thick milkshake through a straw. Behind her a young waitress in classic uniform approaches with a tray of eggs and bacon in one hand and a full glass coffee pot in the other. An older lady starts rising from a nearby booth. 4-8s: [Dynamic Tracking] The older lady collides hard into the waitress. Tray, plate, eggs, bacon and coffee pot explode upward in chaotic slow motion. Coffee erupts into long liquid ribbons and perfect suspended droplets. Camera immediately begins a smooth continuous orbit around the impact. Time locks completely at the peak of the spill. Every face freezes in pure shock. Only the girl at the counter keeps moving, completely unfazed. 8-17s: [Slow 360° Orbital] Camera glides in a full elegant orbit through the frozen diner. Coffee hangs in mid-air as glassy ribbons and spheres with perfect volume and surface tension. Bacon strips, eggs and the spinning tray float weightlessly. Patrons and waitress remain locked in startled expressions. The girl at the counter takes one slow, deliberate sip, eyes half-lidded, almost bored, while the entire frozen world (except her) begins an elegant reverse: every droplet, every piece of food and every person rewinds smoothly back to the exact starting positions. 17-24s: [Medium Shot] Rewind lands perfectly. Waitress stands balanced again with tray and coffee pot. The girl lifts her eyes, raises two fingers in a small casual gesture and softly calls the waitress by name. The waitress turns toward her just before the older lady begins to stand, completely avoiding the collision. A tiny private smile crosses the girl’s face. 24-30s: [Extreme Close-Up] Hard cut to her face as she takes one last slow sip. Soft knowing smile, eyes almost closed in quiet satisfaction, like she has done this a hundred times. Shallow depth of field, creamy bokeh of the neon diner behind her. Photorealistic, ultra-detailed fluid physics, perfect motion blur only on moving elements, stable characters, cinematic lighting, heavy natural film grain, no artifacts, movie-level temporal coherence, high rewatch value.",
     "sourceUrl": "https://x.com/icreat_ai/status/2085297962977227011",
     "sourceLabel": "X 原帖 · @icreat_ai",
@@ -169,6 +173,7 @@
     "model": "MiniMax H3（创作者标注）",
     "mode": "FL2VA",
     "summary": "创作者使用图片确定视觉风格，再配合文字提示复刻小学课本场景，并以贝多芬《月光曲》从平静、汹涌到归于平静的情绪变化组织 15 秒视频。",
+    "summaryEn": "The creator used an image to establish the visual style and a text prompt to recreate a primary-school textbook scene, structuring the 15-second video around the emotional arc of Beethoven’s Moonlight Sonata—from calm to turbulent and back to calm.",
     "prompt": "原帖未公开完整提示词。公开信息：使用图片定风格并配合文字提示词，复刻小学课本场景；音乐情绪参考贝多芬《月光曲》，从平静到汹涌再归于平静。",
     "sourceUrl": "https://x.com/Yangtze_Seventh/status/2085318072903299536",
     "sourceLabel": "X 原帖 · @Yangtze_Seventh",
@@ -200,7 +205,8 @@
     ],
     "promptProvenance": "unknown",
     "sourceType": "x",
-    "verified": false
+    "verified": false,
+    "promptEn": "The original post does not disclose the full prompt. Public details: an image established the visual style, while a text prompt recreated a primary-school textbook scene. The musical arc follows Beethoven's Moonlight Sonata from calm to turbulence and back to calm."
   },
   {
     "id": "x-tapehead-composition-mv",
@@ -209,6 +215,7 @@
     "model": "MiniMax H3（创作者标注）",
     "mode": "Unknown",
     "summary": "一支由 Suno 音乐、Midjourney 视觉素材和 MiniMax H3 视频生成组合而成的长篇 MV。创作者强调 H3 对对象分层与提示词遵循的表现；具体生成模式和单镜头提示词未公开。",
+    "summaryEn": "A long-form music video built from Suno music, Midjourney visuals, and MiniMax H3 video generation. The creator highlights H3’s object layering and prompt adherence, but does not disclose the exact generation mode or shot-level prompts.",
     "prompt": "原帖未公开完整提示词。公开工作流：Music — Suno；Visual — Midjourney；Video Generation — MiniMax H3。创作者称 H3 擅长把对象作为图层处理并能较好遵循提示词。",
     "sourceUrl": "https://x.com/tapehead_Lab/status/2085304883847258179",
     "sourceLabel": "X 原帖 · @tapehead_Lab",
@@ -240,7 +247,8 @@
     ],
     "promptProvenance": "unknown",
     "sourceType": "x",
-    "verified": false
+    "verified": false,
+    "promptEn": "The original post does not disclose the full prompt. Published workflow: music with Suno, visuals with Midjourney, and video generation with MiniMax H3. The creator highlights object layering and prompt adherence."
   },
   {
     "id": "x-pollo-commercial-comparison",
@@ -249,6 +257,7 @@
     "model": "MiniMax H3 与 Seedance 2.0 对比",
     "mode": "T2VA",
     "summary": "在 Pollo AI 中使用相同提示词和设置，对比 MiniMax H3 与 Seedance 2.0 的商业广告输出。创作者认为 H3 更自然、精致，另一模型更强调电影化视觉冲击。",
+    "summaryEn": "Uses the same prompt and settings in Pollo AI to compare commercial outputs from MiniMax H3 and Seedance 2.0. The creator describes H3 as more natural and polished, while the other model places greater emphasis on cinematic visual impact.",
     "prompt": "原帖说明两种模型使用相同提示词与设置，但未公开提示词正文。内容为品牌商业广告对比；原帖标记为付费合作。",
     "sourceUrl": "https://x.com/__spence_r/status/2085281251183747482",
     "sourceLabel": "X 原帖 · @__spence_r",
@@ -280,7 +289,8 @@
     ],
     "promptProvenance": "unknown",
     "sourceType": "x",
-    "verified": false
+    "verified": false,
+    "promptEn": "The post states that both models used the same prompt and settings, but does not publish the prompt text. The case is a sponsored comparison of branded commercial outputs."
   },
   {
     "id": "x-mayii-ugc-commercial",
@@ -289,6 +299,7 @@
     "model": "MiniMax H3 + HyperFrames（创作者标注）",
     "mode": "Unknown",
     "summary": "面向不同国家与内容平台制作的 AI UGC 商品短片工作流，创作者明确说明商业化版本主要由 HyperFrames 与 MiniMax H3 配合完成；两者的具体职责仍待拆解。",
+    "summaryEn": "An AI UGC product-video workflow tailored to different countries and content platforms. The creator states that the commercial version mainly combines HyperFrames with MiniMax H3, although the division of responsibilities between them remains undocumented.",
     "prompt": "原帖未公开完整提示词。公开信息：围绕同一款商品，参考 IG Reels 与小红书种草视频风格，为不同国家和平台受众制作短片；商业化版本主要使用 HyperFrames 与 MiniMax H3。",
     "sourceUrl": "https://x.com/Mayii0205/status/2085305063405220214",
     "sourceLabel": "X 原帖 · @Mayii0205",
@@ -320,7 +331,8 @@
     ],
     "promptProvenance": "unknown",
     "sourceType": "x",
-    "verified": false
+    "verified": false,
+    "promptEn": "The original post does not disclose the full prompt. It describes adapting one product into IG Reels and Xiaohongshu-style seeding videos for audiences in different countries, mainly using HyperFrames and MiniMax H3."
   },
   {
     "id": "x-soylab-person-replacement",
@@ -329,6 +341,7 @@
     "model": "MiniMax H3（创作者标注）",
     "mode": "Ref2VA",
     "summary": "基于 ComfyUI 的人物替换短片实验。原帖明确标注 MiniMax H3，但没有公开提示词、参考输入或节点配置，并包含受版权保护角色的视觉引用。",
+    "summaryEn": "A ComfyUI-based person-replacement video experiment. The original post explicitly identifies MiniMax H3 but provides no prompt, reference inputs, or node configuration, and includes a visual reference to a copyrighted character.",
     "prompt": "原帖未公开完整提示词。公开描述仅为：MiniMax H3 — Test for Replacing a Person；标签包括 ComfyUI、MiniMax、H3 与 Joker。输入类型依据任务描述暂归为参考图像与视频，尚未由创作者确认。",
     "sourceUrl": "https://x.com/soy_lab/status/2085305126001225909",
     "sourceLabel": "X 原帖 · @soy_lab",
@@ -359,7 +372,8 @@
     ],
     "promptProvenance": "unknown",
     "sourceType": "x",
-    "verified": false
+    "verified": false,
+    "promptEn": "The original post only describes this as a MiniMax H3 person-replacement test and does not disclose the prompt, reference inputs, or ComfyUI configuration."
   },
   {
     "id": "x-yukyuk-h3-seedance-same-prompt",
@@ -368,6 +382,7 @@
     "model": "MiniMax H3 与 Seedance 2（创作者标注）",
     "mode": "Unknown",
     "summary": "YukYuk 使用相同提示词分别生成 MiniMax H3 与 Seedance 2 的 15 秒视频，用于观察两个模型的输出差异；原帖没有公开提示词正文。",
+    "summaryEn": "YukYuk generated separate 15-second videos with MiniMax H3 and Seedance 2 using the same prompt to compare their outputs. The original post does not disclose the prompt text.",
     "prompt": "原帖称两个模型使用同一提示词，但未公开提示词正文。",
     "sourceUrl": "https://x.com/YukYukID/status/2085553970702074050",
     "sourceLabel": "X 原帖 · @YukYukID",
@@ -410,7 +425,8 @@
       "durationSeconds": 15,
       "resolution": "not visible",
       "aspectRatio": "not visible"
-    }
+    },
+    "promptEn": "The post says both models used the same prompt, but does not publish the prompt text."
   },
   {
     "id": "x-melvin-comfyui-rtx3090-local",
@@ -419,6 +435,7 @@
     "model": "MiniMax H3 + ComfyUI（创作者标注）",
     "mode": "Unknown",
     "summary": "创作者在 RTX 3090 上通过 ComfyUI 本地生成 15 秒 H3 视频，公开输出为 864×480、耗时约 22 分钟，并肯定其提示词遵循能力。",
+    "summaryEn": "The creator generated a 15-second H3 video locally in ComfyUI on an RTX 3090. The published output is 864×480, took approximately 22 minutes to render, and was presented as a positive test of prompt adherence.",
     "prompt": "原帖未公开提示词正文，只说明仍在测试 prompts。",
     "sourceUrl": "https://x.com/melvindvivas/status/2085553403846078669",
     "sourceLabel": "X 原帖 · @melvindvivas",
@@ -461,7 +478,8 @@
       "durationSeconds": 15,
       "resolution": "864x480",
       "aspectRatio": "not visible"
-    }
+    },
+    "promptEn": "The post does not publish the prompt text and only notes that prompt testing was still in progress."
   },
   {
     "id": "x-coretan-eating-ramen-turbo-lora",
@@ -470,6 +488,7 @@
     "model": "MiniMax H3 Turbo LoRA（创作者标注）",
     "mode": "T2VA",
     "summary": "本地 Turbo LoRA 实验只使用作者公开的单句提示词“Eating Ramen”，测试人物吃拉面时手部、筷子与动作表现。",
+    "summaryEn": "This local Turbo LoRA experiment uses only the creator’s published one-line prompt, “Eating Ramen,” to test the character’s hands, chopsticks, and eating motion.",
     "prompt": "Eating Ramen",
     "sourceUrl": "https://x.com/core_tan/status/2085551748874449032",
     "sourceLabel": "X 原帖 · @core_tan",
@@ -521,6 +540,7 @@
     "model": "MiniMax H3 + Claude Code（创作者标注）",
     "mode": "Unknown",
     "summary": "创作者称 37 秒视频及声音均由 MiniMax H3 本地生成，并通过 Claude Code 一次完成；公开硬件为 Mac Studio M3 Ultra 256GB。",
+    "summaryEn": "The creator states that both the 37-second video and its audio were generated locally with MiniMax H3 in a single Claude Code run. The disclosed hardware is a Mac Studio with an M3 Ultra and 256 GB of memory.",
     "prompt": "原帖未公开提示词正文。",
     "sourceUrl": "https://x.com/rsensui/status/2085551007631880347",
     "sourceLabel": "X 原帖 · @rsensui",
@@ -564,7 +584,8 @@
       "resolution": "not visible",
       "aspectRatio": "not visible",
       "audioClaim": "作者称音频与视频均由 MiniMax H3 本地生成"
-    }
+    },
+    "promptEn": "The original post does not publish the prompt text."
   },
   {
     "id": "x-sada-hand-painted-blizzard",
@@ -573,6 +594,7 @@
     "model": "MiniMax H3（创作者标注）",
     "mode": "T2VA",
     "summary": "作者公开完整提示词，以纸上油画逐帧动画、12 fps 停格节奏、冰冷月光和暴风雪环境描绘一对母子在极端天气中求生。",
+    "summaryEn": "The creator publishes the full prompt for a frame-by-frame oil-on-paper animation with a 12 fps stop-motion cadence, cold moonlight, and a violent blizzard, depicting a mother and child struggling to survive extreme weather.",
     "prompt": "Visual Medium & Craft: Traditional frame-by-frame hand-painted oil-on-paper animation, physical 12 fps stop-motion cadence with deliberate frame holds and natural line jitter between frames. Raw brushstroke textures, strictly zero CGI, no 3D rendering, no digital interpolation, no game engine aesthetics. Cinematography & Lighting: Masterful cinematography in the style of Emmanuel Lubezki and Roger Deakins, shot with physical cine lenses and a classic 180° shutter blur. Lit exclusively by a single overhead light source: pale, freezing moonlight cutting through dense atmospheric haze. Strong contre-jour backlighting with the camera positioned on the shadow side. Uniform cold blue moonlight washes over skin, clothing, snow, and tree trunks, casting sharp cold rim lights on shoulders and hoods while keeping faces in soft shadow. Atmosphere & Environment: A violent, blinding blizzard with near-zero visibility (3 meters maximum), dissolving the background into a solid white fog wall. Gale-force horizontal winds whip thick snow and freezing fog through the frame. Deep snow quickly accumulates on garments. Exhaled breath instantly vaporizes and tears away in the wind. Characters & Emotion: A desperate mother and her frightened young child battling for survival, lost in the storm at the absolute limit of their endurance. The mother conceals her panic to protect her child, while the child cries openly in fear. Both lean heavily into the gale, squinting against the biting wind, shielding their faces with forearms and ducking into their collars. Technical Details: Color palette dominated by 60% snow-blue, 30% deep trunk-black, and 10% cold highlight accents. Strict physical realism with grounded weight, true inertia, and accurate contact shadows on snow. Dynamic compositional balance using the rule of thirds and golden ratio. Uncompromising continuity across all character designs, garments, and environmental assets. 8K IMAX aesthetic.",
     "sourceUrl": "https://x.com/sada_ai/status/2085547332880503134",
     "sourceLabel": "X 原帖 · @sada_ai",
@@ -628,6 +650,7 @@
     "model": "Krea 2 + MiniMax H3（创作者标注）",
     "mode": "FL2VA",
     "summary": "使用 Krea 2 生成的图片作为 H3 视频输入，形成一条适合夜间批量渲染的图片生视频工作流；原帖没有公开提示词。",
+    "summaryEn": "Uses an image generated with Krea 2 as the input for H3, creating an image-to-video workflow suitable for overnight batch rendering. The original post does not disclose the prompt.",
     "prompt": "原帖未公开提示词正文。",
     "sourceUrl": "https://x.com/tmaiaroto/status/2085543978611736973",
     "sourceLabel": "X 原帖 · @tmaiaroto",
@@ -670,7 +693,8 @@
       "durationSeconds": 5,
       "resolution": "not visible",
       "aspectRatio": "not visible"
-    }
+    },
+    "promptEn": "The original post does not publish the prompt text."
   },
   {
     "id": "x-opener-deep-sea-ui-comparison",
@@ -679,6 +703,7 @@
     "model": "MiniMax H3 与 Seedance 2.5 对比",
     "mode": "FL2VA",
     "summary": "作者用同一份完整提示词比较 H3 与 Seedance 2.5：以首帧固定深海百科 UI，只允许光标、主标题和左侧生物变化，并精确编排音效与负面约束。",
+    "summaryEn": "Uses the same full prompt to compare H3 with Seedance 2.5: a first-frame-locked deep-sea encyclopedia interface in which only the cursor, main title, and creature in the left panel may change, with precisely timed audio and extensive negative constraints.",
     "prompt": "[FORMAT]\nCreate a 15-second, 16:9 interactive deep-sea creature encyclopedia video. One continuous locked-screen shot.\n\n[ASSETS]\nUse Image 1 as the exact opening frame and strict visual reference. Treat the entire interface and the complete right-side creature list as an immutable frozen background plate. All thumbnails, creatures, names, card positions, colors, and details on the right must remain pixel-stable and identical to Image 1 in every frame.\n\n[IDENTITY]\nPreserve exactly: the ‘CELESTIAL BESTIARY ARCHIVE’ header, pearl-white and ocean-blue palette, silver ornamental borders, large left display panel, complete right-side card grid, bottom navigation bar, navy typography, existing creature names, translucent crystalline materials, and original spacing. Each main creature must match its original card design without hybridization.\n\n[BEATS]\n[0–2.5 seconds] One white cursor touches LUMINARAY’s wing inside the large left panel. LUMINARAY blinks, chirps, and a constellation glow travels across its wings. Nothing on the right changes.\n[2.5–5 seconds] The cursor clicks the static AURORUNA card. Do not animate or highlight the card. Only the creature inside the left panel changes to AURORUNA. The main title crossfades in place to ‘AURORUNA.’ The cursor circles its bell; AURORUNA follows it and releases a soft stardust pulse.\n[5–7.5 seconds] The cursor clicks the static CORALUMI card. The card and every other right-side thumbnail remain completely unchanged. Only the left-panel creature and main title update to CORALUMI. Three taps on its shell create three small localized lights and delicate chimes.\n[7.5–10.5 seconds] The cursor clicks the static GLOWFIN card. Only the left-panel creature and main title update to GLOWFIN. Two pokes on its lure make it squeak, track the cursor with its eyes, and intensify its bioluminescent glow.\n[10.5–15 seconds] A third poke triggers GLOWFIN’s adult transformation, strictly contained inside the left panel. Preserve its navy scales, round eyes, sharp teeth, fins, and forehead lure. The adult GLOWFIN growls, lunges forward, snaps at the cursor, then returns to idle. The title remains ‘GLOWFIN.’ The right-side list remains identical to the opening frame.\n\n[CAMERA]\nLocked front-facing screen view. No pan, zoom, tilt, shake, crop, perspective shift, parallax, or depth-of-field change. Use exactly one cursor.\n\n[LIGHT]\nMaintain the original pearl-white UI illumination, cool underwater blues, silver reflections, and luminous fantasy glow. Bioluminescent effects must remain clipped inside the large left display panel.\n\n[EDIT]\nNo cuts. Only three elements may change: the single cursor, the main title, and the creature inside the large left panel. Freeze every other UI pixel. The entire right-side card grid is a protected static 2D plate, not a group of animated objects. Main titles crossfade in place over 0.2 seconds, remain still until the next click, and exit only through opacity. No sliding, scaling, bouncing, re-lettering, or layout movement.\n\n[AUDIO]\nAudio: quiet deep-sea ambience, soft UI clicks, crystalline creature chirps, stardust shimmer, three shell chimes, two angler squeaks, a low maturation rumble, one aquatic growl, and a sharp bite snap. BGM: an original 15-second cue, 65% mystical underwater ambient and 35% playful digital fantasy. Glass harmonics, submerged synth pads, and soft sonar pulses. Build gently after 10.5 seconds and end with one humorous muted thump. Do not imitate an existing melody.\n\n[NEGATIVE]\nNever alter, animate, replace, redraw, relabel, reorder, highlight, morph, or regenerate any creature thumbnail or card on the right side. No card creature may blink, move, transform, disappear, swap places, or become the currently selected creature. Do not change any right-side card name, illustration, border, color, position, scale, spacing, or selection state. Do not propagate the left-panel transformation into the card grid. No interface distortion, panel movement, duplicate cursors, extra creatures, extra buttons, new text, subtitles, watermarks, logos, or stickers. Do not introduce Chinese text, garbled characters, misspellings, or incorrect creature names. No hybrid anatomy, uncontrolled morphing, full-screen particles, or effects escaping the left panel. Never a slideshow.",
     "sourceUrl": "https://x.com/opener_ai/status/2085542413729513534",
     "sourceLabel": "X 原帖 · @opener_ai",
@@ -735,6 +760,7 @@
     "model": "MiniMax H3（创作者标注）",
     "mode": "Unknown",
     "summary": "一支时长约 2 分 17 秒的 MiniMax H3 音乐视频实验；原帖明确模型来源，但没有公开提示词或输入素材。",
+    "summaryEn": "A MiniMax H3 music-video experiment lasting approximately 2 minutes and 17 seconds. The original post identifies the model but does not disclose the prompt or input assets.",
     "prompt": "原帖未公开提示词正文或输入素材。",
     "sourceUrl": "https://x.com/megurosumi/status/2085535070102884729",
     "sourceLabel": "X 原帖 · @megurosumi",
@@ -777,7 +803,8 @@
       "durationSeconds": 137,
       "resolution": "not visible",
       "aspectRatio": "not visible"
-    }
+    },
+    "promptEn": "The original post does not publish the prompt text or input assets."
   },
   {
     "id": "x-o685463-comfyui-12step-tests",
@@ -786,6 +813,7 @@
     "model": "MiniMax H3 + ComfyUI（创作者标注）",
     "mode": "Unknown",
     "summary": "三组各 5 秒的本地 ComfyUI 测试，以速度优先的 12 步设置观察 H3 的流体与毛发表现；作者指出低步数下这些细节仍较吃力。",
+    "summaryEn": "Three local ComfyUI tests, each lasting five seconds, use speed-first 12-step settings to examine H3’s handling of fluids and fur. The creator notes that both remain challenging at low step counts.",
     "prompt": "原帖未公开提示词正文。",
     "sourceUrl": "https://x.com/O685463/status/2086345324164161598",
     "sourceLabel": "X 原帖 · @O685463",
@@ -831,7 +859,8 @@
       "resolution": "not visible",
       "aspectRatio": "not visible",
       "generationSettings": "12 steps; local ComfyUI"
-    }
+    },
+    "promptEn": "The original post does not publish the prompt text."
   },
   {
     "id": "x-sepisheim-ref2va-character-sheet",
@@ -840,6 +869,7 @@
     "model": "MiniMax H3 Ref2VA（创作者标注）",
     "mode": "Ref2VA",
     "summary": "使用 ChatGPT 生成角色表作为参考输入，测试 H3 Ref2VA 的角色一致性；公开参数包括 RTX 4070、576×832、24 fps、5 秒和约 225 秒生成时间。",
+    "summaryEn": "Uses a character sheet generated with ChatGPT as the reference input for an H3 Ref2VA consistency test. Published parameters include an RTX 4070, 576×832 resolution, 24 fps, a five-second duration, and an approximately 225-second generation time.",
     "prompt": "原帖未公开提示词正文，只公开了保持画风描述简洁的经验。",
     "sourceUrl": "https://x.com/sep_is_heim/status/2086344253496766502",
     "sourceLabel": "X 原帖 · @sep_is_heim",
@@ -886,7 +916,8 @@
       "aspectRatio": "portrait",
       "fps": 24,
       "generationSettings": "RTX 4070; SageAttention; Spectrum; FirstBlockCache; 225 seconds"
-    }
+    },
+    "promptEn": "The original post does not publish the prompt text. It only notes that concise style descriptions worked better for this character-sheet consistency test."
   },
   {
     "id": "x-aion-flight-2k-astra-4k",
@@ -895,6 +926,7 @@
     "model": "MiniMax H3 + Astra（创作者标注）",
     "mode": "Unknown",
     "summary": "创作者先用 MiniMax H3 生成 2K 飞行场景，再使用 Astra 放大至 4K，展示生成与后期超分辨率串联的工作流。",
+    "summaryEn": "The creator first generates a 2K flight scene with MiniMax H3 and then upscales it to 4K with Astra, demonstrating a workflow that connects generation with post-production super-resolution.",
     "prompt": "原帖未公开提示词正文。",
     "sourceUrl": "https://x.com/AION_2077/status/2086341354469441828",
     "sourceLabel": "X 原帖 · @AION_2077",
@@ -939,7 +971,8 @@
       "resolution": "2K H3 output, upscaled to 4K",
       "aspectRatio": "not visible",
       "postProcessing": "Astra upscale"
-    }
+    },
+    "promptEn": "The original post does not publish the prompt text."
   },
   {
     "id": "x-toyxyz-i2v-turbo-lora",
@@ -948,6 +981,7 @@
     "model": "MiniMax H3 Turbo LoRA + ComfyUI（创作者标注）",
     "mode": "FL2VA",
     "summary": "一条 10 秒的 MiniMax H3 图片生视频 Turbo LoRA 测试，明确使用 ComfyUI；原帖未公开参考图细节或提示词。",
+    "summaryEn": "A 10-second MiniMax H3 image-to-video Turbo LoRA test created in ComfyUI. The original post does not disclose the reference-image details or prompt.",
     "prompt": "原帖未公开提示词正文或参考图说明。",
     "sourceUrl": "https://x.com/toyxyz3/status/2086339956755329363",
     "sourceLabel": "X 原帖 · @toyxyz3",
@@ -992,7 +1026,8 @@
       "resolution": "not visible",
       "aspectRatio": "not visible",
       "generationSettings": "I2V Turbo LoRA; ComfyUI"
-    }
+    },
+    "promptEn": "The original post does not publish the prompt text or explain the reference image."
   },
   {
     "id": "x-cia0-omni-nine-reference-film",
@@ -1001,6 +1036,7 @@
     "model": "MiniMax H3 Omni（创作者标注）",
     "mode": "Ref2VA",
     "summary": "H3 Omni 在一支 15 秒 AI 电影预告中同时处理九张参考图，并测试细节文字渲染。作者只透露提示词约 3,943 个中文字符，没有公开正文。",
+    "summaryEn": "H3 Omni processes nine reference images simultaneously in a 15-second AI film trailer while also testing fine-detail text rendering. The creator only discloses that the prompt contains approximately 3,943 Chinese characters, without publishing its contents.",
     "prompt": "原帖只公开提示词长度为 3,943 个中文字符，没有展示提示词正文。",
     "sourceUrl": "https://x.com/Cia0_exe/status/2086339725875699927",
     "sourceLabel": "X 原帖 · @Cia0_exe",
@@ -1047,7 +1083,8 @@
       "resolution": "not visible",
       "aspectRatio": "not visible",
       "referenceImageCount": 9
-    }
+    },
+    "promptEn": "The creator only discloses that the prompt contains 3,943 Chinese characters and does not publish its contents."
   },
   {
     "id": "x-nsitnov-white-camellia-local-film",
@@ -1056,6 +1093,7 @@
     "model": "MiniMax H3 + Qwen Image 3 Pro + ElevenLabs",
     "mode": "Unknown",
     "summary": "《The White Camellia》由六段 15 秒 H3 镜头组成，并结合 Qwen Image 3 Pro 与 ElevenLabs，在 RTX Pro 6000 96GB 上完成本地制作。",
+    "summaryEn": "The White Camellia comprises six 15-second H3 shots and combines Qwen Image 3 Pro with ElevenLabs. It was produced locally on an RTX Pro 6000 with 96 GB of memory.",
     "prompt": "原帖未公开提示词正文。",
     "sourceUrl": "https://x.com/NsitnovSitnov/status/2086338366946123992",
     "sourceLabel": "X 原帖 · @NsitnovSitnov",
@@ -1103,7 +1141,8 @@
       "resolution": "not visible",
       "aspectRatio": "not visible",
       "workflow": "6 × 15-second H3 clips; Qwen Image 3 Pro; ElevenLabs; local RTX Pro 6000 96GB"
-    }
+    },
+    "promptEn": "The original post does not publish the prompt text."
   },
   {
     "id": "x-aiconia-i2v-larry-turbo-h3-sage",
@@ -1112,6 +1151,7 @@
     "model": "MiniMax H3 + Larry Turbo + H3 Sage",
     "mode": "FL2VA",
     "summary": "RTX 4070 上的 1MP、10 秒 I2V 加速测试，生成耗时 11 分 12 秒，并追加放大和插帧；作者同时公开了脸部块状噪点与语音较弱等缺陷。",
+    "summaryEn": "A 1 MP, 10-second I2V acceleration test on an RTX 4070 took 11 minutes and 12 seconds, followed by upscaling and frame interpolation. The creator also documents blocky facial artifacts and weak speech generation.",
     "prompt": "原帖未公开提示词正文。",
     "sourceUrl": "https://x.com/AiPhotorealGirl/status/2086336598539747535",
     "sourceLabel": "X 原帖 · @AiPhotorealGirl",
@@ -1156,7 +1196,8 @@
       "resolution": "1MP before upscale",
       "aspectRatio": "not visible",
       "generationSettings": "RTX 4070; Larry Turbo + H3 Sage; 11m12s; upscale and frame interpolation"
-    }
+    },
+    "promptEn": "The original post does not publish the prompt text."
   },
   {
     "id": "x-maki-motion-context-five-scene-mv",
@@ -1165,6 +1206,7 @@
     "model": "MiniMax H3 + HyperFrames（创作者标注）",
     "mode": "Unknown",
     "summary": "通过 Motion Context 连锁生成五个场景，把 H3 生成的语音作为音乐，再用 HyperFrames 叠加随节拍运动的歌词，完成约 29 秒的雨中东京 MV。",
+    "summaryEn": "Motion Context chains five scenes together, uses H3-generated vocals as the music, and adds beat-synchronized lyrics with HyperFrames to create an approximately 29-second music video set in rainy Tokyo.",
     "prompt": "原帖未公开提示词正文。",
     "sourceUrl": "https://x.com/hAru_mAki_ch/status/2086334052639142176",
     "sourceLabel": "X 原帖 · @hAru_mAki_ch",
@@ -1213,6 +1255,7 @@
       "resolution": "not visible",
       "aspectRatio": "not visible",
       "workflow": "H3 Motion Context across 5 scenes; H3-generated voice; HyperFrames synced lyrics"
-    }
+    },
+    "promptEn": "The original post does not publish the prompt text."
   }
 ]

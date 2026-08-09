@@ -1,88 +1,221 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import {
   ArrowUpRight,
   Check,
+  ChevronDown,
   ChevronRight,
   Clipboard,
   Clock3,
   Code2,
-  FileCode2,
+  Languages,
   Search,
   SlidersHorizontal,
   Sparkles,
   X,
 } from 'lucide-react'
 import rawCases from '../data/cases.json'
-import rawTemplates from '../data/templates.json'
+import {
+  casePath,
+  casePrompt,
+  caseSummary,
+  caseTitle,
+  copy,
+  metadataValue,
+  modeLabel,
+  modelLabel,
+  pathFor,
+  provenanceLabel,
+  resolveRoute,
+  sourceLabel,
+  taxonomyLabel,
+  type AppPage,
+  type Language,
+} from './i18n'
 import type { CaseMode, VideoCase } from './types'
 import { XPostEmbed } from './XPostEmbed'
 
 const cases = rawCases as VideoCase[]
-const templates = rawTemplates as PromptTemplate[]
 const modes: Array<'ALL' | CaseMode> = ['ALL', 'T2VA', 'FL2VA', 'Ref2VA', 'Unknown']
 const allCategories = [...new Set(cases.map((item) => item.category))]
 const allStyles = [...new Set(cases.flatMap((item) => item.styles))]
 const allScenes = [...new Set(cases.flatMap((item) => item.scenes))]
 
-interface PromptTemplate {
-  id: string
-  title: string
-  titleEn: string
-  mode: CaseMode
-  useWhen: string
-  sourceCaseId: string
-  sections: string[]
-  template: string
-}
-
-const modeCopy: Record<(typeof modes)[number], string> = {
-  ALL: '全部样例',
-  T2VA: '文字生视频',
-  FL2VA: '首尾帧',
-  Ref2VA: '全模态参考',
-  Unknown: '模式待确认',
-}
-
 const toolkitResources = [
   {
     code: 'R01',
-    kind: 'OFFICIAL / SKILLS',
+    kind: { zh: '官方 / AGENT SKILLS', en: 'OFFICIAL / AGENT SKILLS' },
     title: 'MiniMax-AI / MiniMax-H3',
-    description: '官方仓库与本地部署入口。内置 9 个 Agent Skill；先装 h3-prompt-writing，让 Claude / Codex 按镜头、对白与环境声组织 H3 提示词。',
+    description: {
+      zh: '官方仓库与本地部署入口。内置 9 个 Agent Skill；先装 h3-prompt-writing，让 Claude / Codex 按镜头、对白与环境声组织 H3 提示词。',
+      en: 'The official repository and local deployment entry point. Its nine Agent Skills include h3-prompt-writing for structuring shots, dialogue, and environmental audio with Claude or Codex.',
+    },
     tags: ['9 Skills', 'Prompt Writing', 'Local Deploy'],
     url: 'https://github.com/MiniMax-AI/MiniMax-H3',
-    action: '打开官方仓库',
+    action: { zh: '打开官方仓库', en: 'Open official repository' },
   },
   {
     code: 'R02',
-    kind: 'ACCELERATION / LORA',
+    kind: { zh: '加速 / LORA', en: 'ACCELERATION / LORA' },
     title: 'MiniMax-H3 Turbo LoRA',
-    description: '将常规约 20 步采样压缩到 4–8 步并保留同步立体声音频。4 步用于快速预览，v4 版本在 6–8 步通常更稳。',
+    description: {
+      zh: '将常规约 20 步采样压缩到 4–8 步并保留同步立体声音频。4 步用于快速预览，v4 版本在 6–8 步通常更稳。',
+      en: 'Compresses the usual 20-step sampling path to four to eight steps while retaining synchronized stereo audio. Four steps suit previews; v4 is generally steadier at six to eight.',
+    },
     tags: ['4–8 Steps', 'Audio + Video', 'ComfyUI'],
     url: 'https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora',
-    action: '打开 Hugging Face',
+    action: { zh: '打开 Hugging Face', en: 'Open on Hugging Face' },
   },
   {
     code: 'R03',
-    kind: 'LONG VIDEO / CONTEXT',
+    kind: { zh: '长视频 / 上下文', en: 'LONG VIDEO / CONTEXT' },
     title: 'ComfyUI H3 Motion Context',
-    description: '用于多段 H3 视频续接，把上一段的画面与音频上下文带入下一段，减少片段连接处的动作、节奏和声音断裂。',
+    description: {
+      zh: '用于多段 H3 视频续接，把上一段的画面与音频上下文带入下一段，减少连接处的动作、节奏和声音断裂。',
+      en: 'Carries visual and audio context from one H3 clip into the next, reducing breaks in motion, rhythm, and sound across longer sequences.',
+    },
     tags: ['Clip Chaining', 'Motion Context', 'Audio Continuity'],
     url: 'https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context',
-    action: '打开续接节点',
+    action: { zh: '打开续接节点', en: 'Open continuation nodes' },
   },
   {
     code: 'R04',
-    kind: 'AUDIO / WORKFLOWS',
+    kind: { zh: '音频 / 工作流', en: 'AUDIO / WORKFLOWS' },
     title: 'MiniMax H3 Audio T8',
-    description: '面向 ComfyUI 原生 H3 的 14 节点扩展，覆盖音频条件、双时钟采样、混音、裁切、预检和 Ref2VA 参考，并附 API 与前端工作流。',
+    description: {
+      zh: '面向 ComfyUI 原生 H3 的 14 节点扩展，覆盖音频条件、双时钟采样、混音、裁切、预检和 Ref2VA 参考，并附 API 与前端工作流。',
+      en: 'A 14-node extension for native H3 in ComfyUI, covering audio conditioning, dual-clock sampling, mixing, trimming, preflight checks, Ref2VA references, API use, and frontend workflows.',
+    },
     tags: ['14 Nodes', 'Dual Clock', 'Audio Control'],
     url: 'https://github.com/T8mars/comfyui-minimax-h3-audio-T8',
-    action: '打开音频工作流',
+    action: { zh: '打开音频工作流', en: 'Open audio workflows' },
   },
 ]
 
 function App() {
+  const route = resolveRoute(window.location.pathname)
+  const language = route.language
+  const t = copy[language]
+  const pageDescription = route.page === 'toolkit'
+    ? t.toolkit.description
+    : route.page === 'faq'
+      ? t.faq.description
+      : t.siteDescription
+  const pageTitle = route.page === 'home'
+    ? t.siteTitle
+    : route.page === 'toolkit'
+      ? language === 'zh'
+        ? 'MiniMax H3 工具链与部署资源 — H3 Field Notes'
+        : 'MiniMax H3 Toolkit and Deployment Resources — H3 Field Notes'
+      : language === 'zh'
+        ? 'MiniMax H3 视频案例库常见问题 — H3 Field Notes'
+        : 'MiniMax H3 Video Library FAQ — H3 Field Notes'
+
+  useEffect(() => {
+    document.documentElement.lang = t.htmlLang
+    document.title = pageTitle
+    document.querySelector<HTMLMetaElement>('meta[name="description"]')?.setAttribute('content', pageDescription)
+  }, [pageDescription, pageTitle, t.htmlLang])
+
+  return (
+    <main id="top">
+      <div className="grain" aria-hidden="true" />
+      <Header language={language} page={route.page} />
+      {route.page === 'home' && <HomePage language={language} />}
+      {route.page === 'toolkit' && <ToolkitPage language={language} />}
+      {route.page === 'faq' && <FaqPage language={language} />}
+      <Footer language={language} />
+    </main>
+  )
+}
+
+function Header({ language, page }: { language: Language; page: AppPage }) {
+  const t = copy[language]
+  const otherLanguage: Language = language === 'zh' ? 'en' : 'zh'
+
+  return (
+    <header className="site-header-wrap">
+      <div className="shell site-header">
+        <a className="brand" href={pathFor(language, 'home')} aria-label="H3 Field Notes">
+          H3<span>/FN</span>
+        </a>
+        <nav aria-label={language === 'zh' ? '主导航' : 'Primary navigation'}>
+          <a href={pathFor(language, 'home')} aria-current={page === 'home' ? 'page' : undefined}>{t.nav.cases}</a>
+          <a href={pathFor(language, 'toolkit')} aria-current={page === 'toolkit' ? 'page' : undefined}>{t.nav.toolkit}</a>
+          <a href={pathFor(language, 'faq')} aria-current={page === 'faq' ? 'page' : undefined}>{t.nav.faq}</a>
+        </nav>
+        <div className="header-actions">
+          <a
+            className="language-button"
+            href={pathFor(otherLanguage, page)}
+            aria-label={language === 'zh' ? '切换到英文' : 'Switch to Chinese'}
+          >
+            <Languages size={14} aria-hidden="true" /> {t.nav.language}
+          </a>
+          <a
+            className="source-button"
+            href="https://github.com/SkyNotSilent/awesome-minimax-h3"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Code2 size={15} aria-hidden="true" /> <span>{t.nav.source}</span>
+          </a>
+        </div>
+      </div>
+    </header>
+  )
+}
+
+function IntroSplash({ language }: { language: Language }) {
+  const [phase, setPhase] = useState<'visible' | 'leaving' | 'gone'>('visible')
+  const t = copy[language].intro
+
+  useEffect(() => {
+    document.body.classList.add('intro-open')
+    const leaveTimer = window.setTimeout(() => setPhase('leaving'), 1_600)
+    return () => {
+      window.clearTimeout(leaveTimer)
+      document.body.classList.remove('intro-open')
+    }
+  }, [])
+
+  useEffect(() => {
+    if (phase === 'gone') {
+      document.body.classList.remove('intro-open')
+      return
+    }
+    if (phase !== 'leaving') return
+    const removeTimer = window.setTimeout(() => setPhase('gone'), 500)
+    return () => window.clearTimeout(removeTimer)
+  }, [phase])
+
+  const skip = () => {
+    setPhase('leaving')
+  }
+
+  if (phase === 'gone') return null
+
+  return (
+    <aside className={`intro-splash ${phase === 'leaving' ? 'is-leaving' : ''}`} aria-label={t.description}>
+      <div className="intro-grid" aria-hidden="true" />
+      <div className="intro-topline">
+        <span><i /> {t.kicker}</span>
+        <button type="button" onClick={skip}>{t.skip} <ArrowUpRight size={13} /></button>
+      </div>
+      <div className="intro-wordmark" aria-hidden="true">
+        <span>{t.lineOne}</span>
+        <strong>{t.lineTwo}</strong>
+      </div>
+      <div className="intro-bottomline">
+        <p>{t.description}</p>
+        <div className="intro-ready"><span /> {t.ready} · {cases.length}</div>
+      </div>
+      <div className="intro-progress" aria-hidden="true"><span /></div>
+    </aside>
+  )
+}
+
+function HomePage({ language }: { language: Language }) {
+  const t = copy[language]
   const [activeMode, setActiveMode] = useState<(typeof modes)[number]>('ALL')
   const [activeCategory, setActiveCategory] = useState('ALL')
   const [activeStyle, setActiveStyle] = useState('ALL')
@@ -97,142 +230,89 @@ function App() {
       const matchesCategory = activeCategory === 'ALL' || item.category === activeCategory
       const matchesStyle = activeStyle === 'ALL' || item.styles.includes(activeStyle)
       const matchesScene = activeScene === 'ALL' || item.scenes.includes(activeScene)
-      const haystack = [
-        item.title,
-        item.titleEn,
-        item.summary,
-        item.prompt,
-        item.category,
-        ...item.tags,
-        ...item.styles,
-        ...item.scenes,
-      ]
-        .join(' ')
-        .toLowerCase()
-      return matchesMode && matchesCategory && matchesStyle && matchesScene && (!needle || haystack.includes(needle))
+      const haystack = language === 'zh'
+        ? [item.title, item.summary, item.prompt, ...item.tags, item.category, ...item.styles, ...item.scenes]
+        : [item.titleEn, item.summaryEn, casePrompt(item, language), item.category, ...item.styles, ...item.scenes]
+      return matchesMode && matchesCategory && matchesStyle && matchesScene
+        && (!needle || haystack.join(' ').toLowerCase().includes(needle))
     })
-  }, [activeCategory, activeMode, activeScene, activeStyle, query])
+  }, [activeCategory, activeMode, activeScene, activeStyle, language, query])
 
-  useEffect(() => {
-    if (!selected) return
-    const close = (event: KeyboardEvent) => event.key === 'Escape' && setSelected(null)
-    document.body.classList.add('modal-open')
-    window.addEventListener('keydown', close)
-    return () => {
-      document.body.classList.remove('modal-open')
-      window.removeEventListener('keydown', close)
-    }
-  }, [selected])
+  const advancedCount = [activeCategory, activeStyle, activeScene].filter((value) => value !== 'ALL').length
 
   return (
-    <main id="top">
-      <div className="grain" aria-hidden="true" />
-      <Header />
-
-      <section className="hero shell">
-        <div className="hero-kicker reveal reveal-1">
-          <span className="live-dot" /> COMMUNITY RESEARCH INDEX / 2026
-        </div>
-        <h1 className="reveal reveal-2">
-          H3 <span>FIELD</span>
-          <br />NOTES<sup>β</sup>
-        </h1>
-        <div className="hero-bottom reveal reveal-3">
-          <p>
-            MiniMax H3 的社区实验档案。收录真实视频、完整提示词、输入方式与可复现工作流。
-          </p>
-          <div className="hero-stats" aria-label="项目统计">
-            <Stat value={String(cases.length).padStart(2, '0')} label="公开案例" />
-            <Stat value={String(templates.length).padStart(2, '0')} label="提示词模板" />
-            <Stat value="24" label="帧 / 秒" />
-          </div>
-        </div>
-      </section>
-
+    <>
+      <IntroSplash language={language} />
       <section className="catalog shell" id="catalog">
         <div className="catalog-bar">
-          <div>
-            <p className="section-index">01 / 案例索引</p>
-            <h2>观察。拆解。复现。</h2>
+          <div className="catalog-heading">
+            <p className="section-index">{t.catalog.index}</p>
+            <h1>{t.catalog.title}</h1>
+            <p>{t.catalog.description}</p>
           </div>
           <label className="search-box">
             <Search size={17} aria-hidden="true" />
-            <span className="sr-only">搜索案例</span>
+            <span className="sr-only">{t.catalog.searchLabel}</span>
             <input
               value={query}
               onChange={(event) => setQuery(event.target.value)}
-              placeholder="搜索提示词、场景、标签…"
+              placeholder={t.catalog.searchPlaceholder}
             />
             {query && (
-              <button onClick={() => setQuery('')} aria-label="清除搜索">
+              <button type="button" onClick={() => setQuery('')} aria-label={t.catalog.clearSearch}>
                 <X size={15} />
               </button>
             )}
           </label>
         </div>
 
-        <div className="filter-panel" aria-label="案例筛选">
-          <div className="filter-label">
-            <SlidersHorizontal size={16} aria-hidden="true" /> FILTER INDEX
+        <div className="primary-filter" aria-label={t.catalog.filterLabel}>
+          <div className="filter-label"><SlidersHorizontal size={15} aria-hidden="true" /> {t.catalog.mode}</div>
+          <div className="mode-filter">
+            {modes.map((mode) => (
+              <button
+                type="button"
+                key={mode}
+                className={mode === activeMode ? 'active' : ''}
+                onClick={() => setActiveMode(mode)}
+              >
+                <span>{mode === 'ALL' ? '00' : mode}</span>{modeLabel(mode, language)}
+              </button>
+            ))}
           </div>
-          <FilterGroup
-            label="生成模式"
-            options={modes}
-            value={activeMode}
-            onChange={(value) => setActiveMode(value as (typeof modes)[number])}
-            format={(value) => modeCopy[value as (typeof modes)[number]]}
-          />
-          <FilterGroup label="内容分类" options={['ALL', ...allCategories]} value={activeCategory} onChange={setActiveCategory} />
-          <FilterGroup label="视觉风格" options={['ALL', ...allStyles]} value={activeStyle} onChange={setActiveStyle} />
-          <FilterGroup label="场景" options={['ALL', ...allScenes]} value={activeScene} onChange={setActiveScene} />
         </div>
 
-        <div className="case-grid" aria-live="polite">
+        <details className="advanced-filters">
+          <summary>
+            <span><SlidersHorizontal size={14} /> {advancedCount ? t.catalog.advancedActive : t.catalog.advanced}</span>
+            <span>{advancedCount || '—'} <ChevronDown size={14} /></span>
+          </summary>
+          <div className="filter-panel">
+            <FilterGroup language={language} kind="category" label={t.catalog.category} options={['ALL', ...allCategories]} value={activeCategory} onChange={setActiveCategory} />
+            <FilterGroup language={language} kind="style" label={t.catalog.style} options={['ALL', ...allStyles]} value={activeStyle} onChange={setActiveStyle} />
+            <FilterGroup language={language} kind="scene" label={t.catalog.scene} options={['ALL', ...allScenes]} value={activeScene} onChange={setActiveScene} />
+          </div>
+        </details>
+
+        <div className="catalog-count" aria-live="polite">
+          <span>{String(filtered.length).padStart(2, '0')}</span> {t.catalog.resultUnit}
+        </div>
+
+        <div className="case-grid">
           {filtered.map((item, index) => (
-            <CaseCard key={item.id} item={item} index={index} onOpen={() => setSelected(item)} />
+            <CaseCard key={item.id} item={item} index={index} language={language} onOpen={() => setSelected(item)} />
           ))}
         </div>
 
         {filtered.length === 0 && (
           <div className="empty-state">
-            <span>NO MATCHES</span>
-            <p>没有找到匹配案例，换一个关键词或模式试试。</p>
+            <span>{t.catalog.noMatchesEyebrow}</span>
+            <p>{t.catalog.noMatches}</p>
           </div>
         )}
       </section>
-
-      <Templates />
-      <Toolkit />
-      <Method />
-      <FAQ />
-      <Footer />
-      {selected && <CaseDialog item={selected} onClose={() => setSelected(null)} />}
-    </main>
-  )
-}
-
-function Header() {
-  return (
-    <header className="shell site-header reveal reveal-1">
-      <a className="brand" href="#top" aria-label="H3 Field Notes 首页">
-        H3<span>/FN</span>
-      </a>
-      <nav>
-        <a href="#catalog">案例</a>
-        <a href="#templates">模板</a>
-        <a href="#toolkit">工具链</a>
-        <a href="#method">收录方式</a>
-        <a href="#faq">常见问题</a>
-      </nav>
-      <a
-        className="source-button"
-        href="https://github.com/SkyNotSilent/awesome-minimax-h3"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <Code2 size={16} /> SOURCE
-      </a>
-    </header>
+      {selected && <CaseDialog item={selected} language={language} onClose={() => setSelected(null)} />}
+    </>
   )
 }
 
@@ -241,21 +321,23 @@ function FilterGroup({
   options,
   value,
   onChange,
-  format = (option) => (option === 'ALL' ? '全部' : option),
+  language,
+  kind,
 }: {
   label: string
   options: readonly string[]
   value: string
   onChange: (value: string) => void
-  format?: (option: string) => string
+  language: Language
+  kind: 'category' | 'style' | 'scene'
 }) {
   return (
     <div className="filter-group">
       <strong>{label}</strong>
       <div>
         {options.map((option) => (
-          <button key={option} className={option === value ? 'active' : ''} onClick={() => onChange(option)}>
-            {format(option)}
+          <button type="button" key={option} className={option === value ? 'active' : ''} onClick={() => onChange(option)}>
+            {taxonomyLabel(option, language, kind)}
           </button>
         ))}
       </div>
@@ -263,33 +345,33 @@ function FilterGroup({
   )
 }
 
-function Stat({ value, label }: { value: string; label: string }) {
-  return (
-    <div className="stat">
-      <strong>{value}</strong>
-      <span>{label}</span>
-    </div>
-  )
-}
-
 function CaseCard({
   item,
   index,
+  language,
   onOpen,
 }: {
   item: VideoCase
   index: number
+  language: Language
   onOpen: () => void
 }) {
+  const t = copy[language].card
+  const title = caseTitle(item, language)
+  const chips = [
+    item.styles[0] && taxonomyLabel(item.styles[0], language, 'style'),
+    item.scenes[0] && taxonomyLabel(item.scenes[0], language, 'scene'),
+  ].filter(Boolean)
+
   return (
     <article className="case-card" style={{ '--order': index } as React.CSSProperties}>
-      <button className="media" onClick={onOpen} aria-label={`查看 ${item.title} 详情`}>
+      <button className="media" type="button" onClick={onOpen} aria-label={t.open(title)}>
         {item.mediaUrl ? (
           <video src={item.mediaUrl} poster={item.posterUrl} muted loop playsInline preload="metadata" />
         ) : (
           <img
             src={item.posterUrl}
-            alt={`${item.title} 视频封面`}
+            alt={t.cover(title)}
             loading="lazy"
             decoding="async"
             onError={(event) => {
@@ -300,245 +382,163 @@ function CaseCard({
         )}
         <span className="media-scan" aria-hidden="true" />
         <span className="case-number">{String(index + 1).padStart(2, '0')}</span>
-        <span className="duration">
-          <Clock3 size={12} /> {item.duration}s
-        </span>
+        <span className="duration"><Clock3 size={12} /> {item.duration}s</span>
         <span className="play-mark">
-          {item.mediaUrl || item.sourceType === 'x' ? 'PLAY' : 'VIEW'} <ChevronRight size={14} />
+          {item.mediaUrl || item.sourceType === 'x' ? t.play : t.view} <ChevronRight size={14} />
         </span>
       </button>
       <div className="case-meta">
         <div className="mode-line">
-          <span>{item.mode} / {item.category}</span>
-          {item.verified && (
-            <span className="verified">
-              <Check size={11} /> 官方可复现
-            </span>
-          )}
-          {!item.verified && item.sourceType === 'x' && (
-            <span className="verified community-source">
-              <ArrowUpRight size={11} /> X 社区
-            </span>
-          )}
+          <span>{item.mode} / {taxonomyLabel(item.category, language, 'category')}</span>
+          {item.verified ? (
+            <span className="verified"><Check size={11} /> {t.verified}</span>
+          ) : item.sourceType === 'x' ? (
+            <span className="verified community-source"><ArrowUpRight size={11} /> {t.community}</span>
+          ) : null}
         </div>
-        <a className="case-title" href={`/cases/${item.id}/`}>
-          <h3>{item.title}</h3>
-          <p>{item.titleEn}</p>
+        <a className="case-title" href={casePath(language, item.id)}>
+          <h2>{title}</h2>
         </a>
         <div className="tags">
-          {item.tags.slice(0, 3).map((tag) => (
-            <span key={tag}>#{tag}</span>
+          {chips.map((tag) => <span key={tag}>#{tag}</span>)}
+        </div>
+      </div>
+    </article>
+  )
+}
+
+function PageHero({ index, title, description }: { index: string; title: string; description: string }) {
+  return (
+    <section className="page-hero shell">
+      <p className="section-index">{index}</p>
+      <h1>{title}</h1>
+      <p>{description}</p>
+      <div className="page-hero-rule" aria-hidden="true"><span /></div>
+    </section>
+  )
+}
+
+function ToolkitPage({ language }: { language: Language }) {
+  const t = copy[language].toolkit
+
+  return (
+    <div className="standalone-page toolkit-page">
+      <PageHero index={t.index} title={t.title} description={t.description} />
+      <section className="toolkit shell" aria-label={copy[language].nav.toolkit}>
+        <div className="toolkit-grid">
+          {toolkitResources.map((item) => (
+            <a className="resource-card" href={item.url} target="_blank" rel="noreferrer" key={item.code} aria-label={`${item.title}: ${item.action[language]}`}>
+              <div className="resource-topline"><span>{item.code}</span><span>{item.kind[language]}</span></div>
+              <h2>{item.title}</h2>
+              <p>{item.description[language]}</p>
+              <div className="resource-tags">{item.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+              <div className="resource-action">{item.action[language]} <ArrowUpRight size={15} /></div>
+            </a>
           ))}
         </div>
-      </div>
-    </article>
-  )
-}
 
-function Templates() {
-  const [copied, setCopied] = useState<string | null>(null)
-
-  async function copyTemplate(item: PromptTemplate) {
-    await navigator.clipboard.writeText(item.template)
-    setCopied(item.id)
-    window.setTimeout(() => setCopied(null), 1600)
-  }
-
-  return (
-    <section className="templates shell" id="templates">
-      <div className="templates-intro">
-        <p className="section-index">02 / PROMPT AS CODE</p>
-        <h2>从单个案例，<br />提炼可复用镜头协议。</h2>
-        <p>每个模板都能追溯到已核验案例；变量可替换，来源不会丢。</p>
-      </div>
-      <div className="template-list">
-        {templates.map((item) => (
-          <article key={item.id}>
-            <div className="template-code">{item.id}</div>
-            <div className="template-body">
-              <div className="template-mode">{item.mode}</div>
-              <h3>{item.title}</h3>
-              <p className="template-en">{item.titleEn}</p>
-              <p>{item.useWhen}</p>
-              <div className="template-sections">
-                {item.sections.map((section) => <span key={section}>{section}</span>)}
-              </div>
-            </div>
-            <button onClick={() => copyTemplate(item)}>
-              {copied === item.id ? <Check size={15} /> : <FileCode2 size={15} />}
-              {copied === item.id ? '已复制' : '复制模板'}
-            </button>
+        <div className="toolkit-notes">
+          <article className="speed-note">
+            <div className="note-label">{t.speedLabel}</div>
+            <h2>{t.speedTitle}</h2>
+            <p>{t.speedBody}</p>
+            <small>{t.speedFootnote}</small>
           </article>
-        ))}
-      </div>
-    </section>
-  )
-}
-
-function Toolkit() {
-  return (
-    <section className="toolkit shell" id="toolkit">
-      <div className="toolkit-heading">
-        <div>
-          <p className="section-index">03 / H3 FIELD KIT</p>
-          <h2>从提示词，<br />一路接到成片。</h2>
+          <article className="pipeline-note">
+            <div className="note-label">{t.pipelineLabel}</div>
+            <div className="pipeline-flow" aria-label={t.pipelineLabel}>
+              <div><span>01</span><strong>AGENT</strong><small>{t.pipeline[0]}</small></div>
+              <ChevronRight size={18} aria-hidden="true" />
+              <div><span>02</span><strong>COMFYUI API</strong><small>{t.pipeline[1]}</small></div>
+              <ChevronRight size={18} aria-hidden="true" />
+              <div><span>03</span><strong>REMOTION</strong><small>{t.pipeline[2]}</small></div>
+            </div>
+          </article>
         </div>
-        <p>
-          不只给模型权重。这里整理真正会影响落地效率的官方 Skill、加速 LoRA、长视频续接与音视频工作流。
-        </p>
-      </div>
-
-      <div className="toolkit-grid">
-        {toolkitResources.map((item) => (
-          <a
-            className="resource-card"
-            href={item.url}
-            target="_blank"
-            rel="noreferrer"
-            key={item.code}
-            aria-label={`${item.title}：${item.action}`}
-          >
-            <div className="resource-topline">
-              <span>{item.code}</span>
-              <span>{item.kind}</span>
-            </div>
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
-            <div className="resource-tags">
-              {item.tags.map((tag) => <span key={tag}>{tag}</span>)}
-            </div>
-            <div className="resource-action">
-              {item.action} <ArrowUpRight size={15} />
-            </div>
-          </a>
-        ))}
-      </div>
-
-      <div className="toolkit-notes">
-        <article className="speed-note">
-          <div className="note-label">FIELD NOTE / 速度组合</div>
-          <h3>少叠插件，先把采样链路跑稳。</h3>
-          <p>
-            实战优先尝试 <strong>Turbo LoRA + SageAttention</strong>。4 步适合预览，6–8 步用于成片；EasyCache 更适合原生 20 步工作流，不建议和 4 步 Turbo 叠加。端到端速度仍会受到 VAE 解码与视频封装影响。
-          </p>
-          <small>生态观察：当前 H3 LoRA 热点集中在加速，人物与画风训练仍处于早期。</small>
-        </article>
-
-        <article className="pipeline-note">
-          <div className="note-label">NEXT PIPELINE / 无人出片</div>
-          <div className="pipeline-flow" aria-label="下一步自动化路线">
-            <div><span>01</span><strong>AGENT</strong><small>h3-prompt-writing</small></div>
-            <ChevronRight size={18} aria-hidden="true" />
-            <div><span>02</span><strong>COMFYUI API</strong><small>生成音视频</small></div>
-            <ChevronRight size={18} aria-hidden="true" />
-            <div><span>03</span><strong>REMOTION</strong><small>自动剪辑与交付</small></div>
-          </div>
-        </article>
-      </div>
-    </section>
+      </section>
+    </div>
   )
 }
 
-function Method() {
+function FaqPage({ language }: { language: Language }) {
+  const t = copy[language].faq
+
   return (
-    <section className="method shell" id="method">
-      <div className="method-heading">
-        <p className="section-index">04 / 收录方式</p>
-        <h2>不是热度榜。<br />是可验证的实验记录。</h2>
-      </div>
-      <div className="method-steps">
-        <MethodStep number="A" title="发现" text="监控 X 关键词与重点创作者，归档原帖地址和公开元数据，并通过官方嵌入播放器站内展示。" />
-        <MethodStep number="B" title="低成本核验" text="规则先过滤，MiMo V2.5 Pro 处理文本；只有入围视频才交给 MiMo V2.5 多模态核验。" />
-        <MethodStep number="C" title="人工归档" text="候选不会超时自动发布。审核合并后，再同步网站、GitHub 目录与 Agent Skill。" />
-      </div>
-    </section>
+    <div className="standalone-page faq-page">
+      <PageHero index={t.index} title={t.title} description={t.description} />
+      <section className="faq shell" aria-label={copy[language].nav.faq}>
+        <div className="faq-list">
+          {t.items.map(([question, answer], index) => (
+            <article key={question}>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <div><h2>{question}</h2><p>{answer}</p></div>
+            </article>
+          ))}
+        </div>
+      </section>
+    </div>
   )
 }
 
-function MethodStep({ number, title, text }: { number: string; title: string; text: string }) {
-  return (
-    <article>
-      <span>{number}</span>
-      <div>
-        <h3>{title}</h3>
-        <p>{text}</p>
-      </div>
-    </article>
-  )
-}
-
-function FAQ() {
-  return (
-    <section className="faq shell" id="faq">
-      <div className="faq-heading">
-        <p className="section-index">05 / FAQ</p>
-        <h2>关于 MiniMax H3<br />视频提示词案例库</h2>
-      </div>
-      <div className="faq-list">
-        <article>
-          <h3>MiniMax H3 和 Hailuo 3.0 是什么关系？</h3>
-          <p>本项目把 MiniMax H3 作为模型名称，并同时覆盖社区常用的 Hailuo 3.0 / 海螺 3.0 检索表达，方便找到同一技术生态下的视频案例。</p>
-        </article>
-        <article>
-          <h3>这里有哪些 AI 视频生成模式？</h3>
-          <p>当前收录 T2VA 文字生视频、FL2VA 首尾帧条件视频，以及 Ref2VA 全模态参考视频；案例可包含图像、视频、声音、对白和时间轴控制。</p>
-        </article>
-        <article>
-          <h3>X 上发现的案例会自动发布吗？</h3>
-          <p>不会。浏览器任务只写入候选队列，先核对模型、作者、原帖、提示词来源和版权风险，再由人工批准进入公开案例库。</p>
-        </article>
-      </div>
-    </section>
-  )
-}
-
-function CaseDialog({ item, onClose }: { item: VideoCase; onClose: () => void }) {
+function CaseDialog({ item, language, onClose }: { item: VideoCase; language: Language; onClose: () => void }) {
   const [copied, setCopied] = useState(false)
+  const copyTimerRef = useRef<number | null>(null)
+  const mountedRef = useRef(true)
+  const t = copy[language].dialog
+  const title = caseTitle(item, language)
+  const prompt = casePrompt(item, language)
+
+  useEffect(() => {
+    mountedRef.current = true
+    const close = (event: KeyboardEvent) => event.key === 'Escape' && onClose()
+    document.body.classList.add('modal-open')
+    window.addEventListener('keydown', close)
+    return () => {
+      mountedRef.current = false
+      if (copyTimerRef.current !== null) window.clearTimeout(copyTimerRef.current)
+      document.body.classList.remove('modal-open')
+      window.removeEventListener('keydown', close)
+    }
+  }, [onClose])
 
   async function copyPrompt() {
-    await navigator.clipboard.writeText(item.prompt)
+    await navigator.clipboard.writeText(prompt)
+    if (!mountedRef.current) return
     setCopied(true)
-    window.setTimeout(() => setCopied(false), 1800)
+    if (copyTimerRef.current !== null) window.clearTimeout(copyTimerRef.current)
+    copyTimerRef.current = window.setTimeout(() => setCopied(false), 1_800)
   }
 
   return (
     <div className="dialog-backdrop" role="presentation" onMouseDown={onClose}>
-      <section
-        className="case-dialog"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="dialog-title"
-        onMouseDown={(event) => event.stopPropagation()}
-      >
-        <button className="dialog-close" onClick={onClose} aria-label="关闭详情">
-          <X size={19} />
-        </button>
+      <section className="case-dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title" onMouseDown={(event) => event.stopPropagation()}>
+        <button className="dialog-close" type="button" onClick={onClose} aria-label={t.close}><X size={19} /></button>
         <div className="dialog-video">
           {item.mediaUrl ? (
             <video src={item.mediaUrl} poster={item.posterUrl} controls autoPlay playsInline />
           ) : (
-            <XPostEmbed sourceUrl={item.sourceUrl} title={item.title} posterUrl={item.posterUrl} />
+            <XPostEmbed sourceUrl={item.sourceUrl} title={title} posterUrl={item.posterUrl} language={language} />
           )}
         </div>
         <div className="dialog-copy">
           <div className="dialog-eyebrow">
             <span>{item.mode}</span>
-            <span>{item.resolution}</span>
-            <span>{item.aspectRatio}</span>
-            <span>{item.duration} 秒</span>
+            <span>{metadataValue(item.resolution, language)}</span>
+            <span>{metadataValue(item.aspectRatio, language)}</span>
+            <span>{item.duration} {t.seconds}</span>
           </div>
-          <h2 id="dialog-title">{item.title}</h2>
-          <p className="summary">{item.summary}</p>
+          <h2 id="dialog-title">{title}</h2>
+          <p className="summary">{caseSummary(item, language)}</p>
+          <div className="case-model-line">{modelLabel(item, language)}</div>
           <div className="prompt-heading">
-            <span>提示词记录 / PROMPT RECORD · {item.promptProvenance}</span>
-            <button onClick={copyPrompt}>
-              {copied ? <Check size={14} /> : <Clipboard size={14} />}
-              {copied ? '已复制' : '复制'}
+            <span>{t.prompt} · {provenanceLabel(item.promptProvenance, language)}</span>
+            <button type="button" onClick={copyPrompt}>
+              {copied ? <Check size={14} /> : <Clipboard size={14} />}{copied ? t.copied : t.copy}
             </button>
           </div>
-          <pre>{item.prompt}</pre>
+          <pre>{prompt}</pre>
           <a className="original-link" href={item.sourceUrl} target="_blank" rel="noreferrer">
-            查看原始来源 · {item.sourceLabel} <ArrowUpRight size={15} />
+            {t.source} · {sourceLabel(item, language)} <ArrowUpRight size={15} />
           </a>
         </div>
       </section>
@@ -546,13 +546,12 @@ function CaseDialog({ item, onClose }: { item: VideoCase; onClose: () => void })
   )
 }
 
-function Footer() {
+function Footer({ language }: { language: Language }) {
+  const t = copy[language].footer
   return (
     <footer className="shell">
-      <div className="footer-mark">
-        <Sparkles size={16} /> OPEN COMMUNITY ARCHIVE
-      </div>
-      <p>仅收录公开来源；版权归原作者所有。发现错误或希望移除内容，请提交 Issue。</p>
+      <div className="footer-mark"><Sparkles size={16} /> {t.mark}</div>
+      <p>{t.note}</p>
       <span>H3/FN — 2026</span>
     </footer>
   )

@@ -2,14 +2,14 @@
 
 # Awesome MiniMax H3
 
-### Curated MiniMax H3 / Hailuo 3.0 AI video prompts, examples, templates, and reproducible workflows
+### Curated MiniMax H3 / Hailuo 3.0 AI video examples, prompt records, and reproducible workflows
 
 [![Website](https://img.shields.io/badge/Live-H3_Field_Notes-d8ff3e?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/)
 [![Cases](https://img.shields.io/badge/public_cases-25-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
 [![CI](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml/badge.svg)](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg?style=flat-square)](./LICENSE)
 
-[Explore the visual library](https://h3-field-notes-production.up.railway.app/) · [中文说明](./README.zh-CN.md) · [Case catalog](./CATALOG.md) · [Contribute](./CONTRIBUTING.md)
+[Explore the English library](https://h3-field-notes-production.up.railway.app/en/) · [Toolkit](https://h3-field-notes-production.up.railway.app/en/toolkit/) · [FAQ](https://h3-field-notes-production.up.railway.app/en/faq/) · [中文说明](./README.zh-CN.md) · [Contribute](./CONTRIBUTING.md)
 
 </div>
 
@@ -17,15 +17,14 @@
 
 Awesome MiniMax H3 is an open, source-attributed library for **MiniMax H3**, also searched as **Hailuo 3.0**. It organizes public AI video generation examples into reusable prompt patterns for text-to-video, first/last-frame video generation, multimodal reference video editing, synchronized audio, camera movement, dialogue, and character consistency.
 
-The project combines a searchable visual website, Prompt-as-Code templates, a machine-readable dataset, and a browser-first X discovery workflow. Every public case keeps its original source and prompt provenance; uncertain discoveries stay in a review queue.
+The project combines a case-first bilingual website, a machine-readable dataset, and a browser-first X discovery workflow. Every public case keeps its original source and prompt provenance; uncertain discoveries stay in a review queue.
 
 ## What is included
 
 | Resource | Purpose |
 | --- | --- |
-| [Visual case library](https://h3-field-notes-production.up.railway.app/) | Filter MiniMax H3 examples by mode, category, visual style, scene, and keyword |
+| [English visual case library](https://h3-field-notes-production.up.railway.app/en/) | Watch and filter MiniMax H3 examples by mode, category, visual style, scene, and keyword |
 | [`data/cases.json`](./data/cases.json) | Source-attributed, structured MiniMax H3 video prompts and metadata |
-| [`data/templates.json`](./data/templates.json) | Reusable Prompt-as-Code patterns derived from verified cases |
 | [`CATALOG.md`](./CATALOG.md) | Lightweight GitHub-native case index |
 | [`agents/skills/minimax-h3-prompt-library`](./agents/skills/minimax-h3-prompt-library/) | Agent Skill for retrieving and adapting prompt patterns |
 | [`docs/DISCOVERY_WORKFLOW.md`](./docs/DISCOVERY_WORKFLOW.md) | Browser-based X discovery, deduplication, review, and attribution rules |

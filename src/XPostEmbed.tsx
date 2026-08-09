@@ -16,6 +16,7 @@ declare global {
 }
 
 type EmbedStatus = 'loading' | 'slow' | 'ready' | 'error'
+type EmbedLanguage = 'zh' | 'en'
 
 const SLOW_AFTER_MS = 6_000
 const FAIL_AFTER_MS = 20_000
@@ -50,6 +51,7 @@ function loadXWidgets() {
       if (settled) return
       settled = true
       cleanup()
+      script.remove()
       reject(new Error('X widgets failed to load'))
     }
 
@@ -77,21 +79,69 @@ function getPostId(sourceUrl: string) {
   return sourceUrl.match(/\/status\/(\d+)/)?.[1] ?? null
 }
 
-const stateCopy: Record<Exclude<EmbedStatus, 'ready'>, { eyebrow: string; title: string; detail: string }> = {
-  loading: {
-    eyebrow: 'CONNECTING',
-    title: '正在连接 X 播放器',
-    detail: '视频封面已就绪，播放器通常会在 2–8 秒内出现。',
+interface EmbedCopy {
+  playerLabel: (title: string) => string
+  posterAlt: (title: string) => string
+  barTitle: string
+  ready: string
+  providedBy: string
+  retry: string
+  fallback: string
+  states: Record<Exclude<EmbedStatus, 'ready'>, { eyebrow: string; title: string; detail: string }>
+}
+
+const copyByLanguage: Record<EmbedLanguage, EmbedCopy> = {
+  zh: {
+    playerLabel: (title) => `${title} X 原帖播放器`,
+    posterAlt: (title) => `${title} 视频封面`,
+    barTitle: 'X 原帖播放器',
+    ready: '播放器已就绪',
+    providedBy: '媒体由 X 提供',
+    retry: '重新加载',
+    fallback: '播放器受限时在 X 打开原帖',
+    states: {
+      loading: {
+        eyebrow: '正在连接',
+        title: '正在连接 X 播放器',
+        detail: '视频封面已就绪，播放器通常会在 2–8 秒内出现。',
+      },
+      slow: {
+        eyebrow: '响应较慢',
+        title: 'X 响应较慢，仍在加载',
+        detail: '网络或隐私设置可能延迟播放器；你可以继续等待。',
+      },
+      error: {
+        eyebrow: '加载失败',
+        title: '播放器加载失败',
+        detail: '当前网络或隐私设置阻止了 X 播放器，请重试或打开原帖。',
+      },
+    },
   },
-  slow: {
-    eyebrow: 'SLOW RESPONSE',
-    title: 'X 响应较慢，仍在加载',
-    detail: '网络或隐私设置可能延迟播放器；你可以继续等待。',
-  },
-  error: {
-    eyebrow: 'LOAD FAILED',
-    title: '播放器加载失败',
-    detail: '当前网络或隐私设置阻止了 X 播放器，请重试或打开原帖。',
+  en: {
+    playerLabel: (title) => `${title} X post player`,
+    posterAlt: (title) => `${title} video cover`,
+    barTitle: 'X post player',
+    ready: 'Player ready',
+    providedBy: 'Media provided by X',
+    retry: 'Reload player',
+    fallback: 'Open the original post on X if the player is unavailable',
+    states: {
+      loading: {
+        eyebrow: 'CONNECTING',
+        title: 'Connecting to the X player',
+        detail: 'The video cover is ready. The player usually appears within 2–8 seconds.',
+      },
+      slow: {
+        eyebrow: 'SLOW RESPONSE',
+        title: 'X is responding slowly',
+        detail: 'Network or privacy settings may delay the player. You can keep waiting.',
+      },
+      error: {
+        eyebrow: 'LOAD FAILED',
+        title: 'Player failed to load',
+        detail: 'Your network or privacy settings blocked the X player. Reload it or open the original post.',
+      },
+    },
   },
 }
 
@@ -99,10 +149,12 @@ export function XPostEmbed({
   sourceUrl,
   title,
   posterUrl,
+  language = 'zh',
 }: {
   sourceUrl: string
   title: string
   posterUrl: string
+  language?: EmbedLanguage
 }) {
   const targetRef = useRef<HTMLDivElement>(null)
   const postId = useMemo(() => getPostId(sourceUrl), [sourceUrl])
@@ -147,6 +199,7 @@ export function XPostEmbed({
         cards: 'visible',
         conversation: 'none',
         dnt: true,
+        lang: language === 'zh' ? 'zh-cn' : 'en',
         theme: 'dark',
       }))
       .then((embed) => settle(embed ? 'ready' : 'error'))
@@ -158,7 +211,7 @@ export function XPostEmbed({
       window.clearTimeout(failTimer)
       if (mount.parentNode === target) target.replaceChildren()
     }
-  }, [attempt, postId])
+  }, [attempt, language, postId])
 
   const retry = () => {
     setStatus('loading')
@@ -166,25 +219,26 @@ export function XPostEmbed({
   }
 
   const busy = status === 'loading' || status === 'slow'
-  const copy = status === 'ready' ? null : stateCopy[status]
+  const uiCopy = copyByLanguage[language]
+  const stateCopy = status === 'ready' ? null : uiCopy.states[status]
 
   return (
     <section
       className="x-embed-shell"
       data-state={status}
-      aria-label={`${title} X 原帖播放器`}
+      aria-label={uiCopy.playerLabel(title)}
       aria-busy={busy}
     >
       <div className="x-embed-bar">
-        <span><i aria-hidden="true" /> X 原帖播放器</span>
-        <small>{status === 'ready' ? '播放器已就绪' : '媒体由 X 提供'}</small>
+        <span><i aria-hidden="true" /> {uiCopy.barTitle}</span>
+        <small>{status === 'ready' ? uiCopy.ready : uiCopy.providedBy}</small>
       </div>
 
       <div className="x-embed-stage">
         <img
           className="x-embed-poster"
           src={posterUrl}
-          alt={`${title} 视频封面`}
+          alt={uiCopy.posterAlt(title)}
           onError={(event) => {
             event.currentTarget.onerror = null
             event.currentTarget.src = '/posters/x-community.svg'
@@ -193,7 +247,7 @@ export function XPostEmbed({
         <span className="x-embed-scrim" aria-hidden="true" />
         <div ref={targetRef} className="x-embed-target" />
 
-        {copy && (
+        {stateCopy && (
           <div
             className={`x-embed-status x-embed-status--${status}`}
             role={status === 'error' ? 'alert' : 'status'}
@@ -208,13 +262,13 @@ export function XPostEmbed({
               </span>
             )}
             <span className="x-embed-status-copy">
-              <small>{copy.eyebrow}</small>
-              <strong>{copy.title}</strong>
-              <span>{copy.detail}</span>
+              <small>{stateCopy.eyebrow}</small>
+              <strong>{stateCopy.title}</strong>
+              <span>{stateCopy.detail}</span>
             </span>
             {status === 'error' && (
               <button className="x-embed-retry" type="button" onClick={retry}>
-                <RefreshCw size={14} aria-hidden="true" /> 重新加载
+                <RefreshCw size={14} aria-hidden="true" /> {uiCopy.retry}
               </button>
             )}
           </div>
@@ -222,7 +276,7 @@ export function XPostEmbed({
       </div>
 
       <a className="x-embed-fallback" href={sourceUrl} target="_blank" rel="noreferrer">
-        播放器受限时在 X 打开原帖 <ArrowUpRight size={14} />
+        {uiCopy.fallback} <ArrowUpRight size={14} />
       </a>
     </section>
   )
