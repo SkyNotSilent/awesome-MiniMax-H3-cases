@@ -26,6 +26,17 @@ Awesome MiniMax H3 是一个带来源追踪的开源 AI 视频提示词案例库
 | [`CATALOG.md`](./CATALOG.md) | GitHub 原生案例索引 |
 | [`agents/skills/minimax-h3-prompt-library`](./agents/skills/minimax-h3-prompt-library/) | 用于检索和改写提示词的 Agent Skill |
 
+## H3 工具链与部署入口
+
+| 资源 | 先看什么 | 地址 |
+| --- | --- | --- |
+| MiniMax H3 官方仓库 | 权重、部署说明，以及包括 `h3-prompt-writing` 在内的 9 个 Agent Skill | [MiniMax-AI/MiniMax-H3](https://github.com/MiniMax-AI/MiniMax-H3) |
+| MiniMax-H3 Turbo LoRA | 4–8 步同步音视频加速；4 步预览，v4 在 6–8 步通常更稳 | [larryvrh/MiniMax-H3-Turbo-Lora](https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora) |
+| ComfyUI H3 Motion Context | 多片段续接，延续上一段的画面运动与音频上下文 | [NikoDemon80/ComfyUI-H3-Motion-Context](https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context) |
+| MiniMax H3 Audio T8 | 原生 H3 音频条件、双时钟采样、混音、裁切、预检与 Ref2VA 工作流 | [T8mars/comfyui-minimax-h3-audio-T8](https://github.com/T8mars/comfyui-minimax-h3-audio-T8) |
+
+实践路线优先尝试 **Turbo LoRA + SageAttention**。EasyCache 更适合原生 20 步链路，不建议和 4 步 Turbo 叠加；采样步数的缩短也不等于端到端等比例加速，VAE 解码和视频封装仍会占用时间。下一阶段路线图是：`Agent + h3-prompt-writing → ComfyUI API → Remotion`，完成从提示词、生成到剪辑交付的自动化链路。
+
 ## 自动采集路线
 
 ```text

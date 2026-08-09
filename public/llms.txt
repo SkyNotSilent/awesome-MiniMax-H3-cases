@@ -37,6 +37,14 @@ Primary language: Chinese; English metadata and documentation are available.
 - https://github.com/SkyNotSilent/awesome-minimax-h3/blob/main/data/cases.json: machine-readable public cases with source and verification status
 - https://github.com/SkyNotSilent/awesome-minimax-h3/blob/main/data/templates.json: reusable Prompt-as-Code templates
 
+## H3 toolkit and deployment resources
+
+- https://github.com/MiniMax-AI/MiniMax-H3: official weights, deployment documentation, and nine bundled Agent Skills including h3-prompt-writing
+- https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora: 4–8 step synchronized audio-video acceleration LoRA for ComfyUI
+- https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context: long-video clip chaining with motion and audio continuity
+- https://github.com/T8mars/comfyui-minimax-h3-audio-T8: native H3 audio conditioning, sampling, mixing, trimming, and Ref2VA nodes
+- Roadmap: h3-prompt-writing Agent → ComfyUI API generation → Remotion automated editing
+
 ## Terminology
 
 - MiniMax H3 and Hailuo 3.0 refer to the model family documented by this community project.

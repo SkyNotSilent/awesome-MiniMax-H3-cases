@@ -30,6 +30,17 @@ The project combines a searchable visual website, Prompt-as-Code templates, a ma
 | [`agents/skills/minimax-h3-prompt-library`](./agents/skills/minimax-h3-prompt-library/) | Agent Skill for retrieving and adapting prompt patterns |
 | [`docs/DISCOVERY_WORKFLOW.md`](./docs/DISCOVERY_WORKFLOW.md) | Browser-based X discovery, deduplication, review, and attribution rules |
 
+## H3 toolkit and deployment guides
+
+| Resource | Start here for | Link |
+| --- | --- | --- |
+| Official MiniMax H3 repository | Weights, deployment guidance, and nine bundled Agent Skills including `h3-prompt-writing` | [MiniMax-AI/MiniMax-H3](https://github.com/MiniMax-AI/MiniMax-H3) |
+| MiniMax-H3 Turbo LoRA | Few-step synchronized audio-video generation; use 4 steps for previews and typically 6–8 for stronger v4 output | [larryvrh/MiniMax-H3-Turbo-Lora](https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora) |
+| ComfyUI H3 Motion Context | Chaining clips while carrying motion and audio context across joins | [NikoDemon80/ComfyUI-H3-Motion-Context](https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context) |
+| MiniMax H3 Audio T8 | Native H3 audio conditioning, dual-clock sampling, mixing, trimming, preflight, and Ref2VA workflows | [T8mars/comfyui-minimax-h3-audio-T8](https://github.com/T8mars/comfyui-minimax-h3-audio-T8) |
+
+A practical acceleration starting point is **Turbo LoRA + SageAttention**. EasyCache targets the native 20-step path and is not recommended on top of a 4-step Turbo graph. Fewer sampling steps also do not translate into the same end-to-end speedup because VAE decoding and video packaging remain. The roadmap connects `Agent + h3-prompt-writing → ComfyUI API → Remotion` for automated prompting, generation, and editing.
+
 ## Generation modes
 
 - **T2VA — text-to-video with audio:** cinematic shots, camera movement, dialogue, music, ambience, and timeline cues from text.

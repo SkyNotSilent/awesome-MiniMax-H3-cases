@@ -43,6 +43,45 @@ const modeCopy: Record<(typeof modes)[number], string> = {
   Unknown: '模式待确认',
 }
 
+const toolkitResources = [
+  {
+    code: 'R01',
+    kind: 'OFFICIAL / SKILLS',
+    title: 'MiniMax-AI / MiniMax-H3',
+    description: '官方仓库与本地部署入口。内置 9 个 Agent Skill；先装 h3-prompt-writing，让 Claude / Codex 按镜头、对白与环境声组织 H3 提示词。',
+    tags: ['9 Skills', 'Prompt Writing', 'Local Deploy'],
+    url: 'https://github.com/MiniMax-AI/MiniMax-H3',
+    action: '打开官方仓库',
+  },
+  {
+    code: 'R02',
+    kind: 'ACCELERATION / LORA',
+    title: 'MiniMax-H3 Turbo LoRA',
+    description: '将常规约 20 步采样压缩到 4–8 步并保留同步立体声音频。4 步用于快速预览，v4 版本在 6–8 步通常更稳。',
+    tags: ['4–8 Steps', 'Audio + Video', 'ComfyUI'],
+    url: 'https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora',
+    action: '打开 Hugging Face',
+  },
+  {
+    code: 'R03',
+    kind: 'LONG VIDEO / CONTEXT',
+    title: 'ComfyUI H3 Motion Context',
+    description: '用于多段 H3 视频续接，把上一段的画面与音频上下文带入下一段，减少片段连接处的动作、节奏和声音断裂。',
+    tags: ['Clip Chaining', 'Motion Context', 'Audio Continuity'],
+    url: 'https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context',
+    action: '打开续接节点',
+  },
+  {
+    code: 'R04',
+    kind: 'AUDIO / WORKFLOWS',
+    title: 'MiniMax H3 Audio T8',
+    description: '面向 ComfyUI 原生 H3 的 14 节点扩展，覆盖音频条件、双时钟采样、混音、裁切、预检和 Ref2VA 参考，并附 API 与前端工作流。',
+    tags: ['14 Nodes', 'Dual Clock', 'Audio Control'],
+    url: 'https://github.com/T8mars/comfyui-minimax-h3-audio-T8',
+    action: '打开音频工作流',
+  },
+]
+
 function App() {
   const [activeMode, setActiveMode] = useState<(typeof modes)[number]>('ALL')
   const [activeCategory, setActiveCategory] = useState('ALL')
@@ -163,6 +202,7 @@ function App() {
       </section>
 
       <Templates />
+      <Toolkit />
       <Method />
       <FAQ />
       <Footer />
@@ -180,11 +220,9 @@ function Header() {
       <nav>
         <a href="#catalog">案例</a>
         <a href="#templates">模板</a>
+        <a href="#toolkit">工具链</a>
         <a href="#method">收录方式</a>
         <a href="#faq">常见问题</a>
-        <a href="https://huggingface.co/MiniMaxAI/MiniMax-H3" target="_blank" rel="noreferrer">
-          模型权重 <ArrowUpRight size={13} />
-        </a>
       </nav>
       <a
         className="source-button"
@@ -328,11 +366,75 @@ function Templates() {
   )
 }
 
+function Toolkit() {
+  return (
+    <section className="toolkit shell" id="toolkit">
+      <div className="toolkit-heading">
+        <div>
+          <p className="section-index">03 / H3 FIELD KIT</p>
+          <h2>从提示词，<br />一路接到成片。</h2>
+        </div>
+        <p>
+          不只给模型权重。这里整理真正会影响落地效率的官方 Skill、加速 LoRA、长视频续接与音视频工作流。
+        </p>
+      </div>
+
+      <div className="toolkit-grid">
+        {toolkitResources.map((item) => (
+          <a
+            className="resource-card"
+            href={item.url}
+            target="_blank"
+            rel="noreferrer"
+            key={item.code}
+            aria-label={`${item.title}：${item.action}`}
+          >
+            <div className="resource-topline">
+              <span>{item.code}</span>
+              <span>{item.kind}</span>
+            </div>
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+            <div className="resource-tags">
+              {item.tags.map((tag) => <span key={tag}>{tag}</span>)}
+            </div>
+            <div className="resource-action">
+              {item.action} <ArrowUpRight size={15} />
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <div className="toolkit-notes">
+        <article className="speed-note">
+          <div className="note-label">FIELD NOTE / 速度组合</div>
+          <h3>少叠插件，先把采样链路跑稳。</h3>
+          <p>
+            实战优先尝试 <strong>Turbo LoRA + SageAttention</strong>。4 步适合预览，6–8 步用于成片；EasyCache 更适合原生 20 步工作流，不建议和 4 步 Turbo 叠加。端到端速度仍会受到 VAE 解码与视频封装影响。
+          </p>
+          <small>生态观察：当前 H3 LoRA 热点集中在加速，人物与画风训练仍处于早期。</small>
+        </article>
+
+        <article className="pipeline-note">
+          <div className="note-label">NEXT PIPELINE / 无人出片</div>
+          <div className="pipeline-flow" aria-label="下一步自动化路线">
+            <div><span>01</span><strong>AGENT</strong><small>h3-prompt-writing</small></div>
+            <ChevronRight size={18} aria-hidden="true" />
+            <div><span>02</span><strong>COMFYUI API</strong><small>生成音视频</small></div>
+            <ChevronRight size={18} aria-hidden="true" />
+            <div><span>03</span><strong>REMOTION</strong><small>自动剪辑与交付</small></div>
+          </div>
+        </article>
+      </div>
+    </section>
+  )
+}
+
 function Method() {
   return (
     <section className="method shell" id="method">
       <div className="method-heading">
-        <p className="section-index">03 / 收录方式</p>
+        <p className="section-index">04 / 收录方式</p>
         <h2>不是热度榜。<br />是可验证的实验记录。</h2>
       </div>
       <div className="method-steps">
@@ -360,7 +462,7 @@ function FAQ() {
   return (
     <section className="faq shell" id="faq">
       <div className="faq-heading">
-        <p className="section-index">04 / FAQ</p>
+        <p className="section-index">05 / FAQ</p>
         <h2>关于 MiniMax H3<br />视频提示词案例库</h2>
       </div>
       <div className="faq-list">
