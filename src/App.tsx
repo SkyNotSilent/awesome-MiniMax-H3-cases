@@ -287,7 +287,16 @@ function CaseCard({
         {item.mediaUrl ? (
           <video src={item.mediaUrl} poster={item.posterUrl} muted loop playsInline preload="metadata" />
         ) : (
-          <img src={item.posterUrl} alt="" />
+          <img
+            src={item.posterUrl}
+            alt={`${item.title} 视频封面`}
+            loading="lazy"
+            decoding="async"
+            onError={(event) => {
+              event.currentTarget.onerror = null
+              event.currentTarget.src = '/posters/x-community.svg'
+            }}
+          />
         )}
         <span className="media-scan" aria-hidden="true" />
         <span className="case-number">{String(index + 1).padStart(2, '0')}</span>
@@ -508,7 +517,7 @@ function CaseDialog({ item, onClose }: { item: VideoCase; onClose: () => void })
           {item.mediaUrl ? (
             <video src={item.mediaUrl} poster={item.posterUrl} controls autoPlay playsInline />
           ) : (
-            <XPostEmbed sourceUrl={item.sourceUrl} title={item.title} />
+            <XPostEmbed sourceUrl={item.sourceUrl} title={item.title} posterUrl={item.posterUrl} />
           )}
         </div>
         <div className="dialog-copy">
