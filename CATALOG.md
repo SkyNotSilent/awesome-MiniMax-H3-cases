@@ -31,6 +31,8 @@
 | [人物替换实验](https://x.com/soy_lab/status/2085305126001225909) | 14s · 原帖 · 原帖 | `人物替换` `ComfyUI` `视频编辑` `版权角色` |
 | [Ref2VA 角色表一致性测试](https://x.com/sep_is_heim/status/2086344253496766502) | 5s · 576x832 · portrait | `Ref2VA` `角色表` `角色一致性` `RTX 4070` |
 | [九图参考 AI 电影预告](https://x.com/Cia0_exe/status/2086339725875699927) | 15s · 原帖未标注 · 原帖未标注 | `H3 Omni` `九图参考` `电影预告` `文字渲染` |
+| [地铁乘客云团变形](https://x.com/AION_2077/status/2086595652692427042) | 8s · 1080x1080 · square | `Ref2VA` `Glitch` `Cloud Heads` `Static Camera` |
+| [雨夜酒吧连续跟拍对比](https://x.com/EndFolding79421/status/2086584639091536239) | 15s · 1376x768 · landscape | `Ref2VA` `Model Comparison` `Character Continuity` `One Take` |
 
 ## Unknown
 
@@ -46,3 +48,8 @@
 | [2K 飞行镜头至 4K 放大](https://x.com/AION_2077/status/2086341354469441828) | 15s · 2K H3 output, upscaled to 4K · 原帖未标注 | `飞行场景` `2K` `4K 放大` `Astra` |
 | [白山茶：六镜头本地短片](https://x.com/NsitnovSitnov/status/2086338366946123992) | 80s · 原帖未标注 · 原帖未标注 | `叙事短片` `六镜头` `本地工作流` `ElevenLabs` |
 | [五场景雨中东京 MV](https://x.com/hAru_mAki_ch/status/2086334052639142176) | 29s · 原帖未标注 · 原帖未标注 | `Motion Context` `五场景` `音乐视频` `HyperFrames` |
+| [单图驱动的双人对白与韵律](https://x.com/Cardoso/status/2086575833267769614) | 15s · 1344x768 · landscape | `Single Reference Image` `Voice` `Prosody` `Dialogue` |
+| [本地生成的异世界动漫片段](https://x.com/iammal/status/2086568903069597890) | 29s · 1280x736 · landscape | `Local Generation` `Anime` `ComfyUI` `Multi-clip` |
+| [RTX 3080 本地角色舞蹈](https://x.com/Toshi_nyaruo_AI/status/2086596504752726378) | 10s · 608x1056 · portrait | `Local Generation` `Dance` `RTX 3080` `Character Animation` |
+| [十秒后的口型失稳测试](https://x.com/Alone1Moon/status/2086588332965024214) | 15s · 864x1184 · portrait | `Lip Sync` `Audio Replacement` `Failure Boundary` `Anime` |
+| [4070 Ti 本地魔法少女变身](https://x.com/NOTorJB/status/2086586609668137267) | 10s · 576x736 · portrait | `Local Generation` `RTX 4070 Ti` `Transformation` `Benchmark` |

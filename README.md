@@ -5,7 +5,7 @@
 ### Source-attributed MiniMax H3 / Hailuo 3.0 video cases and verbatim public prompts
 
 [![Website](https://img.shields.io/badge/Live-H3_Field_Notes-d8ff3e?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/)
-[![Cases](https://img.shields.io/badge/public_cases-25-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
+[![Cases](https://img.shields.io/badge/public_cases-32-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
 [![CI](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml/badge.svg)](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg?style=flat-square)](./LICENSE)
 
