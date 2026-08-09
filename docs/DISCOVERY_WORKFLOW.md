@@ -10,7 +10,7 @@ Use this when Codex has access to a signed-in browser session and X search resul
 2. Open promising original posts. Ignore repost-only accounts, compilations without attribution, and claims that do not identify the model.
 3. Record the post URL, author, date, visible caption, media type, engagement snapshot, and the exact prompt text only when it is visibly published in the original post.
 4. Classify mode, category, style, scene, and input types using public post metadata and visible media. Keep classifications factual and bounded by the available evidence.
-5. Mark prompt provenance accurately. Use a verbatim provenance only when the exact text is public in the original creator post or an official public script. Otherwise record no prompt and mark it `unknown`.
+5. Mark prompt provenance accurately. Use a verbatim provenance only when the exact text is public in the original creator post or an official public script. Otherwise record `prompt: null` and mark the provenance `not-published`.
 6. Never generate, complete, translate into an alleged original, rewrite, adapt, reconstruct, reverse-engineer, summarize, or decompose a missing prompt. Never infer a hidden production workflow from the finished video.
 7. Compare the post ID, normalized prompt fingerprint when a public prompt exists, and visual thumbnail against the queue.
 8. Add qualified items to `data/candidates.json`. Do not modify `data/cases.json` yet.

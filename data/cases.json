@@ -1239,5 +1239,402 @@
       "aspectRatio": "not visible",
       "workflow": "H3 Motion Context across 5 scenes; H3-generated voice; HyperFrames synced lyrics"
     }
+  },
+  {
+    "id": "x-aion-cloud-head-subway",
+    "title": "地铁乘客云团变形",
+    "titleEn": "Cloud-Head Subway Transformation",
+    "model": "MiniMax H3 · Local",
+    "mode": "Ref2VA",
+    "summary": "固定机位拍摄对称地铁车厢，乘客头部在真人与不同天气云团之间进行数字故障切换，并在第 8 秒收束到参考图构图；原帖同时公开了完整画面与声音 Prompt。",
+    "summaryEn": "A locked-off, symmetrical subway shot glitches the passengers' heads between human faces and distinct weather clouds, then converges on the reference composition at eight seconds. The original post also publishes the complete visual and sound prompt.",
+    "prompt": "integrated_multimodal_description: [Shot 1] Surreal live-action cinematic imagery in a symmetrical square deep-focus wide shot inside the same modern subway carriage established by <Picture 1>. At the beginning, the same seated passengers occupy the exact same seats with the same bodies, clothing, poses, hands, phones, bags, spacing, and calm commuter behavior, but every passenger has a distinct, anatomically normal human head and natural human face; the ceiling above them is ordinary dim stormy condensation without the giant eye. The camera holds a completely static shot for the entire video. From 00:01.600 to 00:02.700, a thin horizontal digital phase glitch sweeps across the carriage with brief RGB channel separation and blocky temporal displacement restricted to the passengers' heads; their normal human heads transform into compact volumetric storm clouds while their necks, bodies, clothing, hands, and positions remain perfectly unchanged. From 00:02.700 to 00:03.450, the interference reverses and restores the same normal, stable human faces. From 00:03.450 to 00:05.550, two faster synchronized glitch pulses alternate every head between the same normal human face and its cloud form, with no body movement, no face melting, and no change to the carriage geometry. From 00:05.550 onward, a final sustained digital stutter locks the passengers into their distinct cloud-headed states: lightning flickers inside the left foreground cloud, warm light glows inside the left midground cloud, rain falls beneath the small dark cloud, a faint rainbow forms in the right-center cloud, and a small sun glows inside the right foreground cloud. Fine luminous mist rises from the central cloud and resolves into the huge pale cloud face and single open eye overhead. The glitches settle, all motion becomes nearly still, and at exactly 8.00 seconds the passenger count, cloud shapes, body poses, wardrobe, seats, poles, windows, lighting, colors, crop, ceiling apparition, and full composition converge precisely to <Picture 1>. No cuts, no camera movement, no zoom, no pan, no tilt, no roll, no shake, no body morphing, no extra people, no missing passengers, no fused limbs, no wardrobe changes, no seat changes, no floating bodies, no text, no subtitles, no logos, and no drift from the final reference image.\n\noverall_soundscape: A steady low subway rumble, muted wheel rhythm, and soft ventilation hum continue throughout. Each transformation is marked by a brief dry digital stutter and electrical crackle, while the final cloud state adds faint rain, distant thunder, and a soft airy hiss without overpowering the train ambience.\n\nnon_diegetic_music: N/A",
+    "sourceUrl": "https://x.com/AION_2077/status/2086595652692427042",
+    "sourceLabel": "X 原帖 · @AION_2077",
+    "author": "AION",
+    "publishedAt": "2026-08-09T23:29:05.331Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/x-aion-cloud-head-subway.jpg",
+    "duration": 8,
+    "aspectRatio": "square",
+    "resolution": "1080x1080",
+    "tags": [
+      "Ref2VA",
+      "Glitch",
+      "Cloud Heads",
+      "Static Camera"
+    ],
+    "category": "Reference Image & Transformation",
+    "styles": [
+      "Surreal",
+      "Cinematic"
+    ],
+    "scenes": [
+      "Subway carriage",
+      "Cloud-head transformation"
+    ],
+    "inputTypes": [
+      "text",
+      "image"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 2,
+      "bookmarks": 1,
+      "views": 15,
+      "capturedAt": "2026-08-09T23:46:03Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 8.064,
+      "resolution": "1080x1080",
+      "aspectRatio": "square",
+      "generationSettings": "Local MiniMax H3; final reference image alignment"
+    }
+  },
+  {
+    "id": "x-endfolding-rainy-bar-comparison",
+    "title": "雨夜酒吧连续跟拍对比",
+    "titleEn": "Rainy Bar Continuous-Tracking Comparison",
+    "model": "MiniMax H3 · ComfyUI / Seedance 2.5",
+    "mode": "Ref2VA",
+    "summary": "同一雨夜街道概念分别交给 Seedance 2.5 与 ComfyUI MiniMax H3：H3 版本以 1376×768 输出 15 秒连续跟拍，并用明确的时间段约束人物从正面经过镜头后转为背面跟随；原帖公开了两版完整 Prompt。",
+    "summaryEn": "The same rainy-street concept is tested with Seedance 2.5 and ComfyUI MiniMax H3. The H3 version outputs a 15-second, 1376×768 continuous tracking shot with timed constraints for moving from a frontal approach to a rear follow. The post publishes both complete prompts.",
+    "prompt": "<image 2>: location\n\n<image 1>: Chris character reference \n\nintegrated_multimodal_description:\nCinematic rain-slicked urban evening with deep teal shadows, warm amber highlights, wet asphalt, shallow puddles, and light mist in the air. ONE continuous shot with NO CUTS. There is only ONE Chris in the entire video. Chris must remain the SAME woman with the SAME face, hair, clothing, body, and appearance throughout the entire shot. Never duplicate Chris, never create a second version of her, and never have her disappear and re-enter.\n\n[0s–4s] Medium tracking shot. Chris walks directly toward the camera along the wet street, looking toward the camera for approximately two beats. The camera smoothly tracks backward in front of her, keeping her face clearly visible and framed at medium distance. Warm amber streetlights reflect across the wet pavement behind her.\n\n[4s–7s] Chris reaches the camera and naturally walks very close past the LEFT side of the camera. IMPORTANT CONTINUITY: the camera does NOT cut away and Chris does NOT leave the continuous action. As her body passes beside the lens, the camera immediately pivots left and rotates approximately 180 degrees with her movement, continuously tracking the SAME Chris as the viewpoint transitions naturally from facing her to following directly behind her.\n\n[7s–15s] The camera finishes the pivot behind Chris and continues following the SAME woman from a medium rear tracking position. Ahead of her is the wet urban street and the Blackwood Bar and Grill storefront. Chris steps off the curb and crosses the street, moving carefully between parked cars with deliberate natural steps. She continues directly toward the Blackwood Bar and Grill. Its cool-white illuminated sign reads \"Blackwood Bar and Grill\" above dark wood-framed windows, creating a soft glow through the mist. Warm amber streetlights backlight Chris and produce long reflections across shallow puddles.\n\nCamera behavior: one uninterrupted continuous tracking shot; no edits, no cuts, no teleportation, no character substitution. Natural handheld cinematography with subtle realistic movement and mild walking shake. During the crossover, maintain continuous visual tracking of Chris's physical movement past the camera so there is never an opportunity for a second Chris to appear. Keep Chris close enough to camera for stable character and facial consistency during the opening approach.\n\noverall_soundscape:\nNatural rainy urban evening ambience. Soft footsteps on wet pavement synchronized with Chris's movement, distant traffic hum, subtle tire noise on wet streets, occasional passing cars, faint environmental city sounds, and quiet atmospheric rain and water sounds.\n\nnon_diegetic_music:\nNone.",
+    "sourceUrl": "https://x.com/EndFolding79421/status/2086584639091536239",
+    "sourceLabel": "X 原帖 · @EndFolding79421",
+    "author": "FoldingEnd A.I.",
+    "publishedAt": "2026-08-09T22:45:19.484Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/x-endfolding-rainy-bar-comparison.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1376x768",
+    "tags": [
+      "Ref2VA",
+      "Model Comparison",
+      "Character Continuity",
+      "One Take"
+    ],
+    "category": "Model Comparison & Continuity",
+    "styles": [
+      "Cinematic",
+      "Photoreal"
+    ],
+    "scenes": [
+      "Rainy street",
+      "Continuous tracking shot",
+      "Bar exterior"
+    ],
+    "inputTypes": [
+      "text",
+      "image"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 3,
+      "bookmarks": 1,
+      "views": 95,
+      "capturedAt": "2026-08-09T23:46:03Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 2,
+      "durationSeconds": 15.083,
+      "resolution": "H3 1376x768; Seedance 2.5 1280x720",
+      "aspectRatio": "landscape",
+      "referenceImageCount": 2
+    }
+  },
+  {
+    "id": "x-cardoso-single-image-voice-prosody",
+    "title": "单图驱动的双人对白与韵律",
+    "titleEn": "Single-Image Dialogue and Prosody Test",
+    "model": "MiniMax H3",
+    "mode": "Unknown",
+    "summary": "作者只使用一张角色参考图，让 H3 生成 15 秒双人室内对话片段，并特别评价模型对声音、语调和韵律的处理；原帖没有公开 Prompt。",
+    "summaryEn": "Using only one character reference image, the creator generates a 15-second indoor two-person dialogue scene and specifically praises H3's handling of voice, intonation, and prosody. The post does not publish a prompt.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Cardoso/status/2086575833267769614",
+    "sourceLabel": "X 原帖 · @Cardoso",
+    "author": "cardoso",
+    "publishedAt": "2026-08-09T22:10:20.012Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/x-cardoso-single-image-voice-prosody.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1344x768",
+    "tags": [
+      "Single Reference Image",
+      "Voice",
+      "Prosody",
+      "Dialogue"
+    ],
+    "category": "Character Audio & Reference Image",
+    "styles": [
+      "Sitcom",
+      "Photoreal"
+    ],
+    "scenes": [
+      "Sitcom living room",
+      "Two-character dialogue"
+    ],
+    "inputTypes": [
+      "image",
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 3,
+      "reposts": 1,
+      "likes": 48,
+      "bookmarks": 9,
+      "views": 2995,
+      "capturedAt": "2026-08-09T23:46:03Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.042,
+      "resolution": "1344x768",
+      "aspectRatio": "landscape",
+      "referenceImageCount": 1
+    }
+  },
+  {
+    "id": "x-iammal-isekai-local-anime",
+    "title": "本地生成的异世界动漫片段",
+    "titleEn": "Locally Generated Isekai Anime Sequence",
+    "model": "MiniMax H3 · Local ComfyUI",
+    "mode": "Unknown",
+    "summary": "一支约 29 秒的异世界日常动漫短片，作者明确标注为本地 H3 生成；回复中说明成片最初由两段 15 秒片段构成，森林部分又从两到三个片段中选取并剪辑。",
+    "summaryEn": "An approximately 29-second isekai slice-of-life anime short explicitly labeled as a local H3 generation. In a reply, the creator says it began as two 15-second sections, with the forest portion edited from two or three clips.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/iammal/status/2086568903069597890",
+    "sourceLabel": "X 原帖 · @iammal",
+    "author": "Mal",
+    "publishedAt": "2026-08-09T21:42:47.724Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/x-iammal-isekai-local-anime.jpg",
+    "duration": 29,
+    "aspectRatio": "landscape",
+    "resolution": "1280x736",
+    "tags": [
+      "Local Generation",
+      "Anime",
+      "ComfyUI",
+      "Multi-clip"
+    ],
+    "category": "Local Anime & Multi-clip",
+    "styles": [
+      "Anime"
+    ],
+    "scenes": [
+      "Fantasy forest",
+      "Cliffside",
+      "Slice of life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 7,
+      "bookmarks": 0,
+      "views": 150,
+      "capturedAt": "2026-08-09T23:46:03Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 29.141,
+      "resolution": "1280x736",
+      "aspectRatio": "landscape",
+      "workflow": "Local ComfyUI; edited from two 15-second sections and multiple forest clips"
+    }
+  },
+  {
+    "id": "x-toshi-local-dance-rtx3080",
+    "title": "RTX 3080 本地角色舞蹈",
+    "titleEn": "Local Character Dance on an RTX 3080",
+    "model": "MiniMax H3 · Local",
+    "mode": "Unknown",
+    "summary": "在 RTX 3080 与 Core i7-13700K 上本地生成 10 秒竖屏角色舞蹈；作者说明借用了另一位创作者的舞蹈 Prompt，并肯定了成片音乐的停顿与收尾，但本帖未逐字公开该 Prompt。",
+    "summaryEn": "A 10-second portrait character dance generated locally on an RTX 3080 and Core i7-13700K. The creator says they borrowed another creator's dance prompt and liked the musical pauses and ending, but this post does not reproduce the prompt verbatim.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Toshi_nyaruo_AI/status/2086596504752726378",
+    "sourceLabel": "X 原帖 · @Toshi_nyaruo_AI",
+    "author": "Toshi@ニャルオAI",
+    "publishedAt": "2026-08-09T23:32:28.478Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/x-toshi-local-dance-rtx3080.jpg",
+    "duration": 10,
+    "aspectRatio": "portrait",
+    "resolution": "608x1056",
+    "tags": [
+      "Local Generation",
+      "Dance",
+      "RTX 3080",
+      "Character Animation"
+    ],
+    "category": "Local Generation & Dance",
+    "styles": [
+      "Anime",
+      "Dance"
+    ],
+    "scenes": [
+      "Character dance",
+      "Colorful studio"
+    ],
+    "inputTypes": [
+      "image",
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 0,
+      "views": 39,
+      "capturedAt": "2026-08-09T23:46:03Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 10.208,
+      "resolution": "608x1056",
+      "aspectRatio": "portrait",
+      "generationSettings": "Core i7-13700K; RTX 3080; 32GB DDR4; local generation"
+    }
+  },
+  {
+    "id": "x-alone1moon-lip-sync-test",
+    "title": "十秒后的口型失稳测试",
+    "titleEn": "Lip-Sync Breakdown After Ten Seconds",
+    "model": "MiniMax H3 · Local",
+    "mode": "Unknown",
+    "summary": "15 秒舞台歌唱口型测试；作者明确说明约 10 秒后歌词开始失稳，因此替换了音频，并认为替换后的声音与画面仍有一定匹配度。",
+    "summaryEn": "A 15-second stage-singing lip-sync test. The creator explicitly says the lyrics break down after roughly ten seconds, so the audio was replaced, while the replacement still appears reasonably aligned with the mouth movement.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Alone1Moon/status/2086588332965024214",
+    "sourceLabel": "X 原帖 · @Alone1Moon",
+    "author": "Alone1M",
+    "publishedAt": "2026-08-09T23:00:00.172Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/x-alone1moon-lip-sync-test.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "864x1184",
+    "tags": [
+      "Lip Sync",
+      "Audio Replacement",
+      "Failure Boundary",
+      "Anime"
+    ],
+    "category": "Lip Sync & Audio Evaluation",
+    "styles": [
+      "Anime",
+      "Music Performance"
+    ],
+    "scenes": [
+      "Stage performance",
+      "Singer close-up"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 16,
+      "bookmarks": 2,
+      "views": 256,
+      "capturedAt": "2026-08-09T23:46:03Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.147,
+      "resolution": "864x1184",
+      "aspectRatio": "portrait",
+      "postProduction": "Audio replaced after the creator observed lyric breakdown after 10 seconds"
+    }
+  },
+  {
+    "id": "x-notorjb-magical-girl-transformation",
+    "title": "4070 Ti 本地魔法少女变身",
+    "titleEn": "Local Magical-Girl Transformation on a 4070 Ti",
+    "model": "MiniMax H3 · Local",
+    "mode": "Unknown",
+    "summary": "10 秒魔法少女变身片段，用快速动作掩盖局部破绽；作者公开的本地性能数据为 RTX 4070 Ti 12GB 生成约 10 秒视频耗时约 9 分钟。",
+    "summaryEn": "A 10-second magical-girl transformation sequence that uses rapid motion to mask local artifacts. The creator reports that an RTX 4070 Ti 12GB takes roughly nine minutes to generate about ten seconds locally.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/NOTorJB/status/2086586609668137267",
+    "sourceLabel": "X 原帖 · @NOTorJB",
+    "author": "NOT氏（大杜製作所）",
+    "publishedAt": "2026-08-09T22:53:09.306Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/x-notorjb-magical-girl-transformation.jpg",
+    "duration": 10,
+    "aspectRatio": "portrait",
+    "resolution": "576x736",
+    "tags": [
+      "Local Generation",
+      "RTX 4070 Ti",
+      "Transformation",
+      "Benchmark"
+    ],
+    "category": "Local Generation & Transformation",
+    "styles": [
+      "Anime",
+      "Transformation Sequence"
+    ],
+    "scenes": [
+      "Magical girl transformation",
+      "White studio background"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "bookmarks": 2,
+      "views": 67,
+      "capturedAt": "2026-08-09T23:46:03Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 10.208,
+      "resolution": "576x736",
+      "aspectRatio": "portrait",
+      "generationSettings": "RTX 4070 Ti 12GB; approximately 9 minutes for a 10-second clip"
+    }
   }
 ]
