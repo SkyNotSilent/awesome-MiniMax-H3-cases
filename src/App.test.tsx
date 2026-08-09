@@ -22,7 +22,7 @@ describe('case-first routes', () => {
     renderAt('/')
 
     expect(screen.getByLabelText('MiniMax H3 社区视频实验档案')).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: '先看效果，再拆工作流。' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '先看 MiniMax H3 的真实效果。' })).toBeInTheDocument()
     expect(screen.getByText('舰桥上的跃迁余震')).toBeInTheDocument()
 
     act(() => vi.advanceTimersByTime(1_600))
@@ -38,7 +38,7 @@ describe('case-first routes', () => {
     expect(screen.getByRole('link', { name: '常见问题' })).toHaveAttribute('href', '/faq/')
     expect(screen.queryByText('从单个案例，提炼可复用镜头协议。')).not.toBeInTheDocument()
     expect(screen.queryByText('收录方式')).not.toBeInTheDocument()
-    expect(screen.queryByText('从提示词，一路接到成片。')).not.toBeInTheDocument()
+    expect(screen.queryByText('H3 工具，按需取用。')).not.toBeInTheDocument()
   })
 
   it('filters cases by generation mode', () => {
@@ -50,7 +50,7 @@ describe('case-first routes', () => {
 
   it('searches across localized case metadata', () => {
     renderAt('/')
-    fireEvent.change(screen.getByPlaceholderText('搜索案例、场景、工作流…'), {
+    fireEvent.change(screen.getByPlaceholderText('搜索案例、场景或创作者…'), {
       target: { value: '焦点转移' },
     })
     expect(screen.getByText('拉面与家庭晚餐')).toBeInTheDocument()
@@ -61,10 +61,12 @@ describe('case-first routes', () => {
     const createTweet = vi.fn().mockResolvedValue(document.createElement('iframe'))
     window.twttr = { widgets: { createTweet } }
     renderAt('/')
-    fireEvent.change(screen.getByPlaceholderText('搜索案例、场景、工作流…'), {
+    fireEvent.change(screen.getByPlaceholderText('搜索案例、场景或创作者…'), {
       target: { value: '时间冻结' },
     })
     fireEvent.click(screen.getByRole('button', { name: '查看 餐厅时间冻结与逆向复原 详情' }))
+    expect(screen.getByText('原始 Prompt · 创作者原文')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: '复制 Prompt' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: /播放器受限时在 X 打开原帖/ })).toHaveAttribute(
       'href',
       'https://x.com/icreat_ai/status/2085297962977227011',
@@ -76,19 +78,35 @@ describe('case-first routes', () => {
     ))
   })
 
+  it('shows video and source details without inventing a prompt when the source did not publish one', async () => {
+    const createTweet = vi.fn().mockResolvedValue(document.createElement('iframe'))
+    window.twttr = { widgets: { createTweet } }
+    const view = renderAt('/')
+    fireEvent.change(screen.getByPlaceholderText('搜索案例、场景或创作者…'), {
+      target: { value: 'YukYuk' },
+    })
+    fireEvent.click(screen.getByRole('button', { name: '查看 同提示词 H3 与 Seedance 对比 详情' }))
+
+    expect(screen.getByText('来源未公开 Prompt；本页只展示视频和公开信息。')).toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: '复制 Prompt' })).not.toBeInTheDocument()
+    expect(view.container.querySelector('.dialog-copy pre')).not.toBeInTheDocument()
+    await waitFor(() => expect(createTweet).toHaveBeenCalled())
+  })
+
   it('publishes Toolkit and FAQ as standalone pages', () => {
     const toolkit = renderAt('/toolkit/')
-    expect(screen.getByRole('heading', { name: '从提示词，一路接到成片。' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'H3 工具，按需取用。' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'MiniMax-AI / MiniMax-H3: 打开官方仓库' })).toHaveAttribute(
       'href',
       'https://github.com/MiniMax-AI/MiniMax-H3',
     )
-    expect(screen.queryByRole('heading', { name: '先看效果，再拆工作流。' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: '先看 MiniMax H3 的真实效果。' })).not.toBeInTheDocument()
     toolkit.unmount()
 
     renderAt('/faq/')
     expect(screen.getByRole('heading', { name: '先把边界讲清楚。' })).toBeInTheDocument()
-    expect(screen.getByText('MiniMax H3 和 Hailuo 3.0 是什么关系？')).toBeInTheDocument()
+    expect(screen.getByText('这里收录什么？')).toBeInTheDocument()
+    expect(screen.getByText('这里展示的 Prompt 会被修改吗？')).toBeInTheDocument()
     expect(screen.queryByText('打开官方仓库')).not.toBeInTheDocument()
   })
 })
@@ -97,10 +115,10 @@ describe('language isolation', () => {
   it('renders the English home without duplicated Chinese case or interface copy', () => {
     renderAt('/en/')
     expect(document.documentElement).toHaveAttribute('lang', 'en')
-    expect(screen.getByRole('heading', { name: 'See the result. Trace the workflow.' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'See what MiniMax H3 actually makes.' })).toBeInTheDocument()
     expect(screen.getByText('After the Fleet Jumps')).toBeInTheDocument()
     expect(screen.queryByText('舰桥上的跃迁余震')).not.toBeInTheDocument()
-    expect(screen.getByPlaceholderText('Search cases, scenes, workflows…')).toBeInTheDocument()
+    expect(screen.getByPlaceholderText('Search cases, scenes, or creators…')).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Toolkit' })).toHaveAttribute('href', '/en/toolkit/')
     expect(screen.getByRole('link', { name: 'Switch to Chinese' })).toHaveAttribute('href', '/')
     expect(document.body.textContent).not.toMatch(/[\u3400-\u9fff]/u)
@@ -108,7 +126,7 @@ describe('language isolation', () => {
 
   it('keeps the language switch on the equivalent standalone route', () => {
     renderAt('/en/toolkit/')
-    expect(screen.getByRole('heading', { name: 'From prompt to finished cut.' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'H3 tools, ready when you need them.' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Switch to Chinese' })).toHaveAttribute('href', '/toolkit/')
     expect(screen.queryByText('打开官方仓库')).not.toBeInTheDocument()
   })
@@ -117,7 +135,7 @@ describe('language isolation', () => {
     const createTweet = vi.fn().mockResolvedValue(document.createElement('iframe'))
     window.twttr = { widgets: { createTweet } }
     renderAt('/en/')
-    fireEvent.change(screen.getByPlaceholderText('Search cases, scenes, workflows…'), {
+    fireEvent.change(screen.getByPlaceholderText('Search cases, scenes, or creators…'), {
       target: { value: 'rewinds' },
     })
     fireEvent.click(screen.getByRole('button', { name: 'View details for The Diner That Rewinds' }))
@@ -132,5 +150,21 @@ describe('language isolation', () => {
       expect.any(HTMLElement),
       expect.objectContaining({ lang: 'en' }),
     ))
+  })
+
+  it('localizes the no-prompt state without exposing a fake prompt field', async () => {
+    const createTweet = vi.fn().mockResolvedValue(document.createElement('iframe'))
+    window.twttr = { widgets: { createTweet } }
+    const view = renderAt('/en/')
+    fireEvent.change(screen.getByPlaceholderText('Search cases, scenes, or creators…'), {
+      target: { value: 'YukYuk' },
+    })
+    fireEvent.click(screen.getByRole('button', { name: 'View details for Same Prompt: H3 vs Seedance 2' }))
+
+    expect(screen.getByText('The source did not publish a prompt. This page shows the video and public details only.')).toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Copy Prompt' })).not.toBeInTheDocument()
+    expect(view.container.querySelector('.dialog-copy pre')).not.toBeInTheDocument()
+    expect(document.body.textContent).not.toMatch(/[\u3400-\u9fff]/u)
+    await waitFor(() => expect(createTweet).toHaveBeenCalled())
   })
 })

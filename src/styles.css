@@ -1448,6 +1448,26 @@ footer > span {
   cursor: pointer;
 }
 
+.prompt-notice {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+.prompt-unavailable {
+  margin: 34px 0 0;
+  padding: 15px 17px;
+  color: #b9bdb2;
+  background: #0d0e0c;
+  border: 1px solid #34382f;
+  border-left: 2px solid var(--acid);
+  font-family: var(--mono);
+  font-size: 10px;
+  line-height: 1.7;
+}
+
 .dialog-copy pre {
   max-height: 300px;
   margin: 0;

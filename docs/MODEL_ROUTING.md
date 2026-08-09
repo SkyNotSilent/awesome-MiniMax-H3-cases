@@ -5,12 +5,13 @@ Do not run the entire pipeline in one long Agent context. Route each stage to th
 | Stage | Default | Why |
 | --- | --- | --- |
 | HTML/X text cleanup | Deterministic code | No model required |
-| Prompt extraction and taxonomy | `mimo-v2.5-pro` | Use the existing Token Plan for structured text analysis |
-| Video and audio verification | `mimo-v2.5` | Xiaomi's video-understanding endpoint currently supports this model only |
-| Ambiguous cross-source reasoning | `mimo-v2.5-pro` | Escalation only, capped per day |
-| Video generation | MiniMax H3 / Seedance provider | Separate job and budget from discovery |
+| Public-text and metadata classification | `mimo-v2.5-pro` | Classify only text visibly published by the source; never produce prompt text |
+| Limited video and audio verification | `mimo-v2.5` | Verify case eligibility, visible content, media properties, and obvious quality signals only |
+| Ambiguous source verification | `mimo-v2.5-pro` | Escalate source conflicts only, capped per day; leave unresolved facts unknown |
 
-Default classification runs with thinking disabled and small output limits. The MiMo video route samples at 0.5 FPS; raise FPS only when fast motion, lip sync, or cuts cannot be judged at that rate.
+Prompt policy is independent of model capability: show a prompt only when the original creator post or an official public script publishes the exact text. Never use any model to generate, complete, translate into an alleged original, rewrite, adapt, reconstruct, reverse-engineer, summarize, or decompose a missing prompt. Never infer a hidden production workflow from a finished video.
+
+Default classification runs with thinking disabled and small output limits. The MiMo video route samples at 0.5 FPS; raise FPS only when visible motion, lip sync, or cuts cannot be verified at that rate. Video analysis must not return a proposed prompt or a decomposed workflow.
 
 For a MiMo Token Plan, set `MIMO_BASE_URL=https://token-plan-sgp.xiaomimimo.com/v1` and `MIMO_AUTH_SCHEME=bearer`. Keep `MIMO_TEXT_MODEL=mimo-v2.5-pro` and `MIMO_MODEL=mimo-v2.5`. Pay-as-you-go keys can use the regular API endpoint; set `MIMO_AUTH_SCHEME=api-key` when required by that account.
 

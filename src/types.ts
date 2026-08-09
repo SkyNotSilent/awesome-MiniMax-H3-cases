@@ -8,8 +8,7 @@ export interface VideoCase {
   mode: CaseMode
   summary: string
   summaryEn: string
-  prompt: string
-  promptEn?: string
+  prompt: string | null
   sourceUrl: string
   sourceLabel: string
   author: string
@@ -24,7 +23,7 @@ export interface VideoCase {
   styles: string[]
   scenes: string[]
   inputTypes: Array<'text' | 'image' | 'video' | 'audio' | 'unknown'>
-  promptProvenance: 'official-verbatim' | 'official-adapted' | 'creator-verbatim' | 'reconstructed' | 'unknown'
+  promptProvenance: 'official-verbatim' | 'creator-verbatim' | 'not-published'
   sourceType: 'official' | 'x' | 'community'
   verified: boolean
 }

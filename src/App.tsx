@@ -230,11 +230,12 @@ function HomePage({ language }: { language: Language }) {
       const matchesCategory = activeCategory === 'ALL' || item.category === activeCategory
       const matchesStyle = activeStyle === 'ALL' || item.styles.includes(activeStyle)
       const matchesScene = activeScene === 'ALL' || item.scenes.includes(activeScene)
+      const prompt = casePrompt(item, language)
       const haystack = language === 'zh'
-        ? [item.title, item.summary, item.prompt, ...item.tags, item.category, ...item.styles, ...item.scenes]
-        : [item.titleEn, item.summaryEn, casePrompt(item, language), item.category, ...item.styles, ...item.scenes]
+        ? [item.title, item.summary, prompt, item.author, item.sourceLabel, ...item.tags, item.category, ...item.styles, ...item.scenes]
+        : [item.titleEn, item.summaryEn, prompt, item.author, item.category, ...item.styles, ...item.scenes]
       return matchesMode && matchesCategory && matchesStyle && matchesScene
-        && (!needle || haystack.join(' ').toLowerCase().includes(needle))
+        && (!needle || haystack.filter(Boolean).join(' ').toLowerCase().includes(needle))
     })
   }, [activeCategory, activeMode, activeScene, activeStyle, language, query])
 
@@ -444,14 +445,14 @@ function ToolkitPage({ language }: { language: Language }) {
             <p>{t.speedBody}</p>
             <small>{t.speedFootnote}</small>
           </article>
-          <article className="pipeline-note">
-            <div className="note-label">{t.pipelineLabel}</div>
-            <div className="pipeline-flow" aria-label={t.pipelineLabel}>
-              <div><span>01</span><strong>AGENT</strong><small>{t.pipeline[0]}</small></div>
+          <article className="pipeline-note principles-note">
+            <div className="note-label">{t.principlesLabel}</div>
+            <div className="pipeline-flow principles-flow" aria-label={t.principlesLabel}>
+              <div><span>01</span><strong>VIDEO</strong><small>{t.principles[0]}</small></div>
               <ChevronRight size={18} aria-hidden="true" />
-              <div><span>02</span><strong>COMFYUI API</strong><small>{t.pipeline[1]}</small></div>
+              <div><span>02</span><strong>SOURCE</strong><small>{t.principles[1]}</small></div>
               <ChevronRight size={18} aria-hidden="true" />
-              <div><span>03</span><strong>REMOTION</strong><small>{t.pipeline[2]}</small></div>
+              <div><span>03</span><strong>PROMPT</strong><small>{t.principles[2]}</small></div>
             </div>
           </article>
         </div>
@@ -487,6 +488,7 @@ function CaseDialog({ item, language, onClose }: { item: VideoCase; language: La
   const t = copy[language].dialog
   const title = caseTitle(item, language)
   const prompt = casePrompt(item, language)
+  const hasPublishedPrompt = item.promptProvenance !== 'not-published' && Boolean(prompt)
 
   useEffect(() => {
     mountedRef.current = true
@@ -502,6 +504,7 @@ function CaseDialog({ item, language, onClose }: { item: VideoCase; language: La
   }, [onClose])
 
   async function copyPrompt() {
+    if (!prompt) return
     await navigator.clipboard.writeText(prompt)
     if (!mountedRef.current) return
     setCopied(true)
@@ -530,13 +533,20 @@ function CaseDialog({ item, language, onClose }: { item: VideoCase; language: La
           <h2 id="dialog-title">{title}</h2>
           <p className="summary">{caseSummary(item, language)}</p>
           <div className="case-model-line">{modelLabel(item, language)}</div>
-          <div className="prompt-heading">
-            <span>{t.prompt} · {provenanceLabel(item.promptProvenance, language)}</span>
-            <button type="button" onClick={copyPrompt}>
-              {copied ? <Check size={14} /> : <Clipboard size={14} />}{copied ? t.copied : t.copy}
-            </button>
-          </div>
-          <pre>{prompt}</pre>
+          {hasPublishedPrompt ? (
+            <div className="published-prompt">
+              <div className="prompt-heading">
+                <span>{t.prompt} · {provenanceLabel(item.promptProvenance, language)}</span>
+                <button type="button" onClick={copyPrompt}>
+                  {copied ? <Check size={14} /> : <Clipboard size={14} />}{copied ? t.copied : t.copy}
+                </button>
+              </div>
+              <p className="prompt-notice">{t.promptPublished} · {t.promptNotice}</p>
+              <pre>{prompt}</pre>
+            </div>
+          ) : (
+            <p className="prompt-unavailable">{t.promptUnavailable}</p>
+          )}
           <a className="original-link" href={item.sourceUrl} target="_blank" rel="noreferrer">
             {t.source} · {sourceLabel(item, language)} <ArrowUpRight size={15} />
           </a>

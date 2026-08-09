@@ -1,6 +1,6 @@
 # H3 Field Notes / Awesome MiniMax H3
 
-> A source-attributed library of MiniMax H3 / Hailuo 3.0 AI video prompts, examples, reusable templates, and reproducible workflows.
+> A source-attributed library of real MiniMax H3 / Hailuo 3.0 video cases and verbatim prompts published by creators or official public scripts.
 
 Canonical website: https://h3-field-notes-production.up.railway.app/
 Public repository: https://github.com/SkyNotSilent/awesome-minimax-h3
@@ -35,7 +35,7 @@ Primary language: Chinese; English metadata and documentation are available.
 - /cases/x-aiconia-i2v-larry-turbo-h3-sage/: I2V acceleration and failure-signal benchmark
 - /cases/x-maki-motion-context-five-scene-mv/: five-scene Motion Context music-video workflow
 - https://github.com/SkyNotSilent/awesome-minimax-h3/blob/main/data/cases.json: machine-readable public cases with source and verification status
-- https://github.com/SkyNotSilent/awesome-minimax-h3/blob/main/data/templates.json: reusable Prompt-as-Code templates
+- https://github.com/SkyNotSilent/awesome-minimax-h3/tree/main/agents/skills/minimax-h3-prompt-library: case and verbatim-public-prompt lookup skill; no prompt generation
 
 ## H3 toolkit and deployment resources
 
@@ -43,7 +43,6 @@ Primary language: Chinese; English metadata and documentation are available.
 - https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora: 4–8 step synchronized audio-video acceleration LoRA for ComfyUI
 - https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context: long-video clip chaining with motion and audio continuity
 - https://github.com/T8mars/comfyui-minimax-h3-audio-T8: native H3 audio conditioning, sampling, mixing, trimming, and Ref2VA nodes
-- Roadmap: h3-prompt-writing Agent → ComfyUI API generation → Remotion automated editing
 
 ## Terminology
 
@@ -51,7 +50,9 @@ Primary language: Chinese; English metadata and documentation are available.
 - T2VA: text-to-video with audio.
 - FL2VA: first/last-frame conditioned video with audio.
 - Ref2VA: multimodal reference-to-video with audio.
-- Every public case includes source attribution and prompt provenance.
+- Every public case includes source attribution.
+- Prompt text appears only when the original creator post or an official public script publishes the exact text.
+- Missing prompts are never generated, translated into alleged originals, rewritten, adapted, reconstructed, reverse-engineered, summarized, or decomposed from a video.
 - X discoveries remain in a review queue until a human explicitly approves publication.
 - X cases use the official embedded post player for in-site playback. Permission-cleared media can use a hosted fallback when embedding is unavailable.
 

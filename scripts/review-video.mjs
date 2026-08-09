@@ -8,6 +8,17 @@ const config = JSON.parse(await readFile(resolve(root, 'config/model-routing.jso
 if (!process.env.MIMO_API_KEY) throw new Error('Missing MIMO_API_KEY.')
 if (!process.env.VIDEO_URL) throw new Error('Missing VIDEO_URL. Pass a public creator/official video URL explicitly.')
 
+const candidateId = process.env.CANDIDATE_ID
+const candidates = candidateId ? JSON.parse(await readFile(candidatesPath, 'utf8')) : null
+const candidate = candidateId ? candidates.find((item) => item.id === candidateId) : null
+if (candidateId && !candidate) throw new Error(`Candidate not found: ${candidateId}`)
+
+const candidatePrompt = [
+  candidate?.classification?.prompt,
+  candidate?.visiblePrompt,
+  candidate?.promptProvenance === 'creator-verbatim' ? candidate?.prompt : null,
+].find((value) => typeof value === 'string' && value.trim().length > 0) ?? null
+
 const mimoAuthHeaders = process.env.MIMO_AUTH_SCHEME === 'api-key'
   ? { 'api-key': process.env.MIMO_API_KEY }
   : { Authorization: `Bearer ${process.env.MIMO_API_KEY}` }
@@ -27,7 +38,7 @@ const response = await fetch(`${process.env.MIMO_BASE_URL || 'https://api.xiaomi
       {
         role: 'system',
         content:
-          'Inspect an AI-generated video candidate. Return compact JSON with visualSummary, temporalBeats, camera, audio, visibleText, likelyMode, qualitySignals, failureSignals, and promptMatchesVideo. Do not identify private individuals or infer an unpublished prompt.',
+          'Perform a minimal provenance-first review of an AI video candidate. Return JSON only with isH3Case (true|false|"uncertain"), isNativeVideo (true|false|"uncertain"), basicQualitySignals (short array), visibleText (exact visible strings only), and promptMatchesVideo (true|false|"uncertain"|null). Do not produce a visual summary, temporal beats, camera analysis, audio analysis, likely generation mode, or any prompt text. Never infer, reconstruct, complete, paraphrase, or translate an unpublished prompt. Set promptMatchesVideo:null unless an explicitPrompt is supplied.',
       },
       {
         role: 'user',
@@ -38,7 +49,15 @@ const response = await fetch(`${process.env.MIMO_BASE_URL || 'https://api.xiaomi
             fps: Number(process.env.MIMO_VIDEO_FPS || config.videoReview.fps),
             media_resolution: config.videoReview.mediaResolution,
           },
-          { type: 'text', text: 'Verify this candidate for a provenance-first MiniMax H3 case library.' },
+          {
+            type: 'text',
+            text: JSON.stringify({
+              task: 'Verify H3 relevance, native-video status, basic quality, and exact visible text only.',
+              sourceText: candidate?.text ?? null,
+              sourceUrl: candidate?.sourceUrl ?? null,
+              explicitPrompt: candidatePrompt,
+            }),
+          },
         ],
       },
     ],
@@ -46,17 +65,23 @@ const response = await fetch(`${process.env.MIMO_BASE_URL || 'https://api.xiaomi
 })
 if (!response.ok) throw new Error(`MiMo ${response.status}: ${await response.text()}`)
 const payload = await response.json()
-const analysis = JSON.parse(payload.choices[0].message.content)
+const raw = JSON.parse(payload.choices[0].message.content)
+const analysis = {
+  isH3Case: raw.isH3Case ?? 'uncertain',
+  isNativeVideo: raw.isNativeVideo ?? 'uncertain',
+  basicQualitySignals: Array.isArray(raw.basicQualitySignals) ? raw.basicQualitySignals : [],
+  visibleText: Array.isArray(raw.visibleText) ? raw.visibleText : [],
+  promptMatchesVideo: candidatePrompt ? (raw.promptMatchesVideo ?? 'uncertain') : null,
+}
 
-if (process.env.CANDIDATE_ID) {
-  const candidates = JSON.parse(await readFile(candidatesPath, 'utf8'))
+if (candidateId) {
   const merged = candidates.map((item) =>
-    item.id === process.env.CANDIDATE_ID
+    item.id === candidateId
       ? { ...item, videoReview: analysis, videoReviewedBy: config.videoReview.model }
       : item,
   )
   await writeFile(candidatesPath, `${JSON.stringify(merged, null, 2)}\n`)
-  console.log(`Attached video review to ${process.env.CANDIDATE_ID}.`)
+  console.log(`Attached video review to ${candidateId}.`)
 } else {
   console.log(JSON.stringify(analysis, null, 2))
 }
