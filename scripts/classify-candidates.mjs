@@ -26,10 +26,36 @@ const headers = {
     : { Authorization: `Bearer ${process.env.MIMO_API_KEY}` }),
 }
 
+function nonEmptyString(value) {
+  return typeof value === 'string' && value.trim().length > 0 ? value : null
+}
+
+function trustedVisiblePrompt(candidate) {
+  return nonEmptyString(candidate.visiblePrompt)
+}
+
+function sanitizeClassification(candidate, raw) {
+  const prompt = trustedVisiblePrompt(candidate)
+  return {
+    id: candidate.id,
+    isH3Case: raw.isH3Case,
+    confidence: raw.confidence,
+    mode: raw.mode,
+    category: raw.category,
+    styles: raw.styles,
+    scenes: raw.scenes,
+    inputTypes: raw.inputTypes,
+    prompt,
+    promptProvenance: prompt ? 'creator-verbatim' : 'not-published',
+    reason: raw.reason,
+  }
+}
+
 const batchSize = 20
 const classifications = new Map()
 for (let offset = 0; offset < pending.length; offset += batchSize) {
   const batch = pending.slice(offset, offset + batchSize)
+  const byId = new Map(batch.map((item) => [item.id, item]))
   const response = await fetch(`${baseUrl}/chat/completions`, {
     method: 'POST',
     headers,
@@ -42,11 +68,17 @@ for (let offset = 0; offset < pending.length; offset += batchSize) {
         {
           role: 'system',
           content:
-            'Classify public posts about MiniMax H3 video examples. Return JSON only as {"items":[...]}. Each item must include id, isH3Case, confidence (0-1), mode (T2VA|FL2VA|Ref2VA|unknown), category, styles (max 3), scenes (max 3), inputTypes, promptProvenance (creator-verbatim|reconstructed|unknown), and reason (max 30 Chinese chars). Do not infer a prompt that is not explicit.',
+            'Classify public posts about MiniMax H3 video examples. Return JSON only as {"items":[...]}. Each item must include id, isH3Case, confidence (0-1), mode (T2VA|FL2VA|Ref2VA|unknown), category, styles (max 3), scenes (max 3), inputTypes, and reason (max 30 Chinese chars). Do not output prompt text or prompt provenance. Never infer, complete, reconstruct, paraphrase, summarize, or translate a prompt.',
         },
         {
           role: 'user',
-          content: JSON.stringify(batch.map(({ id, text, prompt, author, sourceUrl }) => ({ id, text, prompt, author, sourceUrl }))),
+          content: JSON.stringify(batch.map((item) => ({
+            id: item.id,
+            text: item.text,
+            visiblePrompt: trustedVisiblePrompt(item),
+            author: item.author,
+            sourceUrl: item.sourceUrl,
+          }))),
         },
       ],
     }),
@@ -54,7 +86,10 @@ for (let offset = 0; offset < pending.length; offset += batchSize) {
   if (!response.ok) throw new Error(`MiMo ${response.status}: ${await response.text()}`)
   const payload = await response.json()
   const parsed = JSON.parse(payload.choices[0].message.content)
-  for (const item of parsed.items ?? []) classifications.set(item.id, item)
+  for (const raw of parsed.items ?? []) {
+    const candidate = byId.get(raw.id)
+    if (candidate) classifications.set(raw.id, sanitizeClassification(candidate, raw))
+  }
 }
 
 const merged = candidates.map((item) =>

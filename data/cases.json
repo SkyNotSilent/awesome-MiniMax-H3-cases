@@ -7,7 +7,7 @@
     "mode": "T2VA",
     "summary": "从星舰舰桥的中广景切至舰长面部特写，以原生立体声同步表现舰队跃迁、空间冲击与骤然安静的余波。",
     "summaryEn": "Moves from a medium-wide view of a starship bridge to a close-up of the captain, using native stereo audio to synchronize the fleet jump, spatial shock, and the suddenly quiet aftermath.",
-    "prompt": "[Shot 1] Cinematic medium-wide shot, pushing in slowly. A female captain stands in the dimly lit bridge of a starship, silhouetted against a massive observation window. Outside, an armada of dreadnoughts hovers against a deep purple nebula as their rear thrusters begin to glow blue. [Shot 2] At 00:04.500, cut to a close-up of the captain's face as the bridge shakes strongly. A blinding flash floods the window when the fleet jumps to hyperspace. The force jolts the bridge; she staggers, braces, then slowly closes her eyes as the light fades. Sound: low ship hum, escalating electronic whine, bass-heavy boom, metallic rattling, then a hollow room tone. Music: mournful French horn and sustained strings building to a peak before snapping into silence.",
+    "prompt": "integrated_multimodal_description: [Shot 1] Cinematic, medium wide shot, pushing in slowly. In the cavernous, dimly lit bridge of a starship, sleek metallic consoles with glowing amber displays flank a massive, curved observation window. A female captain, in her late 40s with an athletic build and short silver-streaked black hair, stands in the center midground. She wears a structured, high-collared dark navy military tunic with silver chest insignias. Her back is to the camera, silhouetted against the cool, ambient starlight pouring through the thick glass. She stands perfectly still with her hands clasped tightly behind her back. Outside the window, a massive armada of jagged, dark grey dreadnoughts hovers in tight formation against a deep purple space nebula. The fleet's massive rear thrusters begin to glow with an intense, escalating bright blue light. [Shot 2] At 00:04.500, the camera cuts to a close-up of the captain's face and shakes strongly. The brilliant blue-white light from the fleet's gathering energy reflects vividly in her dark eyes. Suddenly, a blinding white flash floods through the window, completely washing out the background as the fleet jumps to hyperspace. The sheer spatial force violently jolts the bridge, causing the captain from Shot 1 to stagger slightly forward, her shoulders tensing as she visibly braces herself against the physical tremors. As the intense white light fades abruptly, leaving only the dim, empty expanse of the purple nebula reflected on her starkly lit skin, her jaw clenches, and she slowly closes her eyes in the newly emptied space.\noverall_soundscape: A low, resonant hum of the ship's ambient life support systems serves as the baseline, soon drowned out by an audible, escalating, high-pitched electronic whine as the fleet outside charges its hyperdrives. A massive, deafening, bass-heavy boom and sharp crackle erupts during the blinding flash, accompanied by the loud metallic creaking, rattling, and deep thuds of the bridge's bulkheads vibrating under immense physical stress. The intense roaring impact then cuts abruptly back to a hollow, echoing room tone, leaving only the faint, steady hum of the isolated bridge.\nnon_diegetic_music: Cinematic space-opera orchestral score, slow tempo, featuring a solitary, mournful French horn melody over deep, sustained string dissonances that build rapidly in volume and intensity, swelling to a massive orchestral peak before snapping immediately into silence right after the jump.",
     "sourceUrl": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-t2va-request.sh",
     "sourceLabel": "MiniMax 官方复现脚本",
     "author": "MiniMaxAI",
@@ -36,7 +36,7 @@
     "inputTypes": [
       "text"
     ],
-    "promptProvenance": "official-adapted",
+    "promptProvenance": "official-verbatim",
     "sourceType": "official",
     "verified": true
   },
@@ -48,7 +48,7 @@
     "mode": "FL2VA",
     "summary": "以拉面首帧为约束，通过缓慢焦点转移让前景蒸汽虚化、背景家庭成员逐渐清晰，考验景深和群像动作。",
     "summaryEn": "Uses a ramen image as the opening-frame constraint, then gradually racks focus so the foreground steam softens while the family in the background comes into view, testing depth of field and ensemble motion.",
-    "prompt": "Reference Picture 1 fully at 0.00 seconds. Hold a perfectly static cinematic shot in a traditional Japanese dining room. Begin with a blue-and-white ceramic bowl of ramen in crisp foreground focus: golden broth, noodles, chashu, scallions and nori. Thick white steam rises continuously. Gradually rack focus deeper into the room so the bowl becomes soft while a family of seven around the table resolves into sharp detail. Family members smile, gesture, use chopsticks and converse naturally as steam forms a translucent veil. Sound: broth hiss, ceramic and chopstick clinks, clothing movement. Music: gentle acoustic guitar with subtle koto.",
+    "prompt": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] This is a live-action, cinematic shot with a shallow depth of field. The camera holds a perfectly static shot throughout the entire eight-second duration, capturing a cozy family gathering in a traditional Japanese dining room. The scene opens with a large, intricately patterned blue and white ceramic bowl of ramen in the immediate foreground, rendered in crisp, sharp focus. The bowl sits on a smooth, polished long wooden table. Inside the bowl, a rich, oily golden-brown broth surrounds yellow wavy noodles, topped with two thick, round slices of chashu pork featuring visible fat marbling and a distinct spiral meat pattern. A generous mound of freshly chopped, bright green scallions rests in the center, and a crisp, dark green rectangular sheet of nori seaweed is tucked into the right edge. To the left of the bowl, a pair of light brown wooden chopsticks rests horizontally on a small, dark rectangular chopstick rest, near a small cylindrical ceramic teacup with blue painted patterns. On the right side of the table, a spherical paper lantern with a ribbed bamboo frame sits on a black wooden base. In the background, a large family of seven is gathered around the table, initially appearing as a soft, blurred presence. Behind them, traditional Japanese sliding shoji screens with wooden lattice frames are open, revealing a bright outdoor scene with lush green trees. Early in the clip, the thick, white steam rising from the hot ramen broth immediately intensifies, billowing upwards in thick, swirling clouds that dance continuously above the bowl. As the clip progresses into the middle seconds, the camera maintains its static position while the focus begins a deliberate, smooth shift deeper into the room. The foreground ramen bowl, its vibrant ingredients, and the rising steam gradually soften into a hazy, out-of-focus blur. Simultaneously, the family members in the background come into sharp, detailed clarity. The heavy steam continues to rise from the foreground, creating a dynamic, translucent veil between the camera and the family. With the focus now firmly locked on the background, the vibrant family dinner comes alive. The man in the dark navy blue long-sleeved shirt on the left leans forward, his mouth moving animatedly in a silent exchange. The young girl in the crisp white short-sleeved t-shirt beside him smiles brightly, looking toward the center of the table. The woman on the far left, wearing a soft light blue long-sleeved blouse, turns her head slightly, smiling gently. Across the table, the woman in the light grey button-down shirt smiles broadly, her eyes crinkling, as she rests her hands near her plate. The woman in the dark grey top further back uses her wooden chopsticks to pick up a small piece of food from a central ceramic dish filled with bright red pickled vegetables. The woman in the center back in the light grey sweater smiles gently, her hands clasped softly in front of her, observing the interaction. Throughout the remainder of the clip, the family continues their lively physical interaction, their mouths moving in continuous, silent cadences of conversation, while the thick, white steam from the blurred ramen bowl in the foreground never stops rising, adding a comforting atmosphere to the warm gathering.\n\noverall_soundscape: The soundscape begins with a quiet room tone mixed with the faint, airy rustle of the thick steam billowing from the hot ramen bowl in the foreground, accompanied by the subtle, continuous hissing and bubbling of the rich broth. As the visual focus shifts deeper into the room, the physical sounds of the bustling family dinner become dominant in the foreground. The clear, sharp clinking of ceramic bowls and wooden chopsticks touching plates is clearly heard as the family members reach for food. This is followed by the faint, muffled thud of a cup being set down on the smooth wooden table, and the subtle, rhythmic rustle of cotton and wool clothing as the family members lean forward and gesture, perfectly capturing the lively, physical atmosphere of the shared meal.\n\nnon_diegetic_music: A gentle, heartwarming acoustic guitar melody plays softly in the background, accompanied by the subtle, resonant notes of a traditional Japanese koto. The music maintains a slow, comforting tempo that enhances the cozy, nostalgic, and joyful atmosphere of the family gathering.",
     "sourceUrl": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-fl2va-request.sh",
     "sourceLabel": "MiniMax 官方复现脚本",
     "author": "MiniMaxAI",
@@ -78,7 +78,7 @@
       "text",
       "image"
     ],
-    "promptProvenance": "official-adapted",
+    "promptProvenance": "official-verbatim",
     "sourceType": "official",
     "verified": true
   },
@@ -90,7 +90,7 @@
     "mode": "Ref2VA",
     "summary": "同时引用视频、原背景音乐和额外人声音色，让角色新增英语对白并保持身份、服装、镜头与环境稳定。",
     "summaryEn": "References a source video, its original background music, and an additional voice timbre to add English dialogue while preserving character identity, wardrobe, framing, and setting.",
-    "prompt": "Edit Video 1 while preserving the young man with wavy blonde hair, bright pink suit, white shirt and the black lamb in his arms. Preserve the original framing, golden-hour pasture and background lambs. Reuse Audio 1 as background music and reference the calm male timbre of Audio 2. Animate the subject's mouth naturally as he says: ‘Follow the wind, live free. Leave worries behind, enjoy the moment.’ When speech ends, his lips meet in a relaxed smile; he looks toward the horizon and gently strokes the lamb while the camera holds.",
+    "prompt": "subject_definitions:\n<Subject 1> is the young man with short wavy blonde hair, wearing a bright pink suit jacket, matching pink trousers, an unbuttoned white shirt, and silver rings, holding a small black lamb in his arms in <Video 1>.\n<Video 1> is the source video for the editing task.\n<Audio 1> is the synchronized audio track of <Video 1>, providing the background music.\n<Audio 2> is the voice timbre reference for <Subject 1>'s voice, containing a spoken male voiceover.\n\nsummary:\n[video editing + audio reference + audio reuse] The target video is an edited version of <Video 1>. <Subject 1>, wearing a bright pink suit and holding a black lamb, stands in a grassy field with other white lambs in the background. The edit animates <Subject 1>'s face to speak the user-provided dialogue. <Audio 1> is partially reused as the continuous background music, while the target references the calm male voice timbre of <Audio 2> for <Subject 1>'s spoken lines.\n\nretention_analysis:\n<Subject 1> (appears in [Shot 1]): fully_preserved - the man retains his identity, wavy blonde hair, pink suit, white shirt, accessories, and the black lamb he holds, with his mouth newly animated to speak.\n<Video 1> (source video editing): fully_preserved - the original camera framing, warm golden hour lighting, grassy hill setting, and background white lambs are maintained while the central character is edited.\n<Audio 1>: partially_copy - the atmospheric background music from <Audio 1> is reused in the target video, mixed beneath the newly added spoken dialogue.\n<Audio 2>: reference - the target audio references the male voice timbre from <Audio 2> to generate <Subject 1>'s spoken dialogue.\n\ndetailed_description:\nThe target video is in realistic photographic style.\n[Shot 1] The shot begins from the source <Video 1>, showing <Subject 1>, a young man with short wavy blonde hair, wearing a bright pink suit jacket, matching pink trousers, and a casually unbuttoned white shirt. He stands confidently in a sunlit green pasture, gently holding a small black lamb securely in his arms. The warm, golden hour lighting casts soft shadows across his face and the bright pink fabric of his suit. Behind him, several white lambs stand and graze on the rolling grassy hill against a clear, pale blue sky. The atmospheric background music from <Audio 1> plays continuously throughout the scene. <Subject 1> physically speaks, his mouth movements naturally syncing to the new dialogue, with his voice timbre referencing the calm male delivery from <Audio 2>. Looking thoughtfully forward, <Subject 1> (S1) speaks softly, <d>[English] Follow the wind, live free.</d> As he delivers the line, he subtly shifts his weight, cradling the resting black lamb while the camera slowly pushes in. <Subject 1> (S1) continues his thought, <d>[English] Leave worries behind, enjoy the moment.</d> Exactly as his voice stops, his lips meet in a relaxed, peaceful smile, and his jaw ceases speaking motion. He then turns his gaze slightly away toward the horizon, gently stroking the black lamb's fleece with his fingers as the camera holds on this tranquil, sunlit state through the end of the video.\n\noverall_soundscape:\nThe soundscape consists of the continuous, atmospheric background music from <Audio 1>, overlaid with the clear, calm male dialogue spoken by the main character, referencing the voice timbre of <Audio 2>.\n\nnon_diegetic_music:\nThe atmospheric, sustained background music from <Audio 1> is reused as the continuous score, playing quietly beneath the spoken dialogue.",
     "sourceUrl": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-ref2va-request.sh",
     "sourceLabel": "MiniMax 官方复现脚本",
     "author": "MiniMaxAI",
@@ -120,7 +120,7 @@
       "video",
       "audio"
     ],
-    "promptProvenance": "official-adapted",
+    "promptProvenance": "official-verbatim",
     "sourceType": "official",
     "verified": true
   },
@@ -174,7 +174,7 @@
     "mode": "FL2VA",
     "summary": "创作者使用图片确定视觉风格，再配合文字提示复刻小学课本场景，并以贝多芬《月光曲》从平静、汹涌到归于平静的情绪变化组织 15 秒视频。",
     "summaryEn": "The creator used an image to establish the visual style and a text prompt to recreate a primary-school textbook scene, structuring the 15-second video around the emotional arc of Beethoven’s Moonlight Sonata—from calm to turbulent and back to calm.",
-    "prompt": "原帖未公开完整提示词。公开信息：使用图片定风格并配合文字提示词，复刻小学课本场景；音乐情绪参考贝多芬《月光曲》，从平静到汹涌再归于平静。",
+    "prompt": null,
     "sourceUrl": "https://x.com/Yangtze_Seventh/status/2085318072903299536",
     "sourceLabel": "X 原帖 · @Yangtze_Seventh",
     "author": "七仔",
@@ -203,10 +203,9 @@
       "text",
       "image"
     ],
-    "promptProvenance": "unknown",
+    "promptProvenance": "not-published",
     "sourceType": "x",
-    "verified": false,
-    "promptEn": "The original post does not disclose the full prompt. Public details: an image established the visual style, while a text prompt recreated a primary-school textbook scene. The musical arc follows Beethoven's Moonlight Sonata from calm to turbulence and back to calm."
+    "verified": false
   },
   {
     "id": "x-tapehead-composition-mv",
@@ -216,7 +215,7 @@
     "mode": "Unknown",
     "summary": "一支由 Suno 音乐、Midjourney 视觉素材和 MiniMax H3 视频生成组合而成的长篇 MV。创作者强调 H3 对对象分层与提示词遵循的表现；具体生成模式和单镜头提示词未公开。",
     "summaryEn": "A long-form music video built from Suno music, Midjourney visuals, and MiniMax H3 video generation. The creator highlights H3’s object layering and prompt adherence, but does not disclose the exact generation mode or shot-level prompts.",
-    "prompt": "原帖未公开完整提示词。公开工作流：Music — Suno；Visual — Midjourney；Video Generation — MiniMax H3。创作者称 H3 擅长把对象作为图层处理并能较好遵循提示词。",
+    "prompt": null,
     "sourceUrl": "https://x.com/tapehead_Lab/status/2085304883847258179",
     "sourceLabel": "X 原帖 · @tapehead_Lab",
     "author": "tapehead.lab",
@@ -245,10 +244,9 @@
       "text",
       "image"
     ],
-    "promptProvenance": "unknown",
+    "promptProvenance": "not-published",
     "sourceType": "x",
-    "verified": false,
-    "promptEn": "The original post does not disclose the full prompt. Published workflow: music with Suno, visuals with Midjourney, and video generation with MiniMax H3. The creator highlights object layering and prompt adherence."
+    "verified": false
   },
   {
     "id": "x-pollo-commercial-comparison",
@@ -258,7 +256,7 @@
     "mode": "T2VA",
     "summary": "在 Pollo AI 中使用相同提示词和设置，对比 MiniMax H3 与 Seedance 2.0 的商业广告输出。创作者认为 H3 更自然、精致，另一模型更强调电影化视觉冲击。",
     "summaryEn": "Uses the same prompt and settings in Pollo AI to compare commercial outputs from MiniMax H3 and Seedance 2.0. The creator describes H3 as more natural and polished, while the other model places greater emphasis on cinematic visual impact.",
-    "prompt": "原帖说明两种模型使用相同提示词与设置，但未公开提示词正文。内容为品牌商业广告对比；原帖标记为付费合作。",
+    "prompt": null,
     "sourceUrl": "https://x.com/__spence_r/status/2085281251183747482",
     "sourceLabel": "X 原帖 · @__spence_r",
     "author": "George",
@@ -287,10 +285,9 @@
     "inputTypes": [
       "text"
     ],
-    "promptProvenance": "unknown",
+    "promptProvenance": "not-published",
     "sourceType": "x",
-    "verified": false,
-    "promptEn": "The post states that both models used the same prompt and settings, but does not publish the prompt text. The case is a sponsored comparison of branded commercial outputs."
+    "verified": false
   },
   {
     "id": "x-mayii-ugc-commercial",
@@ -298,9 +295,9 @@
     "titleEn": "Localized UGC Product Film",
     "model": "MiniMax H3 + HyperFrames（创作者标注）",
     "mode": "Unknown",
-    "summary": "面向不同国家与内容平台制作的 AI UGC 商品短片工作流，创作者明确说明商业化版本主要由 HyperFrames 与 MiniMax H3 配合完成；两者的具体职责仍待拆解。",
+    "summary": "面向不同国家与内容平台制作的 AI UGC 商品短片工作流，创作者明确说明商业化版本主要由 HyperFrames 与 MiniMax H3 配合完成；原帖未说明两者的具体职责。",
     "summaryEn": "An AI UGC product-video workflow tailored to different countries and content platforms. The creator states that the commercial version mainly combines HyperFrames with MiniMax H3, although the division of responsibilities between them remains undocumented.",
-    "prompt": "原帖未公开完整提示词。公开信息：围绕同一款商品，参考 IG Reels 与小红书种草视频风格，为不同国家和平台受众制作短片；商业化版本主要使用 HyperFrames 与 MiniMax H3。",
+    "prompt": null,
     "sourceUrl": "https://x.com/Mayii0205/status/2085305063405220214",
     "sourceLabel": "X 原帖 · @Mayii0205",
     "author": "Tuola Ge",
@@ -329,10 +326,9 @@
       "text",
       "image"
     ],
-    "promptProvenance": "unknown",
+    "promptProvenance": "not-published",
     "sourceType": "x",
-    "verified": false,
-    "promptEn": "The original post does not disclose the full prompt. It describes adapting one product into IG Reels and Xiaohongshu-style seeding videos for audiences in different countries, mainly using HyperFrames and MiniMax H3."
+    "verified": false
   },
   {
     "id": "x-soylab-person-replacement",
@@ -342,7 +338,7 @@
     "mode": "Ref2VA",
     "summary": "基于 ComfyUI 的人物替换短片实验。原帖明确标注 MiniMax H3，但没有公开提示词、参考输入或节点配置，并包含受版权保护角色的视觉引用。",
     "summaryEn": "A ComfyUI-based person-replacement video experiment. The original post explicitly identifies MiniMax H3 but provides no prompt, reference inputs, or node configuration, and includes a visual reference to a copyrighted character.",
-    "prompt": "原帖未公开完整提示词。公开描述仅为：MiniMax H3 — Test for Replacing a Person；标签包括 ComfyUI、MiniMax、H3 与 Joker。输入类型依据任务描述暂归为参考图像与视频，尚未由创作者确认。",
+    "prompt": null,
     "sourceUrl": "https://x.com/soy_lab/status/2085305126001225909",
     "sourceLabel": "X 原帖 · @soy_lab",
     "author": "Nobody",
@@ -370,10 +366,9 @@
       "image",
       "video"
     ],
-    "promptProvenance": "unknown",
+    "promptProvenance": "not-published",
     "sourceType": "x",
-    "verified": false,
-    "promptEn": "The original post only describes this as a MiniMax H3 person-replacement test and does not disclose the prompt, reference inputs, or ComfyUI configuration."
+    "verified": false
   },
   {
     "id": "x-yukyuk-h3-seedance-same-prompt",
@@ -383,7 +378,7 @@
     "mode": "Unknown",
     "summary": "YukYuk 使用相同提示词分别生成 MiniMax H3 与 Seedance 2 的 15 秒视频，用于观察两个模型的输出差异；原帖没有公开提示词正文。",
     "summaryEn": "YukYuk generated separate 15-second videos with MiniMax H3 and Seedance 2 using the same prompt to compare their outputs. The original post does not disclose the prompt text.",
-    "prompt": "原帖称两个模型使用同一提示词，但未公开提示词正文。",
+    "prompt": null,
     "sourceUrl": "https://x.com/YukYukID/status/2085553970702074050",
     "sourceLabel": "X 原帖 · @YukYukID",
     "author": "YukYuk!",
@@ -409,7 +404,7 @@
     "inputTypes": [
       "unknown"
     ],
-    "promptProvenance": "unknown",
+    "promptProvenance": "not-published",
     "sourceType": "x",
     "verified": false,
     "engagement": {
@@ -425,8 +420,7 @@
       "durationSeconds": 15,
       "resolution": "not visible",
       "aspectRatio": "not visible"
-    },
-    "promptEn": "The post says both models used the same prompt, but does not publish the prompt text."
+    }
   },
   {
     "id": "x-melvin-comfyui-rtx3090-local",
@@ -436,7 +430,7 @@
     "mode": "Unknown",
     "summary": "创作者在 RTX 3090 上通过 ComfyUI 本地生成 15 秒 H3 视频，公开输出为 864×480、耗时约 22 分钟，并肯定其提示词遵循能力。",
     "summaryEn": "The creator generated a 15-second H3 video locally in ComfyUI on an RTX 3090. The published output is 864×480, took approximately 22 minutes to render, and was presented as a positive test of prompt adherence.",
-    "prompt": "原帖未公开提示词正文，只说明仍在测试 prompts。",
+    "prompt": null,
     "sourceUrl": "https://x.com/melvindvivas/status/2085553403846078669",
     "sourceLabel": "X 原帖 · @melvindvivas",
     "author": "Melvin Vivas",
@@ -462,7 +456,7 @@
     "inputTypes": [
       "unknown"
     ],
-    "promptProvenance": "unknown",
+    "promptProvenance": "not-published",
     "sourceType": "x",
     "verified": false,
     "engagement": {
@@ -478,8 +472,7 @@
       "durationSeconds": 15,
       "resolution": "864x480",
       "aspectRatio": "not visible"
-    },
-    "promptEn": "The post does not publish the prompt text and only notes that prompt testing was still in progress."
+    }
   },
   {
     "id": "x-coretan-eating-ramen-turbo-lora",
@@ -541,7 +534,7 @@
     "mode": "Unknown",
     "summary": "创作者称 37 秒视频及声音均由 MiniMax H3 本地生成，并通过 Claude Code 一次完成；公开硬件为 Mac Studio M3 Ultra 256GB。",
     "summaryEn": "The creator states that both the 37-second video and its audio were generated locally with MiniMax H3 in a single Claude Code run. The disclosed hardware is a Mac Studio with an M3 Ultra and 256 GB of memory.",
-    "prompt": "原帖未公开提示词正文。",
+    "prompt": null,
     "sourceUrl": "https://x.com/rsensui/status/2085551007631880347",
     "sourceLabel": "X 原帖 · @rsensui",
     "author": "泉水亮介",
@@ -567,7 +560,7 @@
     "inputTypes": [
       "unknown"
     ],
-    "promptProvenance": "unknown",
+    "promptProvenance": "not-published",
     "sourceType": "x",
     "verified": false,
     "engagement": {
@@ -584,8 +577,7 @@
       "resolution": "not visible",
       "aspectRatio": "not visible",
       "audioClaim": "作者称音频与视频均由 MiniMax H3 本地生成"
-    },
-    "promptEn": "The original post does not publish the prompt text."
+    }
   },
   {
     "id": "x-sada-hand-painted-blizzard",
@@ -651,7 +643,7 @@
     "mode": "FL2VA",
     "summary": "使用 Krea 2 生成的图片作为 H3 视频输入，形成一条适合夜间批量渲染的图片生视频工作流；原帖没有公开提示词。",
     "summaryEn": "Uses an image generated with Krea 2 as the input for H3, creating an image-to-video workflow suitable for overnight batch rendering. The original post does not disclose the prompt.",
-    "prompt": "原帖未公开提示词正文。",
+    "prompt": null,
     "sourceUrl": "https://x.com/tmaiaroto/status/2085543978611736973",
     "sourceLabel": "X 原帖 · @tmaiaroto",
     "author": "Tom Maiaroto",
@@ -677,7 +669,7 @@
     "inputTypes": [
       "image"
     ],
-    "promptProvenance": "unknown",
+    "promptProvenance": "not-published",
     "sourceType": "x",
     "verified": false,
     "engagement": {
@@ -693,8 +685,7 @@
       "durationSeconds": 5,
       "resolution": "not visible",
       "aspectRatio": "not visible"
-    },
-    "promptEn": "The original post does not publish the prompt text."
+    }
   },
   {
     "id": "x-opener-deep-sea-ui-comparison",
@@ -761,7 +752,7 @@
     "mode": "Unknown",
     "summary": "一支时长约 2 分 17 秒的 MiniMax H3 音乐视频实验；原帖明确模型来源，但没有公开提示词或输入素材。",
     "summaryEn": "A MiniMax H3 music-video experiment lasting approximately 2 minutes and 17 seconds. The original post identifies the model but does not disclose the prompt or input assets.",
-    "prompt": "原帖未公开提示词正文或输入素材。",
+    "prompt": null,
     "sourceUrl": "https://x.com/megurosumi/status/2085535070102884729",
     "sourceLabel": "X 原帖 · @megurosumi",
     "author": "Jinny Lee",
@@ -787,7 +778,7 @@
     "inputTypes": [
       "unknown"
     ],
-    "promptProvenance": "unknown",
+    "promptProvenance": "not-published",
     "sourceType": "x",
     "verified": false,
     "engagement": {
@@ -803,8 +794,7 @@
       "durationSeconds": 137,
       "resolution": "not visible",
       "aspectRatio": "not visible"
-    },
-    "promptEn": "The original post does not publish the prompt text or input assets."
+    }
   },
   {
     "id": "x-o685463-comfyui-12step-tests",
@@ -814,7 +804,7 @@
     "mode": "Unknown",
     "summary": "三组各 5 秒的本地 ComfyUI 测试，以速度优先的 12 步设置观察 H3 的流体与毛发表现；作者指出低步数下这些细节仍较吃力。",
     "summaryEn": "Three local ComfyUI tests, each lasting five seconds, use speed-first 12-step settings to examine H3’s handling of fluids and fur. The creator notes that both remain challenging at low step counts.",
-    "prompt": "原帖未公开提示词正文。",
+    "prompt": null,
     "sourceUrl": "https://x.com/O685463/status/2086345324164161598",
     "sourceLabel": "X 原帖 · @O685463",
     "author": "Jun Ozaki",
@@ -841,7 +831,7 @@
     "inputTypes": [
       "unknown"
     ],
-    "promptProvenance": "unknown",
+    "promptProvenance": "not-published",
     "sourceType": "x",
     "verified": false,
     "engagement": {
@@ -859,8 +849,7 @@
       "resolution": "not visible",
       "aspectRatio": "not visible",
       "generationSettings": "12 steps; local ComfyUI"
-    },
-    "promptEn": "The original post does not publish the prompt text."
+    }
   },
   {
     "id": "x-sepisheim-ref2va-character-sheet",
@@ -870,7 +859,7 @@
     "mode": "Ref2VA",
     "summary": "使用 ChatGPT 生成角色表作为参考输入，测试 H3 Ref2VA 的角色一致性；公开参数包括 RTX 4070、576×832、24 fps、5 秒和约 225 秒生成时间。",
     "summaryEn": "Uses a character sheet generated with ChatGPT as the reference input for an H3 Ref2VA consistency test. Published parameters include an RTX 4070, 576×832 resolution, 24 fps, a five-second duration, and an approximately 225-second generation time.",
-    "prompt": "原帖未公开提示词正文，只公开了保持画风描述简洁的经验。",
+    "prompt": null,
     "sourceUrl": "https://x.com/sep_is_heim/status/2086344253496766502",
     "sourceLabel": "X 原帖 · @sep_is_heim",
     "author": "Kamimoto",
@@ -897,7 +886,7 @@
       "text",
       "image"
     ],
-    "promptProvenance": "unknown",
+    "promptProvenance": "not-published",
     "sourceType": "x",
     "verified": false,
     "engagement": {
@@ -916,8 +905,7 @@
       "aspectRatio": "portrait",
       "fps": 24,
       "generationSettings": "RTX 4070; SageAttention; Spectrum; FirstBlockCache; 225 seconds"
-    },
-    "promptEn": "The original post does not publish the prompt text. It only notes that concise style descriptions worked better for this character-sheet consistency test."
+    }
   },
   {
     "id": "x-aion-flight-2k-astra-4k",
@@ -927,7 +915,7 @@
     "mode": "Unknown",
     "summary": "创作者先用 MiniMax H3 生成 2K 飞行场景，再使用 Astra 放大至 4K，展示生成与后期超分辨率串联的工作流。",
     "summaryEn": "The creator first generates a 2K flight scene with MiniMax H3 and then upscales it to 4K with Astra, demonstrating a workflow that connects generation with post-production super-resolution.",
-    "prompt": "原帖未公开提示词正文。",
+    "prompt": null,
     "sourceUrl": "https://x.com/AION_2077/status/2086341354469441828",
     "sourceLabel": "X 原帖 · @AION_2077",
     "author": "AION",
@@ -953,7 +941,7 @@
     "inputTypes": [
       "unknown"
     ],
-    "promptProvenance": "unknown",
+    "promptProvenance": "not-published",
     "sourceType": "x",
     "verified": false,
     "engagement": {
@@ -971,8 +959,7 @@
       "resolution": "2K H3 output, upscaled to 4K",
       "aspectRatio": "not visible",
       "postProcessing": "Astra upscale"
-    },
-    "promptEn": "The original post does not publish the prompt text."
+    }
   },
   {
     "id": "x-toyxyz-i2v-turbo-lora",
@@ -982,7 +969,7 @@
     "mode": "FL2VA",
     "summary": "一条 10 秒的 MiniMax H3 图片生视频 Turbo LoRA 测试，明确使用 ComfyUI；原帖未公开参考图细节或提示词。",
     "summaryEn": "A 10-second MiniMax H3 image-to-video Turbo LoRA test created in ComfyUI. The original post does not disclose the reference-image details or prompt.",
-    "prompt": "原帖未公开提示词正文或参考图说明。",
+    "prompt": null,
     "sourceUrl": "https://x.com/toyxyz3/status/2086339956755329363",
     "sourceLabel": "X 原帖 · @toyxyz3",
     "author": "toyxyz",
@@ -1008,7 +995,7 @@
     "inputTypes": [
       "image"
     ],
-    "promptProvenance": "unknown",
+    "promptProvenance": "not-published",
     "sourceType": "x",
     "verified": false,
     "engagement": {
@@ -1026,8 +1013,7 @@
       "resolution": "not visible",
       "aspectRatio": "not visible",
       "generationSettings": "I2V Turbo LoRA; ComfyUI"
-    },
-    "promptEn": "The original post does not publish the prompt text or explain the reference image."
+    }
   },
   {
     "id": "x-cia0-omni-nine-reference-film",
@@ -1037,7 +1023,7 @@
     "mode": "Ref2VA",
     "summary": "H3 Omni 在一支 15 秒 AI 电影预告中同时处理九张参考图，并测试细节文字渲染。作者只透露提示词约 3,943 个中文字符，没有公开正文。",
     "summaryEn": "H3 Omni processes nine reference images simultaneously in a 15-second AI film trailer while also testing fine-detail text rendering. The creator only discloses that the prompt contains approximately 3,943 Chinese characters, without publishing its contents.",
-    "prompt": "原帖只公开提示词长度为 3,943 个中文字符，没有展示提示词正文。",
+    "prompt": null,
     "sourceUrl": "https://x.com/Cia0_exe/status/2086339725875699927",
     "sourceLabel": "X 原帖 · @Cia0_exe",
     "author": "Cia0",
@@ -1065,7 +1051,7 @@
       "text",
       "image"
     ],
-    "promptProvenance": "unknown",
+    "promptProvenance": "not-published",
     "sourceType": "x",
     "verified": false,
     "engagement": {
@@ -1083,8 +1069,7 @@
       "resolution": "not visible",
       "aspectRatio": "not visible",
       "referenceImageCount": 9
-    },
-    "promptEn": "The creator only discloses that the prompt contains 3,943 Chinese characters and does not publish its contents."
+    }
   },
   {
     "id": "x-nsitnov-white-camellia-local-film",
@@ -1094,7 +1079,7 @@
     "mode": "Unknown",
     "summary": "《The White Camellia》由六段 15 秒 H3 镜头组成，并结合 Qwen Image 3 Pro 与 ElevenLabs，在 RTX Pro 6000 96GB 上完成本地制作。",
     "summaryEn": "The White Camellia comprises six 15-second H3 shots and combines Qwen Image 3 Pro with ElevenLabs. It was produced locally on an RTX Pro 6000 with 96 GB of memory.",
-    "prompt": "原帖未公开提示词正文。",
+    "prompt": null,
     "sourceUrl": "https://x.com/NsitnovSitnov/status/2086338366946123992",
     "sourceLabel": "X 原帖 · @NsitnovSitnov",
     "author": "Nedelcho Sitnov",
@@ -1122,7 +1107,7 @@
       "image",
       "audio"
     ],
-    "promptProvenance": "unknown",
+    "promptProvenance": "not-published",
     "sourceType": "x",
     "verified": false,
     "engagement": {
@@ -1141,8 +1126,7 @@
       "resolution": "not visible",
       "aspectRatio": "not visible",
       "workflow": "6 × 15-second H3 clips; Qwen Image 3 Pro; ElevenLabs; local RTX Pro 6000 96GB"
-    },
-    "promptEn": "The original post does not publish the prompt text."
+    }
   },
   {
     "id": "x-aiconia-i2v-larry-turbo-h3-sage",
@@ -1152,7 +1136,7 @@
     "mode": "FL2VA",
     "summary": "RTX 4070 上的 1MP、10 秒 I2V 加速测试，生成耗时 11 分 12 秒，并追加放大和插帧；作者同时公开了脸部块状噪点与语音较弱等缺陷。",
     "summaryEn": "A 1 MP, 10-second I2V acceleration test on an RTX 4070 took 11 minutes and 12 seconds, followed by upscaling and frame interpolation. The creator also documents blocky facial artifacts and weak speech generation.",
-    "prompt": "原帖未公开提示词正文。",
+    "prompt": null,
     "sourceUrl": "https://x.com/AiPhotorealGirl/status/2086336598539747535",
     "sourceLabel": "X 原帖 · @AiPhotorealGirl",
     "author": "AIconia",
@@ -1178,7 +1162,7 @@
     "inputTypes": [
       "image"
     ],
-    "promptProvenance": "unknown",
+    "promptProvenance": "not-published",
     "sourceType": "x",
     "verified": false,
     "engagement": {
@@ -1196,8 +1180,7 @@
       "resolution": "1MP before upscale",
       "aspectRatio": "not visible",
       "generationSettings": "RTX 4070; Larry Turbo + H3 Sage; 11m12s; upscale and frame interpolation"
-    },
-    "promptEn": "The original post does not publish the prompt text."
+    }
   },
   {
     "id": "x-maki-motion-context-five-scene-mv",
@@ -1207,7 +1190,7 @@
     "mode": "Unknown",
     "summary": "通过 Motion Context 连锁生成五个场景，把 H3 生成的语音作为音乐，再用 HyperFrames 叠加随节拍运动的歌词，完成约 29 秒的雨中东京 MV。",
     "summaryEn": "Motion Context chains five scenes together, uses H3-generated vocals as the music, and adds beat-synchronized lyrics with HyperFrames to create an approximately 29-second music video set in rainy Tokyo.",
-    "prompt": "原帖未公开提示词正文。",
+    "prompt": null,
     "sourceUrl": "https://x.com/hAru_mAki_ch/status/2086334052639142176",
     "sourceLabel": "X 原帖 · @hAru_mAki_ch",
     "author": "Maki",
@@ -1237,7 +1220,7 @@
       "text",
       "audio"
     ],
-    "promptProvenance": "unknown",
+    "promptProvenance": "not-published",
     "sourceType": "x",
     "verified": false,
     "engagement": {
@@ -1255,7 +1238,6 @@
       "resolution": "not visible",
       "aspectRatio": "not visible",
       "workflow": "H3 Motion Context across 5 scenes; H3-generated voice; HyperFrames synced lyrics"
-    },
-    "promptEn": "The original post does not publish the prompt text."
+    }
   }
 ]
