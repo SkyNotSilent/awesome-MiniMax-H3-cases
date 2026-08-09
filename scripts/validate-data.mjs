@@ -18,6 +18,9 @@ for (const [index, item] of cases.entries()) {
   ids.add(item.id)
   if (!modes.has(item.mode)) errors.push(`${at}.mode is invalid: ${item.mode}`)
   if (!provenance.has(item.promptProvenance)) errors.push(`${at}.promptProvenance is invalid`)
+  if (item.sourceType === 'x' && !item.posterUrl?.startsWith('/posters/x/')) {
+    errors.push(`${at}.posterUrl must use a case-specific X video cover`)
+  }
   for (const key of ['styles', 'scenes', 'inputTypes', 'tags']) {
     if (!Array.isArray(item[key]) || item[key].length === 0) errors.push(`${at}.${key} must be a non-empty array`)
   }
