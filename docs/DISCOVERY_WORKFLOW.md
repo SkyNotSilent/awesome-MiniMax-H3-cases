@@ -17,13 +17,14 @@ Use this when Codex has access to a signed-in browser session and X search resul
 9. Send only ambiguous or shortlisted videos to `mimo-v2.5` for low-FPS verification.
 10. Present a compact review summary. Publish only entries explicitly approved by a reviewer.
 
-Browser automation should store source URLs and attribution. Do not bypass login controls, download restricted media, or re-host creator videos without permission.
+Browser automation stores source URLs and attribution; it does not need to download media during discovery. Public case pages use the official X embedded-post player so visitors can watch in the catalog. If a post cannot be embedded, a hosted media fallback may be added only after redistribution permission is recorded and a maintainer explicitly approves the ingest. Never bypass login controls or download restricted media.
 
 The browser task does not need an X developer token. It requires the user's existing X login session to remain valid on the Mac. If the session expires, stop and request login instead of bypassing access controls.
 
 ## Review outcomes
 
 - `approved`: move into `data/cases.json`, add editorial title/summary, then regenerate the catalog.
+- `approved-with-media-fallback`: document redistribution permission, ingest the approved video outside the discovery task, and set `mediaUrl` to the hosted asset while preserving the original post URL.
 - `needs-context`: keep in the candidate queue and note the missing evidence.
 - `rejected`: retain the source ID in the rejection log so it is not rediscovered.
 - `removal-requested`: remove from public data immediately while ownership is reviewed.

@@ -21,7 +21,7 @@ export interface VideoCase {
   category: string
   styles: string[]
   scenes: string[]
-  inputTypes: Array<'text' | 'image' | 'video' | 'audio'>
+  inputTypes: Array<'text' | 'image' | 'video' | 'audio' | 'unknown'>
   promptProvenance: 'official-verbatim' | 'official-adapted' | 'creator-verbatim' | 'reconstructed' | 'unknown'
   sourceType: 'official' | 'x' | 'community'
   verified: boolean

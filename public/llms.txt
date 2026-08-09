@@ -45,6 +45,6 @@ Primary language: Chinese; English metadata and documentation are available.
 - Ref2VA: multimodal reference-to-video with audio.
 - Every public case includes source attribution and prompt provenance.
 - X discoveries remain in a review queue until a human explicitly approves publication.
-- Community videos remain on X; the catalog stores attribution, public prompt evidence, and source links without re-hosting media.
+- X cases use the official embedded post player for in-site playback. Permission-cleared media can use a hosted fallback when embedding is unavailable.
 
 This project is not affiliated with MiniMax. Original media and prompts remain subject to their owners and source-platform terms.

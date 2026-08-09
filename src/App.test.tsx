@@ -1,9 +1,12 @@
 import '@testing-library/jest-dom/vitest'
-import { cleanup, fireEvent, render, screen } from '@testing-library/react'
-import { afterEach, describe, expect, it } from 'vitest'
+import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 import App from './App'
 
-afterEach(cleanup)
+afterEach(() => {
+  cleanup()
+  delete window.twttr
+})
 
 describe('case catalog', () => {
   it('filters cases by generation mode', () => {
@@ -22,16 +25,23 @@ describe('case catalog', () => {
     expect(screen.queryByText('粉色西装与黑色羔羊')).not.toBeInTheDocument()
   })
 
-  it('links community cases to the original X video without re-hosting media', () => {
+  it('loads the official in-site X player and keeps a source fallback', async () => {
+    const createTweet = vi.fn().mockResolvedValue(document.createElement('iframe'))
+    window.twttr = { widgets: { createTweet } }
     render(<App />)
     fireEvent.change(screen.getByPlaceholderText('搜索提示词、场景、标签…'), {
       target: { value: '时间冻结' },
     })
     fireEvent.click(screen.getByRole('button', { name: '查看 餐厅时间冻结与逆向复原 详情' }))
-    expect(screen.getByRole('link', { name: /在 X 查看原始视频/ })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: /播放器受限时在 X 打开原帖/ })).toHaveAttribute(
       'href',
       'https://x.com/icreat_ai/status/2085297962977227011',
     )
+    await waitFor(() => expect(createTweet).toHaveBeenCalledWith(
+      '2085297962977227011',
+      expect.any(HTMLElement),
+      expect.objectContaining({ dnt: true, theme: 'dark' }),
+    ))
   })
 
   it('keeps uncertain community modes explicitly labeled', () => {

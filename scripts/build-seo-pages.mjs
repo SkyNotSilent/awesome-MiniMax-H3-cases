@@ -57,7 +57,7 @@ for (const item of cases) {
     : ''
   const mediaMarkup = hasHostedVideo
     ? `<video controls playsinline preload="metadata" poster="${poster}" src="${escapeHtml(item.mediaUrl)}"></video>`
-    : `<a class="source-media" href="${escapeHtml(item.sourceUrl)}" rel="nofollow noopener"><img src="${poster}" alt="${escapeHtml(item.title)} 社区案例封面" /><span>在 X 查看原始视频 ↗</span></a>`
+    : `<section class="x-embed" aria-label="${escapeHtml(item.title)} X 原帖播放器"><div class="embed-label"><span>X 原帖播放器</span><small>媒体由 X 提供</small></div><blockquote class="twitter-tweet" data-theme="dark" data-dnt="true" data-conversation="none"><a href="${escapeHtml(item.sourceUrl)}">载入 ${escapeHtml(item.title)} 的 X 原帖视频</a></blockquote><p class="embed-fallback"><a href="${escapeHtml(item.sourceUrl)}" rel="nofollow noopener">播放器受限时在 X 打开原帖 ↗</a></p></section>`
   const html = `<!doctype html>
 <html lang="zh-CN">
 <head>
@@ -79,7 +79,8 @@ ${videoMeta}
   <meta name="twitter:description" content="${escapeHtml(item.summary)}" />
   <meta name="twitter:image" content="${poster}" />
   <script type="application/ld+json">${JSON.stringify(structuredData).replaceAll('<', '\\u003c')}</script>
-  <style>body{margin:0;background:#0a0b09;color:#f5f5ed;font:16px/1.65 Inter,system-ui,sans-serif}main{max-width:980px;margin:auto;padding:36px 20px 80px}a{color:#d8ff3e}.eyebrow{color:#d8ff3e;letter-spacing:.12em;text-transform:uppercase}h1{font-size:clamp(2rem,7vw,5rem);line-height:1;margin:.25em 0}.summary{font-size:1.2rem;color:#c7c9bd}video,.source-media{display:block;width:100%;max-height:70vh;background:#000;border:1px solid #34362e}.source-media{position:relative;overflow:hidden}.source-media img{display:block;width:100%}.source-media span{position:absolute;left:50%;bottom:28px;padding:12px 16px;color:#0a0b09;background:#d8ff3e;transform:translateX(-50%);font:12px monospace;white-space:nowrap}dl{display:grid;grid-template-columns:max-content 1fr;gap:.5rem 1.25rem;margin:2rem 0}dt{color:#929689}dd{margin:0}pre{white-space:pre-wrap;background:#151712;border:1px solid #34362e;padding:20px;overflow:auto}.back{display:inline-block;margin-bottom:1rem}</style>
+  <style>body{margin:0;background:#0a0b09;color:#f5f5ed;font:16px/1.65 Inter,system-ui,sans-serif}main{max-width:980px;margin:auto;padding:36px 20px 80px}a{color:#d8ff3e}.eyebrow{color:#d8ff3e;letter-spacing:.12em;text-transform:uppercase}h1{font-size:clamp(2rem,7vw,5rem);line-height:1;margin:.25em 0}.summary{font-size:1.2rem;color:#c7c9bd}video{display:block;width:100%;max-height:70vh;background:#000;border:1px solid #34362e}.x-embed{min-height:560px;margin:28px 0;padding:22px;display:flex;flex-direction:column;align-items:center;justify-content:center;background-color:#050605;background-image:linear-gradient(rgba(216,255,62,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(216,255,62,.035) 1px,transparent 1px);background-size:32px 32px;border:1px solid #34362e}.embed-label{width:100%;max-width:550px;display:flex;justify-content:space-between;color:#d8ff3e;font:11px ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase}.embed-label small{color:#929689}.twitter-tweet{width:100%;min-height:460px;display:grid;place-items:center;margin:14px auto!important}.embed-fallback{margin:0;font:11px ui-monospace,monospace}dl{display:grid;grid-template-columns:max-content 1fr;gap:.5rem 1.25rem;margin:2rem 0}dt{color:#929689}dd{margin:0}pre{white-space:pre-wrap;background:#151712;border:1px solid #34362e;padding:20px;overflow:auto}.back{display:inline-block;margin-bottom:1rem}</style>
+  ${hasHostedVideo ? '' : '<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'}
 </head>
 <body><main>
   <a class="back" href="${baseUrl}/">← H3 Field Notes 案例库</a>
