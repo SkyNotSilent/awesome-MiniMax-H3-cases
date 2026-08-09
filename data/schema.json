@@ -20,7 +20,7 @@
     "scenes": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
     "inputTypes": {
       "type": "array",
-      "items": { "enum": ["text", "image", "video", "audio"] },
+      "items": { "enum": ["text", "image", "video", "audio", "unknown"] },
       "uniqueItems": true
     },
     "promptProvenance": {

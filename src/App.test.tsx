@@ -40,4 +40,13 @@ describe('case catalog', () => {
     expect(screen.getByText('分层构图音乐视频')).toBeInTheDocument()
     expect(screen.getByText('跨平台 UGC 种草短片')).toBeInTheDocument()
   })
+
+  it('includes the newly approved multimodal community cases', () => {
+    render(<App />)
+    fireEvent.change(screen.getByPlaceholderText('搜索提示词、场景、标签…'), {
+      target: { value: '九图参考' },
+    })
+    expect(screen.getByText('九图参考 AI 电影预告')).toBeInTheDocument()
+    expect(screen.queryByText('舰桥上的跃迁余震')).not.toBeInTheDocument()
+  })
 })
