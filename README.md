@@ -44,7 +44,7 @@ The project combines a searchable visual website, Prompt-as-Code templates, a ma
 | FL2VA | Ramen Rack Focus | first-frame guidance, depth of field, group motion, ambience | [MiniMax reproducible script](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-fl2va-request.sh) |
 | Ref2VA | Follow the Wind | video editing, voice reference, lip sync, character consistency | [MiniMax reproducible script](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-ref2va-request.sh) |
 
-The catalog also includes 22 human-approved community cases discovered on X, spanning creator-verbatim prompts, local ComfyUI benchmarks, image and multimodal reference workflows, model comparisons, music videos, multi-shot films, native audio, and post-production pipelines. Community media remains on X; this project publishes structured notes and original-source links rather than re-hosting the videos.
+The catalog also includes 22 human-approved community cases discovered on X, spanning creator-verbatim prompts, local ComfyUI benchmarks, image and multimodal reference workflows, model comparisons, music videos, multi-shot films, native audio, and post-production pipelines. X cases play inside the catalog through the official X embed. Permission-cleared media may use a hosted fallback when an embed is unavailable.
 
 ## Discovery and review pipeline
 
@@ -66,7 +66,7 @@ Human approval
 data/cases.json → website / catalog / Agent Skill
 ```
 
-X discovery uses the maintainer's existing signed-in browser session, not an X developer token. It never publishes automatically, bypasses access controls, downloads restricted media, or re-hosts creator videos. The recurring task prompt lives in [`docs/DAILY_COLLECTION_PROMPT.md`](./docs/DAILY_COLLECTION_PROMPT.md).
+X discovery uses the maintainer's existing signed-in browser session, not an X developer token. It never publishes automatically or bypasses access controls. Discovery stores metadata only; publication uses the official X embed first, with a permission-cleared hosted copy reserved for posts that cannot be embedded. The recurring task prompt lives in [`docs/DAILY_COLLECTION_PROMPT.md`](./docs/DAILY_COLLECTION_PROMPT.md).
 
 ## Model routing
 
@@ -104,7 +104,7 @@ The live website runs on Railway. The Railway service tracks the public GitHub r
 
 ## Contribution and copyright
 
-Read [`CONTRIBUTING.md`](./CONTRIBUTING.md) before submitting a case. Link the original creator, identify the prompt provenance, and do not commit downloaded X videos. Creators may open an Issue to request correction or removal.
+Read [`CONTRIBUTING.md`](./CONTRIBUTING.md) before submitting a case. Link the original creator and identify the prompt provenance. Do not commit downloaded X videos unless redistribution permission is documented and the embed fallback has been approved. Creators may open an Issue to request correction or removal.
 
 Code is MIT licensed. Videos, prompts, names, and other collected material remain subject to their original owners and source-platform terms. MiniMax H3 is distributed under its own license; this community project is not affiliated with MiniMax.
 

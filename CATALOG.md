@@ -17,7 +17,7 @@
 | 案例 | 输出 | 标签 |
 | --- | --- | --- |
 | [拉面与家庭晚餐](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-fl2va-request.sh) | 8s · 768p · Auto | `首帧` `焦点转移` `群像` `环境音` |
-| [小学课本场景复刻](https://x.com/Yangtze_Seventh/status/2085305008602652971) | 15s · 原帖 · 原帖 | `图片定风格` `课本复刻` `音乐叙事` `工作流` |
+| [小学课本场景复刻](https://x.com/Yangtze_Seventh/status/2085318072903299536) | 15s · 原帖 · 原帖 | `图片定风格` `课本复刻` `音乐叙事` `工作流` |
 | [Krea 2 图片驱动 H3](https://x.com/tmaiaroto/status/2085543978611736973) | 5s · 原帖未标注 · 原帖未标注 | `图片生视频` `Krea 2` `工作流` `本地渲染` |
 | [深海生物百科交互界面](https://x.com/opener_ai/status/2085542413729513534) | 15s · 原帖未标注 · 16:9 | `完整提示词` `首帧参考` `交互 UI` `模型对比` |
 | [I2V Turbo LoRA 测试](https://x.com/toyxyz3/status/2086339956755329363) | 10s · 原帖未标注 · 原帖未标注 | `I2V` `Turbo LoRA` `ComfyUI` `10 秒` |
