@@ -16,11 +16,25 @@
     "duration": 10,
     "aspectRatio": "16:9",
     "resolution": "768p",
-    "tags": ["电影感", "运镜", "立体声", "多镜头"],
+    "tags": [
+      "电影感",
+      "运镜",
+      "立体声",
+      "多镜头"
+    ],
     "category": "Cinematic & VFX",
-    "styles": ["Cinematic", "Sci-Fi", "Realistic"],
-    "scenes": ["Storytelling", "VFX"],
-    "inputTypes": ["text"],
+    "styles": [
+      "Cinematic",
+      "Sci-Fi",
+      "Realistic"
+    ],
+    "scenes": [
+      "Storytelling",
+      "VFX"
+    ],
+    "inputTypes": [
+      "text"
+    ],
     "promptProvenance": "official-adapted",
     "sourceType": "official",
     "verified": true
@@ -42,11 +56,26 @@
     "duration": 8,
     "aspectRatio": "Auto",
     "resolution": "768p",
-    "tags": ["首帧", "焦点转移", "群像", "环境音"],
+    "tags": [
+      "首帧",
+      "焦点转移",
+      "群像",
+      "环境音"
+    ],
     "category": "Food & Lifestyle",
-    "styles": ["Cinematic", "Realistic", "Shallow Focus"],
-    "scenes": ["Food", "Family"],
-    "inputTypes": ["text", "image"],
+    "styles": [
+      "Cinematic",
+      "Realistic",
+      "Shallow Focus"
+    ],
+    "scenes": [
+      "Food",
+      "Family"
+    ],
+    "inputTypes": [
+      "text",
+      "image"
+    ],
     "promptProvenance": "official-adapted",
     "sourceType": "official",
     "verified": true
@@ -68,11 +97,26 @@
     "duration": 5,
     "aspectRatio": "Auto",
     "resolution": "768p",
-    "tags": ["视频编辑", "声音参考", "口型", "角色一致性"],
+    "tags": [
+      "视频编辑",
+      "声音参考",
+      "口型",
+      "角色一致性"
+    ],
     "category": "Character & Dialogue",
-    "styles": ["Realistic", "Golden Hour"],
-    "scenes": ["Dialogue", "Editing"],
-    "inputTypes": ["text", "video", "audio"],
+    "styles": [
+      "Realistic",
+      "Golden Hour"
+    ],
+    "scenes": [
+      "Dialogue",
+      "Editing"
+    ],
+    "inputTypes": [
+      "text",
+      "video",
+      "audio"
+    ],
     "promptProvenance": "official-adapted",
     "sourceType": "official",
     "verified": true
@@ -94,11 +138,26 @@
     "duration": 15,
     "aspectRatio": "原帖",
     "resolution": "原帖",
-    "tags": ["时间冻结", "逆向运动", "液体物理", "完整提示词"],
+    "tags": [
+      "时间冻结",
+      "逆向运动",
+      "液体物理",
+      "完整提示词"
+    ],
     "category": "Cinematic & VFX",
-    "styles": ["Cinematic", "Photorealistic", "1950s"],
-    "scenes": ["Diner", "Time Freeze", "Fluid Simulation"],
-    "inputTypes": ["text"],
+    "styles": [
+      "Cinematic",
+      "Photorealistic",
+      "1950s"
+    ],
+    "scenes": [
+      "Diner",
+      "Time Freeze",
+      "Fluid Simulation"
+    ],
+    "inputTypes": [
+      "text"
+    ],
     "promptProvenance": "creator-verbatim",
     "sourceType": "x",
     "verified": false
@@ -120,11 +179,25 @@
     "duration": 15,
     "aspectRatio": "原帖",
     "resolution": "原帖",
-    "tags": ["图片定风格", "课本复刻", "音乐叙事", "工作流"],
+    "tags": [
+      "图片定风格",
+      "课本复刻",
+      "音乐叙事",
+      "工作流"
+    ],
     "category": "Education & Storytelling",
-    "styles": ["Illustrative", "Narrative"],
-    "scenes": ["Textbook Recreation", "Music Storytelling"],
-    "inputTypes": ["text", "image"],
+    "styles": [
+      "Illustrative",
+      "Narrative"
+    ],
+    "scenes": [
+      "Textbook Recreation",
+      "Music Storytelling"
+    ],
+    "inputTypes": [
+      "text",
+      "image"
+    ],
     "promptProvenance": "unknown",
     "sourceType": "x",
     "verified": false
@@ -146,11 +219,25 @@
     "duration": 107,
     "aspectRatio": "原帖",
     "resolution": "原帖",
-    "tags": ["音乐视频", "分层构图", "Midjourney", "Suno"],
+    "tags": [
+      "音乐视频",
+      "分层构图",
+      "Midjourney",
+      "Suno"
+    ],
     "category": "Music Video",
-    "styles": ["Stylized", "Layered Composition"],
-    "scenes": ["Music Video", "Object Composition"],
-    "inputTypes": ["text", "image"],
+    "styles": [
+      "Stylized",
+      "Layered Composition"
+    ],
+    "scenes": [
+      "Music Video",
+      "Object Composition"
+    ],
+    "inputTypes": [
+      "text",
+      "image"
+    ],
     "promptProvenance": "unknown",
     "sourceType": "x",
     "verified": false
@@ -172,11 +259,25 @@
     "duration": 30,
     "aspectRatio": "原帖",
     "resolution": "原帖",
-    "tags": ["模型对比", "商业广告", "付费合作", "同提示词"],
+    "tags": [
+      "模型对比",
+      "商业广告",
+      "付费合作",
+      "同提示词"
+    ],
     "category": "Advertising & Comparison",
-    "styles": ["Commercial", "Polished", "Cinematic"],
-    "scenes": ["Product Advertising", "Model Comparison"],
-    "inputTypes": ["text"],
+    "styles": [
+      "Commercial",
+      "Polished",
+      "Cinematic"
+    ],
+    "scenes": [
+      "Product Advertising",
+      "Model Comparison"
+    ],
+    "inputTypes": [
+      "text"
+    ],
     "promptProvenance": "unknown",
     "sourceType": "x",
     "verified": false
@@ -198,11 +299,25 @@
     "duration": 15,
     "aspectRatio": "原帖",
     "resolution": "原帖",
-    "tags": ["UGC", "种草视频", "本地化", "混合工作流"],
+    "tags": [
+      "UGC",
+      "种草视频",
+      "本地化",
+      "混合工作流"
+    ],
     "category": "UGC & Advertising",
-    "styles": ["Commercial", "Social UGC"],
-    "scenes": ["Product Seeding", "Localized Advertising"],
-    "inputTypes": ["text", "image"],
+    "styles": [
+      "Commercial",
+      "Social UGC"
+    ],
+    "scenes": [
+      "Product Seeding",
+      "Localized Advertising"
+    ],
+    "inputTypes": [
+      "text",
+      "image"
+    ],
     "promptProvenance": "unknown",
     "sourceType": "x",
     "verified": false
@@ -224,13 +339,880 @@
     "duration": 14,
     "aspectRatio": "原帖",
     "resolution": "原帖",
-    "tags": ["人物替换", "ComfyUI", "视频编辑", "版权角色"],
+    "tags": [
+      "人物替换",
+      "ComfyUI",
+      "视频编辑",
+      "版权角色"
+    ],
     "category": "Editing & Transformation",
-    "styles": ["Character Edit"],
-    "scenes": ["Person Replacement"],
-    "inputTypes": ["text", "image", "video"],
+    "styles": [
+      "Character Edit"
+    ],
+    "scenes": [
+      "Person Replacement"
+    ],
+    "inputTypes": [
+      "text",
+      "image",
+      "video"
+    ],
     "promptProvenance": "unknown",
     "sourceType": "x",
     "verified": false
+  },
+  {
+    "id": "x-yukyuk-h3-seedance-same-prompt",
+    "title": "同提示词 H3 与 Seedance 对比",
+    "titleEn": "Same Prompt: H3 vs Seedance 2",
+    "model": "MiniMax H3 与 Seedance 2（创作者标注）",
+    "mode": "Unknown",
+    "summary": "YukYuk 使用相同提示词分别生成 MiniMax H3 与 Seedance 2 的 15 秒视频，用于观察两个模型的输出差异；原帖没有公开提示词正文。",
+    "prompt": "原帖称两个模型使用同一提示词，但未公开提示词正文。",
+    "sourceUrl": "https://x.com/YukYukID/status/2085553970702074050",
+    "sourceLabel": "X 原帖 · @YukYukID",
+    "author": "YukYuk!",
+    "publishedAt": "2026-08-07T02:29:48.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x-community.svg",
+    "duration": 15,
+    "aspectRatio": "原帖未标注",
+    "resolution": "原帖未标注",
+    "tags": [
+      "同提示词",
+      "模型对比",
+      "Seedance 2",
+      "15 秒"
+    ],
+    "category": "Model Comparison",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "Same-prompt comparison"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "unknown",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": null,
+      "views": 8,
+      "capturedAt": "2026-08-07T02:36:43Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "durationSeconds": 15,
+      "resolution": "not visible",
+      "aspectRatio": "not visible"
+    }
+  },
+  {
+    "id": "x-melvin-comfyui-rtx3090-local",
+    "title": "RTX 3090 本地 ComfyUI 生成",
+    "titleEn": "Local ComfyUI Generation on RTX 3090",
+    "model": "MiniMax H3 + ComfyUI（创作者标注）",
+    "mode": "Unknown",
+    "summary": "创作者在 RTX 3090 上通过 ComfyUI 本地生成 15 秒 H3 视频，公开输出为 864×480、耗时约 22 分钟，并肯定其提示词遵循能力。",
+    "prompt": "原帖未公开提示词正文，只说明仍在测试 prompts。",
+    "sourceUrl": "https://x.com/melvindvivas/status/2085553403846078669",
+    "sourceLabel": "X 原帖 · @melvindvivas",
+    "author": "Melvin Vivas",
+    "publishedAt": "2026-08-07T02:27:33.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x-community.svg",
+    "duration": 15,
+    "aspectRatio": "原帖未标注",
+    "resolution": "864x480",
+    "tags": [
+      "本地生成",
+      "ComfyUI",
+      "RTX 3090",
+      "性能测试"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "ComfyUI benchmark"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "unknown",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": null,
+      "views": 22,
+      "capturedAt": "2026-08-07T02:36:43Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "durationSeconds": 15,
+      "resolution": "864x480",
+      "aspectRatio": "not visible"
+    }
+  },
+  {
+    "id": "x-coretan-eating-ramen-turbo-lora",
+    "title": "单句提示词：吃拉面",
+    "titleEn": "One-Line Prompt: Eating Ramen",
+    "model": "MiniMax H3 Turbo LoRA（创作者标注）",
+    "mode": "T2VA",
+    "summary": "本地 Turbo LoRA 实验只使用作者公开的单句提示词“Eating Ramen”，测试人物吃拉面时手部、筷子与动作表现。",
+    "prompt": "Eating Ramen",
+    "sourceUrl": "https://x.com/core_tan/status/2085551748874449032",
+    "sourceLabel": "X 原帖 · @core_tan",
+    "author": "CALMDUST aka ちゃんこあ",
+    "publishedAt": "2026-08-07T02:20:59.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x-community.svg",
+    "duration": 10,
+    "aspectRatio": "原帖未标注",
+    "resolution": "原帖未标注",
+    "tags": [
+      "作者提示词",
+      "吃拉面",
+      "Turbo LoRA",
+      "本地生成"
+    ],
+    "category": "Food & Local Generation",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "Eating ramen"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 0,
+      "bookmarks": null,
+      "views": 84,
+      "capturedAt": "2026-08-07T02:36:43Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "durationSeconds": 10,
+      "resolution": "not visible",
+      "aspectRatio": "not visible"
+    }
+  },
+  {
+    "id": "x-rsensui-local-audio-claude-code",
+    "title": "Mac Studio 本地音视频生成",
+    "titleEn": "Local Audio-Video Generation on Mac Studio",
+    "model": "MiniMax H3 + Claude Code（创作者标注）",
+    "mode": "Unknown",
+    "summary": "创作者称 37 秒视频及声音均由 MiniMax H3 本地生成，并通过 Claude Code 一次完成；公开硬件为 Mac Studio M3 Ultra 256GB。",
+    "prompt": "原帖未公开提示词正文。",
+    "sourceUrl": "https://x.com/rsensui/status/2085551007631880347",
+    "sourceLabel": "X 原帖 · @rsensui",
+    "author": "泉水亮介",
+    "publishedAt": "2026-08-07T02:18:02.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x-community.svg",
+    "duration": 37,
+    "aspectRatio": "原帖未标注",
+    "resolution": "原帖未标注",
+    "tags": [
+      "本地生成",
+      "原生音频",
+      "Claude Code",
+      "Mac Studio"
+    ],
+    "category": "Local Generation & Audio",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "Claude Code workflow"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "unknown",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": null,
+      "views": 58,
+      "capturedAt": "2026-08-07T02:36:43Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "durationSeconds": 37,
+      "resolution": "not visible",
+      "aspectRatio": "not visible",
+      "audioClaim": "作者称音频与视频均由 MiniMax H3 本地生成"
+    }
+  },
+  {
+    "id": "x-sada-hand-painted-blizzard",
+    "title": "手绘暴风雪求生",
+    "titleEn": "Hand-Painted Blizzard Survival",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "T2VA",
+    "summary": "作者公开完整提示词，以纸上油画逐帧动画、12 fps 停格节奏、冰冷月光和暴风雪环境描绘一对母子在极端天气中求生。",
+    "prompt": "Visual Medium & Craft: Traditional frame-by-frame hand-painted oil-on-paper animation, physical 12 fps stop-motion cadence with deliberate frame holds and natural line jitter between frames. Raw brushstroke textures, strictly zero CGI, no 3D rendering, no digital interpolation, no game engine aesthetics. Cinematography & Lighting: Masterful cinematography in the style of Emmanuel Lubezki and Roger Deakins, shot with physical cine lenses and a classic 180° shutter blur. Lit exclusively by a single overhead light source: pale, freezing moonlight cutting through dense atmospheric haze. Strong contre-jour backlighting with the camera positioned on the shadow side. Uniform cold blue moonlight washes over skin, clothing, snow, and tree trunks, casting sharp cold rim lights on shoulders and hoods while keeping faces in soft shadow. Atmosphere & Environment: A violent, blinding blizzard with near-zero visibility (3 meters maximum), dissolving the background into a solid white fog wall. Gale-force horizontal winds whip thick snow and freezing fog through the frame. Deep snow quickly accumulates on garments. Exhaled breath instantly vaporizes and tears away in the wind. Characters & Emotion: A desperate mother and her frightened young child battling for survival, lost in the storm at the absolute limit of their endurance. The mother conceals her panic to protect her child, while the child cries openly in fear. Both lean heavily into the gale, squinting against the biting wind, shielding their faces with forearms and ducking into their collars. Technical Details: Color palette dominated by 60% snow-blue, 30% deep trunk-black, and 10% cold highlight accents. Strict physical realism with grounded weight, true inertia, and accurate contact shadows on snow. Dynamic compositional balance using the rule of thirds and golden ratio. Uncompromising continuity across all character designs, garments, and environmental assets. 8K IMAX aesthetic.",
+    "sourceUrl": "https://x.com/sada_ai/status/2085547332880503134",
+    "sourceLabel": "X 原帖 · @sada_ai",
+    "author": "sada",
+    "publishedAt": "2026-08-07T02:03:26.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x-community.svg",
+    "duration": 15,
+    "aspectRatio": "原帖未标注",
+    "resolution": "原帖未标注",
+    "tags": [
+      "完整提示词",
+      "手绘动画",
+      "暴风雪",
+      "电影灯光"
+    ],
+    "category": "Cinematic & Survival",
+    "styles": [
+      "Hand-painted",
+      "Stop-motion",
+      "Cinematic"
+    ],
+    "scenes": [
+      "Blizzard",
+      "Mother and child",
+      "Survival"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 0,
+      "views": 49,
+      "capturedAt": "2026-08-07T02:36:43Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "durationSeconds": 15,
+      "resolution": "not visible",
+      "aspectRatio": "not visible"
+    }
+  },
+  {
+    "id": "x-tmaiaroto-krea-image-to-h3",
+    "title": "Krea 2 图片驱动 H3",
+    "titleEn": "Krea 2 Image to MiniMax H3",
+    "model": "Krea 2 + MiniMax H3（创作者标注）",
+    "mode": "FL2VA",
+    "summary": "使用 Krea 2 生成的图片作为 H3 视频输入，形成一条适合夜间批量渲染的图片生视频工作流；原帖没有公开提示词。",
+    "prompt": "原帖未公开提示词正文。",
+    "sourceUrl": "https://x.com/tmaiaroto/status/2085543978611736973",
+    "sourceLabel": "X 原帖 · @tmaiaroto",
+    "author": "Tom Maiaroto",
+    "publishedAt": "2026-08-07T01:50:06.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x-community.svg",
+    "duration": 5,
+    "aspectRatio": "原帖未标注",
+    "resolution": "原帖未标注",
+    "tags": [
+      "图片生视频",
+      "Krea 2",
+      "工作流",
+      "本地渲染"
+    ],
+    "category": "Image-to-Video Workflow",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "Krea-to-H3 workflow"
+    ],
+    "inputTypes": [
+      "image"
+    ],
+    "promptProvenance": "unknown",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 1,
+      "bookmarks": null,
+      "views": 85,
+      "capturedAt": "2026-08-07T02:36:43Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "durationSeconds": 5,
+      "resolution": "not visible",
+      "aspectRatio": "not visible"
+    }
+  },
+  {
+    "id": "x-opener-deep-sea-ui-comparison",
+    "title": "深海生物百科交互界面",
+    "titleEn": "Interactive Deep-Sea Bestiary UI",
+    "model": "MiniMax H3 与 Seedance 2.5 对比",
+    "mode": "FL2VA",
+    "summary": "作者用同一份完整提示词比较 H3 与 Seedance 2.5：以首帧固定深海百科 UI，只允许光标、主标题和左侧生物变化，并精确编排音效与负面约束。",
+    "prompt": "[FORMAT]\nCreate a 15-second, 16:9 interactive deep-sea creature encyclopedia video. One continuous locked-screen shot.\n\n[ASSETS]\nUse Image 1 as the exact opening frame and strict visual reference. Treat the entire interface and the complete right-side creature list as an immutable frozen background plate. All thumbnails, creatures, names, card positions, colors, and details on the right must remain pixel-stable and identical to Image 1 in every frame.\n\n[IDENTITY]\nPreserve exactly: the ‘CELESTIAL BESTIARY ARCHIVE’ header, pearl-white and ocean-blue palette, silver ornamental borders, large left display panel, complete right-side card grid, bottom navigation bar, navy typography, existing creature names, translucent crystalline materials, and original spacing. Each main creature must match its original card design without hybridization.\n\n[BEATS]\n[0–2.5 seconds] One white cursor touches LUMINARAY’s wing inside the large left panel. LUMINARAY blinks, chirps, and a constellation glow travels across its wings. Nothing on the right changes.\n[2.5–5 seconds] The cursor clicks the static AURORUNA card. Do not animate or highlight the card. Only the creature inside the left panel changes to AURORUNA. The main title crossfades in place to ‘AURORUNA.’ The cursor circles its bell; AURORUNA follows it and releases a soft stardust pulse.\n[5–7.5 seconds] The cursor clicks the static CORALUMI card. The card and every other right-side thumbnail remain completely unchanged. Only the left-panel creature and main title update to CORALUMI. Three taps on its shell create three small localized lights and delicate chimes.\n[7.5–10.5 seconds] The cursor clicks the static GLOWFIN card. Only the left-panel creature and main title update to GLOWFIN. Two pokes on its lure make it squeak, track the cursor with its eyes, and intensify its bioluminescent glow.\n[10.5–15 seconds] A third poke triggers GLOWFIN’s adult transformation, strictly contained inside the left panel. Preserve its navy scales, round eyes, sharp teeth, fins, and forehead lure. The adult GLOWFIN growls, lunges forward, snaps at the cursor, then returns to idle. The title remains ‘GLOWFIN.’ The right-side list remains identical to the opening frame.\n\n[CAMERA]\nLocked front-facing screen view. No pan, zoom, tilt, shake, crop, perspective shift, parallax, or depth-of-field change. Use exactly one cursor.\n\n[LIGHT]\nMaintain the original pearl-white UI illumination, cool underwater blues, silver reflections, and luminous fantasy glow. Bioluminescent effects must remain clipped inside the large left display panel.\n\n[EDIT]\nNo cuts. Only three elements may change: the single cursor, the main title, and the creature inside the large left panel. Freeze every other UI pixel. The entire right-side card grid is a protected static 2D plate, not a group of animated objects. Main titles crossfade in place over 0.2 seconds, remain still until the next click, and exit only through opacity. No sliding, scaling, bouncing, re-lettering, or layout movement.\n\n[AUDIO]\nAudio: quiet deep-sea ambience, soft UI clicks, crystalline creature chirps, stardust shimmer, three shell chimes, two angler squeaks, a low maturation rumble, one aquatic growl, and a sharp bite snap. BGM: an original 15-second cue, 65% mystical underwater ambient and 35% playful digital fantasy. Glass harmonics, submerged synth pads, and soft sonar pulses. Build gently after 10.5 seconds and end with one humorous muted thump. Do not imitate an existing melody.\n\n[NEGATIVE]\nNever alter, animate, replace, redraw, relabel, reorder, highlight, morph, or regenerate any creature thumbnail or card on the right side. No card creature may blink, move, transform, disappear, swap places, or become the currently selected creature. Do not change any right-side card name, illustration, border, color, position, scale, spacing, or selection state. Do not propagate the left-panel transformation into the card grid. No interface distortion, panel movement, duplicate cursors, extra creatures, extra buttons, new text, subtitles, watermarks, logos, or stickers. Do not introduce Chinese text, garbled characters, misspellings, or incorrect creature names. No hybrid anatomy, uncontrolled morphing, full-screen particles, or effects escaping the left panel. Never a slideshow.",
+    "sourceUrl": "https://x.com/opener_ai/status/2085542413729513534",
+    "sourceLabel": "X 原帖 · @opener_ai",
+    "author": "Jin.B",
+    "publishedAt": "2026-08-07T01:43:53.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x-community.svg",
+    "duration": 15,
+    "aspectRatio": "16:9",
+    "resolution": "原帖未标注",
+    "tags": [
+      "完整提示词",
+      "首帧参考",
+      "交互 UI",
+      "模型对比"
+    ],
+    "category": "Interactive UI & Model Comparison",
+    "styles": [
+      "Fantasy UI",
+      "Underwater"
+    ],
+    "scenes": [
+      "Deep-sea encyclopedia",
+      "UI interaction",
+      "Creature transformation"
+    ],
+    "inputTypes": [
+      "text",
+      "image"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 1,
+      "bookmarks": 0,
+      "views": 86,
+      "capturedAt": "2026-08-07T02:36:43Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "durationSeconds": 15,
+      "resolution": "not visible",
+      "aspectRatio": "16:9",
+      "comparison": "MiniMax H3 versus Seedance 2.5"
+    }
+  },
+  {
+    "id": "x-megurosumi-minimax-h3-music-video",
+    "title": "MiniMax H3 长篇音乐视频",
+    "titleEn": "Long-Form MiniMax H3 Music Video",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "一支时长约 2 分 17 秒的 MiniMax H3 音乐视频实验；原帖明确模型来源，但没有公开提示词或输入素材。",
+    "prompt": "原帖未公开提示词正文或输入素材。",
+    "sourceUrl": "https://x.com/megurosumi/status/2085535070102884729",
+    "sourceLabel": "X 原帖 · @megurosumi",
+    "author": "Jinny Lee",
+    "publishedAt": "2026-08-07T01:14:42.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x-community.svg",
+    "duration": 137,
+    "aspectRatio": "原帖未标注",
+    "resolution": "原帖未标注",
+    "tags": [
+      "音乐视频",
+      "长篇视频",
+      "AI Art",
+      "社区实验"
+    ],
+    "category": "Music Video",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "Music video"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "unknown",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "bookmarks": null,
+      "views": 58,
+      "capturedAt": "2026-08-07T02:36:43Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "durationSeconds": 137,
+      "resolution": "not visible",
+      "aspectRatio": "not visible"
+    }
+  },
+  {
+    "id": "x-o685463-comfyui-12step-tests",
+    "title": "本地 12 步流体与毛发测试",
+    "titleEn": "Local 12-Step Fluid and Fur Tests",
+    "model": "MiniMax H3 + ComfyUI（创作者标注）",
+    "mode": "Unknown",
+    "summary": "三组各 5 秒的本地 ComfyUI 测试，以速度优先的 12 步设置观察 H3 的流体与毛发表现；作者指出低步数下这些细节仍较吃力。",
+    "prompt": "原帖未公开提示词正文。",
+    "sourceUrl": "https://x.com/O685463/status/2086345324164161598",
+    "sourceLabel": "X 原帖 · @O685463",
+    "author": "Jun Ozaki",
+    "publishedAt": "2026-08-09T06:54:22.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x-community.svg",
+    "duration": 5,
+    "aspectRatio": "原帖未标注",
+    "resolution": "原帖未标注",
+    "tags": [
+      "本地生成",
+      "12 Steps",
+      "流体测试",
+      "毛发测试"
+    ],
+    "category": "Local Generation Benchmark",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "Fluid test",
+      "Fur test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "unknown",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 1,
+      "views": 15,
+      "capturedAt": "2026-08-09T07:00:52Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 3,
+      "durationSeconds": 5,
+      "resolution": "not visible",
+      "aspectRatio": "not visible",
+      "generationSettings": "12 steps; local ComfyUI"
+    }
+  },
+  {
+    "id": "x-sepisheim-ref2va-character-sheet",
+    "title": "Ref2VA 角色表一致性测试",
+    "titleEn": "Ref2VA Character Sheet Consistency Test",
+    "model": "MiniMax H3 Ref2VA（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "使用 ChatGPT 生成角色表作为参考输入，测试 H3 Ref2VA 的角色一致性；公开参数包括 RTX 4070、576×832、24 fps、5 秒和约 225 秒生成时间。",
+    "prompt": "原帖未公开提示词正文，只公开了保持画风描述简洁的经验。",
+    "sourceUrl": "https://x.com/sep_is_heim/status/2086344253496766502",
+    "sourceLabel": "X 原帖 · @sep_is_heim",
+    "author": "Kamimoto",
+    "publishedAt": "2026-08-09T06:50:07.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x-community.svg",
+    "duration": 5,
+    "aspectRatio": "portrait",
+    "resolution": "576x832",
+    "tags": [
+      "Ref2VA",
+      "角色表",
+      "角色一致性",
+      "RTX 4070"
+    ],
+    "category": "Character Consistency & Benchmark",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "Character sheet test"
+    ],
+    "inputTypes": [
+      "text",
+      "image"
+    ],
+    "promptProvenance": "unknown",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 1,
+      "views": 22,
+      "capturedAt": "2026-08-09T07:00:52Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 5,
+      "resolution": "576x832",
+      "aspectRatio": "portrait",
+      "fps": 24,
+      "generationSettings": "RTX 4070; SageAttention; Spectrum; FirstBlockCache; 225 seconds"
+    }
+  },
+  {
+    "id": "x-aion-flight-2k-astra-4k",
+    "title": "2K 飞行镜头至 4K 放大",
+    "titleEn": "2K Flight Scene Upscaled to 4K",
+    "model": "MiniMax H3 + Astra（创作者标注）",
+    "mode": "Unknown",
+    "summary": "创作者先用 MiniMax H3 生成 2K 飞行场景，再使用 Astra 放大至 4K，展示生成与后期超分辨率串联的工作流。",
+    "prompt": "原帖未公开提示词正文。",
+    "sourceUrl": "https://x.com/AION_2077/status/2086341354469441828",
+    "sourceLabel": "X 原帖 · @AION_2077",
+    "author": "AION",
+    "publishedAt": "2026-08-09T06:38:35.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x-community.svg",
+    "duration": 15,
+    "aspectRatio": "原帖未标注",
+    "resolution": "2K H3 output, upscaled to 4K",
+    "tags": [
+      "飞行场景",
+      "2K",
+      "4K 放大",
+      "Astra"
+    ],
+    "category": "Cinematic & Upscaling Workflow",
+    "styles": [
+      "Cinematic"
+    ],
+    "scenes": [
+      "Flight scene"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "unknown",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 2,
+      "bookmarks": null,
+      "views": 52,
+      "capturedAt": "2026-08-09T07:00:52Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15,
+      "resolution": "2K H3 output, upscaled to 4K",
+      "aspectRatio": "not visible",
+      "postProcessing": "Astra upscale"
+    }
+  },
+  {
+    "id": "x-toyxyz-i2v-turbo-lora",
+    "title": "I2V Turbo LoRA 测试",
+    "titleEn": "I2V Turbo LoRA Test",
+    "model": "MiniMax H3 Turbo LoRA + ComfyUI（创作者标注）",
+    "mode": "FL2VA",
+    "summary": "一条 10 秒的 MiniMax H3 图片生视频 Turbo LoRA 测试，明确使用 ComfyUI；原帖未公开参考图细节或提示词。",
+    "prompt": "原帖未公开提示词正文或参考图说明。",
+    "sourceUrl": "https://x.com/toyxyz3/status/2086339956755329363",
+    "sourceLabel": "X 原帖 · @toyxyz3",
+    "author": "toyxyz",
+    "publishedAt": "2026-08-09T06:33:02.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x-community.svg",
+    "duration": 10,
+    "aspectRatio": "原帖未标注",
+    "resolution": "原帖未标注",
+    "tags": [
+      "I2V",
+      "Turbo LoRA",
+      "ComfyUI",
+      "10 秒"
+    ],
+    "category": "Image-to-Video & Local Generation",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "Turbo LoRA test"
+    ],
+    "inputTypes": [
+      "image"
+    ],
+    "promptProvenance": "unknown",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 3,
+      "bookmarks": 3,
+      "views": 449,
+      "capturedAt": "2026-08-09T07:00:52Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 10,
+      "resolution": "not visible",
+      "aspectRatio": "not visible",
+      "generationSettings": "I2V Turbo LoRA; ComfyUI"
+    }
+  },
+  {
+    "id": "x-cia0-omni-nine-reference-film",
+    "title": "九图参考 AI 电影预告",
+    "titleEn": "Nine-Reference AI Film Trailer",
+    "model": "MiniMax H3 Omni（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "H3 Omni 在一支 15 秒 AI 电影预告中同时处理九张参考图，并测试细节文字渲染。作者只透露提示词约 3,943 个中文字符，没有公开正文。",
+    "prompt": "原帖只公开提示词长度为 3,943 个中文字符，没有展示提示词正文。",
+    "sourceUrl": "https://x.com/Cia0_exe/status/2086339725875699927",
+    "sourceLabel": "X 原帖 · @Cia0_exe",
+    "author": "Cia0",
+    "publishedAt": "2026-08-09T06:32:07.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x-community.svg",
+    "duration": 15,
+    "aspectRatio": "原帖未标注",
+    "resolution": "原帖未标注",
+    "tags": [
+      "H3 Omni",
+      "九图参考",
+      "电影预告",
+      "文字渲染"
+    ],
+    "category": "AI Film & Multimodal Reference",
+    "styles": [
+      "Film Trailer"
+    ],
+    "scenes": [
+      "Multi-reference film trailer",
+      "Rendered text"
+    ],
+    "inputTypes": [
+      "text",
+      "image"
+    ],
+    "promptProvenance": "unknown",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 4,
+      "reposts": 1,
+      "likes": 5,
+      "bookmarks": 2,
+      "views": 599,
+      "capturedAt": "2026-08-09T07:00:52Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15,
+      "resolution": "not visible",
+      "aspectRatio": "not visible",
+      "referenceImageCount": 9
+    }
+  },
+  {
+    "id": "x-nsitnov-white-camellia-local-film",
+    "title": "白山茶：六镜头本地短片",
+    "titleEn": "The White Camellia: Six-Shot Local Film",
+    "model": "MiniMax H3 + Qwen Image 3 Pro + ElevenLabs",
+    "mode": "Unknown",
+    "summary": "《The White Camellia》由六段 15 秒 H3 镜头组成，并结合 Qwen Image 3 Pro 与 ElevenLabs，在 RTX Pro 6000 96GB 上完成本地制作。",
+    "prompt": "原帖未公开提示词正文。",
+    "sourceUrl": "https://x.com/NsitnovSitnov/status/2086338366946123992",
+    "sourceLabel": "X 原帖 · @NsitnovSitnov",
+    "author": "Nedelcho Sitnov",
+    "publishedAt": "2026-08-09T06:26:43.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x-community.svg",
+    "duration": 80,
+    "aspectRatio": "原帖未标注",
+    "resolution": "原帖未标注",
+    "tags": [
+      "叙事短片",
+      "六镜头",
+      "本地工作流",
+      "ElevenLabs"
+    ],
+    "category": "Narrative Film & Local Workflow",
+    "styles": [
+      "Narrative Film"
+    ],
+    "scenes": [
+      "The White Camellia"
+    ],
+    "inputTypes": [
+      "text",
+      "image",
+      "audio"
+    ],
+    "promptProvenance": "unknown",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 1,
+      "views": 48,
+      "capturedAt": "2026-08-09T07:00:52Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 80,
+      "claimedProjectDurationSeconds": 90,
+      "resolution": "not visible",
+      "aspectRatio": "not visible",
+      "workflow": "6 × 15-second H3 clips; Qwen Image 3 Pro; ElevenLabs; local RTX Pro 6000 96GB"
+    }
+  },
+  {
+    "id": "x-aiconia-i2v-larry-turbo-h3-sage",
+    "title": "Larry Turbo + H3 Sage 加速测试",
+    "titleEn": "Larry Turbo and H3 Sage Acceleration Test",
+    "model": "MiniMax H3 + Larry Turbo + H3 Sage",
+    "mode": "FL2VA",
+    "summary": "RTX 4070 上的 1MP、10 秒 I2V 加速测试，生成耗时 11 分 12 秒，并追加放大和插帧；作者同时公开了脸部块状噪点与语音较弱等缺陷。",
+    "prompt": "原帖未公开提示词正文。",
+    "sourceUrl": "https://x.com/AiPhotorealGirl/status/2086336598539747535",
+    "sourceLabel": "X 原帖 · @AiPhotorealGirl",
+    "author": "AIconia",
+    "publishedAt": "2026-08-09T06:19:42.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x-community.svg",
+    "duration": 10,
+    "aspectRatio": "原帖未标注",
+    "resolution": "1MP before upscale",
+    "tags": [
+      "I2V",
+      "Larry Turbo",
+      "H3 Sage",
+      "性能与缺陷"
+    ],
+    "category": "Image-to-Video Benchmark",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "I2V performance test"
+    ],
+    "inputTypes": [
+      "image"
+    ],
+    "promptProvenance": "unknown",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 1,
+      "likes": 11,
+      "bookmarks": 1,
+      "views": 520,
+      "capturedAt": "2026-08-09T07:00:52Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 10,
+      "resolution": "1MP before upscale",
+      "aspectRatio": "not visible",
+      "generationSettings": "RTX 4070; Larry Turbo + H3 Sage; 11m12s; upscale and frame interpolation"
+    }
+  },
+  {
+    "id": "x-maki-motion-context-five-scene-mv",
+    "title": "五场景雨中东京 MV",
+    "titleEn": "Five-Scene Rainy Tokyo Music Video",
+    "model": "MiniMax H3 + HyperFrames（创作者标注）",
+    "mode": "Unknown",
+    "summary": "通过 Motion Context 连锁生成五个场景，把 H3 生成的语音作为音乐，再用 HyperFrames 叠加随节拍运动的歌词，完成约 29 秒的雨中东京 MV。",
+    "prompt": "原帖未公开提示词正文。",
+    "sourceUrl": "https://x.com/hAru_mAki_ch/status/2086334052639142176",
+    "sourceLabel": "X 原帖 · @hAru_mAki_ch",
+    "author": "Maki",
+    "publishedAt": "2026-08-09T06:09:35.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x-community.svg",
+    "duration": 29,
+    "aspectRatio": "原帖未标注",
+    "resolution": "原帖未标注",
+    "tags": [
+      "Motion Context",
+      "五场景",
+      "音乐视频",
+      "HyperFrames"
+    ],
+    "category": "Music Video & Multi-scene Workflow",
+    "styles": [
+      "Music Video",
+      "Lyric Video"
+    ],
+    "scenes": [
+      "Rainy Tokyo",
+      "Female singer",
+      "Five-scene sequence"
+    ],
+    "inputTypes": [
+      "text",
+      "audio"
+    ],
+    "promptProvenance": "unknown",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 2,
+      "bookmarks": 3,
+      "views": 504,
+      "capturedAt": "2026-08-09T07:00:52Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 29,
+      "resolution": "not visible",
+      "aspectRatio": "not visible",
+      "workflow": "H3 Motion Context across 5 scenes; H3-generated voice; HyperFrames synced lyrics"
+    }
   }
 ]

@@ -18,6 +18,22 @@ Primary language: Chinese; English metadata and documentation are available.
 - /cases/x-pollo-commercial-comparison/: same-prompt MiniMax H3 and Seedance commercial comparison
 - /cases/x-mayii-ugc-commercial/: localized UGC advertising workflow using HyperFrames and MiniMax H3
 - /cases/x-soylab-person-replacement/: ComfyUI person-replacement experiment
+- /cases/x-yukyuk-h3-seedance-same-prompt/: same-prompt MiniMax H3 and Seedance 2 comparison
+- /cases/x-melvin-comfyui-rtx3090-local/: local ComfyUI generation benchmark on RTX 3090
+- /cases/x-coretan-eating-ramen-turbo-lora/: creator-verbatim one-line Eating Ramen prompt with Turbo LoRA
+- /cases/x-rsensui-local-audio-claude-code/: local H3 audio-video workflow using Claude Code
+- /cases/x-sada-hand-painted-blizzard/: creator-verbatim hand-painted blizzard survival prompt
+- /cases/x-tmaiaroto-krea-image-to-h3/: Krea 2 image-to-H3 workflow
+- /cases/x-opener-deep-sea-ui-comparison/: creator-verbatim deep-sea interface prompt and model comparison
+- /cases/x-megurosumi-minimax-h3-music-video/: long-form H3 music video experiment
+- /cases/x-o685463-comfyui-12step-tests/: local 12-step fluid and fur benchmark
+- /cases/x-sepisheim-ref2va-character-sheet/: Ref2VA character-sheet consistency benchmark
+- /cases/x-aion-flight-2k-astra-4k/: 2K H3 flight scene upscaled to 4K with Astra
+- /cases/x-toyxyz-i2v-turbo-lora/: ComfyUI I2V Turbo LoRA test
+- /cases/x-cia0-omni-nine-reference-film/: H3 Omni nine-reference film trailer
+- /cases/x-nsitnov-white-camellia-local-film/: six-shot local AI film workflow
+- /cases/x-aiconia-i2v-larry-turbo-h3-sage/: I2V acceleration and failure-signal benchmark
+- /cases/x-maki-motion-context-five-scene-mv/: five-scene Motion Context music-video workflow
 - https://github.com/SkyNotSilent/awesome-minimax-h3/blob/main/data/cases.json: machine-readable public cases with source and verification status
 - https://github.com/SkyNotSilent/awesome-minimax-h3/blob/main/data/templates.json: reusable Prompt-as-Code templates
 

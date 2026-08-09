@@ -5,7 +5,7 @@
 ### Curated MiniMax H3 / Hailuo 3.0 AI video prompts, examples, templates, and reproducible workflows
 
 [![Website](https://img.shields.io/badge/Live-H3_Field_Notes-d8ff3e?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/)
-[![Cases](https://img.shields.io/badge/public_cases-9-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
+[![Cases](https://img.shields.io/badge/public_cases-25-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
 [![CI](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml/badge.svg)](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg?style=flat-square)](./LICENSE)
 
@@ -44,7 +44,7 @@ The project combines a searchable visual website, Prompt-as-Code templates, a ma
 | FL2VA | Ramen Rack Focus | first-frame guidance, depth of field, group motion, ambience | [MiniMax reproducible script](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-fl2va-request.sh) |
 | Ref2VA | Follow the Wind | video editing, voice reference, lip sync, character consistency | [MiniMax reproducible script](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-ref2va-request.sh) |
 
-The catalog also includes six human-approved community cases discovered on X: a creator-verbatim time-freeze prompt, an image-guided textbook recreation, a layered music-video workflow, a same-prompt commercial comparison, a localized UGC workflow, and a person-replacement experiment. Community media remains on X; this project publishes structured notes and original-source links rather than re-hosting the videos.
+The catalog also includes 22 human-approved community cases discovered on X, spanning creator-verbatim prompts, local ComfyUI benchmarks, image and multimodal reference workflows, model comparisons, music videos, multi-shot films, native audio, and post-production pipelines. Community media remains on X; this project publishes structured notes and original-source links rather than re-hosting the videos.
 
 ## Discovery and review pipeline
 

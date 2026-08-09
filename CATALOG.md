@@ -9,6 +9,8 @@
 | [舰桥上的跃迁余震](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-t2va-request.sh) | 10s · 768p · 16:9 | `电影感` `运镜` `立体声` `多镜头` |
 | [餐厅时间冻结与逆向复原](https://x.com/icreat_ai/status/2085297962977227011) | 15s · 原帖 · 原帖 | `时间冻结` `逆向运动` `液体物理` `完整提示词` |
 | [同提示词广告模型对比](https://x.com/__spence_r/status/2085281251183747482) | 30s · 原帖 · 原帖 | `模型对比` `商业广告` `付费合作` `同提示词` |
+| [单句提示词：吃拉面](https://x.com/core_tan/status/2085551748874449032) | 10s · 原帖未标注 · 原帖未标注 | `作者提示词` `吃拉面` `Turbo LoRA` `本地生成` |
+| [手绘暴风雪求生](https://x.com/sada_ai/status/2085547332880503134) | 15s · 原帖未标注 · 原帖未标注 | `完整提示词` `手绘动画` `暴风雪` `电影灯光` |
 
 ## FL2VA
 
@@ -16,6 +18,10 @@
 | --- | --- | --- |
 | [拉面与家庭晚餐](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-fl2va-request.sh) | 8s · 768p · Auto | `首帧` `焦点转移` `群像` `环境音` |
 | [小学课本场景复刻](https://x.com/Yangtze_Seventh/status/2085305008602652971) | 15s · 原帖 · 原帖 | `图片定风格` `课本复刻` `音乐叙事` `工作流` |
+| [Krea 2 图片驱动 H3](https://x.com/tmaiaroto/status/2085543978611736973) | 5s · 原帖未标注 · 原帖未标注 | `图片生视频` `Krea 2` `工作流` `本地渲染` |
+| [深海生物百科交互界面](https://x.com/opener_ai/status/2085542413729513534) | 15s · 原帖未标注 · 16:9 | `完整提示词` `首帧参考` `交互 UI` `模型对比` |
+| [I2V Turbo LoRA 测试](https://x.com/toyxyz3/status/2086339956755329363) | 10s · 原帖未标注 · 原帖未标注 | `I2V` `Turbo LoRA` `ComfyUI` `10 秒` |
+| [Larry Turbo + H3 Sage 加速测试](https://x.com/AiPhotorealGirl/status/2086336598539747535) | 10s · 1MP before upscale · 原帖未标注 | `I2V` `Larry Turbo` `H3 Sage` `性能与缺陷` |
 
 ## Ref2VA
 
@@ -23,6 +29,8 @@
 | --- | --- | --- |
 | [粉色西装与黑色羔羊](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-ref2va-request.sh) | 5s · 768p · Auto | `视频编辑` `声音参考` `口型` `角色一致性` |
 | [人物替换实验](https://x.com/soy_lab/status/2085305126001225909) | 14s · 原帖 · 原帖 | `人物替换` `ComfyUI` `视频编辑` `版权角色` |
+| [Ref2VA 角色表一致性测试](https://x.com/sep_is_heim/status/2086344253496766502) | 5s · 576x832 · portrait | `Ref2VA` `角色表` `角色一致性` `RTX 4070` |
+| [九图参考 AI 电影预告](https://x.com/Cia0_exe/status/2086339725875699927) | 15s · 原帖未标注 · 原帖未标注 | `H3 Omni` `九图参考` `电影预告` `文字渲染` |
 
 ## Unknown
 
@@ -30,3 +38,11 @@
 | --- | --- | --- |
 | [分层构图音乐视频](https://x.com/tapehead_Lab/status/2085304883847258179) | 107s · 原帖 · 原帖 | `音乐视频` `分层构图` `Midjourney` `Suno` |
 | [跨平台 UGC 种草短片](https://x.com/Mayii0205/status/2085305063405220214) | 15s · 原帖 · 原帖 | `UGC` `种草视频` `本地化` `混合工作流` |
+| [同提示词 H3 与 Seedance 对比](https://x.com/YukYukID/status/2085553970702074050) | 15s · 原帖未标注 · 原帖未标注 | `同提示词` `模型对比` `Seedance 2` `15 秒` |
+| [RTX 3090 本地 ComfyUI 生成](https://x.com/melvindvivas/status/2085553403846078669) | 15s · 864x480 · 原帖未标注 | `本地生成` `ComfyUI` `RTX 3090` `性能测试` |
+| [Mac Studio 本地音视频生成](https://x.com/rsensui/status/2085551007631880347) | 37s · 原帖未标注 · 原帖未标注 | `本地生成` `原生音频` `Claude Code` `Mac Studio` |
+| [MiniMax H3 长篇音乐视频](https://x.com/megurosumi/status/2085535070102884729) | 137s · 原帖未标注 · 原帖未标注 | `音乐视频` `长篇视频` `AI Art` `社区实验` |
+| [本地 12 步流体与毛发测试](https://x.com/O685463/status/2086345324164161598) | 5s · 原帖未标注 · 原帖未标注 | `本地生成` `12 Steps` `流体测试` `毛发测试` |
+| [2K 飞行镜头至 4K 放大](https://x.com/AION_2077/status/2086341354469441828) | 15s · 2K H3 output, upscaled to 4K · 原帖未标注 | `飞行场景` `2K` `4K 放大` `Astra` |
+| [白山茶：六镜头本地短片](https://x.com/NsitnovSitnov/status/2086338366946123992) | 80s · 原帖未标注 · 原帖未标注 | `叙事短片` `六镜头` `本地工作流` `ElevenLabs` |
+| [五场景雨中东京 MV](https://x.com/hAru_mAki_ch/status/2086334052639142176) | 29s · 原帖未标注 · 原帖未标注 | `Motion Context` `五场景` `音乐视频` `HyperFrames` |
