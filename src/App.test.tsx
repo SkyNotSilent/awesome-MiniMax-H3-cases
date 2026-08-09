@@ -59,4 +59,26 @@ describe('case catalog', () => {
     expect(screen.getByText('九图参考 AI 电影预告')).toBeInTheDocument()
     expect(screen.queryByText('舰桥上的跃迁余震')).not.toBeInTheDocument()
   })
+
+  it('publishes the four-part H3 toolkit instead of a standalone weights link', () => {
+    render(<App />)
+    expect(screen.getByRole('link', { name: '工具链' })).toHaveAttribute('href', '#toolkit')
+    expect(screen.getByRole('link', { name: 'MiniMax-AI / MiniMax-H3：打开官方仓库' })).toHaveAttribute(
+      'href',
+      'https://github.com/MiniMax-AI/MiniMax-H3',
+    )
+    expect(screen.getByRole('link', { name: 'MiniMax-H3 Turbo LoRA：打开 Hugging Face' })).toHaveAttribute(
+      'href',
+      'https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora',
+    )
+    expect(screen.getByRole('link', { name: 'ComfyUI H3 Motion Context：打开续接节点' })).toHaveAttribute(
+      'href',
+      'https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context',
+    )
+    expect(screen.getByRole('link', { name: 'MiniMax H3 Audio T8：打开音频工作流' })).toHaveAttribute(
+      'href',
+      'https://github.com/T8mars/comfyui-minimax-h3-audio-T8',
+    )
+    expect(screen.queryByRole('link', { name: /模型权重/ })).not.toBeInTheDocument()
+  })
 })
