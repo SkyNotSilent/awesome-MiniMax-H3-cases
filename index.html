@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0a0b09" />
-    <meta name="description" content="MiniMax H3 / Hailuo 3.0 AI 视频案例、提示词模板与可复现工作流。覆盖文字生视频、首尾帧、全模态参考、运镜、原生音频和角色一致性。" />
-    <meta name="keywords" content="MiniMax H3,Hailuo 3.0,海螺 AI,AI video generation,video prompts,视频提示词,text to video,image to video,video to video,prompt engineering,T2VA,FL2VA,Ref2VA" />
+    <meta name="description" content="MiniMax H3 / Hailuo 3.0 AI 视频案例、提示词模板、部署教程与 ComfyUI 工具链。收录 H3 Skills、Turbo LoRA、长视频续接和音视频工作流。" />
+    <meta name="keywords" content="MiniMax H3,Hailuo 3.0,海螺 AI,MiniMax H3 部署,ComfyUI H3,h3-prompt-writing,MiniMax H3 Turbo LoRA,SageAttention,H3 Motion Context,H3 Audio,AI video generation,video prompts,视频提示词,T2VA,FL2VA,Ref2VA" />
     <meta name="robots" content="index,follow,max-image-preview:large,max-video-preview:-1" />
     <link rel="canonical" href="https://h3-field-notes-production.up.railway.app/" />
     <link rel="alternate" hreflang="zh-CN" href="https://h3-field-notes-production.up.railway.app/" />
@@ -14,7 +14,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="H3 Field Notes" />
     <meta property="og:title" content="Awesome MiniMax H3 — Hailuo 3.0 视频提示词案例库" />
-    <meta property="og:description" content="可筛选、可追溯、可复现的 MiniMax H3 AI 视频案例与 Prompt-as-Code 模板。" />
+    <meta property="og:description" content="可筛选、可追溯的 MiniMax H3 视频案例，以及 Skills、Turbo LoRA、ComfyUI 部署和音视频工作流。" />
     <meta property="og:url" content="https://h3-field-notes-production.up.railway.app/" />
     <meta property="og:image" content="https://h3-field-notes-production.up.railway.app/og-image.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -28,14 +28,36 @@
         "name": "Awesome MiniMax H3 / Hailuo 3.0 Video Prompt Library",
         "alternateName": "H3 Field Notes",
         "url": "https://h3-field-notes-production.up.railway.app/",
-        "description": "A source-attributed library of MiniMax H3 AI video examples, prompts, templates, and reproducible workflows.",
+        "description": "A source-attributed library of MiniMax H3 AI video examples, prompts, deployment guides, ComfyUI tools, and reproducible workflows.",
         "inLanguage": ["zh-CN", "en"],
         "isPartOf": {
           "@type": "WebSite",
           "name": "H3 Field Notes",
           "url": "https://h3-field-notes-production.up.railway.app/"
         },
-        "about": ["MiniMax H3", "Hailuo 3.0", "AI video generation", "video prompt engineering"]
+        "about": ["MiniMax H3", "Hailuo 3.0", "AI video generation", "video prompt engineering", "ComfyUI", "Turbo LoRA"],
+        "hasPart": [
+          {
+            "@type": "SoftwareSourceCode",
+            "name": "MiniMax H3 official repository and Agent Skills",
+            "codeRepository": "https://github.com/MiniMax-AI/MiniMax-H3"
+          },
+          {
+            "@type": "SoftwareSourceCode",
+            "name": "MiniMax-H3 Turbo LoRA",
+            "url": "https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora"
+          },
+          {
+            "@type": "SoftwareSourceCode",
+            "name": "ComfyUI H3 Motion Context",
+            "codeRepository": "https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context"
+          },
+          {
+            "@type": "SoftwareSourceCode",
+            "name": "MiniMax H3 Audio T8",
+            "codeRepository": "https://github.com/T8mars/comfyui-minimax-h3-audio-T8"
+          }
+        ]
       }
     </script>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0b09'/%3E%3Cpath d='M14 16h8v12h20V16h8v32h-8V36H22v12h-8z' fill='%23d8ff3e'/%3E%3C/svg%3E" />
