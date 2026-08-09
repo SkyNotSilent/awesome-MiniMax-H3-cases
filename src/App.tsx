@@ -15,6 +15,7 @@ import {
 import rawCases from '../data/cases.json'
 import rawTemplates from '../data/templates.json'
 import type { CaseMode, VideoCase } from './types'
+import { XPostEmbed } from './XPostEmbed'
 
 const cases = rawCases as VideoCase[]
 const templates = rawTemplates as PromptTemplate[]
@@ -256,7 +257,7 @@ function CaseCard({
           <Clock3 size={12} /> {item.duration}s
         </span>
         <span className="play-mark">
-          VIEW <ChevronRight size={14} />
+          {item.mediaUrl || item.sourceType === 'x' ? 'PLAY' : 'VIEW'} <ChevronRight size={14} />
         </span>
       </button>
       <div className="case-meta">
@@ -335,7 +336,7 @@ function Method() {
         <h2>不是热度榜。<br />是可验证的实验记录。</h2>
       </div>
       <div className="method-steps">
-        <MethodStep number="A" title="发现" text="监控 X 关键词与重点创作者，只保存原帖地址和公开元数据。" />
+        <MethodStep number="A" title="发现" text="监控 X 关键词与重点创作者，归档原帖地址和公开元数据，并通过官方嵌入播放器站内展示。" />
         <MethodStep number="B" title="低成本核验" text="规则先过滤，MiMo V2.5 Pro 处理文本；只有入围视频才交给 MiMo V2.5 多模态核验。" />
         <MethodStep number="C" title="人工归档" text="候选不会超时自动发布。审核合并后，再同步网站、GitHub 目录与 Agent Skill。" />
       </div>
@@ -405,10 +406,7 @@ function CaseDialog({ item, onClose }: { item: VideoCase; onClose: () => void })
           {item.mediaUrl ? (
             <video src={item.mediaUrl} poster={item.posterUrl} controls autoPlay playsInline />
           ) : (
-            <a className="external-media" href={item.sourceUrl} target="_blank" rel="noreferrer">
-              <img src={item.posterUrl} alt={`${item.title} 社区案例封面`} />
-              <span>在 X 查看原始视频 <ArrowUpRight size={16} /></span>
-            </a>
+            <XPostEmbed sourceUrl={item.sourceUrl} title={item.title} />
           )}
         </div>
         <div className="dialog-copy">
