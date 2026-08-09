@@ -7,7 +7,9 @@ export interface VideoCase {
   model: string
   mode: CaseMode
   summary: string
+  summaryEn: string
   prompt: string
+  promptEn?: string
   sourceUrl: string
   sourceLabel: string
   author: string

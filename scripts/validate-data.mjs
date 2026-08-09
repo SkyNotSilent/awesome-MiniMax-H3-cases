@@ -11,8 +11,14 @@ const errors = []
 
 for (const [index, item] of cases.entries()) {
   const at = `cases[${index}]`
-  for (const key of ['id', 'title', 'model', 'mode', 'prompt', 'sourceUrl', 'author', 'category', 'posterUrl']) {
+  for (const key of ['id', 'title', 'titleEn', 'summary', 'summaryEn', 'model', 'mode', 'prompt', 'sourceUrl', 'author', 'category', 'posterUrl']) {
     if (!item[key]) errors.push(`${at}.${key} is required`)
+  }
+  if (/[\u3400-\u9fff]/u.test(item.titleEn || '')) errors.push(`${at}.titleEn must not contain CJK text`)
+  if (/[\u3400-\u9fff]/u.test(item.summaryEn || '')) errors.push(`${at}.summaryEn must not contain CJK text`)
+  if (/[\u3400-\u9fff]/u.test(item.prompt || '')) {
+    if (!item.promptEn) errors.push(`${at}.promptEn is required when prompt contains CJK text`)
+    if (/[\u3400-\u9fff]/u.test(item.promptEn || '')) errors.push(`${at}.promptEn must not contain CJK text`)
   }
   if (ids.has(item.id)) errors.push(`${at}.id is duplicated: ${item.id}`)
   ids.add(item.id)

@@ -2,9 +2,9 @@
 
 # Awesome MiniMax H3
 
-### MiniMax H3 / 海螺 Hailuo 3.0 视频案例、提示词模板与可复现工作流
+### MiniMax H3 / 海螺 Hailuo 3.0 视频案例、提示词记录与可复现工作流
 
-[在线案例库](https://h3-field-notes-production.up.railway.app/) · [English](./README.md) · [案例目录](./CATALOG.md) · [参与贡献](./CONTRIBUTING.md)
+[在线案例库](https://h3-field-notes-production.up.railway.app/) · [工具链](https://h3-field-notes-production.up.railway.app/toolkit/) · [常见问题](https://h3-field-notes-production.up.railway.app/faq/) · [English](./README.md) · [参与贡献](./CONTRIBUTING.md)
 
 </div>
 
@@ -12,7 +12,7 @@
 
 Awesome MiniMax H3 是一个带来源追踪的开源 AI 视频提示词案例库，覆盖 **MiniMax H3**、**Hailuo 3.0**、文字生视频、首尾帧视频、全模态参考视频、视频编辑、原生音频、运镜、对白、口型与角色一致性等高意图检索词。
 
-项目由四部分组成：可筛选的网站、Prompt-as-Code 模板、机器可读数据，以及使用 Mac 登录态浏览器自动发现 X 案例的审核工作流。公开案例都保留原始来源和提示词来源类型；不确定内容只进入候选队列，不会超时自动发布。
+项目由三部分组成：案例优先的中英双语网站、机器可读数据，以及使用 Mac 登录态浏览器自动发现 X 案例的审核工作流。公开案例都保留原始来源和提示词来源类型；不确定内容只进入候选队列，不会超时自动发布。
 
 当前共有 25 个公开案例：3 个 MiniMax 官方可复现案例，以及 22 个经人工批准的 X 社区案例，覆盖完整提示词、本地 ComfyUI 性能测试、图片与多模态参考、模型对比、音乐视频、多镜头短片、原生音频和后期工作流。X 案例通过官方嵌入播放器在站内直接播放；确实无法嵌入时，可在留存许可记录后启用自托管兜底。
 
@@ -22,7 +22,6 @@ Awesome MiniMax H3 是一个带来源追踪的开源 AI 视频提示词案例库
 | --- | --- |
 | [可视化案例库](https://h3-field-notes-production.up.railway.app/) | 按生成模式、分类、风格、场景和关键词筛选 |
 | [`data/cases.json`](./data/cases.json) | 带来源与核验状态的结构化视频案例和提示词记录 |
-| [`data/templates.json`](./data/templates.json) | 从已核验案例提炼的可复用提示词模板 |
 | [`CATALOG.md`](./CATALOG.md) | GitHub 原生案例索引 |
 | [`agents/skills/minimax-h3-prompt-library`](./agents/skills/minimax-h3-prompt-library/) | 用于检索和改写提示词的 Agent Skill |
 
