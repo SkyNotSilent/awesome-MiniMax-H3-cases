@@ -2,10 +2,10 @@
 
 # Awesome MiniMax H3
 
-### Source-attributed MiniMax H3 / Hailuo 3.0 video cases and verbatim public prompts
+### Watch MiniMax H3 video examples; copy prompts only when creators publish them
 
 [![Website](https://img.shields.io/badge/Live-H3_Field_Notes-d8ff3e?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/)
-[![Cases](https://img.shields.io/badge/public_cases-148-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
+[![Cases](https://img.shields.io/badge/public_cases-227-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
 [![CI](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml/badge.svg)](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg?style=flat-square)](./LICENSE)
 
@@ -15,7 +15,7 @@
 
 ![H3 Field Notes website](./public/og-image.jpg)
 
-Awesome MiniMax H3 is an open, source-attributed library for **MiniMax H3**, also searched as **Hailuo 3.0**. It puts real public video cases first, spanning text-to-video, first/last-frame video generation, multimodal reference video editing, synchronized audio, camera movement, dialogue, and character consistency.
+Awesome MiniMax H3 is a bilingual, source-attributed gallery of **MiniMax H3 video examples** from X and official public scripts. It is also useful for searches around **Hailuo H3 / Hailuo 3.0**, **MiniMax H3 prompts**, **MiniMax H3 ComfyUI workflows**, T2VA, FL2VA, Ref2VA, native audio, camera movement, dialogue, and character consistency.
 
 The project combines a case-first bilingual website, a machine-readable dataset, and a browser-first X discovery workflow. Every public case keeps its original source. A prompt is shown only when the creator or an official public script published that exact text; otherwise the case explicitly records that no public prompt is available. The project never generates, rewrites, reconstructs, reverse-engineers, or decomposes prompts from a video. Uncertain discoveries stay in a review queue.
 
@@ -29,7 +29,16 @@ The project combines a case-first bilingual website, a machine-readable dataset,
 | [`agents/skills/minimax-h3-prompt-library`](./agents/skills/minimax-h3-prompt-library/) | Agent Skill for finding cases and retrieving verbatim public prompts; it does not write prompts |
 | [`docs/DISCOVERY_WORKFLOW.md`](./docs/DISCOVERY_WORKFLOW.md) | Browser-based X discovery, deduplication, review, and attribution rules |
 
-## H3 toolkit and deployment guides
+## Browse by intent
+
+| Intent | Best entry point |
+| --- | --- |
+| Watch MiniMax H3 / Hailuo H3 video examples | [English visual case library](https://h3-field-notes-production.up.railway.app/en/) |
+| Find creator-published MiniMax H3 prompts | [`data/cases.json`](./data/cases.json) and [`llms-full.txt`](./public/llms-full.txt) |
+| Compare T2VA, FL2VA, and Ref2VA | [`CATALOG.md`](./CATALOG.md) |
+| Set up MiniMax H3 with ComfyUI or acceleration tools | [Tutorials and deployment resources](https://h3-field-notes-production.up.railway.app/en/toolkit/) |
+
+## H3 tutorials and deployment guides
 
 | Resource | Start here for | Link |
 | --- | --- | --- |
@@ -54,7 +63,7 @@ A practical acceleration starting point is **Turbo LoRA + SageAttention**. EasyC
 | FL2VA | Ramen Rack Focus | [MiniMax public script](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-fl2va-request.sh) |
 | Ref2VA | Follow the Wind | [MiniMax public script](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-ref2va-request.sh) |
 
-The catalog now contains 148 public cases: three official reproducible examples and 145 source-attributed X community cases. Sixteen records preserve verbatim prompts published by an official source or creator; every other entry explicitly marks the prompt as not published. The collection spans local ComfyUI benchmarks, image and multimodal reference workflows, model comparisons, music videos, multi-shot films, native audio, and post-production pipelines. X cases play inside the catalog through the official X embed. Permission-cleared media may use a hosted fallback when an embed is unavailable.
+The catalog now contains 227 public cases: three official reproducible examples and 224 source-attributed X community cases. Seventeen records preserve verbatim prompts published by an official source or creator; every other entry explicitly marks the prompt as not published. The collection spans local ComfyUI benchmarks, image and multimodal reference workflows, model comparisons, music videos, multi-shot films, native audio, and post-production pipelines. X cases play inside the catalog through the official X embed. Permission-cleared media may use a hosted fallback when an embed is unavailable.
 
 ## Discovery and review pipeline
 

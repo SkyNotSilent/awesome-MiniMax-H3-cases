@@ -7,6 +7,52 @@ const baseUrl = (process.env.PUBLIC_SITE_URL || 'https://h3-field-notes-producti
 const cases = JSON.parse(await readFile(resolve(root, 'data/cases.json'), 'utf8'))
 
 const locales = ['zh-CN', 'en']
+const latestPublishedDate = cases
+  .map((item) => item.approvedAt ?? item.publishedAt)
+  .filter(Boolean)
+  .sort()
+  .at(-1)
+  ?.slice(0, 10)
+
+const toolkitResources = [
+  {
+    name: 'MiniMax H3 official repository and Agent Skills',
+    nameZh: 'MiniMax H3 官方仓库与 Agent Skills',
+    url: 'https://github.com/MiniMax-AI/MiniMax-H3',
+  },
+  {
+    name: 'MiniMax H3 Turbo LoRA',
+    nameZh: 'MiniMax H3 Turbo LoRA 加速',
+    url: 'https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora',
+  },
+  {
+    name: 'ComfyUI H3 Motion Context',
+    nameZh: 'ComfyUI H3 长视频续接',
+    url: 'https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context',
+  },
+  {
+    name: 'MiniMax H3 Audio T8 workflows',
+    nameZh: 'MiniMax H3 Audio T8 音视频工作流',
+    url: 'https://github.com/T8mars/comfyui-minimax-h3-audio-T8',
+  },
+]
+
+const faqItems = {
+  'zh-CN': [
+    ['这个项目收录什么？', '收录带原始来源、可在站内观看的 MiniMax H3 视频案例。'],
+    ['为什么有些案例没有 Prompt？', '只有原帖逐字公开完整 Prompt 时才展示；未公开时不会反推、补写或改写。'],
+    ['视频如何播放？', '社区案例优先使用官方 X 嵌入播放器，并在播放器载入前显示独立封面。'],
+    ['候选案例会自动发布吗？', '不会。候选必须经过来源、模型标注、Prompt 来源和媒体元数据审核。'],
+    ['如何请求纠错或移除？', '请在 GitHub 提交 Issue，并附上原帖或权利证明。'],
+  ],
+  en: [
+    ['What does this project collect?', 'Source-attributed MiniMax H3 video examples that can be watched inside the library.'],
+    ['Why do some examples have no prompt?', 'A prompt appears only when the original post publishes the complete text. Missing prompts are never inferred, completed, or rewritten.'],
+    ['How are videos played?', 'Community examples use the official X embed, with a case-specific cover shown while the player loads.'],
+    ['Are discovered examples published automatically?', 'No. Sources, model labels, prompt provenance, and media metadata are reviewed before publication.'],
+    ['How can a creator request a correction or removal?', 'Open a GitHub Issue and include the original post or proof of ownership.'],
+  ],
+}
 
 const pageDefinitions = [
   {
@@ -15,14 +61,14 @@ const pageDefinitions = [
     schemaType: 'CollectionPage',
     copy: {
       'zh-CN': {
-        title: 'MiniMax H3 视频案例库 — H3 Field Notes',
-        description: '可筛选、可追溯、可站内观看的 MiniMax H3 / Hailuo 3.0 真实视频案例库；Prompt 仅在来源公开时按原文呈现。',
-        keywords: 'MiniMax H3 视频案例,Hailuo 3.0,海螺 3.0,AI 视频案例,公开 Prompt,T2VA,FL2VA,Ref2VA',
+        title: 'MiniMax H3 视频案例与公开 Prompt — H3 Field Notes',
+        description: `收录 ${cases.length} 个可筛选、可追溯、可站内观看的 MiniMax H3 视频案例；Prompt 仅在原作者公开完整文本时按原文呈现。`,
+        keywords: 'MiniMax H3 视频案例,MiniMax H3 Prompt,Hailuo 3.0,海螺 AI,H3 ComfyUI,AI 视频案例,T2VA,FL2VA,Ref2VA',
       },
       en: {
-        title: 'MiniMax H3 Video Case Library — H3 Field Notes',
-        description: 'A searchable, source-attributed library of real MiniMax H3 and Hailuo 3.0 video examples. Prompts appear only when published by the source.',
-        keywords: 'MiniMax H3 video examples,Hailuo 3.0,AI video cases,published prompts,T2VA,FL2VA,Ref2VA',
+        title: 'MiniMax H3 Video Examples & Public Prompts — H3 Field Notes',
+        description: `Browse ${cases.length} source-attributed MiniMax H3 video examples with in-site playback. Prompts appear verbatim only when creators publish the complete text.`,
+        keywords: 'MiniMax H3 video examples,MiniMax H3 prompts,Hailuo H3,Hailuo 3.0,MiniMax H3 ComfyUI,AI video cases,T2VA,FL2VA,Ref2VA',
       },
     },
   },
@@ -32,12 +78,12 @@ const pageDefinitions = [
     schemaType: 'CollectionPage',
     copy: {
       'zh-CN': {
-        title: 'MiniMax H3 工具链与部署资源 — H3 Field Notes',
+        title: 'MiniMax H3 教程与部署资源 — H3 Field Notes',
         description: 'MiniMax H3 官方 Skills、Turbo LoRA、ComfyUI 长视频续接与音视频工作流的精选部署资源。',
         keywords: 'MiniMax H3 部署,ComfyUI H3,h3-prompt-writing,MiniMax H3 Turbo LoRA,SageAttention,H3 Motion Context,H3 Audio',
       },
       en: {
-        title: 'MiniMax H3 Toolkit and Deployment Resources — H3 Field Notes',
+        title: 'MiniMax H3 Tutorials and Deployment Resources — H3 Field Notes',
         description: 'Curated MiniMax H3 resources for official Skills, Turbo LoRA acceleration, ComfyUI clip chaining, and audio-video workflows.',
         keywords: 'MiniMax H3 deployment,ComfyUI H3,h3-prompt-writing,MiniMax H3 Turbo LoRA,SageAttention,H3 Motion Context,H3 Audio',
       },
@@ -46,7 +92,7 @@ const pageDefinitions = [
   {
     id: 'faq',
     paths: { 'zh-CN': '/faq/', en: '/en/faq/' },
-    schemaType: 'WebPage',
+    schemaType: 'FAQPage',
     copy: {
       'zh-CN': {
         title: 'MiniMax H3 视频案例库常见问题 — H3 Field Notes',
@@ -151,6 +197,12 @@ const isoDuration = (seconds) => `PT${seconds}S`
 const localeCode = (locale) => locale === 'en' ? 'en_US' : 'zh_CN'
 const otherLocale = (locale) => locale === 'en' ? 'zh-CN' : 'en'
 const casePath = (locale, id) => `${locale === 'en' ? '/en' : ''}/cases/${encodeURIComponent(id)}/`
+const compactWhitespace = (value) => String(value).replace(/\s+/g, ' ').trim()
+const truncateMeta = (value, maxLength = 155) => {
+  const normalized = compactWhitespace(value)
+  if (normalized.length <= maxLength) return normalized
+  return `${normalized.slice(0, maxLength - 1).replace(/\s+\S*$/, '') || normalized.slice(0, maxLength - 1)}…`
+}
 
 function assertLanguageIsolation(html, locale, path) {
   const interfaceOnly = html.replace(/<pre data-verbatim-prompt>[\s\S]*?<\/pre>/g, '')
@@ -232,24 +284,93 @@ function alternateSitemapLinks(paths) {
 function appStructuredData(page, locale) {
   const canonical = absolute(page.paths[locale])
   const copy = page.copy[locale]
-  return {
-    '@context': 'https://schema.org',
+  const websiteId = `${baseUrl}/#website`
+  const pageNode = {
     '@type': page.schemaType,
+    '@id': `${canonical}#page`,
     name: copy.title,
     description: copy.description,
     url: canonical,
     inLanguage: locale,
-    isPartOf: {
-      '@type': 'WebSite',
-      name: 'H3 Field Notes',
-      url: `${baseUrl}/`,
-    },
-    about: ['MiniMax H3', 'Hailuo 3.0', 'AI video generation'],
+    isPartOf: { '@id': websiteId },
+    about: ['MiniMax H3', 'Hailuo H3', 'Hailuo 3.0', 'AI video generation'],
   }
+
+  if (page.id === 'catalog') {
+    pageNode.numberOfItems = cases.length
+    pageNode.mainEntity = {
+      '@type': 'ItemList',
+      numberOfItems: cases.length,
+      itemListElement: cases.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: localizedCase(item, locale).title,
+        url: absolute(casePath(locale, item.id)),
+      })),
+    }
+  }
+
+  if (page.id === 'toolkit') {
+    pageNode.mainEntity = {
+      '@type': 'ItemList',
+      numberOfItems: toolkitResources.length,
+      itemListElement: toolkitResources.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: locale === 'en' ? item.name : item.nameZh,
+        url: item.url,
+      })),
+    }
+  }
+
+  if (page.id === 'faq') {
+    pageNode.mainEntity = faqItems[locale].map(([question, answer]) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: { '@type': 'Answer', text: answer },
+    }))
+  }
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        '@id': websiteId,
+        name: 'H3 Field Notes',
+        alternateName: 'Awesome MiniMax H3',
+        url: `${baseUrl}/`,
+        inLanguage: ['zh-CN', 'en'],
+      },
+      pageNode,
+    ],
+  }
+}
+
+function fallbackMarkup(page, locale) {
+  const copy = page.copy[locale]
+  const languageLink = page.paths[otherLocale(locale)]
+  const languageLabel = locale === 'en' ? 'ZH' : 'English'
+  let content
+
+  if (page.id === 'catalog') {
+    const links = cases.map((item) => {
+      const localized = localizedCase(item, locale)
+      return `<li><a href="${casePath(locale, item.id)}">${escapeHtml(localized.title)}</a><small>${escapeHtml(item.mode)} · ${escapeHtml(localized.author)}</small></li>`
+    }).join('')
+    content = `<p><strong>${cases.length}</strong> ${escapeHtml(locale === 'en' ? 'published video examples' : '个已发布视频案例')}</p><ol>${links}</ol>`
+  } else if (page.id === 'toolkit') {
+    content = `<ul>${toolkitResources.map((item) => `<li><a href="${escapeHtml(item.url)}">${escapeHtml(locale === 'en' ? item.name : item.nameZh)}</a></li>`).join('')}</ul>`
+  } else {
+    content = faqItems[locale].map(([question, answer]) => `<article><h2>${escapeHtml(question)}</h2><p>${escapeHtml(answer)}</p></article>`).join('')
+  }
+
+  return `<main class="seo-fallback"><nav><a href="${escapeHtml(languageLink)}" hreflang="${otherLocale(locale)}">${escapeHtml(languageLabel)}</a></nav><h1>${escapeHtml(copy.title)}</h1><p>${escapeHtml(copy.description)}</p>${content}</main>`
 }
 
 function renderAppShell(page, locale, assetTags) {
   const copy = page.copy[locale]
+  const description = truncateMeta(copy.description)
   const canonical = absolute(page.paths[locale])
   const alternateOgLocale = localeCode(otherLocale(locale))
   return `<!doctype html>
@@ -258,7 +379,7 @@ function renderAppShell(page, locale, assetTags) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0a0b09" />
-    <meta name="description" content="${escapeHtml(copy.description)}" />
+    <meta name="description" content="${escapeHtml(description)}" />
     <meta name="keywords" content="${escapeHtml(copy.keywords)}" />
     <meta name="robots" content="index,follow,max-image-preview:large,max-video-preview:-1" />
     <link rel="canonical" href="${canonical}" />
@@ -269,20 +390,26 @@ ${alternateHeadLinks(page.paths)}
     <meta property="og:locale" content="${localeCode(locale)}" />
     <meta property="og:locale:alternate" content="${alternateOgLocale}" />
     <meta property="og:title" content="${escapeHtml(copy.title)}" />
-    <meta property="og:description" content="${escapeHtml(copy.description)}" />
+    <meta property="og:description" content="${escapeHtml(description)}" />
     <meta property="og:url" content="${canonical}" />
     <meta property="og:image" content="${baseUrl}/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="${escapeHtml(copy.title)}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${escapeHtml(copy.title)}" />
-    <meta name="twitter:description" content="${escapeHtml(copy.description)}" />
+    <meta name="twitter:description" content="${escapeHtml(description)}" />
     <meta name="twitter:image" content="${baseUrl}/og-image.jpg" />
+    <meta name="twitter:image:alt" content="${escapeHtml(copy.title)}" />
     <script type="application/ld+json">${jsonForHtml(appStructuredData(page, locale))}</script>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0b09'/%3E%3Cpath d='M14 16h8v12h20V16h8v32h-8V36H22v12h-8z' fill='%23d8ff3e'/%3E%3C/svg%3E" />
     <title>${escapeHtml(copy.title)}</title>
+    <style>.seo-fallback{max-width:1080px;margin:auto;padding:40px 20px 80px;font:16px/1.6 system-ui,sans-serif}.seo-fallback nav{text-align:right}.seo-fallback h1{max-width:900px;font-size:clamp(2.2rem,7vw,5rem);line-height:1}.seo-fallback ol{columns:2;gap:32px;padding-left:1.5rem}.seo-fallback li{break-inside:avoid;margin:.65rem 0}.seo-fallback li small{display:block;color:#666}@media(max-width:720px){.seo-fallback ol{columns:1}}</style>
 ${assetTags.map((tag) => `    ${tag}`).join('\n')}
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">${fallbackMarkup(page, locale)}</div>
     <noscript>${escapeHtml(locale === 'en' ? 'JavaScript is required to browse this video library.' : '浏览此视频案例库需要启用 JavaScript。')}</noscript>
   </body>
 </html>
@@ -312,39 +439,43 @@ function renderCasePage(item, locale) {
   const alternate = absolute(paths[otherLocale(locale)])
   const poster = absolute(item.posterUrl)
   const hasHostedVideo = Boolean(item.mediaUrl)
+  const description = truncateMeta(copy.summary)
   const keywords = [
     'MiniMax H3', 'Hailuo 3.0', 'AI video generation',
     item.mode, item.category, ...copy.tags,
+    item.promptProvenance === 'not-published' ? 'source-attributed video example' : 'public MiniMax H3 prompt',
   ].join(', ')
-  const structuredData = hasHostedVideo
-    ? {
-        '@context': 'https://schema.org',
-        '@type': 'VideoObject',
-        name: copy.title,
-        description: copy.summary,
-        thumbnailUrl: [poster],
-        uploadDate: item.publishedAt,
-        duration: isoDuration(item.duration),
-        contentUrl: item.mediaUrl,
-        embedUrl: canonical,
-        creator: { '@type': 'Organization', name: copy.author },
-        inLanguage: locale,
-        isFamilyFriendly: true,
-        keywords,
-      }
-    : {
-        '@context': 'https://schema.org',
-        '@type': 'Article',
-        headline: copy.title,
-        description: copy.summary,
-        image: [poster],
-        datePublished: item.publishedAt,
-        author: { '@type': 'Person', name: copy.author },
-        mainEntityOfPage: canonical,
-        citation: item.sourceUrl,
-        inLanguage: locale,
-        keywords,
-      }
+  const videoObject = {
+    '@type': 'VideoObject',
+    '@id': `${canonical}#video`,
+    name: copy.title,
+    description: copy.summary,
+    thumbnailUrl: [poster],
+    uploadDate: item.publishedAt,
+    duration: isoDuration(item.duration),
+    embedUrl: canonical,
+    creator: { '@type': item.sourceType === 'official' ? 'Organization' : 'Person', name: copy.author },
+    inLanguage: locale,
+    isFamilyFriendly: true,
+    keywords,
+    isBasedOn: item.sourceUrl,
+    sameAs: item.sourceUrl,
+    ...(hasHostedVideo ? { contentUrl: item.mediaUrl } : {}),
+  }
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      videoObject,
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonical}#breadcrumb`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: labels.siteDescription, item: absolute(locale === 'en' ? '/en/' : '/') },
+          { '@type': 'ListItem', position: 2, name: copy.title, item: canonical },
+        ],
+      },
+    ],
+  }
   const videoMeta = hasHostedVideo
     ? `  <meta property="og:video" content="${escapeHtml(item.mediaUrl)}" />
   <meta property="og:video:type" content="video/mp4" />`
@@ -361,33 +492,37 @@ function renderCasePage(item, locale) {
   <pre data-verbatim-prompt>${escapeHtml(copy.prompt)}</pre>`
     : `<p class="prompt-notice prompt-unavailable"><strong>${escapeHtml(labels.promptUnavailableTitle)}</strong><br>${escapeHtml(labels.promptUnavailableDetail)}</p>`
   const localeTitleSuffix = locale === 'en'
-    ? 'MiniMax H3 / Hailuo 3.0 video case'
-    : 'MiniMax H3 / Hailuo 3.0 视频案例'
+    ? 'MiniMax H3 video example'
+    : 'MiniMax H3 视频案例'
+  const documentTitle = truncateMeta(`${copy.title} — ${localeTitleSuffix}`, 62)
 
   return `<!doctype html>
 <html lang="${locale}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>${escapeHtml(copy.title)} — ${localeTitleSuffix}</title>
-  <meta name="description" content="${escapeHtml(copy.summary)}" />
+  <title>${escapeHtml(documentTitle)}</title>
+  <meta name="description" content="${escapeHtml(description)}" />
   <meta name="keywords" content="${escapeHtml(keywords)}" />
   <meta name="robots" content="index,follow,max-image-preview:large,max-video-preview:-1" />
   <link rel="canonical" href="${canonical}" />
 ${alternateHeadLinks(paths)}
-  <meta property="og:type" content="${hasHostedVideo ? 'video.other' : 'article'}" />
+  <meta property="og:type" content="video.other" />
   <meta property="og:site_name" content="H3 Field Notes" />
   <meta property="og:locale" content="${localeCode(locale)}" />
   <meta property="og:locale:alternate" content="${localeCode(otherLocale(locale))}" />
   <meta property="og:title" content="${escapeHtml(`${copy.title} — MiniMax H3`)}" />
-  <meta property="og:description" content="${escapeHtml(copy.summary)}" />
+  <meta property="og:description" content="${escapeHtml(description)}" />
   <meta property="og:url" content="${canonical}" />
   <meta property="og:image" content="${escapeHtml(poster)}" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:alt" content="${escapeHtml(`${copy.title} — ${labels.coverAlt}`)}" />
 ${videoMeta}
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="${escapeHtml(`${copy.title} — MiniMax H3`)}" />
-  <meta name="twitter:description" content="${escapeHtml(copy.summary)}" />
+  <meta name="twitter:description" content="${escapeHtml(description)}" />
   <meta name="twitter:image" content="${escapeHtml(poster)}" />
+  <meta name="twitter:image:alt" content="${escapeHtml(`${copy.title} — ${labels.coverAlt}`)}" />
   <script type="application/ld+json">${jsonForHtml(structuredData)}</script>
   <style>${casePageStyle}</style>
   ${hasHostedVideo ? '' : '<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'}
@@ -441,6 +576,7 @@ for (const item of cases) {
 function sitemapPageEntry(page, locale) {
   return `  <url>
     <loc>${escapeHtml(absolute(page.paths[locale]))}</loc>
+    <lastmod>${escapeHtml(latestPublishedDate)}</lastmod>
 ${alternateSitemapLinks(page.paths)}
   </url>`
 }
@@ -451,20 +587,23 @@ function sitemapCaseEntry(item, locale) {
     'zh-CN': casePath('zh-CN', item.id),
     en: casePath('en', item.id),
   }
-  const video = item.mediaUrl
-    ? `
+  const videoLocation = item.mediaUrl
+    ? `<video:content_loc>${escapeHtml(item.mediaUrl)}</video:content_loc>`
+    : `<video:player_loc allow_embed="yes">${escapeHtml(absolute(paths[locale]))}</video:player_loc>`
+  const video = `
     <video:video>
       <video:thumbnail_loc>${escapeHtml(absolute(item.posterUrl))}</video:thumbnail_loc>
       <video:title>${escapeHtml(`${copy.title} — MiniMax H3`)}</video:title>
       <video:description>${escapeHtml(copy.summary)}</video:description>
-      <video:content_loc>${escapeHtml(item.mediaUrl)}</video:content_loc>
+      ${videoLocation}
       <video:duration>${item.duration}</video:duration>
       <video:publication_date>${escapeHtml(item.publishedAt)}</video:publication_date>
+      <video:uploader info="${escapeHtml(item.sourceUrl)}">${escapeHtml(copy.author)}</video:uploader>
       <video:family_friendly>yes</video:family_friendly>
     </video:video>`
-    : ''
   return `  <url>
     <loc>${escapeHtml(absolute(paths[locale]))}</loc>
+    <lastmod>${escapeHtml((item.approvedAt ?? item.publishedAt).slice(0, 10))}</lastmod>
 ${alternateSitemapLinks(paths)}${video}
   </url>`
 }
@@ -479,4 +618,12 @@ ${sitemapEntries}
 </urlset>\n`
 await writeFile(resolve(dist, 'sitemap.xml'), sitemap)
 await writeFile(resolve(dist, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${baseUrl}/sitemap.xml\n`)
-console.log(`Generated ${pageDefinitions.length * locales.length} app routes, ${cases.length * locales.length} localized case pages, and a bilingual sitemap for ${baseUrl}.`)
+
+const notFoundCopy = {
+  'zh-CN': ['页面不存在', '这个地址没有对应页面。', '返回案例库'],
+  en: ['Page not found', 'There is no page at this address.', 'Back to the case library'],
+}
+const notFoundHtml = `<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow"><title>404 — H3 Field Notes</title><style>body{margin:0;background:#0a0b09;color:#f5f5ed;font:16px/1.6 system-ui,sans-serif}main{max-width:760px;margin:15vh auto;padding:24px}h1{font-size:clamp(3rem,12vw,8rem);margin:0;color:#d8ff3e}a{color:#d8ff3e}</style></head><body><main><p>404</p><h1>${notFoundCopy['zh-CN'][0]}</h1><p>${notFoundCopy['zh-CN'][1]}</p><p><a href="/">${notFoundCopy['zh-CN'][2]}</a> · <a href="/en/">${notFoundCopy.en[2]}</a></p></main></body></html>`
+await writeFile(resolve(dist, '404.html'), notFoundHtml)
+
+console.log(`Generated ${pageDefinitions.length * locales.length} app routes, ${cases.length * locales.length} localized case pages, ${cases.length * locales.length} video sitemap entries, and a strict 404 page for ${baseUrl}.`)

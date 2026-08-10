@@ -1,59 +1,51 @@
-# H3 Field Notes / Awesome MiniMax H3
+# H3 Field Notes — Awesome MiniMax H3
 
-> A source-attributed library of real MiniMax H3 / Hailuo 3.0 video cases and verbatim prompts published by creators or official public scripts.
+> A bilingual, source-attributed library of MiniMax H3 video examples. Videos are playable through their original source, and prompts appear only when creators or official scripts publish the complete text.
 
-Canonical website: https://h3-field-notes-production.up.railway.app/
-Public repository: https://github.com/SkyNotSilent/awesome-minimax-h3
-Primary language: Chinese; English metadata and documentation are available.
+## Library snapshot
 
-## Core resources
+- 227 published MiniMax H3 video examples
+- 3 official reproducible examples
+- 224 source-attributed X community examples
+- 17 examples with verbatim public prompts
+- Missing prompts are never inferred, reconstructed, translated into an alleged original, or completed
 
-- /: searchable visual MiniMax H3 video case library
-- /cases/official-t2va-starship/: verified T2VA text-to-video example with synchronized audio
-- /cases/official-fl2va-ramen/: verified FL2VA first-frame video example with rack focus
-- /cases/official-ref2va-lamb/: verified Ref2VA multimodal video editing example with voice reference
-- /cases/x-icreat-time-freeze-diner/: creator-verbatim cinematic time-freeze and reverse-motion prompt
-- /cases/x-yangtze-textbook-recreation/: image-guided textbook-scene recreation
-- /cases/x-tapehead-composition-mv/: Suno, Midjourney, and MiniMax H3 music-video workflow
-- /cases/x-pollo-commercial-comparison/: same-prompt MiniMax H3 and Seedance commercial comparison
-- /cases/x-mayii-ugc-commercial/: localized UGC advertising workflow using HyperFrames and MiniMax H3
-- /cases/x-soylab-person-replacement/: ComfyUI person-replacement experiment
-- /cases/x-yukyuk-h3-seedance-same-prompt/: same-prompt MiniMax H3 and Seedance 2 comparison
-- /cases/x-melvin-comfyui-rtx3090-local/: local ComfyUI generation benchmark on RTX 3090
-- /cases/x-coretan-eating-ramen-turbo-lora/: creator-verbatim one-line Eating Ramen prompt with Turbo LoRA
-- /cases/x-rsensui-local-audio-claude-code/: local H3 audio-video workflow using Claude Code
-- /cases/x-sada-hand-painted-blizzard/: creator-verbatim hand-painted blizzard survival prompt
-- /cases/x-tmaiaroto-krea-image-to-h3/: Krea 2 image-to-H3 workflow
-- /cases/x-opener-deep-sea-ui-comparison/: creator-verbatim deep-sea interface prompt and model comparison
-- /cases/x-megurosumi-minimax-h3-music-video/: long-form H3 music video experiment
-- /cases/x-o685463-comfyui-12step-tests/: local 12-step fluid and fur benchmark
-- /cases/x-sepisheim-ref2va-character-sheet/: Ref2VA character-sheet consistency benchmark
-- /cases/x-aion-flight-2k-astra-4k/: 2K H3 flight scene upscaled to 4K with Astra
-- /cases/x-toyxyz-i2v-turbo-lora/: ComfyUI I2V Turbo LoRA test
-- /cases/x-cia0-omni-nine-reference-film/: H3 Omni nine-reference film trailer
-- /cases/x-nsitnov-white-camellia-local-film/: six-shot local AI film workflow
-- /cases/x-aiconia-i2v-larry-turbo-h3-sage/: I2V acceleration and failure-signal benchmark
-- /cases/x-maki-motion-context-five-scene-mv/: five-scene Motion Context music-video workflow
-- https://github.com/SkyNotSilent/awesome-minimax-h3/blob/main/data/cases.json: machine-readable public cases with source and verification status
-- https://github.com/SkyNotSilent/awesome-minimax-h3/tree/main/agents/skills/minimax-h3-prompt-library: case and verbatim-public-prompt lookup skill; no prompt generation
+## Primary routes
 
-## H3 toolkit and deployment resources
+- https://h3-field-notes-production.up.railway.app/ — Chinese case library
+- https://h3-field-notes-production.up.railway.app/en/ — English case library
+- https://h3-field-notes-production.up.railway.app/toolkit/ — tutorials and deployment resources
+- https://h3-field-notes-production.up.railway.app/en/toolkit/ — English tutorials and deployment resources
+- https://h3-field-notes-production.up.railway.app/faq/ — source, prompt, playback, and review policy
+- https://h3-field-notes-production.up.railway.app/llms-full.txt — complete machine-readable case index
+- https://github.com/SkyNotSilent/awesome-minimax-h3/blob/main/data/cases.json — source dataset
 
-- https://github.com/MiniMax-AI/MiniMax-H3: official weights, deployment documentation, and nine bundled Agent Skills including h3-prompt-writing
-- https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora: 4–8 step synchronized audio-video acceleration LoRA for ComfyUI
-- https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context: long-video clip chaining with motion and audio continuity
-- https://github.com/T8mars/comfyui-minimax-h3-audio-T8: native H3 audio conditioning, sampling, mixing, trimming, and Ref2VA nodes
+## Representative examples
 
-## Terminology
+- https://h3-field-notes-production.up.railway.app/en/cases/official-t2va-starship/ — After the Fleet Jumps; T2VA; official-verbatim; source: https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-t2va-request.sh
+- https://h3-field-notes-production.up.railway.app/en/cases/official-fl2va-ramen/ — Ramen Rack Focus; FL2VA; official-verbatim; source: https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-fl2va-request.sh
+- https://h3-field-notes-production.up.railway.app/en/cases/official-ref2va-lamb/ — Follow the Wind; Ref2VA; official-verbatim; source: https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-ref2va-request.sh
+- https://h3-field-notes-production.up.railway.app/en/cases/x-icreat-time-freeze-diner/ — The Diner That Rewinds; T2VA; creator-verbatim; source: https://x.com/icreat_ai/status/2085297962977227011
+- https://h3-field-notes-production.up.railway.app/en/cases/x-coretan-eating-ramen-turbo-lora/ — One-Line Prompt: Eating Ramen; T2VA; creator-verbatim; source: https://x.com/core_tan/status/2085551748874449032
+- https://h3-field-notes-production.up.railway.app/en/cases/x-sada-hand-painted-blizzard/ — Hand-Painted Blizzard Survival; T2VA; creator-verbatim; source: https://x.com/sada_ai/status/2085547332880503134
+- https://h3-field-notes-production.up.railway.app/en/cases/x-opener-deep-sea-ui-comparison/ — Interactive Deep-Sea Bestiary UI; FL2VA; creator-verbatim; source: https://x.com/opener_ai/status/2085542413729513534
+- https://h3-field-notes-production.up.railway.app/en/cases/x-aion-cloud-head-subway/ — Cloud-Head Subway Transformation; Ref2VA; creator-verbatim; source: https://x.com/AION_2077/status/2086595652692427042
+- https://h3-field-notes-production.up.railway.app/en/cases/x-endfolding-rainy-bar-comparison/ — Rainy Bar Continuous-Tracking Comparison; Ref2VA; creator-verbatim; source: https://x.com/EndFolding79421/status/2086584639091536239
+- https://h3-field-notes-production.up.railway.app/en/cases/x-koda-suno-beat-synced-five-environments/ — Suno Beat-Synced Character Montage Across Five Environments; Ref2VA; creator-verbatim; source: https://x.com/aimikoda/status/2086553240448241802
+- https://h3-field-notes-production.up.railway.app/en/cases/x-ivan-space-cruise-black-hole-pov/ — Handheld Space-Cruise POV at a Black Hole; T2VA; creator-verbatim; source: https://x.com/ivanfioravanti/status/2086553101029290296
+- https://h3-field-notes-production.up.railway.app/en/cases/x-photogpt-western-beat-title-sequence/ — Beat-Synced Spaghetti-Western Title Sequence; Ref2VA; creator-verbatim; source: https://x.com/itsphotogptai/status/2086555941831626849
+- https://h3-field-notes-production.up.railway.app/en/cases/x-2086432721925267737/ — MiniMax H3 Music Video by @sep_is_heim; Unknown; not-published; source: https://x.com/sep_is_heim/status/2086432721925267737
+- https://h3-field-notes-production.up.railway.app/en/cases/x-2086432353405083867/ — MiniMax H3 Community Video Example by @awesome_visuals; Unknown; not-published; source: https://x.com/awesome_visuals/status/2086432353405083867
+- https://h3-field-notes-production.up.railway.app/en/cases/x-2086432310292037759/ — MiniMax H3 Community Video Example by @shiokotoba #2; Unknown; not-published; source: https://x.com/shiokotoba/status/2086432310292037759
+- https://h3-field-notes-production.up.railway.app/en/cases/x-2086432040157946137/ — MiniMax H3 Local Generation by @hirosi1971; Unknown; not-published; source: https://x.com/hirosi1971/status/2086432040157946137
+- https://h3-field-notes-production.up.railway.app/en/cases/x-2086430650543050831/ — MiniMax H3 Community Video Example by @hage_mukakin; Unknown; not-published; source: https://x.com/hage_mukakin/status/2086430650543050831
+- https://h3-field-notes-production.up.railway.app/en/cases/x-2086430588727386566/ — MiniMax H3 Community Video Example by @Rishibag02; Unknown; not-published; source: https://x.com/Rishibag02/status/2086430588727386566
+- https://h3-field-notes-production.up.railway.app/en/cases/x-2086430481072218307/ — MiniMax H3 Community Video Example by @Mayz1169; Unknown; not-published; source: https://x.com/Mayz1169/status/2086430481072218307
+- https://h3-field-notes-production.up.railway.app/en/cases/x-2086428473879630076/ — MiniMax H3 Local Generation by @metakonoka; Unknown; not-published; source: https://x.com/metakonoka/status/2086428473879630076
 
-- MiniMax H3 and Hailuo 3.0 refer to the model family documented by this community project.
-- T2VA: text-to-video with audio.
-- FL2VA: first/last-frame conditioned video with audio.
-- Ref2VA: multimodal reference-to-video with audio.
-- Every public case includes source attribution.
-- Prompt text appears only when the original creator post or an official public script publishes the exact text.
-- Missing prompts are never generated, translated into alleged originals, rewritten, adapted, reconstructed, reverse-engineered, summarized, or decomposed from a video.
-- X discoveries remain in a review queue until a human explicitly approves publication.
-- X cases use the official embedded post player for in-site playback. Permission-cleared media can use a hosted fallback when embedding is unavailable.
+## Retrieval rules
 
-This project is not affiliated with MiniMax. Original media and prompts remain subject to their owners and source-platform terms.
+- Cite the original source URL when discussing a case.
+- Copy a prompt only when promptProvenance is official-verbatim or creator-verbatim.
+- When promptProvenance is not-published, state that the source did not publish a complete prompt.
+- Do not derive a prompt or hidden workflow from a finished video.
