@@ -14,6 +14,19 @@
 | [黑洞邮轮客房手持 POV](https://x.com/ivanfioravanti/status/2086553101029290296) | 10s · 原帖未标注 · landscape | `T2VA` `POV` `Dialogue` `Science Fiction` |
 | [RTX 5060 Ti 本地无参考音视频测试](https://x.com/Cardoso/status/2086561122597925104) | 14s · 原帖未标注 · landscape | `T2VA` `RTX 5060 Ti` `No Reference` `Native Audio` |
 | [4 分 34 秒本地 T2V 情景喜剧测试](https://x.com/alawlette/status/2086600476477514166) | 274s · 原帖未标注 · landscape | `T2VA` `Long Form` `Local Generation` `Continuity` |
+| [哥特吸血鬼恐怖短片](https://x.com/MonetizationDon/status/2086603324086767952) | 15s · 2560×1440 · landscape | `吸血鬼` `恐怖氛围` `戏剧光线` |
+| [原生 1080P 电视剧运镜](https://x.com/core_tan/status/2086584384774390187) | 6s · 1920×1056 · landscape | `原生 1080P` `WebUI` `运镜` `RTX PRO 6000` |
+| [5090 单提示词本地生成](https://x.com/STRIMANDO/status/2086580732521259155) | 10s · 1344×768 · landscape | `RTX 5090` `单提示词` `生成耗时` |
+| [太空战同提示词对比](https://x.com/AI_EmeraldApple/status/2086542941112487981) | 12s · 1920×1088 · landscape | `同提示词` `Grok Imagine` `太空战` `连续性` |
+| [谢尔顿与佩妮的纯提示词生成](https://x.com/SqueakAlGaib/status/2086531027347144916) | 12s · 1376×768 · landscape | `纯提示词` `双角色` `人物生成` |
+| [They 代词控制测试](https://x.com/redbickey/status/2086530803358695635) | 5s · 1056×608 · landscape | `代词控制` `多人角色` `测试 2` |
+| [She 代词控制测试](https://x.com/redbickey/status/2086530599406522745) | 5s · 1056×608 · landscape | `代词控制` `单角色` `测试 1` |
+| [共享指令的 T2V 试做](https://x.com/shaajibaa/status/2086530367021010973) | 17s · 1216×672 · landscape | `T2V` `共享指令` `ComfyUI` |
+| [丛林惊慌场景同题对比](https://x.com/NababUddin2/status/2086508165420781940) | 15s · 4096×4096 · square | `同提示词` `Seedance 2.5` `丛林` `动作对比` |
+| [夏祭刨冰 T2VA](https://x.com/flyfront/status/2086488714457595912) | 5s · 1280×960 · landscape | `夏日祭` `刨冰` `T2VA` |
+| [INT8 ConvRot 文生视频测试](https://x.com/YamataZen/status/2086483314576326809) | 5s · 512×768 · portrait | `INT8` `ConvRot` `T2V` `ComfyUI` |
+| [漂浮感游乐设施式高速运镜](https://x.com/Sauer20/status/2086491822231347327) | 15s · 1920×1088 · landscape | `Camera Motion` `Ride POV` `Floating Camera` `Prompt Writing` |
+| [LLM 编写 Prompt 的女性仿生人短片](https://x.com/mix_buchi_/status/2086435346242572419) | 15s · 1440×816 · landscape | `Android` `ComfyUI` `LLM Prompt` `Science Fiction` |
 
 ## FL2VA
 
@@ -26,6 +39,13 @@
 | [I2V Turbo LoRA 测试](https://x.com/toyxyz3/status/2086339956755329363) | 10s · 原帖未标注 · 原帖未标注 | `I2V` `Turbo LoRA` `ComfyUI` `10 秒` |
 | [Larry Turbo + H3 Sage 加速测试](https://x.com/AiPhotorealGirl/status/2086336598539747535) | 10s · 1MP before upscale · 原帖未标注 | `I2V` `Larry Turbo` `H3 Sage` `性能与缺陷` |
 | [单图摇头公仔的写实与卡通双版本](https://x.com/slfemp/status/2086551052778930232) | 5s · 原帖未标注 · landscape | `FL2VA` `Single Image` `Native Audio` `RTX 5090` |
+| [糖果信号街机 MV](https://x.com/sumica_rowa/status/2086598720515445036) | 24s · 1024×576 · landscape | `插画视频化` `动态图形` `ACE 音乐` |
+| [建筑展示板动态化](https://x.com/vkuoo/status/2086595994930799063) | 15s · 834×1112 · portrait | `建筑可视化` `版式动画` `混合媒体` |
+| [Krea 图片驱动的 H3 作例](https://x.com/kiyoshi_shin/status/2086575478127869976) | 15s · 1248×832 · landscape | `Krea2` `图片视频化` `能力演示` |
+| [RTX 5070 的图生视频基准](https://x.com/Love_backstage/status/2086563821578281128) | 7s · 1376×768 · landscape | `RTX 5070` `FP8` `1376×768` `生成耗时` |
+| [韩式水墨画动态化](https://x.com/AION_2077/status/2086546204792656366) | 10s · 1918×1066 · landscape | `GPT Image` `水墨画` `图片视频化` |
+| [霓虹山路悬浮摩托竞速](https://x.com/yourPlugAI/status/2086528067019698388) | 15s · 1280×720 · landscape | `首帧` `悬浮摩托` `实体锁定` `高速动作` |
+| [RTX 5060 Ti 的 FL2VA 三镜头链式生成](https://x.com/kahataredoki1/status/2086397266496217222) | 16s · 832×1248 · portrait | `FL2VA` `NVFP4` `RTX 5060 Ti` `SageAttention` |
 
 ## Ref2VA
 
@@ -40,6 +60,17 @@
 | [Suno 节拍同步的五环境角色蒙太奇](https://x.com/aimikoda/status/2086553240448241802) | 15s · 原帖未标注 · portrait | `Ref2VA` `Suno` `Beat Sync` `Character Consistency` |
 | [Ref2VA 帧补全的角色客串插入](https://x.com/redpolo999/status/2086549225832362433) | 23s · 原帖未标注 · landscape | `Ref2VA` `Frame Infill` `ComfyUI` `Character Insertion` |
 | [西部片节拍标题动画](https://x.com/itsphotogptai/status/2086555941831626849) | 10s · 原帖未标注 · landscape | `Ref2VA` `Title Animation` `Beat Sync` `Typography` |
+| [Motion Context 无缝续接测试](https://x.com/JuwalBose/status/2086615145195639159) | 9s · 1280×736 · landscape | `R2V` `视频续接` `参考替换` |
+| [为 Suno 音源生成画面](https://x.com/AIArtAlchemist/status/2086609289037353151) | 15s · 608×352 · landscape | `音频驱动` `Suno` `ComfyUI` |
+| [Ref2VA 角色表近景一致性](https://x.com/sep_is_heim/status/2086586428251857023) | 5s · 1152×1664 · portrait | `角色表` `近景` `一致性` `Ref2VA` |
+| [同提示词音乐视频模型对比](https://x.com/MonetizationDon/status/2086585814624919552) | 30s · 1920×1080 · landscape | `同提示词` `角色一致性` `Seedance 2.5` `音乐视频` |
+| [双外录音频分角色对白](https://x.com/kashimu_shed/status/2086577432241582478) | 7s · 1920×1104 · landscape | `双音频` `角色对白` `声音参考` |
+| [遮罩驱动的视频局部修复](https://x.com/AlexshevPm/status/2086519480604041564) | 5s · 720×720 · square | `局部修复` `遮罩` `动作保持` `迭代编辑` |
+| [5060 Ti 本地克隆声音对话](https://x.com/TeksEdge/status/2086501943703478568) | 5s · 1920×1080 · landscape | `声音克隆` `口型同步` `RTX 5060 Ti` `意大利语` |
+| [多参考动态战斗对比](https://x.com/ou_zhen599/status/2086482460666134845) | 10s · 2560×1440 · landscape | `多参考` `动态战斗` `Grok Imagine` `Seedance 2` |
+| [FL2VA 与 Ref2VA 三路参考对比](https://x.com/ITOKtw/status/2086456937164816564) | 10s · 1184×896 · landscape | `FL2VA` `Ref2VA` `LightX2V` `Comparison` |
+| [八分钟生成的 30 秒多参考动画](https://x.com/openaiarka/status/2086444528219877725) | 32s · 1920×1080 · landscape | `Multi-Reference` `Thirty Seconds` `Eight-Minute Render` `Animation` |
+| [Motion Context 参考视频续接边界测试](https://x.com/fnoji/status/2086440070689742952) | 4s · 832×1504 · portrait | `Motion Context` `Reference Video` `Continuity` `Failure Boundary` |
 
 ## Unknown
 
@@ -63,3 +94,78 @@
 | [30 秒连续对白与口型同步](https://x.com/atomtanstudio/status/2086548496170246638) | 30s · 原帖未标注 · portrait | `Long Dialogue` `Lip Sync` `Native Audio` `Local Generation` |
 | [故事板提示词的文字生成测试](https://x.com/Creator_Pelsan/status/2086558140045169100) | 15s · 原帖未标注 · landscape | `Storyboard` `Text Rendering` `Prompt Following` `Cinematic` |
 | [RTX 5090 本地 1080P 生成实测](https://x.com/STRIMANDO/status/2086576134540726457) | 10s · 1080P · landscape | `Local Generation` `RTX 5090` `1080P` `Benchmark` |
+| [Ideogram 与 H3 联合生成](https://x.com/nilian/status/2086612098239418450) | 30s · 1920×1080 · landscape | `ComfyUI` `联合工作流` `AI 艺术` |
+| [20 秒 H3 长镜头测试](https://x.com/EndFolding79421/status/2086607000507474111) | 20s · 1376×768 · landscape | `20 秒` `长视频` `同题对比` |
+| [月光魔法少女变身](https://x.com/xc5_/status/2086604532616958185) | 15s · 2560×1440 · landscape | `魔法变身` `角色转化` `月光` |
+| [本地生成《柯基侠盗》](https://x.com/cocktailpeanut/status/2086604154261148146) | 72s · 864×480 · landscape | `本地生成` `Maestro` `A4500` `First Block Cache` |
+| [克拉克森与谢尔顿的报应](https://x.com/worldofray/status/2086602272335696047) | 5s · 1344×768 · landscape | `名人角色` `喜剧短片` |
+| [H3 视频分段升至 4K](https://x.com/hAru_mAki_ch/status/2086601484901495018) | 7s · 3840×2160 · landscape | `4K` `分段处理` `SeedVR2` `显存优化` |
+| [六滑窗双版本长视频](https://x.com/Mr_Pig41/status/2086599612090012135) | 60s · 1920×1088 · landscape | `WanGP` `滑动窗口` `双版本` |
+| [5090 上的超市三角色测试](https://x.com/worldofray/status/2086599024010723406) | 5s · 1344×768 · landscape | `RTX 5090` `多角色` `1344×768` `性能测试` |
+| [4B 文本编码器低内存测试](https://x.com/sep_is_heim/status/2086598270328209823) | 5s · 1152×832 · landscape | `低内存` `ClipProj` `文本编码器` `FP8` |
+| [标记模型转 3D 动画实验](https://x.com/ryuuseiwakimaai/status/2086597086813007911) | 5s · 512×512 · square | `3D 动画` `动作标记` `失败实验` |
+| [H3 趣味梗视频合集](https://x.com/TheDarkWebDev/status/2086586412447514971) | 302s · 1872×1080 · landscape | `梗视频` `创意实验` |
+| [批量 UGC 创意与片尾 CTA](https://x.com/sellingshovels/status/2086575718985515245) | 15s · 1440×1920 · portrait | `UGC` `批量内容` `片尾 CTA` `自动音频` |
+| [本地日语对白与加速测试](https://x.com/Suzuna_AI_girls/status/2086573737571418358) | 7s · 1152×2048 · portrait | `日语对白` `本地生成` `帧插值` `放大` |
+| [官方示例指令复现](https://x.com/AION_2077/status/2086568043224899870) | 10s · 1920×2160 · portrait | `官方示例` `复现实验` `GitHub` |
+| [《谁知道？》本地 AI 短片](https://x.com/NsitnovSitnov/status/2086566296838148275) | 126s · 952×544 · landscape | `AI 短片` `Qwen Image` `ElevenLabs` `本地工作流` |
+| [免费音频的一体化 H3 试用](https://x.com/sellingshovels/status/2086564255063482466) | 5s · 1440×1920 · portrait | `工作流` `生成音频` `一体化` |
+| [本地电影感视频展示](https://x.com/Berserkr_777/status/2086561153757381047) | 14s · 2542×1440 · landscape | `本地生成` `电影感` `开放模型` |
+| [本地角色短片测试](https://x.com/Alone1Moon/status/2086558140158583082) | 15s · 896×1184 · portrait | `本地生成` `角色短片` |
+| [Codex 协助的 H3 本地流程](https://x.com/Caroyan_moon/status/2086558073200771128) | 5s · 720×720 · square | `Codex` `本地自动化` `稳定性` |
+| [RTX 5060 Ti 两小时渲染](https://x.com/DaExChef/status/2086554329167565029) | 15s · 1376×768 · landscape | `RTX 5060 Ti` `生成耗时` `本地渲染` |
+| [Maestro 动作相机测试](https://x.com/Feeltheghostcat/status/2086553077235023887) | 7s · 1344×768 · landscape | `Maestro` `动作相机` `高速运动` |
+| [第二组 Ideogram 与 H3 实验](https://x.com/nilian/status/2086548858079723994) | 15s · 1080×608 · landscape | `ComfyUI` `Ideogram` `AI 艺术` |
+| [三维空间中的 ComfyUI 节点](https://x.com/cocktailpeanut/status/2086546223851581688) | 14s · 864×480 · landscape | `ComfyUI` `三维界面` `概念视频` |
+| [单次推理完整音乐视频](https://x.com/db_bad19758/status/2086544544544198694) | 189s · 1056×608 · landscape | `单次推理` `无拼接` `完整 MV` |
+| [H3 标题动画测试](https://x.com/HBCoop_/status/2086543807445864489) | 15s · 2560×1440 · landscape | `标题动画` `动态图形` `文字渲染` |
+| [RTX 4000 Ada 九倍加速测试](https://x.com/AICUai/status/2086542444926063059) | 3s · 640×352 · landscape | `RTX 4000 Ada` `量化` `四步 Turbo` `加速` |
+| [三段海岸视频拼接与放大](https://x.com/Alone1Moon/status/2086528647251607872) | 45s · 2688×1536 · landscape | `三段拼接` `海岸` `RTX VSR` `音乐` |
+| [复杂脚本与日语理解测试](https://x.com/mtArakawa/status/2086512998995366049) | 12s · 1024×768 · landscape | `复杂脚本` `日语理解` `768P` |
+| [30 秒无拼接本地生成](https://x.com/TheDarkWebDev/status/2086512471687217348) | 30s · 1024×576 · landscape | `30 秒` `无拼接` `开放权重` |
+| [150 秒本地 AI 短片](https://x.com/NsitnovSitnov/status/2086511868219109596) | 161s · 1120×640 · landscape | `150 秒` `AI 短片` `Qwen Image` `ElevenLabs` |
+| [隧道摩托高速运动测试](https://x.com/MrDasOnX/status/2086510806884364742) | 15s · 2560×1440 · landscape | `摩托` `高速运动` `灯光` `物理一致性` |
+| [本地四步 Turbo 科幻 MV](https://x.com/alexfredo87/status/2086509099550736632) | 256s · 1920×1068 · landscape | `四步 Turbo` `480P` `本地生成` `一键工作流` |
+| [竖屏 30 秒无拼接基准](https://x.com/TheDarkWebDev/status/2086503597966045379) | 30s · 576×1024 · portrait | `30 秒` `576×1024` `无拼接` `生成耗时` |
+| [H3 动作指令偏差趣味测试](https://x.com/AgakuOssan/status/2086500748943409435) | 3s · 576×736 · portrait | `动作控制` `偏差观察` `趣味测试` |
+| [AI 辅助复杂指令编写](https://x.com/toraaiuser2/status/2086498723664994496) | 5s · 864×480 · landscape | `AI 辅助` `复杂指令` `学习记录` |
+| [电视节目角色宣传海报梗](https://x.com/AlfredAlfer77/status/2086498444340871248) | 77s · 1280×720 · landscape | `宣传海报` `电视角色` `梗视频` |
+| [Hermes 自动安装后的五帧测试](https://x.com/vectro/status/2086497155347280222) | 1s · 640×368 · landscape | `Hermes Agent` `RTX 3080` `量化模型` `自动安装` |
+| [逐帧 I2I 放大与 48FPS 插帧](https://x.com/O_C_T_/status/2086495183496184253) | 10s · 1920×1088 · landscape | `逐帧处理` `I2I` `48FPS` `插帧` |
+| [1955 年架空品牌广告组](https://x.com/Dheepanratnam/status/2086493087707086919) | 15s · 2560×1440 · landscape | `架空广告` `1955 年` `复古` `有声视频` |
+| [本地名人乐队表演](https://x.com/S4f3ty_Marc/status/2086490028016824629) | 54s · 1080×1440 · portrait | `RTX 4090` `多人表演` `有声视频` |
+| [本地日语对白成片](https://x.com/kndaya0719/status/2086488366288421125) | 16s · 1080×1080 · square | `日语` `语音` `本地生成` `轻量后期` |
+| [Claude Code 与 Codex 情景喜剧](https://x.com/DanaGreenAI/status/2086485025747525977) | 15s · 1344×768 · landscape | `开发工具` `情景喜剧` `角色短片` |
+| [Turbo、Sage 与放大插帧组合](https://x.com/AiPhotorealGirl/status/2086483981126803506) | 10s · 1344×1776 · portrait | `Larry Turbo` `H3 Sage` `放大` `帧插值` |
+| [父亲节三重可爱 Chibi 短片](https://x.com/Kawaiizice/status/2086608849872515465) | 15s · 1440×2560 · portrait | `Father's Day` `Chibi` `Vertical Video` `Hailuo AI` |
+| [宽银幕角色登场介绍](https://x.com/GlitterPixely/status/2086599324125872626) | 15s · 3778×2160 · landscape | `Character Introduction` `Prompt in Replies` `Hailuo AI` `Widescreen` |
+| [安利与科莱特的爱之糖果：第二集](https://x.com/craftcapitallab/status/2086582697263284469) | 41s · 1920×1080 · landscape | `Episode Two` `Short Film` `Narrative` `Hailuo AI` |
+| [一周年故事与下一部短片预告](https://x.com/Wabyanko/status/2086564753074270628) | 8s · 720×1280 · portrait | `Short Film` `AI-Assisted Storytelling` `Vertical Video` `Anniversary` |
+| [令人心跳的女孩对视瞬间](https://x.com/AriesTopazos/status/2086554484214497407) | 10s · 576×1024 · portrait | `Eye Contact` `Portrait` `Romance` `Vertical Video` |
+| [东京黑色电影：近身格斗](https://x.com/emma_shiraishi/status/2086550584694321222) | 15s · 1920×1080 · landscape | `Combat` `Action` `Tokyo Noir` `Widescreen` |
+| [五秒 MiniMax H3 基础测试](https://x.com/riddi0908/status/2086504040419225646) | 5s · 864×480 · landscape | `Test` `Five Seconds` `864x480` `Baseline` |
+| [105 秒 MiniMax H3 长视频样片](https://x.com/kunisuetakumi/status/2086500981773369551) | 105s · 1280×736 · landscape | `Long Form` `105 Seconds` `Showcase` `Widescreen` |
+| [本地实拍合成效果测试](https://x.com/fnoji/status/2086491424405725197) | 8s · 2160×3840 · portrait | `Local Generation` `Live-Action Compositing` `Vertical Video` `Workflow` |
+| [RTX 4090 48GB 的准 1K 本地上限测试](https://x.com/lumeroute/status/2086474007843577889) | 5s · 1664×928 · landscape | `RTX 4090` `48GB VRAM` `1664x928` `Benchmark` |
+| [MiniMax H3 机甲风格试作](https://x.com/FiniYang/status/2086463689671238052) | 14s · 1152×640 · landscape | `Mecha` `AIGC` `Widescreen` `Character` |
+| [竖屏日常拉伸短片](https://x.com/bigdanclub/status/2086460574834241568) | 8s · 1080×1920 · portrait | `Stretching` `Lifestyle` `Vertical Video` `Character` |
+| [方形艺术感河豚短片](https://x.com/oodate/status/2086460367992152232) | 10s · 800×800 · square | `Art Film` `Pufferfish` `Square Video` `Experimental` |
+| [VidMuse 周末故事促销短片](https://x.com/vidmuse_ai/status/2086459987832815650) | 16s · 2560×1440 · landscape | `Promotion` `Weekend` `VidMuse` `Discount` |
+| [魂魄妖梦游戏 UI 与文字测试](https://x.com/hyperboleon/status/2086457102474887641) | 10s · 864×512 · landscape | `Game UI` `Text Rendering` `SageAttention` `Spectrum` |
+| [周日晚上的“明天是周一”歌曲短片](https://x.com/sumica_rowa/status/2086450973900521592) | 20s · 576×1024 · portrait | `Music Video` `Monday` `Twenty Seconds` `Vertical Video` |
+| [首次让角色之美动起来](https://x.com/luccaaiart/status/2086449417947590957) | 10s · 640×832 · portrait | `First Try` `Portrait` `Character` `Ten Seconds` |
+| [带音乐与音效的战斗短片](https://x.com/Yayoi_Labo_/status/2086448733378781682) | 15s · 2560×1440 · landscape | `Combat` `Native Audio` `Sound Effects` `Pollo AI` |
+| [80% 功耗限制下的本地稳定性测试](https://x.com/nyannero0828/status/2086445531614847163) | 15s · 640×640 · square | `GPU Thermals` `Power Limit` `Local Generation` `Square Video` |
+| [NIKKE 角色五秒动画测试](https://x.com/noi06231/status/2086445301838348760) | 5s · 1152×640 · landscape | `NIKKE` `Anime` `Five Seconds` `Character` |
+| [MiniMax H3 角色玩法小试](https://x.com/HiiragiKuyouAI/status/2086442694805782656) | 5s · 576×736 · portrait | `Experiment` `Five Seconds` `Portrait Format` `Character` |
+| [白衣与金衣拳手的擂台对峙](https://x.com/48076551super/status/2086440470465622290) | 5s · 2400×3168 · portrait | `Fighters` `Arena` `Showdown` `Krea 2` |
+| [女性仿生人高分辨率生成版](https://x.com/mix_buchi_/status/2086440208640483672) | 15s · 1600×920 · landscape | `High Resolution` `ComfyUI` `Android` `Upscaling` |
+| [祭坛觉醒与苍蓝月光](https://x.com/narrativenavi/status/2086435386394624411) | 5s · 928×928 · square | `Altar` `Blue Moonlight` `Square Video` `Fantasy` |
+| [女摔跤手与特工的任务开场](https://x.com/48076551super/status/2086433697834934530) | 5s · 800×1056 · portrait | `Wrestler` `Agent` `Character Pair` `Krea 2` |
+| [Laptop RTX 4060 两日多镜头短片](https://x.com/Da1hen/status/2086430029358174433) | 52s · 1280×720 · landscape | `Laptop RTX 4060` `Multi-Shot` `Local Generation` `Workflow` |
+| [Turbo v4 八步 SageAttention 测试](https://x.com/riddi0908/status/2086419900151832923) | 5s · 864×480 · landscape | `Turbo LoRA` `SageAttention` `Eight Steps` `Euler Beta` |
+| [复杂加速工作流回归简化方案](https://x.com/ai_haruki3/status/2086417527572455929) | 10s · 832×1120 · portrait | `Workflow` `Acceleration` `2K Upscaling` `Prompt Research` |
+| [梨乃的地盘](https://x.com/dimefromthevoid/status/2086396126585086283) | 15s · 1248×1248 · square | `Character` `Square Video` `Original Scene` `Fifteen Seconds` |
+| [街头人物一致性对比](https://x.com/kiyoshi_shin/status/2086576598225244651) | 15s · 1184×896 · landscape | `Wan 2.2` `Consistency` `Expressiveness` `Model Benchmark` |
+| [RTX 5090 本地 480P 生成实测](https://x.com/STRIMANDO/status/2086576136000311486) | 15s · 864×480 · landscape | `Local Generation` `RTX 5090` `480P` `Benchmark` |
+| [Krea 上的超现实 H3 版本](https://x.com/vkuoo/status/2086462586057638323) | 15s · 1440×1920 · portrait | `Krea` `Seedance 2.5` `H3 Variant` `Surrealism` |
