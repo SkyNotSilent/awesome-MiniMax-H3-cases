@@ -360,9 +360,15 @@ function CaseCard({
   const t = copy[language].card
   const title = caseTitle(item, language)
   const chips = [
-    item.styles[0] && taxonomyLabel(item.styles[0], language, 'style'),
-    item.scenes[0] && taxonomyLabel(item.scenes[0], language, 'scene'),
-  ].filter(Boolean)
+    item.styles[0] && {
+      key: `style:${item.styles[0]}`,
+      label: taxonomyLabel(item.styles[0], language, 'style'),
+    },
+    item.scenes[0] && {
+      key: `scene:${item.scenes[0]}`,
+      label: taxonomyLabel(item.scenes[0], language, 'scene'),
+    },
+  ].filter((chip): chip is { key: string; label: string } => Boolean(chip))
 
   return (
     <article className="case-card" style={{ '--order': index } as React.CSSProperties}>
@@ -401,7 +407,7 @@ function CaseCard({
           <h2>{title}</h2>
         </a>
         <div className="tags">
-          {chips.map((tag) => <span key={tag}>#{tag}</span>)}
+          {chips.map((chip) => <span key={chip.key}>#{chip.label}</span>)}
         </div>
       </div>
     </article>

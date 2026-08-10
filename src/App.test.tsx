@@ -3,6 +3,23 @@ import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-libra
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import App from './App'
 
+vi.mock('../data/cases.json', async (importOriginal) => {
+  const original = await importOriginal<typeof import('../data/cases.json')>()
+  const originalCases = (original as unknown as { default: Array<{ id: string }> }).default
+  const fixtureIds = new Set([
+    'official-t2va-starship',
+    'official-ref2va-lamb',
+    'official-fl2va-ramen',
+    'x-icreat-time-freeze-diner',
+    'x-yukyuk-h3-seedance-same-prompt',
+    'x-2086641782839005498',
+  ])
+
+  return {
+    default: originalCases.filter((item) => fixtureIds.has(item.id)),
+  }
+})
+
 function renderAt(pathname: string) {
   window.history.replaceState({}, '', pathname)
   return render(<App />)
@@ -39,6 +56,15 @@ describe('case-first routes', () => {
     expect(screen.queryByText('从单个案例，提炼可复用镜头协议。')).not.toBeInTheDocument()
     expect(screen.queryByText('收录方式')).not.toBeInTheDocument()
     expect(screen.queryByText('H3 工具，按需取用。')).not.toBeInTheDocument()
+  })
+
+  it('renders translated style and scene chips without duplicate React keys', () => {
+    const consoleError = vi.spyOn(console, 'error').mockImplementation(() => undefined)
+    renderAt('/')
+
+    const duplicateKeyWarning = consoleError.mock.calls.some((call) => call.join(' ').includes('same key'))
+    expect(duplicateKeyWarning).toBe(false)
+    consoleError.mockRestore()
   })
 
   it('filters cases by generation mode', () => {

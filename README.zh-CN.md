@@ -2,7 +2,7 @@
 
 # Awesome MiniMax H3
 
-### MiniMax H3 / 海螺 Hailuo 3.0 真实视频案例与公开 Prompt 原文
+### 站内观看 MiniMax H3 视频案例；仅在原作者公开时展示 Prompt 原文
 
 [在线案例库](https://h3-field-notes-production.up.railway.app/) · [工具链](https://h3-field-notes-production.up.railway.app/toolkit/) · [常见问题](https://h3-field-notes-production.up.railway.app/faq/) · [English](./README.md) · [参与贡献](./CONTRIBUTING.md)
 
@@ -10,11 +10,11 @@
 
 ![H3 Field Notes 网站](./public/og-image.jpg)
 
-Awesome MiniMax H3 是一个带来源追踪的开源 AI 视频案例库，覆盖 **MiniMax H3**、**Hailuo 3.0**、文字生视频、首尾帧视频、全模态参考视频、视频编辑、原生音频、运镜、对白、口型与角色一致性等高意图检索词。
+Awesome MiniMax H3 是一个中英双语、带来源追踪的开源 AI 视频案例库，收录来自 X 与官方公开脚本的 **MiniMax H3 视频案例**。它同时覆盖 **Hailuo H3 / Hailuo 3.0**、**MiniMax H3 Prompt**、**MiniMax H3 ComfyUI 工作流**、T2VA、FL2VA、Ref2VA、原生音频、运镜、对白、口型与角色一致性等检索需求。
 
 项目由三部分组成：案例优先的中英双语网站、机器可读数据，以及使用 Mac 登录态浏览器自动发现 X 案例的审核流程。公开案例都保留原始来源。只有原作者或官方公开脚本逐字发布了 Prompt，网站才呈现该原文；原帖未公开时会明确标注没有公开 Prompt。项目绝不根据视频生成、改写、重建、反推或拆解提示词。不确定内容只进入候选队列，不会超时自动发布。
 
-当前共有 148 个公开案例：3 个来自 MiniMax 官方公开脚本，145 个来自可追溯原帖的 X 社区案例；其中 16 条保留了官方或创作者逐字公开的 Prompt，其余均明确标注“来源未公开”。内容覆盖本地 ComfyUI 性能测试、图片与多模态参考、模型对比、音乐视频、多镜头短片、原生音频和后期工作流。X 案例通过官方嵌入播放器在站内直接播放；确实无法嵌入时，可在留存许可记录后启用自托管兜底。
+当前共有 227 个公开案例：3 个来自 MiniMax 官方公开脚本，224 个来自可追溯原帖的 X 社区案例；其中 17 条保留了官方或创作者逐字公开的 Prompt，其余均明确标注“来源未公开”。内容覆盖本地 ComfyUI 性能测试、图片与多模态参考、模型对比、音乐视频、多镜头短片、原生音频和后期工作流。X 案例通过官方嵌入播放器在站内直接播放；确实无法嵌入时，可在留存许可记录后启用自托管兜底。
 
 ## 核心内容
 
@@ -25,7 +25,16 @@ Awesome MiniMax H3 是一个带来源追踪的开源 AI 视频案例库，覆盖
 | [`CATALOG.md`](./CATALOG.md) | GitHub 原生案例索引 |
 | [`agents/skills/minimax-h3-prompt-library`](./agents/skills/minimax-h3-prompt-library/) | 用于检索案例与公开 Prompt 原文的 Agent Skill；不负责写提示词 |
 
-## H3 工具链与部署入口
+## 按需求查找
+
+| 需求 | 入口 |
+| --- | --- |
+| 直接观看 MiniMax H3 / Hailuo H3 视频案例 | [可视化案例库](https://h3-field-notes-production.up.railway.app/) |
+| 查找创作者公开的 MiniMax H3 Prompt | [`data/cases.json`](./data/cases.json) 与 [`llms-full.txt`](./public/llms-full.txt) |
+| 对比 T2VA、FL2VA、Ref2VA | [`CATALOG.md`](./CATALOG.md) |
+| 部署 MiniMax H3、ComfyUI 与加速工具 | [教程与部署资源](https://h3-field-notes-production.up.railway.app/toolkit/) |
+
+## H3 教程与部署入口
 
 | 资源 | 先看什么 | 地址 |
 | --- | --- | --- |

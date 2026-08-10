@@ -26,4 +26,15 @@ export interface VideoCase {
   promptProvenance: 'official-verbatim' | 'creator-verbatim' | 'not-published'
   sourceType: 'official' | 'x' | 'community'
   verified: boolean
+  sourceCaption?: string
+  engagement?: {
+    replies: number
+    reposts: number
+    likes: number
+    views: number
+    snapshotAt?: string
+    capturedAt?: string
+  }
+  approvedAt?: string
+  attributionNote?: string
 }
