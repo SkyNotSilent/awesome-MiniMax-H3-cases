@@ -5,16 +5,18 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && node scripts/build-seo-pages.mjs",
-    "start": "vite preview --host 0.0.0.0 --port ${PORT:-4173}",
+    "build": "node scripts/build-discovery-files.mjs && tsc -b && vite build && node scripts/build-seo-pages.mjs",
+    "start": "node scripts/serve-static.mjs",
     "preview": "vite preview",
     "lint": "eslint .",
     "test": "vitest run",
     "classify": "node scripts/classify-candidates.mjs",
     "review:video": "node scripts/review-video.mjs",
+    "promote": "node scripts/promote-candidates.mjs",
     "cost": "node scripts/estimate-cost.mjs",
     "validate:data": "node scripts/validate-data.mjs",
     "catalog": "node scripts/build-catalog.mjs",
+    "discovery": "node scripts/build-discovery-files.mjs",
     "seo": "node scripts/build-seo-pages.mjs"
   },
   "dependencies": {

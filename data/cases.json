@@ -7959,5 +7959,3721 @@
       "resolution": "1440×1920",
       "aspectRatio": "portrait"
     }
+  },
+  {
+    "id": "x-2086644878105280946",
+    "title": "@ITOKtw 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @ITOKtw",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@ITOKtw 于 2026-08-10 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 10 秒 · 950×720。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @ITOKtw on 2026-08-10, with a native-video output of 10s · 950×720. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ITOKtw/status/2086644878105280946",
+    "sourceLabel": "X 原帖 · @ITOKtw",
+    "author": "ITOK",
+    "publishedAt": "2026-08-10T02:44:41.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086644878105280946.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "950×720",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3のreference，プロンプトでの指定のやり方で変わるので，うまくいかなかったら調整でなんとかなるかもですね。最初のフレームで背景指定のものにならなかったので“ There is <Picture 1>”としたら，カメラ指定なしだけどクレーンショットを作ってくれました。",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 130,
+      "snapshotAt": "2026-08-10T05:52:30.474Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.474Z"
+  },
+  {
+    "id": "x-2086644746882293894",
+    "title": "@TJ16th 的 MiniMax H3 模型对比案例",
+    "titleEn": "MiniMax H3 Model Comparison by @TJ16th",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@TJ16th 于 2026-08-10 公开发布的 MiniMax H3 模型对比案例，原生视频规格为 74 秒 · 1920×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 model comparison published by @TJ16th on 2026-08-10, with a native-video output of 74s · 1920×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/TJ16th/status/2086644746882293894",
+    "sourceLabel": "X 原帖 · @TJ16th",
+    "author": "TJ16th",
+    "publishedAt": "2026-08-10T02:44:10.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086644746882293894.jpg",
+    "duration": 74,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "模型对比",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Model Comparison",
+    "styles": [
+      "Comparative"
+    ],
+    "scenes": [
+      "Model Comparison"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3高速化9条件を同一プロンプト・同一seedで比較。\n左上は高速化なしの基準、右下はSage＋Sol-Attn＋Spectrumの全部入り。\n結構出てくる絵が違うのだな。\n※RTX 4060 Ti 16GB環境。",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 3,
+      "views": 190,
+      "snapshotAt": "2026-08-10T05:52:30.474Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.474Z"
+  },
+  {
+    "id": "x-2086643681306812770",
+    "title": "@Suzuna_AI_girls 的 MiniMax H3 模型对比案例",
+    "titleEn": "MiniMax H3 Model Comparison by @Suzuna_AI_girls",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@Suzuna_AI_girls 于 2026-08-10 公开发布的 MiniMax H3 模型对比案例，原生视频规格为 15 秒 · 720×1280。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 model comparison published by @Suzuna_AI_girls on 2026-08-10, with a native-video output of 15s · 720×1280. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Suzuna_AI_girls/status/2086643681306812770",
+    "sourceLabel": "X 原帖 · @Suzuna_AI_girls",
+    "author": "鈴音🔔@Suzuna_japanese_AI_girls",
+    "publishedAt": "2026-08-10T02:39:56.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086643681306812770.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "720×1280",
+    "tags": [
+      "MiniMax H3",
+      "模型对比",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Model Comparison",
+    "styles": [
+      "Comparative"
+    ],
+    "scenes": [
+      "Model Comparison"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "こんにちはだよー🔔\n\n#BellEchoArt\nせっかくMinimax H3のおかげでseedance2.5にも手が届きそうなクオリティを作れるようになって、パソコンも使うようになってきたからLLMも入れたいなーと思いつつ、今は何が強いのかわからないし色々と調べてみたー\n\nそしたら懐かしきdeepseekの4.5とやらが目にとまりなんとなく見てみたらVRAM167GB必要とか書いててびっくりした💦\nこれ個人で使うやつじゃないじゃん😖\n\nローカルはローカルなんだろうけど家庭用で動くLLMとの比較にしれっと並べられても困るっていうか💧\n\n少年野球にメジャーリーガーが混ざってるような理不尽さを感じたかも🫠\n\ncreated with Topview Seedance 2.0",
+    "engagement": {
+      "replies": 2,
+      "reposts": 3,
+      "likes": 20,
+      "views": 734,
+      "snapshotAt": "2026-08-10T05:52:30.474Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.474Z"
+  },
+  {
+    "id": "x-2086643266448244843",
+    "title": "@pin_knuts 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @pin_knuts",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@pin_knuts 于 2026-08-10 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 8 秒 · 640×832。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @pin_knuts on 2026-08-10, with a native-video output of 8s · 640×832. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/pin_knuts/status/2086643266448244843",
+    "sourceLabel": "X 原帖 · @pin_knuts",
+    "author": "ぴんくなっつ",
+    "publishedAt": "2026-08-10T02:38:17.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086643266448244843.jpg",
+    "duration": 8,
+    "aspectRatio": "portrait",
+    "resolution": "640×832",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "焼き鳥の日でもあるんやな。\n○○の日がいっぱい流れてくるからWiki見たら今日はいろんなナントカの日みたいやね。\n\nしかしMinimax H3は何でも動画化してくれるな。\n何で自然発火するのかわからんが…\nこれがホントの火の鳥か？",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "views": 116,
+      "snapshotAt": "2026-08-10T05:52:30.474Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.474Z"
+  },
+  {
+    "id": "x-2086641782839005498",
+    "title": "@irohaseisaku 的 MiniMax H3 音乐视频案例",
+    "titleEn": "MiniMax H3 Music Video by @irohaseisaku",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@irohaseisaku 于 2026-08-10 公开发布的 MiniMax H3 音乐视频案例，原生视频规格为 5 秒 · 864×480。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 music video published by @irohaseisaku on 2026-08-10, with a native-video output of 5s · 864×480. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/irohaseisaku/status/2086641782839005498",
+    "sourceLabel": "X 原帖 · @irohaseisaku",
+    "author": "いろは製作所",
+    "publishedAt": "2026-08-10T02:32:23.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086641782839005498.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "864×480",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Music Video",
+    "styles": [
+      "Music Video"
+    ],
+    "scenes": [
+      "Music Video"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "こっちにある母艦という名の時代遅れPC（RYZEN3900X RTX3070 Mem32GB）でも動くminimax H3さん、お試しで動かしてみてます。謎の音楽でわらってまうｗ",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "views": 163,
+      "snapshotAt": "2026-08-10T05:52:30.474Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.474Z"
+  },
+  {
+    "id": "x-2086639914679247062",
+    "title": "@eggkyunio 的 MiniMax H3 角色对白案例",
+    "titleEn": "MiniMax H3 Character Dialogue by @eggkyunio",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@eggkyunio 于 2026-08-10 公开发布的 MiniMax H3 角色对白案例，原生视频规格为 8 秒 · 1440×2560。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 character dialogue published by @eggkyunio on 2026-08-10, with a native-video output of 8s · 1440×2560. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/eggkyunio/status/2086639914679247062",
+    "sourceLabel": "X 原帖 · @eggkyunio",
+    "author": "きゅにお｜AIで心を動かす動画を作りたい",
+    "publishedAt": "2026-08-10T02:24:58.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086639914679247062.jpg",
+    "duration": 8,
+    "aspectRatio": "portrait",
+    "resolution": "1440×2560",
+    "tags": [
+      "MiniMax H3",
+      "角色对白",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Character & Dialogue",
+    "styles": [
+      "Dialogue"
+    ],
+    "scenes": [
+      "Dialogue"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "【 リップシンクの使い分け👄 】\n\nMiniMax H3ってリップシンク精度高そう💡\nアナウンサーっぽくないセリフでも自然か試してみないとだね！\n\n言葉のイントネーションがあと一息といったところだから、\n口パクの違和感なさ：MiniMax H3\nイントネーションの良さ：AIアバター　など\n好みで生成AI分かれそう🤔\n\nTopviewのAIアバターでの同じセリフ動画はリプへ\n\n#Topview #MiniMaxH3 \n@TopviewAIJP @TopviewAIhq",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 1,
+      "views": 103,
+      "snapshotAt": "2026-08-10T05:52:30.474Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.474Z"
+  },
+  {
+    "id": "x-2086632971079958565",
+    "title": "@newtonmark13 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @newtonmark13",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@newtonmark13 于 2026-08-10 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 15 秒 · 1728×960。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @newtonmark13 on 2026-08-10, with a native-video output of 15s · 1728×960. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/newtonmark13/status/2086632971079958565",
+    "sourceLabel": "X 原帖 · @newtonmark13",
+    "author": "newtonmark",
+    "publishedAt": "2026-08-10T01:57:22.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086632971079958565.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1728×960",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "左边Minimax H3 量化4step残血瞎跑版，右边Grok Image2,同样的提示词，我觉得现在我真的不知道需要Grok来生成啥了，可以退订了。我都没用满血H3跑",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 0,
+      "views": 104,
+      "snapshotAt": "2026-08-10T05:52:30.475Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.475Z"
+  },
+  {
+    "id": "x-2086630492363792699",
+    "title": "@JohnConnorSkyne 的 MiniMax H3 本地生成案例",
+    "titleEn": "MiniMax H3 Local Generation by @JohnConnorSkyne",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "@JohnConnorSkyne 于 2026-08-10 公开发布的 MiniMax H3 本地生成案例，原生视频规格为 15 秒 · 480×864。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 local generation published by @JohnConnorSkyne on 2026-08-10, with a native-video output of 15s · 480×864. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/JohnConnorSkyne/status/2086630492363792699",
+    "sourceLabel": "X 原帖 · @JohnConnorSkyne",
+    "author": "John Connor",
+    "publishedAt": "2026-08-10T01:47:31.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086630492363792699.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "480×864",
+    "tags": [
+      "MiniMax H3",
+      "本地生成",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Technical"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3 Ref2VA on RTX PRO 6000 — 480p, 6 steps, Turbo LoRA + SageAttention 2.2\n⚡ 15s video generated in 73s\n🚀 ~4.9× realtime",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 114,
+      "snapshotAt": "2026-08-10T05:52:30.475Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.475Z"
+  },
+  {
+    "id": "x-2086628613127098615",
+    "title": "@tiyyyyyyyok 的 MiniMax H3 舞蹈视频案例",
+    "titleEn": "MiniMax H3 Dance Video by @tiyyyyyyyok",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "@tiyyyyyyyok 于 2026-08-10 公开发布的 MiniMax H3 舞蹈视频案例，原生视频规格为 30 秒 · 1056×608。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 dance video published by @tiyyyyyyyok on 2026-08-10, with a native-video output of 30s · 1056×608. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/tiyyyyyyyok/status/2086628613127098615",
+    "sourceLabel": "X 原帖 · @tiyyyyyyyok",
+    "author": "かるびぃ",
+    "publishedAt": "2026-08-10T01:40:03.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086628613127098615.jpg",
+    "duration": 30,
+    "aspectRatio": "landscape",
+    "resolution": "1056×608",
+    "tags": [
+      "MiniMax H3",
+      "舞蹈视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation & Dance",
+    "styles": [
+      "Dance"
+    ],
+    "scenes": [
+      "Character dance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Seedance 2.5で作られていたこちらの動画、\n同じプロンプトを使って MiniMax H3（ローカル） でも30秒の広告動画を作ってみました。\n前半15秒：Image to Video\n→ 約11分\n\n後半15秒：Reference to Video（参照画像3枚）\n→ 約30分\n環境：RTX 4070 Ti SUPER 16GB / RAM 64GB\nTurboなし・軽量化あり",
+    "engagement": {
+      "replies": 1,
+      "reposts": 1,
+      "likes": 3,
+      "views": 1030,
+      "snapshotAt": "2026-08-10T05:52:30.475Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.475Z"
+  },
+  {
+    "id": "x-2086627953488621905",
+    "title": "@logicolman 的 MiniMax H3 动作与视觉特效案例",
+    "titleEn": "MiniMax H3 Action and VFX by @logicolman",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@logicolman 于 2026-08-10 公开发布的 MiniMax H3 动作与视觉特效案例，原生视频规格为 65 秒 · 1280×720。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 action and vfx published by @logicolman on 2026-08-10, with a native-video output of 65s · 1280×720. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/logicolman/status/2086627953488621905",
+    "sourceLabel": "X 原帖 · @logicolman",
+    "author": "LOGICOLMAN",
+    "publishedAt": "2026-08-10T01:37:26.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086627953488621905.jpg",
+    "duration": 65,
+    "aspectRatio": "landscape",
+    "resolution": "1280×720",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Action"
+    ],
+    "scenes": [
+      "Action Test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Minimax H3 \nFighting Demo\nPC LOCAL\n\nStreet Fighter/ Mortal Kombat\n\nAún me falta pulir el prompt, para alargar cada secuencia de pelea y para darle mejores movimientos y técnicas de pelea",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 0,
+      "views": 111,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086626083651424388",
+    "title": "@StelsRay2 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @StelsRay2",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@StelsRay2 于 2026-08-10 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 15 秒 · 1728×960。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @StelsRay2 on 2026-08-10, with a native-video output of 15s · 1728×960. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/StelsRay2/status/2086626083651424388",
+    "sourceLabel": "X 原帖 · @StelsRay2",
+    "author": "ステスロス@2号機",
+    "publishedAt": "2026-08-10T01:30:00.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086626083651424388.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1728×960",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3動画\n\n日常エピソード\n『たい焼き、転生』\n神狐様",
+    "engagement": {
+      "replies": 1,
+      "reposts": 2,
+      "likes": 16,
+      "views": 518,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086625510528839945",
+    "title": "@newtonmark13 的 MiniMax H3 本地生成案例",
+    "titleEn": "MiniMax H3 Local Generation by @newtonmark13",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@newtonmark13 于 2026-08-10 公开发布的 MiniMax H3 本地生成案例，原生视频规格为 15 秒 · 1664×928。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 local generation published by @newtonmark13 on 2026-08-10, with a native-video output of 15s · 1664×928. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/newtonmark13/status/2086625510528839945",
+    "sourceLabel": "X 原帖 · @newtonmark13",
+    "author": "newtonmark",
+    "publishedAt": "2026-08-10T01:27:43.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086625510528839945.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1664×928",
+    "tags": [
+      "MiniMax H3",
+      "本地生成",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Technical"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "对于Minimax H3 我唱衰4step ，量化版这么久，这次出个实例来,左边是满血版980p直出效果，右边是4step lora在int8 prune版效果。当然4step确实240秒就出来，这俩都是在RTX PRO 6000跑的，一个提示词，工作流不同",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 105,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086625171616706945",
+    "title": "@jaizard1 的 MiniMax H3 舞蹈视频案例",
+    "titleEn": "MiniMax H3 Dance Video by @jaizard1",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@jaizard1 于 2026-08-10 公开发布的 MiniMax H3 舞蹈视频案例，原生视频规格为 10 秒 · 3840×2160。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 dance video published by @jaizard1 on 2026-08-10, with a native-video output of 10s · 3840×2160. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/jaizard1/status/2086625171616706945",
+    "sourceLabel": "X 原帖 · @jaizard1",
+    "author": "jaizard",
+    "publishedAt": "2026-08-10T01:26:23.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086625171616706945.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "3840×2160",
+    "tags": [
+      "MiniMax H3",
+      "舞蹈视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation & Dance",
+    "styles": [
+      "Dance"
+    ],
+    "scenes": [
+      "Character dance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Higgsfieldのseedance 2.5である程度、自分の考えと動きの動画ができるようになってきた。\nHailuo AI minimax H3は、いい感じの動画を作るのが上手いけど、\nHiggsField seedance 2.5はどちらかというと動画作成ツールに近い。リファレンス画像をきっちり準備すればその通りにしてくれる。なので、結構カメラ割り。音源効果音をどこで何するか指定するようにリファレンス画像を持ってくると自分の思い通りになってくる。\n\n@higgsfield @Hailuo_AI",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 91,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086623243348427121",
+    "title": "@orenoa7 的 MiniMax H3 本地生成案例",
+    "titleEn": "MiniMax H3 Local Generation by @orenoa7",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@orenoa7 于 2026-08-10 公开发布的 MiniMax H3 本地生成案例，原生视频规格为 8 秒 · 1206×2622。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 local generation published by @orenoa7 on 2026-08-10, with a native-video output of 8s · 1206×2622. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/orenoa7/status/2086623243348427121",
+    "sourceLabel": "X 原帖 · @orenoa7",
+    "author": "orenoa",
+    "publishedAt": "2026-08-10T01:18:43.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086623243348427121.jpg",
+    "duration": 8,
+    "aspectRatio": "portrait",
+    "resolution": "1206×2622",
+    "tags": [
+      "MiniMax H3",
+      "本地生成",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Technical"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Codexに動画生成機能追加！\n構成するAIは全てローカル\n\n・エージェント Qwen3.6 27B\n・動画生成 Minimax H3\n・動画理解 Qwen3-VL-30B",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "views": 109,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086622474977050778",
+    "title": "@hAru_mAki_ch 的 MiniMax H3 模型对比案例",
+    "titleEn": "MiniMax H3 Model Comparison by @hAru_mAki_ch",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@hAru_mAki_ch 于 2026-08-10 公开发布的 MiniMax H3 模型对比案例，原生视频规格为 5 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 model comparison published by @hAru_mAki_ch on 2026-08-10, with a native-video output of 5s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/hAru_mAki_ch/status/2086622474977050778",
+    "sourceLabel": "X 原帖 · @hAru_mAki_ch",
+    "author": "Maki@Sunwood AI Labs.",
+    "publishedAt": "2026-08-10T01:15:40.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086622474977050778.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "模型对比",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Model Comparison",
+    "styles": [
+      "Comparative"
+    ],
+    "scenes": [
+      "Model Comparison"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "実験⓬｜MiniMax-H3 × ComfyUI更新比較\n\n同じ4090・同じseedで、\nComfyUI 0.30.0 → 0.31.0\nTurbo 1.2.2 → 1.2.3\nを動画で比較してみた！！！\n\n更新版はTurboの処理が約53秒短縮。\n1本目が旧版、2本目が更新版。\n\n一方で音声は小さくなった、、、\n次は音声経路を切り分けるぞ🔥",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 1,
+      "views": 531,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086620989912408140",
+    "title": "@Luna_R4ze 的 MiniMax H3 本地生成案例",
+    "titleEn": "MiniMax H3 Local Generation by @Luna_R4ze",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@Luna_R4ze 于 2026-08-10 公开发布的 MiniMax H3 本地生成案例，原生视频规格为 7 秒 · 1080×1920。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 local generation published by @Luna_R4ze on 2026-08-10, with a native-video output of 7s · 1080×1920. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Luna_R4ze/status/2086620989912408140",
+    "sourceLabel": "X 原帖 · @Luna_R4ze",
+    "author": "LunaRaze",
+    "publishedAt": "2026-08-10T01:09:46.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086620989912408140.jpg",
+    "duration": 7,
+    "aspectRatio": "portrait",
+    "resolution": "1080×1920",
+    "tags": [
+      "MiniMax H3",
+      "本地生成",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Technical"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "On MiniMax H3 I find outdoor shots are the easiest way to keep things looking as realisitic as possible. Indoor lighting tends to play havoc with the skin textures, but outdoors looks much better. Has anyone else had a similar experience? Any tips on improving indoor scenes? This is all done through ComfyUI then some tweaks in CapCut. 🔥",
+    "engagement": {
+      "replies": 4,
+      "reposts": 0,
+      "likes": 10,
+      "views": 722,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086620966751510630",
+    "title": "@BrentLynch 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @BrentLynch",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "T2VA",
+    "summary": "@BrentLynch 于 2026-08-10 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 15 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @BrentLynch on 2026-08-10, with a native-video output of 15s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/BrentLynch/status/2086620966751510630",
+    "sourceLabel": "X 原帖 · @BrentLynch",
+    "author": "Brent Lynch",
+    "publishedAt": "2026-08-10T01:09:40.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086620966751510630.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "ASKING FOR A FRIEND⁉️\n\nJealous of you Open Source Cool Kids!\n\nSuch a fun model! \n\nMINIMAX H3 TXT2VID\n@MiniMax_AI",
+    "engagement": {
+      "replies": 2,
+      "reposts": 0,
+      "likes": 1,
+      "views": 274,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086618421634924720",
+    "title": "@FurkanGozukara 的 MiniMax H3 本地生成案例",
+    "titleEn": "MiniMax H3 Local Generation by @FurkanGozukara",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@FurkanGozukara 于 2026-08-10 公开发布的 MiniMax H3 本地生成案例，原生视频规格为 61 秒 · 1920×1400。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 local generation published by @FurkanGozukara on 2026-08-10, with a native-video output of 61s · 1920×1400. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/FurkanGozukara/status/2086618421634924720",
+    "sourceLabel": "X 原帖 · @FurkanGozukara",
+    "author": "Furkan Gözükara",
+    "publishedAt": "2026-08-10T00:59:33.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086618421634924720.jpg",
+    "duration": 61,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1400",
+    "tags": [
+      "MiniMax H3",
+      "本地生成",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Technical"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Donald Trump says the Iran war ends “pretty soon.” \n\nThis fan-made South Park parody asks what happens when the missiles are “pre-filled,” the strategy wheel only gets louder, and the off-ramp is a cliff. 😂\n\nMade locally with MiniMax H3 - 0 shot\n\nPrompts written by ChatGPT",
+    "engagement": {
+      "replies": 1,
+      "reposts": 9,
+      "likes": 28,
+      "views": 2973,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086617993950454040",
+    "title": "@Caden_Flux 的 MiniMax H3 舞蹈视频案例",
+    "titleEn": "MiniMax H3 Dance Video by @Caden_Flux",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@Caden_Flux 于 2026-08-10 公开发布的 MiniMax H3 舞蹈视频案例，原生视频规格为 47 秒 · 1920×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 dance video published by @Caden_Flux on 2026-08-10, with a native-video output of 47s · 1920×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Caden_Flux/status/2086617993950454040",
+    "sourceLabel": "X 原帖 · @Caden_Flux",
+    "author": "Caden Flux",
+    "publishedAt": "2026-08-10T00:57:51.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086617993950454040.jpg",
+    "duration": 47,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "舞蹈视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation & Dance",
+    "styles": [
+      "Dance"
+    ],
+    "scenes": [
+      "Character dance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "I used to think creating cinematic fantasy battles with AI was still a major challenge…  \n\nBut this result completely changed my perspective🔥 \n\nTesting @newtake_kr  with Seedance 2.5, MiniMax H3, and Nano Banana shows how far AI video generation has come.  \n\nThe action choreography, character consistency, and cinematic world-building feel closer than ever to a real game trailer or CG production.  \n\nScenes like this once required huge production teams, but AI is making high-quality storytelling more accessible to creators everywhere.  \n\nThe evolution of AI filmmaking is moving incredibly fast, and this is just the beginning. 📷 \n\n#Newtake #Seedance25 #MiniMaxH3 #NanoBanana",
+    "engagement": {
+      "replies": 42,
+      "reposts": 5,
+      "likes": 137,
+      "views": 17131,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086617156364439560",
+    "title": "@Paolozk1 的 MiniMax H3 本地生成案例",
+    "titleEn": "MiniMax H3 Local Generation by @Paolozk1",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@Paolozk1 于 2026-08-10 公开发布的 MiniMax H3 本地生成案例，原生视频规格为 62 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 local generation published by @Paolozk1 on 2026-08-10, with a native-video output of 62s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Paolozk1/status/2086617156364439560",
+    "sourceLabel": "X 原帖 · @Paolozk1",
+    "author": "Paolozky",
+    "publishedAt": "2026-08-10T00:54:32.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086617156364439560.jpg",
+    "duration": 62,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "本地生成",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Technical"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Generé un video de 1 minuto con MiniMax H3 en mi propia PC.\n\nSin GPUs en la nube. Sin servidores externos.\n\nRTX 3080 Ti — 12 GB VRAM\n32 GB RAM DDR4\n\nTardó solo 1 hora y 10 minutos.\n\nLa generación de video local está avanzando mucho más rápido de lo que esperaba🤯",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 57,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086616787240825098",
+    "title": "@RenySantho75815 的 MiniMax H3 本地生成案例",
+    "titleEn": "MiniMax H3 Local Generation by @RenySantho75815",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@RenySantho75815 于 2026-08-10 公开发布的 MiniMax H3 本地生成案例，原生视频规格为 43 秒 · 832×480。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 local generation published by @RenySantho75815 on 2026-08-10, with a native-video output of 43s · 832×480. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/RenySantho75815/status/2086616787240825098",
+    "sourceLabel": "X 原帖 · @RenySantho75815",
+    "author": "DoDobe",
+    "publishedAt": "2026-08-10T00:53:04.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086616787240825098.jpg",
+    "duration": 43,
+    "aspectRatio": "landscape",
+    "resolution": "832×480",
+    "tags": [
+      "MiniMax H3",
+      "本地生成",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Technical"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Ascend 950pr run local minimax h3 : Lmao\n华为昇腾950单卡跑minimaxh3国产模型生成老黄求生！！哈哈😂笑死",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 0,
+      "views": 64,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086616656672129107",
+    "title": "@ModengSir 的 MiniMax H3 本地生成案例 #1",
+    "titleEn": "MiniMax H3 Local Generation by @ModengSir #1",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@ModengSir 于 2026-08-10 公开发布的 MiniMax H3 本地生成案例，原生视频规格为 55 秒 · 1920×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 local generation published by @ModengSir on 2026-08-10, with a native-video output of 55s · 1920×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ModengSir/status/2086616656672129107",
+    "sourceLabel": "X 原帖 · @ModengSir",
+    "author": "Modengsir AI",
+    "publishedAt": "2026-08-10T00:52:33.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086616656672129107.jpg",
+    "duration": 55,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "本地生成",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Technical"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "【云端 ComfyUI+MiniMax H3 成本昨晚实测视频】\n\n输出规格：10s 视频，1280*736 像素\n渲染耗时：19 分钟\n云端服务单价：3 元左右 / 小时\n单条成本：约 1 元左右\n\n【结论】：零散创作按量计费友好，批量创作包月套餐可显著降低制作成本。",
+    "engagement": {
+      "replies": 3,
+      "reposts": 1,
+      "likes": 5,
+      "views": 966,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086519829612130667",
+    "title": "@MaxonShire 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @MaxonShire",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@MaxonShire 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 7 秒 · 1920×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @MaxonShire on 2026-08-09, with a native-video output of 7s · 1920×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/MaxonShire/status/2086519829612130667",
+    "sourceLabel": "X 原帖 · @MaxonShire",
+    "author": "MaxonShire",
+    "publishedAt": "2026-08-09T18:27:47.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086519829612130667.jpg",
+    "duration": 7,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3 Explained — Is Hailuo 3 0 the Best AI Video Model in 2026 ?\n\n#MiniMaxH3 #Hailuo3 #AIVideo \n\nWATCH IT HERE:\n-------------------\nhttps://youtu.be/OnFfp4AjIpg",
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 0,
+      "views": 106,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086486707268947989",
+    "title": "@bypass47078 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @bypass47078",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@bypass47078 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 15 秒 · 1260×720。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @bypass47078 on 2026-08-09, with a native-video output of 15s · 1260×720. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/bypass47078/status/2086486707268947989",
+    "sourceLabel": "X 原帖 · @bypass47078",
+    "author": "Bypass",
+    "publishedAt": "2026-08-09T16:16:10.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086486707268947989.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1260×720",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "院内部署了 MiniMax H3，结合 GPT-Image-2 生图做的第一个视频，挺有意思的。",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 125,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086481332763255063",
+    "title": "@cocktailpeanut 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @cocktailpeanut",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "@cocktailpeanut 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 10 秒 · 480×832。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @cocktailpeanut on 2026-08-09, with a native-video output of 10s · 480×832. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/cocktailpeanut/status/2086481332763255063",
+    "sourceLabel": "X 原帖 · @cocktailpeanut",
+    "author": "cocktail peanut",
+    "publishedAt": "2026-08-09T15:54:49.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086481332763255063.jpg",
+    "duration": 10,
+    "aspectRatio": "portrait",
+    "resolution": "480×832",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Finally testing MiniMax H3 Ref2VA (Reference to Video/Audio) in WanGP.\n\nThe previous version had a memory issue that kept crashing, but now it works.\n\nThis one is \"Provide generic control video\" + 2 ref images. Prompting has a learning curve but it works when you get it.",
+    "engagement": {
+      "replies": 6,
+      "reposts": 7,
+      "likes": 50,
+      "views": 5886,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086479201650213135",
+    "title": "@fnoji 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @fnoji",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@fnoji 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 8 秒 · 2160×3840。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @fnoji on 2026-08-09, with a native-video output of 8s · 2160×3840. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/fnoji/status/2086479201650213135",
+    "sourceLabel": "X 原帖 · @fnoji",
+    "author": "えふのじ",
+    "publishedAt": "2026-08-09T15:46:21.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086479201650213135.jpg",
+    "duration": 8,
+    "aspectRatio": "portrait",
+    "resolution": "2160×3840",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3で出力した奴をアップスケールしてみたけどちょっとノイジー\nそもそもTwitterに上げてる時点で微妙化も\n実写じゃないしコツが要りそうな気がする",
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 4,
+      "views": 1583,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086477914699170293",
+    "title": "@adithatipalli 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @adithatipalli",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@adithatipalli 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 15 秒 · 1440×2560。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @adithatipalli on 2026-08-09, with a native-video output of 15s · 1440×2560. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/adithatipalli/status/2086477914699170293",
+    "sourceLabel": "X 原帖 · @adithatipalli",
+    "author": "Adithya Thatipalli",
+    "publishedAt": "2026-08-09T15:41:14.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086477914699170293.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "1440×2560",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Player stats UI made using GPT Image 2 and Minimax H3 made on @higgsfield\n\nPrompt reference by @aimikoda \n\nCharacter and video prompt in replies",
+    "engagement": {
+      "replies": 2,
+      "reposts": 0,
+      "likes": 1,
+      "views": 171,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086477805202587697",
+    "title": "@ivanfioravanti 的 MiniMax H3 本地生成案例",
+    "titleEn": "MiniMax H3 Local Generation by @ivanfioravanti",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@ivanfioravanti 于 2026-08-09 公开发布的 MiniMax H3 本地生成案例，原生视频规格为 15 秒 · 1280×736。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 local generation published by @ivanfioravanti on 2026-08-09, with a native-video output of 15s · 1280×736. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ivanfioravanti/status/2086477805202587697",
+    "sourceLabel": "X 原帖 · @ivanfioravanti",
+    "author": "Ivan Fioravanti ᯅ",
+    "publishedAt": "2026-08-09T15:40:48.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086477805202587697.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1280×736",
+    "tags": [
+      "MiniMax H3",
+      "本地生成",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Technical"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Hybrid AI Experiments with MiniMax H3.\n2K generation online costs $0.13/sec\n2K regeneration online costs $0.05/sec\n\nI tried the API with the video I generated locally and output quality is not bad. This can be a good example of Hybrid AI where you leverage Local AI resources and combined them with Cloud ones to get best of both worlds. Just some initial experiments. \n\nAPI docs here: https://platform.minimax.io/docs/api-reference/video-generation-v2-regeneration",
+    "engagement": {
+      "replies": 6,
+      "reposts": 0,
+      "likes": 26,
+      "views": 4307,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086473110165799071",
+    "title": "@TeslianHumanoid 的 MiniMax H3 本地生成案例",
+    "titleEn": "MiniMax H3 Local Generation by @TeslianHumanoid",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "FL2VA",
+    "summary": "@TeslianHumanoid 于 2026-08-09 公开发布的 MiniMax H3 本地生成案例，原生视频规格为 52 秒 · 1920×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 local generation published by @TeslianHumanoid on 2026-08-09, with a native-video output of 52s · 1920×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/TeslianHumanoid/status/2086473110165799071",
+    "sourceLabel": "X 原帖 · @TeslianHumanoid",
+    "author": "FilipVijo",
+    "publishedAt": "2026-08-09T15:22:08.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086473110165799071.jpg",
+    "duration": 52,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "本地生成",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Technical"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "text",
+      "image"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "My first video made on open weights using Minimax H3.\n\"THE EYE 眼\" : a 52-second ink-wash film made entirely on open weights.🎬 \nThe process: •\n Model: MiniMax H3 @Hailuo_AI  open weights , FL2VA, self-hosted, no API fees \n• Hardware: rented A100 80GB on RunPod (Iceland) \n• ComfyUI, 8 shots generated locally \n• One accent color in the whole film: the vermilion seal 眼 at the end \n• Continuity: each shot anchored on the previous shot's actual last frame \n• Upscaled from 728p to 1080p HD\n• Score: @suno instrumental \n• Total generation cost: ~$3.50\n\nEvery frame generated, deployed and QC'd by my operator, my right hand, my coworker, my brother in arms, my Hermes agent. @NousResearch @Teknium \n\nOpen weights. Full control.",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 4,
+      "views": 174,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086472319141110032",
+    "title": "@AIReelofficial 的 MiniMax H3 模型对比案例",
+    "titleEn": "MiniMax H3 Model Comparison by @AIReelofficial",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@AIReelofficial 于 2026-08-09 公开发布的 MiniMax H3 模型对比案例，原生视频规格为 30 秒 · 1280×720。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 model comparison published by @AIReelofficial on 2026-08-09, with a native-video output of 30s · 1280×720. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/AIReelofficial/status/2086472319141110032",
+    "sourceLabel": "X 原帖 · @AIReelofficial",
+    "author": "AIReel",
+    "publishedAt": "2026-08-09T15:19:00.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086472319141110032.jpg",
+    "duration": 30,
+    "aspectRatio": "landscape",
+    "resolution": "1280×720",
+    "tags": [
+      "MiniMax H3",
+      "模型对比",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Model Comparison",
+    "styles": [
+      "Comparative"
+    ],
+    "scenes": [
+      "Model Comparison"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3 vs Seedance 2.5 \nHere’s the real difference with the same prompt.\n\nLimited offer:60% off",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "views": 113,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086471891498484171",
+    "title": "@pcneko_lab 的 MiniMax H3 本地生成案例",
+    "titleEn": "MiniMax H3 Local Generation by @pcneko_lab",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "FL2VA",
+    "summary": "@pcneko_lab 于 2026-08-09 公开发布的 MiniMax H3 本地生成案例，原生视频规格为 5 秒 · 864×480。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 local generation published by @pcneko_lab on 2026-08-09, with a native-video output of 5s · 864×480. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/pcneko_lab/status/2086471891498484171",
+    "sourceLabel": "X 原帖 · @pcneko_lab",
+    "author": "PcNeko.Lab",
+    "publishedAt": "2026-08-09T15:17:18.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086471891498484171.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "864×480",
+    "tags": [
+      "MiniMax H3",
+      "本地生成",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Technical"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "text",
+      "image"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "RTX 4060 Ti 16GB環境で、MiniMax H3 Turbo LoRAによる5秒I2V生成に成功(∩´∀｀)∩ﾜｰｲ\n\n解像度：864×480、24fps\n\nCodexに丸投げ生成したので細かい設定は見とらんですはい。🫠",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 9,
+      "views": 394,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086471165581902327",
+    "title": "@Strength04_X 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @Strength04_X",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@Strength04_X 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 15 秒 · 1344×768。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A MiniMax H3 community video example published by @Strength04_X on 2026-08-09, with a native-video output of 15s · 1344×768. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "EXPEDITION:\nTwo glaciologists enter a newly formed ice cave to document its internal structure before seasonal melting changes it.\nEXPLORERS: Two researchers, both wearing crampons, helmets and headlamps, carrying compact measurement equipment.\nSHOOT WINDOW: 7:05 AM – 7:20 AM Early morning outside. Overcast sky. Cold blue daylight enters through the cave entrance.\nLOCATION: Glacial valley, massive blue ice formation, narrow cave entrance, translucent walls, frozen water flowing beneath the surface.\nRECORDING STYLE: First-person expedition footage mixed with a second camera operator. Headlamps create moving pools of light across the ice. Natural breathing and footsteps remain prominent.\n15-SECOND EXPLORATION:\n00:00–00:03 → Researchers squeeze through the narrow entrance.\n00:03–00:06 → Camera reveals deep blue translucent ice walls surrounding them.\n00:06–00:09 → One researcher notices water suddenly moving beneath a transparent ice floor.\n00:09–00:12 → Both carefully step backward and examine the changing surface.\n00:12–00:15 → They mark the location and begin retreating toward daylight.\nAUDIO: Boots scraping ice, dripping water, distant cracking, breathing, muffled voices.\nREALISM DIRECTIVE: Ice must behave like real compressed glacier ice, not glass. Light scatters through the walls naturally. No fantasy formations, supernatural elements or impossible cave geometry.",
+    "sourceUrl": "https://x.com/Strength04_X/status/2086471165581902327",
+    "sourceLabel": "X 原帖 · @Strength04_X",
+    "author": "𝐌",
+    "publishedAt": "2026-08-09T15:14:25.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086471165581902327.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Ice Cave Exploration 🏔️\n\nCreated this using MiniMax H3 on @wavespeed_ai \n\nPrompt - EXPEDITION:\nTwo glaciologists enter a newly formed ice cave to document its internal structure before seasonal melting changes it.\nEXPLORERS: Two researchers, both wearing crampons, helmets and headlamps, carrying compact measurement equipment.\nSHOOT WINDOW: 7:05 AM – 7:20 AM Early morning outside. Overcast sky. Cold blue daylight enters through the cave entrance.\nLOCATION: Glacial valley, massive blue ice formation, narrow cave entrance, translucent walls, frozen water flowing beneath the surface.\nRECORDING STYLE: First-person expedition footage mixed with a second camera operator. Headlamps create moving pools of light across the ice. Natural breathing and footsteps remain prominent.\n15-SECOND EXPLORATION:\n00:00–00:03 → Researchers squeeze through the narrow entrance.\n00:03–00:06 → Camera reveals deep blue translucent ice walls surrounding them.\n00:06–00:09 → One researcher notices water suddenly moving beneath a transparent ice floor.\n00:09–00:12 → Both carefully step backward and examine the changing surface.\n00:12–00:15 → They mark the location and begin retreating toward daylight.\nAUDIO: Boots scraping ice, dripping water, distant cracking, breathing, muffled voices.\nREALISM DIRECTIVE: Ice must behave like real compressed glacier ice, not glass. Light scatters through the walls naturally. No fantasy formations, supernatural elements or impossible cave geometry.",
+    "engagement": {
+      "replies": 12,
+      "reposts": 6,
+      "likes": 47,
+      "views": 1176,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086470723472933293",
+    "title": "@NASNETou 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @NASNETou",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@NASNETou 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 5 秒 · 1080×1620。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @NASNETou on 2026-08-09, with a native-video output of 5s · 1080×1620. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/NASNETou/status/2086470723472933293",
+    "sourceLabel": "X 原帖 · @NASNETou",
+    "author": "那須音トウ / Nasune Tou",
+    "publishedAt": "2026-08-09T15:12:39.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086470723472933293.jpg",
+    "duration": 5,
+    "aspectRatio": "portrait",
+    "resolution": "1080×1620",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "OC 音注意 (minimax h3)",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 2,
+      "views": 255,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086470421986340918",
+    "title": "@yukimino_doga 的 MiniMax H3 本地生成案例",
+    "titleEn": "MiniMax H3 Local Generation by @yukimino_doga",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "@yukimino_doga 于 2026-08-09 公开发布的 MiniMax H3 本地生成案例，原生视频规格为 5 秒 · 768×512。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 local generation published by @yukimino_doga on 2026-08-09, with a native-video output of 5s · 768×512. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/yukimino_doga/status/2086470421986340918",
+    "sourceLabel": "X 原帖 · @yukimino_doga",
+    "author": "ゆきしたミノル@動画",
+    "publishedAt": "2026-08-09T15:11:28.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086470421986340918.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "768×512",
+    "tags": [
+      "MiniMax H3",
+      "本地生成",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Technical"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "ローカルMinimax H3のR2Vで、Unityで撮った3Dの弾幕動画をアニメ化してみた🧐\n使い道はあると思うんだけど、3D動画のほうはエージェント任せだとちょいイマイチなのが多いかな😅 手動が必要～\n（BGMは後付けです）",
+    "engagement": {
+      "replies": 0,
+      "reposts": 3,
+      "likes": 18,
+      "views": 1438,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086468076032450920",
+    "title": "@nayu_pkpk 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @nayu_pkpk",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@nayu_pkpk 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 10 秒 · 896×1184。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @nayu_pkpk on 2026-08-09, with a native-video output of 10s · 896×1184. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/nayu_pkpk/status/2086468076032450920",
+    "sourceLabel": "X 原帖 · @nayu_pkpk",
+    "author": "nayucchi（グラボあちち勢）",
+    "publishedAt": "2026-08-09T15:02:08.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086468076032450920.jpg",
+    "duration": 10,
+    "aspectRatio": "portrait",
+    "resolution": "896×1184",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3\n有紀葉の今日のうりゃないコーナー！（噛んだ笑）\n星座とラッキーカラー選択はLLM任せのワークフローなので1日1回生成して今日1日を占ってくれるぞ！",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 134,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086467465937330555",
+    "title": "@PhotoX86 的 MiniMax H3 社区视频案例 #1",
+    "titleEn": "MiniMax H3 Community Video Example by @PhotoX86 #1",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@PhotoX86 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 68 秒 · 1640×720。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @PhotoX86 on 2026-08-09, with a native-video output of 68s · 1640×720. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/PhotoX86/status/2086467465937330555",
+    "sourceLabel": "X 原帖 · @PhotoX86",
+    "author": "PhotoX86",
+    "publishedAt": "2026-08-09T14:59:43.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086467465937330555.jpg",
+    "duration": 68,
+    "aspectRatio": "landscape",
+    "resolution": "1640×720",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "中式美学幻境2，我更喜欢简约留白不堆砌的朴素禅意，\n所以我在各位大佬们的爆款提示词基础上都做了调整修改\n让它们更符合我的喜好\nMinimax H3制作\n没做竖幅的了，因为宽幅看起来更空灵，21:9画幅，不敢设置太大尺寸，\nRunningHUB都爆显存，所以大场景中人脸有些崩坏",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 188,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086467199393464387",
+    "title": "@PhotoX86 的 MiniMax H3 社区视频案例 #2",
+    "titleEn": "MiniMax H3 Community Video Example by @PhotoX86 #2",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@PhotoX86 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 64 秒 · 1640×720。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @PhotoX86 on 2026-08-09, with a native-video output of 64s · 1640×720. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/PhotoX86/status/2086467199393464387",
+    "sourceLabel": "X 原帖 · @PhotoX86",
+    "author": "PhotoX86",
+    "publishedAt": "2026-08-09T14:58:39.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086467199393464387.jpg",
+    "duration": 64,
+    "aspectRatio": "landscape",
+    "resolution": "1640×720",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "我更喜欢简约留白不堆砌的朴素禅意\n所以我在爆款提示词基础上都做了调整修改\n让它们更符合我的喜好\nMinimax H3制作\n没做竖幅的了，因为宽幅看起来更空灵，\n21:9画幅，不敢设置太大尺寸，RunningHUB都爆显存，所以大场景中人脸有些崩坏",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 2,
+      "views": 172,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086466067854168379",
+    "title": "@developerlin 的 MiniMax H3 本地生成案例 #1",
+    "titleEn": "MiniMax H3 Local Generation by @developerlin #1",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@developerlin 于 2026-08-09 公开发布的 MiniMax H3 本地生成案例，原生视频规格为 15 秒 · 864×480。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 local generation published by @developerlin on 2026-08-09, with a native-video output of 15s · 864×480. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/developerlin/status/2086466067854168379",
+    "sourceLabel": "X 原帖 · @developerlin",
+    "author": "Frank Lin",
+    "publishedAt": "2026-08-09T14:54:09.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086466067854168379.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "864×480",
+    "tags": [
+      "MiniMax H3",
+      "本地生成",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Technical"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Looks good.\n\nMiniMax H3\nRTX 5070 12G\n480p 15s\n\nThe scene and character images are generated by gpt-image2",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 0,
+      "views": 126,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086465855966372247",
+    "title": "@willowion 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @willowion",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@willowion 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 5 秒 · 1152×640。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @willowion on 2026-08-09, with a native-video output of 5s · 1152×640. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/willowion/status/2086465855966372247",
+    "sourceLabel": "X 原帖 · @willowion",
+    "author": "𝖂𝖎𝖑𝖑𝖔𝖂",
+    "publishedAt": "2026-08-09T14:53:19.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086465855966372247.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "1152×640",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "minimax_h3_turbo_v4_step600_ema.safetensors\n\n4ステップにしてみたら参照用のキャラクターシートが薄っすら登場👻\n\nよし、8ステップにしてみよう🐾\n\nMiniMax-H3 Turbo LoRA\n🔗https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora\n\n#MiniMax_H3",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 2,
+      "views": 211,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086465794792439819",
+    "title": "@erukoed 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @erukoed",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@erukoed 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 5 秒 · 864×480。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @erukoed on 2026-08-09, with a native-video output of 5s · 864×480. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/erukoed/status/2086465794792439819",
+    "sourceLabel": "X 原帖 · @erukoed",
+    "author": "出遅れ",
+    "publishedAt": "2026-08-09T14:53:04.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086465794792439819.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "864×480",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax-H3で5秒動画作ってみたけどスペック高くないPCでもこのレベルを5,6分で作れるのはすごい。変な喋りになっているのはテストで作ったのでプロンプト間違っている人側のミス。",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 2,
+      "views": 141,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086464755628376196",
+    "title": "@shiokotoba 的 MiniMax H3 社区视频案例 #1",
+    "titleEn": "MiniMax H3 Community Video Example by @shiokotoba #1",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@shiokotoba 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 61 秒 · 720×1252。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @shiokotoba on 2026-08-09, with a native-video output of 61s · 720×1252. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/shiokotoba/status/2086464755628376196",
+    "sourceLabel": "X 原帖 · @shiokotoba",
+    "author": "koko",
+    "publishedAt": "2026-08-09T14:48:57.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086464755628376196.jpg",
+    "duration": 61,
+    "aspectRatio": "portrait",
+    "resolution": "720×1252",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "今回は画質を意識したので、かなり良くなった。次はもっとリアル寄りの画像が良さそう。5090を一日回せばMinimax H3で24分くらい作れそうだけど、家が蒸し風呂になるしファンもうるさいｗ",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 34,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086464559439855938",
+    "title": "@derek_wall90176 的 MiniMax H3 广告视频案例",
+    "titleEn": "MiniMax H3 Advertising Video by @derek_wall90176",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@derek_wall90176 于 2026-08-09 公开发布的 MiniMax H3 广告视频案例，原生视频规格为 15 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 advertising video published by @derek_wall90176 on 2026-08-09, with a native-video output of 15s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/derek_wall90176/status/2086464559439855938",
+    "sourceLabel": "X 原帖 · @derek_wall90176",
+    "author": "Derek Wen｜德里克文",
+    "publishedAt": "2026-08-09T14:48:10.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086464559439855938.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "广告视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "UGC & Advertising",
+    "styles": [
+      "Advertising"
+    ],
+    "scenes": [
+      "Product Advertising"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "继续来分享采用MiniMax H3生成带给我的惊喜。\n这次我用AI视频来生成15秒精炼的厦门漆线雕工艺制作效果。\n通过AI视频，仅仅通过提示词就能够生成完整的宣传片效果，虽然存在瑕疵，但是效率太高了。\n提示词我放评论区。",
+    "engagement": {
+      "replies": 3,
+      "reposts": 0,
+      "likes": 6,
+      "views": 1551,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086461975727370440",
+    "title": "@mann_hodge 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @mann_hodge",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@mann_hodge 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 5 秒 · 960×544。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @mann_hodge on 2026-08-09, with a native-video output of 5s · 960×544. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/mann_hodge/status/2086461975727370440",
+    "sourceLabel": "X 原帖 · @mann_hodge",
+    "author": "Ȟ̞̲̥̺͔ͬö͈̩̟̱̺̖ͅdͫg̎̊e̲̗̞͓̰͎ M̌a̹̤̻̠ṉ̠̦̦̘̼ͦnͤ̾",
+    "publishedAt": "2026-08-09T14:37:54.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086461975727370440.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "960×544",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Image fed into my Infinite Ident instructions for MiniMax H3.",
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 7,
+      "views": 244,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086460162689450397",
+    "title": "@hogehoge61 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @hogehoge61",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@hogehoge61 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 8 秒 · 864×480。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @hogehoge61 on 2026-08-09, with a native-video output of 8s · 864×480. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/hogehoge61/status/2086460162689450397",
+    "sourceLabel": "X 原帖 · @hogehoge61",
+    "author": "ほげ",
+    "publishedAt": "2026-08-09T14:30:41.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086460162689450397.jpg",
+    "duration": 8,
+    "aspectRatio": "landscape",
+    "resolution": "864×480",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3で動画が生成出来るからと言って、使う人が面白くないんじゃあねえ…… (何も思いつきません)",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 194,
+      "snapshotAt": "2026-08-10T05:52:30.476Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.476Z"
+  },
+  {
+    "id": "x-2086031009402003468",
+    "title": "@AiPhotorealGirl 的 MiniMax H3 本地生成案例",
+    "titleEn": "MiniMax H3 Local Generation by @AiPhotorealGirl",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@AiPhotorealGirl 于 2026-08-08 公开发布的 MiniMax H3 本地生成案例，原生视频规格为 10 秒 · 1776×1344。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 local generation published by @AiPhotorealGirl on 2026-08-08, with a native-video output of 10s · 1776×1344. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/AiPhotorealGirl/status/2086031009402003468",
+    "sourceLabel": "X 原帖 · @AiPhotorealGirl",
+    "author": "AIconia | アイコニア",
+    "publishedAt": "2026-08-08T10:05:23.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086031009402003468.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "1776×1344",
+    "tags": [
+      "MiniMax H3",
+      "本地生成",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Technical"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "最近話題のMiniMax H3を\nローカル環境(RTX 4070)で試してみました\n\n正直ローカルでの動画生成は\n時間も掛かってクオリティが微妙\nというイメージでしたが\n有志の高速化のお陰もあって\n0.4MPixelの5秒動画なら\n３分以内で出力できて\nクオリティもよかったです\n1年前を考えると恐ろしい速さです\n\nそれで1MPixel10秒で試したら\n30分掛かりました\nさすがに厳しい😅\n\nということで\nこの動画はChatGPTで生成した画像から\n1MPixelで動画生成\nアップスケールとフレーム補間をしたものです\n0.5MPixel相当なら実用的な気がします😌",
+    "engagement": {
+      "replies": 23,
+      "reposts": 75,
+      "likes": 1759,
+      "views": 308901,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z",
+    "attributionNote": "Resolved from the quoted post and native-media publisher metadata."
+  },
+  {
+    "id": "x-2086458310006600101",
+    "title": "@aaaa_2469 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @aaaa_2469",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@aaaa_2469 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 7 秒 · 1080×1920。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @aaaa_2469 on 2026-08-09, with a native-video output of 7s · 1080×1920. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/aaaa_2469/status/2086458310006600101",
+    "sourceLabel": "X 原帖 · @aaaa_2469",
+    "author": "ああああ",
+    "publishedAt": "2026-08-09T14:23:20.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086458310006600101.jpg",
+    "duration": 7,
+    "aspectRatio": "portrait",
+    "resolution": "1080×1920",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "minimax h3で作成\n引いて開けるタイプの覗き窓の事を英語でなんて言うのか分からず、色々な英訳を入れても丸い覗き穴がスライドする変な映像になる\nギャング映画で見るやつとか説明してもAIには伝わらなかった",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 2,
+      "views": 330,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086457343995478450",
+    "title": "@mike_at_cg 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @mike_at_cg",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@mike_at_cg 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 7 秒 · 448×672。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @mike_at_cg on 2026-08-09, with a native-video output of 7s · 448×672. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/mike_at_cg/status/2086457343995478450",
+    "sourceLabel": "X 原帖 · @mike_at_cg",
+    "author": "keim_at_si",
+    "publishedAt": "2026-08-09T14:19:29.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086457343995478450.jpg",
+    "duration": 7,
+    "aspectRatio": "portrait",
+    "resolution": "448×672",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Minimax H3 やってみた！楽しい！",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 101,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086456898791092583",
+    "title": "@ivy_memos 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @ivy_memos",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@ivy_memos 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 5 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @ivy_memos on 2026-08-09, with a native-video output of 5s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ivy_memos/status/2086456898791092583",
+    "sourceLabel": "X 原帖 · @ivy_memos",
+    "author": "アイビー",
+    "publishedAt": "2026-08-09T14:17:43.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086456898791092583.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3で生成したのですが、、これは阿波踊りではないな...",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "views": 333,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086455911216971949",
+    "title": "@mizutamaaiart 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @mizutamaaiart",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@mizutamaaiart 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 1 秒 · 416×608。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @mizutamaaiart on 2026-08-09, with a native-video output of 1s · 416×608. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/mizutamaaiart/status/2086455911216971949",
+    "sourceLabel": "X 原帖 · @mizutamaaiart",
+    "author": "みずたま",
+    "publishedAt": "2026-08-09T14:13:48.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086455911216971949.jpg",
+    "duration": 1,
+    "aspectRatio": "portrait",
+    "resolution": "416×608",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "猫ぱんち！\n（お試しMiniMax H3、音声削除）",
+    "engagement": {
+      "replies": 1,
+      "reposts": 4,
+      "likes": 15,
+      "views": 343,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086455504969281685",
+    "title": "@aiaicreate 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @aiaicreate",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@aiaicreate 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 4 秒 · 1280×1248。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @aiaicreate on 2026-08-09, with a native-video output of 4s · 1280×1248. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/aiaicreate/status/2086455504969281685",
+    "sourceLabel": "X 原帖 · @aiaicreate",
+    "author": "R@aiaicreate",
+    "publishedAt": "2026-08-09T14:12:11.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086455504969281685.jpg",
+    "duration": 4,
+    "aspectRatio": "square",
+    "resolution": "1280×1248",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3ベースの生成ワークフロー「A Very Generic Workflow」が公開。\n低スペックPCでの動作を想定した汎用設計。\nVRAM 12GB、RAM 16GBの環境に対応。\n限られたリソースでの生成を支援。\n\n#MiniMaxH3 #Civitai\n\nURLはリプ⬇️",
+    "engagement": {
+      "replies": 1,
+      "reposts": 1,
+      "likes": 9,
+      "views": 1312,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086455274898870431",
+    "title": "@MattPenny99 的 MiniMax H3 模型对比案例",
+    "titleEn": "MiniMax H3 Model Comparison by @MattPenny99",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@MattPenny99 于 2026-08-09 公开发布的 MiniMax H3 模型对比案例，原生视频规格为 10 秒 · 1280×2160。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 model comparison published by @MattPenny99 on 2026-08-09, with a native-video output of 10s · 1280×2160. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/MattPenny99/status/2086455274898870431",
+    "sourceLabel": "X 原帖 · @MattPenny99",
+    "author": "Matt Penny",
+    "publishedAt": "2026-08-09T14:11:16.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086455274898870431.jpg",
+    "duration": 10,
+    "aspectRatio": "portrait",
+    "resolution": "1280×2160",
+    "tags": [
+      "MiniMax H3",
+      "模型对比",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Model Comparison",
+    "styles": [
+      "Comparative"
+    ],
+    "scenes": [
+      "Model Comparison"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Seedance 2.5 vs Minimax H3 vs Omni Flash\n\nI used the same prompt and starting frame for all three models in order to create b-roll in an upcoming YT video about AI video editing.\n\nRough costs\n\nMinimax H3 - $0.79\nOmni Flash - Free in Google Flow\nSeedance 2.5 - $3.60\n\nWhen factoring in cost effectiveness, Omni wins. Even if you use it at API costs rather than not through Google Flow. \n\nLikely can get a better result from Seedance with more reference images and more specific prompting.\n\nCan't blame them for not recreating my face that well as the only reference it has is the starting frame.",
+    "engagement": {
+      "replies": 3,
+      "reposts": 1,
+      "likes": 2,
+      "views": 230,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086454834748903558",
+    "title": "@morita_desu 的 MiniMax H3 模型对比案例",
+    "titleEn": "MiniMax H3 Model Comparison by @morita_desu",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@morita_desu 于 2026-08-09 公开发布的 MiniMax H3 模型对比案例，原生视频规格为 8 秒 · 864×480。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 model comparison published by @morita_desu on 2026-08-09, with a native-video output of 8s · 864×480. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/morita_desu/status/2086454834748903558",
+    "sourceLabel": "X 原帖 · @morita_desu",
+    "author": "ɐʇıɹoɯ",
+    "publishedAt": "2026-08-09T14:09:31.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086454834748903558.jpg",
+    "duration": 8,
+    "aspectRatio": "landscape",
+    "resolution": "864×480",
+    "tags": [
+      "MiniMax H3",
+      "模型对比",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Model Comparison",
+    "styles": [
+      "Comparative"
+    ],
+    "scenes": [
+      "Model Comparison"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "ComfyUI + MiniMax H3で、よく女子高生がペットボトルのジュースを飲む様子みたいなのがアップされてるけど、そういうのは比較的簡単にできるんだなぁと。\n別に女子高生マニアとかではないです(笑)",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 136,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086454188058587341",
+    "title": "@syzmk02 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @syzmk02",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@syzmk02 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 5 秒 · 864×480。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @syzmk02 on 2026-08-09, with a native-video output of 5s · 864×480. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/syzmk02/status/2086454188058587341",
+    "sourceLabel": "X 原帖 · @syzmk02",
+    "author": "しゅーま",
+    "publishedAt": "2026-08-09T14:06:57.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086454188058587341.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "864×480",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "miniMAX-H3もっと早く、画質よくできないかなって探してたけどもうすでに色々と出てきている模様\n早いなぁ\n色々な画風の画像をリファレンスに試してみたけどちゃんと合わしてくるのすごいな\nすぐにリアル系にしたがらない",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 107,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086453457808920930",
+    "title": "@LabMike3D 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @LabMike3D",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@LabMike3D 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 20 秒 · 1920×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @LabMike3D on 2026-08-09, with a native-video output of 20s · 1920×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/LabMike3D/status/2086453457808920930",
+    "sourceLabel": "X 原帖 · @LabMike3D",
+    "author": "Lab Mike 3D",
+    "publishedAt": "2026-08-09T14:04:03.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086453457808920930.jpg",
+    "duration": 20,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3 Upgrade. Fixed audio and 4-step Turbo LoRA integration for low-end/Low VRAM GPUs. MM H3 is constantly evolving. Check out my Hugging Face posts for the best tips. Cheers!",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 157,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086453358668509563",
+    "title": "@ItsmeAjayKV 的 MiniMax H3 音乐视频案例",
+    "titleEn": "MiniMax H3 Music Video by @ItsmeAjayKV",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@ItsmeAjayKV 于 2026-08-09 公开发布的 MiniMax H3 音乐视频案例，原生视频规格为 10 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 music video published by @ItsmeAjayKV on 2026-08-09, with a native-video output of 10s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ItsmeAjayKV/status/2086453358668509563",
+    "sourceLabel": "X 原帖 · @ItsmeAjayKV",
+    "author": "AJ",
+    "publishedAt": "2026-08-09T14:03:39.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086453358668509563.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Music Video",
+    "styles": [
+      "Music Video"
+    ],
+    "scenes": [
+      "Music Video"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Update on MiniMax H3 running on my single 3090 via comfy UI.\n\nHave a workflow almost ready.\n\nH3 is good with sound effects/music as well. This is turning out to be the best video gen model that can be run in a single 3090.\n\n\"non_diegetic_music: A slow solo piano with wide spacing between the notes, soft sustained strings entering underneath about\nhalfway through, and a faint high shimmer that fades to silence at the end.\"",
+    "engagement": {
+      "replies": 3,
+      "reposts": 0,
+      "likes": 4,
+      "views": 442,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086452798074540404",
+    "title": "@mohikan_head1 的 MiniMax H3 音乐视频案例",
+    "titleEn": "MiniMax H3 Music Video by @mohikan_head1",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@mohikan_head1 于 2026-08-09 公开发布的 MiniMax H3 音乐视频案例，原生视频规格为 5 秒 · 576×736。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 music video published by @mohikan_head1 on 2026-08-09, with a native-video output of 5s · 576×736. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/mohikan_head1/status/2086452798074540404",
+    "sourceLabel": "X 原帖 · @mohikan_head1",
+    "author": "もひかん@毛ガニ隊",
+    "publishedAt": "2026-08-09T14:01:26.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086452798074540404.jpg",
+    "duration": 5,
+    "aspectRatio": "portrait",
+    "resolution": "576×736",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Music Video",
+    "styles": [
+      "Music Video"
+    ],
+    "scenes": [
+      "Music Video"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3少し試してみた、うちの4070Tisで十分動く！\n音楽をプロンプトで制御したいがヨグワガンニャイ！\n#AIイラスト #AIart️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️",
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 1,
+      "views": 266,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086451597761286506",
+    "title": "@Bhavani_00007 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @Bhavani_00007",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@Bhavani_00007 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 14 秒 · 1920×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @Bhavani_00007 on 2026-08-09, with a native-video output of 14s · 1920×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Bhavani_00007/status/2086451597761286506",
+    "sourceLabel": "X 原帖 · @Bhavani_00007",
+    "author": "Bhavy☄️",
+    "publishedAt": "2026-08-09T13:56:39.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086451597761286506.jpg",
+    "duration": 14,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Tested MiniMax H3 on @Hailuo_AI again\n\nThe Interstellar scene, but about the Gemini 3.5 Pro release 😭\n\nGave it the reference video, voice samples for all three characters, and the Gemini logo.\n\nIt cloned all three voices and kept the logo on their shirts throughout.\n\nInsane.",
+    "engagement": {
+      "replies": 28,
+      "reposts": 3,
+      "likes": 43,
+      "views": 3270,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086449437275271388",
+    "title": "@luta_ai 的 MiniMax H3 角色对白案例",
+    "titleEn": "MiniMax H3 Character Dialogue by @luta_ai",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "@luta_ai 于 2026-08-09 公开发布的 MiniMax H3 角色对白案例，原生视频规格为 85 秒 · 650×846。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 character dialogue published by @luta_ai on 2026-08-09, with a native-video output of 85s · 650×846. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/luta_ai/status/2086449437275271388",
+    "sourceLabel": "X 原帖 · @luta_ai",
+    "author": "LUTA＠AI",
+    "publishedAt": "2026-08-09T13:48:04.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086449437275271388.jpg",
+    "duration": 85,
+    "aspectRatio": "portrait",
+    "resolution": "650×846",
+    "tags": [
+      "MiniMax H3",
+      "角色对白",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Character & Dialogue",
+    "styles": [
+      "Dialogue"
+    ],
+    "scenes": [
+      "Dialogue"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "✨MiniMax H3、動画の微調整ができる値が隠れていました！\n\nComfyUIのH3のノードには出ていないんですが、モデル側に「参照をどれくらい信用するか」の設定があって、conditioningに入れれば効きます。既定は画像・動画が0.999、音声が1.0でした。\n\n出すだけのノードを20行くらいで書いて、シードを固定したまま0.999→0.9→0.7→0.5→0.3と振ってみました😊\nRTX 4090 / ComfyUI v0.31.0 / 4ステップLoRA / 同じ参照・同じプロンプトです。\n\n嬉しいのはここ👇\n\nFL2Vだと、セリフのイントネーションはシードで決まります。なので声が気に入った時にシードを動かせません。でも動きが気に入らないことがあって、これまでは打つ手がなかったです💦\nこの値を下げると、シードはそのままで動きだけ変えられました。4ステップLoRAで出ていた回転が0.3で出なくなった回もありました。\n\nRef2VAで音声を参照から持ってきている時は逆で、音は参照が押さえてくれるのでシードを振り放題です。動きを変えたければシードを変えればいい。\nなのでこの値が効いてくるのは、音をモデルに作らせている時だと思います。\n\n何が変わって何が変わらないかも見てみました👇\n変わらない：キャラの見た目、衣装、画風、背景、動きの量\n変わる：構図、表情、動きの中身\n\n0.3まで下げても絵は崩れませんでした🤔 計算上そこまで下げると参照はノイズに埋もれるはずなんですが、キャラはそのままです。\n添付の動画では前半がデフォルト値の0.999で、右手の袖の場所が気に入らなかったわけですが、後半のように0.7にすると袖だけを変化できています。これはうまくいったパターンですが、シードで良い感じの動画がでてこの部分だけ気に入らないというのがあった時には一度やってみてもいいかもしれません。もちろん絶対というわけではないですが💦\n\n注意点が2つ💦\n・FL2Vだと0.5あたりから最後のフレーム指定が効かなくなります。0.7までがまあいいところかなと。\n・値を動かすと、上げても下げても最初の2〜3秒の音声が変わる時があります。私が試した限りでは大きくイントネーションが変わることがなかったので、シードでセリフが気に入ったけど、動画が気に入らない場合には使えるかなと思っています。絶対とはいえませんが。\n\nこの画像と音声の差、たぶん狙ってやってるんだと思います。仕様書を見ると音声だけ「そのままコピー」という扱いがあって、映像側にはその言葉がないんですよね。だからH3は音を外から持ってくる前提で作られてそうだなーと感じています🤔\n\nリプにノードのコード置いておきます👇\n\n#ai #comfyui",
+    "engagement": {
+      "replies": 2,
+      "reposts": 16,
+      "likes": 131,
+      "views": 11809,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086448706438713714",
+    "title": "@C12592947592 的 MiniMax H3 动作与视觉特效案例",
+    "titleEn": "MiniMax H3 Action and VFX by @C12592947592",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@C12592947592 于 2026-08-09 公开发布的 MiniMax H3 动作与视觉特效案例，原生视频规格为 10 秒 · 864×480。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 action and vfx published by @C12592947592 on 2026-08-09, with a native-video output of 10s · 864×480. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/C12592947592/status/2086448706438713714",
+    "sourceLabel": "X 原帖 · @C12592947592",
+    "author": "supercub3",
+    "publishedAt": "2026-08-09T13:45:10.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086448706438713714.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "864×480",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Action"
+    ],
+    "scenes": [
+      "Action Test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Minimax H3\n着ぐるみに格ゲーしてもらったテスト",
+    "engagement": {
+      "replies": 0,
+      "reposts": 3,
+      "likes": 17,
+      "views": 1181,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086446187012649188",
+    "title": "@ModengSir 的 MiniMax H3 本地生成案例 #2",
+    "titleEn": "MiniMax H3 Local Generation by @ModengSir #2",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@ModengSir 于 2026-08-09 公开发布的 MiniMax H3 本地生成案例，原生视频规格为 5 秒 · 1280×736。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 local generation published by @ModengSir on 2026-08-09, with a native-video output of 5s · 1280×736. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ModengSir/status/2086446187012649188",
+    "sourceLabel": "X 原帖 · @ModengSir",
+    "author": "Modengsir AI",
+    "publishedAt": "2026-08-09T13:35:09.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086446187012649188.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "1280×736",
+    "tags": [
+      "MiniMax H3",
+      "本地生成",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Technical"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "ComfyUI + MiniMax H3  AI视频生成\n不用多说一句话，你会明白它的含金量\n想部署的欢迎交流沟通",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 6,
+      "views": 475,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086445362126991796",
+    "title": "@NsitnovSitnov 的 MiniMax H3 本地生成案例",
+    "titleEn": "MiniMax H3 Local Generation by @NsitnovSitnov",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@NsitnovSitnov 于 2026-08-09 公开发布的 MiniMax H3 本地生成案例，原生视频规格为 150 秒 · 1120×640。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 local generation published by @NsitnovSitnov on 2026-08-09, with a native-video output of 150s · 1120×640. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/NsitnovSitnov/status/2086445362126991796",
+    "sourceLabel": "X 原帖 · @NsitnovSitnov",
+    "author": "Nedelcho Sitnov",
+    "publishedAt": "2026-08-09T13:31:53.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086445362126991796.jpg",
+    "duration": 150,
+    "aspectRatio": "landscape",
+    "resolution": "1120×640",
+    "tags": [
+      "MiniMax H3",
+      "本地生成",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Technical"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3   \nQwen Image 3 Pro   \nElevenLabs  \nRTX Pro 6000 96GB   \nLocal AI    \n\n„Seven Minutes Before Dawn” \n\n@MiniMax_AI\n@NVIDIAAI\n@Alibaba_Qwen\n@ElevenLabs\n\nhttps://youtube.com/@cinesit",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 2,
+      "views": 239,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086444017584140313",
+    "title": "@Conor_D_Dart 的 MiniMax H3 模型对比案例",
+    "titleEn": "MiniMax H3 Model Comparison by @Conor_D_Dart",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@Conor_D_Dart 于 2026-08-09 公开发布的 MiniMax H3 模型对比案例，原生视频规格为 15 秒 · 1920×816。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 model comparison published by @Conor_D_Dart on 2026-08-09, with a native-video output of 15s · 1920×816. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Conor_D_Dart/status/2086444017584140313",
+    "sourceLabel": "X 原帖 · @Conor_D_Dart",
+    "author": "Conor Dart",
+    "publishedAt": "2026-08-09T13:26:32.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086444017584140313.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1920×816",
+    "tags": [
+      "MiniMax H3",
+      "模型对比",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Model Comparison",
+    "styles": [
+      "Comparative"
+    ],
+    "scenes": [
+      "Model Comparison"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "1/4\n\nI’ve now had the chance to test MiniMax H3 across three different parts of its video-generation workflow: the standard 768p generation, the higher-resolution 2K option, and Context-IR.\n\nSurprisingly, Context-IR might actually be the most important part of the whole experience.\n\nContext-IR is designed to improve and refine your prompt before it is passed to the video-generation model. During my testing, the difference it made was immediately noticeable. Whenever I generated videos without using Context-IR first, the results were consistently worse. (or my prompting just sucks) \n\nWhat impressed me most is how well it seems to understand what H3 itself needs from a prompt.\n\nYou can give Context-IR a fairly straightforward description of a scene, and it expands that into something much more detailed and structured. It fills in many of the important details between your original instructions, such as how the scene progresses, what happens between key moments, camera behaviour, movement, visual details, and the overall flow of the sequence.\n\n- Video details - \nThis video compares the two qualities with the use of Context-IR\n\nI took 3:34 - 5.50 Min to generate the videos in 768p and 2K. \n\nThe Context-IR took around 1min to edit the prompt.\n\nPut Sound on, as that was generated with the video. \n\n-\n\nP.S These Guys have cooked,  @MiniMax_AI  and @Hailuo_AI, I wish I could have run this FAST on my 5080.",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 1,
+      "views": 209,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086443622262820904",
+    "title": "@toyxyz3 的 MiniMax H3 本地生成案例",
+    "titleEn": "MiniMax H3 Local Generation by @toyxyz3",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "@toyxyz3 于 2026-08-09 公开发布的 MiniMax H3 本地生成案例，原生视频规格为 4 秒 · 1728×960。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 local generation published by @toyxyz3 on 2026-08-09, with a native-video output of 4s · 1728×960. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/toyxyz3/status/2086443622262820904",
+    "sourceLabel": "X 原帖 · @toyxyz3",
+    "author": "toyxyz",
+    "publishedAt": "2026-08-09T13:24:58.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086443622262820904.jpg",
+    "duration": 4,
+    "aspectRatio": "landscape",
+    "resolution": "1728×960",
+    "tags": [
+      "MiniMax H3",
+      "本地生成",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Technical"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax-H3 R2V video edit test #comfyui",
+    "engagement": {
+      "replies": 3,
+      "reposts": 10,
+      "likes": 152,
+      "views": 10341,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086443552649941148",
+    "title": "@FutureVibesAi 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @FutureVibesAi",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@FutureVibesAi 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 15 秒 · 1920×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @FutureVibesAi on 2026-08-09, with a native-video output of 15s · 1920×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/FutureVibesAi/status/2086443552649941148",
+    "sourceLabel": "X 原帖 · @FutureVibesAi",
+    "author": "Future Vibes AI - Educator",
+    "publishedAt": "2026-08-09T13:24:41.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086443552649941148.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Minimax H3 - @Hailuo_AI \nThe Model Is God Damn Good 😍\nCheck the prompt below 🙌",
+    "engagement": {
+      "replies": 10,
+      "reposts": 1,
+      "likes": 17,
+      "views": 523,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086439838337667391",
+    "title": "@JuwalBose 的 MiniMax H3 本地生成案例",
+    "titleEn": "MiniMax H3 Local Generation by @JuwalBose",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@JuwalBose 于 2026-08-09 公开发布的 MiniMax H3 本地生成案例，原生视频规格为 25 秒 · 1280×704。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 local generation published by @JuwalBose on 2026-08-09, with a native-video output of 25s · 1280×704. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/JuwalBose/status/2086439838337667391",
+    "sourceLabel": "X 原帖 · @JuwalBose",
+    "author": "JuwalBose",
+    "publishedAt": "2026-08-09T13:09:56.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086439838337667391.jpg",
+    "duration": 25,
+    "aspectRatio": "landscape",
+    "resolution": "1280×704",
+    "tags": [
+      "MiniMax H3",
+      "本地生成",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Technical"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Playing with Minimax H3 Motion Context Video extension.\n\nCreated this 25secs 1280x704 video (5s+5s+15s)\nWorks great with Turbo Loras, 15s took 11.15 min, 93s/it\n\nCheck it out\nhttps://github.com/NikoDemon80/ComfyUI-H3-Motion-Context\n\nMy 4070Ti is loving this new ability😎",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 0,
+      "views": 294,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086438490502574462",
+    "title": "@Elagizy 的 MiniMax H3 本地生成案例",
+    "titleEn": "MiniMax H3 Local Generation by @Elagizy",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@Elagizy 于 2026-08-09 公开发布的 MiniMax H3 本地生成案例，原生视频规格为 15 秒 · 1280×736。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 local generation published by @Elagizy on 2026-08-09, with a native-video output of 15s · 1280×736. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Elagizy/status/2086438490502574462",
+    "sourceLabel": "X 原帖 · @Elagizy",
+    "author": "Ehab Elagizy",
+    "publishedAt": "2026-08-09T13:04:34.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086438490502574462.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1280×736",
+    "tags": [
+      "MiniMax H3",
+      "本地生成",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Technical"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Testing Minimax H3 with ComfyUI. Me and Will Smith doing the spaghetti test...\nInference done locally on 5090 24GB VRAM, 20 Steps, Sage Attn + Sol Attn + Spectrum, took about 27 minutes for a 15s 1280x736 video.",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 0,
+      "views": 127,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086437343276548399",
+    "title": "@Yayoi_Labo_ 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @Yayoi_Labo_",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@Yayoi_Labo_ 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 7 秒 · 1920×1440。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @Yayoi_Labo_ on 2026-08-09, with a native-video output of 7s · 1920×1440. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Yayoi_Labo_/status/2086437343276548399",
+    "sourceLabel": "X 原帖 · @Yayoi_Labo_",
+    "author": "Healing Yayoi -AI Beauty Institute- 弥生",
+    "publishedAt": "2026-08-09T13:00:01.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086437343276548399.jpg",
+    "duration": 7,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1440",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "#美容 #セルフケア 夏の簡単美容ポイント🪟 夏は日の出が早いから寝る前にカーテンを少し開けておくようにしているよ🌌 朝の光が入ると目覚めがすっきりしやすいかも🌿 おやすみなさい🌃\n#PolloAI さんの🎥MiniMax H3 で作成してみました💛\n@PolloAIJP @polloai_creator http://tinyurl.com/b9rfjhs7",
+    "engagement": {
+      "replies": 1,
+      "reposts": 3,
+      "likes": 11,
+      "views": 209,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086437341808271591",
+    "title": "@malariadx 的 MiniMax H3 本地生成案例",
+    "titleEn": "MiniMax H3 Local Generation by @malariadx",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "@malariadx 于 2026-08-09 公开发布的 MiniMax H3 本地生成案例，原生视频规格为 5 秒 · 640×832。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 local generation published by @malariadx on 2026-08-09, with a native-video output of 5s · 640×832. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/malariadx/status/2086437341808271591",
+    "sourceLabel": "X 原帖 · @malariadx",
+    "author": "びおめた",
+    "publishedAt": "2026-08-09T13:00:01.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086437341808271591.jpg",
+    "duration": 5,
+    "aspectRatio": "portrait",
+    "resolution": "640×832",
+    "tags": [
+      "MiniMax H3",
+      "本地生成",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Technical"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3(R2V)を試し、画像/動画/音声を参照して動画を生成するってやつですね、今回はComfyUI-MiniMaxH3-Easyというノードとワークフローを使いました\nhttps://github.com/nkxx188/ComfyUI-MiniMaxH3-Easy\n#AI動画 #AIart",
+    "engagement": {
+      "replies": 2,
+      "reposts": 7,
+      "likes": 79,
+      "views": 5789,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086434543368569014",
+    "title": "@Dheepanratnam 的 MiniMax H3 模型对比案例",
+    "titleEn": "MiniMax H3 Model Comparison by @Dheepanratnam",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "T2VA",
+    "summary": "@Dheepanratnam 于 2026-08-09 公开发布的 MiniMax H3 模型对比案例，原生视频规格为 15 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 model comparison published by @Dheepanratnam on 2026-08-09, with a native-video output of 15s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Dheepanratnam/status/2086434543368569014",
+    "sourceLabel": "X 原帖 · @Dheepanratnam",
+    "author": "Dheepan Ratnam",
+    "publishedAt": "2026-08-09T12:48:53.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086434543368569014.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "模型对比",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Model Comparison",
+    "styles": [
+      "Comparative"
+    ],
+    "scenes": [
+      "Model Comparison"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Seedance 2.0 vs Minimax H3 on Hailuo Ai\n\nFour 15-second spot ads from different era. \nPure text-to-video, no reference images. 24 fps.\n\nSecond set in the series. Same method as Coca-Cola, \nKodak × Four Eras 1950,1970,1990,2010\n\nSeedance 2.0 results and prompts in the replies⤵️",
+    "engagement": {
+      "replies": 7,
+      "reposts": 0,
+      "likes": 26,
+      "views": 1356,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086434192683110584",
+    "title": "@developerlin 的 MiniMax H3 本地生成案例 #2",
+    "titleEn": "MiniMax H3 Local Generation by @developerlin #2",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@developerlin 于 2026-08-09 公开发布的 MiniMax H3 本地生成案例，原生视频规格为 15 秒 · 864×480。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 local generation published by @developerlin on 2026-08-09, with a native-video output of 15s · 864×480. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/developerlin/status/2086434192683110584",
+    "sourceLabel": "X 原帖 · @developerlin",
+    "author": "Frank Lin",
+    "publishedAt": "2026-08-09T12:47:30.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086434192683110584.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "864×480",
+    "tags": [
+      "MiniMax H3",
+      "本地生成",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Technical"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3\nRTX 5070 12G \n480p 15s\n\nLooks much better after agent refined the prompt w/ H3 prompt writting skill, same storyboard.",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 2,
+      "views": 149,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086433968858259528",
+    "title": "@PhotogenicWeekE 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @PhotogenicWeekE",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@PhotogenicWeekE 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 10 秒 · 1920×1104。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @PhotogenicWeekE on 2026-08-09, with a native-video output of 10s · 1920×1104. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/PhotogenicWeekE/status/2086433968858259528",
+    "sourceLabel": "X 原帖 · @PhotogenicWeekE",
+    "author": "Photogenic Weekend",
+    "publishedAt": "2026-08-09T12:46:36.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086433968858259528.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1104",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3、お次は↓のPromptをH3用に整形、リファレンス無しへ、で<d>[English]...って書くところを[Japanese]へ。これすると英語でも日本人っぽい発音になること”も”ある(笑)",
+    "engagement": {
+      "replies": 5,
+      "reposts": 9,
+      "likes": 102,
+      "views": 16260,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086432721925267737",
+    "title": "@sep_is_heim 的 MiniMax H3 音乐视频案例",
+    "titleEn": "MiniMax H3 Music Video by @sep_is_heim",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@sep_is_heim 于 2026-08-09 公开发布的 MiniMax H3 音乐视频案例，原生视频规格为 30 秒 · 1152×1728。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 music video published by @sep_is_heim on 2026-08-09, with a native-video output of 30s · 1152×1728. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/sep_is_heim/status/2086432721925267737",
+    "sourceLabel": "X 原帖 · @sep_is_heim",
+    "author": "Kamimoto(かみもと)",
+    "publishedAt": "2026-08-09T12:41:39.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086432721925267737.jpg",
+    "duration": 30,
+    "aspectRatio": "portrait",
+    "resolution": "1152×1728",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Music Video",
+    "styles": [
+      "Music Video"
+    ],
+    "scenes": [
+      "Music Video"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "とりあえず384×576, 24fps, 30秒ならRTX4070(VRAM 12GB)でもMiniMax H3で動画生成一発できた。SageAttention+TurboLoRA(8step)で7分23秒。歌は適当だけどそれっぽい。以下は3倍アップスケール後。Real-ESRGAN様最高です。",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 1,
+      "views": 177,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086432353405083867",
+    "title": "@awesome_visuals 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @awesome_visuals",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@awesome_visuals 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 15 秒 · 768×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @awesome_visuals on 2026-08-09, with a native-video output of 15s · 768×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/awesome_visuals/status/2086432353405083867",
+    "sourceLabel": "X 原帖 · @awesome_visuals",
+    "author": "awesome_visuals",
+    "publishedAt": "2026-08-09T12:40:11.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086432353405083867.jpg",
+    "duration": 15,
+    "aspectRatio": "square",
+    "resolution": "768×768",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Office blooper 🤣\n\nmade with MiniMax H3",
+    "engagement": {
+      "replies": 7,
+      "reposts": 0,
+      "likes": 49,
+      "views": 4885,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086432310292037759",
+    "title": "@shiokotoba 的 MiniMax H3 社区视频案例 #2",
+    "titleEn": "MiniMax H3 Community Video Example by @shiokotoba #2",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@shiokotoba 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 61 秒 · 736×1280。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @shiokotoba on 2026-08-09, with a native-video output of 61s · 736×1280. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/shiokotoba/status/2086432310292037759",
+    "sourceLabel": "X 原帖 · @shiokotoba",
+    "author": "koko",
+    "publishedAt": "2026-08-09T12:40:01.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086432310292037759.jpg",
+    "duration": 61,
+    "aspectRatio": "portrait",
+    "resolution": "736×1280",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "前にAIで自作したAI動画生成ツールを久しぶりに試してみた。ほぼワンクリックで実行して、そのままPCから離れた。\n高速MiniMax H3で、1280×736・1分の動画生成に43分くらい。画像はKrea 2を使ったけど、なんというか全体的に広告映像っぽい感じがする……。\nLTX 2.3の頃と比べると、かなり進歩してる",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 2,
+      "views": 190,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086432040157946137",
+    "title": "@hirosi1971 的 MiniMax H3 本地生成案例",
+    "titleEn": "MiniMax H3 Local Generation by @hirosi1971",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@hirosi1971 于 2026-08-09 公开发布的 MiniMax H3 本地生成案例，原生视频规格为 5 秒 · 720×720。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 local generation published by @hirosi1971 on 2026-08-09, with a native-video output of 5s · 720×720. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/hirosi1971/status/2086432040157946137",
+    "sourceLabel": "X 原帖 · @hirosi1971",
+    "author": "ばら＠α7iiiとAI修行中",
+    "publishedAt": "2026-08-09T12:38:57.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086432040157946137.jpg",
+    "duration": 5,
+    "aspectRatio": "square",
+    "resolution": "720×720",
+    "tags": [
+      "MiniMax H3",
+      "本地生成",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Technical"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3のローカル動画生成で遊んでます\nなかなか良いのでお試しあれ\n#おねんねあーと",
+    "engagement": {
+      "replies": 1,
+      "reposts": 1,
+      "likes": 8,
+      "views": 389,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086430650543050831",
+    "title": "@hage_mukakin 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @hage_mukakin",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@hage_mukakin 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 10 秒 · 640×832。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @hage_mukakin on 2026-08-09, with a native-video output of 10s · 640×832. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/hage_mukakin/status/2086430650543050831",
+    "sourceLabel": "X 原帖 · @hage_mukakin",
+    "author": "鉄の無課金",
+    "publishedAt": "2026-08-09T12:33:25.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086430650543050831.jpg",
+    "duration": 10,
+    "aspectRatio": "portrait",
+    "resolution": "640×832",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "AIの反乱、なお人間を学習し過ぎたみたい。MiniMax-H3で作成。",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 108,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086430588727386566",
+    "title": "@Rishibag02 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @Rishibag02",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@Rishibag02 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 19 秒 · 1920×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @Rishibag02 on 2026-08-09, with a native-video output of 19s · 1920×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Rishibag02/status/2086430588727386566",
+    "sourceLabel": "X 原帖 · @Rishibag02",
+    "author": "Rishi Bag",
+    "publishedAt": "2026-08-09T12:33:11.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086430588727386566.jpg",
+    "duration": 19,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Great prompt @opener_ai \n\nCreated on @YouArtStudio \nUsing @Hailuo_AI Minimax H3",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 153,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086430481072218307",
+    "title": "@Mayz1169 的 MiniMax H3 社区视频案例",
+    "titleEn": "MiniMax H3 Community Video Example by @Mayz1169",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@Mayz1169 于 2026-08-09 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 15 秒 · 1888×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 community video example published by @Mayz1169 on 2026-08-09, with a native-video output of 15s · 1888×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Mayz1169/status/2086430481072218307",
+    "sourceLabel": "X 原帖 · @Mayz1169",
+    "author": "Kiki",
+    "publishedAt": "2026-08-09T12:32:45.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086430481072218307.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1888×1080",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Second test with MiniMax H3.\n\nThis time I went with a red color palette, and the result turned out pretty good. Btw, the pricing is really reasonable.\n\nPrompt below ⤵️",
+    "engagement": {
+      "replies": 13,
+      "reposts": 8,
+      "likes": 171,
+      "views": 11263,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
+  },
+  {
+    "id": "x-2086428473879630076",
+    "title": "@metakonoka 的 MiniMax H3 本地生成案例",
+    "titleEn": "MiniMax H3 Local Generation by @metakonoka",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "@metakonoka 于 2026-08-09 公开发布的 MiniMax H3 本地生成案例，原生视频规格为 7 秒 · 2000×2020。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A MiniMax H3 local generation published by @metakonoka on 2026-08-09, with a native-video output of 7s · 2000×2020. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/metakonoka/status/2086428473879630076",
+    "sourceLabel": "X 原帖 · @metakonoka",
+    "author": "深海このか☘️Konoka Fukami☘️",
+    "publishedAt": "2026-08-09T12:24:46.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086428473879630076.jpg",
+    "duration": 7,
+    "aspectRatio": "square",
+    "resolution": "2000×2020",
+    "tags": [
+      "MiniMax H3",
+      "本地生成",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Technical"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "こんばんは🍀\n今日はようやく時間ができたのでMiniMax H3を試せました🍀\nローカルPCで動かしてます☺️ヽ(｀▽´)/ﾔｯﾀｰ!",
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 6,
+      "views": 188,
+      "snapshotAt": "2026-08-10T05:52:30.477Z"
+    },
+    "approvedAt": "2026-08-10T05:52:30.477Z"
   }
 ]

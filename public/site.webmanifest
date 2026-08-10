@@ -1,8 +1,11 @@
 {
   "name": "H3 Field Notes — Awesome MiniMax H3",
   "short_name": "H3 Field Notes",
-  "description": "Source-attributed MiniMax H3 / Hailuo 3.0 video cases and verbatim public prompts.",
+  "description": "Source-attributed MiniMax H3 video examples with in-site playback and verbatim prompts only when creators publish them.",
+  "id": "/",
   "start_url": "/",
+  "scope": "/",
+  "lang": "zh-CN",
   "display": "standalone",
   "background_color": "#0a0b09",
   "theme_color": "#0a0b09"

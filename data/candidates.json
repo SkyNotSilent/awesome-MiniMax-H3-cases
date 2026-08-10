@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "id": "x-2086455862932218000",
+    "sourceUrl": "https://x.com/aiaicreate/status/2086455862932218000",
+    "sourceType": "x",
+    "author": "R@aiaicreate",
+    "authorHandle": "@aiaicreate",
+    "publishedAt": "2026-08-09T14:13:36.000Z",
+    "text": "▼话题\n商用视频生成AI「Seedance 2.5」与本地运行「Minimax H3」的比较视频投稿。两者品质差异与本地模型的进步成为关注焦点。\n\n▼主要反应\n・虽然Seedance在描绘的自然度上占优，但本地环境中表现力的高超引发众多惊叹之声。",
+    "captionTruncated": true,
+    "visiblePrompt": null,
+    "prompt": null,
+    "promptProvenance": "not-published",
+    "mediaType": "native-video",
+    "mediaMetadata": {
+      "posterUrl": "https://pbs.twimg.com/amplify_video_thumb/2086455825972006912/img/l4cQqmASiCHCggEg.jpg",
+      "durationSeconds": null,
+      "width": null,
+      "height": null,
+      "resolution": null,
+      "aspectRatio": null
+    },
+    "engagement": {
+      "likes": 5,
+      "replies": 2,
+      "reposts": 0,
+      "views": 1356,
+      "snapshotAt": "2026-08-10T02:51:20.419Z"
+    },
+    "initialClassification": {
+      "isH3Case": true,
+      "mode": "unknown",
+      "category": "dance",
+      "confidence": 0.86,
+      "basis": "Original X post text plus native-video metadata"
+    },
+    "reviewStatus": "needs-context",
+    "discoveredAt": "2026-08-10T02:51:20.419Z",
+    "discoveryQuery": "(\"MiniMax H3\" OR \"Hailuo 3.0\" OR \"MiniMax-H3\") filter:native_video -filter:replies",
+    "reviewNote": "The post is a topic/reaction compilation and points to an original source only in a reply; keep it out of the public catalog until the original post is resolved."
+  }
+]

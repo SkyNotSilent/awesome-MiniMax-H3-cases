@@ -4,7 +4,7 @@
   "type": "object",
   "required": [
     "id", "title", "titleEn", "summary", "summaryEn", "model", "mode", "prompt", "sourceUrl", "author", "posterUrl",
-    "category", "styles", "scenes", "inputTypes", "promptProvenance", "verified"
+    "category", "styles", "scenes", "inputTypes", "promptProvenance", "verified", "duration", "resolution", "aspectRatio", "publishedAt"
   ],
   "properties": {
     "id": { "type": "string", "minLength": 3 },
@@ -17,6 +17,29 @@
     "prompt": { "type": ["string", "null"], "minLength": 1 },
     "sourceUrl": { "type": "string", "format": "uri" },
     "posterUrl": { "type": "string", "minLength": 1 },
+    "duration": { "type": "number", "exclusiveMinimum": 0 },
+    "resolution": { "type": "string", "minLength": 1 },
+    "aspectRatio": { "type": "string", "minLength": 1 },
+    "publishedAt": { "type": "string", "minLength": 1 },
+    "sourceCaption": { "type": "string", "minLength": 1 },
+    "approvedAt": { "type": "string", "minLength": 1 },
+    "attributionNote": { "type": "string", "minLength": 1 },
+    "engagement": {
+      "type": "object",
+      "required": ["replies", "reposts", "likes", "views"],
+      "anyOf": [
+        { "required": ["snapshotAt"] },
+        { "required": ["capturedAt"] }
+      ],
+      "properties": {
+        "replies": { "type": "number", "minimum": 0 },
+        "reposts": { "type": "number", "minimum": 0 },
+        "likes": { "type": "number", "minimum": 0 },
+        "views": { "type": "number", "minimum": 0 },
+        "snapshotAt": { "type": "string", "minLength": 1 },
+        "capturedAt": { "type": "string", "minLength": 1 }
+      }
+    },
     "author": { "type": "string" },
     "category": { "type": "string" },
     "styles": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },

@@ -12,7 +12,7 @@ Thanks for helping document MiniMax H3 experiments. This catalog values real cas
 6. Use the official X embed by default. A downloaded video may be committed or hosted only when the embed is unavailable, redistribution permission is documented, and a maintainer approves the fallback.
 7. Run `npm test`, `npm run lint`, `npm run build`, and `npm run catalog`.
 
-Set `verified` to `false` when the model, public prompt text, or authorship still needs confirmation. Unverified submissions remain in the review queue and are not shown in the public catalog. Verification never authorizes filling a missing prompt.
+Use `data/candidates.json` and `reviewStatus` for unpublished review work. In the public case dataset, `verified: true` is reserved for official reproducible examples; human-reviewed X community cases remain `verified: false` and are labeled as community sources. Publication approval never authorizes filling a missing prompt.
 
 ## Removal requests
 
