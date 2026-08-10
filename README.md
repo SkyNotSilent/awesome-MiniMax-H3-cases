@@ -5,7 +5,7 @@
 ### Source-attributed MiniMax H3 / Hailuo 3.0 video cases and verbatim public prompts
 
 [![Website](https://img.shields.io/badge/Live-H3_Field_Notes-d8ff3e?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/)
-[![Cases](https://img.shields.io/badge/public_cases-42-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
+[![Cases](https://img.shields.io/badge/public_cases-148-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
 [![CI](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml/badge.svg)](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg?style=flat-square)](./LICENSE)
 
@@ -54,7 +54,7 @@ A practical acceleration starting point is **Turbo LoRA + SageAttention**. EasyC
 | FL2VA | Ramen Rack Focus | [MiniMax public script](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-fl2va-request.sh) |
 | Ref2VA | Follow the Wind | [MiniMax public script](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-ref2va-request.sh) |
 
-The catalog also includes 22 human-approved community cases discovered on X, spanning creator-verbatim prompts, local ComfyUI benchmarks, image and multimodal reference workflows, model comparisons, music videos, multi-shot films, native audio, and post-production pipelines. X cases play inside the catalog through the official X embed. Permission-cleared media may use a hosted fallback when an embed is unavailable.
+The catalog now contains 148 public cases: three official reproducible examples and 145 source-attributed X community cases. Sixteen records preserve verbatim prompts published by an official source or creator; every other entry explicitly marks the prompt as not published. The collection spans local ComfyUI benchmarks, image and multimodal reference workflows, model comparisons, music videos, multi-shot films, native audio, and post-production pipelines. X cases play inside the catalog through the official X embed. Permission-cleared media may use a hosted fallback when an embed is unavailable.
 
 ## Discovery and review pipeline
 
