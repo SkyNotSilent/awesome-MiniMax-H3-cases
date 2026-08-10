@@ -11,6 +11,9 @@
 | [同提示词广告模型对比](https://x.com/__spence_r/status/2085281251183747482) | 30s · 原帖 · 原帖 | `模型对比` `商业广告` `付费合作` `同提示词` |
 | [单句提示词：吃拉面](https://x.com/core_tan/status/2085551748874449032) | 10s · 原帖未标注 · 原帖未标注 | `作者提示词` `吃拉面` `Turbo LoRA` `本地生成` |
 | [手绘暴风雪求生](https://x.com/sada_ai/status/2085547332880503134) | 15s · 原帖未标注 · 原帖未标注 | `完整提示词` `手绘动画` `暴风雪` `电影灯光` |
+| [黑洞邮轮客房手持 POV](https://x.com/ivanfioravanti/status/2086553101029290296) | 10s · 原帖未标注 · landscape | `T2VA` `POV` `Dialogue` `Science Fiction` |
+| [RTX 5060 Ti 本地无参考音视频测试](https://x.com/Cardoso/status/2086561122597925104) | 14s · 原帖未标注 · landscape | `T2VA` `RTX 5060 Ti` `No Reference` `Native Audio` |
+| [4 分 34 秒本地 T2V 情景喜剧测试](https://x.com/alawlette/status/2086600476477514166) | 274s · 原帖未标注 · landscape | `T2VA` `Long Form` `Local Generation` `Continuity` |
 
 ## FL2VA
 
@@ -22,6 +25,7 @@
 | [深海生物百科交互界面](https://x.com/opener_ai/status/2085542413729513534) | 15s · 原帖未标注 · 16:9 | `完整提示词` `首帧参考` `交互 UI` `模型对比` |
 | [I2V Turbo LoRA 测试](https://x.com/toyxyz3/status/2086339956755329363) | 10s · 原帖未标注 · 原帖未标注 | `I2V` `Turbo LoRA` `ComfyUI` `10 秒` |
 | [Larry Turbo + H3 Sage 加速测试](https://x.com/AiPhotorealGirl/status/2086336598539747535) | 10s · 1MP before upscale · 原帖未标注 | `I2V` `Larry Turbo` `H3 Sage` `性能与缺陷` |
+| [单图摇头公仔的写实与卡通双版本](https://x.com/slfemp/status/2086551052778930232) | 5s · 原帖未标注 · landscape | `FL2VA` `Single Image` `Native Audio` `RTX 5090` |
 
 ## Ref2VA
 
@@ -33,6 +37,9 @@
 | [九图参考 AI 电影预告](https://x.com/Cia0_exe/status/2086339725875699927) | 15s · 原帖未标注 · 原帖未标注 | `H3 Omni` `九图参考` `电影预告` `文字渲染` |
 | [地铁乘客云团变形](https://x.com/AION_2077/status/2086595652692427042) | 8s · 1080x1080 · square | `Ref2VA` `Glitch` `Cloud Heads` `Static Camera` |
 | [雨夜酒吧连续跟拍对比](https://x.com/EndFolding79421/status/2086584639091536239) | 15s · 1376x768 · landscape | `Ref2VA` `Model Comparison` `Character Continuity` `One Take` |
+| [Suno 节拍同步的五环境角色蒙太奇](https://x.com/aimikoda/status/2086553240448241802) | 15s · 原帖未标注 · portrait | `Ref2VA` `Suno` `Beat Sync` `Character Consistency` |
+| [Ref2VA 帧补全的角色客串插入](https://x.com/redpolo999/status/2086549225832362433) | 23s · 原帖未标注 · landscape | `Ref2VA` `Frame Infill` `ComfyUI` `Character Insertion` |
+| [西部片节拍标题动画](https://x.com/itsphotogptai/status/2086555941831626849) | 10s · 原帖未标注 · landscape | `Ref2VA` `Title Animation` `Beat Sync` `Typography` |
 
 ## Unknown
 
@@ -53,3 +60,6 @@
 | [RTX 3080 本地角色舞蹈](https://x.com/Toshi_nyaruo_AI/status/2086596504752726378) | 10s · 608x1056 · portrait | `Local Generation` `Dance` `RTX 3080` `Character Animation` |
 | [十秒后的口型失稳测试](https://x.com/Alone1Moon/status/2086588332965024214) | 15s · 864x1184 · portrait | `Lip Sync` `Audio Replacement` `Failure Boundary` `Anime` |
 | [4070 Ti 本地魔法少女变身](https://x.com/NOTorJB/status/2086586609668137267) | 10s · 576x736 · portrait | `Local Generation` `RTX 4070 Ti` `Transformation` `Benchmark` |
+| [30 秒连续对白与口型同步](https://x.com/atomtanstudio/status/2086548496170246638) | 30s · 原帖未标注 · portrait | `Long Dialogue` `Lip Sync` `Native Audio` `Local Generation` |
+| [故事板提示词的文字生成测试](https://x.com/Creator_Pelsan/status/2086558140045169100) | 15s · 原帖未标注 · landscape | `Storyboard` `Text Rendering` `Prompt Following` `Cinematic` |
+| [RTX 5090 本地 1080P 生成实测](https://x.com/STRIMANDO/status/2086576134540726457) | 10s · 1080P · landscape | `Local Generation` `RTX 5090` `1080P` `Benchmark` |

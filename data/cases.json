@@ -1636,5 +1636,574 @@
       "aspectRatio": "portrait",
       "generationSettings": "RTX 4070 Ti 12GB; approximately 9 minutes for a 10-second clip"
     }
+  },
+  {
+    "id": "x-koda-suno-beat-synced-five-environments",
+    "title": "Suno 节拍同步的五环境角色蒙太奇",
+    "titleEn": "Suno Beat-Synced Character Montage Across Five Environments",
+    "model": "MiniMax H3 · Suno",
+    "mode": "Ref2VA",
+    "summary": "使用角色设定图和 15 秒 Suno 音轨作为双重参考，在五个环境中按强拍、半拍和乐句切换 30 个镜头；原帖完整公开了角色一致性、镜头结构、节拍同步与负面约束 Prompt。",
+    "summaryEn": "A character sheet and a 15-second Suno track guide 30 shots across five environments, with cuts tied to strong beats, half-beats, and musical phrases. The post publishes the full prompt for identity consistency, shot structure, audio synchronization, and negative constraints.",
+    "prompt": "Use @[char ref] as the strict character reference and @[audio ref] as the timing, rhythm and editing reference.\n\nKeep the character’s exact identity, proportions, hairstyle, outfit, colors and overall style consistent throughout.\n\nCreate a 15-second cinematic burst-cut video showcasing the character across 5 different environments that naturally fit their design, vibe and world.\n\nAUDIO SYNC\nSynchronize the entire edit to @[audio ref]. Cuts, camera accents, transitions and environment changes should land precisely on strong beats, half-beats and musical accents. Let audio1 control the pacing and intensity of the montage.\n\nSTRUCTURE\n- 5 environments total\n- 3 seconds per environment\n- 6 burst-cut shots per environment\n- 30 shots total\n\nEach environment must be clearly different in atmosphere, lighting, scale and visual language.\n\nShow each environment through rapid cinematic angles: wide establishing shots, aerials, low angles, side views, tracking shots, close environmental details, medium shots and hero frames.\n\nEvery cut must reveal a new angle, distance, composition or spatial relationship. Avoid repeated framing. Mix static shots, push-ins, pull-backs, tracking, orbit and crane-like movement.\n\nKeep character movement subtle and natural. The focus is environmental variety, cinematic framing and tight synchronization with audio1.\n\nHard constraints:\n- exactly 5 environments\n- exactly 6 shots per environment\n- exactly 30 shots total\n- environment changes must follow audio1’s musical phrasing\n- cuts and motion accents synchronized to audio1\n- no outfit changes\n- no character duplication\n- no morphing\n- no text or UI\n- no blurry unreadable frames\n- maintain strict character consistency",
+    "sourceUrl": "https://x.com/aimikoda/status/2086553240448241802",
+    "sourceLabel": "X 原帖 · @aimikoda",
+    "author": "Kōda",
+    "publishedAt": "2026-08-09T20:40:33.464Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086553240448241802.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "原帖未标注",
+    "tags": [
+      "Ref2VA",
+      "Suno",
+      "Beat Sync",
+      "Character Consistency"
+    ],
+    "category": "Character Consistency & Beat Sync",
+    "styles": [
+      "Cinematic",
+      "Anime"
+    ],
+    "scenes": [
+      "Five beat-synced environments",
+      "Thirty-shot character montage"
+    ],
+    "inputTypes": [
+      "text",
+      "image",
+      "audio"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 2,
+      "reposts": 4,
+      "likes": 49,
+      "bookmarks": 32,
+      "views": 1541,
+      "capturedAt": "2026-08-10T00:06:30Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.125,
+      "resolution": "原帖未标注",
+      "aspectRatio": "portrait",
+      "generationSettings": "15 seconds; five environments; thirty shots; character-sheet and audio references"
+    }
+  },
+  {
+    "id": "x-ivan-space-cruise-black-hole-pov",
+    "title": "黑洞邮轮客房手持 POV",
+    "titleEn": "Handheld Space-Cruise POV at a Black Hole",
+    "model": "MiniMax H3",
+    "mode": "T2VA",
+    "summary": "游客在太空邮轮客房中用手持视角拍摄窗外的巨型黑洞，中途关灯以增强窗外可见度，并说出一句短对白；原帖逐字公开了完整 Prompt。",
+    "summaryEn": "A tourist records a handheld view from a space-cruise cabin as a giant black hole fills the window. They switch off the light to improve the view and speak a short line. The post publishes the complete prompt verbatim.",
+    "prompt": "amateur handheld pov footage of a tourist in their plush and comfortable room of a space cruise, carpeted floor and comfy bed, large window shows a view of Gargantua blackhole, you can see their reflection in the window, they turn off the light half way through so we can see outside better and say: \"Wow look at that!\", then they show back the room",
+    "sourceUrl": "https://x.com/ivanfioravanti/status/2086553101029290296",
+    "sourceLabel": "X 原帖 · @ivanfioravanti",
+    "author": "Ivan Fioravanti ᯅ",
+    "publishedAt": "2026-08-09T20:40:00.224Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086553101029290296.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "原帖未标注",
+    "tags": [
+      "T2VA",
+      "POV",
+      "Dialogue",
+      "Science Fiction"
+    ],
+    "category": "Science Fiction & POV",
+    "styles": [
+      "Photoreal",
+      "Handheld"
+    ],
+    "scenes": [
+      "Space-cruise cabin",
+      "Black-hole window view"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 5,
+      "reposts": 2,
+      "likes": 43,
+      "bookmarks": 6,
+      "views": 3171,
+      "capturedAt": "2026-08-10T00:06:30Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 10,
+      "resolution": "原帖未标注",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-atomtan-thirty-second-continuous-speech",
+    "title": "30 秒连续对白与口型同步",
+    "titleEn": "Thirty-Second Continuous Speech and Lip Sync",
+    "model": "MiniMax H3 · Local",
+    "mode": "Unknown",
+    "summary": "一段完整 30 秒竖屏人物对白测试。作者明确称这是单段生成而非多个短片拼接，并报告全程连续语音没有出现明显同步漂移；原帖未公开 Prompt。",
+    "summaryEn": "A full 30-second portrait dialogue test. The creator explicitly describes it as one generation rather than a stitched sequence and reports continuous speech without noticeable sync drift. The post does not publish a prompt.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/atomtanstudio/status/2086548496170246638",
+    "sourceLabel": "X 原帖 · @atomtanstudio",
+    "author": "Rich · Atom Tan Studio",
+    "publishedAt": "2026-08-09T20:21:42.340Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086548496170246638.jpg",
+    "duration": 30,
+    "aspectRatio": "portrait",
+    "resolution": "原帖未标注",
+    "tags": [
+      "Long Dialogue",
+      "Lip Sync",
+      "Native Audio",
+      "Local Generation"
+    ],
+    "category": "Long Dialogue & Lip Sync",
+    "styles": [
+      "Portrait",
+      "Photoreal"
+    ],
+    "scenes": [
+      "Single-character dialogue",
+      "Portrait performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 8,
+      "bookmarks": 2,
+      "views": 556,
+      "capturedAt": "2026-08-10T00:06:30Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 30,
+      "resolution": "原帖未标注",
+      "aspectRatio": "portrait",
+      "workflow": "Creator describes a single 30-second generation with continuous synchronized speech"
+    }
+  },
+  {
+    "id": "x-redpolo-ref2va-frame-infill-cameos",
+    "title": "Ref2VA 帧补全的角色客串插入",
+    "titleEn": "Ref2VA Frame-Infill Cameo Insertion",
+    "model": "MiniMax H3 · ComfyUI",
+    "mode": "Ref2VA",
+    "summary": "ComfyUI-MiniMaxH3FrameInfill 新增 Ref2VA 节点：演示只重生成舞蹈视频 3.0–4.5 秒以插入客串角色，以及按时间指定两名角色依次入场、退场和击掌。作者明确标注该功能仍属实验性。",
+    "summaryEn": "A new Ref2VA node for ComfyUI-MiniMaxH3FrameInfill demonstrates regenerating only seconds 3.0–4.5 of a dance clip to insert a cameo, plus timed entrances, exits, and a high-five for two characters. The creator explicitly labels the feature experimental.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/redpolo999/status/2086549225832362433",
+    "sourceLabel": "X 原帖 · @redpolo999",
+    "author": "あかぽろ@日曜技術",
+    "publishedAt": "2026-08-09T20:24:36.305Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086549225832362433.jpg",
+    "duration": 23,
+    "aspectRatio": "landscape",
+    "resolution": "原帖未标注",
+    "tags": [
+      "Ref2VA",
+      "Frame Infill",
+      "ComfyUI",
+      "Character Insertion"
+    ],
+    "category": "Ref2VA Editing & Frame Infill",
+    "styles": [
+      "Anime",
+      "Experimental"
+    ],
+    "scenes": [
+      "Dance-video cameo insertion",
+      "Timed two-character entrance"
+    ],
+    "inputTypes": [
+      "text",
+      "image",
+      "video"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 3,
+      "likes": 10,
+      "bookmarks": 15,
+      "views": 1939,
+      "capturedAt": "2026-08-10T00:06:30Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 2,
+      "durationSeconds": 23,
+      "resolution": "原帖未标注",
+      "aspectRatio": "landscape",
+      "workflow": "Experimental Ref2VA frame infill with image references and timed character insertion"
+    }
+  },
+  {
+    "id": "x-photogpt-western-beat-title-sequence",
+    "title": "西部片节拍标题动画",
+    "titleEn": "Beat-Synced Spaghetti-Western Title Sequence",
+    "model": "MiniMax H3 · PhotoGPT",
+    "mode": "Ref2VA",
+    "summary": "角色参考图与音轨共同驱动的 10 秒意大利西部片风格标题序列：硬切、定格、剪影、模板字和旧胶片损伤全部对齐节拍；原帖完整公开了 Prompt。",
+    "summaryEn": "A character reference and audio track drive a 10-second spaghetti-western title sequence whose hard cuts, freeze frames, silhouettes, stencil typography, and distressed-film effects land on the beat. The full prompt is published in the post.",
+    "prompt": "Use the attached character reference (Image1) and audio track as the timing guide. Create a spaghetti-western pulp anime title sequence where every cut lands precisely on the beat. Style the character as a flat black silhouette against solid desert-inspired colors (burnt orange, ochre, rust, adobe tan), using bold pop-art compositions, vintage bounty-poster framing, split panels, extreme close-ups, and wide horizon shots. Alternate fast action bursts with full-beat freeze frames (draw, stride, turn, match strike, etc.), using hard cuts only. Add worn woodblock/stencil title typography that slams into frame on the beat. Finish with the character frozen in silhouette on a burnt-orange background as the title stamps in on the final hit. Apply heavy 35mm film grain, scratches, dust, gate weave, cigarette burns, and sun-faded print wear throughout for an authentic 1960s spaghetti-western look.",
+    "sourceUrl": "https://x.com/itsphotogptai/status/2086555941831626849",
+    "sourceLabel": "X 原帖 · @itsphotogptai",
+    "author": "PhotoGPT",
+    "publishedAt": "2026-08-09T20:51:17.524Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086555941831626849.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "原帖未标注",
+    "tags": [
+      "Ref2VA",
+      "Title Animation",
+      "Beat Sync",
+      "Typography"
+    ],
+    "category": "Title Design & Beat Sync",
+    "styles": [
+      "Spaghetti Western",
+      "Pulp Anime",
+      "Vintage Film"
+    ],
+    "scenes": [
+      "Desert silhouettes",
+      "Beat-synced title cards"
+    ],
+    "inputTypes": [
+      "text",
+      "image",
+      "audio"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 2,
+      "bookmarks": 0,
+      "views": 97,
+      "capturedAt": "2026-08-10T00:06:30Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 10,
+      "resolution": "原帖未标注",
+      "aspectRatio": "landscape",
+      "generationSettings": "Character image and audio-track references; beat-synchronized editing"
+    }
+  },
+  {
+    "id": "x-cardoso-no-reference-rtx5060ti-audio",
+    "title": "RTX 5060 Ti 本地无参考音视频测试",
+    "titleEn": "Local No-Reference H3 Test on an RTX 5060 Ti",
+    "model": "MiniMax H3 · Local",
+    "mode": "T2VA",
+    "summary": "Cardoso 在 RTX 5060 Ti 16GB 上本地运行 H3，发布了一段 14 秒低分辨率测试。原帖明确说明没有使用任何外部参考，并强调声音、语调与表情均由模型生成。",
+    "summaryEn": "Cardoso runs H3 locally on an RTX 5060 Ti 16GB and publishes a 14-second low-resolution test. The post explicitly states that no external reference was used and highlights the model-generated voices, intonation, and expressions.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Cardoso/status/2086561122597925104",
+    "sourceLabel": "X 原帖 · @Cardoso",
+    "author": "cardoso",
+    "publishedAt": "2026-08-09T21:11:52.715Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086561122597925104.jpg",
+    "duration": 14,
+    "aspectRatio": "landscape",
+    "resolution": "原帖未标注",
+    "tags": [
+      "T2VA",
+      "RTX 5060 Ti",
+      "No Reference",
+      "Native Audio"
+    ],
+    "category": "Local T2VA & Native Audio",
+    "styles": [
+      "Television Comedy",
+      "Photoreal"
+    ],
+    "scenes": [
+      "Living-room dialogue",
+      "Two-character performance"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 5,
+      "reposts": 2,
+      "likes": 48,
+      "bookmarks": 6,
+      "views": 2646,
+      "capturedAt": "2026-08-10T00:06:30Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 14,
+      "resolution": "Creator labels the test low resolution",
+      "aspectRatio": "landscape",
+      "generationSettings": "Local RTX 5060 Ti 16GB; no external reference"
+    }
+  },
+  {
+    "id": "x-alawlette-four-minute-local-t2v",
+    "title": "4 分 34 秒本地 T2V 情景喜剧测试",
+    "titleEn": "Four-Minute Local T2V Sitcom Test",
+    "model": "MiniMax H3 · Local",
+    "mode": "T2VA",
+    "summary": "一支 X 上传时长为 4 分 34 秒的本地 T2V 情景喜剧连贯性测试。作者表示新节点正在改善长段落的一致性；该时长仅表示上传视频总长，不代表一次 H3 直接生成。",
+    "summaryEn": "A locally produced T2V sitcom-coherence test with a total X upload length of four minutes and 34 seconds. The creator says new nodes are improving long-sequence consistency. The upload length is not presented as a single H3 generation.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/alawlette/status/2086600476477514166",
+    "sourceLabel": "X 原帖 · @alawlette",
+    "author": "alawlette",
+    "publishedAt": "2026-08-09T23:48:15.411Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086600476477514166.jpg",
+    "duration": 274,
+    "aspectRatio": "landscape",
+    "resolution": "原帖未标注",
+    "tags": [
+      "T2VA",
+      "Long Form",
+      "Local Generation",
+      "Continuity"
+    ],
+    "category": "Long-Form Local T2V",
+    "styles": [
+      "Sitcom",
+      "Television"
+    ],
+    "scenes": [
+      "Sitcom-style street scene",
+      "Long-form character sequence"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 0,
+      "views": 22,
+      "capturedAt": "2026-08-10T00:06:30Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 274.125,
+      "resolution": "原帖未标注",
+      "aspectRatio": "landscape",
+      "workflow": "Local T2V with additional nodes; 4:34 is the X upload duration, not a claimed single generation"
+    }
+  },
+  {
+    "id": "x-mikefrost-bobblehead-photoreal-cartoon-audio",
+    "title": "单图摇头公仔的写实与卡通双版本",
+    "titleEn": "One-Image Bobblehead in Photoreal and Cartoon Passes",
+    "model": "MiniMax H3 · Local RTX 5090",
+    "mode": "FL2VA",
+    "summary": "一张桌面摇头公仔照片分别生成写实和二维卡通两版 5 秒动画。作者说明画面与音频同步生成，没有额外拟音或 TTS，并在 RTX 5090 上本地完成。",
+    "summaryEn": "One desk photo of a bobblehead becomes two five-second passes, one photoreal and one 2D cartoon. The creator says picture and audio were generated together without added foley or text-to-speech, entirely on an RTX 5090.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/slfemp/status/2086551052778930232",
+    "sourceLabel": "X 原帖 · @slfemp",
+    "author": "Mike Frost",
+    "publishedAt": "2026-08-09T20:31:51.883Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086551052778930232.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "原帖未标注",
+    "tags": [
+      "FL2VA",
+      "Single Image",
+      "Native Audio",
+      "RTX 5090"
+    ],
+    "category": "Image-to-Video & Native Audio",
+    "styles": [
+      "Photoreal",
+      "2D Cartoon"
+    ],
+    "scenes": [
+      "Desktop bobblehead",
+      "Character animation"
+    ],
+    "inputTypes": [
+      "image",
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 1,
+      "bookmarks": 0,
+      "views": 75,
+      "capturedAt": "2026-08-10T00:06:30Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "threadVideoCount": 2,
+      "durationSeconds": 5.166,
+      "resolution": "原帖未标注",
+      "aspectRatio": "landscape",
+      "generationSettings": "Local RTX 5090; image and audio generated together; no added foley or TTS"
+    }
+  },
+  {
+    "id": "x-pelsan-storyboard-prompt-text-rendering",
+    "title": "故事板提示词的文字生成测试",
+    "titleEn": "Storyboard-and-Prompt Text Rendering Test",
+    "model": "MiniMax H3",
+    "mode": "Unknown",
+    "summary": "用故事板加提示词测试 15 秒 H3 成片，覆盖宽银幕场景和画面内文字。作者特别指出仅凭提示词即可生成文字并按指示呈现，但没有逐字公开所用 Prompt。",
+    "summaryEn": "A 15-second H3 test combines a storyboard with prompting across widescreen scenes and on-screen text. The creator specifically notes that the text follows prompt instructions, but does not publish the prompt verbatim.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Creator_Pelsan/status/2086558140045169100",
+    "sourceLabel": "X 原帖 · @Creator_Pelsan",
+    "author": "PeL：I&P",
+    "publishedAt": "2026-08-09T21:00:01.619Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086558140045169100.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "原帖未标注",
+    "tags": [
+      "Storyboard",
+      "Text Rendering",
+      "Prompt Following",
+      "Cinematic"
+    ],
+    "category": "Storyboard & Text Rendering",
+    "styles": [
+      "Cinematic",
+      "Fantasy"
+    ],
+    "scenes": [
+      "Fantasy landscape",
+      "On-screen title"
+    ],
+    "inputTypes": [
+      "text",
+      "image"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 8,
+      "bookmarks": 2,
+      "views": 292,
+      "capturedAt": "2026-08-10T00:06:30Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15,
+      "resolution": "原帖未标注",
+      "aspectRatio": "landscape",
+      "workflow": "Storyboard and prompt; creator reports prompt-following for on-screen text"
+    }
+  },
+  {
+    "id": "x-strimando-rtx5090-1080p-benchmark",
+    "title": "RTX 5090 本地 1080P 生成实测",
+    "titleEn": "Local 1080p Generation Benchmark on an RTX 5090",
+    "model": "MiniMax H3 · Local",
+    "mode": "Unknown",
+    "summary": "RTX 5090 本地生成 10 秒 1080P 视频的公开性能记录：作者报告耗时 15 分 23 秒。相邻回复还给出了 15 秒 480P 版本耗时 1 分 27 秒，便于理解分辨率成本。",
+    "summaryEn": "A public local-performance record for generating a 10-second 1080p clip on an RTX 5090, with a reported runtime of 15 minutes and 23 seconds. An adjacent post reports one minute and 27 seconds for a 15-second 480p version, illustrating the resolution cost.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/STRIMANDO/status/2086576134540726457",
+    "sourceLabel": "X 原帖 · @STRIMANDO",
+    "author": "STRIMANDO.",
+    "publishedAt": "2026-08-09T22:11:31.841Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086576134540726457.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "1080P",
+    "tags": [
+      "Local Generation",
+      "RTX 5090",
+      "1080P",
+      "Benchmark"
+    ],
+    "category": "Local Generation Benchmark",
+    "styles": [
+      "Cinematic",
+      "Photoreal"
+    ],
+    "scenes": [
+      "Modern interior",
+      "Window view"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 3,
+      "bookmarks": 0,
+      "views": 214,
+      "capturedAt": "2026-08-10T00:06:30Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 10,
+      "resolution": "1080P",
+      "aspectRatio": "landscape",
+      "generationSettings": "Local RTX 5090; 15 minutes 23 seconds for the 10-second 1080p clip"
+    }
   }
 ]
