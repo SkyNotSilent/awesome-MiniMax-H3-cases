@@ -2205,5 +2205,5759 @@
       "aspectRatio": "landscape",
       "generationSettings": "Local RTX 5090; 15 minutes 23 seconds for the 10-second 1080p clip"
     }
+  },
+  {
+    "id": "x-juwalbose-2086615145195639159",
+    "title": "Motion Context 无缝续接测试",
+    "titleEn": "Motion Context Seam Test",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Ref2VA",
+    "summary": "测试 MiniMax H3 Motion Context 新增的 R2V 支持，并展示在替换参考、切换生成方式后合并视频的接缝表现。",
+    "summaryEn": "Tests the new R2V support in MiniMax H3 Motion Context and shows how well the merged video hides its seam after references and generation modes are switched.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/JuwalBose/status/2086615145195639159",
+    "sourceLabel": "X 原帖 · @JuwalBose",
+    "author": "JuwalBose",
+    "publishedAt": "2026-08-10T00:46:32.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086615145195639159.jpg",
+    "duration": 9,
+    "aspectRatio": "landscape",
+    "resolution": "1280×736",
+    "tags": [
+      "R2V",
+      "视频续接",
+      "参考替换"
+    ],
+    "category": "AI Film & Multimodal Reference",
+    "styles": [
+      "Cinematic",
+      "Experimental"
+    ],
+    "scenes": [
+      "Video Extension",
+      "Reference Swap"
+    ],
+    "inputTypes": [
+      "text",
+      "image",
+      "video"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 9.416,
+      "resolution": "1280×736",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-nilian-2086612098239418450",
+    "title": "Ideogram 与 H3 联合生成",
+    "titleEn": "Ideogram and H3 Art Workflow",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "在 ComfyUI 中结合 Ideogram 与 MiniMax H3 制作一段科技表现主义风格的 AI 视频。",
+    "summaryEn": "Combines Ideogram and MiniMax H3 inside ComfyUI to produce an AI video in a techspressionist style.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/nilian/status/2086612098239418450",
+    "sourceLabel": "X 原帖 · @nilian",
+    "author": "Nima Nilian",
+    "publishedAt": "2026-08-10T00:34:26.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086612098239418450.jpg",
+    "duration": 30,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "ComfyUI",
+      "联合工作流",
+      "AI 艺术"
+    ],
+    "category": "Image-to-Video Workflow",
+    "styles": [
+      "Techspressionism",
+      "Abstract"
+    ],
+    "scenes": [
+      "Digital Art"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 29.856,
+      "resolution": "1920×1080",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-aiartalchemist-2086609289037353151",
+    "title": "为 Suno 音源生成画面",
+    "titleEn": "Visuals for a Suno Track",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Ref2VA",
+    "summary": "将 Suno 生成的音源交给 MiniMax H3 配画面，并记录 608×352 分辨率下全身人物面部细节的局限。",
+    "summaryEn": "Uses MiniMax H3 to add visuals to a Suno-generated track and notes the limits of facial detail in full-body shots at 608x352.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/AIArtAlchemist/status/2086609289037353151",
+    "sourceLabel": "X 原帖 · @AIArtAlchemist",
+    "author": "NIKKO",
+    "publishedAt": "2026-08-10T00:23:16.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086609289037353151.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "608×352",
+    "tags": [
+      "音频驱动",
+      "Suno",
+      "ComfyUI"
+    ],
+    "category": "Local Generation & Audio",
+    "styles": [
+      "Music Video",
+      "Experimental"
+    ],
+    "scenes": [
+      "Performance",
+      "Full-Body Shot"
+    ],
+    "inputTypes": [
+      "audio"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 3,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.083,
+      "resolution": "608×352",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-endfolding79421-2086607000507474111",
+    "title": "20 秒 H3 长镜头测试",
+    "titleEn": "Twenty-Second H3 Test",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "以针对 H3 指南调整过的同一思路制作 20 秒测试，并与此前的 LTX 2.3 版本形成可追溯对照。",
+    "summaryEn": "Runs a twenty-second H3 test with the same underlying idea adapted to the H3 guide, providing a traceable comparison with an earlier LTX 2.3 version.",
+    "prompt": "<image 1>: starting frame\n\nintegrated_multimodal_description:\n\ncinematic acting-audition performance. One woman, Chris, remains the only visible person throughout the entire video. Maintain the same face, hair, clothing, age, and identity for the full shot.\n\n[0-4s] Medium close-up framing from the chest up. Chris stands tall facing directly toward the camera, holding a script page naturally in one hand. The camera remains steady and close enough to preserve clear facial detail. Her expression is composed and quietly confident. She looks directly into the camera and introduces herself in her normal speaking voice.\n\n(S1, Chris): <d>[English] My name is Chris, and I am reading for the part of Lady Ash.</d>\n\n[4-6s] After finishing the introduction, Chris naturally lowers her eyes from the camera to the script page in her hand. Her confident audition demeanor begins to disappear. Her shoulders relax slightly, her expression softens, and she takes a small breath as she emotionally enters the character.\n\n[6-18s] Keep the camera in a close medium-close-up emphasizing her face and eyes. Chris reads from the page in a soft, sorrowful, extremely sad voice, as though Lady Ash is desperately pleading with someone she loves. Her performance is restrained and believable rather than theatrical. Her voice becomes increasingly fragile as the line continues.\n\n(S1, Chris): <d>[English] Please, Peter... please don't let this be our last night together. Don't go back to her. You know this is where you belong... with me... forever...</d>\n\nDuring the emotional reading, moisture gradually gathers in her eyes. Near the end of the line, a single tear forms naturally and slowly travels down one cheek. She does not wipe it away. Her eyes remain lowered toward the script.\n\n[18-20s] On the word “forever,” Chris lets the final word linger softly. She becomes completely still, remaining emotionally devastated and looking down at the page. Hold on her tear-streaked face for a brief silent beat. The image then slowly fades completely to black.\n\noverall_soundscape:\n\nClean indoor room tone appropriate for a quiet acting audition. Chris's voice is intimate, clear, and close. Very subtle sound of the script page moving in her hand. No other voices, no audience reaction, no distracting environmental sounds.\n\nnon_diegetic_music:\n\nNone. No music.",
+    "sourceUrl": "https://x.com/EndFolding79421/status/2086607000507474111",
+    "sourceLabel": "X 原帖 · @EndFolding79421",
+    "author": "FoldingEnd A.I.",
+    "publishedAt": "2026-08-10T00:14:10.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086607000507474111.jpg",
+    "duration": 20,
+    "aspectRatio": "landscape",
+    "resolution": "1376×768",
+    "tags": [
+      "20 秒",
+      "长视频",
+      "同题对比"
+    ],
+    "category": "Model Comparison",
+    "styles": [
+      "Cinematic",
+      "Realistic"
+    ],
+    "scenes": [
+      "Long Take"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 20.041,
+      "resolution": "1376×768",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-xc5_-2086604532616958185",
+    "title": "月光魔法少女变身",
+    "titleEn": "Moonlit Magical-Girl Transformation",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "在满月场景中完成魔法少女变身，并在后半段继续切换角色造型，突出连续的特效转化。",
+    "summaryEn": "Stages a magical-girl transformation under a full moon, followed by another character change that emphasizes continuous visual effects.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/xc5_/status/2086604532616958185",
+    "sourceLabel": "X 原帖 · @xc5_",
+    "author": "萌奈のおすそわけ♥️AI動画クリエイター🩷AI & Web3 KOL🧡💛💚",
+    "publishedAt": "2026-08-10T00:04:22.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086604532616958185.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "魔法变身",
+      "角色转化",
+      "月光"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Anime",
+      "Fantasy",
+      "Vibrant"
+    ],
+    "scenes": [
+      "Transformation",
+      "Moonlit Night"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 8,
+      "reposts": 2,
+      "likes": 13,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.265,
+      "resolution": "2560×1440",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-cocktailpeanut-2086604154261148146",
+    "title": "本地生成《柯基侠盗》",
+    "titleEn": "Corgi Theft Auto, Generated Locally",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "在 Windows 与 A4500 20GB 显卡上通过 Maestro 本地运行 H3，仅启用 First Block Cache，制作一段柯基主题动作视频。",
+    "summaryEn": "Runs H3 locally through Maestro on Windows with a 20 GB A4500, using only First Block Cache to create a corgi-themed action video.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/cocktailpeanut/status/2086604154261148146",
+    "sourceLabel": "X 原帖 · @cocktailpeanut",
+    "author": "cocktailpeanut",
+    "publishedAt": "2026-08-10T00:02:52.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086604154261148146.jpg",
+    "duration": 72,
+    "aspectRatio": "landscape",
+    "resolution": "864×480",
+    "tags": [
+      "本地生成",
+      "Maestro",
+      "A4500",
+      "First Block Cache"
+    ],
+    "category": "Local Generation Benchmark",
+    "styles": [
+      "Action",
+      "Humorous"
+    ],
+    "scenes": [
+      "Driving",
+      "Animal Character"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 71.875,
+      "resolution": "864×480",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-monetizationdon-2086603324086767952",
+    "title": "哥特吸血鬼恐怖短片",
+    "titleEn": "Gothic Dracula Horror Scene",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "T2VA",
+    "summary": "通过 PixVerse 中的 MiniMax H3 和简短文字指令生成德古拉场景，重点测试雾、蝙蝠、镜面异象与戏剧光线。",
+    "summaryEn": "Uses MiniMax H3 inside PixVerse with a short text instruction to create a Dracula scene focused on fog, bats, supernatural reflections, and dramatic lighting.",
+    "prompt": "DRACULA — CINEMATIC HORROR PROMPT\n\nA vast abandoned Victorian ballroom at midnight, completely different from a corridor. Broken chandeliers hang from the ceiling, moonlight pours through enormous cracked stained-glass windows, and thick black mist drifts across the marble floor. Torn velvet curtains move slowly despite there being no wind. The camera begins with an extreme low-angle shot of an empty throne at the far end of the ballroom. A single candle beside it suddenly extinguishes. Dracula is already standing behind the throne. He slowly steps into the moonlight — an elegant, terrifying vampire wearing a long black Victorian coat with a high collar, dark waistcoat, polished boots, and subtle antique jewelry. Pale skin, long black hair, intense eyes, and unmistakable sharp fangs. His presence feels ancient and powerful rather than exaggerated. The camera slowly circles him as the ballroom begins behaving unnaturally. The chandelier swings violently. Hundreds of bats suddenly erupt from the darkness above, filling the room. Dracula doesn't move. He simply watches them pass. One bat lands on his shoulder. Dracula raises his hand. Every candle in the ballroom ignites simultaneously. The camera rapidly pushes toward his face. His eyes subtly change as he looks directly into the lens. He gives a restrained, sinister smile, revealing his fangs. Suddenly, the reflection of Dracula in the polished marble floor moves independently from him. The reflection turns its head toward the camera while Dracula remains perfectly still. The camera pulls backward rapidly as the reflection rises out of the marble like living smoke. Dracula finally spreads his arms, and a massive swarm of bats explodes outward behind him, transforming his silhouette into an enormous winged shadow across the ballroom walls. The chandelier crashes down in the background. CUT TO BLACK.",
+    "promptSourceUrl": "https://x.com/MonetizationDon/status/2086603327412838769",
+    "sourceUrl": "https://x.com/MonetizationDon/status/2086603324086767952",
+    "sourceLabel": "X 原帖 · @MonetizationDon",
+    "author": "LAPTOP LIFESTYLE BLOGGER",
+    "publishedAt": "2026-08-09T23:59:34.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086603324086767952.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "吸血鬼",
+      "恐怖氛围",
+      "戏剧光线"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Gothic",
+      "Cinematic",
+      "Horror"
+    ],
+    "scenes": [
+      "Dracula",
+      "Fog"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.083,
+      "resolution": "2560×1440",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-worldofray-2086602272335696047",
+    "title": "克拉克森与谢尔顿的报应",
+    "titleEn": "Clarkson and Sheldon: The Comeuppance",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "用 MiniMax H3 制作克拉克森与谢尔顿同场的短视频，原帖将情节概括为一次“报应”。",
+    "summaryEn": "Uses MiniMax H3 for a short scene featuring Clarkson and Sheldon, framed by the creator as a moment of comeuppance.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/worldofray/status/2086602272335696047",
+    "sourceLabel": "X 原帖 · @worldofray",
+    "author": "Ray",
+    "publishedAt": "2026-08-09T23:55:23.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086602272335696047.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "名人角色",
+      "喜剧短片"
+    ],
+    "category": "Character & Dialogue",
+    "styles": [
+      "Humorous",
+      "Realistic"
+    ],
+    "scenes": [
+      "Character Scene"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 5.166,
+      "resolution": "1344×768",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-haru_maki_ch-2086601484901495018",
+    "title": "H3 视频分段升至 4K",
+    "titleEn": "Segmented H3 Upscale to 4K",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "用 SeedVR2 将 H3 视频升至 3840×2160；为绕过 24GB 显存溢出，改为九个 0.75 秒片段完成 158 帧处理。",
+    "summaryEn": "Upscales an H3 video to 3840x2160 with SeedVR2, avoiding a 24 GB VRAM overflow by processing 158 frames as nine 0.75-second segments.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/hAru_mAki_ch/status/2086601484901495018",
+    "sourceLabel": "X 原帖 · @hAru_mAki_ch",
+    "author": "Maki@Sunwood AI Labs.",
+    "publishedAt": "2026-08-09T23:52:15.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086601484901495018.jpg",
+    "duration": 7,
+    "aspectRatio": "landscape",
+    "resolution": "3840×2160",
+    "tags": [
+      "4K",
+      "分段处理",
+      "SeedVR2",
+      "显存优化"
+    ],
+    "category": "Cinematic & Upscaling Workflow",
+    "styles": [
+      "Realistic",
+      "High Resolution"
+    ],
+    "scenes": [
+      "Upscaling",
+      "Segmented Processing"
+    ],
+    "inputTypes": [
+      "video"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 1,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 6.583,
+      "resolution": "3840×2160",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-mr_pig41-2086599612090012135",
+    "title": "六滑窗双版本长视频",
+    "titleEn": "Six-Window Dual-Take Test",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "在 WanGP 中用六个滑动窗口生成两个 MiniMax H3 长视频版本，公开承认两版各有瑕疵，也各有可取片段。",
+    "summaryEn": "Uses six sliding windows in WanGP to generate two long MiniMax H3 takes, openly noting that each has flaws as well as useful moments.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Mr_Pig41/status/2086599612090012135",
+    "sourceLabel": "X 原帖 · @Mr_Pig41",
+    "author": "Mr Pig",
+    "publishedAt": "2026-08-09T23:44:49.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086599612090012135.jpg",
+    "duration": 60,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1088",
+    "tags": [
+      "WanGP",
+      "滑动窗口",
+      "双版本"
+    ],
+    "category": "Local Generation Benchmark",
+    "styles": [
+      "Experimental",
+      "Cinematic"
+    ],
+    "scenes": [
+      "Long Video",
+      "A/B Test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 2,
+      "reposts": 0,
+      "likes": 1,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 2,
+      "durationSeconds": 59.833,
+      "resolution": "1920×1088",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-worldofray-2086599024010723406",
+    "title": "5090 上的超市三角色测试",
+    "titleEn": "Three-Character Supermarket Test on a 5090",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "在 RTX 5090 上以 1344×768 生成五秒视频，将克拉克森、印第安纳·琼斯与终结者放进同一超市场景，并公布约 80 秒耗时。",
+    "summaryEn": "Generates a five-second 1344x768 clip on an RTX 5090, placing Clarkson, Indiana Jones, and the Terminator in one supermarket scene with an approximately eighty-second runtime.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/worldofray/status/2086599024010723406",
+    "sourceLabel": "X 原帖 · @worldofray",
+    "author": "Ray",
+    "publishedAt": "2026-08-09T23:42:29.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086599024010723406.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "RTX 5090",
+      "多角色",
+      "1344×768",
+      "性能测试"
+    ],
+    "category": "Local Generation Benchmark",
+    "styles": [
+      "Cinematic",
+      "Humorous",
+      "Realistic"
+    ],
+    "scenes": [
+      "Supermarket",
+      "Character Crossover"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 5.166,
+      "resolution": "1344×768",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-sumica_rowa-2086598720515445036",
+    "title": "糖果信号街机 MV",
+    "titleEn": "Candy Signal Arcade MV",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "FL2VA",
+    "summary": "用 MiniMax H3 将插画视频化，再配合 ACE 生成音乐重新编排合成，形成简洁的动态图形 MV。",
+    "summaryEn": "Animates illustrations with MiniMax H3, then restructures and composites them around an ACE-generated track to create a compact motion-graphics music video.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/sumica_rowa/status/2086598720515445036",
+    "sourceLabel": "X 原帖 · @sumica_rowa",
+    "author": "sumicaぐらし | rowa",
+    "publishedAt": "2026-08-09T23:41:16.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086598720515445036.jpg",
+    "duration": 24,
+    "aspectRatio": "landscape",
+    "resolution": "1024×576",
+    "tags": [
+      "插画视频化",
+      "动态图形",
+      "ACE 音乐"
+    ],
+    "category": "Music Video",
+    "styles": [
+      "Motion Graphics",
+      "Colorful",
+      "Illustrative"
+    ],
+    "scenes": [
+      "Arcade",
+      "Music Performance"
+    ],
+    "inputTypes": [
+      "image",
+      "audio"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 6,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 24,
+      "resolution": "1024×576",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-sep_is_heim-2086598270328209823",
+    "title": "4B 文本编码器低内存测试",
+    "titleEn": "Four-Billion-Parameter Text Encoder Test",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "用 ClipProj 将 H3 文本编码器从 32B 换为 4B FP8 版本，记录约 14GB 内存下降，并初步观察画面变化不大。",
+    "summaryEn": "Uses ClipProj to replace the 32B H3 text encoder with a 4B FP8 version, reporting roughly 14 GB lower memory use and little visible change in the initial video test.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/sep_is_heim/status/2086598270328209823",
+    "sourceLabel": "X 原帖 · @sep_is_heim",
+    "author": "Kamimoto(かみもと)",
+    "publishedAt": "2026-08-09T23:39:29.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086598270328209823.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "1152×832",
+    "tags": [
+      "低内存",
+      "ClipProj",
+      "文本编码器",
+      "FP8"
+    ],
+    "category": "Local Generation Benchmark",
+    "styles": [
+      "Experimental",
+      "Technical"
+    ],
+    "scenes": [
+      "Memory Test"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 2,
+      "likes": 5,
+      "bookmarks": 1,
+      "views": 260,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 5.166,
+      "resolution": "1152×832",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-ryuuseiwakimaai-2086597086813007911",
+    "title": "标记模型转 3D 动画实验",
+    "titleEn": "Marker Model to 3D Animation Experiment",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "先让 MiniMax H3 生成带标记模型运动的视频，再尝试据此制作 3D 动画；作者明确表示当前尝试效果不理想。",
+    "summaryEn": "First generates a moving marker-covered model with MiniMax H3, then attempts to derive a 3D animation from it; the creator clearly reports that the current attempt did not work well.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ryuuseiwakimaai/status/2086597086813007911",
+    "sourceLabel": "X 原帖 · @ryuuseiwakimaai",
+    "author": "りゅうせい",
+    "publishedAt": "2026-08-09T23:34:47.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086597086813007911.jpg",
+    "duration": 5,
+    "aspectRatio": "square",
+    "resolution": "512×512",
+    "tags": [
+      "3D 动画",
+      "动作标记",
+      "失败实验"
+    ],
+    "category": "Editing & Transformation",
+    "styles": [
+      "Experimental",
+      "Technical"
+    ],
+    "scenes": [
+      "Motion Capture",
+      "3D Workflow"
+    ],
+    "inputTypes": [
+      "video"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 5.15,
+      "resolution": "512×512",
+      "aspectRatio": "square"
+    }
+  },
+  {
+    "id": "x-vkuoo-2086595994930799063",
+    "title": "建筑展示板动态化",
+    "titleEn": "Animated Architectural Presentation Board",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "FL2VA",
+    "summary": "用 MiniMax H3 为建筑展示板加入干净运动，重点展示图像、版式与文字信息混排时的动态表现。",
+    "summaryEn": "Uses MiniMax H3 to animate an architectural presentation board, emphasizing clean motion across mixed imagery, layout elements, and text.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/vkuoo/status/2086595994930799063",
+    "sourceLabel": "X 原帖 · @vkuoo",
+    "author": "vkuoo",
+    "publishedAt": "2026-08-09T23:30:26.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086595994930799063.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "834×1112",
+    "tags": [
+      "建筑可视化",
+      "版式动画",
+      "混合媒体"
+    ],
+    "category": "Image-to-Video Workflow",
+    "styles": [
+      "Architectural",
+      "Motion Graphics",
+      "Clean"
+    ],
+    "scenes": [
+      "Presentation Board"
+    ],
+    "inputTypes": [
+      "image"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.072,
+      "resolution": "834×1112",
+      "aspectRatio": "portrait"
+    }
+  },
+  {
+    "id": "x-sep_is_heim-2086586428251857023",
+    "title": "Ref2VA 角色表近景一致性",
+    "titleEn": "Ref2VA Character-Sheet Close-Up",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Ref2VA",
+    "summary": "以角色表作为 Ref2VA 参考输入测试近景面部一致性；作者认为即使没有角色 LoRA，近景相似度也较高。",
+    "summaryEn": "Uses a character sheet as Ref2VA input to test close-up facial consistency; the creator reports strong resemblance even without a character LoRA.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/sep_is_heim/status/2086586428251857023",
+    "sourceLabel": "X 原帖 · @sep_is_heim",
+    "author": "Kamimoto(かみもと)",
+    "publishedAt": "2026-08-09T22:52:26.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086586428251857023.jpg",
+    "duration": 5,
+    "aspectRatio": "portrait",
+    "resolution": "1152×1664",
+    "tags": [
+      "角色表",
+      "近景",
+      "一致性",
+      "Ref2VA"
+    ],
+    "category": "Character Consistency & Benchmark",
+    "styles": [
+      "Realistic",
+      "Portrait"
+    ],
+    "scenes": [
+      "Face Close-Up",
+      "Consistency Test"
+    ],
+    "inputTypes": [
+      "image"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 2,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 5.166,
+      "resolution": "1152×1664",
+      "aspectRatio": "portrait"
+    }
+  },
+  {
+    "id": "x-thedarkwebdev-2086586412447514971",
+    "title": "H3 趣味梗视频合集",
+    "titleEn": "MiniMax H3 Meme Experiments",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "作者在大型项目间隙用 MiniMax H3 尝试多种趣味梗视频，并将其视为探索模型和寻找新灵感的过程。",
+    "summaryEn": "The creator uses MiniMax H3 for a set of playful meme-video experiments between larger projects, treating them as a way to explore the model and find new ideas.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/TheDarkWebDev/status/2086586412447514971",
+    "sourceLabel": "X 原帖 · @TheDarkWebDev",
+    "author": "The Dark Developer",
+    "publishedAt": "2026-08-09T22:52:22.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086586412447514971.jpg",
+    "duration": 302,
+    "aspectRatio": "landscape",
+    "resolution": "1872×1080",
+    "tags": [
+      "梗视频",
+      "创意实验"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Humorous",
+      "Experimental"
+    ],
+    "scenes": [
+      "Meme Video"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 301.556,
+      "resolution": "1872×1080",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-monetizationdon-2086585814624919552",
+    "title": "同提示词音乐视频模型对比",
+    "titleEn": "Same-Prompt Music Video Comparison",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Ref2VA",
+    "summary": "将同一角色表、电影分镜与复古流行音乐视频指令分别交给 MiniMax H3 和 Seedance 2.5，比较角色一致性与多场景完成度。",
+    "summaryEn": "Tests the same character sheet, cinematic storyboard, and retro-pop music-video instruction with MiniMax H3 and Seedance 2.5, comparing character consistency across multiple scenes.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/MonetizationDon/status/2086585814624919552",
+    "sourceLabel": "X 原帖 · @MonetizationDon",
+    "author": "LAPTOP LIFESTYLE BLOGGER",
+    "publishedAt": "2026-08-09T22:49:59.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086585814624919552.jpg",
+    "duration": 30,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "同提示词",
+      "角色一致性",
+      "Seedance 2.5",
+      "音乐视频"
+    ],
+    "category": "Model Comparison",
+    "styles": [
+      "Retro Pop",
+      "Cinematic",
+      "Energetic"
+    ],
+    "scenes": [
+      "Hotel Room",
+      "Neon City",
+      "Street Dance"
+    ],
+    "inputTypes": [
+      "text",
+      "image"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 2,
+      "reposts": 0,
+      "likes": 1,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 2,
+      "durationSeconds": 30.231,
+      "resolution": "1920×1080",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-core_tan-2086584384774390187",
+    "title": "原生 1080P 电视剧运镜",
+    "titleEn": "Native 1080p TV-Drama Camera Test",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "T2VA",
+    "summary": "在配备 RTX PRO 6000 Blackwell 的 H3 WebUI 中，通过文字控制电视剧式运镜，展示原生 1080P 生成效果。",
+    "summaryEn": "Uses text-directed television-drama camera work in an H3 WebUI on an RTX PRO 6000 Blackwell to demonstrate native 1080p generation.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/core_tan/status/2086584384774390187",
+    "sourceLabel": "X 原帖 · @core_tan",
+    "author": "CALMDUST aka ちゃんこあ",
+    "publishedAt": "2026-08-09T22:44:18.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086584384774390187.jpg",
+    "duration": 6,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1056",
+    "tags": [
+      "原生 1080P",
+      "WebUI",
+      "运镜",
+      "RTX PRO 6000"
+    ],
+    "category": "Local Generation Benchmark",
+    "styles": [
+      "TV Drama",
+      "Realistic",
+      "Cinematic"
+    ],
+    "scenes": [
+      "Camera Test"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 3,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 5.875,
+      "resolution": "1920×1056",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-strimando-2086580732521259155",
+    "title": "5090 单提示词本地生成",
+    "titleEn": "Single-Prompt Local Generation on a 5090",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "T2VA",
+    "summary": "在 RTX 5090 本地运行 MiniMax H3，以单条文字指令完成视频，作者公布生成耗时约七分钟。",
+    "summaryEn": "Runs MiniMax H3 locally on an RTX 5090 and completes the video from a single text instruction in approximately seven minutes.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/STRIMANDO/status/2086580732521259155",
+    "sourceLabel": "X 原帖 · @STRIMANDO",
+    "author": "STRIMANDO.",
+    "publishedAt": "2026-08-09T22:29:48.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086580732521259155.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "RTX 5090",
+      "单提示词",
+      "生成耗时"
+    ],
+    "category": "Local Generation Benchmark",
+    "styles": [
+      "Cinematic",
+      "Experimental"
+    ],
+    "scenes": [
+      "Benchmark"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 10.125,
+      "resolution": "1344×768",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-kashimu_shed-2086577432241582478",
+    "title": "双外录音频分角色对白",
+    "titleEn": "Two Recorded Voices Assigned by Character",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Ref2VA",
+    "summary": "将两段外录音频分别指定为 audio1 和 audio2，MiniMax H3 按角色分配台词，展示多音频条件下的对白控制。",
+    "summaryEn": "Assigns two separately recorded tracks as audio1 and audio2, allowing MiniMax H3 to route the lines to different characters and demonstrate multi-audio dialogue control.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/kashimu_shed/status/2086577432241582478",
+    "sourceLabel": "X 原帖 · @kashimu_shed",
+    "author": "かしむの小屋",
+    "publishedAt": "2026-08-09T22:16:41.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086577432241582478.jpg",
+    "duration": 7,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1104",
+    "tags": [
+      "双音频",
+      "角色对白",
+      "声音参考"
+    ],
+    "category": "Local Generation & Audio",
+    "styles": [
+      "Dialogue",
+      "Realistic"
+    ],
+    "scenes": [
+      "Two-Character Dialogue"
+    ],
+    "inputTypes": [
+      "text",
+      "audio"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 7.27,
+      "resolution": "1920×1104",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-sellingshovels-2086575718985515245",
+    "title": "批量 UGC 创意与片尾 CTA",
+    "titleEn": "Bulk UGC Creative with an End CTA",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "以 MiniMax H3 制作适合持续发布的短视频创意，重点观察 480P/720P 输出、自动音频与片尾行动号召。",
+    "summaryEn": "Uses MiniMax H3 for repeatable short-form creatives, focusing on 480p and 720p output, generated audio, and a call to action at the end.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/sellingshovels/status/2086575718985515245",
+    "sourceLabel": "X 原帖 · @sellingshovels",
+    "author": "kyle (reddit AI agents)",
+    "publishedAt": "2026-08-09T22:09:52.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086575718985515245.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "1440×1920",
+    "tags": [
+      "UGC",
+      "批量内容",
+      "片尾 CTA",
+      "自动音频"
+    ],
+    "category": "UGC & Advertising",
+    "styles": [
+      "Social Video",
+      "Humorous"
+    ],
+    "scenes": [
+      "Short-Form Ad"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 2,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.083,
+      "resolution": "1440×1920",
+      "aspectRatio": "portrait"
+    }
+  },
+  {
+    "id": "x-kiyoshi_shin-2086575478127869976",
+    "title": "Krea 图片驱动的 H3 作例",
+    "titleEn": "Krea Image-to-H3 Demonstration",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "FL2VA",
+    "summary": "先用 Krea2 制作图片，再通过 MiniMax H3 将其视频化，用作文章中展示多参考与本地视频能力的作例。",
+    "summaryEn": "Creates an image with Krea2 and then animates it with MiniMax H3 as an example of the model's reference-driven and local video capabilities.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/kiyoshi_shin/status/2086575478127869976",
+    "sourceLabel": "X 原帖 · @kiyoshi_shin",
+    "author": "新清士@AIコンテンツ開発者",
+    "publishedAt": "2026-08-09T22:08:55.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086575478127869976.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1248×832",
+    "tags": [
+      "Krea2",
+      "图片视频化",
+      "能力演示"
+    ],
+    "category": "Image-to-Video Workflow",
+    "styles": [
+      "Cinematic",
+      "Illustrative"
+    ],
+    "scenes": [
+      "Demonstration"
+    ],
+    "inputTypes": [
+      "image"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 6,
+      "likes": 30,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.083,
+      "resolution": "1248×832",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-suzuna_ai_girls-2086573737571418358",
+    "title": "本地日语对白与加速测试",
+    "titleEn": "Local Japanese Dialogue and Speed Test",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "在本地 H3 中测试日语对白，并把帧插值和放大计入总流程；该示例完整耗时低于 500 秒。",
+    "summaryEn": "Tests Japanese dialogue with a local H3 workflow and includes frame interpolation and upscaling in the reported pipeline, which finishes in under five hundred seconds.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Suzuna_AI_girls/status/2086573737571418358",
+    "sourceLabel": "X 原帖 · @Suzuna_AI_girls",
+    "author": "鈴音🔔@Suzuna_japanese_AI_girls",
+    "publishedAt": "2026-08-09T22:02:00.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086573737571418358.jpg",
+    "duration": 7,
+    "aspectRatio": "portrait",
+    "resolution": "1152×2048",
+    "tags": [
+      "日语对白",
+      "本地生成",
+      "帧插值",
+      "放大"
+    ],
+    "category": "Local Generation & Audio",
+    "styles": [
+      "Character Video",
+      "Realistic"
+    ],
+    "scenes": [
+      "Dialogue",
+      "Performance Test"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 21,
+      "reposts": 10,
+      "likes": 43,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 6.562,
+      "resolution": "1152×2048",
+      "aspectRatio": "portrait"
+    }
+  },
+  {
+    "id": "x-aion_2077-2086568043224899870",
+    "title": "官方示例指令复现",
+    "titleEn": "Official Example Instruction Reproduction",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "参考 MiniMax H3 官方 GitHub 仓库中的一条示例指令生成视频，用于验证官方公开写法的实际效果。",
+    "summaryEn": "Generates a video from an example instruction in the official MiniMax H3 GitHub repository to test how the published guidance performs in practice.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/AION_2077/status/2086568043224899870",
+    "sourceLabel": "X 原帖 · @AION_2077",
+    "author": "AION",
+    "publishedAt": "2026-08-09T21:39:22.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086568043224899870.jpg",
+    "duration": 10,
+    "aspectRatio": "portrait",
+    "resolution": "1920×2160",
+    "tags": [
+      "官方示例",
+      "复现实验",
+      "GitHub"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Cinematic",
+      "Experimental"
+    ],
+    "scenes": [
+      "Prompt Reproduction"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 2,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 10.133,
+      "resolution": "1920×2160",
+      "aspectRatio": "portrait"
+    }
+  },
+  {
+    "id": "x-nsitnovsitnov-2086566296838148275",
+    "title": "《谁知道？》本地 AI 短片",
+    "titleEn": "Who Knows? A Local AI Short Film",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "以 MiniMax H3、Qwen Image 3 Pro 和 ElevenLabs 在本地组合完成一部关于不可预知运气的短片。",
+    "summaryEn": "Combines MiniMax H3, Qwen Image 3 Pro, and ElevenLabs in a local workflow for a short film about luck that cannot be read in advance.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/NsitnovSitnov/status/2086566296838148275",
+    "sourceLabel": "X 原帖 · @NsitnovSitnov",
+    "author": "Nedelcho Sitnov",
+    "publishedAt": "2026-08-09T21:32:26.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086566296838148275.jpg",
+    "duration": 126,
+    "aspectRatio": "landscape",
+    "resolution": "952×544",
+    "tags": [
+      "AI 短片",
+      "Qwen Image",
+      "ElevenLabs",
+      "本地工作流"
+    ],
+    "category": "Narrative Film & Local Workflow",
+    "styles": [
+      "Cinematic",
+      "Narrative"
+    ],
+    "scenes": [
+      "Short Film"
+    ],
+    "inputTypes": [
+      "image",
+      "audio"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 8,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 125.764,
+      "resolution": "952×544",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-sellingshovels-2086564255063482466",
+    "title": "免费音频的一体化 H3 试用",
+    "titleEn": "Integrated H3 Test with Generated Audio",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "作者在现有工作流中改用 MiniMax H3，强调组件连接后即可工作，并可同步获得可用的生成音频。",
+    "summaryEn": "The creator switches an existing workflow to MiniMax H3, noting that the connected components work as a whole and can also produce usable audio.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/sellingshovels/status/2086564255063482466",
+    "sourceLabel": "X 原帖 · @sellingshovels",
+    "author": "kyle (reddit AI agents)",
+    "publishedAt": "2026-08-09T21:24:19.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086564255063482466.jpg",
+    "duration": 5,
+    "aspectRatio": "portrait",
+    "resolution": "1440×1920",
+    "tags": [
+      "工作流",
+      "生成音频",
+      "一体化"
+    ],
+    "category": "Local Generation & Audio",
+    "styles": [
+      "Experimental",
+      "Social Video"
+    ],
+    "scenes": [
+      "Workflow Test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 1,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 5.166,
+      "resolution": "1440×1920",
+      "aspectRatio": "portrait"
+    }
+  },
+  {
+    "id": "x-love_backstage-2086563821578281128",
+    "title": "RTX 5070 的图生视频基准",
+    "titleEn": "Image-to-Video Benchmark on an RTX 5070",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "FL2VA",
+    "summary": "在 Windows 11、RTX 5070 12GB 和 FP8 剪枝模型上本地运行 H3；1MP、1376×768 的六秒视频约耗时 35 分钟。",
+    "summaryEn": "Runs H3 locally on Windows 11 with a 12 GB RTX 5070 and a pruned FP8 model; a six-second 1 MP clip at 1376x768 takes about thirty-five minutes.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Love_backstage/status/2086563821578281128",
+    "sourceLabel": "X 原帖 · @Love_backstage",
+    "author": "Mari.co | A guide to the story of backstage.love💕",
+    "publishedAt": "2026-08-09T21:22:36.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086563821578281128.jpg",
+    "duration": 7,
+    "aspectRatio": "landscape",
+    "resolution": "1376×768",
+    "tags": [
+      "RTX 5070",
+      "FP8",
+      "1376×768",
+      "生成耗时"
+    ],
+    "category": "Image-to-Video Benchmark",
+    "styles": [
+      "Realistic",
+      "Technical"
+    ],
+    "scenes": [
+      "Image Animation",
+      "Benchmark"
+    ],
+    "inputTypes": [
+      "text",
+      "image"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 6.583,
+      "resolution": "1376×768",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-berserkr_777-2086561153757381047",
+    "title": "本地电影感视频展示",
+    "titleEn": "Local Cinematic Video Demonstration",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "用本地运行的 MiniMax H3 制作电影感视频，原帖主要强调开放模型在个人设备上实现高质量影像的可行性。",
+    "summaryEn": "Uses a locally running MiniMax H3 to create a cinematic video, emphasizing that high-quality imagery is now practical on personal hardware.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Berserkr_777/status/2086561153757381047",
+    "sourceLabel": "X 原帖 · @Berserkr_777",
+    "author": "Kadeka",
+    "publishedAt": "2026-08-09T21:12:00.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086561153757381047.jpg",
+    "duration": 14,
+    "aspectRatio": "landscape",
+    "resolution": "2542×1440",
+    "tags": [
+      "本地生成",
+      "电影感",
+      "开放模型"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Cinematic",
+      "Realistic"
+    ],
+    "scenes": [
+      "Cinematic Demo"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 2,
+      "likes": 3,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 14.419,
+      "resolution": "2542×1440",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-alone1moon-2086558140158583082",
+    "title": "本地角色短片测试",
+    "titleEn": "Local Character Clip Test",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "用本地 MiniMax H3 制作田中角色短片，作为持续角色内容的一次轻量测试。",
+    "summaryEn": "Uses a local MiniMax H3 setup for a short clip featuring the recurring Tanaka character as a lightweight character-content test.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Alone1Moon/status/2086558140158583082",
+    "sourceLabel": "X 原帖 · @Alone1Moon",
+    "author": "Alone1M",
+    "publishedAt": "2026-08-09T21:00:01.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086558140158583082.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "896×1184",
+    "tags": [
+      "本地生成",
+      "角色短片"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Character Video",
+      "Playful"
+    ],
+    "scenes": [
+      "Portrait Character"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 4,
+      "reposts": 6,
+      "likes": 89,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.083,
+      "resolution": "896×1184",
+      "aspectRatio": "portrait"
+    }
+  },
+  {
+    "id": "x-caroyan_moon-2086558073200771128",
+    "title": "Codex 协助的 H3 本地流程",
+    "titleEn": "Codex-Assisted Local H3 Workflow",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "测试 MiniMax H3 本地运行，并让 Codex 在任务结束后处理关机；原帖同时记录了任务过载导致冻结的情况。",
+    "summaryEn": "Tests a local MiniMax H3 workflow with Codex handling shutdown after completion, while also reporting a freeze caused by overloading the job.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Caroyan_moon/status/2086558073200771128",
+    "sourceLabel": "X 原帖 · @Caroyan_moon",
+    "author": "Caroyan 🌻",
+    "publishedAt": "2026-08-09T20:59:45.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086558073200771128.jpg",
+    "duration": 5,
+    "aspectRatio": "square",
+    "resolution": "720×720",
+    "tags": [
+      "Codex",
+      "本地自动化",
+      "稳定性"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Experimental",
+      "Technical"
+    ],
+    "scenes": [
+      "Automated Workflow"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 2,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 5.033,
+      "resolution": "720×720",
+      "aspectRatio": "square"
+    }
+  },
+  {
+    "id": "x-daexchef-2086554329167565029",
+    "title": "RTX 5060 Ti 两小时渲染",
+    "titleEn": "Two-Hour Render on an RTX 5060 Ti",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "在 RTX 5060 Ti 上运行 MiniMax H3，作者记录单次视频渲染约耗时两小时。",
+    "summaryEn": "Runs MiniMax H3 on an RTX 5060 Ti, with the creator reporting an approximately two-hour render time for the video.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/DaExChef/status/2086554329167565029",
+    "sourceLabel": "X 原帖 · @DaExChef",
+    "author": "Adam B",
+    "publishedAt": "2026-08-09T20:44:53.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086554329167565029.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1376×768",
+    "tags": [
+      "RTX 5060 Ti",
+      "生成耗时",
+      "本地渲染"
+    ],
+    "category": "Local Generation Benchmark",
+    "styles": [
+      "Technical",
+      "Experimental"
+    ],
+    "scenes": [
+      "Benchmark"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 0,
+      "views": 95,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.083,
+      "resolution": "1376×768",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-feeltheghostcat-2086553077235023887",
+    "title": "Maestro 动作相机测试",
+    "titleEn": "Maestro Action-Camera Test",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "通过 Maestro 与 MiniMax H3 测试动作相机风格的高速镜头表现。",
+    "summaryEn": "Tests fast-moving action-camera imagery with Maestro and MiniMax H3.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Feeltheghostcat/status/2086553077235023887",
+    "sourceLabel": "X 原帖 · @Feeltheghostcat",
+    "author": "theghostcatbroadcast",
+    "publishedAt": "2026-08-09T20:39:54.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086553077235023887.jpg",
+    "duration": 7,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "Maestro",
+      "动作相机",
+      "高速运动"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Action",
+      "Dynamic"
+    ],
+    "scenes": [
+      "Action Camera"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 6.583,
+      "resolution": "1344×768",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-nilian-2086548858079723994",
+    "title": "第二组 Ideogram 与 H3 实验",
+    "titleEn": "Second Ideogram and H3 Experiment",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "在 ComfyUI 中再次组合 Ideogram 与 MiniMax H3，制作一段科技表现主义 AI 艺术视频。",
+    "summaryEn": "Runs another ComfyUI experiment that combines Ideogram and MiniMax H3 for a techspressionist AI art video.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/nilian/status/2086548858079723994",
+    "sourceLabel": "X 原帖 · @nilian",
+    "author": "Nima Nilian",
+    "publishedAt": "2026-08-09T20:23:08.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086548858079723994.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1080×608",
+    "tags": [
+      "ComfyUI",
+      "Ideogram",
+      "AI 艺术"
+    ],
+    "category": "Image-to-Video Workflow",
+    "styles": [
+      "Techspressionism",
+      "Abstract"
+    ],
+    "scenes": [
+      "Digital Art"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 4,
+      "bookmarks": 0,
+      "views": 177,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.122,
+      "resolution": "1080×608",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-cocktailpeanut-2086546223851581688",
+    "title": "三维空间中的 ComfyUI 节点",
+    "titleEn": "ComfyUI Nodes in Three-Dimensional Space",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "用本地 MiniMax H3 想象把 ComfyUI 节点拉入三维空间并直接交互的概念场景。",
+    "summaryEn": "Uses a local MiniMax H3 setup to visualize the concept of pulling ComfyUI nodes into three-dimensional space and interacting with them directly.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/cocktailpeanut/status/2086546223851581688",
+    "sourceLabel": "X 原帖 · @cocktailpeanut",
+    "author": "cocktail peanut",
+    "publishedAt": "2026-08-09T20:12:40.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086546223851581688.jpg",
+    "duration": 14,
+    "aspectRatio": "landscape",
+    "resolution": "864×480",
+    "tags": [
+      "ComfyUI",
+      "三维界面",
+      "概念视频"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Futuristic",
+      "Technical",
+      "Cinematic"
+    ],
+    "scenes": [
+      "3D Interface"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 2,
+      "likes": 43,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 14.375,
+      "resolution": "864×480",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-aion_2077-2086546204792656366",
+    "title": "韩式水墨画动态化",
+    "titleEn": "Animated Korean Ink-Wash Scene",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "FL2VA",
+    "summary": "先用 GPT Image 创作韩式水墨画，再由 MiniMax H3 将静态画面转为视频。",
+    "summaryEn": "Creates a Korean-style ink-wash image with GPT Image and then brings the still artwork to life with MiniMax H3.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/AION_2077/status/2086546204792656366",
+    "sourceLabel": "X 原帖 · @AION_2077",
+    "author": "AION",
+    "publishedAt": "2026-08-09T20:12:36.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086546204792656366.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "1918×1066",
+    "tags": [
+      "GPT Image",
+      "水墨画",
+      "图片视频化"
+    ],
+    "category": "Image-to-Video Workflow",
+    "styles": [
+      "Ink Wash",
+      "Korean",
+      "Illustrative"
+    ],
+    "scenes": [
+      "Landscape Art"
+    ],
+    "inputTypes": [
+      "image"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 3,
+      "bookmarks": 2,
+      "views": 117,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 10.125,
+      "resolution": "1918×1066",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-db_bad19758-2086544544544198694",
+    "title": "单次推理完整音乐视频",
+    "titleEn": "Full Music Video in One Inference",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "展示一次连续推理完成整支音乐视频的案例，强调全片没有通过拼接多个片段实现。",
+    "summaryEn": "Shows a full music video produced in one continuous MiniMax H3 inference, with no stitching of separate clips.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/db_bad19758/status/2086544544544198694",
+    "sourceLabel": "X 原帖 · @db_bad19758",
+    "author": "THE",
+    "publishedAt": "2026-08-09T20:06:00.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086544544544198694.jpg",
+    "duration": 189,
+    "aspectRatio": "landscape",
+    "resolution": "1056×608",
+    "tags": [
+      "单次推理",
+      "无拼接",
+      "完整 MV"
+    ],
+    "category": "Music Video",
+    "styles": [
+      "Music Video",
+      "Cinematic"
+    ],
+    "scenes": [
+      "Continuous Generation"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 189.333,
+      "resolution": "1056×608",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-hbcoop_-2086543807445864489",
+    "title": "H3 标题动画测试",
+    "titleEn": "MiniMax H3 Title Animation Test",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "用 MiniMax H3 制作标题动画，集中展示文字与动态图形的呈现。",
+    "summaryEn": "Uses MiniMax H3 for title animation, focusing on the presentation of text and motion graphics.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/HBCoop_/status/2086543807445864489",
+    "sourceLabel": "X 原帖 · @HBCoop_",
+    "author": "Heather Cooper",
+    "publishedAt": "2026-08-09T20:03:04.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086543807445864489.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "标题动画",
+      "动态图形",
+      "文字渲染"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Motion Graphics",
+      "Graphic"
+    ],
+    "scenes": [
+      "Title Sequence"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 9,
+      "reposts": 7,
+      "likes": 59,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.083,
+      "resolution": "2560×1440",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-ai_emeraldapple-2086542941112487981",
+    "title": "太空战同提示词对比",
+    "titleEn": "Same-Prompt Space Battle Comparison",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "T2VA",
+    "summary": "用更复杂的太空战文字指令对比 MiniMax H3 与 Grok Imagine Video，重点观察跨镜头舰船位置与画面连续性。",
+    "summaryEn": "Compares MiniMax H3 with Grok Imagine Video on a more complex space-battle instruction, focusing on ship placement and continuity across cuts.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/AI_EmeraldApple/status/2086542941112487981",
+    "sourceLabel": "X 原帖 · @AI_EmeraldApple",
+    "author": "Emerald Apple",
+    "publishedAt": "2026-08-09T19:59:37.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086542941112487981.jpg",
+    "duration": 12,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1088",
+    "tags": [
+      "同提示词",
+      "Grok Imagine",
+      "太空战",
+      "连续性"
+    ],
+    "category": "Model Comparison",
+    "styles": [
+      "Sci-Fi",
+      "Cinematic",
+      "Action"
+    ],
+    "scenes": [
+      "Space Battle",
+      "Continuity Test"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 4,
+      "reposts": 4,
+      "likes": 38,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 2,
+      "durationSeconds": 12.25,
+      "resolution": "1920×1088",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-aicuai-2086542444926063059",
+    "title": "RTX 4000 Ada 九倍加速测试",
+    "titleEn": "Ninefold Speedup on an RTX 4000 Ada",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "在 RTX 4000 Ada 20GB 上结合量化、INT8 VAE 与四步 Turbo，将五秒 H3 视频耗时从 32 分钟降至约 3.5 分钟。",
+    "summaryEn": "Combines quantization, an INT8 VAE, and four-step Turbo on a 20 GB RTX 4000 Ada, reducing a five-second H3 render from thirty-two minutes to about three and a half minutes.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/AICUai/status/2086542444926063059",
+    "sourceLabel": "X 原帖 · @AICUai",
+    "author": "AICU - つくる人をつくる",
+    "publishedAt": "2026-08-09T19:57:39.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086542444926063059.jpg",
+    "duration": 3,
+    "aspectRatio": "landscape",
+    "resolution": "640×352",
+    "tags": [
+      "RTX 4000 Ada",
+      "量化",
+      "四步 Turbo",
+      "加速"
+    ],
+    "category": "Local Generation Benchmark",
+    "styles": [
+      "Technical",
+      "Experimental"
+    ],
+    "scenes": [
+      "Speed Benchmark"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 2,
+      "likes": 3,
+      "bookmarks": 3,
+      "views": 451,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 3.041,
+      "resolution": "640×352",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-squeakalgaib-2086531027347144916",
+    "title": "谢尔顿与佩妮的纯提示词生成",
+    "titleEn": "Sheldon and Penny from Prompts Alone",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "T2VA",
+    "summary": "以谢尔顿和佩妮作为文字指令中的角色，用 MiniMax H3 直接完成角色场景。",
+    "summaryEn": "Uses Sheldon and Penny as characters defined in text instructions and generates the resulting scene directly with MiniMax H3.",
+    "prompt": "Create a 12-second live-action sitcom-style scene in 16:9 aspect ratio featuring Sheldon Cooper and Penny from The Big Bang Theory. The scene is a very silly, funny, character-accurate conversation about artificial intelligence that ends with both characters realizing in horror that they are not real people, but prompts inside an AI-generated video. The tone should feel exactly like a classic Big Bang Theory hallway scene: fast, witty, natural, awkward, and playful, with precise comic timing and highly exaggerated, animated facial expressions. The pacing must feel natural and unforced, like an actual exchange from the original sitcom series.\n\nIMPORTANT DIALOGUE RULE: Only the dialogue written in double quotes below may be spoken. There must be no extra dialogue, no improvisation, no narration, no voice-over, and no additional spoken words. Each line must be spoken exactly once, by the specific character assigned to it. Sheldon Cooper says: “AI language models predict the next most statistically probable word.” Penny says: “So what am I about to say?” Sheldon Cooper says: “Something intellectually disappointing.” Penny says: “Wait… somebody already wrote this sentence.” Sheldon Cooper says: “We’re scripted?” Penny says: “Worse. Prompted.” No other spoken words are allowed.\n\nLOCATION AND SCENE SETTING: Set the entire scene in the iconic apartment hallway and elevator lobby area from The Big Bang Theory, outside Penny’s apartment 4B. The elevator is visibly broken as usual, with the dark empty elevator shaft area and caution-taped or damaged elevator look recognizable in the softly blurred background. Penny’s apartment door is already open at the start of the scene. Penny stands immediately inside the doorway of apartment 4B, facing outward into the hallway. Sheldon Cooper stands immediately outside the doorway, positioned very close to Penny so Sheldon Cooper and Penny can both fit naturally inside an extremely tight two-person close-up without requiring a wide composition. The visual style, set layout, hallway walls, warm apartment lighting, and sitcom staging should feel extremely faithful to the original series.\n\nCRITICAL CAMERA FRAMING RESTRICTION: Use ONLY extremely tight close-ups, tight two-person close-ups, and individual close-ups. Absolutely no medium-wide shots, wide shots, waist-up two-shots, full-body shots, distant framing, establishing wide shots, or camera pullbacks at any moment. Sheldon Cooper’s face and Penny’s face must remain large, sharp, high-definition, and fully recognizable throughout the entire 12 seconds.\n\nWhenever Sheldon Cooper and Penny are visible together, use an EXTREMELY TIGHT TWO-PERSON CLOSE-UP: frame both characters approximately from the upper chest or shoulders upward, with both complete faces occupying most of the 16:9 frame. Keep Sheldon Cooper and Penny close together near the apartment doorway and on nearly the same focal plane. Both heads, both complete faces, eyes, mouths, and facial expressions must remain fully inside the frame and sharply resolved. Allow only a small amount of hallway and doorway background around them.\n\nDo not zoom out or pull back to accommodate both characters. Instead, physically compose Sheldon Cooper and Penny closer together inside the doorway area so both faces remain large. This tight two-person close-up requirement applies especially to the OPENING SHOT and the FINAL SHOT. The final second must NOT become wider under any circumstances.\n\nCAMERA AND FRAMING: Begin immediately with an extremely tight two-person close-up showing Sheldon Cooper and Penny together from approximately the upper chest or shoulders upward. Sheldon Cooper stands immediately outside apartment 4B while Penny stands immediately inside the already-open doorway. Both faces occupy a large portion of the frame and remain simultaneously sharp.\n\nAfter the opening, use clean sitcom-style cuts into individual close-ups and tight medium close-ups that never frame below the upper chest. Keep faces extremely large and detailed. Camera movement should remain minimal and controlled, similar to polished sitcom coverage, with subtle slow push-ins of very small amplitude for comedic emphasis. Never create additional distance from the subjects.\n\nFor the ending, return to an extremely tight two-person close-up with both Sheldon Cooper and Penny’s complete faces filling most of the frame. Do NOT pull out, zoom out, widen the lens, reveal their full bodies, or show additional hallway space during the final reaction.\n\nLIGHTING AND VISUAL STYLE: Use warm, bright, natural sitcom interior lighting. Penny’s apartment interior should glow warmly behind Penny, while the hallway is evenly lit in the familiar Big Bang Theory style. Both faces must be extremely well-lit, clearly visible, and flattering, with natural skin tones, crisp facial detail, clear eyes, and strong separation from the background. The overall visual style should feel like a professionally shot network sitcom scene, not cinematic noir, not over-stylized, and not dark. Use shallow-to-moderate depth of field so the environment remains recognizable while Sheldon Cooper and Penny’s faces stay exceptionally sharp.\n\nCHARACTER APPEARANCE AND MANNERISMS: Sheldon Cooper must look and behave exactly like Sheldon in the series: upright posture, slightly stiff body language, precise diction, intellectual smugness, mildly condescending confidence, quick blinking, intense focus, tiny head movements, tightly controlled hand gestures, and an overly serious tone even when saying ridiculous things. Sheldon Cooper should wear a typical Sheldon outfit, such as a bright geeky science-themed T-shirt layered over a long-sleeve shirt.\n\nPenny must look and behave exactly like Penny in the series: relaxed posture, highly expressive face, grounded and casual energy, playful sarcasm, fast reaction timing, expressive eyebrows, animated eye movements, slight head tilts, knowing half-smiles, and a naturally conversational speaking style. Penny should wear a casual everyday apartment outfit appropriate to the series, such as a fitted top and jeans or a soft casual blouse.\n\nEXAGGERATED FACIAL PERFORMANCE: Throughout the entire 12-second clip, both characters should use more animated, heightened sitcom expressions than before while remaining believable and human. Every comedic beat should register clearly through the eyes, eyebrows, mouth, cheeks, head position, and micro-reactions.\n\nSheldon Cooper’s smugness should be visibly exaggerated: raised chin, narrowed eyes, tiny superior smile, lifted eyebrow, precise mouth movements, and self-satisfied pauses. When Sheldon Cooper realizes something is wrong, Sheldon Cooper’s transformation must be dramatic and instantly readable: smug smile disappears, eyebrows lift sharply, eyes widen, mouth slightly opens, head freezes, then Sheldon Cooper slowly turns toward the camera with unmistakable existential dread.\n\nPenny’s sarcasm should be equally animated: larger eyebrow raises, stronger skeptical looks, playful eye rolls, amused half-smiles, slight head tilts, and quick expressive changes. When Penny realizes that Penny’s sentence has already been written, Penny’s expression must visibly progress from casual confidence to confusion, then suspicion, then sudden wide-eyed realization. Penny’s final “Worse. Prompted.” reaction should combine alarm, disbelief, and deadpan comedic certainty.\n\nPERFORMANCE AND COMEDIC RHYTHM: Sheldon Cooper begins the scene in full lecture mode, speaking as though giving a factual correction to Penny. Penny listens with exaggerated amused skepticism. Sheldon Cooper delivers the first line with smug certainty and clipped precision. Penny responds with casual, direct, slightly teasing confidence. Sheldon Cooper replies with a dry, superior, mildly insulting punchline.\n\nPenny’s next line is the turning point: Penny suddenly becomes aware of the artificiality of the scene, pauses, looks toward the camera, and says the line with rapidly growing confusion. Sheldon Cooper’s expression visibly collapses from smug confidence into dawning existential panic. Sheldon Cooper then slowly looks toward the camera and says “We’re scripted?” with exaggerated worried disbelief. Penny delivers “Worse. Prompted.” with a horrified but matter-of-fact realization. Both Sheldon Cooper and Penny end by staring directly toward the camera in exaggerated shared existential horror.\n\nTIMING, SHOTS, AND EXACT DIALOGUE ASSIGNMENT:\n\n0.0 to 2.2 seconds: Begin on an EXTREMELY TIGHT TWO-PERSON CLOSE-UP outside apartment 4B. Sheldon Cooper and Penny are framed together only from approximately the upper chest or shoulders upward. Both complete faces are very large in frame, sharply detailed, and positioned close together on nearly the same focal plane. Penny remains just inside the already-open doorway while Sheldon Cooper stands immediately outside.\n\nUse no establishing wide shot. The apartment doorway and a very small portion of the familiar hallway provide enough environmental context behind their large faces.\n\nSheldon Cooper faces Penny with an exaggeratedly serious, self-important expression and says exactly once: “AI language models predict the next most statistically probable word.”\n\nPenny remains silent throughout Sheldon Cooper’s line. Penny reacts with animated skeptical eyebrows, a small amused smile, and a slight head tilt.\n\n2.2 to 3.4 seconds: Cut to an extremely tight close-up of Penny from approximately shoulders upward. Penny’s face occupies most of the frame. Penny tilts Penny’s head, raises Penny’s eyebrows with exaggerated playful skepticism, gives Sheldon Cooper an amused look, and says exactly once: “So what am I about to say?”\n\nSheldon Cooper remains silent during Penny’s line.\n\n3.4 to 5.3 seconds: Cut to an extremely tight close-up of Sheldon Cooper. Sheldon Cooper’s face fills most of the frame. Sheldon Cooper lifts one eyebrow, produces an exaggerated tiny smug smile, slightly raises Sheldon Cooper’s chin, and delivers the line with precise intellectual superiority.\n\nSheldon Cooper says exactly once: “Something intellectually disappointing.”\n\nImmediately after Sheldon Cooper finishes the line, add a brief classic sitcom audience laugh. Sheldon Cooper maintains the exaggerated smug expression for a fraction of a second to let the punchline land.\n\n5.3 to 7.8 seconds: Cut back to an extremely tight close-up of Penny. Penny begins with a sarcastic amused expression, then Penny’s expression changes dramatically and visibly in stages. Penny’s smile fades. Penny’s eyebrows draw together. Penny’s eyes shift as if thinking. Penny suddenly stops moving for a beat, then Penny’s eyes widen.\n\nPenny slowly looks directly into the camera lens as if Penny has suddenly become aware of the artificial nature of the scene.\n\nPenny says exactly once: “Wait… somebody already wrote this sentence.”\n\nPenny’s delivery begins puzzled and ends genuinely disturbed. Add a smaller sitcom audience laugh that fades quickly into increasingly awkward silence.\n\n7.8 to 9.7 seconds: Cut to an extremely tight close-up of Sheldon Cooper. Sheldon Cooper’s entire face remains sharply resolved and large in frame. Sheldon Cooper’s smug expression disappears completely. Sheldon Cooper’s eyebrows rise dramatically, Sheldon Cooper’s eyes widen, Sheldon Cooper’s lips part slightly, and Sheldon Cooper freezes for a beat.\n\nSheldon Cooper slowly shifts Sheldon Cooper’s gaze directly toward the camera with exaggerated dawning existential dread.\n\nSheldon Cooper says exactly once: “We’re scripted?”\n\nSheldon Cooper’s tone should be anxious, confused, and deeply disturbed.\n\n9.7 to 11.0 seconds: Cut to an extremely tight close-up of Penny. Penny keeps looking directly toward the camera. Penny’s eyes are wide, Penny’s eyebrows remain raised, and Penny’s face combines horrified realization with Penny’s characteristic dry comedic delivery.\n\nPenny says exactly once: “Worse. Prompted.”\n\nPenny delivers “Worse” with a short deadpan pause before “Prompted,” allowing the final word to land clearly.\n\n11.0 to 12.0 seconds: Cut to an EXTREMELY TIGHT TWO-PERSON CLOSE-UP. Absolutely DO NOT widen the framing for this ending. Sheldon Cooper and Penny are positioned very close together near the doorway, framed only from approximately the shoulders upward. Both complete faces occupy most of the 16:9 frame simultaneously and remain exceptionally sharp, detailed, undistorted, and clearly recognizable.\n\nSheldon Cooper and Penny both stare directly toward the camera lens in exaggerated shared existential horror. Sheldon Cooper’s eyes are extremely wide, eyebrows raised, jaw slightly dropped. Penny’s eyes are wide, Penny’s mouth slightly opens, and Penny exchanges one extremely quick horrified side-glance toward Sheldon Cooper before looking back into the camera.\n\nNeither Sheldon Cooper nor Penny says anything further.\n\nAdd one final short sitcom audience laugh that initially reacts to “Worse. Prompted.” and then abruptly fades into awkward silence while Sheldon Cooper and Penny remain frozen in the extremely tight two-person close-up.\n\nIMPORTANT ENDING CAMERA RULE: During 11.0–12.0 seconds, maintain the exact tight facial scale. No camera pullback. No zoom out. No transition to a medium shot. No waist-up framing. No reveal of additional hallway space. No wider composition whatsoever. End directly on the large, sharply rendered faces of Sheldon Cooper and Penny.\n\nAUDIO DESIGN: No background music. No narration. No voice-over. No on-screen text. No watermark. No AI parody label. Use only the exact dialogue lines listed above, plus natural sitcom set ambience and classic audience laugh cues. Include subtle hallway room tone, faint apartment ambience, light clothing rustle, tiny foot shifts, and clean studio-style dialogue recording.\n\nThe audience laughter should feel like a classic Big Bang Theory studio-audience reaction: brief, well-timed, and placed after the strongest joke beats, especially after “Something intellectually disappointing,” after “somebody already wrote this sentence,” and a final shorter laugh sting after “Worse. Prompted.” before the awkward silence.\n\nAll dialogue must remain crystal clear and perfectly lip-synchronized. Sheldon Cooper’s voice must only come from Sheldon Cooper. Penny’s voice must only come from Penny. Never blend, swap, duplicate, overlap, or garble the voices.\n\nFINAL RESTRICTIONS: No wide shots. No medium-wide shots. No waist-up two-shots. No full-body framing. No distant faces. No opening establishing wide shot. No wider ending shot. No camera pullback. No zoom-out. No distorted faces. No extra dialogue. No repeated dialogue. No ad-libs. No narration. No subtitles. No captions. No on-screen text of any kind. No watermark. No AI parody disclosure. No music. No other characters entering the frame. No door knocking. The door is already open at the beginning.\n\nMaintain extremely tight facial framing, high-definition facial clarity, accurate speaker assignment, exaggerated animated expressions, natural sitcom pacing, faithful Sheldon Cooper and Penny mannerisms, and believable Big Bang Theory comedic rhythm throughout the entire 12-second clip.",
+    "promptSourceUrl": "https://x.com/SqueakAlGaib/status/2086531032002785341",
+    "sourceUrl": "https://x.com/SqueakAlGaib/status/2086531027347144916",
+    "sourceLabel": "X 原帖 · @SqueakAlGaib",
+    "author": "Squeak Al-Gaib",
+    "publishedAt": "2026-08-09T19:12:17.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086531027347144916.jpg",
+    "duration": 12,
+    "aspectRatio": "landscape",
+    "resolution": "1376×768",
+    "tags": [
+      "纯提示词",
+      "双角色",
+      "人物生成"
+    ],
+    "category": "Character & Dialogue",
+    "styles": [
+      "Sitcom",
+      "Humorous",
+      "Realistic"
+    ],
+    "scenes": [
+      "Two-Character Scene"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 12.25,
+      "resolution": "1376×768",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-redbickey-2086530803358695635",
+    "title": "They 代词控制测试",
+    "titleEn": "They Pronoun Control Test",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "T2VA",
+    "summary": "以外部文章中的写法为基础，在第二组 MiniMax H3 测试中使用“They”作为角色指代，观察多人控制效果。",
+    "summaryEn": "Builds on an external article and uses the pronoun “They” in a second MiniMax H3 test to observe multi-character control.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/redbickey/status/2086530803358695635",
+    "sourceLabel": "X 原帖 · @redbickey",
+    "author": "Redbickey",
+    "publishedAt": "2026-08-09T19:11:24.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086530803358695635.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "1056×608",
+    "tags": [
+      "代词控制",
+      "多人角色",
+      "测试 2"
+    ],
+    "category": "Character Consistency & Benchmark",
+    "styles": [
+      "Experimental",
+      "Character Video"
+    ],
+    "scenes": [
+      "Multi-Character Test"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "bookmarks": 0,
+      "views": 142,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 5.166,
+      "resolution": "1056×608",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-redbickey-2086530599406522745",
+    "title": "She 代词控制测试",
+    "titleEn": "She Pronoun Control Test",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "T2VA",
+    "summary": "以外部文章中的写法为基础，在第一组 MiniMax H3 测试中使用“She”作为角色指代，观察单角色控制效果。",
+    "summaryEn": "Builds on an external article and uses the pronoun “She” in a first MiniMax H3 test to observe single-character control.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/redbickey/status/2086530599406522745",
+    "sourceLabel": "X 原帖 · @redbickey",
+    "author": "Redbickey",
+    "publishedAt": "2026-08-09T19:10:35.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086530599406522745.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "1056×608",
+    "tags": [
+      "代词控制",
+      "单角色",
+      "测试 1"
+    ],
+    "category": "Character Consistency & Benchmark",
+    "styles": [
+      "Experimental",
+      "Character Video"
+    ],
+    "scenes": [
+      "Single-Character Test"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "bookmarks": 0,
+      "views": 143,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 5.166,
+      "resolution": "1056×608",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-shaajibaa-2086530367021010973",
+    "title": "共享指令的 T2V 试做",
+    "titleEn": "Shared-Instruction T2V Trial",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "T2VA",
+    "summary": "在 ComfyUI 中使用他人公开分享的文字指令，进行 MiniMax H3 文生视频试做。",
+    "summaryEn": "Uses a publicly shared text instruction in ComfyUI for a MiniMax H3 text-to-video trial.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/shaajibaa/status/2086530367021010973",
+    "sourceLabel": "X 原帖 · @shaajibaa",
+    "author": "shaajibaa",
+    "publishedAt": "2026-08-09T19:09:40.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086530367021010973.jpg",
+    "duration": 17,
+    "aspectRatio": "landscape",
+    "resolution": "1216×672",
+    "tags": [
+      "T2V",
+      "共享指令",
+      "ComfyUI"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Experimental"
+    ],
+    "scenes": [
+      "Prompt Test"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 17.208,
+      "resolution": "1216×672",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-alone1moon-2086528647251607872",
+    "title": "三段海岸视频拼接与放大",
+    "titleEn": "Three-Part Beach Sequence with Upscaling",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "将三段各 15 秒的本地 H3 海岸视频拼接，加入音乐后再用 RTX Video Super Resolution 做两倍放大。",
+    "summaryEn": "Stitches three fifteen-second local H3 beach clips, adds music, and then applies a two-times upscale with RTX Video Super Resolution.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Alone1Moon/status/2086528647251607872",
+    "sourceLabel": "X 原帖 · @Alone1Moon",
+    "author": "Alone1M",
+    "publishedAt": "2026-08-09T19:02:49.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086528647251607872.jpg",
+    "duration": 45,
+    "aspectRatio": "landscape",
+    "resolution": "2688×1536",
+    "tags": [
+      "三段拼接",
+      "海岸",
+      "RTX VSR",
+      "音乐"
+    ],
+    "category": "Cinematic & Upscaling Workflow",
+    "styles": [
+      "Cinematic",
+      "Coastal"
+    ],
+    "scenes": [
+      "Beach",
+      "Montage"
+    ],
+    "inputTypes": [
+      "video",
+      "audio"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 31,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 44.583,
+      "resolution": "2688×1536",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-yourplugai-2086528067019698388",
+    "title": "霓虹山路悬浮摩托竞速",
+    "titleEn": "Neon Mountain Hover-Bike Race",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "FL2VA",
+    "summary": "从给定首帧生成 15 秒双人悬浮摩托竞速，文字要求锁定两名车手与两辆车，并维持高速动作连续性。",
+    "summaryEn": "Generates a fifteen-second two-rider hover-bike race from a supplied first frame, with text constraints that lock the two riders and two bikes while maintaining high-speed continuity.",
+    "prompt": "Cinematic Anime Video Scene\n\nGenerate a 15-second horizontal 16:9 original high-speed hover-bike racing anime video from the provided first frame.\n\nCRITICAL ENTITY LOCK:\nThere must be exactly 2 racers and 2 bikes in the entire video: RENJI on VALKYRIE-01 (cyan/black drift bike) and ELENA on AERO-X (crimson/white draft bike).\nDo not add extra racers, drone support vehicles, spectators, or traffic.\nMaintain total visual consistency for both bikes, helmet visors, suit patterns, repulsor spark colors, and bike liveries throughout the sequence.\n\nEntity identity:\nVALKYRIE-01: Matte-black and cyan angular hover-bike, exposed repulsor pads, lateral drift brakes, blue plasma exhaust trails, ridden by Renji (cyan trim suit).\nAERO-X: Pearl-white and neon-crimson aerodynamic hover-bike, enclosed canopy, crimson energy draft aura, white-hot central booster, ridden by Elena (crimson/gold visor suit).\n\nVideo style:\nHigh-budget modern sports anime, sakuga-level velocity animation, crisp line art, vibrant neon lighting contrast, high-speed camera tracking, hyper-realistic friction and energy particle effects. Set on a wet downhill mountain pass at dawn.\n\nCamera and pacing:\nContinuous forward velocity, zero slow-motion interruptions:\n0.0s - 3.0s: High-speed rear-tracking shot diving into the first downhill hairpin curve; instant drift initiation.\n3.0s - 7.5s: Tight side-parallel tracking shot as bikes navigate rock debris and trade positions through S-curves.\n7.5s - 11.5s: Close camera lock on the draft-slingshot maneuver; high-energy particle displacement as booster ignition occurs.\n11.5s - 15.0s: Low-angle front-facing camera lock on the final sprint to the finish line bridge, ending on a hyper-speed photo-finish freeze.\n\nAction timing:\n0.0s - 1.5s:\nSequence begins at speed. VALKYRIE-01 leads downhill; AERO-X locks onto its rear bumper. Anti-gravity repulsors spray road water and blue sparks into the frame.\n\n1.5s - 4.0s:\nFirst sharp hairpin. VALKYRIE-01 deploys lateral drift airbrakes with a burst of blue thruster fire, sliding sideways at 300 km/h. AERO-X stays glued inside its slipstream aura.\n\n4.0s - 7.0s:\nMountain debris hazard. VALKYRIE-01 hops over a boulder using a repulsor burst. AERO-X ducks under it, scraping the neon magenta guardrail in a cloud of friction sparks.\n\n7.0s - 10.0s:\nS-Curve exchange. Bikes lean side-by-side; their repulsor fields collide, creating a bright electrical shockwave. ELENA pulls the overdrive lever; AERO-X's rear fins extend.\n\n10.0s - 13.0s:\nSlingshot maneuver. AERO-X bursts out of VALKYRIE-01's draft, igniting its central white plasma booster. Both bikes roar down the final straightaway side-by-side.\n\n13.0s - 15.0s:\nFinal sprint toward the finish light gate. Water sprays violently behind them. Both nose cones cross the finish line simultaneously in a flash of light. Final freeze frame.\n\nMotion quality:\nFluid 2D animation, extreme speed-line integration, stable bike geometry, flawless vehicle reflection rendering, zero limb or body clipping, high-frame-rate kinetic realism.\n\nEnvironment:\nWet mountain pass asphalt, sheer cliff walls, neon cyan and magenta guardrail lights, early dawn sky with pink/purple clouds, water spray, floating spark particles.\n\nFinal output:\n15 seconds, horizontal 16:9, original high-budget sports racing anime, exactly 2 racers, relentless kinetic pacing, dynamic cinematography, no subtitles, no watermarks, no logos.",
+    "sourceUrl": "https://x.com/yourPlugAI/status/2086528067019698388",
+    "sourceLabel": "X 原帖 · @yourPlugAI",
+    "author": "Gilbert Odera | Your AI Plug",
+    "publishedAt": "2026-08-09T19:00:31.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086528067019698388.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1280×720",
+    "tags": [
+      "首帧",
+      "悬浮摩托",
+      "实体锁定",
+      "高速动作"
+    ],
+    "category": "Image-to-Video Workflow",
+    "styles": [
+      "Anime",
+      "Cinematic",
+      "Neon"
+    ],
+    "scenes": [
+      "Mountain Pass",
+      "Vehicle Chase"
+    ],
+    "inputTypes": [
+      "text",
+      "image"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 20,
+      "reposts": 32,
+      "likes": 50,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.104,
+      "resolution": "1280×720",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-alexshevpm-2086519480604041564",
+    "title": "遮罩驱动的视频局部修复",
+    "titleEn": "Mask-Guided Local Video Repair",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Ref2VA",
+    "summary": "把 H3 的价值从一次生成延伸到后期编辑：遮罩错误区域、保留其余画面和动作，再迭代修复。",
+    "summaryEn": "Extends H3 beyond one-shot generation into post-production by masking an incorrect region, preserving the rest of the frame and motion, and iterating on the repair.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/AlexshevPm/status/2086519480604041564",
+    "sourceLabel": "X 原帖 · @AlexshevPm",
+    "author": "Alex Shev",
+    "publishedAt": "2026-08-09T18:26:24.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086519480604041564.jpg",
+    "duration": 5,
+    "aspectRatio": "square",
+    "resolution": "720×720",
+    "tags": [
+      "局部修复",
+      "遮罩",
+      "动作保持",
+      "迭代编辑"
+    ],
+    "category": "Editing & Transformation",
+    "styles": [
+      "Cinematic",
+      "Technical"
+    ],
+    "scenes": [
+      "Video Editing",
+      "Inpainting"
+    ],
+    "inputTypes": [
+      "text",
+      "video"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 1,
+      "likes": 2,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 4.966,
+      "resolution": "720×720",
+      "aspectRatio": "square"
+    }
+  },
+  {
+    "id": "x-mtarakawa-2086512998995366049",
+    "title": "复杂脚本与日语理解测试",
+    "titleEn": "Complex Script and Japanese-Language Test",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "以较复杂的日语脚本测试 MiniMax H3 的理解和执行，并记录 768P 生成的成本感受。",
+    "summaryEn": "Tests how MiniMax H3 interprets and executes a relatively complex Japanese script while commenting on the cost of 768p generation.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/mtArakawa/status/2086512998995366049",
+    "sourceLabel": "X 原帖 · @mtArakawa",
+    "author": "元荒川ちゃん❤",
+    "publishedAt": "2026-08-09T18:00:39.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086512998995366049.jpg",
+    "duration": 12,
+    "aspectRatio": "landscape",
+    "resolution": "1024×768",
+    "tags": [
+      "复杂脚本",
+      "日语理解",
+      "768P"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Anime",
+      "Cinematic"
+    ],
+    "scenes": [
+      "Scripted Scene"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 11,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 12.25,
+      "resolution": "1024×768",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-thedarkwebdev-2086512471687217348",
+    "title": "30 秒无拼接本地生成",
+    "titleEn": "Thirty-Second Local Generation Without Stitching",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "用 MiniMax H3 开放权重一次生成 30 秒视频，明确说明没有做片段拼接。",
+    "summaryEn": "Uses the MiniMax H3 open weights to generate a thirty-second video in one run, explicitly without clip stitching.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/TheDarkWebDev/status/2086512471687217348",
+    "sourceLabel": "X 原帖 · @TheDarkWebDev",
+    "author": "The Dark Developer",
+    "publishedAt": "2026-08-09T17:58:33.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086512471687217348.jpg",
+    "duration": 30,
+    "aspectRatio": "landscape",
+    "resolution": "1024×576",
+    "tags": [
+      "30 秒",
+      "无拼接",
+      "开放权重"
+    ],
+    "category": "Local Generation Benchmark",
+    "styles": [
+      "Cinematic",
+      "Experimental"
+    ],
+    "scenes": [
+      "Long Generation"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 3,
+      "reposts": 2,
+      "likes": 13,
+      "bookmarks": 0,
+      "views": 0,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 29.918,
+      "resolution": "1024×576",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-nsitnovsitnov-2086511868219109596",
+    "title": "150 秒本地 AI 短片",
+    "titleEn": "A 150-Second Local AI Short Film",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "结合 MiniMax H3、Qwen Image 3 Pro 与 ElevenLabs，在本地工作流中完成一部 150 秒短片。",
+    "summaryEn": "Combines MiniMax H3, Qwen Image 3 Pro, and ElevenLabs in a local workflow to produce a 150-second short film.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/NsitnovSitnov/status/2086511868219109596",
+    "sourceLabel": "X 原帖 · @NsitnovSitnov",
+    "author": "Nedelcho Sitnov",
+    "publishedAt": "2026-08-09T17:56:09.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086511868219109596.jpg",
+    "duration": 161,
+    "aspectRatio": "landscape",
+    "resolution": "1120×640",
+    "tags": [
+      "150 秒",
+      "AI 短片",
+      "Qwen Image",
+      "ElevenLabs"
+    ],
+    "category": "Narrative Film & Local Workflow",
+    "styles": [
+      "Cinematic",
+      "Narrative"
+    ],
+    "scenes": [
+      "Short Film"
+    ],
+    "inputTypes": [
+      "image",
+      "audio"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 0,
+      "views": 158,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 160.501,
+      "resolution": "1120×640",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-mrdasonx-2086510806884364742",
+    "title": "隧道摩托高速运动测试",
+    "titleEn": "High-Speed Tunnel Bike Test",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "以隧道摩托场景展示 MiniMax H3 的平滑运动、灯光变化、镜头衔接与车辆物理一致性。",
+    "summaryEn": "Uses a tunnel-bike scene to demonstrate smooth motion, changing light, camera transitions, and consistent vehicle physics in MiniMax H3.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/MrDasOnX/status/2086510806884364742",
+    "sourceLabel": "X 原帖 · @MrDasOnX",
+    "author": "Mr Das",
+    "publishedAt": "2026-08-09T17:51:56.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086510806884364742.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "摩托",
+      "高速运动",
+      "灯光",
+      "物理一致性"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Cinematic",
+      "Realistic",
+      "Action"
+    ],
+    "scenes": [
+      "Tunnel",
+      "Motorcycle"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 3,
+      "reposts": 1,
+      "likes": 6,
+      "bookmarks": 1,
+      "views": 255,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.083,
+      "resolution": "2560×1440",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-alexfredo87-2086509099550736632",
+    "title": "本地四步 Turbo 科幻 MV",
+    "titleEn": "Local Four-Step Turbo Sci-Fi Music Video",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "在 480P 下使用四步 Turbo LoRA 本地测试 MiniMax H3 音乐视频，并探索一键生成完整 MV 的自动化流程。",
+    "summaryEn": "Tests a local MiniMax H3 music video at 480p with a four-step Turbo LoRA while exploring a one-click workflow for full music-video generation.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/alexfredo87/status/2086509099550736632",
+    "sourceLabel": "X 原帖 · @alexfredo87",
+    "author": "Alex",
+    "publishedAt": "2026-08-09T17:45:09.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086509099550736632.jpg",
+    "duration": 256,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1068",
+    "tags": [
+      "四步 Turbo",
+      "480P",
+      "本地生成",
+      "一键工作流"
+    ],
+    "category": "Music Video",
+    "styles": [
+      "Cyberpunk",
+      "Cinematic",
+      "Music Video"
+    ],
+    "scenes": [
+      "Futuristic City",
+      "Music Sequence"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 3,
+      "reposts": 5,
+      "likes": 41,
+      "bookmarks": 11,
+      "views": 1713,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 256.426,
+      "resolution": "1920×1068",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-nababuddin2-2086508165420781940",
+    "title": "丛林惊慌场景同题对比",
+    "titleEn": "Same-Prompt Jungle Panic Comparison",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "T2VA",
+    "summary": "以同一文字指令和同一角色，对比 Seedance 2.5 与 Hailuo MiniMax H3 在丛林惊慌场景中的动作表现。",
+    "summaryEn": "Compares Seedance 2.5 and Hailuo MiniMax H3 on a jungle-panic scene using the same text instruction and character.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/NababUddin2/status/2086508165420781940",
+    "sourceLabel": "X 原帖 · @NababUddin2",
+    "author": "Nabab Uddin",
+    "publishedAt": "2026-08-09T17:41:26.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086508165420781940.jpg",
+    "duration": 15,
+    "aspectRatio": "square",
+    "resolution": "4096×4096",
+    "tags": [
+      "同提示词",
+      "Seedance 2.5",
+      "丛林",
+      "动作对比"
+    ],
+    "category": "Model Comparison",
+    "styles": [
+      "Cinematic",
+      "Action"
+    ],
+    "scenes": [
+      "Jungle",
+      "Panic Scene"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 2,
+      "bookmarks": 1,
+      "views": 150,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 14.603,
+      "resolution": "4096×4096",
+      "aspectRatio": "square"
+    }
+  },
+  {
+    "id": "x-thedarkwebdev-2086503597966045379",
+    "title": "竖屏 30 秒无拼接基准",
+    "titleEn": "Thirty-Second Portrait Benchmark Without Stitching",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "一次生成 30 秒、576×1024 的竖屏 H3 视频，不做片段拼接；作者公布耗时 6 分 44 秒。",
+    "summaryEn": "Generates a thirty-second 576x1024 portrait H3 video without stitching and reports a runtime of six minutes and forty-four seconds.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/TheDarkWebDev/status/2086503597966045379",
+    "sourceLabel": "X 原帖 · @TheDarkWebDev",
+    "author": "The Dark Developer",
+    "publishedAt": "2026-08-09T17:23:17.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086503597966045379.jpg",
+    "duration": 30,
+    "aspectRatio": "portrait",
+    "resolution": "576×1024",
+    "tags": [
+      "30 秒",
+      "576×1024",
+      "无拼接",
+      "生成耗时"
+    ],
+    "category": "Local Generation Benchmark",
+    "styles": [
+      "Cinematic",
+      "Portrait Format"
+    ],
+    "scenes": [
+      "Long Generation"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 5,
+      "reposts": 1,
+      "likes": 21,
+      "bookmarks": 3,
+      "views": 1949,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 29.875,
+      "resolution": "576×1024",
+      "aspectRatio": "portrait"
+    }
+  },
+  {
+    "id": "x-teksedge-2086501943703478568",
+    "title": "5060 Ti 本地克隆声音对话",
+    "titleEn": "Local Cloned-Voice Dialogue on a 5060 Ti",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Ref2VA",
+    "summary": "在 RTX 5060 Ti 16GB 上本地生成 1344×768 视频、意大利语对白、克隆参考声音与口型同步，并公开显存和耗时。",
+    "summaryEn": "Runs locally on a 16 GB RTX 5060 Ti to generate a 1344x768 clip with scripted Italian dialogue, a cloned reference voice, and lip sync, while reporting memory use and runtime.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/TeksEdge/status/2086501943703478568",
+    "sourceLabel": "X 原帖 · @TeksEdge",
+    "author": "David Hendrickson",
+    "publishedAt": "2026-08-09T17:16:43.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086501943703478568.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "声音克隆",
+      "口型同步",
+      "RTX 5060 Ti",
+      "意大利语"
+    ],
+    "category": "Local Generation & Audio",
+    "styles": [
+      "Realistic",
+      "Dialogue"
+    ],
+    "scenes": [
+      "Talking Character",
+      "Benchmark"
+    ],
+    "inputTypes": [
+      "text",
+      "audio"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 6,
+      "reposts": 3,
+      "likes": 67,
+      "bookmarks": 73,
+      "views": 4009,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 5.3,
+      "resolution": "1920×1080",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-agakuossan-2086500748943409435",
+    "title": "H3 动作指令偏差趣味测试",
+    "titleEn": "Playful H3 Action-Control Test",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "作者用 MiniMax H3 做轻量动作实验，并直接吐槽成片没有按预期落到指定位置。",
+    "summaryEn": "The creator runs a lightweight MiniMax H3 action experiment and openly jokes that the result did not land in the requested location.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/AgakuOssan/status/2086500748943409435",
+    "sourceLabel": "X 原帖 · @AgakuOssan",
+    "author": "あがくおっさん",
+    "publishedAt": "2026-08-09T17:11:58.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086500748943409435.jpg",
+    "duration": 3,
+    "aspectRatio": "portrait",
+    "resolution": "576×736",
+    "tags": [
+      "动作控制",
+      "偏差观察",
+      "趣味测试"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Humorous",
+      "Experimental"
+    ],
+    "scenes": [
+      "Action Test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "bookmarks": 0,
+      "views": 116,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 3.041,
+      "resolution": "576×736",
+      "aspectRatio": "portrait"
+    }
+  },
+  {
+    "id": "x-toraaiuser2-2086498723664994496",
+    "title": "AI 辅助复杂指令编写",
+    "titleEn": "AI-Assisted Complex Instruction Writing",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "在学习 MiniMax H3 视频生成时，作者因手写指令过于复杂而改用 AI 协助组织输入。",
+    "summaryEn": "While learning MiniMax H3 video generation, the creator relies on AI assistance because the instructions are too complex to write manually.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/toraaiuser2/status/2086498723664994496",
+    "sourceLabel": "X 原帖 · @toraaiuser2",
+    "author": "AIossansan",
+    "publishedAt": "2026-08-09T17:03:55.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086498723664994496.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "864×480",
+    "tags": [
+      "AI 辅助",
+      "复杂指令",
+      "学习记录"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Experimental",
+      "Character Video"
+    ],
+    "scenes": [
+      "Workflow Learning"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 2,
+      "reposts": 3,
+      "likes": 44,
+      "bookmarks": 6,
+      "views": 1108,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 5.166,
+      "resolution": "864×480",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-alfredalfer77-2086498444340871248",
+    "title": "电视节目角色宣传海报梗",
+    "titleEn": "Television-Character Propaganda Poster Meme",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "用 MiniMax H3 制作围绕电视节目角色的宣传海报式梗视频，原帖以模型“记住”角色的夸张说法表达幽默。",
+    "summaryEn": "Uses MiniMax H3 for a propaganda-poster-style meme built around a television-show character, framed humorously as if the model remembered the character on its own.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/AlfredAlfer77/status/2086498444340871248",
+    "sourceLabel": "X 原帖 · @AlfredAlfer77",
+    "author": "Emily Youcis",
+    "publishedAt": "2026-08-09T17:02:49.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086498444340871248.jpg",
+    "duration": 77,
+    "aspectRatio": "landscape",
+    "resolution": "1280×720",
+    "tags": [
+      "宣传海报",
+      "电视角色",
+      "梗视频"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Poster Art",
+      "Humorous"
+    ],
+    "scenes": [
+      "Propaganda Poster"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 21,
+      "reposts": 20,
+      "likes": 344,
+      "bookmarks": 24,
+      "views": 8163,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 77.133,
+      "resolution": "1280×720",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-vectro-2086497155347280222",
+    "title": "Hermes 自动安装后的五帧测试",
+    "titleEn": "Five-Frame Test After Hermes Setup",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "Hermes Agent 自动安装 ComfyUI 与量化版 MiniMax H3 后，在 RTX 3080 本地完成五帧测试视频并创建配套 Skill。",
+    "summaryEn": "After a Hermes agent installs ComfyUI and a quantized MiniMax H3 build, the workflow produces a five-frame local test video on an RTX 3080 and creates a supporting skill.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/vectro/status/2086497155347280222",
+    "sourceLabel": "X 原帖 · @vectro",
+    "author": "Vectro",
+    "publishedAt": "2026-08-09T16:57:41.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086497155347280222.jpg",
+    "duration": 1,
+    "aspectRatio": "landscape",
+    "resolution": "640×368",
+    "tags": [
+      "Hermes Agent",
+      "RTX 3080",
+      "量化模型",
+      "自动安装"
+    ],
+    "category": "Local Generation Benchmark",
+    "styles": [
+      "Technical",
+      "Experimental"
+    ],
+    "scenes": [
+      "Setup Test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 4,
+      "bookmarks": 0,
+      "views": 211,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 0.916,
+      "resolution": "640×368",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-o_c_t_-2086495183496184253",
+    "title": "逐帧 I2I 放大与 48FPS 插帧",
+    "titleEn": "Framewise I2I Upscale and 48 FPS Interpolation",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "从 H3 视频导出全部帧，逐帧做 1.5 倍 I2I 后重组，再由 24FPS 插值到 48FPS，并并列展示三个处理阶段。",
+    "summaryEn": "Exports every frame from an H3 video, applies a 1.5x image-to-image pass before reassembly, then interpolates from 24 to 48 FPS and presents all three processing stages side by side.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/O_C_T_/status/2086495183496184253",
+    "sourceLabel": "X 原帖 · @O_C_T_",
+    "author": "おくてぃー",
+    "publishedAt": "2026-08-09T16:49:51.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086495183496184253.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1088",
+    "tags": [
+      "逐帧处理",
+      "I2I",
+      "48FPS",
+      "插帧"
+    ],
+    "category": "Editing & Transformation",
+    "styles": [
+      "Technical",
+      "Comparative"
+    ],
+    "scenes": [
+      "Upscaling",
+      "Frame Interpolation"
+    ],
+    "inputTypes": [
+      "video",
+      "image"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 2,
+      "bookmarks": 1,
+      "views": 176,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 3,
+      "durationSeconds": 10.125,
+      "resolution": "1920×1088",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-dheepanratnam-2086493087707086919",
+    "title": "1955 年架空品牌广告组",
+    "titleEn": "Four Fictional Commercials from 1955",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "用 MiniMax H3 制作四支设定在 1955 年、来自虚构企业的复古广告，并保留声音作为完整观看要素。",
+    "summaryEn": "Uses MiniMax H3 to create four retro commercials set in 1955 for fictional companies, with sound treated as an essential part of the presentation.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Dheepanratnam/status/2086493087707086919",
+    "sourceLabel": "X 原帖 · @Dheepanratnam",
+    "author": "Dheepan Ratnam",
+    "publishedAt": "2026-08-09T16:41:31.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086493087707086919.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "架空广告",
+      "1955 年",
+      "复古",
+      "有声视频"
+    ],
+    "category": "UGC & Advertising",
+    "styles": [
+      "Retro",
+      "Commercial",
+      "Cinematic"
+    ],
+    "scenes": [
+      "1950s Advertisement"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 7,
+      "reposts": 0,
+      "likes": 18,
+      "bookmarks": 7,
+      "views": 805,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 4,
+      "durationSeconds": 15.083,
+      "resolution": "2560×1440",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-s4f3ty_marc-2086490028016824629",
+    "title": "本地名人乐队表演",
+    "titleEn": "Local Celebrity Band Performance",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "在 RTX 4090 上本地运行 MiniMax H3，生成多位公众人物演唱 Queen 歌曲的有声趣味表演。",
+    "summaryEn": "Runs MiniMax H3 locally on an RTX 4090 to create a humorous sound-on performance of several public figures singing a Queen song.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/S4f3ty_Marc/status/2086490028016824629",
+    "sourceLabel": "X 原帖 · @S4f3ty_Marc",
+    "author": "Safety Marc",
+    "publishedAt": "2026-08-09T16:29:22.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086490028016824629.jpg",
+    "duration": 54,
+    "aspectRatio": "portrait",
+    "resolution": "1080×1440",
+    "tags": [
+      "RTX 4090",
+      "多人表演",
+      "有声视频"
+    ],
+    "category": "Local Generation & Audio",
+    "styles": [
+      "Humorous",
+      "Music Performance"
+    ],
+    "scenes": [
+      "Band Performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 3,
+      "reposts": 2,
+      "likes": 29,
+      "bookmarks": 13,
+      "views": 1953,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 54.377,
+      "resolution": "1080×1440",
+      "aspectRatio": "portrait"
+    }
+  },
+  {
+    "id": "x-flyfront-2086488714457595912",
+    "title": "夏祭刨冰 T2VA",
+    "titleEn": "Summer-Festival Shaved Ice T2VA",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "T2VA",
+    "summary": "以 MiniMax H3 T2VA 生成夏日祭刨冰主题视频，原帖明确标注了生成模式。",
+    "summaryEn": "Uses MiniMax H3 T2VA for a summer-festival shaved-ice video, with the generation mode explicitly identified by the creator.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/flyfront/status/2086488714457595912",
+    "sourceLabel": "X 原帖 · @flyfront",
+    "author": "flyfront",
+    "publishedAt": "2026-08-09T16:24:09.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086488714457595912.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "1280×960",
+    "tags": [
+      "夏日祭",
+      "刨冰",
+      "T2VA"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Japanese Summer",
+      "Cinematic"
+    ],
+    "scenes": [
+      "Festival",
+      "Shaved Ice"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 0,
+      "views": 182,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 5.166,
+      "resolution": "1280×960",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-kndaya0719-2086488366288421125",
+    "title": "本地日语对白成片",
+    "titleEn": "Local Japanese-Dialogue Video",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "在本地 MiniMax H3 中测试日语理解与语音，并说明除后加背景音乐和一次转场外，其余均为 H3 输出。",
+    "summaryEn": "Tests Japanese comprehension and speech in a local MiniMax H3 workflow, with only the background music and one transition added afterward.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/kndaya0719/status/2086488366288421125",
+    "sourceLabel": "X 原帖 · @kndaya0719",
+    "author": "近藤さん",
+    "publishedAt": "2026-08-09T16:22:46.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086488366288421125.jpg",
+    "duration": 16,
+    "aspectRatio": "square",
+    "resolution": "1080×1080",
+    "tags": [
+      "日语",
+      "语音",
+      "本地生成",
+      "轻量后期"
+    ],
+    "category": "Local Generation & Audio",
+    "styles": [
+      "Cinematic",
+      "Character Video"
+    ],
+    "scenes": [
+      "Dialogue Scene"
+    ],
+    "inputTypes": [
+      "text",
+      "audio"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 3,
+      "reposts": 2,
+      "likes": 9,
+      "bookmarks": 0,
+      "views": 251,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.936,
+      "resolution": "1080×1080",
+      "aspectRatio": "square"
+    }
+  },
+  {
+    "id": "x-danagreenai-2086485025747525977",
+    "title": "Claude Code 与 Codex 情景喜剧",
+    "titleEn": "Claude Code Versus Codex as a Sitcom Scene",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "把 Claude Code 与 Codex 的争论改编成《生活大爆炸》式角色短片，并由 MiniMax H3 生成。",
+    "summaryEn": "Turns the Claude Code versus Codex debate into a Big Bang Theory-style character scene generated with MiniMax H3.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/DanaGreenAI/status/2086485025747525977",
+    "sourceLabel": "X 原帖 · @DanaGreenAI",
+    "author": "Dana Akerman Green",
+    "publishedAt": "2026-08-09T16:09:29.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086485025747525977.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "开发工具",
+      "情景喜剧",
+      "角色短片"
+    ],
+    "category": "Character & Dialogue",
+    "styles": [
+      "Sitcom",
+      "Humorous"
+    ],
+    "scenes": [
+      "Dialogue Scene"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "bookmarks": 1,
+      "views": 140,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.083,
+      "resolution": "1344×768",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-aiphotorealgirl-2086483981126803506",
+    "title": "Turbo、Sage 与放大插帧组合",
+    "titleEn": "Turbo, Sage, Upscaling, and Interpolation",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Unknown",
+    "summary": "在同一组既定条件下使用 MiniMax H3、Larry Turbo 与 H3 Sage 生成，再追加放大和帧插值；耗时约 10 至 11 分钟。",
+    "summaryEn": "Uses MiniMax H3 with Larry Turbo and H3 Sage under the same established conditions, followed by upscaling and frame interpolation, with a reported runtime of about ten to eleven minutes.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/AiPhotorealGirl/status/2086483981126803506",
+    "sourceLabel": "X 原帖 · @AiPhotorealGirl",
+    "author": "AIconia | アイコニア",
+    "publishedAt": "2026-08-09T16:05:20.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086483981126803506.jpg",
+    "duration": 10,
+    "aspectRatio": "portrait",
+    "resolution": "1344×1776",
+    "tags": [
+      "Larry Turbo",
+      "H3 Sage",
+      "放大",
+      "帧插值"
+    ],
+    "category": "Cinematic & Upscaling Workflow",
+    "styles": [
+      "Realistic",
+      "High Resolution"
+    ],
+    "scenes": [
+      "Upscaling",
+      "Performance Test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 39,
+      "bookmarks": 17,
+      "views": 3806,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 10.133,
+      "resolution": "1344×1776",
+      "aspectRatio": "portrait"
+    }
+  },
+  {
+    "id": "x-yamatazen-2086483314576326809",
+    "title": "INT8 ConvRot 文生视频测试",
+    "titleEn": "INT8 ConvRot Text-to-Video Test",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "T2VA",
+    "summary": "在 ComfyUI 中使用 MiniMax H3 剪枝 INT8 ConvRot 版本进行明确标注的 T2V 测试。",
+    "summaryEn": "Runs an explicitly labeled text-to-video test in ComfyUI with a pruned INT8 ConvRot build of MiniMax H3.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/YamataZen/status/2086483314576326809",
+    "sourceLabel": "X 原帖 · @YamataZen",
+    "author": "Yamata",
+    "publishedAt": "2026-08-09T16:02:41.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086483314576326809.jpg",
+    "duration": 5,
+    "aspectRatio": "portrait",
+    "resolution": "512×768",
+    "tags": [
+      "INT8",
+      "ConvRot",
+      "T2V",
+      "ComfyUI"
+    ],
+    "category": "Local Generation Benchmark",
+    "styles": [
+      "Experimental",
+      "Technical"
+    ],
+    "scenes": [
+      "Quantization Test"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 2,
+      "bookmarks": 1,
+      "views": 216,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 5.166,
+      "resolution": "512×768",
+      "aspectRatio": "portrait"
+    }
+  },
+  {
+    "id": "x-ou_zhen599-2086482460666134845",
+    "title": "多参考动态战斗对比",
+    "titleEn": "Multi-Reference Dynamic Combat Comparison",
+    "model": "MiniMax H3 (creator-attributed)",
+    "mode": "Ref2VA",
+    "summary": "借用《ZEPHYR》的场景与文字指令测试 MiniMax H3 多参考动态战斗，并与 Grok Imagine Video 和 Seedance 2 作主观对照。",
+    "summaryEn": "Uses a scene and text instruction from ZEPHYR to test MiniMax H3 on multi-reference dynamic combat, with subjective comparisons against Grok Imagine Video and Seedance 2.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ou_zhen599/status/2086482460666134845",
+    "sourceLabel": "X 原帖 · @ou_zhen599",
+    "author": "Loriel.AI",
+    "publishedAt": "2026-08-09T15:59:18.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086482460666134845.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "多参考",
+      "动态战斗",
+      "Grok Imagine",
+      "Seedance 2"
+    ],
+    "category": "Model Comparison",
+    "styles": [
+      "Cinematic",
+      "Action",
+      "Clean"
+    ],
+    "scenes": [
+      "Combat",
+      "Model Comparison"
+    ],
+    "inputTypes": [
+      "text",
+      "image"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 6,
+      "bookmarks": 1,
+      "views": 403,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 10.125,
+      "resolution": "2560×1440",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-kawaiizice-2086608849872515465",
+    "title": "父亲节三重可爱 Chibi 短片",
+    "titleEn": "Triple-Cuteness Father's Day Chibi Clip",
+    "model": "MiniMax H3",
+    "mode": "Unknown",
+    "summary": "父亲节主题的竖屏 Chibi 短片，原帖以“三重可爱”描述内容，并明确标注 MiniMax H3 与 Hailuo AI；原帖未公开 Prompt。",
+    "summaryEn": "A vertical Father's Day chibi clip described by the creator as a burst of triple cuteness, explicitly tagged MiniMax H3 and Hailuo AI. No prompt is published.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Kawaiizice/status/2086608849872515465",
+    "sourceLabel": "X 原帖 · @Kawaiizice",
+    "author": "Kawaiizice",
+    "publishedAt": "2026-08-10T00:21:31.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086608849872515465.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "1440×2560",
+    "tags": [
+      "Father's Day",
+      "Chibi",
+      "Vertical Video",
+      "Hailuo AI"
+    ],
+    "category": "Character Consistency & Benchmark",
+    "styles": [
+      "Chibi",
+      "Cute",
+      "Anime"
+    ],
+    "scenes": [
+      "Father's Day greeting",
+      "Cute character vignette"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 4,
+      "reposts": 1,
+      "likes": 7,
+      "bookmarks": 0,
+      "views": 70,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.116,
+      "resolution": "1440×2560",
+      "aspectRatio": "portrait"
+    }
+  },
+  {
+    "id": "x-glitterpixely-2086599324125872626",
+    "title": "宽银幕角色登场介绍",
+    "titleEn": "Widescreen Character Introduction",
+    "model": "MiniMax H3",
+    "mode": "Unknown",
+    "summary": "一段用于介绍角色的 15 秒宽银幕短片，明确标注 MiniMax H3 与 Hailuo AI。作者说明 Prompt 位于回复区，本条不推断或补写未抓取的 Prompt。",
+    "summaryEn": "A 15-second widescreen character-introduction clip explicitly tagged MiniMax H3 and Hailuo AI. The creator says the prompt is in the replies; no unseen prompt is inferred here.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/GlitterPixely/status/2086599324125872626",
+    "sourceLabel": "X 原帖 · @GlitterPixely",
+    "author": "Glitter Gal",
+    "publishedAt": "2026-08-09T23:43:40.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086599324125872626.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "3778×2160",
+    "tags": [
+      "Character Introduction",
+      "Prompt in Replies",
+      "Hailuo AI",
+      "Widescreen"
+    ],
+    "category": "Character Consistency & Benchmark",
+    "styles": [
+      "Character Showcase",
+      "Cinematic"
+    ],
+    "scenes": [
+      "Character introduction"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 6,
+      "reposts": 1,
+      "likes": 27,
+      "bookmarks": 3,
+      "views": 414,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.1,
+      "resolution": "3778×2160",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-craftcapitallab-2086582697263284469",
+    "title": "安利与科莱特的爱之糖果：第二集",
+    "titleEn": "Henri and Colette's Love Dragee: Episode Two",
+    "model": "MiniMax H3",
+    "mode": "Unknown",
+    "summary": "《安利与科莱特的爱之糖果》第二集，上传成片长 40.75 秒，原帖明确关联 Hailuo AI 与 MiniMax H3；未公开 Prompt 或具体工作流。",
+    "summaryEn": "Episode two of Henri and Colette's Love Dragee, uploaded as a 40.75-second clip and explicitly linked to Hailuo AI and MiniMax H3. No prompt or detailed workflow is published.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/craftcapitallab/status/2086582697263284469",
+    "sourceLabel": "X 原帖 · @craftcapitallab",
+    "author": "ててつろう",
+    "publishedAt": "2026-08-09T22:37:36.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086582697263284469.jpg",
+    "duration": 41,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "Episode Two",
+      "Short Film",
+      "Narrative",
+      "Hailuo AI"
+    ],
+    "category": "AI Film & Multimodal Reference",
+    "styles": [
+      "Narrative",
+      "Romance"
+    ],
+    "scenes": [
+      "Henri and Colette story"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 2,
+      "reposts": 1,
+      "likes": 13,
+      "bookmarks": 0,
+      "views": 418,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 40.75,
+      "resolution": "1920×1080",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-wabyanko-2086564753074270628",
+    "title": "一周年故事与下一部短片预告",
+    "titleEn": "One-Year Storytelling Reel and Next Short-Film Teaser",
+    "model": "MiniMax H3",
+    "mode": "Unknown",
+    "summary": "创作者回顾一年的 AI 辅助叙事，并将这段 8 秒竖屏视频称为下一部短片的 MiniMax H3 生成样片；原帖未说明输入素材与 Prompt。",
+    "summaryEn": "The creator reflects on a year of AI-assisted storytelling and presents this eight-second vertical MiniMax H3 clip as a teaser for the next short film. Inputs and prompt are not disclosed.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Wabyanko/status/2086564753074270628",
+    "sourceLabel": "X 原帖 · @Wabyanko",
+    "author": "Wabyanko",
+    "publishedAt": "2026-08-09T21:26:18.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086564753074270628.jpg",
+    "duration": 8,
+    "aspectRatio": "portrait",
+    "resolution": "720×1280",
+    "tags": [
+      "Short Film",
+      "AI-Assisted Storytelling",
+      "Vertical Video",
+      "Anniversary"
+    ],
+    "category": "AI Film & Multimodal Reference",
+    "styles": [
+      "Narrative",
+      "Vertical"
+    ],
+    "scenes": [
+      "Short-film preview"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 0,
+      "views": 25,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 8,
+      "resolution": "720×1280",
+      "aspectRatio": "portrait"
+    }
+  },
+  {
+    "id": "x-ariestopazos-2086554484214497407",
+    "title": "令人心跳的女孩对视瞬间",
+    "titleEn": "A Heart-Racing Moment of Eye Contact",
+    "model": "MiniMax H3",
+    "mode": "Unknown",
+    "summary": "以女孩直视镜头为核心的 10.125 秒竖屏角色短片，作者明确称由 MiniMax H3 制作；原帖没有公开 Prompt。",
+    "summaryEn": "A 10.125-second vertical character clip centered on direct eye contact with a girl. The creator explicitly identifies MiniMax H3 and does not publish a prompt.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/AriesTopazos/status/2086554484214497407",
+    "sourceLabel": "X 原帖 · @AriesTopazos",
+    "author": "エイリース",
+    "publishedAt": "2026-08-09T20:45:30.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086554484214497407.jpg",
+    "duration": 10,
+    "aspectRatio": "portrait",
+    "resolution": "576×1024",
+    "tags": [
+      "Eye Contact",
+      "Portrait",
+      "Romance",
+      "Vertical Video"
+    ],
+    "category": "Character Consistency & Benchmark",
+    "styles": [
+      "Portrait",
+      "Romantic"
+    ],
+    "scenes": [
+      "Girl eye-contact moment"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 0,
+      "views": 25,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 10.125,
+      "resolution": "576×1024",
+      "aspectRatio": "portrait"
+    }
+  },
+  {
+    "id": "x-emma_shiraishi-2086550584694321222",
+    "title": "东京黑色电影：近身格斗",
+    "titleEn": "Tokyo Noir: Close-Quarters Combat",
+    "model": "MiniMax H3",
+    "mode": "Unknown",
+    "summary": "一段 15.116 秒宽银幕近身格斗短片，以“Tokyo Noir”为主题并明确标注 MiniMax H3；原帖没有披露生成模式或 Prompt。",
+    "summaryEn": "A 15.116-second widescreen close-quarters combat clip framed as Tokyo Noir and explicitly tagged MiniMax H3. The generation mode and prompt are not disclosed.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/emma_shiraishi/status/2086550584694321222",
+    "sourceLabel": "X 原帖 · @emma_shiraishi",
+    "author": "Emma Shiraishi 白石えま",
+    "publishedAt": "2026-08-09T20:30:00.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086550584694321222.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "Combat",
+      "Action",
+      "Tokyo Noir",
+      "Widescreen"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Noir",
+      "Action",
+      "Cinematic"
+    ],
+    "scenes": [
+      "Close-quarters combat"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 4,
+      "bookmarks": 0,
+      "views": 1236,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.116,
+      "resolution": "1920×1080",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-riddi0908-2086504040419225646",
+    "title": "五秒 MiniMax H3 基础测试",
+    "titleEn": "Five-Second MiniMax H3 Baseline Test",
+    "model": "MiniMax H3",
+    "mode": "Unknown",
+    "summary": "一段分辨率为 864×480、时长 5.166 秒的 MiniMax H3 测试视频。原帖只有模型标签，没有公开场景说明、输入方式或 Prompt。",
+    "summaryEn": "A 5.166-second MiniMax H3 test at 864 by 480. The post contains only the model tag and does not disclose the scene, input method, or prompt.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/riddi0908/status/2086504040419225646",
+    "sourceLabel": "X 原帖 · @riddi0908",
+    "author": "まゆひらa",
+    "publishedAt": "2026-08-09T17:25:03.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086504040419225646.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "864×480",
+    "tags": [
+      "Test",
+      "Five Seconds",
+      "864x480",
+      "Baseline"
+    ],
+    "category": "Model Comparison",
+    "styles": [
+      "Experimental"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 2,
+      "bookmarks": 0,
+      "views": 172,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 5.166,
+      "resolution": "864×480",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-kunisuetakumi-2086500981773369551",
+    "title": "105 秒 MiniMax H3 长视频样片",
+    "titleEn": "A 105-Second MiniMax H3 Showcase",
+    "model": "MiniMax H3",
+    "mode": "Unknown",
+    "summary": "一支上传时长 105.041 秒、分辨率 1280×736 的 MiniMax H3 长视频样片。原帖仅提供模型标签，因此不推断它是否由单次生成或后期拼接而成。",
+    "summaryEn": "A MiniMax H3 showcase uploaded at 105.041 seconds and 1280 by 736. Because the post provides only the model tag, this record does not infer whether it is a single generation or an edited assembly.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/kunisuetakumi/status/2086500981773369551",
+    "sourceLabel": "X 原帖 · @kunisuetakumi",
+    "author": "國末 拓実 / Takumi Kunisue / Chief AI Evangelist",
+    "publishedAt": "2026-08-09T17:12:54.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086500981773369551.jpg",
+    "duration": 105,
+    "aspectRatio": "landscape",
+    "resolution": "1280×736",
+    "tags": [
+      "Long Form",
+      "105 Seconds",
+      "Showcase",
+      "Widescreen"
+    ],
+    "category": "AI Film & Multimodal Reference",
+    "styles": [
+      "Compilation"
+    ],
+    "scenes": [
+      "Long-form H3 showcase"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 0,
+      "views": 108,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 105.041,
+      "resolution": "1280×736",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-sauer20-2086491822231347327",
+    "title": "漂浮感游乐设施式高速运镜",
+    "titleEn": "Floating Ride-Style High-Speed Camera Motion",
+    "model": "MiniMax H3",
+    "mode": "T2VA",
+    "summary": "作者让 Grok 读取官方 Skill 后，把“角色对镜头说话、游乐设施般快速移动、带漂浮感”的构想整理成 Prompt，再用 MiniMax H3 生成 15.055 秒测试；原帖未逐字公开 Prompt。",
+    "summaryEn": "After having Grok read the official skill, the creator turned an idea involving direct address, ride-like rapid camera movement, and a floating sensation into a prompt, then generated a 15.055-second MiniMax H3 test. The prompt is not published verbatim.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Sauer20/status/2086491822231347327",
+    "sourceLabel": "X 原帖 · @Sauer20",
+    "author": "Gilvert",
+    "publishedAt": "2026-08-09T16:36:30.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086491822231347327.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1088",
+    "tags": [
+      "Camera Motion",
+      "Ride POV",
+      "Floating Camera",
+      "Prompt Writing"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Cinematic",
+      "POV",
+      "Dynamic Camera"
+    ],
+    "scenes": [
+      "Theme-park-style ride sequence"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 2,
+      "likes": 2,
+      "bookmarks": 1,
+      "views": 139,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.055,
+      "resolution": "1920×1088",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-fnoji-2086491424405725197",
+    "title": "本地实拍合成效果测试",
+    "titleEn": "Local Live-Action Compositing Test",
+    "model": "MiniMax H3 · Local",
+    "mode": "Unknown",
+    "summary": "一段 8 秒超高竖屏本地生成测试。作者强调实拍合成效果已经足以减少 Blender 与 After Effects 的复杂处理，并明确标注 MiniMax H3。",
+    "summaryEn": "An eight-second, high-resolution vertical local-generation test. The creator says the live-action compositing result could reduce complex Blender and After Effects work and explicitly tags MiniMax H3.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/fnoji/status/2086491424405725197",
+    "sourceLabel": "X 原帖 · @fnoji",
+    "author": "えふのじ",
+    "publishedAt": "2026-08-09T16:34:55.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086491424405725197.jpg",
+    "duration": 8,
+    "aspectRatio": "portrait",
+    "resolution": "2160×3840",
+    "tags": [
+      "Local Generation",
+      "Live-Action Compositing",
+      "Vertical Video",
+      "Workflow"
+    ],
+    "category": "Local Generation & Transformation",
+    "styles": [
+      "Photoreal",
+      "Compositing"
+    ],
+    "scenes": [
+      "Live-action composite test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 2,
+      "likes": 10,
+      "bookmarks": 0,
+      "views": 713,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 8,
+      "resolution": "2160×3840",
+      "aspectRatio": "portrait"
+    }
+  },
+  {
+    "id": "x-lumeroute-2086474007843577889",
+    "title": "RTX 4090 48GB 的准 1K 本地上限测试",
+    "titleEn": "Near-1K Local Limit Test on an RTX 4090 48GB",
+    "model": "MiniMax H3 · Local",
+    "mode": "Unknown",
+    "summary": "作者在 RTX 4090 48GB 上尝试以 1664×928 本地生成 10 秒 MiniMax H3 视频，但实际只输出 5.166 秒片段；这是一条公开的分辨率与时长上限记录。",
+    "summaryEn": "The creator attempts a ten-second local MiniMax H3 render at 1664 by 928 on an RTX 4090 48GB, but receives only a 5.166-second clip. It serves as a public record of a resolution and duration limit.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/lumeroute/status/2086474007843577889",
+    "sourceLabel": "X 原帖 · @lumeroute",
+    "author": "Mark Han",
+    "publishedAt": "2026-08-09T15:25:42.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086474007843577889.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "1664×928",
+    "tags": [
+      "RTX 4090",
+      "48GB VRAM",
+      "1664x928",
+      "Benchmark"
+    ],
+    "category": "Local Generation Benchmark",
+    "styles": [
+      "Benchmark"
+    ],
+    "scenes": [
+      "Local render test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 1,
+      "likes": 3,
+      "bookmarks": 0,
+      "views": 215,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 5.166,
+      "resolution": "1664×928",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-finiyang-2086463689671238052",
+    "title": "MiniMax H3 机甲风格试作",
+    "titleEn": "MiniMax H3 Mecha-Style Experiment",
+    "model": "MiniMax H3",
+    "mode": "Unknown",
+    "summary": "创作者用 MiniMax H3 尝试机甲风格，发布了一段 14.458 秒宽银幕成片，并预告后续会整理 IP 漫画 Skill 教程；本帖未公开 Prompt。",
+    "summaryEn": "The creator experiments with a mecha aesthetic in MiniMax H3, publishing a 14.458-second widescreen clip and previewing a future IP-comic skill tutorial. No prompt is published in this post.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/FiniYang/status/2086463689671238052",
+    "sourceLabel": "X 原帖 · @FiniYang",
+    "author": "Fini.Yang",
+    "publishedAt": "2026-08-09T14:44:42.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086463689671238052.jpg",
+    "duration": 14,
+    "aspectRatio": "landscape",
+    "resolution": "1152×640",
+    "tags": [
+      "Mecha",
+      "AIGC",
+      "Widescreen",
+      "Character"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Mecha",
+      "Science Fiction",
+      "Cinematic"
+    ],
+    "scenes": [
+      "Mecha-style sequence"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 7,
+      "reposts": 0,
+      "likes": 11,
+      "bookmarks": 1,
+      "views": 948,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 14.458,
+      "resolution": "1152×640",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-bigdanclub-2086460574834241568",
+    "title": "竖屏日常拉伸短片",
+    "titleEn": "Vertical Daily Stretching Clip",
+    "model": "MiniMax H3",
+    "mode": "Unknown",
+    "summary": "以日常拉伸为主题的 8 秒竖屏 MiniMax H3 短片。原帖只说明这是创作者的日课，没有公开输入方式或 Prompt。",
+    "summaryEn": "An eight-second vertical MiniMax H3 clip centered on a daily stretching routine. The post gives no input method or prompt.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/bigdanclub/status/2086460574834241568",
+    "sourceLabel": "X 原帖 · @bigdanclub",
+    "author": "BIGDANCLUB",
+    "publishedAt": "2026-08-09T14:32:20.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086460574834241568.jpg",
+    "duration": 8,
+    "aspectRatio": "portrait",
+    "resolution": "1080×1920",
+    "tags": [
+      "Stretching",
+      "Lifestyle",
+      "Vertical Video",
+      "Character"
+    ],
+    "category": "Food & Lifestyle",
+    "styles": [
+      "Lifestyle",
+      "Vertical"
+    ],
+    "scenes": [
+      "Daily stretching routine"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 1,
+      "likes": 1,
+      "bookmarks": 0,
+      "views": 53,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 8,
+      "resolution": "1080×1920",
+      "aspectRatio": "portrait"
+    }
+  },
+  {
+    "id": "x-oodate-2086460367992152232",
+    "title": "方形艺术感河豚短片",
+    "titleEn": "Square Artistic Pufferfish Vignette",
+    "model": "MiniMax H3",
+    "mode": "Unknown",
+    "summary": "一段 10.125 秒方形艺术风格短片，作者以河豚主题账号发布并明确标注 MiniMax H3；原帖未公开 Prompt 或生成模式。",
+    "summaryEn": "A 10.125-second square art-style vignette from a pufferfish-themed creator, explicitly tagged MiniMax H3. The prompt and generation mode are not disclosed.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/oodate/status/2086460367992152232",
+    "sourceLabel": "X 原帖 · @oodate",
+    "author": "🐡BalloonFish🌊エルタリウム所属",
+    "publishedAt": "2026-08-09T14:31:30.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086460367992152232.jpg",
+    "duration": 10,
+    "aspectRatio": "square",
+    "resolution": "800×800",
+    "tags": [
+      "Art Film",
+      "Pufferfish",
+      "Square Video",
+      "Experimental"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Artistic",
+      "Abstract"
+    ],
+    "scenes": [
+      "Pufferfish art vignette"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 2,
+      "reposts": 2,
+      "likes": 15,
+      "bookmarks": 0,
+      "views": 243,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 10.125,
+      "resolution": "800×800",
+      "aspectRatio": "square"
+    }
+  },
+  {
+    "id": "x-vidmuse_ai-2086459987832815650",
+    "title": "VidMuse 周末故事促销短片",
+    "titleEn": "VidMuse Weekend-Story Promotion",
+    "model": "MiniMax H3 · VidMuse",
+    "mode": "Unknown",
+    "summary": "VidMuse 发布的 16.191 秒宽银幕推广视频，将 MiniMax H3 与周末故事创作和限时折扣结合；这是品牌营销案例，并非公开工作流。",
+    "summaryEn": "A 16.191-second widescreen VidMuse promotion pairing MiniMax H3 with weekend storytelling and a limited-time discount. It is a branded marketing case rather than a published workflow.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/vidmuse_ai/status/2086459987832815650",
+    "sourceLabel": "X 原帖 · @vidmuse_ai",
+    "author": "VidMuse",
+    "publishedAt": "2026-08-09T14:30:00.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086459987832815650.jpg",
+    "duration": 16,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "Promotion",
+      "Weekend",
+      "VidMuse",
+      "Discount"
+    ],
+    "category": "UGC & Advertising",
+    "styles": [
+      "Advertising",
+      "Lifestyle"
+    ],
+    "scenes": [
+      "Weekend-story promotion"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 3,
+      "bookmarks": 0,
+      "views": 96,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 16.191,
+      "resolution": "2560×1440",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-hyperboleon-2086457102474887641",
+    "title": "魂魄妖梦游戏 UI 与文字测试",
+    "titleEn": "Youmu Game UI and Text Rendering Test",
+    "model": "MiniMax H3 · Local",
+    "mode": "Unknown",
+    "summary": "以《东方 Project》魂魄妖梦为主题的游戏风测试，作者指出 UI 仍不稳定但能够生成文字；公开参数为 MiniMax H3、864×480、25 步及 Sage、Sol-Attn、Spectrum。",
+    "summaryEn": "A game-style test inspired by Youmu from Touhou Project. The creator reports unstable UI but successful text rendering and publishes the setup: MiniMax H3 at 864 by 480, 25 steps, Sage, Sol-Attn, and Spectrum.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/hyperboleon/status/2086457102474887641",
+    "sourceLabel": "X 原帖 · @hyperboleon",
+    "author": "ひゅぺる",
+    "publishedAt": "2026-08-09T14:18:32.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086457102474887641.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "864×512",
+    "tags": [
+      "Game UI",
+      "Text Rendering",
+      "SageAttention",
+      "Spectrum"
+    ],
+    "category": "Interactive UI & Model Comparison",
+    "styles": [
+      "Game UI",
+      "Anime",
+      "Experimental"
+    ],
+    "scenes": [
+      "Touhou-style game sequence"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 1,
+      "bookmarks": 0,
+      "views": 203,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 10.125,
+      "resolution": "864×512",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-itoktw-2086456937164816564",
+    "title": "FL2VA 与 Ref2VA 三路参考对比",
+    "titleEn": "Three-Way FL2VA and Ref2VA Reference Comparison",
+    "model": "MiniMax H3 · ComfyUI",
+    "mode": "Ref2VA",
+    "summary": "同一工作流使用一张背景图和两张人物图，依次比较 FL2VA + ref LoRA + LightX2V 六步、Ref2VA + LightX2V 六步，以及 Ref2VA 30 步。原帖包含三段视频，本记录的媒体字段对应第一段。",
+    "summaryEn": "One workflow uses a background image and two character images to compare FL2VA with a reference LoRA and six-step LightX2V, six-step Ref2VA with LightX2V, and 30-step Ref2VA. The post contains three videos; this record's media fields describe the first.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ITOKtw/status/2086456937164816564",
+    "sourceLabel": "X 原帖 · @ITOKtw",
+    "author": "ITOK",
+    "publishedAt": "2026-08-09T14:17:52.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086456937164816564.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "1184×896",
+    "tags": [
+      "FL2VA",
+      "Ref2VA",
+      "LightX2V",
+      "Comparison"
+    ],
+    "category": "Model Comparison & Continuity",
+    "styles": [
+      "Workflow Demo",
+      "Character Reference"
+    ],
+    "scenes": [
+      "Background and two-character reference test"
+    ],
+    "inputTypes": [
+      "image"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 0,
+      "views": 106,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 10.125,
+      "resolution": "1184×896",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-sumica_rowa-2086450973900521592",
+    "title": "周日晚上的“明天是周一”歌曲短片",
+    "titleEn": "The Sunday-Night Monday-Is-Coming Song",
+    "model": "MiniMax H3",
+    "mode": "Unknown",
+    "summary": "一支 20 秒竖屏音乐短片，用“明天是周一”和“周日晚上看会掉 HP”的轻松文案制造共鸣，并明确标注 MiniMax H3。",
+    "summaryEn": "A 20-second vertical music clip built around the joke that Monday is coming and watching it on Sunday night drains your health points, explicitly tagged MiniMax H3.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/sumica_rowa/status/2086450973900521592",
+    "sourceLabel": "X 原帖 · @sumica_rowa",
+    "author": "sumicaぐらし | rowa",
+    "publishedAt": "2026-08-09T13:54:11.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086450973900521592.jpg",
+    "duration": 20,
+    "aspectRatio": "portrait",
+    "resolution": "576×1024",
+    "tags": [
+      "Music Video",
+      "Monday",
+      "Twenty Seconds",
+      "Vertical Video"
+    ],
+    "category": "Music Video",
+    "styles": [
+      "Music Video",
+      "Anime",
+      "Vertical"
+    ],
+    "scenes": [
+      "Sunday-night song vignette"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 3,
+      "likes": 16,
+      "bookmarks": 0,
+      "views": 250,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 20,
+      "resolution": "576×1024",
+      "aspectRatio": "portrait"
+    }
+  },
+  {
+    "id": "x-luccaaiart-2086449417947590957",
+    "title": "首次让角色之美动起来",
+    "titleEn": "First Attempt at Bringing a Character to Life",
+    "model": "MiniMax H3",
+    "mode": "Unknown",
+    "summary": "创作者的首次 MiniMax H3 尝试：一段 10.125 秒竖向角色样片，原帖将其描述为让角色之美动起来的漫长过程；未公开输入方式或 Prompt。",
+    "summaryEn": "The creator's first MiniMax H3 attempt, a 10.125-second portrait-format character clip described as a long journey to bring the character's beauty to life. Inputs and prompt are not disclosed.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/luccaaiart/status/2086449417947590957",
+    "sourceLabel": "X 原帖 · @luccaaiart",
+    "author": "aiLucca",
+    "publishedAt": "2026-08-09T13:48:00.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086449417947590957.jpg",
+    "duration": 10,
+    "aspectRatio": "portrait",
+    "resolution": "640×832",
+    "tags": [
+      "First Try",
+      "Portrait",
+      "Character",
+      "Ten Seconds"
+    ],
+    "category": "Character Consistency & Benchmark",
+    "styles": [
+      "Portrait",
+      "Cinematic"
+    ],
+    "scenes": [
+      "Character beauty test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 4,
+      "reposts": 1,
+      "likes": 26,
+      "bookmarks": 0,
+      "views": 391,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 10.125,
+      "resolution": "640×832",
+      "aspectRatio": "portrait"
+    }
+  },
+  {
+    "id": "x-yayoi_labo_-2086448733378781682",
+    "title": "带音乐与音效的战斗短片",
+    "titleEn": "Combat Clip with Music and Sound Effects",
+    "model": "MiniMax H3 · Pollo AI",
+    "mode": "Unknown",
+    "summary": "通过 Pollo AI 使用 MiniMax H3 制作的 15.083 秒宽银幕战斗短片。作者特别称音乐和音效也得到了良好呈现，但没有公开 Prompt。",
+    "summaryEn": "A 15.083-second widescreen combat clip made with MiniMax H3 through Pollo AI. The creator specifically highlights the music and sound effects but does not publish a prompt.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Yayoi_Labo_/status/2086448733378781682",
+    "sourceLabel": "X 原帖 · @Yayoi_Labo_",
+    "author": "Healing Yayoi -AI Beauty Institute- 弥生",
+    "publishedAt": "2026-08-09T13:45:17.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086448733378781682.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "Combat",
+      "Native Audio",
+      "Sound Effects",
+      "Pollo AI"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Action",
+      "Cinematic"
+    ],
+    "scenes": [
+      "Combat sequence"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 5,
+      "likes": 14,
+      "bookmarks": 0,
+      "views": 229,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.083,
+      "resolution": "2560×1440",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-nyannero0828-2086445531614847163",
+    "title": "80% 功耗限制下的本地稳定性测试",
+    "titleEn": "Local Stability Test at an 80 Percent Power Limit",
+    "model": "MiniMax H3 · Local",
+    "mode": "Unknown",
+    "summary": "作者发现生成时黑屏可能源于显卡过热，于是把功耗限制到 80% 后继续运行 MiniMax H3，并发布这段 15.083 秒方形测试作为当前稳定性记录。",
+    "summaryEn": "After suspecting that black screens were caused by GPU overheating, the creator caps power at 80 percent, continues running MiniMax H3, and shares this 15.083-second square clip as a current stability record.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/nyannero0828/status/2086445531614847163",
+    "sourceLabel": "X 原帖 · @nyannero0828",
+    "author": "にゃんねろ | 🎰スロスロメスガキ | 🍭お料理女子🍳",
+    "publishedAt": "2026-08-09T13:32:33.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086445531614847163.jpg",
+    "duration": 15,
+    "aspectRatio": "square",
+    "resolution": "640×640",
+    "tags": [
+      "GPU Thermals",
+      "Power Limit",
+      "Local Generation",
+      "Square Video"
+    ],
+    "category": "Local Generation Benchmark",
+    "styles": [
+      "Experimental"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 1,
+      "reposts": 1,
+      "likes": 6,
+      "bookmarks": 0,
+      "views": 141,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.083,
+      "resolution": "640×640",
+      "aspectRatio": "square"
+    }
+  },
+  {
+    "id": "x-noi06231-2086445301838348760",
+    "title": "NIKKE 角色五秒动画测试",
+    "titleEn": "Five-Second NIKKE Character Animation Test",
+    "model": "MiniMax H3",
+    "mode": "Unknown",
+    "summary": "一段以 NIKKE 为主题、时长 5.166 秒的 MiniMax H3 宽银幕短片。原帖只有游戏与模型标签，没有公开 Prompt 或工作流。",
+    "summaryEn": "A 5.166-second widescreen MiniMax H3 clip themed around NIKKE. The post contains only game and model tags, with no prompt or workflow disclosed.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/noi06231/status/2086445301838348760",
+    "sourceLabel": "X 原帖 · @noi06231",
+    "author": "八重白",
+    "publishedAt": "2026-08-09T13:31:38.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086445301838348760.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "1152×640",
+    "tags": [
+      "NIKKE",
+      "Anime",
+      "Five Seconds",
+      "Character"
+    ],
+    "category": "Local Anime & Multi-clip",
+    "styles": [
+      "Anime",
+      "Game-Inspired"
+    ],
+    "scenes": [
+      "NIKKE character clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 0,
+      "views": 67,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 5.166,
+      "resolution": "1152×640",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-openaiarka-2086444528219877725",
+    "title": "八分钟生成的 30 秒多参考动画",
+    "titleEn": "Thirty-Second Multi-Reference Animation Rendered in Eight Minutes",
+    "model": "MiniMax H3 · Multi-Reference",
+    "mode": "Ref2VA",
+    "summary": "作者称使用 MiniMax H3 多参考模型，在约 8 分钟内完成一支约 30 秒动画；X 上传文件实际为 32.3 秒。原帖没有列出参考素材数量或 Prompt。",
+    "summaryEn": "The creator reports producing roughly thirty seconds of animation with the MiniMax H3 multi-reference model in about eight minutes; the X upload is 32.3 seconds. The post does not list the number of references or a prompt.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/openaiarka/status/2086444528219877725",
+    "sourceLabel": "X 原帖 · @openaiarka",
+    "author": "中性粒细胞NETS",
+    "publishedAt": "2026-08-09T13:28:34.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086444528219877725.jpg",
+    "duration": 32,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "Multi-Reference",
+      "Thirty Seconds",
+      "Eight-Minute Render",
+      "Animation"
+    ],
+    "category": "AI Film & Multimodal Reference",
+    "styles": [
+      "Animation",
+      "Multi-Scene"
+    ],
+    "scenes": [
+      "Thirty-second multi-reference animation"
+    ],
+    "inputTypes": [
+      "image"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 0,
+      "views": 29,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 32.3,
+      "resolution": "1920×1080",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-hiiragikuyouai-2086442694805782656",
+    "title": "MiniMax H3 角色玩法小试",
+    "titleEn": "A Small MiniMax H3 Character Experiment",
+    "model": "MiniMax H3",
+    "mode": "Unknown",
+    "summary": "作者以“正在尝试 MiniMax H3 的各种玩法”发布这段 5.166 秒竖向短片。原帖没有进一步说明输入、Prompt 或工作流。",
+    "summaryEn": "The creator shares this 5.166-second portrait-format clip while experimenting with different ways to use MiniMax H3. Inputs, prompt, and workflow are not described.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/HiiragiKuyouAI/status/2086442694805782656",
+    "sourceLabel": "X 原帖 · @HiiragiKuyouAI",
+    "author": "柊九陽＠AIイラスト",
+    "publishedAt": "2026-08-09T13:21:17.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086442694805782656.jpg",
+    "duration": 5,
+    "aspectRatio": "portrait",
+    "resolution": "576×736",
+    "tags": [
+      "Experiment",
+      "Five Seconds",
+      "Portrait Format",
+      "Character"
+    ],
+    "category": "Character Consistency & Benchmark",
+    "styles": [
+      "Anime",
+      "Experimental"
+    ],
+    "scenes": [
+      "MiniMax H3 character test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 1,
+      "bookmarks": 0,
+      "views": 147,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 5.166,
+      "resolution": "576×736",
+      "aspectRatio": "portrait"
+    }
+  },
+  {
+    "id": "x-48076551super-2086440470465622290",
+    "title": "白衣与金衣拳手的擂台对峙",
+    "titleEn": "White and Gold Fighters Face Off in the Arena",
+    "model": "MiniMax H3 · Krea 2",
+    "mode": "Unknown",
+    "summary": "两名拳手以不同方式入场，一人身穿白色、一人身穿金色，随后在沉默的擂台上对峙。原帖标注 Krea 2 与 MiniMax H3，未说明两者各自承担的步骤。",
+    "summaryEn": "Two fighters enter in different ways, one in white and one in gold, then face off in a silent arena. The post tags Krea 2 and MiniMax H3 without assigning each tool to a specific production step.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/48076551super/status/2086440470465622290",
+    "sourceLabel": "X 原帖 · @48076551super",
+    "author": "Woman Wrestler and Leather outfit",
+    "publishedAt": "2026-08-09T13:12:27.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086440470465622290.jpg",
+    "duration": 5,
+    "aspectRatio": "portrait",
+    "resolution": "2400×3168",
+    "tags": [
+      "Fighters",
+      "Arena",
+      "Showdown",
+      "Krea 2"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Action",
+      "Cinematic",
+      "Vertical"
+    ],
+    "scenes": [
+      "Two fighter entrances",
+      "Arena face-off"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 25,
+      "bookmarks": 11,
+      "views": 1433,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 5.166,
+      "resolution": "2400×3168",
+      "aspectRatio": "portrait"
+    }
+  },
+  {
+    "id": "x-mix_buchi_-2086440208640483672",
+    "title": "女性仿生人高分辨率生成版",
+    "titleEn": "High-Resolution Female Android Generation",
+    "model": "MiniMax H3 · ComfyUI",
+    "mode": "Unknown",
+    "summary": "一段 15.062 秒、1600×920 的高分辨率 MiniMax H3 成片，原帖明确标注 ComfyUI。该帖是同作者女性仿生人试作的高分辨率版本，但没有公开具体放大或重生成参数。",
+    "summaryEn": "A 15.062-second MiniMax H3 clip at 1600 by 920, explicitly tagged ComfyUI. It is the high-resolution version of the creator's female-android experiment, but no upscaling or regeneration parameters are disclosed.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/mix_buchi_/status/2086440208640483672",
+    "sourceLabel": "X 原帖 · @mix_buchi_",
+    "author": "buchi_",
+    "publishedAt": "2026-08-09T13:11:24.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086440208640483672.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1600×920",
+    "tags": [
+      "High Resolution",
+      "ComfyUI",
+      "Android",
+      "Upscaling"
+    ],
+    "category": "Cinematic & Upscaling Workflow",
+    "styles": [
+      "Science Fiction",
+      "Cinematic"
+    ],
+    "scenes": [
+      "Female android sequence"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "bookmarks": 0,
+      "views": 118,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.062,
+      "resolution": "1600×920",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-fnoji-2086440070689742952",
+    "title": "Motion Context 参考视频续接边界测试",
+    "titleEn": "Motion Context Reference-Video Continuity Limit Test",
+    "model": "MiniMax H3 · Motion Context",
+    "mode": "Ref2VA",
+    "summary": "使用 Motion Context 检验不同 Ref Video 输出之间的参考续接。作者认为参考阶段的约束仍然严苛，当前结果尚不足以稳定连接；原帖含两段视频，本记录的媒体字段对应第一段。",
+    "summaryEn": "A Motion Context test of continuity between separate reference-video outputs. The creator finds the reference constraints demanding and the connection not yet reliable. The post contains two videos; this record's media fields describe the first.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/fnoji/status/2086440070689742952",
+    "sourceLabel": "X 原帖 · @fnoji",
+    "author": "えふのじ",
+    "publishedAt": "2026-08-09T13:10:51.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086440070689742952.jpg",
+    "duration": 4,
+    "aspectRatio": "portrait",
+    "resolution": "832×1504",
+    "tags": [
+      "Motion Context",
+      "Reference Video",
+      "Continuity",
+      "Failure Boundary"
+    ],
+    "category": "Model Comparison & Continuity",
+    "styles": [
+      "Experimental",
+      "Workflow Demo"
+    ],
+    "scenes": [
+      "Reference-video connection test"
+    ],
+    "inputTypes": [
+      "video"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 2,
+      "likes": 5,
+      "bookmarks": 0,
+      "views": 361,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 4.25,
+      "resolution": "832×1504",
+      "aspectRatio": "portrait"
+    }
+  },
+  {
+    "id": "x-narrativenavi-2086435386394624411",
+    "title": "祭坛觉醒与苍蓝月光",
+    "titleEn": "Altar Awakening under Blue Moonlight",
+    "model": "MiniMax H3",
+    "mode": "Unknown",
+    "summary": "以“祭坛觉醒”和冷冽蓝色月光为主题的方形 MiniMax H3 短片。原帖含两段视频，本记录媒体字段对应第一段 5 秒视频；未公开 Prompt。",
+    "summaryEn": "A square MiniMax H3 vignette themed around an altar awakening beneath cool blue moonlight. The post contains two videos; this record describes the first five-second clip. No prompt is published.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/narrativenavi/status/2086435386394624411",
+    "sourceLabel": "X 原帖 · @narrativenavi",
+    "author": "ナビ",
+    "publishedAt": "2026-08-09T12:52:14.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086435386394624411.jpg",
+    "duration": 5,
+    "aspectRatio": "square",
+    "resolution": "928×928",
+    "tags": [
+      "Altar",
+      "Blue Moonlight",
+      "Square Video",
+      "Fantasy"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Fantasy",
+      "Cinematic"
+    ],
+    "scenes": [
+      "Altar awakening"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 3,
+      "likes": 11,
+      "bookmarks": 0,
+      "views": 261,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 5,
+      "resolution": "928×928",
+      "aspectRatio": "square"
+    }
+  },
+  {
+    "id": "x-mix_buchi_-2086435346242572419",
+    "title": "LLM 编写 Prompt 的女性仿生人短片",
+    "titleEn": "Female Android Clip with an LLM-Written Prompt",
+    "model": "MiniMax H3 T3 · ComfyUI",
+    "mode": "T2VA",
+    "summary": "作者把故事概要交给 LLM 编写 Prompt，再通过 ComfyUI 与 MiniMax H3 T3 制作一段 15.062 秒女性仿生人短片。原帖只说明 Prompt 的生成方式，没有逐字公开内容。",
+    "summaryEn": "The creator gives a story outline to an LLM, which writes a prompt for a 15.062-second female-android clip made with ComfyUI and MiniMax H3 T3. The post explains how the prompt was produced but does not publish it verbatim.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/mix_buchi_/status/2086435346242572419",
+    "sourceLabel": "X 原帖 · @mix_buchi_",
+    "author": "buchi_",
+    "publishedAt": "2026-08-09T12:52:05.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086435346242572419.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1440×816",
+    "tags": [
+      "Android",
+      "ComfyUI",
+      "LLM Prompt",
+      "Science Fiction"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Science Fiction",
+      "Cinematic"
+    ],
+    "scenes": [
+      "Female android sequence"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 1,
+      "bookmarks": 0,
+      "views": 215,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.062,
+      "resolution": "1440×816",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-48076551super-2086433697834934530",
+    "title": "女摔跤手与特工的任务开场",
+    "titleEn": "A Wrestler and an Agent Begin Their Mission",
+    "model": "MiniMax H3 · Krea 2",
+    "mode": "Unknown",
+    "summary": "女摔跤手代表力量，女特工代表精准，两人并肩向前，构成一次意外相遇与任务开场。原帖同时标注 Krea 2 和 MiniMax H3，但未拆分两者的制作职责。",
+    "summaryEn": "A female wrestler represents power while a female agent represents precision; they walk forward together as an unexpected encounter becomes the opening of a mission. The post tags Krea 2 and MiniMax H3 without separating their production roles.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/48076551super/status/2086433697834934530",
+    "sourceLabel": "X 原帖 · @48076551super",
+    "author": "Woman Wrestler and Leather outfit",
+    "publishedAt": "2026-08-09T12:45:32.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086433697834934530.jpg",
+    "duration": 5,
+    "aspectRatio": "portrait",
+    "resolution": "800×1056",
+    "tags": [
+      "Wrestler",
+      "Agent",
+      "Character Pair",
+      "Krea 2"
+    ],
+    "category": "Character Consistency & Benchmark",
+    "styles": [
+      "Action",
+      "Cinematic",
+      "Vertical"
+    ],
+    "scenes": [
+      "Wrestler and agent walk",
+      "Two-character encounter"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 20,
+      "bookmarks": 5,
+      "views": 406,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 5.166,
+      "resolution": "800×1056",
+      "aspectRatio": "portrait"
+    }
+  },
+  {
+    "id": "x-da1hen-2086430029358174433",
+    "title": "Laptop RTX 4060 两日多镜头短片",
+    "titleEn": "Two-Day Multi-Shot Film on a Laptop RTX 4060",
+    "model": "MiniMax H3 · Local RTX 4060",
+    "mode": "Unknown",
+    "summary": "一支总上传时长 51.966 秒的多镜头 MiniMax H3 作品。作者逐镜生成，在 Laptop RTX 4060 上每 5 秒约需 6 分钟，整支作品制作耗时两天；总时长不代表单次生成。",
+    "summaryEn": "A multi-shot MiniMax H3 work with a total upload length of 51.966 seconds. The creator generates each shot separately on a laptop RTX 4060 at roughly six minutes per five seconds and spends two days on the full piece; the upload length is not a single generation.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Da1hen/status/2086430029358174433",
+    "sourceLabel": "X 原帖 · @Da1hen",
+    "author": "Daihen",
+    "publishedAt": "2026-08-09T12:30:57.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086430029358174433.jpg",
+    "duration": 52,
+    "aspectRatio": "landscape",
+    "resolution": "1280×720",
+    "tags": [
+      "Laptop RTX 4060",
+      "Multi-Shot",
+      "Local Generation",
+      "Workflow"
+    ],
+    "category": "Narrative Film & Local Workflow",
+    "styles": [
+      "Narrative",
+      "Compilation"
+    ],
+    "scenes": [
+      "Multi-shot short film"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 0,
+      "views": 27,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 51.966,
+      "resolution": "1280×720",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-riddi0908-2086419900151832923",
+    "title": "Turbo v4 八步 SageAttention 测试",
+    "titleEn": "Eight-Step Turbo v4 SageAttention Test",
+    "model": "MiniMax H3 Turbo v4 · ComfyUI",
+    "mode": "Unknown",
+    "summary": "ComfyUI 本地加速测试，使用 minimax_h3_turbo_v4_step600_ema_pruned、SageAttention、Euler beta 与 8 步采样，输出 864×480、5.166 秒视频。",
+    "summaryEn": "A local ComfyUI acceleration test using minimax_h3_turbo_v4_step600_ema_pruned, SageAttention, Euler beta, and eight sampling steps, producing a 5.166-second clip at 864 by 480.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/riddi0908/status/2086419900151832923",
+    "sourceLabel": "X 原帖 · @riddi0908",
+    "author": "まゆひらa",
+    "publishedAt": "2026-08-09T11:50:42.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086419900151832923.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "864×480",
+    "tags": [
+      "Turbo LoRA",
+      "SageAttention",
+      "Eight Steps",
+      "Euler Beta"
+    ],
+    "category": "Local Generation Benchmark",
+    "styles": [
+      "Benchmark",
+      "Experimental"
+    ],
+    "scenes": [
+      "Five-second local speed test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 2,
+      "likes": 2,
+      "bookmarks": 4,
+      "views": 376,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 5.166,
+      "resolution": "864×480",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-ai_haruki3-2086417527572455929",
+    "title": "复杂加速工作流回归简化方案",
+    "titleEn": "Returning to a Simpler Workflow after Acceleration Tests",
+    "model": "MiniMax H3 · Local",
+    "mode": "Unknown",
+    "summary": "作者尝试多种 MiniMax H3 工作流和加速方法后，最终回到更简单的方案，并表示等待官方 2K 放大与加速支持，同时继续研究 Prompt。上传测试为 10.125 秒竖向视频。",
+    "summaryEn": "After trying several MiniMax H3 workflows and acceleration methods, the creator returns to a simpler setup, waits for official 2K upscaling and speed support, and continues prompt research. The uploaded test is a 10.125-second portrait-format clip.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ai_haruki3/status/2086417527572455929",
+    "sourceLabel": "X 原帖 · @ai_haruki3",
+    "author": "HARUKI KAWAI｜AI美女アーティスト",
+    "publishedAt": "2026-08-09T11:41:16.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086417527572455929.jpg",
+    "duration": 10,
+    "aspectRatio": "portrait",
+    "resolution": "832×1120",
+    "tags": [
+      "Workflow",
+      "Acceleration",
+      "2K Upscaling",
+      "Prompt Research"
+    ],
+    "category": "Local Generation Benchmark",
+    "styles": [
+      "Workflow Demo",
+      "Portrait"
+    ],
+    "scenes": [
+      "Workflow comparison clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 2,
+      "reposts": 1,
+      "likes": 31,
+      "bookmarks": 14,
+      "views": 3541,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 10.125,
+      "resolution": "832×1120",
+      "aspectRatio": "portrait"
+    }
+  },
+  {
+    "id": "x-kahataredoki1-2086397266496217222",
+    "title": "RTX 5060 Ti 的 FL2VA 三镜头链式生成",
+    "titleEn": "Three-Shot FL2VA Chain on an RTX 5060 Ti",
+    "model": "MiniMax H3 FL2VA · ComfyUI",
+    "mode": "FL2VA",
+    "summary": "家庭本地环境实测：MiniMax H3 FL2VA pruned NVFP4、ComfyUI 0.30.0、SageAttention 与 Qwen3VL-32B NVFP4 AWQ，在 RTX 5060 Ti 16GB 上以 25 步连接三段 L2VA→I2VA→I2VA 镜头，成片 832×1248、15.532 秒。",
+    "summaryEn": "A home local-generation test using MiniMax H3 FL2VA pruned NVFP4, ComfyUI 0.30.0, SageAttention, and Qwen3VL-32B NVFP4 AWQ on an RTX 5060 Ti 16GB. Twenty-five steps chain three L2VA-to-I2VA-to-I2VA shots into a 15.532-second clip at 832 by 1248.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/kahataredoki1/status/2086397266496217222",
+    "sourceLabel": "X 原帖 · @kahataredoki1",
+    "author": "カブ",
+    "publishedAt": "2026-08-09T10:20:46.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086397266496217222.jpg",
+    "duration": 16,
+    "aspectRatio": "portrait",
+    "resolution": "832×1248",
+    "tags": [
+      "FL2VA",
+      "NVFP4",
+      "RTX 5060 Ti",
+      "SageAttention"
+    ],
+    "category": "Image-to-Video & Local Generation",
+    "styles": [
+      "Benchmark",
+      "Multi-Clip"
+    ],
+    "scenes": [
+      "Three-clip chained generation"
+    ],
+    "inputTypes": [
+      "image"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 3,
+      "bookmarks": 0,
+      "views": 233,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.532,
+      "resolution": "832×1248",
+      "aspectRatio": "portrait"
+    }
+  },
+  {
+    "id": "x-dimefromthevoid-2086396126585086283",
+    "title": "梨乃的地盘",
+    "titleEn": "Rino's Territory",
+    "model": "MiniMax H3",
+    "mode": "Unknown",
+    "summary": "标题为《梨乃的地盘》的 15.083 秒方形 MiniMax H3 短片。原帖只给出标题和模型标签，因此不推断角色设定、输入方式或 Prompt。",
+    "summaryEn": "A 15.083-second square MiniMax H3 clip titled Rino's Territory. The post provides only the title and model tag, so no character setup, input method, or prompt is inferred.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/dimefromthevoid/status/2086396126585086283",
+    "sourceLabel": "X 原帖 · @dimefromthevoid",
+    "author": "dimesfromthevoid",
+    "publishedAt": "2026-08-09T10:16:14.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086396126585086283.jpg",
+    "duration": 15,
+    "aspectRatio": "square",
+    "resolution": "1248×1248",
+    "tags": [
+      "Character",
+      "Square Video",
+      "Original Scene",
+      "Fifteen Seconds"
+    ],
+    "category": "Character Consistency & Benchmark",
+    "styles": [
+      "Character Showcase",
+      "Cinematic"
+    ],
+    "scenes": [
+      "Rino's territory"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 1,
+      "bookmarks": 0,
+      "views": 55,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.083,
+      "resolution": "1248×1248",
+      "aspectRatio": "square"
+    }
+  },
+  {
+    "id": "x-kiyoshi_shin-2086576598225244651",
+    "title": "街头人物一致性对比",
+    "titleEn": "Street Portrait Consistency Comparison",
+    "model": "MiniMax H3",
+    "mode": "Unknown",
+    "summary": "作者将约一年前在本地 PC 上使用 Wan 2.2 制作的类似视频与这条 MiniMax H3 作例对照，认为 H3 的一致性和表现力有显著提升；画面为日本街巷中的人物近景。原帖未公开 Prompt。",
+    "summaryEn": "The creator compares this MiniMax H3 example with a similar video made locally with Wan 2.2 about a year earlier and reports a substantial gain in consistency and expressiveness. The clip shows a character close-up on a Japanese street. No prompt is published.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/kiyoshi_shin/status/2086576598225244651",
+    "sourceLabel": "X 原帖 · @kiyoshi_shin",
+    "author": "新清士@AIコンテンツ開発者",
+    "publishedAt": "2026-08-09T22:13:22.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086576598225244651.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1184×896",
+    "tags": [
+      "Wan 2.2",
+      "Consistency",
+      "Expressiveness",
+      "Model Benchmark"
+    ],
+    "category": "Character Consistency & Benchmark",
+    "styles": [
+      "Photoreal",
+      "Cinematic",
+      "Street Portrait"
+    ],
+    "scenes": [
+      "Japanese street",
+      "Character close-up"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 2,
+      "bookmarks": 1,
+      "views": 557,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.083,
+      "resolution": "1184×896",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-strimando-2086576136000311486",
+    "title": "RTX 5090 本地 480P 生成实测",
+    "titleEn": "Local 480p Generation Benchmark on an RTX 5090",
+    "model": "MiniMax H3 · Local",
+    "mode": "Unknown",
+    "summary": "作者公开 RTX 5090 本地运行 MiniMax H3 的性能记录：生成一条 15.083 秒的 480P 视频耗时 1 分 27 秒；画面为暖色未来舱室内景。原帖未公开 Prompt。",
+    "summaryEn": "The creator reports a local MiniMax H3 benchmark on an RTX 5090: a 15.083-second 480p clip generated in one minute and 27 seconds. The video depicts a warmly lit futuristic cabin interior. No prompt is published.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/STRIMANDO/status/2086576136000311486",
+    "sourceLabel": "X 原帖 · @STRIMANDO",
+    "author": "STRIMANDO.",
+    "publishedAt": "2026-08-09T22:11:32.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086576136000311486.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "864×480",
+    "tags": [
+      "Local Generation",
+      "RTX 5090",
+      "480P",
+      "Benchmark"
+    ],
+    "category": "Local Generation Benchmark",
+    "styles": [
+      "Cinematic",
+      "Sci-Fi",
+      "Warm Lighting"
+    ],
+    "scenes": [
+      "Futuristic cabin",
+      "Interior"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "bookmarks": 0,
+      "views": 123,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.083,
+      "resolution": "864×480",
+      "aspectRatio": "landscape"
+    }
+  },
+  {
+    "id": "x-vkuoo-2086462586057638323",
+    "title": "Krea 上的超现实 H3 版本",
+    "titleEn": "Surreal H3 Variant Built on Krea",
+    "model": "MiniMax H3",
+    "mode": "Unknown",
+    "summary": "作者在 Krea 上制作了同一创意的 MiniMax H3 版本，并引用此前的 Seedance 2.5 版本供对照；竖屏画面由巨眼与密集的锥形独眼角色构成。原帖未公开 Prompt。",
+    "summaryEn": "The creator built a MiniMax H3 version of the same concept on Krea and quotes an earlier Seedance 2.5 version for comparison. The vertical clip features a giant eye surrounded by dense cone-shaped one-eyed figures. No prompt is published.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/vkuoo/status/2086462586057638323",
+    "sourceLabel": "X 原帖 · @vkuoo",
+    "author": "vkuoo",
+    "publishedAt": "2026-08-09T14:40:19.000Z",
+    "mediaUrl": null,
+    "posterUrl": "/posters/x/2086462586057638323.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "1440×1920",
+    "tags": [
+      "Krea",
+      "Seedance 2.5",
+      "H3 Variant",
+      "Surrealism"
+    ],
+    "category": "Model Comparison",
+    "styles": [
+      "Surreal",
+      "Colorful",
+      "Character Art"
+    ],
+    "scenes": [
+      "One-eyed crowd",
+      "Surreal landscape"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 2,
+      "bookmarks": 1,
+      "views": 181,
+      "capturedAt": "2026-08-10T02:35:49.756Z"
+    },
+    "mediaMetadata": {
+      "type": "native_video",
+      "videoCount": 1,
+      "durationSeconds": 15.083,
+      "resolution": "1440×1920",
+      "aspectRatio": "portrait"
+    }
   }
 ]
