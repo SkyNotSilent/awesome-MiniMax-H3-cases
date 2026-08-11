@@ -14,6 +14,7 @@ import {
   X,
 } from 'lucide-react'
 import rawCases from '../data/cases.json'
+import rawTutorials from '../data/tutorials.json'
 import {
   casePath,
   casePrompt,
@@ -35,77 +36,47 @@ import type { CaseMode, VideoCase } from './types'
 import { XPostEmbed } from './XPostEmbed'
 
 const cases = rawCases as VideoCase[]
+type TutorialCategory = 'mac' | 'official' | 'acceleration' | 'long-video' | 'audio'
+type LocalizedText = Record<Language, string>
+type TutorialResource = {
+  id: string
+  code: string
+  category: TutorialCategory
+  featured: boolean
+  title: string
+  url: string
+  kind: LocalizedText
+  description: LocalizedText
+  audience: LocalizedText
+  steps: Record<Language, string[]>
+  facts: string[]
+  tags: string[]
+  action: LocalizedText
+  verifiedAt: string
+}
+
+const tutorials = rawTutorials as TutorialResource[]
+const tutorialCategories: Array<'all' | TutorialCategory> = ['all', 'mac', 'official', 'acceleration', 'long-video', 'audio']
 const modes: Array<'ALL' | CaseMode> = ['ALL', 'T2VA', 'FL2VA', 'Ref2VA', 'Unknown']
 const allCategories = [...new Set(cases.map((item) => item.category))]
 const allStyles = [...new Set(cases.flatMap((item) => item.styles))]
 const allScenes = [...new Set(cases.flatMap((item) => item.scenes))]
 
-const toolkitResources = [
-  {
-    code: 'R01',
-    kind: { zh: '官方 / AGENT SKILLS', en: 'OFFICIAL / AGENT SKILLS' },
-    title: 'MiniMax-AI / MiniMax-H3',
-    description: {
-      zh: '官方仓库与本地部署入口。内置 9 个 Agent Skill；先装 h3-prompt-writing，让 Claude / Codex 按镜头、对白与环境声组织 H3 提示词。',
-      en: 'The official repository and local deployment entry point. Its nine Agent Skills include h3-prompt-writing for structuring shots, dialogue, and environmental audio with Claude or Codex.',
-    },
-    tags: ['9 Skills', 'Prompt Writing', 'Local Deploy'],
-    url: 'https://github.com/MiniMax-AI/MiniMax-H3',
-    action: { zh: '打开官方仓库', en: 'Open official repository' },
-  },
-  {
-    code: 'R02',
-    kind: { zh: '加速 / LORA', en: 'ACCELERATION / LORA' },
-    title: 'MiniMax-H3 Turbo LoRA',
-    description: {
-      zh: '将常规约 20 步采样压缩到 4–8 步并保留同步立体声音频。4 步用于快速预览，v4 版本在 6–8 步通常更稳。',
-      en: 'Compresses the usual 20-step sampling path to four to eight steps while retaining synchronized stereo audio. Four steps suit previews; v4 is generally steadier at six to eight.',
-    },
-    tags: ['4–8 Steps', 'Audio + Video', 'ComfyUI'],
-    url: 'https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora',
-    action: { zh: '打开 Hugging Face', en: 'Open on Hugging Face' },
-  },
-  {
-    code: 'R03',
-    kind: { zh: '长视频 / 上下文', en: 'LONG VIDEO / CONTEXT' },
-    title: 'ComfyUI H3 Motion Context',
-    description: {
-      zh: '用于多段 H3 视频续接，把上一段的画面与音频上下文带入下一段，减少连接处的动作、节奏和声音断裂。',
-      en: 'Carries visual and audio context from one H3 clip into the next, reducing breaks in motion, rhythm, and sound across longer sequences.',
-    },
-    tags: ['Clip Chaining', 'Motion Context', 'Audio Continuity'],
-    url: 'https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context',
-    action: { zh: '打开续接节点', en: 'Open continuation nodes' },
-  },
-  {
-    code: 'R04',
-    kind: { zh: '音频 / 工作流', en: 'AUDIO / WORKFLOWS' },
-    title: 'MiniMax H3 Audio T8',
-    description: {
-      zh: '面向 ComfyUI 原生 H3 的 14 节点扩展，覆盖音频条件、双时钟采样、混音、裁切、预检和 Ref2VA 参考，并附 API 与前端工作流。',
-      en: 'A 14-node extension for native H3 in ComfyUI, covering audio conditioning, dual-clock sampling, mixing, trimming, preflight checks, Ref2VA references, API use, and frontend workflows.',
-    },
-    tags: ['14 Nodes', 'Dual Clock', 'Audio Control'],
-    url: 'https://github.com/T8mars/comfyui-minimax-h3-audio-T8',
-    action: { zh: '打开音频工作流', en: 'Open audio workflows' },
-  },
-]
-
 function App() {
   const route = resolveRoute(window.location.pathname)
   const language = route.language
   const t = copy[language]
-  const pageDescription = route.page === 'toolkit'
-    ? t.toolkit.description
+  const pageDescription = route.page === 'tutorials'
+    ? t.tutorials.description
     : route.page === 'faq'
       ? t.faq.description
       : t.siteDescription
   const pageTitle = route.page === 'home'
     ? t.siteTitle
-    : route.page === 'toolkit'
+    : route.page === 'tutorials'
       ? language === 'zh'
-        ? 'MiniMax H3 工具链与部署资源 — H3 Field Notes'
-        : 'MiniMax H3 Toolkit and Deployment Resources — H3 Field Notes'
+        ? 'MiniMax H3 教程：Mac、部署、加速与音频 — H3 Field Notes'
+        : 'MiniMax H3 Tutorials: Mac, Deployment, Acceleration and Audio — H3 Field Notes'
       : language === 'zh'
         ? 'MiniMax H3 视频案例库常见问题 — H3 Field Notes'
         : 'MiniMax H3 Video Library FAQ — H3 Field Notes'
@@ -121,7 +92,7 @@ function App() {
       <div className="grain" aria-hidden="true" />
       <Header language={language} page={route.page} />
       {route.page === 'home' && <HomePage language={language} />}
-      {route.page === 'toolkit' && <ToolkitPage language={language} />}
+      {route.page === 'tutorials' && <TutorialsPage language={language} />}
       {route.page === 'faq' && <FaqPage language={language} />}
       <Footer language={language} />
     </main>
@@ -140,7 +111,7 @@ function Header({ language, page }: { language: Language; page: AppPage }) {
         </a>
         <nav aria-label={language === 'zh' ? '主导航' : 'Primary navigation'}>
           <a href={pathFor(language, 'home')} aria-current={page === 'home' ? 'page' : undefined}>{t.nav.cases}</a>
-          <a href={pathFor(language, 'toolkit')} aria-current={page === 'toolkit' ? 'page' : undefined}>{t.nav.toolkit}</a>
+          <a href={pathFor(language, 'tutorials')} aria-current={page === 'tutorials' ? 'page' : undefined}>{t.nav.tutorials}</a>
           <a href={pathFor(language, 'faq')} aria-current={page === 'faq' ? 'page' : undefined}>{t.nav.faq}</a>
         </nav>
         <div className="header-actions">
@@ -425,43 +396,118 @@ function PageHero({ index, title, description }: { index: string; title: string;
   )
 }
 
-function ToolkitPage({ language }: { language: Language }) {
-  const t = copy[language].toolkit
+function TutorialsPage({ language }: { language: Language }) {
+  const t = copy[language].tutorials
+  const [activeCategory, setActiveCategory] = useState<(typeof tutorialCategories)[number]>('all')
+  const [query, setQuery] = useState('')
+
+  const filtered = useMemo(() => {
+    const needle = query.trim().toLowerCase()
+    return tutorials.filter((item) => {
+      const categoryMatches = activeCategory === 'all' || item.category === activeCategory
+      const searchable = [
+        item.title,
+        item.kind[language],
+        item.description[language],
+        item.audience[language],
+        ...item.steps[language],
+        ...item.facts,
+        ...item.tags,
+      ].join(' ').toLowerCase()
+      return categoryMatches && (!needle || searchable.includes(needle))
+    })
+  }, [activeCategory, language, query])
+
+  const featured = filtered.find((item) => item.featured)
+  const remaining = filtered.filter((item) => !item.featured)
 
   return (
-    <div className="standalone-page toolkit-page">
+    <div className="standalone-page tutorials-page">
       <PageHero index={t.index} title={t.title} description={t.description} />
-      <section className="toolkit shell" aria-label={copy[language].nav.toolkit}>
-        <div className="toolkit-grid">
-          {toolkitResources.map((item) => (
-            <a className="resource-card" href={item.url} target="_blank" rel="noreferrer" key={item.code} aria-label={`${item.title}: ${item.action[language]}`}>
-              <div className="resource-topline"><span>{item.code}</span><span>{item.kind[language]}</span></div>
-              <h2>{item.title}</h2>
-              <p>{item.description[language]}</p>
-              <div className="resource-tags">{item.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-              <div className="resource-action">{item.action[language]} <ArrowUpRight size={15} /></div>
-            </a>
-          ))}
+      <section className="tutorial-hub shell" aria-label={copy[language].nav.tutorials}>
+        <div className="tutorial-controls">
+          <label className="tutorial-search">
+            <Search size={16} aria-hidden="true" />
+            <span className="sr-only">{t.searchLabel}</span>
+            <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={t.searchPlaceholder} />
+            {query && <button type="button" onClick={() => setQuery('')} aria-label={t.clearSearch}><X size={14} /></button>}
+          </label>
+          <div className="tutorial-filters" role="group" aria-label={t.filterLabel}>
+            {tutorialCategories.map((category) => (
+              <button
+                type="button"
+                key={category}
+                className={activeCategory === category ? 'active' : ''}
+                aria-pressed={activeCategory === category}
+                onClick={() => setActiveCategory(category)}
+              >
+                {t.categories[category]}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div className="toolkit-notes">
-          <article className="speed-note">
-            <div className="note-label">{t.speedLabel}</div>
-            <h2>{t.speedTitle}</h2>
-            <p>{t.speedBody}</p>
-            <small>{t.speedFootnote}</small>
-          </article>
-          <article className="pipeline-note principles-note">
-            <div className="note-label">{t.principlesLabel}</div>
-            <div className="pipeline-flow principles-flow" aria-label={t.principlesLabel}>
-              <div><span>01</span><strong>VIDEO</strong><small>{t.principles[0]}</small></div>
-              <ChevronRight size={18} aria-hidden="true" />
-              <div><span>02</span><strong>SOURCE</strong><small>{t.principles[1]}</small></div>
-              <ChevronRight size={18} aria-hidden="true" />
-              <div><span>03</span><strong>PROMPT</strong><small>{t.principles[2]}</small></div>
+        {featured && (
+          <article className="tutorial-feature">
+            <div className="tutorial-feature-copy">
+              <div className="resource-topline"><span>{featured.code} / {t.featuredLabel}</span><span>{featured.kind[language]}</span></div>
+              <h2>{featured.title}</h2>
+              <p className="tutorial-summary">{featured.description[language]}</p>
+              <p className="tutorial-audience"><strong>{t.bestFor}</strong>{featured.audience[language]}</p>
+              <div className="resource-tags">{featured.facts.map((fact) => <span key={fact}>{fact}</span>)}</div>
+              <a className="tutorial-link" href={featured.url} target="_blank" rel="noreferrer">
+                {featured.action[language]} <ArrowUpRight size={16} />
+              </a>
+            </div>
+            <div className="tutorial-feature-steps">
+              <div className="tutorial-step-heading"><span>{t.startLabel}</span><small>{t.verified} {featured.verifiedAt}</small></div>
+              <ol>
+                {featured.steps[language].map((step, index) => (
+                  <li key={step}><span>{String(index + 1).padStart(2, '0')}</span><p>{step}</p></li>
+                ))}
+              </ol>
+              <div className="tutorial-command" aria-label={t.commandLabel}>
+                <code>make -j8</code>
+                <code>./h3 --info -d ./MiniMax-H3</code>
+              </div>
             </div>
           </article>
-        </div>
+        )}
+
+        {remaining.length > 0 && (
+          <div className="tutorial-grid">
+            {remaining.map((item) => (
+              <article className="tutorial-card" key={item.id}>
+                <div className="resource-topline"><span>{item.code}</span><span>{item.kind[language]}</span></div>
+                <h2>{item.title}</h2>
+                <p className="tutorial-summary">{item.description[language]}</p>
+                <p className="tutorial-audience"><strong>{t.bestFor}</strong>{item.audience[language]}</p>
+                <ol className="tutorial-card-steps">
+                  {item.steps[language].map((step, index) => (
+                    <li key={step}><span>{index + 1}</span><p>{step}</p></li>
+                  ))}
+                </ol>
+                <div className="resource-tags">{item.facts.map((fact) => <span key={fact}>{fact}</span>)}</div>
+                <div className="tutorial-card-footer">
+                  <small>{t.verified} {item.verifiedAt}</small>
+                  <a href={item.url} target="_blank" rel="noreferrer" aria-label={`${item.title}: ${item.action[language]}`}>
+                    {item.action[language]} <ArrowUpRight size={15} />
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        )}
+
+        {!featured && remaining.length === 0 && (
+          <div className="tutorial-empty"><span>00</span><p>{t.noResults}</p></div>
+        )}
+
+        <aside className="tutorial-field-note">
+          <div><span>{t.fieldNoteLabel}</span><h2>{t.fieldNoteTitle}</h2></div>
+          <p>{t.fieldNoteBody}</p>
+          <small>{t.sourceNote}</small>
+        </aside>
       </section>
     </div>
   )

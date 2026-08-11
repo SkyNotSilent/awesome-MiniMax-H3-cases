@@ -3,6 +3,7 @@ import { resolve } from 'node:path'
 
 const root = resolve(import.meta.dirname, '..')
 const cases = JSON.parse(await readFile(resolve(root, 'data/cases.json'), 'utf8'))
+const tutorials = JSON.parse(await readFile(resolve(root, 'data/tutorials.json'), 'utf8'))
 const modes = new Set(['T2VA', 'FL2VA', 'Ref2VA', 'Unknown'])
 const provenance = new Set(['official-verbatim', 'creator-verbatim', 'not-published'])
 const ids = new Set()
@@ -61,8 +62,40 @@ for (const [index, item] of cases.entries()) {
   }
 }
 
+const tutorialIds = new Set()
+const tutorialCodes = new Set()
+const tutorialCategories = new Set(['mac', 'official', 'acceleration', 'long-video', 'audio'])
+
+for (const [index, item] of tutorials.entries()) {
+  const at = `tutorials[${index}]`
+  for (const key of ['id', 'code', 'category', 'title', 'url', 'verifiedAt']) {
+    if (!item[key]) errors.push(`${at}.${key} is required`)
+  }
+  if (tutorialIds.has(item.id)) errors.push(`${at}.id is duplicated: ${item.id}`)
+  if (tutorialCodes.has(item.code)) errors.push(`${at}.code is duplicated: ${item.code}`)
+  tutorialIds.add(item.id)
+  tutorialCodes.add(item.code)
+  if (!tutorialCategories.has(item.category)) errors.push(`${at}.category is invalid: ${item.category}`)
+  if (Number.isNaN(Date.parse(item.verifiedAt))) errors.push(`${at}.verifiedAt must be a valid date`)
+  try {
+    new URL(item.url)
+  } catch {
+    errors.push(`${at}.url is invalid`)
+  }
+  for (const key of ['kind', 'description', 'audience', 'action']) {
+    if (!item[key]?.zh || !item[key]?.en) errors.push(`${at}.${key} requires zh and en values`)
+    if (/[\u3400-\u9fff]/u.test(item[key]?.en || '')) errors.push(`${at}.${key}.en must not contain CJK text`)
+  }
+  if (!Array.isArray(item.steps?.zh) || item.steps.zh.length < 2) errors.push(`${at}.steps.zh must contain at least two steps`)
+  if (!Array.isArray(item.steps?.en) || item.steps.en.length < 2) errors.push(`${at}.steps.en must contain at least two steps`)
+  if (item.steps?.en?.some((step) => /[\u3400-\u9fff]/u.test(step))) errors.push(`${at}.steps.en must not contain CJK text`)
+  for (const key of ['facts', 'tags']) {
+    if (!Array.isArray(item[key]) || item[key].length === 0) errors.push(`${at}.${key} must be a non-empty array`)
+  }
+}
+
 if (errors.length) {
   console.error(errors.join('\n'))
   process.exit(1)
 }
-console.log(`Validated ${cases.length} cases.`)
+console.log(`Validated ${cases.length} cases and ${tutorials.length} tutorials.`)
