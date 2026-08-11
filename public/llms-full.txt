@@ -1,6 +1,71 @@
-# H3 Field Notes — Complete MiniMax H3 Case Index
+# H3 Field Notes — Complete MiniMax H3 Case and Tutorial Index
 
 Generated from data/cases.json. Total: 304 cases. Verbatim public prompts: 25.
+
+## Tutorials
+
+### h3.c / h3-metal
+
+- Route: NATIVE MAC / C + METAL
+- Best for: For Mac users who want to run H3 locally on Apple Silicon and are comfortable with a command line.
+- Summary: Antirez's native MiniMax H3 inference engine for Apple Silicon, built without Python, PyTorch, or ComfyUI. Text-to-audio-video, first/last-frame control, and ordered Ref2VA references work end to end.
+- Source checked: 2026-08-11
+- Original documentation: https://github.com/antirez/h3.c
+- Start here:
+  1. Prepare an Apple Silicon Mac, the official Hugging Face weights, and FFmpeg plus FFprobe on PATH.
+  2. Run make -j8, then inspect the model layout and Metal device with ./h3 --info -d ./MiniMax-H3.
+  3. Start without -p for an interactive session; set !first, !last, or !ref-image before entering a prompt.
+
+### MiniMax-AI / MiniMax-H3
+
+- Route: OFFICIAL / WEIGHTS + AGENT SKILL
+- Best for: For first-time H3 deployment and anyone who wants a reliable prompt-writing baseline.
+- Summary: The official entry point for weights, deployment documentation, and nine Agent Skills. h3-prompt-writing structures shots, dialogue, and environmental audio in agents including Claude and Codex.
+- Source checked: 2026-08-11
+- Original documentation: https://github.com/MiniMax-AI/MiniMax-H3
+- Start here:
+  1. Choose the task family first: FL2VA covers text and first/last-frame inputs; Ref2VA handles multimodal references.
+  2. Install the prompt helper with npx skills add and the official repository URL, followed by --skill h3-prompt-writing.
+  3. Pick SGLang, vLLM, Diffusers, or the official ComfyUI tutorial for your hardware, then reproduce a published example first.
+
+### MiniMax-H3 Turbo LoRA
+
+- Route: ACCELERATION / COMFYUI LORA
+- Best for: For users who already have H3 working in ComfyUI and want shorter sampling times.
+- Summary: Compresses the usual roughly 20-step synchronized audio-video sampling path to four to eight steps. The current v4 EMA suits most work; six to eight steps are steadier, while four is primarily for previews.
+- Source checked: 2026-08-11
+- Original documentation: https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora
+- Start here:
+  1. Install the companion ComfyUI-MiniMax-H3-Turbo nodes and prepare the H3 base model, both VAEs, and the text encoder.
+  2. Prefer the v4 step600 EMA weight and insert Turbo LoRA between the official workflow's model loader and sampler.
+  3. Keep the scheduler on simple and strength at 1.0; use six to eight steps for finals and four for quick previews.
+
+### ComfyUI H3 Motion Context
+
+- Route: LONG VIDEO / MOTION + AUDIO CONTEXT
+- Best for: For continuous shots, music sequences, or narratives that exceed one generation window.
+- Summary: Carries the previous clip's H3 visual latent and audio context into the next clip so motion, rhythm, and sound continue across the join instead of restarting with a similar take.
+- Source checked: 2026-08-11
+- Original documentation: https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context
+- Start here:
+  1. Place the repository in ComfyUI/custom_nodes and restart; runtime patches install only when a chaining graph first runs.
+  2. Carry the previous joint audio-video latent through Save/Load Latent to avoid lossy pixel and audio round trips.
+  3. Start with context_length 22, audio_context_length 22, match_tail enabled, and Spectrum off.
+
+### MiniMax H3 Audio T8
+
+- Route: AUDIO / COMFYUI WORKFLOWS
+- Best for: For advanced users who need finer control over H3 native sound, dialogue, mixing, or audio-video timing.
+- Summary: A native ComfyUI H3 audio-video node suite covering stable dual-clock sampling, audio conditioning, mixing, trimming, and preflight, plus experimental long-video, speech, keyframe, and source-AV paths.
+- Source checked: 2026-08-11
+- Original documentation: https://github.com/T8mars/comfyui-minimax-h3-audio-T8
+- Start here:
+  1. Place the project in ComfyUI/custom_nodes/minimax-h3-audio-T8; the stable base nodes add no pip dependencies.
+  2. Begin with the stable Audio Conditioning, Preflight, Dual-Clock Sampler, AV Decode, and Output Trim path.
+  3. Long-video, speech, multi-keyframe, and source-AV paths are experimental and should be enabled one at a time against the repository's validation notes.
+
+
+## Video cases
 
 ## After the Fleet Jumps
 

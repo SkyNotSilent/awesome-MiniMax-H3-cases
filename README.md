@@ -41,18 +41,19 @@ No account, API key, or local model setup is required to browse the public galle
 | Scan all cases without leaving GitHub | [`CATALOG.md`](./CATALOG.md) |
 | Query the source-attributed dataset | [`data/cases.json`](./data/cases.json) or [`llms-full.txt`](./public/llms-full.txt) |
 | Find a case through an Agent Skill | [`minimax-h3-prompt-library`](./agents/skills/minimax-h3-prompt-library/) |
-| Set up MiniMax H3, ComfyUI, or acceleration tools | [Tutorials and deployment resources](https://h3-field-notes-production.up.railway.app/en/toolkit/) |
+| Set up MiniMax H3 on Mac, ComfyUI, or acceleration tools | [Searchable H3 tutorials](https://h3-field-notes-production.up.railway.app/en/tutorials/) |
 
 ## H3 tutorials and deployment guides
 
 | Resource | Start here for | Link |
 | --- | --- | --- |
+| h3.c / h3-metal | Native Apple Silicon inference in pure C + Metal, without Python, PyTorch, or ComfyUI | [antirez/h3.c](https://github.com/antirez/h3.c) |
 | Official MiniMax H3 repository | Weights, deployment guidance, and nine bundled Agent Skills including `h3-prompt-writing` | [MiniMax-AI/MiniMax-H3](https://github.com/MiniMax-AI/MiniMax-H3) |
 | MiniMax-H3 Turbo LoRA | Few-step synchronized audio-video generation; use 4 steps for previews and typically 6–8 for stronger v4 output | [larryvrh/MiniMax-H3-Turbo-Lora](https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora) |
 | ComfyUI H3 Motion Context | Chaining clips while carrying motion and audio context across joins | [NikoDemon80/ComfyUI-H3-Motion-Context](https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context) |
-| MiniMax H3 Audio T8 | Native H3 audio conditioning, dual-clock sampling, mixing, trimming, preflight, and Ref2VA workflows | [T8mars/comfyui-minimax-h3-audio-T8](https://github.com/T8mars/comfyui-minimax-h3-audio-T8) |
+| MiniMax H3 Audio T8 | A 56-node native H3 suite for stable audio conditioning and dual-clock sampling plus clearly separated experimental workflows | [T8mars/comfyui-minimax-h3-audio-T8](https://github.com/T8mars/comfyui-minimax-h3-audio-T8) |
 
-A practical acceleration starting point is **Turbo LoRA + SageAttention**. EasyCache targets the native 20-step path and is not recommended on top of a 4-step Turbo graph. Fewer sampling steps also do not translate into the same end-to-end speedup because VAE decoding and video packaging remain. These external deployment resources are documented separately from the case archive; the archive does not derive prompts or production workflows from collected videos.
+The standalone tutorials page lets users search and filter these routes, see who each project is for, and follow three source-checked first steps before opening the original documentation. These external resources are documented separately from the case archive; the archive does not derive prompts or production workflows from collected videos.
 
 ## Generation modes
 

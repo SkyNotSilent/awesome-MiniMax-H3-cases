@@ -1,0 +1,197 @@
+[
+  {
+    "id": "antirez-h3-metal",
+    "code": "T01",
+    "category": "mac",
+    "featured": true,
+    "title": "h3.c / h3-metal",
+    "url": "https://github.com/antirez/h3.c",
+    "kind": {
+      "zh": "MAC 原生 / C + METAL",
+      "en": "NATIVE MAC / C + METAL"
+    },
+    "description": {
+      "zh": "antirez 从零实现的 Apple Silicon 原生 MiniMax H3 推理引擎。无需 Python、PyTorch 或 ComfyUI，已打通文生音视频、首尾帧控制与有序 Ref2VA 参考。",
+      "en": "Antirez's native MiniMax H3 inference engine for Apple Silicon, built without Python, PyTorch, or ComfyUI. Text-to-audio-video, first/last-frame control, and ordered Ref2VA references work end to end."
+    },
+    "audience": {
+      "zh": "适合希望直接在 Apple Silicon 上本地运行 H3，并愿意使用命令行的 Mac 用户。",
+      "en": "For Mac users who want to run H3 locally on Apple Silicon and are comfortable with a command line."
+    },
+    "steps": {
+      "zh": [
+        "准备 Apple Silicon Mac、官方 Hugging Face 权重，并确保 FFmpeg 与 FFprobe 已加入 PATH。",
+        "运行 make -j8，再用 ./h3 --info -d ./MiniMax-H3 检查模型目录和 Metal 设备。",
+        "不传 -p 即可进入交互会话；用 !first、!last 或 !ref-image 设置条件，再输入提示词生成。"
+      ],
+      "en": [
+        "Prepare an Apple Silicon Mac, the official Hugging Face weights, and FFmpeg plus FFprobe on PATH.",
+        "Run make -j8, then inspect the model layout and Metal device with ./h3 --info -d ./MiniMax-H3.",
+        "Start without -p for an interactive session; set !first, !last, or !ref-image before entering a prompt."
+      ]
+    },
+    "facts": ["Pure C + Metal", "No Python / PyTorch", "T2VA · FL2VA · Ref2VA"],
+    "tags": ["Apple Silicon", "Metal", "CLI", "FFmpeg"],
+    "action": {
+      "zh": "阅读 Mac 原生教程",
+      "en": "Read the native Mac tutorial"
+    },
+    "verifiedAt": "2026-08-11"
+  },
+  {
+    "id": "official-minimax-h3",
+    "code": "T02",
+    "category": "official",
+    "featured": false,
+    "title": "MiniMax-AI / MiniMax-H3",
+    "url": "https://github.com/MiniMax-AI/MiniMax-H3",
+    "kind": {
+      "zh": "官方 / 权重 + AGENT SKILL",
+      "en": "OFFICIAL / WEIGHTS + AGENT SKILL"
+    },
+    "description": {
+      "zh": "官方权重、部署说明与九个 Agent Skill 的总入口。h3-prompt-writing 可在 Claude、Codex 等 Agent 中按镜头、对白和环境声组织提示词。",
+      "en": "The official entry point for weights, deployment documentation, and nine Agent Skills. h3-prompt-writing structures shots, dialogue, and environmental audio in agents including Claude and Codex."
+    },
+    "audience": {
+      "zh": "适合第一次部署 H3，或希望先建立可靠提示词写法的用户。",
+      "en": "For first-time H3 deployment and anyone who wants a reliable prompt-writing baseline."
+    },
+    "steps": {
+      "zh": [
+        "先确认任务类型：FL2VA 权重覆盖文字与首尾帧，Ref2VA 权重用于多模态参考。",
+        "需要提示词助手时，运行 npx skills add 官方仓库地址 --skill h3-prompt-writing。",
+        "本地推理按硬件选择 SGLang、vLLM、Diffusers 或官方 ComfyUI 教程，并先复现公开样例。"
+      ],
+      "en": [
+        "Choose the task family first: FL2VA covers text and first/last-frame inputs; Ref2VA handles multimodal references.",
+        "Install the prompt helper with npx skills add and the official repository URL, followed by --skill h3-prompt-writing.",
+        "Pick SGLang, vLLM, Diffusers, or the official ComfyUI tutorial for your hardware, then reproduce a published example first."
+      ]
+    },
+    "facts": ["9 Agent Skills", "Official Weights", "4–15s · 24 FPS"],
+    "tags": ["Official", "Prompt Writing", "SGLang", "ComfyUI"],
+    "action": {
+      "zh": "打开官方部署文档",
+      "en": "Open official deployment docs"
+    },
+    "verifiedAt": "2026-08-11"
+  },
+  {
+    "id": "turbo-lora",
+    "code": "T03",
+    "category": "acceleration",
+    "featured": false,
+    "title": "MiniMax-H3 Turbo LoRA",
+    "url": "https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora",
+    "kind": {
+      "zh": "加速 / COMFYUI LORA",
+      "en": "ACCELERATION / COMFYUI LORA"
+    },
+    "description": {
+      "zh": "把常规约 20 步的同步音视频采样压缩到 4–8 步。当前 v4 EMA 更适合大多数任务；6–8 步质量更稳，4 步主要用于快速预览。",
+      "en": "Compresses the usual roughly 20-step synchronized audio-video sampling path to four to eight steps. The current v4 EMA suits most work; six to eight steps are steadier, while four is primarily for previews."
+    },
+    "audience": {
+      "zh": "适合已经跑通 ComfyUI H3，下一步想缩短采样时间的用户。",
+      "en": "For users who already have H3 working in ComfyUI and want shorter sampling times."
+    },
+    "steps": {
+      "zh": [
+        "安装配套 ComfyUI-MiniMax-H3-Turbo 节点，并准备官方 H3 基模、双 VAE 与文本编码器。",
+        "优先放入 v4 step600 EMA 权重，在官方工作流的模型加载器与采样器之间插入 Turbo LoRA。",
+        "调度器使用 simple、强度先保持 1.0；从 6–8 步成片，4 步只做快速预览。"
+      ],
+      "en": [
+        "Install the companion ComfyUI-MiniMax-H3-Turbo nodes and prepare the H3 base model, both VAEs, and the text encoder.",
+        "Prefer the v4 step600 EMA weight and insert Turbo LoRA between the official workflow's model loader and sampler.",
+        "Keep the scheduler on simple and strength at 1.0; use six to eight steps for finals and four for quick previews."
+      ]
+    },
+    "facts": ["4–8 Steps", "v4 EMA", "Synchronized Audio"],
+    "tags": ["LoRA", "ComfyUI", "Acceleration", "Audio + Video"],
+    "action": {
+      "zh": "查看权重与工作流",
+      "en": "View weights and workflow"
+    },
+    "verifiedAt": "2026-08-11"
+  },
+  {
+    "id": "motion-context",
+    "code": "T04",
+    "category": "long-video",
+    "featured": false,
+    "title": "ComfyUI H3 Motion Context",
+    "url": "https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context",
+    "kind": {
+      "zh": "长视频 / 运动 + 音频续接",
+      "en": "LONG VIDEO / MOTION + AUDIO CONTEXT"
+    },
+    "description": {
+      "zh": "把上一段的 H3 画面 latent 与音频上下文带入下一段，让运动方向、节奏与声音跨片段继续，而不是重新生成一个相似开头。",
+      "en": "Carries the previous clip's H3 visual latent and audio context into the next clip so motion, rhythm, and sound continue across the join instead of restarting with a similar take."
+    },
+    "audience": {
+      "zh": "适合制作超过单次生成时长的连续镜头、音乐段落或叙事视频。",
+      "en": "For continuous shots, music sequences, or narratives that exceed one generation window."
+    },
+    "steps": {
+      "zh": [
+        "把仓库目录放进 ComfyUI/custom_nodes 并重启；节点只在首次运行续接图时安装运行时补丁。",
+        "用 Save/Load Latent 把上一段的联合音画 latent 接入下一次运行，避免像素与音频的有损往返。",
+        "从 context_length 22、audio_context_length 22、match_tail 开始，并关闭 Spectrum。"
+      ],
+      "en": [
+        "Place the repository in ComfyUI/custom_nodes and restart; runtime patches install only when a chaining graph first runs.",
+        "Carry the previous joint audio-video latent through Save/Load Latent to avoid lossy pixel and audio round trips.",
+        "Start with context_length 22, audio_context_length 22, match_tail enabled, and Spectrum off."
+      ]
+    },
+    "facts": ["Latent Chaining", "Motion Continuity", "Audio Continuity"],
+    "tags": ["Long Video", "ComfyUI", "Context", "Audio"],
+    "action": {
+      "zh": "阅读续接教程",
+      "en": "Read the chaining tutorial"
+    },
+    "verifiedAt": "2026-08-11"
+  },
+  {
+    "id": "audio-t8",
+    "code": "T05",
+    "category": "audio",
+    "featured": false,
+    "title": "MiniMax H3 Audio T8",
+    "url": "https://github.com/T8mars/comfyui-minimax-h3-audio-T8",
+    "kind": {
+      "zh": "音频 / COMFYUI 工作流",
+      "en": "AUDIO / COMFYUI WORKFLOWS"
+    },
+    "description": {
+      "zh": "面向 ComfyUI 原生 H3 的音画节点集，覆盖稳定双时钟采样、音频条件、混音、裁切与预检，并提供长视频、语音、关键帧和来源音画重绘等实验路线。",
+      "en": "A native ComfyUI H3 audio-video node suite covering stable dual-clock sampling, audio conditioning, mixing, trimming, and preflight, plus experimental long-video, speech, keyframe, and source-AV paths."
+    },
+    "audience": {
+      "zh": "适合需要精细控制 H3 原生声音、对白、混音或音画时间线的进阶用户。",
+      "en": "For advanced users who need finer control over H3 native sound, dialogue, mixing, or audio-video timing."
+    },
+    "steps": {
+      "zh": [
+        "将项目放入 ComfyUI/custom_nodes/minimax-h3-audio-T8；稳定基础节点没有额外 pip 依赖。",
+        "先从 Audio Conditioning、Preflight、Dual-Clock Sampler、AV Decode 与 Output Trim 的稳定链路开始。",
+        "长视频、语音、多关键帧和来源音画重绘均标为实验能力，应按仓库验证记录逐项启用。"
+      ],
+      "en": [
+        "Place the project in ComfyUI/custom_nodes/minimax-h3-audio-T8; the stable base nodes add no pip dependencies.",
+        "Begin with the stable Audio Conditioning, Preflight, Dual-Clock Sampler, AV Decode, and Output Trim path.",
+        "Long-video, speech, multi-keyframe, and source-AV paths are experimental and should be enabled one at a time against the repository's validation notes."
+      ]
+    },
+    "facts": ["56 Nodes", "Dual Clock", "Stable + Experimental"],
+    "tags": ["Audio", "ComfyUI", "Mixing", "Ref2VA"],
+    "action": {
+      "zh": "打开音画节点文档",
+      "en": "Open the audio-video node docs"
+    },
+    "verifiedAt": "2026-08-11"
+  }
+]

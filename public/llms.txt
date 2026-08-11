@@ -14,8 +14,8 @@
 
 - https://h3-field-notes-production.up.railway.app/ — Chinese case library
 - https://h3-field-notes-production.up.railway.app/en/ — English case library
-- https://h3-field-notes-production.up.railway.app/toolkit/ — tutorials and deployment resources
-- https://h3-field-notes-production.up.railway.app/en/toolkit/ — English tutorials and deployment resources
+- https://h3-field-notes-production.up.railway.app/tutorials/ — Mac, official deployment, acceleration, long-video, and audio tutorials
+- https://h3-field-notes-production.up.railway.app/en/tutorials/ — English H3 tutorials
 - https://h3-field-notes-production.up.railway.app/faq/ — source, prompt, playback, and review policy
 - https://h3-field-notes-production.up.railway.app/llms-full.txt — complete machine-readable case index
 - https://github.com/SkyNotSilent/awesome-minimax-h3/blob/main/data/cases.json — source dataset
@@ -42,6 +42,14 @@
 - https://h3-field-notes-production.up.railway.app/en/cases/x-2086785719604052241/ — MiniMax H3 Community Video Example by @Haruka1425054; Unknown; not-published; source: https://x.com/Haruka1425054/status/2086785719604052241
 - https://h3-field-notes-production.up.railway.app/en/cases/x-2086704420587458621/ — MiniMax H3 Local Generation by @makotwi0104; Unknown; not-published; source: https://x.com/makotwi0104/status/2086704420587458621
 - https://h3-field-notes-production.up.railway.app/en/cases/x-2086841608746553784/ — MiniMax H3 Community Video Example by @jerrod_lew; Unknown; not-published; source: https://x.com/jerrod_lew/status/2086841608746553784
+
+## Tutorial sources
+
+- h3.c / h3-metal — NATIVE MAC / C + METAL; Antirez's native MiniMax H3 inference engine for Apple Silicon, built without Python, PyTorch, or ComfyUI. Text-to-audio-video, first/last-frame control, and ordered Ref2VA references work end to end.; source checked 2026-08-11; https://github.com/antirez/h3.c
+- MiniMax-AI / MiniMax-H3 — OFFICIAL / WEIGHTS + AGENT SKILL; The official entry point for weights, deployment documentation, and nine Agent Skills. h3-prompt-writing structures shots, dialogue, and environmental audio in agents including Claude and Codex.; source checked 2026-08-11; https://github.com/MiniMax-AI/MiniMax-H3
+- MiniMax-H3 Turbo LoRA — ACCELERATION / COMFYUI LORA; Compresses the usual roughly 20-step synchronized audio-video sampling path to four to eight steps. The current v4 EMA suits most work; six to eight steps are steadier, while four is primarily for previews.; source checked 2026-08-11; https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora
+- ComfyUI H3 Motion Context — LONG VIDEO / MOTION + AUDIO CONTEXT; Carries the previous clip's H3 visual latent and audio context into the next clip so motion, rhythm, and sound continue across the join instead of restarting with a similar take.; source checked 2026-08-11; https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context
+- MiniMax H3 Audio T8 — AUDIO / COMFYUI WORKFLOWS; A native ComfyUI H3 audio-video node suite covering stable dual-clock sampling, audio conditioning, mixing, trimming, and preflight, plus experimental long-video, speech, keyframe, and source-AV paths.; source checked 2026-08-11; https://github.com/T8mars/comfyui-minimax-h3-audio-T8
 
 ## Retrieval rules
 

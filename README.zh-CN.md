@@ -40,18 +40,19 @@
 | 不离开 GitHub 快速浏览全部案例 | [`CATALOG.md`](./CATALOG.md) |
 | 查询带来源的结构化数据 | [`data/cases.json`](./data/cases.json) 或 [`llms-full.txt`](./public/llms-full.txt) |
 | 让 Agent 帮你查找案例 | [`minimax-h3-prompt-library`](./agents/skills/minimax-h3-prompt-library/) |
-| 部署 MiniMax H3、ComfyUI 与加速工具 | [教程与部署资源](https://h3-field-notes-production.up.railway.app/toolkit/) |
+| 在 Mac、ComfyUI 上部署 H3 或使用加速工具 | [可搜索的 H3 教程](https://h3-field-notes-production.up.railway.app/tutorials/) |
 
 ## H3 教程与部署入口
 
 | 资源 | 先看什么 | 地址 |
 | --- | --- | --- |
+| h3.c / h3-metal | Apple Silicon 原生 C + Metal 推理，不依赖 Python、PyTorch 或 ComfyUI | [antirez/h3.c](https://github.com/antirez/h3.c) |
 | MiniMax H3 官方仓库 | 权重、部署说明，以及包括 `h3-prompt-writing` 在内的 9 个 Agent Skill | [MiniMax-AI/MiniMax-H3](https://github.com/MiniMax-AI/MiniMax-H3) |
 | MiniMax-H3 Turbo LoRA | 4–8 步同步音视频加速；4 步预览，v4 在 6–8 步通常更稳 | [larryvrh/MiniMax-H3-Turbo-Lora](https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora) |
 | ComfyUI H3 Motion Context | 多片段续接，延续上一段的画面运动与音频上下文 | [NikoDemon80/ComfyUI-H3-Motion-Context](https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context) |
-| MiniMax H3 Audio T8 | 原生 H3 音频条件、双时钟采样、混音、裁切、预检与 Ref2VA 工作流 | [T8mars/comfyui-minimax-h3-audio-T8](https://github.com/T8mars/comfyui-minimax-h3-audio-T8) |
+| MiniMax H3 Audio T8 | 56 个原生 H3 节点：稳定音频条件与双时钟采样，以及明确隔离的实验工作流 | [T8mars/comfyui-minimax-h3-audio-T8](https://github.com/T8mars/comfyui-minimax-h3-audio-T8) |
 
-实践路线优先尝试 **Turbo LoRA + SageAttention**。EasyCache 更适合原生 20 步链路，不建议和 4 步 Turbo 叠加；采样步数的缩短也不等于端到端等比例加速，VAE 解码和视频封装仍会占用时间。这些外部部署资源与案例档案分开维护；案例库不会从收录视频中派生提示词或制作流程。
+独立教程页支持按平台和能力搜索、筛选，先说明每个项目适合谁，再给出三步起跑方式和原始文档入口。这些外部资源与案例档案分开维护；案例库不会从收录视频中派生提示词或制作流程。
 
 ## 自动采集路线
 
