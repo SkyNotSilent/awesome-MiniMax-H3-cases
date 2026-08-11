@@ -51,11 +51,11 @@ describe('case-first routes', () => {
   it('keeps the home page focused on cases and removes template and collection-method sections', () => {
     renderAt('/')
     expect(screen.getByRole('link', { name: '案例' })).toHaveAttribute('href', '/')
-    expect(screen.getByRole('link', { name: '工具链' })).toHaveAttribute('href', '/toolkit/')
+    expect(screen.getByRole('link', { name: '教程' })).toHaveAttribute('href', '/tutorials/')
     expect(screen.getByRole('link', { name: '常见问题' })).toHaveAttribute('href', '/faq/')
     expect(screen.queryByText('从单个案例，提炼可复用镜头协议。')).not.toBeInTheDocument()
     expect(screen.queryByText('收录方式')).not.toBeInTheDocument()
-    expect(screen.queryByText('H3 工具，按需取用。')).not.toBeInTheDocument()
+    expect(screen.queryByText('从案例，走到真正跑起来。')).not.toBeInTheDocument()
   })
 
   it('renders translated style and scene chips without duplicate React keys', () => {
@@ -119,21 +119,33 @@ describe('case-first routes', () => {
     await waitFor(() => expect(createTweet).toHaveBeenCalled())
   })
 
-  it('publishes Toolkit and FAQ as standalone pages', () => {
-    const toolkit = renderAt('/toolkit/')
-    expect(screen.getByRole('heading', { name: 'H3 工具，按需取用。' })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'MiniMax-AI / MiniMax-H3: 打开官方仓库' })).toHaveAttribute(
+  it('publishes Tutorials and FAQ as standalone pages', () => {
+    const tutorials = renderAt('/tutorials/')
+    expect(screen.getByRole('heading', { name: '从案例，走到真正跑起来。' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'MiniMax-AI / MiniMax-H3: 打开官方部署文档' })).toHaveAttribute(
       'href',
       'https://github.com/MiniMax-AI/MiniMax-H3',
     )
+    expect(screen.getByRole('link', { name: '阅读 Mac 原生教程' })).toHaveAttribute(
+      'href',
+      'https://github.com/antirez/h3.c',
+    )
     expect(screen.queryByRole('heading', { name: '先看 MiniMax H3 的真实效果。' })).not.toBeInTheDocument()
-    toolkit.unmount()
+    tutorials.unmount()
 
     renderAt('/faq/')
     expect(screen.getByRole('heading', { name: '先把边界讲清楚。' })).toBeInTheDocument()
     expect(screen.getByText('这里收录什么？')).toBeInTheDocument()
     expect(screen.getByText('这里展示的 Prompt 会被修改吗？')).toBeInTheDocument()
     expect(screen.queryByText('打开官方仓库')).not.toBeInTheDocument()
+  })
+
+  it('filters tutorial routes without mixing them into the case catalog', () => {
+    renderAt('/tutorials/')
+    fireEvent.click(screen.getByRole('button', { name: '长视频' }))
+    expect(screen.getByRole('heading', { name: 'ComfyUI H3 Motion Context' })).toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: 'h3.c / h3-metal' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: 'MiniMax-H3 Turbo LoRA' })).not.toBeInTheDocument()
   })
 })
 
@@ -145,16 +157,23 @@ describe('language isolation', () => {
     expect(screen.getByText('After the Fleet Jumps')).toBeInTheDocument()
     expect(screen.queryByText('舰桥上的跃迁余震')).not.toBeInTheDocument()
     expect(screen.getByPlaceholderText('Search cases, scenes, or creators…')).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'Toolkit' })).toHaveAttribute('href', '/en/toolkit/')
+    expect(screen.getByRole('link', { name: 'Tutorials' })).toHaveAttribute('href', '/en/tutorials/')
     expect(screen.getByRole('link', { name: 'Switch to Chinese' })).toHaveAttribute('href', '/')
     expect(document.body.textContent).not.toMatch(/[\u3400-\u9fff]/u)
   })
 
   it('keeps the language switch on the equivalent standalone route', () => {
-    renderAt('/en/toolkit/')
-    expect(screen.getByRole('heading', { name: 'H3 tools, ready when you need them.' })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'Switch to Chinese' })).toHaveAttribute('href', '/toolkit/')
+    renderAt('/en/tutorials/')
+    expect(screen.getByRole('heading', { name: 'From watching examples to running H3.' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Switch to Chinese' })).toHaveAttribute('href', '/tutorials/')
     expect(screen.queryByText('打开官方仓库')).not.toBeInTheDocument()
+    expect(document.body.textContent).not.toMatch(/[\u3400-\u9fff]/u)
+  })
+
+  it('keeps the old toolkit URL as a client-side compatibility alias', () => {
+    renderAt('/en/toolkit/')
+    expect(screen.getByRole('heading', { name: 'From watching examples to running H3.' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Switch to Chinese' })).toHaveAttribute('href', '/tutorials/')
   })
 
   it('localizes the English X player and case dialog', async () => {

@@ -4,6 +4,7 @@ import { resolve } from 'node:path'
 const root = resolve(import.meta.dirname, '..')
 const baseUrl = (process.env.PUBLIC_SITE_URL || 'https://h3-field-notes-production.up.railway.app').replace(/\/$/, '')
 const cases = JSON.parse(await readFile(resolve(root, 'data/cases.json'), 'utf8'))
+const tutorials = JSON.parse(await readFile(resolve(root, 'data/tutorials.json'), 'utf8'))
 const officialCount = cases.filter((item) => item.sourceType === 'official').length
 const xCount = cases.filter((item) => item.sourceType === 'x').length
 const promptCases = cases.filter((item) => item.promptProvenance !== 'not-published')
@@ -31,8 +32,8 @@ const llms = `# H3 Field Notes — Awesome MiniMax H3
 
 - ${baseUrl}/ — Chinese case library
 - ${baseUrl}/en/ — English case library
-- ${baseUrl}/toolkit/ — tutorials and deployment resources
-- ${baseUrl}/en/toolkit/ — English tutorials and deployment resources
+- ${baseUrl}/tutorials/ — Mac, official deployment, acceleration, long-video, and audio tutorials
+- ${baseUrl}/en/tutorials/ — English H3 tutorials
 - ${baseUrl}/faq/ — source, prompt, playback, and review policy
 - ${baseUrl}/llms-full.txt — complete machine-readable case index
 - https://github.com/SkyNotSilent/awesome-minimax-h3/blob/main/data/cases.json — source dataset
@@ -40,6 +41,10 @@ const llms = `# H3 Field Notes — Awesome MiniMax H3
 ## Representative examples
 
 ${representatives.map((item) => `- ${caseUrl(item.id, 'en')} — ${item.titleEn}; ${item.mode}; ${item.promptProvenance}; source: ${item.sourceUrl}`).join('\n')}
+
+## Tutorial sources
+
+${tutorials.map((item) => `- ${item.title} — ${item.kind.en}; ${item.description.en}; source checked ${item.verifiedAt}; ${item.url}`).join('\n')}
 
 ## Retrieval rules
 
@@ -49,9 +54,24 @@ ${representatives.map((item) => `- ${caseUrl(item.id, 'en')} — ${item.titleEn}
 - Do not derive a prompt or hidden workflow from a finished video.
 `
 
-const llmsFull = `# H3 Field Notes — Complete MiniMax H3 Case Index
+const llmsFull = `# H3 Field Notes — Complete MiniMax H3 Case and Tutorial Index
 
 Generated from data/cases.json. Total: ${cases.length} cases. Verbatim public prompts: ${promptCases.length}.
+
+## Tutorials
+
+${tutorials.map((item) => `### ${item.title}
+
+- Route: ${item.kind.en}
+- Best for: ${item.audience.en}
+- Summary: ${item.description.en}
+- Source checked: ${item.verifiedAt}
+- Original documentation: ${item.url}
+- Start here:
+${item.steps.en.map((step, index) => `  ${index + 1}. ${step}`).join('\n')}
+`).join('\n')}
+
+## Video cases
 
 ${cases.map((item) => `## ${item.titleEn}
 

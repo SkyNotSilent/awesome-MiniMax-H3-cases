@@ -5,6 +5,7 @@ const root = resolve(import.meta.dirname, '..')
 const dist = resolve(root, 'dist')
 const baseUrl = (process.env.PUBLIC_SITE_URL || 'https://h3-field-notes-production.up.railway.app').replace(/\/$/, '')
 const cases = JSON.parse(await readFile(resolve(root, 'data/cases.json'), 'utf8'))
+const tutorials = JSON.parse(await readFile(resolve(root, 'data/tutorials.json'), 'utf8'))
 
 const locales = ['zh-CN', 'en']
 const latestPublishedDate = cases
@@ -13,29 +14,6 @@ const latestPublishedDate = cases
   .sort()
   .at(-1)
   ?.slice(0, 10)
-
-const toolkitResources = [
-  {
-    name: 'MiniMax H3 official repository and Agent Skills',
-    nameZh: 'MiniMax H3 官方仓库与 Agent Skills',
-    url: 'https://github.com/MiniMax-AI/MiniMax-H3',
-  },
-  {
-    name: 'MiniMax H3 Turbo LoRA',
-    nameZh: 'MiniMax H3 Turbo LoRA 加速',
-    url: 'https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora',
-  },
-  {
-    name: 'ComfyUI H3 Motion Context',
-    nameZh: 'ComfyUI H3 长视频续接',
-    url: 'https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context',
-  },
-  {
-    name: 'MiniMax H3 Audio T8 workflows',
-    nameZh: 'MiniMax H3 Audio T8 音视频工作流',
-    url: 'https://github.com/T8mars/comfyui-minimax-h3-audio-T8',
-  },
-]
 
 const faqItems = {
   'zh-CN': [
@@ -73,19 +51,19 @@ const pageDefinitions = [
     },
   },
   {
-    id: 'toolkit',
-    paths: { 'zh-CN': '/toolkit/', en: '/en/toolkit/' },
+    id: 'tutorials',
+    paths: { 'zh-CN': '/tutorials/', en: '/en/tutorials/' },
     schemaType: 'CollectionPage',
     copy: {
       'zh-CN': {
-        title: 'MiniMax H3 教程与部署资源 — H3 Field Notes',
-        description: 'MiniMax H3 官方 Skills、Turbo LoRA、ComfyUI 长视频续接与音视频工作流的精选部署资源。',
-        keywords: 'MiniMax H3 部署,ComfyUI H3,h3-prompt-writing,MiniMax H3 Turbo LoRA,SageAttention,H3 Motion Context,H3 Audio',
+        title: 'MiniMax H3 教程：Mac、部署、加速与音频 — H3 Field Notes',
+        description: 'MiniMax H3 实操教程入口：Apple Silicon 原生 h3.c、官方部署、Prompt Skill、Turbo LoRA、ComfyUI 长视频与音频工作流。',
+        keywords: 'MiniMax H3 教程,MiniMax H3 Mac,h3.c,h3-metal,MiniMax H3 部署,ComfyUI H3,h3-prompt-writing,MiniMax H3 Turbo LoRA,H3 Motion Context,H3 Audio',
       },
       en: {
-        title: 'MiniMax H3 Tutorials and Deployment Resources — H3 Field Notes',
-        description: 'Curated MiniMax H3 resources for official Skills, Turbo LoRA acceleration, ComfyUI clip chaining, and audio-video workflows.',
-        keywords: 'MiniMax H3 deployment,ComfyUI H3,h3-prompt-writing,MiniMax H3 Turbo LoRA,SageAttention,H3 Motion Context,H3 Audio',
+        title: 'MiniMax H3 Tutorials: Mac, Deployment, Acceleration and Audio — H3 Field Notes',
+        description: 'Practical MiniMax H3 tutorials for native Apple Silicon inference with h3.c, official deployment, Prompt Skills, Turbo LoRA, long-video chaining, and audio workflows.',
+        keywords: 'MiniMax H3 tutorials,MiniMax H3 Mac,h3.c,h3-metal,MiniMax H3 deployment,ComfyUI H3,h3-prompt-writing,MiniMax H3 Turbo LoRA,H3 Motion Context,H3 Audio',
       },
     },
   },
@@ -310,14 +288,15 @@ function appStructuredData(page, locale) {
     }
   }
 
-  if (page.id === 'toolkit') {
+  if (page.id === 'tutorials') {
     pageNode.mainEntity = {
       '@type': 'ItemList',
-      numberOfItems: toolkitResources.length,
-      itemListElement: toolkitResources.map((item, index) => ({
+      numberOfItems: tutorials.length,
+      itemListElement: tutorials.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
-        name: locale === 'en' ? item.name : item.nameZh,
+        name: item.title,
+        description: locale === 'en' ? item.description.en : item.description.zh,
         url: item.url,
       })),
     }
@@ -359,8 +338,12 @@ function fallbackMarkup(page, locale) {
       return `<li><a href="${casePath(locale, item.id)}">${escapeHtml(localized.title)}</a><small>${escapeHtml(item.mode)} · ${escapeHtml(localized.author)}</small></li>`
     }).join('')
     content = `<p><strong>${cases.length}</strong> ${escapeHtml(locale === 'en' ? 'published video examples' : '个已发布视频案例')}</p><ol>${links}</ol>`
-  } else if (page.id === 'toolkit') {
-    content = `<ul>${toolkitResources.map((item) => `<li><a href="${escapeHtml(item.url)}">${escapeHtml(locale === 'en' ? item.name : item.nameZh)}</a></li>`).join('')}</ul>`
+  } else if (page.id === 'tutorials') {
+    content = `<ol>${tutorials.map((item) => {
+      const description = locale === 'en' ? item.description.en : item.description.zh
+      const steps = locale === 'en' ? item.steps.en : item.steps.zh
+      return `<li><a href="${escapeHtml(item.url)}">${escapeHtml(item.title)}</a><p>${escapeHtml(description)}</p><ol>${steps.map((step) => `<li>${escapeHtml(step)}</li>`).join('')}</ol></li>`
+    }).join('')}</ol>`
   } else {
     content = faqItems[locale].map(([question, answer]) => `<article><h2>${escapeHtml(question)}</h2><p>${escapeHtml(answer)}</p></article>`).join('')
   }
@@ -560,6 +543,21 @@ for (const page of pageDefinitions) {
     await mkdir(pageDir, { recursive: true })
     await writeFile(resolve(pageDir, 'index.html'), html)
   }
+}
+
+const legacyTutorialRoutes = [
+  { locale: 'zh-CN', from: '/toolkit/', to: '/tutorials/', label: '教程页面已迁移，正在跳转。' },
+  { locale: 'en', from: '/en/toolkit/', to: '/en/tutorials/', label: 'The tutorials page has moved. Redirecting.' },
+]
+
+for (const route of legacyTutorialRoutes) {
+  const target = absolute(route.to)
+  const relativePath = route.from.replace(/^\//, '')
+  const pageDir = resolve(dist, relativePath)
+  const html = `<!doctype html><html lang="${route.locale}"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=${escapeHtml(target)}"><meta name="robots" content="noindex,follow"><link rel="canonical" href="${escapeHtml(target)}"><title>${escapeHtml(route.label)}</title><script>location.replace(${jsonForHtml(target)})</script></head><body><p>${escapeHtml(route.label)} <a href="${escapeHtml(target)}">${escapeHtml(target)}</a></p></body></html>`
+  assertLanguageIsolation(html, route.locale, route.from)
+  await mkdir(pageDir, { recursive: true })
+  await writeFile(resolve(pageDir, 'index.html'), html)
 }
 
 for (const item of cases) {

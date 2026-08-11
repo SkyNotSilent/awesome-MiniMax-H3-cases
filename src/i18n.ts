@@ -1,7 +1,7 @@
 import type { CaseMode, VideoCase } from './types'
 
 export type Language = 'zh' | 'en'
-export type AppPage = 'home' | 'toolkit' | 'faq'
+export type AppPage = 'home' | 'tutorials' | 'faq'
 
 export interface AppRoute {
   language: Language
@@ -12,7 +12,11 @@ export function resolveRoute(pathname: string): AppRoute {
   const segments = pathname.split('/').filter(Boolean)
   const language: Language = segments[0] === 'en' ? 'en' : 'zh'
   const pageSegment = segments[language === 'en' ? 1 : 0]
-  const page: AppPage = pageSegment === 'toolkit' || pageSegment === 'faq' ? pageSegment : 'home'
+  const page: AppPage = pageSegment === 'tutorials' || pageSegment === 'toolkit'
+    ? 'tutorials'
+    : pageSegment === 'faq'
+      ? 'faq'
+      : 'home'
   return { language, page }
 }
 
@@ -30,7 +34,7 @@ export const copy = {
     htmlLang: 'zh-CN',
     siteTitle: 'Awesome MiniMax H3 — 视频案例库',
     siteDescription: '可筛选、可追溯、可站内观看的 MiniMax H3 / Hailuo 3.0 视频案例库。',
-    nav: { cases: '案例', toolkit: '工具链', faq: '常见问题', source: '源码', language: 'EN' },
+    nav: { cases: '案例', tutorials: '教程', faq: '常见问题', source: '源码', language: 'EN' },
     intro: {
       kicker: 'COMMUNITY VIDEO ARCHIVE / 2026',
       lineOne: 'H3',
@@ -76,16 +80,32 @@ export const copy = {
       copied: '已复制',
       source: '查看原始来源',
     },
-    toolkit: {
-      index: '02 / H3 工具链',
-      title: 'H3 工具，按需取用。',
-      description: '官方仓库、加速 LoRA、长视频续接与音视频节点独立整理，方便需要时直接查阅。',
-      speedLabel: '实战笔记 / 速度组合',
-      speedTitle: '少叠插件，先把采样链路跑稳。',
-      speedBody: '优先尝试 Turbo LoRA + SageAttention。4 步适合预览，6–8 步用于成片；EasyCache 更适合原生 20 步工作流，不建议和 4 步 Turbo 叠加。',
-      speedFootnote: '当前 H3 LoRA 的生态热点仍集中在加速，人物与画风训练处于早期。',
-      principlesLabel: '案例库原则 / VIDEO FIRST',
-      principles: ['真实视频优先', '原始来源可查', 'Prompt 只收原文'],
+    tutorials: {
+      index: '02 / H3 教程',
+      title: '从案例，走到真正跑起来。',
+      description: '为 Mac 原生、官方部署、ComfyUI 加速、长视频续接与原生音频整理的实操入口。每条路线都给出适用对象、起步步骤与原始文档。',
+      searchLabel: '搜索教程',
+      searchPlaceholder: '搜索平台、能力或项目…',
+      clearSearch: '清除教程搜索',
+      filterLabel: '教程分类',
+      categories: {
+        all: '全部路线',
+        mac: 'Mac 原生',
+        official: '官方入门',
+        acceleration: '采样加速',
+        'long-video': '长视频',
+        audio: '音频工作流',
+      },
+      featuredLabel: '本周重点',
+      bestFor: '适合：',
+      startLabel: '三步起跑',
+      verified: '资料核验',
+      commandLabel: 'h3.c 起步命令',
+      noResults: '没有匹配的教程，换一个关键词或分类试试。',
+      fieldNoteLabel: '实战提示 / SPEED STACK',
+      fieldNoteTitle: '加速不是把开关全部打开。',
+      fieldNoteBody: 'ComfyUI 路线可先从 Turbo LoRA 的 v4 EMA、simple 调度器与 6–8 步开始。4 步更适合预览；Motion Context 明确建议关闭 Spectrum。不同加速器是否能叠加，应以各自当前 README 和固定素材 A/B 为准。',
+      sourceNote: '教程摘要只整理项目公开文档，不从案例视频反推隐藏流程。外部项目持续更新，执行前请再次查看原始 README。',
     },
     faq: {
       index: '03 / 常见问题',
@@ -107,7 +127,7 @@ export const copy = {
     htmlLang: 'en',
     siteTitle: 'Awesome MiniMax H3 — Video Case Library',
     siteDescription: 'A filterable, source-attributed MiniMax H3 / Hailuo 3.0 video case library with in-site playback.',
-    nav: { cases: 'Cases', toolkit: 'Toolkit', faq: 'FAQ', source: 'Source', language: 'ZH' },
+    nav: { cases: 'Cases', tutorials: 'Tutorials', faq: 'FAQ', source: 'Source', language: 'ZH' },
     intro: {
       kicker: 'COMMUNITY VIDEO ARCHIVE / 2026',
       lineOne: 'H3',
@@ -153,16 +173,32 @@ export const copy = {
       copied: 'Copied',
       source: 'View original source',
     },
-    toolkit: {
-      index: '02 / H3 TOOLKIT',
-      title: 'H3 tools, ready when you need them.',
-      description: 'Official resources, acceleration LoRA, clip continuation, and audio-video nodes collected in one focused reference page.',
-      speedLabel: 'FIELD NOTE / SPEED STACK',
-      speedTitle: 'Stabilize the sampling chain before stacking plugins.',
-      speedBody: 'Start with Turbo LoRA + SageAttention. Use four steps for previews and six to eight for finals. EasyCache is better suited to the native 20-step workflow and should not be stacked with four-step Turbo.',
-      speedFootnote: 'The H3 LoRA ecosystem currently concentrates on acceleration; character and style training remain early.',
-      principlesLabel: 'LIBRARY RULES / VIDEO FIRST',
-      principles: ['Real video first', 'Original source linked', 'Published prompts only'],
+    tutorials: {
+      index: '02 / H3 TUTORIALS',
+      title: 'From watching examples to running H3.',
+      description: 'Practical starting points for native Mac inference, official deployment, ComfyUI acceleration, long-video chaining, and native audio. Every route includes who it is for, first steps, and the original documentation.',
+      searchLabel: 'Search tutorials',
+      searchPlaceholder: 'Search platforms, capabilities, or projects…',
+      clearSearch: 'Clear tutorial search',
+      filterLabel: 'Tutorial categories',
+      categories: {
+        all: 'All routes',
+        mac: 'Native Mac',
+        official: 'Official setup',
+        acceleration: 'Acceleration',
+        'long-video': 'Long video',
+        audio: 'Audio workflows',
+      },
+      featuredLabel: 'FEATURED NOW',
+      bestFor: 'Best for: ',
+      startLabel: 'START IN THREE STEPS',
+      verified: 'Source checked',
+      commandLabel: 'h3.c starter commands',
+      noResults: 'No tutorial matches this search. Try another term or category.',
+      fieldNoteLabel: 'FIELD NOTE / SPEED STACK',
+      fieldNoteTitle: 'Acceleration is not every switch at once.',
+      fieldNoteBody: 'For the ComfyUI route, start with Turbo LoRA v4 EMA, the simple scheduler, and six to eight steps. Four steps suit previews; Motion Context explicitly recommends keeping Spectrum off. Test other combinations against current READMEs and fixed-input A/B renders.',
+      sourceNote: 'Tutorial summaries are grounded in public project documentation, never inferred from case videos. External projects evolve, so recheck the original README before running a guide.',
     },
     faq: {
       index: '03 / FAQ',
