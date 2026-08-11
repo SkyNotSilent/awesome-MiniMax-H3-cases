@@ -300,12 +300,13 @@ await mkdir(posterDirectory, { recursive: true })
 await mapConcurrent(enriched, 6, downloadPoster)
 await writeFile(casesPath, `${JSON.stringify([...cases, ...promoted], null, 2)}\n`)
 const deferredQueue = candidates
-  .filter((item) => deferredReasons.has(sourcePostId(item)))
-  .map((item) => ({
-    ...item,
-    reviewStatus: 'needs-context',
-    reviewNote: deferredReasons.get(sourcePostId(item)),
-  }))
+  .filter((item) => item.reviewStatus !== 'pending' || deferredReasons.has(sourcePostId(item)))
+  .map((item) => {
+    const deferredReason = deferredReasons.get(sourcePostId(item))
+    return deferredReason
+      ? { ...item, reviewStatus: 'needs-context', reviewNote: deferredReason }
+      : item
+  })
 await writeFile(candidatesPath, `${JSON.stringify(deferredQueue, null, 2)}\n`)
 
-console.log(`Promoted ${promoted.length} candidates. Public catalog now contains ${cases.length + promoted.length} cases; ${deferredQueue.length} candidate remains in needs-context review.`)
+console.log(`Promoted ${promoted.length} candidates. Public catalog now contains ${cases.length + promoted.length} cases; ${deferredQueue.length} candidate records remain deferred or rejected.`)
