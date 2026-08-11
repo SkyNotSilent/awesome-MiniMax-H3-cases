@@ -2,19 +2,19 @@
 
 # Awesome MiniMax H3 Video Examples
 
-### 227 source-attributed MiniMax H3 / Hailuo H3 videos, playable in your browser
+### 304 source-attributed MiniMax H3 / Hailuo H3 videos, playable in your browser
 
 [![Video Gallery](https://img.shields.io/badge/Watch-Live_Video_Gallery-d8ff3e?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/en/)
-[![Examples](https://img.shields.io/badge/video_examples-227-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
-[![X Cases](https://img.shields.io/badge/original_X_cases-224-f5f5ed?style=flat-square&labelColor=0a0b09)](./data/cases.json)
+[![Examples](https://img.shields.io/badge/video_examples-304-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
+[![X Cases](https://img.shields.io/badge/original_X_cases-301-f5f5ed?style=flat-square&labelColor=0a0b09)](./data/cases.json)
 [![CI](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml/badge.svg)](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg?style=flat-square)](./LICENSE)
 
-[▶ Browse all 227 video examples](https://h3-field-notes-production.up.railway.app/en/) · [Browse on GitHub](./CATALOG.md) · [中文说明](./README.zh-CN.md) · [Contribute](./CONTRIBUTING.md)
+[▶ Browse all 304 video examples](https://h3-field-notes-production.up.railway.app/en/) · [Browse on GitHub](./CATALOG.md) · [中文说明](./README.zh-CN.md) · [Contribute](./CONTRIBUTING.md)
 
 </div>
 
-[![H3 Field Notes — browse 227 MiniMax H3 video examples](./public/og-image.jpg)](https://h3-field-notes-production.up.railway.app/en/)
+[![H3 Field Notes — browse 304 MiniMax H3 video examples](./public/og-image.jpg)](https://h3-field-notes-production.up.railway.app/en/)
 
 **See what MiniMax H3 can actually produce before you spend time setting it up.** MiniMax H3 is also commonly searched as Hailuo H3 or Hailuo 3.0. Browse real outputs from X and MiniMax's official examples, search by keyword, and filter by generation mode, category, style, or scene. Open any case to watch it inside the gallery and jump back to the original source.
 
@@ -22,14 +22,14 @@
 
 | What you get | Why it matters |
 | --- | --- |
-| **227 watchable video examples** | Judge MiniMax H3 / Hailuo H3 by real output, not a feature list |
+| **304 watchable video examples** | Judge MiniMax H3 / Hailuo H3 by real output, not a feature list |
 | **Fast search and filters** | Find relevant T2VA, FL2VA, Ref2VA, cinematic, dance, dialogue, music, advertising, and local-generation cases |
 | **Case-specific covers and loading states** | Know what each video contains before opening it and whether the X player is still loading |
 | **Original creator and source on every case** | Verify context, publication date, and attribution without hunting for the post |
 | **Verbatim public prompts when available** | Copy the exact prompt only when the creator or official script published it; missing prompts are never invented |
 | **Chinese and English routes** | Browse the same library in either language without mixed-language pages |
 
-**Current snapshot:** 227 video examples · 224 original X cases · 3 official reproductions · 17 verbatim public prompts.
+**Current snapshot:** 304 video examples · 301 original X cases · 3 official reproductions · 25 verbatim public prompts.
 
 No account, API key, or local model setup is required to browse the public gallery.
 
@@ -68,7 +68,7 @@ A practical acceleration starting point is **Turbo LoRA + SageAttention**. EasyC
 | FL2VA | Ramen Rack Focus | [MiniMax public script](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-fl2va-request.sh) |
 | Ref2VA | Follow the Wind | [MiniMax public script](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-ref2va-request.sh) |
 
-The catalog now contains 227 public cases: three official reproducible examples and 224 source-attributed X community cases. Seventeen records preserve verbatim prompts published by an official source or creator; every other entry explicitly marks the prompt as not published. The collection spans local ComfyUI benchmarks, image and multimodal reference workflows, model comparisons, music videos, multi-shot films, native audio, and post-production pipelines. X cases play inside the catalog through the official X embed. Permission-cleared media may use a hosted fallback when an embed is unavailable.
+The catalog now contains 304 public cases: three official reproducible examples and 301 source-attributed X community cases. Twenty-five records preserve verbatim prompts published by an official source or creator; every other entry explicitly marks the prompt as not published. The collection spans local ComfyUI benchmarks, image and multimodal reference workflows, model comparisons, music videos, multi-shot films, native audio, and post-production pipelines. X cases play inside the catalog through the official X embed. Permission-cleared media may use a hosted fallback when an embed is unavailable.
 
 ## Discovery and review pipeline
 
