@@ -29,6 +29,8 @@
 | [LLM 编写 Prompt 的女性仿生人短片](https://x.com/mix_buchi_/status/2086435346242572419) | 15s · 1440×816 · landscape | `Android` `ComfyUI` `LLM Prompt` `Science Fiction` |
 | [@BrentLynch 的 MiniMax H3 社区视频案例](https://x.com/BrentLynch/status/2086620966751510630) | 15s · 1344×768 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
 | [@Dheepanratnam 的 MiniMax H3 模型对比案例](https://x.com/Dheepanratnam/status/2086434543368569014) | 15s · 2560×1440 · landscape | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [@AIiswonder 的 MiniMax H3 模型对比案例](https://x.com/AIiswonder/status/2086927616616067125) | 13s · 1920×1080 · landscape | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [@pu_so2 的 MiniMax H3 本地生成案例](https://x.com/pu_so2/status/2086809650448793721) | 8s · 1876×1080 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
 
 ## FL2VA
 
@@ -50,6 +52,11 @@
 | [RTX 5060 Ti 的 FL2VA 三镜头链式生成](https://x.com/kahataredoki1/status/2086397266496217222) | 16s · 832×1248 · portrait | `FL2VA` `NVFP4` `RTX 5060 Ti` `SageAttention` |
 | [@TeslianHumanoid 的 MiniMax H3 本地生成案例](https://x.com/TeslianHumanoid/status/2086473110165799071) | 52s · 1920×1080 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
 | [@pcneko_lab 的 MiniMax H3 本地生成案例](https://x.com/pcneko_lab/status/2086471891498484171) | 5s · 864×480 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
+| [@0xmomonifty 的 MiniMax H3 模型对比案例](https://x.com/0xmomonifty/status/2086660959054229833) | 20s · 1344×768 · landscape | `MiniMax H3` `模型对比` `公开 Prompt` `X 原帖` |
+| [@NullpoLab 的 MiniMax H3 社区视频案例 #1](https://x.com/NullpoLab/status/2086801730797531206) | 15s · 1216×672 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@NullpoLab 的 MiniMax H3 社区视频案例 #2](https://x.com/NullpoLab/status/2086783038915256474) | 15s · 1216×672 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@wildmindai 的 MiniMax H3 社区视频案例](https://x.com/wildmindai/status/2086730072493261168) | 30s · 2400×1280 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@higana_yogana 的 MiniMax H3 本地生成案例](https://x.com/higana_yogana/status/2086720354526114078) | 3s · 1920×1088 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
 
 ## Ref2VA
 
@@ -82,6 +89,13 @@
 | [@luta_ai 的 MiniMax H3 角色对白案例](https://x.com/luta_ai/status/2086449437275271388) | 85s · 650×846 · portrait | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
 | [@toyxyz3 的 MiniMax H3 本地生成案例](https://x.com/toyxyz3/status/2086443622262820904) | 4s · 1728×960 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
 | [@malariadx 的 MiniMax H3 本地生成案例](https://x.com/malariadx/status/2086437341808271591) | 5s · 640×832 · portrait | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
+| [@da2el2da_eichi 的 MiniMax H3 音乐视频案例](https://x.com/da2el2da_eichi/status/2086830098909712644) | 7s · 576×736 · portrait | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [@cla_kuro37459 的 MiniMax H3 本地生成案例](https://x.com/cla_kuro37459/status/2086674810500001967) | 5s · 768×1344 · portrait | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
+| [@CallMeDiegoJr 的 MiniMax H3 社区视频案例](https://x.com/CallMeDiegoJr/status/2086923648527405211) | 20s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@luche_whitewing 的 MiniMax H3 模型对比案例](https://x.com/luche_whitewing/status/2086769532337889555) | 17s · 1920×1080 · landscape | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [@javawock7618 的 MiniMax H3 社区视频案例](https://x.com/javawock7618/status/2086909339894501611) | 10s · 1920×1080 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@javawock7618 的 MiniMax H3 模型对比案例](https://x.com/javawock7618/status/2086871126647673308) | 5s · 1920×1080 · landscape | `MiniMax H3` `模型对比` `公开 Prompt` `X 原帖` |
+| [@0x0SojalSec 的 MiniMax H3 舞蹈视频案例](https://x.com/0x0SojalSec/status/2086956124134310292) | 10s · 768×448 · landscape | `MiniMax H3` `舞蹈视频` `来源未公开 Prompt` `X 原帖` |
 
 ## Unknown
 
@@ -248,3 +262,66 @@
 | [@Rishibag02 的 MiniMax H3 社区视频案例](https://x.com/Rishibag02/status/2086430588727386566) | 19s · 1920×1080 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
 | [@Mayz1169 的 MiniMax H3 社区视频案例](https://x.com/Mayz1169/status/2086430481072218307) | 15s · 1888×1080 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
 | [@metakonoka 的 MiniMax H3 本地生成案例](https://x.com/metakonoka/status/2086428473879630076) | 7s · 2000×2020 · square | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
+| [@kagami_kami_m 的 MiniMax H3 动作与视觉特效案例](https://x.com/kagami_kami_m/status/2086647221190303868) | 10s · 1080×1620 · portrait | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [@SaniAiTech 的 MiniMax H3 舞蹈视频案例](https://x.com/SaniAiTech/status/2086771726822904256) | 15s · 1440×2560 · portrait | `MiniMax H3` `舞蹈视频` `来源未公开 Prompt` `X 原帖` |
+| [@jAlpha_create 的 MiniMax H3 本地生成案例](https://x.com/jAlpha_create/status/2086680991981289554) | 15s · 832×480 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
+| [@ayzalnooor24521 的 MiniMax H3 角色对白案例](https://x.com/ayzalnooor24521/status/2086671141998059973) | 15s · 1088×720 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [@Lonely__MH 的 MiniMax H3 本地生成案例](https://x.com/Lonely__MH/status/2086675231947751768) | 16s · 3794×1836 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
+| [@aimikoda 的 MiniMax H3 社区视频案例](https://x.com/aimikoda/status/2086782084723405173) | 15s · 2944×1248 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [@da2el2da_eichi 的 MiniMax H3 社区视频案例](https://x.com/da2el2da_eichi/status/2086747292347023752) | 8s · 576×736 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@aidenguoai 的 MiniMax H3 社区视频案例](https://x.com/aidenguoai/status/2086761559989112965) | 15s · 1344×768 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@Tail_hammer 的 MiniMax H3 社区视频案例](https://x.com/Tail_hammer/status/2086754979625447658) | 10s · 1344×1856 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@ojiji2025 的 MiniMax H3 动作与视觉特效案例](https://x.com/ojiji2025/status/2086839812234059832) | 15s · 1440×1440 · square | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [@dobe1919 的 MiniMax H3 社区视频案例](https://x.com/dobe1919/status/2086794038737539077) | 15s · 768×576 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@AlfredAlfer77 的 MiniMax H3 音乐视频案例](https://x.com/AlfredAlfer77/status/2086954503635419578) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [@FutureVibesAi 的 MiniMax H3 社区视频案例 #1](https://x.com/FutureVibesAi/status/2086777152666796255) | 15s · 1920×1080 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@Lianaalane 的 MiniMax H3 动作与视觉特效案例](https://x.com/Lianaalane/status/2086730655161823597) | 15s · 2560×1440 · landscape | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
+| [@gizakdag 的 MiniMax H3 社区视频案例](https://x.com/gizakdag/status/2086774589426643034) | 12s · 1920×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [@JayKay65220066 的 MiniMax H3 社区视频案例](https://x.com/JayKay65220066/status/2086769538666779063) | 15s · 1344×768 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@HustleXR 的 MiniMax H3 本地生成案例](https://x.com/HustleXR/status/2086716196011786447) | 38s · 1280×720 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
+| [@cocktailpeanut 的 MiniMax H3 社区视频案例](https://x.com/cocktailpeanut/status/2086879654116495564) | 14s · 832×480 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [@minima_ai 的 MiniMax H3 音乐视频案例](https://x.com/minima_ai/status/2086950723908960413) | 176s · 1920×1080 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [@israfill 的 MiniMax H3 模型对比案例](https://x.com/israfill/status/2086869019995582600) | 15s · 3840×2160 · landscape | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [@AIArtAlchemist 的 MiniMax H3 音乐视频案例](https://x.com/AIArtAlchemist/status/2086654654759477391) | 30s · 960×544 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [@nanyuan0412 的 MiniMax H3 社区视频案例](https://x.com/nanyuan0412/status/2086761271228277102) | 15s · 1344×768 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@_GAi92 的 MiniMax H3 社区视频案例](https://x.com/_GAi92/status/2086872372968099940) | 8s · 1504×832 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@Mayz1169 的 MiniMax H3 社区视频案例](https://x.com/Mayz1169/status/2086716748255187134) | 13s · 1920×1080 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@bluecatillust 的 MiniMax H3 本地生成案例](https://x.com/bluecatillust/status/2086945818939211965) | 5s · 576×736 · portrait | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
+| [@C_of_Creativity 的 MiniMax H3 本地生成案例](https://x.com/C_of_Creativity/status/2086919173100404744) | 180s · 1280×720 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
+| [@SushiNFTart 的 MiniMax H3 广告视频案例](https://x.com/SushiNFTart/status/2086663477687705873) | 10s · 1280×720 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [@mirochill 的 MiniMax H3 社区视频案例](https://x.com/mirochill/status/2086838059509658109) | 30s · 640×352 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@C12592947592 的 MiniMax H3 社区视频案例](https://x.com/C12592947592/status/2086835787883266098) | 10s · 864×480 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@awesome_visuals 的 MiniMax H3 社区视频案例](https://x.com/awesome_visuals/status/2086887047558475955) | 15s · 1080×1080 · square | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@Toshi_nyaruo_AI 的 MiniMax H3 音乐视频案例](https://x.com/Toshi_nyaruo_AI/status/2086731522586062868) | 7s · 608×1056 · portrait | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [@Artedeingenio 的 MiniMax H3 社区视频案例](https://x.com/Artedeingenio/status/2086737521606627681) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@tebasaki3D 的 MiniMax H3 本地生成案例](https://x.com/tebasaki3D/status/2086776767768059941) | 16s · 2432×1344 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
+| [@ponzponz15 的 MiniMax H3 社区视频案例](https://x.com/ponzponz15/status/2086755247909949636) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@AizawaAisePhoto 的 MiniMax H3 模型对比案例](https://x.com/AizawaAisePhoto/status/2086732414567751957) | 15s · 720×1280 · portrait | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [@Cardoso 的 MiniMax H3 本地生成案例](https://x.com/Cardoso/status/2086819464528412709) | 31s · 576×448 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
+| [@PhotogenicWeekE 的 MiniMax H3 角色对白案例](https://x.com/PhotogenicWeekE/status/2086705799766900805) | 15s · 1104×1920 · portrait | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [@Saiko_AIch 的 MiniMax H3 模型对比案例](https://x.com/Saiko_AIch/status/2086817541507493972) | 15s · 1112×834 · landscape | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [@gmi_cloud 的 MiniMax H3 舞蹈视频案例](https://x.com/gmi_cloud/status/2086976751335551335) | 15s · 3280×1692 · landscape | `MiniMax H3` `舞蹈视频` `来源未公开 Prompt` `X 原帖` |
+| [@777_shinta 的 MiniMax H3 社区视频案例](https://x.com/777_shinta/status/2086920526883422474) | 7s · 800×1312 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@pinkshihtzu 的 MiniMax H3 社区视频案例](https://x.com/pinkshihtzu/status/2086839530901078239) | 45s · 1920×1080 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@Strength04_X 的 MiniMax H3 音乐视频案例](https://x.com/Strength04_X/status/2086800473957490829) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [@Strength04_X 的 MiniMax H3 社区视频案例](https://x.com/Strength04_X/status/2086861788466090391) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@steftranquillin 的 MiniMax H3 模型对比案例](https://x.com/steftranquillin/status/2086731061074002222) | 15s · 2560×1440 · landscape | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [@HirokaKoizumi 的 MiniMax H3 音乐视频案例](https://x.com/HirokaKoizumi/status/2086657829990240339) | 56s · 1920×1080 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [@gosrum 的 MiniMax H3 社区视频案例](https://x.com/gosrum/status/2086746548357284233) | 20s · 832×1248 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@Diplomeme 的 MiniMax H3 动作与视觉特效案例](https://x.com/Diplomeme/status/2086833428713116099) | 15s · 1280×720 · landscape | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
+| [@Luna_R4ze 的 MiniMax H3 本地生成案例](https://x.com/Luna_R4ze/status/2086895104455762130) | 10s · 1376×768 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
+| [@aihonobono2023 的 MiniMax H3 角色对白案例](https://x.com/aihonobono2023/status/2086648732993327204) | 38s · 1280×736 · landscape | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [@jun1228909 的 MiniMax H3 本地生成案例](https://x.com/jun1228909/status/2086652506340557218) | 5s · 1920×1088 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
+| [@FutureVibesAi 的 MiniMax H3 社区视频案例 #2](https://x.com/FutureVibesAi/status/2086873055641629136) | 15s · 1920×1080 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@guriham_lab 的 MiniMax H3 本地生成案例](https://x.com/guriham_lab/status/2086747822553190866) | 5s · 720×1280 · portrait | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
+| [@iamrealsnow 的 MiniMax H3 动作与视觉特效案例](https://x.com/iamrealsnow/status/2086826832649941435) | 30s · 1920×1080 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [@PhotogenicWeekE 的 MiniMax H3 社区视频案例](https://x.com/PhotogenicWeekE/status/2086753713029583219) | 21s · 1920×1104 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@reiQjo 的 MiniMax H3 社区视频案例](https://x.com/reiQjo/status/2086754802021892454) | 15s · 720×1280 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@Alone1Moon 的 MiniMax H3 本地生成案例](https://x.com/Alone1Moon/status/2086920526052655286) | 15s · 1664×2496 · portrait | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
+| [@monaka_aiart 的 MiniMax H3 社区视频案例](https://x.com/monaka_aiart/status/2086650241370247205) | 10s · 928×1664 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@s3nhxx 的 MiniMax H3 本地生成案例](https://x.com/s3nhxx/status/2086800107362509190) | 15s · 1024×768 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
+| [@joshesye 的 MiniMax H3 社区视频案例](https://x.com/joshesye/status/2086805066686603524) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@hAru_mAki_ch 的 MiniMax H3 社区视频案例](https://x.com/hAru_mAki_ch/status/2086804027556372803) | 30s · 1280×704 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@Haruka1425054 的 MiniMax H3 社区视频案例](https://x.com/Haruka1425054/status/2086785719604052241) | 18s · 1088×608 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [@makotwi0104 的 MiniMax H3 本地生成案例](https://x.com/makotwi0104/status/2086704420587458621) | 15s · 1440×1920 · portrait | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
+| [@jerrod_lew 的 MiniMax H3 社区视频案例](https://x.com/jerrod_lew/status/2086841608746553784) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
