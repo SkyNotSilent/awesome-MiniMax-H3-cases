@@ -1,42 +1,47 @@
 <div align="center">
 
-# Awesome MiniMax H3
+# Awesome MiniMax H3 Video Examples
 
-### Watch MiniMax H3 video examples; copy prompts only when creators publish them
+### 227 source-attributed MiniMax H3 / Hailuo H3 videos, playable in your browser
 
-[![Website](https://img.shields.io/badge/Live-H3_Field_Notes-d8ff3e?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/)
-[![Cases](https://img.shields.io/badge/public_cases-227-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
+[![Video Gallery](https://img.shields.io/badge/Watch-Live_Video_Gallery-d8ff3e?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/en/)
+[![Examples](https://img.shields.io/badge/video_examples-227-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
+[![X Cases](https://img.shields.io/badge/original_X_cases-224-f5f5ed?style=flat-square&labelColor=0a0b09)](./data/cases.json)
 [![CI](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml/badge.svg)](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg?style=flat-square)](./LICENSE)
 
-[Explore the English library](https://h3-field-notes-production.up.railway.app/en/) · [Toolkit](https://h3-field-notes-production.up.railway.app/en/toolkit/) · [FAQ](https://h3-field-notes-production.up.railway.app/en/faq/) · [中文说明](./README.zh-CN.md) · [Contribute](./CONTRIBUTING.md)
+[▶ Browse all 227 video examples](https://h3-field-notes-production.up.railway.app/en/) · [Browse on GitHub](./CATALOG.md) · [中文说明](./README.zh-CN.md) · [Contribute](./CONTRIBUTING.md)
 
 </div>
 
-![H3 Field Notes website](./public/og-image.jpg)
+[![H3 Field Notes — browse 227 MiniMax H3 video examples](./public/og-image.jpg)](https://h3-field-notes-production.up.railway.app/en/)
 
-Awesome MiniMax H3 is a bilingual, source-attributed gallery of **MiniMax H3 video examples** from X and official public scripts. It is also useful for searches around **Hailuo H3 / Hailuo 3.0**, **MiniMax H3 prompts**, **MiniMax H3 ComfyUI workflows**, T2VA, FL2VA, Ref2VA, native audio, camera movement, dialogue, and character consistency.
+**See what MiniMax H3 can actually produce before you spend time setting it up.** MiniMax H3 is also commonly searched as Hailuo H3 or Hailuo 3.0. Browse real outputs from X and MiniMax's official examples, search by keyword, and filter by generation mode, category, style, or scene. Open any case to watch it inside the gallery and jump back to the original source.
 
-The project combines a case-first bilingual website, a machine-readable dataset, and a browser-first X discovery workflow. Every public case keeps its original source. A prompt is shown only when the creator or an official public script published that exact text; otherwise the case explicitly records that no public prompt is available. The project never generates, rewrites, reconstructs, reverse-engineers, or decomposes prompts from a video. Uncertain discoveries stay in a review queue.
+## Why use this library?
 
-## What is included
-
-| Resource | Purpose |
+| What you get | Why it matters |
 | --- | --- |
-| [English visual case library](https://h3-field-notes-production.up.railway.app/en/) | Watch and filter MiniMax H3 examples by mode, category, visual style, scene, and keyword |
-| [`data/cases.json`](./data/cases.json) | Source-attributed MiniMax H3 video cases, public prompt records, and metadata |
-| [`CATALOG.md`](./CATALOG.md) | Lightweight GitHub-native case index |
-| [`agents/skills/minimax-h3-prompt-library`](./agents/skills/minimax-h3-prompt-library/) | Agent Skill for finding cases and retrieving verbatim public prompts; it does not write prompts |
-| [`docs/DISCOVERY_WORKFLOW.md`](./docs/DISCOVERY_WORKFLOW.md) | Browser-based X discovery, deduplication, review, and attribution rules |
+| **227 watchable video examples** | Judge MiniMax H3 / Hailuo H3 by real output, not a feature list |
+| **Fast search and filters** | Find relevant T2VA, FL2VA, Ref2VA, cinematic, dance, dialogue, music, advertising, and local-generation cases |
+| **Case-specific covers and loading states** | Know what each video contains before opening it and whether the X player is still loading |
+| **Original creator and source on every case** | Verify context, publication date, and attribution without hunting for the post |
+| **Verbatim public prompts when available** | Copy the exact prompt only when the creator or official script published it; missing prompts are never invented |
+| **Chinese and English routes** | Browse the same library in either language without mixed-language pages |
 
-## Browse by intent
+**Current snapshot:** 227 video examples · 224 original X cases · 3 official reproductions · 17 verbatim public prompts.
 
-| Intent | Best entry point |
+No account, API key, or local model setup is required to browse the public gallery.
+
+## Start exploring
+
+| What you want to do | Open |
 | --- | --- |
-| Watch MiniMax H3 / Hailuo H3 video examples | [English visual case library](https://h3-field-notes-production.up.railway.app/en/) |
-| Find creator-published MiniMax H3 prompts | [`data/cases.json`](./data/cases.json) and [`llms-full.txt`](./public/llms-full.txt) |
-| Compare T2VA, FL2VA, and Ref2VA | [`CATALOG.md`](./CATALOG.md) |
-| Set up MiniMax H3 with ComfyUI or acceleration tools | [Tutorials and deployment resources](https://h3-field-notes-production.up.railway.app/en/toolkit/) |
+| Watch and filter every MiniMax H3 video example | [Live visual gallery](https://h3-field-notes-production.up.railway.app/en/) |
+| Scan all cases without leaving GitHub | [`CATALOG.md`](./CATALOG.md) |
+| Query the source-attributed dataset | [`data/cases.json`](./data/cases.json) or [`llms-full.txt`](./public/llms-full.txt) |
+| Find a case through an Agent Skill | [`minimax-h3-prompt-library`](./agents/skills/minimax-h3-prompt-library/) |
+| Set up MiniMax H3, ComfyUI, or acceleration tools | [Tutorials and deployment resources](https://h3-field-notes-production.up.railway.app/en/toolkit/) |
 
 ## H3 tutorials and deployment guides
 

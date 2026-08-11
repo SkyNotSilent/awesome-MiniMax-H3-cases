@@ -1,37 +1,45 @@
 <div align="center">
 
-# Awesome MiniMax H3
+# Awesome MiniMax H3 视频案例库
 
-### 站内观看 MiniMax H3 视频案例；仅在原作者公开时展示 Prompt 原文
+### 227 个来源可追溯、可在站内观看的 MiniMax H3 / Hailuo H3 真实视频案例
 
-[在线案例库](https://h3-field-notes-production.up.railway.app/) · [工具链](https://h3-field-notes-production.up.railway.app/toolkit/) · [常见问题](https://h3-field-notes-production.up.railway.app/faq/) · [English](./README.md) · [参与贡献](./CONTRIBUTING.md)
+[![视频案例库](https://img.shields.io/badge/立即观看-视频案例库-d8ff3e?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/)
+[![案例数量](https://img.shields.io/badge/视频案例-227-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
+[![X 原帖](https://img.shields.io/badge/X_原帖案例-224-f5f5ed?style=flat-square&labelColor=0a0b09)](./data/cases.json)
+[![CI](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml/badge.svg)](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml)
+
+[▶ 浏览全部 227 个视频案例](https://h3-field-notes-production.up.railway.app/) · [在 GitHub 查看案例](./CATALOG.md) · [English](./README.md) · [参与贡献](./CONTRIBUTING.md)
 
 </div>
 
-![H3 Field Notes 网站](./public/og-image.jpg)
+[![H3 Field Notes — 浏览 227 个 MiniMax H3 视频案例](./public/og-image.jpg)](https://h3-field-notes-production.up.railway.app/)
 
-Awesome MiniMax H3 是一个中英双语、带来源追踪的开源 AI 视频案例库，收录来自 X 与官方公开脚本的 **MiniMax H3 视频案例**。它同时覆盖 **Hailuo H3 / Hailuo 3.0**、**MiniMax H3 Prompt**、**MiniMax H3 ComfyUI 工作流**、T2VA、FL2VA、Ref2VA、原生音频、运镜、对白、口型与角色一致性等检索需求。
+**在花时间安装模型或研究参数之前，先看 MiniMax H3 实际能生成什么。** MiniMax H3 也常被搜索为 Hailuo H3 或 Hailuo 3.0。这里汇总来自 X 与 MiniMax 官方公开示例的真实输出，可以按关键词、生成模式、分类、风格与场景筛选。打开任意案例即可站内观看，并能随时回到原作者帖子。
 
-项目由三部分组成：案例优先的中英双语网站、机器可读数据，以及使用 Mac 登录态浏览器自动发现 X 案例的审核流程。公开案例都保留原始来源。只有原作者或官方公开脚本逐字发布了 Prompt，网站才呈现该原文；原帖未公开时会明确标注没有公开 Prompt。项目绝不根据视频生成、改写、重建、反推或拆解提示词。不确定内容只进入候选队列，不会超时自动发布。
+## 为什么使用这个案例库？
 
-当前共有 227 个公开案例：3 个来自 MiniMax 官方公开脚本，224 个来自可追溯原帖的 X 社区案例；其中 17 条保留了官方或创作者逐字公开的 Prompt，其余均明确标注“来源未公开”。内容覆盖本地 ComfyUI 性能测试、图片与多模态参考、模型对比、音乐视频、多镜头短片、原生音频和后期工作流。X 案例通过官方嵌入播放器在站内直接播放；确实无法嵌入时，可在留存许可记录后启用自托管兜底。
-
-## 核心内容
-
-| 资源 | 用途 |
+| 你能得到什么 | 对用户的价值 |
 | --- | --- |
-| [可视化案例库](https://h3-field-notes-production.up.railway.app/) | 按生成模式、分类、风格、场景和关键词筛选 |
-| [`data/cases.json`](./data/cases.json) | 带来源与核验状态的视频案例、公开 Prompt 原文记录和元数据 |
-| [`CATALOG.md`](./CATALOG.md) | GitHub 原生案例索引 |
-| [`agents/skills/minimax-h3-prompt-library`](./agents/skills/minimax-h3-prompt-library/) | 用于检索案例与公开 Prompt 原文的 Agent Skill；不负责写提示词 |
+| **227 个可观看视频案例** | 不读功能列表，直接根据真实输出判断 MiniMax H3 / Hailuo H3 的效果 |
+| **关键词搜索与多维筛选** | 快速找到 T2VA、FL2VA、Ref2VA、电影、舞蹈、对白、音乐、广告与本地生成案例 |
+| **每条案例独立封面与加载状态** | 点开前先看到视频内容，并能分辨 X 播放器是在加载还是加载失败 |
+| **每条案例保留作者与原帖** | 无需四处找来源，即可核对上下文、发布日期和原作者 |
+| **仅展示来源公开的 Prompt 原文** | 原作者公开时可以直接复制；未公开时绝不反推、补写或伪造 |
+| **中英文完全隔离** | 可以在中文或英文界面浏览同一套案例，不混杂另一种语言 |
 
-## 按需求查找
+**当前规模：** 227 个视频案例 · 224 个 X 原帖案例 · 3 个官方复现案例 · 17 条公开 Prompt 原文。
 
-| 需求 | 入口 |
+浏览公开案例不需要账号、API Key 或本地部署模型。
+
+## 直接开始
+
+| 你想做什么 | 入口 |
 | --- | --- |
-| 直接观看 MiniMax H3 / Hailuo H3 视频案例 | [可视化案例库](https://h3-field-notes-production.up.railway.app/) |
-| 查找创作者公开的 MiniMax H3 Prompt | [`data/cases.json`](./data/cases.json) 与 [`llms-full.txt`](./public/llms-full.txt) |
-| 对比 T2VA、FL2VA、Ref2VA | [`CATALOG.md`](./CATALOG.md) |
+| 站内观看并筛选全部 MiniMax H3 视频案例 | [可视化案例库](https://h3-field-notes-production.up.railway.app/) |
+| 不离开 GitHub 快速浏览全部案例 | [`CATALOG.md`](./CATALOG.md) |
+| 查询带来源的结构化数据 | [`data/cases.json`](./data/cases.json) 或 [`llms-full.txt`](./public/llms-full.txt) |
+| 让 Agent 帮你查找案例 | [`minimax-h3-prompt-library`](./agents/skills/minimax-h3-prompt-library/) |
 | 部署 MiniMax H3、ComfyUI 与加速工具 | [教程与部署资源](https://h3-field-notes-production.up.railway.app/toolkit/) |
 
 ## H3 教程与部署入口
