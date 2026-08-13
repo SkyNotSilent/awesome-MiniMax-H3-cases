@@ -443,7 +443,7 @@ function renderCasePage(item, locale) {
     keywords,
     isBasedOn: item.sourceUrl,
     sameAs: item.sourceUrl,
-    ...(hasHostedVideo ? { contentUrl: item.mediaUrl } : {}),
+    ...(hasHostedVideo ? { contentUrl: absolute(item.mediaUrl) } : {}),
   }
   const structuredData = {
     '@context': 'https://schema.org',
@@ -460,7 +460,7 @@ function renderCasePage(item, locale) {
     ],
   }
   const videoMeta = hasHostedVideo
-    ? `  <meta property="og:video" content="${escapeHtml(item.mediaUrl)}" />
+    ? `  <meta property="og:video" content="${escapeHtml(absolute(item.mediaUrl))}" />
   <meta property="og:video:type" content="video/mp4" />`
     : ''
   const embedded = hasHostedVideo ? null : renderXEmbed(item, copy, labels, poster)

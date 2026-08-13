@@ -3,6 +3,8 @@ import { realpath, stat } from 'node:fs/promises'
 import { createServer } from 'node:http'
 import { basename, extname, isAbsolute, relative, resolve, sep } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { GetObjectCommand, HeadObjectCommand, S3Client } from '@aws-sdk/client-s3'
+import { getSignedUrl } from '@aws-sdk/s3-request-presigner'
 
 const DEFAULT_DIST_DIR = fileURLToPath(new URL('../dist/', import.meta.url))
 
@@ -153,7 +155,50 @@ function parseRequestTarget(requestUrl) {
   return { decodedPath, rawPath, search }
 }
 
-export async function createStaticServer({ distDir = DEFAULT_DIST_DIR, logger = console } = {}) {
+function createVideoStoreFromEnv() {
+  const endpoint = process.env.VIDEO_S3_ENDPOINT
+  const accessKeyId = process.env.VIDEO_S3_ACCESS_KEY_ID
+  const secretAccessKey = process.env.VIDEO_S3_SECRET_ACCESS_KEY
+  const bucket = process.env.VIDEO_S3_BUCKET
+  if (!endpoint || !accessKeyId || !secretAccessKey || !bucket) return null
+
+  const client = new S3Client({
+    endpoint,
+    region: process.env.VIDEO_S3_REGION || 'auto',
+    forcePathStyle: process.env.VIDEO_S3_FORCE_PATH_STYLE === 'true',
+    credentials: { accessKeyId, secretAccessKey },
+  })
+
+  return {
+    async sign(key, method) {
+      const input = { Bucket: bucket, Key: `videos/${key}.mp4` }
+      const command = method === 'HEAD'
+        ? new HeadObjectCommand(input)
+        : new GetObjectCommand({ ...input, ResponseContentType: 'video/mp4' })
+      return getSignedUrl(client, command, { expiresIn: 3_600 })
+    },
+  }
+}
+
+async function redirectVideo(request, response, videoStore, decodedPath) {
+  const match = decodedPath.match(/^\/media\/([a-zA-Z0-9._-]+)\.mp4$/)
+  if (!match) return false
+  if (!videoStore) {
+    writeText(response, request.method, 503, '<!doctype html><title>503 Video Storage Unavailable</title><h1>Video storage unavailable.</h1>')
+    return true
+  }
+
+  const signedUrl = await videoStore.sign(match[1], request.method)
+  response.writeHead(307, {
+    'Cache-Control': 'private, max-age=300',
+    Location: signedUrl,
+    'X-Content-Type-Options': 'nosniff',
+  })
+  response.end()
+  return true
+}
+
+export async function createStaticServer({ distDir = DEFAULT_DIST_DIR, logger = console, videoStore = createVideoStoreFromEnv() } = {}) {
   const distRoot = await realpath(resolve(distDir))
   const rootStats = await stat(distRoot)
   if (!rootStats.isDirectory()) throw new Error(`Static root is not a directory: ${distRoot}`)
@@ -172,6 +217,8 @@ export async function createStaticServer({ distDir = DEFAULT_DIST_DIR, logger = 
         writeText(response, request.method, 400, '<!doctype html><title>400 Bad Request</title><h1>400 Bad Request</h1>')
         return
       }
+
+      if (await redirectVideo(request, response, videoStore, target.decodedPath)) return
 
       const requestedPath = resolve(distRoot, `.${target.decodedPath}`)
       if (!isPathInside(distRoot, requestedPath)) {

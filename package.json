@@ -12,6 +12,7 @@
     "test": "vitest run",
     "classify": "node scripts/classify-candidates.mjs",
     "review:video": "node scripts/review-video.mjs",
+    "mirror:videos": "node scripts/mirror-videos.mjs",
     "promote": "node scripts/promote-candidates.mjs",
     "cost": "node scripts/estimate-cost.mjs",
     "validate:data": "node scripts/validate-data.mjs",
@@ -20,12 +21,14 @@
     "seo": "node scripts/build-seo-pages.mjs"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1109.0",
+    "@aws-sdk/s3-request-presigner": "^3.1109.0",
     "@vitejs/plugin-react": "latest",
-    "vite": "latest",
-    "typescript": "latest",
+    "lucide-react": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "lucide-react": "latest"
+    "typescript": "latest",
+    "vite": "latest"
   },
   "devDependencies": {
     "@eslint/js": "latest",

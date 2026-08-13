@@ -36,6 +36,9 @@ for (const [index, item] of cases.entries()) {
   if (item.sourceType === 'x' && !item.posterUrl?.startsWith('/posters/x/')) {
     errors.push(`${at}.posterUrl must use a case-specific X video cover`)
   }
+  if (item.mediaUrl !== `/media/${item.id}.mp4`) {
+    errors.push(`${at}.mediaUrl must point to its hosted case video`)
+  }
   for (const key of ['styles', 'scenes', 'inputTypes', 'tags']) {
     if (!Array.isArray(item[key]) || item[key].length === 0) errors.push(`${at}.${key} must be a non-empty array`)
   }
@@ -49,7 +52,7 @@ for (const [index, item] of cases.entries()) {
   if (item.approvedAt && Number.isNaN(Date.parse(item.approvedAt))) errors.push(`${at}.approvedAt must be a valid date`)
   try {
     new URL(item.sourceUrl)
-    if (item.mediaUrl) new URL(item.mediaUrl)
+    new URL(item.mediaUrl, 'https://h3-field-notes-production.up.railway.app')
   } catch {
     errors.push(`${at} contains an invalid URL`)
   }

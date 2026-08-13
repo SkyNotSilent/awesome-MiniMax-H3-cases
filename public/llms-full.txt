@@ -1,6 +1,6 @@
 # H3 Field Notes — Complete MiniMax H3 Case and Tutorial Index
 
-Generated from data/cases.json. Total: 602 cases. Verbatim public prompts: 25.
+Generated from data/cases.json. Total: 599 cases. Verbatim public prompts: 25.
 
 ## Tutorials
 
@@ -1066,25 +1066,6 @@ Use the attached character reference (Image1) and audio track as the timing guid
 - Prompt provenance: not-published
 - Chinese summary: 在 ComfyUI 中结合 Ideogram 与 MiniMax H3 制作一段科技表现主义风格的 AI 视频。
 - English summary: Combines Ideogram and MiniMax H3 inside ComfyUI to produce an AI video in a techspressionist style.
-- Verbatim public prompt: not published by the source
-
-## Visuals for a Suno Track
-
-- ID: x-aiartalchemist-2086609289037353151
-- 中文标题: 为 Suno 音源生成画面
-- English title: Visuals for a Suno Track
-- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-aiartalchemist-2086609289037353151/
-- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-aiartalchemist-2086609289037353151/
-- Original source: https://x.com/AIArtAlchemist/status/2086609289037353151
-- Author: NIKKO
-- Published: 2026-08-10T00:23:16.000Z
-- Model: MiniMax H3 (creator-attributed)
-- Mode: Ref2VA
-- Category: Local Generation & Audio
-- Output: 15s, 608×352, landscape
-- Prompt provenance: not-published
-- Chinese summary: 将 Suno 生成的音源交给 MiniMax H3 配画面，并记录 608×352 分辨率下全身人物面部细节的局限。
-- English summary: Uses MiniMax H3 to add visuals to a Suno-generated track and notes the limits of facial detail in full-body shots at 608x352.
 - Verbatim public prompt: not published by the source
 
 ## Twenty-Second H3 Test
@@ -3307,25 +3288,6 @@ Final output:
 - English summary: A MiniMax H3 community video example published by @pin_knuts on 2026-08-10, with a native-video output of 8s · 640×832. The source did not publish a complete prompt, so this library does not infer or complete one.
 - Verbatim public prompt: not published by the source
 
-## MiniMax H3 Music Video by @irohaseisaku
-
-- ID: x-2086641782839005498
-- 中文标题: @irohaseisaku 的 MiniMax H3 音乐视频案例
-- English title: MiniMax H3 Music Video by @irohaseisaku
-- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2086641782839005498/
-- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2086641782839005498/
-- Original source: https://x.com/irohaseisaku/status/2086641782839005498
-- Author: いろは製作所
-- Published: 2026-08-10T02:32:23.000Z
-- Model: MiniMax H3（创作者标注）
-- Mode: Unknown
-- Category: Music Video
-- Output: 5s, 864×480, landscape
-- Prompt provenance: not-published
-- Chinese summary: @irohaseisaku 于 2026-08-10 公开发布的 MiniMax H3 音乐视频案例，原生视频规格为 5 秒 · 864×480。原帖未公开完整 Prompt，本库不反推或补写。
-- English summary: A MiniMax H3 music video published by @irohaseisaku on 2026-08-10, with a native-video output of 5s · 864×480. The source did not publish a complete prompt, so this library does not infer or complete one.
-- Verbatim public prompt: not published by the source
-
 ## MiniMax H3 Character Dialogue by @eggkyunio
 
 - ID: x-2086639914679247062
@@ -5227,25 +5189,6 @@ Talk about life, but make jokes.
 - Prompt provenance: not-published
 - Chinese summary: @JayKay65220066 于 2026-08-10 公开发布的 MiniMax H3 社区视频案例，原生视频规格为 15 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。
 - English summary: A MiniMax H3 community video example published by @JayKay65220066 on 2026-08-10, with a native-video output of 15s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.
-- Verbatim public prompt: not published by the source
-
-## MiniMax H3 Local Generation by @HustleXR
-
-- ID: x-2086716196011786447
-- 中文标题: @HustleXR 的 MiniMax H3 本地生成案例
-- English title: MiniMax H3 Local Generation by @HustleXR
-- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2086716196011786447/
-- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2086716196011786447/
-- Original source: https://x.com/HustleXR/status/2086716196011786447
-- Author: Zayan
-- Published: 2026-08-10T07:28:05.000Z
-- Model: MiniMax H3（创作者标注）
-- Mode: Unknown
-- Category: Local Generation
-- Output: 38s, 1280×720, landscape
-- Prompt provenance: not-published
-- Chinese summary: @HustleXR 于 2026-08-10 公开发布的 MiniMax H3 本地生成案例，原生视频规格为 38 秒 · 1280×720。原帖未公开完整 Prompt，本库不反推或补写。
-- English summary: A MiniMax H3 local generation published by @HustleXR on 2026-08-10, with a native-video output of 38s · 1280×720. The source did not publish a complete prompt, so this library does not infer or complete one.
 - Verbatim public prompt: not published by the source
 
 ## MiniMax H3 Community Video Example by @cocktailpeanut
