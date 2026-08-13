@@ -11,6 +11,7 @@ import {
   Search,
   SlidersHorizontal,
   Sparkles,
+  TriangleAlert,
   X,
 } from 'lucide-react'
 import rawCases from '../data/cases.json'
@@ -61,6 +62,62 @@ const modes: Array<'ALL' | CaseMode> = ['ALL', 'T2VA', 'FL2VA', 'Ref2VA', 'Unkno
 const allCategories = [...new Set(cases.map((item) => item.category))]
 const allStyles = [...new Set(cases.flatMap((item) => item.styles))]
 const allScenes = [...new Set(cases.flatMap((item) => item.scenes))]
+
+function XMark({ size = 16 }: { size?: number }) {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="currentColor">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.657l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z" />
+    </svg>
+  )
+}
+
+function HostedVideo({ item, language, title }: { item: VideoCase; language: Language; title: string }) {
+  const [state, setState] = useState<'loading' | 'ready' | 'error'>('loading')
+  const loading = language === 'zh' ? '正在加载站内视频…' : 'Loading hosted video…'
+  const failed = language === 'zh' ? '视频暂时无法加载' : 'Video is temporarily unavailable'
+  const openX = language === 'zh' ? '在 X 打开原帖' : 'Open original post on X'
+
+  return (
+    <div className="hosted-video" data-state={state}>
+      <video
+        src={item.mediaUrl || undefined}
+        poster={item.posterUrl}
+        controls
+        autoPlay
+        playsInline
+        preload="metadata"
+        onLoadStart={() => setState('loading')}
+        onCanPlay={() => setState('ready')}
+        onError={() => setState('error')}
+      />
+      {state === 'loading' && (
+        <div className="hosted-video-status" role="status" aria-live="polite">
+          <span className="hosted-video-spinner" aria-hidden="true" />
+          <strong>{loading}</strong>
+        </div>
+      )}
+      {state === 'error' && (
+        <div className="hosted-video-status hosted-video-error" role="alert">
+          <TriangleAlert size={28} aria-hidden="true" />
+          <strong>{failed}</strong>
+          {item.sourceType === 'x' && <a href={item.sourceUrl} target="_blank" rel="noreferrer"><XMark /> {openX}</a>}
+        </div>
+      )}
+      {item.sourceType === 'x' && (
+        <a
+          className="x-source-icon"
+          href={item.sourceUrl}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`${openX}: ${title}`}
+          title={openX}
+        >
+          <XMark size={17} />
+        </a>
+      )}
+    </div>
+  )
+}
 
 function App() {
   const route = resolveRoute(window.location.pathname)
@@ -344,20 +401,16 @@ function CaseCard({
   return (
     <article className="case-card" style={{ '--order': index } as React.CSSProperties}>
       <button className="media" type="button" onClick={onOpen} aria-label={t.open(title)}>
-        {item.mediaUrl ? (
-          <video src={item.mediaUrl} poster={item.posterUrl} muted loop playsInline preload="metadata" />
-        ) : (
-          <img
-            src={item.posterUrl}
-            alt={t.cover(title)}
-            loading="lazy"
-            decoding="async"
-            onError={(event) => {
-              event.currentTarget.onerror = null
-              event.currentTarget.src = '/posters/x-community.svg'
-            }}
-          />
-        )}
+        <img
+          src={item.posterUrl}
+          alt={t.cover(title)}
+          loading="lazy"
+          decoding="async"
+          onError={(event) => {
+            event.currentTarget.onerror = null
+            event.currentTarget.src = '/posters/x-community.svg'
+          }}
+        />
         <span className="media-scan" aria-hidden="true" />
         <span className="case-number">{String(index + 1).padStart(2, '0')}</span>
         <span className="duration"><Clock3 size={12} /> {item.duration}s</span>
@@ -570,7 +623,7 @@ function CaseDialog({ item, language, onClose }: { item: VideoCase; language: La
         <button className="dialog-close" type="button" onClick={onClose} aria-label={t.close}><X size={19} /></button>
         <div className="dialog-video">
           {item.mediaUrl ? (
-            <video src={item.mediaUrl} poster={item.posterUrl} controls autoPlay playsInline />
+            <HostedVideo item={item} language={language} title={title} />
           ) : (
             <XPostEmbed sourceUrl={item.sourceUrl} title={title} posterUrl={item.posterUrl} language={language} />
           )}

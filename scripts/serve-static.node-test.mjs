@@ -105,6 +105,34 @@ test('returns an actual 404 response and rejects unsupported methods', async () 
   assert.equal(post.headers.get('allow'), 'GET, HEAD')
 })
 
+test('redirects hosted video requests through a short-lived signed URL', async () => {
+  await new Promise((resolveClose) => server.close(resolveClose))
+  const signedRequests = []
+  server = await createStaticServer({
+    distDir: rootDir,
+    logger: { error() {} },
+    videoStore: {
+      async sign(key, method) {
+        signedRequests.push({ key, method })
+        return `https://storage.example/${key}.mp4?signature=test`
+      },
+    },
+  })
+  await new Promise((resolveListen, rejectListen) => {
+    server.once('error', rejectListen)
+    server.listen(0, '127.0.0.1', () => {
+      server.off('error', rejectListen)
+      resolveListen()
+    })
+  })
+
+  baseUrl = `http://127.0.0.1:${server.address().port}`
+  const response = await fetch(`${baseUrl}/media/x-123.mp4`, { redirect: 'manual' })
+  assert.equal(response.status, 307)
+  assert.equal(response.headers.get('location'), 'https://storage.example/x-123.mp4?signature=test')
+  assert.deepEqual(signedRequests, [{ key: 'x-123', method: 'GET' }])
+})
+
 test('blocks traversal syntax and symlinks that escape the static root', async () => {
   for (const path of ['/../secret.txt', '/%2e%2e/secret.txt', '/%2e%2e%2fsecret.txt', '/%5c..%5csecret.txt']) {
     const response = await rawRequest(path)
