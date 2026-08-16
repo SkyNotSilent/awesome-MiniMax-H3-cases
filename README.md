@@ -1,8 +1,8 @@
 <div align="center">
 
-# Awesome MiniMax H3 Video Examples
+# Awesome MiniMax H3 — Video Examples, Prompts & Tutorials
 
-### 631 source-attributed MiniMax H3 / Hailuo H3 videos, playable in your browser
+### 631 source-attributed videos with in-site playback · 27 public prompts · 13 source-checked tutorials
 
 **[English](./README.md)** · **[简体中文](./README.zh-CN.md)**
 

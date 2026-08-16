@@ -1,8 +1,8 @@
 <div align="center">
 
-# Awesome MiniMax H3 视频案例库
+# Awesome MiniMax H3 视频案例与实用教程
 
-### 631 个来源可追溯、可在站内观看的 MiniMax H3 / Hailuo H3 真实视频案例
+### 631 个来源可追溯、可站内观看的视频案例 · 27 条公开 Prompt · 13 条来源核验教程
 
 **[简体中文](./README.zh-CN.md)** · **[English](./README.md)**
 

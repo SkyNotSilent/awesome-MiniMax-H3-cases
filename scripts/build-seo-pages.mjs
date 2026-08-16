@@ -39,14 +39,14 @@ const pageDefinitions = [
     schemaType: 'CollectionPage',
     copy: {
       'zh-CN': {
-        title: 'MiniMax H3 视频案例与公开 Prompt — H3 Field Notes',
-        description: `MiniMax H3 视频案例库：收录 ${cases.length} 个可筛选、可追溯、可站内观看的真实案例，覆盖 Hailuo H3、文字生视频、图生视频与视频生视频；Prompt 仅按来源公开原文呈现。`,
-        keywords: 'MiniMax H3,MiniMax H3 视频案例,MiniMax H3 Prompt,Hailuo H3,Hailuo 3.0,海螺 H3,海螺 3.0,海螺 AI,AI 视频生成,text-to-video,image-to-video,video-to-video,H3 ComfyUI,T2VA,FL2VA,Ref2VA',
+        title: 'MiniMax H3 视频案例、公开 Prompt 与实用教程 — H3 Field Notes',
+        description: `浏览 ${cases.length} 个可筛选、可追溯、可站内观看的 MiniMax H3 / Hailuo H3 真实视频案例，获取来源公开 Prompt，并通过 ${tutorials.length} 条核验教程了解部署、工作流、加速与训练。`,
+        keywords: 'MiniMax H3,MiniMax H3 视频案例,MiniMax H3 Prompt,MiniMax H3 教程,Hailuo H3,Hailuo 3.0,海螺 H3,海螺 3.0,海螺 AI,AI 视频生成,text-to-video,image-to-video,video-to-video,H3 ComfyUI,T2VA,FL2VA,Ref2VA',
       },
       en: {
-        title: 'MiniMax H3 Video Examples & Public Prompts — H3 Field Notes',
-        description: `Browse ${cases.length} source-attributed MiniMax H3 video examples with in-site playback across text-to-video, image-to-video, and video-to-video. Prompts appear only when sources publish the complete text.`,
-        keywords: 'MiniMax H3,MiniMax H3 video examples,MiniMax H3 prompts,Hailuo H3,Hailuo 3.0,AI video generation,text-to-video,image-to-video,video-to-video,MiniMax H3 ComfyUI,T2VA,FL2VA,Ref2VA',
+        title: 'MiniMax H3 Video Examples, Public Prompts & Tutorials — H3 Field Notes',
+        description: `Browse ${cases.length} source-attributed MiniMax H3 / Hailuo H3 videos with in-site playback, use prompts only when sources publish them, and explore ${tutorials.length} checked guides for setup, workflows, acceleration, and training.`,
+        keywords: 'MiniMax H3,MiniMax H3 video examples,MiniMax H3 prompts,MiniMax H3 tutorials,Hailuo H3,Hailuo 3.0,AI video generation,text-to-video,image-to-video,video-to-video,MiniMax H3 ComfyUI,T2VA,FL2VA,Ref2VA',
       },
     },
   },
