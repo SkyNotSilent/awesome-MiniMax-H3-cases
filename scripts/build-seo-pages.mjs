@@ -56,14 +56,14 @@ const pageDefinitions = [
     schemaType: 'CollectionPage',
     copy: {
       'zh-CN': {
-        title: 'MiniMax H3 教程：Mac、部署、加速与音频 — H3 Field Notes',
-        description: 'MiniMax H3 实操教程入口：Apple Silicon 原生 h3.c、官方部署、Prompt Skill、Turbo LoRA、ComfyUI 长视频与音频工作流。',
-        keywords: 'MiniMax H3 教程,MiniMax H3 Mac,h3.c,h3-metal,MiniMax H3 部署,ComfyUI H3,h3-prompt-writing,MiniMax H3 Turbo LoRA,H3 Motion Context,H3 Audio',
+        title: 'MiniMax H3 教程与工具：部署、工作流、加速、训练 — H3 Field Notes',
+        description: 'MiniMax H3 生态教程入口：官方部署、Apple Silicon 原生推理、ComfyUI 导演工作流、Turbo 加速、长视频、音频、微调训练与资源导航。',
+        keywords: 'MiniMax H3 教程,MiniMax H3 Mac,h3.c,MiniMax H3 部署,ComfyUI H3,H3 Director,MiniMax H3 Turbo,H3 Motion Context,H3 Audio,MiniMax H3 微调',
       },
       en: {
-        title: 'MiniMax H3 Tutorials: Mac, Deployment, Acceleration and Audio — H3 Field Notes',
-        description: 'Practical MiniMax H3 tutorials for native Apple Silicon inference with h3.c, official deployment, Prompt Skills, Turbo LoRA, long-video chaining, and audio workflows.',
-        keywords: 'MiniMax H3 tutorials,MiniMax H3 Mac,h3.c,h3-metal,MiniMax H3 deployment,ComfyUI H3,h3-prompt-writing,MiniMax H3 Turbo LoRA,H3 Motion Context,H3 Audio',
+        title: 'MiniMax H3 Tutorials and Tools: Setup, Workflows, Speed, Training — H3 Field Notes',
+        description: 'A practical MiniMax H3 ecosystem guide for official setup, native Apple Silicon inference, ComfyUI director workflows, Turbo acceleration, long video, audio, fine-tuning, and resource maps.',
+        keywords: 'MiniMax H3 tutorials,MiniMax H3 Mac,h3.c,MiniMax H3 deployment,ComfyUI H3,H3 Director,MiniMax H3 Turbo,H3 Motion Context,H3 Audio,MiniMax H3 fine-tuning',
       },
     },
   },

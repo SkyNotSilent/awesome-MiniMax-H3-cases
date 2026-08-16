@@ -9,7 +9,7 @@
 [![Video Gallery](https://img.shields.io/badge/Watch-Live_Video_Gallery-d8ff3e?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/en/)
 [![Examples](https://img.shields.io/badge/video_examples-631-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
 [![Public Prompts](https://img.shields.io/badge/verbatim_prompts-27-f5f5ed?style=flat-square&labelColor=0a0b09)](./data/cases.json)
-[![Tutorials](https://img.shields.io/badge/source--checked_tutorials-5-f5f5ed?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/en/tutorials/)
+[![Tutorials](https://img.shields.io/badge/source--checked_tutorials-13-f5f5ed?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/en/tutorials/)
 [![GitHub Stars](https://img.shields.io/github/stars/SkyNotSilent/awesome-minimax-h3?style=flat-square&labelColor=0a0b09&color=d8ff3e)](https://github.com/SkyNotSilent/awesome-minimax-h3/stargazers)
 [![CI](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml/badge.svg)](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg?style=flat-square)](./LICENSE)
@@ -58,9 +58,11 @@ No account, API key, or local model setup is required to browse the public galle
 | Scan all cases without leaving GitHub | [`CATALOG.md`](./CATALOG.md) |
 | Query the source-attributed dataset | [`data/cases.json`](./data/cases.json) or [`llms-full.txt`](./public/llms-full.txt) |
 | Find a case through an Agent Skill | [`minimax-h3-prompt-library`](./agents/skills/minimax-h3-prompt-library/) |
-| Set up MiniMax H3 on Mac, ComfyUI, or acceleration tools | [Searchable H3 tutorials](https://h3-field-notes-production.up.railway.app/en/tutorials/) |
+| Choose an H3 setup, workflow, accelerator, training path, or resource index | [Searchable H3 ecosystem guide](https://h3-field-notes-production.up.railway.app/en/tutorials/) |
 
-## H3 tutorials and deployment guides
+## H3 tutorials and ecosystem guide
+
+The tutorial hub now explains 13 source-checked H3 projects and routes: what each one solves, who it is for, how to start, and where to find the original documentation.
 
 | Resource | Start here for | Link |
 | --- | --- | --- |
@@ -68,9 +70,14 @@ No account, API key, or local model setup is required to browse the public galle
 | Official MiniMax H3 repository | Weights, deployment guidance, and nine bundled Agent Skills including `h3-prompt-writing` | [MiniMax-AI/MiniMax-H3](https://github.com/MiniMax-AI/MiniMax-H3) |
 | MiniMax-H3 Turbo LoRA | Few-step synchronized audio-video generation; use 4 steps for previews and typically 6–8 for stronger v4 output | [larryvrh/MiniMax-H3-Turbo-Lora](https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora) |
 | ComfyUI H3 Motion Context | Chaining clips while carrying motion and audio context across joins | [NikoDemon80/ComfyUI-H3-Motion-Context](https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context) |
-| MiniMax H3 Audio T8 | A 56-node native H3 suite for stable audio conditioning and dual-clock sampling plus clearly separated experimental workflows | [T8mars/comfyui-minimax-h3-audio-T8](https://github.com/T8mars/comfyui-minimax-h3-audio-T8) |
+| MiniMax H3 Audio T8 | An 86-node native H3 suite for stable audio conditioning and dual-clock sampling plus clearly separated experimental workflows | [T8mars/comfyui-minimax-h3-audio-T8](https://github.com/T8mars/comfyui-minimax-h3-audio-T8) |
+| H3 Director | Multi-shot timelines, T2V/FL2V/Ref2VA/V2V workflows, selective runs, and refinement | [AIMixer/ComfyUI_MiniMaxH3_Director](https://github.com/AIMixer/ComfyUI_MiniMaxH3_Director) |
+| Spectrum for H3 | Transformer-evaluation forecasting with controlled same-input A/B guidance | [xmarre/ComfyUI-Spectrum-MiniMax-H3](https://github.com/xmarre/ComfyUI-Spectrum-MiniMax-H3) |
+| MiniMax H3 Easy | Unified media input, `@` references, dialogue blocks, and a smaller ComfyUI graph | [nkxx188/ComfyUI-MiniMaxH3-Easy](https://github.com/nkxx188/ComfyUI-MiniMaxH3-Easy) |
+| H3 FineTuning | Rectified-flow training, latent caching, LoRA, and multi-GPU ZeRO-3 | [IAmIronMan42/MiniMax-H3-FineTuning](https://github.com/IAmIronMan42/MiniMax-H3-FineTuning) |
+| Awesome MiniMax H3 | Models, quantizations, LoRAs, nodes, guides, and workflow index | [wildminder/awesome-minimax-H3](https://github.com/wildminder/awesome-minimax-H3) |
 
-The standalone tutorials page lets users search and filter these routes, see who each project is for, and follow three source-checked first steps before opening the original documentation. These external resources are documented separately from the case archive; the archive does not derive prompts or production workflows from collected videos.
+The standalone tutorials page lets users filter official setup, Mac, director workflows, acceleration, long video, audio, fine-tuning, and resource maps. These external resources are documented separately from the case archive; the archive does not derive prompts or production workflows from collected videos.
 
 [![MiniMax H3 tutorials for Mac, official deployment, ComfyUI acceleration, long video, and audio](./docs/screenshots/tutorials-en.png)](https://h3-field-notes-production.up.railway.app/en/tutorials/)
 
