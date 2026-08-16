@@ -4,18 +4,32 @@
 
 ### 631 个来源可追溯、可在站内观看的 MiniMax H3 / Hailuo H3 真实视频案例
 
+**[简体中文](./README.zh-CN.md)** · **[English](./README.md)**
+
 [![视频案例库](https://img.shields.io/badge/立即观看-视频案例库-d8ff3e?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/)
 [![案例数量](https://img.shields.io/badge/视频案例-631-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
-[![X 原帖](https://img.shields.io/badge/X_原帖案例-628-f5f5ed?style=flat-square&labelColor=0a0b09)](./data/cases.json)
+[![公开 Prompt](https://img.shields.io/badge/公开_Prompt_原文-27-f5f5ed?style=flat-square&labelColor=0a0b09)](./data/cases.json)
+[![教程](https://img.shields.io/badge/已核验教程-5-f5f5ed?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/tutorials/)
+[![GitHub Stars](https://img.shields.io/github/stars/SkyNotSilent/awesome-minimax-h3?style=flat-square&labelColor=0a0b09&color=d8ff3e)](https://github.com/SkyNotSilent/awesome-minimax-h3/stargazers)
 [![CI](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml/badge.svg)](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg?style=flat-square)](./LICENSE)
 
 [▶ 浏览全部 631 个视频案例](https://h3-field-notes-production.up.railway.app/) · [在 GitHub 查看案例](./CATALOG.md) · [English](./README.md) · [参与贡献](./CONTRIBUTING.md)
 
 </div>
 
-[![H3 Field Notes — 浏览 631 个 MiniMax H3 视频案例](./public/og-image.jpg)](https://h3-field-notes-production.up.railway.app/)
+[![H3 Field Notes — 浏览 631 个 MiniMax H3 视频案例](./docs/screenshots/case-library-zh.png)](https://h3-field-notes-production.up.railway.app/)
 
 **在花时间安装模型或研究参数之前，先看 MiniMax H3 实际能生成什么。** MiniMax H3 也常被搜索为 Hailuo H3、Hailuo 3.0、海螺 H3 或海螺 3.0。这里汇总来自 X 与 MiniMax 官方公开示例的文字生视频、图生视频和视频生视频真实输出，可以按生成模式、分类、风格与场景筛选。打开任意案例即可站内观看，并能随时回到原作者帖子。
+
+> **截至 2026-08-16，我们公开检索并核验到的同类库中规模最大：** 631 个可播放、来源可追溯的 MiniMax H3 视频案例。同次检索中较大的公开案例或 Prompt 图库分别约为 300、222、135、67 和 28 条；只有 Prompt、没有对应视频案例的列表不计入案例库对比。
+
+<details>
+<summary>“规模最大”是如何核验的</summary>
+
+我们在 2026-08-16 检索了公开 GitHub 仓库和网页中的 MiniMax H3 / Hailuo H3 视频案例、示例、图库与 Prompt 库。对比对象包括 [BeatAPI 的 300 条 Prompt 图库](https://github.com/BeatAPI/awesome-minimax-h3-prompts)、[xianyu110 的 222 条 Prompt 图库](https://github.com/xianyu110/awesome-minimax-h3-prompts)、[stimQQ 的带视频图库](https://github.com/stimQQ/stunning-minimax-h3-prompts)、[收录 45 个示例 / 67 个视频的官方展示索引](https://minimaxh3.app/showcase)，以及 [ImagineVid 的 28 个核验案例](https://github.com/imagineVid/Awesome-minimax-h3-prompts-and-skills)。不含没有对应可播放案例视频的通用资源列表和纯 Prompt 集合。这是带日期、可复核的对比，不代表对未来所有网站作永久性声明。
+
+</details>
 
 ## 为什么使用这个案例库？
 
@@ -31,6 +45,10 @@
 **当前规模：** 631 个视频案例 · 628 个 X 原帖案例 · 3 个官方复现案例 · 27 条公开 Prompt 原文。
 
 浏览公开案例不需要账号、API Key 或本地部署模型。
+
+### 一个完整案例：站内视频、规格、原始来源与公开 Prompt
+
+[![MiniMax H3 案例详情：站内视频、媒体规格与原帖公开 Prompt](./docs/screenshots/case-detail-prompt-zh.png)](https://h3-field-notes-production.up.railway.app/cases/x-2088844629093601702/)
 
 ## 直接开始
 
@@ -53,6 +71,8 @@
 | MiniMax H3 Audio T8 | 56 个原生 H3 节点：稳定音频条件与双时钟采样，以及明确隔离的实验工作流 | [T8mars/comfyui-minimax-h3-audio-T8](https://github.com/T8mars/comfyui-minimax-h3-audio-T8) |
 
 独立教程页支持按平台和能力搜索、筛选，先说明每个项目适合谁，再给出三步起跑方式和原始文档入口。这些外部资源与案例档案分开维护；案例库不会从收录视频中派生提示词或制作流程。
+
+[![MiniMax H3 教程页：Mac 原生、官方部署、ComfyUI 加速、长视频与音频工作流](./docs/screenshots/tutorials-zh.png)](https://h3-field-notes-production.up.railway.app/tutorials/)
 
 ## 自动采集路线
 

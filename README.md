@@ -4,9 +4,13 @@
 
 ### 631 source-attributed MiniMax H3 / Hailuo H3 videos, playable in your browser
 
+**[English](./README.md)** · **[简体中文](./README.zh-CN.md)**
+
 [![Video Gallery](https://img.shields.io/badge/Watch-Live_Video_Gallery-d8ff3e?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/en/)
 [![Examples](https://img.shields.io/badge/video_examples-631-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
-[![X Cases](https://img.shields.io/badge/original_X_cases-628-f5f5ed?style=flat-square&labelColor=0a0b09)](./data/cases.json)
+[![Public Prompts](https://img.shields.io/badge/verbatim_prompts-27-f5f5ed?style=flat-square&labelColor=0a0b09)](./data/cases.json)
+[![Tutorials](https://img.shields.io/badge/source--checked_tutorials-5-f5f5ed?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/en/tutorials/)
+[![GitHub Stars](https://img.shields.io/github/stars/SkyNotSilent/awesome-minimax-h3?style=flat-square&labelColor=0a0b09&color=d8ff3e)](https://github.com/SkyNotSilent/awesome-minimax-h3/stargazers)
 [![CI](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml/badge.svg)](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg?style=flat-square)](./LICENSE)
 
@@ -14,9 +18,18 @@
 
 </div>
 
-[![H3 Field Notes — browse 631 MiniMax H3 video examples](./public/og-image.jpg)](https://h3-field-notes-production.up.railway.app/en/)
+[![H3 Field Notes — browse 631 MiniMax H3 video examples](./docs/screenshots/case-library-en.png)](https://h3-field-notes-production.up.railway.app/en/)
 
 **See what MiniMax H3 can actually produce before you spend time setting it up.** MiniMax H3 is also commonly searched as Hailuo H3 or Hailuo 3.0. Browse real text-to-video, image-to-video, and video-to-video outputs from X and MiniMax's official examples, then filter by generation mode, category, style, or scene. Open any case to watch it inside the gallery and jump back to the original source.
+
+> **Largest public collection we could verify on 2026-08-16:** 631 playable, source-attributed MiniMax H3 video cases. The closest public case or prompt galleries found in the same search contained 300, 222, 135, 67, and 28 examples. Prompt-only lists are not counted as video case libraries.
+
+<details>
+<summary>How the collection-size claim was checked</summary>
+
+We searched public GitHub repositories and web results for MiniMax H3 / Hailuo H3 video examples, cases, galleries, and prompts on 2026-08-16. The comparison set included [BeatAPI's 300-prompt gallery](https://github.com/BeatAPI/awesome-minimax-h3-prompts), [xianyu110's 222-prompt gallery](https://github.com/xianyu110/awesome-minimax-h3-prompts), [stimQQ's clip-backed gallery](https://github.com/stimQQ/stunning-minimax-h3-prompts), the [45-example / 67-video official-showcase index](https://minimaxh3.app/showcase), and [ImagineVid's 28 verified cases](https://github.com/imagineVid/Awesome-minimax-h3-prompts-and-skills). General resource lists and prompt-only collections without matching playable case videos were excluded. This is a dated, reproducible comparison—not a permanent claim about every future site.
+
+</details>
 
 ## Why use this library?
 
@@ -32,6 +45,10 @@
 **Current snapshot:** 631 video examples · 628 original X cases · 3 official reproductions · 27 verbatim public prompts.
 
 No account, API key, or local model setup is required to browse the public gallery.
+
+### A complete case: hosted video, metadata, source, and public Prompt
+
+[![MiniMax H3 case detail with hosted video metadata and a verbatim public prompt](./docs/screenshots/case-detail-prompt-en.png)](https://h3-field-notes-production.up.railway.app/en/cases/x-2088844629093601702/)
 
 ## Start exploring
 
@@ -54,6 +71,8 @@ No account, API key, or local model setup is required to browse the public galle
 | MiniMax H3 Audio T8 | A 56-node native H3 suite for stable audio conditioning and dual-clock sampling plus clearly separated experimental workflows | [T8mars/comfyui-minimax-h3-audio-T8](https://github.com/T8mars/comfyui-minimax-h3-audio-T8) |
 
 The standalone tutorials page lets users search and filter these routes, see who each project is for, and follow three source-checked first steps before opening the original documentation. These external resources are documented separately from the case archive; the archive does not derive prompts or production workflows from collected videos.
+
+[![MiniMax H3 tutorials for Mac, official deployment, ComfyUI acceleration, long video, and audio](./docs/screenshots/tutorials-en.png)](https://h3-field-notes-production.up.railway.app/en/tutorials/)
 
 ## Generation modes
 
