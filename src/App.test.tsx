@@ -143,6 +143,26 @@ describe('case-first routes', () => {
     expect(screen.queryByRole('heading', { name: 'h3.c / h3-metal' })).not.toBeInTheDocument()
     expect(screen.queryByRole('heading', { name: 'MiniMax-H3 Turbo LoRA' })).not.toBeInTheDocument()
   })
+
+  it('maps director, training, and resource projects to their own tutorial categories', () => {
+    renderAt('/tutorials/')
+
+    fireEvent.click(screen.getByRole('button', { name: '导演工作流' }))
+    expect(screen.getByRole('heading', { name: 'ComfyUI MiniMax H3 Director' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'MiniMax H3 Director Workflow Pack' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'ComfyUI MiniMax H3 Easy' })).toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: 'MiniMax H3 FineTuning' })).not.toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: '训练微调' }))
+    expect(screen.getByRole('link', { name: 'MiniMax H3 FineTuning: 阅读微调文档' })).toHaveAttribute(
+      'href',
+      'https://github.com/IAmIronMan42/MiniMax-H3-FineTuning',
+    )
+
+    fireEvent.click(screen.getByRole('button', { name: '资源导航' }))
+    expect(screen.getByRole('heading', { name: 'Awesome MiniMax H3 Resources' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'BeatAPI MiniMax H3 Prompt Gallery' })).toBeInTheDocument()
+  })
 })
 
 describe('language isolation', () => {

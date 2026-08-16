@@ -36,7 +36,7 @@
       "zh": "阅读 Mac 原生教程",
       "en": "Read the native Mac tutorial"
     },
-    "verifiedAt": "2026-08-11"
+    "verifiedAt": "2026-08-16"
   },
   {
     "id": "official-minimax-h3",
@@ -75,7 +75,7 @@
       "zh": "打开官方部署文档",
       "en": "Open official deployment docs"
     },
-    "verifiedAt": "2026-08-11"
+    "verifiedAt": "2026-08-16"
   },
   {
     "id": "turbo-lora",
@@ -83,7 +83,7 @@
     "category": "acceleration",
     "featured": false,
     "title": "MiniMax-H3 Turbo LoRA",
-    "url": "https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora",
+    "url": "https://github.com/Larryvrh/ComfyUI-MiniMax-H3-Turbo",
     "kind": {
       "zh": "加速 / COMFYUI LORA",
       "en": "ACCELERATION / COMFYUI LORA"
@@ -114,7 +114,7 @@
       "zh": "查看权重与工作流",
       "en": "View weights and workflow"
     },
-    "verifiedAt": "2026-08-11"
+    "verifiedAt": "2026-08-16"
   },
   {
     "id": "motion-context",
@@ -139,12 +139,12 @@
       "zh": [
         "把仓库目录放进 ComfyUI/custom_nodes 并重启；节点只在首次运行续接图时安装运行时补丁。",
         "用 Save/Load Latent 把上一段的联合音画 latent 接入下一次运行，避免像素与音频的有损往返。",
-        "从 context_length 22、audio_context_length 22、match_tail 开始，并关闭 Spectrum。"
+        "从 context_length 22、audio_context_length 24、match_tail 开始，并关闭 Spectrum。"
       ],
       "en": [
         "Place the repository in ComfyUI/custom_nodes and restart; runtime patches install only when a chaining graph first runs.",
         "Carry the previous joint audio-video latent through Save/Load Latent to avoid lossy pixel and audio round trips.",
-        "Start with context_length 22, audio_context_length 22, match_tail enabled, and Spectrum off."
+        "Start with context_length 22, audio_context_length 24, match_tail enabled, and Spectrum off."
       ]
     },
     "facts": ["Latent Chaining", "Motion Continuity", "Audio Continuity"],
@@ -153,7 +153,7 @@
       "zh": "阅读续接教程",
       "en": "Read the chaining tutorial"
     },
-    "verifiedAt": "2026-08-11"
+    "verifiedAt": "2026-08-16"
   },
   {
     "id": "audio-t8",
@@ -167,8 +167,8 @@
       "en": "AUDIO / COMFYUI WORKFLOWS"
     },
     "description": {
-      "zh": "面向 ComfyUI 原生 H3 的音画节点集，覆盖稳定双时钟采样、音频条件、混音、裁切与预检，并提供长视频、语音、关键帧和来源音画重绘等实验路线。",
-      "en": "A native ComfyUI H3 audio-video node suite covering stable dual-clock sampling, audio conditioning, mixing, trimming, and preflight, plus experimental long-video, speech, keyframe, and source-AV paths."
+      "zh": "面向 ComfyUI 原生 H3 的 86 节点音画工具箱，覆盖稳定双时钟采样、音频条件、混音、裁切与预检，并提供长视频、语音、关键帧和来源音画重绘等实验路线。",
+      "en": "An 86-node native ComfyUI H3 audio-video suite covering stable dual-clock sampling, audio conditioning, mixing, trimming, and preflight, plus experimental long-video, speech, keyframe, and source-AV paths."
     },
     "audience": {
       "zh": "适合需要精细控制 H3 原生声音、对白、混音或音画时间线的进阶用户。",
@@ -186,12 +186,324 @@
         "Long-video, speech, multi-keyframe, and source-AV paths are experimental and should be enabled one at a time against the repository's validation notes."
       ]
     },
-    "facts": ["56 Nodes", "Dual Clock", "Stable + Experimental"],
+    "facts": ["86 Nodes", "Dual Clock", "Stable + Experimental"],
     "tags": ["Audio", "ComfyUI", "Mixing", "Ref2VA"],
     "action": {
       "zh": "打开音画节点文档",
       "en": "Open the audio-video node docs"
     },
-    "verifiedAt": "2026-08-11"
+    "verifiedAt": "2026-08-16"
+  },
+  {
+    "id": "aimixer-h3-director",
+    "code": "T06",
+    "category": "workflow",
+    "featured": false,
+    "title": "ComfyUI MiniMax H3 Director",
+    "url": "https://github.com/AIMixer/ComfyUI_MiniMaxH3_Director",
+    "kind": {
+      "zh": "导演工作流 / 多段时间线",
+      "en": "DIRECTOR / MULTI-SHOT TIMELINE"
+    },
+    "description": {
+      "zh": "把 H3 的分段计划、条件编码、采样、音画解码和导出整合成一套 ComfyUI 导演台。覆盖 T2V、FL2V、R2V、V2V 与 RV2V，并支持时间线、选择运行、段间引导和二次精修。",
+      "en": "A ComfyUI director that combines H3 shot planning, conditioning, sampling, audio-video decoding, and export. It covers T2V, FL2V, R2V, V2V, and RV2V with timelines, selective runs, inter-shot guidance, and optional refinement."
+    },
+    "audience": {
+      "zh": "适合需要分镜、批量生成、视频换人或逐段修改长内容的 ComfyUI 创作者。",
+      "en": "For ComfyUI creators who need storyboards, batch generation, subject replacement, or shot-by-shot editing of longer work."
+    },
+    "steps": {
+      "zh": [
+        "确认 ComfyUI 0.30.0 以上并已能加载官方 H3 节点，再通过 Git URL 或 custom_nodes 安装插件与 requirements。",
+        "按任务准备 FL2VA 或 Ref2VA 权重、Qwen3-VL 文本编码器以及视频和音频 VAE。",
+        "导入仓库示例，先用 5 秒单段测试；确认后再添加素材组、时间线与可选 Refine 二采。"
+      ],
+      "en": [
+        "Confirm ComfyUI 0.30.0 or newer can load the official H3 nodes, then install the plugin and its requirements through a Git URL or custom_nodes.",
+        "Prepare FL2VA or Ref2VA weights for the task, plus the Qwen3-VL text encoder and both video and audio VAEs.",
+        "Import a bundled example and test one five-second shot before adding media groups, a timeline, and optional Refine passes."
+      ]
+    },
+    "facts": ["Multi-shot Timeline", "6 Task Modes", "Segment Refine"],
+    "tags": ["ComfyUI", "Director", "V2V", "Storyboards"],
+    "action": {
+      "zh": "打开导演台插件",
+      "en": "Open the director plugin"
+    },
+    "verifiedAt": "2026-08-16"
+  },
+  {
+    "id": "huangserva-director-workflows",
+    "code": "T07",
+    "category": "workflow",
+    "featured": false,
+    "title": "MiniMax H3 Director Workflow Pack",
+    "url": "https://github.com/huangserva/ComfyUI_MiniMaxH3_Director",
+    "kind": {
+      "zh": "现成模板 / 5 套工作流",
+      "en": "READY-MADE / 5 WORKFLOWS"
+    },
+    "description": {
+      "zh": "一套便于下载和复现的 Director 工作流副本，提供 T2V、FL2V、R2V、V2V 与 RV2V 五份 JSON。它依赖 AIMixer 上游插件，不是另一套独立推理引擎。",
+      "en": "A reproduction-oriented pack of five Director JSON workflows for T2V, FL2V, R2V, V2V, and RV2V. It depends on the upstream AIMixer plugin and is not a separate inference engine."
+    },
+    "audience": {
+      "zh": "适合已经装好 Director，希望直接拖入模板检查接线和模型目录的用户。",
+      "en": "For users who already installed Director and want importable templates for checking wiring and model placement."
+    },
+    "steps": {
+      "zh": [
+        "先安装 AIMixer 的 ComfyUI MiniMax H3 Director 上游插件及其依赖。",
+        "把 example_workflows 中对应任务的 JSON 拖进 ComfyUI，并按 README 放置 FL2VA/Ref2VA、CLIP 和双 VAE。",
+        "先复现 5 秒固定素材测试；R2V、V2V 和 RV2V 是该仓库明确在 4090 环境验证过的路线。"
+      ],
+      "en": [
+        "Install the upstream AIMixer ComfyUI MiniMax H3 Director plugin and its dependencies first.",
+        "Drag the task-specific JSON from example_workflows into ComfyUI and place FL2VA or Ref2VA, CLIP, and both VAEs as documented.",
+        "Reproduce a fixed five-second test first; R2V, V2V, and RV2V are the routes explicitly verified in the repository's 4090 environment."
+      ]
+    },
+    "facts": ["5 Importable JSONs", "4090-checked Ref2VA", "Upstream Required"],
+    "tags": ["ComfyUI", "Workflow Pack", "Director", "RV2V"],
+    "action": {
+      "zh": "下载工作流模板",
+      "en": "Download workflow templates"
+    },
+    "verifiedAt": "2026-08-16"
+  },
+  {
+    "id": "spectrum-h3",
+    "code": "T08",
+    "category": "acceleration",
+    "featured": false,
+    "title": "ComfyUI Spectrum MiniMax H3",
+    "url": "https://github.com/xmarre/ComfyUI-Spectrum-MiniMax-H3",
+    "kind": {
+      "zh": "加速 / 隐藏状态预测",
+      "en": "ACCELERATION / HIDDEN-STATE FORECAST"
+    },
+    "description": {
+      "zh": "通过预测 H3 目标音视频行的隐藏状态，跳过部分昂贵的 Transformer 计算，同时保留原生输出头、解码和保存链路。默认 20 步路径通常变成 11 次真实计算加 9 次预测。",
+      "en": "Forecasts hidden states for H3 target audio-video rows to skip selected expensive transformer evaluations while keeping the native output head, decode, and save path. A default 20-step run commonly becomes 11 actual evaluations plus nine forecasts."
+    },
+    "audience": {
+      "zh": "适合已经稳定运行原生 H3，希望在固定素材上严谨测试速度与质量取舍的用户。",
+      "en": "For users with a stable native H3 setup who want controlled speed-versus-quality testing on fixed inputs."
+    },
+    "steps": {
+      "zh": [
+        "通过 ComfyUI Manager 安装，或把仓库克隆到 custom_nodes 后重启。",
+        "按模型加载器 → LoRA/补丁 → Sigma Shift → Spectrum Apply → 采样器的顺序接线，先保留默认参数。",
+        "用相同 seed、提示词、模型、素材和采样器做开关 A/B；不要在同一模型分支叠加 EasyCache 或 LazyCache。"
+      ],
+      "en": [
+        "Install through ComfyUI Manager or clone the repository into custom_nodes, then restart.",
+        "Wire model loader to LoRA or patches, Sigma Shift, Spectrum Apply, and the sampler in that order, keeping defaults first.",
+        "Run enabled-versus-disabled A/B tests with the same seed, prompt, model, media, and sampler; do not stack EasyCache or LazyCache on the same model branch."
+      ]
+    },
+    "facts": ["11 Actual + 9 Forecasts", "T2VA · FL2VA · Ref2VA", "Fail-closed"],
+    "tags": ["ComfyUI", "Acceleration", "Spectrum", "A/B Testing"],
+    "action": {
+      "zh": "阅读 Spectrum 配置",
+      "en": "Read Spectrum setup"
+    },
+    "verifiedAt": "2026-08-16"
+  },
+  {
+    "id": "minimax-h3-easy",
+    "code": "T09",
+    "category": "workflow",
+    "featured": false,
+    "title": "ComfyUI MiniMax H3 Easy",
+    "url": "https://github.com/nkxx188/ComfyUI-MiniMaxH3-Easy",
+    "kind": {
+      "zh": "简化工作流 / 统一素材输入",
+      "en": "EASIER WORKFLOW / UNIFIED MEDIA"
+    },
+    "description": {
+      "zh": "把图片、视频和音频统一到一个 Media 输入，提供 @ 素材引用、对白块、原始 Prompt 视图和多后端 Prompt 优化，并用一组节点覆盖文字、首尾帧与全参考模式。",
+      "en": "Combines images, videos, and audio in one Media input with @ references, dialogue blocks, raw-prompt inspection, multi-provider prompt optimization, and a compact node set spanning text, keyframe, and full-reference modes."
+    },
+    "audience": {
+      "zh": "适合觉得官方 H3 节点接线复杂，希望用更少节点管理多模态素材和提示词的用户。",
+      "en": "For users who find the official H3 graph too complex and want fewer nodes for multimodal media and prompt control."
+    },
+    "steps": {
+      "zh": [
+        "安装插件后，在 Easy Loader 中选择 FL2VA、Ref2VA、Qwen3-VL、视频 VAE 和音频 VAE。",
+        "把图片、视频与音频接到统一 Media 端口，在编辑器中用 @ 选择素材、用 # 创建对白块。",
+        "先关闭外部 Prompt 优化复现基础工作流；需要时再配置兼容 API，并检查发送素材的格式与大小限制。"
+      ],
+      "en": [
+        "After installation, select FL2VA, Ref2VA, Qwen3-VL, video VAE, and audio VAE in Easy Loader.",
+        "Connect images, videos, and audio to the unified Media port, then use @ for media references and # for dialogue blocks.",
+        "Reproduce the base workflow with external prompt optimization off, then configure a compatible API only if needed and review media-format limits."
+      ]
+    },
+    "facts": ["One Media Port", "@ References", "Prompt Guides"],
+    "tags": ["ComfyUI", "Easy Workflow", "Multimodal", "Prompt Editor"],
+    "action": {
+      "zh": "打开简化工作流",
+      "en": "Open the easier workflow"
+    },
+    "verifiedAt": "2026-08-16"
+  },
+  {
+    "id": "h3-finetuning",
+    "code": "T10",
+    "category": "training",
+    "featured": false,
+    "title": "MiniMax H3 FineTuning",
+    "url": "https://github.com/IAmIronMan42/MiniMax-H3-FineTuning",
+    "kind": {
+      "zh": "训练 / LORA + 多 GPU",
+      "en": "TRAINING / LORA + MULTI-GPU"
+    },
+    "description": {
+      "zh": "补齐官方未提供训练器的空白：基于官方 Diffusers 集成实现 H3 监督式 rectified-flow 训练、视频与立体声音频 latent 缓存、LoRA 和 ZeRO-3 多 GPU 路线。",
+      "en": "Fills the trainer gap left by the official release with supervised rectified-flow training on the official Diffusers integration, cached video and stereo-audio latents, LoRA, and ZeRO-3 multi-GPU paths."
+    },
+    "audience": {
+      "zh": "适合有训练数据和高显存 GPU，准备研究角色、风格或专用能力微调的开发者。",
+      "en": "For developers with training data and high-memory GPUs who want to research character, style, or domain-specific fine-tuning."
+    },
+    "steps": {
+      "zh": [
+        "先阅读 FIXES.md 与模型许可；该路线面向研究和训练环境，不是普通消费级显卡的一键方案。",
+        "用 validate_manifest 检查数据清单，再通过 prepare_cache.py 离线缓存文字、视频和可选真实音频 latent。",
+        "先单卡 heads 模式做 10 步 smoke test，确认损失方向正确后再进入 LoRA 与多 GPU ZeRO-3。"
+      ],
+      "en": [
+        "Read FIXES.md and the model license first; this is a research and training path, not a one-click consumer-GPU setup.",
+        "Validate the data manifest, then cache text, video, and optional real-audio latents offline with prepare_cache.py.",
+        "Run a ten-step single-GPU heads smoke test before moving to LoRA and multi-GPU ZeRO-3 training."
+      ]
+    },
+    "facts": ["Rectified-flow Trainer", "LoRA + ZeRO-3", "Audio in Loss"],
+    "tags": ["Fine-tuning", "Training", "LoRA", "Multi-GPU"],
+    "action": {
+      "zh": "阅读微调文档",
+      "en": "Read the fine-tuning guide"
+    },
+    "verifiedAt": "2026-08-16"
+  },
+  {
+    "id": "modeltc-h3-turbo",
+    "code": "T11",
+    "category": "acceleration",
+    "featured": false,
+    "title": "ModelTC MiniMax H3 Turbo",
+    "url": "https://github.com/ModelTC/Minimax-H3-Turbo",
+    "kind": {
+      "zh": "蒸馏加速 / 4–8 NFE",
+      "en": "DISTILLED SPEED / 4–8 NFE"
+    },
+    "description": {
+      "zh": "提供 FL2VA 与 Ref2VA 的 4 步/8 步 Turbo LoRA、Diffusers 批量推理脚本和可直接导入的 ComfyUI 工作流，覆盖文字、首帧与多参考生成。",
+      "en": "Provides four- and eight-step Turbo LoRAs for FL2VA and Ref2VA, Diffusers batch-inference scripts, and importable ComfyUI workflows for text, first-frame, and multimodal reference generation."
+    },
+    "audience": {
+      "zh": "适合需要比较不同 Turbo 实现，或希望同时使用 Diffusers 与 ComfyUI 的用户。",
+      "en": "For users comparing Turbo implementations or needing both Diffusers and ComfyUI routes."
+    },
+    "steps": {
+      "zh": [
+        "先按任务选择 FL2VA 或 Ref2VA，以及 544p/768p、4 NFE/8 NFE 对应权重。",
+        "Diffusers 用户按独立安装文档准备环境；ComfyUI 用户直接导入仓库对应 T2VA、I2VA 或 Ref2VA JSON。",
+        "保持参考图宽高比，并优先使用训练匹配的 reference-resize-mode=match，再与原生模型固定素材对比。"
+      ],
+      "en": [
+        "Choose FL2VA or Ref2VA first, then select the matching 544p or 768p and four- or eight-NFE checkpoint.",
+        "Follow the dedicated setup for Diffusers, or import the matching T2VA, I2VA, or Ref2VA JSON in ComfyUI.",
+        "Preserve reference-image aspect ratio and start with the training-matched reference-resize-mode=match before comparing against the native model."
+      ]
+    },
+    "facts": ["FL2VA + Ref2VA", "4 / 8 NFE", "Diffusers + ComfyUI"],
+    "tags": ["Turbo", "Distillation", "Diffusers", "ComfyUI"],
+    "action": {
+      "zh": "查看 Turbo 模型与示例",
+      "en": "View Turbo models and examples"
+    },
+    "verifiedAt": "2026-08-16"
+  },
+  {
+    "id": "awesome-h3-resources",
+    "code": "T12",
+    "category": "resources",
+    "featured": false,
+    "title": "Awesome MiniMax H3 Resources",
+    "url": "https://github.com/wildminder/awesome-minimax-H3",
+    "kind": {
+      "zh": "资源导航 / 模型 + 工具",
+      "en": "RESOURCE MAP / MODELS + TOOLS"
+    },
+    "description": {
+      "zh": "持续整理 H3 官方与社区生态，包括原始和量化权重、文本编码器、VAE、Turbo 与风格 LoRA、ComfyUI 节点、教程和可导入工作流。",
+      "en": "A maintained map of the official and community H3 ecosystem: base and quantized weights, text encoders, VAEs, Turbo and style LoRAs, ComfyUI nodes, tutorials, and importable workflows."
+    },
+    "audience": {
+      "zh": "适合已经知道要解决什么问题，需要快速查找对应模型、量化版本或节点的用户。",
+      "en": "For users who know the problem they need to solve and want to locate a matching model, quantization, or node quickly."
+    },
+    "steps": {
+      "zh": [
+        "先按硬件确定原始、剪枝或量化权重，不要因为文件更小就默认质量与兼容性相同。",
+        "再按任务查看 Turbo、LoRA、ComfyUI Nodes 或 Workflow，不要一次叠加所有优化。",
+        "下载前回到每个原项目确认许可、依赖、最近更新和已验证环境。"
+      ],
+      "en": [
+        "Choose full, pruned, or quantized weights for your hardware first; smaller files do not imply identical quality or compatibility.",
+        "Then browse Turbo, LoRA, ComfyUI Nodes, or Workflows for the task instead of stacking every optimization at once.",
+        "Before downloading, return to each original project to verify its license, dependencies, latest update, and tested environment."
+      ]
+    },
+    "facts": ["Models + Quants", "LoRA + Nodes", "Guides + Workflows"],
+    "tags": ["Awesome List", "Models", "ComfyUI", "Resources"],
+    "action": {
+      "zh": "浏览 H3 资源地图",
+      "en": "Browse the H3 resource map"
+    },
+    "verifiedAt": "2026-08-16"
+  },
+  {
+    "id": "beatapi-prompt-gallery",
+    "code": "T13",
+    "category": "resources",
+    "featured": false,
+    "title": "BeatAPI MiniMax H3 Prompt Gallery",
+    "url": "https://github.com/BeatAPI/awesome-minimax-h3-prompts",
+    "kind": {
+      "zh": "案例参考 / PROMPT + 视频",
+      "en": "CASE REFERENCE / PROMPTS + VIDEO"
+    },
+    "description": {
+      "zh": "一个按用途组织的 H3 Prompt 图库，收录 300 条 Prompt、WebM 示例与创作者来源，覆盖故事、动作、广告、音乐和社交视频。",
+      "en": "A use-case-organized H3 prompt gallery with 300 prompts, WebM examples, and creator attribution across stories, action, ads, music, and social video."
+    },
+    "audience": {
+      "zh": "适合想从“成片 + Prompt”配对中学习结构，再回到原作者核对上下文的用户。",
+      "en": "For users who want to learn from paired outputs and prompts, then return to the original creator for context."
+    },
+    "steps": {
+      "zh": [
+        "先按 Stories、Action、Ads、Music 或 Social 用途进入对应分类。",
+        "先观看 WebM 成片，再展开 Prompt，观察镜头、动作、环境和声音如何被组织。",
+        "复制前打开 Source 核对原作者与原帖；不同工作流、参考素材和模型版本可能产生不同结果。"
+      ],
+      "en": [
+        "Start with the Stories, Action, Ads, Music, or Social use-case category that matches your goal.",
+        "Watch the WebM result before expanding the prompt to study how shots, action, environment, and sound are structured.",
+        "Open the source to verify the creator and post before reuse; workflow, reference media, and model-version differences can change results."
+      ]
+    },
+    "facts": ["300 Prompts", "Playable WebM", "Creator Attribution"],
+    "tags": ["Prompt Gallery", "Examples", "WebM", "Attribution"],
+    "action": {
+      "zh": "浏览 Prompt 图库",
+      "en": "Browse the prompt gallery"
+    },
+    "verifiedAt": "2026-08-16"
   }
 ]

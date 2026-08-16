@@ -67,7 +67,16 @@ for (const [index, item] of cases.entries()) {
 
 const tutorialIds = new Set()
 const tutorialCodes = new Set()
-const tutorialCategories = new Set(['mac', 'official', 'acceleration', 'long-video', 'audio'])
+const tutorialCategories = new Set([
+  'mac',
+  'official',
+  'workflow',
+  'acceleration',
+  'long-video',
+  'audio',
+  'training',
+  'resources',
+])
 
 for (const [index, item] of tutorials.entries()) {
   const at = `tutorials[${index}]`

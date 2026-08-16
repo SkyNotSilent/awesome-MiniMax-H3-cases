@@ -37,7 +37,7 @@ import type { CaseMode, VideoCase } from './types'
 import { XPostEmbed } from './XPostEmbed'
 
 const cases = rawCases as VideoCase[]
-type TutorialCategory = 'mac' | 'official' | 'acceleration' | 'long-video' | 'audio'
+type TutorialCategory = 'mac' | 'official' | 'workflow' | 'acceleration' | 'long-video' | 'audio' | 'training' | 'resources'
 type LocalizedText = Record<Language, string>
 type TutorialResource = {
   id: string
@@ -57,7 +57,17 @@ type TutorialResource = {
 }
 
 const tutorials = rawTutorials as TutorialResource[]
-const tutorialCategories: Array<'all' | TutorialCategory> = ['all', 'mac', 'official', 'acceleration', 'long-video', 'audio']
+const tutorialCategories: Array<'all' | TutorialCategory> = [
+  'all',
+  'official',
+  'mac',
+  'workflow',
+  'acceleration',
+  'long-video',
+  'audio',
+  'training',
+  'resources',
+]
 const modes: Array<'ALL' | CaseMode> = ['ALL', 'T2VA', 'FL2VA', 'Ref2VA', 'Unknown']
 const allCategories = [...new Set(cases.map((item) => item.category))]
 const allStyles = [...new Set(cases.flatMap((item) => item.styles))]
@@ -132,8 +142,8 @@ function App() {
     ? t.siteTitle
     : route.page === 'tutorials'
       ? language === 'zh'
-        ? 'MiniMax H3 教程：Mac、部署、加速与音频 — H3 Field Notes'
-        : 'MiniMax H3 Tutorials: Mac, Deployment, Acceleration and Audio — H3 Field Notes'
+        ? 'MiniMax H3 教程与工具：部署、工作流、加速、训练 — H3 Field Notes'
+        : 'MiniMax H3 Tutorials and Tools: Setup, Workflows, Speed, Training — H3 Field Notes'
       : language === 'zh'
         ? 'MiniMax H3 视频案例库常见问题 — H3 Field Notes'
         : 'MiniMax H3 Video Library FAQ — H3 Field Notes'

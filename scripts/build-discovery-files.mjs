@@ -32,8 +32,8 @@ const llms = `# H3 Field Notes — Awesome MiniMax H3
 
 - ${baseUrl}/ — Chinese case library
 - ${baseUrl}/en/ — English case library
-- ${baseUrl}/tutorials/ — Mac, official deployment, acceleration, long-video, and audio tutorials
-- ${baseUrl}/en/tutorials/ — English H3 tutorials
+- ${baseUrl}/tutorials/ — Chinese H3 ecosystem guide: setup, workflows, acceleration, long video, audio, training, and resources
+- ${baseUrl}/en/tutorials/ — English H3 ecosystem guide
 - ${baseUrl}/faq/ — source, prompt, playback, and review policy
 - ${baseUrl}/llms-full.txt — complete machine-readable case index
 - https://github.com/SkyNotSilent/awesome-minimax-h3/blob/main/data/cases.json — source dataset

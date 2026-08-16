@@ -9,7 +9,7 @@
 [![视频案例库](https://img.shields.io/badge/立即观看-视频案例库-d8ff3e?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/)
 [![案例数量](https://img.shields.io/badge/视频案例-631-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
 [![公开 Prompt](https://img.shields.io/badge/公开_Prompt_原文-27-f5f5ed?style=flat-square&labelColor=0a0b09)](./data/cases.json)
-[![教程](https://img.shields.io/badge/已核验教程-5-f5f5ed?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/tutorials/)
+[![教程](https://img.shields.io/badge/已核验教程-13-f5f5ed?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/tutorials/)
 [![GitHub Stars](https://img.shields.io/github/stars/SkyNotSilent/awesome-minimax-h3?style=flat-square&labelColor=0a0b09&color=d8ff3e)](https://github.com/SkyNotSilent/awesome-minimax-h3/stargazers)
 [![CI](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml/badge.svg)](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg?style=flat-square)](./LICENSE)
@@ -58,9 +58,11 @@
 | 不离开 GitHub 快速浏览全部案例 | [`CATALOG.md`](./CATALOG.md) |
 | 查询带来源的结构化数据 | [`data/cases.json`](./data/cases.json) 或 [`llms-full.txt`](./public/llms-full.txt) |
 | 让 Agent 帮你查找案例 | [`minimax-h3-prompt-library`](./agents/skills/minimax-h3-prompt-library/) |
-| 在 Mac、ComfyUI 上部署 H3 或使用加速工具 | [可搜索的 H3 教程](https://h3-field-notes-production.up.railway.app/tutorials/) |
+| 选择 H3 部署、导演工作流、加速、训练或资源导航 | [可搜索的 H3 生态指南](https://h3-field-notes-production.up.railway.app/tutorials/) |
 
-## H3 教程与部署入口
+## H3 教程与生态指南
+
+教程页目前整理了 13 条经过来源核验的 H3 项目与路线：每一条都说明它解决什么问题、适合谁、如何开始，以及原始文档在哪里。
 
 | 资源 | 先看什么 | 地址 |
 | --- | --- | --- |
@@ -68,9 +70,14 @@
 | MiniMax H3 官方仓库 | 权重、部署说明，以及包括 `h3-prompt-writing` 在内的 9 个 Agent Skill | [MiniMax-AI/MiniMax-H3](https://github.com/MiniMax-AI/MiniMax-H3) |
 | MiniMax-H3 Turbo LoRA | 4–8 步同步音视频加速；4 步预览，v4 在 6–8 步通常更稳 | [larryvrh/MiniMax-H3-Turbo-Lora](https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora) |
 | ComfyUI H3 Motion Context | 多片段续接，延续上一段的画面运动与音频上下文 | [NikoDemon80/ComfyUI-H3-Motion-Context](https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context) |
-| MiniMax H3 Audio T8 | 56 个原生 H3 节点：稳定音频条件与双时钟采样，以及明确隔离的实验工作流 | [T8mars/comfyui-minimax-h3-audio-T8](https://github.com/T8mars/comfyui-minimax-h3-audio-T8) |
+| MiniMax H3 Audio T8 | 86 个原生 H3 节点：稳定音频条件与双时钟采样，以及明确隔离的实验工作流 | [T8mars/comfyui-minimax-h3-audio-T8](https://github.com/T8mars/comfyui-minimax-h3-audio-T8) |
+| H3 Director 导演台 | 多段时间线、T2V/FL2V/Ref2VA/V2V、选择运行与二次精修 | [AIMixer/ComfyUI_MiniMaxH3_Director](https://github.com/AIMixer/ComfyUI_MiniMaxH3_Director) |
+| Spectrum for H3 | 预测部分 Transformer 计算，并提供固定素材 A/B 的配置建议 | [xmarre/ComfyUI-Spectrum-MiniMax-H3](https://github.com/xmarre/ComfyUI-Spectrum-MiniMax-H3) |
+| MiniMax H3 Easy | 统一素材输入、`@` 引用、对白块和更紧凑的 ComfyUI 接线 | [nkxx188/ComfyUI-MiniMaxH3-Easy](https://github.com/nkxx188/ComfyUI-MiniMaxH3-Easy) |
+| H3 FineTuning | Rectified-flow 训练、latent 缓存、LoRA 与多 GPU ZeRO-3 | [IAmIronMan42/MiniMax-H3-FineTuning](https://github.com/IAmIronMan42/MiniMax-H3-FineTuning) |
+| Awesome MiniMax H3 | 模型、量化、LoRA、节点、教程与工作流资源导航 | [wildminder/awesome-minimax-H3](https://github.com/wildminder/awesome-minimax-H3) |
 
-独立教程页支持按平台和能力搜索、筛选，先说明每个项目适合谁，再给出三步起跑方式和原始文档入口。这些外部资源与案例档案分开维护；案例库不会从收录视频中派生提示词或制作流程。
+独立教程页支持筛选官方入门、Mac、导演工作流、加速、长视频、音频、训练微调与资源导航。这些外部资源与案例档案分开维护；案例库不会从收录视频中派生提示词或制作流程。
 
 [![MiniMax H3 教程页：Mac 原生、官方部署、ComfyUI 加速、长视频与音频工作流](./docs/screenshots/tutorials-zh.png)](https://h3-field-notes-production.up.railway.app/tutorials/)
 
