@@ -2,33 +2,33 @@
 
 # Awesome MiniMax H3 视频案例库
 
-### 304 个来源可追溯、可在站内观看的 MiniMax H3 / Hailuo H3 真实视频案例
+### 631 个来源可追溯、可在站内观看的 MiniMax H3 / Hailuo H3 真实视频案例
 
 [![视频案例库](https://img.shields.io/badge/立即观看-视频案例库-d8ff3e?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/)
-[![案例数量](https://img.shields.io/badge/视频案例-304-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
-[![X 原帖](https://img.shields.io/badge/X_原帖案例-301-f5f5ed?style=flat-square&labelColor=0a0b09)](./data/cases.json)
+[![案例数量](https://img.shields.io/badge/视频案例-631-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
+[![X 原帖](https://img.shields.io/badge/X_原帖案例-628-f5f5ed?style=flat-square&labelColor=0a0b09)](./data/cases.json)
 [![CI](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml/badge.svg)](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml)
 
-[▶ 浏览全部 304 个视频案例](https://h3-field-notes-production.up.railway.app/) · [在 GitHub 查看案例](./CATALOG.md) · [English](./README.md) · [参与贡献](./CONTRIBUTING.md)
+[▶ 浏览全部 631 个视频案例](https://h3-field-notes-production.up.railway.app/) · [在 GitHub 查看案例](./CATALOG.md) · [English](./README.md) · [参与贡献](./CONTRIBUTING.md)
 
 </div>
 
-[![H3 Field Notes — 浏览 304 个 MiniMax H3 视频案例](./public/og-image.jpg)](https://h3-field-notes-production.up.railway.app/)
+[![H3 Field Notes — 浏览 631 个 MiniMax H3 视频案例](./public/og-image.jpg)](https://h3-field-notes-production.up.railway.app/)
 
-**在花时间安装模型或研究参数之前，先看 MiniMax H3 实际能生成什么。** MiniMax H3 也常被搜索为 Hailuo H3 或 Hailuo 3.0。这里汇总来自 X 与 MiniMax 官方公开示例的真实输出，可以按关键词、生成模式、分类、风格与场景筛选。打开任意案例即可站内观看，并能随时回到原作者帖子。
+**在花时间安装模型或研究参数之前，先看 MiniMax H3 实际能生成什么。** MiniMax H3 也常被搜索为 Hailuo H3、Hailuo 3.0、海螺 H3 或海螺 3.0。这里汇总来自 X 与 MiniMax 官方公开示例的文字生视频、图生视频和视频生视频真实输出，可以按生成模式、分类、风格与场景筛选。打开任意案例即可站内观看，并能随时回到原作者帖子。
 
 ## 为什么使用这个案例库？
 
 | 你能得到什么 | 对用户的价值 |
 | --- | --- |
-| **304 个可观看视频案例** | 不读功能列表，直接根据真实输出判断 MiniMax H3 / Hailuo H3 的效果 |
+| **631 个可观看视频案例** | 不读功能列表，直接根据真实输出判断 MiniMax H3 / Hailuo H3 的效果 |
 | **关键词搜索与多维筛选** | 快速找到 T2VA、FL2VA、Ref2VA、电影、舞蹈、对白、音乐、广告与本地生成案例 |
 | **每条案例独立封面与加载状态** | 点开前先看到视频内容，并能分辨 X 播放器是在加载还是加载失败 |
 | **每条案例保留作者与原帖** | 无需四处找来源，即可核对上下文、发布日期和原作者 |
 | **仅展示来源公开的 Prompt 原文** | 原作者公开时可以直接复制；未公开时绝不反推、补写或伪造 |
 | **中英文完全隔离** | 可以在中文或英文界面浏览同一套案例，不混杂另一种语言 |
 
-**当前规模：** 304 个视频案例 · 301 个 X 原帖案例 · 3 个官方复现案例 · 25 条公开 Prompt 原文。
+**当前规模：** 631 个视频案例 · 628 个 X 原帖案例 · 3 个官方复现案例 · 27 条公开 Prompt 原文。
 
 浏览公开案例不需要账号、API Key 或本地部署模型。
 
@@ -69,12 +69,12 @@ MiMo V2.5 Pro 公开文本分类
         ↓
 data/candidates.json
         ↓
-人工确认
+入库条件与播放校验
         ↓
 data/cases.json → 网站 / GitHub / Agent Skill
 ```
 
-这条路线不需要 X API Token，但需要 Mac 上现有的 X 登录态。任务不会绕过登录限制或直接公开候选案例；发现阶段只记录公开元数据，只有原帖逐字展示 Prompt 时才复制原文，绝不让模型补写或反推。发布阶段优先使用官方 X 嵌入，无法嵌入时才进入许可明确的媒体兜底流程。详细规则见 [`docs/DISCOVERY_WORKFLOW.md`](./docs/DISCOVERY_WORKFLOW.md)。
+这条路线不需要 X API Token，但需要 Mac 上现有的 X 登录态，并且不会绕过登录限制。发现阶段只记录公开元数据，只有原帖逐字展示 Prompt 时才复制原文，绝不让模型补写或反推。来源、模型、媒体、存储和站内播放全部校验通过的明确案例可直接发布；模糊项或失败项继续留在审核队列。已发布视频统一使用项目存储保证站内播放，并始终保留 X 原帖入口。详细规则见 [`docs/DISCOVERY_WORKFLOW.md`](./docs/DISCOVERY_WORKFLOW.md)。
 
 ## 模型与密钥
 
@@ -115,7 +115,7 @@ npm run catalog
 - 只收录能追溯原作者与原始链接的案例；
 - Prompt 仅在原作者或官方公开脚本逐字发布时收录，并保持原文不变；
 - 原帖未公开 Prompt 时不生成、不补全、不翻译成原文、不改写、不重建、不反推、不拆解，明确标注为未公开；
-- 默认使用官方 X 嵌入；只有许可记录明确且嵌入不可用时才重托管创作者视频；
+- 视频文件保存在 Git 仓库之外的项目存储中，站内播放时始终保留原作者与 X 原帖入口；
 - 不确定项始终留在审核队列；
 - 创作者可通过 Issue 请求纠错或移除。
 
