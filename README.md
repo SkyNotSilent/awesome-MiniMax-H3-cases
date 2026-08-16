@@ -2,34 +2,34 @@
 
 # Awesome MiniMax H3 Video Examples
 
-### 304 source-attributed MiniMax H3 / Hailuo H3 videos, playable in your browser
+### 631 source-attributed MiniMax H3 / Hailuo H3 videos, playable in your browser
 
 [![Video Gallery](https://img.shields.io/badge/Watch-Live_Video_Gallery-d8ff3e?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/en/)
-[![Examples](https://img.shields.io/badge/video_examples-304-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
-[![X Cases](https://img.shields.io/badge/original_X_cases-301-f5f5ed?style=flat-square&labelColor=0a0b09)](./data/cases.json)
+[![Examples](https://img.shields.io/badge/video_examples-631-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
+[![X Cases](https://img.shields.io/badge/original_X_cases-628-f5f5ed?style=flat-square&labelColor=0a0b09)](./data/cases.json)
 [![CI](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml/badge.svg)](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg?style=flat-square)](./LICENSE)
 
-[▶ Browse all 304 video examples](https://h3-field-notes-production.up.railway.app/en/) · [Browse on GitHub](./CATALOG.md) · [中文说明](./README.zh-CN.md) · [Contribute](./CONTRIBUTING.md)
+[▶ Browse all 631 video examples](https://h3-field-notes-production.up.railway.app/en/) · [Browse on GitHub](./CATALOG.md) · [中文说明](./README.zh-CN.md) · [Contribute](./CONTRIBUTING.md)
 
 </div>
 
-[![H3 Field Notes — browse 304 MiniMax H3 video examples](./public/og-image.jpg)](https://h3-field-notes-production.up.railway.app/en/)
+[![H3 Field Notes — browse 631 MiniMax H3 video examples](./public/og-image.jpg)](https://h3-field-notes-production.up.railway.app/en/)
 
-**See what MiniMax H3 can actually produce before you spend time setting it up.** MiniMax H3 is also commonly searched as Hailuo H3 or Hailuo 3.0. Browse real outputs from X and MiniMax's official examples, search by keyword, and filter by generation mode, category, style, or scene. Open any case to watch it inside the gallery and jump back to the original source.
+**See what MiniMax H3 can actually produce before you spend time setting it up.** MiniMax H3 is also commonly searched as Hailuo H3 or Hailuo 3.0. Browse real text-to-video, image-to-video, and video-to-video outputs from X and MiniMax's official examples, then filter by generation mode, category, style, or scene. Open any case to watch it inside the gallery and jump back to the original source.
 
 ## Why use this library?
 
 | What you get | Why it matters |
 | --- | --- |
-| **304 watchable video examples** | Judge MiniMax H3 / Hailuo H3 by real output, not a feature list |
+| **631 watchable video examples** | Judge MiniMax H3 / Hailuo H3 by real output, not a feature list |
 | **Fast search and filters** | Find relevant T2VA, FL2VA, Ref2VA, cinematic, dance, dialogue, music, advertising, and local-generation cases |
 | **Case-specific covers and loading states** | Know what each video contains before opening it and whether the X player is still loading |
 | **Original creator and source on every case** | Verify context, publication date, and attribution without hunting for the post |
 | **Verbatim public prompts when available** | Copy the exact prompt only when the creator or official script published it; missing prompts are never invented |
 | **Chinese and English routes** | Browse the same library in either language without mixed-language pages |
 
-**Current snapshot:** 304 video examples · 301 original X cases · 3 official reproductions · 25 verbatim public prompts.
+**Current snapshot:** 631 video examples · 628 original X cases · 3 official reproductions · 27 verbatim public prompts.
 
 No account, API key, or local model setup is required to browse the public gallery.
 
@@ -69,7 +69,7 @@ The standalone tutorials page lets users search and filter these routes, see who
 | FL2VA | Ramen Rack Focus | [MiniMax public script](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-fl2va-request.sh) |
 | Ref2VA | Follow the Wind | [MiniMax public script](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-ref2va-request.sh) |
 
-The catalog now contains 304 public cases: three official reproducible examples and 301 source-attributed X community cases. Twenty-five records preserve verbatim prompts published by an official source or creator; every other entry explicitly marks the prompt as not published. The collection spans local ComfyUI benchmarks, image and multimodal reference workflows, model comparisons, music videos, multi-shot films, native audio, and post-production pipelines. X cases play inside the catalog through the official X embed. Permission-cleared media may use a hosted fallback when an embed is unavailable.
+The catalog now contains 631 public cases: three official reproducible examples and 628 source-attributed X community cases. Twenty-seven records preserve verbatim prompts published by an official source or creator; every other entry explicitly marks the prompt as not published. The collection spans local ComfyUI benchmarks, text-to-video, image-to-video and video-to-video workflows, model comparisons, music videos, multi-shot films, native audio, and post-production pipelines. Every published case plays inside the gallery through project storage and keeps a direct link to its original source.
 
 ## Discovery and review pipeline
 
@@ -86,12 +86,12 @@ Shortlisted video → MiMo V2.5 low-FPS review
           ↓
 data/candidates.json
           ↓
-Human approval
+Eligibility + playback verification
           ↓
 data/cases.json → website / catalog / Agent Skill
 ```
 
-X discovery uses the maintainer's existing signed-in browser session, not an X developer token. It never publishes automatically or bypasses access controls. Discovery stores public metadata and copies a prompt only when the exact text is visibly published in the source post. It never asks a model to recover a missing prompt. Publication uses the official X embed first, with a permission-cleared hosted copy reserved for posts that cannot be embedded. The recurring task prompt lives in [`docs/DAILY_COLLECTION_PROMPT.md`](./docs/DAILY_COLLECTION_PROMPT.md).
+X discovery uses the maintainer's existing signed-in browser session, not an X developer token, and never bypasses access controls. Discovery stores public metadata and copies a prompt only when the exact text is visibly published in the source post; it never asks a model to recover a missing prompt. Clear cases are published only after source, model, media, storage, and in-site playback checks pass, while ambiguous or failed cases remain in the review queue. Published videos use project storage for reliable in-site playback and always retain the original X source link. The recurring task prompt lives in [`docs/DAILY_COLLECTION_PROMPT.md`](./docs/DAILY_COLLECTION_PROMPT.md).
 
 ## Model routing
 
@@ -129,7 +129,7 @@ The live website runs on Railway. The Railway service tracks the public GitHub r
 
 ## Contribution and copyright
 
-Read [`CONTRIBUTING.md`](./CONTRIBUTING.md) before submitting a case. Link the original creator and identify the prompt provenance. Include prompt text only when it can be copied verbatim from the original post or an official public script. Do not commit downloaded X videos unless redistribution permission is documented and the embed fallback has been approved. Creators may open an Issue to request correction or removal.
+Read [`CONTRIBUTING.md`](./CONTRIBUTING.md) before submitting a case. Link the original creator and identify the prompt provenance. Include prompt text only when it can be copied verbatim from the original post or an official public script. Videos are stored outside Git in project storage; do not commit downloaded creator media to the repository. Creators may open an Issue to request correction or removal.
 
 Code is MIT licensed. Videos, prompts, names, and other collected material remain subject to their original owners and source-platform terms. MiniMax H3 is distributed under its own license; this community project is not affiliated with MiniMax.
 

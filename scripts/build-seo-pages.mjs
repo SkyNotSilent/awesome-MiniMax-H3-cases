@@ -19,15 +19,15 @@ const faqItems = {
   'zh-CN': [
     ['这个项目收录什么？', '收录带原始来源、可在站内观看的 MiniMax H3 视频案例。'],
     ['为什么有些案例没有 Prompt？', '只有原帖逐字公开完整 Prompt 时才展示；未公开时不会反推、补写或改写。'],
-    ['视频如何播放？', '社区案例优先使用官方 X 嵌入播放器，并在播放器载入前显示独立封面。'],
-    ['候选案例会自动发布吗？', '不会。候选必须经过来源、模型标注、Prompt 来源和媒体元数据审核。'],
+    ['视频如何播放？', '案例视频通过项目存储在站内播放，并始终保留 X 原帖入口。'],
+    ['候选案例会自动发布吗？', '来源、模型、媒体、存储和站内播放校验全部通过的明确案例可以直接发布；模糊项继续留在审核队列。'],
     ['如何请求纠错或移除？', '请在 GitHub 提交 Issue，并附上原帖或权利证明。'],
   ],
   en: [
     ['What does this project collect?', 'Source-attributed MiniMax H3 video examples that can be watched inside the library.'],
     ['Why do some examples have no prompt?', 'A prompt appears only when the original post publishes the complete text. Missing prompts are never inferred, completed, or rewritten.'],
-    ['How are videos played?', 'Community examples use the official X embed, with a case-specific cover shown while the player loads.'],
-    ['Are discovered examples published automatically?', 'No. Sources, model labels, prompt provenance, and media metadata are reviewed before publication.'],
+    ['How are videos played?', 'Case videos play in-site through project storage and always retain a link to the original X post.'],
+    ['Are discovered examples published automatically?', 'Clear examples can be published after source, model, media, storage, and in-site playback checks pass; ambiguous items stay in the review queue.'],
     ['How can a creator request a correction or removal?', 'Open a GitHub Issue and include the original post or proof of ownership.'],
   ],
 }
@@ -40,13 +40,13 @@ const pageDefinitions = [
     copy: {
       'zh-CN': {
         title: 'MiniMax H3 视频案例与公开 Prompt — H3 Field Notes',
-        description: `收录 ${cases.length} 个可筛选、可追溯、可站内观看的 MiniMax H3 视频案例；Prompt 仅在原作者公开完整文本时按原文呈现。`,
-        keywords: 'MiniMax H3 视频案例,MiniMax H3 Prompt,Hailuo 3.0,海螺 AI,H3 ComfyUI,AI 视频案例,T2VA,FL2VA,Ref2VA',
+        description: `MiniMax H3 视频案例库：收录 ${cases.length} 个可筛选、可追溯、可站内观看的真实案例，覆盖 Hailuo H3、文字生视频、图生视频与视频生视频；Prompt 仅按来源公开原文呈现。`,
+        keywords: 'MiniMax H3,MiniMax H3 视频案例,MiniMax H3 Prompt,Hailuo H3,Hailuo 3.0,海螺 H3,海螺 3.0,海螺 AI,AI 视频生成,text-to-video,image-to-video,video-to-video,H3 ComfyUI,T2VA,FL2VA,Ref2VA',
       },
       en: {
         title: 'MiniMax H3 Video Examples & Public Prompts — H3 Field Notes',
-        description: `Browse ${cases.length} source-attributed MiniMax H3 video examples with in-site playback. Prompts appear verbatim only when creators publish the complete text.`,
-        keywords: 'MiniMax H3 video examples,MiniMax H3 prompts,Hailuo H3,Hailuo 3.0,MiniMax H3 ComfyUI,AI video cases,T2VA,FL2VA,Ref2VA',
+        description: `Browse ${cases.length} source-attributed MiniMax H3 video examples with in-site playback across text-to-video, image-to-video, and video-to-video. Prompts appear only when sources publish the complete text.`,
+        keywords: 'MiniMax H3,MiniMax H3 video examples,MiniMax H3 prompts,Hailuo H3,Hailuo 3.0,AI video generation,text-to-video,image-to-video,video-to-video,MiniMax H3 ComfyUI,T2VA,FL2VA,Ref2VA',
       },
     },
   },
