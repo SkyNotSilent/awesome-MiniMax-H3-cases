@@ -33,7 +33,7 @@ export const copy = {
   zh: {
     htmlLang: 'zh-CN',
     siteTitle: 'Awesome MiniMax H3 — 视频案例与教程',
-    siteDescription: '631 个可筛选、可追溯、可站内观看的 MiniMax H3 / Hailuo 3.0 视频案例，以及公开 Prompt 与来源核验教程。',
+    siteDescription: '653 个可筛选、可追溯、可站内观看的 MiniMax H3 / Hailuo 3.0 视频案例，以及公开 Prompt 与来源核验教程。',
     nav: { cases: '案例', tutorials: '教程', faq: '常见问题', source: '源码', language: 'EN' },
     intro: {
       kicker: 'COMMUNITY VIDEO ARCHIVE / 2026',
@@ -129,7 +129,7 @@ export const copy = {
   en: {
     htmlLang: 'en',
     siteTitle: 'Awesome MiniMax H3 — Video Examples & Tutorials',
-    siteDescription: '631 filterable, source-attributed MiniMax H3 / Hailuo 3.0 video examples with in-site playback, public prompts, and source-checked tutorials.',
+    siteDescription: '653 filterable, source-attributed MiniMax H3 / Hailuo 3.0 video examples with in-site playback, public prompts, and source-checked tutorials.',
     nav: { cases: 'Cases', tutorials: 'Tutorials', faq: 'FAQ', source: 'Source', language: 'ZH' },
     intro: {
       kicker: 'COMMUNITY VIDEO ARCHIVE / 2026',
