@@ -8,10 +8,10 @@
   ],
   "properties": {
     "id": { "type": "string", "minLength": 3 },
-    "title": { "type": "string" },
-    "titleEn": { "type": "string", "minLength": 1 },
-    "summary": { "type": "string", "minLength": 1 },
-    "summaryEn": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1, "pattern": "^[^@]*$" },
+    "titleEn": { "type": "string", "minLength": 1, "pattern": "^[^@]*$" },
+    "summary": { "type": "string", "minLength": 1, "pattern": "^[^@]*$" },
+    "summaryEn": { "type": "string", "minLength": 1, "pattern": "^[^@]*$" },
     "model": { "type": "string" },
     "mode": { "enum": ["T2VA", "FL2VA", "Ref2VA", "Unknown"] },
     "prompt": { "type": ["string", "null"], "minLength": 1 },
@@ -25,6 +25,7 @@
     "sourceCaption": { "type": "string", "minLength": 1 },
     "approvedAt": { "type": "string", "minLength": 1 },
     "attributionNote": { "type": "string", "minLength": 1 },
+    "editorialBasis": { "type": "string", "minLength": 1 },
     "engagement": {
       "type": "object",
       "required": ["replies", "reposts", "likes", "views"],

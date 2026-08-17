@@ -1,5 +1,6 @@
 import { access, mkdir, readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
+import { requireEditorialCopy } from './editorial-copy.mjs'
 
 const root = resolve(import.meta.dirname, '..')
 const candidatesPath = resolve(root, 'data/candidates.json')
@@ -52,6 +53,7 @@ const seenCandidateSources = new Set()
 
 for (const candidate of pending) {
   const normalizedSource = candidate.sourceUrl.replace(/\?.*$/, '')
+  requireEditorialCopy(candidate)
   if (existingIds.has(candidate.id)) throw new Error(`Candidate id is already public: ${candidate.id}`)
   if (existingSources.has(normalizedSource)) throw new Error(`Candidate source is already public: ${normalizedSource}`)
   if (seenCandidateIds.has(candidate.id)) throw new Error(`Duplicate candidate id: ${candidate.id}`)
@@ -121,7 +123,7 @@ async function fetchTweet(candidate) {
 }
 
 function modeFor(candidate, caption) {
-  const declared = candidate.initialClassification?.mode
+  const declared = candidate.classification?.mode ?? candidate.initialClassification?.mode
   if (declared && declared !== 'unknown') return declared
   if (/\b(?:Ref2VA|R2V)\b|reference\s*(?:to|2)\s*video/i.test(caption)) return 'Ref2VA'
   if (/\b(?:FL2VA|I2V)\b|image\s*(?:to|2)\s*video|first[- ]?frame|last[- ]?frame|首帧|尾帧|图生视频/i.test(caption)) return 'FL2VA'
@@ -130,7 +132,7 @@ function modeFor(candidate, caption) {
 }
 
 function categoryFor(candidate, caption) {
-  const initial = candidate.initialClassification?.category
+  const initial = candidate.classification?.category ?? candidate.initialClassification?.category
   if (/\bvs\b|comparison|compare|比較|对比|對比/i.test(caption) || initial === 'comparison') return 'Model Comparison'
   if (/music|\bMV\b|song|音楽|歌|曲/i.test(caption) || initial === 'music') return 'Music Video'
   if (/dance|ダンス|舞蹈/i.test(caption) || initial === 'dance') return 'Local Generation & Dance'
@@ -143,28 +145,28 @@ function categoryFor(candidate, caption) {
 
 const categoryMetadata = {
   'Model Comparison': {
-    zh: '模型对比案例', en: 'Model Comparison', style: 'Comparative', scene: 'Model Comparison', tag: '模型对比',
+    style: 'Comparative', scene: 'Model Comparison', tag: '模型对比',
   },
   'Music Video': {
-    zh: '音乐视频案例', en: 'Music Video', style: 'Music Video', scene: 'Music Video', tag: '音乐视频',
+    style: 'Music Video', scene: 'Music Video', tag: '音乐视频',
   },
   'Local Generation & Dance': {
-    zh: '舞蹈视频案例', en: 'Dance Video', style: 'Dance', scene: 'Character dance', tag: '舞蹈视频',
+    style: 'Dance', scene: 'Character dance', tag: '舞蹈视频',
   },
   'Character & Dialogue': {
-    zh: '角色对白案例', en: 'Character Dialogue', style: 'Dialogue', scene: 'Dialogue', tag: '角色对白',
+    style: 'Dialogue', scene: 'Dialogue', tag: '角色对白',
   },
   'Cinematic & VFX': {
-    zh: '动作与视觉特效案例', en: 'Action and VFX', style: 'Action', scene: 'Action Test', tag: '动作特效',
+    style: 'Action', scene: 'Action Test', tag: '动作特效',
   },
   'UGC & Advertising': {
-    zh: '广告视频案例', en: 'Advertising Video', style: 'Advertising', scene: 'Product Advertising', tag: '广告视频',
+    style: 'Advertising', scene: 'Product Advertising', tag: '广告视频',
   },
   'Local Generation': {
-    zh: '本地生成案例', en: 'Local Generation', style: 'Technical', scene: 'Local H3 generation test', tag: '本地生成',
+    style: 'Technical', scene: 'Local H3 generation test', tag: '本地生成',
   },
   'Community Showcase': {
-    zh: '社区视频案例', en: 'Community Video Example', style: 'Unspecified', scene: 'MiniMax H3 test clip', tag: '社区案例',
+    style: 'Unspecified', scene: 'MiniMax H3 test clip', tag: '社区案例',
   },
 }
 
@@ -199,19 +201,19 @@ function buildCase(candidate, tweet, video) {
   const metadata = categoryMetadata[category]
   const duration = Math.max(1, Math.round(video.duration))
   const publishedAt = tweet.created_at ? new Date(tweet.created_at).toISOString() : candidate.publishedAt
-  const date = publishedAt.slice(0, 10)
   const promptPublished = candidate.promptProvenance !== 'not-published'
   const outputZh = `${duration} 秒 · ${video.width}×${video.height}`
   const outputEn = `${duration}s · ${video.width}×${video.height}`
+  const editorial = requireEditorialCopy(candidate)
 
   return {
     id: candidate.id,
-    title: `${authorHandle} 的 MiniMax H3 ${metadata.zh}`,
-    titleEn: `MiniMax H3 ${metadata.en} by ${authorHandle}`,
+    title: editorial.title,
+    titleEn: editorial.titleEn,
     model: 'MiniMax H3（创作者标注）',
     mode,
-    summary: `${authorHandle} 于 ${date} 公开发布的 MiniMax H3 ${metadata.zh}，原生视频规格为 ${outputZh}。${promptPublished ? '原帖完整公开了 Prompt，本页按原文保留。' : '原帖未公开完整 Prompt，本库不反推或补写。'}`,
-    summaryEn: `A MiniMax H3 ${metadata.en.toLowerCase()} published by ${authorHandle} on ${date}, with a native-video output of ${outputEn}. ${promptPublished ? 'The creator published the complete prompt, preserved here verbatim.' : 'The source did not publish a complete prompt, so this library does not infer or complete one.'}`,
+    summary: `${editorial.summary} 原生视频规格为 ${outputZh}。${promptPublished ? '原帖完整公开了 Prompt，本页按原文保留。' : '原帖未公开完整 Prompt，本库不反推或补写。'}`,
+    summaryEn: `${editorial.summaryEn} Native-video output: ${outputEn}. ${promptPublished ? 'The creator published the complete prompt, preserved here verbatim.' : 'The source did not publish a complete prompt, so this library does not infer or complete one.'}`,
     prompt: candidate.prompt,
     sourceUrl: candidate.sourceUrl.replace(/\?.*$/, ''),
     sourceLabel: `X 原帖 · ${authorHandle}`,
@@ -233,6 +235,7 @@ function buildCase(candidate, tweet, video) {
     sourceCaption: caption,
     engagement: engagementFor(candidate, tweet),
     approvedAt: new Date().toISOString(),
+    editorialBasis: editorial.basis,
     ...(candidate.attributionNote ? { attributionNote: candidate.attributionNote } : {}),
   }
 }
@@ -266,18 +269,6 @@ const enriched = await mapConcurrent(pending, 6, async (candidate) => {
 })
 
 const promoted = enriched.map(({ candidate, tweet, video }) => buildCase(candidate, tweet, video))
-const titleCounts = new Map()
-for (const item of promoted) {
-  titleCounts.set(item.titleEn, (titleCounts.get(item.titleEn) ?? 0) + 1)
-}
-const titleOrdinals = new Map()
-for (const item of promoted) {
-  if ((titleCounts.get(item.titleEn) ?? 0) < 2) continue
-  const ordinal = (titleOrdinals.get(item.titleEn) ?? 0) + 1
-  titleOrdinals.set(item.titleEn, ordinal)
-  item.title = `${item.title} #${ordinal}`
-  item.titleEn = `${item.titleEn} #${ordinal}`
-}
 
 if (!apply) {
   const promptCount = promoted.filter((item) => item.prompt).length

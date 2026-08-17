@@ -37,4 +37,5 @@ export interface VideoCase {
   }
   approvedAt?: string
   attributionNote?: string
+  editorialBasis?: string
 }
