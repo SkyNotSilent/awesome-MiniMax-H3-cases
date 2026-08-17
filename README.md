@@ -2,19 +2,19 @@
 
 # Awesome MiniMax H3 — Video Examples, Prompts & Tutorials
 
-### 631 source-attributed videos with in-site playback · 27 public prompts · 13 source-checked tutorials
+### 653 source-attributed videos with in-site playback · 30 public prompts · 13 source-checked tutorials
 
 **[English](./README.md)** · **[简体中文](./README.zh-CN.md)**
 
 [![Video Gallery](https://img.shields.io/badge/Watch-Live_Video_Gallery-d8ff3e?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/en/)
-[![Examples](https://img.shields.io/badge/video_examples-631-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
-[![Public Prompts](https://img.shields.io/badge/verbatim_prompts-27-f5f5ed?style=flat-square&labelColor=0a0b09)](./data/cases.json)
+[![Examples](https://img.shields.io/badge/video_examples-653-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
+[![Public Prompts](https://img.shields.io/badge/verbatim_prompts-30-f5f5ed?style=flat-square&labelColor=0a0b09)](./data/cases.json)
 [![Tutorials](https://img.shields.io/badge/source--checked_tutorials-13-f5f5ed?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/en/tutorials/)
 [![GitHub Stars](https://img.shields.io/github/stars/SkyNotSilent/awesome-minimax-h3?style=flat-square&labelColor=0a0b09&color=d8ff3e)](https://github.com/SkyNotSilent/awesome-minimax-h3/stargazers)
 [![CI](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml/badge.svg)](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg?style=flat-square)](./LICENSE)
 
-[▶ Browse all 631 video examples](https://h3-field-notes-production.up.railway.app/en/) · [Browse on GitHub](./CATALOG.md) · [中文说明](./README.zh-CN.md) · [Contribute](./CONTRIBUTING.md)
+[▶ Browse all 653 video examples](https://h3-field-notes-production.up.railway.app/en/) · [Browse on GitHub](./CATALOG.md) · [中文说明](./README.zh-CN.md) · [Contribute](./CONTRIBUTING.md)
 
 </div>
 
@@ -22,7 +22,7 @@
 
 **See what MiniMax H3 can actually produce before you spend time setting it up.** MiniMax H3 is also commonly searched as Hailuo H3 or Hailuo 3.0. Browse real text-to-video, image-to-video, and video-to-video outputs from X and MiniMax's official examples, then filter by generation mode, category, style, or scene. Open any case to watch it inside the gallery and jump back to the original source.
 
-> **Largest public collection we could verify on 2026-08-16:** 631 playable, source-attributed MiniMax H3 video cases. The closest public case or prompt galleries found in the same search contained 300, 222, 135, 67, and 28 examples. Prompt-only lists are not counted as video case libraries.
+> **Largest public collection in our 2026-08-16 comparison:** the library now contains 653 playable, source-attributed MiniMax H3 video cases. The closest public case or prompt galleries found in that search contained 300, 222, 135, 67, and 28 examples. Prompt-only lists are not counted as video case libraries.
 
 <details>
 <summary>How the collection-size claim was checked</summary>
@@ -35,14 +35,14 @@ We searched public GitHub repositories and web results for MiniMax H3 / Hailuo H
 
 | What you get | Why it matters |
 | --- | --- |
-| **631 watchable video examples** | Judge MiniMax H3 / Hailuo H3 by real output, not a feature list |
+| **653 watchable video examples** | Judge MiniMax H3 / Hailuo H3 by real output, not a feature list |
 | **Fast search and filters** | Find relevant T2VA, FL2VA, Ref2VA, cinematic, dance, dialogue, music, advertising, and local-generation cases |
 | **Case-specific covers and loading states** | Know what each video contains before opening it and whether the X player is still loading |
 | **Original creator and source on every case** | Verify context, publication date, and attribution without hunting for the post |
 | **Verbatim public prompts when available** | Copy the exact prompt only when the creator or official script published it; missing prompts are never invented |
 | **Chinese and English routes** | Browse the same library in either language without mixed-language pages |
 
-**Current snapshot:** 631 video examples · 628 original X cases · 3 official reproductions · 27 verbatim public prompts.
+**Current snapshot:** 653 video examples · 650 original X cases · 3 official reproductions · 30 verbatim public prompts.
 
 No account, API key, or local model setup is required to browse the public gallery.
 
@@ -95,7 +95,7 @@ The standalone tutorials page lets users filter official setup, Mac, director wo
 | FL2VA | Ramen Rack Focus | [MiniMax public script](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-fl2va-request.sh) |
 | Ref2VA | Follow the Wind | [MiniMax public script](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-ref2va-request.sh) |
 
-The catalog now contains 631 public cases: three official reproducible examples and 628 source-attributed X community cases. Twenty-seven records preserve verbatim prompts published by an official source or creator; every other entry explicitly marks the prompt as not published. The collection spans local ComfyUI benchmarks, text-to-video, image-to-video and video-to-video workflows, model comparisons, music videos, multi-shot films, native audio, and post-production pipelines. Every published case plays inside the gallery through project storage and keeps a direct link to its original source.
+The catalog now contains 653 public cases: three official reproducible examples and 650 source-attributed X community cases. Thirty records preserve verbatim prompts published by an official source or creator; every other entry explicitly marks the prompt as not published. The collection spans local ComfyUI benchmarks, text-to-video, image-to-video and video-to-video workflows, model comparisons, music videos, multi-shot films, native audio, and post-production pipelines. Every published case plays inside the gallery through project storage and keeps a direct link to its original source.
 
 ## Discovery and review pipeline
 

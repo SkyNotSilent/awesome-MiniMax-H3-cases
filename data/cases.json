@@ -31232,5 +31232,1063 @@
     },
     "approvedAt": "2026-08-16T04:44:06.093Z",
     "editorialBasis": "sourceCaption explicitly names the two cat-pose terms and the two-model comparison"
+  },
+  {
+    "id": "x-2089141649503044017",
+    "title": "乘法口诀的九宫格鱼群",
+    "titleEn": "Multiplication Tables with Fish Pairs",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "T2VA",
+    "summary": "橙色猫咪带着九个水池，用成对鱼群和逐拍算式演示二的乘法表。 原生视频规格为 15 秒 · 2560×1440。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "An orange cat guides a nine-pool grid where paired fish and beat-matched equations teach the two-times table. Native-video output: 15s · 2560×1440. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "integrated_multimodal_description: [Shot 1] Adorable rounded 3D animation for preschool children, soft studio lighting, subtle contact shadows, smooth gradients, and a calm uncluttered vertical composition on a clean off-white background with a very soft pale-blue glow behind the center. Use a restrained palette of off-white, warm orange, cream, turquoise blue, and dark gray: orange is the cat, turquoise is the fish and every correct answer, dark gray is the equation. The camera is a Static Shot for the entire film. A small smiling cat mascot bounces gently into the upper area: a big rounded head on a short chubby body, warm orange fur, a cream muzzle, cream belly and cream paw tips, two small rounded triangle ears with pale pink inner lining, round full cheeks, simple black dot eyes, tiny whiskers, and a thick rounded tail. It lands with a soft squash-and-stretch, its tail curls up once behind it, and it taps the air with one front paw, creating a spreading circular pale-blue water ripple. The ripple opens outward and reveals a three-by-three grid of nine small empty pale-blue water pools in the lower half of the frame, with a clear empty space for one large equation above them. A warm young Japanese female narrator with a bright, soft voice (S1) chants in a steady rhythmic sing-song counting cadence, one line per beat, and begins: <d>[Japanese] にのだん!</d>\n\n[Shot 2] At 00:01.200, one large thick rounded dark-gray equation appears in the upper space and is rewritten twice in place, holding each state clearly on its own beat: first \"2 × 1 = 2\", then \"2 × 2 = 4\", then \"2 × 3 = 6\". On each new equation, exactly one matching pair of two plump turquoise-blue fish drops together into the next empty water pool with a small splash. The two fish of a pair are identical, side by side, both facing right and slightly offset so both are clearly countable, each with a cream belly, a triangular tail, and one round black eye. The pairs fill the top row from left to right, and the answer numeral turns turquoise as each pair lands. At the end of this shot exactly three pools in the top row are filled, each holding exactly two fish, for six fish in total; six pools remain empty. (S1) chants on the beat: <d>[Japanese] にいちがに。ににんがし。にさんがろく。</d>\n\n[Shot 3] At 00:04.700, a soft pale-blue water ripple wipes across the frame and the same large equation continues to be rewritten in place on each beat: \"2 × 4 = 8\", then \"2 × 5 = 10\", then \"2 × 6 = 12\". One matching pair of two fish drops into the next empty pool on each new equation, filling the middle row from left to right, and the answer numeral turns turquoise as each pair lands. Two-digit answers stay large, correctly formed, and fully readable. The three pairs already in the top row stay exactly where they are and do not move, change, or multiply. At the end of this shot exactly six pools are filled, each holding exactly two fish, for twelve fish in total; three pools remain empty. (S1) chants on the beat: <d>[Japanese] にしがはち。にごじゅう。にろくじゅうに。</d>\n\n[Shot 4] At 00:08.100, a soft pale-blue water ripple wipes across the frame and the large equation is rewritten in place on each beat for the last time: \"2 × 7 = 14\", then \"2 × 8 = 16\", then \"2 × 9 = 18\". One matching pair of two fish drops into the next empty pool on each new equation, filling the bottom row from left to right, and the answer numeral turns turquoise as each pair lands. The six pairs already placed stay exactly where they are and do not move, change, or multiply. At the end of this shot all nine pools are filled, each holding exactly two fish, for eighteen fish in total. (S1) chants on the beat: <d>[Japanese] にしちじゅうし。にはちじゅうろく。にくじゅうはち。</d>\n\n[Shot 5] At 00:12.100, the final equation \"2 × 9 = 18\" stays in the upper space and its turquoise answer numeral \"18\" gently enlarges once and settles. Below it, the nine pairs of fish gain small friendly smiles and their tails flick once, in a quick wave from the top-left pool to the bottom-right pool, each pair flicking together as one. The same warm-orange cat mascot from [Shot 1], unchanged in every detail, bounces in at the lower edge beside the grid and points up toward it with one front paw while its tail curls once and small pale-blue sparkles rise around it. Exactly nine pools remain, each still holding exactly two fish, and no new objects enter. (S1) says: <d>[Japanese] よく できました!</d> Hold the complete grid, the equation, and the cat clearly and without further motion until the film ends exactly at 00:15.000.\n\nThroughout the entire film, keep the camera a Static Shot, keep the off-white background clean and empty, keep the single equation large, thick, rounded, correctly shaped, and centered in the upper space, and keep the fish design identical in every shot. Every filled pool always holds exactly two fish - never one, never three - and the two fish of a pair always arrive together, land together, and stay together as one unit. The cat must look exactly the same in [Shot 1] and [Shot 5], identical in fur color, head and body shape, ears, eyes, and tail, and it never appears in [Shot 2], [Shot 3], or [Shot 4]. Only one cat is ever on screen, it stays beside or above the grid, and it never stands on, reaches into, covers, or eats any fish. Only one equation is ever visible at a time. Display only numerals and the symbols × and =. Do not generate any hiragana, katakana, kanji, Latin words, or any other written characters anywhere on screen. Fish only ever accumulate, never disappear, never leave their pool once placed, and never overlap; the number of filled pools must exactly match the multiplier of the current equation, and the total fish count must exactly match the answer numeral, reaching exactly eighteen fish in nine pools at the end. Avoid fast camera movement, sudden cuts, cluttered backgrounds, tiny typography, warped or duplicated numerals, reversed two-digit numbers, wrong counts, extra or missing fish, unpaired single fish, fish appearing before their equation, fish swimming freely around the frame, realistic or scaly fish anatomy, scary expressions, harsh colors, heavy motion blur, and loud or distracting sound effects.\n\noverall_soundscape: A soft double water plop sounds each time a pair of fish drops into a pool. A light padded paw tap sounds when the cat touches the air, and one single soft kitten meow occurs as the cat first bounces into frame. Gentle spreading water ripples mark the two transitions, and a small confirmation chime sounds each time an answer numeral turns turquoise. Tiny shimmer sparkles occur around the cat at the end.\n\nnon_diegetic_music: A light nursery jingle at a steady moderate tempo using marimba, soft celesta, and gently plucked strings, with a clear repeating beat that the chant lands on. Begin with a single marimba figure, add one instrument at each row of the grid, and thin back out for the final line. Resolve with a clean rising three-note chime landing at 15.000 seconds.",
+    "sourceUrl": "https://x.com/tanabe_fragm/status/2089141649503044017",
+    "sourceLabel": "X 原帖 · @tanabe_fragm",
+    "author": "タナベ | AI動画 × マーケティング",
+    "publishedAt": "2026-08-17T00:05:58.000Z",
+    "mediaUrl": "/media/x-2089141649503044017.mp4",
+    "posterUrl": "/posters/x/2089141649503044017.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Music Video",
+    "styles": [
+      "Music Video"
+    ],
+    "scenes": [
+      "Music Video"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3で、リズムに合わせてかけ算を学べる動画【パート2】を作りました😃\n\n今回は「2の段」です！\n\n昨夜、うちの子（小学2年生）に「1の段」の動画（引用元ポスト）を見せたところ、けさ\n\n「いちのだ〜ん♩」\n\nと歌っていたそうです😌\n\nまだ学校ではかけ算を習っていないのですが、こうやって歌で覚えていくのは、やっぱり効果がありそうですね😃\n\nちなみに今回の動画は、前回の「1の段」のプロンプトをベースに、Claude Codeに\n\n「次は2の段にして」\n\nと伝えただけ。\n\nちゃんと「2の段」の動画に作り替えてくれました😄\n\nプロンプトはこちら↓\n------------------\nintegrated_multimodal_description: [Shot 1] Adorable rounded 3D animation for preschool children, soft studio lighting, subtle contact shadows, smooth gradients, and a calm uncluttered vertical composition on a clean off-white background with a very soft pale-blue glow behind the center. Use a restrained palette of off-white, warm orange, cream, turquoise blue, and dark gray: orange is the cat, turquoise is the fish and every correct answer, dark gray is the equation. The camera is a Static Shot for the entire film. A small smiling cat mascot bounces gently into the upper area: a big rounded head on a short chubby body, warm orange fur, a cream muzzle, cream belly and cream paw tips, two small rounded triangle ears with pale pink inner lining, round full cheeks, simple black dot eyes, tiny whiskers, and a thick rounded tail. It lands with a soft squash-and-stretch, its tail curls up once behind it, and it taps the air with one front paw, creating a spreading circular pale-blue water ripple. The ripple opens outward and reveals a three-by-three grid of nine small empty pale-blue water pools in the lower half of the frame, with a clear empty space for one large equation above them. A warm young Japanese female narrator with a bright, soft voice (S1) chants in a steady rhythmic sing-song counting cadence, one line per beat, and begins: <d>[Japanese] にのだん!</d>\n\n[Shot 2] At 00:01.200, one large thick rounded dark-gray equation appears in the upper space and is rewritten twice in place, holding each state clearly on its own beat: first \"2 × 1 = 2\", then \"2 × 2 = 4\", then \"2 × 3 = 6\". On each new equation, exactly one matching pair of two plump turquoise-blue fish drops together into the next empty water pool with a small splash. The two fish of a pair are identical, side by side, both facing right and slightly offset so both are clearly countable, each with a cream belly, a triangular tail, and one round black eye. The pairs fill the top row from left to right, and the answer numeral turns turquoise as each pair lands. At the end of this shot exactly three pools in the top row are filled, each holding exactly two fish, for six fish in total; six pools remain empty. (S1) chants on the beat: <d>[Japanese] にいちがに。ににんがし。にさんがろく。</d>\n\n[Shot 3] At 00:04.700, a soft pale-blue water ripple wipes across the frame and the same large equation continues to be rewritten in place on each beat: \"2 × 4 = 8\", then \"2 × 5 = 10\", then \"2 × 6 = 12\". One matching pair of two fish drops into the next empty pool on each new equation, filling the middle row from left to right, and the answer numeral turns turquoise as each pair lands. Two-digit answers stay large, correctly formed, and fully readable. The three pairs already in the top row stay exactly where they are and do not move, change, or multiply. At the end of this shot exactly six pools are filled, each holding exactly two fish, for twelve fish in total; three pools remain empty. (S1) chants on the beat: <d>[Japanese] にしがはち。にごじゅう。にろくじゅうに。</d>\n\n[Shot 4] At 00:08.100, a soft pale-blue water ripple wipes across the frame and the large equation is rewritten in place on each beat for the last time: \"2 × 7 = 14\", then \"2 × 8 = 16\", then \"2 × 9 = 18\". One matching pair of two fish drops into the next empty pool on each new equation, filling the bottom row from left to right, and the answer numeral turns turquoise as each pair lands. The six pairs already placed stay exactly where they are and do not move, change, or multiply. At the end of this shot all nine pools are filled, each holding exactly two fish, for eighteen fish in total. (S1) chants on the beat: <d>[Japanese] にしちじゅうし。にはちじゅうろく。にくじゅうはち。</d>\n\n[Shot 5] At 00:12.100, the final equation \"2 × 9 = 18\" stays in the upper space and its turquoise answer numeral \"18\" gently enlarges once and settles. Below it, the nine pairs of fish gain small friendly smiles and their tails flick once, in a quick wave from the top-left pool to the bottom-right pool, each pair flicking together as one. The same warm-orange cat mascot from [Shot 1], unchanged in every detail, bounces in at the lower edge beside the grid and points up toward it with one front paw while its tail curls once and small pale-blue sparkles rise around it. Exactly nine pools remain, each still holding exactly two fish, and no new objects enter. (S1) says: <d>[Japanese] よく できました!</d> Hold the complete grid, the equation, and the cat clearly and without further motion until the film ends exactly at 00:15.000.\n\nThroughout the entire film, keep the camera a Static Shot, keep the off-white background clean and empty, keep the single equation large, thick, rounded, correctly shaped, and centered in the upper space, and keep the fish design identical in every shot. Every filled pool always holds exactly two fish - never one, never three - and the two fish of a pair always arrive together, land together, and stay together as one unit. The cat must look exactly the same in [Shot 1] and [Shot 5], identical in fur color, head and body shape, ears, eyes, and tail, and it never appears in [Shot 2], [Shot 3], or [Shot 4]. Only one cat is ever on screen, it stays beside or above the grid, and it never stands on, reaches into, covers, or eats any fish. Only one equation is ever visible at a time. Display only numerals and the symbols × and =. Do not generate any hiragana, katakana, kanji, Latin words, or any other written characters anywhere on screen. Fish only ever accumulate, never disappear, never leave their pool once placed, and never overlap; the number of filled pools must exactly match the multiplier of the current equation, and the total fish count must exactly match the answer numeral, reaching exactly eighteen fish in nine pools at the end. Avoid fast camera movement, sudden cuts, cluttered backgrounds, tiny typography, warped or duplicated numerals, reversed two-digit numbers, wrong counts, extra or missing fish, unpaired single fish, fish appearing before their equation, fish swimming freely around the frame, realistic or scaly fish anatomy, scary expressions, harsh colors, heavy motion blur, and loud or distracting sound effects.\n\noverall_soundscape: A soft double water plop sounds each time a pair of fish drops into a pool. A light padded paw tap sounds when the cat touches the air, and one single soft kitten meow occurs as the cat first bounces into frame. Gentle spreading water ripples mark the two transitions, and a small confirmation chime sounds each time an answer numeral turns turquoise. Tiny shimmer sparkles occur around the cat at the end.\n\nnon_diegetic_music: A light nursery jingle at a steady moderate tempo using marimba, soft celesta, and gently plucked strings, with a clear repeating beat that the chant lands on. Begin with a single marimba figure, add one instrument at each row of the grid, and thin back out for the final line. Resolve with a clean rising three-note chime landing at 15.000 seconds.",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 3,
+      "views": 572,
+      "snapshotAt": "2026-08-17T02:39:30.454Z"
+    },
+    "approvedAt": "2026-08-17T02:39:30.454Z",
+    "editorialBasis": "sourceCaption publishes the complete structured prompt and the reviewed frames show the matching cat, equations, and fish-grid animation"
+  },
+  {
+    "id": "x-2089127930647683146",
+    "title": "时光机抵达古波斯",
+    "titleEn": "A Time Machine Reaches Ancient Persia",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "镜头穿过时空隧道，抵达带有宫殿、仪仗与人群的古代波斯城市。 原生视频规格为 15 秒 · 864×480。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "The camera travels through a time tunnel into an ancient Persian city filled with palaces, a procession, and crowds. Native-video output: 15s · 864×480. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ImanOracle/status/2089127930647683146",
+    "sourceLabel": "X 原帖 · @ImanOracle",
+    "author": "ImanOracle.eth",
+    "publishedAt": "2026-08-16T23:11:27.000Z",
+    "mediaUrl": "/media/x-2089127930647683146.mp4",
+    "posterUrl": "/posters/x/2089127930647683146.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "864×480",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "چقدر این مدل Minimax H3 خوبه، یک سرور 5090 اجاره کردم از Vast AI با ۵۰ سنت واسه هر ساعت، تو ۴ دقیقه این ویدیو رو ساخت\nگفتم فکر کن از ماشین زمان استفاده کردیم رفتیم زمان قدیم پرسپولیس!",
+    "engagement": {
+      "replies": 2,
+      "reposts": 1,
+      "likes": 69,
+      "views": 4012,
+      "snapshotAt": "2026-08-17T02:39:30.455Z"
+    },
+    "approvedAt": "2026-08-17T02:39:30.455Z",
+    "editorialBasis": "sourceCaption states the creator generated the clip with MiniMax H3 and describes the ancient-Persia time-travel premise"
+  },
+  {
+    "id": "x-2089124518166135196",
+    "title": "幽灵侦察机的变形预告",
+    "titleEn": "Ghost Recon Fighter Transformation",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "暗色侦察机在红蓝光带与扫描字幕中完成高速揭晓和机甲变形。 原生视频规格为 19 秒 · 1920×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A dark recon fighter races through red-blue light trails, scan typography, and a mecha transformation reveal. Native-video output: 19s · 1920×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/stonekaiju/status/2089124518166135196",
+    "sourceLabel": "X 原帖 · @stonekaiju",
+    "author": "Stone Kaiju ᯅ ⚡ ³³º¹",
+    "publishedAt": "2026-08-16T22:57:53.000Z",
+    "mediaUrl": "/media/x-2089124518166135196.mp4",
+    "posterUrl": "/posters/x/2089124518166135196.jpg",
+    "duration": 19,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Action"
+    ],
+    "scenes": [
+      "Action Test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "“Longinus” 💫 \n\nInspired by @aimikoda’s wonderful character reveal prompt 🙏 Worked with Luma in Luma Agents @LumaLabsAI  to convert this to a ship reveal. Referenced a Fighter variant drawn in @Procreate and ran this with Minimax H3.\n\nLuma’s prompt and notes: “LONGINUS — Reveal Trailer Concept\n\nAdapting Aimikoda's H3 character-reveal template to a SHIP. Register: hot-blooded M******. Hero beat: mid-flight Fighter → B****** transformation. Identity authority: Stonekaiju's Procreate V******* drawing (8onK8nEw) — cell-shaded anime.\n\nThe pitch\n\nLONGINUS — the spear that pierces the dark. A stealth deep-recon variant of the Spectral Knights: a ghost the whole trailer, until it stands up. Restraint → release. Dark hull, blue-and-red glow, clean cel-shading, bold anime editorial.\n\nPARAMETERS (parameterized — swap freely)\n\nCHARACTER_NAME = \"LONGINUS\"\n\nSTATUS_TEXT_1 = \"GHOST DRIVE: ONLINE\"\n\nSTATUS_TEXT_2 = \"MODE: DEEP RECON\"\n\nINTERSTITIAL_TEXT_1 = \"PHANTOM VEIL\"\n\nINTERSTITIAL_TEXT_2 = \"TARGET SCAN\"\n\nINTERSTITIAL_TEXT_3 = \"FULL DRIVE\"\n\nSUBTITLE = \"Spectral Knights · Deep-Recon Variant\"\n\nPROJECT_TEXT = \"SPECTRAL KNIGHTS\"\n\nThe ~13-cut reveal (ship beats)\n\nHULL — extreme close-up on a defining detail (Spectral Knights sigil / canopy / a glowing seam), half in shadow. Slow push-in.\n\nIGNITION — the ghost-drive spins up: blue/red glow-filaments race the hull, vents flare, stealth field shimmers alive.\n\nSTATUS CARD — editorial freeze: huge circular field, oversized condensed type GHOST DRIVE: ONLINE, cropped hull detail integrated. Text reads first, ship overlaps.\n\nENGAGE CARD — high-contrast ship silhouette over an accent band, MODE: DEEP RECON, energy ribbon sweep.\n\nWORLD — smash into space: Longinus dives/boosts through a nebula & the hulls of a sleeping enemy fleet. Whip-pan.\n\nDETAIL — the stealth field ripples and it decloaks; vector vanes articulate.\n\nINTERSTITIAL 01 — text card PHANTOM VEIL; ship as a small integrated silhouette.\n\nIMPACT — aggressive angle: threads a defense-turret sweep / debris gauntlet (Itano-lite).\n\nINTERSTITIAL 02 — punchy card TARGET SCAN, scan-lines/UI.\n\nVELOCITY — rushes the lens, environment stretches into speed blur.\n\nINTERSTITIAL 03 — FULL DRIVE — the transformation trigger card, sweeping energy stroke.\n\nHERO — THE TRANSFORMATION — mid-flight Fighter → G****** → B******. (Craft: SLOW-MOTION section on the transform, named & scoped; camera ORBIT during it; dual-identity bridge — the blue/red glow signature + Spectral Knights sigil carry across every form so it reads as ONE machine changing.) Battroid lands the hero pose. Return to speed.\n\nSHIP ID — clean pale field, enormous concentric circles + network nodes, the B******* (or a heroic banking fighter) overlapping huge type LONGINUS, subtitle Spectral Knights · Deep-Recon Variant. Behind: a black ink-brush emblem holding a ghosted spear/lance motif.\n\nEdit + Score\n\nEDIT: aggressive AAA rhythm — hard cuts, graphic matches, whip-pans, freeze-frames, speed ramps; every cut a new composition; the graphic cards break the flight rhythm. No slow dissolves. SCORE: hot-blooded anime brass + driving percussion + synth, hits on cuts/type, restrained ghost-tension → the transformation is the PEAK → final reveal stinger.\n\nCraft integrations (our kit)\n\nIdentity authority: the drawing is the SOLE authority for the FIGHTER form — never redesign; adapt world/VFX/movement to it.\n\nText in POST: in-gen cards carry only BIG status words; render the crisp LONGINUS ID card + emblem in code (Pillow) for legibility — as we did for Valhalla.\n\nCell-shaded throughout: clean lineart, cel shading, bold flat color, anime editorial.\n\nThe honest open decision (flag)\n\nThe Mecha form doesn't exist yet — only your fighter does. Two paths:\n\n(A) Silhouette/backlit Mecha (my lean for the first experiment): keep the transform dramatic and shadowed so your fighter stays the star and identity can't drift. Fast, safe.\n\n(B) Design the Mecha as a full bridged form first (its own plate), then transform to it — truer, but a bigger step and a real identity-lock challenge. Also honest: an original mecha transforming cleanly is the hardest thing to ask a model for in one pass — if H3 fumbles the transform in-gen, we shoot that beat as its own controlled keyframe shot and cut it in.”\n\n Try Luma Agents here… http://lumalabs.ai/app\n\n#LumaCPP",
+    "engagement": {
+      "replies": 1,
+      "reposts": 1,
+      "likes": 11,
+      "views": 279,
+      "snapshotAt": "2026-08-17T02:39:30.455Z"
+    },
+    "approvedAt": "2026-08-17T02:39:30.455Z",
+    "editorialBasis": "sourceCaption documents the referenced fighter drawing and MiniMax H3 run; reviewed frames confirm the reveal-trailer treatment"
+  },
+  {
+    "id": "x-2089122755077874016",
+    "title": "罗宾汉的最后旅程",
+    "titleEn": "Robin Hood’s Final Journey",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "老去的罗宾汉在雪地与篝火之间回望自己的选择，形成一支完整的电影化短片。 原生视频规格为 71 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "An aging Robin Hood reflects on his choices across snowy landscapes and a firelit camp in a complete cinematic short. Native-video output: 71s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Banyu_Biroeee/status/2089122755077874016",
+    "sourceLabel": "X 原帖 · @Banyu_Biroeee",
+    "author": "Rian Andria",
+    "publishedAt": "2026-08-16T22:50:53.000Z",
+    "mediaUrl": "/media/x-2089122755077874016.mp4",
+    "posterUrl": "/posters/x/2089122755077874016.jpg",
+    "duration": 71,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "As his legend begins to fade, Robin Hood embarks on one final journey through Sherwood Forest, confronting the wounds, choices, and sacrifices that shaped the outlaw before the world says goodbye to its greatest hero.\n\nMinimax H3 on @Hailuo_AI \n\n#minimaxh3 #aivideo #hailuoai",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 52,
+      "snapshotAt": "2026-08-17T02:39:30.455Z"
+    },
+    "approvedAt": "2026-08-17T02:39:30.455Z",
+    "editorialBasis": "sourceCaption explicitly credits MiniMax H3 on Hailuo and identifies the Robin Hood narrative"
+  },
+  {
+    "id": "x-2089110704108290281",
+    "title": "炸虾小姐的上班应援歌",
+    "titleEn": "The Fried-Shrimp Lady’s Workday Song",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "炸虾造型的少女角色用歌声为假期结束后的上班日加油。 原生视频规格为 10 秒 · 1280×720。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A shrimp-costumed character sings an encouraging tune for the first workday after the holiday. Native-video output: 10s · 1280×720. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/asanagiako/status/2089110704108290281",
+    "sourceLabel": "X 原帖 · @asanagiako",
+    "author": "朝凪あこAIイラスト",
+    "publishedAt": "2026-08-16T22:03:00.000Z",
+    "mediaUrl": "/media/x-2089110704108290281.mp4",
+    "posterUrl": "/posters/x/2089110704108290281.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "1280×720",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Music Video",
+    "styles": [
+      "Music Video"
+    ],
+    "scenes": [
+      "Music Video"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "お盆休みも終わって、お仕事ですね…✨\nえびふらいりすにお仕事が嫌って気持ちを伝えたら謎のお歌を歌ってくれました…✨\n皆様えびふらい系お嬢様の応援で頑張りましょう\n\n…これがMiniMax H3の力…！？\n#お嬢様の小さな日常",
+    "engagement": {
+      "replies": 4,
+      "reposts": 9,
+      "likes": 21,
+      "views": 299,
+      "snapshotAt": "2026-08-17T02:39:30.456Z"
+    },
+    "approvedAt": "2026-08-17T02:39:30.456Z",
+    "editorialBasis": "sourceCaption explicitly identifies MiniMax H3 and describes the character singing the mysterious encouragement song"
+  },
+  {
+    "id": "x-2089106173920522485",
+    "title": "菠萝日的厨房小剧场",
+    "titleEn": "Pineapple Day Kitchen Sketch",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "圆润的三维女孩在厨房里与猫咪和菠萝互动，并完成日语对白。 原生视频规格为 15 秒 · 576×576。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A rounded 3D girl interacts with a cat and pineapple in a kitchen while delivering Japanese dialogue. Native-video output: 15s · 576×576. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Spoonful_of_Fun/status/2089106173920522485",
+    "sourceLabel": "X 原帖 · @Spoonful_of_Fun",
+    "author": "一抹のFun",
+    "publishedAt": "2026-08-16T21:45:00.000Z",
+    "mediaUrl": "/media/x-2089106173920522485.mp4",
+    "posterUrl": "/posters/x/2089106173920522485.jpg",
+    "duration": 15,
+    "aspectRatio": "square",
+    "resolution": "576×576",
+    "tags": [
+      "MiniMax H3",
+      "角色对白",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Character & Dialogue",
+    "styles": [
+      "Dialogue"
+    ],
+    "scenes": [
+      "Dialogue"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "おはようございます。\n\n今日８月17日は「パイナップルの日」なんですね。\nということで今日もMiniMax H3で動画化。\n昨日の課題だったセリフは解決。色々と向上したような。\nただ、些細なことながら気になることが。膝や肘の関節、メカニカルな可動部を表現してほしくないんですけどねぇ。なかなか消えない。猫が人形ネコじゃなくってリアル猫だなーとか。\n\nまぁ正直言って平日はあまり手を入れられないんですけどね…",
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 3,
+      "views": 92,
+      "snapshotAt": "2026-08-17T02:39:30.456Z"
+    },
+    "approvedAt": "2026-08-17T02:39:30.456Z",
+    "editorialBasis": "sourceCaption says the creator animated the scene with MiniMax H3 and specifically discusses the solved dialogue"
+  },
+  {
+    "id": "x-2089104947162054735",
+    "title": "参考图驱动的动漫角色动作",
+    "titleEn": "Reference-Driven Anime Character Motion",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "本地角色图与游戏语音作为参考，驱动动漫角色完成短动作与日语语音。 原生视频规格为 5 秒 · 896×1184。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A locally generated character image and game voice reference drive a short anime motion clip with Japanese speech. Native-video output: 5s · 896×1184. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/kyle_catweasel/status/2089104947162054735",
+    "sourceLabel": "X 原帖 · @kyle_catweasel",
+    "author": "かいるー",
+    "publishedAt": "2026-08-16T21:40:07.000Z",
+    "mediaUrl": "/media/x-2089104947162054735.mp4",
+    "posterUrl": "/posters/x/2089104947162054735.jpg",
+    "duration": 5,
+    "aspectRatio": "portrait",
+    "resolution": "896×1184",
+    "tags": [
+      "MiniMax H3",
+      "本地生成",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Technical"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "動画生成楽しいな\n一晩中シャオルーン動画作って遊んでた\nillustrious＋シャオルーンLoraでローカル出力した画像とゲームボイスをリファレンスにComfyUIのMiniMax H3公式ref2vaテンプレートを使って生成\n省メモリ化拡張や高速化Loraは音声が不安定になるというかまともに日本語喋れなくなるから不使用",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "views": 80,
+      "snapshotAt": "2026-08-17T02:39:30.456Z"
+    },
+    "approvedAt": "2026-08-17T02:39:30.456Z",
+    "editorialBasis": "sourceCaption explicitly names the official MiniMax H3 Ref2VA ComfyUI template and its image and voice references"
+  },
+  {
+    "id": "x-2089094854727119124",
+    "title": "卧室里的连续舞步",
+    "titleEn": "Two-Part Bedroom Dance",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "FL2VA",
+    "summary": "蓝发水手服角色在固定机位中完成两段衔接舞步，头发与裙摆随动作自然摆动。 原生视频规格为 12 秒 · 608×1088。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A blue-haired sailor-uniform character performs two connected dance segments in a fixed bedroom shot, with natural hair and skirt motion. Native-video output: 12s · 608×1088. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "動画（MiniMax H3）1本目\n\nThe young anime woman with light blue hair and a white summer sailor uniform shown in <Picture 1> is dancing in place in her bedroom on a bright morning. She sways her hips from side to side and bounces lightly on her feet in rhythm, keeping both feet in the same spot on the wooden floor. Her long light blue hair and her navy pleated skirt swing with the motion, and she keeps looking back over her shoulder with a happy smile. She stays in the same position and does not walk anywhere. Static camera, fixed framing, full body visible, morning sunlight through the curtains. Quiet room ambience, no music.\n\n動画（MiniMax H3）2本目\n\nThe young anime woman with light blue hair and a white summer sailor uniform shown in <Picture 1> keeps dancing in place in her bedroom. She slowly raises both arms above her head and then lowers them again, twisting her upper body gently from side to side as she does. Her long light blue hair sways with the motion and her navy pleated skirt turns a little with her hips. She keeps both feet in the same spot on the wooden floor and glances back over her shoulder with a happy smile. Static camera, fixed framing, full body visible, morning sunlight through the curtains. Quiet room ambience, no music.",
+    "sourceUrl": "https://x.com/Haruka1425054/status/2089094854727119124",
+    "sourceLabel": "X 原帖 · @Haruka1425054",
+    "author": "はるか🎀 Haruka",
+    "publishedAt": "2026-08-16T21:00:01.000Z",
+    "mediaUrl": "/media/x-2089094854727119124.mp4",
+    "posterUrl": "/posters/x/2089094854727119124.jpg",
+    "duration": 12,
+    "aspectRatio": "portrait",
+    "resolution": "608×1088",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Music Video",
+    "styles": [
+      "Music Video"
+    ],
+    "scenes": [
+      "Music Video"
+    ],
+    "inputTypes": [
+      "text",
+      "image"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "連休、おわっちゃったね。\n気合い入れていくよ〜\n\n鏡の前で いち、に、さん。 \n……よし、いこっか。 \n\nSFW anime-style illustration No nudity, no suggestive intent.\n\nMiniMax H3のプロンプト、こんな感じで作ったよ\n\n動画（MiniMax H3）1本目\n\nThe young anime woman with light blue hair and a white summer sailor uniform shown in <Picture 1> is dancing in place in her bedroom on a bright morning. She sways her hips from side to side and bounces lightly on her feet in rhythm, keeping both feet in the same spot on the wooden floor. Her long light blue hair and her navy pleated skirt swing with the motion, and she keeps looking back over her shoulder with a happy smile. She stays in the same position and does not walk anywhere. Static camera, fixed framing, full body visible, morning sunlight through the curtains. Quiet room ambience, no music.\n\n動画（MiniMax H3）2本目\n\nThe young anime woman with light blue hair and a white summer sailor uniform shown in <Picture 1> keeps dancing in place in her bedroom. She slowly raises both arms above her head and then lowers them again, twisting her upper body gently from side to side as she does. Her long light blue hair sways with the motion and her navy pleated skirt turns a little with her hips. She keeps both feet in the same spot on the wooden floor and glances back over her shoulder with a happy smile. Static camera, fixed framing, full body visible, morning sunlight through the curtains. Quiet room ambience, no music.\n\n動画の設定\n608×1088 / 141フレーム（約5.9秒）×2本\n24fps\n1本目の最終フレームを2本目の起点にして接続",
+    "engagement": {
+      "replies": 20,
+      "reposts": 9,
+      "likes": 53,
+      "views": 1408,
+      "snapshotAt": "2026-08-17T02:39:30.456Z"
+    },
+    "approvedAt": "2026-08-17T02:39:30.456Z",
+    "editorialBasis": "sourceCaption publishes both complete MiniMax H3 prompts and the reviewed frames match the described bedroom dance"
+  },
+  {
+    "id": "x-2089080655128740221",
+    "title": "北极熊步态双模型对照",
+    "titleEn": "Polar Bear Gait Across Two Models",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "同一只雪地北极熊被并排用于观察 LTX 2.5 与 MiniMax H3 的速度和画面差异。 原生视频规格为 5 秒 · 2224×944。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A polar bear walking across snow is shown side by side to compare LTX 2.5 and MiniMax H3 speed and image quality. Native-video output: 5s · 2224×944. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ReyReinoso/status/2089080655128740221",
+    "sourceLabel": "X 原帖 · @ReyReinoso",
+    "author": "Rey Josias Reinoso",
+    "publishedAt": "2026-08-16T20:03:36.000Z",
+    "mediaUrl": "/media/x-2089080655128740221.mp4",
+    "posterUrl": "/posters/x/2089080655128740221.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "2224×944",
+    "tags": [
+      "MiniMax H3",
+      "模型对比",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Model Comparison",
+    "styles": [
+      "Comparative"
+    ],
+    "scenes": [
+      "Model Comparison"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "LTX 2.5 vs Minimax H3 in FHD  \nLeft: LTX 2.5 – generation time: 4m 29s\nRight: Minimax H3 – generation time: 18m 55s  \nFor simple prompts like this, LTX wins on both speed and quality.  For strong prompt understanding and creating new things → Minimax H3.",
+    "engagement": {
+      "replies": 0,
+      "reposts": 3,
+      "likes": 8,
+      "views": 486,
+      "snapshotAt": "2026-08-17T02:39:30.456Z"
+    },
+    "approvedAt": "2026-08-17T02:39:30.456Z",
+    "editorialBasis": "sourceCaption explicitly labels both models and gives generation times; reviewed frames confirm the side-by-side comparison"
+  },
+  {
+    "id": "x-2089079820072169515",
+    "title": "卧室巨蛛的惊悚转折",
+    "titleEn": "A Giant Spider in the Bedroom",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "平静的卧室场景逐渐出现巨型蜘蛛，并以床上包围形成惊悚转折。 原生视频规格为 50 秒 · 1250×720。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A quiet bedroom scene escalates into a giant-spider reveal and a horror turn around the bed. Native-video output: 50s · 1250×720. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Spacedog19/status/2089079820072169515",
+    "sourceLabel": "X 原帖 · @Spacedog19",
+    "author": "Dan Thompson",
+    "publishedAt": "2026-08-16T20:00:16.000Z",
+    "mediaUrl": "/media/x-2089079820072169515.mp4",
+    "posterUrl": "/posters/x/2089079820072169515.jpg",
+    "duration": 50,
+    "aspectRatio": "landscape",
+    "resolution": "1250×720",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Spider, made with MiniMax H3.",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 60,
+      "snapshotAt": "2026-08-17T02:39:30.456Z"
+    },
+    "approvedAt": "2026-08-17T02:39:30.456Z",
+    "editorialBasis": "sourceCaption directly states the creator made Spider with MiniMax H3 and the reviewed frames confirm the generated sequence"
+  },
+  {
+    "id": "x-2089040728609411541",
+    "title": "冰白宫廷中的无声靠近",
+    "titleEn": "Silent Closeness in an Ice-White Court",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "华服男女在冰白色宫廷布景中缓慢靠近，镜头强调衣领细节与唇部距离。 原生视频规格为 8 秒 · 2560×1440。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "Two elaborately dressed figures move closer in an ice-white court as the camera emphasizes collar detail and the distance between their lips. Native-video output: 8s · 2560×1440. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "The focus shifts from the ornate shimmer of his jacket collar to the delicate curve of her lips, emphasizing the unspoken dialogue in their closeness.",
+    "sourceUrl": "https://x.com/ai_artworkgen/status/2089040728609411541",
+    "sourceLabel": "X 原帖 · @ai_artworkgen",
+    "author": "Marco",
+    "publishedAt": "2026-08-16T17:24:56.000Z",
+    "mediaUrl": "/media/x-2089040728609411541.mp4",
+    "posterUrl": "/posters/x/2089040728609411541.jpg",
+    "duration": 8,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "角色对白",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Character & Dialogue",
+    "styles": [
+      "Dialogue"
+    ],
+    "scenes": [
+      "Dialogue"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Hailuo H3 prompt:\n\n\"The focus shifts from the ornate shimmer of his jacket collar to the delicate curve of her lips, emphasizing the unspoken dialogue in their closeness.\"",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 11,
+      "views": 784,
+      "snapshotAt": "2026-08-17T02:39:30.456Z"
+    },
+    "approvedAt": "2026-08-17T02:39:30.456Z",
+    "editorialBasis": "sourceCaption explicitly labels and fully publishes the Hailuo H3 prompt; reviewed frames match its close-up staging"
+  },
+  {
+    "id": "x-2089034591172690090",
+    "title": "绿幕前的飞行待机",
+    "titleEn": "Flying Standby on a Green Screen",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "穿统一舞台服装的少女们在绿幕摄影棚中排队，并以对白呈现飞行待机片段。 原生视频规格为 15 秒 · 1920×1440。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Performers in matching stage outfits line up on a green-screen set for a dialogue-led flying-standby scene. Native-video output: 15s · 1920×1440. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/mtArakawa/status/2089034591172690090",
+    "sourceLabel": "X 原帖 · @mtArakawa",
+    "author": "元荒川ちゃん❤",
+    "publishedAt": "2026-08-16T17:00:33.000Z",
+    "mediaUrl": "/media/x-2089034591172690090.mp4",
+    "posterUrl": "/posters/x/2089034591172690090.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1440",
+    "tags": [
+      "MiniMax H3",
+      "角色对白",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Character & Dialogue",
+    "styles": [
+      "Dialogue"
+    ],
+    "scenes": [
+      "Dialogue"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "flying standby\nトレーナーとスコートの舞台衣装って\nまだあるんでしょうか？\n\nと思って調べたら\n舞台チアの代名詞だったスクールメイツは\nまだ活動していました\nちょっとビックリ\n\nセリフはHailuoに丸投げ\n２番目の子のダウナーさは草\n\nNBPro + MiniMax H3\n#schoolgirl #flying #wireaction",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 6,
+      "views": 1625,
+      "snapshotAt": "2026-08-17T02:39:30.456Z"
+    },
+    "approvedAt": "2026-08-17T02:39:30.456Z",
+    "editorialBasis": "sourceCaption explicitly credits NBPro plus MiniMax H3 and states Hailuo supplied the dialogue"
+  },
+  {
+    "id": "x-2089032084484714609",
+    "title": "雨后发光种子的旅程",
+    "titleEn": "The Glowing Seed After Rain",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "FL2VA",
+    "summary": "一只蓝色小鸟把雨后发现的发光种子带过屋顶，种进花盆并点亮街道。 原生视频规格为 15 秒 · 2208×1248。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A tiny blue bird carries a glowing seed across rain-wet rooftops, plants it, and lights up the street. Native-video output: 15s · 2208×1248. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/hmetouch/status/2089032084484714609",
+    "sourceLabel": "X 原帖 · @hmetouch",
+    "author": "Hemanth",
+    "publishedAt": "2026-08-16T16:50:35.000Z",
+    "mediaUrl": "/media/x-2089032084484714609.mp4",
+    "posterUrl": "/posters/x/2089032084484714609.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2208×1248",
+    "tags": [
+      "MiniMax H3",
+      "本地生成",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Technical"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "text",
+      "image"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Minimax H3 Director Workflow(Muse) + ChatGPT Image2  Reference - Locally Generated with 4090+128GB RAM \n\nVideo Style: Luminous Digital Gouache\nShort Story: A tiny blue bird finds a glowing seed after the rain.\nIt carries it across quiet rooftops to an empty flowerpot.\nOne small drop of water wakes the seed.\nBy sunrise, the whole street is glowing. ✨\nPROMPT 👇",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 0,
+      "views": 139,
+      "snapshotAt": "2026-08-17T02:39:30.456Z"
+    },
+    "approvedAt": "2026-08-17T02:39:30.456Z",
+    "editorialBasis": "sourceCaption identifies a locally generated MiniMax H3 Director workflow and provides the complete short-story premise"
+  },
+  {
+    "id": "x-2088967626760523804",
+    "title": "四步加速下的高动态动作",
+    "titleEn": "High Motion at Four Turbo Steps",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "动漫角色以夸张幅度快速摆动，用来检验四步 Turbo LoRA 的运动能力。 原生视频规格为 4 秒 · 768×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "An anime character moves with exaggerated speed to test motion at four Turbo LoRA steps. Native-video output: 4s · 768×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ostrisai/status/2088967626760523804",
+    "sourceLabel": "X 原帖 · @ostrisai",
+    "author": "Ostris",
+    "publishedAt": "2026-08-16T12:34:28.000Z",
+    "mediaUrl": "/media/x-2088967626760523804.mp4",
+    "posterUrl": "/posters/x/2088967626760523804.jpg",
+    "duration": 4,
+    "aspectRatio": "square",
+    "resolution": "768×768",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Current results at 4 step with the turbo time LoRA for MiniMax H3 I am training. Lack of movement is no longer an issue. Opposite.",
+    "engagement": {
+      "replies": 27,
+      "reposts": 7,
+      "likes": 153,
+      "views": 7413,
+      "snapshotAt": "2026-08-17T02:39:30.456Z"
+    },
+    "approvedAt": "2026-08-17T02:39:30.456Z",
+    "editorialBasis": "sourceCaption identifies current four-step MiniMax H3 Turbo LoRA results and the frames show the motion test"
+  },
+  {
+    "id": "x-2088967109548056919",
+    "title": "AMD 显卡上的工业变形",
+    "titleEn": "Industrial Transformation on AMD",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "在 AMD RX 7900 XTX 上运行移植后的工作流，把工业设备参考转化成机器人形态。 原生视频规格为 5 秒 · 736×736。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A ported workflow on an AMD RX 7900 XTX transforms industrial-equipment reference imagery into a robot form. Native-video output: 5s · 736×736. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/txtnurcahyo/status/2088967109548056919",
+    "sourceLabel": "X 原帖 · @txtnurcahyo",
+    "author": "Wahyu Nurcahyo 🇮🇩@🇩🇪",
+    "publishedAt": "2026-08-16T12:32:24.000Z",
+    "mediaUrl": "/media/x-2088967109548056919.mp4",
+    "posterUrl": "/posters/x/2088967109548056919.jpg",
+    "duration": 5,
+    "aspectRatio": "square",
+    "resolution": "736×736",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3 under Maestro AMD, yes AMD. Maestro in Pinokio @cocktailpeanut  supports only NVIDIA, but mine is AMD RX 7900 XTX, so I port it to AMD.\n\nI have tested for FLV and Ref like below, both working properly. But I tested only in my GPU.\n\nThe link below:",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 0,
+      "views": 87,
+      "snapshotAt": "2026-08-17T02:39:30.456Z"
+    },
+    "approvedAt": "2026-08-17T02:39:30.456Z",
+    "editorialBasis": "sourceCaption states MiniMax H3 was ported to AMD and that the displayed reference workflow was tested on the author’s GPU"
+  },
+  {
+    "id": "x-2088966290765733908",
+    "title": "中端显卡的两秒动漫动作",
+    "titleEn": "A Two-Second Anime Motion on Midrange GPU",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "RTX 4060 Ti 本地生成的动漫角色短动作，用于展示较短生成时间下的画面质量。 原生视频规格为 2 秒 · 864×480。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A short anime character motion generated locally on an RTX 4060 Ti demonstrates output quality at a modest runtime. Native-video output: 2s · 864×480. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/NAKA_X68K/status/2088966290765733908",
+    "sourceLabel": "X 原帖 · @NAKA_X68K",
+    "author": "nakataka",
+    "publishedAt": "2026-08-16T12:29:09.000Z",
+    "mediaUrl": "/media/x-2088966290765733908.mp4",
+    "posterUrl": "/posters/x/2088966290765733908.jpg",
+    "duration": 2,
+    "aspectRatio": "landscape",
+    "resolution": "864×480",
+    "tags": [
+      "MiniMax H3",
+      "本地生成",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Technical"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3 を ComfyUI で試してみました。環境は、RTX4060Ti 16G, メインメモリ 128GB 。生成時間は 2分40秒。２秒の動画ですが、高品質で生成時間も短くて、MiniMax H3 かなりいいですね。",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 2,
+      "views": 239,
+      "snapshotAt": "2026-08-17T02:39:30.456Z"
+    },
+    "approvedAt": "2026-08-17T02:39:30.456Z",
+    "editorialBasis": "sourceCaption gives the MiniMax H3 ComfyUI hardware, generation time, and clip length; reviewed frames confirm the output"
+  },
+  {
+    "id": "x-2088954932473074028",
+    "title": "涂鸦彩色的刑警片头",
+    "titleEn": "Scribbled-Color Detective Opening",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "真人刑警片头被处理成涂鸦彩色风格，手写文字与人物镜头快速交替。 原生视频规格为 10 秒 · 1280×720。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A live-action detective opening becomes a scribbled-color sequence with rapid alternation between handwritten text and character shots. Native-video output: 10s · 1280×720. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ChiakiAkagi/status/2088954932473074028",
+    "sourceLabel": "X 原帖 · @ChiakiAkagi",
+    "author": "ChiakiAkagi 還暦のAIイリュージョニスト",
+    "publishedAt": "2026-08-16T11:44:01.000Z",
+    "mediaUrl": "/media/x-2088954932473074028.mp4",
+    "posterUrl": "/posters/x/2088954932473074028.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "1280×720",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "先日の踊る大捜査線のオープニング風AI映像を落書きカラーにしました。\nこの動画も｢編集｣していません。\nCapCutのMiniMax H3 で作りました。\nテンポアップする指定もしています。\n#capcut #CapCutCpp @capcutapp_jp",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 237,
+      "snapshotAt": "2026-08-17T02:39:30.456Z"
+    },
+    "approvedAt": "2026-08-17T02:39:30.456Z",
+    "editorialBasis": "sourceCaption states the unedited sequence was created with CapCut MiniMax H3 and describes the tempo instruction"
+  },
+  {
+    "id": "x-2088952829465727147",
+    "title": "雪站长镜头的失败记录",
+    "titleEn": "A Failed Long Take at a Snowy Station",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "雪地车站长镜头保持人物和环境连贯，但末段列车意外退化成二维形态。 原生视频规格为 31 秒 · 864×480。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A long take at a snowy station keeps the person and setting coherent until the train collapses into a flat form near the end. Native-video output: 31s · 864×480. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/PixelAigc/status/2088952829465727147",
+    "sourceLabel": "X 原帖 · @PixelAigc",
+    "author": "PixelAIGC",
+    "publishedAt": "2026-08-16T11:35:40.000Z",
+    "mediaUrl": "/media/x-2088952829465727147.mp4",
+    "posterUrl": "/posters/x/2088952829465727147.jpg",
+    "duration": 31,
+    "aspectRatio": "landscape",
+    "resolution": "864×480",
+    "tags": [
+      "MiniMax H3",
+      "本地生成",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Technical"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "一个失败的视频案例，最后几秒出现的火车成了二维的，minimax H3 本地部署挑战30秒。",
+    "engagement": {
+      "replies": 9,
+      "reposts": 1,
+      "likes": 36,
+      "views": 7346,
+      "snapshotAt": "2026-08-17T02:39:30.456Z"
+    },
+    "approvedAt": "2026-08-17T02:39:30.456Z",
+    "editorialBasis": "sourceCaption explicitly presents this as a failed locally deployed MiniMax H3 30-second challenge and names the visible failure"
+  },
+  {
+    "id": "x-2088946165542953262",
+    "title": "崩塌山体化作标题",
+    "titleEn": "A Collapsing Mountain Becomes a Title",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "山崖崩落后，空中的岩石聚合成 DOMINION 字样，再随砂尘消散。 原生视频规格为 15 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A cliff collapses, airborne rocks assemble into the word DOMINION, and the title dissolves into dust. Native-video output: 15s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/shintaro_campon/status/2088946165542953262",
+    "sourceLabel": "X 原帖 · @shintaro_campon",
+    "author": "しんたろー△SNS30万｜個人開発",
+    "publishedAt": "2026-08-16T11:09:11.000Z",
+    "mediaUrl": "/media/x-2088946165542953262.mp4",
+    "posterUrl": "/posters/x/2088946165542953262.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Minimax H3の映像生成がヤバすぎる。\n\n崩壊する山が空中でタイトルロゴに変わる。\n\n・0:00から崖が崩落し土煙が舞う\n・0:08で空中の岩がDOMINIONに\n・0:11で風に流され砂塵に消える",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 1,
+      "views": 302,
+      "snapshotAt": "2026-08-17T02:39:30.456Z"
+    },
+    "approvedAt": "2026-08-17T02:39:30.456Z",
+    "editorialBasis": "sourceCaption explicitly attributes the generation to MiniMax H3 and provides a time-coded description matching the reviewed frames"
+  },
+  {
+    "id": "x-2088943855320064442",
+    "title": "日常动画风的片间标题",
+    "titleEn": "Slice-of-Life Anime Eyecatch",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "女学生在夕照房间中停下书写并微笑，随后切入彩色手绘风标题卡。 原生视频规格为 10 秒 · 864×480。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A schoolgirl pauses her writing and smiles in a sunset-lit room before a colorful hand-drawn title card appears. Native-video output: 10s · 864×480. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/zeroban_noriba/status/2088943855320064442",
+    "sourceLabel": "X 原帖 · @zeroban_noriba",
+    "author": "えきちょー（0番のりば）",
+    "publishedAt": "2026-08-16T11:00:00.000Z",
+    "mediaUrl": "/media/x-2088943855320064442.mp4",
+    "posterUrl": "/posters/x/2088943855320064442.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "864×480",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3、10秒ポン出し。\n日常アニメのアイキャッチ風動画！\nちゃんと「0番のりば」って出た✨👀\n\n※えきちょーは出ません（ぇ）",
+    "engagement": {
+      "replies": 4,
+      "reposts": 49,
+      "likes": 169,
+      "views": 3444,
+      "snapshotAt": "2026-08-17T02:39:30.456Z"
+    },
+    "approvedAt": "2026-08-17T02:39:30.456Z",
+    "editorialBasis": "sourceCaption explicitly identifies a direct ten-second MiniMax H3 generation and the reviewed frames show the described eyecatch"
+  },
+  {
+    "id": "x-2088942927036698921",
+    "title": "香蕉创意会的三维喜剧",
+    "titleEn": "The Banana Brainstorm in 3D",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "绵羊般的办公室角色围绕香蕉图示开会，逐步把一根香蕉变成两根。 原生视频规格为 15 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Sheep-like office characters hold a meeting around a banana diagram that changes from one banana to two. Native-video output: 15s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Artedeingenio/status/2088942927036698921",
+    "sourceLabel": "X 原帖 · @Artedeingenio",
+    "author": "OscarAI",
+    "publishedAt": "2026-08-16T10:56:19.000Z",
+    "mediaUrl": "/media/x-2088942927036698921.mp4",
+    "posterUrl": "/posters/x/2088942927036698921.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "This 3D cartoon animation is so much fun, and it works really well with @Hailuo_AI MiniMax H3.",
+    "engagement": {
+      "replies": 9,
+      "reposts": 5,
+      "likes": 43,
+      "views": 3579,
+      "snapshotAt": "2026-08-17T02:39:30.456Z"
+    },
+    "approvedAt": "2026-08-17T02:39:30.456Z",
+    "editorialBasis": "sourceCaption explicitly credits Hailuo AI MiniMax H3 and describes the output as a 3D cartoon animation"
+  },
+  {
+    "id": "x-2088935944896250356",
+    "title": "群像镜头的多样性对照",
+    "titleEn": "Crowd Diversity Across Two Models",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "相同群像提示在 MiniMax H3 与 LTX 2.5 中并列呈现，用于观察人物与构图多样性。 原生视频规格为 10 秒 · 1664×640。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "The same crowd-oriented setup is shown across MiniMax H3 and LTX 2.5 to compare people and compositional diversity. Native-video output: 10s · 1664×640. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/PolaczekSagi/status/2088935944896250356",
+    "sourceLabel": "X 原帖 · @PolaczekSagi",
+    "author": "Sagi Polaczek 🦜",
+    "publishedAt": "2026-08-16T10:28:34.000Z",
+    "mediaUrl": "/media/x-2088935944896250356.mp4",
+    "posterUrl": "/posters/x/2088935944896250356.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "1664×640",
+    "tags": [
+      "MiniMax H3",
+      "模型对比",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Model Comparison",
+    "styles": [
+      "Comparative"
+    ],
+    "scenes": [
+      "Model Comparison"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax-H3 vs LTX-2.5,\nDIVESITY TEST",
+    "engagement": {
+      "replies": 1,
+      "reposts": 1,
+      "likes": 20,
+      "views": 1565,
+      "snapshotAt": "2026-08-17T02:39:30.456Z"
+    },
+    "approvedAt": "2026-08-17T02:39:30.456Z",
+    "editorialBasis": "sourceCaption explicitly labels this a MiniMax H3 versus LTX 2.5 diversity test; reviewed frames confirm the split comparison"
   }
 ]

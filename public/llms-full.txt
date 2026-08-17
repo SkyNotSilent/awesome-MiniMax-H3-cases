@@ -1,6 +1,6 @@
 # H3 Field Notes — Complete MiniMax H3 Case and Tutorial Index
 
-Generated from data/cases.json. Total: 631 cases. Verbatim public prompts: 27.
+Generated from data/cases.json. Total: 653 cases. Verbatim public prompts: 30.
 
 ## Tutorials
 
@@ -12634,5 +12634,455 @@ Use <Image 0>  the exact FIRST FRAME and <Image 1>as the exact LAST FRAME. Creat
 - Prompt provenance: not-published
 - Chinese summary: 两种模型分别尝试理解“肚皮朝天”和“苏格兰折耳坐”等猫姿势术语，并对呈现结果进行并列观察。 成片规格为 35 秒 · 1920×1080。原帖未公开完整 Prompt，本库不反推或补写。
 - English summary: Two models interpret Japanese terms for belly-up and Scottish Fold sitting poses, with the resulting cat postures compared side by side. Output: 35s · 1920×1080. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## Multiplication Tables with Fish Pairs
+
+- ID: x-2089141649503044017
+- 中文标题: 乘法口诀的九宫格鱼群
+- English title: Multiplication Tables with Fish Pairs
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2089141649503044017/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2089141649503044017/
+- Original source: https://x.com/tanabe_fragm/status/2089141649503044017
+- Author: タナベ | AI動画 × マーケティング
+- Published: 2026-08-17T00:05:58.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: T2VA
+- Category: Music Video
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 橙色猫咪带着九个水池，用成对鱼群和逐拍算式演示二的乘法表。 原生视频规格为 15 秒 · 2560×1440。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: An orange cat guides a nine-pool grid where paired fish and beat-matched equations teach the two-times table. Native-video output: 15s · 2560×1440. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+integrated_multimodal_description: [Shot 1] Adorable rounded 3D animation for preschool children, soft studio lighting, subtle contact shadows, smooth gradients, and a calm uncluttered vertical composition on a clean off-white background with a very soft pale-blue glow behind the center. Use a restrained palette of off-white, warm orange, cream, turquoise blue, and dark gray: orange is the cat, turquoise is the fish and every correct answer, dark gray is the equation. The camera is a Static Shot for the entire film. A small smiling cat mascot bounces gently into the upper area: a big rounded head on a short chubby body, warm orange fur, a cream muzzle, cream belly and cream paw tips, two small rounded triangle ears with pale pink inner lining, round full cheeks, simple black dot eyes, tiny whiskers, and a thick rounded tail. It lands with a soft squash-and-stretch, its tail curls up once behind it, and it taps the air with one front paw, creating a spreading circular pale-blue water ripple. The ripple opens outward and reveals a three-by-three grid of nine small empty pale-blue water pools in the lower half of the frame, with a clear empty space for one large equation above them. A warm young Japanese female narrator with a bright, soft voice (S1) chants in a steady rhythmic sing-song counting cadence, one line per beat, and begins: <d>[Japanese] にのだん!</d>
+
+[Shot 2] At 00:01.200, one large thick rounded dark-gray equation appears in the upper space and is rewritten twice in place, holding each state clearly on its own beat: first "2 × 1 = 2", then "2 × 2 = 4", then "2 × 3 = 6". On each new equation, exactly one matching pair of two plump turquoise-blue fish drops together into the next empty water pool with a small splash. The two fish of a pair are identical, side by side, both facing right and slightly offset so both are clearly countable, each with a cream belly, a triangular tail, and one round black eye. The pairs fill the top row from left to right, and the answer numeral turns turquoise as each pair lands. At the end of this shot exactly three pools in the top row are filled, each holding exactly two fish, for six fish in total; six pools remain empty. (S1) chants on the beat: <d>[Japanese] にいちがに。ににんがし。にさんがろく。</d>
+
+[Shot 3] At 00:04.700, a soft pale-blue water ripple wipes across the frame and the same large equation continues to be rewritten in place on each beat: "2 × 4 = 8", then "2 × 5 = 10", then "2 × 6 = 12". One matching pair of two fish drops into the next empty pool on each new equation, filling the middle row from left to right, and the answer numeral turns turquoise as each pair lands. Two-digit answers stay large, correctly formed, and fully readable. The three pairs already in the top row stay exactly where they are and do not move, change, or multiply. At the end of this shot exactly six pools are filled, each holding exactly two fish, for twelve fish in total; three pools remain empty. (S1) chants on the beat: <d>[Japanese] にしがはち。にごじゅう。にろくじゅうに。</d>
+
+[Shot 4] At 00:08.100, a soft pale-blue water ripple wipes across the frame and the large equation is rewritten in place on each beat for the last time: "2 × 7 = 14", then "2 × 8 = 16", then "2 × 9 = 18". One matching pair of two fish drops into the next empty pool on each new equation, filling the bottom row from left to right, and the answer numeral turns turquoise as each pair lands. The six pairs already placed stay exactly where they are and do not move, change, or multiply. At the end of this shot all nine pools are filled, each holding exactly two fish, for eighteen fish in total. (S1) chants on the beat: <d>[Japanese] にしちじゅうし。にはちじゅうろく。にくじゅうはち。</d>
+
+[Shot 5] At 00:12.100, the final equation "2 × 9 = 18" stays in the upper space and its turquoise answer numeral "18" gently enlarges once and settles. Below it, the nine pairs of fish gain small friendly smiles and their tails flick once, in a quick wave from the top-left pool to the bottom-right pool, each pair flicking together as one. The same warm-orange cat mascot from [Shot 1], unchanged in every detail, bounces in at the lower edge beside the grid and points up toward it with one front paw while its tail curls once and small pale-blue sparkles rise around it. Exactly nine pools remain, each still holding exactly two fish, and no new objects enter. (S1) says: <d>[Japanese] よく できました!</d> Hold the complete grid, the equation, and the cat clearly and without further motion until the film ends exactly at 00:15.000.
+
+Throughout the entire film, keep the camera a Static Shot, keep the off-white background clean and empty, keep the single equation large, thick, rounded, correctly shaped, and centered in the upper space, and keep the fish design identical in every shot. Every filled pool always holds exactly two fish - never one, never three - and the two fish of a pair always arrive together, land together, and stay together as one unit. The cat must look exactly the same in [Shot 1] and [Shot 5], identical in fur color, head and body shape, ears, eyes, and tail, and it never appears in [Shot 2], [Shot 3], or [Shot 4]. Only one cat is ever on screen, it stays beside or above the grid, and it never stands on, reaches into, covers, or eats any fish. Only one equation is ever visible at a time. Display only numerals and the symbols × and =. Do not generate any hiragana, katakana, kanji, Latin words, or any other written characters anywhere on screen. Fish only ever accumulate, never disappear, never leave their pool once placed, and never overlap; the number of filled pools must exactly match the multiplier of the current equation, and the total fish count must exactly match the answer numeral, reaching exactly eighteen fish in nine pools at the end. Avoid fast camera movement, sudden cuts, cluttered backgrounds, tiny typography, warped or duplicated numerals, reversed two-digit numbers, wrong counts, extra or missing fish, unpaired single fish, fish appearing before their equation, fish swimming freely around the frame, realistic or scaly fish anatomy, scary expressions, harsh colors, heavy motion blur, and loud or distracting sound effects.
+
+overall_soundscape: A soft double water plop sounds each time a pair of fish drops into a pool. A light padded paw tap sounds when the cat touches the air, and one single soft kitten meow occurs as the cat first bounces into frame. Gentle spreading water ripples mark the two transitions, and a small confirmation chime sounds each time an answer numeral turns turquoise. Tiny shimmer sparkles occur around the cat at the end.
+
+non_diegetic_music: A light nursery jingle at a steady moderate tempo using marimba, soft celesta, and gently plucked strings, with a clear repeating beat that the chant lands on. Begin with a single marimba figure, add one instrument at each row of the grid, and thin back out for the final line. Resolve with a clean rising three-note chime landing at 15.000 seconds.
+```
+
+## A Time Machine Reaches Ancient Persia
+
+- ID: x-2089127930647683146
+- 中文标题: 时光机抵达古波斯
+- English title: A Time Machine Reaches Ancient Persia
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2089127930647683146/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2089127930647683146/
+- Original source: https://x.com/ImanOracle/status/2089127930647683146
+- Author: ImanOracle.eth
+- Published: 2026-08-16T23:11:27.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Community Showcase
+- Output: 15s, 864×480, landscape
+- Prompt provenance: not-published
+- Chinese summary: 镜头穿过时空隧道，抵达带有宫殿、仪仗与人群的古代波斯城市。 原生视频规格为 15 秒 · 864×480。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: The camera travels through a time tunnel into an ancient Persian city filled with palaces, a procession, and crowds. Native-video output: 15s · 864×480. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## Ghost Recon Fighter Transformation
+
+- ID: x-2089124518166135196
+- 中文标题: 幽灵侦察机的变形预告
+- English title: Ghost Recon Fighter Transformation
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2089124518166135196/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2089124518166135196/
+- Original source: https://x.com/stonekaiju/status/2089124518166135196
+- Author: Stone Kaiju ᯅ ⚡ ³³º¹
+- Published: 2026-08-16T22:57:53.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Ref2VA
+- Category: Cinematic & VFX
+- Output: 19s, 1920×1080, landscape
+- Prompt provenance: not-published
+- Chinese summary: 暗色侦察机在红蓝光带与扫描字幕中完成高速揭晓和机甲变形。 原生视频规格为 19 秒 · 1920×1080。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A dark recon fighter races through red-blue light trails, scan typography, and a mecha transformation reveal. Native-video output: 19s · 1920×1080. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## Robin Hood’s Final Journey
+
+- ID: x-2089122755077874016
+- 中文标题: 罗宾汉的最后旅程
+- English title: Robin Hood’s Final Journey
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2089122755077874016/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2089122755077874016/
+- Original source: https://x.com/Banyu_Biroeee/status/2089122755077874016
+- Author: Rian Andria
+- Published: 2026-08-16T22:50:53.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Community Showcase
+- Output: 71s, 2560×1440, landscape
+- Prompt provenance: not-published
+- Chinese summary: 老去的罗宾汉在雪地与篝火之间回望自己的选择，形成一支完整的电影化短片。 原生视频规格为 71 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: An aging Robin Hood reflects on his choices across snowy landscapes and a firelit camp in a complete cinematic short. Native-video output: 71s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## The Fried-Shrimp Lady’s Workday Song
+
+- ID: x-2089110704108290281
+- 中文标题: 炸虾小姐的上班应援歌
+- English title: The Fried-Shrimp Lady’s Workday Song
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2089110704108290281/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2089110704108290281/
+- Original source: https://x.com/asanagiako/status/2089110704108290281
+- Author: 朝凪あこAIイラスト
+- Published: 2026-08-16T22:03:00.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Music Video
+- Output: 10s, 1280×720, landscape
+- Prompt provenance: not-published
+- Chinese summary: 炸虾造型的少女角色用歌声为假期结束后的上班日加油。 原生视频规格为 10 秒 · 1280×720。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A shrimp-costumed character sings an encouraging tune for the first workday after the holiday. Native-video output: 10s · 1280×720. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## Pineapple Day Kitchen Sketch
+
+- ID: x-2089106173920522485
+- 中文标题: 菠萝日的厨房小剧场
+- English title: Pineapple Day Kitchen Sketch
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2089106173920522485/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2089106173920522485/
+- Original source: https://x.com/Spoonful_of_Fun/status/2089106173920522485
+- Author: 一抹のFun
+- Published: 2026-08-16T21:45:00.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Character & Dialogue
+- Output: 15s, 576×576, square
+- Prompt provenance: not-published
+- Chinese summary: 圆润的三维女孩在厨房里与猫咪和菠萝互动，并完成日语对白。 原生视频规格为 15 秒 · 576×576。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A rounded 3D girl interacts with a cat and pineapple in a kitchen while delivering Japanese dialogue. Native-video output: 15s · 576×576. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## Reference-Driven Anime Character Motion
+
+- ID: x-2089104947162054735
+- 中文标题: 参考图驱动的动漫角色动作
+- English title: Reference-Driven Anime Character Motion
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2089104947162054735/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2089104947162054735/
+- Original source: https://x.com/kyle_catweasel/status/2089104947162054735
+- Author: かいるー
+- Published: 2026-08-16T21:40:07.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Ref2VA
+- Category: Local Generation
+- Output: 5s, 896×1184, portrait
+- Prompt provenance: not-published
+- Chinese summary: 本地角色图与游戏语音作为参考，驱动动漫角色完成短动作与日语语音。 原生视频规格为 5 秒 · 896×1184。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A locally generated character image and game voice reference drive a short anime motion clip with Japanese speech. Native-video output: 5s · 896×1184. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## Two-Part Bedroom Dance
+
+- ID: x-2089094854727119124
+- 中文标题: 卧室里的连续舞步
+- English title: Two-Part Bedroom Dance
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2089094854727119124/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2089094854727119124/
+- Original source: https://x.com/Haruka1425054/status/2089094854727119124
+- Author: はるか🎀 Haruka
+- Published: 2026-08-16T21:00:01.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: FL2VA
+- Category: Music Video
+- Output: 12s, 608×1088, portrait
+- Prompt provenance: creator-verbatim
+- Chinese summary: 蓝发水手服角色在固定机位中完成两段衔接舞步，头发与裙摆随动作自然摆动。 原生视频规格为 12 秒 · 608×1088。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A blue-haired sailor-uniform character performs two connected dance segments in a fixed bedroom shot, with natural hair and skirt motion. Native-video output: 12s · 608×1088. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+動画（MiniMax H3）1本目
+
+The young anime woman with light blue hair and a white summer sailor uniform shown in <Picture 1> is dancing in place in her bedroom on a bright morning. She sways her hips from side to side and bounces lightly on her feet in rhythm, keeping both feet in the same spot on the wooden floor. Her long light blue hair and her navy pleated skirt swing with the motion, and she keeps looking back over her shoulder with a happy smile. She stays in the same position and does not walk anywhere. Static camera, fixed framing, full body visible, morning sunlight through the curtains. Quiet room ambience, no music.
+
+動画（MiniMax H3）2本目
+
+The young anime woman with light blue hair and a white summer sailor uniform shown in <Picture 1> keeps dancing in place in her bedroom. She slowly raises both arms above her head and then lowers them again, twisting her upper body gently from side to side as she does. Her long light blue hair sways with the motion and her navy pleated skirt turns a little with her hips. She keeps both feet in the same spot on the wooden floor and glances back over her shoulder with a happy smile. Static camera, fixed framing, full body visible, morning sunlight through the curtains. Quiet room ambience, no music.
+```
+
+## Polar Bear Gait Across Two Models
+
+- ID: x-2089080655128740221
+- 中文标题: 北极熊步态双模型对照
+- English title: Polar Bear Gait Across Two Models
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2089080655128740221/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2089080655128740221/
+- Original source: https://x.com/ReyReinoso/status/2089080655128740221
+- Author: Rey Josias Reinoso
+- Published: 2026-08-16T20:03:36.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Model Comparison
+- Output: 5s, 2224×944, landscape
+- Prompt provenance: not-published
+- Chinese summary: 同一只雪地北极熊被并排用于观察 LTX 2.5 与 MiniMax H3 的速度和画面差异。 原生视频规格为 5 秒 · 2224×944。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A polar bear walking across snow is shown side by side to compare LTX 2.5 and MiniMax H3 speed and image quality. Native-video output: 5s · 2224×944. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## A Giant Spider in the Bedroom
+
+- ID: x-2089079820072169515
+- 中文标题: 卧室巨蛛的惊悚转折
+- English title: A Giant Spider in the Bedroom
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2089079820072169515/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2089079820072169515/
+- Original source: https://x.com/Spacedog19/status/2089079820072169515
+- Author: Dan Thompson
+- Published: 2026-08-16T20:00:16.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Community Showcase
+- Output: 50s, 1250×720, landscape
+- Prompt provenance: not-published
+- Chinese summary: 平静的卧室场景逐渐出现巨型蜘蛛，并以床上包围形成惊悚转折。 原生视频规格为 50 秒 · 1250×720。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A quiet bedroom scene escalates into a giant-spider reveal and a horror turn around the bed. Native-video output: 50s · 1250×720. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## Silent Closeness in an Ice-White Court
+
+- ID: x-2089040728609411541
+- 中文标题: 冰白宫廷中的无声靠近
+- English title: Silent Closeness in an Ice-White Court
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2089040728609411541/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2089040728609411541/
+- Original source: https://x.com/ai_artworkgen/status/2089040728609411541
+- Author: Marco
+- Published: 2026-08-16T17:24:56.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Character & Dialogue
+- Output: 8s, 2560×1440, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 华服男女在冰白色宫廷布景中缓慢靠近，镜头强调衣领细节与唇部距离。 原生视频规格为 8 秒 · 2560×1440。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: Two elaborately dressed figures move closer in an ice-white court as the camera emphasizes collar detail and the distance between their lips. Native-video output: 8s · 2560×1440. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+The focus shifts from the ornate shimmer of his jacket collar to the delicate curve of her lips, emphasizing the unspoken dialogue in their closeness.
+```
+
+## Flying Standby on a Green Screen
+
+- ID: x-2089034591172690090
+- 中文标题: 绿幕前的飞行待机
+- English title: Flying Standby on a Green Screen
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2089034591172690090/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2089034591172690090/
+- Original source: https://x.com/mtArakawa/status/2089034591172690090
+- Author: 元荒川ちゃん❤
+- Published: 2026-08-16T17:00:33.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Character & Dialogue
+- Output: 15s, 1920×1440, landscape
+- Prompt provenance: not-published
+- Chinese summary: 穿统一舞台服装的少女们在绿幕摄影棚中排队，并以对白呈现飞行待机片段。 原生视频规格为 15 秒 · 1920×1440。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: Performers in matching stage outfits line up on a green-screen set for a dialogue-led flying-standby scene. Native-video output: 15s · 1920×1440. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## The Glowing Seed After Rain
+
+- ID: x-2089032084484714609
+- 中文标题: 雨后发光种子的旅程
+- English title: The Glowing Seed After Rain
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2089032084484714609/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2089032084484714609/
+- Original source: https://x.com/hmetouch/status/2089032084484714609
+- Author: Hemanth
+- Published: 2026-08-16T16:50:35.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: FL2VA
+- Category: Local Generation
+- Output: 15s, 2208×1248, landscape
+- Prompt provenance: not-published
+- Chinese summary: 一只蓝色小鸟把雨后发现的发光种子带过屋顶，种进花盆并点亮街道。 原生视频规格为 15 秒 · 2208×1248。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A tiny blue bird carries a glowing seed across rain-wet rooftops, plants it, and lights up the street. Native-video output: 15s · 2208×1248. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## High Motion at Four Turbo Steps
+
+- ID: x-2088967626760523804
+- 中文标题: 四步加速下的高动态动作
+- English title: High Motion at Four Turbo Steps
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2088967626760523804/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2088967626760523804/
+- Original source: https://x.com/ostrisai/status/2088967626760523804
+- Author: Ostris
+- Published: 2026-08-16T12:34:28.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Community Showcase
+- Output: 4s, 768×768, square
+- Prompt provenance: not-published
+- Chinese summary: 动漫角色以夸张幅度快速摆动，用来检验四步 Turbo LoRA 的运动能力。 原生视频规格为 4 秒 · 768×768。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: An anime character moves with exaggerated speed to test motion at four Turbo LoRA steps. Native-video output: 4s · 768×768. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## Industrial Transformation on AMD
+
+- ID: x-2088967109548056919
+- 中文标题: AMD 显卡上的工业变形
+- English title: Industrial Transformation on AMD
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2088967109548056919/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2088967109548056919/
+- Original source: https://x.com/txtnurcahyo/status/2088967109548056919
+- Author: Wahyu Nurcahyo 🇮🇩@🇩🇪
+- Published: 2026-08-16T12:32:24.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Ref2VA
+- Category: Community Showcase
+- Output: 5s, 736×736, square
+- Prompt provenance: not-published
+- Chinese summary: 在 AMD RX 7900 XTX 上运行移植后的工作流，把工业设备参考转化成机器人形态。 原生视频规格为 5 秒 · 736×736。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A ported workflow on an AMD RX 7900 XTX transforms industrial-equipment reference imagery into a robot form. Native-video output: 5s · 736×736. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## A Two-Second Anime Motion on Midrange GPU
+
+- ID: x-2088966290765733908
+- 中文标题: 中端显卡的两秒动漫动作
+- English title: A Two-Second Anime Motion on Midrange GPU
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2088966290765733908/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2088966290765733908/
+- Original source: https://x.com/NAKA_X68K/status/2088966290765733908
+- Author: nakataka
+- Published: 2026-08-16T12:29:09.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Local Generation
+- Output: 2s, 864×480, landscape
+- Prompt provenance: not-published
+- Chinese summary: RTX 4060 Ti 本地生成的动漫角色短动作，用于展示较短生成时间下的画面质量。 原生视频规格为 2 秒 · 864×480。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A short anime character motion generated locally on an RTX 4060 Ti demonstrates output quality at a modest runtime. Native-video output: 2s · 864×480. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## Scribbled-Color Detective Opening
+
+- ID: x-2088954932473074028
+- 中文标题: 涂鸦彩色的刑警片头
+- English title: Scribbled-Color Detective Opening
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2088954932473074028/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2088954932473074028/
+- Original source: https://x.com/ChiakiAkagi/status/2088954932473074028
+- Author: ChiakiAkagi 還暦のAIイリュージョニスト
+- Published: 2026-08-16T11:44:01.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Community Showcase
+- Output: 10s, 1280×720, landscape
+- Prompt provenance: not-published
+- Chinese summary: 真人刑警片头被处理成涂鸦彩色风格，手写文字与人物镜头快速交替。 原生视频规格为 10 秒 · 1280×720。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A live-action detective opening becomes a scribbled-color sequence with rapid alternation between handwritten text and character shots. Native-video output: 10s · 1280×720. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## A Failed Long Take at a Snowy Station
+
+- ID: x-2088952829465727147
+- 中文标题: 雪站长镜头的失败记录
+- English title: A Failed Long Take at a Snowy Station
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2088952829465727147/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2088952829465727147/
+- Original source: https://x.com/PixelAigc/status/2088952829465727147
+- Author: PixelAIGC
+- Published: 2026-08-16T11:35:40.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Local Generation
+- Output: 31s, 864×480, landscape
+- Prompt provenance: not-published
+- Chinese summary: 雪地车站长镜头保持人物和环境连贯，但末段列车意外退化成二维形态。 原生视频规格为 31 秒 · 864×480。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A long take at a snowy station keeps the person and setting coherent until the train collapses into a flat form near the end. Native-video output: 31s · 864×480. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## A Collapsing Mountain Becomes a Title
+
+- ID: x-2088946165542953262
+- 中文标题: 崩塌山体化作标题
+- English title: A Collapsing Mountain Becomes a Title
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2088946165542953262/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2088946165542953262/
+- Original source: https://x.com/shintaro_campon/status/2088946165542953262
+- Author: しんたろー△SNS30万｜個人開発
+- Published: 2026-08-16T11:09:11.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Community Showcase
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: not-published
+- Chinese summary: 山崖崩落后，空中的岩石聚合成 DOMINION 字样，再随砂尘消散。 原生视频规格为 15 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A cliff collapses, airborne rocks assemble into the word DOMINION, and the title dissolves into dust. Native-video output: 15s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## Slice-of-Life Anime Eyecatch
+
+- ID: x-2088943855320064442
+- 中文标题: 日常动画风的片间标题
+- English title: Slice-of-Life Anime Eyecatch
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2088943855320064442/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2088943855320064442/
+- Original source: https://x.com/zeroban_noriba/status/2088943855320064442
+- Author: えきちょー（0番のりば）
+- Published: 2026-08-16T11:00:00.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Community Showcase
+- Output: 10s, 864×480, landscape
+- Prompt provenance: not-published
+- Chinese summary: 女学生在夕照房间中停下书写并微笑，随后切入彩色手绘风标题卡。 原生视频规格为 10 秒 · 864×480。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A schoolgirl pauses her writing and smiles in a sunset-lit room before a colorful hand-drawn title card appears. Native-video output: 10s · 864×480. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## The Banana Brainstorm in 3D
+
+- ID: x-2088942927036698921
+- 中文标题: 香蕉创意会的三维喜剧
+- English title: The Banana Brainstorm in 3D
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2088942927036698921/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2088942927036698921/
+- Original source: https://x.com/Artedeingenio/status/2088942927036698921
+- Author: OscarAI
+- Published: 2026-08-16T10:56:19.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Community Showcase
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: not-published
+- Chinese summary: 绵羊般的办公室角色围绕香蕉图示开会，逐步把一根香蕉变成两根。 原生视频规格为 15 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: Sheep-like office characters hold a meeting around a banana diagram that changes from one banana to two. Native-video output: 15s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## Crowd Diversity Across Two Models
+
+- ID: x-2088935944896250356
+- 中文标题: 群像镜头的多样性对照
+- English title: Crowd Diversity Across Two Models
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2088935944896250356/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2088935944896250356/
+- Original source: https://x.com/PolaczekSagi/status/2088935944896250356
+- Author: Sagi Polaczek 🦜
+- Published: 2026-08-16T10:28:34.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Model Comparison
+- Output: 10s, 1664×640, landscape
+- Prompt provenance: not-published
+- Chinese summary: 相同群像提示在 MiniMax H3 与 LTX 2.5 中并列呈现，用于观察人物与构图多样性。 原生视频规格为 10 秒 · 1664×640。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: The same crowd-oriented setup is shown across MiniMax H3 and LTX 2.5 to compare people and compositional diversity. Native-video output: 10s · 1664×640. The source did not publish a complete prompt, so this library does not infer or complete one.
 - Verbatim public prompt: not published by the source
 
