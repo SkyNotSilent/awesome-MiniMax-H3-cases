@@ -1,5 +1,6 @@
 import { access, readFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
+import { editorialCopyErrors, genericEditorialCopyPattern } from './editorial-copy.mjs'
 
 const root = resolve(import.meta.dirname, '..')
 const cases = JSON.parse(await readFile(resolve(root, 'data/cases.json'), 'utf8'))
@@ -19,6 +20,21 @@ for (const [index, item] of cases.entries()) {
   if (Object.hasOwn(item, 'promptEn')) errors.push(`${at}.promptEn is not allowed; preserve the original prompt in every locale`)
   if (/[\u3400-\u9fff]/u.test(item.titleEn || '')) errors.push(`${at}.titleEn must not contain CJK text`)
   if (/[\u3400-\u9fff]/u.test(item.summaryEn || '')) errors.push(`${at}.summaryEn must not contain CJK text`)
+  for (const key of ['title', 'titleEn']) {
+    if (genericEditorialCopyPattern(item[key])) errors.push(`${at}.${key} must keep account handles out of public titles`)
+  }
+  for (const key of ['summary', 'summaryEn']) {
+    if (genericEditorialCopyPattern(item[key])) errors.push(`${at}.${key} must keep account handles in attribution fields`)
+  }
+  if (item.editorialBasis) {
+    for (const error of editorialCopyErrors({
+      title: item.title,
+      titleEn: item.titleEn,
+      summary: item.summary,
+      summaryEn: item.summaryEn,
+      basis: item.editorialBasis,
+    })) errors.push(`${at}: ${error}`)
+  }
   if (ids.has(item.id)) errors.push(`${at}.id is duplicated: ${item.id}`)
   ids.add(item.id)
   const normalizedSource = item.sourceUrl?.replace(/\?.*$/, '')
