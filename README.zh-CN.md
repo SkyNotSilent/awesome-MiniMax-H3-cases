@@ -18,7 +18,7 @@
 
 </div>
 
-[![H3 Field Notes — 浏览 631 个 MiniMax H3 视频案例](./docs/screenshots/case-library-zh.png)](https://h3-field-notes-production.up.railway.app/)
+[![H3 Field Notes — MiniMax H3 视频案例首页，展示内容分类筛选与案例卡片](./docs/screenshots/case-library-zh.jpg)](https://h3-field-notes-production.up.railway.app/)
 
 **在花时间安装模型或研究参数之前，先看 MiniMax H3 实际能生成什么。** MiniMax H3 也常被搜索为 Hailuo H3、Hailuo 3.0、海螺 H3 或海螺 3.0。这里汇总来自 X 与 MiniMax 官方公开示例的文字生视频、图生视频和视频生视频真实输出，可以按生成模式、分类、风格与场景筛选。打开任意案例即可站内观看，并能随时回到原作者帖子。
 
