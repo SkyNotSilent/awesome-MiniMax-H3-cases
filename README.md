@@ -18,7 +18,7 @@
 
 </div>
 
-[![H3 Field Notes — browse 631 MiniMax H3 video examples](./docs/screenshots/case-library-en.png)](https://h3-field-notes-production.up.railway.app/en/)
+[![H3 Field Notes — MiniMax H3 video example homepage with content-first filters and case cards](./docs/screenshots/case-library-en.jpg)](https://h3-field-notes-production.up.railway.app/en/)
 
 **See what MiniMax H3 can actually produce before you spend time setting it up.** MiniMax H3 is also commonly searched as Hailuo H3 or Hailuo 3.0. Browse real text-to-video, image-to-video, and video-to-video outputs from X and MiniMax's official examples, then filter by generation mode, category, style, or scene. Open any case to watch it inside the gallery and jump back to the original source.
 
