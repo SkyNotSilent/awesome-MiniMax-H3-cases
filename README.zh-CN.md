@@ -2,19 +2,19 @@
 
 # Awesome MiniMax H3 视频案例与实用教程
 
-### 685 个来源可追溯、可站内观看的视频案例 · 35 条公开 Prompt · 13 条来源核验教程
+### 713 个来源可追溯、可站内观看的视频案例 · 37 条公开 Prompt · 13 条来源核验教程
 
 **[简体中文](./README.zh-CN.md)** · **[English](./README.md)**
 
 [![视频案例库](https://img.shields.io/badge/立即观看-视频案例库-d8ff3e?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/)
-[![案例数量](https://img.shields.io/badge/视频案例-685-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
-[![公开 Prompt](https://img.shields.io/badge/公开_Prompt_原文-35-f5f5ed?style=flat-square&labelColor=0a0b09)](./data/cases.json)
+[![案例数量](https://img.shields.io/badge/视频案例-713-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
+[![公开 Prompt](https://img.shields.io/badge/公开_Prompt_原文-37-f5f5ed?style=flat-square&labelColor=0a0b09)](./data/cases.json)
 [![教程](https://img.shields.io/badge/已核验教程-13-f5f5ed?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/tutorials/)
 [![GitHub Stars](https://img.shields.io/github/stars/SkyNotSilent/awesome-minimax-h3?style=flat-square&labelColor=0a0b09&color=d8ff3e)](https://github.com/SkyNotSilent/awesome-minimax-h3/stargazers)
 [![CI](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml/badge.svg)](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg?style=flat-square)](./LICENSE)
 
-[▶ 浏览全部 685 个视频案例](https://h3-field-notes-production.up.railway.app/) · [在 GitHub 查看案例](./CATALOG.md) · [English](./README.md) · [参与贡献](./CONTRIBUTING.md)
+[▶ 浏览全部 713 个视频案例](https://h3-field-notes-production.up.railway.app/) · [在 GitHub 查看案例](./CATALOG.md) · [English](./README.md) · [参与贡献](./CONTRIBUTING.md)
 
 </div>
 
@@ -22,7 +22,7 @@
 
 **在花时间安装模型或研究参数之前，先看 MiniMax H3 实际能生成什么。** MiniMax H3 也常被搜索为 Hailuo H3、Hailuo 3.0、海螺 H3 或海螺 3.0。这里汇总来自 X 与 MiniMax 官方公开示例的文字生视频、图生视频和视频生视频真实输出，可以按生成模式、分类、风格与场景筛选。打开任意案例即可站内观看，并能随时回到原作者帖子。
 
-> **在 2026-08-16 的公开同类库对比中规模最大：** 本库现有 685 个可播放、来源可追溯的 MiniMax H3 视频案例。该次检索中较大的公开案例或 Prompt 图库分别约为 300、222、135、67 和 28 条；只有 Prompt、没有对应视频案例的列表不计入案例库对比。
+> **在 2026-08-16 的公开同类库对比中规模最大：** 本库现有 713 个可播放、来源可追溯的 MiniMax H3 视频案例。该次检索中较大的公开案例或 Prompt 图库分别约为 300、222、135、67 和 28 条；只有 Prompt、没有对应视频案例的列表不计入案例库对比。
 
 <details>
 <summary>“规模最大”是如何核验的</summary>
@@ -35,14 +35,14 @@
 
 | 你能得到什么 | 对用户的价值 |
 | --- | --- |
-| **685 个可观看视频案例** | 不读功能列表，直接根据真实输出判断 MiniMax H3 / Hailuo H3 的效果 |
+| **713 个可观看视频案例** | 不读功能列表，直接根据真实输出判断 MiniMax H3 / Hailuo H3 的效果 |
 | **关键词搜索与多维筛选** | 快速找到 T2VA、FL2VA、Ref2VA、电影、舞蹈、对白、音乐、广告与本地生成案例 |
 | **每条案例独立封面与加载状态** | 点开前先看到视频内容，并能分辨 X 播放器是在加载还是加载失败 |
 | **每条案例保留作者与原帖** | 无需四处找来源，即可核对上下文、发布日期和原作者 |
 | **仅展示来源公开的 Prompt 原文** | 原作者公开时可以直接复制；未公开时绝不反推、补写或伪造 |
 | **中英文完全隔离** | 可以在中文或英文界面浏览同一套案例，不混杂另一种语言 |
 
-**当前规模：** 685 个视频案例 · 682 个 X 原帖案例 · 3 个官方复现案例 · 35 条公开 Prompt 原文。
+**当前规模：** 713 个视频案例 · 710 个 X 原帖案例 · 3 个官方复现案例 · 37 条公开 Prompt 原文。
 
 浏览公开案例不需要账号、API Key 或本地部署模型。
 
