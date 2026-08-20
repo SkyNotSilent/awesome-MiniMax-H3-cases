@@ -49,6 +49,25 @@ describe('case-first routes', () => {
     expect(screen.queryByLabelText('MiniMax H3 社区视频实验档案')).not.toBeInTheDocument()
   })
 
+  it('dismisses the intro immediately when the visitor interacts', () => {
+    renderAt('/')
+
+    expect(screen.getByLabelText('MiniMax H3 社区视频实验档案')).toBeInTheDocument()
+    fireEvent.pointerDown(window)
+
+    expect(screen.queryByLabelText('MiniMax H3 社区视频实验档案')).not.toBeInTheDocument()
+    expect(document.body).not.toHaveClass('intro-open')
+  })
+
+  it('dismisses the intro immediately on wheel or swipe intent', () => {
+    renderAt('/')
+
+    fireEvent.wheel(window, { deltaY: 120 })
+
+    expect(screen.queryByLabelText('MiniMax H3 社区视频实验档案')).not.toBeInTheDocument()
+    expect(document.body).not.toHaveClass('intro-open')
+  })
+
   it('keeps the home page focused on cases and removes template and collection-method sections', () => {
     renderAt('/')
     expect(screen.getByRole('link', { name: '案例' })).toHaveAttribute('href', '/')
