@@ -1,5 +1,5 @@
 import { createReadStream, createWriteStream } from 'node:fs'
-import { mkdtemp, readFile, rename, rm, stat, writeFile } from 'node:fs/promises'
+import { access, mkdtemp, readFile, rename, rm, stat, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join, resolve } from 'node:path'
 import { Readable } from 'node:stream'
@@ -12,6 +12,7 @@ const apply = process.argv.includes('--apply')
 const concurrency = Number(process.env.VIDEO_MIRROR_CONCURRENCY || 4)
 const credentialsFromStdin = process.argv.includes('--credentials-stdin')
 const onlyIds = new Set((process.env.VIDEO_MIRROR_ONLY || '').split(',').map((value) => value.trim()).filter(Boolean))
+const sourceDirectory = process.env.VIDEO_MIRROR_SOURCE_DIR ? resolve(process.env.VIDEO_MIRROR_SOURCE_DIR) : null
 const officialSources = new Map([
   ['official-t2va-starship', 'https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/main/assets/t2va.mp4'],
   ['official-fl2va-ramen', 'https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/main/assets/fl2va.mp4'],
@@ -101,13 +102,26 @@ async function mirror(item) {
   if (present.exists) return { id: item.id, key, bytes: present.bytes, state: 'existing' }
   if (!apply) return { id: item.id, key, bytes: 0, state: 'missing' }
 
-  const sourceUrl = await sourceFor(item)
   const filePath = join(tempDirectory, `${item.id}.mp4`)
-  await retry(`Download ${item.id}`, async () => {
-    const response = await fetch(sourceUrl, { headers: { 'User-Agent': 'awesome-minimax-h3-cases/1.0 video-mirror' } })
-    if (!response.ok || !response.body) throw new Error(`HTTP ${response.status}`)
-    await pipeline(Readable.fromWeb(response.body), createWriteStream(filePath))
-  })
+  const stagedSource = sourceDirectory ? resolve(sourceDirectory, `${item.id}.mp4`) : null
+  let staged = false
+  if (stagedSource) {
+    try {
+      await access(stagedSource)
+      await pipeline(createReadStream(stagedSource), createWriteStream(filePath))
+      staged = true
+    } catch {
+      // Fall back to the original public media source below.
+    }
+  }
+  if (!staged) {
+    const sourceUrl = await sourceFor(item)
+    await retry(`Download ${item.id}`, async () => {
+      const response = await fetch(sourceUrl, { headers: { 'User-Agent': 'awesome-minimax-h3-cases/1.0 video-mirror' } })
+      if (!response.ok || !response.body) throw new Error(`HTTP ${response.status}`)
+      await pipeline(Readable.fromWeb(response.body), createWriteStream(filePath))
+    })
+  }
   const fileStats = await stat(filePath)
   if (fileStats.size < 10_000) throw new Error(`Downloaded file is too small (${fileStats.size} bytes)`)
   await retry(`Upload ${item.id}`, () => client.send(new PutObjectCommand({

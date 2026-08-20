@@ -8,6 +8,7 @@ const tutorials = JSON.parse(await readFile(resolve(root, 'data/tutorials.json')
 const officialCount = cases.filter((item) => item.sourceType === 'official').length
 const xCount = cases.filter((item) => item.sourceType === 'x').length
 const promptCases = cases.filter((item) => item.promptProvenance !== 'not-published')
+const withoutTrailingWhitespace = (text) => text.replace(/[ \t]+$/gm, '')
 
 const caseUrl = (id, locale = 'zh-CN') => `${baseUrl}${locale === 'en' ? '/en' : ''}/cases/${encodeURIComponent(id)}/`
 
@@ -94,6 +95,6 @@ ${item.prompt ? `- Verbatim public prompt:\n\n\`\`\`text\n${item.prompt}\n\`\`\`
 `).join('\n')}
 `
 
-await writeFile(resolve(root, 'public/llms.txt'), llms)
-await writeFile(resolve(root, 'public/llms-full.txt'), llmsFull)
+await writeFile(resolve(root, 'public/llms.txt'), withoutTrailingWhitespace(llms))
+await writeFile(resolve(root, 'public/llms-full.txt'), withoutTrailingWhitespace(llmsFull))
 console.log(`Generated llms.txt and llms-full.txt for ${cases.length} cases.`)

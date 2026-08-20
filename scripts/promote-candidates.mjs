@@ -215,6 +215,7 @@ function buildCase(candidate, tweet, video) {
     summary: `${editorial.summary} 原生视频规格为 ${outputZh}。${promptPublished ? '原帖完整公开了 Prompt，本页按原文保留。' : '原帖未公开完整 Prompt，本库不反推或补写。'}`,
     summaryEn: `${editorial.summaryEn} Native-video output: ${outputEn}. ${promptPublished ? 'The creator published the complete prompt, preserved here verbatim.' : 'The source did not publish a complete prompt, so this library does not infer or complete one.'}`,
     prompt: candidate.prompt,
+    ...(candidate.promptSourceUrl ? { promptSourceUrl: candidate.promptSourceUrl.replace(/\?.*$/, '') } : {}),
     sourceUrl: candidate.sourceUrl.replace(/\?.*$/, ''),
     sourceLabel: `X 原帖 · ${authorHandle}`,
     author: tweet.author?.name || candidate.author,
