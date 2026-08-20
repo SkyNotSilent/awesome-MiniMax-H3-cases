@@ -39,6 +39,15 @@
 | [睡过头后的匆忙晨间流程](https://x.com/noorlewisx/status/2088844629093601702) | 15s · 1344×768 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
 | [制服角色的多步肖像对比网格](https://x.com/sep_is_heim/status/2088795571079586079) | 5s · 1620×1728 · portrait | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
 | [乘法口诀的九宫格鱼群](https://x.com/tanabe_fragm/status/2089141649503044017) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [皮肤、纸面与金属的连续变形](https://x.com/MauriceBourdon/status/2090370009507750070) | 37s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [日式办公室的横向跟拍](https://x.com/ITOKtw/status/2090360926021308906) | 5s · 1024×768 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [显卡广告的强力排版](https://x.com/amadeus_NFT/status/2090344867184451786) | 15s · 1280×736 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [纸艺火山吞没史前世界](https://x.com/Strength04_X/status/2090331284564476354) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [红宝石女王变身战士](https://x.com/TaliaAariz/status/2090330350668947525) | 15s · 1440×2560 · portrait | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
+| [游船途中遇见海豚](https://x.com/nawalsehar/status/2090306968900784383) | 15s · 2560×1440 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [橙黑街舞品牌快切广告](https://x.com/tanabe_fragm/status/2090306302966919515) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [南极研究员与企鹅群](https://x.com/aiwithaly/status/2090297623622426984) | 15s · 2560×1440 · landscape | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [餐盘上的人脸蛋糕切片](https://x.com/CreaitiveLabs/status/2090285250475708694) | 15s · 3886×2160 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
 
 ## FL2VA
 
@@ -91,6 +100,9 @@
 | [Krea 2 插画的动漫式动态转换](https://x.com/breath_in_code/status/2088793684292825106) | 20s · 1080×1920 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
 | [卧室里的连续舞步](https://x.com/Haruka1425054/status/2089094854727119124) | 12s · 608×1088 · portrait | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
 | [雨后发光种子的旅程](https://x.com/hmetouch/status/2089032084484714609) | 15s · 2208×1248 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
+| [角色穿越多重画风](https://x.com/Ushizaru_LAB/status/2090365462542799007) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [暗黑圣堂的人物誓约](https://x.com/ZtohAic/status/2090359582032076832) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [粉色舞台上的角色宣言](https://x.com/xiaomimasato/status/2090322678292906110) | 15s · 832×640 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
 
 ## Ref2VA
 
@@ -150,6 +162,11 @@
 | [幽灵侦察机的变形预告](https://x.com/stonekaiju/status/2089124518166135196) | 19s · 1920×1080 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
 | [参考图驱动的动漫角色动作](https://x.com/kyle_catweasel/status/2089104947162054735) | 5s · 896×1184 · portrait | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
 | [AMD 显卡上的工业变形](https://x.com/txtnurcahyo/status/2088967109548056919) | 5s · 736×736 · square | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [从街头走进百货专柜](https://x.com/cwh_tw/status/2090344857957286046) | 20s · 720×960 · portrait | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [快餐店里追逐镜头的猫](https://x.com/Mathewdoeslife/status/2090325586736738393) | 7s · 896×672 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [极光啤酒的海边口播广告](https://x.com/PhotogenicWeekE/status/2090313408256336198) | 10s · 736×1280 · portrait | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [双色偶像组合的人物短片](https://x.com/pon708/status/2090304950266187945) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [卧室里的三套穿搭切换](https://x.com/codewithhajra/status/2090276653012287567) | 16s · 1088×720 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
 
 ## Unknown
 
@@ -674,3 +691,18 @@
 | [日常动画风的片间标题](https://x.com/zeroban_noriba/status/2088943855320064442) | 10s · 864×480 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
 | [香蕉创意会的三维喜剧](https://x.com/Artedeingenio/status/2088942927036698921) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
 | [群像镜头的多样性对照](https://x.com/PolaczekSagi/status/2088935944896250356) | 10s · 1664×640 · landscape | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [双色风车标记的旋转练习](https://x.com/Toshi_nyaruo_AI/status/2090368569494340039) | 3s · 608×352 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
+| [猫耳女孩的意面动作对照](https://x.com/IsekaiBardGuild/status/2090366981664903407) | 7s · 640×832 · portrait | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [竹轮角色的舞台独舞](https://x.com/yukisiromeruto/status/2090366297322475544) | 15s · 1080×1888 · portrait | `MiniMax H3` `舞蹈视频` `来源未公开 Prompt` `X 原帖` |
+| [狙击手的图形化人物揭晓](https://x.com/aoarashi_web/status/2090363222658580535) | 15s · 1344×768 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [深夜病房的长段落表演](https://x.com/shonai_arai/status/2090355657849676251) | 46s · 1874×1080 · landscape | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [和风甜点品牌的动态图形](https://x.com/seiiiiiiiiiiru/status/2090349415534035047) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [黄昏栏杆边的动漫人物](https://x.com/DeBug_lzy/status/2090343936560963779) | 24s · 1280×712 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
+| [韩国意象的月夜长卷](https://x.com/snowy_mandu/status/2090324150162473271) | 15s · 1280×720 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [低音演奏撕开地下海报](https://x.com/ManuAGI01/status/2090322529982590994) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [向日葵从种子到盛放](https://x.com/Strength04_X/status/2090321133254086935) | 48s · 1920×1080 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [黑洞王冠的科幻片头](https://x.com/rovvmut_/status/2090315119356244222) | 15s · 1920×1080 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [燃烧房间里的从容小狗](https://x.com/Cencencahya12/status/2090306040097034391) | 15s · 1080×1440 · portrait | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [废墟宫殿里的喷火巨龙](https://x.com/Cencencahya12/status/2090305577767547285) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [雨夜街头的三十秒压力挑战](https://x.com/iwhale/status/2090292380914291144) | 15s · 864×480 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [奢华精华液的竖屏口播](https://x.com/noorlewisx/status/2090284291033100433) | 15s · 768×1344 · portrait | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
