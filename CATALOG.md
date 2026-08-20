@@ -48,6 +48,8 @@
 | [橙黑街舞品牌快切广告](https://x.com/tanabe_fragm/status/2090306302966919515) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
 | [南极研究员与企鹅群](https://x.com/aiwithaly/status/2090297623622426984) | 15s · 2560×1440 · landscape | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
 | [餐盘上的人脸蛋糕切片](https://x.com/CreaitiveLabs/status/2090285250475708694) | 15s · 3886×2160 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
+| [包豪斯字形的节拍重组](https://x.com/EZheng66099/status/2090185695641968736) | 12s · 1080×1920 · portrait | `MiniMax H3` `舞蹈视频` `公开 Prompt` `X 原帖` |
+| [会切换犬种的互动图鉴](https://x.com/nakazakifam/status/2090175089404789097) | 15s · 1280×736 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
 
 ## FL2VA
 
@@ -103,6 +105,7 @@
 | [角色穿越多重画风](https://x.com/Ushizaru_LAB/status/2090365462542799007) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
 | [暗黑圣堂的人物誓约](https://x.com/ZtohAic/status/2090359582032076832) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
 | [粉色舞台上的角色宣言](https://x.com/xiaomimasato/status/2090322678292906110) | 15s · 832×640 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [新艺术机械乌鸦的变形长卷](https://x.com/oohiro35/status/2090183484057034955) | 30s · 1344×768 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
 
 ## Ref2VA
 
@@ -167,6 +170,12 @@
 | [极光啤酒的海边口播广告](https://x.com/PhotogenicWeekE/status/2090313408256336198) | 10s · 736×1280 · portrait | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
 | [双色偶像组合的人物短片](https://x.com/pon708/status/2090304950266187945) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
 | [卧室里的三套穿搭切换](https://x.com/codewithhajra/status/2090276653012287567) | 16s · 1088×720 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [夏日祭典里的双人盆舞](https://x.com/momuandteasteam/status/2090261780115427440) | 5s · 864×480 · landscape | `MiniMax H3` `舞蹈视频` `来源未公开 Prompt` `X 原帖` |
+| [怪盗电影的金黑预告片](https://x.com/tanabe_fragm/status/2090251901388693638) | 20s · 1920×1080 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [七宗罪角色的七幕揭晓](https://x.com/aimikoda/status/2090242494193660134) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [步行街上的自然行走](https://x.com/00Bohr/status/2090214618882773503) | 7s · 832×1120 · portrait | `MiniMax H3` `本地生成` `公开 Prompt` `X 原帖` |
+| [铅笔线条生长为绿色标记](https://x.com/itsnicholash/status/2090182264705454105) | 15s · 1440×1440 · square | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [穿越多重材质世界的旅人](https://x.com/hmetouch/status/2090136979866521914) | 15s · 1376×768 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
 
 ## Unknown
 
@@ -706,3 +715,22 @@
 | [废墟宫殿里的喷火巨龙](https://x.com/Cencencahya12/status/2090305577767547285) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
 | [雨夜街头的三十秒压力挑战](https://x.com/iwhale/status/2090292380914291144) | 15s · 864×480 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
 | [奢华精华液的竖屏口播](https://x.com/noorlewisx/status/2090284291033100433) | 15s · 768×1344 · portrait | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [珊瑚色线条拼出品牌字标](https://x.com/EZheng66099/status/2090273822431674561) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [原宿甜品街的巨型字景](https://x.com/su_nagomi/status/2090272463934644653) | 15s · 1920×1080 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [机械狐狸飞越微缩城市](https://x.com/Brjen/status/2090271497491214625) | 16s · 1280×704 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [红黑动漫排版的双模型对照](https://x.com/kik0ai1jikake/status/2090270568532828380) | 10s · 1344×768 · landscape | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [动漫贝斯手的舞台演奏](https://x.com/Toshi_nyaruo_AI/status/2090267333172629630) | 5s · 768×1344 · portrait | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [吉他手的竖屏音乐蒙太奇](https://x.com/Aiborned/status/2090265136569200923) | 60s · 1080×1920 · portrait | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [长矛与字标的英雄揭晓](https://x.com/junwatu/status/2090257920953123100) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [糖浆流动的双模型对照](https://x.com/Lart_AI/status/2090234862028406919) | 15s · 540×960 · portrait | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [街头偶遇的即兴对话](https://x.com/Jessewelle/status/2090230978547703913) | 15s · 1280×720 · landscape | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [黑色豪华车的多镜头广告](https://x.com/Flkrstudio/status/2090230972851835104) | 30s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [蓝白网球运动排版](https://x.com/synthetic_ape/status/2090222715948917233) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [森林追逐的一镜到底挑战](https://x.com/AIWarper/status/2090214143022490065) | 14s · 1344×1524 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [烟花夜里的夏末预告](https://x.com/kurumirekishi/status/2090209401206653023) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [装备室里的动漫人物卡](https://x.com/nogsaw2/status/2090193779089461340) | 15s · 640×368 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [红绿灯纪念日的街角小剧场](https://x.com/Spoonful_of_Fun/status/2090193337504710980) | 15s · 576×576 · square | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [羊皮纸上的绝地光明史诗](https://x.com/nonameoasis/status/2090180874222588332) | 91s · 2548×1080 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [墙后低语的走廊惊魂](https://x.com/PromptSin/status/2090166948239909375) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [纸艺特洛伊城的陷落](https://x.com/MayorKingAI/status/2090145591083077637) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [狼耳角色的预录音频口型](https://x.com/MrJ0SHie/status/2090141574462333406) | 15s · 1120×832 · landscape | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
