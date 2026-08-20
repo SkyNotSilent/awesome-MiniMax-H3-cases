@@ -39,12 +39,12 @@ const pageDefinitions = [
     schemaType: 'CollectionPage',
     copy: {
       'zh-CN': {
-        title: 'MiniMax H3 视频案例、公开 Prompt 与实用教程 — H3 Field Notes',
+        title: 'MiniMax H3 Cases & Guides — 视频案例、公开 Prompt 与实用教程',
         description: `浏览 ${cases.length} 个可筛选、可追溯、可站内观看的 MiniMax H3 / Hailuo H3 真实视频案例，获取来源公开 Prompt，并通过 ${tutorials.length} 条核验教程了解部署、工作流、加速与训练。`,
         keywords: 'MiniMax H3,MiniMax H3 视频案例,MiniMax H3 Prompt,MiniMax H3 教程,Hailuo H3,Hailuo 3.0,海螺 H3,海螺 3.0,海螺 AI,AI 视频生成,text-to-video,image-to-video,video-to-video,H3 ComfyUI,T2VA,FL2VA,Ref2VA',
       },
       en: {
-        title: 'MiniMax H3 Video Examples, Public Prompts & Tutorials — H3 Field Notes',
+        title: 'MiniMax H3 Cases & Guides — Videos, Public Prompts & Tutorials',
         description: `Browse ${cases.length} source-attributed MiniMax H3 / Hailuo H3 videos with in-site playback, use prompts only when sources publish them, and explore ${tutorials.length} checked guides for setup, workflows, acceleration, and training.`,
         keywords: 'MiniMax H3,MiniMax H3 video examples,MiniMax H3 prompts,MiniMax H3 tutorials,Hailuo H3,Hailuo 3.0,AI video generation,text-to-video,image-to-video,video-to-video,MiniMax H3 ComfyUI,T2VA,FL2VA,Ref2VA',
       },
@@ -56,12 +56,12 @@ const pageDefinitions = [
     schemaType: 'CollectionPage',
     copy: {
       'zh-CN': {
-        title: 'MiniMax H3 教程与工具：部署、工作流、加速、训练 — H3 Field Notes',
+        title: 'MiniMax H3 教程与工具：部署、工作流、加速、训练 — MiniMax H3 Cases & Guides',
         description: 'MiniMax H3 生态教程入口：官方部署、Apple Silicon 原生推理、ComfyUI 导演工作流、Turbo 加速、长视频、音频、微调训练与资源导航。',
         keywords: 'MiniMax H3 教程,MiniMax H3 Mac,h3.c,MiniMax H3 部署,ComfyUI H3,H3 Director,MiniMax H3 Turbo,H3 Motion Context,H3 Audio,MiniMax H3 微调',
       },
       en: {
-        title: 'MiniMax H3 Tutorials and Tools: Setup, Workflows, Speed, Training — H3 Field Notes',
+        title: 'MiniMax H3 Tutorials and Tools: Setup, Workflows, Speed, Training — MiniMax H3 Cases & Guides',
         description: 'A practical MiniMax H3 ecosystem guide for official setup, native Apple Silicon inference, ComfyUI director workflows, Turbo acceleration, long video, audio, fine-tuning, and resource maps.',
         keywords: 'MiniMax H3 tutorials,MiniMax H3 Mac,h3.c,MiniMax H3 deployment,ComfyUI H3,H3 Director,MiniMax H3 Turbo,H3 Motion Context,H3 Audio,MiniMax H3 fine-tuning',
       },
@@ -73,12 +73,12 @@ const pageDefinitions = [
     schemaType: 'FAQPage',
     copy: {
       'zh-CN': {
-        title: 'MiniMax H3 视频案例库常见问题 — H3 Field Notes',
+        title: 'MiniMax H3 视频案例库常见问题 — MiniMax H3 Cases & Guides',
         description: '关于 MiniMax H3 视频案例来源、公开 Prompt 边界与人工审核流程的常见问题。',
         keywords: 'MiniMax H3 常见问题,Hailuo 3.0,海螺 3.0,T2VA,FL2VA,Ref2VA,AI 视频案例',
       },
       en: {
-        title: 'MiniMax H3 Video Library FAQ — H3 Field Notes',
+        title: 'MiniMax H3 Video Library FAQ — MiniMax H3 Cases & Guides',
         description: 'Frequently asked questions about MiniMax H3 video sources, published-prompt boundaries, and human review.',
         keywords: 'MiniMax H3 FAQ,Hailuo 3.0,T2VA,FL2VA,Ref2VA,AI video examples',
       },
@@ -88,7 +88,7 @@ const pageDefinitions = [
 
 const ui = {
   'zh-CN': {
-    back: '返回 H3 Field Notes 案例库',
+    back: '返回 MiniMax H3 Cases & Guides 案例库',
     language: 'EN',
     playerLabel: 'X 原帖播放器',
     playerProvider: '媒体由 X 提供',
@@ -118,7 +118,7 @@ const ui = {
     siteDescription: 'MiniMax H3 视频案例库',
   },
   en: {
-    back: 'Back to the H3 Field Notes case library',
+    back: 'Back to MiniMax H3 Cases & Guides',
     language: 'ZH',
     playerLabel: 'Original X post player',
     playerProvider: 'Media provided by X',
@@ -316,8 +316,8 @@ function appStructuredData(page, locale) {
       {
         '@type': 'WebSite',
         '@id': websiteId,
-        name: 'H3 Field Notes',
-        alternateName: 'Awesome MiniMax H3',
+        name: 'MiniMax H3 Cases & Guides',
+        alternateName: 'Awesome MiniMax H3 Cases',
         url: `${baseUrl}/`,
         inLanguage: ['zh-CN', 'en'],
       },
@@ -369,7 +369,7 @@ function renderAppShell(page, locale, assetTags) {
 ${alternateHeadLinks(page.paths)}
     <link rel="manifest" href="/site.webmanifest" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="H3 Field Notes" />
+    <meta property="og:site_name" content="MiniMax H3 Cases &amp; Guides" />
     <meta property="og:locale" content="${localeCode(locale)}" />
     <meta property="og:locale:alternate" content="${alternateOgLocale}" />
     <meta property="og:title" content="${escapeHtml(copy.title)}" />
@@ -496,7 +496,7 @@ function renderCasePage(item, locale) {
   <link rel="canonical" href="${canonical}" />
 ${alternateHeadLinks(paths)}
   <meta property="og:type" content="video.other" />
-  <meta property="og:site_name" content="H3 Field Notes" />
+  <meta property="og:site_name" content="MiniMax H3 Cases &amp; Guides" />
   <meta property="og:locale" content="${localeCode(locale)}" />
   <meta property="og:locale:alternate" content="${localeCode(otherLocale(locale))}" />
   <meta property="og:title" content="${escapeHtml(`${copy.title} — MiniMax H3`)}" />
@@ -626,7 +626,7 @@ const notFoundCopy = {
   'zh-CN': ['页面不存在', '这个地址没有对应页面。', '返回案例库'],
   en: ['Page not found', 'There is no page at this address.', 'Back to the case library'],
 }
-const notFoundHtml = `<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow"><title>404 — H3 Field Notes</title><style>body{margin:0;background:#0a0b09;color:#f5f5ed;font:16px/1.6 system-ui,sans-serif}main{max-width:760px;margin:15vh auto;padding:24px}h1{font-size:clamp(3rem,12vw,8rem);margin:0;color:#d8ff3e}a{color:#d8ff3e}</style></head><body><main><p>404</p><h1>${notFoundCopy['zh-CN'][0]}</h1><p>${notFoundCopy['zh-CN'][1]}</p><p><a href="/">${notFoundCopy['zh-CN'][2]}</a> · <a href="/en/">${notFoundCopy.en[2]}</a></p></main></body></html>`
+const notFoundHtml = `<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow"><title>404 — MiniMax H3 Cases &amp; Guides</title><style>body{margin:0;background:#0a0b09;color:#f5f5ed;font:16px/1.6 system-ui,sans-serif}main{max-width:760px;margin:15vh auto;padding:24px}h1{font-size:clamp(3rem,12vw,8rem);margin:0;color:#d8ff3e}a{color:#d8ff3e}</style></head><body><main><p>404</p><h1>${notFoundCopy['zh-CN'][0]}</h1><p>${notFoundCopy['zh-CN'][1]}</p><p><a href="/">${notFoundCopy['zh-CN'][2]}</a> · <a href="/en/">${notFoundCopy.en[2]}</a></p></main></body></html>`
 await writeFile(resolve(dist, '404.html'), notFoundHtml)
 
 console.log(`Generated ${pageDefinitions.length * locales.length} app routes, ${cases.length * locales.length} localized case pages, ${cases.length * locales.length} video sitemap entries, and a strict 404 page for ${baseUrl}.`)

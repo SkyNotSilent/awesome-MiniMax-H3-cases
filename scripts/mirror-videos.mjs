@@ -84,7 +84,7 @@ async function sourceFor(item) {
   const postId = item.sourceUrl.match(/status\/(\d+)/)?.[1]
   if (!postId) throw new Error('Missing X post id')
   const payload = await retry(`Fetch metadata for ${item.id}`, async () => {
-    const response = await fetch(`https://api.fxtwitter.com/status/${postId}`, { headers: { 'User-Agent': 'awesome-minimax-h3/1.0 video-mirror' } })
+    const response = await fetch(`https://api.fxtwitter.com/status/${postId}`, { headers: { 'User-Agent': 'awesome-minimax-h3-cases/1.0 video-mirror' } })
     if (!response.ok) throw new Error(`HTTP ${response.status}`)
     return response.json()
   })
@@ -104,7 +104,7 @@ async function mirror(item) {
   const sourceUrl = await sourceFor(item)
   const filePath = join(tempDirectory, `${item.id}.mp4`)
   await retry(`Download ${item.id}`, async () => {
-    const response = await fetch(sourceUrl, { headers: { 'User-Agent': 'awesome-minimax-h3/1.0 video-mirror' } })
+    const response = await fetch(sourceUrl, { headers: { 'User-Agent': 'awesome-minimax-h3-cases/1.0 video-mirror' } })
     if (!response.ok || !response.body) throw new Error(`HTTP ${response.status}`)
     await pipeline(Readable.fromWeb(response.body), createWriteStream(filePath))
   })

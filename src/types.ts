@@ -9,6 +9,7 @@ export interface VideoCase {
   summary: string
   summaryEn: string
   prompt: string | null
+  promptSourceUrl?: string
   sourceUrl: string
   sourceLabel: string
   author: string

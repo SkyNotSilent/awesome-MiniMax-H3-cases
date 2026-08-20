@@ -1,6 +1,6 @@
-# H3 Field Notes — Complete MiniMax H3 Case and Tutorial Index
+# MiniMax H3 Cases & Guides — Complete Case and Tutorial Index
 
-Generated from data/cases.json. Total: 713 cases. Verbatim public prompts: 37.
+Generated from data/cases.json. Total: 713 cases. Verbatim public prompts: 40.
 
 ## Tutorials
 
@@ -2619,10 +2619,49 @@ Final output:
 - Mode: Unknown
 - Category: Character Consistency & Benchmark
 - Output: 15s, 3778×2160, landscape
-- Prompt provenance: not-published
-- Chinese summary: 一段用于介绍角色的 15 秒宽银幕短片，明确标注 MiniMax H3 与 Hailuo AI。作者说明 Prompt 位于回复区，本条不推断或补写未抓取的 Prompt。
-- English summary: A 15-second widescreen character-introduction clip explicitly tagged MiniMax H3 and Hailuo AI. The creator says the prompt is in the replies; no unseen prompt is inferred here.
-- Verbatim public prompt: not published by the source
+- Prompt provenance: creator-verbatim
+- Chinese summary: 一段用于介绍角色的 15 秒宽银幕短片，明确标注 MiniMax H3 与 Hailuo AI。原作者在回复区完整公开了 Prompt，本页按原文保留。
+- English summary: A 15-second widescreen character-introduction clip explicitly tagged MiniMax H3 and Hailuo AI. The creator published the complete prompt in a reply, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+subject_definitions:
+<Subject 1> is ENRA VAEL, the woman from < 📷Image1 >: the same sharp face, dark wispy bangs, long braid threaded through copper rings, spiked hair ornaments, severe expression, layered red robes, tattered soot-black panels, high metal collar, dark shoulder armor, red lamellar plates, ropes, beads, and weathered fittings. Her left arm alone remains blackened and lava-cracked and holds the fire-wreathed bladed weapon; her normal right hand holds the heavy chain and attached bronze vessel-like weight. The burning double metal ring remains a separate floating halo behind her.
+
+<Subject 2> is the colossal forge city from < 📷Image2 >: one black-basalt shelf beside a lower-center lava river, a cylindrical furnace tower left, layered bridges overhead, a lavafall and furnace opening right, distant towers in gray smoke, hanging chains, heat haze, and embers.
+
+< 📷Audio1 > is the 15.00-second stereo music track used continuously and as the exact editorial-timing source.
+summary:
+[reference generation + audio reuse] Nine beat-matched angles present <Subject 1> inside <Subject 2> as a high-impact character music video. The empty opening shot reveals the exact name "ENRA VAEL" before the character appears; a furnace-light scan, ring-aperture transition, solarized accent, six-segment fire sigil, escalating heat rings, and posterized charge build toward the 00:14.120 iron-sun detonation.
+
+retention_analysis:
+
+<Subject 1> (appears in [Shot 2], [Shot 3], [Shot 4], [Shot 5], [Shot 6], [Shot 7], [Shot 8], [Shot 9]): fully_preserved - face, proportions, braid, hair ornaments, asymmetrical arms, wardrobe, armor, handed props, weighted chain, floating double ring, and expression remain consistent beneath every effect.
+<Subject 2> (appears in [Shot 1], [Shot 2], [Shot 3], [Shot 4], [Shot 5], [Shot 6], [Shot 7], [Shot 8], [Shot 9]): fully_preserved - connected geography, landmarks, materials, smoke, lava, and orange-charcoal lighting persist while viewpoint and temporary transition treatments change.
+< 📷Audio1 >: partially_copy - the full musical layer is copied in its original order and timing; only restrained diegetic chain, cloth, fire, title-weld, and impact sounds are mixed beneath it.
+
+detailed_description:
+
+AAA anime action-RPG music video; effects alter only environment and end by 00:13.770.
+[Shot 1] Empty extreme-wide of <Subject 2>; no character, halo, or weapon. At 00:00.120 an ember seam opens. At 00:00.240, the complete exact uppercase "ENRA VAEL" appears simultaneously, centered, black iron with a thin white-hot rim, maximum 42% frame width. It holds through 00:01.120, collapses, and is gone by 00:01.350. No text crosses the next cut. <Audio 1> starts at 00:00.000.
+
+[Shot 2] At 00:01.430, a left-front full-body angle pedestals up as she drags the chain weight. From 00:01.880 to 00:02.650, a furnace-light scan travels boots-to-face, revealing robe, armor, chain, and ornaments with afterglow.
+[Shot 3] At 00:02.840, a near-static right-front three-quarter hero card keeps her face, halo, and weapon unobstructed. No text is visible.
+
+[Shot 4] At 00:04.470, a close-up frames her face inside the unattached ring. Molten arm pulses at 00:04.940; right hand closes on chain at 00:05.410. The ring turns front-on at 00:05.870 and expands; its black center fills frame from 00:06.170 to 00:06.300 without covering her face.
+[Shot 5] At 00:06.340, the ring aperture opens on the drop to a ground-level full-body angle. She yanks the weighted chain; ring spins independently, weapon traces a molten circle, and furnaces flash. One black-red solarized frame hits, then normal color returns.
+[Shot 6] At 00:08.240, overhead, she pivots as fire engraves a six-segment solar sigil. Segments lock at 00:08.710, 00:09.180, and 00:09.650; it flashes at 00:09.800, then lifts as ribbons into the ring by 00:10.090.
+[Shot 7] At 00:10.090, a weapon-side view tracks blade, cracked arm, and face. Pulses send one, two, then three heat rings through the background at 00:10.580, 00:11.040, and 00:11.480; her geometry stays stable.
+
+[Shot 8] At 00:11.950, a low medium-wide pushes in fast. She pulls chain taut, raises weapon at 00:12.440, turns it down at 00:12.900, and compresses an iron sun at 00:13.360. That accent briefly posterizes her charcoal-red with a white rim, then restores detail.
+
+[Shot 9] At 00:13.770, prior effects gone, a frontal ultra-wide catches her downward strike. At 00:14.120, weapon meets basalt and chain snaps taut: the iron sun erupts behind her into corona, lava shockwave, fire plume, furnace flares, and bowed smoke. A second shell hits at 00:14.560; a final flare at 00:14.910 frames her intact silhouette. Camera pulls back and shakes only on primary impact. End centered, weapon planted, chain weighted. Render exact "ENRA VAEL" once during the empty opening only; no reversed letters, extra glyphs, subtitles, logos, extra characters, costume changes, duplicate limbs, extra weapons, or fire across her face.
+overall_soundscape:
+
+Lava roar, furnace resonance, wind, metal fittings, cloth, and chain clinks sit beneath the music. Add a restrained metal-weld sizzle at 00:00.240, a chain snap and ring whoosh at 00:06.340, then a metal strike, concussive blast, pressure rush, and ember hiss at 00:14.120 without overpowering < 📷Audio1 >.
+non_diegetic_music:
+Directly reuse the 00:00.000-00:15.000 musical layer of < 📷Audio1 > unchanged. Preserve its sparse opening, 00:06.340 drop, approximately 128-BPM pulse, 00:13.770 ignition, 00:14.120 detonation, 00:14.560 secondary burst, 00:14.910 flare, and hard ending; every cut, title state, and VFX change lands on the stated transient, with no replacement score.
+```
 
 ## Henri and Colette's Love Dragee: Episode Two
 
@@ -3797,10 +3836,212 @@ Final output:
 - Mode: Unknown
 - Category: Community Showcase
 - Output: 15s, 1440×2560, portrait
-- Prompt provenance: not-published
-- Chinese summary: 黑暗中的人物剪影逐渐亮起，随后成为站在未来感数据面板中央的黑衣赛博特工，周围排列属性、装备与人体示意图。 成片规格为 15 秒 · 1440×2560。原帖未公开完整 Prompt，本库不反推或补写。
-- English summary: A figure emerges from a dark silhouette into a black-suited cybernetic operative centered on a futuristic stat panel surrounded by attributes, equipment, and body diagrams. Output: 15s · 1440×2560. The source did not publish a complete prompt, so this library does not infer or complete one.
-- Verbatim public prompt: not published by the source
+- Prompt provenance: creator-verbatim
+- Chinese summary: 黑暗中的人物剪影逐渐亮起，随后成为站在未来感数据面板中央的黑衣赛博特工，周围排列属性、装备与人体示意图。 成片规格为 15 秒 · 1440×2560。原作者在回复区完整公开了 Prompt，本页按原文保留。
+- English summary: A figure emerges from a dark silhouette into a black-suited cybernetic operative centered on a futuristic stat panel surrounded by attributes, equipment, and body diagrams. Output: 15s · 1440×2560. The creator published the complete prompt in a reply, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+@[ref img] is the sole visual authority for ZENITH, his face, body, hairstyle, black tactical bodysuit, cyan circuit details, exposed cybernetic arm, and the complete operative-dossier interface including typography, numbers, icons, colors, panels, lighting, layout, and 9:16 vertical composition.
+
+Animate this exact screen without redesigning it. Preserve every existing label, stat value, diagnostic value, icon, panel boundary, and final UI position.
+
+[GOAL]
+Create a polished 15-second futuristic cyber-operative character dossier opening. The feeling is elite black-ops intelligence software coming online and identifying an extremely dangerous enhanced operative.
+
+Use one continuous locked straight-on full-screen composition. No camera movement, cuts, reframing, cropping, zooming, rotation, or perspective distortion.
+
+[SEQUENCE]
+
+0–2.2 seconds:
+Begin from near-black charcoal with only extremely faint cyan interface traces visible.
+
+A thin horizontal biometric scanner travels downward through the screen, gradually revealing ZENITH’s silhouette and the outer dossier frame.
+
+Fine digital particles, tiny grid points, circuit traces, and subtle cyan data noise activate progressively.
+
+ZENITH remains almost motionless in shadow.
+
+His cybernetic arm gives one extremely subtle mechanical initialization twitch as internal joints power on.
+
+2.2–5.5 seconds:
+The OPERATIVE DOSSIER header, FILE ID: ZN-7X-00, ZENITH nameplate, CYBERNETIC OPERATIVE subtitle, PROFILE panel, portrait frame, biometric panel, and THREAT LEVEL panel resolve through precise line-draw and scanning animations.
+
+Reveal the existing profile information exactly:
+ROLE: Black Ops / Infiltration
+HEIGHT: 6’2” / 188 cm
+BUILD: Lean / Athletic
+AFFILIATION: Unknown
+
+The THREAT LEVEL display resolves into:
+EXTREME
+CLASS: OMEGA
+
+ZENITH emerges completely from darkness into the exact referenced standing pose.
+
+He takes one controlled breath, subtly raises his chest and shoulders, then settles.
+
+His stern gaze sharpens toward the viewer.
+
+Maintain his exact angular face, slick black hairstyle, lean proportions, black fitted suit, cyan circuitry, and single exposed cybernetic arm.
+
+Thin cyan suit lines illuminate progressively from the upper torso toward the legs and cybernetic arm.
+
+5.5–10.8 seconds:
+Animate the OPERATIVE METRICS panel sequentially.
+
+Each bar fills smoothly left-to-right and lands precisely on the existing final value:
+
+STRENGTH — 84
+AGILITY — 96
+REFLEX — 98
+ENDURANCE — 88
+STEALTH — 97
+COMBAT IQ — 93
+CYBER SYNC — 94
+TACTICAL EFFICIENCY — 91
+
+Each completed value receives one restrained cyan confirmation pulse. Do not alter the final numbers.
+
+Simultaneously, the biometric body scan draws vertically through the miniature human silhouette.
+
+Small waveform and graph elements activate with subtle believable data movement.
+
+The CYBERNETIC ARM DIAGNOSTICS section powers online from shoulder to fingertips.
+
+Callout lines trace toward the mechanical joints while the existing diagnostic values resolve exactly:
+
+MOTOR UNITS — 100%
+STRENGTH OUTPUT — 132%
+RESPONSE TIME — 0.008s
+SENSOR SUITE — ONLINE
+GRIP FORCE — 2,400 N
+SYSTEM INTEGRITY — 100% / OPTIMAL
+
+The circular SYSTEM INTEGRITY indicator completes one clean clockwise sweep and locks at 100%.
+
+ZENITH’s mechanical fingers make one tiny natural calibration movement before returning to the exact referenced resting position.
+
+10.8–13.3 seconds:
+The SPECIALIZATIONS and EQUIPMENT LOADOUT sections activate from left to right.
+
+Existing specialization icons receive brief controlled cyan illumination:
+STEALTH INFILTRATION
+CQC EXPERT
+CYBERNETIC ENHANCEMENT
+INTEL GATHERING
+
+Existing equipment cards resolve cleanly:
+SHADOW BLADE
+EMP SHARD
+SMOKE DISPERSER
+DATA SPIKE
+
+Do not physically place these weapons or tools into ZENITH’s hands. They remain UI inventory graphics only.
+
+A subtle electronic current travels through the cyan circuitry across ZENITH’s suit and into the cybernetic arm.
+
+The mechanical shoulder, elbow, wrist, and finger joints produce extremely restrained servo adjustments.
+
+ZENITH tightens his organic fist slightly.
+
+He gives one natural blink while maintaining his intimidating expression and exact stance.
+
+13.3–15 seconds:
+The lower dossier statement and STATUS: ACTIVE indicator reach full brightness.
+
+A controlled cyan system pulse travels once around the outer interface frame and converges briefly behind ZENITH.
+
+His cybernetic arm emits a restrained internal energy glow through existing cyan seams—no new effects or weapons.
+
+The pulse settles immediately.
+
+Hold the fully assembled screen matching @[ref img] exactly.
+
+ZENITH continues subtle breathing.
+Tiny cybernetic servos remain alive.
+Cyan suit circuitry gives a gentle idle pulse.
+Biometric waveforms move minimally.
+Small particles shimmer.
+All text, numbers, icons, diagnostic values, stat bars, and UI geometry remain completely stable and readable.
+
+[CHARACTER MOTION]
+ZENITH is disciplined and nearly motionless.
+
+Movement must remain minimal and believable:
+controlled breathing,
+one blink,
+small shoulder adjustment,
+slight organic fist tightening,
+tiny cybernetic finger calibration,
+subtle mechanical joint settling.
+
+Do not turn his body away from the referenced pose.
+Do not change his facial structure, hairstyle, costume, proportions, cybernetic-arm design, or expression language.
+
+[UI MOTION]
+Premium classified-military sci-fi HUD animation.
+
+Use:
+precise line drawing,
+scanner sweeps,
+data ticks,
+segmented stat fills,
+restrained cyan confirmation pulses,
+biometric scan lines,
+mechanical diagnostic tracing,
+very subtle particles,
+clean system boot transitions.
+
+Keep every panel, icon, label, number, and geometric boundary fixed once revealed.
+
+No floating panels.
+No rearranging the interface.
+No unnecessary glitching.
+No aggressive flicker.
+No holographic elements crossing over readable text.
+
+[VISUAL STYLE]
+Crisp premium futuristic game UI.
+Clean stylized 2D animation matching the reference.
+Dark charcoal-black interface with cyan/teal illumination and white typography.
+Sharp angular graphic character rendering.
+Subtle depth separation between ZENITH and the HUD while preserving the exact flat front-facing composition.
+High readability throughout.
+
+[STRICT PRESERVATION]
+Do not introduce:
+new text,
+new numbers,
+new stats,
+new icons,
+extra cybernetic limbs,
+additional weapons,
+extra characters,
+new logos,
+captions,
+environment scenery,
+camera motion,
+screen shake,
+interface redesign,
+new panels,
+or additional objects.
+
+Do not change any final UI values.
+
+[Audio]
+Low classified-system boot hum.
+Soft scanner sweep.
+Fine electronic data ticks.
+Short restrained confirmation tones as each metric locks.
+Quiet mechanical servo clicks from the cybernetic arm.
+Subtle electrical current as the cyan suit circuitry activates.
+Low biometric pulse.
+One refined completion chime when STATUS: ACTIVE resolves.
+
+No dialogue.
+No background music.
+```
 
 ## A Car Rises Between Skyscrapers Above a Rainy Street
 
@@ -4099,10 +4340,46 @@ REALISM DIRECTIVE: Ice must behave like real compressed glacier ice, not glass. 
 - Mode: Unknown
 - Category: UGC & Advertising
 - Output: 15s, 2560×1440, landscape
-- Prompt provenance: not-published
-- Chinese summary: 工匠先把材料捻成细线，再将金色纹样盘贴并雕饰在红色花瓶表面，末帧双手把成品放上展台。 成片规格为 15 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。
-- English summary: An artisan rolls material into fine strands, applies and carves gold ornament across a red vase, and finally places the completed piece on a display stand. Output: 15s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.
-- Verbatim public prompt: not published by the source
+- Prompt provenance: creator-verbatim
+- Chinese summary: 工匠先把材料捻成细线，再将金色纹样盘贴并雕饰在红色花瓶表面，末帧双手把成品放上展台。 成片规格为 15 秒 · 2560×1440。原作者在回复区完整公开了 Prompt，本页按原文保留。
+- English summary: An artisan rolls material into fine strands, applies and carves gold ornament across a red vase, and finally places the completed piece on a display stand. Output: 15s · 2560×1440. The creator published the complete prompt in a reply, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+【参考图规则】
+@图片1 是最终漆线雕作品的唯一权威参考。 必须严格保持图片1中的作品造型、主体比例、漆面颜色、金色漆线纹样、纹样走向、器型和整体气质。 不得随意增加龙、凤、佛像、文字或不存在的装饰。
+ @图片2 是包装盒、包装纸、品牌标识以及产品标签的唯一权威参考。 所有包装结构、颜色和标识均按照图片2执行。
+@图片3 是厦门传统漆线雕工作室的环境与工匠服装参考。 保持真实闽南手工作坊质感，不做古装影视化处理，不制造虚假的“古代作坊”。
+
+【目标】  制作一支15秒、9:16竖版的厦门漆线雕非遗工艺短片。  主题：  “一根线，走完三百年的手艺。”  影片完整呈现：  备料 → 舂打漆线土 → 搓线 → 盘线成纹 → 安金 → 贴金 → 清理完成 → 包装 → 上架  快速剪辑， 字幕驱动， 即使完全静音观看也能理解整个制作过程。  视觉采用真实高端人文纪录广告摄影：  35毫米胶片电影质感， 细腻颗粒， 浅景深， 大量微距， 自然手持， 运动非常克制， 不做旅游宣传片， 不做华丽国潮特效， 不做博物馆宣传片。  重点永远是：  手， 线， 漆， 金箔， 纹样， 时间。
+
+【金色就是时间】  整支影片必须存在一条不可逆的视觉变化：  画面中的“金色”从无到有，并越来越多。  影片开始：  只有黑、 深褐、 砖灰、 暗红， 几乎看不到金色。  漆线开始盘绕以后， 画面出现第一点暖金。  贴金以后， 金色迅速扩大。  作品完成时， 精细金色纹样覆盖主体。  最后上架时， 整个作品被温暖自然光照亮。  每一个镜头都必须比前一个镜头拥有更多的金色。  这个变化不能倒退。  金色就是这支影片的时间。
+
+【固定字幕牌】  整个影片始终只有一个字幕牌。  位置：  画面下方三分之一， 水平居中， 所有镜头完全相同的位置。  造型：  非常克制的小型圆角矩形， 深朱砂红底， 暖米白文字。  两行文字：  第一行： 较细字体， 显示“工序”。  第二行： 粗体， 显示一句极短的动作描述。  字幕牌：  不移动， 不放大， 不缩小， 不淡入淡出， 不跳动。  只在指定剪辑点瞬间更换文字。  字体必须清楚、正确。
+
+【镜头序列】
+ 0—1.7秒  主镜头。  深夜般昏暗的传统工作台。  一盏暖色工作灯只照亮双手。  桌面上可以看到：  陈年砖粉质感的细粉、 深色大漆材料、 正在被反复捶打揉合的深褐色漆线土。  工匠双手将材料反复捶、压、揉， 逐渐形成柔软、富有韧性的泥团。  周围环境全部沉入黑暗。  没有金色。  字幕：  “第一道” “捶土成线”
+1.7—3.3秒  极端微距。  一小块漆线土放在传统搓线板之间。  工匠双手稳定向前推动搓板。  原本粗厚的泥条逐渐被搓成长而均匀的细线。  摄影机贴得非常近。  能够清楚看到：  漆线轻微湿润的表面， 细小纹理， 手指压力， 线条被不断拉细。  背景完全虚化。  字幕保持：  “第一道” “捶土成线”
+ 3.3—5.0秒  主镜头。  朱红漆面的器物坯体第一次出现。  工匠用极细工具， 将刚刚搓好的柔软漆线轻轻落在器物表面。  第一根漆线贴上去。  只有一根。  然后第二根。  线条开始形成第一个小小的卷云纹。  画面第一次出现非常微弱的暖色高光。  字幕：  “第二道” “一线起纹”
+ 5.0—6.8秒  微距插入镜头。  镜头几乎贴着器物表面横向观察。  工匠用竹制细工具推动漆线：  盘， 绕， 结， 堆。  几根不足毫米级视觉尺度的柔软漆线， 逐渐形成具有明显高度差的浮凸纹样。  线条之间非常紧密。  卷云、缠枝、如意形态逐渐出现。  重点展示：  线并不是画上去的，  而是真正一根一根盘出来的。  字幕保持：  “第二道” “一线起纹”
+6.8—8.6秒  主镜头。  器物已经完成大部分漆线纹样。  摄影机非常缓慢地向前推近。  工匠旋转器物。  光线擦过密集漆线表面。  能够看到：  高低起伏， 盘绕结构， 层层叠叠的线性浮雕。  这时依然没有真正的金箔。  只有漆线自身的暖棕色。  字幕：  “第三道” “盘线成雕”
+8.6—10.2秒  全片最重要的声音与视觉高潮。  极端微距。  一张极薄金箔悬在空气里轻微颤动。  几乎没有重量。  工匠屏住动作， 用传统工具将金箔缓缓落向已经完成的漆线纹样。  金箔接触表面的瞬间，  贴住。  镜头保持。  不要快速切走。  细小金箔自然贴合漆线的高低起伏， 金色第一次大面积出现。  字幕：  “第四道” “一片金落下”
+10.2—11.7秒  微距。  柔软毛刷轻轻扫过作品表面。  多余金箔碎屑被一点点扫开。  随着刷毛经过，  清晰、 锐利、 细密的金色漆线纹样从杂乱金箔中显现。  这是第二个视觉高潮。  镜头必须清楚表现：  杂乱金箔  变成  精确金色纹样。  字幕：  “第五道” “金纹醒来”
+11.7—12.8秒  主镜头。  完成后的作品放在深色木质工作台上。  工匠用双手缓慢旋转检查。  没有任何戏剧表演。  只检查：  纹样， 漆面， 金箔， 边缘， 细节。  自然光已经明显进入工作室。  金色纹样被晨光照亮。  字幕：  “第六道” “最后一眼”
+12.8—13.8秒  插入镜头。  作品被轻轻放入定制包装盒。  暖米色软布包裹器物。  盒盖缓慢合上。  手将包装盒推向画面前方。  纸张、 布料、 木盒均保持真实触感。  不要奢侈品浮夸包装。  字幕：  “第七道” “入盒”
+13.8—15秒  最终镜头。  切到极简现代非遗精品店。  温暖自然晨光。  深色木制陈列架。  一只手将完成的漆线雕作品从画面侧面轻轻放到展示台中央。  手退出画面。  作品保持完全静止。  金色漆线在自然光中形成极精细的浮雕反光。  背景虚化。  最后0.6秒不再运动。  字幕：  “第八道” “上架”  画面中央仅允许出现一句极小的中文：  “厦门漆线雕”  下面更小：  “一线成雕”  最终画面必须像高端工艺品牌的静态产品摄影。  绝对不要继续运动。
+
+【色彩】  整支影片限制在以下颜色：  陈年砖粉灰， 生漆深褐， 木质黑褐， 朱砂红， 暖米白， 金箔金。  影片前半段：  黑褐色占主导。  中段：  朱红逐渐出现。  后半段：  金色逐渐占据视觉中心。  禁止：  青蓝科技色， 霓虹， 紫色， 赛博朋克， 高饱和国潮配色。  金色必须来自真实金箔和真实光线。  不能使用发光特效制造金色。
+
+【摄影】  全片使用真实人文纪录摄影语言。  大量：  100毫米微距镜头， 近距离手部特写， 极浅景深， 35毫米胶片颗粒。  摄影机运动非常少。  允许：  轻微呼吸感手持， 一次非常缓慢的轴向推进， 极细微的跟随动作。  禁止：  无人机， 环绕运镜， 快速推拉， 旋转镜头， 甩镜， 变焦冲击， 慢动作， 速度渐变， 镜头炫技。  镜头永远尊重手艺本身。
+
+【声音】  全片没有任何音乐。  没有旁白。  没有人物对白。  没有广告配音。  只使用现场真实声音。
+ 0—3.3秒：  凌晨安静工作室。  远处非常轻的环境底噪。  漆线土落在木板上的闷响。  手掌揉压材料的湿润摩擦声。  搓板来回运动产生细密摩擦声。   3.3—8.6秒：  整体声音进一步降低。  细工具轻碰器物表面的声音。  手指移动。  漆线被放下时极轻微的黏连声音。  器物缓慢旋转时木架产生细小摩擦声。   8.6—10.2秒：  这是整支影片最重要的声音时刻。  其他环境声音全部压低。  只留下：  金箔极薄的纸张颤动声， 轻微呼吸， 工具触碰金箔的细小声音。  金箔落到漆线表面的瞬间，  接近安静。  让观众感觉自己离这张金箔只有几厘米。   10.2—12.8秒：  软毛刷扫过金箔。  细碎金箔摩擦。  器物在木架上轻轻旋转。   12.8—15秒：  包装纸折叠。  布料摩擦。  盒盖轻轻合上。  随后进入店铺：  作品底座接触木质展台，  “嗒”。  最后接近完全安静。  只保留非常微弱的室内环境声。
+
+【核心视觉原则】  不要把它拍成：  “传统文化宣传片”。  要把它拍成：  “世界顶级手工艺品牌新品诞生纪录”。  传统来自材料和工艺，  高级感来自摄影、节奏和克制。
+
+【禁止项】  不得出现任何与产品无关的文字。  不得出现旅游宣传标语。  不得出现：  “匠心传承” “非遗之美” “千年文化” “东方美学” 等泛化宣传口号。  不得出现不存在的历史年代。  不得出现虚假的皇宫或寺庙场景。  不得增加和尚、古装人物、舞狮、灯笼等所谓中国元素。  不得把漆线雕表现成木雕、石雕或刀刻。  重点必须明确表现：  搓线， 放线， 盘线， 绕线， 堆线， 贴金。  不得用三维特效让纹样自动生长。  不得让漆线自行移动。  所有纹样必须由人的手完成。  不得使用魔法粒子。  不得让金箔发光。  不得使用人工光晕。  不得使用慢动作。  不得加入速度渐变。  不得加入转场音效。  不得使用呼啸声。  不得出现手机界面。  不得出现电商界面。  不得出现价格。  不得出现二维码。  不得出现网站。  不得出现社交媒体账号。  不得出现水印。  不得增加第十个镜头。  最终画面完全静止。
+```
 
 ## A Colorful Pom-Pom Becomes Smoke Spelling Tim
 

@@ -143,11 +143,11 @@ function App() {
     ? t.siteTitle
     : route.page === 'tutorials'
       ? language === 'zh'
-        ? 'MiniMax H3 教程与工具：部署、工作流、加速、训练 — H3 Field Notes'
-        : 'MiniMax H3 Tutorials and Tools: Setup, Workflows, Speed, Training — H3 Field Notes'
+        ? 'MiniMax H3 教程与工具：部署、工作流、加速、训练 — MiniMax H3 Cases & Guides'
+        : 'MiniMax H3 Tutorials and Tools: Setup, Workflows, Speed, Training — MiniMax H3 Cases & Guides'
       : language === 'zh'
-        ? 'MiniMax H3 视频案例库常见问题 — H3 Field Notes'
-        : 'MiniMax H3 Video Library FAQ — H3 Field Notes'
+        ? 'MiniMax H3 视频案例库常见问题 — MiniMax H3 Cases & Guides'
+        : 'MiniMax H3 Video Library FAQ — MiniMax H3 Cases & Guides'
 
   useEffect(() => {
     document.documentElement.lang = t.htmlLang
@@ -174,8 +174,8 @@ function Header({ language, page }: { language: Language; page: AppPage }) {
   return (
     <header className="site-header-wrap">
       <div className="shell site-header">
-        <a className="brand" href={pathFor(language, 'home')} aria-label="H3 Field Notes">
-          H3<span>/FN</span>
+        <a className="brand" href={pathFor(language, 'home')} aria-label="MiniMax H3 Cases & Guides">
+          MiniMax H3<span> Cases & Guides</span>
         </a>
         <nav aria-label={language === 'zh' ? '主导航' : 'Primary navigation'}>
           <a href={pathFor(language, 'home')} aria-current={page === 'home' ? 'page' : undefined}>{t.nav.cases}</a>
@@ -185,14 +185,14 @@ function Header({ language, page }: { language: Language; page: AppPage }) {
         <div className="header-actions">
           <a
             className="language-button"
-            href={pathFor(otherLanguage, page)}
+            href={`${pathFor(otherLanguage, page)}${window.location.search}`}
             aria-label={language === 'zh' ? '切换到英文' : 'Switch to Chinese'}
           >
             <Languages size={14} aria-hidden="true" /> {t.nav.language}
           </a>
           <a
             className="source-button"
-            href="https://github.com/SkyNotSilent/awesome-minimax-h3"
+            href="https://github.com/SkyNotSilent/awesome-minimax-h3-cases"
             target="_blank"
             rel="noreferrer"
           >
@@ -274,11 +274,19 @@ function IntroSplash({ language }: { language: Language }) {
 function HomePage({ language }: { language: Language }) {
   const t = copy[language]
   const [activeDuration, setActiveDuration] = useState<DurationRange>('ALL')
+  const [promptOnly, setPromptOnly] = useState(() => new URLSearchParams(window.location.search).get('prompt') === '1')
   const [activeCategory, setActiveCategory] = useState('ALL')
   const [activeStyle, setActiveStyle] = useState('ALL')
   const [activeScene, setActiveScene] = useState('ALL')
   const [query, setQuery] = useState('')
   const [selected, setSelected] = useState<VideoCase | null>(null)
+
+  useEffect(() => {
+    const url = new URL(window.location.href)
+    if (promptOnly) url.searchParams.set('prompt', '1')
+    else url.searchParams.delete('prompt')
+    window.history.replaceState(window.history.state, '', `${url.pathname}${url.search}${url.hash}`)
+  }, [promptOnly])
 
   const filtered = useMemo(() => {
     const needle = query.trim().toLowerCase()
@@ -292,13 +300,14 @@ function HomePage({ language }: { language: Language }) {
       const matchesStyle = activeStyle === 'ALL' || item.styles.includes(activeStyle)
       const matchesScene = activeScene === 'ALL' || item.scenes.includes(activeScene)
       const prompt = casePrompt(item, language)
+      const matchesPrompt = !promptOnly || (typeof prompt === 'string' && prompt.trim().length > 0)
       const haystack = language === 'zh'
         ? [item.title, item.summary, prompt, item.author, item.sourceLabel, ...item.tags, item.category, ...item.styles, ...item.scenes]
         : [item.titleEn, item.summaryEn, prompt, item.author, item.category, ...item.styles, ...item.scenes]
-      return matchesDuration && matchesCategory && matchesStyle && matchesScene
+      return matchesDuration && matchesCategory && matchesStyle && matchesScene && matchesPrompt
         && (!needle || haystack.filter(Boolean).join(' ').toLowerCase().includes(needle))
     })
-  }, [activeCategory, activeDuration, activeScene, activeStyle, language, query])
+  }, [activeCategory, activeDuration, activeScene, activeStyle, language, promptOnly, query])
 
   const advancedCount = [activeCategory, activeStyle, activeScene].filter((value) => value !== 'ALL').length
 
@@ -330,17 +339,30 @@ function HomePage({ language }: { language: Language }) {
 
         <div className="primary-filter" aria-label={t.catalog.filterLabel}>
           <div className="filter-label"><Clock3 size={15} aria-hidden="true" /> {t.catalog.duration}</div>
-          <div className="duration-filter">
-            {durationRanges.map((range, index) => (
-              <button
-                type="button"
-                key={range}
-                className={range === activeDuration ? 'active' : ''}
-                onClick={() => setActiveDuration(range)}
-              >
-                <span>{String(index).padStart(2, '0')}</span>{durationLabel(range, language)}
-              </button>
-            ))}
+          <div className="primary-filter-controls">
+            <div className="duration-filter">
+              {durationRanges.map((range, index) => (
+                <button
+                  type="button"
+                  key={range}
+                  className={range === activeDuration ? 'active' : ''}
+                  onClick={() => setActiveDuration(range)}
+                >
+                  <span>{String(index).padStart(2, '0')}</span>{durationLabel(range, language)}
+                </button>
+              ))}
+            </div>
+            <button
+              type="button"
+              className={`prompt-only-toggle${promptOnly ? ' active' : ''}`}
+              role="switch"
+              aria-checked={promptOnly}
+              onClick={() => setPromptOnly((current) => !current)}
+            >
+              <Sparkles size={14} aria-hidden="true" />
+              <span>{t.catalog.promptOnly}</span>
+              <i aria-hidden="true"><b /></i>
+            </button>
           </div>
         </div>
 
@@ -679,7 +701,14 @@ function CaseDialog({ item, language, onClose }: { item: VideoCase; language: La
                   {copied ? <Check size={14} /> : <Clipboard size={14} />}{copied ? t.copied : t.copy}
                 </button>
               </div>
-              <p className="prompt-notice">{t.promptPublished} · {t.promptNotice}</p>
+              <p className="prompt-notice">
+                {t.promptPublished} · {t.promptNotice}
+                {item.promptSourceUrl ? (
+                  <a href={item.promptSourceUrl} target="_blank" rel="noreferrer">
+                    {t.promptSource} <ArrowUpRight size={11} />
+                  </a>
+                ) : null}
+              </p>
               <pre>{prompt}</pre>
             </div>
           ) : (
@@ -700,7 +729,7 @@ function Footer({ language }: { language: Language }) {
     <footer className="shell">
       <div className="footer-mark"><Sparkles size={16} /> {t.mark}</div>
       <p>{t.note}</p>
-      <span>H3/FN — 2026</span>
+      <span>MINIMAX H3 CASES &amp; GUIDES — 2026</span>
     </footer>
   )
 }

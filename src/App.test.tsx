@@ -14,6 +14,7 @@ vi.mock('../data/cases.json', async (importOriginal) => {
     'x-yukyuk-h3-seedance-same-prompt',
     'x-2086641782839005498',
     'x-2090180874222588332',
+    'x-2086477914699170293',
   ])
 
   return {
@@ -39,23 +40,23 @@ describe('case-first routes', () => {
     vi.useFakeTimers()
     renderAt('/')
 
-    expect(screen.getByLabelText('MiniMax H3 社区视频实验档案')).toBeInTheDocument()
+    expect(document.querySelector('.intro-splash')).toHaveAttribute('aria-label', 'MiniMax H3 Cases & Guides')
     expect(screen.getByRole('heading', { name: '先看 MiniMax H3 的真实效果。' })).toBeInTheDocument()
     expect(screen.getByText('舰桥上的跃迁余震')).toBeInTheDocument()
 
     act(() => vi.advanceTimersByTime(1_600))
-    expect(screen.getByLabelText('MiniMax H3 社区视频实验档案')).toHaveClass('is-leaving')
+    expect(document.querySelector('.intro-splash')).toHaveClass('is-leaving')
     act(() => vi.advanceTimersByTime(500))
-    expect(screen.queryByLabelText('MiniMax H3 社区视频实验档案')).not.toBeInTheDocument()
+    expect(document.querySelector('.intro-splash')).not.toBeInTheDocument()
   })
 
   it('dismisses the intro immediately when the visitor interacts', () => {
     renderAt('/')
 
-    expect(screen.getByLabelText('MiniMax H3 社区视频实验档案')).toBeInTheDocument()
+    expect(document.querySelector('.intro-splash')).toHaveAttribute('aria-label', 'MiniMax H3 Cases & Guides')
     fireEvent.pointerDown(window)
 
-    expect(screen.queryByLabelText('MiniMax H3 社区视频实验档案')).not.toBeInTheDocument()
+    expect(document.querySelector('.intro-splash')).not.toBeInTheDocument()
     expect(document.body).not.toHaveClass('intro-open')
   })
 
@@ -64,7 +65,7 @@ describe('case-first routes', () => {
 
     fireEvent.wheel(window, { deltaY: 120 })
 
-    expect(screen.queryByLabelText('MiniMax H3 社区视频实验档案')).not.toBeInTheDocument()
+    expect(document.querySelector('.intro-splash')).not.toBeInTheDocument()
     expect(document.body).not.toHaveClass('intro-open')
   })
 
@@ -107,6 +108,30 @@ describe('case-first routes', () => {
     expect(screen.queryByText('餐厅时间冻结与逆向复原')).not.toBeInTheDocument()
   })
 
+  it('filters to complete public prompts and composes with duration filters', () => {
+    renderAt('/')
+    const promptSwitch = screen.getByRole('switch', { name: '只看有 Prompt' })
+    expect(promptSwitch).toHaveAttribute('aria-checked', 'false')
+    expect(screen.getByText('同提示词 H3 与 Seedance 对比')).toBeInTheDocument()
+
+    fireEvent.click(promptSwitch)
+    expect(promptSwitch).toHaveAttribute('aria-checked', 'true')
+    expect(window.location.search).toBe('?prompt=1')
+    expect(screen.queryByText('同提示词 H3 与 Seedance 对比')).not.toBeInTheDocument()
+    expect(screen.getByText('舰桥上的跃迁余震')).toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: /5 秒及以下/ }))
+    expect(screen.getByText('粉色西装与黑色羔羊')).toBeInTheDocument()
+    expect(screen.queryByText('舰桥上的跃迁余震')).not.toBeInTheDocument()
+  })
+
+  it('restores the prompt-only switch from the public URL', () => {
+    renderAt('/?prompt=1')
+    expect(screen.getByRole('switch', { name: '只看有 Prompt' })).toHaveAttribute('aria-checked', 'true')
+    expect(screen.queryByText('同提示词 H3 与 Seedance 对比')).not.toBeInTheDocument()
+    expect(screen.getByRole('link', { name: '切换到英文' })).toHaveAttribute('href', '/en/?prompt=1')
+  })
+
   it('searches across localized case metadata', () => {
     renderAt('/')
     fireEvent.change(screen.getByPlaceholderText('搜索案例、场景或创作者…'), {
@@ -129,6 +154,19 @@ describe('case-first routes', () => {
       'https://x.com/icreat_ai/status/2085297962977227011',
     )
     expect(screen.getByText('正在加载站内视频…')).toBeInTheDocument()
+  })
+
+  it('links a creator-verbatim Prompt back to the original X reply', () => {
+    renderAt('/')
+    fireEvent.change(screen.getByPlaceholderText('搜索案例、场景或创作者…'), {
+      target: { value: '赛博特工' },
+    })
+    fireEvent.click(screen.getByRole('button', { name: '查看 赛博特工从剪影显现在数据面板 详情' }))
+
+    expect(screen.getByRole('link', { name: /查看 Prompt 原帖/ })).toHaveAttribute(
+      'href',
+      'https://x.com/adithatipalli/status/2086478122241962266',
+    )
   })
 
   it('shows video and source details without inventing a prompt when the source did not publish one', () => {
@@ -206,6 +244,7 @@ describe('language isolation', () => {
     expect(screen.getByText('After the Fleet Jumps')).toBeInTheDocument()
     expect(screen.queryByText('舰桥上的跃迁余震')).not.toBeInTheDocument()
     expect(screen.getByPlaceholderText('Search cases, scenes, or creators…')).toBeInTheDocument()
+    expect(screen.getByRole('switch', { name: 'With Prompt' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Tutorials' })).toHaveAttribute('href', '/en/tutorials/')
     expect(screen.getByRole('link', { name: 'Switch to Chinese' })).toHaveAttribute('href', '/')
     expect(document.body.textContent).not.toMatch(/[\u3400-\u9fff]/u)

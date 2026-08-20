@@ -107,7 +107,7 @@ async function fetchTweet(candidate) {
   const postId = postIdFor(candidate)
   return retry(`Fetch X metadata for ${postId}`, async () => {
     const response = await fetch(`https://api.fxtwitter.com/status/${postId}`, {
-      headers: { 'User-Agent': 'awesome-minimax-h3/1.0 metadata-cache' },
+      headers: { 'User-Agent': 'awesome-minimax-h3-cases/1.0 metadata-cache' },
     })
     if (!response.ok) throw new Error(`HTTP ${response.status}`)
     const payload = await response.json()
@@ -251,7 +251,7 @@ async function downloadPoster(item) {
 
   await retry(`Download poster for ${item.postId}`, async () => {
     const response = await fetch(item.video.thumbnail_url, {
-      headers: { 'User-Agent': 'awesome-minimax-h3/1.0 poster-cache' },
+      headers: { 'User-Agent': 'awesome-minimax-h3-cases/1.0 poster-cache' },
     })
     if (!response.ok) throw new Error(`HTTP ${response.status}`)
     const contentType = response.headers.get('content-type') || ''

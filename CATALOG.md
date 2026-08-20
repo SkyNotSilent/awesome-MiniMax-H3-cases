@@ -243,7 +243,7 @@
 | [Claude Code 与 Codex 情景喜剧](https://x.com/DanaGreenAI/status/2086485025747525977) | 15s · 1344×768 · landscape | `开发工具` `情景喜剧` `角色短片` |
 | [Turbo、Sage 与放大插帧组合](https://x.com/AiPhotorealGirl/status/2086483981126803506) | 10s · 1344×1776 · portrait | `Larry Turbo` `H3 Sage` `放大` `帧插值` |
 | [父亲节三重可爱 Chibi 短片](https://x.com/Kawaiizice/status/2086608849872515465) | 15s · 1440×2560 · portrait | `Father's Day` `Chibi` `Vertical Video` `Hailuo AI` |
-| [宽银幕角色登场介绍](https://x.com/GlitterPixely/status/2086599324125872626) | 15s · 3778×2160 · landscape | `Character Introduction` `Prompt in Replies` `Hailuo AI` `Widescreen` |
+| [宽银幕角色登场介绍](https://x.com/GlitterPixely/status/2086599324125872626) | 15s · 3778×2160 · landscape | `Character Introduction` `Prompt in Replies` `Hailuo AI` `Widescreen` `公开 Prompt` |
 | [安利与科莱特的爱之糖果：第二集](https://x.com/craftcapitallab/status/2086582697263284469) | 41s · 1920×1080 · landscape | `Episode Two` `Short Film` `Narrative` `Hailuo AI` |
 | [一周年故事与下一部短片预告](https://x.com/Wabyanko/status/2086564753074270628) | 8s · 720×1280 · portrait | `Short Film` `AI-Assisted Storytelling` `Vertical Video` `Anniversary` |
 | [令人心跳的女孩对视瞬间](https://x.com/AriesTopazos/status/2086554484214497407) | 10s · 576×1024 · portrait | `Eye Contact` `Portrait` `Romance` `Vertical Video` |
@@ -295,7 +295,7 @@
 | [紫色封面上的彩色播放徽标](https://x.com/MaxonShire/status/2086519829612130667) | 7s · 1920×1080 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
 | [少女沿山间公路滑板下坡](https://x.com/bypass47078/status/2086486707268947989) | 15s · 1260×720 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
 | [金发魔女在拱廊中抬手扶帽](https://x.com/fnoji/status/2086479201650213135) | 8s · 2160×3840 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
-| [赛博特工从剪影显现在数据面板](https://x.com/adithatipalli/status/2086477914699170293) | 15s · 1440×2560 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [赛博特工从剪影显现在数据面板](https://x.com/adithatipalli/status/2086477914699170293) | 15s · 1440×2560 · portrait | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
 | [雨中街口升空越过高楼的汽车](https://x.com/ivanfioravanti/status/2086477805202587697) | 15s · 1280×736 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
 | [红发女子迎战熔岩巨人的双栏对照](https://x.com/AIReelofficial/status/2086472319141110032) | 30s · 1280×720 · landscape | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
 | [两名冰川学者深入蓝色冰洞](https://x.com/Strength04_X/status/2086471165581902327) | 15s · 1344×768 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
@@ -307,7 +307,7 @@
 | [舞台女乐队与浮现的角色设定图](https://x.com/willowion/status/2086465855966372247) | 5s · 1152×640 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
 | [银发女子在夕照天台挥手](https://x.com/erukoed/status/2086465794792439819) | 5s · 864×480 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
 | [女子从室内招手到超市购物与床边取物](https://x.com/shiokotoba/status/2086464755628376196) | 61s · 720×1252 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
-| [漆线雕花瓶从捻土盘线到上架](https://x.com/derek_wall90176/status/2086464559439855938) | 15s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [漆线雕花瓶从捻土盘线到上架](https://x.com/derek_wall90176/status/2086464559439855938) | 15s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
 | [彩色绒球化作烟雾拼出Tim](https://x.com/mann_hodge/status/2086461975727370440) | 5s · 960×544 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
 | [电脑前大笑男子与突然燃烧的住宅](https://x.com/hogehoge61/status/2086460162689450397) | 8s · 864×480 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
 | [花纹泳装女子坐在沙滩轻理长发](https://x.com/AiPhotorealGirl/status/2086031009402003468) | 10s · 1776×1344 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |

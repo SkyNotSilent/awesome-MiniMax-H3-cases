@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "H3 Field Notes case",
+  "title": "MiniMax H3 Cases & Guides case",
   "type": "object",
   "required": [
     "id", "title", "titleEn", "summary", "summaryEn", "model", "mode", "prompt", "sourceUrl", "mediaUrl", "author", "posterUrl",
@@ -54,6 +54,7 @@
     "promptProvenance": {
       "enum": ["official-verbatim", "creator-verbatim", "not-published"]
     },
+    "promptSourceUrl": { "type": "string", "format": "uri" },
     "verified": { "type": "boolean" }
   },
   "allOf": [
