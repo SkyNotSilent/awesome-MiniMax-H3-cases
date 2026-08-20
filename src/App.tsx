@@ -22,8 +22,8 @@ import {
   caseSummary,
   caseTitle,
   copy,
+  durationLabel,
   metadataValue,
-  modeLabel,
   modelLabel,
   pathFor,
   provenanceLabel,
@@ -33,7 +33,7 @@ import {
   type AppPage,
   type Language,
 } from './i18n'
-import type { CaseMode, VideoCase } from './types'
+import type { VideoCase } from './types'
 import { XPostEmbed } from './XPostEmbed'
 
 const cases = rawCases as VideoCase[]
@@ -68,7 +68,8 @@ const tutorialCategories: Array<'all' | TutorialCategory> = [
   'training',
   'resources',
 ]
-const modes: Array<'ALL' | CaseMode> = ['ALL', 'T2VA', 'FL2VA', 'Ref2VA', 'Unknown']
+const durationRanges = ['ALL', 'UP_TO_5', 'SIX_TO_10', 'ELEVEN_TO_15', 'OVER_15'] as const
+type DurationRange = (typeof durationRanges)[number]
 const allCategories = [...new Set(cases.map((item) => item.category))]
 const allStyles = [...new Set(cases.flatMap((item) => item.styles))]
 const allScenes = [...new Set(cases.flatMap((item) => item.scenes))]
@@ -254,7 +255,7 @@ function IntroSplash({ language }: { language: Language }) {
 
 function HomePage({ language }: { language: Language }) {
   const t = copy[language]
-  const [activeMode, setActiveMode] = useState<(typeof modes)[number]>('ALL')
+  const [activeDuration, setActiveDuration] = useState<DurationRange>('ALL')
   const [activeCategory, setActiveCategory] = useState('ALL')
   const [activeStyle, setActiveStyle] = useState('ALL')
   const [activeScene, setActiveScene] = useState('ALL')
@@ -264,7 +265,11 @@ function HomePage({ language }: { language: Language }) {
   const filtered = useMemo(() => {
     const needle = query.trim().toLowerCase()
     return cases.filter((item) => {
-      const matchesMode = activeMode === 'ALL' || item.mode === activeMode
+      const matchesDuration = activeDuration === 'ALL'
+        || (activeDuration === 'UP_TO_5' && item.duration <= 5)
+        || (activeDuration === 'SIX_TO_10' && item.duration > 5 && item.duration <= 10)
+        || (activeDuration === 'ELEVEN_TO_15' && item.duration > 10 && item.duration <= 15)
+        || (activeDuration === 'OVER_15' && item.duration > 15)
       const matchesCategory = activeCategory === 'ALL' || item.category === activeCategory
       const matchesStyle = activeStyle === 'ALL' || item.styles.includes(activeStyle)
       const matchesScene = activeScene === 'ALL' || item.scenes.includes(activeScene)
@@ -272,10 +277,10 @@ function HomePage({ language }: { language: Language }) {
       const haystack = language === 'zh'
         ? [item.title, item.summary, prompt, item.author, item.sourceLabel, ...item.tags, item.category, ...item.styles, ...item.scenes]
         : [item.titleEn, item.summaryEn, prompt, item.author, item.category, ...item.styles, ...item.scenes]
-      return matchesMode && matchesCategory && matchesStyle && matchesScene
+      return matchesDuration && matchesCategory && matchesStyle && matchesScene
         && (!needle || haystack.filter(Boolean).join(' ').toLowerCase().includes(needle))
     })
-  }, [activeCategory, activeMode, activeScene, activeStyle, language, query])
+  }, [activeCategory, activeDuration, activeScene, activeStyle, language, query])
 
   const advancedCount = [activeCategory, activeStyle, activeScene].filter((value) => value !== 'ALL').length
 
@@ -306,16 +311,16 @@ function HomePage({ language }: { language: Language }) {
         </div>
 
         <div className="primary-filter" aria-label={t.catalog.filterLabel}>
-          <div className="filter-label"><SlidersHorizontal size={15} aria-hidden="true" /> {t.catalog.mode}</div>
-          <div className="mode-filter">
-            {modes.map((mode) => (
+          <div className="filter-label"><Clock3 size={15} aria-hidden="true" /> {t.catalog.duration}</div>
+          <div className="duration-filter">
+            {durationRanges.map((range, index) => (
               <button
                 type="button"
-                key={mode}
-                className={mode === activeMode ? 'active' : ''}
-                onClick={() => setActiveMode(mode)}
+                key={range}
+                className={range === activeDuration ? 'active' : ''}
+                onClick={() => setActiveDuration(range)}
               >
-                <span>{mode === 'ALL' ? '00' : mode}</span>{modeLabel(mode, language)}
+                <span>{String(index).padStart(2, '0')}</span>{durationLabel(range, language)}
               </button>
             ))}
           </div>

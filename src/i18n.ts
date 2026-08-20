@@ -51,7 +51,7 @@ export const copy = {
       searchPlaceholder: '搜索案例、场景或创作者…',
       clearSearch: '清除搜索',
       filterLabel: '案例筛选',
-      mode: '生成模式',
+      duration: '视频时长',
       advanced: '更多筛选',
       advancedActive: '更多筛选 · 已启用',
       category: '内容分类',
@@ -147,7 +147,7 @@ export const copy = {
       searchPlaceholder: 'Search cases, scenes, or creators…',
       clearSearch: 'Clear search',
       filterLabel: 'Case filters',
-      mode: 'Generation mode',
+      duration: 'Duration',
       advanced: 'More filters',
       advancedActive: 'More filters · Active',
       category: 'Category',
@@ -242,6 +242,28 @@ const modeEn: Record<'ALL' | CaseMode, string> = {
 
 export function modeLabel(mode: 'ALL' | CaseMode, language: Language) {
   return language === 'zh' ? modeZh[mode] : modeEn[mode]
+}
+
+export type DurationRange = 'ALL' | 'UP_TO_5' | 'SIX_TO_10' | 'ELEVEN_TO_15' | 'OVER_15'
+
+const durationZh: Record<DurationRange, string> = {
+  ALL: '全部时长',
+  UP_TO_5: '5 秒及以下',
+  SIX_TO_10: '6–10 秒',
+  ELEVEN_TO_15: '11–15 秒',
+  OVER_15: '超过 15 秒',
+}
+
+const durationEn: Record<DurationRange, string> = {
+  ALL: 'All durations',
+  UP_TO_5: 'Up to 5s',
+  SIX_TO_10: '6–10s',
+  ELEVEN_TO_15: '11–15s',
+  OVER_15: 'Over 15s',
+}
+
+export function durationLabel(range: DurationRange, language: Language) {
+  return language === 'zh' ? durationZh[range] : durationEn[range]
 }
 
 const categoryZh: Record<string, string> = {
