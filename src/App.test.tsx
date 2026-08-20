@@ -13,6 +13,7 @@ vi.mock('../data/cases.json', async (importOriginal) => {
     'x-icreat-time-freeze-diner',
     'x-yukyuk-h3-seedance-same-prompt',
     'x-2086641782839005498',
+    'x-2090180874222588332',
   ])
 
   return {
@@ -67,11 +68,24 @@ describe('case-first routes', () => {
     consoleError.mockRestore()
   })
 
-  it('filters cases by generation mode', () => {
+  it('uses duration as the primary case filter', () => {
     renderAt('/')
-    fireEvent.click(screen.getByRole('button', { name: /全模态参考/ }))
+    expect(screen.queryByRole('button', { name: /全模态参考/ })).not.toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: /5 秒及以下/ }))
     expect(screen.getByText('粉色西装与黑色羔羊')).toBeInTheDocument()
     expect(screen.queryByText('舰桥上的跃迁余震')).not.toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: /6–10 秒/ }))
+    expect(screen.getByText('舰桥上的跃迁余震')).toBeInTheDocument()
+    expect(screen.queryByText('粉色西装与黑色羔羊')).not.toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: /11–15 秒/ }))
+    expect(screen.getByText('餐厅时间冻结与逆向复原')).toBeInTheDocument()
+    expect(screen.queryByText('舰桥上的跃迁余震')).not.toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: /超过 15 秒/ }))
+    expect(screen.getByText('羊皮纸上的绝地光明史诗')).toBeInTheDocument()
+    expect(screen.queryByText('餐厅时间冻结与逆向复原')).not.toBeInTheDocument()
   })
 
   it('searches across localized case metadata', () => {
