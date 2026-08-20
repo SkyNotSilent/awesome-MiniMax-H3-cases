@@ -18,9 +18,9 @@
 
 </div>
 
-[![H3 Field Notes — MiniMax H3 video example homepage with content-first filters and case cards](./docs/screenshots/case-library-en.jpg)](https://h3-field-notes-production.up.railway.app/en/)
+[![H3 Field Notes — MiniMax H3 video example homepage with duration-first filters and case cards](./docs/screenshots/case-library-en.jpg)](https://h3-field-notes-production.up.railway.app/en/)
 
-**See what MiniMax H3 can actually produce before you spend time setting it up.** MiniMax H3 is also commonly searched as Hailuo H3 or Hailuo 3.0. Browse real text-to-video, image-to-video, and video-to-video outputs from X and MiniMax's official examples, then filter by generation mode, category, style, or scene. Open any case to watch it inside the gallery and jump back to the original source.
+**See what MiniMax H3 can actually produce before you spend time setting it up.** MiniMax H3 is also commonly searched as Hailuo H3 or Hailuo 3.0. Browse real outputs from X and MiniMax's official examples through duration-first filters: up to 5 seconds, 6–10 seconds, 11–15 seconds, or over 15 seconds. Category, style, and scene remain available as deeper filters. Open any case to watch it inside the gallery and jump back to the original source.
 
 > **Largest public collection in our 2026-08-16 comparison:** the library now contains 713 playable, source-attributed MiniMax H3 video cases. The closest public case or prompt galleries found in that search contained 300, 222, 135, 67, and 28 examples. Prompt-only lists are not counted as video case libraries.
 
@@ -36,7 +36,7 @@ We searched public GitHub repositories and web results for MiniMax H3 / Hailuo H
 | What you get | Why it matters |
 | --- | --- |
 | **713 watchable video examples** | Judge MiniMax H3 / Hailuo H3 by real output, not a feature list |
-| **Fast search and filters** | Find relevant T2VA, FL2VA, Ref2VA, cinematic, dance, dialogue, music, advertising, and local-generation cases |
+| **Duration-first browsing** | Jump directly to ≤5s, 6–10s, 11–15s, or >15s outputs, then narrow by content, style, or scene |
 | **Case-specific covers and loading states** | Know what each video contains before opening it and whether the X player is still loading |
 | **Original creator and source on every case** | Verify context, publication date, and attribution without hunting for the post |
 | **Verbatim public prompts when available** | Copy the exact prompt only when the creator or official script published it; missing prompts are never invented |

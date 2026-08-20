@@ -211,8 +211,25 @@ function IntroSplash({ language }: { language: Language }) {
   useEffect(() => {
     document.body.classList.add('intro-open')
     const leaveTimer = window.setTimeout(() => setPhase('leaving'), 1_600)
+    const dismissImmediately = () => {
+      document.body.classList.remove('intro-open')
+      setPhase('gone')
+    }
+    const passiveOptions: AddEventListenerOptions = { passive: true }
+
+    window.addEventListener('pointerdown', dismissImmediately)
+    window.addEventListener('wheel', dismissImmediately, passiveOptions)
+    window.addEventListener('touchmove', dismissImmediately, passiveOptions)
+    window.addEventListener('scroll', dismissImmediately, passiveOptions)
+    window.addEventListener('keydown', dismissImmediately)
+
     return () => {
       window.clearTimeout(leaveTimer)
+      window.removeEventListener('pointerdown', dismissImmediately)
+      window.removeEventListener('wheel', dismissImmediately)
+      window.removeEventListener('touchmove', dismissImmediately)
+      window.removeEventListener('scroll', dismissImmediately)
+      window.removeEventListener('keydown', dismissImmediately)
       document.body.classList.remove('intro-open')
     }
   }, [])
@@ -228,7 +245,8 @@ function IntroSplash({ language }: { language: Language }) {
   }, [phase])
 
   const skip = () => {
-    setPhase('leaving')
+    document.body.classList.remove('intro-open')
+    setPhase('gone')
   }
 
   if (phase === 'gone') return null
