@@ -50,6 +50,19 @@
 | [餐盘上的人脸蛋糕切片](https://x.com/CreaitiveLabs/status/2090285250475708694) | 15s · 3886×2160 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
 | [包豪斯字形的节拍重组](https://x.com/EZheng66099/status/2090185695641968736) | 12s · 1080×1920 · portrait | `MiniMax H3` `舞蹈视频` `公开 Prompt` `X 原帖` |
 | [会切换犬种的互动图鉴](https://x.com/nakazakifam/status/2090175089404789097) | 15s · 1280×736 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [AI 脱口秀的精准笑点节奏](https://x.com/azed_ai/status/2087208466264076759) | 15s · 2560×1440 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [曼哈顿街头的人形蛋糕碰撞](https://x.com/sadlemonjuice/status/2087131708223046088) | 15s · 2752×1536 · landscape | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
+| [1947 小镇的复古战地纪实](https://x.com/RuzainaMeer/status/2087117707816714552) | 15s · 1280×720 · landscape | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
+| [摄影师偶遇老人和小狗](https://x.com/aiwithaly/status/2087102541146522089) | 15s · 2560×1440 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [城市夜色里的银色耳机广告](https://x.com/ayzalnooor24521/status/2087042771257540945) | 15s · 1088×720 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [《INK AFTER DARK》黑色电影片头](https://x.com/opener_ai/status/2087042643369099381) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [无尽阶梯的黑白错视](https://x.com/su_nagomi/status/2086943242713813383) | 15s · 1344×768 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [宫岛黄昏散步的橘猫](https://x.com/sanasana0707/status/2086839288025710776) | 8s · 1056×608 · landscape | `MiniMax H3` `本地生成` `公开 Prompt` `X 原帖` |
+| [舞台歌手的双模型同题对照](https://x.com/ou_zhen599/status/2086831315559854556) | 27s · 2160×2880 · portrait | `MiniMax H3` `模型对比` `公开 Prompt` `X 原帖` |
+| [云海凝成 MORNING](https://x.com/CharaspowerAI/status/2086754531698725200) | 15s · 2560×1440 · landscape | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
+| [董事会收购谈判](https://x.com/adithatipalli/status/2086698076325253323) | 15s · 2560×1440 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [冰箱里的微型高速公路](https://x.com/LikeToasters/status/2086603936736170082) | 10s · 736×992 · portrait | `MiniMax H3` `本地生成` `公开 Prompt` `X 原帖` |
+| [疾驰列车顶上的爆炸对决](https://x.com/leuk_o/status/2086419768047976597) | 10s · 1152×640 · landscape | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
 
 ## FL2VA
 
@@ -106,6 +119,8 @@
 | [暗黑圣堂的人物誓约](https://x.com/ZtohAic/status/2090359582032076832) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
 | [粉色舞台上的角色宣言](https://x.com/xiaomimasato/status/2090322678292906110) | 15s · 832×640 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
 | [新艺术机械乌鸦的变形长卷](https://x.com/oohiro35/status/2090183484057034955) | 30s · 1344×768 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
+| [醉拳海报苏醒后的动态擂台](https://x.com/MonetizationDon/status/2087183007874453795) | 23s · 1920×1080 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [Haru 的高对比动漫开场](https://x.com/keneth_ai/status/2087039444146933942) | 15s · 1886×1080 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
 
 ## Ref2VA
 
@@ -176,6 +191,8 @@
 | [步行街上的自然行走](https://x.com/00Bohr/status/2090214618882773503) | 7s · 832×1120 · portrait | `MiniMax H3` `本地生成` `公开 Prompt` `X 原帖` |
 | [铅笔线条生长为绿色标记](https://x.com/itsnicholash/status/2090182264705454105) | 15s · 1440×1440 · square | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
 | [穿越多重材质世界的旅人](https://x.com/hmetouch/status/2090136979866521914) | 15s · 1376×768 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
+| [天才黑客 NEON 登场](https://x.com/Nokosu_kansoku/status/2086700416654594554) | 15s · 1344×768 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [风中角色的电影式登场](https://x.com/aimikoda/status/2086412223061135392) | 15s · 2410×2560 · portrait | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
 
 ## Unknown
 

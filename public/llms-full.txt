@@ -1,6 +1,6 @@
 # MiniMax H3 Cases & Guides — Complete Case and Tutorial Index
 
-Generated from data/cases.json. Total: 713 cases. Verbatim public prompts: 40.
+Generated from data/cases.json. Total: 730 cases. Verbatim public prompts: 57.
 
 ## Tutorials
 
@@ -775,7 +775,7 @@ non_diegetic_music: N/A
 ```text
 <image 2>: location
 
-<image 1>: Chris character reference 
+<image 1>: Chris character reference
 
 integrated_multimodal_description:
 Cinematic rain-slicked urban evening with deep teal shadows, warm amber highlights, wet asphalt, shallow puddles, and light mist in the air. ONE continuous shot with NO CUTS. There is only ONE Chris in the entire video. Chris must remain the SAME woman with the SAME face, hair, clothing, body, and appearance throughout the entire shot. Never duplicate Chris, never create a second version of her, and never have her disappear and re-enter.
@@ -14708,4 +14708,694 @@ DO NOT: gradients, drop shadows, 3D extrusion, serif fonts, melted letters, adde
 - Chinese summary: 旅人连续穿过门洞，在写实、纸艺与动画材质世界之间切换。 原生视频规格为 15 秒 · 1376×768。原帖未公开完整 Prompt，本库不反推或补写。
 - English summary: A traveler crosses successive doorways between realistic, paper-crafted, and animated worlds. Native-video output: 15s · 1376×768. The source did not publish a complete prompt, so this library does not infer or complete one.
 - Verbatim public prompt: not published by the source
+
+## Punchline Timing in an AI Stand-up Special
+
+- ID: x-2087208466264076759
+- 中文标题: AI 脱口秀的精准笑点节奏
+- English title: Punchline Timing in an AI Stand-up Special
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2087208466264076759/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2087208466264076759/
+- Original source: https://x.com/azed_ai/status/2087208466264076759
+- Author: Amira Zairi
+- Published: 2026-08-11T16:04:11.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: T2VA
+- Category: Character & Dialogue
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 喜剧演员在小型俱乐部连续抛出笑点，观众反应、停顿与多机位切换紧跟台词节奏。 原生视频规格为 15 秒 · 2560×1440。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A comedian delivers a rapid club set while audience reactions, pauses, and multi-camera cuts track each punchline. Native-video output: 15s · 2560×1440. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+Style: Live stand-up comedy special, intimate comedy club, professional multi-camera production, warm stage lighting, packed audience around small tables, sharp HD broadcast look, natural facial expressions, authentic comedic timing, clean microphone audio, realistic audience reactions, subtle handheld audience camera, 15-second video, 5 cinematic cuts
+
+0–3s: [Wide Establishing → Medium Push-In]
+A comedian stands center stage holding a microphone as the audience settles. The comedian smiles and says:
+
+Comedian: “I asked AI to organize my life yesterday”
+
+Brief beat
+
+3–6s: [Medium Close-Up]
+The comedian maintains a completely serious expression
+
+Comedian: “It looked at my schedule and said, ‘Actually... I’m just a language model.’”
+
+Audience immediately laughs
+
+6–9s: [Side Angle + Audience Reaction]
+The comedian waits for the laughter, then slowly nods
+
+Comedian: “Even artificial intelligence has boundaries”
+
+Quick cut to the front row laughing and clapping
+
+9–12s: [Tight Close-Up]
+The comedian leans toward the microphone
+
+Comedian: “My mom thinks AI is listening to everything we say”
+
+Beat
+
+Comedian: “Mom... nobody wants that podcast”
+
+Audience erupts into louder laughter
+
+12–15s: [Medium → Wide Ending]
+The comedian waits for silence, then delivers the final line:
+
+Comedian: “AI isn't replacing us. It saw our search history and declined the position”
+
+Big audience laugh. The comedian smiles and lowers the microphone as the camera pulls out to reveal the applauding club
+
+Production details: Keep the same comedian, outfit, microphone, stage and audience throughout. Prioritize precise comedic timing, short pauses before punchlines, believable facial expressions and natural audience reactions. Never cut during a punchline. Audience laughter starts only after the punchline lands. No canned laughter, no overlapping dialogue, coherent eyelines, realistic club acoustics, professional live comedy special editing
+```
+
+## A Drunken-Master Poster Comes Alive
+
+- ID: x-2087183007874453795
+- 中文标题: 醉拳海报苏醒后的动态擂台
+- English title: A Drunken-Master Poster Comes Alive
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2087183007874453795/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2087183007874453795/
+- Original source: https://x.com/MonetizationDon/status/2087183007874453795
+- Author: LAPTOP LIFESTYLE BLOGGER
+- Published: 2026-08-11T14:23:01.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: FL2VA
+- Category: UGC & Advertising
+- Output: 23s, 1920×1080, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 静态武术海报被扩展为带烟雾、火花、液体飞溅、人物动作与动态字体的电影式动效。 原生视频规格为 23 秒 · 1920×1080。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A static martial-arts poster expands into moving characters, smoke, sparks, splashing liquid, and animated typography. Native-video output: 23s · 1920×1080. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+Animate the uploaded CHUNG LEE movie poster as a 10-second cinematic martial-arts motion poster while preserving the original artwork, characters, typography, composition and layout.
+
+Bring the static poster to life with rich cinematic colors — crimson red, golden yellow, fiery orange, electric blue, emerald green and magenta. Animate the lanterns, drifting smoke, flying dust, sparks, debris and the surrounding crowd.
+
+Give CHUNG LEE subtle drunken-master movement: shifting shoulders, flowing hair, a confident expression and a casual lift of the gourd with liquid splashing in slow motion.
+
+Then make “CHUNG LEE” the ultimate visual flex — dramatic brush-stroke reveals, golden particles, energy trails and a powerful 3D pop-out effect that makes the title feel like it is breaking out of the poster.
+
+Add glowing red energy around the Chinese characters, dynamic martial-arts impacts, moving background fighters, cinematic camera movement and bursts of colorful light.
+
+Finish with a dramatic push toward the CHUNG LEE title, then pull back to reveal the complete poster before locking into the final frame.
+
+No redesign. No new text. No distorted typography. Preserve the original poster — just make it move.
+
+Animation made with Minimax H3
+```
+
+## Human Cakes Collide on a Manhattan Street
+
+- ID: x-2087131708223046088
+- 中文标题: 曼哈顿街头的人形蛋糕碰撞
+- English title: Human Cakes Collide on a Manhattan Street
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2087131708223046088/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2087131708223046088/
+- Original source: https://x.com/sadlemonjuice/status/2087131708223046088
+- Author: Socratech
+- Published: 2026-08-11T10:59:10.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: T2VA
+- Category: Cinematic & VFX
+- Output: 15s, 2752×1536, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 第一人称手机镜头记录街头车辆撞向行人后出现人形蛋糕质感的荒诞连续场面。 原生视频规格为 15 秒 · 2752×1536。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A shaky first-person phone camera follows absurd street impacts that transform people into human-cake forms. Native-video output: 15s · 2752×1536. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+Shaky handheld smartphone footage, pure first-person view, bright clear Manhattan street under shiny midday sun.The camera jerks, sways and shakes heavily like a real phone held by someone walking backward in panic. Sharp sunlight, hard shadows, clean blue sky above brick buildings and dry asphalt. Strong natural motion blur and smartphone digital noise.
+Continuous 20-second sequence (new subject + vehicle every 5 seconds):
+[0s–5s] Operator walks backward from a white man in a black agent suit and sunglasses. The operator’s hand silently points urgently behind the man. The man turns his head, eyes widening in shock as he sees a bright red sports car drifting sideways at high speed toward him. The car slides in at an angle with screeching tires and physically slams into his body first — the impact throws him hard against the hood. Only after the physical hit does his body dissipate into a chaotic spray of tiny randomized fragments — almost pure thick cream mixed with very small irregular cake crumbs, no large pieces. The intricate cream explosion splatters in all directions, coating the red hood, windshield and street in messy streaks and droplets. The suit is ripped off by the force and either sticks to the car or drops to the ground. Cream heavily sprays across the lens.
+[5s–10s] Camera keeps shaking and moving back. A Black woman in a business blazer. Operator silently points hard behind her. She turns, face reacting with sudden fear as a dark blue SUV drifts sharply toward her. The SUV locks brakes mid-drift and physically smashes into her body first. Immediately after the impact her body dissipates into an intricate burst of tiny randomized particles — mostly thick chocolate cream with only minuscule dark cake crumbs. The fine cream spray coats the blue SUV surface and asphalt in dense, chaotic patterns. The blazer and skirt are torn away, parts sticking to the vehicle mixed with cream, the rest dropping naturally. Chocolate cream heavily splatters the lens.
+[10s–15s] Operator still walking backward, phone shaking. An Asian man in a hoodie. Operator silently points behind him. The man turns and freezes in panic seeing a white delivery van sliding into a wide drift. The van physically crashes into his body first. Right after the hit he dissipates into a highly randomized spray of tiny fragments — almost entirely cream with very small scattered sponge and fruit particles. The intricate cream explosion covers the van and pavement in messy droplets and streaks. The hoodie and jeans are stripped off, some cloth remaining on the van mixed with cream, the rest falling with natural physics. Cream hits the lens hard.
+[15s–20s] Camera continues with heavy smartphone shake. A Latina woman in a trench coat. Operator silently points urgently behind her. She spins around, eyes wide in terror as a black pickup truck performs a long cinematic drift straight at her. The truck physically hits her body first. Only then does her body dissipate into a fine, chaotic spray of tiny randomized particles — mostly thick caramel cream with only minute golden crumbs. The intricate cream blast coats the truck hood, grille and ground in dense, irregular patterns. The trench coat is ripped off, sections sticking to the truck with cream, the rest falling realistically. Cream and tiny fragments cascade over the vehicle and street, heavily streaking the lens.
+Throughout: constant heavy smartphone-style camera shake and jitter, natural motion blur, dense cream sprays and tiny randomized particles hitting the lens, realistic cloth physics, cinematic vehicle drifts, clear physical body impact first followed by dissipation into almost pure cream with only very small irregular cake crumbs (never large pieces or whole shapes), photorealistic, bright clear daylight, raw live smartphone footage look. No text, no logos, no stabilisation.
+```
+
+## A Vintage 1947 Town Under Fire
+
+- ID: x-2087117707816714552
+- 中文标题: 1947 小镇的复古战地纪实
+- English title: A Vintage 1947 Town Under Fire
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2087117707816714552/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2087117707816714552/
+- Original source: https://x.com/RuzainaMeer/status/2087117707816714552
+- Author: Ruzaina
+- Published: 2026-08-11T10:03:32.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: T2VA
+- Category: Cinematic & VFX
+- Output: 15s, 1280×720, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 乡镇建筑、老式车辆、士兵与烟尘被组织成仿 1940 年代胶片质感的战地纪实段落。 原生视频规格为 15 秒 · 1280×720。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: Period buildings, vintage cars, soldiers, smoke, and debris form a documentary-like 1940s film sequence. Native-video output: 15s · 1280×720. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+Create a 15-second ultra-photorealistic live-action war sequence set in the United States in 1947, designed to look like authentic historical footage captured on a 1940s film camera. The entire scene must feel grounded, documentary-like, raw, and physically realistic.
+Environment: A rural American town in 1947 with wooden houses, old brick buildings, telephone poles, dirt roads, vintage American cars from the 1940s, wooden fences, farmland, and period-accurate street details. Overcast afternoon light, light fog, drifting smoke, dust in the air, damaged buildings, scattered debris, and a tense wartime atmosphere.
+Characters: American soldiers wearing historically accurate late-1940s military uniforms, helmets, boots, and equipment. Civilians wear authentic 1940s American clothing. Natural faces, realistic skin texture, sweat, dirt, fatigue, and believable body movements.
+0–3s — Establishing Shot:
+Wide handheld shot of a quiet rural American street suddenly filled with smoke and confusion. Vintage 1940s vehicles are parked along the road while soldiers move quickly between wooden buildings. Civilians rush toward safer areas.
+3–6s — Tension:
+Camera moves through the street at shoulder height, following several soldiers as distant gunfire is heard. They immediately react and take cover behind a vintage vehicle and a brick wall. Their movements are cautious and realistic.
+6–10s — Combat:
+Fast handheld tracking shot as the soldiers move between cover while distant gunfire impacts the environment. Small pieces of wood, dust, and debris fall naturally from nearby impacts. Weapon recoil, movement, and body weight must be physically accurate. Keep the violence realistic and restrained.
+10–13s — Human Moment:
+Camera briefly focuses on a soldier helping an injured civilian move behind cover. Their breathing, facial expressions, body language, and movement should feel natural and unscripted.
+13–15s — Final Shot:
+Camera pulls back into a wide shot of the American town as smoke slowly moves through the street. Soldiers remain behind cover while vintage vehicles and damaged buildings fill the background. The scene ends with an authentic, tense 1940s documentary feeling.
+Visual Style: Ultra-photorealistic live-action, authentic 1940s American environment, vintage 35mm film texture, subtle film grain, natural imperfections, realistic exposure, handheld documentary cinematography, muted historical color palette, realistic smoke and dust, natural shadows, accurate depth of field.
+Physics: Strictly obey real-world gravity, momentum, inertia, friction, recoil, weight, collision physics, and human biomechanics. No exaggerated explosions, impossible movements, superhero behavior, or choreographed-looking combat.
+Negative Prompt: modern buildings, modern cars, smartphones, modern clothing, modern weapons, futuristic technology, CGI appearance, video-game graphics, fantasy, superhero action, excessive explosions, excessive blood, gore, impossible physics, unrealistic recoil, slow-motion physics, distorted faces, extra limbs, floating objects, plastic skin, artificial-looking environments.
+```
+
+## A Street Photographer Meets an Old Man and His Dog
+
+- ID: x-2087102541146522089
+- 中文标题: 摄影师偶遇老人和小狗
+- English title: A Street Photographer Meets an Old Man and His Dog
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2087102541146522089/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2087102541146522089/
+- Original source: https://x.com/aiwithaly/status/2087102541146522089
+- Author: Ali
+- Published: 2026-08-11T09:03:16.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: T2VA
+- Category: Character & Dialogue
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 街头摄影师发现咖啡馆外的老人和小狗，拍下瞬间后转身向镜头展示照片。 原生视频规格为 15 秒 · 2560×1440。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A street photographer notices an old man and his dog, captures the candid moment, then shows the photograph to camera. Native-video output: 15s · 2560×1440. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+A young Western female street photographer walks through a lively downtown street and notices an elderly man sitting outside a café with his small dog. She carefully composes the candid moment through her camera, captures the photo, then turns the camera toward the viewer to proudly show the shot she just took. She smiles, says “Look at that,” then continues walking through the city. Ultra-photorealistic visuals, natural handheld documentary movement, realistic camera interaction, authentic facial expressions, accurate hand movements, realistic dog behavior, natural daylight, cinematic depth of field, continuous character consistency, immersive city ambience, premium documentary realism.
+```
+
+## Silver Earbuds in the City at Night
+
+- ID: x-2087042771257540945
+- 中文标题: 城市夜色里的银色耳机广告
+- English title: Silver Earbuds in the City at Night
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2087042771257540945/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2087042771257540945/
+- Original source: https://x.com/ayzalnooor24521/status/2087042771257540945
+- Author: ayzalnoor
+- Published: 2026-08-11T05:05:46.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: T2VA
+- Category: Music Video
+- Output: 15s, 1088×720, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 银色耳机特写衔接城市步行场景，最后以干净的产品英雄镜头收束。 原生视频规格为 15 秒 · 1088×720。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: Close-ups of silver earbuds flow into a stylish city walk and finish on a clean product hero shot. Native-video output: 15s · 1088×720. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+Create a premium 15-second cinematic ad for Audionic Trance Airbud 850. Start with a close-up of the silver earbuds and case, then show a stylish Korean girl wearing them and walking through a luxurious Korean shopping street while enjoying a modern Korean K-pop song. Use beautiful city lights, soft bokeh, elegant fashion, natural expressions and smooth cinematic camera movement. End with one clean hero shot of the silver earbuds and case only. No phone screen, Bluetooth connection, discount text, logo end card or extra ending scene.
+```
+
+## INK AFTER DARK in Pulp-Noir Motion
+
+- ID: x-2087042643369099381
+- 中文标题: 《INK AFTER DARK》黑色电影片头
+- English title: INK AFTER DARK in Pulp-Noir Motion
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2087042643369099381/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2087042643369099381/
+- Original source: https://x.com/opener_ai/status/2087042643369099381
+- Author: Jin.B
+- Published: 2026-08-11T05:05:16.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: T2VA
+- Category: Community Showcase
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 一位夜间写作者穿行于黑白拼色、撕纸转场与复古印刷纹理构成的片头段落。 原生视频规格为 15 秒 · 2560×1440。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A mysterious night writer moves through pulp-noir compositions, torn-paper transitions, and retro print textures. Native-video output: 15s · 2560×1440. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+[FORMAT]
+Create a 15-second, 16:9 retro graphic opening-title sequence titled "INK AFTER DARK".
+A stylish 1960s pulp-noir animation about a mysterious night writer. Bold, minimal, elegant, slightly dangerous, with dry visual wit.
+
+[IDENTITY]
+Keep one female writer visually consistent throughout: sharp angular bob haircut, narrow almond-shaped eyes, long black turtleneck, high-waisted trousers, slim silhouette, black leather gloves, calm expression, upright self-assured posture, and hard graphic highlights along one side of her face.
+Use flat hand-inked 2D illustration with rough screen-print texture, imperfect paper grain, and slightly uneven ink edges.
+
+[BEATS]
+[0–3 seconds] Extreme close-up of the writer's face emerging from near-total black. A narrow cream-colored strip of light slides across her eyes. The frame abruptly opens sideways like torn paper, revealing her full silhouette walking across a burnt-red background while loose sheets of paper trail behind her like a long ribbon.
+
+[3–6 seconds] The paper ribbon sweeps across frame and becomes a graphic wipe. Reveal her in profile at a desk. She strikes one typewriter key. On impact, the screen fractures into three bold rectangular panels: her gloved fingers, the metal typebar snapping forward, and a giant black ink letter striking paper.
+
+[6–9 seconds] Rapid rhythmic close-ups: spinning typewriter ribbon spool, carriage return lever snapping sideways, black ink spreading through rough paper fibers. Thin cream lines cut diagonally across the screen and reorganize the images into an asymmetric editorial collage.
+
+[9–12 seconds] Pull wide. The writer stands alone beside an enormous abstract typewriter rendered as a black geometric silhouette. She pulls one endless page upward. The rising page becomes a full-frame cream vertical wipe while scattered black letters tumble downward like physical debris.
+
+[12–15 seconds] The letters rapidly assemble into the exact title "INK AFTER DARK" centered large on a burnt-red paper field. The writer's small black silhouette crosses beneath the title and exits frame. The title appears through sharp letter-by-letter mechanical impacts over 0.5 seconds, holds completely still through the ending. No bouncing, spinning, stretching, or fly-in typography.
+
+[CAMERA]
+Use aggressive graphic changes in scale: extreme facial close-up → full-body silhouette → macro mechanical inserts → monumental wide composition.
+Camera movement should feel designed rather than realistic: fast lateral pushes, sudden graphic crops, one rapid pull-out, and precise locked compositions. Avoid conventional cinematic orbit shots.
+
+[LIGHT]
+Limited palette only: burnt red, aged cream, deep black, with tiny muted silver highlights on typewriter metal.
+Hard noir side-lighting translated into flat graphic shapes. Rough vintage print stock, subtle paper scratches, coarse ink grain, slight registration offsets, and occasional frame jitter.
+
+[EDIT]
+Fast editorial rhythm with hard cuts, paper wipes, diagonal panel slices, oversized object masks, and split-screen recompositions.
+Transitions must be motivated by paper, ink, typewriter mechanisms, or moving silhouettes. No soft dissolves.
+Make every shot feel newly composed rather than simply zooming into the previous image.
+
+[AUDIO]
+Audio: dry typewriter key strikes, paper slides, ribbon-spool clicks, carriage-return snaps, faint room hum, and one heavy mechanical impact when the final title locks.
+BGM: an original 15-second cue, 65% noir suspense and 35% cool jazz. Upright bass, brushed snare, muted vibraphone, sparse low piano, and short clipped brass accents. Begin almost empty, introduce bass at 3 seconds, rhythmic percussion at 6 seconds, a brief brass accent at 10 seconds, then freeze the final 2 seconds on one bass note and the mechanical title hit. Do not imitate an existing melody.
+
+[NEGATIVE]
+No subtitles, extra on-screen text, watermarks, platform logos, or stickers.
+Do not introduce Chinese text, garbled characters, misspellings, or additional title variations. Render "INK AFTER DARK" once only.
+No 3D CGI, photorealism, anime styling, glossy modern motion graphics, neon cyberpunk aesthetics, or smooth vector-clean surfaces.
+Never a slideshow. Maintain active graphic motion, physical visual transitions, and continuously evolving compositions.
+```
+
+## Haru in a High-Contrast Anime Opening
+
+- ID: x-2087039444146933942
+- 中文标题: Haru 的高对比动漫开场
+- English title: Haru in a High-Contrast Anime Opening
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2087039444146933942/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2087039444146933942/
+- Original source: https://x.com/keneth_ai/status/2087039444146933942
+- Author: Keneth Tran | AI Animation
+- Published: 2026-08-11T04:52:33.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: FL2VA
+- Category: Music Video
+- Output: 15s, 1886×1080, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 角色 Haru 在霓虹配色、闪白、奔跑和节拍硬切中完成 15 秒动漫开场。 原生视频规格为 15 秒 · 1886×1080。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: Haru moves through neon color fields, white flashes, rooftop motion, and beat-synced cuts in a 15-second anime opening. Native-video output: 15s · 1886×1080. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+[CHARACTER LOCK — use attached reference sheet]
+Haru: teen boy, short messy dark-brown hair with warm amber rim-light on the
+edges, tired amber eyes, single silver earring on left ear, thin dark cord
+choker, oversized grey-blue windbreaker open over a longline blue hoodie, black
+joggers with dangling straps, scuffed black high-top sneakers. Face, hair
+silhouette, and outfit identical in every shot.
+
+[FORMAT]
+Anime television opening, 2D cel-shaded, crisp linework, 16:9, high contrast,
+film grain. Total runtime 15 seconds, 12 shots, beat-synced hard cuts.
+
+[SHOT LIST — 15s]
+00.0–01.2  Black. Hard white flash. Haru's silhouette snaps in, back to camera,
+           jacket billowing. Background floods CYAN.
+01.2–02.4  Whip-pan to profile close-up. Downcast eyes flick up, sharp.
+           Flash. Background MAGENTA.
+02.4–03.2  Low-angle wide: he sprints along a rooftop ledge, coat trailing,
+           paper and leaves scattering. ORANGE-RED, speed lines.
+03.2–03.9  Freeze-frame mid-leap between rooftops. Pure black silhouette
+           against strobing YELLOW-to-LIME.
+03.9–04.7  Top-down spin: lands, one hand on concrete, dust ring bursts out.
+           Snap to DEEP PURPLE.
+04.7–05.3  Extreme close-up: silver earring swings, catches a lens flare.
+           White flash frame.
+05.3–06.2  Split-screen triptych — three duotone copies of his face
+           (blue / red / green) rotating, one per beat.
+06.2–07.4  Back view, walking into wind, hood snapping, hair whipping.
+           Background ELECTRIC BLUE with horizontal scan lines.
+07.4–08.2  Hands-in-pockets front shot, camera orbits fast around him.
+           Colors cycle GREEN → PINK → WHITE across the orbit.
+08.2–09.4  Seated on the ledge, knees up, head down, city lights blooming
+           behind. Muted TEAL. Brief calm — no flash on this cut.
+09.4–10.6  He stands, turns to camera, hair lifting, single amber rim-light
+           igniting along his edge. Background goes pure WHITE.
+10.6–15.0  Pull-back wide: Haru walks away toward the sunset skyline, hands in
+           pockets, clothes drifting. Color settles into the warm painted
+           palette of the reference sheet. Camera dollies out, holds on
+           centered title-card space.
+
+[MOTION]
+Simple punchy character animation on twos. Hair and fabric always drifting.
+Camera: whip pans, snap zooms, one fast orbit, one final dolly-out.
+
+[COLOR & FX]
+Full-frame color swaps on every cut, synced to an implied beat. White
+flash-frames between shots 1–9. Chromatic aberration on impacts, halftone dot
+bursts, quick duotone inversions, floating leaf and paper debris throughout.
+Warm amber rim-light preserved on the character in every shot.
+
+[NEGATIVE]
+photorealistic, 3D render, live action, extra characters, text or logos,
+changing outfit, changing hair color, distorted face, extra fingers, watermark
+```
+
+## The Black-and-White Illusion of an Endless Staircase
+
+- ID: x-2086943242713813383
+- 中文标题: 无尽阶梯的黑白错视
+- English title: The Black-and-White Illusion of an Endless Staircase
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2086943242713813383/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2086943242713813383/
+- Original source: https://x.com/su_nagomi/status/2086943242713813383
+- Author: すーさん
+- Published: 2026-08-10T22:30:17.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: T2VA
+- Category: Community Showcase
+- Output: 15s, 1344×768, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 人物沿极简阶梯前行，条纹、建筑和人体在黑白空间里逐步突破物理规则。 原生视频规格为 15 秒 · 1344×768。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A figure climbs a minimal staircase as stripes, architecture, and the body gradually break physical rules in monochrome space. Native-video output: 15s · 1344×768. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+タイトル：ENDLESS STEP / 終わらない階段 尺：15秒 ジャンル：現代アート / Op Art / Surrealism 画面：16:9 カラー：白黒モノクロ中心 BGM：なし コンセプト：「進み続けているのに、どこにも辿り着いていない」 演出方針：前半は空間の異常、中盤は物理法則の崩壊、後半は人間と空間そのものの境界を崩す。ネオン・派手なグリッチ・大量の粒子は禁止。幾何学、錯視、建築、人体の融合だけで見せる。 CUT1｜0.0–1.8秒 Visuals｜何も存在しない真っ白な巨大空間。中央に一本だけ細長い黒い階段が奥へ伸びている。黒いミニマルな衣装の主人公が背中を向け、ゆっくり階段を上る。階段の表面だけが細い白黒ストライプになっている。最初は完全に静かな世界。 Camera｜24mm / F4。床ギリギリのローアングル。主人公を中央固定した完全シンメトリー構図。ゆっくり前方へドリーイン。 Motion｜主人公の歩行のみ。1歩につき約0.7秒。最後の0.5秒から階段表面のストライプがごく僅かに波打つ。 Lighting｜巨大な白いソフトボックスで空間全体を均一照明。人物と階段の下だけにシャープな黒い影。 VFX｜非常に弱い水平波状ディストーション。まだ異常だと断定できない程度。 SFX｜乾いた靴音「コツ、コツ」。極低音のルームトーン。 Emotion｜静寂。整いすぎていることへの違和感。 Transition｜足が次の段へ触れた瞬間にCUT2。 CUT2｜1.8–3.3秒 Visuals｜足元の極端なクローズアップ。靴底が階段へ触れるたび、白黒ストライプが水面のように沈み込み、波紋となって階段全体へ広がる。階段自体は固体なのに、模様だけが液体のように反応する。 Camera｜70mm / F2.8。階段より少し低い位置から足を追うローアングルトラッキング。 Motion｜足が接触 → 模様が沈む → 円状波紋が広がる → 次の一歩。足の動きはリアル、模様だけ非現実。 Lighting｜白背景を飛ばし気味にし、靴とストライプの黒を強調。 VFX｜Optical ripple、局所的なストライプ変形、軽いレンズ屈折。 SFX｜足音の直後に低い「ブゥン」という短い共鳴音。 Emotion｜世界が人物の存在に反応し始める。 Transition｜波紋が画面いっぱいへ広がりCUT3。 CUT3｜3.3–5.0秒 Visuals｜主人公の横顔ミディアム。背後の真っ白な壁に、横方向へ伸びる黒い階段がいつの間にか存在している。その階段を、もう一人の人物が壁面に対して垂直に歩いている。さらに天井には逆さになった人物が歩く。主人公本人はまだ気づいていない。 Camera｜50mm / F2.8。主人公の横顔にフォーカス。約0.7秒後、背景の異常な階段へラックフォーカス。 Motion｜主人公、壁の人物、天井の人物は全員まったく同じ歩行周期。ただし方向だけ異なる。 Lighting｜全人物へ同じ方向から光が当たっている。重力方向と影の方向が一致しない。 VFX｜Impossible perspective、非ユークリッド建築、重力不一致。 SFX｜正面の足音に、左・上方向から別の足音が薄く加わる。 Emotion｜「何かがおかしい」が明確になる瞬間。 Transition｜主人公が次の一段へ足を置く瞬間、低音と同時にCUT4。 CUT4｜5.0–6.7秒 Visuals｜足が一段に着地した瞬間、巨大空間全体が突然90°回転する。床が右側の壁へ変わり、天井だった面が床になる。しかし主人公は何事もなかったかのように同じ階段を上り続ける。階段の白黒ストライプが一気に巨大な同心円へ変形。 Camera｜18mm / F5.6。主人公正面寄りの超広角。空間回転と完全同期してカメラも90°ロール。その後、主人公だけ水平に見える角度で固定。 Motion｜空間：高速90°回転。主人公：速度一定。同心円：主人公から外側へ膨張。 Lighting｜回転開始時に0.1秒だけ光量低下。回転後は光源方向だけ元の位置を維持し、不自然な影を作る。 VFX｜90° spatial rotation、同心円ディストーション、短いモーションブラー、パース破綻。 SFX｜重い「ゴォン」＋低周波スイープ。 Emotion｜重力のルールが完全に壊れる。 Transition｜同心円の中心へカメラが吸い込まれCUT5。 CUT5｜6.7–8.5秒 Visuals｜超広角全景。上下左右、斜め、天井、壁へ無数の階段が伸びる巨大な不可能建築。人物は複数存在するが大量には増やさず、5〜7人程度。それぞれ異なる重力方向で歩いている。階段同士は交差しているように見えるが、実際には接続していない。中央の主人公だけが正常方向にいる。 Camera｜14mm / F5.6。空間中央を中心に高速オービット約100°。少しだけロールを加える。 Motion｜階段は静止。人物は一定速度で歩行。背景のストライプのみ逆方向へゆっくり移動。 Lighting｜完全モノクロ。白背景、黒い階段。影だけが異なる方向へ伸び、現実感を壊す。 VFX｜Non-Euclidean architecture、forced perspective、figure-ground ambiguity。 SFX｜異なる方向から足音が重なり、リズムが少しずつズレる。 Emotion｜空間そのものが巨大な錯視装置になった感覚。 Transition｜オービット中、主人公の顔がフレーム中央へ入りCUT6。 CUT6｜8.5–10.2秒 Visuals｜主人公の正面クローズアップ。主人公が初めて立ち止まる。顔の右側が模様になるのではなく、頬の表面そのものがゆっくり内側へ折れ始める。皮膚が建築物の壁のように変形し、顔の内部へ何百メートルも続く小さな白黒階段が現れる。片目、鼻、口の位置は正常なまま。顔の内部だけが巨大空間になっている。 Camera｜85mm / F2。顔正面。0.8秒かけてゆっくりドリーイン。最後の0.4秒で顔内部の階段へ急速接近。 Motion｜主人公は完全静止。まばたき一回。顔表面が紙を内側へ折るように段階的に陥没。内部階段の小さな人物だけが歩き続ける。 Lighting｜顔中央に柔らかい正面光。顔内部の空間はCUT1と同じ白い美術館照明。 VFX｜Face-to-architecture morph、recursive geometry、skin folding、深度拡張。顔への単純な模様貼り付けは禁止。 SFX｜周囲の足音が突然消える。顔が開く瞬間に紙を折るような乾いた音＋低い吸引音。 Emotion｜人体と建築の境界が崩れる。 Transition｜カメラが顔内部の階段へ完全に突入してCUT7。 CUT7｜10.2–12.5秒 Visuals｜顔内部の階段を歩く小さな主人公を追う。カメラが180°回転すると、これまで階段だと思っていた巨大な構造が、実は横向きになった人間の顔の輪郭だったと判明する。鼻梁が階段、唇の輪郭が通路、眼窩が巨大な円形空間になっている。さらにもう一度角度が変わると、再びただの階段に見える。「顔」と「建築」が視点によって交互に切り替わる。 Camera｜18mm / F4。人物後方から高速プッシュイン → 180°カメラロール → 一瞬静止 → ゆっくりドリーアウト。 Motion｜小さな主人公は歩行継続。巨大構造は動かさず、カメラ角度だけで顔と階段の認識が反転する。 Lighting｜均一な白黒照明。輪郭にだけ薄いサイドライトを入れ、顔として認識できるギリギリまで強調。 VFX｜Figure-ground reversal、anamorphic perspective、face/architecture ambiguity。モーフではなく「見る角度で意味が変わる」錯視を優先。 SFX｜短い逆再生音。顔として見えた瞬間だけ人間の呼吸音が一度入る。 Emotion｜「見えているものが何なのか分からない」状態。 Transition｜階段の最上部にある巨大な黒い円へ主人公が近づきCUT8。 CUT8｜12.5–15.0秒 Visuals｜主人公が階段の頂上へ到達。正面には巨大な完全な黒い円。その向こうは見えない。主人公が黒い円へ足を踏み入れる。瞬間、カメラが真上へ高速ドリーアウト。巨大な階段構造全体が一度ねじれ、メビウスの輪のようにつながっていることが判明。さらに引くと、先ほどの黒い円は実はCUT1で主人公が最初に踏み出した「階段の一段目」の黒い面だったことが分かる。構図がCUT1と完全一致。主人公が再び最初の一歩を踏み出す。 Camera｜35mmから開始。黒い円への短いプッシュイン → 真上視点へ急上昇 → 14mm相当の超ワイド → CUT1と同じ24mmローアングル構図へシームレス変形。 Motion｜階段全体がゆっくり180°ねじれてメビウス構造になる。主人公は止まらず歩き続ける。最後の0.5秒はCUT1と完全同一の動き。 Lighting｜最後まで完全モノクロ。白と黒のみ。ループ直前に一瞬だけ白黒を反転し、すぐ元へ戻す。 VFX｜Möbius topology transformation、recursive space、black-white inversion、seamless loop。 SFX｜黒い円へ入る直前に音が完全停止。CUT1の構図へ戻った瞬間、最初と同じ「コツ」という一歩目の足音。 Emotion｜「15秒間進んでいたのに、実は最初の一歩から抜け出せていなかった」。 END｜暗転なし。文字なし。ロゴなし。CUT1へ完全に戻るシームレスループ。 最重要生成ルール｜  1. 主役は常に同一人物。同じ黒い衣装・髪型・体格を固定。 2. 世界は白・黒のみ。サイバーパンク、未来都市、ネオンは禁止。 3. 階段の形状と白黒ストライプを全CUTで共通モチーフとして維持。 4. CUT6は「顔に模様を貼る」のではなく「顔内部が巨大建築空間になる」。 5. CUT7は単純な顔モーフではなく、視点によって顔と階段の認識が反転する錯視。 6. CUT8は必ずCUT1へ物理的につながるメビウス構造にする。 7. グリッチは使わない。AIらしい溶け・崩れ・余計な手足・余計な人物生成を避ける。 8. オプ・アートらしい幾何学的精度、直線、反復、同心円、白黒コントラストを優先する。
+Made with AI
+```
+
+## A Ginger Cat Strolls Through Miyajima at Dusk
+
+- ID: x-2086839288025710776
+- 中文标题: 宫岛黄昏散步的橘猫
+- English title: A Ginger Cat Strolls Through Miyajima at Dusk
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2086839288025710776/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2086839288025710776/
+- Original source: https://x.com/sanasana0707/status/2086839288025710776
+- Author: マツモトアキヒサ＠Broad Arts & リライトシステムズ
+- Published: 2026-08-10T15:37:12.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: T2VA
+- Category: Local Generation
+- Output: 8s, 1056×608, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 橘猫沿宫岛海岸石道散步，鹿、枫树与海上鸟居共同构成温暖的九十年代动漫氛围。 原生视频规格为 8 秒 · 1056×608。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A ginger cat walks Miyajima’s coastal stone path among deer, maple trees, and the floating torii in a warm 1990s anime mood. Native-video output: 8s · 1056×608. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+Style & Visual Direction:Classic 90s Japanese anime aesthetic, Hand-drawn anime style, Studio Ghibli-inspired warm tone, cel-shaded texturing, vibrant golden hour twilight lighting, soft painted backgrounds, natural fluid animation, high quality, masterpiece.
+Scene Overview:A calm, peaceful afternoon on Miyajima Island. A ginger tabby cat wanders past the iconic floating Great Torii Gate standing in the serene water, enjoying a quiet stroll along the coastal stone path as deer rest nearby.
+
+Storyboard (8-Second Sequence):
+[0s-2s] Shot 1: Medium wide shot. The ginger tabby cat walks gracefully along the ancient stone lantern pathway near the shore, tail gently swaying. In the background, a friendly Miyajima deer rests peacefully under a maple tree.
+
+[2s-4.5s] Shot 2: Tracking shot. Low-angle side camera following the cat as it steps smoothly along the stone path. The iconic red Torii Gate is visible across the calm, shimmering water under a soft orange and pink sky.
+
+[4.5s-6.5s] Shot 3: Close-up shot. The cat pauses, turns its head toward the sea, and blinks slowly with curious amber eyes as the soft evening breeze rustles its fur.
+
+[6.5s-8s] Shot 4: Wide cinematic shot. The cat sits next to a classic stone lantern, gazing out at the floating Torii Gate reflected in the gently rippling tide.
+
+Camera:Smooth cinematic tracking, gentle pan and low-angle follow, clean cuts between shots on the natural beats.
+
+Audio:Gentle ocean waves lapping against the shore, quiet rustling leaves, soft ambient wind chimes, peaceful low piano melody carrying through to the end.
+
+Negative Prompts:No live-action photo style, no 3D CGI rendering, no text, no subtitles, no logos, no watermarks, no distorted anatomy, no abrupt jittery motion.
+```
+
+## One Stage Performance Across Two Models
+
+- ID: x-2086831315559854556
+- 中文标题: 舞台歌手的双模型同题对照
+- English title: One Stage Performance Across Two Models
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2086831315559854556/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2086831315559854556/
+- Original source: https://x.com/ou_zhen599/status/2086831315559854556
+- Author: Loriel.AI
+- Published: 2026-08-10T15:05:31.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: T2VA
+- Category: Model Comparison
+- Output: 27s, 2160×2880, portrait
+- Prompt provenance: creator-verbatim
+- Chinese summary: 同一位金发歌手、同一舞台和同一段完整描述被用于双模型输出对照。 原生视频规格为 27 秒 · 2160×2880。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: The same blonde performer, arena stage, and complete direction are used for a side-by-side model comparison. Native-video output: 27s · 2160×2880. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+— A young Caucasian woman, 177 cm tall, with long, straight, silky light-blonde hair and neat, airy bangs; she has light gray, clear eyes and delicate, cool-looking features. She is wearing a white, fitted, short, pleated V-neck spaghetti-strap tank top, blue fitted jeans, a brown leather belt with a large vintage-style silver buckle, and dark brown leather knee-high boots.
+ — white wireless microphone.
+ — round stage in the center of the arena, surrounded by crowd on all sides, LED screen above.
+ — music track, exactly this track must play throughout the entire scene.
+
+Mira performing on stage to the track — not singing, moving like a rock star, dynamic chaotic movements, aggressively moving to the beat, sharply headbanging. White microphone in hand. Not looking at the camera. Shooting only mira — super close-up, cuts allowed. No zooms — camera always physically right next to mira on stage, heavily tilted, handheld. Dark cinematic lighting — top light, soft warm light barely touching her face, deep shadows below. Realistic skin. ARRI Alexa 35, anamorphic lenses. No 3D, no VFX.
+```
+
+## Clouds Form the Word MORNING at Sunrise
+
+- ID: x-2086754531698725200
+- 中文标题: 云海凝成 MORNING
+- English title: Clouds Form the Word MORNING at Sunrise
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2086754531698725200/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2086754531698725200/
+- Original source: https://x.com/CharaspowerAI/status/2086754531698725200
+- Author: Pierrick Chevallier | IA
+- Published: 2026-08-10T10:00:25.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: T2VA
+- Category: Cinematic & VFX
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 日出穿过山峰云海，气流把云层塑成 MORNING 后再随光线消散。 原生视频规格为 15 秒 · 2560×1440。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: Sunrise pours over mountain clouds as air currents sculpt the word MORNING before it dissolves into light. Native-video output: 15s · 2560×1440. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+Epic cinematic aerial shot: Endless rolling clouds flow across towering mountain peaks during sunrise. The golden light transforms the clouds into rivers of glowing vapor. Air currents gradually sculpt the cloud formations into the gigantic word "MORNING", stretching naturally across the sky. As the sun rises higher, the cloud letters slowly dissolve into the atmosphere while brilliant light floods the frame. Interstellar meets National Geographic, majestic, emotionally powerful.
+```
+
+## NEON the Hacker Steps Into the Megacity
+
+- ID: x-2086700416654594554
+- 中文标题: 天才黑客 NEON 登场
+- English title: NEON the Hacker Steps Into the Megacity
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2086700416654594554/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2086700416654594554/
+- Original source: https://x.com/Nokosu_kansoku/status/2086700416654594554
+- Author: Nokosu
+- Published: 2026-08-10T06:25:23.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Ref2VA
+- Category: Music Video
+- Output: 15s, 1344×768, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 粉发黑客 NEON 随音频节拍穿过霓虹巷道、地下设施与巨城屋顶，完成角色亮相。 原生视频规格为 15 秒 · 1344×768。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: Pink-haired hacker NEON moves to an audio reference through neon alleys, underground facilities, and a megacity rooftop. Native-video output: 15s · 1344×768. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+@[face ref] をNEONの顔、ピンクのボブヘア、黒い丸眼鏡の厳密な参照として使用します。
+@[body ref] をNEONの体格、黒と赤のサイバーパンク衣装、装備、ブーツの厳密な参照として使用します。
+@[audio ref] は映像のリズム、カットの強弱、主要な音楽アクセントの参照として使用します。
+
+15秒のハイエンドなサイバーパンク・キャラクター紹介映像。
+主役はNEONただ一人。
+クールで知的、危険な雰囲気。動作は自信に満ち、抑制されている。
+
+構成：
+
+0–3秒：IDENTITY REVEAL
+暗いネオン照明の空間。
+ブーツ、赤いジャケットのディテール、眼鏡越しの目元を短いバーストカットで見せる。
+最後に顔のクローズアップ。
+カットを@[audio ref] の最初の強いアクセントに合わせる。
+
+3–6秒：NEON ALLEY
+雨に濡れた未来都市の路地。
+NEONがゆっくりカメラ方向へ歩く。
+ローアングル、横方向のトラッキング、濡れた路面に映る赤いネオン。
+人物の動きよりもカメラワークを強調。
+
+6–9秒：TECH UNDERGROUND
+赤い警告灯が点滅する地下施設。
+肩越しのショット、手袋と装備のクローズアップ、短いオービットショット。
+NEONは静かに周囲を観察する。
+
+9–12秒：MEGACITY ROOFTOP
+巨大な未来都市を見下ろす夜の屋上。
+風でピンクの髪とジャケットがわずかに揺れる。
+ワイドショットからローアングルのヒーローフレームへ切り替える。
+
+12–15秒：FINAL HERO REVEAL
+赤とマゼンタの逆光。
+カメラがNEONの周囲を短く回り込み、正面のミディアムクローズアップで止まる。
+NEONが眼鏡越しにカメラを見る。
+最後の音楽アクセントで力強い静止ヒーローフレーム。
+
+編集：
+合計12〜15ショット。
+主要カットを@[audio ref] の強拍に合わせる。
+環境変更は音楽フレーズの変化に合わせる。
+細かい半拍すべてにカットを入れず、強いアクセントを優先する。
+
+一貫性：
+同じ顔、同じ髪型、同じ眼鏡、同じ体格、同じ衣装を全編で維持。
+衣装の黒・赤・ゴールドの配色と装備位置を維持。
+キャラクターは常に一人だけ。
+
+禁止：
+複数のNEON、分身、衣装変更、髪型変更、眼鏡の消失、
+顔や身体のモーフィング、過剰なアクション、文字、ロゴ、字幕、UI、
+キャラクターシート風レイアウト、分割画面、白背景。
+-------------------------------------------------------
+```
+
+## A High-Stakes Acquisition in the Boardroom
+
+- ID: x-2086698076325253323
+- 中文标题: 董事会收购谈判
+- English title: A High-Stakes Acquisition in the Boardroom
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2086698076325253323/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2086698076325253323/
+- Original source: https://x.com/adithatipalli/status/2086698076325253323
+- Author: Adithya Thatipalli
+- Published: 2026-08-10T06:16:05.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: T2VA
+- Category: Character & Dialogue
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 四位实业家围绕收购方案展开针锋相对的对白，镜头在日间董事会空间里逐步推进。 原生视频规格为 15 秒 · 2560×1440。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: Four industrialists debate an acquisition as the camera slowly pushes through a daylight boardroom. Native-video output: 15s · 2560×1440. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+cinematic 15-second ultra-realistic sequence inside a luxurious modern boardroom during daytime. Soft natural light enters through large glass windows. Four powerful industrialists in expensive tailored suits sit around a long polished dark wooden table. The atmosphere is tense and high-stakes.
+
+The senior industrialist at the head of the table leans forward slightly and says firmly:
+“This acquisition will change the entire market. Either we move now, or someone else will.”
+
+Another industrialist across the table adjusts his cufflinks and replies calmly:
+“Moving now is risky. The numbers still don’t support a full takeover.”A third industrialist places both hands on the table and speaks with intensity:
+“Risk is the price of control.
+
+The investors are already waiting for our decision.”The camera slowly pushes in as the most powerful industrialist leans back, looks at everyone, and delivers the final line with quiet authority:
+“Then we take it. No more delays.”
+
+Cinematic lighting, sharp details on suits and the wooden table, subtle tension in their faces, realistic skin textures, high-end corporate atmosphere, shallow depth of field, filmic look.
+```
+
+## A Miniature Highway Hidden Inside the Fridge
+
+- ID: x-2086603936736170082
+- 中文标题: 冰箱里的微型高速公路
+- English title: A Miniature Highway Hidden Inside the Fridge
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2086603936736170082/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2086603936736170082/
+- Original source: https://x.com/LikeToasters/status/2086603936736170082
+- Author: ILikeToasters
+- Published: 2026-08-10T00:02:00.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: T2VA
+- Category: Local Generation
+- Output: 10s, 736×992, portrait
+- Prompt provenance: creator-verbatim
+- Chinese summary: 男子打开冰箱后发现食物之间运行着微型公路，橙汁泄漏还引发施工和交通疏导。 原生视频规格为 10 秒 · 736×992。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A man opens his fridge to find a miniature highway weaving through food, complete with an orange-juice spill and road crews. Native-video output: 10s · 736×992. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+integrated_multimodal_description
+
+Shot 1 A realistic suburban kitchen at night. A man casually walks to the refrigerator and opens the door. The camera starts just behind his shoulder and slowly pushes closer as bright refrigerator light illuminates his confused face.
+Inside the refrigerator is an incredibly detailed miniature highway network integrated naturally between the food. Several lanes of tiny moving cars weave between milk cartons, jars, leftovers, vegetables, and drink bottles. Tiny headlights and brake lights glow realistically.
+The camera moves closer into the refrigerator interior as if entering this tiny world.
+
+A miniature traffic jam forms beside a tipped container leaking orange juice across one lane like a flooded roadway. Tiny construction vehicles arrive. Small workers in reflective clothing place cones and redirect traffic around the spill.
+
+A tiny tow truck pulls a stalled car away. Another vehicle honks impatiently. Cars merge aggressively around a yogurt container.
+
+The man slowly reaches one hand toward the highway. Several tiny cars immediately slam on their brakes. A miniature police officer begins angrily waving at his enormous finger to move away.
+
+The man freezes, completely baffled.
+
+The camera finishes extremely close to the refrigerator highway as traffic starts moving again around his stationary finger.
+
+overall_soundscape
+
+Quiet kitchen ambience, refrigerator hum, refrigerator door opening, tiny engines, miniature car horns, distant tiny sirens, construction equipment, subtle liquid splashing from the orange juice spill.
+
+non_diegetic_music
+
+None.
+```
+
+## An Explosive Fight on Top of a Moving Train
+
+- ID: x-2086419768047976597
+- 中文标题: 疾驰列车顶上的爆炸对决
+- English title: An Explosive Fight on Top of a Moving Train
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2086419768047976597/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2086419768047976597/
+- Original source: https://x.com/leuk_o/status/2086419768047976597
+- Author: L. Oscar Plains
+- Published: 2026-08-09T11:50:11.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: T2VA
+- Category: Cinematic & VFX
+- Output: 10s, 1152×640, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 动作明星在疾驰列车顶部与对手交战，爆炸和多角度切换强化好莱坞动作片节奏。 原生视频规格为 10 秒 · 1152×640。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: An action star fights an opponent atop a moving train as explosions and multiple camera angles drive the sequence. Native-video output: 10s · 1152×640. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+Create a cinematic Hollywood movie scene, action adventure, explosions, Jackie Chan is fighting an opponent on top of a moving train, have multiple camera cuts and angles
+```
+
+## A Cinematic Character Entrance in the Wind
+
+- ID: x-2086412223061135392
+- 中文标题: 风中角色的电影式登场
+- English title: A Cinematic Character Entrance in the Wind
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2086412223061135392/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2086412223061135392/
+- Original source: https://x.com/aimikoda/status/2086412223061135392
+- Author: Kōda
+- Published: 2026-08-09T11:20:12.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Ref2VA
+- Category: Community Showcase
+- Output: 15s, 2410×2560, portrait
+- Prompt provenance: creator-verbatim
+- Chinese summary: 镜头从服装与肢体细节向上推进，再以侧后方、剪影和英雄构图完成角色亮相。 原生视频规格为 15 秒 · 2410×2560。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: The camera rises from costume and body details into profile, silhouette, and final hero framing as the environment moves in the wind. Native-video output: 15s · 2410×2560. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+Use @[char ref] as the sole character reference. Preserve the exact identity, face, body proportions, hairstyle, outfit, colors, materials and overall silhouette of the character throughout the entire video. Do not redesign, simplify or replace any defining visual features.
+
+Create a cinematic character introduction focused on presence, silhouette, attitude and controlled motion.
+
+0–4s
+Begin with a close shot of a defining lower-body or detail element such as boots, shoes, feet, hands, clothing hem or an important accessory. The character enters frame or settles into position. The camera slowly tracks upward while hair, clothing and secondary elements move naturally in the wind or environment.
+
+4–8s
+Reveal more of the body with a medium or medium-wide shot from the back, side or three-quarter angle. The character stands in a calm, composed way inside the environment. The camera makes a smooth orbit, arc or lateral move to gradually reveal the character’s face and silhouette.
+
+8–12s
+Move into a tight cinematic portrait or upper-body shot. The character performs one subtle signature action that fits their personality, such as lifting the chin, turning the head, adjusting clothing, brushing hair aside, opening a hand, looking toward camera, or shifting posture. Keep the motion minimal and intentional. The expression should match the character’s vibe.
+
+12–15s
+End with a strong full-body hero shot that clearly presents the entire design and silhouette. Use a low-angle, eye-level or slightly dramatic framing depending on the character’s personality. The character settles into a natural final pose and holds it confidently for a clean final reveal.
+
+VISUAL DIRECTION
+Premium cinematic presentation. Match the visual medium and rendering style of @[char ref]. Emphasize clean silhouette, elegant staging, subtle secondary motion, believable hair and cloth movement, strong composition, atmospheric depth and polished lighting. The scene should feel like a high-end anime, game or film character introduction.
+
+CAMERA
+Use a clear progression from detail reveal to partial reveal to face reveal to full-body hero reveal. Camera movement should be smooth, controlled and intentional. Avoid chaotic motion.
+
+ENVIRONMENT
+Place the character in a fitting environment that supports their identity and mood. The background should enhance the character without distracting from them.
+```
 
