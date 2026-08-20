@@ -1,6 +1,6 @@
 # H3 Field Notes — Complete MiniMax H3 Case and Tutorial Index
 
-Generated from data/cases.json. Total: 653 cases. Verbatim public prompts: 30.
+Generated from data/cases.json. Total: 685 cases. Verbatim public prompts: 35.
 
 ## Tutorials
 
@@ -13085,4 +13085,797 @@ The focus shifts from the ornate shimmer of his jacket collar to the delicate cu
 - Chinese summary: 相同群像提示在 MiniMax H3 与 LTX 2.5 中并列呈现，用于观察人物与构图多样性。 原生视频规格为 10 秒 · 1664×640。原帖未公开完整 Prompt，本库不反推或补写。
 - English summary: The same crowd-oriented setup is shown across MiniMax H3 and LTX 2.5 to compare people and compositional diversity. Native-video output: 10s · 1664×640. The source did not publish a complete prompt, so this library does not infer or complete one.
 - Verbatim public prompt: not published by the source
+
+## Skin, Paper, and Metal Transformations
+
+- ID: x-2090370009507750070
+- 中文标题: 皮肤、纸面与金属的连续变形
+- English title: Skin, Paper, and Metal Transformations
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090370009507750070/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090370009507750070/
+- Original source: https://x.com/MauriceBourdon/status/2090370009507750070
+- Author: Maurice Bourdon
+- Published: 2026-08-20T09:27:02.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: T2VA
+- Category: Community Showcase
+- Output: 37s, 2560×1440, landscape
+- Prompt provenance: not-published
+- Chinese summary: 极近景皮肤、手绘版式和金属容器在同一组测试中改变尺度、视角、物体与空间。 原生视频规格为 37 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: Macro skin, a hand-drawn layout, and a metal vessel shift scale, perspective, objects, and space in one test sequence. Native-video output: 37s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## A Two-Color Pinwheel Motion Study
+
+- ID: x-2090368569494340039
+- 中文标题: 双色风车标记的旋转练习
+- English title: A Two-Color Pinwheel Motion Study
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090368569494340039/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090368569494340039/
+- Original source: https://x.com/Toshi_nyaruo_AI/status/2090368569494340039
+- Author: Toshi@ニャルオAI
+- Published: 2026-08-20T09:21:18.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Local Generation
+- Output: 3s, 608×352, landscape
+- Prompt provenance: not-published
+- Chinese summary: 橙绿几何叶片在米色画布上旋转、错位并重新组合。 原生视频规格为 3 秒 · 608×352。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: Orange and teal geometric blades rotate, offset, and regroup on a cream field. Native-video output: 3s · 608×352. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## Cat-Eared Diner Pasta Comparison
+
+- ID: x-2090366981664903407
+- 中文标题: 猫耳女孩的意面动作对照
+- English title: Cat-Eared Diner Pasta Comparison
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090366981664903407/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090366981664903407/
+- Original source: https://x.com/IsekaiBardGuild/status/2090366981664903407
+- Author: AI Bard Guild
+- Published: 2026-08-20T09:15:00.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Model Comparison
+- Output: 7s, 640×832, portrait
+- Prompt provenance: not-published
+- Chinese summary: 猫耳女孩在餐桌前尝试卷起意面，用于并列观察四种模型的手部与餐具动作。 原生视频规格为 7 秒 · 640×832。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A cat-eared diner tries to twirl pasta, comparing utensil and hand motion across four models. Native-video output: 7s · 640×832. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## Chikuwa Character Stage Dance
+
+- ID: x-2090366297322475544
+- 中文标题: 竹轮角色的舞台独舞
+- English title: Chikuwa Character Stage Dance
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090366297322475544/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090366297322475544/
+- Original source: https://x.com/yukisiromeruto/status/2090366297322475544
+- Author: 雪白めると｜恋愛小説/AIアニメ
+- Published: 2026-08-20T09:12:17.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Local Generation & Dance
+- Output: 15s, 1080×1888, portrait
+- Prompt provenance: not-published
+- Chinese summary: 拟人竹轮从聚光灯下登场，随后在彩灯舞台上完成活泼独舞。 原生视频规格为 15 秒 · 1080×1888。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: An anthropomorphic chikuwa enters under a spotlight and performs an upbeat solo on a colorful stage. Native-video output: 15s · 1080×1888. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## A Character Crosses Multiple Visual Worlds
+
+- ID: x-2090365462542799007
+- 中文标题: 角色穿越多重画风
+- English title: A Character Crosses Multiple Visual Worlds
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090365462542799007/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090365462542799007/
+- Original source: https://x.com/Ushizaru_LAB/status/2090365462542799007
+- Author: Ushizaru / うしざる
+- Published: 2026-08-20T09:08:58.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: FL2VA
+- Category: Community Showcase
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: not-published
+- Chinese summary: 同一角色从彩色动画画面进入阴暗废墟，再来到霓虹舞台。 原生视频规格为 15 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: One character moves from colorful animation into dark ruins and then a neon stage. Native-video output: 15s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## Graphic Character Reveal for a Sniper
+
+- ID: x-2090363222658580535
+- 中文标题: 狙击手的图形化人物揭晓
+- English title: Graphic Character Reveal for a Sniper
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090363222658580535/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090363222658580535/
+- Original source: https://x.com/aoarashi_web/status/2090363222658580535
+- Author: べち【Bechi】
+- Published: 2026-08-20T09:00:04.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Community Showcase
+- Output: 15s, 1344×768, landscape
+- Prompt provenance: not-published
+- Chinese summary: 持枪角色在特写、剪影与排版卡之间切换，形成完整的人物介绍。 原生视频规格为 15 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A rifle-carrying character moves through close-ups, silhouettes, and typography cards in a complete reveal. Native-video output: 15s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## A Lateral Tracking Shot Through a Japanese Office
+
+- ID: x-2090360926021308906
+- 中文标题: 日式办公室的横向跟拍
+- English title: A Lateral Tracking Shot Through a Japanese Office
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090360926021308906/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090360926021308906/
+- Original source: https://x.com/ITOKtw/status/2090360926021308906
+- Author: ITOK
+- Published: 2026-08-20T08:50:56.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: T2VA
+- Category: Community Showcase
+- Output: 5s, 1024×768, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 镜头横向穿过自然布置的日式办公室，记录员工、文件柜与工作区域。 原生视频规格为 5 秒 · 1024×768。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A lateral camera move crosses a naturally furnished Japanese office with staff, cabinets, and desks. Native-video output: 5s · 1024×768. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+A Japanese Office scene. Tracking shot to the left.
+```
+
+## A Character Vow in a Dark Sanctuary
+
+- ID: x-2090359582032076832
+- 中文标题: 暗黑圣堂的人物誓约
+- English title: A Character Vow in a Dark Sanctuary
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090359582032076832/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090359582032076832/
+- Original source: https://x.com/ZtohAic/status/2090359582032076832
+- Author: ztoh🎱⑦❸⓽²7
+- Published: 2026-08-20T08:45:36.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: FL2VA
+- Category: Community Showcase
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: not-published
+- Chinese summary: 黑衣角色在哥特圣堂、巨型标题和舞台式构图之间完成暗黑人物揭晓。 原生视频规格为 15 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A dark-clad character is revealed across a gothic sanctuary, giant typography, and stage-like compositions. Native-video output: 15s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## A Long Night-Hospital Performance
+
+- ID: x-2090355657849676251
+- 中文标题: 深夜病房的长段落表演
+- English title: A Long Night-Hospital Performance
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090355657849676251/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090355657849676251/
+- Original source: https://x.com/shonai_arai/status/2090355657849676251
+- Author: 障ナイさん
+- Published: 2026-08-20T08:30:00.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Character & Dialogue
+- Output: 46s, 1874×1080, landscape
+- Prompt provenance: not-published
+- Chinese summary: 动画角色从走廊时钟与自动售货机进入病房，展开一段连续夜间表演。 原生视频规格为 46 秒 · 1874×1080。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: An animated character moves from a corridor clock and vending machine into a hospital room for a continuous night scene. Native-video output: 46s · 1874×1080. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## Japanese Dessert Brand Motion Graphics
+
+- ID: x-2090349415534035047
+- 中文标题: 和风甜点品牌的动态图形
+- English title: Japanese Dessert Brand Motion Graphics
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090349415534035047/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090349415534035047/
+- Original source: https://x.com/seiiiiiiiiiiru/status/2090349415534035047
+- Author: SEIIIRU😈動画生成AIを使う映像クリエイター
+- Published: 2026-08-20T08:05:12.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Community Showcase
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: not-published
+- Chinese summary: 麦茶、夏祭与蛋糕店等和风品牌卡片以图形转场快速串联。 原生视频规格为 15 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: Japanese-style brand cards for barley tea, a summer festival, and a cake shop connect through graphic transitions. Native-video output: 15s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## Power Typography for a Graphics Card Ad
+
+- ID: x-2090344867184451786
+- 中文标题: 显卡广告的强力排版
+- English title: Power Typography for a Graphics Card Ad
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090344867184451786/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090344867184451786/
+- Original source: https://x.com/amadeus_NFT/status/2090344867184451786
+- Author: Amadeus | Latent Art
+- Published: 2026-08-20T07:47:07.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: T2VA
+- Category: UGC & Advertising
+- Output: 15s, 1280×736, landscape
+- Prompt provenance: not-published
+- Chinese summary: 人物进入重复文字空间，随后以显卡特写和巨型口号完成产品揭晓。 原生视频规格为 15 秒 · 1280×736。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A figure enters a tunnel of repeated words before graphics-card close-ups and a giant slogan reveal the product. Native-video output: 15s · 1280×736. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## From the Street Into a Department Store
+
+- ID: x-2090344857957286046
+- 中文标题: 从街头走进百货专柜
+- English title: From the Street Into a Department Store
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090344857957286046/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090344857957286046/
+- Original source: https://x.com/cwh_tw/status/2090344857957286046
+- Author: 一定iPad溫開水
+- Published: 2026-08-20T07:47:05.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Ref2VA
+- Category: UGC & Advertising
+- Output: 20s, 720×960, portrait
+- Prompt provenance: not-published
+- Chinese summary: 顾客从街头画面切换到商品网页，最终在百货专柜与店员交流。 原生视频规格为 20 秒 · 720×960。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A shopper moves from a street scene to a product page and finally speaks with staff at a department-store counter. Native-video output: 20s · 720×960. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## An Anime Figure at a Sunset Railing
+
+- ID: x-2090343936560963779
+- 中文标题: 黄昏栏杆边的动漫人物
+- English title: An Anime Figure at a Sunset Railing
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090343936560963779/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090343936560963779/
+- Original source: https://x.com/DeBug_lzy/status/2090343936560963779
+- Author: DeBug
+- Published: 2026-08-20T07:43:25.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Local Generation
+- Output: 24s, 1280×712, landscape
+- Prompt provenance: not-published
+- Chinese summary: 黑发动漫人物站在黄昏栏杆旁，头发与衣摆在风中保持细微运动。 原生视频规格为 24 秒 · 1280×712。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A dark-haired anime figure stands by a sunset railing with subtle wind in the hair and clothing. Native-video output: 24s · 1280×712. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## A Paper Volcano Devours a Prehistoric World
+
+- ID: x-2090331284564476354
+- 中文标题: 纸艺火山吞没史前世界
+- English title: A Paper Volcano Devours a Prehistoric World
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090331284564476354/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090331284564476354/
+- Original source: https://x.com/Strength04_X/status/2090331284564476354
+- Author: 𝐌
+- Published: 2026-08-20T06:53:09.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: T2VA
+- Category: Community Showcase
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: not-published
+- Chinese summary: 宁静纸艺史前景观逐渐喷发，熔岩与浓烟最终覆盖山谷。 原生视频规格为 15 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A peaceful paper-crafted prehistoric landscape erupts as lava and smoke consume the valley. Native-video output: 15s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## Ruby Queen Transforms Into a Warrior
+
+- ID: x-2090330350668947525
+- 中文标题: 红宝石女王变身战士
+- English title: Ruby Queen Transforms Into a Warrior
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090330350668947525/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090330350668947525/
+- Original source: https://x.com/TaliaAariz/status/2090330350668947525
+- Author: Talia
+- Published: 2026-08-20T06:49:26.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: T2VA
+- Category: Cinematic & VFX
+- Output: 15s, 1440×2560, portrait
+- Prompt provenance: creator-verbatim
+- Chinese summary: 红宝石女王在哥特王座厅中被红光包围，礼服变成盔甲并举起剑盾。 原生视频规格为 15 秒 · 1440×2560。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A ruby queen is engulfed in red magic inside a gothic throne room, transforming her gown into armor and raising sword and shield. Native-video output: 15s · 1440×2560. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+A cinematic fantasy transformation beginning with a majestic queen wearing an intricate ruby-embroidered corset gown, matching crown, and holding a glowing heart-topped scepter inside a gothic cathedral throne room. The camera zooms out to show her full attire as she turns and walks toward a grand staircase, where a burst of glowing red magical light erupts around her. Enveloped in the crimson energy, her gown transforms into sleek, ornate metallic warrior armor, while her scepter morphs into a longsword and an embossed shield. She turns back toward the camera in a powerful battle stance, positioned before a glowing red arcane circle on the cathedral steps.
+```
+
+## A Cat Chases the Camera Through a Diner
+
+- ID: x-2090325586736738393
+- 中文标题: 快餐店里追逐镜头的猫
+- English title: A Cat Chases the Camera Through a Diner
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090325586736738393/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090325586736738393/
+- Original source: https://x.com/Mathewdoeslife/status/2090325586736738393
+- Author: Mathew Youssef
+- Published: 2026-08-20T06:30:30.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Ref2VA
+- Category: Community Showcase
+- Output: 7s, 896×672, landscape
+- Prompt provenance: not-published
+- Chinese summary: 镜头穿过快餐店后厨与用餐区，猫咪一路奔跑并追随移动视角。 原生视频规格为 7 秒 · 896×672。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: The camera travels through a diner kitchen and seating area while a cat runs after the moving viewpoint. Native-video output: 7s · 896×672. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## A Moonlit Panorama of Korean Motifs
+
+- ID: x-2090324150162473271
+- 中文标题: 韩国意象的月夜长卷
+- English title: A Moonlit Panorama of Korean Motifs
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090324150162473271/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090324150162473271/
+- Original source: https://x.com/snowy_mandu/status/2090324150162473271
+- Author: snowy_mandu
+- Published: 2026-08-20T06:24:48.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Community Showcase
+- Output: 15s, 1280×720, landscape
+- Prompt provenance: not-published
+- Chinese summary: 水墨山景、宫殿纹样与月夜城门通过红蓝飘带串联成文化主题片。 原生视频规格为 15 秒 · 1280×720。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: Ink mountains, palace motifs, and a moonlit gate connect through red and blue ribbons in a cultural motion piece. Native-video output: 15s · 1280×720. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## A Character Statement on a Pink Stage
+
+- ID: x-2090322678292906110
+- 中文标题: 粉色舞台上的角色宣言
+- English title: A Character Statement on a Pink Stage
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090322678292906110/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090322678292906110/
+- Original source: https://x.com/xiaomimasato/status/2090322678292906110
+- Author: のえみん
+- Published: 2026-08-20T06:18:57.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: FL2VA
+- Category: UGC & Advertising
+- Output: 15s, 832×640, landscape
+- Prompt provenance: not-published
+- Chinese summary: 自绘角色在粉色舞台与巨型霓虹文字之间舞动，形成短片式人物表达。 原生视频规格为 15 秒 · 832×640。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A self-illustrated character dances between a pink stage and giant neon words in a compact character piece. Native-video output: 15s · 832×640. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## Bass Performance Tears Through a Poster
+
+- ID: x-2090322529982590994
+- 中文标题: 低音演奏撕开地下海报
+- English title: Bass Performance Tears Through a Poster
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090322529982590994/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090322529982590994/
+- Original source: https://x.com/ManuAGI01/status/2090322529982590994
+- Author: ManuAGI 🤖 - ( ManuIn )
+- Published: 2026-08-20T06:18:22.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Music Video
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: not-published
+- Chinese summary: 真实贝斯演奏与复印纹理、撕纸图形交替，最终形成地下海报人物卡。 原生视频规格为 15 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A live bass performance alternates with photocopy textures and torn-paper graphics before resolving into an underground poster. Native-video output: 15s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## A Sunflower Grows From Seed to Bloom
+
+- ID: x-2090321133254086935
+- 中文标题: 向日葵从种子到盛放
+- English title: A Sunflower Grows From Seed to Bloom
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090321133254086935/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090321133254086935/
+- Original source: https://x.com/Strength04_X/status/2090321133254086935
+- Author: 𝐌
+- Published: 2026-08-20T06:12:49.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Community Showcase
+- Output: 48s, 1920×1080, landscape
+- Prompt provenance: not-published
+- Chinese summary: 种子落入花盆后发芽、长叶并开出完整向日葵。 原生视频规格为 48 秒 · 1920×1080。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A seed drops into a flowerpot, sprouts, grows leaves, and opens into a full sunflower. Native-video output: 48s · 1920×1080. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## The Void Crown Sci-Fi Opening
+
+- ID: x-2090315119356244222
+- 中文标题: 黑洞王冠的科幻片头
+- English title: The Void Crown Sci-Fi Opening
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090315119356244222/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090315119356244222/
+- Original source: https://x.com/rovvmut_/status/2090315119356244222
+- Author: Heisenberg
+- Published: 2026-08-20T05:48:55.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Community Showcase
+- Output: 15s, 1920×1080, landscape
+- Prompt provenance: not-published
+- Chinese summary: 轨道线稿、恒星爆发与黑洞标题卡组成冷峻科幻片头。 原生视频规格为 15 秒 · 1920×1080。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: Orbital diagrams, a stellar burst, and a black-hole title card form a stark sci-fi opening. Native-video output: 15s · 1920×1080. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## A Seaside Testimonial for Aurora Beer
+
+- ID: x-2090313408256336198
+- 中文标题: 极光啤酒的海边口播广告
+- English title: A Seaside Testimonial for Aurora Beer
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090313408256336198/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090313408256336198/
+- Original source: https://x.com/PhotogenicWeekE/status/2090313408256336198
+- Author: Photogenic Weekend
+- Published: 2026-08-20T05:42:07.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Ref2VA
+- Category: UGC & Advertising
+- Output: 10s, 736×1280, portrait
+- Prompt provenance: not-published
+- Chinese summary: 人物在海边展示极光啤酒罐，并以产品定帧完成口播式广告。 原生视频规格为 10 秒 · 736×1280。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A presenter holds an Aurora beer can by the water before a clean product-pack shot closes the testimonial ad. Native-video output: 10s · 736×1280. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## Dolphins Appear Beside a Sightseeing Boat
+
+- ID: x-2090306968900784383
+- 中文标题: 游船途中遇见海豚
+- English title: Dolphins Appear Beside a Sightseeing Boat
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090306968900784383/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090306968900784383/
+- Original source: https://x.com/nawalsehar/status/2090306968900784383
+- Author: Nawal
+- Published: 2026-08-20T05:16:32.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: T2VA
+- Category: Character & Dialogue
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 女游客登上游船、坐稳出港，并在航行中发现伴随船尾的海豚。 原生视频规格为 15 秒 · 2560×1440。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A traveler boards a sightseeing boat, settles in, and spots dolphins swimming beside the wake. Native-video output: 15s · 2560×1440. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+A young Western female traveler in her mid-20s walks naturally along a wooden marina dock toward a small white sightseeing boat. She wears a light blue windbreaker, white shirt, dark trousers, comfortable sneakers, sunglasses, a properly fitted life jacket, and a small crossbody bag. She carefully steps from the dock onto the gently rocking boat while holding the handrail, naturally shifting her weight as the boat responds to her movement. She walks toward the rear passenger bench, sits down, adjusts her position, and looks toward the open water. The boat engine starts with a realistic low rumble and gradually leaves the marina, creating a small bow wave and narrow wake. As the boat moves into open water, she notices movement nearby, looks surprised, and naturally says, "Wait... are those dolphins?" Two dolphins surface several meters beside the moving boat, swimming parallel at a safe distance with realistic tail propulsion, surfacing, diving, breathing, and water displacement. She picks up her phone with both hands and records them while smiling with genuine excitement. One dolphin briefly surfaces near the rear side of the boat, exhales through its blowhole, creates a small burst of mist and droplets, then dives beneath the water and leaves expanding ripples behind. She lowers her phone and says, "That is incredible." Ultra-photorealistic marine wildlife travel documentary, cinematic realism, natural human behavior, realistic walking and sitting biomechanics, physically accurate boat buoyancy and acceleration, authentic ocean waves and wake, realistic dolphin anatomy and swimming behavior, natural water reflections and refraction, accurate English lip synchronization, bright neutral daytime lighting, realistic coastal wind, immersive marina and ocean ambience, smooth documentary camera movement, continuous visual consistency, seamless storytelling from walking to boarding, departure, dolphin encounter, recording, and final reaction, no narration, no CGI appearance, no plastic skin, no robotic movement, no exaggerated dolphin jumps, no impossible water behavior, no sudden camera transitions, no text overlays, logos, or watermarks.
+```
+
+## Orange-and-Black Street Dance Commercial
+
+- ID: x-2090306302966919515
+- 中文标题: 橙黑街舞品牌快切广告
+- English title: Orange-and-Black Street Dance Commercial
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090306302966919515/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090306302966919515/
+- Original source: https://x.com/tanabe_fragm/status/2090306302966919515
+- Author: タナベ | AI動画 × マーケティング
+- Published: 2026-08-20T05:13:53.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: T2VA
+- Category: Music Video
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 街舞人物在橙黑几何排版中完成快切动作，以巨型日文字卡收束。 原生视频规格为 15 秒 · 2560×1440。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A street dancer performs through rapid orange-and-black geometric layouts before a giant Japanese title closes the spot. Native-video output: 15s · 2560×1440. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+----------------------
+integrated_multimodal_description:
+2D-animated, a bold graphic-design motion-graphics commercial in 16:9 with exactly 13
+distinct cuts at 24fps. This film is 85% kinetic graphic design and 15% character action:
+giant kinetic Japanese typography, hard-edged flat shapes, split screens, halftone, speed
+lines, torn-paper reveals and shutter flashes. Palette, strictly four colors: fluorescent
+orange, deep black, off-white, silver grey. The recurring character is a young anime street
+dancer with a black chin-length bob and blunt bangs, sharp confident eyes, an oversized
+off-white track jacket with fluorescent-orange sleeve stripes, black cargo shorts, and
+chunky white sneakers with fluorescent-orange lines. Preserve her exact face, proportions,
+hairstyle, outfit, materials and colors throughout; never redesign her. Every graphic
+element moves fast and snaps hard on the beat.
+
+[Shot 1] On a deep black field, a massive off-white circle slams into frame left of center,
+then two fluorescent-orange bars wipe across the upper and lower thirds, then the Japanese
+kanji "烈" builds itself stroke by stroke in off-white at the center until it is complete.
+The camera shakes slightly with small amplitude at fast speed on each impact.
+
+[Shot 2] At 00:01.000, the camera cuts to an off-white field where four black squares
+rotate into the center one at a time. The largest square opens as a porthole revealing an
+extreme close-up of the dancer's ice-sharp eye glancing up, then a red-and-cyan split flash
+tears across the edges and the squares shatter into flat shards. The camera pushes in with
+small amplitude at fast speed.
+
+[Shot 3] At 00:02.000, the camera cuts to an off-white field filled by an enormous black
+kanji "烈". The dancer sprints in from frame left, power-slides along the baseline of the
+typography, and fluorescent-orange ink splatter trails behind her as speed lines streak
+past. The camera trucks left with large amplitude at fast speed. The kanji stays fully
+readable before she crosses in front of it.
+
+[Shot 4] At 00:03.100, the camera cuts to a vertical triptych of fluorescent-orange, deep
+black and off-white panels. Her flat silhouette appears in each panel in stroboscopic
+freeze, one after another — takeoff, mid-air tuck, landing — while giant vertical silver
+text "全速" scrolls upward behind the panels. Static shot.
+
+[Shot 5] At 00:04.000, the camera cuts to a black field where a giant tilted ring of
+fluorescent-orange Japanese characters reading "止マルナ" rotates. The dancer leaps through
+the center of the ring, spins once in mid-air, and the characters break off and scatter
+outward as flat shards. The camera arcs with large amplitude at fast speed, then snap-zooms
+onto her confident face.
+
+[Shot 6] At 00:05.100, the camera cuts to a clean off-white editorial card holding a huge
+black kanji "跳" with one orange diagonal slash. She vaults over the word itself, plants her
+palm on its left radical, the character compresses like a spring under her hand, then
+rebounds as her legs whip across the frame. Static shot.
+
+[Shot 7] At 00:06.000, the camera cuts to a full fluorescent-orange field crossed by one
+thick black diagonal stripe. She back-flips along the stripe in three stroboscopic ghost
+frames tinted black, off-white and silver grey, while a large outlined kanji "回" rotates
+180 degrees in sync with her rotation. The camera rolls clockwise with small amplitude at
+fast speed.
+
+[Shot 8] At 00:07.000, the camera cuts to an off-white field with a hard black band. Four
+bold black kanji slam in one at a time at different scales and angles — "速", then "鋭",
+then "静", then "烈" — each landing with a white shutter flash and an orange impact mark,
+while she slides on her knees across the foreground, jacket flaring. The camera shakes
+slightly with small amplitude at fast speed.
+
+[Shot 9] At 00:08.000, the camera cuts to a black frame where a white wireframe grid tilts
+away in 3D. She runs up the grid like a wall, kicks off it, and hangs frozen in mid-air as
+a fluorescent-orange circle stamps around her pose like a target lock with silver UI
+brackets and tick marks. The camera tilts up with small amplitude at slow speed.
+
+[Shot 10] At 00:09.000, the freeze releases and the camera cuts to layered flat-color panes
+stacked toward the lens. She dives straight at the camera, the panes tear open one at a
+time like thick paper, and each tear reveals a larger portion of the black kanji "烈"
+behind, before her sneaker wipes across the foreground. The camera pulls out with large
+amplitude at fast speed.
+
+[Shot 11] At 00:10.100, the camera cuts to a rapid-fire montage of four full-screen graphic
+posters of her in different action poses — mid-flip, sliding, landing, hands in pockets —
+snapping past with hard cuts, each with an oversized silver number 01 to 04, a black
+barcode strip and thick diagonal slashes. Static shot.
+
+[Shot 12] At 00:11.100, the camera cuts to a clean off-white cyclorama for the hero moment.
+She lands a final backflip dead center in slow motion, straightens with both hands in her
+pockets, and a shockwave of concentric fluorescent-orange rings blasts outward from her feet
+carrying shattered fragments of the kanji "烈" with it, then the frame overexposes toward
+white. The camera pushes in with small amplitude at slow speed.
+
+[Shot 13] At 00:13.000, the camera cuts to the final identity card on a pale off-white
+field. An enormous black kanji "烈" dominates the frame with translucent orange rings and
+thin technical arcs behind it, the silver-grey word "RETSU" sits directly beneath the kanji,
+and she stands relaxed at the lower center overlapping the bottom of the strokes with her
+jacket rippling. One thin orange pulse sweeps horizontally through the typography and holds
+cleanly until exactly 15.000 seconds. Static shot.
+
+Editing: extremely aggressive rhythm — hard cuts on every beat, graphic matches, whip pans,
+snap zooms, stroboscopic freezes, foreground wipes, split flashes and impact shakes. Every
+cut must feel compositionally different. All Japanese typography is always fully readable
+before the character overlaps it. No weapons, no combat, no fire, no explosions; all energy
+comes from motion design, ink, torn paper, wind and her street-dance athleticism. No
+photorealism, no 3D rendering, no gradients, no browser interface, no player controls, no
+subtitles, no captions, and no text other than the Japanese characters named above.
+Exactly 13 cuts.
+
+overall_soundscape:
+Sneaker impacts, knee slides and landings hit hard against a clean room tone. Ink splatters
+burst, thick paper tears open, and flat panels shatter like glass. Sharp whooshes carry the
+color wipes and typography slams, with small shutter clicks on each flash. No dialogue.
+
+non_diegetic_music:
+An original 15-second drum-heavy breakbeat with a deep sub bass, hard snare hits, risers and
+glitch fills locked to every cut. Begin with a single impact, build tightly through the
+middle, peak at the landing at 00:11.100, and end with a cold electronic logo sting that
+resolves at 15.000 seconds.
+```
+
+## A Calm Dog in a Burning Room
+
+- ID: x-2090306040097034391
+- 中文标题: 燃烧房间里的从容小狗
+- English title: A Calm Dog in a Burning Room
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090306040097034391/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090306040097034391/
+- Original source: https://x.com/Cencencahya12/status/2090306040097034391
+- Author: Cencen
+- Published: 2026-08-20T05:12:50.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Model Comparison
+- Output: 15s, 1080×1440, portrait
+- Prompt provenance: not-published
+- Chinese summary: 同一网络迷因分别由两个模型重制，小狗坐在桌边，房间逐步被火焰吞没。 原生视频规格为 15 秒 · 1080×1440。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: Two models recreate the same meme as a dog sits calmly at a table while fire consumes the room. Native-video output: 15s · 1080×1440. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## A Fire-Breathing Dragon in a Ruined Palace
+
+- ID: x-2090305577767547285
+- 中文标题: 废墟宫殿里的喷火巨龙
+- English title: A Fire-Breathing Dragon in a Ruined Palace
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090305577767547285/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090305577767547285/
+- Original source: https://x.com/Cencencahya12/status/2090305577767547285
+- Author: Cencen
+- Published: 2026-08-20T05:11:00.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Community Showcase
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: not-published
+- Chinese summary: 黑红巨龙在残破宫殿中展开双翼并喷出火柱。 原生视频规格为 15 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A black-and-red dragon spreads its wings inside a ruined palace and releases a column of fire. Native-video output: 15s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## A Two-Member Idol Character Film
+
+- ID: x-2090304950266187945
+- 中文标题: 双色偶像组合的人物短片
+- English title: A Two-Member Idol Character Film
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090304950266187945/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090304950266187945/
+- Original source: https://x.com/pon708/status/2090304950266187945
+- Author: こづつみPON
+- Published: 2026-08-20T05:08:30.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Ref2VA
+- Category: Music Video
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: not-published
+- Chinese summary: 金发与蓝发偶像在粉色图形、合照和档案式文字卡之间完成组合介绍。 原生视频规格为 15 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: Blonde and blue-haired idols are introduced through pink graphics, paired portraits, and profile typography. Native-video output: 15s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## An Antarctic Researcher Meets Penguins
+
+- ID: x-2090297623622426984
+- 中文标题: 南极研究员与企鹅群
+- English title: An Antarctic Researcher Meets Penguins
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090297623622426984/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090297623622426984/
+- Original source: https://x.com/aiwithaly/status/2090297623622426984
+- Author: Ali
+- Published: 2026-08-20T04:39:23.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: T2VA
+- Category: Character & Dialogue
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: not-published
+- Chinese summary: 研究员走向雪岸企鹅群，举起相机观察，并目送企鹅滑入海水。 原生视频规格为 15 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A researcher approaches a penguin colony, raises her camera, and watches a penguin slide into the sea. Native-video output: 15s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## A Thirty-Second Rainy-Street Challenge
+
+- ID: x-2090292380914291144
+- 中文标题: 雨夜街头的三十秒压力挑战
+- English title: A Thirty-Second Rainy-Street Challenge
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090292380914291144/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090292380914291144/
+- Original source: https://x.com/iwhale/status/2090292380914291144
+- Author: iwhale
+- Published: 2026-08-20T04:18:34.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Community Showcase
+- Output: 15s, 864×480, landscape
+- Prompt provenance: not-published
+- Chinese summary: 雨夜城市车流与独行人物维持连续镜头，用于挑战超规格长时生成。 原生视频规格为 15 秒 · 864×480。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: Rainy city traffic and a lone pedestrian remain coherent in a continuous shot used to stress-test an overlength generation. Native-video output: 15s · 864×480. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## A Human-Face Cake Is Sliced Open
+
+- ID: x-2090285250475708694
+- 中文标题: 餐盘上的人脸蛋糕切片
+- English title: A Human-Face Cake Is Sliced Open
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090285250475708694/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090285250475708694/
+- Original source: https://x.com/CreaitiveLabs/status/2090285250475708694
+- Author: ReAiLity Labs
+- Published: 2026-08-20T03:50:13.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: T2VA
+- Category: Local Generation
+- Output: 15s, 3886×2160, landscape
+- Prompt provenance: not-published
+- Chinese summary: 写实人脸蛋糕躺在餐盘上，被刀具切开并移走一块。 原生视频规格为 15 秒 · 3886×2160。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A photoreal human-face cake lies on a plate before a knife cuts and removes a slice. Native-video output: 15s · 3886×2160. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## A Vertical Testimonial for Luxury Serum
+
+- ID: x-2090284291033100433
+- 中文标题: 奢华精华液的竖屏口播
+- English title: A Vertical Testimonial for Luxury Serum
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090284291033100433/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090284291033100433/
+- Original source: https://x.com/noorlewisx/status/2090284291033100433
+- Author: Noor
+- Published: 2026-08-20T03:46:25.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: UGC & Advertising
+- Output: 15s, 768×1344, portrait
+- Prompt provenance: not-published
+- Chinese summary: 女性手持精华液进行竖屏演示，以自然表情和近距离产品展示完成口播。 原生视频规格为 15 秒 · 768×1344。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A presenter demonstrates a luxury serum in a vertical testimonial with natural expressions and close product framing. Native-video output: 15s · 768×1344. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Verbatim public prompt: not published by the source
+
+## Three Outfit Changes in a Bedroom
+
+- ID: x-2090276653012287567
+- 中文标题: 卧室里的三套穿搭切换
+- English title: Three Outfit Changes in a Bedroom
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2090276653012287567/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2090276653012287567/
+- Original source: https://x.com/codewithhajra/status/2090276653012287567
+- Author: H A J R A
+- Published: 2026-08-20T03:16:04.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Ref2VA
+- Category: Music Video
+- Output: 16s, 1088×720, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 女性在卧室打开衣袋后快速切换三套造型，并以镜头前定格结束。 原生视频规格为 16 秒 · 1088×720。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A woman opens a garment bag in her bedroom, switches through three outfits, and ends posed to camera. Native-video output: 16s · 1088×720. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+Format: 15 seconds | 16:9 | 4K HDR | 24fps | photorealistic cinematic vlog
+
+Character: Use the girl from the uploaded reference image as the exact character reference. Preserve her facial identity, eye color, skin tone, hairstyle, body proportions, and overall appearance consistently throughout every shot. No face changes or identity drift.
+
+Scene & Story:
+0–3 sec — The Mystery Package
+The video opens with a handheld creator-vlog shot in her cozy bedroom during late afternoon. She walks into frame holding a stylish garment bag, looking genuinely curious. She places it on the bed and looks directly into the camera with a playful expression.
+
+She says naturally: “Okay… I found something for tonight, but I have absolutely no clue if I can pull it off.”
+
+She unzips the garment bag, revealing only a glimpse of the outfit.
+
+3–6 sec — First Reveal
+She quickly steps behind a nearby room divider. The camera follows with a fast handheld whip-pan.
+
+She emerges wearing a chic fitted top, tailored trousers, and elegant heels. She looks at herself in the mirror, slightly surprised by how good it looks.
+
+She turns toward the camera and says: “Wait… this might actually work.”
+
+She gives a small confident pose.
+
+6–9 sec — The Unexpected Switch
+Instead of snapping her fingers, she grabs a jacket hanging beside her and dramatically throws it toward the camera.
+
+As the jacket briefly covers the lens, the outfit seamlessly transforms underneath it.
+
+When she pulls the jacket away, she is wearing a completely different fashion-forward look: a stylish mini dress with statement shoes and subtle accessories.
+
+She looks down, raises one eyebrow, then laughs.
+
+9–12 sec — The Wild Card
+She walks toward the mirror while the camera circles around her. She notices a third outfit hanging on the wardrobe door.
+
+Suddenly, she steps backward and spins.
+
+During the spin, her outfit naturally morphs into a glamorous evening look with a sophisticated silhouette, elegant heels, and refined accessories.
+
+The transformation happens continuously during the movement with realistic fabric motion — no jump cut.
+
+12–15 sec — Final Decision
+She walks toward the camera with confident energy, then stops very close to the lens.
+
+She looks at the camera, points toward herself, then gestures toward the three outfits visible behind her.
+
+With a playful smile, she says:
+
+“Okay… you’re choosing. Which one?”
+
+The camera quickly pushes in toward her face as she laughs, ending on a natural freeze-like moment.
+
+Visual Direction:
+Ultra-realistic fashion creator vlog, authentic handheld camera movement, natural body language, expressive facial reactions, realistic fabric physics, seamless outfit transitions, natural hair movement, subtle mirror reflections, cinematic depth of field, realistic skin texture, soft late-afternoon daylight mixed with warm practical bedroom lighting, detailed wardrobe and bedroom environment, premium fashion-film aesthetic while maintaining casual YouTube-vlog energy.
+
+Camera:
+Handheld selfie framing, medium shots, quick whip-pans, subtle camera shake, smooth tracking movements, one controlled orbit around the character, final slow push-in.
+
+Audio:
+Natural bedroom ambience, fabric and wardrobe sounds, footsteps, garment movement, subtle mirror-room reverb, upbeat modern fashion-vlog background music, natural spoken dialogue, soft whoosh effects during the outfit transitions. No subtitles, no logos, no watermark.
+
+Consistency & Quality:
+No jump cuts during transformations. No duplicated character. No distorted hands or fingers. No warped clothing. No inconsistent room layout. No facial identity changes. No unnatural skin smoothing. Keep the same character, bedroom, lighting logic, and visual realism throughout.
+```
 
