@@ -1,33 +1,33 @@
 <div align="center">
 
-# Awesome MiniMax H3 — Video Examples, Prompts & Tutorials
+# MiniMax H3 Cases & Guides
 
-### 713 source-attributed videos with in-site playback · 37 public prompts · 13 source-checked tutorials
+### 713 source-attributed videos with in-site playback · 40 public prompts · 13 source-checked tutorials
 
 **[English](./README.md)** · **[简体中文](./README.zh-CN.md)**
 
 [![Video Gallery](https://img.shields.io/badge/Watch-Live_Video_Gallery-d8ff3e?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/en/)
 [![Examples](https://img.shields.io/badge/video_examples-713-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
-[![Public Prompts](https://img.shields.io/badge/verbatim_prompts-37-f5f5ed?style=flat-square&labelColor=0a0b09)](./data/cases.json)
+[![Public Prompts](https://img.shields.io/badge/verbatim_prompts-40-f5f5ed?style=flat-square&labelColor=0a0b09)](./data/cases.json)
 [![Tutorials](https://img.shields.io/badge/source--checked_tutorials-13-f5f5ed?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/en/tutorials/)
-[![GitHub Stars](https://img.shields.io/github/stars/SkyNotSilent/awesome-minimax-h3?style=flat-square&labelColor=0a0b09&color=d8ff3e)](https://github.com/SkyNotSilent/awesome-minimax-h3/stargazers)
-[![CI](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml/badge.svg)](https://github.com/SkyNotSilent/awesome-minimax-h3/actions/workflows/ci.yml)
+[![GitHub Stars](https://img.shields.io/github/stars/SkyNotSilent/awesome-minimax-h3-cases?style=flat-square&labelColor=0a0b09&color=d8ff3e)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/stargazers)
+[![CI](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/actions/workflows/ci.yml/badge.svg)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg?style=flat-square)](./LICENSE)
 
 [▶ Browse all 713 video examples](https://h3-field-notes-production.up.railway.app/en/) · [Browse on GitHub](./CATALOG.md) · [中文说明](./README.zh-CN.md) · [Contribute](./CONTRIBUTING.md)
 
 </div>
 
-[![H3 Field Notes — MiniMax H3 video example homepage with duration-first filters and case cards](./docs/screenshots/case-library-en.jpg)](https://h3-field-notes-production.up.railway.app/en/)
+[![MiniMax H3 Cases & Guides homepage with duration and public-prompt filters](./docs/screenshots/case-library-en.jpg)](https://h3-field-notes-production.up.railway.app/en/)
 
-**See what MiniMax H3 can actually produce before you spend time setting it up.** MiniMax H3 is also commonly searched as Hailuo H3 or Hailuo 3.0. Browse real outputs from X and MiniMax's official examples through duration-first filters: up to 5 seconds, 6–10 seconds, 11–15 seconds, or over 15 seconds. Category, style, and scene remain available as deeper filters. Open any case to watch it inside the gallery and jump back to the original source.
+**See what MiniMax H3 can actually produce before you spend time setting it up.** MiniMax H3 is also commonly searched as Hailuo H3 or Hailuo 3.0. Browse real outputs from X and MiniMax's official examples through duration-first filters, then switch on **With Prompt** to focus on reproducible examples with complete public prompt text. Category, style, and scene remain available as deeper filters. Open any case to watch it inside the gallery and jump back to the original source.
 
 > **Largest public collection in our 2026-08-16 comparison:** the library now contains 713 playable, source-attributed MiniMax H3 video cases. The closest public case or prompt galleries found in that search contained 300, 222, 135, 67, and 28 examples. Prompt-only lists are not counted as video case libraries.
 
 <details>
 <summary>How the collection-size claim was checked</summary>
 
-We searched public GitHub repositories and web results for MiniMax H3 / Hailuo H3 video examples, cases, galleries, and prompts on 2026-08-16. The comparison set included [BeatAPI's 300-prompt gallery](https://github.com/BeatAPI/awesome-minimax-h3-prompts), [xianyu110's 222-prompt gallery](https://github.com/xianyu110/awesome-minimax-h3-prompts), [stimQQ's clip-backed gallery](https://github.com/stimQQ/stunning-minimax-h3-prompts), the [45-example / 67-video official-showcase index](https://minimaxh3.app/showcase), and [ImagineVid's 28 verified cases](https://github.com/imagineVid/Awesome-minimax-h3-prompts-and-skills). General resource lists and prompt-only collections without matching playable case videos were excluded. This is a dated, reproducible comparison—not a permanent claim about every future site.
+We searched public GitHub repositories and web results for MiniMax H3 / Hailuo H3 video examples, cases, galleries, and prompts on 2026-08-16. The five largest comparable collections found in that snapshot contained 300, 222, 135, 67, and 28 entries. General resource lists and prompt-only collections without matching playable case videos were excluded. This is a dated comparison—not a permanent claim about every future site.
 
 </details>
 
@@ -37,12 +37,13 @@ We searched public GitHub repositories and web results for MiniMax H3 / Hailuo H
 | --- | --- |
 | **713 watchable video examples** | Judge MiniMax H3 / Hailuo H3 by real output, not a feature list |
 | **Duration-first browsing** | Jump directly to ≤5s, 6–10s, 11–15s, or >15s outputs, then narrow by content, style, or scene |
+| **One-switch public Prompt view** | Show only cases whose creators or official sources published the complete Prompt verbatim |
 | **Case-specific covers and loading states** | Know what each video contains before opening it and whether the X player is still loading |
 | **Original creator and source on every case** | Verify context, publication date, and attribution without hunting for the post |
 | **Verbatim public prompts when available** | Copy the exact prompt only when the creator or official script published it; missing prompts are never invented |
 | **Chinese and English routes** | Browse the same library in either language without mixed-language pages |
 
-**Current snapshot:** 713 video examples · 710 original X cases · 3 official reproductions · 37 verbatim public prompts.
+**Current snapshot:** 713 video examples · 710 original X cases · 3 official reproductions · 40 verbatim public prompts.
 
 No account, API key, or local model setup is required to browse the public gallery.
 
@@ -95,7 +96,7 @@ The standalone tutorials page lets users filter official setup, Mac, director wo
 | FL2VA | Ramen Rack Focus | [MiniMax public script](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-fl2va-request.sh) |
 | Ref2VA | Follow the Wind | [MiniMax public script](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-ref2va-request.sh) |
 
-The catalog now contains 713 public cases: three official reproducible examples and 710 source-attributed X community cases. Thirty-seven records preserve verbatim prompts published by an official source or creator; every other entry explicitly marks the prompt as not published. The collection spans local ComfyUI benchmarks, text-to-video, image-to-video and video-to-video workflows, model comparisons, music videos, multi-shot films, native audio, and post-production pipelines. Every published case plays inside the gallery through project storage and keeps a direct link to its original source.
+The catalog now contains 713 public cases: three official reproducible examples and 710 source-attributed X community cases. Forty records preserve verbatim prompts published by an official source or creator; every other entry explicitly marks the prompt as not published. The collection spans local ComfyUI benchmarks, text-to-video, image-to-video and video-to-video workflows, model comparisons, music videos, multi-shot films, native audio, and post-production pipelines. Every published case plays inside the gallery through project storage and keeps a direct link to its original source.
 
 ## Discovery and review pipeline
 

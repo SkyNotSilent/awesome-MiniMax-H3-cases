@@ -16,7 +16,7 @@ const representatives = [
   ...cases.filter((item) => item.promptProvenance === 'not-published').slice(-8),
 ]
 
-const llms = `# H3 Field Notes — Awesome MiniMax H3
+const llms = `# MiniMax H3 Cases & Guides
 
 > A bilingual, source-attributed library of MiniMax H3 video examples. Videos are playable through their original source, and prompts appear only when creators or official scripts publish the complete text.
 
@@ -36,7 +36,7 @@ const llms = `# H3 Field Notes — Awesome MiniMax H3
 - ${baseUrl}/en/tutorials/ — English H3 ecosystem guide
 - ${baseUrl}/faq/ — source, prompt, playback, and review policy
 - ${baseUrl}/llms-full.txt — complete machine-readable case index
-- https://github.com/SkyNotSilent/awesome-minimax-h3/blob/main/data/cases.json — source dataset
+- https://github.com/SkyNotSilent/awesome-minimax-h3-cases/blob/main/data/cases.json — source dataset
 
 ## Representative examples
 
@@ -54,7 +54,7 @@ ${tutorials.map((item) => `- ${item.title} — ${item.kind.en}; ${item.descripti
 - Do not derive a prompt or hidden workflow from a finished video.
 `
 
-const llmsFull = `# H3 Field Notes — Complete MiniMax H3 Case and Tutorial Index
+const llmsFull = `# MiniMax H3 Cases & Guides — Complete Case and Tutorial Index
 
 Generated from data/cases.json. Total: ${cases.length} cases. Verbatim public prompts: ${promptCases.length}.
 

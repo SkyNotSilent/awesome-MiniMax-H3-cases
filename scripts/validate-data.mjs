@@ -46,8 +46,22 @@ for (const [index, item] of cases.entries()) {
   if (!provenance.has(item.promptProvenance)) errors.push(`${at}.promptProvenance is invalid`)
   if (item.promptProvenance === 'not-published') {
     if (item.prompt !== null) errors.push(`${at}.prompt must be null when promptProvenance is not-published`)
+    if (item.promptSourceUrl) errors.push(`${at}.promptSourceUrl is not allowed when promptProvenance is not-published`)
   } else if (typeof item.prompt !== 'string' || item.prompt.trim().length === 0) {
     errors.push(`${at}.prompt must be a non-empty verbatim string for published prompt provenance`)
+  }
+  if (item.promptSourceUrl) {
+    try {
+      const promptSource = new URL(item.promptSourceUrl)
+      if (item.sourceType === 'x' && promptSource.hostname !== 'x.com') {
+        errors.push(`${at}.promptSourceUrl must point to the original X source`)
+      }
+      if (item.sourceType === 'x' && !/^\/[^/]+\/status\/\d+$/.test(promptSource.pathname)) {
+        errors.push(`${at}.promptSourceUrl must point to an X status`)
+      }
+    } catch {
+      errors.push(`${at}.promptSourceUrl is invalid`)
+    }
   }
   if (item.sourceType === 'x' && !item.posterUrl?.startsWith('/posters/x/')) {
     errors.push(`${at}.posterUrl must use a case-specific X video cover`)
