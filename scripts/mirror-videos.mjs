@@ -1,10 +1,13 @@
 import { createReadStream, createWriteStream } from 'node:fs'
 import { access, mkdtemp, readFile, rename, rm, stat, writeFile } from 'node:fs/promises'
+import { lookup as dnsLookup } from 'node:dns'
+import https from 'node:https'
 import { tmpdir } from 'node:os'
 import { join, resolve } from 'node:path'
 import { Readable } from 'node:stream'
 import { pipeline } from 'node:stream/promises'
 import { HeadObjectCommand, PutObjectCommand, S3Client } from '@aws-sdk/client-s3'
+import { NodeHttpHandler } from '@smithy/node-http-handler'
 
 const root = resolve(import.meta.dirname, '..')
 const casesPath = resolve(root, 'data/cases.json')
@@ -13,6 +16,7 @@ const concurrency = Number(process.env.VIDEO_MIRROR_CONCURRENCY || 4)
 const credentialsFromStdin = process.argv.includes('--credentials-stdin')
 const onlyIds = new Set((process.env.VIDEO_MIRROR_ONLY || '').split(',').map((value) => value.trim()).filter(Boolean))
 const sourceDirectory = process.env.VIDEO_MIRROR_SOURCE_DIR ? resolve(process.env.VIDEO_MIRROR_SOURCE_DIR) : null
+const storageResolveIp = process.env.VIDEO_S3_RESOLVE_IP?.trim() || null
 const officialSources = new Map([
   ['official-t2va-starship', 'https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/main/assets/t2va.mp4'],
   ['official-fl2va-ramen', 'https://huggingface.co/MiniMaxAI/MiniMax-H3/resolve/main/assets/fl2va.mp4'],
@@ -39,11 +43,27 @@ for (const [key, value] of Object.entries(storage)) {
 }
 if (!Number.isInteger(concurrency) || concurrency < 1 || concurrency > 12) throw new Error('VIDEO_MIRROR_CONCURRENCY must be between 1 and 12.')
 
+const endpointHostname = new URL(storage.endpoint).hostname
+const requestHandler = storageResolveIp
+  ? new NodeHttpHandler({
+      httpsAgent: new https.Agent({
+        keepAlive: true,
+        lookup(hostname, options, callback) {
+          const isStorageHostname = hostname === endpointHostname || hostname.endsWith(`.${endpointHostname}`)
+          if (!isStorageHostname) return dnsLookup(hostname, options, callback)
+          if (options?.all) return callback(null, [{ address: storageResolveIp, family: 4 }])
+          return callback(null, storageResolveIp, 4)
+        },
+      }),
+    })
+  : undefined
+
 const client = new S3Client({
   endpoint: storage.endpoint,
   region: storage.region,
   forcePathStyle: storage.forcePathStyle,
   credentials: { accessKeyId: storage.accessKeyId, secretAccessKey: storage.secretAccessKey },
+  requestHandler,
 })
 const cases = JSON.parse(await readFile(casesPath, 'utf8'))
 const targets = onlyIds.size ? cases.filter((item) => onlyIds.has(item.id)) : cases

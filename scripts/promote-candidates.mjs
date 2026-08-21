@@ -10,6 +10,12 @@ const apply = process.argv.includes('--apply')
 
 const candidates = JSON.parse(await readFile(candidatesPath, 'utf8'))
 const cases = JSON.parse(await readFile(casesPath, 'utf8'))
+const promotionEvidence = process.env.PROMOTION_EVIDENCE_FILE
+  ? JSON.parse(await readFile(resolve(root, process.env.PROMOTION_EVIDENCE_FILE), 'utf8'))
+  : []
+const cachedTweets = new Map(promotionEvidence
+  .filter((item) => item?.entry?.xStatusId && item?.source)
+  .map((item) => [item.entry.xStatusId, item.source]))
 
 const sourceOverrides = new Map([
   [
@@ -105,6 +111,15 @@ function postIdFor(candidate) {
 
 async function fetchTweet(candidate) {
   const postId = postIdFor(candidate)
+  const cachedTweet = cachedTweets.get(postId)
+  if (cachedTweet) {
+    const video = cachedTweet.media?.videos?.[0] ?? cachedTweet.media?.all?.find((item) => item.type === 'video')
+    if (!video) throw new Error(`Cached X metadata for ${postId} has no native video`)
+    if (!Number.isFinite(video.duration) || !video.width || !video.height || !video.thumbnail_url) {
+      throw new Error(`Cached X metadata for ${postId} is incomplete`)
+    }
+    return { tweet: cachedTweet, video }
+  }
   return retry(`Fetch X metadata for ${postId}`, async () => {
     const response = await fetch(`https://api.fxtwitter.com/status/${postId}`, {
       headers: { 'User-Agent': 'awesome-minimax-h3-cases/1.0 metadata-cache' },

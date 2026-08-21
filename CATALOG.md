@@ -68,6 +68,9 @@
 | [女秘书策划的办公室绯闻](https://x.com/drjoetw/status/2086020747336761388) | 15s · 2560×1440 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
 | [泳池边的仙女棒身份互换](https://x.com/drjoetw/status/2085983430219895004) | 15s · 2560×1440 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
 | [山溪营地的搭帐篷时刻](https://x.com/Strength04_X/status/2085973447562162229) | 15s · 2560×1440 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [二千分辨率下的真人电影镜头](https://x.com/tanabe_fragm/status/2084854693403197897) | 15s · 1440×2560 · portrait | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [日惹传统市场的清晨](https://x.com/junwatu/status/2084840152715911311) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [每个伟大故事的动态标题](https://x.com/umesh_ai/status/2083909535593644291) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
 
 ## FL2VA
 
@@ -134,6 +137,8 @@
 | [花园噩耗的双模型表演对照](https://x.com/ou_zhen599/status/2086121943615541389) | 27s · 3840×2160 · landscape | `MiniMax H3` `模型对比` `公开 Prompt` `X 原帖` |
 | [月下仙城的剑阵决战](https://x.com/Stellakjbk/status/2086021869040263455) | 15s · 1280×711 · landscape | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
 | [温室里的害羞雨云](https://x.com/ManuAGI01/status/2085986114800951530) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [真人质感与人工痕迹的对照](https://x.com/tanabe_fragm/status/2084855587540795780) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [二千画质与七百二十画质的对决](https://x.com/MadMax_Series/status/2083855654205186452) | 15s · 1080×1080 · square | `MiniMax H3` `模型对比` `公开 Prompt` `X 原帖` |
 
 ## Ref2VA
 
@@ -208,6 +213,29 @@
 | [风中角色的电影式登场](https://x.com/aimikoda/status/2086412223061135392) | 15s · 2410×2560 · portrait | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
 | [黎明面包配送广告](https://x.com/Dheepanratnam/status/2086199653922455917) | 15s · 1440×2560 · portrait | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
 | [里维埃拉海岸的编织手袋](https://x.com/Dustfinger2077/status/2086086171117969702) | 15s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [马耳他魔法群岛舞蹈](https://x.com/abulu8/status/2085793101600428386) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [为自己打造的未来广告](https://x.com/abulu8/status/2085626141759709286) | 15s · 2560×1084 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [加油站逃亡故事·下篇](https://x.com/ManuAGI01/status/2085607833408852170) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [加油站逃亡故事·上篇](https://x.com/ManuAGI01/status/2085606945755693556) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [西部片风格的动漫片头](https://x.com/doctorwasif/status/2085599659326935100) | 15s · 1920×1080 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [花朵绽放的色彩蒙太奇](https://x.com/Shinebynous/status/2085505725149622337) | 15s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [九十年代美式餐厅之夜](https://x.com/NsitnovSitnov/status/2085329351915000274) | 15s · 1024×576 · landscape | `MiniMax H3` `本地生成` `公开 Prompt` `X 原帖` |
+| [八帧歌词变成韩流音乐录像](https://x.com/MrLarus/status/2085272318649987242) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [笑着靠近镜头的演唱](https://x.com/MireilleDartois/status/2085254169259311602) | 10s · 842×474 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [歌曲对口型的双模型对照](https://x.com/abulu8/status/2085253978166808615) | 15s · 1440×2560 · portrait | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [三模型重现同一幅战斗图](https://x.com/LufzzLiz/status/2085152634949030212) | 15s · 1080×1920 · portrait | `MiniMax H3` `模型对比` `公开 Prompt` `X 原帖` |
+| [角色、音频与歌词的三重参考](https://x.com/Kiber_Alla/status/2085138181133894024) | 10s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [消费级显卡上的七秒场景](https://x.com/uniqornate/status/2085097057073709123) | 7s · 1376×768 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [奇幻古埃及之旅](https://x.com/Diplomeme/status/2084932583335624724) | 15s · 1080×1350 · portrait | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [同一参考图的电影化对决](https://x.com/joshesye/status/2084852295607484730) | 14s · 1080×1350 · portrait | `MiniMax H3` `模型对比` `公开 Prompt` `X 原帖` |
+| [国风想象力之旅](https://x.com/Stellakjbk/status/2084691296472449246) | 10s · 1920×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [第一次的运镜惊喜](https://x.com/medfac_opc/status/2084580423649423684) | 15s · 480×832 · portrait | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [高级时装大片的全流程](https://x.com/influencer_seo/status/2084355335222108362) | 15s · 1280×720 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [日系偶像的五秒问候](https://x.com/riddi0908/status/2084233895202197998) | 5s · 864×480 · landscape | `MiniMax H3` `本地生成` `公开 Prompt` `X 原帖` |
+| [凯恩·门罗的动态字体登场](https://x.com/Dheepanratnam/status/2084201268977844521) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [动漫音乐录像的歌词排版](https://x.com/haruuraeadss/status/2083875116900024386) | 16s · 1920×1080 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [星花都市的角色登场](https://x.com/haruuraeadss/status/2083768289612947872) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [黑暗幻想世界的游戏预告](https://x.com/haruuraeadss/status/2083736220635738298) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
 
 ## Unknown
 
@@ -766,3 +794,75 @@
 | [墙后低语的走廊惊魂](https://x.com/PromptSin/status/2090166948239909375) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
 | [纸艺特洛伊城的陷落](https://x.com/MayorKingAI/status/2090145591083077637) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
 | [狼耳角色的预录音频口型](https://x.com/MrJ0SHie/status/2090141574462333406) | 15s · 1120×832 · landscape | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [亡灵法师唤醒骷髅军团](https://x.com/UnrealRafael/status/2085884187626614835) | 5s · 864×480 · landscape | `MiniMax H3` `本地生成` `公开 Prompt` `X 原帖` |
+| [镜头穿越街机屏幕](https://x.com/cocktailpeanut/status/2085835546572800047) | 14s · 832×480 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [后院药草园的宁静时光](https://x.com/Strength04_X/status/2085786048521757074) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [唤醒宇宙奇观](https://x.com/airina_xyz/status/2085784390903173149) | 15s · 320×560 · portrait | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [第一人称幻想战斗对决](https://x.com/KrevixAi/status/2085759071047565341) | 15s · 2160×2700 · portrait | `MiniMax H3` `模型对比` `公开 Prompt` `X 原帖` |
+| [随音乐疾驰的超现实时尚](https://x.com/aimikoda/status/2085691802233835622) | 15s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [宇航员花园的双模型对决](https://x.com/ou_zhen599/status/2085663805229715612) | 30s · 2160×2880 · portrait | `MiniMax H3` `模型对比` `公开 Prompt` `X 原帖` |
+| [扭蛋机里的另一个世界](https://x.com/itxabdullaa/status/2085656146363249079) | 15s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [纸艺山谷的幻想大战](https://x.com/xianshi666123/status/2085649264185913721) | 15s · 1280×736 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [少女持剑对决霸王龙](https://x.com/Lianaalane/status/2085625652829708458) | 15s · 1088×720 · landscape | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
+| [日出湖面的早安标题](https://x.com/CharaspowerAI/status/2085622021812039920) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [橘猫惊天一屁](https://x.com/TheAwakenOne619/status/2085602322177282512) | 15s · 864×480 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [节奏、表演与动态字体](https://x.com/Inshrah_ali_/status/2085595583927185447) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [日文字幕的动画练习](https://x.com/su_nagomi/status/2085594060384010351) | 15s · 1344×768 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [最后一刻的极限救援](https://x.com/aiwithaly/status/2085585698699243802) | 15s · 2560×1440 · landscape | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
+| [他靠时机赢下力量赛](https://x.com/bmx_ai13/status/2085584972778229978) | 15s · 1344×768 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [银甲战士的双模型对决](https://x.com/HeyZoyaKhan/status/2085575259533783077) | 15s · 1920×1080 · landscape | `MiniMax H3` `舞蹈视频` `公开 Prompt` `X 原帖` |
+| [精确台词驱动的双人戏](https://x.com/cocktailpeanut/status/2085498501384024495) | 14s · 832×480 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [在机械星球上行走的战士](https://x.com/nonameoasis/status/2085459203892576280) | 15s · 2560×1440 · landscape | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
+| [镜头下的法国斗牛犬](https://x.com/cocktailpeanut/status/2085448660612182507) | 14s · 832×480 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [产品特性逐层标注](https://x.com/LudovicCreator/status/2085425839236096175) | 15s · 2944×1248 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [同一提示词的多模型比拼](https://x.com/ozansihay/status/2085420070952649179) | 110s · 1920×1080 · landscape | `MiniMax H3` `舞蹈视频` `公开 Prompt` `X 原帖` |
+| [极简背景下的产品奇观](https://x.com/guicastellanos1/status/2085418202457129035) | 10s · 1440×2560 · portrait | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [一次贯穿全场的电影运镜](https://x.com/guicastellanos1/status/2085411288218276158) | 10s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [不该相信的林中幽魂](https://x.com/drjoetw/status/2085407344234836142) | 15s · 2560×1440 · landscape | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
+| [韩国女生的日常片刻](https://x.com/Strength04_X/status/2085344414466281571) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [穿着开衫的慢早晨](https://x.com/Strength04_X/status/2085335642515603469) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [迷幻手绘动画中的产品](https://x.com/tanabe_fragm/status/2085323195301917120) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [十五秒看懂官僚主义](https://x.com/airina_xyz/status/2085309090511675674) | 15s · 1536×2688 · portrait | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [彩绘玻璃中的五饼二鱼](https://x.com/xianshi666123/status/2085308481981268047) | 15s · 1956×1088 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [漆画与螺钿里的盘古开天](https://x.com/xianshi666123/status/2085294852804378626) | 15s · 1280×736 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [深夜艺廊的镜头实验](https://x.com/EndFolding79421/status/2085282791906742459) | 8s · 1280×736 · landscape | `MiniMax H3` `本地生成` `公开 Prompt` `X 原帖` |
+| [图像与文字的无缝变换](https://x.com/opener_ai/status/2085241788340797558) | 15s · 2944×1248 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [勇士迎战巨型怪物](https://x.com/RuzainaMeer/status/2085240792067784843) | 15s · 2560×1440 · landscape | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
+| [深海沉没](https://x.com/I_Muhammadali44/status/2085234595784773704) | 15s · 1920×1080 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [曼谷街头美食之旅](https://x.com/nawalsehar/status/2085233880353915217) | 15s · 2560×1440 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [忘却王国的无畏旅人](https://x.com/aiwithaly/status/2085221226335879541) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [产品图变身高级电商界面](https://x.com/ImaStudio_ai/status/2085211946815758841) | 15s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [超人亲自洗衣服](https://x.com/Strength04_X/status/2085210848272986556) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [一场由逐句台词精确控制的戏](https://x.com/cocktailpeanut/status/2085198361989460476) | 14s · 832×480 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [埃及艳后点了披萨](https://x.com/Strength04_X/status/2085193166437892346) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [校园奔跑中的日语对话](https://x.com/MireilleDartois/status/2085168181648445763) | 8s · 864×480 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [文字在镜头中流动](https://x.com/opener_ai/status/2085159317578330229) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [八位像素少女漫步阳光小径](https://x.com/albertgao/status/2085137397134561487) | 5s · 768×768 · square | `MiniMax H3` `本地生成` `公开 Prompt` `X 原帖` |
+| [高速照片蒙太奇与日文手写字](https://x.com/su_nagomi/status/2085112656328098132) | 15s · 768×1344 · portrait | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [吊床上的午后小睡](https://x.com/Strength04_X/status/2085009719371190553) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [镜头前的戏剧化表演](https://x.com/EccentrismArt/status/2085006715339301360) | 15s · 1920×1080 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [星花魔法都市的游戏预告](https://x.com/haruuraeadss/status/2084910486362247434) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [用一周七天学英语](https://x.com/Strength04_X/status/2084874623825723522) | 15s · 2944×1248 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [开源时代的影像宣言](https://x.com/underwoodxie96/status/2084873926141006285) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [渔船上的拾得式恐怖片](https://x.com/cocktailpeanut/status/2084842607411335284) | 14s · 832×480 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [一张图像的两种结果](https://x.com/DeEdimakor/status/2084816642031394936) | 10s · 1280×720 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [一镜制作的高级时装广告](https://x.com/lepadphone/status/2084637679254376793) | 15s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [互动游戏界面的连续演示](https://x.com/0xbisc/status/2084626773015417323) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [办公室茶水间的伪纪录片](https://x.com/Arminn_Ai/status/2084619631742837115) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [人工智能无法替代你](https://x.com/TechieBySA/status/2084600512180113820) | 14s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [圆形、方形、三角形与星形](https://x.com/Strength04_X/status/2084586713205317678) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [导演拥抱人工智能的瞬间](https://x.com/PixelAigc/status/2084559907395940599) | 10s · 1344×768 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [从一数到十的儿童动画](https://x.com/Strength04_X/status/2084552480554446929) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [海报在镜头中苏醒](https://x.com/LudovicCreator/status/2084519725405483220) | 15s · 1440×1920 · portrait | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [露娜的未来直播间](https://x.com/GlitterPixely/status/2084481873158328598) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [人类进化的动态长卷](https://x.com/xianshi666123/status/2084472700030816740) | 15s · 1056×608 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [表情与镜头之间的张力](https://x.com/opener_ai/status/2084441225667735905) | 10s · 1280×720 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [办公室里的荒诞早餐](https://x.com/WolfRiccardo/status/2084402067120988527) | 15s · 2560×1440 · landscape | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
+| [办公室会议室的黄金笑料](https://x.com/Arminn_Ai/status/2084387316286595436) | 15s · 2560×1440 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [从静帧进入虚构角色扮演游戏](https://x.com/LudovicCreator/status/2084338573210157293) | 15s · 1920×1080 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [跑过静电噪声](https://x.com/sebatheepan/status/2084311486277599712) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [霓虹暴雨中的赛博武士](https://x.com/noorwithwifi/status/2084289809359810731) | 12s · 2560×1440 · landscape | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
+| [把教育愿景变成学习奇观](https://x.com/umesh_ai/status/2084227244533411987) | 15s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [洗衣店里的超现实想象](https://x.com/opener_ai/status/2084075915706052621) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [史诗级太空大战](https://x.com/itxabdullaa/status/2083854803801960837) | 15s · 1280×720 · landscape | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
+| [另一张苏醒的动态海报](https://x.com/LudovicCreator/status/2083628852165672988) | 10s · 1440×2560 · portrait | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
