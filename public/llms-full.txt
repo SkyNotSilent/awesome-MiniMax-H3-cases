@@ -1,6 +1,6 @@
 # MiniMax H3 Cases & Guides — Complete Case and Tutorial Index
 
-Generated from data/cases.json. Total: 730 cases. Verbatim public prompts: 57.
+Generated from data/cases.json. Total: 745 cases. Verbatim public prompts: 72.
 
 ## Tutorials
 
@@ -15397,5 +15397,4721 @@ Use a clear progression from detail reveal to partial reveal to face reveal to f
 
 ENVIRONMENT
 Place the character in a fitting environment that supports their identity and mood. The background should enhance the character without distracting from them.
+```
+
+## The Boy Who Chases a Midnight Dragon
+
+- ID: x-2086321605073105162
+- 中文标题: 追逐午夜龙的碎月少年
+- English title: The Boy Who Chases a Midnight Dragon
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2086321605073105162/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2086321605073105162/
+- Original source: https://x.com/ManuAGI01/status/2086321605073105162
+- Author: ManuAGI 🤖 - ( ManuIn )
+- Published: 2026-08-09T05:20:07.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: FL2VA
+- Category: Community Showcase
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 少年 Kael 目睹银月裂开、午夜龙衔走碎片，随即穿过湖畔与森林追向禁忌山谷。 原生视频规格为 15 秒 · 2560×1440。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: Kael watches the silver moon crack, sees a midnight dragon carry away a shard, and pursues it toward a forbidden valley. Native-video output: 15s · 2560×1440. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+[REFERENCE CONTROL]
+
+Use the uploaded PART 1 storyboard image for “THE BOY WHO RETURNED THE MOON” as the PRIMARY visual, character, environment, cinematography, lighting, scale, prop, performance, and narrative reference.
+
+Generate a FINISHED cinematic animated sequence from the storyboard.
+
+DO NOT reproduce the storyboard sheet itself.
+
+The final video must NOT contain:
+- storyboard panel borders
+- panel numbers
+- timestamps
+- handwritten captions
+- production notes
+- character-reference sketches
+- prop-reference drawings
+- title/header
+- page number
+- off-white storyboard-paper texture
+- camera-note boxes
+- color swatches
+
+The uploaded storyboard locks:
+
+1. Kael’s exact face and body design
+2. Kael’s swept-back black hairstyle
+3. Kael’s dark tunic and trousers
+4. Nyx’s exact black midnight-dragon design
+5. Nyx’s long serpentine body
+6. Nyx’s giant amber-orange eyes
+7. Nyx’s luminous toothy grin
+8. the enormous silver full moon
+9. Noctara’s gothic castle architecture
+10. orange-lit castle windows
+11. reflective moonlit lake
+12. dark lakeside rock and forest geography
+13. exact glowing silver moon-fragment design
+14. deep midnight-blue visual palette
+15. Part 1 story progression
+16. final Valley of Bones cliffhanger
+
+The finished video must feel like these storyboard paintings have come alive as a premium cinematic 2D animated short.
+
+IMPORTANT:
+
+The storyboard contains 15 one-second panels.
+
+DO NOT create fifteen frantic one-second cuts.
+
+Consolidate them into approximately 8 cinematic shots with clear:
+
+setup
+→ disturbance
+→ discovery
+→ dragon reveal
+→ misunderstanding
+→ chase
+→ forbidden-land cliffhanger.
+
+--------------------------------------------------
+
+[VIDEO GOAL]
+
+Duration:
+EXACTLY 15 seconds
+
+Story range:
+0:00–0:15 of the 1-minute film
+
+Aspect ratio:
+16:9 landscape
+
+Frame-rate feeling:
+cinematic 24 fps
+
+Visual style:
+premium hand-painted 2D dark-fantasy animation
+
+Genre:
+moonlit fantasy mystery / adventure
+
+Audience:
+family-friendly
+
+Dialogue:
+native synchronized English
+
+Audio:
+native dialogue + cinematic environment + magical SFX + original music
+
+EMOTIONAL ARC:
+
+peaceful moonlit wonder
+→ subtle unease
+→ impossible celestial event
+→ shock
+→ mysterious creature reveal
+→ false villain assumption
+→ determination
+→ chase
+→ ominous curiosity
+
+Core Part 1 question:
+
+“Why did the dragon take the moon fragment?”
+
+--------------------------------------------------
+
+[PART 1 STORY LIMIT]
+
+PART 1 ONLY.
+
+START:
+
+Kael sits peacefully beside the moonlit lake watching the enormous full moon above Noctara.
+
+END:
+
+Kael reaches the ridge overlooking the Valley of Bones after Nyx disappears inside with the moon fragment.
+
+The cracked moon is visibly dimmer above him.
+
+Kael decides to follow.
+
+DO NOT show:
+- Zara
+- skeleton guardians
+- Bonekeeper reveal
+- Nyx being innocent
+- “He’s trying to return it”
+- Moon Shrine
+- Bone Bridge
+- Nyx losing the shard
+- Kael catching the shard
+- shrine activation
+- restored moon
+- moon-fireflies
+- final friendship scene
+
+Those belong to later parts.
+
+--------------------------------------------------
+
+[CHARACTER IDENTITY LOCK — KAEL]
+
+Match the uploaded storyboard EXACTLY.
+
+KAEL:
+
+Slim teenage moon-watcher.
+
+Appearance:
+- youthful stylized angular face
+- cool pale-to-medium skin tone
+- large expressive dark eyes
+- thick black eyebrows
+- swept-back tousled black hair
+- pointed windswept hair silhouette
+- lean narrow shoulders
+- long thin limbs
+- small athletic teenage build
+
+Clothing:
+- simple charcoal / black fantasy tunic
+- slightly loose short sleeves
+- dark fitted trousers
+- dark practical boots
+- subtle dark belt
+- no armor
+- no cape
+- no weapons
+
+Personality:
+- quiet
+- thoughtful
+- curious
+- emotionally intense when surprised
+- brave
+- impulsive
+- deeply fascinated by the moon
+
+PART 1 PERFORMANCE:
+
+0–3 sec:
+calm, reflective, mesmerized
+
+3–5 sec:
+uneasy → shocked
+
+5–7 sec:
+disbelief
+
+7–9 sec:
+fear mixed with anger
+
+9–12 sec:
+decisive pursuit
+
+12–15 sec:
+cautious but determined
+
+CRITICAL:
+
+Maintain exact:
+- face
+- hair
+- clothing
+- age
+- proportions
+- eye design
+- silhouette
+
+Do not make Kael older, more muscular, armored, or heroic-looking.
+
+He is an ordinary boy who makes a brave decision.
+
+--------------------------------------------------
+
+[CHARACTER IDENTITY LOCK — NYX]
+
+Match the uploaded storyboard EXACTLY.
+
+NYX — THE MIDNIGHT DRAGON
+
+Appearance:
+- huge black dragon
+- elongated serpentine body
+- long narrow flexible neck
+- layered feather-like black scales
+- blue-black moonlit edge highlights
+- dramatic backward-pointing head spines
+- pointed ear-like horns
+- enormous glowing amber-orange eyes
+- vertical black slit pupils
+- large luminous white toothy grin
+- narrow expressive dragon snout
+- long curved tail
+- large dark wings matching his silhouette where visible
+
+Personality in Part 1:
+UNKNOWN to Kael.
+
+Visually Nyx should seem:
+- mysterious
+- powerful
+- intimidating
+- slightly mischievous
+- unreadable
+
+But do NOT portray true cruelty.
+
+Subtle clues may suggest he is protecting rather than stealing the fragment:
+- careful grip on shard
+- controlled flight
+- no attacks
+- no fire
+- no aggression toward Kael
+
+NYX MUST NOT SPEAK IN PART 1.
+
+His intimidating appearance creates the misunderstanding.
+
+--------------------------------------------------
+
+[MOON FRAGMENT IDENTITY LOCK]
+
+Match storyboard exactly.
+
+ONE fragment only.
+
+Appearance:
+- irregular crescent / crystalline shard
+- brilliant white-silver center
+- translucent icy-blue edges
+- faint silver particles
+- small radiant aura
+- roughly large enough for Nyx to carry carefully in his jaws
+
+Timeline:
+
+full moon cracks
+→ fragment separates
+→ begins falling
+→ Nyx intercepts
+→ Nyx carries same shard through chase
+
+Do NOT:
+- duplicate fragment
+- change shape between shots
+- let Nyx swallow it
+- turn it gold
+- create multiple moon pieces
+
+--------------------------------------------------
+
+[MOON IDENTITY / DAMAGE CONTINUITY]
+
+Opening:
+enormous perfect silver-blue full moon.
+
+After crack:
+one obvious glowing fracture.
+
+After fragment breaks free:
+missing wedge / damaged section remains visible.
+
+During chase:
+moon becomes subtly dimmer.
+
+Final shot:
+moon is still large and recognizable, but clearly:
+- cracked
+- missing fragment
+- weaker in brightness
+
+Do NOT restore it in Part 1.
+
+--------------------------------------------------
+
+[ENVIRONMENT LOCK — NOCTARA]
+
+Maintain exact visual world from the storyboard.
+
+NOCTARA:
+
+A huge fantasy kingdom surrounding a moonlit lake.
+
+Environment:
+- towering gothic fantasy castles
+- tall narrow spires
+- ornate towers
+- warm orange glowing windows
+- dark blue stone architecture
+- dense shadowy trees
+- steep cliffs
+- reflective lake
+- rocky lakeshore
+- narrow forest paths
+- mountain silhouettes
+- clear star-filled night sky
+- enormous silver moon
+
+Visual contrast:
+
+MOON:
+cool silver-blue.
+
+CASTLES:
+warm amber-orange.
+
+FOREST / WATER:
+deep midnight blue.
+
+Atmosphere:
+beautiful,
+mysterious,
+grand,
+storybook-dark,
+never horror.
+
+--------------------------------------------------
+
+[VALLEY OF BONES — PART 1 REVEAL ONLY]
+
+Only reveal its exterior / entrance.
+
+Design:
+- deep forbidden canyon
+- tall jagged black-blue stone spires
+- pale mist
+- huge ancient fossil-like rib structures
+- distant mountain walls
+- twisted trees
+- barren rocky path
+- very subtle ivory bone-like shapes
+
+Do NOT show:
+- active skeleton guardians
+- Zara
+- full bone structures in close disturbing detail
+- gore
+- corpses
+
+The valley should feel ancient and mysterious, not horrific.
+
+--------------------------------------------------
+
+[WORLD / PHYSICS LOGIC]
+
+Part 1 cause-and-effect must be crystal clear:
+
+Kael watches moon
+→ moon cracks
+
+moon cracks
+→ fragment breaks free
+
+fragment falls
+→ Nyx intercepts
+
+Nyx catches fragment
+→ Kael assumes theft
+
+Nyx turns toward mountains
+→ Kael decides to chase
+
+Nyx enters forbidden valley
+→ Kael must choose whether to follow
+
+No unexplained teleportation.
+
+--------------------------------------------------
+
+integrated_multimodal_description:
+
+[SHOT 1] — 0.00s–2.20s
+NOCTARA BENEATH A PERFECT MOON
+
+Open on a majestic ultra-wide establishing shot matching storyboard Panel 1.
+
+An enormous silver full moon dominates the sky.
+
+Below:
+
+Noctara’s tall gothic towers rise on both sides of a perfectly still lake.
+
+Warm amber-orange windows glow through the dark blue architecture.
+
+The moon reflects in long silver ripples across the water.
+
+Camera slowly glides toward a dark lakeside rock.
+
+Reveal tiny KAEL sitting alone.
+
+Kael sits with knees raised, arms resting casually, staring at the moon.
+
+Very subtle breeze moves his hair and tunic.
+
+Camera:
+huge kingdom wide
+→ slow dolly toward Kael
+→ settle behind him with the full moon framed ahead.
+
+No dialogue initially.
+
+Sound:
+- calm lake water
+- soft night breeze
+- distant forest insects
+- very faint city bells
+- distant night birds
+- quiet cloth movement
+
+Music:
+soft piano,
+airy flute,
+very light strings,
+subtle magical glass tones.
+
+The feeling should be beautiful and peaceful.
+
+--------------------------------------------------
+
+[SHOT 2] — 2.20s–3.50s
+KAEL WATCHES THE MOON
+
+Move into an intimate side-profile / three-quarter close-up matching storyboard Panels 2–3.
+
+Cool moonlight outlines Kael’s face.
+
+Warm orange castle lights blur softly in the background.
+
+His eyes track the moon.
+
+He seems comfortable here, as if he does this every night.
+
+Kael quietly says:
+
+<d>[English] Still there.</d>
+
+Tiny smile.
+
+Then the smile weakens.
+
+Something feels slightly unusual.
+
+Kael narrows his eyes.
+
+Dialogue:
+
+<d>[English] ...Right?</d>
+
+Camera:
+medium profile
+→ gentle push toward his eyes
+→ rack focus from Kael to moon.
+
+Sound:
+breeze becomes slightly quieter.
+
+Music:
+remove a few warm notes,
+introduce one subtle unresolved tone.
+
+--------------------------------------------------
+
+[SHOT 3] — 3.50s–5.20s
+THE MOON CRACKS
+
+Cut to the giant moon.
+
+For one silent fraction of a second:
+
+perfect.
+
+Then—
+
+A brilliant silver fracture appears.
+
+CRAAACK.
+
+Not an explosion.
+
+A glowing line spreads across part of the moon’s surface.
+
+Kael rises quickly in the foreground.
+
+His face goes from confusion to disbelief.
+
+A chunk of silver moonlight begins separating.
+
+Dialogue:
+
+Kael:
+<d>[English] What...?</d>
+
+The moon fragment breaks free.
+
+It begins falling through the night sky, trailing beautiful silver particles.
+
+Kael:
+<d>[English] No!</d>
+
+Camera:
+moon close-up
+→ crack spreading
+→ fragment separation
+→ tilt downward following falling shard
+→ Kael reaction.
+
+Sound:
+- deep crystalline celestial crack
+- distant harmonic resonance
+- silver sparkling trail
+- sudden gust
+
+Music:
+sharp orchestral/glass accent,
+then urgent low strings begin.
+
+No fiery explosion.
+
+--------------------------------------------------
+
+[SHOT 4] — 5.20s–7.20s
+SOMETHING REACHES IT FIRST
+
+Kael watches the shard fall.
+
+Suddenly a huge BLACK silhouette streaks across frame.
+
+The camera briefly struggles to follow its speed.
+
+Kael turns sharply.
+
+The dark creature curves upward.
+
+Reveal NYX.
+
+His long black serpentine body arcs across the giant moon.
+
+His amber eyes glow intensely.
+
+Nyx reaches the fragment just before it can fall farther.
+
+He catches it CAREFULLY between his jaws.
+
+Silver light illuminates his black scales from below.
+
+Camera:
+Kael POV toward falling shard
+→ black silhouette enters
+→ dynamic pan
+→ wide Nyx arc against moon
+→ close-up catch.
+
+No bite/crunch.
+
+The fragment remains fully intact.
+
+Sound:
+- strong but controlled wing rush
+- scale / feather movement
+- magical shard shimmer
+- low dragon breath
+- no roar
+
+Kael, stunned:
+<d>[English] A dragon...?</d>
+
+Music:
+mysterious low strings + brass swell,
+not villain-horror music.
+
+--------------------------------------------------
+
+[SHOT 5] — 7.20s–8.80s
+THE MIDNIGHT DRAGON
+
+Close cinematic reveal matching storyboard Panels 7–8.
+
+Nyx turns his long head.
+
+For a brief moment he looks toward Kael.
+
+Frame:
+huge amber eyes,
+black feathered scales,
+wild head spines,
+luminous exaggerated teeth,
+silver fragment glowing between his jaws.
+
+The visual should make him look like a villain from KAEL’S perspective.
+
+Nyx’s enormous amber eye subtly narrows.
+
+But he does NOT threaten Kael.
+
+He simply turns away.
+
+Kael’s expression changes:
+
+shock
+→ fear
+→ certainty.
+
+Dialogue:
+
+Kael:
+<d>[English] He took it...</d>
+
+Nyx coils his body through the air and begins turning toward the mountains.
+
+--------------------------------------------------
+
+[SHOT 6] — 8.80s–10.40s
+“HE STOLE THE MOON!”
+
+Reaction close-up on Kael matching Panel 9.
+
+Kael points toward Nyx.
+
+His fear transforms into angry determination.
+
+Dialogue:
+
+Kael:
+<d>[English] HE STOLE THE MOON!</d>
+
+Nyx accelerates toward the dark mountain valley.
+
+Wide composition:
+
+Nyx flying across the skyline,
+fragment glowing from his jaws,
+Noctara towers beneath him,
+cracked moon above.
+
+Kael immediately jumps down from the rock.
+
+He begins running.
+
+Camera:
+Kael close reaction
+→ turn with his pointing arm
+→ follow Nyx
+→ snap back to Kael launching into pursuit.
+
+Sound:
+- Kael footsteps beginning
+- night wind intensifying
+- Nyx wing movement
+- castle ambience fading behind
+
+Music:
+adventure rhythm begins,
+strings + low percussion + light brass.
+
+--------------------------------------------------
+
+[SHOT 7] — 10.40s–12.80s
+THE CHASE BENEATH A BROKEN MOON
+
+Create a fluid cinematic chase montage rather than several separate cuts.
+
+Kael runs along the lakeside path.
+
+His dark tunic and hair move with his sprint.
+
+Above and ahead:
+
+Nyx races between castle towers carrying the fragment.
+
+Show:
+
+Kael running beside moonlit water
+→ Nyx passing beyond gothic spires
+→ Kael climbing a dark rocky path
+→ castle lights progressively farther behind
+→ trees becoming denser
+→ moon still cracked overhead.
+
+Kael breathes hard.
+
+Dialogue:
+
+Kael:
+<d>[English] Stop!</d>
+
+Nyx does not respond.
+
+Kael:
+<d>[English] Give it back!</d>
+
+Nyx turns once in flight, briefly glancing toward Kael.
+
+He does not attack.
+
+He continues toward the mountains.
+
+Camera:
+side tracking with Kael
+→ wide sky parallax with Nyx
+→ forward-running camera
+→ increasingly darker forest framing.
+
+Sound:
+- running footsteps
+- branches
+- gravel
+- breath
+- wing beats
+- silver fragment hum
+
+--------------------------------------------------
+
+[SHOT 8] — 12.80s–15.00s
+THE VALLEY OF BONES — CLIFFHANGER
+
+Kael exits the darker forest path onto a high rocky ridge.
+
+He stops.
+
+Breathing heavily.
+
+Camera slowly moves around him.
+
+Reveal the enormous forbidden valley below.
+
+Use the visual language of storyboard Panels 13–15:
+
+- towering jagged stone spires
+- deep canyon
+- pale blue mist
+- enormous ancient rib-like fossil arches
+- narrow winding path
+- dark mountain walls
+- very distant cold landscape
+
+Nyx becomes a small silhouette flying deeper into the valley.
+
+The glowing moon fragment remains clearly visible in his jaws as a silver point of light.
+
+Kael watches him disappear.
+
+Then he slowly looks upward.
+
+The moon is visibly dimmer now.
+
+Cracked.
+
+Missing its fragment.
+
+Kael looks back into the forbidden valley.
+
+A quiet fear crosses his face.
+
+Then determination.
+
+Dialogue:
+
+Kael, quietly:
+<d>[English] You’re not getting away.</d>
+
+Beat.
+
+He takes one step down the forbidden path.
+
+Kael:
+<d>[English] I’m getting it back.</d>
+
+Camera:
+behind Kael
+→ giant valley reveal
+→ Nyx disappearing
+→ tilt to broken moon
+→ return to Kael close-up
+→ slow pull wide as Kael enters valley.
+
+Music:
+adventure rhythm fades into deep mysterious note.
+
+CUT TO BLACK.
+
+END PART 1.
+
+--------------------------------------------------
+
+[AUDIO DESCRIPTION]
+
+Generate synchronized native stereo audio.
+
+--------------------------------------------------
+
+[KAEL VOICE]
+
+Natural teenage-boy voice.
+
+Age:
+approximately mid-teens.
+
+Voice qualities:
+- youthful
+- thoughtful
+- emotionally expressive
+- initially quiet
+- clear English
+- no exaggerated heroic delivery
+
+Performance progression:
+
+0–3 sec:
+soft and reflective.
+
+3–5 sec:
+confused / shocked.
+
+5–7 sec:
+breathless disbelief.
+
+7–9 sec:
+suspicion becoming certainty.
+
+9–12 sec:
+urgent determination.
+
+12–15 sec:
+fear controlled by resolve.
+
+IMPORTANT:
+
+“He stole the moon!”
+
+should sound like Kael genuinely believes what he has just witnessed.
+
+Not comedic.
+
+Not melodramatically shouted.
+
+--------------------------------------------------
+
+[NYX AUDIO]
+
+No spoken words in PART 1.
+
+Use:
+- large controlled breathing
+- deep throat resonance
+- scale / feather movement
+- powerful wing sweeps
+- small curious exhale when looking toward Kael
+
+Do NOT use:
+- roaring
+- evil laughter
+- growling threats
+- fire sounds
+
+Nyx must remain ambiguous.
+
+--------------------------------------------------
+
+[MOON / MAGIC SOUND DESIGN]
+
+Full moon:
+subtle glassy harmonic ambience.
+
+Crack:
+deep celestial crystal fracture.
+
+Fragment:
+high silver shimmer,
+soft harmonic resonance,
+tiny star particles.
+
+Nyx catches fragment:
+low warm resonant pulse +
+silver chime.
+
+No explosive boom.
+
+--------------------------------------------------
+
+[ENVIRONMENT AUDIO]
+
+NOCTARA:
+
+- lake water
+- night wind
+- distant bells
+- faint city ambience
+- nocturnal insects
+- tree leaves
+- occasional distant bird
+
+CHASE:
+
+- footsteps
+- gravel
+- breath
+- clothing
+- faster wind
+- Nyx’s wings
+
+VALLEY:
+
+- wider empty wind
+- subtle echo
+- distant stone resonance
+- almost no wildlife
+
+This sonic transition helps communicate leaving the safe kingdom.
+
+--------------------------------------------------
+
+[NON-DIEGETIC MUSIC]
+
+Create an ORIGINAL cinematic fantasy score.
+
+Instrumentation:
+
+Opening:
+- soft piano
+- airy flute
+- warm strings
+- glockenspiel / celesta
+
+Moon crack:
+- glass harmonics
+- low cello
+- subtle brass
+
+Nyx reveal:
+- low strings
+- bass clarinet
+- restrained horns
+
+Chase:
+- rhythmic strings
+- hand percussion
+- low drums
+- light brass pulses
+
+Valley ending:
+- low sustained strings
+- distant choir texture without lyrics
+- sparse metallic chime
+
+MUSIC ARC:
+
+0.00–2.20
+peaceful wonder.
+
+2.20–3.50
+slight mystery.
+
+3.50–5.20
+celestial rupture.
+
+5.20–7.20
+mysterious Nyx reveal.
+
+7.20–8.80
+suspicion.
+
+8.80–12.80
+adventure/chase momentum.
+
+12.80–15.00
+ominous mystery cliffhanger.
+
+No horror score.
+
+No trailer-style massive percussion.
+
+--------------------------------------------------
+
+[CAMERA LANGUAGE]
+
+Part 1 camera must move from calm cinematic observation into increasingly urgent adventure.
+
+CAMERA ARC:
+
+0–3.5 sec:
+slow,
+wide,
+stable,
+graceful.
+
+3.5–5.2 sec:
+sudden celestial focus.
+
+5.2–8.8 sec:
+dynamic sky tracking + reaction close-ups.
+
+8.8–12.8 sec:
+faster but smooth chase camera.
+
+12.8–15 sec:
+slow back down for giant valley reveal.
+
+Use:
+- slow dolly
+- subtle crane
+- elegant tilt
+- rack focus
+- giant moon compositions
+- character profile close-up
+- smooth aerial tracking of Nyx
+- side-running tracking
+- environmental parallax
+- dramatic wide reveal
+
+Avoid:
+- handheld shake
+- extreme fisheye
+- constant fast cuts
+- 360 spins
+- Dutch angles
+- chaotic action camera
+
+--------------------------------------------------
+
+[VISUAL STYLE]
+
+Premium finished hand-painted 2D dark-fantasy animation.
+
+MATCH THE STORYBOARD EXACTLY IN SPIRIT.
+
+Use:
+
+- delicate dark ink contours
+- painterly 2D shading
+- rich watercolor/gouache backgrounds
+- stylized expressive faces
+- cinematic blue-black environments
+- silver atmospheric moonlight
+- warm orange architecture lighting
+- layered depth
+- subtle soft bloom
+- painterly dragon scales
+- hand-crafted fantasy architecture
+
+The finished film should feel like:
+
+a premium illustrated fantasy movie brought to life.
+
+NOT:
+- photorealistic
+- 3D CGI
+- hyper-real dragon rendering
+- anime
+- flat vector
+- storyboard animatic
+- motion comic
+- slideshow
+
+--------------------------------------------------
+
+[COLOR / LIGHTING ARC]
+
+OPENING:
+
+Deep navy sky.
+Silver moon.
+Warm orange castle lights.
+
+Kael:
+mostly cool moonlight with subtle warm bounce.
+
+MOON CRACK:
+
+Increase brilliant cool white-silver contrast.
+
+NYX REVEAL:
+
+Nyx remains near-black,
+but use:
+- blue rim light
+- silver shard under-light
+- intense amber eyes
+- luminous pale teeth
+
+CHASE:
+
+Gradually reduce warm Noctara illumination as Kael leaves the kingdom.
+
+VALLEY:
+
+Palette becomes:
+- colder blue
+- gray
+- charcoal
+- pale cyan mist
+
+Final composition:
+Kael = dark silhouette
+fragment = tiny bright silver point far away
+moon = damaged silver
+valley = cold mysterious blue-gray.
+
+--------------------------------------------------
+
+[KAEL MOTION RULES]
+
+Opening:
+natural seated breathing,
+small head movement,
+subtle hair flutter.
+
+Reaction:
+fast but believable rise to feet.
+
+Running:
+natural teenage sprint,
+arms and legs follow realistic stylized physics,
+tunic and hair respond to motion.
+
+No:
+- superhuman jumps
+- parkour stunts
+- magical powers
+- impossible speed.
+
+--------------------------------------------------
+
+[NYX MOTION RULES]
+
+Nyx must feel large and graceful.
+
+Use:
+- long serpentine body follow-through
+- wings with convincing weight
+- slight lag through tail
+- flexible neck
+- smooth aerial banking
+- subtle head movements
+- natural inertia
+
+When catching shard:
+
+Nyx approaches
+→ matches shard trajectory
+→ opens jaws
+→ gently catches
+→ closes jaw enough to secure it
+→ banks away.
+
+No violent snapping.
+
+--------------------------------------------------
+
+[MOON FRAGMENT MOTION]
+
+Fragment falling:
+follow gravity with magical slight drift.
+
+Particle trail:
+subtle silver sparks.
+
+Once Nyx catches it:
+remain physically fixed and stable in his grip.
+
+Do not flicker in/out.
+
+--------------------------------------------------
+
+[CONTINUITY RULES]
+
+Keep exactly:
+
+ONE Kael.
+ONE Nyx.
+ONE moon fragment.
+ONE moon.
+
+Same:
+- Kael design
+- Nyx design
+- castle architecture
+- moon shape
+- lake
+- forest
+- valley entrance
+- night palette
+
+Moon damage must persist after cracking.
+
+Once Nyx catches fragment:
+he retains it through all subsequent Part 1 shots.
+
+Kael starts seated by lake.
+
+He must physically stand and run.
+
+Do not teleport him to the valley.
+
+Castle lights gradually recede during chase.
+
+--------------------------------------------------
+
+[EMOTIONAL PERFORMANCE RULE]
+
+Part 1 intentionally creates a FALSE interpretation.
+
+The viewer should understand why Kael believes Nyx stole the fragment.
+
+However, avoid proving Nyx evil.
+
+Visual balance:
+
+Nyx looks frightening
+BUT
+behaves carefully.
+
+Kael sees:
+giant black dragon + glowing moon shard + flying away.
+
+Therefore he assumes:
+“thief.”
+
+This misunderstanding drives the next chapter.
+
+--------------------------------------------------
+
+[NEGATIVE CONSTRAINTS]
+
+No storyboard sheet.
+No panel borders.
+No timestamps.
+No captions.
+No subtitles.
+No production notes.
+No title cards.
+No watermark.
+No logos.
+No brands.
+
+No duplicate Kael.
+No duplicate Nyx.
+No duplicate fragment.
+No second moon.
+
+No Kael costume change.
+No hairstyle drift.
+No older Kael.
+No armor.
+No weapons.
+
+No Nyx redesign.
+No red dragon.
+No fire breathing.
+No horns appearing/disappearing.
+No eye-color changes.
+No short-neck Nyx.
+No bulky Western-dragon redesign.
+
+No Zara.
+No skeleton guardians.
+No Bone Bridge.
+No Moon Shrine reveal.
+
+No blood.
+No gore.
+No injury.
+No combat.
+No attack.
+No horror.
+No dead bodies.
+
+No moon explosion.
+No planet destruction.
+No falling castle.
+No destroyed city.
+
+No photorealism.
+No 3D CGI.
+No malformed anatomy.
+No extra fingers.
+No face flicker.
+No scale inconsistency.
+No teleportation.
+
+--------------------------------------------------
+
+[FINAL 3-SECOND PRIORITY]
+
+The final sequence must provide a strong PART 2 hook.
+
+Kael reaches the ridge.
+
+He looks down.
+
+Reveal:
+
+THE VALLEY OF BONES.
+
+Jagged cliffs.
+
+Pale mist.
+
+Ancient giant rib-like fossil formations.
+
+Nyx flies deeper inside.
+
+The silver moon fragment glows clearly from his jaws.
+
+Then Kael looks upward.
+
+The giant moon is:
+
+cracked,
+missing its shard,
+noticeably dimmer.
+
+Kael understands time may matter.
+
+He looks back into the valley.
+
+His fear becomes resolve.
+
+Kael says:
+
+<d>[English] You’re not getting away.</d>
+
+Then:
+
+<d>[English] I’m getting it back.</d>
+
+He takes his first step into the valley.
+
+Camera slowly pulls far backward.
+
+Kael becomes tiny against the massive forbidden landscape.
+
+The damaged moon hangs above everything.
+
+Nyx’s distant silver shard-light disappears deeper into the canyon.
+
+CUT TO BLACK.
+
+END PART 1.
+
+The viewer should immediately want to know:
+
+“What is inside the Valley of Bones?”
+
+and
+
+“Did Nyx really steal the moon?”
+```
+
+## An 1890s Bird Plate Draws Itself
+
+- ID: x-2086312209919963371
+- 中文标题: 自动绘成的 1890 年代鸟类图鉴
+- English title: An 1890s Bird Plate Draws Itself
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2086312209919963371/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2086312209919963371/
+- Original source: https://x.com/Dheepanratnam/status/2086312209919963371
+- Author: Dheepan Ratnam
+- Published: 2026-08-09T04:42:47.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: FL2VA
+- Category: Community Showcase
+- Output: 15s, 1920×1440, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 空白旧纸先出现铅笔稿，再叠加墨线和色彩，最后图鉴中的鸟悄然苏醒。 原生视频规格为 15 秒 · 1920×1440。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: An aged blank page gains pencil marks, engraved ink, and color before the illustrated bird quietly comes alive. Native-video output: 15s · 1920×1440. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+@ Image1 is the sole visual authority for the folio spread, the wren, the hazel twig, the egg study, the foot sketch, the handwriting, the printed type, the paper, the foxing, the lighting, the palette, the layout and the horizontal composition.
+
+Animate this exact page without redesigning it. Preserve every existing mark, letter and colour in its final state.
+
+[Goal] Create a 15-second sequence in which this plate makes itself, and then the bird inside it comes quietly alive. One continuous, locked, straight-on overhead composition. No camera movement, no cuts, no cropping, no perspective change, no page turning.
+
+[Sequence]  0-2.4 seconds: Begin on blank aged ivory paper — the empty spread, correct in paper texture, chain lines, foxing and lighting, but carrying no image, no writing and no type. A faint graphite underdrawing appears across the right page in light searching strokes, finding the wren's posture and the line of the twig.
+A few construction marks overshoot and are left uncorrected.
+
+2.4-6 seconds: Engraved ink linework draws itself over the pencil, following the exact contours of the finished plate — outline first, then hatching building the shadow under the wing, the barring of the tail, the texture of the twig. The rectangular plate mark presses into the paper around the image with a soft physical impression, lifting the paper very slightly at its edge.
+
+6-10.5 seconds: Watercolour floods in. Washes enter the printed outlines and settle into them, warm russet across the back, buff along the eyebrow stripe, muted olive on the twig, each wash landing exactly within the shapes of the finished plate and overrunning the line in the same few places the reference does.
+
+The colour blooms wet and then visibly dries, darkening slightly at the edges. On the left page, the sepia handwriting writes itself line by line from the top, in a period cursive hand that is elegant, cramped and only partly legible. The small egg study fills with colour and the pencil foot sketch appears faintly beside it.
+10.5-13 seconds: The printed type impresses into the right page — TROGLODYTES TROGLODYTES, then The Common Wren beneath it, then PLATE XVII in the top right corner. Foxing spots deepen. The last details resolve: the highlight in the bird's eye, the fine barring on the flank. The page settles. Everything on the spread is now exactly as in @[ref img].  13-15 seconds: The page stays completely still and completely flat
+
+— it is paper and it behaves like paper. But the printed bird begins to breathe. Its flank rises and falls very slightly. It blinks once. It turns its head a few degrees and holds, alert, looking past the viewer at something outside the page. The cocked tail gives one small twitch. It does not fly, it does not leave the plate, it does not become three-dimensional, and it does not look at the viewer. Settle into a living idle: the bird breathing, one more slow blink, the paper still.  Render as photoreal archival photography of a real object under warm north-window light. Keep the printed page flat and matte with no glow, no emission, no glint and no digital sheen.
+
+Keep the two motion layers distinct: the page is a made thing being made, the bird is alive. Keep all type, handwriting, marks and geometry fixed once they appear.  Do not introduce any new text, letters, numerals, marks, birds, objects, hands, tools, logos, captions, borders, watermarks or page numbers. Do not turn or lift the page. Do not move, rotate or scale the camera. Do not zoom. Do not add glow, neon, coloured light, lens flare, bokeh or shallow-focus racking.
+
+Do not make the bird photoreal or three-dimensional — it must remain a hand-coloured engraving that happens to be alive. Do not have it fly, hop, open its beak wide, or leave the plate.
+
+Audio: fine graphite scratching on rough paper; the dry precise scrape of a steel nib; the deep soft compression of a plate press; a sable brush loaded with water moving across paper; paper fibres settling; the quiet room tone of a study with a slow long-case clock ticking somewhere behind.
+At 13 seconds, one Eurasian wren song — sudden, intricate and far louder than anything that small should produce — then the room tone returns and the clock keeps going. No music, no dialogue, no narration, no electronic tones.
+```
+
+## 3,200 Paper Stars on a Rooftop
+
+- ID: x-2086294164409630916
+- 中文标题: 屋顶上的 3,200 颗纸星星
+- English title: 3,200 Paper Stars on a Rooftop
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2086294164409630916/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2086294164409630916/
+- Original source: https://x.com/ManuAGI01/status/2086294164409630916
+- Author: ManuAGI 🤖 - ( ManuIn )
+- Published: 2026-08-09T03:31:04.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: FL2VA
+- Category: Community Showcase
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 小创作者 Milo 在夜色屋顶遇见巨型纸灯笼 Luma，并以发光纸星开启一段分章节故事。 原生视频规格为 15 秒 · 2560×1440。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: Young creator Milo meets the giant paper lantern Luma on a nighttime rooftop and begins a chaptered story with glowing paper stars. Native-video output: 15s · 2560×1440. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+[REFERENCE CONTROL]
+
+Use the uploaded PART 1 storyboard image for “The Little Creator and the 3,200 Paper Stars” as the PRIMARY visual, character, environment, scale, prop, lighting, performance, and narrative reference.
+
+Generate a FINISHED cinematic animated sequence from this storyboard.
+
+DO NOT reproduce the storyboard sheet itself.
+
+The final video must NOT contain:
+- storyboard borders
+- storyboard panel layout
+- panel numbers
+- timestamps
+- handwritten captions
+- production notes
+- character-reference drawings
+- scale-reference diagrams
+- storyboard title/header
+- paper background
+- footer decorations
+
+The uploaded storyboard locks:
+
+1. Milo’s exact character identity
+2. Milo’s dark-blue oversized hoodie
+3. Milo’s fluffy brown hair
+4. Milo’s glowing-star satchel
+5. Luma’s exact giant lantern design
+6. Luma’s warm cream/orange paper texture
+7. Luma’s sleepy face
+8. Luma’s hanging ribbons and tassels
+9. Pip’s exact firefly design
+10. extreme Milo-vs-Luma scale
+11. handmade glowing paper-star design
+12. same magical rooftop environment
+13. same distant nighttime city
+14. deep indigo + warm amber palette
+15. single-star placement story beat
+16. final full-satchel cliffhanger
+
+Translate the 15 storyboard panels into approximately 8 coherent cinematic shots.
+
+DO NOT create fifteen one-second hard cuts.
+
+Use clear:
+
+cause → action → consequence → reaction.
+
+--------------------------------------------------
+
+[VIDEO GOAL]
+
+Duration:
+EXACTLY 15 seconds
+
+Story time:
+0:00–0:15
+
+Aspect ratio:
+16:9 landscape
+
+Frame-rate feeling:
+cinematic 24 fps
+
+Visual medium:
+premium painterly 2D animated short film
+
+Genre:
+magical gratitude story / whimsical rooftop fantasy
+
+Audience:
+family-friendly
+
+Dialogue:
+natural synchronized English
+
+Audio:
+native dialogue + character sounds + rooftop ambience + magical paper-star effects + original music
+
+EMOTIONAL ARC:
+
+quiet rooftop wonder
+→ gratitude
+→ magical giant reveal
+→ tiny secret mission
+→ difficult climb
+→ first star placement
+→ beautiful success
+→ realization that thousands remain
+→ mischievous cliffhanger
+
+The overall feeling should be:
+
+small creator,
+huge dream,
+warm gratitude.
+
+--------------------------------------------------
+
+[PART 1 STORY LIMIT]
+
+PART 1 ONLY.
+
+START:
+
+Milo sits alone on a peaceful rooftop beneath a star-filled night sky with a satchel containing glowing handmade paper stars.
+
+He is celebrating an important milestone:
+
+3,200 supporters.
+
+END:
+
+Milo has attached EXACTLY ONE glowing paper star to Luma.
+
+He then looks back at his still-overflowing satchel.
+
+Milo gets a huge idea.
+
+He whispers:
+
+<d>[English] Maybe... all of them?</d>
+
+Pip realizes what Milo means.
+
+CUT TO BLACK.
+
+DO NOT show:
+- Milo attaching multiple stars
+- Luma fully decorated
+- hundreds of stars covering Luma
+- Luma waking
+- Luma flying higher
+- stars leaving Luma
+- sky formation
+- giant “3200”
+- “THANK YOU”
+- full milestone celebration
+- final hero shot
+
+Those belong to PART 2.
+
+--------------------------------------------------
+
+[CHARACTER IDENTITY LOCK — MILO]
+
+Match the uploaded storyboard EXACTLY.
+
+MILO:
+
+Tiny young creator.
+
+Appearance:
+- warm light skin
+- soft rounded youthful face
+- large expressive dark-brown eyes
+- fluffy tousled medium-brown hair
+- slightly oversized head for appealing animation proportions
+
+Clothing:
+- oversized dark navy-blue hoodie
+- dark/simple trousers
+- little shoes/boots
+- small brown crossbody satchel
+- satchel filled with glowing folded paper stars
+
+Personality:
+- grateful
+- creative
+- curious
+- optimistic
+- emotional
+- slightly impulsive
+- playful
+
+PART 1 PERFORMANCE ARC:
+
+0–3 sec:
+quietly grateful
+
+3–5 sec:
+curious wonder
+
+5–7 sec:
+gets an idea
+
+7–10 sec:
+determined tiny climber
+
+10–12 sec:
+careful and emotionally invested
+
+12–15 sec:
+proud → inspired → mischievously ambitious
+
+Milo should never feel arrogant.
+
+The milestone means something because of the people represented by the stars.
+
+CRITICAL:
+
+Keep exact:
+- face
+- brown hair
+- navy hoodie
+- satchel
+- body proportions
+- age appearance
+- scale
+
+--------------------------------------------------
+
+[CHARACTER IDENTITY LOCK — LUMA]
+
+Match the uploaded storyboard exactly.
+
+LUMA:
+
+A gigantic living floating sky lantern.
+
+Appearance:
+- enormous rounded lantern body
+- warm cream / parchment-orange paper surface
+- handmade subtle paper texture
+- decorative curved motifs
+- gentle closed sleepy eyes
+- tiny peaceful curved smile
+- soft amber-gold inner illumination
+- decorative frame underneath
+- multiple long hanging ribbons / tassels
+- huge scale relative to Milo
+
+Personality:
+- peaceful
+- gentle
+- warm
+- sleepy
+- safe
+- quietly magical
+
+PART 1:
+
+Luma remains ASLEEP for the entire sequence.
+
+Allowed:
+- very subtle floating
+- gentle vertical bob
+- soft breathing-like light pulse
+- tiny peaceful smile response when first star is attached
+
+Do NOT:
+- open her eyes
+- speak
+- rise dramatically
+- intentionally move Milo
+- activate celebration magic
+
+Her awakening happens in PART 2.
+
+--------------------------------------------------
+
+[CHARACTER IDENTITY LOCK — PIP]
+
+Match the storyboard.
+
+PIP:
+
+Tiny glowing firefly helper.
+
+Appearance:
+- small round yellow-gold body
+- pale luminous glow
+- large expressive eyes
+- tiny antennae
+- translucent wings
+- much smaller than Milo
+
+Personality:
+- practical
+- cautious
+- loyal
+- funny
+- suspicious of Milo’s big ideas
+
+Performance:
+
+calm companion
+→ curious
+→ realizes Milo’s plan
+→ worried during climb
+→ nervous during star placement
+→ pleased that it works
+→ horrified by Milo’s final bigger idea
+
+Pip may speak in short natural lines.
+
+--------------------------------------------------
+
+[GLOWING PAPER STAR LOCK]
+
+All stars must match the storyboard.
+
+Design:
+- handmade folded paper stars
+- cream / pale-gold paper
+- visible folded facets
+- warm golden light from inside
+- physical tactile objects
+- lightweight
+- slightly magical
+
+Close views should preserve real paper folds.
+
+At the beginning:
+the satchel contains many glowing stars.
+
+During PART 1:
+Milo removes ONLY ONE star for decoration.
+
+At the final shot:
+the satchel must still visibly overflow with stars.
+
+--------------------------------------------------
+
+[STAR SYMBOLISM]
+
+The stars represent individual pieces of support from Milo’s audience/community.
+
+The video should communicate this emotionally without showing social-media interfaces.
+
+No:
+- phones
+- follower counters
+- social-media app screens
+- X logos
+- Twitter logos
+- platform branding
+
+Milo may verbally reference:
+
+“3,200”
+
+but the milestone should primarily be represented by the glowing paper stars.
+
+--------------------------------------------------
+
+[ENVIRONMENT LOCK — ROOFTOP]
+
+Maintain the exact nighttime rooftop world from the storyboard.
+
+Include:
+- cozy high rooftop
+- old rooftop stone/brick surfaces
+- chimney / small rooftop structures
+- a few potted plants
+- distant city buildings
+- warm glowing windows
+- layered rooftops
+- deep blue night sky
+- stars
+- crescent moon
+- subtle distant clouds
+- warm rooftop accent lights
+
+Mood:
+quiet,
+safe,
+dreamlike,
+intimate.
+
+The city is far below.
+
+No crowds.
+
+No extra characters.
+
+--------------------------------------------------
+
+[SCALE RULES]
+
+Extreme scale contrast is critical.
+
+Milo is tiny compared with Luma.
+
+Use storyboard scale:
+
+- Milo smaller than one tassel knot
+- Luma’s lantern body towers above Milo
+- hanging ribbons are thick enough for Milo to climb like ropes
+- one section of Luma’s body is enormous compared with Milo’s full height
+
+Pip is much smaller than Milo.
+
+Never accidentally render Milo human-sized beside Luma.
+
+--------------------------------------------------
+
+[WORLD / MOTION LOGIC]
+
+Clear cause-and-effect:
+
+Milo looks at stars
+→ remembers milestone
+
+Milo looks upward
+→ notices sleeping Luma
+
+Luma’s huge blank lantern surface
+→ gives Milo decorating idea
+
+Milo wants to celebrate
+→ climbs ribbons
+
+Milo reaches lantern
+→ attaches ONE star
+
+Star lights up beautifully
+→ Milo feels successful
+
+Milo looks down
+→ sees full satchel
+
+Full satchel + enormous lantern
+→ Milo gets much bigger idea
+
+Pip realizes what Milo is thinking
+→ comic panic cliffhanger
+
+No random magic.
+
+--------------------------------------------------
+
+integrated_multimodal_description:
+
+[SHOT 1] — 0.00s–1.80s
+A QUIET ROOFTOP AND 3,200 LITTLE LIGHTS
+
+Open with a beautiful nighttime establishing shot.
+
+Deep indigo sky.
+
+Crescent moon.
+
+Thousands of distant real stars.
+
+Camera slowly descends toward a peaceful rooftop overlooking a softly glowing city.
+
+Milo sits near the rooftop edge.
+
+Beside him is his brown satchel.
+
+Warm golden light leaks from inside.
+
+Milo opens the satchel.
+
+Reveal many handmade glowing paper stars.
+
+He gently picks ONE up with both hands.
+
+The warm star light illuminates his face.
+
+Pip floats quietly beside him.
+
+Camera:
+wide skyline
+→ slow dolly toward Milo
+→ overhead satchel insert
+→ intimate close-up on glowing star in his hands.
+
+Dialogue:
+
+Milo, softly:
+<d>[English] Three thousand two hundred...</d>
+
+Tiny pause.
+
+Milo smiles.
+
+<d>[English] That’s a lot of people.</d>
+
+Pip gives a soft happy chirp.
+
+Sound:
+- distant nighttime city
+- light rooftop breeze
+- cloth movement
+- satchel leather
+- subtle paper rustle
+- soft magical star hum
+
+Music:
+gentle piano + glockenspiel + warm strings.
+
+--------------------------------------------------
+
+[SHOT 2] — 1.80s–3.50s
+A REASON TO SAY THANK YOU
+
+Milo holds the glowing star near his chest.
+
+His expression becomes warm and grateful.
+
+He looks at the many remaining stars.
+
+Dialogue:
+
+Milo:
+<d>[English] We should do something special.</d>
+
+Pip tilts his head.
+
+Then Milo notices an enormous warm amber light above him.
+
+The light softly brightens his face.
+
+Milo slowly looks upward.
+
+Camera follows his gaze.
+
+Reveal the lower edge of Luma entering frame.
+
+Long decorative ribbons sway gently beneath her.
+
+Milo’s eyes widen.
+
+Dialogue:
+
+Milo:
+<d>[English] Oh...</d>
+
+Pip slowly turns upward too.
+
+Sound:
+- gentle ribbon movement
+- low warm lantern hum
+- night breeze
+
+Music:
+introduce airy flute and soft wonder motif.
+
+--------------------------------------------------
+
+[SHOT 3] — 3.50s–5.20s
+THE SLEEPY SKY LANTERN
+
+Camera continues upward into a full magical reveal of Luma.
+
+Luma floats above the city.
+
+Huge.
+
+Round.
+
+Warmly illuminated.
+
+Her eyes remain peacefully closed.
+
+Her tiny smile is gentle.
+
+She slowly bobs in the night air.
+
+Milo is tiny at the bottom of frame.
+
+This shot must strongly emphasize SCALE.
+
+Milo looks at:
+the glowing star in his hand...
+
+then Luma’s enormous blank lantern surface.
+
+Idea forming.
+
+His mouth curls into a grin.
+
+Pip notices Milo’s expression.
+
+Dialogue:
+
+Milo, whispering:
+<d>[English] Pip...</d>
+
+Pip:
+<d>[English] What?</d>
+
+Milo:
+<d>[English] I have an idea.</d>
+
+Pip immediately becomes suspicious.
+
+Pip:
+<d>[English] That face worries me.</d>
+
+Music:
+small mischievous plucked motif enters.
+
+--------------------------------------------------
+
+[SHOT 4] — 5.20s–7.00s
+THE SECRET STAR MISSION
+
+Milo walks beneath one long hanging Luma ribbon.
+
+He grabs it with both hands.
+
+Tests it.
+
+Looks upward.
+
+It extends far above him.
+
+Milo puts the glowing star securely into his hoodie pocket / small pouch while keeping it visible and safe.
+
+Then starts climbing.
+
+Pip hovers beside him.
+
+Dialogue:
+
+Milo, whispering:
+<d>[English] We should celebrate.</d>
+
+Pip:
+<d>[English] From the roof.</d>
+
+Milo climbs higher.
+
+Milo:
+<d>[English] Too ordinary.</d>
+
+Pip:
+<d>[English] Of course.</d>
+
+Camera:
+low-angle ribbon shot
+→ side tracking with Milo climbing
+→ pull wide showing tiny Milo beneath giant lantern.
+
+Sound:
+- fabric ribbon strain
+- Milo’s tiny climbing effort
+- shoe taps
+- Pip wing buzz
+- soft Luma hum
+
+--------------------------------------------------
+
+[SHOT 5] — 7.00s–9.00s
+MILO VS. LUMA
+
+Milo reaches a large tassel knot.
+
+He pauses and sits momentarily on it.
+
+The knot itself is nearly Milo-sized.
+
+He looks upward at the enormous lantern surface.
+
+Pip floats beside him, slightly out of breath despite being a firefly.
+
+Use a vertical scale composition.
+
+Milo climbs the final short ribbon section.
+
+He reaches Luma’s lower lantern edge.
+
+Luma remains completely asleep.
+
+Dialogue:
+
+Milo:
+<d>[English] Almost there...</d>
+
+Pip:
+<d>[English] Define “almost.”</d>
+
+Milo pulls himself onto a decorative rim.
+
+Dialogue:
+
+Milo:
+<d>[English] There.</d>
+
+Sound:
+- ribbon movement
+- tiny climb grunt
+- paper lantern creak
+- soft floating ambience
+
+--------------------------------------------------
+
+[SHOT 6] — 9.00s–11.00s
+THE FIRST STAR
+
+Milo retrieves the ONE glowing folded star.
+
+He looks at it.
+
+Then at Luma’s huge lantern body.
+
+He carefully presses the handmade star onto the lantern using a tiny clip / adhesive tab.
+
+Take time with this.
+
+The star gently settles.
+
+For half a beat:
+
+nothing.
+
+Then its glow becomes slightly warmer.
+
+The golden star light blends beautifully with Luma’s amber paper body.
+
+Milo’s face lights up.
+
+Pip watches cautiously.
+
+Luma’s sleeping smile curves perhaps one tiny degree more.
+
+She does NOT wake.
+
+Dialogue:
+
+Milo, whispering:
+<d>[English] One little thank-you.</d>
+
+Soft click.
+
+Milo:
+<d>[English] Perfect.</d>
+
+Sound:
+- paper touching paper
+- tiny clip click
+- warm magical “ting”
+- Luma’s gentle light pulse
+
+Camera:
+close-up Milo’s hands
+→ macro star attachment
+→ reaction on Milo
+→ Luma’s peaceful sleepy expression.
+
+Music:
+gentle emotional success note.
+
+--------------------------------------------------
+
+[SHOT 7] — 11.00s–12.80s
+ONE VERY BIG SUCCESS
+
+Milo leans back against Luma’s decorative rim.
+
+He admires the glowing star.
+
+The single paper star looks beautiful against the huge warm lantern surface.
+
+Pip slowly smiles.
+
+Milo:
+<d>[English] Look at that.</d>
+
+Pip:
+<d>[English] Okay...</d>
+
+Pip studies it.
+
+<d>[English] That is actually nice.</d>
+
+Milo beams.
+
+Camera pulls out slightly.
+
+Clearly show:
+
+tiny Milo
++
+one glowing star
++
+enormous mostly undecorated Luma.
+
+The contrast is important.
+
+--------------------------------------------------
+
+[SHOT 8] — 12.80s–15.00s
+THE MUCH BIGGER IDEA — CLIFFHANGER
+
+Milo’s proud smile suddenly pauses.
+
+He remembers something.
+
+He looks downward.
+
+Camera follows his gaze toward the rooftop.
+
+His satchel remains there / hangs securely nearby according to spatial setup, visibly overflowing with glowing paper stars.
+
+Alternatively, if he carried the satchel during the climb, show it hanging securely from his shoulder and still overflowing.
+
+CRITICAL:
+do not teleport the satchel.
+
+Use whichever configuration is established earlier and maintain it consistently.
+
+Milo slowly opens / looks into it.
+
+Dozens upon dozens of glowing folded stars illuminate his face.
+
+Then he looks at:
+
+the full satchel...
+
+the ONE star on Luma...
+
+Luma’s ENORMOUS remaining lantern surface.
+
+Milo’s eyes widen.
+
+A mischievous smile grows.
+
+Pip looks at Milo.
+
+Pip looks at the satchel.
+
+Pip looks at enormous Luma.
+
+Pip’s expression turns to immediate horror.
+
+Pip:
+<d>[English] Milo...</d>
+
+Milo raises the satchel slightly.
+
+Milo, delighted whisper:
+<d>[English] Maybe... all of them?</d>
+
+Pip’s eyes become huge.
+
+Pip:
+<d>[English] ALL?!</d>
+
+Luma continues peacefully sleeping.
+
+The ONE attached star glows softly.
+
+Hold on:
+
+Milo = enormous inspiration
+Pip = comic panic
+Luma = peacefully unaware
+
+CUT TO BLACK.
+
+END PART 1.
+
+--------------------------------------------------
+
+[AUDIO DESCRIPTION]
+
+Generate synchronized native stereo audio.
+
+--------------------------------------------------
+
+[MILO VOICE]
+
+Natural young creator voice.
+
+Age feeling:
+young / youthful, not adult.
+
+Qualities:
+- warm
+- sincere
+- curious
+- imaginative
+- emotionally grateful
+- playful
+- clear English
+
+Do not make Milo sound boastful.
+
+His line:
+
+<d>[English] Three thousand two hundred...</d>
+
+should sound genuinely amazed and appreciative.
+
+His final:
+
+<d>[English] Maybe... all of them?</d>
+
+should be playful, excited and slightly mischievous.
+
+--------------------------------------------------
+
+[PIP VOICE]
+
+Small cute firefly voice.
+
+Qualities:
+- slightly higher pitch
+- quick
+- expressive
+- cautious
+- dry comic timing
+- understandable English
+
+Performance:
+
+beginning:
+supportive
+
+middle:
+increasing suspicion
+
+climb:
+slightly anxious
+
+first star:
+pleasantly surprised
+
+ending:
+immediate panic
+
+Final:
+
+<d>[English] ALL?!</d>
+
+is the comedy punctuation.
+
+--------------------------------------------------
+
+[LUMA AUDIO]
+
+No spoken dialogue in PART 1.
+
+Use only:
+- very soft floating-lantern hum
+- subtle paper movement
+- gentle inner magical resonance
+- tiny warm pulse when star is attached
+
+No snoring is necessary unless extremely soft and cute.
+
+Luma remains asleep.
+
+--------------------------------------------------
+
+[ENVIRONMENT AUDIO]
+
+Nighttime rooftop sound bed:
+
+- soft breeze
+- distant city ambience
+- very faint traffic far below
+- occasional distant bird/night insect
+- fabric ribbon movement
+- rooftop plants rustling
+- subtle paper-star sounds
+- Pip wing buzz
+- lantern hum
+
+Keep everything intimate.
+
+--------------------------------------------------
+
+[STAR SOUND DESIGN]
+
+Paper stars need a signature sound identity.
+
+Physical handling:
+soft folded-paper rustle.
+
+Glow:
+delicate glassy/glockenspiel-like shimmer.
+
+Attachment:
+tiny paper “tap” + gentle magical “ting.”
+
+Do NOT use:
+- sci-fi electricity
+- laser sounds
+- aggressive magical effects
+
+--------------------------------------------------
+
+[NON-DIEGETIC MUSIC]
+
+Use an ORIGINAL whimsical emotional score.
+
+Instrumentation:
+- soft piano
+- delicate glockenspiel
+- pizzicato strings
+- airy flute
+- light harp
+- warm string pad
+- subtle marimba
+- tiny bell accents
+
+MUSIC ARC:
+
+0.00–1.80
+quiet rooftop wonder.
+
+1.80–3.50
+gentle gratitude.
+
+3.50–5.20
+magical Luma reveal.
+
+5.20–7.00
+playful mission rhythm.
+
+7.00–9.00
+light climbing comedy.
+
+9.00–11.00
+small emotional star-placement motif.
+
+11.00–12.80
+warm success.
+
+12.80–15.00
+mischievous rising idea motif.
+
+End with playful comic sting after Pip says:
+
+<d>[English] ALL?!</d>
+
+No epic trailer music.
+
+No dramatic action score.
+
+--------------------------------------------------
+
+[CAMERA LANGUAGE]
+
+PART 1 camera should gradually move from intimate to enormous scale.
+
+CAMERA ARC:
+
+0–3.5 sec:
+quiet rooftop wides + emotional close-ups.
+
+3.5–5.2 sec:
+large upward reveal.
+
+5.2–9 sec:
+miniature adventure camera.
+
+9–12.8 sec:
+intimate star-placement coverage.
+
+12.8–15 sec:
+reaction-driven cliffhanger.
+
+Use:
+- slow dolly
+- gentle tilt
+- upward reveal
+- macro star inserts
+- low-angle climbing shots
+- vertical scale compositions
+- soft rack focus
+- reaction close-ups
+- gentle final push toward Milo
+
+Avoid:
+- handheld shaking
+- crash zoom
+- excessive cuts
+- spinning camera
+- action-movie camera movement
+- Dutch angles
+
+--------------------------------------------------
+
+[VISUAL STYLE]
+
+Premium finished painterly 2D animation.
+
+Match the uploaded storyboard EXACTLY in spirit:
+
+- hand-drawn ink-like contours
+- watercolor/gouache-inspired fills
+- deep painterly night skies
+- warm paper-lantern textures
+- expressive rounded characters
+- cinematic glow
+- delicate atmospheric city depth
+- charming handmade objects
+- subtle squash and stretch
+- believable fabric/ribbon movement
+
+The video should look like the storyboard artwork has come alive.
+
+NOT:
+- storyboard animatic
+- slideshow
+- motion comic
+- photorealism
+- 3D CGI
+- anime
+- vector animation
+- cel-shaded 3D
+
+--------------------------------------------------
+
+[COLOR / LIGHTING]
+
+Primary palette:
+
+NIGHT:
+- navy blue
+- indigo
+- subtle violet
+- midnight teal
+
+WARM LIGHT:
+- amber
+- golden yellow
+- cream
+- soft orange
+
+MILO:
+dark blue hoodie with warm star-light reflections.
+
+PIP:
+small yellow-gold glow.
+
+LUMA:
+largest warm amber light source.
+
+Paper stars:
+cream-gold.
+
+Lighting progression:
+
+0–3 sec:
+mostly cool night with small warm star light.
+
+3–5 sec:
+Luma introduces large warm amber source.
+
+5–9 sec:
+mix of cool moonlight and warm lantern rim light.
+
+9–12 sec:
+single paper star becomes a delicate focal glow.
+
+12–15 sec:
+satchel illuminates Milo’s excited face with many warm points.
+
+No neon colors.
+
+No overexposure.
+
+--------------------------------------------------
+
+[MOTION RULES — MILO]
+
+Natural tiny-character movement.
+
+Use:
+- soft seated posture
+- careful star handling
+- curious head tilts
+- expressive eyes
+- hoodie fabric reacting to breeze
+- determined climbing
+- hands gripping ribbons
+- stable footing
+- gentle placement of star
+
+No:
+- superhero jumping
+- flying
+- impossible leaps
+- dangerous falls
+
+--------------------------------------------------
+
+[MOTION RULES — LUMA]
+
+Luma floats gently.
+
+Use:
+- slow vertical bob
+- minimal horizontal drift
+- ribbons responding softly to air
+- subtle paper flex
+- gentle internal light breathing
+
+During star attachment:
+only a tiny warm light pulse.
+
+No awakening.
+
+--------------------------------------------------
+
+[MOTION RULES — PIP]
+
+Use:
+- natural hovering
+- fast tiny wings
+- subtle inertia
+- head tilts
+- expressive eye widening
+- small arcs around Milo
+
+Do not have Pip carry Milo.
+
+--------------------------------------------------
+
+[CONTINUITY RULES]
+
+Maintain:
+
+one Milo
+one Pip
+one Luma
+
+Same:
+- rooftop
+- skyline
+- crescent moon
+- satchel
+- paper stars
+- Luma ribbons
+- character outfits
+- scale
+- night lighting direction
+
+Milo begins on rooftop.
+
+He climbs Luma using her ribbons.
+
+Do NOT teleport him onto Luma.
+
+Exactly ONE star is attached during Part 1.
+
+Once attached, the star remains visible.
+
+Luma stays asleep.
+
+The satchel remains full at ending.
+
+--------------------------------------------------
+
+[NEGATIVE CONSTRAINTS]
+
+No storyboard sheet.
+No panel frames.
+No numbers.
+No timestamps.
+No captions.
+No subtitles.
+No production notes.
+No watermark.
+No social-media logo.
+No X logo.
+No Twitter logo.
+No platform UI.
+
+No duplicate Milo.
+No duplicate Pip.
+No duplicate Luma.
+No identity drift.
+No clothing changes.
+No hairstyle changes.
+No scale inconsistency.
+
+No awake Luma.
+No talking Luma.
+No angry Luma.
+No fire.
+No burning lantern.
+No falling.
+No injury.
+No dangerous rooftop behavior.
+No destructive magic.
+
+No multiple stars attached in Part 1.
+No fully decorated lantern.
+No star explosion.
+No “3200” sky formation yet.
+No “THANK YOU” sky formation.
+No Part 2 celebration.
+
+No warped hands.
+No extra fingers.
+No malformed face.
+No melting lantern.
+No flickering character identity.
+No disappearing satchel.
+
+--------------------------------------------------
+
+[FINAL 2.5-SECOND PRIORITY]
+
+The ending must clearly create anticipation for PART 2.
+
+Show:
+
+ONE glowing paper star attached to Luma.
+
+Milo proudly admires it.
+
+Then Milo looks into his still-overflowing satchel.
+
+Many warm paper stars glow inside.
+
+Milo looks from:
+
+satchel
+→ single star
+→ enormous empty lantern surface.
+
+His expression becomes increasingly excited.
+
+Pip slowly realizes what Milo is thinking.
+
+Pip:
+
+<d>[English] Milo...</d>
+
+Milo smiles:
+
+<d>[English] Maybe... all of them?</d>
+
+Pip:
+
+<d>[English] ALL?!</d>
+
+Luma remains peacefully asleep.
+
+Hold long enough for:
+
+Milo = ambitious gratitude
+Pip = comic panic
+Luma = peacefully unaware
+
+to register clearly.
+
+CUT TO BLACK.
+
+END PART 1.
+
+The viewer should immediately want to see how 3,200 tiny stars transform the night in PART 2.
+```
+
+## An Architecture Board Assembles from Wireframes
+
+- ID: x-2086254335021961590
+- 中文标题: 从线框到成品的建筑展板
+- English title: An Architecture Board Assembles from Wireframes
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2086254335021961590/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2086254335021961590/
+- Original source: https://x.com/vkuoo/status/2086254335021961590
+- Author: vkuoo
+- Published: 2026-08-09T00:52:48.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: FL2VA
+- Category: UGC & Advertising
+- Output: 15s, 480×640, portrait
+- Prompt provenance: creator-verbatim
+- Chinese summary: 建筑方案从点云、深度图和白色线框逐层显现，最终拼装为完整的图文展示板。 原生视频规格为 15 秒 · 480×640。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: An architectural scheme evolves from point cloud, depth map, and white wireframe into a complete mixed-media presentation board. Native-video output: 15s · 480×640. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+Use [img1] as the sole visual authority for the architecture, courtyard, container modules, roof geometry, facade openings, materials, landscape, people, diagrams, site plan, typography, labels, colors, and final presentation-board composition.
+
+Create a fast-paced 15-second architectural presentation reveal. Do not begin with the completed board. Start from a dark charcoal background and progressively assemble the board through point clouds, depth maps, wireframes, technical drawings, typography, diagrams, and finally the photorealistic architecture.
+
+Preserve the architecture exactly. Do not redesign the building.
+
+[0.0–1.5s — ARCHITECTURE EMERGES]
+
+Start from near-black.
+
+A faint point cloud flashes into existence in the upper portion of the frame, rapidly transforming:
+
+point cloud → depth map → white architectural wireframe → shaded clay model.
+
+Roof edges, container modules, balconies, windows, courtyard boundaries, and structural lines are traced in quick succession with sharp rhythmic flashes and scanning effects.
+
+[1.5–3.2s — HERO IMAGE REVEAL]
+
+The wireframe snaps into the photorealistic courtyard rendering.
+
+Color and material flood into the image:
+white container walls, timber roofs, glass reflections, grass, trees, and warm sunlight.
+
+The hero image locks into its final upper-board position.
+
+Subtle life begins immediately:
+tree branches sway,
+grass moves,
+people make small gestures,
+sunlight shifts across the facades.
+
+[3.2–4.4s — TYPOGRAPHY]
+
+The title appears letter-by-letter with elegant tracking expansion.
+
+Subtitle and location follow.
+
+Divider lines shoot into place.
+
+Small labels reveal sequentially.
+
+Keep all typography sharp, clean, and stable once revealed.
+
+[4.4–6.4s — SPATIAL SEQUENCE]
+
+The first analytical module flashes in as fragmented white linework.
+
+Its layers rapidly assemble:
+ground plane → building volumes → balconies → roofs → courtyard.
+
+Orange arrows sweep through thresholds and semi-private zones toward the courtyard.
+
+Labels appear one by one beneath the diagram.
+
+[6.4–8.3s — DAYLIGHTING]
+
+A lateral light sweep activates the second diagram.
+
+Sun icons appear.
+
+A curved solar path draws across the architecture.
+
+Warm light rays move over the roofs and into the courtyard.
+
+Reflected light and subtle airflow paths animate briefly.
+
+The hero image above responds with changing sunlight and moving tree shadows.
+
+[8.3–10.1s — CIRCULATION]
+
+The third axonometric appears as a translucent technical model.
+
+Orange circulation paths race around balconies and climb vertical connectors.
+
+Small moving points suggest occupants traveling through the building.
+
+The animation settles into the final circulation diagram.
+
+[10.1–11.8s — SITE + DATA]
+
+The lower section assembles rapidly from left to right.
+
+Site context appears.
+
+The site boundary traces itself.
+
+The plan develops from thin drafting lines.
+
+Project data appears row-by-row with precise editorial timing.
+
+The full board is now nearly complete.
+
+[11.8–13.5s — BUILDING COMES ALIVE]
+
+Shift emphasis back to the large hero rendering.
+
+A subtle push-in occurs only inside this image.
+
+Existing people begin moving naturally.
+
+Add several more occupants:
+one person enters a ground-floor doorway,
+another exits,
+a student crosses the courtyard,
+one person walks along an upper balcony.
+
+Doors open and close softly.
+
+Foliage moves more clearly.
+
+Sunlight passes through leaves and shadows glide across the facades.
+
+[13.5–15.0s — FINAL CLIMAX]
+
+A final pulse travels from the hero rendering downward through the board.
+
+Spatial sequence activates.
+Daylighting activates.
+Circulation activates.
+Site plan activates.
+
+Fine orange and white lines briefly connect the analytical systems, then settle.
+
+Hold the complete final board while subtle life continues inside the hero rendering:
+people walking,
+people entering and leaving,
+moving foliage,
+soft reflections,
+shifting sunlight.
+
+[MOTION STYLE]
+
+Fast, rhythmic architectural motion graphics.
+Point-cloud reconstruction.
+Depth-map transitions.
+Wireframe-to-photoreal reveal.
+Rapid drafting-line animation.
+Masked typography.
+Diagram assembly.
+Circulation tracing.
+Animated light paths.
+Strong acceleration and clean easing.
+
+The first 11 seconds should contain frequent visual events every 0.3–0.8 seconds.
+
+Use the rhythm:
+FLASH → DRAW → ASSEMBLE → LOCK.
+
+Once revealed, each module remains in its final position.
+
+[CRITICAL RULES]
+
+Do not rotate the entire board.
+Do not turn the board into a separate full-screen architectural flythrough.
+Do not rearrange the layout.
+Do not redesign the building.
+Do not alter the container massing, roof geometry, facade rhythm, courtyard proportions, balconies, windows, or structural logic.
+Do not replace the original diagrams.
+
+Avoid neon HUDs, cyberpunk effects, random particles, excessive glow, or generic tech graphics.
+
+Keep the visual language architectural, editorial, precise, and premium.
+
+[AUDIO]
+
+Deep opening impact, scanner pulses, drafting scratches, paper-like swishes, subtle mechanical clicks, soft transition whooshes.
+
+As the hero image comes alive, introduce quiet courtyard ambience:
+footsteps, distant conversation, doors opening, leaves moving in the breeze.
+
+Finish with one clean low-frequency impact as the full board locks into place.
+
+No dialogue.
+```
+
+## A Tiny Village on Cow Dung
+
+- ID: x-2086224302316105742
+- 中文标题: 牛粪上的微型村庄
+- English title: A Tiny Village on Cow Dung
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2086224302316105742/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2086224302316105742/
+- Original source: https://x.com/LikeToasters/status/2086224302316105742
+- Author: ILikeToasters
+- Published: 2026-08-08T22:53:28.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: T2VA
+- Category: Local Generation
+- Output: 10s, 608×1056, portrait
+- Prompt provenance: creator-verbatim
+- Chinese summary: 镜头先观察微型居民的村庄，随后戏剧性拉远，揭示聚落其实建在田野里的牛粪上。 原生视频规格为 10 秒 · 608×1056。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: The camera observes a tiny village, then dramatically pulls back to reveal that it sits on cow dung beside a nearby cow. Native-video output: 10s · 608×1056. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+a village of tiny people living on cow poop. The camera then dramatically zooms out to show where they are and the cow nearby in the field.
+```
+
+## A Dawn Bakery Delivery Launch
+
+- ID: x-2086199653922455917
+- 中文标题: 黎明面包配送广告
+- English title: A Dawn Bakery Delivery Launch
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2086199653922455917/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2086199653922455917/
+- Original source: https://x.com/Dheepanratnam/status/2086199653922455917
+- Author: Dheepan Ratnam
+- Published: 2026-08-08T21:15:31.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Ref2VA
+- Category: UGC & Advertising
+- Output: 15s, 1440×2560, portrait
+- Prompt provenance: creator-verbatim
+- Chinese summary: 烘焙、装袋和骑手配送随着天色逐步变亮，被剪成一条可静音理解的竖屏品牌广告。 原生视频规格为 15 秒 · 1440×2560。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: Baking, packing, and courier delivery unfold as the light progresses from pre-dawn darkness to warm sunrise in a vertical brand launch. Native-video output: 15s · 1440×2560. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+@ Image1 is the sole authority for the PROOF logo: the roundel of five concentric rings
+and the PROOF wordmark in heavy geometric rounded sans. Reproduce the mark and the
+spelling P-R-O-O-F exactly and never alter, restyle or re-letter them. @ Image2 is the
+authority for the branded kraft bakery bag. @ Image3 is the authority for the courier,
+the canvas bread satchel and the dawn street.
+
+[GOAL]
+A 15-second vertical 9:16 social launch commercial for PROOF, a dawn bakery delivery
+service. Fast-cut, caption-led, designed to be understood with the sound off. Photoreal
+documentary commercial cinematography on 35mm, fine grain, shallow depth of field,
+handheld with restrained movement.
+
+[THE LIGHT IS THE CLOCK]
+The film brightens continuously from beginning to end. It opens in near-darkness lit by
+a single work lamp and finishes in full warm golden sunrise. Every shot is measurably
+lighter than the one before it. This progression must be unbroken.
+
+[CAPTION CHIPS]
+Throughout, a single caption chip sits in the lower third, horizontally centred, in the
+same position in every shot. It is a rounded rectangle in burnt ochre with warm cream
+text, two lines: a lighter-weight top line and a bold bottom line. The chip changes
+content on the cuts listed below and never moves, resizes or animates. Type must be
+crisp and correctly spelled.
+
+[SEQUENCE — cut on every timing, eight cuts]
+0-1.9s    HERO. Interior of a small bakery at night, lit by one overhead work lamp.
+          A baker's hands turn a large mass of wet dough on a floured steel bench.
+          Everything else in the room is black.
+          CHIP: "04:12" / "someone is already awake"
+1.9-3.6s  INSERT. Extreme close-up, a handful of flour thrown across the bench, dust
+          catching the single lamp.
+          CHIP unchanged.
+3.6-5.4s  HERO. A row of round dough balls resting in floured proving baskets on a rack.
+          Slightly warmer, slightly brighter. One dough is visibly swollen and domed.
+          CHIP: "05:30" / "it's proving"
+5.4-7.1s  INSERT. An oven door swings open and a wall of steam rolls out toward camera,
+          lit warm from inside.
+          CHIP unchanged.
+7.1-8.9s  HERO. A dark-crusted round sourdough loaf lands on a cooling rack. Hold on it.
+          The crust is visibly crackling and ticking as it cools.
+          CHIP: "06:15" / "it's out of the oven"
+8.9-10.6s INSERT. The loaf is slid into the kraft PROOF bag from @ Image2, the top folded
+          over once and taped. The ochre roundel and wordmark clearly readable.
+          CHIP unchanged.
+10.6-12.3s HERO. The courier from @ Image3 rides away down an empty terraced street in
+          low golden sunrise, satchel on their back, PROOF mark readable, streetlights
+          switching off behind them.
+          CHIP: "06:52" / "it's moving"
+12.3-13.6s INSERT. The kraft bag set down on a stone doorstep in full golden light,
+          exactly as in @ Image2. A hand withdraws from frame. Steam rises from the fold.
+          CHIP: "07:04" / "it's at your door"
+13.6-15s  END FRAME. Cut to a clean flat warm cream background. The PROOF concentric
+          ring mark and wordmark from @ Image1 sit centred, still, in burnt ochre and
+          dark rye brown. Beneath them, small, in dark rye brown: "now delivering".
+          CHIP for the final beat only: "bread younger than your alarm", single bold
+          line, centred. Absolutely no motion on this frame — it is a still card.
+
+[COLOUR]
+Burnt ochre is a physical object in the world before it is ever an interface colour —
+it is printed ink on the kraft bag and on the canvas satchel, lit by real light. The
+caption chip is the only ochre graphic element. Palette: warm cream, kraft brown, burnt
+ochre, dark rye brown, one cool blue-grey in the pre-dawn shadows.
+
+[AUDIO]
+Diegetic sound only, no music of any kind. The mix should feel close, warm and real.
+0-3.6s    The dead quiet of a room at 4am: an extractor fan humming, wet dough slapping
+          and stretching against steel, a scraper, the soft thud of flour.
+3.6-7.1s  Quieter still. A rack wheeled a short distance. The heavy clunk of an oven
+          latch and a deep roll of escaping steam.
+7.1-8.9s  THIS IS THE MOMENT THE WHOLE FILM IS BUILT AROUND. A loaf on a wire rack, its
+          crust crackling and ticking as it cools — a fine, irregular, delicate series
+          of snaps and pops, close-miked and clearly audible above everything else.
+          Bring the rest of the mix down under it.
+8.9-12.3s Kraft paper crumpling and folding, tape torn. Then outdoors: a freewheel
+          ticking, tyres on wet tarmac, one blackbird, distant early traffic.
+12.3-15s  The bag setting down on stone. Footsteps leaving. Birdsong. Then near silence
+          under the end card, with one last faint crust tick.
+No music, no voiceover, no narration, no dialogue, no whoosh transitions, no sound
+effects that are not physically present in the scene.
+
+[NEGATIVE]
+No text of any kind other than the caption chips, the PROOF wordmark, and "now
+delivering". No other logos, no brand names, no shop signage, no readable street signs,
+no house numbers, no phone screens, no app interfaces, no price, no website, no social
+handles, no hashtags, no watermarks. Do not alter the PROOF mark's ring count or the
+spelling of the wordmark. No music. No people speaking. No faces held in close-up for
+longer than one second — this is about the bread, not a character. No slow motion, no
+speed ramps, no lens flare, no colour grading toward teal or blue. The caption chip
+never moves position. Do not add a ninth shot. Do not animate the end card.
+```
+
+## Kaze’s Player Stats Screen Powers Up
+
+- ID: x-2086122377633575169
+- 中文标题: Kaze 球员属性界面启动
+- English title: Kaze’s Player Stats Screen Powers Up
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2086122377633575169/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2086122377633575169/
+- Original source: https://x.com/aimikoda/status/2086122377633575169
+- Author: Kōda
+- Published: 2026-08-08T16:08:27.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: FL2VA
+- Category: UGC & Advertising
+- Output: 15s, 720×1280, portrait
+- Prompt provenance: creator-verbatim
+- Chinese summary: 角色与足球从暗色扫描中显现，姓名、等级、总评与各项属性依次完成动画填充。 原生视频规格为 15 秒 · 720×1280。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: Kaze and the football emerge from a dark scanner pass as the nameplate, level, overall rating, and attribute bars animate into place. Native-video output: 15s · 720×1280. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+@[ref img] is the sole visual authority for Kaze, the football, the complete player-stats interface, typography, numbers, icons, colors, lighting, layout, and vertical composition. Animate this exact screen without redesigning it. Preserve all existing labels and final stat values.
+[Goal]
+Create a polished 15-second anime sports-game player stats screen opening. Use one continuous, locked, straight-on full-screen composition with no camera movement, cuts, cropping, or perspective distortion.
+
+[Sequence]
+0–2.2 seconds: Begin from near-black teal. A faint horizontal scanner passes downward, revealing Kaze’s silhouette and the outer edges of the interface. Fine particles and dim mint circuitry flicker awake.
+2.2–5.5 seconds: The header, KAZE nameplate, role badge, level panel, and overall panel resolve through clean line-draw animations. Kaze emerges fully from shadow, takes a controlled breath, subtly shifts her shoulders and raised arm into the referenced pose, then fixes an intense gaze toward the viewer. Her hair, ribbons, and loose clothing react naturally to a growing current of wind. The football begins a slow, stable rotation beside her hand.
+
+5.5–10.8 seconds: The large overall score counts rapidly upward and lands precisely on 92. The level settles on 46. Each attribute bar fills smoothly from left to right in sequence—Speed 93, Power 91, Control 88, Stamina 90, Agility 94, Technique 89—each landing with a restrained mint pulse. The radar chart draws outward from its center and locks into the exact final polygon. Skill cards activate from top to bottom; their icons flare briefly while the ACTIVE and ULTIMATE states illuminate.
+10.8–13.3 seconds: The player ID strip and bottom navigation fade and slide into their exact final positions. The wind energy around Kaze accelerates clockwise, wrapping around the rotating ball and sweeping behind her body with layered luminous trails. Kaze tightens her hand, leans slightly into the current, and gives one natural blink; preserve her identity, anatomy, costume, and right-side placement.
+
+13.3–15 seconds: The energy arc reaches a bright controlled crest, then settles into a living idle pulse. Hold the fully assembled screen matching @[ref img] exactly. Kaze continues subtle breathing; hair and ribbons drift, the football rotates slowly, particles shimmer, and all stats remain stable and readable.
+
+Use crisp premium game-UI motion, clean 2D anime character animation, subtle depth between Kaze and the interface, and stable legible typography. Keep every panel, icon, label, number, and geometric boundary fixed once revealed. Do not introduce new text, extra characters, additional objects, logos, captions, or UI elements.
+
+Audio: low electronic boot hum, delicate scanning ticks, short confirmation tones as values lock, rising airy wind around the ball, soft cloth movement, and one refined completion chime. No dialogue and no music.
+```
+
+## A Garden Tragedy Across Two Models
+
+- ID: x-2086121943615541389
+- 中文标题: 花园噩耗的双模型表演对照
+- English title: A Garden Tragedy Across Two Models
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2086121943615541389/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2086121943615541389/
+- Original source: https://x.com/ou_zhen599/status/2086121943615541389
+- Author: Loriel.AI
+- Published: 2026-08-08T16:06:44.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: FL2VA
+- Category: Model Comparison
+- Output: 27s, 3840×2160, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 同一张古装花园人物图与同一段噩耗表演提示被用于 MiniMax H3 和 Grok 的并排情绪对照。 原生视频规格为 27 秒 · 3840×2160。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: The same period-garden reference and tragic performance prompt drive a side-by-side emotional comparison between MiniMax H3 and Grok. Native-video output: 27s · 3840×2160. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+15秒古装电影写实剧情，花海庭园氛围，镜头丝滑自然推进，情绪反转强烈，人物表演细腻真实，有明显的“悠闲惬意 -> 突闻噩耗 -> 身体先崩 -> 情绪失控前的不可置信”递进。女人一开始站在花丛中悠闲赏景，手中轻轻摇着团扇，神情放松，眼神柔和，肩膀、手腕和呼吸都是松弛的，衣袖、发饰和流苏在微风里轻轻晃动，整个人毫无防备。画外突然传来带着慌乱和哭腔的女声：“夫人！老爷被斩首了！”
+
+0-3秒：镜头穿过前景花丛丝滑推近到女人半身，女人悠闲地轻轻扇着团扇，神情安静惬意，嘴角甚至有一丝若有若无的闲适笑意，正在轻松看风景。
+
+3-6秒：画外音猛地刺入：“夫人！老爷被斩首了！”女人的扇风动作瞬间断掉，手腕僵在半空，眼神猛地定住，呼吸像被一下掐断，头极轻地偏过去一点，像不敢相信自己听到了什么，脸上的放松感瞬间消失。
+
+6-10秒：她猛地往后退一步，肩膀本能一缩，后背绷紧，脚下发软，差点站不稳跌倒，另一只手下意识抬起想抓住什么稳住自己却落空。与此同时，拿扇子的手因惊吓脱力，团扇从指间滑落，掉进脚边花丛里。她眼睛失神般睁大，嘴唇微张，想说话却几乎发不出声，只能失神低语：“你……说什么？”
+
+10-15秒：镜头迅速压近到脸和上半身。她勉强站住，但整个人像魂被抽空，胸口呼吸乱掉，眼眶迅速泛红，泪意猛地涌上来。她不是立刻大哭，而是先陷入更狠的不可置信崩塌状态，表情从空白到震惊再到痛得不敢承认，嘴唇发抖，眼神溃散，像下一秒就要彻底撑不住。
+
+音效与配乐：前半段是柔和古风环境音与轻微风声、衣袖与花叶摩擦声；噩耗传来的一瞬间配乐骤停半拍，再压入低沉悲音和压迫弦乐；团扇掉进花丛要有清晰轻响；整体情绪要像中国古装电影中的突变悲剧时刻。
+
+负面限制：不要夸张嚎哭，不要立刻瘫倒，不要卡通化表演，不要慢动作，不要过多甩头动作，不要让团扇乱飞太远，不要字幕。
+```
+
+## A Woven Handbag on the Riviera
+
+- ID: x-2086086171117969702
+- 中文标题: 里维埃拉海岸的编织手袋
+- English title: A Woven Handbag on the Riviera
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2086086171117969702/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2086086171117969702/
+- Original source: https://x.com/Dustfinger2077/status/2086086171117969702
+- Author: DUST
+- Published: 2026-08-08T13:44:35.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Ref2VA
+- Category: UGC & Advertising
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 银链编织手袋始终作为视觉中心，在海岸公路、敞篷车与夏日造型之间保持产品结构一致。 原生视频规格为 15 秒 · 2560×1440。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A silver-chain woven handbag remains the visual anchor across a Riviera road, convertible, and summer-fashion sequence while preserving product construction. Native-video output: 15s · 2560×1440. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+Create a 15 second, 16:9 luxury fashion commercial using @Image1@Image2 as exact visual references. @Image1 is the sole product reference. Preserve the bag’s exact proportions, pale grey white woven textile, irregular rectangular stitching, soft structure, curved flap, silver clasp, four black eyelets, side construction, zipper details, and hardware. Do not reinterpret it as leather. The bag has two separate short straps made from silver chain woven with matching textile. Preserve their exact construction, attachment points, resting positions, and maximum lengths. The front strap connects only the two front eyelets. The rear strap connects only the two rear eyelets. They must never cross, merge, disappear, duplicate, lengthen, or be rerouted. @Image2 is the exact character reference. Preserve the woman’s face, green eyes, straight blonde bob, natural proportions, and understated makeup. Dress her consistently in a sophisticated beige silk summer mini dress with a square neckline, narrow shoulder straps, fitted waist, and softly moving skirt. Add ivory slingback heels and small pearl earrings. The bag is the visual anchor throughout. It must always be the largest, brightest, sharpest, or most prominently framed element. The woman, hotel, landscape, and car are supporting elements only.
+0 to 1.75 seconds: Tight product shot of the bag alone on a sunlit limestone console beside a softly shimmering Riviera pool. Directional sunlight reveals the textile weave, stitching, two straps, four eyelets, side details, and clasp. 1.75 to 3.25 seconds: Keep the bag large and tack sharp in the foreground while the woman approaches through the bright hotel suite in soft focus. She has not touched it yet. 3.25 to 5 seconds: Extreme close up of her fingers lifting both straps together. Keep the front and rear straps visibly separate, correctly routed, and uncrossed. Show realistic chain tension, textile threaded through the links, and accurate hands. 5 to 7 seconds: She places both short straps together over one shoulder and wears the bag as a side shoulder bag. It hangs close beneath her arm, high against the side of her upper waist. It must never reach her hip or thigh. Both straps remain visibly separate, uncrossed, and at their true maximum length. 7 to 9 seconds: Close tracking shot through a sunlit hotel colonnade, composed mainly around the bag moving naturally against the beige silk dress. The straps respond realistically to her steps, shoulder movement, tension, and gravity. 9 to 11 seconds: The bag stands upright and tack sharp on a pale stone terrace table. Its two straps settle naturally and remain identifiable. The woman sits behind it in soft focus, looking toward the sea. 11 to 13 seconds: She carries the bag on one shoulder toward a cream vintage convertible. In a tight product focused montage, she opens the driver door, removes both straps from her shoulder, and carefully places the bag upright on the front passenger seat cushion. The bag’s entire base must rest directly on the horizontal cushion where a passenger sits. It is not on the backrest, headrest, seat edge, center console, or top of the seat. The passenger backrest rises behind it. Both straps settle naturally beside and partly behind the bag without disappearing. She enters the driver seat. Keep the car cropped and secondary. 13 to 15 seconds: The car moves along the Riviera coast. Keep the bag upright, large, and tack sharp on the passenger seat cushion while the woman holds steering wheel and drives in the soft background. The sea and road pass through the windows in gentle motion blur. Moving sunlight reveals the woven textile, stitching, eyelets, two distinct straps, and hardware. End with one controlled flash across the silver clasp.
+Use bright, fashion forward European luxury cinematography inspired by a restored 1990s campaign film. Directional Mediterranean sunlight, dimensional shadows, layered reflections, warm 35 mm grain, gentle haliation, creamy highlights, subtle film weave, natural motion blur, and tactile textile detail. Use elegant editorial cuts, realistic movement, accurate hands, and consistent spatial logic. Add a sophisticated original fashion score with crisp percussion, warm bass, airy electronic textures, subtle chain sounds, clasp click, silk movement, footsteps, coastal ambience, car door movement, and quiet engine sound. No dialogue. No product redesign, leather texture, colour change, altered stitching, missing or merged straps, crossed straps, extra straps, extended straps, changed eyelet routing, crossbody carry, low hip placement, warped chains, changed hardware, duplicated bag, distorted hands, outfit changes, blue dress, car hero shot, wide vehicle profile, empty road shot, incorrect seat placement, text, or subtitles.
+```
+
+## Secret Agents in a Meta Beach Comedy
+
+- ID: x-2086063980234035362
+- 中文标题: 海滩特工的元喜剧对话
+- English title: Secret Agents in a Meta Beach Comedy
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2086063980234035362/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2086063980234035362/
+- Original source: https://x.com/Cardoso/status/2086063980234035362
+- Author: cardoso
+- Published: 2026-08-08T12:16:24.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: T2VA
+- Category: Character & Dialogue
+- Output: 15s, 1008×576, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 两名卡通特工在海滩进行节奏紧凑的自指式对话，有限动画和硬阴影强化成人喜剧风格。 原生视频规格为 15 秒 · 1008×576。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: Two cartoon secret agents trade a tightly timed meta joke on a beach, using limited animation, bold outlines, and hard graphic shadows. Native-video output: 15s · 1008×576. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+Style: Adult animated television comedy in the distinctive flat-vector / limited-animation style of a suave-spy cartoon. Bold inked outlines, flat cel-shaded colors, slightly stiff comedic timing, hard graphic shadows, subtle film-grain texture. 2K, cinematic but comedic.
+
+Setting: A bright sunny beach. Clear blue sky, soft sand, ocean waves in the background.
+
+Characters:
+Sterling Archer: a handsome secret agent with jet-black slicked-back hair, wearing a tight dark swimsuit. Self-satisfied, manic energy, perpetually smug.
+Lana Kane: a tall, striking brown-skinned female agent, wearing a stylish bikini. Exasperated, eyes-wide "are-you-kidding-me" energy.
+
+Shot 1 (0:00–0:03): Medium shot of Archer and Lana standing on the beach. Archer cups his hands around his mouth and calls out: <d>[English] Lana? Lana? LANA!!!!</d>
+
+Shot 2 (0:03–0:05): Cut to Lana turning sharply toward him, annoyed: <d>[English] What?!</d>
+
+Shot 3 (0:05–0:07): Archer leans in with a smug grin: <d>[English] With MiniMax any internet pervert can draw us!</d>
+
+Shot 4 (0:07–0:08): Lana frowns, confused: <d>[English] What do you mean?</d>
+
+Shot 5 (0:08–0:09): Archer points at her with a knowing look: <d>[English] They can even change your clothes!</d>
+
+Shot 6 (0:09–0:10): Quick flash. Lana’s bikini instantly becomes a modern one-piece swimsuit. She looks down in surprise.
+
+Shot 7 (0:10–0:11): Another quick flash. The swimsuit changes into a 1920s-style bathing suit. Lana’s eyes widen further.
+
+Shot 8 (0:11–0:13): Final flash. The bathing suit disappears completely. Lana is suddenly naked and quickly covers herself with both hands, shocked and angry: <d>[English] Archer, stop that!</d>
+
+Shot 9 (0:13–0:15): Archer raises both hands defensively, looking genuine: <d>[English] That’s not me!</d>
+
+overall_soundscape: Soft ocean waves and light beach ambience. Clear comedic dialogue with sharp cuts between the clothing changes.
+
+non_diegetic_music: None. Dry, absurd, self-aware comedic timing.
+```
+
+## Sword Formations Above a Moonlit Immortal City
+
+- ID: x-2086021869040263455
+- 中文标题: 月下仙城的剑阵决战
+- English title: Sword Formations Above a Moonlit Immortal City
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2086021869040263455/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2086021869040263455/
+- Original source: https://x.com/Stellakjbk/status/2086021869040263455
+- Author: 九尾狐-FoxFairy🦊
+- Published: 2026-08-08T09:29:04.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: FL2VA
+- Category: Cinematic & VFX
+- Output: 15s, 1280×711, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 男女剑仙在月下浮空仙城迎战黑金魔修，御剑、万剑阵、魔龙与终极法相连续升级。 原生视频规格为 15 秒 · 1280×711。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: Two sword immortals battle a black-and-gold adversary above a moonlit floating city as flying swords, a demon dragon, and giant avatars escalate the fight. Native-video output: 15s · 1280×711. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+5秒，4:3，顶级东方仙侠3A游戏CG，电影级高端宣传片，严格参考图1的月下仙城场景与美术气质：巨大明月、云海天宫、环形仙城、悬浮仙山、瀑布、白玉仙桥、金顶楼阁、冷蓝月光。整体画面必须唯美、恢弘、神圣、危险、酷炫，像大厂正式游戏开场CG，不像普通AI视频。
+
+双主角设定：男剑仙，黑色长发，白蓝战袍，冰蓝雷光长剑，英俊冷峻，强大沉稳；女剑仙，黑色长发，白青仙裙，月白灵剑与月华法术，清冷绝美，高贵飘逸。反派为黑金重甲魔修，手持黑色巨剑，周身暗红黑色魔气，压迫感极强。人物脸和服装全程稳定统一，保持高级游戏角色建模质感。
+
+开场镜头从巨大明月前高速穿越云海与浮空仙山，俯冲进入宏伟仙城，来到白玉高台，男女主背对镜头立于高台边缘，衣袍长发飞扬，英雄感极强。远处天空突然裂开暗红色空间裂缝，魔修高速坠落，轰然落地，引发碎石、冲击波和魔气爆发。
+
+男剑仙瞬间拔剑冲出，与魔修在仙桥中央高速对撞，剑刃碰撞爆发蓝红双色能量冲击、空间波纹、火星与剑气。近战动作凌厉、清晰、有重量感，包含高速斩击、格挡、反击、短暂慢动作碰撞特写，镜头低机位跟拍与高速环绕，极具电影感。
+
+随后女剑仙御剑升空，展开巨大蓝白仙阵，发动“万剑齐发”，数百柄发光飞剑如流星暴雨般射向魔修，夜空被剑光点亮。魔修爆发黑红魔气，凝聚巨大的魔龙反击，空中连续爆炸。男剑仙御剑穿梭爆炸火光与云海，一剑斩裂魔龙，空战场面华丽震撼。
+
+最后魔修释放百米高的黑红魔神法相，遮蔽天空。男女主并肩悬空，男剑仙开启覆盖半个天空的金蓝剑阵，女剑仙召唤巨大的白蓝月华莲华法相，二人联手凝聚数百米长的金蓝神剑，与魔神巨剑正面碰撞。碰撞瞬间进入超级慢动作，蓝色雷电、金色符文、白色月华、红色魔焰与空间裂痕同时凝固，随后爆发毁天灭地的大爆炸，形成巨大的环形云洞与能量冲击波。
+
+结尾爆炸光芒散去，巨大明月重现，男女主并肩立于悬空巨剑之上俯瞰整座仙城，周围灵剑环绕，远处天宫亮起金蓝光柱，镜头缓慢拉远，形成极强的高级游戏主视觉结尾，并预留后期添加Logo空间。
+
+镜头要求：超广角航拍、俯冲推进、低机位英雄视角、高速跟拍、环绕镜头、御剑追踪、短暂升格慢动作、终极碰撞震动、史诗级拉远收尾。镜头必须流畅稳定，不乱晃，不跳轴。
+
+视觉要求：特效炫丽但高级干净，不能廉价光污染。强调冰蓝雷电剑气、金色仙纹、月华粒子、飞剑阵、空间裂缝、黑红魔焰、魔龙、巨大法相、神剑、冲击波、体积云、瀑布水雾、发光碎片。人物主体始终清晰，画面精致通透，PBR材质，真实布料与长发动效，电影级光影与空间层次。
+
+音效：原生立体声。包含高空风声、远处钟鸣、低沉鼓点、剑刃碰撞、破风声、雷电炸裂、万剑掠空、魔龙低吼、终极爆炸低频冲击。无对白，无字幕，无水印，无乱码。
+```
+
+## The Secretary’s Office-Scandal Trap
+
+- ID: x-2086020747336761388
+- 中文标题: 女秘书策划的办公室绯闻
+- English title: The Secretary’s Office-Scandal Trap
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2086020747336761388/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2086020747336761388/
+- Original source: https://x.com/drjoetw/status/2086020747336761388
+- Author: The Anxious Mind
+- Published: 2026-08-08T09:24:37.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: T2VA
+- Category: Character & Dialogue
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 复古香港办公室争执被女秘书反转成报纸头条，她最后换装现身街头并向镜头示意保密。 原生视频规格为 15 秒 · 2560×1440。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A retro Hong Kong office confrontation becomes a newspaper scandal engineered by the secretary, who reappears in disguise and signals secrecy to camera. Native-video output: 15s · 2560×1440. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+1960年代，香港邵氏復古電影風格：戴黑粗框眼鏡、頭髮微捲及肩的霸總生氣地按住女秘書(粉紅色廉價套裝、明顯腮紅、淡藍色眼影)的肩膀，質問女秘書道"昨晚，妳到底去了哪裡？"。女秘書開始眼眶泛淚，推開霸總的雙手，然後轉身拭淚哭泣著說"總裁這是我私人的事情，不用你管!"。總裁快步接近女秘書，然後將女秘書的身體按壓在復古的竹製躺椅上，總裁認真地對女秘書說"對不起，我錯了。"然後總裁開始親吻女秘書的臉頰。女秘書一邊假裝喘氣，一邊從總裁的背後拿高了手機喀擦一聲拍照。下一個畫面是香港街道的路人，手中拿著報紙(上面有總裁親吻流淚女秘書的自拍照 新聞標題寫著"OFFICE SCANDAL")。下一個畫面是圍著時尚花頭巾的女秘書(改穿米色連身風衣、黑色高跟鞋)自信地"哼"一聲，從書報攤拿了一份有相同頭版照片的報紙，然後得意地看著鏡頭比了個"shh"的手勢。畫面fade into black.
+```
+
+## A Shy Rain Cloud in the Greenhouse
+
+- ID: x-2085986114800951530
+- 中文标题: 温室里的害羞雨云
+- English title: A Shy Rain Cloud in the Greenhouse
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2085986114800951530/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2085986114800951530/
+- Original source: https://x.com/ManuAGI01/status/2085986114800951530
+- Author: ManuAGI 🤖 - ( ManuIn )
+- Published: 2026-08-08T07:07:00.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: FL2VA
+- Category: Community Showcase
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 小园丁 Luma 在旧水壶中发现害羞雨云 Nimbus，一滴雨让枯萎向日葵重新抬头。 原生视频规格为 15 秒 · 2560×1440。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: Young gardener Luma discovers shy rain cloud Nimbus inside an old watering can, and one drop revives a wilted sunflower. Native-video output: 15s · 2560×1440. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+[REFERENCE CONTROL]
+
+Use the uploaded PART 1 storyboard image for “The Little Gardener and the Runaway Rain Cloud” as the PRIMARY visual, character, environment, composition, and narrative reference.
+
+Generate a FINISHED animated sequence from the storyboard.
+
+DO NOT reproduce the storyboard sheet itself.
+
+The final video must NOT contain:
+- storyboard borders
+- panel numbers
+- panel captions
+- timestamps
+- production notes
+- character reference sheets
+- off-white storyboard paper
+- storyboard title/header
+- handwritten annotations
+
+The uploaded storyboard controls and locks:
+
+1. Luma’s exact character design
+2. Nimbus’s exact cloud design
+3. Sprout’s exact snail design
+4. the rooftop greenhouse architecture
+5. the wilted sunflower design
+6. the old metal watering can
+7. the gardening props
+8. warm watercolor/painterly 2D visual style
+9. character scale relationships
+10. overall color palette
+11. Part 1 story progression
+
+Animate these designs naturally while maintaining extremely high identity consistency.
+
+--------------------------------------------------
+
+[VIDEO GOAL]
+
+Create exactly:
+
+Duration: 15 seconds
+Aspect Ratio: 16:9 landscape
+Frame rate feeling: cinematic 24 fps
+Genre: magical garden comedy / heartwarming fantasy
+Visual medium: premium hand-painted 2D animated short
+Audience: family-friendly
+Dialogue language: English
+Native synchronized dialogue + sound effects + music
+
+Emotional progression:
+
+peaceful garden morning
+→ concern
+→ determination
+→ mysterious sound
+→ magical discovery
+→ tiny comic surprise
+→ hopeful miracle
+→ BIG IDEA cliffhanger
+
+The storytelling must be very easy to understand even without narration.
+
+IMPORTANT:
+
+Although the storyboard contains 15 individual panels, DO NOT turn the video into fifteen frantic one-second cuts.
+
+Consolidate those beats into approximately 7–8 fluid cinematic shots.
+
+Each shot should contain several connected storyboard actions so the animation feels like an actual polished animated short rather than a slideshow.
+
+--------------------------------------------------
+
+[CHARACTER IDENTITY LOCK — LUMA]
+
+LUMA must match the uploaded storyboard exactly.
+
+Character:
+approximately 8-year-old little gardener.
+
+Physical appearance:
+- warm fair skin
+- large expressive dark brown eyes
+- soft round childlike face
+- freckles across cheeks/nose if visible in reference
+- fluffy auburn / reddish-brown hair
+- hair gathered into two messy buns
+- several loose curly strands around face
+
+Signature clothing:
+- oversized warm yellow gardening hat
+- mint-green gardening overalls
+- coral-and-cream horizontally striped shirt
+- red gardening boots
+- tiny brown gardening/seed pouch attached at waist
+
+Character proportions:
+- small child stature
+- slightly oversized head
+- expressive hands
+- rounded appealing silhouette
+
+Personality:
+- caring
+- cheerful
+- imaginative
+- curious
+- determined when a plant needs help
+- easily excited by magical discoveries
+
+Performance should transition:
+
+happy gardener
+→ worried plant caretaker
+→ determined problem solver
+→ curious investigator
+→ amazed child
+→ excited inventor
+
+CRITICAL:
+
+Luma must remain visually identical in every shot.
+
+Do not change:
+- face
+- age
+- hairstyle
+- hair color
+- hat
+- clothing
+- boots
+- proportions
+- eye color
+
+--------------------------------------------------
+
+[CHARACTER IDENTITY LOCK — NIMBUS]
+
+Nimbus must match the cloud discovered inside the watering can in the storyboard.
+
+Nimbus is a tiny living rain cloud approximately pillow-sized.
+
+Design:
+- soft fluffy blue-white cloud body
+- subtle watercolor edges
+- very faint pale blue shadows
+- large round expressive dark eyes
+- tiny eyebrows
+- small cute mouth
+- slight rosy blush
+- tiny dangling raindrop-shaped feet
+- soft semi-translucent cloud fluff
+- no arms unless naturally suggested by cloud shape
+
+Personality:
+- shy
+- timid
+- gentle
+- easily embarrassed
+- harmless
+- sweet
+
+Nimbus begins PART 1 hiding inside the watering can.
+
+He must NOT appear in the greenhouse before the discovery sequence.
+
+His first reveal should feel magical and surprising.
+
+Nimbus should remain very small.
+
+DO NOT:
+- enlarge Nimbus
+- darken Nimbus
+- create storm powers
+- add flower crown yet
+- make him Super Cloud
+- generate multiple Nimbus clouds
+- create lightning
+
+Those belong to later story beats.
+
+--------------------------------------------------
+
+[CHARACTER IDENTITY LOCK — SPROUT]
+
+Sprout must match the storyboard exactly.
+
+Design:
+- tiny green garden snail
+- soft rounded body
+- large tall expressive eye stalks
+- warm brown spiral shell
+- tiny yellow flower growing beside/on shell
+- same miniature scale throughout
+
+Personality:
+- slow
+- observant
+- dramatic
+- suspicious
+- comedic reaction character
+
+Sprout has no human speech unless specified.
+
+Use:
+- tiny squeaks
+- gasps
+- nervous chirps
+- eye-stalk reactions
+
+Sprout should frequently understand the danger of Luma’s ideas before Luma does.
+
+--------------------------------------------------
+
+[PROP IDENTITY LOCK — WILTED SUNFLOWER]
+
+Use the exact sunflower from the storyboard.
+
+At the start:
+- heavily drooping yellow petals
+- bowed flower head
+- wilted leaves
+- weak stem
+- planted in rectangular wooden planter
+- still alive
+
+After ONE drop from Nimbus:
+the flower should perk up slightly.
+
+IMPORTANT:
+
+Do NOT magically transform it into a giant perfect sunflower yet.
+
+Only show:
+- stem becoming slightly stronger
+- leaves lifting
+- flower head rising a little
+- color becoming slightly healthier
+
+This is a small visual miracle.
+
+--------------------------------------------------
+
+[PROP IDENTITY LOCK — WATERING CAN]
+
+Use the same old watering can from the storyboard.
+
+Appearance:
+- weathered gray/blue metal
+- rounded main body
+- curved metal handle
+- long narrow spout
+- slightly worn surface
+- small painted flower decoration if visible
+- large enough for tiny Nimbus to curl inside
+
+It is an ordinary gardening can.
+
+Do not transform it into a magical object.
+
+Nimbus is simply hiding inside.
+
+--------------------------------------------------
+
+[ENVIRONMENT LOCK — ROOFTOP GREENHOUSE]
+
+Maintain exactly the warm rooftop greenhouse established by the storyboard.
+
+Environment:
+- glass-paneled greenhouse walls
+- glass roof
+- wooden structural framing
+- warm sunlight pouring through glass
+- hanging vines
+- multiple wooden planter boxes
+- terracotta flower pots
+- colorful flowers
+- herbs
+- leafy plants
+- gardening shelves
+- small ladder
+- watering hose
+- gardening tools
+- seed packets
+- old watering can
+- pots and wooden crates
+- distant soft city rooftop skyline through greenhouse glass
+
+Visual feeling:
+handmade,
+lived-in,
+cozy,
+safe,
+sunny,
+lush,
+magical without obvious fantasy effects at the beginning.
+
+Maintain coherent geography throughout.
+
+The sunflower planter, watering can area, shelves, and main walkway must not randomly move between shots.
+
+--------------------------------------------------
+
+[WORLD / MAGIC RULES]
+
+The world begins mostly realistic.
+
+Nimbus introduces the first visible magical element.
+
+Magic should be:
+- delicate
+- soft
+- believable within a children’s animated world
+- visually elegant
+- never explosive
+
+Nimbus creates rain naturally.
+
+Cause-and-effect must be clear:
+
+sunflower is dry
+→ Luma searches for water
+→ watering can sneezes
+→ Luma investigates
+→ Nimbus is discovered
+→ Nimbus nervously sneezes
+→ one raindrop falls
+→ sunflower responds
+→ Luma realizes Nimbus can help
+→ Luma gets a BIG IDEA
+
+No unexplained magical events.
+
+--------------------------------------------------
+
+integrated_multimodal_description:
+
+[SHOT 1] (0.00s–2.00s)
+THE PEACEFUL ROOFTOP GARDEN
+
+Open with a beautiful wide establishing shot of the rooftop greenhouse.
+
+Warm morning sunlight enters through the glass ceiling.
+
+Tiny dust particles float through the golden beams.
+
+Leaves move gently in a rooftop breeze.
+
+Luma happily walks between planter boxes carrying a small basket of seeds/gardening tools.
+
+Sprout slowly crawls along the edge of a wooden planter beside her.
+
+Use subtle environmental life:
+- small leaves swaying
+- hanging vines moving
+- distant city haze
+- butterflies or tiny garden insects only if subtle
+
+Camera:
+
+begin outside/near the glass roof
+→ smooth gentle push through the greenhouse
+→ settle into a medium-wide shot of Luma tending plants.
+
+Luma hums quietly.
+
+She pats soil around a healthy flower.
+
+Dialogue:
+
+Luma, cheerful:
+<d>[English] Good morning, little guys!</d>
+
+She notices Sprout.
+
+Luma:
+<d>[English] Morning, Sprout.</d>
+
+Sprout gives a tiny cheerful squeak.
+
+Sound:
+- light morning breeze
+- gentle birds outside
+- leaves rustling
+- gardening basket movement
+- soft snail squeak
+- quiet greenhouse ambience
+
+Music:
+delicate whimsical opening using pizzicato strings, gentle marimba, and soft flute.
+
+--------------------------------------------------
+
+[SHOT 2] (2.00s–4.20s)
+THE WILTING SUNFLOWER
+
+As Luma continues through the garden, her smile slowly fades.
+
+Her gaze lands on the drooping sunflower.
+
+Cut to a closer view:
+
+the sunflower’s head hangs sadly downward.
+
+Its leaves droop.
+
+Sprout crawls beside the planter and slowly raises both eye stalks toward the flower.
+
+One eye stalk leans sideways with concern.
+
+Luma immediately kneels.
+
+She gently lifts one wilted leaf between her fingers.
+
+Camera:
+
+medium tracking with Luma
+→ rack focus from healthy flowers to wilted sunflower
+→ close-up flower
+→ intimate medium-close shot of Luma kneeling.
+
+Dialogue:
+
+Luma:
+<d>[English] Oh no...</d>
+
+She gently examines the plant.
+
+Luma:
+<d>[English] Sunny, what happened?</d>
+
+She touches the dry soil.
+
+Luma:
+<d>[English] You’re thirsty.</d>
+
+Sprout gives a worried tiny squeak.
+
+Luma’s worried expression becomes determined.
+
+Luma:
+<d>[English] Don’t worry. I’ll find water.</d>
+
+Sound:
+- soft soil touch
+- leaf rustle
+- subtle worried musical note
+
+Keep this emotionally sincere but brief.
+
+--------------------------------------------------
+
+[SHOT 3] (4.20s–6.30s)
+THE SEARCH
+
+Luma stands quickly and begins checking the greenhouse.
+
+She looks at:
+- empty small watering cup
+- dry watering station
+- hose
+- gardening shelf
+
+She trots along the walkway.
+
+Sprout follows at an absurdly slow speed.
+
+Use a brief visual comedy beat:
+
+Luma rushes past frame.
+
+A moment later...
+
+Sprout is still only a few centimeters farther along.
+
+Luma then notices the old metal watering can sitting among leafy pots.
+
+Her eyes brighten.
+
+Camera:
+
+side tracking shot following Luma
+→ small comedic static shot of slow Sprout
+→ quick pan toward watering can as Luma notices it.
+
+Dialogue:
+
+Luma:
+<d>[English] Water... water...</d>
+
+She spots the can.
+
+Luma:
+<d>[English] Aha!</d>
+
+Sound:
+- light footsteps
+- tool clinks
+- leaves brushing clothes
+- tiny Sprout effort squeak
+
+Music becomes slightly more playful.
+
+--------------------------------------------------
+
+[SHOT 4] (6.30s–8.30s)
+THE WATERING CAN SNEEZES
+
+Luma approaches the old watering can.
+
+Before she reaches it—
+
+something inside shifts.
+
+Very subtle.
+
+Luma freezes.
+
+The watering can gives a tiny wobble.
+
+Then:
+
+<d>[English] Ah... ah...</d>
+
+Luma slowly leans closer.
+
+Sprout’s eye stalks rise behind her.
+
+Suddenly from inside:
+
+<d>[English] ACHOO!</d>
+
+A tiny puff of cool mist shoots gently from the watering-can spout.
+
+The can rocks slightly.
+
+Luma jumps backward only a few centimeters in surprise.
+
+Sprout instantly retracts slightly into his shell.
+
+No danger.
+
+Camera:
+
+slow push-in on watering can
+→ close-up of its dark opening
+→ Luma listening
+→ mist puff from spout
+→ reaction two-shot.
+
+Dialogue:
+
+Luma:
+<d>[English] ...Did you just sneeze?</d>
+
+Beat.
+
+She looks toward Sprout.
+
+Luma:
+<d>[English] Watering cans don’t sneeze.</d>
+
+Sprout gives a tiny uncertain squeak.
+
+Sound:
+- metal can creak
+- tiny movement from inside
+- adorable sneeze
+- mist “pfft”
+- light metallic wobble
+
+Music:
+brief curious plucked-string motif.
+
+--------------------------------------------------
+
+[SHOT 5] (8.30s–10.30s)
+THE IMPOSSIBLE DISCOVERY
+
+Luma carefully crouches beside the watering can.
+
+She grips its edge gently.
+
+Slowly...
+
+she peers inside.
+
+Camera moves over Luma’s shoulder toward the dark interior.
+
+For one beat we see only darkness.
+
+Then two tiny eyes blink.
+
+Soft pale-blue cloud fluff emerges.
+
+Nimbus is curled inside the watering can.
+
+He looks up at Luma.
+
+Nimbus immediately becomes embarrassed and tries to shrink deeper into the can.
+
+Luma’s expression transforms from caution to pure wonder.
+
+Sprout stretches upward from beside the can to see inside.
+
+Camera:
+
+over-shoulder POV
+→ gradual focus transition revealing Nimbus
+→ close-up Nimbus eyes
+→ reaction close-up Luma
+→ wider three-character composition.
+
+Dialogue:
+
+Luma, whispering:
+<d>[English] Whoa...</d>
+
+Nimbus nervously:
+<d>[English] ...Hi.</d>
+
+Luma:
+<d>[English] You’re a cloud.</d>
+
+Nimbus gives a shy tiny nod.
+
+Luma, amazed:
+<d>[English] A tiny cloud!</d>
+
+Sound:
+- subtle magical shimmer
+- tiny cloud puff
+- soft metal resonance from inside can
+- Nimbus’s faint watery ambience
+
+Music:
+introduce delicate glockenspiel and airy flute.
+
+--------------------------------------------------
+
+[SHOT 6] (10.30s–12.20s)
+THE TINY RAIN DROP
+
+Nimbus slowly floats just above the watering-can opening.
+
+He is nervous about being watched.
+
+Luma leans closer with fascinated eyes.
+
+Sprout watches from below.
+
+Nimbus’s little face scrunches.
+
+His cloud body briefly compresses.
+
+Nimbus:
+
+<d>[English] Ah... ah...</d>
+
+Luma realizes another sneeze is coming.
+
+Nimbus:
+
+<d>[English] Achoo!</d>
+
+A single sparkling raindrop pops from the underside of Nimbus.
+
+IMPORTANT:
+
+Only ONE meaningful raindrop.
+
+Camera follows the droplet in a graceful macro tracking shot.
+
+The droplet catches sunlight and briefly shows a subtle rainbow refraction.
+
+It falls toward the sunflower planter.
+
+Sound:
+- cute cloud sneeze
+- tiny watery “plink”
+- soft magical shimmer
+
+Luma:
+<d>[English] Wait...!</d>
+
+--------------------------------------------------
+
+[SHOT 7] (12.20s–13.50s)
+ONE DROP IS ENOUGH
+
+Extreme close-up:
+
+the raindrop lands in the dry soil near the sunflower stem.
+
+A soft ring of moisture spreads through the soil.
+
+Nothing explosive.
+
+The sunflower responds gently.
+
+Its stem firms.
+
+One leaf slowly lifts.
+
+The flower head rises a few centimeters.
+
+Its yellow petals regain a little warmth.
+
+Luma watches from the background.
+
+Her mouth falls open.
+
+Then she clasps her hands with delighted excitement.
+
+Nimbus looks surprised by what he just did.
+
+Sprout’s eyes become enormous.
+
+Camera:
+
+macro raindrop impact
+→ tilt upward following sunflower
+→ rack focus to Luma’s astonished face.
+
+Dialogue:
+
+Luma:
+<d>[English] You did that?</d>
+
+Nimbus, shy:
+<d>[English] I... think so.</d>
+
+Luma:
+<d>[English] One drop!</d>
+
+Sound:
+- small water impact
+- subtle plant movement
+- soft magical chime
+- leaf unfurl sound
+
+Music:
+warm hopeful melodic lift.
+
+--------------------------------------------------
+
+[SHOT 8] (13.50s–15.00s)
+THE BIG IDEA — CLIFFHANGER
+
+Luma looks from the revived sunflower...
+
+to Nimbus...
+
+then slowly around at the dozens of plants filling the greenhouse.
+
+Her eyes widen.
+
+A playful “idea” expression spreads across her face.
+
+She turns toward Nimbus with a huge excited smile and raises one finger.
+
+Nimbus immediately becomes slightly nervous.
+
+Sprout looks at Luma.
+
+Then at Nimbus.
+
+Then at the enormous greenhouse.
+
+Sprout’s eye stalks shoot upward in comic alarm.
+
+Luma excitedly gestures toward all the plants.
+
+Dialogue:
+
+Luma:
+<d>[English] Nimbus...</d>
+
+Tiny pause.
+
+Luma:
+<d>[English] You can help ALL my flowers!</d>
+
+Nimbus:
+<d>[English] ...All?</d>
+
+Sprout gives a loud alarmed:
+
+<d>[English] Eep!</d>
+
+Hold briefly on the three expressions:
+
+Luma = thrilled
+
+Nimbus = shy uncertainty
+
+Sprout = “this is going to be a disaster”
+
+Camera:
+
+medium shot behind Luma looking across greenhouse
+→ quick close-up on Luma’s excited realization
+→ reaction close-up Nimbus
+→ reaction close-up Sprout
+→ final wide three-character composition.
+
+End with a gentle comedic musical sting.
+
+CUT TO BLACK.
+
+DO NOT show Luma upgrading Nimbus.
+
+DO NOT begin Part 2.
+
+--------------------------------------------------
+
+[AUDIO DESCRIPTION]
+
+Generate synchronized native stereo audio.
+
+LUMA VOICE:
+
+Natural young girl voice, approximately 8 years old.
+
+Voice qualities:
+- warm
+- bright
+- playful
+- emotionally expressive
+- curious
+- not overly cartoonish
+- clear natural English
+
+Her voice progression:
+
+0–4 sec:
+gentle and caring
+
+4–8 sec:
+determined then curious
+
+8–12 sec:
+soft wonder
+
+12–15 sec:
+high-energy excitement
+
+--------------------------------------------------
+
+NIMBUS VOICE:
+
+Very soft youthful cloud voice.
+
+Characteristics:
+- shy
+- slightly breathy
+- adorable
+- gentle
+- innocent
+- quiet
+- slightly higher pitched than Luma but easily understandable
+
+Do NOT make Nimbus sound robotic.
+
+His sneezes should be small and cute.
+
+--------------------------------------------------
+
+SPROUT AUDIO:
+
+No full normal dialogue.
+
+Use:
+- tiny squeaks
+- nervous chirps
+- tiny gasps
+- comic “eep”
+
+Do not give Sprout a human adult voice.
+
+--------------------------------------------------
+
+[ENVIRONMENT AUDIO]
+
+Maintain a rich but soft greenhouse sound bed:
+
+- distant rooftop birds
+- very light city ambience far below
+- glass greenhouse creaks
+- subtle wind
+- leaves rustling
+- hanging plants moving
+- gardening tools
+- footsteps on stone/wood
+- soil movement
+- watering-can metal noises
+- small water droplets
+- Nimbus cloud puffs
+- Sprout squeaks
+
+Never overpower dialogue.
+
+--------------------------------------------------
+
+[NON-DIEGETIC MUSIC]
+
+Create an original whimsical family-animation score.
+
+Instrumentation:
+- gentle pizzicato strings
+- marimba
+- soft acoustic plucks
+- airy flute
+- glockenspiel
+- very subtle warm pads
+
+Musical arc:
+
+0.00–2.00
+peaceful garden theme.
+
+2.00–4.20
+slightly concerned but still warm.
+
+4.20–6.30
+playful search rhythm.
+
+6.30–8.30
+curious comedic suspense.
+
+8.30–10.30
+magical discovery.
+
+10.30–13.50
+wonder and hopeful warmth.
+
+13.50–15.00
+playful “big idea” motif ending on light comedic suspense.
+
+No epic music.
+No scary music.
+No dramatic disaster music.
+
+--------------------------------------------------
+
+[CAMERA LANGUAGE]
+
+Use cinematic storybook camera work.
+
+Overall camera rhythm:
+
+Beginning:
+wide, calm, observational.
+
+Problem:
+closer emotional coverage.
+
+Mystery:
+slow push-ins.
+
+Discovery:
+intimate close-ups.
+
+Magic:
+macro insert + graceful tracking.
+
+Final idea:
+reaction-driven comedy framing.
+
+Preferred techniques:
+- gentle dolly
+- subtle parallax
+- slow push-in
+- rack focus
+- over-the-shoulder composition
+- macro raindrop shot
+- reaction close-ups
+- wide environmental establishing shot
+
+Avoid:
+- handheld shake
+- crash zoom
+- extreme Dutch angles
+- fast action-camera motion
+- excessive cuts
+- 360-degree spins
+- random camera movement
+
+--------------------------------------------------
+
+[VISUAL STYLE]
+
+Premium finished painterly 2D animated short.
+
+Match the storyboard’s exact aesthetic:
+
+- delicate ink outlines
+- watercolor-like painted fills
+- warm children’s-book texture
+- cinematic lighting
+- painterly background detail
+- softly textured paper-like brushwork without showing actual paper
+- appealing rounded characters
+- expressive facial animation
+- subtle squash and stretch
+- natural secondary hair/clothing motion
+- charming hand-crafted environment
+
+The final video should look like an animated film version of the storyboard artwork.
+
+NOT:
+- 3D CGI
+- photorealism
+- anime
+- flat vector art
+- cheap motion comic
+- slideshow
+- storyboard animation
+
+--------------------------------------------------
+
+[COLOR / LIGHTING]
+
+Primary palette:
+
+Warm golden sunlight
++
+fresh leafy green
++
+mint green
++
+sunflower yellow
++
+coral orange
++
+soft sky blue
+
+Luma:
+warm sunlight on face and hair.
+
+Nimbus:
+cool pale-blue-white color providing subtle visual contrast.
+
+Greenhouse:
+bright, airy, naturally saturated.
+
+Sunlight should create:
+- leaf-shaped shadows
+- soft rim lights
+- reflections through glass
+- golden dust particles
+- subtle bloom
+
+During Nimbus reveal:
+slightly cooler soft blue fill from the watering can interior.
+
+During raindrop:
+tiny prism/rainbow highlight.
+
+Do NOT darken the greenhouse dramatically.
+
+--------------------------------------------------
+
+[ANIMATION / MOTION RULES]
+
+LUMA:
+
+Use believable child motion.
+
+Examples:
+- small energetic steps
+- expressive hands
+- head tilts
+- natural blinking
+- loose auburn hair bouncing
+- hat shifting subtly as she runs
+- clothing following body movement
+
+Avoid:
+- rubber limbs
+- extreme cartoon deformation
+- unnatural running
+
+NIMBUS:
+
+Motion should feel buoyant.
+
+Use:
+- subtle floating
+- soft vertical bob
+- cloud edges gently expanding/contracting
+- tiny squash when sneezing
+- raindrop feet swaying
+- slight drifting inertia
+
+SPROUT:
+
+Movement should be very slow.
+
+Comedy comes from contrast with Luma.
+
+Use:
+- eye-stalk stretching
+- tiny shell shifts
+- slow sliding
+- sudden eye reactions
+
+PLANTS:
+
+Use gentle natural motion:
+- leaves bending
+- flower head lifting
+- vines swaying
+- tiny response after water
+
+--------------------------------------------------
+
+[CONTINUITY RULES]
+
+Maintain one consistent Luma.
+
+Maintain one consistent Nimbus.
+
+Maintain one consistent Sprout.
+
+Do not duplicate characters.
+
+The sunflower remains the same flower throughout.
+
+The watering can remains spatially consistent.
+
+Luma’s seed pouch remains visible.
+
+Luma’s yellow hat remains on her head during Part 1.
+
+Nimbus remains tiny throughout Part 1.
+
+Sprout remains significantly smaller than Luma and Nimbus.
+
+The greenhouse layout must remain coherent between shots.
+
+Morning lighting direction must remain consistent.
+
+--------------------------------------------------
+
+[STORY RESTRICTIONS — PART 1 ONLY]
+
+DO NOT show:
+
+- Super Cloud mode
+- flower crown on Nimbus
+- hand fan upgrade
+- wind chimes upgrade
+- Nimbus drinking water
+- Nimbus growing larger
+- multiple rain showers
+- greenhouse rain chaos
+- puddle rafting
+- overwhelmed Nimbus
+- gray Nimbus
+- magical greenhouse transformation
+- rainbow-drop charm
+- final ending
+
+These belong to later parts.
+
+Part 1 ends ONLY when Luma realizes Nimbus could help all her flowers.
+
+--------------------------------------------------
+
+[NEGATIVE CONSTRAINTS]
+
+No storyboard borders.
+No storyboard panels.
+No captions.
+No subtitles.
+No timestamps.
+No production notes.
+No title card.
+No watermark.
+No brand logo.
+
+No character identity drift.
+No extra children.
+No extra Nimbus clouds.
+No duplicate Sprout.
+No hairstyle changes.
+No costume changes.
+No missing hat.
+No changing seed pouch.
+No adult-looking Luma.
+
+No dark storm.
+No scary cloud.
+No evil eyes.
+No thunder.
+No lightning.
+No flooding.
+No destructive rain.
+No windstorm.
+No danger.
+No injury.
+No broken plants.
+No horror.
+
+No random magical objects.
+No visual teleportation.
+No background redesign.
+
+No excessive camera movement.
+No frame interpolation artifacts.
+No warped hands.
+No extra fingers.
+No malformed faces.
+No melting character anatomy.
+No inconsistent eye placement.
+
+--------------------------------------------------
+
+[FINAL 1.5-SECOND PRIORITY]
+
+The ending must have crystal-clear storytelling.
+
+Luma looks across the entire greenhouse.
+
+She realizes Nimbus might be able to water every plant.
+
+Her face fills with enormous excitement.
+
+She turns to him and says:
+
+<d>[English] Nimbus... you can help ALL my flowers!</d>
+
+Nimbus becomes uncertain:
+
+<d>[English] ...All?</d>
+
+Sprout looks toward the huge greenhouse and reacts:
+
+<d>[English] Eep!</d>
+
+Final emotional composition:
+
+Luma:
+excited and confident.
+
+Nimbus:
+tiny, shy, slightly worried.
+
+Sprout:
+comic dread.
+
+Warm beautiful greenhouse behind them.
+
+Hold long enough for all three expressions to register.
+
+Then:
+
+CUT TO BLACK.
+
+This cut should make the viewer immediately want to watch PART 2.
+```
+
+## A Fairy-Wand Role Reversal by the Pool
+
+- ID: x-2085983430219895004
+- 中文标题: 泳池边的仙女棒身份互换
+- English title: A Fairy-Wand Role Reversal by the Pool
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2085983430219895004/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2085983430219895004/
+- Original source: https://x.com/drjoetw/status/2085983430219895004
+- Author: The Anxious Mind
+- Published: 2026-08-08T06:56:20.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: T2VA
+- Category: Character & Dialogue
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 泳池边争吵的年轻女子与清洁妇被仙女棒交换年龄与处境，最后以夸张真人秀反应收尾。 原生视频规格为 15 秒 · 2560×1440。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A fairy wand reverses the ages and fortunes of a young woman and a cleaner arguing by a pool, ending on an exaggerated reality-show reaction. Native-video output: 15s · 2560×1440. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+美國喜劇reality show: 豪宅的泳池邊，20歲金髮藍眼的紅色比基尼美女與60歲灰髮憔悴的清潔婦正在激烈地爭吵，美女說"醜死了，你這死老太婆!"，清潔婦也不甘示弱說"整天只會換男人，不正經!"。這時畫誇張眼影妖后造型的drag queen飛過，便將手中的仙女棒往美女與清潔婦的頭上各點一下，結果美女迅速老化變成70歲皮膚鬆垮的老女人，清潔婦則迅速變成年輕的20歲美麗模樣。變年輕的清潔婦自信地說"啊，我現在感覺好多了!"就脫掉制服，露出夏季連身華麗黑色窄裙與高跟鞋，然後自信地離去，留下崩潰且一臉錯愕的老女人無助地看著鏡頭哭著吶喊:"不!!!!!!"
+```
+
+## Setting Up Camp beside a Mountain Stream
+
+- ID: x-2085973447562162229
+- 中文标题: 山溪营地的搭帐篷时刻
+- English title: Setting Up Camp beside a Mountain Stream
+- Chinese page: https://h3-field-notes-production.up.railway.app/cases/x-2085973447562162229/
+- English page: https://h3-field-notes-production.up.railway.app/en/cases/x-2085973447562162229/
+- Original source: https://x.com/Strength04_X/status/2085973447562162229
+- Author: 𝐌
+- Published: 2026-08-08T06:16:40.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: T2VA
+- Category: Character & Dialogue
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: creator-verbatim
+- Chinese summary: 年轻女子在山溪旁敲入地钉、处理卡住的帐杆，并在帐篷立起后用韩语分享完成的喜悦。 原生视频规格为 15 秒 · 2560×1440。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A young woman drives tent stakes and wrestles with a stubborn pole beside a mountain stream before celebrating the finished setup in Korean. Native-video output: 15s · 2560×1440. The creator published the complete prompt, preserved here verbatim.
+- Verbatim public prompt:
+
+```text
+Main Subject : Young Korean woman, early 20s, oversized flannel over a tank top, cargo shorts, hair in a practical braid, focused cheerful energy.
+Location: Quiet forest campsite near a mountain stream, late afternoon. A half-set-up tent, camping gear scattered on a mat, tall pine trees, dappled sunlight. No other campers nearby.
+Visual Style:
+Ultra-realistic documentary realism, adventurous candid feeling, warm natural forest light.
+Camera Style:
+Early 2000s DV camcorder, handheld with natural outdoor shake, autofocus hunting in dappled light, soft grain, faded tones. No stabilization.
+Timeline (15 sec, each slot = 2 compressed beats):
+00:00–00:03 → She hammers a tent stake into the ground, then checks the tension of the rope.
+00:03–00:06 → She struggles with a stubborn pole, then says to camera "이거 왜 이렇게 안 들어가" ("Why won't this go in").
+00:06–00:09 → She finally gets it to click into place, laughing in relief.
+00:09–00:12 → She steps back to admire the standing tent, hands on her hips.
+00:12–00:15 → She looks at camera saying "다 됐다, 오늘 여기서 자자!" ("Done, let's sleep here tonight!"), smiling as it fades.
+Audio:
+Wind through trees, distant stream flowing, birds, fabric rustling. Her dialogue as noted above. No music.
+Goal: An adventurous, cheerful camping setup moment grounded, warm, authentic.
 ```
 
