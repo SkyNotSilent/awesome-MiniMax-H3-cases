@@ -63,6 +63,11 @@
 | [董事会收购谈判](https://x.com/adithatipalli/status/2086698076325253323) | 15s · 2560×1440 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
 | [冰箱里的微型高速公路](https://x.com/LikeToasters/status/2086603936736170082) | 10s · 736×992 · portrait | `MiniMax H3` `本地生成` `公开 Prompt` `X 原帖` |
 | [疾驰列车顶上的爆炸对决](https://x.com/leuk_o/status/2086419768047976597) | 10s · 1152×640 · landscape | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
+| [牛粪上的微型村庄](https://x.com/LikeToasters/status/2086224302316105742) | 10s · 608×1056 · portrait | `MiniMax H3` `本地生成` `公开 Prompt` `X 原帖` |
+| [海滩特工的元喜剧对话](https://x.com/Cardoso/status/2086063980234035362) | 15s · 1008×576 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [女秘书策划的办公室绯闻](https://x.com/drjoetw/status/2086020747336761388) | 15s · 2560×1440 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [泳池边的仙女棒身份互换](https://x.com/drjoetw/status/2085983430219895004) | 15s · 2560×1440 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [山溪营地的搭帐篷时刻](https://x.com/Strength04_X/status/2085973447562162229) | 15s · 2560×1440 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
 
 ## FL2VA
 
@@ -121,6 +126,14 @@
 | [新艺术机械乌鸦的变形长卷](https://x.com/oohiro35/status/2090183484057034955) | 30s · 1344×768 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
 | [醉拳海报苏醒后的动态擂台](https://x.com/MonetizationDon/status/2087183007874453795) | 23s · 1920×1080 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
 | [Haru 的高对比动漫开场](https://x.com/keneth_ai/status/2087039444146933942) | 15s · 1886×1080 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [追逐午夜龙的碎月少年](https://x.com/ManuAGI01/status/2086321605073105162) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [自动绘成的 1890 年代鸟类图鉴](https://x.com/Dheepanratnam/status/2086312209919963371) | 15s · 1920×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [屋顶上的 3,200 颗纸星星](https://x.com/ManuAGI01/status/2086294164409630916) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [从线框到成品的建筑展板](https://x.com/vkuoo/status/2086254335021961590) | 15s · 480×640 · portrait | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [Kaze 球员属性界面启动](https://x.com/aimikoda/status/2086122377633575169) | 15s · 720×1280 · portrait | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [花园噩耗的双模型表演对照](https://x.com/ou_zhen599/status/2086121943615541389) | 27s · 3840×2160 · landscape | `MiniMax H3` `模型对比` `公开 Prompt` `X 原帖` |
+| [月下仙城的剑阵决战](https://x.com/Stellakjbk/status/2086021869040263455) | 15s · 1280×711 · landscape | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
+| [温室里的害羞雨云](https://x.com/ManuAGI01/status/2085986114800951530) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
 
 ## Ref2VA
 
@@ -193,6 +206,8 @@
 | [穿越多重材质世界的旅人](https://x.com/hmetouch/status/2090136979866521914) | 15s · 1376×768 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
 | [天才黑客 NEON 登场](https://x.com/Nokosu_kansoku/status/2086700416654594554) | 15s · 1344×768 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
 | [风中角色的电影式登场](https://x.com/aimikoda/status/2086412223061135392) | 15s · 2410×2560 · portrait | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [黎明面包配送广告](https://x.com/Dheepanratnam/status/2086199653922455917) | 15s · 1440×2560 · portrait | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [里维埃拉海岸的编织手袋](https://x.com/Dustfinger2077/status/2086086171117969702) | 15s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
 
 ## Unknown
 

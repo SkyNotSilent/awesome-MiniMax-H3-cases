@@ -133,6 +133,17 @@ function modeFor(candidate, caption) {
 
 function categoryFor(candidate, caption) {
   const initial = candidate.classification?.category ?? candidate.initialClassification?.category
+  const explicit = {
+    comparison: 'Model Comparison',
+    music: 'Music Video',
+    dance: 'Local Generation & Dance',
+    dialogue: 'Character & Dialogue',
+    action: 'Cinematic & VFX',
+    advertising: 'UGC & Advertising',
+    'local-generation': 'Local Generation',
+    community: 'Community Showcase',
+  }[initial]
+  if (explicit) return explicit
   if (/\bvs\b|comparison|compare|比較|对比|對比/i.test(caption) || initial === 'comparison') return 'Model Comparison'
   if (/music|\bMV\b|song|音楽|歌|曲/i.test(caption) || initial === 'music') return 'Music Video'
   if (/dance|ダンス|舞蹈/i.test(caption) || initial === 'dance') return 'Local Generation & Dance'
