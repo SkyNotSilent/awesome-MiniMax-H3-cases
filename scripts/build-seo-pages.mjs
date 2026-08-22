@@ -6,6 +6,7 @@ const dist = resolve(root, 'dist')
 const baseUrl = (process.env.PUBLIC_SITE_URL || 'https://h3-field-notes-production.up.railway.app').replace(/\/$/, '')
 const cases = JSON.parse(await readFile(resolve(root, 'data/cases.json'), 'utf8'))
 const tutorials = JSON.parse(await readFile(resolve(root, 'data/tutorials.json'), 'utf8'))
+const completePromptCount = cases.filter((item) => item.promptProvenance !== 'not-published' && item.prompt?.trim()).length
 
 const locales = ['zh-CN', 'en']
 const latestPublishedDate = cases
@@ -357,6 +358,24 @@ function fallbackMarkup(page, locale) {
   return `<main class="seo-fallback"><nav><a href="${escapeHtml(languageLink)}" hreflang="${otherLocale(locale)}">${escapeHtml(languageLabel)}</a></nav><h1>${escapeHtml(copy.title)}</h1><p>${escapeHtml(copy.description)}</p>${content}</main>`
 }
 
+function prebootMarkup(locale) {
+  const isEnglish = locale === 'en'
+  const summary = isEnglish
+    ? `${cases.length} playable cases · ${completePromptCount} complete Prompts · ${tutorials.length} guides`
+    : `${cases.length} 个可播放案例 · ${completePromptCount} 条完整 Prompt · ${tutorials.length} 篇教程`
+  const ready = isEnglish ? 'CASE LIBRARY LOADING' : '案例库加载中'
+
+  return `<aside class="preboot-splash" aria-label="MiniMax H3 Cases &amp; Guides">
+      <div class="preboot-grid" aria-hidden="true"></div>
+      <div class="preboot-kicker"><i></i> COMMUNITY VIDEO ARCHIVE / 2026</div>
+      <div class="preboot-wordmark" aria-hidden="true"><span>MINIMAX H3</span><strong>CASES + GUIDES</strong></div>
+      <div class="preboot-bottom"><p>${escapeHtml(summary)}</p><div class="preboot-ready"><i></i> ${escapeHtml(ready)}</div></div>
+      <div class="preboot-progress" aria-hidden="true"><span></span></div>
+    </aside>`
+}
+
+const prebootStyle = `html,body{margin:0;min-width:320px;min-height:100%;background:#090a08;color:#f0f0e8}.preboot-splash{position:fixed;z-index:120;inset:0;overflow:hidden;background:radial-gradient(circle at 78% 28%,rgba(217,255,67,.08),transparent 28rem),#090a08;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}.preboot-grid{position:absolute;inset:0;opacity:.52;background-image:linear-gradient(rgba(217,255,67,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(217,255,67,.055) 1px,transparent 1px);background-size:min(8vw,110px) min(8vw,110px);mask-image:linear-gradient(to bottom,#000 10%,transparent 92%)}.preboot-kicker,.preboot-bottom{position:absolute;z-index:2;right:clamp(24px,4vw,64px);left:clamp(24px,4vw,64px);display:flex;align-items:center;justify-content:space-between;font-size:10px;letter-spacing:.1em;text-transform:uppercase}.preboot-kicker{top:clamp(24px,4vw,58px);gap:9px;justify-content:flex-start}.preboot-kicker i,.preboot-ready i{width:7px;height:7px;display:inline-block;background:#d9ff43;box-shadow:0 0 14px rgba(217,255,67,.65)}.preboot-wordmark{position:absolute;z-index:2;top:50%;right:clamp(24px,4vw,64px);left:clamp(24px,4vw,64px);display:flex;flex-direction:column;font-family:Impact,'Arial Narrow',sans-serif;font-size:clamp(64px,11.5vw,190px);font-weight:700;line-height:.76;letter-spacing:-.055em;transform:translateY(-54%)}.preboot-wordmark strong{align-self:flex-end;color:#d9ff43;font-weight:inherit}.preboot-bottom{bottom:clamp(30px,5vw,68px);gap:32px}.preboot-bottom p{max-width:560px;margin:0;color:#b9bdb2;font:400 clamp(14px,1.4vw,19px)/1.6 system-ui,sans-serif;letter-spacing:0;text-transform:none}.preboot-ready{display:flex;align-items:center;gap:9px;color:#d9ff43;white-space:nowrap}.preboot-progress{position:absolute;z-index:2;right:0;bottom:0;left:0;height:3px;background:#22251f}.preboot-progress span{width:100%;height:100%;display:block;background:#d9ff43;transform-origin:left;animation:preboot-progress 1.6s linear both}@keyframes preboot-progress{from{transform:scaleX(0)}}@media(max-width:700px){.preboot-wordmark{font-size:clamp(44px,12.5vw,84px);line-height:.78}.preboot-wordmark strong{align-self:flex-start}.preboot-bottom{align-items:flex-start;flex-direction:column;gap:24px}}@media(prefers-reduced-motion:reduce){.preboot-progress span{animation-duration:.01ms}}`
+
 function renderAppShell(page, locale, assetTags) {
   const copy = page.copy[locale]
   const description = truncateMeta(copy.description)
@@ -394,12 +413,12 @@ ${alternateHeadLinks(page.paths)}
     <script type="application/ld+json">${jsonForHtml(appStructuredData(page, locale))}</script>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0b09'/%3E%3Cpath d='M14 16h8v12h20V16h8v32h-8V36H22v12h-8z' fill='%23d8ff3e'/%3E%3C/svg%3E" />
     <title>${escapeHtml(copy.title)}</title>
-    <style>.seo-fallback{max-width:1080px;margin:auto;padding:40px 20px 80px;font:16px/1.6 system-ui,sans-serif}.seo-fallback nav{text-align:right}.seo-fallback h1{max-width:900px;font-size:clamp(2.2rem,7vw,5rem);line-height:1}.seo-fallback ol{columns:2;gap:32px;padding-left:1.5rem}.seo-fallback li{break-inside:avoid;margin:.65rem 0}.seo-fallback li small{display:block;color:#666}@media(max-width:720px){.seo-fallback ol{columns:1}}</style>
+    <style>${prebootStyle}.seo-fallback{max-width:1080px;margin:auto;padding:40px 20px 80px;font:16px/1.6 system-ui,sans-serif}.seo-fallback nav{text-align:right}.seo-fallback h1{max-width:900px;font-size:clamp(2.2rem,7vw,5rem);line-height:1}.seo-fallback ol{columns:2;gap:32px;padding-left:1.5rem}.seo-fallback li{break-inside:avoid;margin:.65rem 0}.seo-fallback li small{display:block;color:#666}@media(max-width:720px){.seo-fallback ol{columns:1}}</style>
 ${assetTags.map((tag) => `    ${tag}`).join('\n')}
   </head>
   <body>
-    <div id="root">${fallbackMarkup(page, locale)}</div>
-    <noscript>${escapeHtml(locale === 'en' ? 'JavaScript is required to browse this video library.' : '浏览此视频案例库需要启用 JavaScript。')}</noscript>
+    <div id="root">${prebootMarkup(locale)}</div>
+    <noscript><style>.preboot-splash{display:none}</style>${fallbackMarkup(page, locale)}</noscript>
   </body>
 </html>
 `
