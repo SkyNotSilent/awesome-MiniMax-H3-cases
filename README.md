@@ -19,19 +19,13 @@
 </div>
 
 <a href="https://h3-field-notes-production.up.railway.app/en/">
-  <picture>
-    <source media="(max-width: 600px)" srcset="./docs/screenshots/intro-en-mobile.jpg">
-    <img src="./docs/screenshots/intro-en.jpg" alt="MiniMax H3 Cases & Guides fluid opening screen highlighting 997 playable cases and daily updates" width="100%">
-  </picture>
+  <img src="./docs/screenshots/intro-en.jpg" srcset="./docs/screenshots/intro-en-mobile.jpg 600w, ./docs/screenshots/intro-en.jpg 1440w" sizes="(max-width: 600px) 100vw, 100vw" alt="MiniMax H3 Cases & Guides fluid opening screen highlighting 997 playable cases and daily updates" width="100%">
 </a>
 
 *The opening establishes the collection scale first—997 playable cases, 309 complete public Prompts, and daily updates—then yields immediately to any click, scroll, or key press.*
 
 <a href="https://h3-field-notes-production.up.railway.app/en/">
-  <picture>
-    <source media="(max-width: 600px)" srcset="./docs/screenshots/case-library-en-mobile.jpg">
-    <img src="./docs/screenshots/case-library-en.jpg" alt="MiniMax H3 Cases & Guides homepage with duration and public-prompt filters" width="100%">
-  </picture>
+  <img src="./docs/screenshots/case-library-en.jpg" srcset="./docs/screenshots/case-library-en-mobile.jpg 600w, ./docs/screenshots/case-library-en.jpg 1440w" sizes="(max-width: 600px) 100vw, 100vw" alt="MiniMax H3 Cases & Guides homepage with duration and public-prompt filters" width="100%">
 </a>
 
 **See what MiniMax H3 can actually produce before you spend time setting it up.** MiniMax H3 is also commonly searched as Hailuo H3 or Hailuo 3.0. Browse real outputs from X and MiniMax's official examples through duration-first filters, then switch on **With Prompt** to focus on 309 cases with complete public Prompt text. Truncated excerpts are excluded. Category, style, and scene remain available as deeper filters. Open any case to watch it inside the gallery and jump back to the original source.

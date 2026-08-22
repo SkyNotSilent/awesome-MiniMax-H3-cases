@@ -19,19 +19,13 @@
 </div>
 
 <a href="https://h3-field-notes-production.up.railway.app/">
-  <picture>
-    <source media="(max-width: 600px)" srcset="./docs/screenshots/intro-zh-mobile.jpg">
-    <img src="./docs/screenshots/intro-zh.jpg" alt="MiniMax H3 Cases & Guides 流动开屏，突出 997 个可播放案例与每日持续更新" width="100%">
-  </picture>
+  <img src="./docs/screenshots/intro-zh.jpg" srcset="./docs/screenshots/intro-zh-mobile.jpg 600w, ./docs/screenshots/intro-zh.jpg 1440w" sizes="(max-width: 600px) 100vw, 100vw" alt="MiniMax H3 Cases & Guides 流动开屏，突出 997 个可播放案例与每日持续更新" width="100%">
 </a>
 
 *开屏首先展示资源规模：997 个可播放案例、309 条完整公开 Prompt，并强调每日持续更新；用户点击、滚动或按键即可立即进入案例首页。*
 
 <a href="https://h3-field-notes-production.up.railway.app/">
-  <picture>
-    <source media="(max-width: 600px)" srcset="./docs/screenshots/case-library-zh-mobile.jpg">
-    <img src="./docs/screenshots/case-library-zh.jpg" alt="MiniMax H3 Cases & Guides 首页，展示时长和只看有 Prompt 筛选" width="100%">
-  </picture>
+  <img src="./docs/screenshots/case-library-zh.jpg" srcset="./docs/screenshots/case-library-zh-mobile.jpg 600w, ./docs/screenshots/case-library-zh.jpg 1440w" sizes="(max-width: 600px) 100vw, 100vw" alt="MiniMax H3 Cases & Guides 首页，展示时长和只看有 Prompt 筛选" width="100%">
 </a>
 
 **在花时间安装模型或研究参数之前，先看 MiniMax H3 实际能生成什么。** MiniMax H3 也常被搜索为 Hailuo H3、Hailuo 3.0、海螺 H3 或海螺 3.0。这里汇总来自 X 与 MiniMax 官方公开示例的真实输出，首页按时长逐级浏览；打开 **只看有 Prompt**，即可集中查看原作者或官方完整公开提示词的案例。内容分类、风格与场景仍可继续组合筛选，任意案例均可站内观看并回到原作者帖子。
