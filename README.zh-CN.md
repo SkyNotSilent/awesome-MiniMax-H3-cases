@@ -2,7 +2,9 @@
 
 # MiniMax H3 Cases & Guides｜视频案例与实用教程
 
-### 997 个来源可追溯的视频案例 · 309 条完整公开 Prompt · 4 条基础路线 + 20 篇社区教程
+### MiniMax H3 / Hailuo H3 视频案例、完整 Prompt、ComfyUI 工作流与本地部署教程
+
+**997 个来源可追溯的视频案例 · 309 条完整公开 Prompt · 4 条基础路线 + 20 篇社区教程**
 
 **[简体中文](./README.zh-CN.md)** · **[English](./README.md)**
 
@@ -20,21 +22,23 @@
 
 <a href="https://h3-field-notes-production.up.railway.app/">
   <picture>
-    <source media="(max-width: 600px)" srcset="./docs/screenshots/intro-zh-mobile.jpg">
-    <img src="./docs/screenshots/intro-zh.jpg" alt="MiniMax H3 Cases & Guides 流动开屏，突出 997 个可播放案例与每日持续更新" width="100%">
-  </picture>
-</a>
-
-*开屏首先展示资源规模：997 个可播放案例、309 条完整公开 Prompt，并强调每日持续更新；用户点击、滚动或按键即可立即进入案例首页。*
-
-<a href="https://h3-field-notes-production.up.railway.app/">
-  <picture>
     <source media="(max-width: 600px)" srcset="./docs/screenshots/case-library-zh-mobile.jpg">
-    <img src="./docs/screenshots/case-library-zh.jpg" alt="MiniMax H3 Cases & Guides 首页，展示时长和只看有 Prompt 筛选" width="100%">
+    <img src="./docs/screenshots/case-library-zh.jpg" alt="MiniMax H3 与 Hailuo H3 视频案例库，支持时长与只看完整公开 Prompt 筛选" width="100%">
   </picture>
 </a>
 
 **在花时间安装模型或研究参数之前，先看 MiniMax H3 实际能生成什么。** MiniMax H3 也常被搜索为 Hailuo H3、Hailuo 3.0、海螺 H3 或海螺 3.0。这里汇总来自 X 与 MiniMax 官方公开示例的真实输出，首页按时长逐级浏览；打开 **只看有 Prompt**，即可集中查看原作者或官方完整公开提示词的案例。内容分类、风格与场景仍可继续组合筛选，任意案例均可站内观看并回到原作者帖子。
+
+<a href="https://h3-field-notes-production.up.railway.app/tutorials/">
+  <picture>
+    <source media="(max-width: 600px)" srcset="./docs/screenshots/tutorials-zh-mobile.png">
+    <img src="./docs/screenshots/tutorials-zh.png" alt="MiniMax H3 教程库，覆盖 Hailuo H3 部署、NVIDIA ComfyUI、Mac 原生推理、Prompt、加速、音频、长视频和 LoRA 训练" width="100%">
+  </picture>
+</a>
+
+**看完案例，直接开始执行。** 选择 4 条精简的 MiniMax H3 基础路线，或进入 20 篇经过来源核验的社区教程，覆盖 NVIDIA + ComfyUI、Apple Silicon Metal 推理、Prompt 与 Agent Skill、Turbo LoRA 加速、低显存部署、音频工作流、长视频续接和 Ref2VA 训练。每篇教程保留原始来源，并可一键复制成结构化 AI 任务。
+
+**覆盖关键词：** MiniMax H3 · Hailuo H3 · Hailuo 3.0 · 海螺 H3 · AI 视频案例 · MiniMax H3 提示词 · ComfyUI 工作流 · 本地部署 · Apple Silicon / Metal · Turbo LoRA · 长视频 · 音频生成 · Ref2VA 训练。
 
 > **在 2026-08-16 的公开同类库对比中规模最大：** 本库现有 997 个可播放、来源可追溯的 MiniMax H3 视频案例。该次检索中较大的公开案例或 Prompt 图库分别约为 300、222、135、67 和 28 条；只有 Prompt、没有对应视频案例的列表不计入案例库对比。
 
@@ -87,8 +91,6 @@
 原有 13 个来源核验生态项目仍然保留，但已经放进对应路线的“相关工具与资源”，不再与社区教程混在同一层级。社区原帖只做来源明确的结构化整理，不整篇复制。
 
 每周发现任务遵循 [`docs/WEEKLY_TUTORIAL_COLLECTION.md`](./docs/WEEKLY_TUTORIAL_COLLECTION.md) 中的回源核验和隐私规则。
-
-[![MiniMax H3 教程页：Mac 原生、官方部署、ComfyUI 加速、长视频与音频工作流](./docs/screenshots/tutorials-zh.png)](https://h3-field-notes-production.up.railway.app/tutorials/)
 
 ## 自动采集路线
 
