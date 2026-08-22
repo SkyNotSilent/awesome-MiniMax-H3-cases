@@ -1711,8 +1711,10 @@ body.intro-open {
 }
 
 .source-button {
+  width: 42px;
   min-height: 42px;
-  padding: 0 15px;
+  padding: 0;
+  justify-content: center;
 }
 
 .intro-splash {
