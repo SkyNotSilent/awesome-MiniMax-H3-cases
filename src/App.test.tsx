@@ -56,15 +56,17 @@ describe('case-first routes', () => {
     expect(document.querySelector('.intro-splash')).not.toBeInTheDocument()
   })
 
-  it('frames the intro with collection scale and a dated comparison claim', () => {
+  it('frames the intro with the prompt split and daily update rhythm', () => {
     renderAt('/')
 
     expect(Number(document.querySelector('.intro-proof-cases strong')?.textContent)).toBeGreaterThan(0)
-    expect(document.querySelector('.intro-proof-rank strong')).toHaveTextContent('#01')
-    expect(screen.getByText('已核验对比中规模最大')).toBeInTheDocument()
-    expect(screen.getByText('2026.08.16 对比快照')).toBeInTheDocument()
+    expect(document.querySelector('.intro-proof-cases em')).toHaveTextContent('完整公开 Prompt')
+    expect(document.querySelector('.intro-proof-cases em')).toHaveTextContent('来源未公开完整 Prompt')
+    expect(document.querySelector('.intro-proof-rank strong')).toHaveTextContent('DAILY')
+    expect(screen.getByText('每天持续更新')).toBeInTheDocument()
+    expect(screen.getByText('持续发现 · 核验 · 发布')).toBeInTheDocument()
     expect(document.querySelector('.intro-proof-connection path')).toBeInTheDocument()
-    expect(screen.getByText('全网更多真实案例，就在这里')).toBeInTheDocument()
+    expect(screen.getByText(/个真实案例，每天持续增长/)).toBeInTheDocument()
   })
 
   it('dismisses the intro immediately when the visitor interacts', () => {

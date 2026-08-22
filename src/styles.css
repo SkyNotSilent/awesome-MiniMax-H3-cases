@@ -1848,6 +1848,14 @@ body.intro-open {
   letter-spacing: 0.12em;
 }
 
+.intro-proof-card em span {
+  display: block;
+}
+
+.intro-proof-card em span + span {
+  margin-top: 2px;
+}
+
 .intro-proof-card strong {
   display: block;
   margin-top: 4px;
@@ -1954,6 +1962,12 @@ body.intro-open {
 
 .intro-proof-verdict span {
   flex: 1;
+}
+
+.intro-proof-verdict b {
+  font-family: var(--display);
+  font-size: 1.4em;
+  letter-spacing: -0.02em;
 }
 
 .intro-proof-verdict i {
