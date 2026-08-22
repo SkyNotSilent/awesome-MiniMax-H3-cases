@@ -2,14 +2,14 @@
 
 # MiniMax H3 Cases & Guides
 
-### 997 source-attributed videos with in-site playback · 309 complete public Prompts · 13 source-checked tutorials
+### 997 source-attributed videos · 309 complete public Prompts · 4 foundation routes + 20 community tutorials
 
 **[English](./README.md)** · **[简体中文](./README.zh-CN.md)**
 
 [![Video Gallery](https://img.shields.io/badge/Watch-Live_Video_Gallery-d8ff3e?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/en/)
 [![Examples](https://img.shields.io/badge/video_examples-997-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
 [![Complete Prompts](https://img.shields.io/badge/complete_prompts-309-f5f5ed?style=flat-square&labelColor=0a0b09)](./data/cases.json)
-[![Tutorials](https://img.shields.io/badge/source--checked_tutorials-13-f5f5ed?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/en/tutorials/)
+[![Tutorials](https://img.shields.io/badge/source--checked_tutorials-24-f5f5ed?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/en/tutorials/)
 [![GitHub Stars](https://img.shields.io/github/stars/SkyNotSilent/awesome-minimax-h3-cases?style=flat-square&labelColor=0a0b09&color=d8ff3e)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/stargazers)
 [![CI](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/actions/workflows/ci.yml/badge.svg)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg?style=flat-square)](./LICENSE)
@@ -73,26 +73,20 @@ No account, API key, or local model setup is required to browse the public galle
 | Scan all cases without leaving GitHub | [`CATALOG.md`](./CATALOG.md) |
 | Query the source-attributed dataset | [`data/cases.json`](./data/cases.json) or [`llms-full.txt`](./public/llms-full.txt) |
 | Find a case through an Agent Skill | [`minimax-h3-prompt-library`](./agents/skills/minimax-h3-prompt-library/) |
-| Choose an H3 setup, workflow, accelerator, training path, or resource index | [Searchable H3 ecosystem guide](https://h3-field-notes-production.up.railway.app/en/tutorials/) |
+| Follow a setup route or copy an executable tutorial into an AI agent | [MiniMax H3 tutorial workspace](https://h3-field-notes-production.up.railway.app/en/tutorials/) |
 
-## H3 tutorials and ecosystem guide
+## MiniMax H3 tutorial workspace
 
-The tutorial hub now explains 13 source-checked H3 projects and routes: what each one solves, who it is for, how to start, and where to find the original documentation.
+The tutorial hub is now a learning and execution workspace instead of a GitHub link list:
 
-| Resource | Start here for | Link |
-| --- | --- | --- |
-| h3.c / h3-metal | Native Apple Silicon inference in pure C + Metal, without Python, PyTorch, or ComfyUI | [antirez/h3.c](https://github.com/antirez/h3.c) |
-| Official MiniMax H3 repository | Weights, deployment guidance, and nine bundled Agent Skills including `h3-prompt-writing` | [MiniMax-AI/MiniMax-H3](https://github.com/MiniMax-AI/MiniMax-H3) |
-| MiniMax-H3 Turbo LoRA | Few-step synchronized audio-video generation; use 4 steps for previews and typically 6–8 for stronger v4 output | [larryvrh/MiniMax-H3-Turbo-Lora](https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora) |
-| ComfyUI H3 Motion Context | Chaining clips while carrying motion and audio context across joins | [NikoDemon80/ComfyUI-H3-Motion-Context](https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context) |
-| MiniMax H3 Audio T8 | An 86-node native H3 suite for stable audio conditioning and dual-clock sampling plus clearly separated experimental workflows | [T8mars/comfyui-minimax-h3-audio-T8](https://github.com/T8mars/comfyui-minimax-h3-audio-T8) |
-| H3 Director | Multi-shot timelines, T2V/FL2V/Ref2VA/V2V workflows, selective runs, and refinement | [AIMixer/ComfyUI_MiniMaxH3_Director](https://github.com/AIMixer/ComfyUI_MiniMaxH3_Director) |
-| Spectrum for H3 | Transformer-evaluation forecasting with controlled same-input A/B guidance | [xmarre/ComfyUI-Spectrum-MiniMax-H3](https://github.com/xmarre/ComfyUI-Spectrum-MiniMax-H3) |
-| MiniMax H3 Easy | Unified media input, `@` references, dialogue blocks, and a smaller ComfyUI graph | [nkxx188/ComfyUI-MiniMaxH3-Easy](https://github.com/nkxx188/ComfyUI-MiniMaxH3-Easy) |
-| H3 FineTuning | Rectified-flow training, latent caching, LoRA, and multi-GPU ZeRO-3 | [IAmIronMan42/MiniMax-H3-FineTuning](https://github.com/IAmIronMan42/MiniMax-H3-FineTuning) |
-| Awesome MiniMax H3 | Models, quantizations, LoRAs, nodes, guides, and workflow index | [wildminder/awesome-minimax-H3](https://github.com/wildminder/awesome-minimax-H3) |
+- **4 foundation routes:** official setup, NVIDIA + ComfyUI, native Mac inference, and Prompt + Agent Skill.
+- **20 community field guides:** source-attributed X tutorials selected for reach and executability across setup, ComfyUI, prompts, acceleration, long video, audio, and training.
+- **Bilingual detail pages:** every guide has separate Chinese and English routes, steps, commands, hardware notes, caveats, author, original source, verification date, and visible engagement snapshot.
+- **Copy for AI:** one action creates a structured task package with environment checks, commands, risks, sources, and a guardrail to verify the latest README instead of guessing missing steps.
 
-The standalone tutorials page lets users filter official setup, Mac, director workflows, acceleration, long video, audio, fine-tuning, and resource maps. These external resources are documented separately from the case archive; the archive does not derive prompts or production workflows from collected videos.
+The 13 source-checked ecosystem projects still exist, but now appear as related tools inside the route where they are useful. Community posts are summarized and structured; their full text is not copied.
+
+Weekly discovery follows the source-verification and privacy rules in [`docs/WEEKLY_TUTORIAL_COLLECTION.md`](./docs/WEEKLY_TUTORIAL_COLLECTION.md).
 
 [![MiniMax H3 tutorials for Mac, official deployment, ComfyUI acceleration, long video, and audio](./docs/screenshots/tutorials-en.png)](https://h3-field-notes-production.up.railway.app/en/tutorials/)
 
@@ -162,7 +156,7 @@ npm run build
 npm run catalog
 ```
 
-The build creates discoverable static case pages, `VideoObject` structured data, a video sitemap, `robots.txt`, Open Graph metadata, and [`llms.txt`](./public/llms.txt) for AI search and answer engines.
+The build creates localized case and tutorial pages, `VideoObject` and `HowTo` structured data, sitemap and hreflang links, Open Graph metadata, `robots.txt`, and [`llms.txt`](./public/llms.txt) for AI search and answer engines.
 
 ## Deployment
 

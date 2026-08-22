@@ -5,7 +5,7 @@ const root = resolve(import.meta.dirname, '..')
 const dist = resolve(root, 'dist')
 const baseUrl = (process.env.PUBLIC_SITE_URL || 'https://h3-field-notes-production.up.railway.app').replace(/\/$/, '')
 const cases = JSON.parse(await readFile(resolve(root, 'data/cases.json'), 'utf8'))
-const tutorials = JSON.parse(await readFile(resolve(root, 'data/tutorials.json'), 'utf8'))
+const tutorialGuides = JSON.parse(await readFile(resolve(root, 'data/tutorial-guides.json'), 'utf8'))
 const completePromptCount = cases.filter((item) => item.promptProvenance !== 'not-published' && item.prompt?.trim()).length
 
 const locales = ['zh-CN', 'en']
@@ -41,12 +41,12 @@ const pageDefinitions = [
     copy: {
       'zh-CN': {
         title: 'MiniMax H3 Cases & Guides — 视频案例、公开 Prompt 与实用教程',
-        description: `浏览 ${cases.length} 个可筛选、可追溯、可站内观看的 MiniMax H3 / Hailuo H3 真实视频案例，获取来源公开 Prompt，并通过 ${tutorials.length} 条核验教程了解部署、工作流、加速与训练。`,
+        description: `浏览 ${cases.length} 个可筛选、可追溯、可站内观看的 MiniMax H3 / Hailuo H3 真实视频案例，获取来源公开 Prompt，并通过 ${tutorialGuides.length} 条核验教程了解部署、工作流、加速与训练。`,
         keywords: 'MiniMax H3,MiniMax H3 视频案例,MiniMax H3 Prompt,MiniMax H3 教程,Hailuo H3,Hailuo 3.0,海螺 H3,海螺 3.0,海螺 AI,AI 视频生成,text-to-video,image-to-video,video-to-video,H3 ComfyUI,T2VA,FL2VA,Ref2VA',
       },
       en: {
         title: 'MiniMax H3 Cases & Guides — Videos, Public Prompts & Tutorials',
-        description: `Browse ${cases.length} source-attributed MiniMax H3 / Hailuo H3 videos with in-site playback, use prompts only when sources publish them, and explore ${tutorials.length} checked guides for setup, workflows, acceleration, and training.`,
+        description: `Browse ${cases.length} source-attributed MiniMax H3 / Hailuo H3 videos with in-site playback, use prompts only when sources publish them, and explore ${tutorialGuides.length} checked guides for setup, workflows, acceleration, and training.`,
         keywords: 'MiniMax H3,MiniMax H3 video examples,MiniMax H3 prompts,MiniMax H3 tutorials,Hailuo H3,Hailuo 3.0,AI video generation,text-to-video,image-to-video,video-to-video,MiniMax H3 ComfyUI,T2VA,FL2VA,Ref2VA',
       },
     },
@@ -58,12 +58,12 @@ const pageDefinitions = [
     copy: {
       'zh-CN': {
         title: 'MiniMax H3 教程与工具：部署、工作流、加速、训练 — MiniMax H3 Cases & Guides',
-        description: 'MiniMax H3 生态教程入口：官方部署、Apple Silicon 原生推理、ComfyUI 导演工作流、Turbo 加速、长视频、音频、微调训练与资源导航。',
+        description: `4 条基础路线与 20 篇来源可追溯的 MiniMax H3 社区教程，覆盖官方部署、Apple Silicon、ComfyUI、Prompt、Turbo、长视频、音频与训练。`,
         keywords: 'MiniMax H3 教程,MiniMax H3 Mac,h3.c,MiniMax H3 部署,ComfyUI H3,H3 Director,MiniMax H3 Turbo,H3 Motion Context,H3 Audio,MiniMax H3 微调',
       },
       en: {
         title: 'MiniMax H3 Tutorials and Tools: Setup, Workflows, Speed, Training — MiniMax H3 Cases & Guides',
-        description: 'A practical MiniMax H3 ecosystem guide for official setup, native Apple Silicon inference, ComfyUI director workflows, Turbo acceleration, long video, audio, fine-tuning, and resource maps.',
+        description: 'Four foundation routes and 20 source-attributed MiniMax H3 community tutorials for official setup, Apple Silicon, ComfyUI, prompts, Turbo, long video, audio, and training.',
         keywords: 'MiniMax H3 tutorials,MiniMax H3 Mac,h3.c,MiniMax H3 deployment,ComfyUI H3,H3 Director,MiniMax H3 Turbo,H3 Motion Context,H3 Audio,MiniMax H3 fine-tuning',
       },
     },
@@ -180,6 +180,7 @@ const isoDuration = (seconds) => `PT${seconds}S`
 const localeCode = (locale) => locale === 'en' ? 'en_US' : 'zh_CN'
 const otherLocale = (locale) => locale === 'en' ? 'zh-CN' : 'en'
 const casePath = (locale, id) => `${locale === 'en' ? '/en' : ''}/cases/${encodeURIComponent(id)}/`
+const tutorialPath = (locale, id) => `${locale === 'en' ? '/en' : ''}/tutorials/${encodeURIComponent(id)}/`
 const compactWhitespace = (value) => String(value).replace(/\s+/g, ' ').trim()
 const truncateMeta = (value, maxLength = 155) => {
   const normalized = compactWhitespace(value)
@@ -254,6 +255,46 @@ function localizedCase(item, locale) {
   }
 }
 
+function localizedTutorial(item, locale) {
+  const language = locale === 'en' ? 'en' : 'zh'
+  return {
+    title: item.title[language],
+    outcome: item.outcome[language],
+    audience: item.audience[language],
+    hardware: item.hardware[language],
+    prerequisites: item.prerequisites[language],
+    steps: item.steps[language],
+    caveats: item.caveats[language],
+  }
+}
+
+function tutorialPageDefinition(item) {
+  const paths = {
+    'zh-CN': tutorialPath('zh-CN', item.id),
+    en: tutorialPath('en', item.id),
+  }
+  return {
+    id: `tutorial:${item.id}`,
+    paths,
+    schemaType: 'WebPage',
+    tutorial: item,
+    copy: {
+      'zh-CN': {
+        title: `${item.title.zh} — MiniMax H3 教程`,
+        description: item.outcome.zh,
+        keywords: ['MiniMax H3 教程', 'Hailuo H3', item.category, ...item.tags].join(','),
+      },
+      en: {
+        title: `${item.title.en} — MiniMax H3 tutorial`,
+        description: item.outcome.en,
+        keywords: ['MiniMax H3 tutorial', 'Hailuo H3', item.category, ...item.tags].join(','),
+      },
+    },
+  }
+}
+
+const tutorialPageDefinitions = tutorialGuides.map(tutorialPageDefinition)
+
 function alternateHeadLinks(paths) {
   return `  <link rel="alternate" hreflang="zh-CN" href="${absolute(paths['zh-CN'])}" />
   <link rel="alternate" hreflang="en" href="${absolute(paths.en)}" />
@@ -298,13 +339,13 @@ function appStructuredData(page, locale) {
   if (page.id === 'tutorials') {
     pageNode.mainEntity = {
       '@type': 'ItemList',
-      numberOfItems: tutorials.length,
-      itemListElement: tutorials.map((item, index) => ({
+      numberOfItems: tutorialGuides.length,
+      itemListElement: tutorialGuides.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
-        name: item.title,
-        description: locale === 'en' ? item.description.en : item.description.zh,
-        url: item.url,
+        name: localizedTutorial(item, locale).title,
+        description: localizedTutorial(item, locale).outcome,
+        url: absolute(tutorialPath(locale, item.id)),
       })),
     }
   }
@@ -317,19 +358,54 @@ function appStructuredData(page, locale) {
     }))
   }
 
+  const graph = [
+    {
+      '@type': 'WebSite',
+      '@id': websiteId,
+      name: 'MiniMax H3 Cases & Guides',
+      alternateName: 'Awesome MiniMax H3 Cases',
+      url: `${baseUrl}/`,
+      inLanguage: ['zh-CN', 'en'],
+    },
+    pageNode,
+  ]
+
+  if (page.tutorial) {
+    const item = page.tutorial
+    const localized = localizedTutorial(item, locale)
+    const breadcrumbId = `${canonical}#breadcrumb`
+    pageNode.breadcrumb = { '@id': breadcrumbId }
+    graph.push({
+      '@type': 'BreadcrumbList',
+      '@id': breadcrumbId,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: locale === 'en' ? 'MiniMax H3 tutorials' : 'MiniMax H3 教程', item: absolute(locale === 'en' ? '/en/tutorials/' : '/tutorials/') },
+        { '@type': 'ListItem', position: 2, name: localized.title, item: canonical },
+      ],
+    })
+    graph.push({
+      '@type': 'HowTo',
+      '@id': `${canonical}#howto`,
+      name: localized.title,
+      description: localized.outcome,
+      image: [absolute(item.posterUrl)],
+      inLanguage: locale,
+      isBasedOn: item.source.url,
+      author: { '@type': item.source.platform === 'github' ? 'Organization' : 'Person', name: item.source.author },
+      supply: localized.prerequisites.map((name) => ({ '@type': 'HowToSupply', name })),
+      step: localized.steps.map((text, index) => ({
+        '@type': 'HowToStep',
+        position: index + 1,
+        name: `${locale === 'en' ? 'Step' : '步骤'} ${index + 1}`,
+        text,
+        url: `${canonical}#step-${index + 1}`,
+      })),
+    })
+  }
+
   return {
     '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'WebSite',
-        '@id': websiteId,
-        name: 'MiniMax H3 Cases & Guides',
-        alternateName: 'Awesome MiniMax H3 Cases',
-        url: `${baseUrl}/`,
-        inLanguage: ['zh-CN', 'en'],
-      },
-      pageNode,
-    ],
+    '@graph': graph,
   }
 }
 
@@ -346,11 +422,17 @@ function fallbackMarkup(page, locale) {
     }).join('')
     content = `<p><strong>${cases.length}</strong> ${escapeHtml(locale === 'en' ? 'published video examples' : '个已发布视频案例')}</p><ol>${links}</ol>`
   } else if (page.id === 'tutorials') {
-    content = `<ol>${tutorials.map((item) => {
-      const description = locale === 'en' ? item.description.en : item.description.zh
-      const steps = locale === 'en' ? item.steps.en : item.steps.zh
-      return `<li><a href="${escapeHtml(item.url)}">${escapeHtml(item.title)}</a><p>${escapeHtml(description)}</p><ol>${steps.map((step) => `<li>${escapeHtml(step)}</li>`).join('')}</ol></li>`
+    content = `<ol>${tutorialGuides.map((item) => {
+      const localized = localizedTutorial(item, locale)
+      return `<li><a href="${escapeHtml(tutorialPath(locale, item.id))}">${escapeHtml(localized.title)}</a><p>${escapeHtml(localized.outcome)}</p></li>`
     }).join('')}</ol>`
+  } else if (page.tutorial) {
+    const item = page.tutorial
+    const localized = localizedTutorial(item, locale)
+    const commands = item.commands.length
+      ? `<h2>${escapeHtml(locale === 'en' ? 'Commands' : '命令')}</h2><pre>${escapeHtml(item.commands.join('\n'))}</pre>`
+      : ''
+    content = `<p><strong>${escapeHtml(locale === 'en' ? 'Audience' : '适用人群')}:</strong> ${escapeHtml(localized.audience)}</p><p><strong>${escapeHtml(locale === 'en' ? 'Hardware' : '硬件要求')}:</strong> ${escapeHtml(localized.hardware)}</p><h2>${escapeHtml(locale === 'en' ? 'Prerequisites' : '前置条件')}</h2><ul>${localized.prerequisites.map((value) => `<li>${escapeHtml(value)}</li>`).join('')}</ul><h2>${escapeHtml(locale === 'en' ? 'Steps' : '执行步骤')}</h2><ol>${localized.steps.map((value, index) => `<li id="step-${index + 1}">${escapeHtml(value)}</li>`).join('')}</ol>${commands}<h2>${escapeHtml(locale === 'en' ? 'Caveats' : '注意事项')}</h2><ul>${localized.caveats.map((value) => `<li>${escapeHtml(value)}</li>`).join('')}</ul><p><a href="${escapeHtml(item.source.url)}" rel="nofollow noopener">${escapeHtml(locale === 'en' ? 'View original source' : '查看原始来源')}</a> · ${escapeHtml(item.source.author)} · ${escapeHtml(item.verifiedAt)}</p>`
   } else {
     content = faqItems[locale].map(([question, answer]) => `<article><h2>${escapeHtml(question)}</h2><p>${escapeHtml(answer)}</p></article>`).join('')
   }
@@ -399,6 +481,8 @@ function renderAppShell(page, locale, assetTags) {
   const description = truncateMeta(copy.description)
   const canonical = absolute(page.paths[locale])
   const alternateOgLocale = localeCode(otherLocale(locale))
+  const ogImage = page.tutorial ? absolute(page.tutorial.posterUrl) : `${baseUrl}/og-image.jpg`
+  const rootMarkup = page.id === 'catalog' ? prebootMarkup(locale) : ''
   return `<!doctype html>
 <html lang="${locale}">
   <head>
@@ -411,24 +495,21 @@ function renderAppShell(page, locale, assetTags) {
     <link rel="canonical" href="${canonical}" />
 ${alternateHeadLinks(page.paths)}
     <link rel="manifest" href="/site.webmanifest" />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="${page.tutorial ? 'article' : 'website'}" />
     <meta property="og:site_name" content="MiniMax H3 Cases &amp; Guides" />
     <meta property="og:locale" content="${localeCode(locale)}" />
     <meta property="og:locale:alternate" content="${alternateOgLocale}" />
     <meta property="og:title" content="${escapeHtml(copy.title)}" />
     <meta property="og:description" content="${escapeHtml(description)}" />
     <meta property="og:url" content="${canonical}" />
-    <meta property="og:image" content="${baseUrl}/og-image.jpg" />
-    <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image" content="${escapeHtml(ogImage)}" />
     <meta property="og:image:alt" content="${escapeHtml(copy.title)}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${escapeHtml(copy.title)}" />
     <meta name="twitter:description" content="${escapeHtml(description)}" />
-    <meta name="twitter:image" content="${baseUrl}/og-image.jpg" />
+    <meta name="twitter:image" content="${escapeHtml(ogImage)}" />
     <meta name="twitter:image:alt" content="${escapeHtml(copy.title)}" />
-    <script>window.__H3_BOOT_AT = performance.now()</script>
+    ${page.id === 'catalog' ? '<script>window.__H3_BOOT_AT = performance.now()</script>' : ''}
     <script type="application/ld+json">${jsonForHtml(appStructuredData(page, locale))}</script>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0b09'/%3E%3Cpath d='M14 16h8v12h20V16h8v32h-8V36H22v12h-8z' fill='%23d8ff3e'/%3E%3C/svg%3E" />
     <title>${escapeHtml(copy.title)}</title>
@@ -436,7 +517,7 @@ ${alternateHeadLinks(page.paths)}
 ${assetTags.map((tag) => `    ${tag}`).join('\n')}
   </head>
   <body>
-    <div id="root">${prebootMarkup(locale)}</div>
+    <div id="root">${rootMarkup}</div>
     <noscript><style>.preboot-splash{display:none}</style>${fallbackMarkup(page, locale)}</noscript>
   </body>
 </html>
@@ -594,6 +675,17 @@ for (const page of pageDefinitions) {
   }
 }
 
+for (const page of tutorialPageDefinitions) {
+  for (const locale of locales) {
+    const relativePath = page.paths[locale].replace(/^\//, '')
+    const pageDir = resolve(dist, relativePath)
+    const html = renderAppShell(page, locale, assetTags)
+    assertLanguageIsolation(html, locale, page.paths[locale])
+    await mkdir(pageDir, { recursive: true })
+    await writeFile(resolve(pageDir, 'index.html'), html)
+  }
+}
+
 const legacyTutorialRoutes = [
   { locale: 'zh-CN', from: '/toolkit/', to: '/tutorials/', label: '教程页面已迁移，正在跳转。' },
   { locale: 'en', from: '/en/toolkit/', to: '/en/tutorials/', label: 'The tutorials page has moved. Redirecting.' },
@@ -657,6 +749,7 @@ ${alternateSitemapLinks(paths)}${video}
 
 const sitemapEntries = [
   ...pageDefinitions.flatMap((page) => locales.map((locale) => sitemapPageEntry(page, locale))),
+  ...tutorialPageDefinitions.flatMap((page) => locales.map((locale) => sitemapPageEntry(page, locale))),
   ...cases.flatMap((item) => locales.map((locale) => sitemapCaseEntry(item, locale))),
 ].join('\n')
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -673,4 +766,4 @@ const notFoundCopy = {
 const notFoundHtml = `<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow"><title>404 — MiniMax H3 Cases &amp; Guides</title><style>body{margin:0;background:#0a0b09;color:#f5f5ed;font:16px/1.6 system-ui,sans-serif}main{max-width:760px;margin:15vh auto;padding:24px}h1{font-size:clamp(3rem,12vw,8rem);margin:0;color:#d8ff3e}a{color:#d8ff3e}</style></head><body><main><p>404</p><h1>${notFoundCopy['zh-CN'][0]}</h1><p>${notFoundCopy['zh-CN'][1]}</p><p><a href="/">${notFoundCopy['zh-CN'][2]}</a> · <a href="/en/">${notFoundCopy.en[2]}</a></p></main></body></html>`
 await writeFile(resolve(dist, '404.html'), notFoundHtml)
 
-console.log(`Generated ${pageDefinitions.length * locales.length} app routes, ${cases.length * locales.length} localized case pages, ${cases.length * locales.length} video sitemap entries, and a strict 404 page for ${baseUrl}.`)
+console.log(`Generated ${pageDefinitions.length * locales.length} app routes, ${tutorialGuides.length * locales.length} localized tutorial pages, ${cases.length * locales.length} localized case pages, ${cases.length * locales.length} video sitemap entries, and a strict 404 page for ${baseUrl}.`)

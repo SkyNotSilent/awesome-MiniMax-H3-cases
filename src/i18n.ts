@@ -1,7 +1,7 @@
 import type { CaseMode, VideoCase } from './types'
 
 export type Language = 'zh' | 'en'
-export type AppPage = 'home' | 'tutorials' | 'faq'
+export type AppPage = 'home' | 'tutorials' | 'tutorial-detail' | 'faq'
 
 export const languagePreferenceKey = 'minimax-h3-language'
 
@@ -21,23 +21,33 @@ export function detectVisitorLanguage(languages: readonly string[], timeZone = '
 export interface AppRoute {
   language: Language
   page: AppPage
+  tutorialSlug?: string
 }
 
 export function resolveRoute(pathname: string): AppRoute {
   const segments = pathname.split('/').filter(Boolean)
   const language: Language = segments[0] === 'en' ? 'en' : 'zh'
   const pageSegment = segments[language === 'en' ? 1 : 0]
+  const tutorialSlug = (pageSegment === 'tutorials' || pageSegment === 'toolkit')
+    ? segments[language === 'en' ? 2 : 1]
+    : undefined
   const page: AppPage = pageSegment === 'tutorials' || pageSegment === 'toolkit'
-    ? 'tutorials'
+    ? tutorialSlug
+      ? 'tutorial-detail'
+      : 'tutorials'
     : pageSegment === 'faq'
       ? 'faq'
       : 'home'
-  return { language, page }
+  return { language, page, tutorialSlug }
 }
 
-export function pathFor(language: Language, page: AppPage) {
+export function pathFor(language: Language, page: Exclude<AppPage, 'tutorial-detail'>) {
   const prefix = language === 'en' ? '/en' : ''
   return page === 'home' ? `${prefix}/` : `${prefix}/${page}/`
+}
+
+export function tutorialPath(language: Language, slug: string) {
+  return `${language === 'en' ? '/en' : ''}/tutorials/${encodeURIComponent(slug)}/`
 }
 
 export function casePath(language: Language, id: string) {
@@ -110,33 +120,55 @@ export const copy = {
     },
     tutorials: {
       index: '02 / H3 教程',
-      title: '从案例，走到真正跑起来。',
-      description: '一张持续更新的 MiniMax H3 生态地图：从官方部署、Mac 原生与 ComfyUI 工作流，到加速、长视频、音频、训练和资源导航。每条路线都说明它解决什么问题、适合谁以及如何开始。',
+      title: '从路线开始，跟着做完。',
+      description: '四条基础路线建立可靠起点；20 篇全球社区实战教程，整理成可学习、可执行、可复制给 AI 的双语工作台。',
+      foundationIndex: '01 / 基础路线',
+      foundationTitle: '先选一条可靠起跑线。',
+      foundationDescription: '官方部署、NVIDIA + ComfyUI、Mac 原生、Prompt + Agent Skill。项目工具被放回对应路线，不再与社区教程混在一起。',
+      communityIndex: '02 / 社区热门教程',
+      communityTitle: '从真实实战中少走弯路。',
+      communityDescription: '按相对热度和可执行性精选，所有互动量均为公开快照；只整理，不整篇复制原帖。',
       searchLabel: '搜索教程',
-      searchPlaceholder: '搜索平台、能力或项目…',
+      searchPlaceholder: '搜索硬件、能力或工作流…',
       clearSearch: '清除教程搜索',
       filterLabel: '教程分类',
       categories: {
-        all: '全部路线',
-        official: '官方入门',
-        mac: 'Mac 原生',
-        workflow: '导演工作流',
-        acceleration: '采样加速',
+        all: '全部教程',
+        'getting-started': '入门部署',
+        comfyui: 'ComfyUI',
+        prompt: 'Prompt',
+        acceleration: '加速',
         'long-video': '长视频',
-        audio: '音频工作流',
-        training: '训练微调',
-        resources: '资源导航',
+        audio: '音频',
+        training: '训练',
       },
-      featuredLabel: '本周重点',
-      bestFor: '适合：',
-      startLabel: '三步起跑',
-      verified: '资料核验',
-      commandLabel: 'h3.c 起步命令',
+      routeLabel: '基础路线',
+      communityLabel: '社区实战',
+      openGuide: '打开教程',
+      openSource: '查看原帖',
+      copyAi: '复制给 AI',
+      copied: '已复制 AI 任务包',
+      copyFailed: '剪贴板不可用，请手动复制',
+      manualCopy: '手动复制 AI 任务包',
+      back: '返回教程库',
+      goal: '目标',
+      audience: '适用人群',
+      hardware: '硬件要求',
+      prerequisites: '前置条件',
+      steps: '执行步骤',
+      commands: '命令',
+      caveats: '注意事项',
+      source: '来源与核验',
+      related: '相关工具与资源',
+      relatedGuides: '继续学习',
+      verified: '核验日期',
+      snapshot: '互动快照',
+      replies: '回复',
+      reposts: '转发',
+      likes: '喜欢',
+      views: '浏览',
       noResults: '没有匹配的教程，换一个关键词或分类试试。',
-      fieldNoteLabel: '实战提示 / SPEED STACK',
-      fieldNoteTitle: '加速不是把开关全部打开。',
-      fieldNoteBody: 'ComfyUI 路线可先从 Turbo LoRA 的 v4 EMA、simple 调度器与 6–8 步开始。4 步更适合预览；Motion Context 明确建议关闭 Spectrum。不同加速器是否能叠加，应以各自当前 README 和固定素材 A/B 为准。',
-      sourceNote: '教程摘要只整理项目公开文档，不从案例视频反推隐藏流程。外部项目持续更新，执行前请再次查看原始 README。',
+      sourceNote: '执行前先核验最新 README，不猜测缺失步骤、命令或参数。',
     },
     faq: {
       index: '03 / 常见问题',
@@ -219,33 +251,55 @@ export const copy = {
     },
     tutorials: {
       index: '02 / H3 TUTORIALS',
-      title: 'From watching examples to running H3.',
-      description: 'A living map of the MiniMax H3 ecosystem: official setup, native Mac inference, ComfyUI workflows, acceleration, long video, audio, training, and resource indexes. Every route explains what it solves, who it is for, and how to start.',
+      title: 'Pick a route. Finish the workflow.',
+      description: 'Four foundation routes establish a reliable baseline, followed by 20 global community field guides that are bilingual, executable, and ready to copy into an AI agent.',
+      foundationIndex: '01 / FOUNDATION ROUTES',
+      foundationTitle: 'Choose a dependable starting line.',
+      foundationDescription: 'Official setup, NVIDIA + ComfyUI, native Mac, and Prompt + Agent Skill. Project tools now live under the route where they help.',
+      communityIndex: '02 / COMMUNITY FIELD GUIDES',
+      communityTitle: 'Learn from real-world practice.',
+      communityDescription: 'Curated by relative reach and executability. Engagement figures are public snapshots; guides summarize rather than reproduce source posts.',
       searchLabel: 'Search tutorials',
-      searchPlaceholder: 'Search platforms, capabilities, or projects…',
+      searchPlaceholder: 'Search hardware, capabilities, or workflows…',
       clearSearch: 'Clear tutorial search',
       filterLabel: 'Tutorial categories',
       categories: {
-        all: 'All routes',
-        official: 'Official setup',
-        mac: 'Native Mac',
-        workflow: 'Director workflows',
+        all: 'All guides',
+        'getting-started': 'Getting started',
+        comfyui: 'ComfyUI',
+        prompt: 'Prompt',
         acceleration: 'Acceleration',
         'long-video': 'Long video',
-        audio: 'Audio workflows',
-        training: 'Fine-tuning',
-        resources: 'Resource maps',
+        audio: 'Audio',
+        training: 'Training',
       },
-      featuredLabel: 'FEATURED NOW',
-      bestFor: 'Best for: ',
-      startLabel: 'START IN THREE STEPS',
-      verified: 'Source checked',
-      commandLabel: 'h3.c starter commands',
+      routeLabel: 'Foundation route',
+      communityLabel: 'Community field guide',
+      openGuide: 'Open guide',
+      openSource: 'View source post',
+      copyAi: 'Copy for AI',
+      copied: 'AI task package copied',
+      copyFailed: 'Clipboard unavailable. Copy manually below.',
+      manualCopy: 'Manual AI task package',
+      back: 'Back to tutorials',
+      goal: 'Goal',
+      audience: 'Who it is for',
+      hardware: 'Hardware',
+      prerequisites: 'Prerequisites',
+      steps: 'Steps',
+      commands: 'Commands',
+      caveats: 'Caveats',
+      source: 'Source and verification',
+      related: 'Related tools and resources',
+      relatedGuides: 'Continue learning',
+      verified: 'Verified',
+      snapshot: 'Engagement snapshot',
+      replies: 'replies',
+      reposts: 'reposts',
+      likes: 'likes',
+      views: 'views',
       noResults: 'No tutorial matches this search. Try another term or category.',
-      fieldNoteLabel: 'FIELD NOTE / SPEED STACK',
-      fieldNoteTitle: 'Acceleration is not every switch at once.',
-      fieldNoteBody: 'For the ComfyUI route, start with Turbo LoRA v4 EMA, the simple scheduler, and six to eight steps. Four steps suit previews; Motion Context explicitly recommends keeping Spectrum off. Test other combinations against current READMEs and fixed-input A/B renders.',
-      sourceNote: 'Tutorial summaries are grounded in public project documentation, never inferred from case videos. External projects evolve, so recheck the original README before running a guide.',
+      sourceNote: 'Verify the latest README before running. Never guess missing steps, commands, or parameters.',
     },
     faq: {
       index: '03 / FAQ',

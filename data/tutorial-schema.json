@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://h3-field-notes-production.up.railway.app/schemas/tutorial-guide.json",
+  "title": "MiniMax H3 Tutorial Guide",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "contentType", "category", "title", "outcome", "audience", "hardware", "prerequisites", "steps", "commands", "caveats", "posterUrl", "tags", "relatedResourceIds", "source", "verifiedAt"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "contentType": { "enum": ["foundation", "community"] },
+    "category": { "enum": ["getting-started", "comfyui", "prompt", "acceleration", "long-video", "audio", "training"] },
+    "title": { "$ref": "#/$defs/localizedText" },
+    "outcome": { "$ref": "#/$defs/localizedText" },
+    "audience": { "$ref": "#/$defs/localizedText" },
+    "hardware": { "$ref": "#/$defs/localizedText" },
+    "prerequisites": { "$ref": "#/$defs/localizedList" },
+    "steps": { "$ref": "#/$defs/localizedList" },
+    "commands": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+    "caveats": { "$ref": "#/$defs/localizedList" },
+    "posterUrl": { "type": "string", "pattern": "^/tutorial-posters/" },
+    "tags": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1, "uniqueItems": true },
+    "relatedResourceIds": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["platform", "url", "author", "originalLanguage"],
+      "properties": {
+        "platform": { "enum": ["x", "github"] },
+        "url": { "type": "string", "format": "uri" },
+        "author": { "type": "string", "minLength": 1 },
+        "handle": { "type": "string" },
+        "publishedAt": { "type": "string", "format": "date" },
+        "originalLanguage": { "enum": ["zh", "en", "other"] }
+      }
+    },
+    "engagement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["snapshotAt"],
+      "properties": {
+        "replies": { "type": "integer", "minimum": 0 },
+        "reposts": { "type": "integer", "minimum": 0 },
+        "likes": { "type": "integer", "minimum": 0 },
+        "views": { "type": "integer", "minimum": 0 },
+        "snapshotAt": { "type": "string", "format": "date" }
+      }
+    },
+    "verifiedAt": { "type": "string", "format": "date" }
+  },
+  "$defs": {
+    "localizedText": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["zh", "en"],
+      "properties": { "zh": { "type": "string", "minLength": 1 }, "en": { "type": "string", "minLength": 1 } }
+    },
+    "localizedList": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["zh", "en"],
+      "properties": {
+        "zh": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 },
+        "en": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 }
+      }
+    }
+  }
+}

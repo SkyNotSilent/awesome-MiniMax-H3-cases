@@ -4,13 +4,15 @@ import { resolve } from 'node:path'
 const root = resolve(import.meta.dirname, '..')
 const baseUrl = (process.env.PUBLIC_SITE_URL || 'https://h3-field-notes-production.up.railway.app').replace(/\/$/, '')
 const cases = JSON.parse(await readFile(resolve(root, 'data/cases.json'), 'utf8'))
-const tutorials = JSON.parse(await readFile(resolve(root, 'data/tutorials.json'), 'utf8'))
+const tutorialGuides = JSON.parse(await readFile(resolve(root, 'data/tutorial-guides.json'), 'utf8'))
+const tutorialResources = JSON.parse(await readFile(resolve(root, 'data/tutorials.json'), 'utf8'))
 const officialCount = cases.filter((item) => item.sourceType === 'official').length
 const xCount = cases.filter((item) => item.sourceType === 'x').length
 const promptCases = cases.filter((item) => item.promptProvenance !== 'not-published')
 const withoutTrailingWhitespace = (text) => text.replace(/[ \t]+$/gm, '')
 
 const caseUrl = (id, locale = 'zh-CN') => `${baseUrl}${locale === 'en' ? '/en' : ''}/cases/${encodeURIComponent(id)}/`
+const tutorialUrl = (id, locale = 'zh-CN') => `${baseUrl}${locale === 'en' ? '/en' : ''}/tutorials/${encodeURIComponent(id)}/`
 
 const representatives = [
   ...promptCases.slice(0, 12),
@@ -27,6 +29,7 @@ const llms = `# MiniMax H3 Cases & Guides
 - ${officialCount} official reproducible examples
 - ${xCount} source-attributed X community examples
 - ${promptCases.length} examples with complete verbatim public Prompts
+- ${tutorialGuides.filter((item) => item.contentType === 'foundation').length} foundation tutorial routes and ${tutorialGuides.filter((item) => item.contentType === 'community').length} source-attributed community field guides
 - Missing prompts are never inferred, reconstructed, translated into an alleged original, or completed
 
 ## Primary routes
@@ -43,9 +46,9 @@ const llms = `# MiniMax H3 Cases & Guides
 
 ${representatives.map((item) => `- ${caseUrl(item.id, 'en')} — ${item.titleEn}; ${item.mode}; ${item.promptProvenance}; source: ${item.sourceUrl}`).join('\n')}
 
-## Tutorial sources
+## Tutorial guides
 
-${tutorials.map((item) => `- ${item.title} — ${item.kind.en}; ${item.description.en}; source checked ${item.verifiedAt}; ${item.url}`).join('\n')}
+${tutorialGuides.map((item) => `- ${tutorialUrl(item.id, 'en')} — ${item.title.en}; ${item.category}; source checked ${item.verifiedAt}; original: ${item.source.url}`).join('\n')}
 
 ## Retrieval rules
 
@@ -59,20 +62,29 @@ ${tutorials.map((item) => `- ${item.title} — ${item.kind.en}; ${item.descripti
 
 const llmsFull = `# MiniMax H3 Cases & Guides — Complete Case and Tutorial Index
 
-Generated from data/cases.json. Total: ${cases.length} cases. Complete verbatim public Prompts: ${promptCases.length}.
+Generated from data/cases.json and data/tutorial-guides.json. Total: ${cases.length} cases and ${tutorialGuides.length} tutorials. Complete verbatim public Prompts: ${promptCases.length}.
 
 ## Tutorials
 
-${tutorials.map((item) => `### ${item.title}
+${tutorialGuides.map((item) => `### ${item.title.en}
 
-- Route: ${item.kind.en}
+- English page: ${tutorialUrl(item.id, 'en')}
+- Chinese page: ${tutorialUrl(item.id)}
+- Type: ${item.contentType}
+- Category: ${item.category}
 - Best for: ${item.audience.en}
-- Summary: ${item.description.en}
+- Goal: ${item.outcome.en}
+- Hardware: ${item.hardware.en}
 - Source checked: ${item.verifiedAt}
-- Original documentation: ${item.url}
+- Original source: ${item.source.url}
 - Start here:
 ${item.steps.en.map((step, index) => `  ${index + 1}. ${step}`).join('\n')}
+${item.commands.length ? `- Commands:\n${item.commands.map((command) => `  - ${command}`).join('\n')}` : ''}
 `).join('\n')}
+
+## Related project resources
+
+${tutorialResources.map((item) => `- ${item.title} — ${item.kind.en}; ${item.description.en}; source checked ${item.verifiedAt}; ${item.url}`).join('\n')}
 
 ## Video cases
 
@@ -101,4 +113,4 @@ ${item.prompt ? `- Complete verbatim public prompt:\n\n\`\`\`text\n${item.prompt
 
 await writeFile(resolve(root, 'public/llms.txt'), withoutTrailingWhitespace(llms))
 await writeFile(resolve(root, 'public/llms-full.txt'), withoutTrailingWhitespace(llmsFull))
-console.log(`Generated llms.txt and llms-full.txt for ${cases.length} cases.`)
+console.log(`Generated llms.txt and llms-full.txt for ${cases.length} cases and ${tutorialGuides.length} tutorials.`)
