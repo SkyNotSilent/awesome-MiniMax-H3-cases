@@ -1728,6 +1728,7 @@ body.intro-open {
     #090a08;
   transition: clip-path 520ms cubic-bezier(0.76, 0, 0.24, 1), opacity 420ms ease;
   clip-path: inset(0 0 0 0);
+  perspective: 1200px;
 }
 
 .intro-splash::before,
@@ -1837,13 +1838,17 @@ body.intro-open {
 .intro-proof-card {
   position: absolute;
   z-index: 4;
-  width: clamp(260px, 24vw, 360px);
+  width: clamp(292px, 25vw, 380px);
   padding: 0;
+  overflow: visible;
   color: var(--ink);
   background: transparent;
   border: 0;
   font-family: var(--mono);
   text-transform: uppercase;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, opacity, filter;
 }
 
 .intro-proof-card::before {
@@ -1869,6 +1874,7 @@ body.intro-open {
   font-size: 9px;
   line-height: 1.2;
   letter-spacing: 0.2em;
+  white-space: nowrap;
 }
 
 .intro-proof-card small::before {
@@ -1889,8 +1895,10 @@ body.intro-open {
   font-family: var(--display);
   font-size: clamp(72px, 7vw, 112px);
   font-weight: 700;
-  line-height: 0.78;
+  line-height: 0.94;
   letter-spacing: -0.065em;
+  padding: 0.035em 0.025em 0.075em 0;
+  overflow: visible;
   filter: drop-shadow(0 10px 32px rgba(217, 255, 67, 0.13));
 }
 
@@ -1900,6 +1908,7 @@ body.intro-open {
   font-size: 11px;
   line-height: 1.4;
   letter-spacing: 0.16em;
+  white-space: nowrap;
 }
 
 .intro-proof-card em {
@@ -1910,6 +1919,7 @@ body.intro-open {
   font-style: normal;
   line-height: 1.45;
   letter-spacing: 0.13em;
+  white-space: nowrap;
 }
 
 .intro-proof-card em span {
@@ -1931,13 +1941,15 @@ body.intro-open {
 .intro-proof-cases {
   top: clamp(90px, 11vh, 112px);
   left: clamp(28px, 5vw, 78px);
+  transform-origin: 50% 0;
   animation: intro-stat-cases 920ms calc(var(--intro-offset, 0ms) + 30ms) cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .intro-proof-update {
   right: clamp(28px, 5vw, 78px);
-  bottom: clamp(148px, 18vh, 180px);
+  bottom: clamp(136px, 16.5vh, 168px);
   text-align: right;
+  transform-origin: 50% 100%;
   animation: intro-stat-update 980ms calc(var(--intro-offset, 0ms) + 120ms) cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
@@ -1972,13 +1984,15 @@ body.intro-open {
 }
 
 @keyframes intro-stat-cases {
-  from { opacity: 0; transform: translate3d(-72px, 42px, 0) scale(0.92); filter: blur(14px); }
-  to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); filter: blur(0); }
+  0% { opacity: 0; transform: perspective(900px) rotateX(-88deg) translateY(-18px); filter: blur(9px); }
+  72% { opacity: 1; transform: perspective(900px) rotateX(5deg) translateY(2px); filter: blur(0); }
+  100% { opacity: 1; transform: perspective(900px) rotateX(0) translateY(0); filter: blur(0); }
 }
 
 @keyframes intro-stat-update {
-  from { opacity: 0; transform: translate3d(76px, -42px, 0) scale(0.94); filter: blur(14px); }
-  to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); filter: blur(0); }
+  0% { opacity: 0; transform: perspective(900px) rotateX(88deg) translateY(18px); filter: blur(9px); }
+  72% { opacity: 1; transform: perspective(900px) rotateX(-5deg) translateY(-2px); filter: blur(0); }
+  100% { opacity: 1; transform: perspective(900px) rotateX(0) translateY(0); filter: blur(0); }
 }
 
 .intro-proof-connection {
@@ -2078,39 +2092,50 @@ body.intro-open {
 .intro-wordmark {
   position: absolute;
   z-index: 1;
-  top: 49%;
+  top: 51%;
   left: 50%;
   width: calc(100% - clamp(48px, 8vw, 128px));
   transform: translate(-50%, -52%);
   display: flex;
   flex-direction: column;
-  gap: clamp(12px, 1vw, 18px);
+  gap: clamp(2px, 0.35vw, 6px);
   font-family: var(--display);
   font-size: clamp(62px, 10vw, 152px);
   font-weight: 700;
-  line-height: 0.79;
+  line-height: 0.9;
   letter-spacing: -0.045em;
   text-transform: uppercase;
 }
 
 .intro-wordmark span {
+  display: block;
+  width: max-content;
   color: transparent;
   background: linear-gradient(94deg, #f5f7ef 0%, #d9ff43 48%, #76e8bd 100%);
   background-clip: text;
   -webkit-background-clip: text;
-  animation: intro-mark-in 820ms var(--intro-offset, 0ms) cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: intro-mark-from-left 900ms calc(var(--intro-offset, 0ms) + 130ms) cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .intro-wordmark strong {
+  display: block;
+  width: max-content;
   align-self: flex-end;
   color: transparent;
   -webkit-text-stroke: 1.25px rgba(218, 224, 210, 0.58);
-  animation: intro-mark-in 860ms calc(var(--intro-offset, 0ms) + 90ms) cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: intro-mark-from-right 920ms calc(var(--intro-offset, 0ms) + 210ms) cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-@keyframes intro-mark-in {
-  from { opacity: 0; transform: translateY(38px); filter: blur(12px); }
-  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+@keyframes intro-mark-from-left {
+  0% { opacity: 0; transform: translate3d(-72vw, 0, 0); filter: blur(12px); }
+  74% { opacity: 1; transform: translate3d(1.2vw, 0, 0); filter: blur(0); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0); filter: blur(0); }
+}
+
+@keyframes intro-mark-from-right {
+  0% { opacity: 0; transform: translate3d(72vw, 0, 0); filter: blur(12px); }
+  74% { opacity: 1; transform: translate3d(-1.2vw, 0, 0); filter: blur(0); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0); filter: blur(0); }
 }
 
 .intro-bottomline {
@@ -2967,7 +2992,7 @@ footer {
     top: 46%;
     width: calc(100% - 40px);
     font-size: clamp(46px, 13.5vw, 78px);
-    line-height: 0.88;
+    line-height: 0.94;
     letter-spacing: -0.035em;
     gap: 8px;
   }
@@ -2977,13 +3002,14 @@ footer {
   }
 
   .intro-proof-card {
-    width: min(70vw, 260px);
+    width: min(78vw, 280px);
     padding: 0;
   }
 
   .intro-proof-card strong {
     margin-top: 9px;
     font-size: clamp(54px, 16vw, 72px);
+    line-height: 0.96;
   }
 
   .intro-proof-card p {
@@ -3005,7 +3031,7 @@ footer {
   .intro-proof-update {
     right: 24px;
     bottom: 19%;
-    width: min(56vw, 220px);
+    width: min(64vw, 238px);
   }
 
   .intro-proof-update strong {
