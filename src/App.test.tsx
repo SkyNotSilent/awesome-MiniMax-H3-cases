@@ -1,7 +1,8 @@
 import '@testing-library/jest-dom/vitest'
 import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
-import { afterEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import App from './App'
+import { languagePreferenceKey } from './i18n'
 
 vi.mock('../data/cases.json', async (importOriginal) => {
   const original = await importOriginal<typeof import('../data/cases.json')>()
@@ -27,11 +28,16 @@ function renderAt(pathname: string) {
   return render(<App />)
 }
 
+beforeEach(() => {
+  window.localStorage.setItem(languagePreferenceKey, 'zh')
+})
+
 afterEach(() => {
   cleanup()
   vi.useRealTimers()
   window.history.replaceState({}, '', '/')
   document.body.classList.remove('intro-open', 'modal-open')
+  window.localStorage.clear()
   delete window.twttr
 })
 
@@ -67,6 +73,22 @@ describe('case-first routes', () => {
 
     expect(document.querySelector('.intro-splash')).not.toBeInTheDocument()
     expect(document.body).not.toHaveClass('intro-open')
+  })
+
+  it('switches language in place without replaying the intro or reloading the document', () => {
+    renderAt('/')
+    fireEvent.pointerDown(window)
+    expect(document.querySelector('.intro-splash')).not.toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('link', { name: '切换到英文' }))
+    expect(window.location.pathname).toBe('/en/')
+    expect(screen.getByRole('heading', { name: 'See what MiniMax H3 actually makes.' })).toBeInTheDocument()
+    expect(document.querySelector('.intro-splash')).not.toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('link', { name: 'Switch to Chinese' }))
+    expect(window.location.pathname).toBe('/')
+    expect(screen.getByRole('heading', { name: '先看 MiniMax H3 的真实效果。' })).toBeInTheDocument()
+    expect(window.localStorage.getItem(languagePreferenceKey)).toBe('zh')
   })
 
   it('keeps the home page focused on cases and removes template and collection-method sections', () => {

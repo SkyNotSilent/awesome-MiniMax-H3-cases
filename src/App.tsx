@@ -22,7 +22,9 @@ import {
   caseSummary,
   caseTitle,
   copy,
+  detectVisitorLanguage,
   durationLabel,
+  languagePreferenceKey,
   metadataValue,
   modelLabel,
   pathFor,
@@ -73,6 +75,39 @@ type DurationRange = (typeof durationRanges)[number]
 const allCategories = [...new Set(cases.map((item) => item.category))]
 const allStyles = [...new Set(cases.flatMap((item) => item.styles))]
 const allScenes = [...new Set(cases.flatMap((item) => item.scenes))]
+
+function initialRoute() {
+  const route = resolveRoute(window.location.pathname)
+  const isAutoLanguageEntry = window.location.pathname === '/' || window.location.pathname === ''
+  if (!isAutoLanguageEntry) return route
+
+  let storedLanguage: Language | null = null
+  try {
+    const stored = window.localStorage.getItem(languagePreferenceKey)
+    if (stored === 'zh' || stored === 'en') storedLanguage = stored
+  } catch {
+    // Language detection still works when storage is disabled.
+  }
+
+  let timeZone = ''
+  try {
+    timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
+  } catch {
+    // Some privacy-focused browsers do not expose a time zone.
+  }
+
+  const detectedLanguage = storedLanguage ?? detectVisitorLanguage(
+    navigator.languages?.length ? navigator.languages : [navigator.language],
+    timeZone,
+  )
+
+  if (detectedLanguage === 'en') {
+    window.history.replaceState(window.history.state, '', `/en/${window.location.search}${window.location.hash}`)
+    return { language: 'en' as const, page: 'home' as const }
+  }
+
+  return route
+}
 
 function XMark({ size = 16 }: { size?: number }) {
   return (
@@ -131,7 +166,7 @@ function HostedVideo({ item, language, title }: { item: VideoCase; language: Lan
 }
 
 function App() {
-  const route = resolveRoute(window.location.pathname)
+  const [route, setRoute] = useState(initialRoute)
   const language = route.language
   const t = copy[language]
   const pageDescription = route.page === 'tutorials'
@@ -155,10 +190,28 @@ function App() {
     document.querySelector<HTMLMetaElement>('meta[name="description"]')?.setAttribute('content', pageDescription)
   }, [pageDescription, pageTitle, t.htmlLang])
 
+  useEffect(() => {
+    const handlePopState = () => setRoute(resolveRoute(window.location.pathname))
+    window.addEventListener('popstate', handlePopState)
+    return () => window.removeEventListener('popstate', handlePopState)
+  }, [])
+
+  const switchLanguage = (nextLanguage: Language) => {
+    if (nextLanguage === language) return
+    try {
+      window.localStorage.setItem(languagePreferenceKey, nextLanguage)
+    } catch {
+      // Keep the current-session switch working when storage is disabled.
+    }
+    const nextPath = `${pathFor(nextLanguage, route.page)}${window.location.search}${window.location.hash}`
+    window.history.pushState(window.history.state, '', nextPath)
+    setRoute({ ...route, language: nextLanguage })
+  }
+
   return (
     <main id="top">
       <div className="grain" aria-hidden="true" />
-      <Header language={language} page={route.page} />
+      <Header language={language} page={route.page} onLanguageChange={switchLanguage} />
       {route.page === 'home' && <HomePage language={language} />}
       {route.page === 'tutorials' && <TutorialsPage language={language} />}
       {route.page === 'faq' && <FaqPage language={language} />}
@@ -167,7 +220,15 @@ function App() {
   )
 }
 
-function Header({ language, page }: { language: Language; page: AppPage }) {
+function Header({
+  language,
+  page,
+  onLanguageChange,
+}: {
+  language: Language
+  page: AppPage
+  onLanguageChange: (language: Language) => void
+}) {
   const t = copy[language]
   const otherLanguage: Language = language === 'zh' ? 'en' : 'zh'
 
@@ -185,8 +246,13 @@ function Header({ language, page }: { language: Language; page: AppPage }) {
         <div className="header-actions">
           <a
             className="language-button"
-            href={`${pathFor(otherLanguage, page)}${window.location.search}`}
+            href={`${pathFor(otherLanguage, page)}${window.location.search}${window.location.hash}`}
             aria-label={language === 'zh' ? '切换到英文' : 'Switch to Chinese'}
+            onClick={(event) => {
+              if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return
+              event.preventDefault()
+              onLanguageChange(otherLanguage)
+            }}
           >
             <Languages size={14} aria-hidden="true" /> {t.nav.language}
           </a>
@@ -319,22 +385,24 @@ function HomePage({ language }: { language: Language }) {
           <div className="catalog-heading">
             <p className="section-index">{t.catalog.index}</p>
             <h1>{t.catalog.title}</h1>
-            <p>{t.catalog.description}</p>
           </div>
-          <label className="search-box">
-            <Search size={17} aria-hidden="true" />
-            <span className="sr-only">{t.catalog.searchLabel}</span>
-            <input
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              placeholder={t.catalog.searchPlaceholder}
-            />
-            {query && (
-              <button type="button" onClick={() => setQuery('')} aria-label={t.catalog.clearSearch}>
-                <X size={15} />
-              </button>
-            )}
-          </label>
+          <div className="catalog-support">
+            <p>{t.catalog.description}</p>
+            <label className="search-box">
+              <Search size={19} aria-hidden="true" />
+              <span className="sr-only">{t.catalog.searchLabel}</span>
+              <input
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                placeholder={t.catalog.searchPlaceholder}
+              />
+              {query && (
+                <button type="button" onClick={() => setQuery('')} aria-label={t.catalog.clearSearch}>
+                  <X size={17} />
+                </button>
+              )}
+            </label>
+          </div>
         </div>
 
         <div className="primary-filter" aria-label={t.catalog.filterLabel}>

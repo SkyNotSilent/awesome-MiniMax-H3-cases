@@ -3,6 +3,21 @@ import type { CaseMode, VideoCase } from './types'
 export type Language = 'zh' | 'en'
 export type AppPage = 'home' | 'tutorials' | 'faq'
 
+export const languagePreferenceKey = 'minimax-h3-language'
+
+const chineseTimeZones = new Set([
+  'Asia/Shanghai',
+  'Asia/Chongqing',
+  'Asia/Harbin',
+  'Asia/Urumqi',
+])
+
+export function detectVisitorLanguage(languages: readonly string[], timeZone = ''): Language {
+  if (languages.some((language) => language.toLowerCase().startsWith('zh'))) return 'zh'
+  if (chineseTimeZones.has(timeZone)) return 'zh'
+  return 'en'
+}
+
 export interface AppRoute {
   language: Language
   page: AppPage
