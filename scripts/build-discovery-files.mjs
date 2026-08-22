@@ -8,6 +8,8 @@ const tutorials = JSON.parse(await readFile(resolve(root, 'data/tutorials.json')
 const officialCount = cases.filter((item) => item.sourceType === 'official').length
 const xCount = cases.filter((item) => item.sourceType === 'x').length
 const promptCases = cases.filter((item) => item.promptProvenance !== 'not-published')
+const completePromptCases = promptCases.filter((item) => item.promptCompleteness !== 'excerpt')
+const promptExcerptCases = promptCases.filter((item) => item.promptCompleteness === 'excerpt')
 const withoutTrailingWhitespace = (text) => text.replace(/[ \t]+$/gm, '')
 
 const caseUrl = (id, locale = 'zh-CN') => `${baseUrl}${locale === 'en' ? '/en' : ''}/cases/${encodeURIComponent(id)}/`
@@ -19,14 +21,14 @@ const representatives = [
 
 const llms = `# MiniMax H3 Cases & Guides
 
-> A bilingual, source-attributed library of MiniMax H3 video examples. Videos are playable through their original source, and prompts appear only when creators or official scripts publish the complete text.
+> A bilingual, source-attributed library of MiniMax H3 video examples. Videos play in the gallery; prompt text is marked as complete or as an archived excerpt.
 
 ## Library snapshot
 
 - ${cases.length} published MiniMax H3 video examples
 - ${officialCount} official reproducible examples
 - ${xCount} source-attributed X community examples
-- ${promptCases.length} examples with verbatim public prompts
+- ${promptCases.length} examples with public Prompt text (${completePromptCases.length} complete, ${promptExcerptCases.length} explicitly labeled excerpts)
 - Missing prompts are never inferred, reconstructed, translated into an alleged original, or completed
 
 ## Primary routes
@@ -50,14 +52,16 @@ ${tutorials.map((item) => `- ${item.title} — ${item.kind.en}; ${item.descripti
 ## Retrieval rules
 
 - Cite the original source URL when discussing a case.
-- Copy a prompt only when promptProvenance is official-verbatim or creator-verbatim.
+- Copy a prompt only when promptCompleteness is not excerpt and promptProvenance is official-verbatim, creator-verbatim, or external-archive-verbatim.
+- When promptCompleteness is excerpt, label it as incomplete and preserve its trailing ellipsis; never complete the missing text.
+- When promptProvenance is external-archive-verbatim, cite archiveSourceUrl and do not claim that the original X post was re-verified.
 - When promptProvenance is not-published, state that the source did not publish a complete prompt.
 - Do not derive a prompt or hidden workflow from a finished video.
 `
 
 const llmsFull = `# MiniMax H3 Cases & Guides — Complete Case and Tutorial Index
 
-Generated from data/cases.json. Total: ${cases.length} cases. Verbatim public prompts: ${promptCases.length}.
+Generated from data/cases.json. Total: ${cases.length} cases. Public Prompt text: ${promptCases.length} (${completePromptCases.length} complete, ${promptExcerptCases.length} archived excerpts).
 
 ## Tutorials
 
@@ -89,9 +93,11 @@ ${cases.map((item) => `## ${item.titleEn}
 - Category: ${item.category}
 - Output: ${item.duration}s, ${item.resolution}, ${item.aspectRatio}
 - Prompt provenance: ${item.promptProvenance}
+- Prompt completeness: ${item.prompt ? (item.promptCompleteness ?? 'complete') : 'not-published'}
+${item.archiveSourceUrl ? `- Archive source: ${item.archiveSourceUrl}` : ''}
 - Chinese summary: ${item.summary}
 - English summary: ${item.summaryEn}
-${item.prompt ? `- Verbatim public prompt:\n\n\`\`\`text\n${item.prompt}\n\`\`\`` : '- Verbatim public prompt: not published by the source'}
+${item.prompt ? `- Public prompt ${item.promptCompleteness === 'excerpt' ? 'excerpt (incomplete; preserved verbatim)' : 'text (complete; preserved verbatim)'}:\n\n\`\`\`text\n${item.prompt}\n\`\`\`` : '- Public prompt: not published by the source'}
 `).join('\n')}
 `
 

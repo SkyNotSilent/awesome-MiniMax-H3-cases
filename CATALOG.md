@@ -72,6 +72,8 @@
 | [日惹传统市场的清晨](https://x.com/junwatu/status/2084840152715911311) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
 | [每个伟大故事的动态标题](https://x.com/umesh_ai/status/2083909535593644291) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
 | [同一提示词的双模型奇幻对决](https://x.com/MadMax_Series/status/2083501727836225758) | 15s · 1080×1080 · square | `MiniMax H3` `模型对比` `公开 Prompt` `X 原帖` |
+| [雨中之刃剪纸片头](https://x.com/TanLuAI/status/2086053955315064990) | 15s · 1260×720 · landscape | `MiniMax H3` `有 Prompt` `完整 Prompt` `公开归档` |
+| [奥德修斯直面独眼巨人](https://x.com/apiframe/status/2085720283336622590) | 25s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `完整 Prompt` `公开归档` |
 
 ## FL2VA
 
@@ -245,6 +247,23 @@
 | [蓝色影棚中的人马共舞](https://x.com/egeberkina/status/2083301476206588086) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
 | [骑手、摩托与十五秒节拍](https://x.com/HBCoop_/status/2083282581450375367) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
 | [千禧流行女团说唱片段](https://x.com/LeoCreaIA/status/2083240416166748313) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [打烊前最后一个气泡 · 下篇](https://x.com/ManuAGI01/status/2087066113775665414) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
+| [打烊前最后一个气泡 · 上篇](https://x.com/ManuAGI01/status/2087065646903517354) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
+| [阿里与布鲁诺的羊角包花 · 下篇](https://x.com/ManuAGI01/status/2086667788488442041) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
+| [阿里与布鲁诺的羊角包花 · 上篇](https://x.com/ManuAGI01/status/2086667268700995928) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `完整 Prompt` `公开归档` |
+| [绅士猫与小老鼠的惊喜 · 下篇](https://x.com/ManuAGI01/status/2086426551114215889) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
+| [绅士猫与小老鼠的惊喜 · 上篇](https://x.com/ManuAGI01/status/2086426143612440739) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
+| [小草莓唤醒菠萝王 · 下篇](https://x.com/ManuAGI01/status/2086360699505451093) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
+| [小草莓唤醒菠萝王 · 上篇](https://x.com/ManuAGI01/status/2086360167176954269) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
+| [归还月亮的少年 · 第四幕](https://x.com/ManuAGI01/status/2086323087092470161) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
+| [归还月亮的少年 · 第三幕](https://x.com/ManuAGI01/status/2086322454679707867) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
+| [归还月亮的少年 · 第二幕](https://x.com/ManuAGI01/status/2086321924070834347) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
+| [小小创作者与 3200 颗纸星星](https://x.com/ManuAGI01/status/2086294491179495506) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
+| [小小花匠与沉睡的山岭巨人 · 下篇](https://x.com/ManuAGI01/status/2086051214425477564) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
+| [小小花匠与沉睡的山岭巨人 · 上篇](https://x.com/ManuAGI01/status/2086050663365333283) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
+| [小园丁与出逃的雨云 · 第三幕](https://x.com/ManuAGI01/status/2085987791587135909) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
+| [小园丁与出逃的雨云 · 第二幕](https://x.com/ManuAGI01/status/2085986990919647644) | 15s · 2560×1440 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
+| [柯克舰长的舰桥指令](https://x.com/SolutionsJoeG/status/2085929499653238799) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `完整 Prompt` `公开归档` |
 
 ## Unknown
 

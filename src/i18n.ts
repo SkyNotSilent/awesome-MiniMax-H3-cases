@@ -33,7 +33,7 @@ export const copy = {
   zh: {
     htmlLang: 'zh-CN',
     siteTitle: 'MiniMax H3 Cases & Guides — 视频案例、公开 Prompt 与教程',
-    siteDescription: '868 个可筛选、可追溯、可站内观看的 MiniMax H3 / Hailuo 3.0 视频案例，以及公开 Prompt 与来源核验教程。',
+    siteDescription: '887 个可筛选、可追溯、可站内观看的 MiniMax H3 / Hailuo 3.0 视频案例，含 214 条 Prompt 文本与来源核验教程。',
     nav: { cases: '案例', tutorials: '教程', faq: '常见问题', source: '源码', language: 'EN' },
     intro: {
       kicker: 'COMMUNITY VIDEO ARCHIVE / 2026',
@@ -76,10 +76,12 @@ export const copy = {
       prompt: '原始 Prompt',
       promptPublished: '来源公开',
       promptNotice: '以下内容按来源原文呈现。',
+      promptExcerptNotice: '对标站与原帖仅保留了以 ... 结尾的公开 Prompt 节选；本页按归档原文展示，未补写缺失内容。',
       promptUnavailable: '来源未公开 Prompt；本页只展示视频和公开信息。',
       copy: '复制 Prompt',
       copied: '已复制',
       promptSource: '查看 Prompt 原帖',
+      archiveSource: '查看归档来源',
       source: '查看原始来源',
     },
     tutorials: {
@@ -131,7 +133,7 @@ export const copy = {
   en: {
     htmlLang: 'en',
     siteTitle: 'MiniMax H3 Cases & Guides — Videos, Public Prompts & Tutorials',
-    siteDescription: '868 filterable, source-attributed MiniMax H3 / Hailuo 3.0 video examples with in-site playback, public prompts, and source-checked tutorials.',
+    siteDescription: '887 filterable, source-attributed MiniMax H3 / Hailuo 3.0 video examples with in-site playback, 214 cases with Prompt text, and source-checked tutorials.',
     nav: { cases: 'Cases', tutorials: 'Tutorials', faq: 'FAQ', source: 'Source', language: 'ZH' },
     intro: {
       kicker: 'COMMUNITY VIDEO ARCHIVE / 2026',
@@ -174,10 +176,12 @@ export const copy = {
       prompt: 'Original Prompt',
       promptPublished: 'Published by source',
       promptNotice: 'Shown exactly as published by the source.',
+      promptExcerptNotice: 'The source and comparison archive retain only a public Prompt excerpt ending in ...; it is shown verbatim here without completing the missing text.',
       promptUnavailable: 'The source did not publish a prompt. This page shows the video and public details only.',
       copy: 'Copy Prompt',
       copied: 'Copied',
       promptSource: 'View Prompt source',
+      archiveSource: 'View archive source',
       source: 'View original source',
     },
     tutorials: {
@@ -420,6 +424,7 @@ export function modelLabel(item: VideoCase, language: Language) {
   if (language === 'zh') return item.model
   return item.model
     .replace('（创作者标注）', ' (creator-identified)')
+    .replace('（来源标注）', ' (source-identified)')
     .replace(/^MiniMax H3 与 (.+) 对比$/, 'MiniMax H3 vs $1')
     .replaceAll(' 与 ', ' vs ')
 }
@@ -433,12 +438,14 @@ export function metadataValue(value: string, language: Language) {
 const provenanceZh: Record<VideoCase['promptProvenance'], string> = {
   'official-verbatim': '官方原文',
   'creator-verbatim': '创作者原文',
+  'external-archive-verbatim': '外部归档原文',
   'not-published': '来源未公开',
 }
 
 const provenanceEn: Record<VideoCase['promptProvenance'], string> = {
   'official-verbatim': 'Official verbatim',
   'creator-verbatim': 'Creator verbatim',
+  'external-archive-verbatim': 'External archive verbatim',
   'not-published': 'Not published by source',
 }
 

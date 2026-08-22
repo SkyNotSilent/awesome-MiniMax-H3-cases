@@ -4,7 +4,7 @@ import rawCases from '../data/cases.json'
 describe('published prompt policy', () => {
   it('stores only verbatim published prompts and never prompt reconstructions or placeholders', () => {
     for (const item of rawCases) {
-      expect(['official-verbatim', 'creator-verbatim', 'not-published']).toContain(item.promptProvenance)
+      expect(['official-verbatim', 'creator-verbatim', 'external-archive-verbatim', 'not-published']).toContain(item.promptProvenance)
       expect(item).not.toHaveProperty('promptEn')
 
       if (item.promptProvenance === 'not-published') {
@@ -12,6 +12,8 @@ describe('published prompt policy', () => {
       } else {
         expect(typeof item.prompt).toBe('string')
         expect(item.prompt?.trim().length).toBeGreaterThan(0)
+        if (item.promptCompleteness === 'excerpt') expect(item.archiveSourceUrl).toMatch(/^https:\/\//)
+        if (item.promptProvenance === 'external-archive-verbatim') expect(item.archiveSourceUrl).toMatch(/^https:\/\//)
       }
     }
   })

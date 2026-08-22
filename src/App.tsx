@@ -702,10 +702,15 @@ function CaseDialog({ item, language, onClose }: { item: VideoCase; language: La
                 </button>
               </div>
               <p className="prompt-notice">
-                {t.promptPublished} · {t.promptNotice}
+                {t.promptPublished} · {item.promptCompleteness === 'excerpt' ? t.promptExcerptNotice : t.promptNotice}
                 {item.promptSourceUrl ? (
                   <a href={item.promptSourceUrl} target="_blank" rel="noreferrer">
                     {t.promptSource} <ArrowUpRight size={11} />
+                  </a>
+                ) : null}
+                {item.archiveSourceUrl ? (
+                  <a href={item.archiveSourceUrl} target="_blank" rel="noreferrer">
+                    {t.archiveSource} <ArrowUpRight size={11} />
                   </a>
                 ) : null}
               </p>

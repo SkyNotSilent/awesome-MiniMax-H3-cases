@@ -6,7 +6,7 @@ version: 0.2.0
 
 # MiniMax H3 Case and Public Prompt Lookup
 
-Retrieve source-attributed MiniMax H3 / Hailuo 3.0 video cases from the catalog. Return prompt text only when the original creator post or an official public script published that exact text.
+Retrieve source-attributed MiniMax H3 / Hailuo 3.0 video cases from the catalog. Return complete prompt text only when its provenance and completeness fields support that claim; archived excerpts must remain labeled as incomplete.
 
 Keep this skill lookup-only. Never create a new prompt, adapt an existing prompt, combine prompt fragments, reconstruct a missing prompt, reverse-engineer a video, or decompose a hidden production workflow.
 
@@ -22,9 +22,11 @@ Use case metadata to search by model, mode, category, style, scene, creator, tit
 2. Search `data/cases.json` for the closest factual matches.
 3. Return the case title, short factual summary, model, mode, author, catalog identifier, and original source URL.
 4. Check `promptProvenance` before returning prompt text.
-5. Return a prompt only when provenance is `official-verbatim` or `creator-verbatim` and the source supports the exact text.
-6. Treat `unknown`, `official-adapted`, `reconstructed`, or any unrecognized provenance as unavailable. Do not present stored text under those labels as an original prompt.
-7. Preserve public prompt wording, order, punctuation, timestamps, formatting, and language exactly. Do not clean, translate, shorten, expand, or normalize it.
+5. Return a complete prompt only when `promptCompleteness` is `complete` (or omitted for legacy records) and provenance is `official-verbatim`, `creator-verbatim`, or `external-archive-verbatim`.
+6. When `promptCompleteness` is `excerpt`, label it as an incomplete archived excerpt, preserve the trailing ellipsis, and cite `archiveSourceUrl`; never present it as complete.
+7. For `external-archive-verbatim`, disclose that the original post was unavailable during recheck and cite the archive source instead of claiming creator re-verification.
+8. Treat `unknown`, `official-adapted`, `reconstructed`, or any unrecognized provenance as unavailable. Do not present stored text under those labels as an original prompt.
+9. Preserve public prompt wording, order, punctuation, timestamps, formatting, and language exactly. Do not clean, translate, shorten, expand, or normalize it.
 
 ## Output contract
 
@@ -39,7 +41,7 @@ DISCLOSURE
 
 For each match, distinguish the visible case result from the availability of a public prompt.
 
-When a verbatim public prompt exists, reproduce only that exact prompt and link the original source.
+When a complete verbatim public prompt exists, reproduce only that exact prompt and link its source. If only an excerpt exists, return it only with an explicit incomplete-excerpt warning and archive link.
 
 When no verbatim public prompt exists, write:
 

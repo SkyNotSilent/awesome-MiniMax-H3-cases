@@ -1,13 +1,13 @@
 # MiniMax H3 Cases & Guides
 
-> A bilingual, source-attributed library of MiniMax H3 video examples. Videos are playable through their original source, and prompts appear only when creators or official scripts publish the complete text.
+> A bilingual, source-attributed library of MiniMax H3 video examples. Videos play in the gallery; prompt text is marked as complete or as an archived excerpt.
 
 ## Library snapshot
 
-- 868 published MiniMax H3 video examples
+- 887 published MiniMax H3 video examples
 - 3 official reproducible examples
-- 865 source-attributed X community examples
-- 195 examples with verbatim public prompts
+- 884 source-attributed X community examples
+- 214 examples with public Prompt text (199 complete, 15 explicitly labeled excerpts)
 - Missing prompts are never inferred, reconstructed, translated into an alleged original, or completed
 
 ## Primary routes
@@ -62,6 +62,8 @@
 ## Retrieval rules
 
 - Cite the original source URL when discussing a case.
-- Copy a prompt only when promptProvenance is official-verbatim or creator-verbatim.
+- Copy a prompt only when promptCompleteness is not excerpt and promptProvenance is official-verbatim, creator-verbatim, or external-archive-verbatim.
+- When promptCompleteness is excerpt, label it as incomplete and preserve its trailing ellipsis; never complete the missing text.
+- When promptProvenance is external-archive-verbatim, cite archiveSourceUrl and do not claim that the original X post was re-verified.
 - When promptProvenance is not-published, state that the source did not publish a complete prompt.
 - Do not derive a prompt or hidden workflow from a finished video.
