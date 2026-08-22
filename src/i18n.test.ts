@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import rawCases from '../data/cases.json'
-import { detectVisitorLanguage, metadataValue, modelLabel } from './i18n'
+import { detectVisitorLanguage, metadataValue, modelLabel, resolveRoute, tutorialPath } from './i18n'
 import type { VideoCase } from './types'
 
 const cases = rawCases as VideoCase[]
@@ -20,5 +20,14 @@ describe('visitor language detection', () => {
     expect(detectVisitorLanguage(['zh-CN', 'en-US'], 'America/New_York')).toBe('zh')
     expect(detectVisitorLanguage(['en-US'], 'Asia/Shanghai')).toBe('zh')
     expect(detectVisitorLanguage(['en-US', 'fr-FR'], 'Europe/Paris')).toBe('en')
+  })
+})
+
+describe('tutorial routes', () => {
+  it('resolves bilingual detail pages and builds equivalent localized paths', () => {
+    expect(resolveRoute('/tutorials/mac-native/')).toEqual({ language: 'zh', page: 'tutorial-detail', tutorialSlug: 'mac-native' })
+    expect(resolveRoute('/en/tutorials/mac-native/')).toEqual({ language: 'en', page: 'tutorial-detail', tutorialSlug: 'mac-native' })
+    expect(tutorialPath('zh', 'mac-native')).toBe('/tutorials/mac-native/')
+    expect(tutorialPath('en', 'mac-native')).toBe('/en/tutorials/mac-native/')
   })
 })

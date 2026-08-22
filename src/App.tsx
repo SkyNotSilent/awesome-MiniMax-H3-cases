@@ -14,6 +14,7 @@ import {
   X,
 } from 'lucide-react'
 import rawCases from '../data/cases.json'
+import rawTutorialGuides from '../data/tutorial-guides.json'
 import rawTutorials from '../data/tutorials.json'
 import {
   casePath,
@@ -31,33 +32,16 @@ import {
   resolveRoute,
   sourceLabel,
   taxonomyLabel,
+  tutorialPath,
   type AppPage,
   type Language,
 } from './i18n'
-import type { VideoCase } from './types'
+import type { TutorialCategory, TutorialGuide, TutorialResource, VideoCase } from './types'
 import { XPostEmbed } from './XPostEmbed'
 
 const cases = rawCases as VideoCase[]
-type TutorialCategory = 'mac' | 'official' | 'workflow' | 'acceleration' | 'long-video' | 'audio' | 'training' | 'resources'
-type LocalizedText = Record<Language, string>
-type TutorialResource = {
-  id: string
-  code: string
-  category: TutorialCategory
-  featured: boolean
-  title: string
-  url: string
-  kind: LocalizedText
-  description: LocalizedText
-  audience: LocalizedText
-  steps: Record<Language, string[]>
-  facts: string[]
-  tags: string[]
-  action: LocalizedText
-  verifiedAt: string
-}
-
-const tutorials = rawTutorials as TutorialResource[]
+const tutorialResources = rawTutorials as TutorialResource[]
+const tutorialGuides = rawTutorialGuides as TutorialGuide[]
 const completePromptCount = cases.filter((item) => (
   item.promptProvenance !== 'not-published' && Boolean(item.prompt?.trim())
 )).length
@@ -68,14 +52,13 @@ const initialIntroOffset = bootStartedAt
   : 0
 const tutorialCategories: Array<'all' | TutorialCategory> = [
   'all',
-  'official',
-  'mac',
-  'workflow',
+  'getting-started',
+  'comfyui',
+  'prompt',
   'acceleration',
   'long-video',
   'audio',
   'training',
-  'resources',
 ]
 const durationRanges = ['ALL', 'UP_TO_5', 'SIX_TO_10', 'ELEVEN_TO_15', 'OVER_15'] as const
 type DurationRange = (typeof durationRanges)[number]
@@ -184,12 +167,19 @@ function App() {
   const [route, setRoute] = useState(initialRoute)
   const language = route.language
   const t = copy[language]
-  const pageDescription = route.page === 'tutorials'
+  const activeTutorial = route.page === 'tutorial-detail'
+    ? tutorialGuides.find((item) => item.id === route.tutorialSlug)
+    : undefined
+  const pageDescription = activeTutorial
+    ? activeTutorial.outcome[language]
+    : route.page === 'tutorials'
     ? t.tutorials.description
     : route.page === 'faq'
       ? t.faq.description
       : t.siteDescription
-  const pageTitle = route.page === 'home'
+  const pageTitle = activeTutorial
+    ? `${activeTutorial.title[language]} — MiniMax H3 Cases & Guides`
+    : route.page === 'home'
     ? t.siteTitle
     : route.page === 'tutorials'
       ? language === 'zh'
@@ -218,7 +208,10 @@ function App() {
     } catch {
       // Keep the current-session switch working when storage is disabled.
     }
-    const nextPath = `${pathFor(nextLanguage, route.page)}${window.location.search}${window.location.hash}`
+    const nextBasePath = route.page === 'tutorial-detail' && route.tutorialSlug
+      ? tutorialPath(nextLanguage, route.tutorialSlug)
+      : pathFor(nextLanguage, route.page as Exclude<AppPage, 'tutorial-detail'>)
+    const nextPath = `${nextBasePath}${window.location.search}${window.location.hash}`
     window.history.pushState(window.history.state, '', nextPath)
     setRoute({ ...route, language: nextLanguage })
   }
@@ -229,6 +222,8 @@ function App() {
       <Header language={language} page={route.page} onLanguageChange={switchLanguage} />
       {route.page === 'home' && <HomePage language={language} />}
       {route.page === 'tutorials' && <TutorialsPage language={language} />}
+      {route.page === 'tutorial-detail' && activeTutorial && <TutorialDetailPage language={language} tutorial={activeTutorial} />}
+      {route.page === 'tutorial-detail' && !activeTutorial && <TutorialNotFound language={language} />}
       {route.page === 'faq' && <FaqPage language={language} />}
       <Footer language={language} />
     </main>
@@ -247,6 +242,9 @@ function Header({
   const t = copy[language]
   const otherLanguage: Language = language === 'zh' ? 'en' : 'zh'
   const githubLabel = language === 'zh' ? '在 GitHub 查看源码' : 'View source on GitHub'
+  const languageHref = page === 'tutorial-detail'
+    ? tutorialPath(otherLanguage, resolveRoute(window.location.pathname).tutorialSlug || '')
+    : pathFor(otherLanguage, page)
 
   return (
     <header className="site-header-wrap">
@@ -256,13 +254,13 @@ function Header({
         </a>
         <nav aria-label={language === 'zh' ? '主导航' : 'Primary navigation'}>
           <a href={pathFor(language, 'home')} aria-current={page === 'home' ? 'page' : undefined}>{t.nav.cases}</a>
-          <a href={pathFor(language, 'tutorials')} aria-current={page === 'tutorials' ? 'page' : undefined}>{t.nav.tutorials}</a>
+          <a href={pathFor(language, 'tutorials')} aria-current={page === 'tutorials' || page === 'tutorial-detail' ? 'page' : undefined}>{t.nav.tutorials}</a>
           <a href={pathFor(language, 'faq')} aria-current={page === 'faq' ? 'page' : undefined}>{t.nav.faq}</a>
         </nav>
         <div className="header-actions">
           <a
             className="language-button"
-            href={`${pathFor(otherLanguage, page)}${window.location.search}${window.location.hash}`}
+            href={`${languageHref}${window.location.search}${window.location.hash}`}
             aria-label={language === 'zh' ? '切换到英文' : 'Switch to Chinese'}
             onClick={(event) => {
               if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return
@@ -628,35 +626,138 @@ function PageHero({ index, title, description }: { index: string; title: string;
   )
 }
 
+function formatMetric(value: number | undefined, language: Language) {
+  if (value === undefined) return null
+  return new Intl.NumberFormat(language === 'zh' ? 'zh-CN' : 'en', { notation: 'compact', maximumFractionDigits: 1 }).format(value)
+}
+
+function buildTutorialAiTask(tutorial: TutorialGuide, language: Language) {
+  const t = copy[language].tutorials
+  const section = (label: string, lines: string[]) => lines.length
+    ? `${label}:\n${lines.map((line) => `- ${line}`).join('\n')}`
+    : ''
+  const commands = tutorial.commands.length
+    ? `${t.commands}:\n${tutorial.commands.map((command) => `- ${command}`).join('\n')}`
+    : ''
+  const guardrail = language === 'zh'
+    ? '执行约束：先核验来源项目的最新 README 与版本；不得猜测缺失步骤、命令、参数或素材；涉及付费云资源时先估算费用；任何不确定项先停下说明。'
+    : 'Execution guardrail: verify the latest source README and versions first; never guess missing steps, commands, parameters, or media; estimate cost before using paid cloud resources; stop and explain any uncertainty.'
+
+  return [
+    `MiniMax H3 — ${tutorial.title[language]}`,
+    `${t.goal}: ${tutorial.outcome[language]}`,
+    `${t.audience}: ${tutorial.audience[language]}`,
+    `${t.hardware}: ${tutorial.hardware[language]}`,
+    section(t.prerequisites, tutorial.prerequisites[language]),
+    section(t.steps, tutorial.steps[language]),
+    commands,
+    section(t.caveats, tutorial.caveats[language]),
+    `${t.source}: ${tutorial.source.url}`,
+    guardrail,
+  ].filter(Boolean).join('\n\n')
+}
+
+function CopyTutorialButton({ tutorial, language, compact = false }: { tutorial: TutorialGuide; language: Language; compact?: boolean }) {
+  const t = copy[language].tutorials
+  const [state, setState] = useState<'idle' | 'copied' | 'fallback'>('idle')
+  const task = useMemo(() => buildTutorialAiTask(tutorial, language), [language, tutorial])
+
+  const copyTask = async () => {
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error('clipboard unavailable')
+      await navigator.clipboard.writeText(task)
+      setState('copied')
+      window.setTimeout(() => setState('idle'), 1_800)
+    } catch {
+      setState('fallback')
+    }
+  }
+
+  return (
+    <div className={`tutorial-copy-wrap ${compact ? 'is-compact' : ''}`}>
+      <button type="button" className="tutorial-copy-button" onClick={copyTask} aria-live="polite">
+        {state === 'copied' ? <Check size={15} /> : <Clipboard size={15} />}
+        {state === 'copied' ? t.copied : t.copyAi}
+      </button>
+      {state === 'fallback' && (
+        <div className="tutorial-copy-fallback" role="status">
+          <label>{t.copyFailed}<textarea readOnly value={task} aria-label={t.manualCopy} /></label>
+          <button type="button" onClick={() => setState('idle')} aria-label={language === 'zh' ? '关闭手动复制' : 'Close manual copy'}><X size={14} /></button>
+        </div>
+      )}
+    </div>
+  )
+}
+
+function TutorialActions({ tutorial, language, compact = false }: { tutorial: TutorialGuide; language: Language; compact?: boolean }) {
+  const t = copy[language].tutorials
+  return (
+    <div className={`tutorial-actions ${compact ? 'is-compact' : ''}`}>
+      <a className="tutorial-open-guide" href={tutorialPath(language, tutorial.id)}>{t.openGuide} <ChevronRight size={15} /></a>
+      <a className="tutorial-source-link" href={tutorial.source.url} target="_blank" rel="noreferrer">{t.openSource} <ArrowUpRight size={14} /></a>
+      <CopyTutorialButton tutorial={tutorial} language={language} compact={compact} />
+    </div>
+  )
+}
+
+function TutorialSectionHeading({ index, title, description }: { index: string; title: string; description: string }) {
+  return (
+    <header className="tutorial-section-heading">
+      <p>{index}</p>
+      <div><h2>{title}</h2><span>{description}</span></div>
+    </header>
+  )
+}
+
 function TutorialsPage({ language }: { language: Language }) {
   const t = copy[language].tutorials
   const [activeCategory, setActiveCategory] = useState<(typeof tutorialCategories)[number]>('all')
   const [query, setQuery] = useState('')
+  const foundations = tutorialGuides.filter((item) => item.contentType === 'foundation')
 
-  const filtered = useMemo(() => {
+  const community = useMemo(() => {
     const needle = query.trim().toLowerCase()
-    return tutorials.filter((item) => {
+    return tutorialGuides.filter((item) => {
+      if (item.contentType !== 'community') return false
       const categoryMatches = activeCategory === 'all' || item.category === activeCategory
       const searchable = [
-        item.title,
-        item.kind[language],
-        item.description[language],
+        item.title[language],
+        item.outcome[language],
         item.audience[language],
+        item.hardware[language],
+        ...item.prerequisites[language],
         ...item.steps[language],
-        ...item.facts,
         ...item.tags,
+        item.source.author,
+        item.source.handle || '',
       ].join(' ').toLowerCase()
       return categoryMatches && (!needle || searchable.includes(needle))
     })
   }, [activeCategory, language, query])
 
-  const featured = filtered.find((item) => item.featured)
-  const remaining = filtered.filter((item) => !item.featured)
-
   return (
     <div className="standalone-page tutorials-page">
       <PageHero index={t.index} title={t.title} description={t.description} />
       <section className="tutorial-hub shell" aria-label={copy[language].nav.tutorials}>
+        <TutorialSectionHeading index={t.foundationIndex} title={t.foundationTitle} description={t.foundationDescription} />
+        <div className="foundation-route-grid">
+          {foundations.map((tutorial, index) => (
+            <article className="foundation-route-card" key={tutorial.id}>
+              <a className="foundation-route-poster" href={tutorialPath(language, tutorial.id)}>
+                <img src={tutorial.posterUrl} alt={tutorial.title[language]} />
+                <span>{String(index + 1).padStart(2, '0')}</span>
+              </a>
+              <div className="foundation-route-copy">
+                <small>{t.routeLabel} / {tutorial.tags[0]}</small>
+                <h3><a href={tutorialPath(language, tutorial.id)}>{tutorial.title[language]}</a></h3>
+                <p>{tutorial.outcome[language]}</p>
+                <TutorialActions tutorial={tutorial} language={language} compact />
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <TutorialSectionHeading index={t.communityIndex} title={t.communityTitle} description={t.communityDescription} />
         <div className="tutorial-controls">
           <label className="tutorial-search">
             <Search size={16} aria-hidden="true" />
@@ -679,68 +780,112 @@ function TutorialsPage({ language }: { language: Language }) {
           </div>
         </div>
 
-        {featured && (
-          <article className="tutorial-feature">
-            <div className="tutorial-feature-copy">
-              <div className="resource-topline"><span>{featured.code} / {t.featuredLabel}</span><span>{featured.kind[language]}</span></div>
-              <h2>{featured.title}</h2>
-              <p className="tutorial-summary">{featured.description[language]}</p>
-              <p className="tutorial-audience"><strong>{t.bestFor}</strong>{featured.audience[language]}</p>
-              <div className="resource-tags">{featured.facts.map((fact) => <span key={fact}>{fact}</span>)}</div>
-              <a className="tutorial-link" href={featured.url} target="_blank" rel="noreferrer">
-                {featured.action[language]} <ArrowUpRight size={16} />
-              </a>
-            </div>
-            <div className="tutorial-feature-steps">
-              <div className="tutorial-step-heading"><span>{t.startLabel}</span><small>{t.verified} {featured.verifiedAt}</small></div>
-              <ol>
-                {featured.steps[language].map((step, index) => (
-                  <li key={step}><span>{String(index + 1).padStart(2, '0')}</span><p>{step}</p></li>
-                ))}
-              </ol>
-              <div className="tutorial-command" aria-label={t.commandLabel}>
-                <code>make -j8</code>
-                <code>./h3 --info -d ./MiniMax-H3</code>
-              </div>
-            </div>
-          </article>
-        )}
-
-        {remaining.length > 0 && (
-          <div className="tutorial-grid">
-            {remaining.map((item) => (
-              <article className="tutorial-card" key={item.id}>
-                <div className="resource-topline"><span>{item.code}</span><span>{item.kind[language]}</span></div>
-                <h2>{item.title}</h2>
-                <p className="tutorial-summary">{item.description[language]}</p>
-                <p className="tutorial-audience"><strong>{t.bestFor}</strong>{item.audience[language]}</p>
-                <ol className="tutorial-card-steps">
-                  {item.steps[language].map((step, index) => (
-                    <li key={step}><span>{index + 1}</span><p>{step}</p></li>
-                  ))}
-                </ol>
-                <div className="resource-tags">{item.facts.map((fact) => <span key={fact}>{fact}</span>)}</div>
-                <div className="tutorial-card-footer">
-                  <small>{t.verified} {item.verifiedAt}</small>
-                  <a href={item.url} target="_blank" rel="noreferrer" aria-label={`${item.title}: ${item.action[language]}`}>
-                    {item.action[language]} <ArrowUpRight size={15} />
-                  </a>
+        {community.length > 0 ? (
+          <div className="community-tutorial-grid">
+            {community.map((tutorial) => (
+              <article className="community-tutorial-card" key={tutorial.id}>
+                <a className="community-tutorial-poster" href={tutorialPath(language, tutorial.id)}>
+                  <img src={tutorial.posterUrl} alt={tutorial.title[language]} loading="lazy" />
+                  <span>{t.communityLabel}</span>
+                  {tutorial.engagement && (
+                    <em>{formatMetric(tutorial.engagement.likes, language)} {t.likes} · {formatMetric(tutorial.engagement.views, language)} {t.views}</em>
+                  )}
+                </a>
+                <div className="community-tutorial-copy">
+                  <small>{t.categories[tutorial.category]} / {tutorial.source.handle || tutorial.source.author}</small>
+                  <h3><a href={tutorialPath(language, tutorial.id)}>{tutorial.title[language]}</a></h3>
+                  <p>{tutorial.outcome[language]}</p>
+                  <div className="resource-tags">{tutorial.tags.slice(0, 3).map((tag) => <span key={tag}>{tag}</span>)}</div>
+                  <TutorialActions tutorial={tutorial} language={language} compact />
                 </div>
               </article>
             ))}
           </div>
-        )}
-
-        {!featured && remaining.length === 0 && (
+        ) : (
           <div className="tutorial-empty"><span>00</span><p>{t.noResults}</p></div>
         )}
-
-        <aside className="tutorial-field-note">
-          <div><span>{t.fieldNoteLabel}</span><h2>{t.fieldNoteTitle}</h2></div>
-          <p>{t.fieldNoteBody}</p>
-          <small>{t.sourceNote}</small>
-        </aside>
       </section>
+    </div>
+  )
+}
+
+function TutorialDetailPage({ language, tutorial }: { language: Language; tutorial: TutorialGuide }) {
+  const t = copy[language].tutorials
+  const resources = tutorial.relatedResourceIds
+    .map((id) => tutorialResources.find((resource) => resource.id === id))
+    .filter((resource): resource is TutorialResource => Boolean(resource))
+  const related = tutorialGuides
+    .filter((item) => item.id !== tutorial.id && item.category === tutorial.category)
+    .slice(0, 3)
+  const engagementItems: Array<[string, number]> = tutorial.engagement ? [
+    [t.replies, tutorial.engagement.replies] as const,
+    [t.reposts, tutorial.engagement.reposts] as const,
+    [t.likes, tutorial.engagement.likes] as const,
+    [t.views, tutorial.engagement.views] as const,
+  ].flatMap(([label, value]) => value === undefined ? [] : [[label, value]]) : []
+
+  return (
+    <div className="standalone-page tutorial-detail-page">
+      <article className="tutorial-detail shell">
+        <a className="tutorial-back" href={pathFor(language, 'tutorials')}><ChevronRight size={14} /> {t.back}</a>
+        <header className="tutorial-detail-hero">
+          <div className="tutorial-detail-poster"><img src={tutorial.posterUrl} alt={tutorial.title[language]} /></div>
+          <div className="tutorial-detail-heading">
+            <p>{tutorial.contentType === 'foundation' ? t.routeLabel : t.communityLabel} / {t.categories[tutorial.category]}</p>
+            <h1>{tutorial.title[language]}</h1>
+            <strong>{tutorial.outcome[language]}</strong>
+            <div className="resource-tags">{tutorial.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+            <div className="tutorial-detail-actions">
+              <a href={tutorial.source.url} target="_blank" rel="noreferrer">{t.openSource} <ArrowUpRight size={15} /></a>
+              <CopyTutorialButton tutorial={tutorial} language={language} />
+            </div>
+          </div>
+        </header>
+
+        <div className="tutorial-detail-layout">
+          <main className="tutorial-detail-content">
+            <section><h2>{t.audience}</h2><p>{tutorial.audience[language]}</p></section>
+            <section><h2>{t.hardware}</h2><p>{tutorial.hardware[language]}</p></section>
+            <section><h2>{t.prerequisites}</h2><ul>{tutorial.prerequisites[language].map((item) => <li key={item}>{item}</li>)}</ul></section>
+            <section className="tutorial-detail-steps"><h2>{t.steps}</h2><ol>{tutorial.steps[language].map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, '0')}</span><p>{item}</p></li>)}</ol></section>
+            {tutorial.commands.length > 0 && <section><h2>{t.commands}</h2><div className="tutorial-detail-commands">{tutorial.commands.map((command) => <code key={command}>{command}</code>)}</div></section>}
+            <section><h2>{t.caveats}</h2><ul>{tutorial.caveats[language].map((item) => <li key={item}>{item}</li>)}</ul><small className="tutorial-source-note">{t.sourceNote}</small></section>
+          </main>
+          <aside className="tutorial-detail-meta">
+            <h2>{t.source}</h2>
+            <dl>
+              <div><dt>{language === 'zh' ? '作者' : 'Author'}</dt><dd>{tutorial.source.author} {tutorial.source.handle || ''}</dd></div>
+              {tutorial.source.publishedAt && <div><dt>{language === 'zh' ? '发布' : 'Published'}</dt><dd>{tutorial.source.publishedAt}</dd></div>}
+              <div><dt>{t.verified}</dt><dd>{tutorial.verifiedAt}</dd></div>
+            </dl>
+            {engagementItems.length > 0 && <div className="tutorial-engagement"><small>{t.snapshot} / {tutorial.engagement?.snapshotAt}</small>{engagementItems.map(([label, value]) => <span key={label}><strong>{formatMetric(value, language)}</strong>{label}</span>)}</div>}
+            <a className="tutorial-meta-source" href={tutorial.source.url} target="_blank" rel="noreferrer">{t.openSource} <ArrowUpRight size={14} /></a>
+          </aside>
+        </div>
+
+        {resources.length > 0 && (
+          <section className="tutorial-related-resources">
+            <h2>{t.related}</h2>
+            <div>{resources.map((resource) => <a key={resource.id} href={resource.url} target="_blank" rel="noreferrer"><small>{resource.kind[language]}</small><strong>{resource.title}</strong><p>{resource.description[language]}</p><span>{resource.action[language]} <ArrowUpRight size={13} /></span></a>)}</div>
+          </section>
+        )}
+        {related.length > 0 && (
+          <section className="tutorial-related-guides">
+            <h2>{t.relatedGuides}</h2>
+            <div>{related.map((item) => <a key={item.id} href={tutorialPath(language, item.id)}><img src={item.posterUrl} alt="" /><span><small>{t.categories[item.category]}</small><strong>{item.title[language]}</strong></span><ChevronRight size={18} /></a>)}</div>
+          </section>
+        )}
+      </article>
+    </div>
+  )
+}
+
+function TutorialNotFound({ language }: { language: Language }) {
+  return (
+    <div className="standalone-page tutorial-not-found shell">
+      <span>404</span>
+      <h1>{language === 'zh' ? '这篇教程不存在。' : 'This tutorial does not exist.'}</h1>
+      <a href={pathFor(language, 'tutorials')}>{copy[language].tutorials.back}</a>
     </div>
   )
 }

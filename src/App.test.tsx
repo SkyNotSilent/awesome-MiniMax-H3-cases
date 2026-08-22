@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom/vitest'
-import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
+import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import App from './App'
 import { languagePreferenceKey } from './i18n'
@@ -38,6 +38,7 @@ afterEach(() => {
   window.history.replaceState({}, '', '/')
   document.body.classList.remove('intro-open', 'modal-open')
   window.localStorage.clear()
+  Object.defineProperty(navigator, 'clipboard', { configurable: true, value: undefined })
   delete window.twttr
 })
 
@@ -227,15 +228,13 @@ describe('case-first routes', () => {
 
   it('publishes Tutorials and FAQ as standalone pages', () => {
     const tutorials = renderAt('/tutorials/')
-    expect(screen.getByRole('heading', { name: '从案例，走到真正跑起来。' })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'MiniMax-AI / MiniMax-H3: 打开官方部署文档' })).toHaveAttribute(
-      'href',
-      'https://github.com/MiniMax-AI/MiniMax-H3',
+    expect(screen.getByRole('heading', { name: '从路线开始，跟着做完。' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '先选一条可靠起跑线。' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '从真实实战中少走弯路。' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: '官方部署：先跑通一条可复现链路' })).toHaveAttribute(
+      'href', '/tutorials/official-deployment/',
     )
-    expect(screen.getByRole('link', { name: '阅读 Mac 原生教程' })).toHaveAttribute(
-      'href',
-      'https://github.com/antirez/h3.c',
-    )
+    expect(screen.getAllByText('社区实战')).toHaveLength(20)
     expect(screen.queryByRole('heading', { name: '先看 MiniMax H3 的真实效果。' })).not.toBeInTheDocument()
     tutorials.unmount()
 
@@ -249,29 +248,47 @@ describe('case-first routes', () => {
   it('filters tutorial routes without mixing them into the case catalog', () => {
     renderAt('/tutorials/')
     fireEvent.click(screen.getByRole('button', { name: '长视频' }))
-    expect(screen.getByRole('heading', { name: 'ComfyUI H3 Motion Context' })).toBeInTheDocument()
-    expect(screen.queryByRole('heading', { name: 'h3.c / h3-metal' })).not.toBeInTheDocument()
-    expect(screen.queryByRole('heading', { name: 'MiniMax-H3 Turbo LoRA' })).not.toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'H3 WebUI：Motion Context + 内置升频' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '4070 12GB：5 秒分块续接 13 秒角色舞蹈' })).toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: 'Mac Studio 上用 Phosphene 跑 Turbo' })).not.toBeInTheDocument()
   })
 
-  it('maps director, training, and resource projects to their own tutorial categories', () => {
+  it('searches community guides and opens a source-checked detail page', () => {
     renderAt('/tutorials/')
+    fireEvent.change(screen.getByPlaceholderText('搜索硬件、能力或工作流…'), { target: { value: 'Ref2VA LoRA' } })
+    expect(screen.getByRole('heading', { name: '用 AI Toolkit 训练 H3 Ref2VA LoRA' })).toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: '从零装机到第一条带声视频' })).not.toBeInTheDocument()
 
-    fireEvent.click(screen.getByRole('button', { name: '导演工作流' }))
-    expect(screen.getByRole('heading', { name: 'ComfyUI MiniMax H3 Director' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: 'MiniMax H3 Director Workflow Pack' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: 'ComfyUI MiniMax H3 Easy' })).toBeInTheDocument()
-    expect(screen.queryByRole('heading', { name: 'MiniMax H3 FineTuning' })).not.toBeInTheDocument()
+    cleanup()
+    renderAt('/tutorials/mac-native/')
+    expect(screen.getByRole('heading', { name: 'Mac 原生运行：纯 C + Metal' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '命令' })).toBeInTheDocument()
+    expect(screen.getByText('make -j8')).toBeInTheDocument()
+    expect(screen.getAllByRole('link', { name: /查看原帖/ })[0]).toHaveAttribute('href', 'https://github.com/antirez/h3.c')
+    expect(screen.getByRole('heading', { name: '相关工具与资源' })).toBeInTheDocument()
+  })
 
-    fireEvent.click(screen.getByRole('button', { name: '训练微调' }))
-    expect(screen.getByRole('link', { name: 'MiniMax H3 FineTuning: 阅读微调文档' })).toHaveAttribute(
-      'href',
-      'https://github.com/IAmIronMan42/MiniMax-H3-FineTuning',
-    )
+  it('copies an AI task package and falls back to a manual text field', async () => {
+    const writeText = vi.fn().mockResolvedValue(undefined)
+    Object.defineProperty(navigator, 'clipboard', { configurable: true, value: { writeText } })
+    renderAt('/tutorials/mac-native/')
+    fireEvent.click(screen.getByRole('button', { name: '复制给 AI' }))
+    await waitFor(() => expect(writeText).toHaveBeenCalledOnce())
+    expect(writeText.mock.calls[0][0]).toContain('目标:')
+    expect(writeText.mock.calls[0][0]).toContain('https://github.com/antirez/h3.c')
+    expect(writeText.mock.calls[0][0]).toContain('不得猜测缺失步骤')
+    expect(screen.getByRole('button', { name: '已复制 AI 任务包' })).toBeInTheDocument()
 
-    fireEvent.click(screen.getByRole('button', { name: '资源导航' }))
-    expect(screen.getByRole('heading', { name: 'Awesome MiniMax H3 Resources' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: 'BeatAPI MiniMax H3 Prompt Gallery' })).toBeInTheDocument()
+    cleanup()
+    Object.defineProperty(navigator, 'clipboard', { configurable: true, value: undefined })
+    renderAt('/tutorials/mac-native/')
+    fireEvent.click(screen.getByRole('button', { name: '复制给 AI' }))
+    expect((screen.getByRole('textbox', { name: '手动复制 AI 任务包' }) as HTMLTextAreaElement).value).toContain('执行约束')
+  })
+
+  it('renders a client-side 404 for an unknown tutorial slug', () => {
+    renderAt('/tutorials/not-a-real-guide/')
+    expect(screen.getByRole('heading', { name: '这篇教程不存在。' })).toBeInTheDocument()
   })
 })
 
@@ -291,16 +308,24 @@ describe('language isolation', () => {
 
   it('keeps the language switch on the equivalent standalone route', () => {
     renderAt('/en/tutorials/')
-    expect(screen.getByRole('heading', { name: 'From watching examples to running H3.' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Pick a route. Finish the workflow.' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Switch to Chinese' })).toHaveAttribute('href', '/tutorials/')
-    expect(screen.queryByText('打开官方仓库')).not.toBeInTheDocument()
+    expect(screen.queryByText('先选一条可靠起跑线。')).not.toBeInTheDocument()
     expect(document.body.textContent).not.toMatch(/[\u3400-\u9fff]/u)
   })
 
   it('keeps the old toolkit URL as a client-side compatibility alias', () => {
     renderAt('/en/toolkit/')
-    expect(screen.getByRole('heading', { name: 'From watching examples to running H3.' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Pick a route. Finish the workflow.' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Switch to Chinese' })).toHaveAttribute('href', '/tutorials/')
+  })
+
+  it('keeps the language switch on the equivalent tutorial detail route', () => {
+    renderAt('/en/tutorials/mac-native/')
+    expect(screen.getByRole('heading', { name: 'Native Mac inference: pure C + Metal' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Switch to Chinese' })).toHaveAttribute('href', '/tutorials/mac-native/')
+    expect(screen.queryByText('Mac 原生运行：纯 C + Metal')).not.toBeInTheDocument()
+    expect(document.body.textContent).not.toMatch(/[\u3400-\u9fff]/u)
   })
 
   it('localizes the hosted player and keeps the English X source button', async () => {

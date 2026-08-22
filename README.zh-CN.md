@@ -2,14 +2,14 @@
 
 # MiniMax H3 Cases & Guides｜视频案例与实用教程
 
-### 997 个来源可追溯、可站内观看的视频案例 · 309 条完整公开 Prompt · 13 条来源核验教程
+### 997 个来源可追溯的视频案例 · 309 条完整公开 Prompt · 4 条基础路线 + 20 篇社区教程
 
 **[简体中文](./README.zh-CN.md)** · **[English](./README.md)**
 
 [![视频案例库](https://img.shields.io/badge/立即观看-视频案例库-d8ff3e?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/)
 [![案例数量](https://img.shields.io/badge/视频案例-997-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
 [![完整 Prompt](https://img.shields.io/badge/完整_Prompt-309-f5f5ed?style=flat-square&labelColor=0a0b09)](./data/cases.json)
-[![教程](https://img.shields.io/badge/已核验教程-13-f5f5ed?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/tutorials/)
+[![教程](https://img.shields.io/badge/已核验教程-24-f5f5ed?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/tutorials/)
 [![GitHub Stars](https://img.shields.io/github/stars/SkyNotSilent/awesome-minimax-h3-cases?style=flat-square&labelColor=0a0b09&color=d8ff3e)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/stargazers)
 [![CI](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/actions/workflows/ci.yml/badge.svg)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg?style=flat-square)](./LICENSE)
@@ -73,26 +73,20 @@
 | 不离开 GitHub 快速浏览全部案例 | [`CATALOG.md`](./CATALOG.md) |
 | 查询带来源的结构化数据 | [`data/cases.json`](./data/cases.json) 或 [`llms-full.txt`](./public/llms-full.txt) |
 | 让 Agent 帮你查找案例 | [`minimax-h3-prompt-library`](./agents/skills/minimax-h3-prompt-library/) |
-| 选择 H3 部署、导演工作流、加速、训练或资源导航 | [可搜索的 H3 生态指南](https://h3-field-notes-production.up.railway.app/tutorials/) |
+| 跟随部署路线，或把可执行教程一键复制给 AI | [MiniMax H3 教程工作台](https://h3-field-notes-production.up.railway.app/tutorials/) |
 
-## H3 教程与生态指南
+## MiniMax H3 教程工作台
 
-教程页目前整理了 13 条经过来源核验的 H3 项目与路线：每一条都说明它解决什么问题、适合谁、如何开始，以及原始文档在哪里。
+教程页已从“GitHub 链接导航”升级为可学习、可执行的工作台：
 
-| 资源 | 先看什么 | 地址 |
-| --- | --- | --- |
-| h3.c / h3-metal | Apple Silicon 原生 C + Metal 推理，不依赖 Python、PyTorch 或 ComfyUI | [antirez/h3.c](https://github.com/antirez/h3.c) |
-| MiniMax H3 官方仓库 | 权重、部署说明，以及包括 `h3-prompt-writing` 在内的 9 个 Agent Skill | [MiniMax-AI/MiniMax-H3](https://github.com/MiniMax-AI/MiniMax-H3) |
-| MiniMax-H3 Turbo LoRA | 4–8 步同步音视频加速；4 步预览，v4 在 6–8 步通常更稳 | [larryvrh/MiniMax-H3-Turbo-Lora](https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora) |
-| ComfyUI H3 Motion Context | 多片段续接，延续上一段的画面运动与音频上下文 | [NikoDemon80/ComfyUI-H3-Motion-Context](https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context) |
-| MiniMax H3 Audio T8 | 86 个原生 H3 节点：稳定音频条件与双时钟采样，以及明确隔离的实验工作流 | [T8mars/comfyui-minimax-h3-audio-T8](https://github.com/T8mars/comfyui-minimax-h3-audio-T8) |
-| H3 Director 导演台 | 多段时间线、T2V/FL2V/Ref2VA/V2V、选择运行与二次精修 | [AIMixer/ComfyUI_MiniMaxH3_Director](https://github.com/AIMixer/ComfyUI_MiniMaxH3_Director) |
-| Spectrum for H3 | 预测部分 Transformer 计算，并提供固定素材 A/B 的配置建议 | [xmarre/ComfyUI-Spectrum-MiniMax-H3](https://github.com/xmarre/ComfyUI-Spectrum-MiniMax-H3) |
-| MiniMax H3 Easy | 统一素材输入、`@` 引用、对白块和更紧凑的 ComfyUI 接线 | [nkxx188/ComfyUI-MiniMaxH3-Easy](https://github.com/nkxx188/ComfyUI-MiniMaxH3-Easy) |
-| H3 FineTuning | Rectified-flow 训练、latent 缓存、LoRA 与多 GPU ZeRO-3 | [IAmIronMan42/MiniMax-H3-FineTuning](https://github.com/IAmIronMan42/MiniMax-H3-FineTuning) |
-| Awesome MiniMax H3 | 模型、量化、LoRA、节点、教程与工作流资源导航 | [wildminder/awesome-minimax-H3](https://github.com/wildminder/awesome-minimax-H3) |
+- **4 条基础路线：** 官方部署、NVIDIA + ComfyUI、Mac 原生推理、Prompt + Agent Skill；
+- **20 篇社区实战：** 按相对热度与可执行性精选 X 教程，覆盖入门、ComfyUI、Prompt、加速、长视频、音频和训练；
+- **中英文独立详情页：** 每篇都有目标、受众、硬件、前置条件、步骤、命令、风险、作者、原帖、互动快照和核验日期；
+- **一键复制给 AI：** 实时生成结构化任务包，并明确要求先核验最新 README、不得猜测缺失步骤。
 
-独立教程页支持筛选官方入门、Mac、导演工作流、加速、长视频、音频、训练微调与资源导航。这些外部资源与案例档案分开维护；案例库不会从收录视频中派生提示词或制作流程。
+原有 13 个来源核验生态项目仍然保留，但已经放进对应路线的“相关工具与资源”，不再与社区教程混在同一层级。社区原帖只做来源明确的结构化整理，不整篇复制。
+
+每周发现任务遵循 [`docs/WEEKLY_TUTORIAL_COLLECTION.md`](./docs/WEEKLY_TUTORIAL_COLLECTION.md) 中的回源核验和隐私规则。
 
 [![MiniMax H3 教程页：Mac 原生、官方部署、ComfyUI 加速、长视频与音频工作流](./docs/screenshots/tutorials-zh.png)](https://h3-field-notes-production.up.railway.app/tutorials/)
 
@@ -146,7 +140,7 @@ npm run build
 npm run catalog
 ```
 
-构建过程会生成独立案例页、`VideoObject` 结构化数据、视频 Sitemap、Open Graph 元数据、`robots.txt` 和 `llms.txt`，兼顾传统 SEO 与面向 AI 搜索/答案引擎的 GEO 可发现性。
+构建过程会生成中英文案例页与教程页、`VideoObject` 与 `HowTo` 结构化数据、Sitemap 与 hreflang、Open Graph 元数据、`robots.txt` 和 `llms.txt`，兼顾传统 SEO 与面向 AI 搜索/答案引擎的 GEO 可发现性。
 
 ## Railway 自动部署
 

@@ -42,3 +42,65 @@ export interface VideoCase {
   attributionNote?: string
   editorialBasis?: string
 }
+
+export type LocalizedText = Record<'zh' | 'en', string>
+export type LocalizedList = Record<'zh' | 'en', string[]>
+
+export type TutorialCategory =
+  | 'getting-started'
+  | 'comfyui'
+  | 'prompt'
+  | 'acceleration'
+  | 'long-video'
+  | 'audio'
+  | 'training'
+
+export interface TutorialResource {
+  id: string
+  code: string
+  category: 'mac' | 'official' | 'workflow' | 'acceleration' | 'long-video' | 'audio' | 'training' | 'resources'
+  featured: boolean
+  title: string
+  url: string
+  kind: LocalizedText
+  description: LocalizedText
+  audience: LocalizedText
+  steps: LocalizedList
+  facts: string[]
+  tags: string[]
+  action: LocalizedText
+  verifiedAt: string
+}
+
+export interface TutorialGuide {
+  id: string
+  contentType: 'foundation' | 'community'
+  category: TutorialCategory
+  title: LocalizedText
+  outcome: LocalizedText
+  audience: LocalizedText
+  hardware: LocalizedText
+  prerequisites: LocalizedList
+  steps: LocalizedList
+  commands: string[]
+  caveats: LocalizedList
+  posterUrl: string
+  tags: string[]
+  relatedResourceIds: string[]
+  source: {
+    platform: 'github' | 'x'
+    url: string
+    author: string
+    handle?: string
+    publishedAt?: string
+    originalLanguage: 'zh' | 'en' | 'ja'
+  }
+  engagement?: {
+    replies?: number
+    reposts?: number
+    likes?: number
+    views?: number
+    snapshotAt: string
+  }
+  verifiedAt: string
+}

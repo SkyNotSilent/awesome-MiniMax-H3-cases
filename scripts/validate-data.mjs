@@ -5,6 +5,7 @@ import { editorialCopyErrors, genericEditorialCopyPattern } from './editorial-co
 const root = resolve(import.meta.dirname, '..')
 const cases = JSON.parse(await readFile(resolve(root, 'data/cases.json'), 'utf8'))
 const tutorials = JSON.parse(await readFile(resolve(root, 'data/tutorials.json'), 'utf8'))
+const tutorialGuides = JSON.parse(await readFile(resolve(root, 'data/tutorial-guides.json'), 'utf8'))
 const modes = new Set(['T2VA', 'FL2VA', 'Ref2VA', 'Unknown'])
 const provenance = new Set(['official-verbatim', 'creator-verbatim', 'external-archive-verbatim', 'not-published'])
 const promptCompleteness = new Set(['complete'])
@@ -149,8 +150,76 @@ for (const [index, item] of tutorials.entries()) {
   }
 }
 
+const guideIds = new Set()
+const guideSources = new Set()
+const guideCategories = new Set(['getting-started', 'comfyui', 'prompt', 'acceleration', 'long-video', 'audio', 'training'])
+const guideTypes = new Set(['foundation', 'community'])
+const resourceIds = new Set(tutorials.map((item) => item.id))
+
+for (const [index, item] of tutorialGuides.entries()) {
+  const at = `tutorialGuides[${index}]`
+  for (const key of ['id', 'contentType', 'category', 'posterUrl', 'source', 'verifiedAt']) {
+    if (!item[key]) errors.push(`${at}.${key} is required`)
+  }
+  if (guideIds.has(item.id)) errors.push(`${at}.id is duplicated: ${item.id}`)
+  guideIds.add(item.id)
+  if (!guideTypes.has(item.contentType)) errors.push(`${at}.contentType is invalid`)
+  if (!guideCategories.has(item.category)) errors.push(`${at}.category is invalid: ${item.category}`)
+  if (Number.isNaN(Date.parse(item.verifiedAt))) errors.push(`${at}.verifiedAt must be a valid date`)
+  for (const key of ['title', 'outcome', 'audience', 'hardware']) {
+    if (!item[key]?.zh || !item[key]?.en) errors.push(`${at}.${key} requires zh and en values`)
+    if (/[㐀-鿿]/u.test(item[key]?.en || '')) errors.push(`${at}.${key}.en must not contain CJK text`)
+  }
+  for (const key of ['prerequisites', 'steps', 'caveats']) {
+    if (!Array.isArray(item[key]?.zh) || item[key].zh.length === 0) errors.push(`${at}.${key}.zh must be non-empty`)
+    if (!Array.isArray(item[key]?.en) || item[key].en.length === 0) errors.push(`${at}.${key}.en must be non-empty`)
+    if (item[key]?.en?.some((value) => /[㐀-鿿]/u.test(value))) errors.push(`${at}.${key}.en must not contain CJK text`)
+  }
+  for (const key of ['commands', 'tags', 'relatedResourceIds']) {
+    if (!Array.isArray(item[key])) errors.push(`${at}.${key} must be an array`)
+  }
+  for (const resourceId of item.relatedResourceIds || []) {
+    if (!resourceIds.has(resourceId)) errors.push(`${at}.relatedResourceIds contains unknown resource: ${resourceId}`)
+  }
+  if (!['github', 'x'].includes(item.source?.platform)) errors.push(`${at}.source.platform is invalid`)
+  if (!item.source?.author || !item.source?.originalLanguage) errors.push(`${at}.source requires author and originalLanguage`)
+  try {
+    const sourceUrl = new URL(item.source.url)
+    if (sourceUrl.protocol !== 'https:') errors.push(`${at}.source.url must use HTTPS`)
+    if (item.contentType === 'community' && !/^\/[^/]+\/status\/\d+$/.test(sourceUrl.pathname)) {
+      errors.push(`${at}.source.url must point to an original X status`)
+    }
+  } catch {
+    errors.push(`${at}.source.url is invalid`)
+  }
+  if (item.contentType === 'community' && guideSources.has(item.source?.url)) errors.push(`${at}.source.url is duplicated: ${item.source?.url}`)
+  if (item.contentType === 'community') guideSources.add(item.source?.url)
+  if (item.contentType === 'community' && !item.source.publishedAt) errors.push(`${at}.source.publishedAt is required for community guides`)
+  if (item.source?.publishedAt && Number.isNaN(Date.parse(item.source.publishedAt))) errors.push(`${at}.source.publishedAt must be a valid date`)
+  if (item.engagement) {
+    for (const key of ['replies', 'reposts', 'likes', 'views']) {
+      if (item.engagement[key] !== undefined && (!Number.isFinite(item.engagement[key]) || item.engagement[key] < 0)) {
+        errors.push(`${at}.engagement.${key} must be a non-negative number when present`)
+      }
+    }
+    if (Number.isNaN(Date.parse(item.engagement.snapshotAt))) errors.push(`${at}.engagement.snapshotAt must be a valid date`)
+  }
+  if (item.posterUrl?.startsWith('/')) {
+    try {
+      await access(resolve(root, 'public', item.posterUrl.slice(1)))
+    } catch {
+      errors.push(`${at}.posterUrl does not exist: ${item.posterUrl}`)
+    }
+  }
+}
+
+const foundationCount = tutorialGuides.filter((item) => item.contentType === 'foundation').length
+const communityCount = tutorialGuides.filter((item) => item.contentType === 'community').length
+if (foundationCount !== 4) errors.push(`tutorialGuides must contain exactly 4 foundation routes; found ${foundationCount}`)
+if (communityCount < 20) errors.push(`tutorialGuides must contain at least 20 community guides; found ${communityCount}`)
+
 if (errors.length) {
   console.error(errors.join('\n'))
   process.exit(1)
 }
-console.log(`Validated ${cases.length} cases and ${tutorials.length} tutorials.`)
+console.log(`Validated ${cases.length} cases, ${tutorials.length} resources, and ${tutorialGuides.length} tutorial guides.`)

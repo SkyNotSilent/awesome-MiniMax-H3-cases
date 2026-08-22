@@ -1,165 +1,439 @@
 # MiniMax H3 Cases & Guides — Complete Case and Tutorial Index
 
-Generated from data/cases.json. Total: 997 cases. Complete verbatim public Prompts: 309.
+Generated from data/cases.json and data/tutorial-guides.json. Total: 997 cases and 24 tutorials. Complete verbatim public Prompts: 309.
 
 ## Tutorials
 
-### h3.c / h3-metal
+### Official setup: reproduce one known-good path
 
-- Route: NATIVE MAC / C + METAL
-- Best for: For Mac users who want to run H3 locally on Apple Silicon and are comfortable with a command line.
-- Summary: Antirez's native MiniMax H3 inference engine for Apple Silicon, built without Python, PyTorch, or ComfyUI. Text-to-audio-video, first/last-frame control, and ordered Ref2VA references work end to end.
-- Source checked: 2026-08-16
-- Original documentation: https://github.com/antirez/h3.c
+- English page: https://h3-field-notes-production.up.railway.app/en/tutorials/official-deployment/
+- Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/official-deployment/
+- Type: foundation
+- Category: getting-started
+- Best for: Developers running H3 locally for the first time.
+- Goal: Choose the right FL2VA or Ref2VA weights, check the environment, and reproduce an official sample.
+- Hardware: Use the NVIDIA environment currently documented by the official README; low-VRAM users should start with a quantized path.
+- Source checked: 2026-08-23
+- Original source: https://github.com/MiniMax-AI/MiniMax-H3
 - Start here:
-  1. Prepare an Apple Silicon Mac, the official Hugging Face weights, and FFmpeg plus FFprobe on PATH.
-  2. Run make -j8, then inspect the model layout and Metal device with ./h3 --info -d ./MiniMax-H3.
-  3. Start without -p for an interactive session; set !first, !last, or !ref-image before entering a prompt.
+  1. Choose the task family and matching weights; do not mix FL2VA and Ref2VA.
+  2. Pick SGLang, vLLM, Diffusers, or ComfyUI from the current official README.
+  3. Reproduce a fixed official sample before replacing prompts or references.
+- Commands:
+  - git clone https://github.com/MiniMax-AI/MiniMax-H3.git
+  - cd MiniMax-H3
 
-### MiniMax-AI / MiniMax-H3
+### NVIDIA + ComfyUI: from one shot to director workflows
 
-- Route: OFFICIAL / WEIGHTS + AGENT SKILL
-- Best for: For first-time H3 deployment and anyone who wants a reliable prompt-writing baseline.
-- Summary: The official entry point for weights, deployment documentation, and nine Agent Skills. h3-prompt-writing structures shots, dialogue, and environmental audio in agents including Claude and Codex.
-- Source checked: 2026-08-16
-- Original documentation: https://github.com/MiniMax-AI/MiniMax-H3
+- English page: https://h3-field-notes-production.up.railway.app/en/tutorials/nvidia-comfyui/
+- Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/nvidia-comfyui/
+- Type: foundation
+- Category: comfyui
+- Best for: Users who want node-graph control over multimodal inputs and audio-video generation.
+- Goal: Run the native H3 workflow, then add Turbo, chaining, audio, or director nodes only as needed.
+- Hardware: An NVIDIA GPU; use quantized, pruned, or cloud paths when VRAM is limited.
+- Source checked: 2026-08-23
+- Original source: https://github.com/MiniMax-AI/MiniMax-H3
 - Start here:
-  1. Choose the task family first: FL2VA covers text and first/last-frame inputs; Ref2VA handles multimodal references.
-  2. Install the prompt helper with npx skills add and the official repository URL, followed by --skill h3-prompt-writing.
-  3. Pick SGLang, vLLM, Diffusers, or the official ComfyUI tutorial for your hardware, then reproduce a published example first.
+  1. Import the native workflow and verify every model path.
+  2. Create a baseline with fixed seed, prompt, and media.
+  3. Add one accelerator or extension at a time and compare against the baseline.
 
-### MiniMax-H3 Turbo LoRA
 
-- Route: ACCELERATION / COMFYUI LORA
-- Best for: For users who already have H3 working in ComfyUI and want shorter sampling times.
-- Summary: Compresses the usual roughly 20-step synchronized audio-video sampling path to four to eight steps. The current v4 EMA suits most work; six to eight steps are steadier, while four is primarily for previews.
-- Source checked: 2026-08-16
-- Original documentation: https://github.com/Larryvrh/ComfyUI-MiniMax-H3-Turbo
+### Native Mac inference: pure C + Metal
+
+- English page: https://h3-field-notes-production.up.railway.app/en/tutorials/mac-native/
+- Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/mac-native/
+- Type: foundation
+- Category: getting-started
+- Best for: Apple Silicon users comfortable with a command line.
+- Goal: Generate with H3 on Apple Silicon without Python, PyTorch, or ComfyUI.
+- Hardware: An Apple Silicon Mac; use the current h3.c benchmarks for performance and memory expectations.
+- Source checked: 2026-08-23
+- Original source: https://github.com/antirez/h3.c
 - Start here:
-  1. Install the companion ComfyUI-MiniMax-H3-Turbo nodes and prepare the H3 base model, both VAEs, and the text encoder.
-  2. Prefer the v4 step600 EMA weight and insert Turbo LoRA between the official workflow's model loader and sampler.
-  3. Keep the scheduler on simple and strength at 1.0; use six to eight steps for finals and four for quick previews.
+  1. Build h3.c.
+  2. Inspect the model directory and Metal device.
+  3. Enter interactive mode and set !first, !last, or !ref-image before generating.
+- Commands:
+  - make -j8
+  - ./h3 --info -d ./MiniMax-H3
+  - ./h3 -d ./MiniMax-H3
 
-### ComfyUI H3 Motion Context
+### Prompt and Agent Skill: direct the shot before rendering
 
-- Route: LONG VIDEO / MOTION + AUDIO CONTEXT
-- Best for: For continuous shots, music sequences, or narratives that exceed one generation window.
-- Summary: Carries the previous clip's H3 visual latent and audio context into the next clip so motion, rhythm, and sound continue across the join instead of restarting with a similar take.
-- Source checked: 2026-08-16
-- Original documentation: https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context
+- English page: https://h3-field-notes-production.up.railway.app/en/tutorials/prompt-agent-skill/
+- Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/prompt-agent-skill/
+- Type: foundation
+- Category: prompt
+- Best for: Creators who want reusable H3 prompt direction inside agents such as Claude or Codex.
+- Goal: Have an agent structure H3 prompts around shots, action, dialogue, and environmental audio while keeping human review.
+- Hardware: Prompt writing needs no GPU; prepare a separate generation environment.
+- Source checked: 2026-08-23
+- Original source: https://github.com/MiniMax-AI/MiniMax-H3
 - Start here:
-  1. Place the repository in ComfyUI/custom_nodes and restart; runtime patches install only when a chaining graph first runs.
-  2. Carry the previous joint audio-video latent through Save/Load Latent to avoid lossy pixel and audio round trips.
-  3. Start with context_length 22, audio_context_length 24, match_tail enabled, and Spectrum off.
+  1. Install the official h3-prompt-writing Skill.
+  2. Give the agent the goal, media, duration, and hard constraints first.
+  3. Review its shot, dialogue, and sound structure before sending it to a generation workflow.
+- Commands:
+  - npx skills add https://github.com/MiniMax-AI/MiniMax-H3 --skill h3-prompt-writing
 
-### MiniMax H3 Audio T8
+### From a clean machine to the first video with audio
 
-- Route: AUDIO / COMFYUI WORKFLOWS
-- Best for: For advanced users who need finer control over H3 native sound, dialogue, mixing, or audio-video timing.
-- Summary: An 86-node native ComfyUI H3 audio-video suite covering stable dual-clock sampling, audio conditioning, mixing, trimming, and preflight, plus experimental long-video, speech, keyframe, and source-AV paths.
-- Source checked: 2026-08-16
-- Original documentation: https://github.com/T8mars/comfyui-minimax-h3-audio-T8
+- English page: https://h3-field-notes-production.up.railway.app/en/tutorials/local-deployment-zero-to-output/
+- Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/local-deployment-zero-to-output/
+- Type: community
+- Category: getting-started
+- Best for: NVIDIA users deploying H3 for the first time.
+- Goal: Build a reproducible local H3 setup and prompt-writing baseline.
+- Hardware: An NVIDIA GPU; recheck VRAM and software versions against the source article and official README.
+- Source checked: 2026-08-23
+- Original source: https://x.com/servasyy_ai/status/2085251627880255525
 - Start here:
-  1. Place the project in ComfyUI/custom_nodes/minimax-h3-audio-T8; the stable base nodes add no pip dependencies.
-  2. Begin with the stable Audio Conditioning, Preflight, Dual-Clock Sampler, AV Decode, and Output Trim path.
-  3. Long-video, speech, multi-keyframe, and source-AV paths are experimental and should be enabled one at a time against the repository's validation notes.
+  1. Prepare dependencies and model directories from the source article.
+  2. Reproduce its audio-video baseline first.
+  3. Then replace shot, dialogue, and ambience using the official prompt syntax.
 
-### ComfyUI MiniMax H3 Director
 
-- Route: DIRECTOR / MULTI-SHOT TIMELINE
-- Best for: For ComfyUI creators who need storyboards, batch generation, subject replacement, or shot-by-shot editing of longer work.
-- Summary: A ComfyUI director that combines H3 shot planning, conditioning, sampling, audio-video decoding, and export. It covers T2V, FL2V, R2V, V2V, and RV2V with timelines, selective runs, inter-shot guidance, and optional refinement.
-- Source checked: 2026-08-16
-- Original documentation: https://github.com/AIMixer/ComfyUI_MiniMaxH3_Director
+### How four essential H3 repositories fit together
+
+- English page: https://h3-field-notes-production.up.railway.app/en/tutorials/four-essential-h3-repositories/
+- Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/four-essential-h3-repositories/
+- Type: community
+- Category: getting-started
+- Best for: Users who have the base model working and are choosing extensions.
+- Goal: Place the official Skill, Turbo, Motion Context, and audio workflows into one clear path.
+- Hardware: Depends on the selected local inference route.
+- Source checked: 2026-08-23
+- Original source: https://x.com/servasyy_ai/status/2086101388132835743
 - Start here:
-  1. Confirm ComfyUI 0.30.0 or newer can load the official H3 nodes, then install the plugin and its requirements through a Git URL or custom_nodes.
-  2. Prepare FL2VA or Ref2VA weights for the task, plus the Qwen3-VL text encoder and both video and audio VAEs.
-  3. Import a bundled example and test one five-second shot before adding media groups, a timeline, and optional Refine passes.
+  1. Start with the official Skill for a prompt baseline.
+  2. Test Turbo alone when speed is the constraint.
+  3. Add Motion Context or T8 separately for continuity or detailed audio control.
 
-### MiniMax H3 Director Workflow Pack
 
-- Route: READY-MADE / 5 WORKFLOWS
-- Best for: For users who already installed Director and want importable templates for checking wiring and model placement.
-- Summary: A reproduction-oriented pack of five Director JSON workflows for T2V, FL2V, R2V, V2V, and RV2V. It depends on the upstream AIMixer plugin and is not a separate inference engine.
-- Source checked: 2026-08-16
-- Original documentation: https://github.com/huangserva/ComfyUI_MiniMaxH3_Director
+### Attention backends, character LoRA, and low-VRAM paths
+
+- English page: https://h3-field-notes-production.up.railway.app/en/tutorials/attention-low-vram-lora/
+- Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/attention-low-vram-lora/
+- Type: community
+- Category: acceleration
+- Best for: Users with a base workflow who want performance or character-consistency improvements.
+- Goal: Add steadier settings, an attention backend, character LoRA, or a low-VRAM path based on the actual need.
+- Hardware: NVIDIA; each backend and quantization combination needs separate testing.
+- Source checked: 2026-08-23
+- Original source: https://x.com/servasyy_ai/status/2087562850781020535
 - Start here:
-  1. Install the upstream AIMixer ComfyUI MiniMax H3 Director plugin and its dependencies first.
-  2. Drag the task-specific JSON from example_workflows into ComfyUI and place FL2VA or Ref2VA, CLIP, and both VAEs as documented.
-  3. Reproduce a fixed five-second test first; R2V, V2V, and RV2V are the routes explicitly verified in the repository's 4090 environment.
+  1. Record baseline speed, VRAM, and quality.
+  2. Change one attention, LoRA, or quantization variable at a time.
+  3. Keep the comparison before promoting the choice into production.
 
-### ComfyUI Spectrum MiniMax H3
 
-- Route: ACCELERATION / HIDDEN-STATE FORECAST
-- Best for: For users with a stable native H3 setup who want controlled speed-versus-quality testing on fixed inputs.
-- Summary: Forecasts hidden states for H3 target audio-video rows to skip selected expensive transformer evaluations while keeping the native output head, decode, and save path. A default 20-step run commonly becomes 11 actual evaluations plus nine forecasts.
-- Source checked: 2026-08-16
-- Original documentation: https://github.com/xmarre/ComfyUI-Spectrum-MiniMax-H3
+### Enhance a prompt with Context-IR, then render locally
+
+- English page: https://h3-field-notes-production.up.railway.app/en/tutorials/context-ir-local-pipeline/
+- Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/context-ir-local-pipeline/
+- Type: community
+- Category: prompt
+- Best for: Users whose first-frame generations lack nuanced action.
+- Goal: Turn emotional intent into action, camera direction, and sound design before local H3 generation.
+- Hardware: Cloud Context-IR plus a local H3 environment.
+- Source checked: 2026-08-23
+- Original source: https://x.com/servasyy_ai/status/2086814254066434076
 - Start here:
-  1. Install through ComfyUI Manager or clone the repository into custom_nodes, then restart.
-  2. Wire model loader to LoRA or patches, Sigma Shift, Spectrum Apply, and the sampler in that order, keeping defaults first.
-  3. Run enabled-versus-disabled A/B tests with the same seed, prompt, model, media, and sampler; do not stack EasyCache or LazyCache on the same model branch.
+  1. Send the original prompt and first frame to Context-IR.
+  2. Review whether the returned text stays faithful to the intent and media.
+  3. Generate a 768p local test and compare it with the unenhanced version.
 
-### ComfyUI MiniMax H3 Easy
 
-- Route: EASIER WORKFLOW / UNIFIED MEDIA
-- Best for: For users who find the official H3 graph too complex and want fewer nodes for multimodal media and prompt control.
-- Summary: Combines images, videos, and audio in one Media input with @ references, dialogue blocks, raw-prompt inspection, multi-provider prompt optimization, and a compact node set spanning text, keyframe, and full-reference modes.
-- Source checked: 2026-08-16
-- Original documentation: https://github.com/nkxx188/ComfyUI-MiniMaxH3-Easy
+### Generate new camera angles from one performance
+
+- English page: https://h3-field-notes-production.up.railway.app/en/tutorials/video-pov-camera-angles/
+- Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/video-pov-camera-angles/
+- Type: community
+- Category: prompt
+- Best for: Creators who need coverage or alternate angles for editing.
+- Goal: Switch point of view while preserving the scene and performance.
+- Hardware: An H3 Ref2VA or video-reference workflow.
+- Source checked: 2026-08-23
+- Original source: https://x.com/magnific/status/2090423731055448271
 - Start here:
-  1. After installation, select FL2VA, Ref2VA, Qwen3-VL, video VAE, and audio VAE in Easy Loader.
-  2. Connect images, videos, and audio to the unified Media port, then use @ for media references and # for dialogue blocks.
-  3. Reproduce the base workflow with external prompt optimization off, then configure a compatible API only if needed and review media-format limits.
+  1. Use the original video as motion and performance reference.
+  2. Change only camera position, lens, or POV while preserving scene and action constraints.
+  3. Generate short alternatives and check identity, motion, and timing continuity.
 
-### MiniMax H3 FineTuning
 
-- Route: TRAINING / LORA + MULTI-GPU
-- Best for: For developers with training data and high-memory GPUs who want to research character, style, or domain-specific fine-tuning.
-- Summary: Fills the trainer gap left by the official release with supervised rectified-flow training on the official Diffusers integration, cached video and stereo-audio latents, LoRA, and ZeRO-3 multi-GPU paths.
-- Source checked: 2026-08-16
-- Original documentation: https://github.com/IAmIronMan42/MiniMax-H3-FineTuning
+### Turn storyboard frames into a consistent trailer
+
+- English page: https://h3-field-notes-production.up.railway.app/en/tutorials/storyboard-to-trailer/
+- Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/storyboard-to-trailer/
+- Type: community
+- Category: prompt
+- Best for: Film and advertising creators with storyboards or final-film frames.
+- Goal: Generate shot by shot from final-film frames and shot descriptions, then assemble a trailer.
+- Hardware: An H3 image-reference workflow.
+- Source checked: 2026-08-23
+- Original source: https://x.com/magnific/status/2090508187875356957
 - Start here:
-  1. Read FIXES.md and the model license first; this is a research and training path, not a one-click consumer-GPU setup.
-  2. Validate the data manifest, then cache text, video, and optional real-audio latents offline with prepare_cache.py.
-  3. Run a ten-step single-GPU heads smoke test before moving to LoRA and multi-GPU ZeRO-3 training.
+  1. Extract one reference frame for every intended shot.
+  2. Generate each shot with its frame and description while keeping style constraints fixed.
+  3. Select takes, edit to rhythm, and finish sound and color consistently.
 
-### ModelTC MiniMax H3 Turbo
 
-- Route: DISTILLED SPEED / 4–8 NFE
-- Best for: For users comparing Turbo implementations or needing both Diffusers and ComfyUI routes.
-- Summary: Provides four- and eight-step Turbo LoRAs for FL2VA and Ref2VA, Diffusers batch-inference scripts, and importable ComfyUI workflows for text, first-frame, and multimodal reference generation.
-- Source checked: 2026-08-16
-- Original documentation: https://github.com/ModelTC/Minimax-H3-Turbo
+### Build a one-minute trailer on RTX 3060 with Turbo LoRA
+
+- English page: https://h3-field-notes-production.up.railway.app/en/tutorials/3060-turbo-trailer/
+- Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/3060-turbo-trailer/
+- Type: community
+- Category: acceleration
+- Best for: Creators with 12GB VRAM and an existing concept-art or storyboard set.
+- Goal: Animate an existing image set into short shots and edit them into a one-minute trailer.
+- Hardware: RTX 3060 12GB and 24GB system memory, as reported by the source.
+- Source checked: 2026-08-23
+- Original source: https://x.com/PixelAigc/status/2086958485741441240
 - Start here:
-  1. Choose FL2VA or Ref2VA first, then select the matching 544p or 768p and four- or eight-NFE checkpoint.
-  2. Follow the dedicated setup for Diffusers, or import the matching T2VA, I2VA, or Ref2VA JSON in ComfyUI.
-  3. Preserve reference-image aspect ratio and start with the training-matched reference-resize-mode=match before comparing against the native model.
+  1. Order the images and action notes by shot.
+  2. Generate short clips with Turbo LoRA instead of chasing a one-minute single pass.
+  3. Select takes and finish pacing and sound in an editor.
 
-### Awesome MiniMax H3 Resources
 
-- Route: RESOURCE MAP / MODELS + TOOLS
-- Best for: For users who know the problem they need to solve and want to locate a matching model, quantization, or node quickly.
-- Summary: A maintained map of the official and community H3 ecosystem: base and quantized weights, text encoders, VAEs, Turbo and style LoRAs, ComfyUI nodes, tutorials, and importable workflows.
-- Source checked: 2026-08-16
-- Original documentation: https://github.com/wildminder/awesome-minimax-H3
+### Maestro six-step Turbo: trade detail for iteration speed
+
+- English page: https://h3-field-notes-production.up.railway.app/en/tutorials/maestro-six-step-turbo/
+- Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/maestro-six-step-turbo/
+- Type: community
+- Category: acceleration
+- Best for: Local Maestro users who want shorter iteration cycles.
+- Goal: Use a six-step distilled LoRA in Maestro for fast H3 previews.
+- Hardware: Depends on Maestro and the selected H3 weights.
+- Source checked: 2026-08-23
+- Original source: https://x.com/blizaine/status/2085554573494657328
 - Start here:
-  1. Choose full, pruned, or quantized weights for your hardware first; smaller files do not imply identical quality or compatibility.
-  2. Then browse Turbo, LoRA, ComfyUI Nodes, or Workflows for the task instead of stacking every optimization at once.
-  3. Before downloading, return to each original project to verify its license, dependencies, latest update, and tested environment.
+  1. Save a native-mode baseline first.
+  2. Switch to six-step Turbo without changing other variables.
+  3. Use Turbo for shot selection and compare higher steps for important finals.
 
-### BeatAPI MiniMax H3 Prompt Gallery
 
-- Route: CASE REFERENCE / PROMPTS + VIDEO
-- Best for: For users who want to learn from paired outputs and prompts, then return to the original creator for context.
-- Summary: A use-case-organized H3 prompt gallery with 300 prompts, WebM examples, and creator attribution across stories, action, ads, music, and social video.
-- Source checked: 2026-08-16
-- Original documentation: https://github.com/BeatAPI/awesome-minimax-h3-prompts
+### Low-VRAM Maestro: pruned 20B plus Turbo
+
+- English page: https://h3-field-notes-production.up.railway.app/en/tutorials/maestro-pruned-20b/
+- Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/maestro-pruned-20b/
+- Type: community
+- Category: acceleration
+- Best for: Maestro users who cannot comfortably run the full model.
+- Goal: Reduce VRAM pressure with the pruned 20B model, six-step Turbo, and optional First Block Cache.
+- Hardware: A lower-VRAM NVIDIA setup; use current Maestro documentation for the actual minimum.
+- Source checked: 2026-08-23
+- Original source: https://x.com/cocktailpeanut/status/2086119385757041048
 - Start here:
-  1. Start with the Stories, Action, Ads, Music, or Social use-case category that matches your goal.
-  2. Watch the WebM result before expanding the prompt to study how shots, action, environment, and sound are structured.
-  3. Open the source to verify the creator and post before reuse; workflow, reference media, and model-version differences can change results.
+  1. Select the pruned 20B model and six-step Turbo.
+  2. Run a fixed-input baseline and record VRAM.
+  3. Enable First Block Cache only if still needed, then inspect quality again.
 
+
+### Before-and-after Turbo LoRA benchmark on RTX 3060
+
+- English page: https://h3-field-notes-production.up.railway.app/en/tutorials/3060-turbo-benchmark/
+- Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/3060-turbo-benchmark/
+- Type: community
+- Category: acceleration
+- Best for: 12GB users who want a measured view of Turbo gains.
+- Goal: Compare native and Turbo runs at fixed resolution and duration on the same RTX 3060.
+- Hardware: RTX 3060 12GB, 64GB RAM, and Windows 11, as reported by the source.
+- Source checked: 2026-08-23
+- Original source: https://x.com/AIPixLab/status/2088797656118390866
+- Start here:
+  1. Run a native baseline and record its time.
+  2. Add only the specified Turbo LoRA while keeping input and output settings fixed.
+  3. Compare time, image quality, audio, and motion stability.
+
+
+### Run H3 Turbo on Mac Studio with Phosphene
+
+- English page: https://h3-field-notes-production.up.railway.app/en/tutorials/mac-phosphene-turbo/
+- Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/mac-phosphene-turbo/
+- Type: community
+- Category: acceleration
+- Best for: Mac users who want a graphical H3 Turbo path.
+- Goal: Use fewer steps on Apple Silicon to reduce a five-second run from about 20 minutes to about eight in the reported setup.
+- Hardware: Mac Studio M4 with 64GB memory, as reported by the source.
+- Source checked: 2026-08-23
+- Original source: https://x.com/cocktailpeanut/status/2085765919079350355
+- Start here:
+  1. Generate a baseline with Turbo disabled.
+  2. Enable Turbo while keeping prompt and media unchanged.
+  3. Use the faster result for iteration and return to quality settings for important shots.
+
+
+### When local hardware is short: rent a GPU with a ComfyUI image
+
+- English page: https://h3-field-notes-production.up.railway.app/en/tutorials/rent-gpu-comfyui/
+- Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/rent-gpu-comfyui/
+- Type: community
+- Category: getting-started
+- Best for: Users with limited local VRAM who want to validate results first.
+- Goal: Run one H3 cloud test without rebuilding the local machine.
+- Hardware: The post suggests a 5090 plus 32GB; verify the actual instance image and cost with the provider.
+- Source checked: 2026-08-23
+- Original source: https://x.com/Lonely__MH/status/2085302359971053826
+- Start here:
+  1. Choose a ComfyUI image that includes the H3 model.
+  2. Check model paths and public-access settings after launch.
+  3. Stop the instance after a short test and confirm billing.
+
+
+### Dual-clock sampling: separate video and audio step counts
+
+- English page: https://h3-field-notes-production.up.railway.app/en/tutorials/dual-clock-audio/
+- Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/dual-clock-audio/
+- Type: community
+- Category: audio
+- Best for: Advanced users balancing sound quality, sync, and generation speed.
+- Goal: Control video and audio sampling separately in ComfyUI and compare it carefully with an acceleration LoRA.
+- Hardware: An NVIDIA environment capable of running H3 in ComfyUI.
+- Source checked: 2026-08-23
+- Original source: https://x.com/0xmomonifty/status/2085377094461333550
+- Start here:
+  1. Install the T8 nodes and run the stable base path first.
+  2. Adjust video and audio steps separately while recording time and sync.
+  3. Add an acceleration LoRA only if needed and compare against the native baseline.
+
+
+### Native H3 in ComfyUI: choose the right input mode
+
+- English page: https://h3-field-notes-production.up.railway.app/en/tutorials/native-comfyui-modes/
+- Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/native-comfyui-modes/
+- Type: community
+- Category: comfyui
+- Best for: Users seeing H3's multiple ComfyUI workflows for the first time.
+- Goal: Choose the right workflow for text, keyframes, or multimodal references.
+- Hardware: Follow current ComfyUI and official H3 documentation.
+- Source checked: 2026-08-23
+- Original source: https://x.com/ComfyUI/status/2084110113078751465
+- Start here:
+  1. Use text-to-video when the prompt is the only input.
+  2. Use first, last, or first-and-last frame control for boundaries.
+  3. Use Ref2VA to carry a subject, motion, or voice, with references in the documented order.
+
+
+### RTX 4080 16GB: pruned plus INT8 low-VRAM setup
+
+- English page: https://h3-field-notes-production.up.railway.app/en/tutorials/4080-int8-pruned/
+- Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/4080-int8-pruned/
+- Type: community
+- Category: acceleration
+- Best for: Users around 16GB VRAM who need a reduced-memory path.
+- Goal: Run a ten-second local H3 test within 16GB VRAM.
+- Hardware: RTX 4080 16GB as reported by the source; roughly ten minutes for a ten-second clip.
+- Source checked: 2026-08-23
+- Original source: https://x.com/eternityspring/status/2084666970558074971
+- Start here:
+  1. Place models exactly as documented and do not mix versions.
+  2. Import a fixed ten-second test workflow first.
+  3. Confirm VRAM and output before increasing resolution or duration.
+
+
+### 4-bit plus DiffSynth: an 8GB-VRAM route
+
+- English page: https://h3-field-notes-production.up.railway.app/en/tutorials/four-bit-eight-gb/
+- Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/four-bit-eight-gb/
+- Type: community
+- Category: acceleration
+- Best for: Users with 8GB VRAM or those testing a quantized H3 path on Mac.
+- Goal: Run H3 on smaller GPUs through 4-bit quantization and VRAM-adaptive inference.
+- Hardware: The source reports an 8GB minimum; verify actual speed and supported modes.
+- Source checked: 2026-08-23
+- Original source: https://x.com/ModelScope2022/status/2084625441940279770
+- Start here:
+  1. Confirm the current 4-bit model and DiffSynth version from the source.
+  2. Enable VRAM-adaptive inference for the available memory.
+  3. Start with a short baseline, then test resolution and modes gradually.
+
+
+### Train a MiniMax H3 Ref2VA LoRA with AI Toolkit
+
+- English page: https://h3-field-notes-production.up.railway.app/en/tutorials/train-ref2va-lora/
+- Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/train-ref2va-lora/
+- Type: community
+- Category: training
+- Best for: Developers with training experience, data, and a high-memory GPU.
+- Goal: Prepare a video-to-video dataset and run an auditable Ref2VA LoRA training experiment.
+- Hardware: A high-memory NVIDIA GPU; use current AI Toolkit and H3 training docs for exact requirements.
+- Source checked: 2026-08-23
+- Original source: https://x.com/ostrisai/status/2090540475199680543
+- Start here:
+  1. Define the target behavior as verifiable data pairs.
+  2. Configure a Ref2VA LoRA from the tutorial instead of copying image-LoRA settings.
+  3. Run a short training and fixed validation set before scaling up.
+
+
+### H3 WebUI: Motion Context plus built-in upscaling
+
+- English page: https://h3-field-notes-production.up.railway.app/en/tutorials/webui-motion-context/
+- Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/webui-motion-context/
+- Type: community
+- Category: long-video
+- Best for: Users who prefer a WebUI over manually wiring a ComfyUI graph.
+- Goal: Chain short clips toward roughly one minute with Motion Context and upscale before export.
+- Hardware: Apple Silicon or the environments currently supported by the WebUI.
+- Source checked: 2026-08-23
+- Original source: https://x.com/core_tan/status/2087415961293144516
+- Start here:
+  1. Validate a five-second 720p base generation.
+  2. Enable Motion Context and generate in segments while checking each join.
+  3. Apply built-in upscaling last so its artifacts do not confuse generation tuning.
+
+
+### 4070 12GB: chain three five-second chunks into a character dance
+
+- English page: https://h3-field-notes-production.up.railway.app/en/tutorials/ref2v-motion-context-chunks/
+- Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/ref2v-motion-context-chunks/
+- Type: community
+- Category: long-video
+- Best for: 12GB users who need character replacement or longer motion continuity.
+- Goal: When a 13-second pass does not fit, use eight-step Turbo and Motion Context chunks.
+- Hardware: RTX 4070 12GB plus 32GB RAM, as reported by the source.
+- Source checked: 2026-08-23
+- Original source: https://x.com/cla_kuro37459/status/2087892024410480796
+- Start here:
+  1. Split the longer motion into roughly five-second sections.
+  2. Use Ref2VA for character and motion reference with eight-step Turbo.
+  3. Chain with Motion Context and inspect motion, audio, and identity at every join.
+
+
+### Four-step vs eight-step LoRA: a 30-second chaining A/B
+
+- English page: https://h3-field-notes-production.up.railway.app/en/tutorials/lightx2v-vs-larryvrh/
+- Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/lightx2v-vs-larryvrh/
+- Type: community
+- Category: acceleration
+- Best for: Users with Motion Context working who are choosing a Turbo weight.
+- Goal: Compare lightx2v and larryvrh LoRAs for sharpness, noise, speech, and stability.
+- Hardware: Depends on the current H3 WebUI or ComfyUI path.
+- Source checked: 2026-08-23
+- Original source: https://x.com/core_tan/status/2088147718732734936
+- Start here:
+  1. Fix every input and Motion Context parameter.
+  2. Test four and eight steps separately and record LoRA strength.
+  3. Choose by sharpness, noise, speech, and join stability—not speed alone.
+
+
+
+## Related project resources
+
+- h3.c / h3-metal — NATIVE MAC / C + METAL; Antirez's native MiniMax H3 inference engine for Apple Silicon, built without Python, PyTorch, or ComfyUI. Text-to-audio-video, first/last-frame control, and ordered Ref2VA references work end to end.; source checked 2026-08-16; https://github.com/antirez/h3.c
+- MiniMax-AI / MiniMax-H3 — OFFICIAL / WEIGHTS + AGENT SKILL; The official entry point for weights, deployment documentation, and nine Agent Skills. h3-prompt-writing structures shots, dialogue, and environmental audio in agents including Claude and Codex.; source checked 2026-08-16; https://github.com/MiniMax-AI/MiniMax-H3
+- MiniMax-H3 Turbo LoRA — ACCELERATION / COMFYUI LORA; Compresses the usual roughly 20-step synchronized audio-video sampling path to four to eight steps. The current v4 EMA suits most work; six to eight steps are steadier, while four is primarily for previews.; source checked 2026-08-16; https://github.com/Larryvrh/ComfyUI-MiniMax-H3-Turbo
+- ComfyUI H3 Motion Context — LONG VIDEO / MOTION + AUDIO CONTEXT; Carries the previous clip's H3 visual latent and audio context into the next clip so motion, rhythm, and sound continue across the join instead of restarting with a similar take.; source checked 2026-08-16; https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context
+- MiniMax H3 Audio T8 — AUDIO / COMFYUI WORKFLOWS; An 86-node native ComfyUI H3 audio-video suite covering stable dual-clock sampling, audio conditioning, mixing, trimming, and preflight, plus experimental long-video, speech, keyframe, and source-AV paths.; source checked 2026-08-16; https://github.com/T8mars/comfyui-minimax-h3-audio-T8
+- ComfyUI MiniMax H3 Director — DIRECTOR / MULTI-SHOT TIMELINE; A ComfyUI director that combines H3 shot planning, conditioning, sampling, audio-video decoding, and export. It covers T2V, FL2V, R2V, V2V, and RV2V with timelines, selective runs, inter-shot guidance, and optional refinement.; source checked 2026-08-16; https://github.com/AIMixer/ComfyUI_MiniMaxH3_Director
+- MiniMax H3 Director Workflow Pack — READY-MADE / 5 WORKFLOWS; A reproduction-oriented pack of five Director JSON workflows for T2V, FL2V, R2V, V2V, and RV2V. It depends on the upstream AIMixer plugin and is not a separate inference engine.; source checked 2026-08-16; https://github.com/huangserva/ComfyUI_MiniMaxH3_Director
+- ComfyUI Spectrum MiniMax H3 — ACCELERATION / HIDDEN-STATE FORECAST; Forecasts hidden states for H3 target audio-video rows to skip selected expensive transformer evaluations while keeping the native output head, decode, and save path. A default 20-step run commonly becomes 11 actual evaluations plus nine forecasts.; source checked 2026-08-16; https://github.com/xmarre/ComfyUI-Spectrum-MiniMax-H3
+- ComfyUI MiniMax H3 Easy — EASIER WORKFLOW / UNIFIED MEDIA; Combines images, videos, and audio in one Media input with @ references, dialogue blocks, raw-prompt inspection, multi-provider prompt optimization, and a compact node set spanning text, keyframe, and full-reference modes.; source checked 2026-08-16; https://github.com/nkxx188/ComfyUI-MiniMaxH3-Easy
+- MiniMax H3 FineTuning — TRAINING / LORA + MULTI-GPU; Fills the trainer gap left by the official release with supervised rectified-flow training on the official Diffusers integration, cached video and stereo-audio latents, LoRA, and ZeRO-3 multi-GPU paths.; source checked 2026-08-16; https://github.com/IAmIronMan42/MiniMax-H3-FineTuning
+- ModelTC MiniMax H3 Turbo — DISTILLED SPEED / 4–8 NFE; Provides four- and eight-step Turbo LoRAs for FL2VA and Ref2VA, Diffusers batch-inference scripts, and importable ComfyUI workflows for text, first-frame, and multimodal reference generation.; source checked 2026-08-16; https://github.com/ModelTC/Minimax-H3-Turbo
+- Awesome MiniMax H3 Resources — RESOURCE MAP / MODELS + TOOLS; A maintained map of the official and community H3 ecosystem: base and quantized weights, text encoders, VAEs, Turbo and style LoRAs, ComfyUI nodes, tutorials, and importable workflows.; source checked 2026-08-16; https://github.com/wildminder/awesome-minimax-H3
+- BeatAPI MiniMax H3 Prompt Gallery — CASE REFERENCE / PROMPTS + VIDEO; A use-case-organized H3 prompt gallery with 300 prompts, WebM examples, and creator attribution across stories, action, ads, music, and social video.; source checked 2026-08-16; https://github.com/BeatAPI/awesome-minimax-h3-prompts
 
 ## Video cases
 

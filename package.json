@@ -19,6 +19,8 @@
     "catalog": "node scripts/build-catalog.mjs",
     "discovery": "node scripts/build-discovery-files.mjs",
     "sync:external": "node scripts/sync-external-catalog.mjs",
+    "tutorials:check": "node scripts/tutorial-collection.mjs",
+    "tutorials:publish": "node scripts/tutorial-collection.mjs --publish",
     "seo": "node scripts/build-seo-pages.mjs"
   },
   "dependencies": {
