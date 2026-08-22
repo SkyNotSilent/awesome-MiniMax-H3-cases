@@ -228,9 +228,9 @@ describe('case-first routes', () => {
 
   it('publishes Tutorials and FAQ as standalone pages', () => {
     const tutorials = renderAt('/tutorials/')
-    expect(screen.getByRole('heading', { name: '从路线开始，跟着做完。' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: '先选一条可靠起跑线。' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: '从真实实战中少走弯路。' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'MiniMax H3 教程' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '基础路线' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '社区教程' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: '官方部署：先跑通一条可复现链路' })).toHaveAttribute(
       'href', '/tutorials/official-deployment/',
     )
@@ -308,7 +308,7 @@ describe('language isolation', () => {
 
   it('keeps the language switch on the equivalent standalone route', () => {
     renderAt('/en/tutorials/')
-    expect(screen.getByRole('heading', { name: 'Pick a route. Finish the workflow.' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'MiniMax H3 Tutorials' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Switch to Chinese' })).toHaveAttribute('href', '/tutorials/')
     expect(screen.queryByText('先选一条可靠起跑线。')).not.toBeInTheDocument()
     expect(document.body.textContent).not.toMatch(/[\u3400-\u9fff]/u)
@@ -316,7 +316,7 @@ describe('language isolation', () => {
 
   it('keeps the old toolkit URL as a client-side compatibility alias', () => {
     renderAt('/en/toolkit/')
-    expect(screen.getByRole('heading', { name: 'Pick a route. Finish the workflow.' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'MiniMax H3 Tutorials' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Switch to Chinese' })).toHaveAttribute('href', '/tutorials/')
   })
 
