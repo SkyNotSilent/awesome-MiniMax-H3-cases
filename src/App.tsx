@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react'
 import {
   ArrowUpRight,
   Check,
@@ -58,6 +58,13 @@ type TutorialResource = {
 }
 
 const tutorials = rawTutorials as TutorialResource[]
+const completePromptCount = cases.filter((item) => (
+  item.promptProvenance !== 'not-published' && Boolean(item.prompt?.trim())
+)).length
+const bootStartedAt = (window as Window & { __H3_BOOT_AT?: number }).__H3_BOOT_AT
+const initialIntroOffset = bootStartedAt
+  ? Math.max(0, Math.min(1_600, performance.now() - bootStartedAt))
+  : 0
 const tutorialCategories: Array<'all' | TutorialCategory> = [
   'all',
   'official',
@@ -283,10 +290,11 @@ function Header({
 function IntroSplash({ language }: { language: Language }) {
   const [phase, setPhase] = useState<'visible' | 'leaving' | 'gone'>('visible')
   const t = copy[language].intro
+  const introStyle = { '--intro-offset': `-${initialIntroOffset}ms` } as CSSProperties
 
   useEffect(() => {
     document.body.classList.add('intro-open')
-    const leaveTimer = window.setTimeout(() => setPhase('leaving'), 1_600)
+    const leaveTimer = window.setTimeout(() => setPhase('leaving'), Math.max(0, 1_600 - initialIntroOffset))
     const dismissImmediately = () => {
       document.body.classList.remove('intro-open')
       setPhase('gone')
@@ -328,18 +336,44 @@ function IntroSplash({ language }: { language: Language }) {
   if (phase === 'gone') return null
 
   return (
-    <aside className={`intro-splash ${phase === 'leaving' ? 'is-leaving' : ''}`} aria-label={t.description}>
+    <aside
+      className={`intro-splash ${phase === 'leaving' ? 'is-leaving' : ''}`}
+      aria-label={t.description}
+      style={introStyle}
+    >
       <div className="intro-grid" aria-hidden="true" />
       <div className="intro-topline">
         <span><i /> {t.kicker}</span>
         <button type="button" onClick={skip}>{t.skip} <ArrowUpRight size={13} /></button>
       </div>
+      <div className="intro-proof-card intro-proof-cases">
+        <small>{t.caseEyebrow}</small>
+        <strong>{cases.length}</strong>
+        <p>{t.caseLabel}</p>
+        <em>{completePromptCount} {t.promptLabel} · {tutorials.length} {t.guideLabel}</em>
+      </div>
+      <div className="intro-proof-card intro-proof-rank">
+        <small>{t.rankEyebrow}</small>
+        <strong>{t.rankValue}</strong>
+        <p>{t.rankLabel}</p>
+        <em>{t.rankFootnote}</em>
+      </div>
+      <svg className="intro-proof-connection" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true">
+        <path pathLength="1" d="M 130 125 C 350 125, 650 475, 870 475" />
+        <circle cx="130" cy="125" r="5" />
+        <circle cx="870" cy="475" r="5" />
+      </svg>
       <div className="intro-wordmark" aria-hidden="true">
         <span>{t.lineOne}</span>
         <strong>{t.lineTwo}</strong>
       </div>
+      <div className="intro-proof-verdict" aria-hidden="true">
+        <i />
+        <span>{t.proofLine}</span>
+        <i />
+      </div>
       <div className="intro-bottomline">
-        <p>{t.description}</p>
+        <p>{t.summary}</p>
         <div className="intro-ready"><span /> {t.ready} · {cases.length}</div>
       </div>
       <div className="intro-progress" aria-hidden="true"><span /></div>
