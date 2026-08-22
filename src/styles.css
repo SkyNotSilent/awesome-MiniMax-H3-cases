@@ -1651,65 +1651,68 @@ footer > span {
   }
 }
 
-/* Tutorial learning workspace */
-.tutorials-page .page-hero {
-  min-height: 0;
-  padding-top: clamp(48px, 6vw, 86px);
-  padding-bottom: clamp(38px, 5vw, 64px);
-}
-
-.tutorials-page .page-hero h1 {
-  max-width: 980px;
-  font-size: clamp(56px, 7vw, 104px);
-}
-
-.tutorials-page .page-hero > p:not(.section-index) {
-  max-width: 820px;
-}
-
+/* Tutorial index: compact, content-first editorial directory */
 .tutorial-hub {
-  padding-top: 0;
+  padding-top: clamp(34px, 4vw, 58px);
+  padding-bottom: 110px;
 }
 
-.tutorial-section-heading {
-  margin: 72px 0 30px;
-  padding-top: 22px;
-  display: grid;
-  grid-template-columns: minmax(150px, .3fr) 1fr;
-  gap: 32px;
-  border-top: 1px solid #383c34;
+.tutorial-index-header {
+  min-height: 72px;
+  padding-bottom: 14px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 1px solid #3a3e36;
 }
 
-.tutorial-section-heading > p,
-.tutorial-section-heading small {
-  margin: 0;
+.tutorial-index-header > p {
+  order: 2;
+  margin: 0 0 7px;
   color: var(--acid);
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 9px;
   letter-spacing: .13em;
   text-transform: uppercase;
 }
 
-.tutorial-section-heading > div {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr);
-  align-items: end;
-  gap: 48px;
-}
-
-.tutorial-section-heading h2 {
+.tutorial-index-header h1 {
   margin: 0;
   font-family: var(--display);
-  font-size: clamp(36px, 4.5vw, 66px);
-  line-height: .98;
-  letter-spacing: -.05em;
+  font-size: clamp(44px, 5.2vw, 76px);
+  line-height: .9;
+  letter-spacing: -.055em;
   text-transform: uppercase;
 }
 
-.tutorial-section-heading span {
-  color: #aeb2a8;
-  font-size: 14px;
-  line-height: 1.75;
+.tutorial-list-heading {
+  margin: 22px 0 10px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.tutorial-list-heading.is-community {
+  margin-top: 30px;
+  padding-top: 14px;
+  border-top: 1px solid #3a3e36;
+}
+
+.tutorial-list-heading h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(24px, 2.4vw, 36px);
+  line-height: 1;
+  letter-spacing: -.035em;
+  text-transform: uppercase;
+}
+
+.tutorial-list-heading > span {
+  color: var(--acid);
+  font-family: var(--mono);
+  font-size: 10px;
 }
 
 .foundation-route-grid {
@@ -1737,7 +1740,7 @@ footer > span {
 
 .foundation-route-poster {
   position: relative;
-  aspect-ratio: 1;
+  aspect-ratio: 2.15 / 1;
   display: block;
   overflow: hidden;
   background: #090a08;
@@ -1776,7 +1779,7 @@ footer > span {
 
 .foundation-route-copy,
 .community-tutorial-copy {
-  padding: 24px;
+  padding: 18px;
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -1793,7 +1796,7 @@ footer > span {
 
 .foundation-route-copy h3,
 .community-tutorial-copy h3 {
-  margin: 18px 0 12px;
+  margin: 10px 0 12px;
   font-family: var(--display);
   font-size: 26px;
   line-height: 1.08;
@@ -1811,6 +1814,14 @@ footer > span {
   color: #a8aca2;
   font-size: 13px;
   line-height: 1.7;
+}
+
+.foundation-route-copy {
+  padding: 16px;
+}
+
+.foundation-route-copy .tutorial-card-actions {
+  margin: auto -16px -16px;
 }
 
 .tutorial-controls {
@@ -1838,7 +1849,7 @@ footer > span {
 
 .community-tutorial-poster {
   position: relative;
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 3;
   display: block;
   overflow: hidden;
   background: #090a08;
@@ -1890,16 +1901,50 @@ footer > span {
 }
 
 .community-tutorial-copy h3 {
-  min-height: 56px;
-  font-size: 24px;
+  min-height: 50px;
+  font-size: 22px;
 }
 
 .community-tutorial-copy > p {
-  min-height: 66px;
+  min-height: 44px;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
-.community-tutorial-copy .resource-tags {
-  margin-top: auto;
+.tutorial-card-actions {
+  position: relative;
+  margin: auto -18px -18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--line);
+}
+
+.tutorial-card-actions > a,
+.tutorial-card-actions .tutorial-copy-button {
+  min-height: 40px;
+  padding: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #b5b9ae;
+  background: transparent;
+  border: 0;
+  font-family: var(--mono);
+  font-size: 8px;
+  cursor: pointer;
+}
+
+.tutorial-card-actions > a {
+  border-right: 1px solid var(--line);
+}
+
+.tutorial-card-actions > a:hover,
+.tutorial-card-actions .tutorial-copy-button:hover {
+  color: var(--acid);
+  background: #141711;
 }
 
 .tutorial-actions {
@@ -2358,9 +2403,7 @@ footer > span {
 }
 
 @media (max-width: 820px) {
-  .tutorial-section-heading,
-  .tutorial-section-heading > div { grid-template-columns: 1fr; gap: 14px; }
-  .tutorial-section-heading > div { gap: 18px; }
+  .tutorial-index-header { min-height: 82px; }
   .tutorial-detail-hero,
   .tutorial-detail-layout { grid-template-columns: 1fr; }
   .tutorial-detail-poster { max-width: 520px; }
@@ -2370,10 +2413,23 @@ footer > span {
 }
 
 @media (max-width: 600px) {
-  .tutorials-page .page-hero { padding-top: 36px; }
-  .tutorials-page .page-hero h1 { font-size: 52px; }
-  .tutorial-section-heading { margin-top: 54px; }
-  .foundation-route-grid,
+  .tutorial-hub { padding-top: 26px; }
+  .tutorial-index-header { min-height: 72px; align-items: flex-start; flex-direction: column-reverse; gap: 10px; }
+  .tutorial-index-header > p { order: initial; margin: 0; }
+  .tutorial-index-header h1 { font-size: 42px; }
+  .tutorial-list-heading { margin-top: 24px; }
+  .tutorial-list-heading.is-community { margin-top: 36px; }
+  .foundation-route-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+  }
+  .foundation-route-card {
+    min-width: min(78vw, 320px);
+    flex: 0 0 min(78vw, 320px);
+    scroll-snap-align: start;
+  }
   .community-tutorial-grid { grid-template-columns: 1fr; }
   .tutorial-filters { display: flex; overflow-x: auto; }
   .tutorial-filters button { min-width: max-content; }
@@ -3244,14 +3300,14 @@ body.intro-open {
 }
 
 .tutorial-controls {
-  margin-bottom: 28px;
+  margin-bottom: 18px;
   display: grid;
-  grid-template-columns: minmax(260px, 0.72fr) 1.28fr;
+  grid-template-columns: minmax(260px, 0.6fr) 1.4fr;
   gap: 12px;
 }
 
 .tutorial-search {
-  min-height: 52px;
+  min-height: 44px;
   padding: 0 16px;
   display: flex;
   align-items: center;
@@ -3295,15 +3351,17 @@ body.intro-open {
 }
 
 .tutorial-filters {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
+  overflow-x: auto;
   border-top: 1px solid #44483f;
   border-left: 1px solid #44483f;
 }
 
 .tutorial-filters button {
-  min-height: 52px;
-  padding: 8px 10px;
+  min-width: 78px;
+  min-height: 44px;
+  padding: 6px 8px;
+  flex: 1;
   color: #898d83;
   background: rgba(13, 15, 12, 0.82);
   border: 0;

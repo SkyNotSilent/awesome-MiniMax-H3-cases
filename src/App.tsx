@@ -689,23 +689,13 @@ function CopyTutorialButton({ tutorial, language, compact = false }: { tutorial:
   )
 }
 
-function TutorialActions({ tutorial, language, compact = false }: { tutorial: TutorialGuide; language: Language; compact?: boolean }) {
+function TutorialCardActions({ tutorial, language }: { tutorial: TutorialGuide; language: Language }) {
   const t = copy[language].tutorials
   return (
-    <div className={`tutorial-actions ${compact ? 'is-compact' : ''}`}>
-      <a className="tutorial-open-guide" href={tutorialPath(language, tutorial.id)}>{t.openGuide} <ChevronRight size={15} /></a>
-      <a className="tutorial-source-link" href={tutorial.source.url} target="_blank" rel="noreferrer">{t.openSource} <ArrowUpRight size={14} /></a>
-      <CopyTutorialButton tutorial={tutorial} language={language} compact={compact} />
+    <div className="tutorial-card-actions">
+      <a href={tutorial.source.url} target="_blank" rel="noreferrer">{t.openSource} <ArrowUpRight size={13} /></a>
+      <CopyTutorialButton tutorial={tutorial} language={language} compact />
     </div>
-  )
-}
-
-function TutorialSectionHeading({ index, title, description }: { index: string; title: string; description: string }) {
-  return (
-    <header className="tutorial-section-heading">
-      <p>{index}</p>
-      <div><h2>{title}</h2><span>{description}</span></div>
-    </header>
   )
 }
 
@@ -737,9 +727,15 @@ function TutorialsPage({ language }: { language: Language }) {
 
   return (
     <div className="standalone-page tutorials-page">
-      <PageHero index={t.index} title={t.title} description={t.description} />
       <section className="tutorial-hub shell" aria-label={copy[language].nav.tutorials}>
-        <TutorialSectionHeading index={t.foundationIndex} title={t.foundationTitle} description={t.foundationDescription} />
+        <header className="tutorial-index-header">
+          <p>{t.index} / {foundations.length + tutorialGuides.filter((item) => item.contentType === 'community').length}</p>
+          <h1>{t.title}</h1>
+        </header>
+        <header className="tutorial-list-heading">
+          <h2>{t.foundationTitle}</h2>
+          <span>{String(foundations.length).padStart(2, '0')}</span>
+        </header>
         <div className="foundation-route-grid">
           {foundations.map((tutorial, index) => (
             <article className="foundation-route-card" key={tutorial.id}>
@@ -750,14 +746,16 @@ function TutorialsPage({ language }: { language: Language }) {
               <div className="foundation-route-copy">
                 <small>{t.routeLabel} / {tutorial.tags[0]}</small>
                 <h3><a href={tutorialPath(language, tutorial.id)}>{tutorial.title[language]}</a></h3>
-                <p>{tutorial.outcome[language]}</p>
-                <TutorialActions tutorial={tutorial} language={language} compact />
+                <TutorialCardActions tutorial={tutorial} language={language} />
               </div>
             </article>
           ))}
         </div>
 
-        <TutorialSectionHeading index={t.communityIndex} title={t.communityTitle} description={t.communityDescription} />
+        <header className="tutorial-list-heading is-community">
+          <h2>{t.communityTitle}</h2>
+          <span>{String(tutorialGuides.filter((item) => item.contentType === 'community').length).padStart(2, '0')}</span>
+        </header>
         <div className="tutorial-controls">
           <label className="tutorial-search">
             <Search size={16} aria-hidden="true" />
@@ -795,8 +793,7 @@ function TutorialsPage({ language }: { language: Language }) {
                   <small>{t.categories[tutorial.category]} / {tutorial.source.handle || tutorial.source.author}</small>
                   <h3><a href={tutorialPath(language, tutorial.id)}>{tutorial.title[language]}</a></h3>
                   <p>{tutorial.outcome[language]}</p>
-                  <div className="resource-tags">{tutorial.tags.slice(0, 3).map((tag) => <span key={tag}>{tag}</span>)}</div>
-                  <TutorialActions tutorial={tutorial} language={language} compact />
+                  <TutorialCardActions tutorial={tutorial} language={language} />
                 </div>
               </article>
             ))}
