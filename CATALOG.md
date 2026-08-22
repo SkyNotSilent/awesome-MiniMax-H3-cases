@@ -71,6 +71,7 @@
 | [二千分辨率下的真人电影镜头](https://x.com/tanabe_fragm/status/2084854693403197897) | 15s · 1440×2560 · portrait | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
 | [日惹传统市场的清晨](https://x.com/junwatu/status/2084840152715911311) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
 | [每个伟大故事的动态标题](https://x.com/umesh_ai/status/2083909535593644291) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [同一提示词的双模型奇幻对决](https://x.com/MadMax_Series/status/2083501727836225758) | 15s · 1080×1080 · square | `MiniMax H3` `模型对比` `公开 Prompt` `X 原帖` |
 
 ## FL2VA
 
@@ -236,6 +237,14 @@
 | [动漫音乐录像的歌词排版](https://x.com/haruuraeadss/status/2083875116900024386) | 16s · 1920×1080 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
 | [星花都市的角色登场](https://x.com/haruuraeadss/status/2083768289612947872) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
 | [黑暗幻想世界的游戏预告](https://x.com/haruuraeadss/status/2083736220635738298) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [邦德式谍战动漫片头](https://x.com/doctorwasif/status/2085947083463295024) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [自动对口型的高速说唱表演](https://x.com/KEETY2591756/status/2085918684879765882) | 30s · 1344×768 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [博物馆里苏醒的机械蝴蝶](https://x.com/zhongying14/status/2083615699260313955) | 15s · 1440×2560 · portrait | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
+| [蓝发少年与灵狐逃生](https://x.com/HBCoop_/status/2083553619413209379) | 15s · 2560×1440 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [八镜头奢华护肤广告](https://x.com/Maercihh/status/2083407991114805571) | 15s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [蓝色影棚中的人马共舞](https://x.com/egeberkina/status/2083301476206588086) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [骑手、摩托与十五秒节拍](https://x.com/HBCoop_/status/2083282581450375367) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [千禧流行女团说唱片段](https://x.com/LeoCreaIA/status/2083240416166748313) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
 
 ## Unknown
 
@@ -866,3 +875,17 @@
 | [洗衣店里的超现实想象](https://x.com/opener_ai/status/2084075915706052621) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
 | [史诗级太空大战](https://x.com/itxabdullaa/status/2083854803801960837) | 15s · 1280×720 · landscape | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
 | [另一张苏醒的动态海报](https://x.com/LudovicCreator/status/2083628852165672988) | 10s · 1440×2560 · portrait | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [泥泞脚步与惊恐回眸](https://x.com/FikkkFX/status/2085973171581161893) | 5s · 1920×2160 · portrait | `MiniMax H3` `舞蹈视频` `公开 Prompt` `X 原帖` |
+| [办公室里的人工智能新员工](https://x.com/karankendre/status/2085952141395726491) | 15s · 2560×1440 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [交通规则里的推理挑战](https://x.com/cocktailpeanut/status/2085893756688167396) | 14s · 832×480 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [漫游城市的浪漫蒙太奇](https://x.com/ikausarsolanki/status/2083617497216106839) | 8s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [六图一音频打造动漫片头](https://x.com/aimikoda/status/2083611951003734471) | 15s · 1280×720 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [低机位追踪的时尚短片](https://x.com/Kiber_Alla/status/2083583963512062019) | 15s · 2560×1440 · landscape | `MiniMax H3` `舞蹈视频` `公开 Prompt` `X 原帖` |
+| [暴风雨中的海盗船大战](https://x.com/seirdotmk/status/2083582886280561048) | 10s · 2560×1440 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [暴风雨里的黏土鲸鱼](https://x.com/shikoba_86/status/2083555537912729607) | 10s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [金继剑刃的无缝循环](https://x.com/Cia0_exe/status/2083525563491524882) | 15s · 3840×2160 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [拉面试吃的真实 UGC 质感](https://x.com/Taaruk_/status/2083461207919612348) | 15s · 1280×544 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [汉堡试吃的第一视角短片](https://x.com/oggii_0/status/2083436822085165289) | 15s · 2944×1248 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [动态字体融入咖啡广告](https://x.com/pewdenai/status/2083298802413555943) | 15s · 2944×1248 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [蓝色影棚里的超现实时装](https://x.com/shikoba_86/status/2083225662316265763) | 15s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [游乐园记忆的动态图形蒙太奇](https://x.com/magnific/status/2083217899540586917) | 5s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
