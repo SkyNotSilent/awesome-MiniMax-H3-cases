@@ -61,6 +61,7 @@ const tutorials = rawTutorials as TutorialResource[]
 const completePromptCount = cases.filter((item) => (
   item.promptProvenance !== 'not-published' && Boolean(item.prompt?.trim())
 )).length
+const unpublishedPromptCount = cases.length - completePromptCount
 const bootStartedAt = (window as Window & { __H3_BOOT_AT?: number }).__H3_BOOT_AT
 const initialIntroOffset = bootStartedAt
   ? Math.max(0, Math.min(1_600, performance.now() - bootStartedAt))
@@ -350,13 +351,16 @@ function IntroSplash({ language }: { language: Language }) {
         <small>{t.caseEyebrow}</small>
         <strong>{cases.length}</strong>
         <p>{t.caseLabel}</p>
-        <em>{completePromptCount} {t.promptLabel} · {tutorials.length} {t.guideLabel}</em>
+        <em>
+          <span>{completePromptCount} {t.promptAvailableLabel}</span>
+          <span>{unpublishedPromptCount} {t.promptUnavailableLabel}</span>
+        </em>
       </div>
       <div className="intro-proof-card intro-proof-rank">
-        <small>{t.rankEyebrow}</small>
-        <strong>{t.rankValue}</strong>
-        <p>{t.rankLabel}</p>
-        <em>{t.rankFootnote}</em>
+        <small>{t.updateEyebrow}</small>
+        <strong>{t.updateValue}</strong>
+        <p>{t.updateLabel}</p>
+        <em>{t.updateFootnote}</em>
       </div>
       <svg className="intro-proof-connection" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true">
         <path pathLength="1" d="M 130 125 C 350 125, 650 475, 870 475" />
@@ -369,7 +373,7 @@ function IntroSplash({ language }: { language: Language }) {
       </div>
       <div className="intro-proof-verdict" aria-hidden="true">
         <i />
-        <span>{t.proofLine}</span>
+        <span><b>{cases.length}</b> {t.proofLine}</span>
         <i />
       </div>
       <div className="intro-bottomline">
