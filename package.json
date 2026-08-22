@@ -46,5 +46,8 @@
     "jsdom": "latest",
     "typescript-eslint": "latest",
     "vitest": "latest"
+  },
+  "overrides": {
+    "nanoid": "3.3.18"
   }
 }
