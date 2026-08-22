@@ -6,7 +6,6 @@ import {
   ChevronRight,
   Clipboard,
   Clock3,
-  Code2,
   Languages,
   Search,
   SlidersHorizontal,
@@ -113,6 +112,14 @@ function XMark({ size = 16 }: { size?: number }) {
   return (
     <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="currentColor">
       <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.657l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z" />
+    </svg>
+  )
+}
+
+function GitHubMark({ size = 21 }: { size?: number }) {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="currentColor">
+      <path d="M12 .297a12 12 0 0 0-3.79 23.4c.6.112.82-.26.82-.577v-2.234c-3.338.726-4.04-1.61-4.04-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.419-1.305.762-1.604-2.665-.305-5.466-1.334-5.466-5.93 0-1.312.468-2.382 1.235-3.222-.123-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23A11.5 11.5 0 0 1 12 6.32a11.5 11.5 0 0 1 3.004.404c2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.119 3.177.768.84 1.233 1.91 1.233 3.221 0 4.61-2.806 5.624-5.479 5.921.43.37.814 1.102.814 2.222v3.293c0 .32.216.694.825.576A12 12 0 0 0 12 .297Z" />
     </svg>
   )
 }
@@ -231,6 +238,7 @@ function Header({
 }) {
   const t = copy[language]
   const otherLanguage: Language = language === 'zh' ? 'en' : 'zh'
+  const githubLabel = language === 'zh' ? '在 GitHub 查看源码' : 'View source on GitHub'
 
   return (
     <header className="site-header-wrap">
@@ -261,8 +269,10 @@ function Header({
             href="https://github.com/SkyNotSilent/awesome-minimax-h3-cases"
             target="_blank"
             rel="noreferrer"
+            aria-label={githubLabel}
+            title={githubLabel}
           >
-            <Code2 size={15} aria-hidden="true" /> <span>{t.nav.source}</span>
+            <GitHubMark />
           </a>
         </div>
       </div>

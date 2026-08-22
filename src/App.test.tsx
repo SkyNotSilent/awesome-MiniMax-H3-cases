@@ -96,6 +96,10 @@ describe('case-first routes', () => {
     expect(screen.getByRole('link', { name: '案例' })).toHaveAttribute('href', '/')
     expect(screen.getByRole('link', { name: '教程' })).toHaveAttribute('href', '/tutorials/')
     expect(screen.getByRole('link', { name: '常见问题' })).toHaveAttribute('href', '/faq/')
+    expect(screen.getByRole('link', { name: '在 GitHub 查看源码' })).toHaveAttribute(
+      'href',
+      'https://github.com/SkyNotSilent/awesome-minimax-h3-cases',
+    )
     expect(screen.queryByText('从单个案例，提炼可复用镜头协议。')).not.toBeInTheDocument()
     expect(screen.queryByText('收录方式')).not.toBeInTheDocument()
     expect(screen.queryByText('从案例，走到真正跑起来。')).not.toBeInTheDocument()
