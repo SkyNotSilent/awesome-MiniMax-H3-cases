@@ -356,16 +356,24 @@ function IntroSplash({ language }: { language: Language }) {
           <span>{unpublishedPromptCount} {t.promptUnavailableLabel}</span>
         </em>
       </div>
-      <div className="intro-proof-card intro-proof-rank">
+      <div className="intro-proof-card intro-proof-update">
         <small>{t.updateEyebrow}</small>
         <strong>{t.updateValue}</strong>
         <p>{t.updateLabel}</p>
         <em>{t.updateFootnote}</em>
       </div>
       <svg className="intro-proof-connection" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true">
-        <path pathLength="1" d="M 130 125 C 350 125, 650 475, 870 475" />
-        <circle cx="130" cy="125" r="5" />
-        <circle cx="870" cy="475" r="5" />
+        <defs>
+          <linearGradient id="intro-flow-gradient" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stopColor="#d9ff43" stopOpacity="0.08" />
+            <stop offset="0.48" stopColor="#d9ff43" stopOpacity="0.6" />
+            <stop offset="1" stopColor="#76e8bd" stopOpacity="0.12" />
+          </linearGradient>
+        </defs>
+        <path className="intro-flow-glow" pathLength="1" d="M 150 135 C 235 190, 205 500, 850 465" />
+        <path className="intro-flow-line" pathLength="1" d="M 150 135 C 235 190, 205 500, 850 465" />
+        <circle cx="150" cy="135" r="3.5" />
+        <circle cx="850" cy="465" r="3.5" />
       </svg>
       <div className="intro-wordmark" aria-hidden="true">
         <span>{t.lineOne}</span>

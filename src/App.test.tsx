@@ -62,7 +62,7 @@ describe('case-first routes', () => {
     expect(Number(document.querySelector('.intro-proof-cases strong')?.textContent)).toBeGreaterThan(0)
     expect(document.querySelector('.intro-proof-cases em')).toHaveTextContent('完整公开 Prompt')
     expect(document.querySelector('.intro-proof-cases em')).toHaveTextContent('来源未公开完整 Prompt')
-    expect(document.querySelector('.intro-proof-rank strong')).toHaveTextContent('DAILY')
+    expect(document.querySelector('.intro-proof-update strong')).toHaveTextContent('DAILY')
     expect(screen.getByText('每天持续更新')).toBeInTheDocument()
     expect(screen.getByText('持续发现 · 核验 · 发布')).toBeInTheDocument()
     expect(document.querySelector('.intro-proof-connection path')).toBeInTheDocument()
