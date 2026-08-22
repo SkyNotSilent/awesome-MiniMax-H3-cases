@@ -74,6 +74,74 @@
 | [同一提示词的双模型奇幻对决](https://x.com/MadMax_Series/status/2083501727836225758) | 15s · 1080×1080 · square | `MiniMax H3` `模型对比` `公开 Prompt` `X 原帖` |
 | [雨中之刃剪纸片头](https://x.com/TanLuAI/status/2086053955315064990) | 15s · 1260×720 · landscape | `MiniMax H3` `有 Prompt` `完整 Prompt` `公开归档` |
 | [奥德修斯直面独眼巨人](https://x.com/apiframe/status/2085720283336622590) | 25s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `完整 Prompt` `公开归档` |
+| [赛博战士对决远古斗士](https://x.com/alex_bagnuoli89/status/2083207597025354071) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Action & VFX` |
+| [草莓饮料变形广告](https://x.com/GumVue/status/2083189719827878083) | 7s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `UGC & Advertising` |
+| [波尔图法兰西斯克三明治喜剧食谱](https://x.com/imagineFERA/status/2083172752790282615) | 15s · 1698×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Comedy` |
+| [金刚鹦鹉极慢速鸣叫](https://x.com/yuvalav/status/2083143771508592938) | 15s · 1698×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Narrative Film` |
+| [黑莓香草汽水 UGC Vlog](https://x.com/AIwithJessica/status/2083136052638998714) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `UGC & Advertising` |
+| [竹林武侠谜案](https://x.com/AIwithAliya/status/2083132770650571041) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `UGC & Advertising` |
+| [翡翠生物精华产品片](https://x.com/noorlewisx/status/2083081579262591469) | 15s · 720×1280 · portrait | `MiniMax H3` `完整 Prompt` `公开归档` `UGC & Advertising` |
+| [黑金奢华香水广告](https://x.com/kingofdairyque/status/2083079304632520833) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `UGC & Advertising` |
+| [现代战争 FPS 实机画面](https://x.com/Just_sharon7/status/2083064417798025721) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Gaming` |
+| [奢华香水商业片](https://x.com/CaliraVal/status/2083059583308751079) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `UGC & Advertising` |
+| [奢华腕表分镜广告](https://x.com/I_amShiti/status/2083051609953903017) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `UGC & Advertising` |
+| [NOVA X 手机 TVC](https://x.com/UrMeer289/status/2083048872566575568) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `UGC & Advertising` |
+| [训练后健身房 Vlog](https://x.com/doctorwasif/status/2083048782581858681) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Vlog` |
+| [韩国偶像 VHS 美妆 Vlog](https://x.com/saniaspeaks_/status/2083043197937209852) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Narrative Film` |
+| [拳台边手机实拍击倒](https://x.com/johnAGI168/status/2083033353679221043) | 15s · 720×1280 · portrait | `MiniMax H3` `完整 Prompt` `公开归档` `Action & VFX` |
+| [脏感嘻哈 MV 情绪](https://x.com/tebasaki3D/status/2083032443226030578) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Music Video` |
+| [赛博废土时装片与 VHS 故障](https://x.com/fal/status/2083021146341978345) | 19s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Community Showcase` |
+| [浴室镜前护肤 UGC 广告](https://x.com/ZaraIrahh/status/2083011066800242986) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `UGC & Advertising` |
+| [黑白八位机旧金山动画](https://x.com/vercel_dev/status/2083007144111325353) | 10s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Community Showcase` |
+| [火龙与焰骑士掠过焦土世界](https://x.com/kulufly/status/2082970376745726278) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Narrative Film` |
+| [手工剪纸定格短片](https://x.com/AiMeowing/status/2082964095410512241) | 15s · 960×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Community Showcase` |
+| [漂浮生态城中的探险者与猫](https://x.com/AiMeowing/status/2082937573559722460) | 43s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Gaming` |
+| [极致电影感场景挑战](https://x.com/JamianGerard/status/2082916440403742779) | 15s · 1698×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Narrative Film` |
+| [沙漠秀场金属礼服时尚广告](https://x.com/noorwithwifi/status/2082897758084907132) | 12s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `UGC & Advertising` |
+| [都市街头超能力重拳动作](https://x.com/itsshara_ai/status/2082892924694712509) | 28s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Narrative Film` |
+| [皮克斯风小鼠冒险动画](https://x.com/sebatheepan/status/2082873433478582726) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Anime` |
+| [世界上最倒霉的超级英雄](https://x.com/NACHOS2D_/status/2082853567543615837) | 30s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Comedy` |
+| [黄昏厨房里的发光生物](https://x.com/underwoodxie96/status/2082850740603867462) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Horror` |
+| [厨房巨蛛喜剧短片](https://x.com/Ciri_ai/status/2082840410268057697) | 15s · 1698×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Anime` |
+| [寿司之夜手机 UGC Vlog](https://x.com/oggii_0/status/2082837405812613617) | 15s · 1698×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `UGC & Advertising` |
+| [赛博朋克冰蓝角色觉醒](https://x.com/ainextastro/status/2082830892209221921) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Horror` |
+| [手绘姜烧猪肉料理动画](https://x.com/ozuozuai99/status/2082828444484960451) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Anime` |
+| [草莓四季匹配剪辑食品广告](https://x.com/HBCoop_/status/2082827829172117943) | 15s · 1698×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `UGC & Advertising` |
+| [The Brief: "Jessica x The Bag"](https://x.com/AIwithJessica/status/2082804771220804089) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Fashion` |
+| [风暴悬崖高尔夫物理挑战](https://x.com/Dheepanratnam/status/2082799981426037151) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Action & VFX` |
+| [水彩动画感官蒙太奇快切](https://x.com/yachimat_manga/status/2082799648528335119) | 15s · 720×1280 · portrait | `MiniMax H3` `完整 Prompt` `公开归档` `Anime` |
+| [Image Model: GPT Image 2](https://x.com/ShamsAmin56/status/2082798559901143224) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `UGC & Advertising` |
+| [喷气背包俯冲山峡](https://x.com/Ankit_patel211/status/2082794108998078815) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Action & VFX` |
+| [雨夜韩国黑色电影重逢](https://x.com/doctorwasif/status/2082790356983447606) | 19s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Narrative Film` |
+| [奢华无线耳机产品演示](https://x.com/LudovicCreator/status/2082783319075291312) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Community Showcase` |
+| [竖屏改装车街头文化短片](https://x.com/fromjtown/status/2082783123830378938) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `UGC & Advertising` |
+| [超高端香水电影级广告](https://x.com/SadiaMalik182/status/2082776032042783085) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `UGC & Advertising` |
+| [手持镜头双人争吵](https://x.com/heydin_ai/status/2082774662342377881) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Narrative Film` |
+| [神雕侠侣趣味讲单词 dream](https://x.com/nicekate8888/status/2082762739697815758) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Comedy` |
+| [公园巨型锦鲤意外](https://x.com/underwoodxie96/status/2082747838782386563) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Community Showcase` |
+| [一九九八首尔雨夜公交站家用录像](https://x.com/itxabdullaa/status/2082747126497300930) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Narrative Film` |
+| [水墨虾跃入未来都市](https://x.com/nicekate8888/status/2082746108493848857) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Narrative Film` |
+| [破碎宫殿中的喷火巨龙](https://x.com/dreamydigiarts/status/2082745513573831106) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Narrative Film` |
+| [日出峡谷翼装飞行](https://x.com/sebatheepan/status/2082731549707927857) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Action & VFX` |
+| [空西装定格组装](https://x.com/lukasersil/status/2082727329390854152) | 12s · 720×864 · portrait | `MiniMax H3` `完整 Prompt` `公开归档` `Narrative Film` |
+| [少林寺中的雷神降临](https://x.com/seirdotmk/status/2082718662482411584) | 5s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Narrative Film` |
+| [飞空艇穿越浮空王国](https://x.com/Strength04_X/status/2082712692159344891) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Narrative Film` |
+| [梦幻夏日温室动画](https://x.com/haruuraeadss/status/2082707037256056852) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Music Video` |
+| [天然材质巨龙定格动画](https://x.com/Maercihh/status/2082704405619679353) | 12s · 960×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Narrative Film` |
+| [悬崖下行至海边](https://x.com/umesh_ai/status/2082700637444452380) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Narrative Film` |
+| [1970 年代涩谷都市传说恐怖片](https://x.com/drjoetw/status/2082669221222207488) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Horror` |
+| [奢华翡翠项链广告分镜](https://x.com/itxabdullaa/status/2082667261718872509) | 15s · 720×960 · portrait | `MiniMax H3` `完整 Prompt` `公开归档` `UGC & Advertising` |
+| [无菌实验室收容失效](https://x.com/plasm0/status/2082659300090994748) | 15s · 1678×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Horror` |
+| [暗黑奇幻酒馆斗殴](https://x.com/craftian_keskin/status/2082658222247137433) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Anime` |
+| [奇幻学院分享面包场景](https://x.com/haruuraeadss/status/2082652041709773075) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Music Video` |
+| [电影叙事作品 333627](https://x.com/drjoetw/status/2082650526362333627) | 15s · 720×1280 · portrait | `MiniMax H3` `完整 Prompt` `公开归档` `Narrative Film` |
+| [小偷尴尬的产品借口](https://x.com/ponzponz15/status/2082646007444300101) | 15s · 720×828 · portrait | `MiniMax H3` `完整 Prompt` `公开归档` `UGC & Advertising` |
+| [要不要一起跳舞](https://x.com/OrctonAI/status/2082612279866986858) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Music Video` |
+| [高能情感表演口型同步](https://x.com/Kiber_Alla/status/2082605878679609528) | 15s · 720×1280 · portrait | `MiniMax H3` `完整 Prompt` `公开归档` `Music Video` |
+| [霓虹噩梦汉堡广告](https://x.com/xavier_mitjana/status/2082549709240160587) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `UGC & Advertising` |
+| [实拍关系告白对峙戏](https://x.com/NEXUS_TO_NOVA/status/2082548512286224793) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Narrative Film` |
+| [小机器人赛博朋克逃亡](https://x.com/AIandDesign/status/2082522979339288619) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Narrative Film` |
+| [写实角色转面设定图](https://x.com/aiehon_aya/status/2082501605803597837) | 7s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Anime` |
 
 ## FL2VA
 
@@ -142,6 +210,13 @@
 | [温室里的害羞雨云](https://x.com/ManuAGI01/status/2085986114800951530) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
 | [真人质感与人工痕迹的对照](https://x.com/tanabe_fragm/status/2084855587540795780) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
 | [二千画质与七百二十画质的对决](https://x.com/MadMax_Series/status/2083855654205186452) | 15s · 1080×1080 · square | `MiniMax H3` `模型对比` `公开 Prompt` `X 原帖` |
+| [圣家堂 FPV 穿越](https://x.com/Diplomeme/status/2083056488122380671) | 15s · 720×860 · portrait | `MiniMax H3` `完整 Prompt` `公开归档` `Travel` |
+| [1980 年代开源家庭喜剧](https://x.com/BrentLynch/status/2083020024340693185) | 12s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Comedy` |
+| [无缝循环武士刀刃重构](https://x.com/ogbenniasamuel2/status/2082934406910513162) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Narrative Film` |
+| [九宫格女说唱歌手同屏表演](https://x.com/lukasersil/status/2082847686185672833) | 12s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Music Video` |
+| [四种泳姿美学演示](https://x.com/johnAGI168/status/2082798969499832514) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Narrative Film` |
+| [孟买季风 FPV 航拍穿越](https://x.com/CurieuxExplorer/status/2082747871103942674) | 15s · 720×960 · portrait | `MiniMax H3` `完整 Prompt` `公开归档` `Travel` |
+| [金铠女剑士岩台动作戏](https://x.com/Cia0_exe/status/2082693906224009447) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Narrative Film` |
 
 ## Ref2VA
 
@@ -247,23 +322,55 @@
 | [蓝色影棚中的人马共舞](https://x.com/egeberkina/status/2083301476206588086) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
 | [骑手、摩托与十五秒节拍](https://x.com/HBCoop_/status/2083282581450375367) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
 | [千禧流行女团说唱片段](https://x.com/LeoCreaIA/status/2083240416166748313) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
-| [打烊前最后一个气泡 · 下篇](https://x.com/ManuAGI01/status/2087066113775665414) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
-| [打烊前最后一个气泡 · 上篇](https://x.com/ManuAGI01/status/2087065646903517354) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
-| [阿里与布鲁诺的羊角包花 · 下篇](https://x.com/ManuAGI01/status/2086667788488442041) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
+| [打烊前最后一个气泡 · 下篇](https://x.com/ManuAGI01/status/2087066113775665414) | 15s · 1280×720 · landscape | `MiniMax H3` `公开归档` `来源未公开 Prompt` |
+| [打烊前最后一个气泡 · 上篇](https://x.com/ManuAGI01/status/2087065646903517354) | 15s · 1280×720 · landscape | `MiniMax H3` `公开归档` `来源未公开 Prompt` |
+| [阿里与布鲁诺的羊角包花 · 下篇](https://x.com/ManuAGI01/status/2086667788488442041) | 15s · 1280×720 · landscape | `MiniMax H3` `公开归档` `来源未公开 Prompt` |
 | [阿里与布鲁诺的羊角包花 · 上篇](https://x.com/ManuAGI01/status/2086667268700995928) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `完整 Prompt` `公开归档` |
-| [绅士猫与小老鼠的惊喜 · 下篇](https://x.com/ManuAGI01/status/2086426551114215889) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
-| [绅士猫与小老鼠的惊喜 · 上篇](https://x.com/ManuAGI01/status/2086426143612440739) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
-| [小草莓唤醒菠萝王 · 下篇](https://x.com/ManuAGI01/status/2086360699505451093) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
-| [小草莓唤醒菠萝王 · 上篇](https://x.com/ManuAGI01/status/2086360167176954269) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
-| [归还月亮的少年 · 第四幕](https://x.com/ManuAGI01/status/2086323087092470161) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
-| [归还月亮的少年 · 第三幕](https://x.com/ManuAGI01/status/2086322454679707867) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
-| [归还月亮的少年 · 第二幕](https://x.com/ManuAGI01/status/2086321924070834347) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
-| [小小创作者与 3200 颗纸星星](https://x.com/ManuAGI01/status/2086294491179495506) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
-| [小小花匠与沉睡的山岭巨人 · 下篇](https://x.com/ManuAGI01/status/2086051214425477564) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
-| [小小花匠与沉睡的山岭巨人 · 上篇](https://x.com/ManuAGI01/status/2086050663365333283) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
-| [小园丁与出逃的雨云 · 第三幕](https://x.com/ManuAGI01/status/2085987791587135909) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
-| [小园丁与出逃的雨云 · 第二幕](https://x.com/ManuAGI01/status/2085986990919647644) | 15s · 2560×1440 · landscape | `MiniMax H3` `有 Prompt` `Prompt 节选` `公开归档` |
+| [绅士猫与小老鼠的惊喜 · 下篇](https://x.com/ManuAGI01/status/2086426551114215889) | 15s · 1280×720 · landscape | `MiniMax H3` `公开归档` `来源未公开 Prompt` |
+| [绅士猫与小老鼠的惊喜 · 上篇](https://x.com/ManuAGI01/status/2086426143612440739) | 15s · 1280×720 · landscape | `MiniMax H3` `公开归档` `来源未公开 Prompt` |
+| [小草莓唤醒菠萝王 · 下篇](https://x.com/ManuAGI01/status/2086360699505451093) | 15s · 1280×720 · landscape | `MiniMax H3` `公开归档` `来源未公开 Prompt` |
+| [小草莓唤醒菠萝王 · 上篇](https://x.com/ManuAGI01/status/2086360167176954269) | 15s · 1280×720 · landscape | `MiniMax H3` `公开归档` `来源未公开 Prompt` |
+| [归还月亮的少年 · 第四幕](https://x.com/ManuAGI01/status/2086323087092470161) | 15s · 1280×720 · landscape | `MiniMax H3` `公开归档` `来源未公开 Prompt` |
+| [归还月亮的少年 · 第三幕](https://x.com/ManuAGI01/status/2086322454679707867) | 15s · 1280×720 · landscape | `MiniMax H3` `公开归档` `来源未公开 Prompt` |
+| [归还月亮的少年 · 第二幕](https://x.com/ManuAGI01/status/2086321924070834347) | 15s · 1280×720 · landscape | `MiniMax H3` `公开归档` `来源未公开 Prompt` |
+| [小小创作者与 3200 颗纸星星](https://x.com/ManuAGI01/status/2086294491179495506) | 15s · 1280×720 · landscape | `MiniMax H3` `公开归档` `来源未公开 Prompt` |
+| [小小花匠与沉睡的山岭巨人 · 下篇](https://x.com/ManuAGI01/status/2086051214425477564) | 15s · 1280×720 · landscape | `MiniMax H3` `公开归档` `来源未公开 Prompt` |
+| [小小花匠与沉睡的山岭巨人 · 上篇](https://x.com/ManuAGI01/status/2086050663365333283) | 15s · 1280×720 · landscape | `MiniMax H3` `公开归档` `来源未公开 Prompt` |
+| [小园丁与出逃的雨云 · 第三幕](https://x.com/ManuAGI01/status/2085987791587135909) | 15s · 1280×720 · landscape | `MiniMax H3` `公开归档` `来源未公开 Prompt` |
+| [小园丁与出逃的雨云 · 第二幕](https://x.com/ManuAGI01/status/2085986990919647644) | 15s · 2560×1440 · landscape | `MiniMax H3` `公开归档` `来源未公开 Prompt` |
 | [柯克舰长的舰桥指令](https://x.com/SolutionsJoeG/status/2085929499653238799) | 15s · 1280×720 · landscape | `MiniMax H3` `有 Prompt` `完整 Prompt` `公开归档` |
+| [冰霜枪手网页互动循环](https://x.com/Cia0_exe/status/2083180088775045626) | 15s · 1278×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Fashion` |
+| [黄金守卫网页首屏循环](https://x.com/Cia0_exe/status/2083090068378616089) | 30s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Fashion` |
+| [晨间唇油 UGC 体验分享](https://x.com/SimplyAnnisa/status/2083075282186256521) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `UGC & Advertising` |
+| [嘻哈角色对口型表演](https://x.com/bennash/status/2083065653104107776) | 108s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Music Video` |
+| [爵士黑色电影动画片头](https://x.com/AIWarper/status/2083045838377652641) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Anime` |
+| [超碳酸海滩饮料广告](https://x.com/mi7_crypto/status/2083042578883383681) | 15s · 720×966 · portrait | `MiniMax H3` `完整 Prompt` `公开归档` `UGC & Advertising` |
+| [沙漠越野车战斗追逐](https://x.com/beginnersblog1/status/2083039412506743096) | 21s · 1698×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Horror` |
+| [机械公牛冲锋·野兽将至](https://x.com/rahulnanda86/status/2083033635364720815) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Narrative Film` |
+| [醒来，我们去狩猎](https://x.com/rahulnanda86/status/2083032575908700581) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Narrative Film` |
+| [高端时装大片逐套亮相](https://x.com/luxaios/status/2083024913322103224) | 15s · 720×1280 · portrait | `MiniMax H3` `完整 Prompt` `公开归档` `Community Showcase` |
+| [豪华跑车落地页动效](https://x.com/BubbleBrain/status/2082999806948229386) | 14s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `UGC & Advertising` |
+| [Lilia Astra 预告片头](https://x.com/haruuraeadss/status/2082945363431080299) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Community Showcase` |
+| [节拍同步 K-Pop 多模态 MV](https://x.com/aisearchio/status/2082932693613043716) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Music Video` |
+| [奇幻卡组构筑战斗界面](https://x.com/AllaAisling/status/2082909383424446745) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Gaming` |
+| [彩色颜料武器选择界面](https://x.com/craftian_keskin/status/2082893990995619967) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Gaming` |
+| [暗黑流行三人组 MV 与标题](https://x.com/ivanka_humeniuk/status/2082854898907931081) | 15s · 720×808 · portrait | `MiniMax H3` `完整 Prompt` `公开归档` `Music Video` |
+| [大理石楼梯唇彩广告](https://x.com/AIwithSynthia/status/2082845923152150697) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `UGC & Advertising` |
+| [白色无影棚奢华眼镜广告](https://x.com/hey_leomartin/status/2082820121882665060) | 15s · 720×1280 · portrait | `MiniMax H3` `完整 Prompt` `公开归档` `UGC & Advertising` |
+| [暗黑说唱时尚杂志音乐成片](https://x.com/MO_IAI/status/2082818054598066367) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `UGC & Advertising` |
+| [披萨之夜 UGC 开箱 Vlog](https://x.com/ShamiWeb3/status/2082799917140197798) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Vlog` |
+| [温室红茶异世界动画](https://x.com/haruuraeadss/status/2082798959014064531) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Anime` |
+| [科幻探险者逼近黑暗之门](https://x.com/beginnersblog1/status/2082782535252410508) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Narrative Film` |
+| [高速运动产品落地页](https://x.com/Voxyz_ai/status/2082777543824789559) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `UGC & Advertising` |
+| [武士剑影无缝循环](https://x.com/Cia0_exe/status/2082774526098874724) | 30s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Fashion` |
+| [无线电员守住撤离桥](https://x.com/Diplomeme/status/2082770042630943156) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Narrative Film` |
+| [海外零食 ASMR 多镜开箱动画](https://x.com/aiehon_aya/status/2082768164413428159) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Anime` |
+| [夜店霹雳舞环绕镜头](https://x.com/luisnomad/status/2082754694250717186) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Music Video` |
+| [暗黑流行赛博废土说唱 MV 风格](https://x.com/Just_sharon7/status/2082711476347998615) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Music Video` |
+| [混凝土广场尖翻落地](https://x.com/eijo_AIart/status/2082684613475082714) | 10s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Action & VFX` |
+| [硬核科幻沙漠九宫格动画](https://x.com/techhalla/status/2082611421225845158) | 15s · 720×810 · portrait | `MiniMax H3` `完整 Prompt` `公开归档` `Narrative Film` |
+| [五段电影对白重场戏](https://x.com/maxescu/status/2082563241062875568) | 161s · 1286×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Narrative Film` |
+| [斗篷复仇者对决赛博处刑者](https://x.com/LudovicCreator/status/2082519983842595100) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Narrative Film` |
 
 ## Unknown
 
@@ -908,3 +1015,6 @@
 | [动态字体融入咖啡广告](https://x.com/pewdenai/status/2083298802413555943) | 15s · 2944×1248 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
 | [蓝色影棚里的超现实时装](https://x.com/shikoba_86/status/2083225662316265763) | 15s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
 | [游乐园记忆的动态图形蒙太奇](https://x.com/magnific/status/2083217899540586917) | 5s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [RadiantGlo 护肤广告](https://x.com/AIwithJessica/status/2083013658230317082) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `Community Showcase` |
+| [KALDR 极冷香水多模态广告](https://x.com/abulu8/status/2082919486399943073) | 15s · 1700×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `UGC & Advertising` |
+| [格子纹跑车夜到黎明广告](https://x.com/shirawiggles/status/2082857595824451623) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `公开归档` `UGC & Advertising` |

@@ -11,7 +11,7 @@ export interface VideoCase {
   prompt: string | null
   promptSourceUrl?: string
   archiveSourceUrl?: string
-  promptCompleteness?: 'complete' | 'excerpt'
+  promptCompleteness?: 'complete'
   sourceUrl: string
   sourceLabel: string
   author: string

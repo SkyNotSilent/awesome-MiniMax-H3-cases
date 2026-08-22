@@ -1,13 +1,13 @@
 # MiniMax H3 Cases & Guides
 
-> A bilingual, source-attributed library of MiniMax H3 video examples. Videos play in the gallery; prompt text is marked as complete or as an archived excerpt.
+> A bilingual, source-attributed library of MiniMax H3 video examples. Videos play in the gallery; Prompt text appears only when the complete public text is retained.
 
 ## Library snapshot
 
-- 887 published MiniMax H3 video examples
+- 997 published MiniMax H3 video examples
 - 3 official reproducible examples
-- 884 source-attributed X community examples
-- 214 examples with public Prompt text (199 complete, 15 explicitly labeled excerpts)
+- 994 source-attributed X community examples
+- 309 examples with complete verbatim public Prompts
 - Missing prompts are never inferred, reconstructed, translated into an alleged original, or completed
 
 ## Primary routes
@@ -34,14 +34,14 @@
 - https://h3-field-notes-production.up.railway.app/en/cases/x-koda-suno-beat-synced-five-environments/ — Suno Beat-Synced Character Montage Across Five Environments; Ref2VA; creator-verbatim; source: https://x.com/aimikoda/status/2086553240448241802
 - https://h3-field-notes-production.up.railway.app/en/cases/x-ivan-space-cruise-black-hole-pov/ — Handheld Space-Cruise POV at a Black Hole; T2VA; creator-verbatim; source: https://x.com/ivanfioravanti/status/2086553101029290296
 - https://h3-field-notes-production.up.railway.app/en/cases/x-photogpt-western-beat-title-sequence/ — Beat-Synced Spaghetti-Western Title Sequence; Ref2VA; creator-verbatim; source: https://x.com/itsphotogptai/status/2086555941831626849
-- https://h3-field-notes-production.up.railway.app/en/cases/x-2090183484057034955/ — An Art Nouveau Mechanical Raven Sequence; FL2VA; not-published; source: https://x.com/oohiro35/status/2090183484057034955
-- https://h3-field-notes-production.up.railway.app/en/cases/x-2090182264705454105/ — A Pencil Line Grows Into a Green Mark; Ref2VA; not-published; source: https://x.com/itsnicholash/status/2090182264705454105
-- https://h3-field-notes-production.up.railway.app/en/cases/x-2090180874222588332/ — A Jedi Saga in Parchment and Gold Foil; Unknown; not-published; source: https://x.com/nonameoasis/status/2090180874222588332
-- https://h3-field-notes-production.up.railway.app/en/cases/x-2090175089404789097/ — An Interactive Catalogue of Dog Breeds; T2VA; not-published; source: https://x.com/nakazakifam/status/2090175089404789097
-- https://h3-field-notes-production.up.railway.app/en/cases/x-2090166948239909375/ — Whispers Behind the Wall; Unknown; not-published; source: https://x.com/PromptSin/status/2090166948239909375
-- https://h3-field-notes-production.up.railway.app/en/cases/x-2090145591083077637/ — The Fall of Troy in Paper Cut-Outs; Unknown; not-published; source: https://x.com/MayorKingAI/status/2090145591083077637
-- https://h3-field-notes-production.up.railway.app/en/cases/x-2090141574462333406/ — Pre-Recorded Lip Sync for a Wolf-Eared Character; Unknown; not-published; source: https://x.com/MrJ0SHie/status/2090141574462333406
-- https://h3-field-notes-production.up.railway.app/en/cases/x-2090136979866521914/ — A Traveler Crosses Worlds of Different Materials; Ref2VA; not-published; source: https://x.com/hmetouch/status/2090136979866521914
+- https://h3-field-notes-production.up.railway.app/en/cases/x-2086323087092470161/ — The Boy Who Returned the Moon · Chapter 4; Ref2VA; not-published; source: https://x.com/ManuAGI01/status/2086323087092470161
+- https://h3-field-notes-production.up.railway.app/en/cases/x-2086322454679707867/ — The Boy Who Returned the Moon · Chapter 3; Ref2VA; not-published; source: https://x.com/ManuAGI01/status/2086322454679707867
+- https://h3-field-notes-production.up.railway.app/en/cases/x-2086321924070834347/ — The Boy Who Returned the Moon · Chapter 2; Ref2VA; not-published; source: https://x.com/ManuAGI01/status/2086321924070834347
+- https://h3-field-notes-production.up.railway.app/en/cases/x-2086294491179495506/ — The Little Creator and 3,200 Paper Stars; Ref2VA; not-published; source: https://x.com/ManuAGI01/status/2086294491179495506
+- https://h3-field-notes-production.up.railway.app/en/cases/x-2086051214425477564/ — The Tiny Florist and the Sleeping Mountain Giant · Part 2; Ref2VA; not-published; source: https://x.com/ManuAGI01/status/2086051214425477564
+- https://h3-field-notes-production.up.railway.app/en/cases/x-2086050663365333283/ — The Tiny Florist and the Sleeping Mountain Giant · Part 1; Ref2VA; not-published; source: https://x.com/ManuAGI01/status/2086050663365333283
+- https://h3-field-notes-production.up.railway.app/en/cases/x-2085987791587135909/ — The Little Gardener and the Runaway Rain Cloud · Chapter 3; Ref2VA; not-published; source: https://x.com/ManuAGI01/status/2085987791587135909
+- https://h3-field-notes-production.up.railway.app/en/cases/x-2085986990919647644/ — The Little Gardener and the Runaway Rain Cloud · Chapter 2; Ref2VA; not-published; source: https://x.com/ManuAGI01/status/2085986990919647644
 
 ## Tutorial sources
 
@@ -62,8 +62,8 @@
 ## Retrieval rules
 
 - Cite the original source URL when discussing a case.
-- Copy a prompt only when promptCompleteness is not excerpt and promptProvenance is official-verbatim, creator-verbatim, or external-archive-verbatim.
-- When promptCompleteness is excerpt, label it as incomplete and preserve its trailing ellipsis; never complete the missing text.
+- Copy a prompt only when promptCompleteness is complete (or omitted for legacy records) and promptProvenance is official-verbatim, creator-verbatim, or external-archive-verbatim.
+- Never publish or return a truncated Prompt excerpt.
 - When promptProvenance is external-archive-verbatim, cite archiveSourceUrl and do not claim that the original X post was re-verified.
 - When promptProvenance is not-published, state that the source did not publish a complete prompt.
 - Do not derive a prompt or hidden workflow from a finished video.

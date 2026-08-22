@@ -7,7 +7,7 @@ const cases = JSON.parse(await readFile(resolve(root, 'data/cases.json'), 'utf8'
 const tutorials = JSON.parse(await readFile(resolve(root, 'data/tutorials.json'), 'utf8'))
 const modes = new Set(['T2VA', 'FL2VA', 'Ref2VA', 'Unknown'])
 const provenance = new Set(['official-verbatim', 'creator-verbatim', 'external-archive-verbatim', 'not-published'])
-const promptCompleteness = new Set(['complete', 'excerpt'])
+const promptCompleteness = new Set(['complete'])
 const ids = new Set()
 const sourceUrls = new Set()
 const errors = []
@@ -48,14 +48,12 @@ for (const [index, item] of cases.entries()) {
   if (item.promptProvenance === 'not-published') {
     if (item.prompt !== null) errors.push(`${at}.prompt must be null when promptProvenance is not-published`)
     if (item.promptSourceUrl) errors.push(`${at}.promptSourceUrl is not allowed when promptProvenance is not-published`)
-    if (item.archiveSourceUrl) errors.push(`${at}.archiveSourceUrl is not allowed when promptProvenance is not-published`)
     if (item.promptCompleteness) errors.push(`${at}.promptCompleteness is not allowed when promptProvenance is not-published`)
   } else if (typeof item.prompt !== 'string' || item.prompt.trim().length === 0) {
     errors.push(`${at}.prompt must be a non-empty verbatim string for published prompt provenance`)
   } else if (item.promptCompleteness && !promptCompleteness.has(item.promptCompleteness)) {
     errors.push(`${at}.promptCompleteness is invalid`)
   }
-  if (item.promptCompleteness === 'excerpt' && !item.archiveSourceUrl) errors.push(`${at}.archiveSourceUrl is required for an archived prompt excerpt`)
   if (item.promptProvenance === 'external-archive-verbatim' && !item.archiveSourceUrl) errors.push(`${at}.archiveSourceUrl is required for external archive provenance`)
   if (item.promptSourceUrl) {
     try {

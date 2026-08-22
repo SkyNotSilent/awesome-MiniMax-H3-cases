@@ -112,7 +112,6 @@ const ui = {
     provenance: '提示词来源',
     promptHeading: '原始 Prompt',
     promptNotice: '以下为来源公开的原文 Prompt，未翻译、改写或补全。',
-    promptExcerptNotice: '以下为公开归档中以 ... 结尾的 Prompt 节选；未补写缺失内容。',
     archiveSource: '查看归档来源',
     promptUnavailableTitle: '来源未公开 Prompt',
     promptUnavailableDetail: '本页仅展示视频和可核对的公开信息；不根据视频反推或补写 Prompt。',
@@ -144,7 +143,6 @@ const ui = {
     provenance: 'Prompt provenance',
     promptHeading: 'Original Prompt',
     promptNotice: 'Verbatim prompt as published by the source; not translated, rewritten, or completed.',
-    promptExcerptNotice: 'Public Prompt excerpt ending in ... as retained by the archive; missing text has not been completed.',
     archiveSource: 'View archive source',
     promptUnavailableTitle: 'Prompt not published by the source',
     promptUnavailableDetail: 'This page only shows the video and verifiable public information. It does not infer or complete a prompt from the video.',
@@ -199,6 +197,7 @@ function englishModel(model) {
   return model
     .replaceAll('（创作者标注）', ' (creator-labeled)')
     .replaceAll('（来源标注）', ' (source-labeled)')
+    .replaceAll('（公开归档标注）', ' (public-archive-labeled)')
     .replace(/^MiniMax H3 与 (.+) 对比$/, 'MiniMax H3 vs $1')
     .replaceAll(' 与 ', ' vs ')
 }
@@ -483,7 +482,7 @@ function renderCasePage(item, locale) {
   const hasPrompt = typeof copy.prompt === 'string' && copy.prompt.trim().length > 0
   const promptMarkup = hasPrompt
     ? `<h2>${escapeHtml(labels.promptHeading)}</h2>
-  <p class="prompt-notice">${escapeHtml(item.promptCompleteness === 'excerpt' ? labels.promptExcerptNotice : labels.promptNotice)}${item.archiveSourceUrl ? ` <a href="${escapeHtml(item.archiveSourceUrl)}" rel="nofollow noopener">${escapeHtml(labels.archiveSource)} ↗</a>` : ''}</p>
+  <p class="prompt-notice">${escapeHtml(labels.promptNotice)}${item.archiveSourceUrl ? ` <a href="${escapeHtml(item.archiveSourceUrl)}" rel="nofollow noopener">${escapeHtml(labels.archiveSource)} ↗</a>` : ''}</p>
   <pre data-verbatim-prompt>${escapeHtml(copy.prompt)}</pre>`
     : `<p class="prompt-notice prompt-unavailable"><strong>${escapeHtml(labels.promptUnavailableTitle)}</strong><br>${escapeHtml(labels.promptUnavailableDetail)}</p>`
   const localeTitleSuffix = locale === 'en'
@@ -530,7 +529,7 @@ ${videoMeta}
   ${mediaMarkup}
   <dl><dt>${escapeHtml(labels.mode)}</dt><dd>${escapeHtml(item.mode)}</dd><dt>${escapeHtml(labels.model)}</dt><dd>${escapeHtml(copy.model)}</dd><dt>${escapeHtml(labels.output)}</dt><dd>${item.duration}s · ${escapeHtml(copy.resolution)} · ${escapeHtml(copy.aspectRatio)}</dd><dt>${escapeHtml(labels.tags)}</dt><dd>${escapeHtml(copy.tags.join(' · '))}</dd><dt>${escapeHtml(labels.provenance)}</dt><dd>${escapeHtml(provenance)}</dd></dl>
   ${promptMarkup}
-  <p><a href="${escapeHtml(item.sourceUrl)}" rel="nofollow noopener">${escapeHtml(labels.source)} · ${escapeHtml(copy.sourceLabel)}</a></p>
+  <p><a href="${escapeHtml(item.sourceUrl)}" rel="nofollow noopener">${escapeHtml(labels.source)} · ${escapeHtml(copy.sourceLabel)}</a>${!hasPrompt && item.archiveSourceUrl ? ` · <a href="${escapeHtml(item.archiveSourceUrl)}" rel="nofollow noopener">${escapeHtml(labels.archiveSource)}</a>` : ''}</p>
 </main>${embedded?.script ?? ''}</body></html>`
 }
 

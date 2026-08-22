@@ -15,7 +15,7 @@
     "model": { "type": "string" },
     "mode": { "enum": ["T2VA", "FL2VA", "Ref2VA", "Unknown"] },
     "prompt": { "type": ["string", "null"], "minLength": 1 },
-    "promptCompleteness": { "enum": ["complete", "excerpt"] },
+    "promptCompleteness": { "const": "complete" },
     "archiveSourceUrl": { "type": "string", "format": "uri", "pattern": "^https://" },
     "mediaUrl": { "type": "string", "pattern": "^/media/[a-zA-Z0-9_-]+\\.mp4$" },
     "sourceUrl": { "type": "string", "format": "uri" },
