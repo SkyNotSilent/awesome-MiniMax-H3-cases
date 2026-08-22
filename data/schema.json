@@ -70,10 +70,7 @@
       "minLength": 1
     },
     "promptCompleteness": {
-      "enum": [
-        "complete",
-        "excerpt"
-      ]
+      "const": "complete"
     },
     "mediaUrl": {
       "type": "string",
