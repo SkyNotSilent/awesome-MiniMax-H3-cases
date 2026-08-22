@@ -18,6 +18,10 @@
 
 </div>
 
+[![MiniMax H3 Cases & Guides fluid opening screen highlighting 997 playable cases and daily updates](./docs/screenshots/intro-en.jpg)](https://h3-field-notes-production.up.railway.app/en/)
+
+*The opening establishes the collection scale first—997 playable cases, 309 complete public Prompts, and daily updates—then yields immediately to any click, scroll, or key press.*
+
 [![MiniMax H3 Cases & Guides homepage with duration and public-prompt filters](./docs/screenshots/case-library-en.jpg)](https://h3-field-notes-production.up.railway.app/en/)
 
 **See what MiniMax H3 can actually produce before you spend time setting it up.** MiniMax H3 is also commonly searched as Hailuo H3 or Hailuo 3.0. Browse real outputs from X and MiniMax's official examples through duration-first filters, then switch on **With Prompt** to focus on 309 cases with complete public Prompt text. Truncated excerpts are excluded. Category, style, and scene remain available as deeper filters. Open any case to watch it inside the gallery and jump back to the original source.
