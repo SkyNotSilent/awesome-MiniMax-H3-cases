@@ -36,7 +36,7 @@
   </picture>
 </a>
 
-**Move from examples to execution.** Follow four concise MiniMax H3 setup routes or open 20 source-checked community tutorials covering NVIDIA + ComfyUI, Apple Silicon Metal inference, Prompt and Agent Skills, Turbo LoRA acceleration, low-VRAM deployment, audio workflows, long-video continuation, and Ref2VA training. Every guide keeps its original source and can be copied as a structured AI task.
+**Move from examples to execution.** Follow four complete MiniMax H3 zero-to-one tutorials—first ComfyUI video with audio, Turbo + low-VRAM acceleration, native Apple Silicon inference, and Motion Context clip chaining—or open 20 source-checked community field guides. Every guide keeps its references and can be copied as a structured AI task.
 
 **Topics covered:** MiniMax H3 · Hailuo H3 · Hailuo 3.0 · AI video examples · MiniMax H3 prompts · ComfyUI workflows · local deployment · Apple Silicon / Metal · Turbo LoRA · long video · audio generation · Ref2VA training.
 
@@ -83,9 +83,9 @@ No account, API key, or local model setup is required to browse the public galle
 
 The tutorial hub is now a learning and execution workspace instead of a GitHub link list:
 
-- **4 foundation routes:** official setup, NVIDIA + ComfyUI, native Mac inference, and Prompt + Agent Skill.
+- **4 complete zero-to-one routes:** first H3 video with audio in ComfyUI, Turbo + low-VRAM acceleration, native Mac inference, and Motion Context clip chaining.
 - **20 community field guides:** source-attributed X tutorials selected for reach and executability across setup, ComfyUI, prompts, acceleration, long video, audio, and training.
-- **Bilingual detail pages:** every guide has separate Chinese and English routes, steps, commands, hardware notes, caveats, author, original source, verification date, and visible engagement snapshot.
+- **Bilingual detail pages:** every guide has separate Chinese and English routes, installation steps, exact commands, hardware notes, troubleshooting, completion checks, references, and verification dates.
 - **Copy for AI:** one action creates a structured task package with environment checks, commands, risks, sources, and a guardrail to verify the latest README instead of guessing missing steps.
 
 The 13 source-checked ecosystem projects still exist, but now appear as related tools inside the route where they are useful. Community posts are summarized and structured; their full text is not copied.

@@ -16,6 +16,7 @@
     "prerequisites": { "$ref": "#/$defs/localizedList" },
     "steps": { "$ref": "#/$defs/localizedList" },
     "commands": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+    "checks": { "$ref": "#/$defs/localizedList" },
     "caveats": { "$ref": "#/$defs/localizedList" },
     "posterUrl": { "type": "string", "pattern": "^/tutorial-posters/" },
     "tags": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1, "uniqueItems": true },
@@ -25,7 +26,7 @@
       "additionalProperties": false,
       "required": ["platform", "url", "author", "originalLanguage"],
       "properties": {
-        "platform": { "enum": ["x", "github"] },
+        "platform": { "enum": ["x", "github", "docs"] },
         "url": { "type": "string", "format": "uri" },
         "author": { "type": "string", "minLength": 1 },
         "handle": { "type": "string" },

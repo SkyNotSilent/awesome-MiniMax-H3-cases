@@ -46,10 +46,10 @@
 
 ## Tutorial guides
 
-- https://h3-field-notes-production.up.railway.app/en/tutorials/official-deployment/ — Official setup: reproduce one known-good path; getting-started; source checked 2026-08-23; original: https://github.com/MiniMax-AI/MiniMax-H3
-- https://h3-field-notes-production.up.railway.app/en/tutorials/nvidia-comfyui/ — NVIDIA + ComfyUI: from one shot to director workflows; comfyui; source checked 2026-08-23; original: https://github.com/MiniMax-AI/MiniMax-H3
-- https://h3-field-notes-production.up.railway.app/en/tutorials/mac-native/ — Native Mac inference: pure C + Metal; getting-started; source checked 2026-08-23; original: https://github.com/antirez/h3.c
-- https://h3-field-notes-production.up.railway.app/en/tutorials/prompt-agent-skill/ — Prompt and Agent Skill: direct the shot before rendering; prompt; source checked 2026-08-23; original: https://github.com/MiniMax-AI/MiniMax-H3
+- https://h3-field-notes-production.up.railway.app/en/tutorials/official-deployment/ — ComfyUI zero to your first H3 video with audio; comfyui; source checked 2026-08-23; original: https://docs.comfy.org/tutorials/video/minimax/minimax-h3
+- https://h3-field-notes-production.up.railway.app/en/tutorials/nvidia-comfyui/ — Turbo + lower VRAM: reduce 20 steps to 4–8; acceleration; source checked 2026-08-23; original: https://github.com/Larryvrh/ComfyUI-MiniMax-H3-Turbo
+- https://h3-field-notes-production.up.railway.app/en/tutorials/mac-native/ — Run H3 on Mac from zero with pure C + Metal; getting-started; source checked 2026-08-23; original: https://github.com/antirez/h3.c
+- https://h3-field-notes-production.up.railway.app/en/tutorials/prompt-agent-skill/ — Motion Context: chain H3 clips into a longer video; long-video; source checked 2026-08-23; original: https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context
 - https://h3-field-notes-production.up.railway.app/en/tutorials/local-deployment-zero-to-output/ — From a clean machine to the first video with audio; getting-started; source checked 2026-08-23; original: https://x.com/servasyy_ai/status/2085251627880255525
 - https://h3-field-notes-production.up.railway.app/en/tutorials/four-essential-h3-repositories/ — How four essential H3 repositories fit together; getting-started; source checked 2026-08-23; original: https://x.com/servasyy_ai/status/2086101388132835743
 - https://h3-field-notes-production.up.railway.app/en/tutorials/attention-low-vram-lora/ — Attention backends, character LoRA, and low-VRAM paths; acceleration; source checked 2026-08-23; original: https://x.com/servasyy_ai/status/2087562850781020535

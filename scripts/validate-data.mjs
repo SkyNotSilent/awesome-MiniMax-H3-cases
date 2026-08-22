@@ -175,13 +175,18 @@ for (const [index, item] of tutorialGuides.entries()) {
     if (!Array.isArray(item[key]?.en) || item[key].en.length === 0) errors.push(`${at}.${key}.en must be non-empty`)
     if (item[key]?.en?.some((value) => /[㐀-鿿]/u.test(value))) errors.push(`${at}.${key}.en must not contain CJK text`)
   }
+  if (item.checks) {
+    if (!Array.isArray(item.checks.zh) || item.checks.zh.length === 0) errors.push(`${at}.checks.zh must be non-empty`)
+    if (!Array.isArray(item.checks.en) || item.checks.en.length === 0) errors.push(`${at}.checks.en must be non-empty`)
+    if (item.checks.en?.some((value) => /[㐀-鿿]/u.test(value))) errors.push(`${at}.checks.en must not contain CJK text`)
+  }
   for (const key of ['commands', 'tags', 'relatedResourceIds']) {
     if (!Array.isArray(item[key])) errors.push(`${at}.${key} must be an array`)
   }
   for (const resourceId of item.relatedResourceIds || []) {
     if (!resourceIds.has(resourceId)) errors.push(`${at}.relatedResourceIds contains unknown resource: ${resourceId}`)
   }
-  if (!['github', 'x'].includes(item.source?.platform)) errors.push(`${at}.source.platform is invalid`)
+  if (!['docs', 'github', 'x'].includes(item.source?.platform)) errors.push(`${at}.source.platform is invalid`)
   if (!item.source?.author || !item.source?.originalLanguage) errors.push(`${at}.source requires author and originalLanguage`)
   try {
     const sourceUrl = new URL(item.source.url)

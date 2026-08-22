@@ -639,6 +639,7 @@ function buildTutorialAiTask(tutorial: TutorialGuide, language: Language) {
   const commands = tutorial.commands.length
     ? `${t.commands}:\n${tutorial.commands.map((command) => `- ${command}`).join('\n')}`
     : ''
+  const checks = tutorial.checks ? section(t.checks, tutorial.checks[language]) : ''
   const guardrail = language === 'zh'
     ? '执行约束：先核验来源项目的最新 README 与版本；不得猜测缺失步骤、命令、参数或素材；涉及付费云资源时先估算费用；任何不确定项先停下说明。'
     : 'Execution guardrail: verify the latest source README and versions first; never guess missing steps, commands, parameters, or media; estimate cost before using paid cloud resources; stop and explain any uncertainty.'
@@ -651,6 +652,7 @@ function buildTutorialAiTask(tutorial: TutorialGuide, language: Language) {
     section(t.prerequisites, tutorial.prerequisites[language]),
     section(t.steps, tutorial.steps[language]),
     commands,
+    checks,
     section(t.caveats, tutorial.caveats[language]),
     `${t.source}: ${tutorial.source.url}`,
     guardrail,
@@ -691,9 +693,15 @@ function CopyTutorialButton({ tutorial, language, compact = false }: { tutorial:
 
 function TutorialCardActions({ tutorial, language }: { tutorial: TutorialGuide; language: Language }) {
   const t = copy[language].tutorials
+  const isFoundation = tutorial.contentType === 'foundation'
   return (
     <div className="tutorial-card-actions">
-      <a href={tutorial.source.url} target="_blank" rel="noreferrer">{t.openSource} <ArrowUpRight size={13} /></a>
+      <a
+        href={isFoundation ? tutorialPath(language, tutorial.id) : tutorial.source.url}
+        {...(!isFoundation ? { target: '_blank', rel: 'noreferrer' } : {})}
+      >
+        {isFoundation ? t.openGuide : t.openSource} <ArrowUpRight size={13} />
+      </a>
       <CopyTutorialButton tutorial={tutorial} language={language} compact />
     </div>
   )
@@ -833,7 +841,7 @@ function TutorialDetailPage({ language, tutorial }: { language: Language; tutori
             <strong>{tutorial.outcome[language]}</strong>
             <div className="resource-tags">{tutorial.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
             <div className="tutorial-detail-actions">
-              <a href={tutorial.source.url} target="_blank" rel="noreferrer">{t.openSource} <ArrowUpRight size={15} /></a>
+              {tutorial.contentType === 'community' && <a href={tutorial.source.url} target="_blank" rel="noreferrer">{t.openSource} <ArrowUpRight size={15} /></a>}
               <CopyTutorialButton tutorial={tutorial} language={language} />
             </div>
           </div>
@@ -846,6 +854,7 @@ function TutorialDetailPage({ language, tutorial }: { language: Language; tutori
             <section><h2>{t.prerequisites}</h2><ul>{tutorial.prerequisites[language].map((item) => <li key={item}>{item}</li>)}</ul></section>
             <section className="tutorial-detail-steps"><h2>{t.steps}</h2><ol>{tutorial.steps[language].map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, '0')}</span><p>{item}</p></li>)}</ol></section>
             {tutorial.commands.length > 0 && <section><h2>{t.commands}</h2><div className="tutorial-detail-commands">{tutorial.commands.map((command) => <code key={command}>{command}</code>)}</div></section>}
+            {tutorial.checks && <section className="tutorial-detail-checks"><h2>{t.checks}</h2><ul>{tutorial.checks[language].map((item) => <li key={item}><Check size={15} aria-hidden="true" /> <span>{item}</span></li>)}</ul></section>}
             <section><h2>{t.caveats}</h2><ul>{tutorial.caveats[language].map((item) => <li key={item}>{item}</li>)}</ul><small className="tutorial-source-note">{t.sourceNote}</small></section>
           </main>
           <aside className="tutorial-detail-meta">
@@ -856,7 +865,7 @@ function TutorialDetailPage({ language, tutorial }: { language: Language; tutori
               <div><dt>{t.verified}</dt><dd>{tutorial.verifiedAt}</dd></div>
             </dl>
             {engagementItems.length > 0 && <div className="tutorial-engagement"><small>{t.snapshot} / {tutorial.engagement?.snapshotAt}</small>{engagementItems.map(([label, value]) => <span key={label}><strong>{formatMetric(value, language)}</strong>{label}</span>)}</div>}
-            <a className="tutorial-meta-source" href={tutorial.source.url} target="_blank" rel="noreferrer">{t.openSource} <ArrowUpRight size={14} /></a>
+            <a className="tutorial-meta-source" href={tutorial.source.url} target="_blank" rel="noreferrer">{tutorial.contentType === 'foundation' ? t.openReference : t.openSource} <ArrowUpRight size={14} /></a>
           </aside>
         </div>
 
