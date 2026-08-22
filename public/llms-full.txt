@@ -4,79 +4,127 @@ Generated from data/cases.json and data/tutorial-guides.json. Total: 997 cases a
 
 ## Tutorials
 
-### Official setup: reproduce one known-good path
+### ComfyUI zero to your first H3 video with audio
 
 - English page: https://h3-field-notes-production.up.railway.app/en/tutorials/official-deployment/
 - Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/official-deployment/
 - Type: foundation
-- Category: getting-started
-- Best for: Developers running H3 locally for the first time.
-- Goal: Choose the right FL2VA or Ref2VA weights, check the environment, and reproduce an official sample.
-- Hardware: Use the NVIDIA environment currently documented by the official README; low-VRAM users should start with a quantized path.
+- Category: comfyui
+- Best for: First-time NVIDIA users who want a guided local MiniMax H3 run instead of reverse-engineering a node graph.
+- Goal: Start with a clean ComfyUI setup, place all five model files correctly, and render a playable T2VA MP4 with picture and synchronized audio.
+- Hardware: Windows or Linux with an NVIDIA GPU and ample disk space. Start at the template preview size when VRAM is limited instead of jumping to 1344×768.
 - Source checked: 2026-08-23
-- Original source: https://github.com/MiniMax-AI/MiniMax-H3
+- Original source: https://docs.comfy.org/tutorials/video/minimax/minimax-h3
 - Start here:
-  1. Choose the task family and matching weights; do not mix FL2VA and Ref2VA.
-  2. Pick SGLang, vLLM, Diffusers, or ComfyUI from the current official README.
-  3. Reproduce a fixed official sample before replacing prompts or references.
+  1. Install or update ComfyUI. Use the official Desktop or Portable build on Windows, or a separate Python environment for a manual/Linux install. Confirm the UI opens without a CUDA initialization error.
+  2. Open Template Library → Video → MiniMax H3 T2V. Use the model-download popup when available; preserve the exact filenames for manual downloads.
+  3. Place minimax_h3_fl2va_pruned_int8_convrot.safetensors in ComfyUI/models/diffusion_models/. T2V and I2V use FL2VA; only R2V switches to Ref2VA weights.
+  4. Place qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors in ComfyUI/models/text_encoders/. Put both the video and audio VAEs in ComfyUI/models/vae/. A silent render is not a successful audio-video setup.
+  5. Place minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors in ComfyUI/models/loras/. It powers the optional turbo_mode; keep Turbo off and use the default 20 steps for the first baseline.
+  6. Restart ComfyUI or refresh the model list. Confirm every Loader finds the diffusion model, text encoder, both VAEs, and LoRA. Fix null, undefined, or red nodes before queuing.
+  7. Render a short clip at the template preview size, 16:9, and multiple=32. Describe the scene first, then shots and camera, then dialogue, effects, or music. Add no custom nodes or stacked accelerators yet.
+  8. Queue the graph and wait through VAE decode and MP4 assembly. Open the file and verify picture, duration, audio, and event or lip synchronization. Save this untouched graph as the baseline.
+  9. After the baseline passes, move to the native 1344×768 canvas or 0.98 MP in Resolution Selector. Do not choose 1.0 MP because it produces 1376×768, above the model area cap.
+  10. For first/last frames, connect first_frame or last_frame in the same FL2VA graph. For identity, style, motion, camera, or voice references, open the R2V template and switch to Ref2VA weights instead of mixing model families.
 - Commands:
-  - git clone https://github.com/MiniMax-AI/MiniMax-H3.git
-  - cd MiniMax-H3
+  - python --version
+  - python -m pip install -r requirements.txt
+  - python main.py
+  - ComfyUI/models/diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors
+  - ComfyUI/models/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors
+  - ComfyUI/models/vae/minimax_h3_video_vae_fp16.safetensors
+  - ComfyUI/models/vae/minimax_h3_audio_vae_fp32.safetensors
+  - ComfyUI/models/loras/minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors
 
-### NVIDIA + ComfyUI: from one shot to director workflows
+### Turbo + lower VRAM: reduce 20 steps to 4–8
 
 - English page: https://h3-field-notes-production.up.railway.app/en/tutorials/nvidia-comfyui/
 - Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/nvidia-comfyui/
 - Type: foundation
-- Category: comfyui
-- Best for: Users who want node-graph control over multimodal inputs and audio-video generation.
-- Goal: Run the native H3 workflow, then add Turbo, chaining, audio, or director nodes only as needed.
-- Hardware: An NVIDIA GPU; use quantized, pruned, or cloud paths when VRAM is limited.
+- Category: acceleration
+- Best for: NVIDIA users who can already render with the official H3 graph but need faster iteration or lower VRAM use.
+- Goal: Add the community Turbo nodes to a working H3 ComfyUI baseline, render usable clips at 6–8 steps, and follow a controlled fallback order when VRAM runs out.
+- Hardware: An NVIDIA GPU. Record native peak VRAM and time first. Low-VRAM mode is a fallback, not the default quality setting.
 - Source checked: 2026-08-23
-- Original source: https://github.com/MiniMax-AI/MiniMax-H3
+- Original source: https://github.com/Larryvrh/ComfyUI-MiniMax-H3-Turbo
 - Start here:
-  1. Import the native workflow and verify every model path.
-  2. Create a baseline with fixed seed, prompt, and media.
-  3. Add one accelerator or extension at a time and compare against the baseline.
+  1. Run the native 20-step graph once and record total time, peak VRAM, fine detail, fast motion, and audio quality. This render is the only valid baseline.
+  2. Install MiniMax-H3 Turbo through ComfyUI-Manager, or clone it under ComfyUI/custom_nodes/. Fully restart ComfyUI and confirm there is no import error.
+  3. Place minimax_h3_turbo_v4_step600_ema.safetensors in ComfyUI/models/loras/. Prefer v4-600 for most work; compare the older v1-850 only when 4-step heavy motion shows trailing or smear.
+  4. Start from the official T2V or I2V graph. Insert MiniMax-H3 Turbo LoRA between Load Diffusion Model and SamplerCustomAdvanced, then select the downloaded checkpoint.
+  5. Feed SamplerCustomAdvanced from MiniMax-H3 Turbo Sampler and set BasicScheduler to simple. Keep conditioning, both VAE decoders, and audio output unchanged.
+  6. Start at 8 steps and strength=1.0, then test 6 steps. Use 4 steps for composition previews or strict budgets rather than assuming it is final quality.
+  7. Render again with the exact same seed, prompt, media, resolution, and duration. Compare time, face and hand detail, fast-motion trails, audio quality, and sync. Turbo must be the only changed variable.
+  8. If VRAM runs out, reduce preview resolution or duration first, disable nonessential previews or nodes second, and enable low_vram last. Low-VRAM mode lowers peak use but can soften quantized output.
+  9. For smear or blur on a specific clip, test strength around 1.05–1.2. For oversharp grain, test about 0.8–0.95. Change only one parameter per run.
+  10. Keep separate native and Turbo workflow files. Use Turbo for shot selection and bulk previews, then compare important finals against the native 20-step baseline.
+- Commands:
+  - cd ComfyUI/custom_nodes
+  - git clone https://github.com/larryvrh/ComfyUI-MiniMax-H3-Turbo
+  - git -C ComfyUI-MiniMax-H3-Turbo pull
+  - ComfyUI/models/loras/minimax_h3_turbo_v4_step600_ema.safetensors
 
-
-### Native Mac inference: pure C + Metal
+### Run H3 on Mac from zero with pure C + Metal
 
 - English page: https://h3-field-notes-production.up.railway.app/en/tutorials/mac-native/
 - Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/mac-native/
 - Type: foundation
 - Category: getting-started
-- Best for: Apple Silicon users comfortable with a command line.
-- Goal: Generate with H3 on Apple Silicon without Python, PyTorch, or ComfyUI.
-- Hardware: An Apple Silicon Mac; use the current h3.c benchmarks for performance and memory expectations.
+- Best for: Apple Silicon users who can use Terminal and do not want to build an NVIDIA or ComfyUI stack.
+- Goal: Without Python, PyTorch, or ComfyUI, compile h3.c on Apple Silicon, validate the model, and generate a first MP4 with audio.
+- Hardware: An M-series Mac with enough unified memory and storage. Start at 512×512 and 22 frames; speed and usable memory vary widely by chip.
 - Source checked: 2026-08-23
 - Original source: https://github.com/antirez/h3.c
 - Start here:
-  1. Build h3.c.
-  2. Inspect the model directory and Metal device.
-  3. Enter interactive mode and set !first, !last, or !ref-image before generating.
+  1. Run xcode-select --install in Terminal; macOS will say when it is already present. Install FFmpeg with Homebrew, then verify both ffmpeg and ffprobe.
+  2. Clone antirez/h3.c and enter the repository. Keep the code separate from the weight files; this guide expects the complete model at ./MiniMax-H3.
+  3. Download the complete MiniMaxAI/MiniMax-H3 Hugging Face snapshot into ./MiniMax-H3. Preserve filenames and do not download only the apparent main checkpoint.
+  4. Run make -j8, then create outputs. If compilation fails, confirm the active compiler is Apple clang and repair Command Line Tools before changing build flags.
+  5. Run ./h3 --info -d ./MiniMax-H3. It validates model layout and prints the Metal device without mapping every weight or generating media. Resolve missing files here.
+  6. Run the balanced 512×512, 22-frame, 20-step example first. The first invocation pays model-loading and filesystem-cache costs, so its total time is not a stable benchmark.
+  7. Keep --show only when the terminal supports graphical protocols and unified memory is sufficient. Remove it under memory pressure because preview adds about 10 GiB of temporary model residency.
+  8. Confirm outputs/fox-fast.mp4 plays with audio. Repeat the same command; the second run is a more useful performance comparison.
+  9. For interactive work, run ./h3 -d ./MiniMax-H3 --width 512 --height 512 --steps 6. Use !status, !seed random, !seconds 2, and !save output.mp4 to control the session.
+  10. Use !first opening.png and !last ending.png for boundary frames, or !ref-image person.png for a general reference. Ref2VA references cannot be mixed with !first or !last; clear the old mode first.
 - Commands:
-  - make -j8
+  - xcode-select --install
+  - brew install ffmpeg
+  - git clone https://github.com/antirez/h3.c && cd h3.c
+  - hf download MiniMaxAI/MiniMax-H3 --local-dir MiniMax-H3
+  - make -j8 && mkdir -p outputs
   - ./h3 --info -d ./MiniMax-H3
-  - ./h3 -d ./MiniMax-H3
+  - ./h3 --profile -d ./MiniMax-H3 -p "A red fox walks through fresh snow in a pine forest. Medium tracking shot, natural winter light, realistic fur, soft footsteps and wind." --width 512 --height 512 --frames 22 --steps 20 --layers 45 --reuse 2 -o outputs/fox-fast.mp4
+  - ./h3 -d ./MiniMax-H3 --width 512 --height 512 --steps 6
+  - make test
 
-### Prompt and Agent Skill: direct the shot before rendering
+### Motion Context: chain H3 clips into a longer video
 
 - English page: https://h3-field-notes-production.up.railway.app/en/tutorials/prompt-agent-skill/
 - Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/prompt-agent-skill/
 - Type: foundation
-- Category: prompt
-- Best for: Creators who want reusable H3 prompt direction inside agents such as Claude or Codex.
-- Goal: Have an agent structure H3 prompts around shots, action, dialogue, and environmental audio while keeping human review.
-- Hardware: Prompt writing needs no GPU; prepare a separate generation environment.
+- Category: long-video
+- Best for: ComfyUI users with a stable single-clip H3 workflow who need longer sequences without obvious picture seams or restarted audio.
+- Goal: Install Motion Context, carry the previous audio-video latent into the next generation, and complete a two-clip chain with continuous picture and sound.
+- Hardware: An NVIDIA setup that already runs H3 reliably. Both clips must use identical resolution; validate with short native-sampling clips first.
 - Source checked: 2026-08-23
-- Original source: https://github.com/MiniMax-AI/MiniMax-H3
+- Original source: https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context
 - Start here:
-  1. Install the official h3-prompt-writing Skill.
-  2. Give the agent the goal, media, duration, and hard constraints first.
-  3. Review its shot, dialogue, and sound structure before sending it to a generation workflow.
+  1. Clone ComfyUI-H3-Motion-Context into ComfyUI/custom_nodes/ and restart. The console should report h3_motion_context: nodes registered. Remove duplicate installs or another pack that owns the same patch when it reports a conflict.
+  2. Duplicate the working H3 graph for long-video experiments. Route H3 conditioning into H3 Motion Context and its output back to the guider or sampler, leaving the original baseline untouched.
+  3. Add H3 Motion Context Save Latent after the sampler. Set Save clip_index=1 for clip one and leave context_latent disconnected. Generate clip one and retain its decoded IMAGE, AUDIO, and latent.
+  4. For clip two, add H3 Motion Context Load Latent with Load clip_index=1 and connect its output only to Motion Context context_latent. Do not decode it or replace these nodes with stock Save/Load Latent, which cannot carry H3's paired video-audio latent.
+  5. Also route the current clip-two sampler output to Save Latent with Save clip_index=2. A retry still loads clip one and overwrites clip two; after approval, advance both indices together.
+  6. Route decoded IMAGE and AUDIO through H3 Motion Context Trim and connect trim_frames from Motion Context. Trim both picture and sound or the pinned context repeats at the new clip's beginning.
+  7. Start with context_length=22, audio_context_length=24, match_tail on, exactly the same resolution, and Spectrum off. A 22-frame head removes about 0.92 seconds from delivered clip two.
+  8. Open the second prompt by holding the prior closing composition for about two seconds. Do not immediately change rooms or add people; include a breath, weight shift, or eyeline move to avoid a frozen hold, then introduce the new shot.
+  9. After rendering clip two, compare untrimmed and trimmed output for picture seams, motion direction, audio waveform or beat, and loudness. Concatenate only after the join passes.
+  10. For clip three, load index 2 and save index 3. Listen critically as the chain grows because audio high frequencies can soften; restart the chain at a natural musical transition instead of continuing forever.
 - Commands:
-  - npx skills add https://github.com/MiniMax-AI/MiniMax-H3 --skill h3-prompt-writing
+  - cd ComfyUI/custom_nodes
+  - git clone https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context
+  - git -C ComfyUI-H3-Motion-Context pull
+  - python ComfyUI-H3-Motion-Context/tests/_mock_harness.py
+  - python ComfyUI-H3-Motion-Context/tests/_node_smoke_test.py
 
 ### From a clean machine to the first video with audio
 

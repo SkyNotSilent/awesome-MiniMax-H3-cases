@@ -391,7 +391,7 @@ function appStructuredData(page, locale) {
       image: [absolute(item.posterUrl)],
       inLanguage: locale,
       isBasedOn: item.source.url,
-      author: { '@type': item.source.platform === 'github' ? 'Organization' : 'Person', name: item.source.author },
+      author: { '@type': item.source.platform === 'x' ? 'Person' : 'Organization', name: item.source.author },
       supply: localized.prerequisites.map((name) => ({ '@type': 'HowToSupply', name })),
       step: localized.steps.map((text, index) => ({
         '@type': 'HowToStep',

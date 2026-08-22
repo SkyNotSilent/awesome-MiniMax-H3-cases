@@ -231,9 +231,10 @@ describe('case-first routes', () => {
     expect(screen.getByRole('heading', { name: 'MiniMax H3 教程' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '基础路线' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '社区教程' })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: '官方部署：先跑通一条可复现链路' })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: 'ComfyUI 从零到第一条 H3 带声视频' })).toHaveAttribute(
       'href', '/tutorials/official-deployment/',
     )
+    expect(screen.getAllByRole('link', { name: /打开教程/ })).toHaveLength(4)
     expect(screen.getAllByText('社区实战')).toHaveLength(20)
     expect(screen.queryByRole('heading', { name: '先看 MiniMax H3 的真实效果。' })).not.toBeInTheDocument()
     tutorials.unmount()
@@ -261,10 +262,12 @@ describe('case-first routes', () => {
 
     cleanup()
     renderAt('/tutorials/mac-native/')
-    expect(screen.getByRole('heading', { name: 'Mac 原生运行：纯 C + Metal' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Mac 从零运行 H3：纯 C + Metal' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '命令' })).toBeInTheDocument()
-    expect(screen.getByText('make -j8')).toBeInTheDocument()
-    expect(screen.getAllByRole('link', { name: /查看原帖/ })[0]).toHaveAttribute('href', 'https://github.com/antirez/h3.c')
+    expect(screen.getByText('make -j8 && mkdir -p outputs')).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /查看参考资料/ })).toHaveAttribute('href', 'https://github.com/antirez/h3.c')
+    expect(screen.getByRole('heading', { name: '完成标准' })).toBeInTheDocument()
+    expect(screen.getAllByText(/outputs\/fox-fast\.mp4/).length).toBeGreaterThanOrEqual(2)
     expect(screen.getByRole('heading', { name: '相关工具与资源' })).toBeInTheDocument()
   })
 
@@ -322,9 +325,9 @@ describe('language isolation', () => {
 
   it('keeps the language switch on the equivalent tutorial detail route', () => {
     renderAt('/en/tutorials/mac-native/')
-    expect(screen.getByRole('heading', { name: 'Native Mac inference: pure C + Metal' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Run H3 on Mac from zero with pure C + Metal' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Switch to Chinese' })).toHaveAttribute('href', '/tutorials/mac-native/')
-    expect(screen.queryByText('Mac 原生运行：纯 C + Metal')).not.toBeInTheDocument()
+    expect(screen.queryByText('Mac 从零运行 H3：纯 C + Metal')).not.toBeInTheDocument()
     expect(document.body.textContent).not.toMatch(/[\u3400-\u9fff]/u)
   })
 

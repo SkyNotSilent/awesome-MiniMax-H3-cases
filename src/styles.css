@@ -2131,6 +2131,11 @@ footer > span {
   align-items: start;
 }
 
+.tutorial-detail-content,
+.tutorial-detail-meta {
+  min-width: 0;
+}
+
 .tutorial-detail-content > section {
   padding: 30px 0 36px;
   border-top: 1px solid var(--line);
@@ -2153,6 +2158,7 @@ footer > span {
   color: #c0c4b9;
   font-size: 15px;
   line-height: 1.8;
+  overflow-wrap: anywhere;
 }
 
 .tutorial-detail-content ul {
@@ -2199,6 +2205,30 @@ footer > span {
   background: #090a08;
   font-family: var(--mono);
   font-size: 11px;
+}
+
+.tutorial-detail-checks ul {
+  padding: 0;
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  list-style: none;
+}
+
+.tutorial-detail-checks li {
+  padding: 14px 16px;
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 10px;
+  align-items: start;
+  color: #d6dacd;
+  background: #0c0e0b;
+}
+
+.tutorial-detail-checks svg {
+  margin-top: 6px;
+  color: var(--acid);
 }
 
 .tutorial-source-note {

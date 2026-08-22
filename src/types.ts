@@ -83,12 +83,13 @@ export interface TutorialGuide {
   prerequisites: LocalizedList
   steps: LocalizedList
   commands: string[]
+  checks?: LocalizedList
   caveats: LocalizedList
   posterUrl: string
   tags: string[]
   relatedResourceIds: string[]
   source: {
-    platform: 'github' | 'x'
+    platform: 'docs' | 'github' | 'x'
     url: string
     author: string
     handle?: string
