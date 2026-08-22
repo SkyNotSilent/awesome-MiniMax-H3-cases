@@ -2,7 +2,9 @@
 
 # MiniMax H3 Cases & Guides
 
-### 997 source-attributed videos · 309 complete public Prompts · 4 foundation routes + 20 community tutorials
+### MiniMax H3 / Hailuo H3 video examples, public Prompts, ComfyUI workflows & deployment tutorials
+
+**997 source-attributed videos · 309 complete public Prompts · 4 foundation routes + 20 community tutorials**
 
 **[English](./README.md)** · **[简体中文](./README.zh-CN.md)**
 
@@ -20,21 +22,23 @@
 
 <a href="https://h3-field-notes-production.up.railway.app/en/">
   <picture>
-    <source media="(max-width: 600px)" srcset="./docs/screenshots/intro-en-mobile.jpg">
-    <img src="./docs/screenshots/intro-en.jpg" alt="MiniMax H3 Cases & Guides fluid opening screen highlighting 997 playable cases and daily updates" width="100%">
-  </picture>
-</a>
-
-*The opening establishes the collection scale first—997 playable cases, 309 complete public Prompts, and daily updates—then yields immediately to any click, scroll, or key press.*
-
-<a href="https://h3-field-notes-production.up.railway.app/en/">
-  <picture>
     <source media="(max-width: 600px)" srcset="./docs/screenshots/case-library-en-mobile.jpg">
-    <img src="./docs/screenshots/case-library-en.jpg" alt="MiniMax H3 Cases & Guides homepage with duration and public-prompt filters" width="100%">
+    <img src="./docs/screenshots/case-library-en.jpg" alt="MiniMax H3 and Hailuo H3 video example gallery with duration and complete public Prompt filters" width="100%">
   </picture>
 </a>
 
 **See what MiniMax H3 can actually produce before you spend time setting it up.** MiniMax H3 is also commonly searched as Hailuo H3 or Hailuo 3.0. Browse real outputs from X and MiniMax's official examples through duration-first filters, then switch on **With Prompt** to focus on 309 cases with complete public Prompt text. Truncated excerpts are excluded. Category, style, and scene remain available as deeper filters. Open any case to watch it inside the gallery and jump back to the original source.
+
+<a href="https://h3-field-notes-production.up.railway.app/en/tutorials/">
+  <picture>
+    <source media="(max-width: 600px)" srcset="./docs/screenshots/tutorials-en-mobile.png">
+    <img src="./docs/screenshots/tutorials-en.png" alt="MiniMax H3 tutorials covering Hailuo H3 setup, NVIDIA ComfyUI, native Mac inference, Prompts, acceleration, audio, long video, and LoRA training" width="100%">
+  </picture>
+</a>
+
+**Move from examples to execution.** Follow four concise MiniMax H3 setup routes or open 20 source-checked community tutorials covering NVIDIA + ComfyUI, Apple Silicon Metal inference, Prompt and Agent Skills, Turbo LoRA acceleration, low-VRAM deployment, audio workflows, long-video continuation, and Ref2VA training. Every guide keeps its original source and can be copied as a structured AI task.
+
+**Topics covered:** MiniMax H3 · Hailuo H3 · Hailuo 3.0 · AI video examples · MiniMax H3 prompts · ComfyUI workflows · local deployment · Apple Silicon / Metal · Turbo LoRA · long video · audio generation · Ref2VA training.
 
 > **Largest public collection in our 2026-08-16 comparison:** the library now contains 997 playable, source-attributed MiniMax H3 video cases. The closest public case or prompt galleries found in that search contained 300, 222, 135, 67, and 28 examples. Prompt-only lists are not counted as video case libraries.
 
@@ -87,8 +91,6 @@ The tutorial hub is now a learning and execution workspace instead of a GitHub l
 The 13 source-checked ecosystem projects still exist, but now appear as related tools inside the route where they are useful. Community posts are summarized and structured; their full text is not copied.
 
 Weekly discovery follows the source-verification and privacy rules in [`docs/WEEKLY_TUTORIAL_COLLECTION.md`](./docs/WEEKLY_TUTORIAL_COLLECTION.md).
-
-[![MiniMax H3 tutorials for Mac, official deployment, ComfyUI acceleration, long video, and audio](./docs/screenshots/tutorials-en.png)](https://h3-field-notes-production.up.railway.app/en/tutorials/)
 
 ## Generation modes
 
