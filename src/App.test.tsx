@@ -114,6 +114,10 @@ describe('case-first routes', () => {
       'href',
       'https://github.com/SkyNotSilent/awesome-minimax-h3-cases',
     )
+    expect(screen.getByRole('link', { name: 'MiniMax H3 Cases & Guides' }).querySelector('img')).toHaveAttribute(
+      'src',
+      '/icon.svg',
+    )
     expect(screen.queryByText('从单个案例，提炼可复用镜头协议。')).not.toBeInTheDocument()
     expect(screen.queryByText('收录方式')).not.toBeInTheDocument()
     expect(screen.queryByText('从案例，走到真正跑起来。')).not.toBeInTheDocument()

@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="./public/icon.svg" alt="MiniMax H3 Cases & Guides 图标" width="96" height="96">
+
 # MiniMax H3 Cases & Guides｜视频案例与实用教程
 
 ### MiniMax H3 / Hailuo H3 视频案例、完整 Prompt、ComfyUI 工作流与本地部署教程

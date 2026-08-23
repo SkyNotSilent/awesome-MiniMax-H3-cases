@@ -489,11 +489,18 @@ function renderAppShell(page, locale, assetTags) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0a0b09" />
+    <meta name="application-name" content="MiniMax H3 Cases &amp; Guides" />
+    <meta name="apple-mobile-web-app-title" content="H3 Cases" />
     <meta name="description" content="${escapeHtml(description)}" />
     <meta name="keywords" content="${escapeHtml(copy.keywords)}" />
     <meta name="robots" content="index,follow,max-image-preview:large,max-video-preview:-1" />
     <link rel="canonical" href="${canonical}" />
 ${alternateHeadLinks(page.paths)}
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <link rel="mask-icon" href="/icon-mask.svg" color="#d9ff43" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta property="og:type" content="${page.tutorial ? 'article' : 'website'}" />
     <meta property="og:site_name" content="MiniMax H3 Cases &amp; Guides" />
@@ -511,7 +518,6 @@ ${alternateHeadLinks(page.paths)}
     <meta name="twitter:image:alt" content="${escapeHtml(copy.title)}" />
     ${page.id === 'catalog' ? '<script>window.__H3_BOOT_AT = performance.now()</script>' : ''}
     <script type="application/ld+json">${jsonForHtml(appStructuredData(page, locale))}</script>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0b09'/%3E%3Cpath d='M14 16h8v12h20V16h8v32h-8V36H22v12h-8z' fill='%23d8ff3e'/%3E%3C/svg%3E" />
     <title>${escapeHtml(copy.title)}</title>
     <style>${prebootStyle}${prebootFluidStyle}${prebootFourLayerStyle}.seo-fallback{max-width:1080px;margin:auto;padding:40px 20px 80px;font:16px/1.6 system-ui,sans-serif}.seo-fallback nav{text-align:right}.seo-fallback h1{max-width:900px;font-size:clamp(2.2rem,7vw,5rem);line-height:1}.seo-fallback ol{columns:2;gap:32px;padding-left:1.5rem}.seo-fallback li{break-inside:avoid;margin:.65rem 0}.seo-fallback li small{display:block;color:#666}@media(max-width:720px){.seo-fallback ol{columns:1}}</style>
 ${assetTags.map((tag) => `    ${tag}`).join('\n')}
@@ -614,12 +620,21 @@ function renderCasePage(item, locale) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0a0b09" />
+  <meta name="application-name" content="MiniMax H3 Cases &amp; Guides" />
+  <meta name="apple-mobile-web-app-title" content="H3 Cases" />
   <title>${escapeHtml(documentTitle)}</title>
   <meta name="description" content="${escapeHtml(description)}" />
   <meta name="keywords" content="${escapeHtml(keywords)}" />
   <meta name="robots" content="index,follow,max-image-preview:large,max-video-preview:-1" />
   <link rel="canonical" href="${canonical}" />
 ${alternateHeadLinks(paths)}
+  <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+  <link rel="mask-icon" href="/icon-mask.svg" color="#d9ff43" />
+  <link rel="manifest" href="/site.webmanifest" />
   <meta property="og:type" content="video.other" />
   <meta property="og:site_name" content="MiniMax H3 Cases &amp; Guides" />
   <meta property="og:locale" content="${localeCode(locale)}" />

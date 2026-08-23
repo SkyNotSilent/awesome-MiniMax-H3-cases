@@ -105,6 +105,9 @@ a {
 
 .brand {
   justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--display);
   font-size: 16px;
   font-weight: 700;
@@ -112,8 +115,21 @@ a {
   white-space: nowrap;
 }
 
-.brand span {
+.brand-icon {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  border-radius: 7px;
+  box-shadow: 0 0 0 1px rgba(217, 255, 67, 0.12), 0 0 18px rgba(217, 255, 67, 0.08);
+}
+
+.brand-name {
+  display: inline-flex;
+}
+
+.brand-name strong {
   color: var(--acid);
+  font: inherit;
 }
 
 .site-header nav {
@@ -3798,6 +3814,12 @@ footer {
 
   .site-header .brand {
     grid-area: brand;
+  }
+
+  .brand-icon {
+    width: 28px;
+    height: 28px;
+    flex-basis: 28px;
   }
 
   .site-header nav {
