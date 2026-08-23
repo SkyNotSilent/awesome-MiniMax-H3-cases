@@ -1,21 +1,24 @@
 import { access, readFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { editorialCopyErrors, genericEditorialCopyPattern } from './editorial-copy.mjs'
+import { creatorRankKeys, extractXHandle } from './creator-catalog.mjs'
 
 const root = resolve(import.meta.dirname, '..')
 const cases = JSON.parse(await readFile(resolve(root, 'data/cases.json'), 'utf8'))
 const tutorials = JSON.parse(await readFile(resolve(root, 'data/tutorials.json'), 'utf8'))
 const tutorialGuides = JSON.parse(await readFile(resolve(root, 'data/tutorial-guides.json'), 'utf8'))
+const creatorCatalog = JSON.parse(await readFile(resolve(root, 'data/creators.json'), 'utf8'))
 const modes = new Set(['T2VA', 'FL2VA', 'Ref2VA', 'Unknown'])
 const provenance = new Set(['official-verbatim', 'creator-verbatim', 'external-archive-verbatim', 'not-published'])
 const promptCompleteness = new Set(['complete'])
 const ids = new Set()
 const sourceUrls = new Set()
 const errors = []
+const isoDateTimePattern = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,3})?(?:Z|[+-]\d{2}:\d{2})$/
 
 for (const [index, item] of cases.entries()) {
   const at = `cases[${index}]`
-  for (const key of ['id', 'title', 'titleEn', 'summary', 'summaryEn', 'model', 'mode', 'sourceUrl', 'sourceLabel', 'author', 'publishedAt', 'category', 'posterUrl', 'resolution', 'aspectRatio']) {
+  for (const key of ['id', 'title', 'titleEn', 'summary', 'summaryEn', 'model', 'mode', 'sourceUrl', 'sourceLabel', 'author', 'publishedAt', 'addedAt', 'category', 'posterUrl', 'resolution', 'aspectRatio']) {
     if (!item[key]) errors.push(`${at}.${key} is required`)
   }
   if (!Object.hasOwn(item, 'prompt')) errors.push(`${at}.prompt is required and must be a verbatim string or null`)
@@ -44,6 +47,7 @@ for (const [index, item] of cases.entries()) {
   sourceUrls.add(normalizedSource)
   if (!Number.isFinite(item.duration) || item.duration <= 0) errors.push(`${at}.duration must be a positive number`)
   if (Number.isNaN(Date.parse(item.publishedAt))) errors.push(`${at}.publishedAt must be a valid date`)
+  if (!isoDateTimePattern.test(item.addedAt) || Number.isNaN(Date.parse(item.addedAt))) errors.push(`${at}.addedAt must be a valid ISO date-time`)
   if (!modes.has(item.mode)) errors.push(`${at}.mode is invalid: ${item.mode}`)
   if (!provenance.has(item.promptProvenance)) errors.push(`${at}.promptProvenance is invalid`)
   if (item.promptProvenance === 'not-published') {
@@ -162,7 +166,7 @@ const resourceIds = new Set(tutorials.map((item) => item.id))
 
 for (const [index, item] of tutorialGuides.entries()) {
   const at = `tutorialGuides[${index}]`
-  for (const key of ['id', 'contentType', 'category', 'posterUrl', 'source', 'verifiedAt']) {
+  for (const key of ['id', 'contentType', 'category', 'posterUrl', 'source', 'verifiedAt', 'addedAt']) {
     if (!item[key]) errors.push(`${at}.${key} is required`)
   }
   if (guideIds.has(item.id)) errors.push(`${at}.id is duplicated: ${item.id}`)
@@ -170,6 +174,7 @@ for (const [index, item] of tutorialGuides.entries()) {
   if (!guideTypes.has(item.contentType)) errors.push(`${at}.contentType is invalid`)
   if (!guideCategories.has(item.category)) errors.push(`${at}.category is invalid: ${item.category}`)
   if (Number.isNaN(Date.parse(item.verifiedAt))) errors.push(`${at}.verifiedAt must be a valid date`)
+  if (!isoDateTimePattern.test(item.addedAt) || Number.isNaN(Date.parse(item.addedAt))) errors.push(`${at}.addedAt must be a valid ISO date-time`)
   for (const key of ['title', 'outcome', 'audience', 'hardware']) {
     if (!item[key]?.zh || !item[key]?.en) errors.push(`${at}.${key} requires zh and en values`)
     if (/[㐀-鿿]/u.test(item[key]?.en || '')) errors.push(`${at}.${key}.en must not contain CJK text`)
@@ -243,8 +248,72 @@ if (communityCount < 20) errors.push(`tutorialGuides must contain at least 20 co
 const flagshipCount = tutorialGuides.filter((item) => item.flagship).length
 if (flagshipCount !== 8) errors.push(`tutorialGuides must contain exactly 8 flagship guides; found ${flagshipCount}`)
 
+const creatorIds = new Set()
+const creatorSlugs = new Set()
+const creatorHandles = new Set()
+const caseById = new Map(cases.map((item) => [item.id, item]))
+const guideById = new Map(tutorialGuides.map((item) => [item.id, item]))
+const privateCreatorKeys = new Set(['discoveryPriority', 'status', 'outcomes', 'rejected', 'lastCheckedAt', 'nextCheckAt', 'monitoringCadence', 'source'])
+const rankValues = new Map(creatorRankKeys.map((key) => [key, []]))
+
+for (const [index, item] of creatorCatalog.creators.entries()) {
+  const at = `creators[${index}]`
+  for (const key of ['id', 'slug', 'handle', 'displayName', 'xUrl', 'roles', 'caseIds', 'promptCaseIds', 'tutorialIds', 'ranks', 'rankDelta']) {
+    if (!Object.hasOwn(item, key)) errors.push(`${at}.${key} is required`)
+  }
+  if (creatorIds.has(item.id)) errors.push(`${at}.id is duplicated: ${item.id}`)
+  if (creatorSlugs.has(item.slug)) errors.push(`${at}.slug is duplicated: ${item.slug}`)
+  if (creatorHandles.has(item.handle)) errors.push(`${at}.handle is duplicated: ${item.handle}`)
+  creatorIds.add(item.id)
+  creatorSlugs.add(item.slug)
+  creatorHandles.add(item.handle)
+  if (item.handle !== item.handle.toLowerCase() || item.handle.startsWith('@')) errors.push(`${at}.handle must be normalized lowercase without @`)
+  if (item.slug !== item.slug.toLowerCase()) errors.push(`${at}.slug must be lowercase`)
+  if (item.xUrl !== `https://x.com/${item.handle}`) errors.push(`${at}.xUrl must match the current handle`)
+  if (!Array.isArray(item.roles) || item.roles.length === 0 || item.roles.some((role) => !['video', 'tutorial'].includes(role))) errors.push(`${at}.roles is invalid`)
+  for (const key of ['caseIds', 'promptCaseIds', 'tutorialIds', 'representativeCaseIds', 'latestCaseIds', 'badges', 'reasons', 'aliases']) {
+    if (!Array.isArray(item[key])) errors.push(`${at}.${key} must be an array`)
+  }
+  if (item.caseCount !== item.caseIds.length) errors.push(`${at}.caseCount does not match caseIds`)
+  if (item.promptCount !== item.promptCaseIds.length) errors.push(`${at}.promptCount does not match promptCaseIds`)
+  if (item.tutorialCount !== item.tutorialIds.length) errors.push(`${at}.tutorialCount does not match tutorialIds`)
+  for (const caseId of item.caseIds) {
+    const videoCase = caseById.get(caseId)
+    if (!videoCase) errors.push(`${at}.caseIds contains unknown case ${caseId}`)
+    const handle = videoCase ? extractXHandle(videoCase.sourceUrl) : null
+    if (handle && handle !== item.handle && !item.aliases.includes(handle)) errors.push(`${at}.caseIds contains a case from @${handle}`)
+  }
+  for (const promptId of item.promptCaseIds) {
+    const videoCase = caseById.get(promptId)
+    if (!item.caseIds.includes(promptId) || !videoCase?.prompt?.trim() || videoCase.promptProvenance === 'not-published') errors.push(`${at}.promptCaseIds contains an invalid Prompt case ${promptId}`)
+  }
+  for (const tutorialId of item.tutorialIds) {
+    if (!guideById.has(tutorialId)) errors.push(`${at}.tutorialIds contains unknown tutorial ${tutorialId}`)
+  }
+  for (const key of creatorRankKeys) {
+    const rank = item.ranks[key]
+    const delta = item.rankDelta[key]
+    if (rank !== null && (!Number.isInteger(rank) || rank < 1)) errors.push(`${at}.ranks.${key} must be a positive integer or null`)
+    if (delta !== null && !Number.isInteger(delta)) errors.push(`${at}.rankDelta.${key} must be an integer or null`)
+    if (rank !== null) rankValues.get(key).push(rank)
+  }
+  for (const key of Object.keys(item)) {
+    if (key.startsWith('_') || privateCreatorKeys.has(key) || /score/i.test(key)) errors.push(`${at}.${key} exposes private ranking or monitoring data`)
+  }
+}
+
+for (const [key, values] of rankValues) {
+  const unique = new Set(values)
+  if (unique.size !== values.length) errors.push(`creator ${key} ranks contain duplicates`)
+  if (values.length && Math.max(...values) !== values.length) errors.push(`creator ${key} ranks must be contiguous`)
+}
+if (creatorCatalog.stats.sourceCreators !== new Set(cases.filter((item) => item.sourceType === 'x').map((item) => extractXHandle(item.sourceUrl)).filter(Boolean)).size) errors.push('creatorCatalog.stats.sourceCreators is stale')
+if (creatorCatalog.stats.rankedCreators !== creatorCatalog.creators.length) errors.push('creatorCatalog.stats.rankedCreators is stale')
+if (creatorCatalog.stats.videoCreators !== creatorCatalog.creators.filter((item) => item.roles.includes('video')).length) errors.push('creatorCatalog.stats.videoCreators is stale')
+if (creatorCatalog.stats.tutorialCreators !== creatorCatalog.creators.filter((item) => item.roles.includes('tutorial')).length) errors.push('creatorCatalog.stats.tutorialCreators is stale')
+
 if (errors.length) {
   console.error(errors.join('\n'))
   process.exit(1)
 }
-console.log(`Validated ${cases.length} cases, ${tutorials.length} resources, and ${tutorialGuides.length} tutorial guides.`)
+console.log(`Validated ${cases.length} cases, ${tutorials.length} resources, ${tutorialGuides.length} tutorial guides, and ${creatorCatalog.creators.length} ranked creators.`)

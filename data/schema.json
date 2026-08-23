@@ -4,7 +4,7 @@
   "type": "object",
   "required": [
     "id", "title", "titleEn", "summary", "summaryEn", "model", "mode", "prompt", "sourceUrl", "mediaUrl", "author", "posterUrl",
-    "category", "styles", "scenes", "inputTypes", "promptProvenance", "verified", "duration", "resolution", "aspectRatio", "publishedAt"
+    "category", "styles", "scenes", "inputTypes", "promptProvenance", "verified", "duration", "resolution", "aspectRatio", "publishedAt", "addedAt"
   ],
   "properties": {
     "id": { "type": "string", "minLength": 3 },
@@ -24,6 +24,7 @@
     "resolution": { "type": "string", "minLength": 1 },
     "aspectRatio": { "type": "string", "minLength": 1 },
     "publishedAt": { "type": "string", "minLength": 1 },
+    "addedAt": { "type": "string", "format": "date-time" },
     "sourceCaption": { "type": "string", "minLength": 1 },
     "approvedAt": { "type": "string", "minLength": 1 },
     "attributionNote": { "type": "string", "minLength": 1 },

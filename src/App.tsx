@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react'
 import {
   ArrowUpRight,
+  ArrowDownRight,
+  ArrowUpRight as TrendUp,
   Bookmark,
   BookOpen,
   Check,
@@ -14,9 +16,11 @@ import {
   Sparkles,
   Star,
   TriangleAlert,
+  Users,
   X,
 } from 'lucide-react'
 import rawCases from '../data/cases.json'
+import rawCreators from '../data/creators.json'
 import rawProjectStats from '../data/project-stats.json'
 import rawTutorialGuides from '../data/tutorial-guides.json'
 import rawTutorials from '../data/tutorials.json'
@@ -26,6 +30,7 @@ import {
   caseSummary,
   caseTitle,
   copy,
+  creatorPath,
   detectVisitorLanguage,
   durationLabel,
   languagePreferenceKey,
@@ -41,10 +46,23 @@ import {
   type AppPage,
   type Language,
 } from './i18n'
-import type { TutorialCategory, TutorialGuide, TutorialHardwareProfile, TutorialResource, VideoCase } from './types'
+import type { CreatorCatalog, CreatorProfile, CreatorRankKey, TutorialCategory, TutorialGuide, TutorialHardwareProfile, TutorialResource, VideoCase } from './types'
 import { XPostEmbed } from './XPostEmbed'
+import {
+  addedDateHref,
+  addedDatePresets,
+  formatAddedDate,
+  matchesAddedDate,
+  maxAddedAt,
+  parseAddedDatePreset,
+  parseSince,
+  updatesSeenThroughKey,
+  type AddedDatePreset,
+} from './updates'
 
 const cases = rawCases as VideoCase[]
+const creatorCatalog = rawCreators as CreatorCatalog
+const creators = creatorCatalog.creators
 const tutorialResources = rawTutorials as TutorialResource[]
 const tutorialGuides = rawTutorialGuides as TutorialGuide[]
 const projectStats = rawProjectStats
@@ -70,6 +88,7 @@ const allCategories = [...new Set(cases.map((item) => item.category))]
 const allStyles = [...new Set(cases.flatMap((item) => item.styles))]
 const allScenes = [...new Set(cases.flatMap((item) => item.scenes))]
 const favoriteStorageKey = 'minimax-h3-favorite-cases'
+const favoriteCreatorStorageKey = 'minimax-h3-favorite-creators'
 const collectionKeys = ['all', 'featured', 'latest', 'prompt', 'official', 'long', 'favorites'] as const
 type CaseCollection = (typeof collectionKeys)[number]
 const featuredCaseIds = new Set(cases
@@ -77,9 +96,10 @@ const featuredCaseIds = new Set(cases
   .slice(0, 24)
   .map((item) => item.id))
 const latestCaseIds = new Set([...cases]
-  .sort((a, b) => Date.parse(b.approvedAt ?? b.publishedAt) - Date.parse(a.approvedAt ?? a.publishedAt))
+  .sort((a, b) => Date.parse(b.addedAt) - Date.parse(a.addedAt))
   .slice(0, 48)
   .map((item) => item.id))
+const latestAddedAt = maxAddedAt([...cases, ...tutorialGuides])
 const hardwareProfiles: TutorialHardwareProfile[] = [
   'apple-silicon',
   'vram-8',
@@ -88,6 +108,48 @@ const hardwareProfiles: TutorialHardwareProfile[] = [
   'vram-24-plus',
   'cloud-gpu',
 ]
+
+interface UpdateSession {
+  since: string | null
+  through: string
+  caseIds: Set<string>
+  tutorialIds: Set<string>
+  initialPreset: AddedDatePreset
+  storageAvailable: boolean
+}
+
+function createUpdateSession(): UpdateSession {
+  const params = new URLSearchParams(window.location.search)
+  const rawPreset = params.get('added')
+  const requestedPreset = parseAddedDatePreset(rawPreset)
+  const invalidPreset = rawPreset !== null && requestedPreset === 'all' && rawPreset !== 'all'
+  const rawSince = params.get('since')
+  const requestedSince = parseSince(rawSince)
+  const invalidSince = requestedPreset === 'unseen' && rawSince !== null && requestedSince === null
+
+  let storedSince: string | null = null
+  let storageAvailable = true
+  try {
+    storedSince = parseSince(window.localStorage.getItem(updatesSeenThroughKey))
+  } catch {
+    storageAvailable = false
+  }
+
+  const since = requestedPreset === 'unseen' && requestedSince
+    ? requestedSince
+    : storedSince ?? latestAddedAt
+  const caseIds = new Set(cases.filter((item) => matchesAddedDate(item.addedAt, 'unseen', since)).map((item) => item.id))
+  const tutorialIds = new Set(tutorialGuides.filter((item) => matchesAddedDate(item.addedAt, 'unseen', since)).map((item) => item.id))
+  const hasExplicitFilter = ['collection', 'added', 'since', 'prompt'].some((key) => params.has(key))
+  const shouldAutoOpen = storageAvailable && Boolean(storedSince) && !hasExplicitFilter && caseIds.size + tutorialIds.size > 0
+  const initialPreset = invalidPreset || invalidSince
+    ? 'all'
+    : shouldAutoOpen
+      ? 'unseen'
+      : requestedPreset
+
+  return { since, through: latestAddedAt, caseIds, tutorialIds, initialPreset, storageAvailable }
+}
 
 function initialRoute() {
   const route = resolveRoute(window.location.pathname)
@@ -188,15 +250,25 @@ function HostedVideo({ item, language, title }: { item: VideoCase; language: Lan
 
 function App() {
   const [route, setRoute] = useState(initialRoute)
+  const [updateSession] = useState(createUpdateSession)
   const language = route.language
   const t = copy[language]
   const activeTutorial = route.page === 'tutorial-detail'
     ? tutorialGuides.find((item) => item.id === route.tutorialSlug)
     : undefined
+  const activeCreator = route.page === 'creator-detail'
+    ? creators.find((item) => item.slug === route.creatorSlug || item.aliases.includes(route.creatorSlug ?? ''))
+    : undefined
   const pageDescription = activeTutorial
     ? activeTutorial.outcome[language]
+    : activeCreator
+      ? language === 'zh'
+        ? `${activeCreator.displayName} 的 MiniMax H3 案例、完整公开 Prompt 与实战教程。`
+        : `MiniMax H3 cases, complete public Prompts, and field guides by ${activeCreator.displayName}.`
     : route.page === 'tutorials' || route.page === 'tutorial-ecosystem'
     ? t.tutorials.description
+    : route.page === 'creators'
+      ? t.creators.description
     : route.page === 'faq'
       ? t.faq.description
       : t.siteDescription
@@ -204,6 +276,8 @@ function App() {
     ? `${activeTutorial.title[language]} — MiniMax H3 Cases & Guides`
     : route.page === 'home'
     ? t.siteTitle
+    : activeCreator
+      ? `${activeCreator.displayName} — MiniMax H3 ${language === 'zh' ? '创作者案例与教程' : 'Creator Cases & Guides'}`
     : route.page === 'tutorials'
       ? language === 'zh'
         ? 'MiniMax H3 教程与工具：部署、工作流、加速、训练 — MiniMax H3 Cases & Guides'
@@ -212,6 +286,10 @@ function App() {
         ? language === 'zh'
           ? 'MiniMax H3 教程与工具生态 — MiniMax H3 Cases & Guides'
           : 'MiniMax H3 Tutorial and Tool Ecosystem — MiniMax H3 Cases & Guides'
+      : route.page === 'creators'
+        ? language === 'zh'
+          ? 'MiniMax H3 优质创作者动态榜单 — MiniMax H3 Cases & Guides'
+          : 'MiniMax H3 Featured Creator Leaderboard — MiniMax H3 Cases & Guides'
       : language === 'zh'
         ? 'MiniMax H3 视频案例库常见问题 — MiniMax H3 Cases & Guides'
         : 'MiniMax H3 Video Library FAQ — MiniMax H3 Cases & Guides'
@@ -223,10 +301,25 @@ function App() {
   }, [pageDescription, pageTitle, t.htmlLang])
 
   useEffect(() => {
+    if (route.page !== 'creator-detail' || !activeCreator || route.creatorSlug === activeCreator.slug) return
+    const canonical = creatorPath(language, activeCreator.slug)
+    window.history.replaceState(window.history.state, '', `${canonical}${window.location.search}${window.location.hash}`)
+  }, [activeCreator, language, route.creatorSlug, route.page])
+
+  useEffect(() => {
     const handlePopState = () => setRoute(resolveRoute(window.location.pathname))
     window.addEventListener('popstate', handlePopState)
     return () => window.removeEventListener('popstate', handlePopState)
   }, [])
+
+  useEffect(() => {
+    if (!updateSession.storageAvailable || !updateSession.through) return
+    try {
+      window.localStorage.setItem(updatesSeenThroughKey, updateSession.through)
+    } catch {
+      // Date filters remain usable when local update state cannot be persisted.
+    }
+  }, [updateSession])
 
   const switchLanguage = (nextLanguage: Language) => {
     if (nextLanguage === language) return
@@ -239,7 +332,9 @@ function App() {
       ? tutorialPath(nextLanguage, route.tutorialSlug)
       : route.page === 'tutorial-ecosystem'
         ? tutorialEcosystemPath(nextLanguage)
-        : pathFor(nextLanguage, route.page as Exclude<AppPage, 'tutorial-detail' | 'tutorial-ecosystem'>)
+        : route.page === 'creator-detail' && activeCreator
+          ? creatorPath(nextLanguage, activeCreator.slug)
+        : pathFor(nextLanguage, route.page as Exclude<AppPage, 'tutorial-detail' | 'tutorial-ecosystem' | 'creator-detail'>)
     const nextPath = `${nextBasePath}${window.location.search}${window.location.hash}`
     window.history.pushState(window.history.state, '', nextPath)
     setRoute({ ...route, language: nextLanguage })
@@ -249,11 +344,14 @@ function App() {
     <main id="top">
       <div className="grain" aria-hidden="true" />
       <Header language={language} page={route.page} onLanguageChange={switchLanguage} />
-      {route.page === 'home' && <HomePage language={language} />}
-      {route.page === 'tutorials' && <TutorialsPage language={language} />}
+      {route.page === 'home' && <HomePage language={language} updateSession={updateSession} />}
+      {route.page === 'tutorials' && <TutorialsPage language={language} updateSession={updateSession} />}
       {route.page === 'tutorial-ecosystem' && <TutorialEcosystemPage language={language} />}
       {route.page === 'tutorial-detail' && activeTutorial && <TutorialDetailPage language={language} tutorial={activeTutorial} />}
       {route.page === 'tutorial-detail' && !activeTutorial && <TutorialNotFound language={language} />}
+      {route.page === 'creators' && <CreatorsPage language={language} />}
+      {route.page === 'creator-detail' && activeCreator && <CreatorDetailPage language={language} creator={activeCreator} />}
+      {route.page === 'creator-detail' && !activeCreator && <CreatorNotFound language={language} />}
       {route.page === 'faq' && <FaqPage language={language} />}
       <Footer language={language} />
     </main>
@@ -276,6 +374,8 @@ function Header({
     ? tutorialPath(otherLanguage, resolveRoute(window.location.pathname).tutorialSlug || '')
     : page === 'tutorial-ecosystem'
       ? tutorialEcosystemPath(otherLanguage)
+    : page === 'creator-detail'
+      ? creatorPath(otherLanguage, resolveRoute(window.location.pathname).creatorSlug || '')
       : pathFor(otherLanguage, page)
 
   return (
@@ -288,6 +388,7 @@ function Header({
         <nav aria-label={language === 'zh' ? '主导航' : 'Primary navigation'}>
           <a href={pathFor(language, 'home')} aria-current={page === 'home' ? 'page' : undefined}>{t.nav.cases}</a>
           <a href={pathFor(language, 'tutorials')} aria-current={page === 'tutorials' || page === 'tutorial-detail' || page === 'tutorial-ecosystem' ? 'page' : undefined}>{t.nav.tutorials}</a>
+          <a href={pathFor(language, 'creators')} aria-current={page === 'creators' || page === 'creator-detail' ? 'page' : undefined}>{t.nav.creators}</a>
           <a href={pathFor(language, 'faq')} aria-current={page === 'faq' ? 'page' : undefined}>{t.nav.faq}</a>
         </nav>
         <div className="header-actions">
@@ -424,7 +525,68 @@ function IntroSplash({ language }: { language: Language }) {
   )
 }
 
-function HomePage({ language }: { language: Language }) {
+function AddedDateFilter({
+  language,
+  value,
+  onChange,
+  unseenCount,
+}: {
+  language: Language
+  value: AddedDatePreset
+  onChange: (value: AddedDatePreset) => void
+  unseenCount: number
+}) {
+  const t = copy[language].catalog
+  return (
+    <div className="added-date-filter" role="group" aria-label={t.addedDateFilterLabel}>
+      <span><Clock3 size={13} aria-hidden="true" /> {t.addedDateFilterLabel}</span>
+      <div>
+        {addedDatePresets.map((preset) => (
+          <button
+            type="button"
+            key={preset}
+            className={value === preset ? 'active' : ''}
+            aria-pressed={value === preset}
+            onClick={() => onChange(preset)}
+          >
+            {t.addedDatePresets[preset]}
+            {preset === 'unseen' ? <small>{unseenCount}</small> : null}
+          </button>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function UpdateSummary({ language, updateSession }: { language: Language; updateSession: UpdateSession }) {
+  const t = copy[language].catalog
+  const caseCount = updateSession.caseIds.size
+  const tutorialCount = updateSession.tutorialIds.size
+  const hasUpdates = caseCount + tutorialCount > 0
+  const tutorialHref = addedDateHref(pathFor(language, 'tutorials'), 'unseen', updateSession.since)
+
+  return (
+    <section className={`update-summary${hasUpdates ? ' has-updates' : ''}`} aria-live="polite">
+      <div className="update-summary-index">
+        <span>{t.updateSummaryIndex}</span>
+        <strong>{hasUpdates ? t.updateSummaryStatus : t.upToDateStatus}</strong>
+      </div>
+      <div className="update-summary-copy">
+        <h2>{hasUpdates ? t.updateSummaryTitle(caseCount, tutorialCount) : t.upToDateTitle}</h2>
+        <p>{hasUpdates ? t.updateSummaryDescription : t.upToDateDescription}</p>
+      </div>
+      <div className="update-summary-meta">
+        <span>{t.lastAddedLabel}</span>
+        <time dateTime={updateSession.through}>{formatAddedDate(updateSession.through, language)}</time>
+        {tutorialCount > 0 ? (
+          <a href={tutorialHref}>{t.viewTutorialUpdates(tutorialCount)} <ArrowUpRight size={14} /></a>
+        ) : null}
+      </div>
+    </section>
+  )
+}
+
+function HomePage({ language, updateSession }: { language: Language; updateSession: UpdateSession }) {
   const t = copy[language]
   const [activeDuration, setActiveDuration] = useState<DurationRange>('ALL')
   const [promptOnly, setPromptOnly] = useState(() => new URLSearchParams(window.location.search).get('prompt') === '1')
@@ -432,6 +594,7 @@ function HomePage({ language }: { language: Language }) {
     const requested = new URLSearchParams(window.location.search).get('collection')
     return collectionKeys.includes(requested as CaseCollection) ? requested as CaseCollection : 'all'
   })
+  const [activeAddedDate, setActiveAddedDate] = useState<AddedDatePreset>(updateSession.initialPreset)
   const [favorites, setFavorites] = useState<Set<string>>(() => {
     try {
       const saved = JSON.parse(window.localStorage.getItem(favoriteStorageKey) || '[]')
@@ -452,8 +615,12 @@ function HomePage({ language }: { language: Language }) {
     else url.searchParams.delete('prompt')
     if (activeCollection !== 'all') url.searchParams.set('collection', activeCollection)
     else url.searchParams.delete('collection')
+    if (activeAddedDate !== 'all') url.searchParams.set('added', activeAddedDate)
+    else url.searchParams.delete('added')
+    if (activeAddedDate === 'unseen' && updateSession.since) url.searchParams.set('since', updateSession.since)
+    else url.searchParams.delete('since')
     window.history.replaceState(window.history.state, '', `${url.pathname}${url.search}${url.hash}`)
-  }, [activeCollection, promptOnly])
+  }, [activeAddedDate, activeCollection, promptOnly, updateSession.since])
 
   const toggleFavorite = (id: string) => {
     setFavorites((current) => {
@@ -482,6 +649,7 @@ function HomePage({ language }: { language: Language }) {
       const matchesScene = activeScene === 'ALL' || item.scenes.includes(activeScene)
       const prompt = casePrompt(item, language)
       const matchesPrompt = !promptOnly || (typeof prompt === 'string' && prompt.trim().length > 0)
+      const matchesAdded = matchesAddedDate(item.addedAt, activeAddedDate, updateSession.since)
       const matchesCollection = activeCollection === 'all'
         || (activeCollection === 'featured' && featuredCaseIds.has(item.id))
         || (activeCollection === 'latest' && latestCaseIds.has(item.id))
@@ -492,13 +660,11 @@ function HomePage({ language }: { language: Language }) {
       const haystack = language === 'zh'
         ? [item.title, item.summary, prompt, item.author, item.sourceLabel, ...item.tags, item.category, ...item.styles, ...item.scenes]
         : [item.titleEn, item.summaryEn, prompt, item.author, item.category, ...item.styles, ...item.scenes]
-      return matchesDuration && matchesCategory && matchesStyle && matchesScene && matchesPrompt && matchesCollection
+      return matchesDuration && matchesCategory && matchesStyle && matchesScene && matchesPrompt && matchesCollection && matchesAdded
         && (!needle || haystack.filter(Boolean).join(' ').toLowerCase().includes(needle))
     })
-    return activeCollection === 'latest'
-      ? matching.sort((a, b) => Date.parse(b.approvedAt ?? b.publishedAt) - Date.parse(a.approvedAt ?? a.publishedAt))
-      : matching
-  }, [activeCategory, activeCollection, activeDuration, activeScene, activeStyle, favorites, language, promptOnly, query])
+    return matching.sort((a, b) => Date.parse(b.addedAt) - Date.parse(a.addedAt))
+  }, [activeAddedDate, activeCategory, activeCollection, activeDuration, activeScene, activeStyle, favorites, language, promptOnly, query, updateSession.since])
 
   const advancedCount = [activeCategory, activeStyle, activeScene].filter((value) => value !== 'ALL').length
 
@@ -529,6 +695,15 @@ function HomePage({ language }: { language: Language }) {
             </label>
           </div>
         </div>
+
+        <UpdateSummary language={language} updateSession={updateSession} />
+
+        <AddedDateFilter
+          language={language}
+          value={activeAddedDate}
+          onChange={setActiveAddedDate}
+          unseenCount={updateSession.caseIds.size}
+        />
 
         <div className="primary-filter" aria-label={t.catalog.filterLabel}>
           <div className="filter-label"><Clock3 size={15} aria-hidden="true" /> {t.catalog.duration}</div>
@@ -603,6 +778,7 @@ function HomePage({ language }: { language: Language }) {
               onOpen={() => setSelected(item)}
               isFavorite={favorites.has(item.id)}
               onFavorite={() => toggleFavorite(item.id)}
+              isNew={updateSession.caseIds.has(item.id)}
             />
           ))}
         </div>
@@ -655,6 +831,7 @@ function CaseCard({
   onOpen,
   isFavorite,
   onFavorite,
+  isNew,
 }: {
   item: VideoCase
   index: number
@@ -662,6 +839,7 @@ function CaseCard({
   onOpen: () => void
   isFavorite: boolean
   onFavorite: () => void
+  isNew: boolean
 }) {
   const t = copy[language].card
   const title = caseTitle(item, language)
@@ -707,6 +885,10 @@ function CaseCard({
         </span>
       </button>
       <div className="case-meta">
+        <div className="added-at-meta">
+          {isNew ? <strong>{copy[language].catalog.newlyAdded}</strong> : null}
+          <time dateTime={item.addedAt}>{copy[language].catalog.addedOn(formatAddedDate(item.addedAt, language))}</time>
+        </div>
         <div className="mode-line">
           <span>{item.mode} / {taxonomyLabel(item.category, language, 'category')}</span>
           {item.verified ? (
@@ -845,12 +1027,25 @@ function TutorialCardActions({ tutorial, language }: { tutorial: TutorialGuide; 
   )
 }
 
-function TutorialsPage({ language }: { language: Language }) {
+function TutorialsPage({ language, updateSession }: { language: Language; updateSession: UpdateSession }) {
   const t = copy[language].tutorials
   const [activeCategory, setActiveCategory] = useState<(typeof tutorialCategories)[number]>('all')
   const [activeHardware, setActiveHardware] = useState<'all' | TutorialHardwareProfile>('all')
+  const [activeAddedDate, setActiveAddedDate] = useState<AddedDatePreset>(updateSession.initialPreset)
   const [query, setQuery] = useState('')
-  const foundations = tutorialGuides.filter((item) => item.contentType === 'foundation')
+  const foundations = useMemo(() => tutorialGuides
+    .filter((item) => item.contentType === 'foundation' && matchesAddedDate(item.addedAt, activeAddedDate, updateSession.since))
+    .sort((a, b) => Date.parse(b.addedAt) - Date.parse(a.addedAt)),
+  [activeAddedDate, updateSession.since])
+
+  useEffect(() => {
+    const url = new URL(window.location.href)
+    if (activeAddedDate !== 'all') url.searchParams.set('added', activeAddedDate)
+    else url.searchParams.delete('added')
+    if (activeAddedDate === 'unseen' && updateSession.since) url.searchParams.set('since', updateSession.since)
+    else url.searchParams.delete('since')
+    window.history.replaceState(window.history.state, '', `${url.pathname}${url.search}${url.hash}`)
+  }, [activeAddedDate, updateSession.since])
 
   const community = useMemo(() => {
     const needle = query.trim().toLowerCase()
@@ -858,6 +1053,7 @@ function TutorialsPage({ language }: { language: Language }) {
       if (item.contentType !== 'community') return false
       const categoryMatches = activeCategory === 'all' || item.category === activeCategory
       const hardwareMatches = activeHardware === 'all' || item.hardwareProfiles?.includes(activeHardware)
+      const addedMatches = matchesAddedDate(item.addedAt, activeAddedDate, updateSession.since)
       const searchable = [
         item.title[language],
         item.outcome[language],
@@ -869,9 +1065,10 @@ function TutorialsPage({ language }: { language: Language }) {
         item.source.author,
         item.source.handle || '',
       ].join(' ').toLowerCase()
-      return categoryMatches && hardwareMatches && (!needle || searchable.includes(needle))
+      return categoryMatches && hardwareMatches && addedMatches && (!needle || searchable.includes(needle))
     })
-  }, [activeCategory, activeHardware, language, query])
+      .sort((a, b) => Date.parse(b.addedAt) - Date.parse(a.addedAt))
+  }, [activeAddedDate, activeCategory, activeHardware, language, query, updateSession.since])
 
   const hardwareLabels: Record<'all' | TutorialHardwareProfile, string> = language === 'zh' ? {
     all: '全部硬件',
@@ -895,33 +1092,43 @@ function TutorialsPage({ language }: { language: Language }) {
     <div className="standalone-page tutorials-page">
       <section className="tutorial-hub shell" aria-label={copy[language].nav.tutorials}>
         <header className="tutorial-index-header">
-          <p>{t.index} / {foundations.length + tutorialGuides.filter((item) => item.contentType === 'community').length}</p>
+          <p>{t.index} / {tutorialGuides.length}</p>
           <h1>{t.title}</h1>
         </header>
-        <header className="tutorial-list-heading">
-          <h2>{t.foundationTitle}</h2>
-          <span>{String(foundations.length).padStart(2, '0')}</span>
-        </header>
-        <div className="foundation-route-grid">
-          {foundations.map((tutorial, index) => (
-            <article className="foundation-route-card" key={tutorial.id}>
-              <a className="foundation-route-poster" href={tutorialPath(language, tutorial.id)}>
-                <img src={tutorial.posterUrl} alt={tutorial.title[language]} />
-                <span>{String(index + 1).padStart(2, '0')}</span>
-              </a>
-              <div className="foundation-route-copy">
-                <small>{t.routeLabel} / {tutorial.tags[0]}</small>
-                <h3><a href={tutorialPath(language, tutorial.id)}>{tutorial.title[language]}</a></h3>
-                <TutorialCardActions tutorial={tutorial} language={language} />
-              </div>
-            </article>
-          ))}
-        </div>
+        {foundations.length > 0 ? (
+          <>
+            <header className="tutorial-list-heading">
+              <h2>{t.foundationTitle}</h2>
+              <span>{String(foundations.length).padStart(2, '0')}</span>
+            </header>
+            <div className="foundation-route-grid">
+              {foundations.map((tutorial, index) => (
+                <article className="foundation-route-card" key={tutorial.id}>
+                  <a className="foundation-route-poster" href={tutorialPath(language, tutorial.id)}>
+                    <img src={tutorial.posterUrl} alt={tutorial.title[language]} />
+                    <span>{String(index + 1).padStart(2, '0')}</span>
+                  </a>
+                  <div className="foundation-route-copy">
+                    <div className="added-at-meta">
+                      {updateSession.tutorialIds.has(tutorial.id) ? <strong>{copy[language].catalog.newlyAdded}</strong> : null}
+                      <time dateTime={tutorial.addedAt}>{copy[language].catalog.addedOn(formatAddedDate(tutorial.addedAt, language))}</time>
+                    </div>
+                    <small>{t.routeLabel} / {tutorial.tags[0]}</small>
+                    <h3><a href={tutorialPath(language, tutorial.id)}>{tutorial.title[language]}</a></h3>
+                    <TutorialCardActions tutorial={tutorial} language={language} />
+                  </div>
+                </article>
+              ))}
+            </div>
+          </>
+        ) : null}
 
-        <header className="tutorial-list-heading is-community">
-          <h2>{t.communityTitle}</h2>
-          <span>{String(tutorialGuides.filter((item) => item.contentType === 'community').length).padStart(2, '0')}</span>
-        </header>
+        {community.length > 0 ? (
+          <header className="tutorial-list-heading is-community">
+            <h2>{t.communityTitle}</h2>
+            <span>{String(community.length).padStart(2, '0')}</span>
+          </header>
+        ) : null}
         <div className="tutorial-pathways">
           <div>
             <small>{t.learnByGoal}</small>
@@ -953,6 +1160,12 @@ function TutorialsPage({ language }: { language: Language }) {
           </div>
           <a href={tutorialEcosystemPath(language)}><BookOpen size={17} /> <span><strong>{t.ecosystemTitle}</strong><small>{t.ecosystemCta}</small></span><ChevronRight size={18} /></a>
         </div>
+        <AddedDateFilter
+          language={language}
+          value={activeAddedDate}
+          onChange={setActiveAddedDate}
+          unseenCount={updateSession.tutorialIds.size}
+        />
         <div className="tutorial-controls">
           <label className="tutorial-search">
             <Search size={16} aria-hidden="true" />
@@ -960,7 +1173,7 @@ function TutorialsPage({ language }: { language: Language }) {
             <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={t.searchPlaceholder} />
             {query && <button type="button" onClick={() => setQuery('')} aria-label={t.clearSearch}><X size={14} /></button>}
           </label>
-          <p className="tutorial-active-filter" aria-live="polite">{t.categories[activeCategory]} · {hardwareLabels[activeHardware]}</p>
+          <p className="tutorial-active-filter" aria-live="polite">{t.categories[activeCategory]} · {hardwareLabels[activeHardware]} · {copy[language].catalog.addedDatePresets[activeAddedDate]}</p>
         </div>
 
         {community.length > 0 ? (
@@ -975,6 +1188,10 @@ function TutorialsPage({ language }: { language: Language }) {
                   )}
                 </a>
                 <div className="community-tutorial-copy">
+                  <div className="added-at-meta">
+                    {updateSession.tutorialIds.has(tutorial.id) ? <strong>{copy[language].catalog.newlyAdded}</strong> : null}
+                    <time dateTime={tutorial.addedAt}>{copy[language].catalog.addedOn(formatAddedDate(tutorial.addedAt, language))}</time>
+                  </div>
                   <small>{t.categories[tutorial.category]} / {tutorial.source.handle || tutorial.source.author}</small>
                   <h3><a href={tutorialPath(language, tutorial.id)}>{tutorial.title[language]}</a></h3>
                   <p>{tutorial.outcome[language]}</p>
@@ -983,9 +1200,9 @@ function TutorialsPage({ language }: { language: Language }) {
               </article>
             ))}
           </div>
-        ) : (
+        ) : foundations.length === 0 ? (
           <div className="tutorial-empty"><span>00</span><p>{t.noResults}</p></div>
-        )}
+        ) : null}
       </section>
     </div>
   )
@@ -1154,6 +1371,319 @@ function TutorialNotFound({ language }: { language: Language }) {
       <span>404</span>
       <h1>{language === 'zh' ? '这篇教程不存在。' : 'This tutorial does not exist.'}</h1>
       <a href={pathFor(language, 'tutorials')}>{copy[language].tutorials.back}</a>
+    </div>
+  )
+}
+
+function loadStoredSet(key: string) {
+  try {
+    const saved = JSON.parse(window.localStorage.getItem(key) || '[]')
+    return new Set<string>(Array.isArray(saved) ? saved.filter((id): id is string => typeof id === 'string') : [])
+  } catch {
+    return new Set<string>()
+  }
+}
+
+function saveStoredSet(key: string, value: Set<string>) {
+  try {
+    window.localStorage.setItem(key, JSON.stringify([...value]))
+  } catch {
+    // Keep the current-session state when browser storage is unavailable.
+  }
+}
+
+function creatorPosters(creator: CreatorProfile) {
+  const casePosters = creator.representativeCaseIds
+    .map((id) => cases.find((item) => item.id === id)?.posterUrl)
+    .filter((poster): poster is string => Boolean(poster))
+  const tutorialPosters = creator.tutorialIds
+    .map((id) => tutorialGuides.find((item) => item.id === id)?.posterUrl)
+    .filter((poster): poster is string => Boolean(poster))
+  const posters = [...casePosters, ...tutorialPosters]
+  return posters.length ? posters.slice(0, 3) : ['/posters/x-community.svg']
+}
+
+function rankTrend(creator: CreatorProfile, rankKey: CreatorRankKey, language: Language) {
+  const delta = creator.rankDelta[rankKey]
+  const t = copy[language].creators
+  if (delta === null) return { label: t.rankNew, direction: 'new' }
+  if (delta > 0) return { label: t.rankUp(delta), direction: 'up' }
+  if (delta < 0) return { label: t.rankDown(Math.abs(delta)), direction: 'down' }
+  return { label: t.rankSame, direction: 'same' }
+}
+
+function CreatorMosaic({ creator }: { creator: CreatorProfile }) {
+  const posters = creatorPosters(creator)
+  return (
+    <div className={`creator-mosaic count-${posters.length}`} aria-hidden="true">
+      {posters.map((poster, index) => (
+        <img
+          key={`${poster}:${index}`}
+          src={poster}
+          alt=""
+          loading="lazy"
+          decoding="async"
+          onError={(event) => {
+            event.currentTarget.onerror = null
+            event.currentTarget.src = '/posters/x-community.svg'
+          }}
+        />
+      ))}
+      <span className="creator-mosaic-scan" />
+    </div>
+  )
+}
+
+function CreatorCard({
+  creator,
+  rankKey,
+  language,
+  saved,
+  onToggleSave,
+  compact = false,
+}: {
+  creator: CreatorProfile
+  rankKey: CreatorRankKey
+  language: Language
+  saved: boolean
+  onToggleSave: () => void
+  compact?: boolean
+}) {
+  const t = copy[language].creators
+  const rank = creator.ranks[rankKey] ?? creator.ranks.overall ?? creator.ranks.tutorials
+  const trend = rankTrend(creator, rankKey, language)
+  return (
+    <article className={`creator-card${compact ? ' is-podium' : ''}`}>
+      <a className="creator-card-visual" href={creatorPath(language, creator.slug)} aria-label={`${t.openProfile}: ${creator.displayName}`}>
+        <CreatorMosaic creator={creator} />
+        <strong>{rank ? `#${String(rank).padStart(2, '0')}` : '—'}</strong>
+        <span className={`creator-rank-trend is-${trend.direction}`}>
+          {trend.direction === 'up' ? <TrendUp size={13} /> : trend.direction === 'down' ? <ArrowDownRight size={13} /> : null}
+          {trend.label}
+        </span>
+      </a>
+      <div className="creator-card-copy">
+        <div className="creator-card-identity">
+          <small>@{creator.handle}</small>
+          <button
+            type="button"
+            className={saved ? 'active' : ''}
+            aria-label={saved ? t.unsave : t.save}
+            aria-pressed={saved}
+            title={saved ? t.unsave : t.save}
+            onClick={onToggleSave}
+          >
+            <Bookmark size={15} fill={saved ? 'currentColor' : 'none'} />
+          </button>
+        </div>
+        <h2><a href={creatorPath(language, creator.slug)}>{creator.displayName}</a></h2>
+        <p>{t.reasons[creator.reasons[0] ?? 'recently-active']}</p>
+        <dl>
+          <div><dt>{t.cases}</dt><dd>{creator.caseCount}</dd></div>
+          <div><dt>{t.prompts}</dt><dd>{creator.promptCount}</dd></div>
+          <div><dt>{t.recent}</dt><dd>{creator.recentCaseCount}</dd></div>
+        </dl>
+        <div className="creator-card-actions">
+          <a href={creatorPath(language, creator.slug)}>{t.openProfile} <ChevronRight size={14} /></a>
+          <a href={creator.xUrl} target="_blank" rel="noreferrer"><XMark size={13} /> {t.followOnX}</a>
+        </div>
+      </div>
+    </article>
+  )
+}
+
+function CreatorsPage({ language }: { language: Language }) {
+  const t = copy[language].creators
+  const [view, setView] = useState<'video' | 'tutorial' | 'saved'>('video')
+  const [rankKey, setRankKey] = useState<CreatorRankKey>('overall')
+  const [savedCreators, setSavedCreators] = useState(() => loadStoredSet(favoriteCreatorStorageKey))
+  const videoRankKeys: CreatorRankKey[] = ['overall', 'active', 'cases', 'prompts', 'rising']
+
+  const toggleSaved = (id: string) => {
+    setSavedCreators((current) => {
+      const next = new Set(current)
+      if (next.has(id)) next.delete(id)
+      else next.add(id)
+      saveStoredSet(favoriteCreatorStorageKey, next)
+      return next
+    })
+  }
+
+  const podium = creators
+    .filter((creator) => creator.ranks.overall)
+    .sort((a, b) => (a.ranks.overall ?? 999) - (b.ranks.overall ?? 999))
+    .slice(0, 3)
+  const ranked = useMemo(() => {
+    if (view === 'saved') {
+      return creators
+        .filter((creator) => savedCreators.has(creator.id))
+        .sort((a, b) => (a.ranks.overall ?? a.ranks.tutorials ?? 999) - (b.ranks.overall ?? b.ranks.tutorials ?? 999))
+    }
+    const key: CreatorRankKey = view === 'tutorial' ? 'tutorials' : rankKey
+    return creators
+      .filter((creator) => creator.ranks[key])
+      .sort((a, b) => (a.ranks[key] ?? 999) - (b.ranks[key] ?? 999))
+  }, [rankKey, savedCreators, view])
+  const activeRankKey: CreatorRankKey = view === 'tutorial' ? 'tutorials' : rankKey
+
+  return (
+    <div className="standalone-page creators-page">
+      <section className="creators shell">
+        <header className="creators-hero">
+          <div>
+            <p>{t.index}</p>
+            <h1>{t.title}</h1>
+            <span>{t.description}</span>
+          </div>
+          <dl>
+            <div><dt>{t.videoCreators}</dt><dd>{creatorCatalog.stats.videoCreators}</dd></div>
+            <div><dt>{t.tutorialCreators}</dt><dd>{creatorCatalog.stats.tutorialCreators}</dd></div>
+            <div><dt>{language === 'zh' ? '来源作者' : 'Source authors'}</dt><dd>{creatorCatalog.stats.sourceCreators}</dd></div>
+          </dl>
+        </header>
+
+        <section className="creator-podium" aria-labelledby="creator-podium-title">
+          <header><span>01</span><h2 id="creator-podium-title">{t.podium}</h2><small>{t.methodology}</small></header>
+          <div>{podium.map((creator) => <CreatorCard key={creator.id} creator={creator} rankKey="overall" language={language} saved={savedCreators.has(creator.id)} onToggleSave={() => toggleSaved(creator.id)} compact />)}</div>
+        </section>
+
+        <section className="creator-leaderboard" aria-labelledby="creator-leaderboard-title">
+          <header className="creator-leaderboard-heading">
+            <div><span>02</span><h2 id="creator-leaderboard-title">{t.leaderboard}</h2></div>
+            <div className="creator-view-tabs" role="group" aria-label={t.leaderboard}>
+              <button type="button" className={view === 'video' ? 'active' : ''} aria-pressed={view === 'video'} onClick={() => setView('video')}><Users size={14} /> {t.videoCreators}</button>
+              <button type="button" className={view === 'tutorial' ? 'active' : ''} aria-pressed={view === 'tutorial'} onClick={() => setView('tutorial')}><BookOpen size={14} /> {t.tutorialCreators}</button>
+              <button type="button" className={view === 'saved' ? 'active' : ''} aria-pressed={view === 'saved'} onClick={() => setView('saved')}><Bookmark size={14} /> {t.savedCreators}{savedCreators.size ? <small>{savedCreators.size}</small> : null}</button>
+            </div>
+          </header>
+          {view === 'video' && (
+            <div className="creator-rank-tabs" role="tablist" aria-label={t.leaderboard}>
+              {videoRankKeys.map((key) => <button key={key} type="button" role="tab" aria-selected={rankKey === key} className={rankKey === key ? 'active' : ''} onClick={() => setRankKey(key)}>{t.rankTabs[key]}</button>)}
+            </div>
+          )}
+          <div className="creator-grid">
+            {ranked.map((creator) => <CreatorCard key={creator.id} creator={creator} rankKey={activeRankKey} language={language} saved={savedCreators.has(creator.id)} onToggleSave={() => toggleSaved(creator.id)} />)}
+          </div>
+          {ranked.length === 0 && <div className="creator-empty"><Bookmark size={22} /><p>{t.noSaved}</p></div>}
+        </section>
+      </section>
+    </div>
+  )
+}
+
+function CreatorDetailPage({ language, creator }: { language: Language; creator: CreatorProfile }) {
+  const t = copy[language].creators
+  const [savedCreators, setSavedCreators] = useState(() => loadStoredSet(favoriteCreatorStorageKey))
+  const [favoriteCases, setFavoriteCases] = useState(() => loadStoredSet(favoriteStorageKey))
+  const [promptOnly, setPromptOnly] = useState(() => new URLSearchParams(window.location.search).get('prompt') === '1')
+  const [activeDuration, setActiveDuration] = useState<DurationRange>('ALL')
+  const [activeCategory, setActiveCategory] = useState('ALL')
+  const [selected, setSelected] = useState<VideoCase | null>(null)
+  const creatorCases = creator.caseIds.map((id) => cases.find((item) => item.id === id)).filter((item): item is VideoCase => Boolean(item))
+  const creatorCategories = [...new Set(creatorCases.map((item) => item.category))]
+  const creatorTutorials = creator.tutorialIds.map((id) => tutorialGuides.find((item) => item.id === id)).filter((item): item is TutorialGuide => Boolean(item))
+  const saved = savedCreators.has(creator.id)
+
+  useEffect(() => {
+    const url = new URL(window.location.href)
+    if (promptOnly) url.searchParams.set('prompt', '1')
+    else url.searchParams.delete('prompt')
+    window.history.replaceState(window.history.state, '', `${url.pathname}${url.search}${url.hash}`)
+  }, [promptOnly])
+
+  const filteredCases = creatorCases.filter((item) => {
+    const durationMatches = activeDuration === 'ALL'
+      || (activeDuration === 'UP_TO_5' && item.duration <= 5)
+      || (activeDuration === 'SIX_TO_10' && item.duration > 5 && item.duration <= 10)
+      || (activeDuration === 'ELEVEN_TO_15' && item.duration > 10 && item.duration <= 15)
+      || (activeDuration === 'OVER_15' && item.duration > 15)
+    const categoryMatches = activeCategory === 'ALL' || item.category === activeCategory
+    return durationMatches && categoryMatches && (!promptOnly || (item.promptProvenance !== 'not-published' && Boolean(item.prompt?.trim())))
+  })
+
+  const toggleCreator = () => {
+    setSavedCreators((current) => {
+      const next = new Set(current)
+      if (next.has(creator.id)) next.delete(creator.id)
+      else next.add(creator.id)
+      saveStoredSet(favoriteCreatorStorageKey, next)
+      return next
+    })
+  }
+  const toggleCase = (id: string) => {
+    setFavoriteCases((current) => {
+      const next = new Set(current)
+      if (next.has(id)) next.delete(id)
+      else next.add(id)
+      saveStoredSet(favoriteStorageKey, next)
+      return next
+    })
+  }
+  const primaryRank = creator.ranks.overall ?? creator.ranks.tutorials
+
+  return (
+    <div className="standalone-page creator-detail-page">
+      <article className="creator-profile shell">
+        <a className="tutorial-back" href={pathFor(language, 'creators')}><ChevronRight size={14} /> {t.back}</a>
+        <header className="creator-profile-hero">
+          <div className="creator-profile-visual"><CreatorMosaic creator={creator} /><strong>{primaryRank ? `#${String(primaryRank).padStart(2, '0')}` : '—'}</strong></div>
+          <div className="creator-profile-copy">
+            <p>@{creator.handle}</p>
+            <h1>{creator.displayName}</h1>
+            <div className="creator-badges">{creator.badges.map((badge) => <span key={badge}>{t.badges[badge]}</span>)}</div>
+            <div className="creator-profile-actions">
+              <button type="button" className={saved ? 'active' : ''} onClick={toggleCreator} aria-pressed={saved}><Bookmark size={15} fill={saved ? 'currentColor' : 'none'} /> {saved ? t.unsave : t.save}</button>
+              <a href={creator.xUrl} target="_blank" rel="noreferrer"><XMark size={14} /> {t.followOnX}</a>
+            </div>
+          </div>
+          <dl className="creator-profile-stats">
+            <div><dt>{t.cases}</dt><dd>{creator.caseCount}</dd></div>
+            <div><dt>{t.prompts}</dt><dd>{creator.promptCount}</dd></div>
+            <div><dt>{t.tutorials}</dt><dd>{creator.tutorialCount}</dd></div>
+            <div><dt>{t.activeWeeks}</dt><dd>{creator.activeWeeks}</dd></div>
+          </dl>
+        </header>
+
+        {creatorCases.length > 0 && (
+          <section className="creator-work" aria-labelledby="creator-work-title">
+            <header>
+              <div><span>01</span><h2 id="creator-work-title">{t.work}</h2></div>
+              <div className="creator-work-filters">
+                <label>{t.duration}<select value={activeDuration} onChange={(event) => setActiveDuration(event.target.value as DurationRange)}>{durationRanges.map((range) => <option value={range} key={range}>{durationLabel(range, language)}</option>)}</select></label>
+                <label>{copy[language].catalog.category}<select value={activeCategory} onChange={(event) => setActiveCategory(event.target.value)}>{['ALL', ...creatorCategories].map((category) => <option value={category} key={category}>{taxonomyLabel(category, language, 'category')}</option>)}</select></label>
+                <button type="button" role="switch" aria-checked={promptOnly} className={promptOnly ? 'active' : ''} onClick={() => setPromptOnly((value) => !value)}><Sparkles size={14} /> {t.promptOnly}<i><b /></i></button>
+              </div>
+            </header>
+            <div className="case-grid">
+              {filteredCases.map((item, index) => <CaseCard key={item.id} item={item} index={index} language={language} onOpen={() => setSelected(item)} isFavorite={favoriteCases.has(item.id)} onFavorite={() => toggleCase(item.id)} isNew={false} />)}
+            </div>
+            {filteredCases.length === 0 && <div className="creator-empty"><p>{t.noCases}</p></div>}
+          </section>
+        )}
+
+        {creatorTutorials.length > 0 && (
+          <section className="creator-guides" aria-labelledby="creator-guides-title">
+            <header><span>02</span><h2 id="creator-guides-title">{t.guides}</h2></header>
+            <div>{creatorTutorials.map((tutorial) => <a key={tutorial.id} href={tutorialPath(language, tutorial.id)}><img src={tutorial.posterUrl} alt="" /><span><small>{copy[language].tutorials.categories[tutorial.category]}</small><strong>{tutorial.title[language]}</strong></span><ChevronRight size={17} /></a>)}</div>
+          </section>
+        )}
+
+        <footer className="creator-profile-correction">
+          <p>{t.correction}</p>
+          <a href={`https://github.com/SkyNotSilent/awesome-minimax-h3-cases/issues/new?template=creator-correction.yml&title=${encodeURIComponent(`[Creator profile] @${creator.handle}`)}`} target="_blank" rel="noreferrer">{t.correctionCta} <ArrowUpRight size={14} /></a>
+        </footer>
+      </article>
+      {selected && <CaseDialog item={selected} language={language} onClose={() => setSelected(null)} />}
+    </div>
+  )
+}
+
+function CreatorNotFound({ language }: { language: Language }) {
+  return (
+    <div className="standalone-page tutorial-not-found shell">
+      <span>404</span>
+      <h1>{language === 'zh' ? '这位创作者暂未进入榜单。' : 'This creator is not currently ranked.'}</h1>
+      <a href={pathFor(language, 'creators')}>{copy[language].creators.back}</a>
     </div>
   )
 }

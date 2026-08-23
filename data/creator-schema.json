@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://h3-field-notes-production.up.railway.app/schemas/creator-profile.json",
+  "title": "MiniMax H3 Creator Profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "slug", "handle", "aliases", "displayName", "xUrl", "roles", "caseIds", "promptCaseIds", "tutorialIds", "representativeCaseIds", "latestCaseIds", "caseCount", "promptCount", "promptRate", "tutorialCount", "recentCaseCount", "activeWeeks", "firstAddedAt", "lastAddedAt", "engagementPercentile", "badges", "reasons", "ranks", "rankDelta"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "slug": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "handle": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "aliases": { "type": "array", "items": { "type": "string", "pattern": "^[a-z0-9_]+$" }, "uniqueItems": true },
+    "displayName": { "type": "string", "minLength": 1 },
+    "xUrl": { "type": "string", "pattern": "^https://x\\.com/" },
+    "roles": { "type": "array", "items": { "enum": ["video", "tutorial"] }, "minItems": 1, "uniqueItems": true },
+    "caseIds": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "promptCaseIds": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "tutorialIds": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "representativeCaseIds": { "type": "array", "items": { "type": "string" }, "maxItems": 3, "uniqueItems": true },
+    "latestCaseIds": { "type": "array", "items": { "type": "string" }, "maxItems": 6, "uniqueItems": true },
+    "caseCount": { "type": "integer", "minimum": 0 },
+    "promptCount": { "type": "integer", "minimum": 0 },
+    "promptRate": { "type": "number", "minimum": 0, "maximum": 1 },
+    "tutorialCount": { "type": "integer", "minimum": 0 },
+    "recentCaseCount": { "type": "integer", "minimum": 0 },
+    "activeWeeks": { "type": "integer", "minimum": 0 },
+    "firstAddedAt": { "type": ["string", "null"] },
+    "lastAddedAt": { "type": ["string", "null"] },
+    "engagementPercentile": { "type": "number", "minimum": 0, "maximum": 1 },
+    "badges": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "reasons": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "ranks": { "$ref": "#/$defs/ranks" },
+    "rankDelta": { "$ref": "#/$defs/ranks" }
+  },
+  "$defs": {
+    "ranks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["overall", "active", "cases", "prompts", "rising", "tutorials"],
+      "properties": {
+        "overall": { "type": ["integer", "null"] },
+        "active": { "type": ["integer", "null"] },
+        "cases": { "type": ["integer", "null"] },
+        "prompts": { "type": ["integer", "null"] },
+        "rising": { "type": ["integer", "null"] },
+        "tutorials": { "type": ["integer", "null"] }
+      }
+    }
+  }
+}

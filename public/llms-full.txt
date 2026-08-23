@@ -1,6 +1,2141 @@
 # MiniMax H3 Cases & Guides — Complete Case and Tutorial Index
 
-Generated from data/cases.json and data/tutorial-guides.json. Total: 997 cases and 24 tutorials. Complete verbatim public Prompts: 317.
+Generated from data/cases.json, data/tutorial-guides.json, and data/creators.json. Total: 997 cases, 24 tutorials, and 213 featured creators. Complete verbatim public Prompts: 317.
+
+## Creator discovery
+
+The creator leaderboard is derived only from source-attributed content already published in this library. It is not an official X influence ranking. Internal monitoring scores, rejected posts, and review cadence are never public.
+
+### @servasyy_ai
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/servasyy_ai/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/servasyy_ai/
+- X profile: https://x.com/servasyy_ai
+- Roles: tutorial
+- Published cases: 0
+- Complete public Prompts: 0
+- Source-checked tutorials: 4
+
+### @modelscope2022
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/modelscope2022/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/modelscope2022/
+- X profile: https://x.com/modelscope2022
+- Roles: tutorial
+- Published cases: 0
+- Complete public Prompts: 0
+- Source-checked tutorials: 1
+
+### @eternityspring
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/eternityspring/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/eternityspring/
+- X profile: https://x.com/eternityspring
+- Roles: tutorial
+- Published cases: 0
+- Complete public Prompts: 0
+- Source-checked tutorials: 1
+
+### @magnific
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/magnific/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/magnific/
+- X profile: https://x.com/magnific
+- Roles: tutorial
+- Published cases: 1
+- Complete public Prompts: 1
+- Source-checked tutorials: 2
+
+### @cla_kuro37459
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/cla_kuro37459/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/cla_kuro37459/
+- X profile: https://x.com/cla_kuro37459
+- Roles: tutorial
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 1
+
+### @blizaine
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/blizaine/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/blizaine/
+- X profile: https://x.com/blizaine
+- Roles: tutorial
+- Published cases: 0
+- Complete public Prompts: 0
+- Source-checked tutorials: 1
+
+### @aipixlab
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/aipixlab/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/aipixlab/
+- X profile: https://x.com/aipixlab
+- Roles: tutorial
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 1
+
+### @manuagi01
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/manuagi01/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/manuagi01/
+- X profile: https://x.com/manuagi01
+- Roles: video
+- Published cases: 22
+- Complete public Prompts: 14
+- Source-checked tutorials: 0
+
+### @strength04_x
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/strength04_x/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/strength04_x/
+- X profile: https://x.com/strength04_x
+- Roles: video
+- Published cases: 19
+- Complete public Prompts: 12
+- Source-checked tutorials: 0
+
+### @cocktailpeanut
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/cocktailpeanut/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/cocktailpeanut/
+- X profile: https://x.com/cocktailpeanut
+- Roles: video, tutorial
+- Published cases: 13
+- Complete public Prompts: 7
+- Source-checked tutorials: 2
+
+### @haruuraeadss
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/haruuraeadss/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/haruuraeadss/
+- X profile: https://x.com/haruuraeadss
+- Roles: video
+- Published cases: 9
+- Complete public Prompts: 8
+- Source-checked tutorials: 0
+
+### @aimikoda
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/aimikoda/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/aimikoda/
+- X profile: https://x.com/aimikoda
+- Roles: video
+- Published cases: 8
+- Complete public Prompts: 6
+- Source-checked tutorials: 0
+
+### @ludoviccreator
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/ludoviccreator/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/ludoviccreator/
+- X profile: https://x.com/ludoviccreator
+- Roles: video
+- Published cases: 7
+- Complete public Prompts: 6
+- Source-checked tutorials: 0
+
+### @tanabe_fragm
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/tanabe_fragm/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/tanabe_fragm/
+- X profile: https://x.com/tanabe_fragm
+- Roles: video
+- Published cases: 8
+- Complete public Prompts: 5
+- Source-checked tutorials: 0
+
+### @cia0_exe
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/cia0_exe/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/cia0_exe/
+- X profile: https://x.com/cia0_exe
+- Roles: video
+- Published cases: 6
+- Complete public Prompts: 5
+- Source-checked tutorials: 0
+
+### @hbcoop_
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/hbcoop_/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/hbcoop_/
+- X profile: https://x.com/hbcoop_
+- Roles: video
+- Published cases: 7
+- Complete public Prompts: 3
+- Source-checked tutorials: 0
+
+### @opener_ai
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/opener_ai/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/opener_ai/
+- X profile: https://x.com/opener_ai
+- Roles: video
+- Published cases: 6
+- Complete public Prompts: 6
+- Source-checked tutorials: 0
+
+### @aiwithaly
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/aiwithaly/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/aiwithaly/
+- X profile: https://x.com/aiwithaly
+- Roles: video
+- Published cases: 5
+- Complete public Prompts: 3
+- Source-checked tutorials: 0
+
+### @dheepanratnam
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/dheepanratnam/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/dheepanratnam/
+- X profile: https://x.com/dheepanratnam
+- Roles: video
+- Published cases: 6
+- Complete public Prompts: 4
+- Source-checked tutorials: 0
+
+### @diplomeme
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/diplomeme/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/diplomeme/
+- X profile: https://x.com/diplomeme
+- Roles: video
+- Published cases: 4
+- Complete public Prompts: 4
+- Source-checked tutorials: 0
+
+### @itxabdullaa
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/itxabdullaa/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/itxabdullaa/
+- X profile: https://x.com/itxabdullaa
+- Roles: video
+- Published cases: 4
+- Complete public Prompts: 4
+- Source-checked tutorials: 0
+
+### @doctorwasif
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/doctorwasif/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/doctorwasif/
+- X profile: https://x.com/doctorwasif
+- Roles: video
+- Published cases: 4
+- Complete public Prompts: 4
+- Source-checked tutorials: 0
+
+### @su_nagomi
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/su_nagomi/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/su_nagomi/
+- X profile: https://x.com/su_nagomi
+- Roles: video
+- Published cases: 6
+- Complete public Prompts: 3
+- Source-checked tutorials: 0
+
+### @drjoetw
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/drjoetw/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/drjoetw/
+- X profile: https://x.com/drjoetw
+- Roles: video
+- Published cases: 5
+- Complete public Prompts: 5
+- Source-checked tutorials: 0
+
+### @core_tan
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/core_tan/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/core_tan/
+- X profile: https://x.com/core_tan
+- Roles: video, tutorial
+- Published cases: 9
+- Complete public Prompts: 1
+- Source-checked tutorials: 2
+
+### @endfolding79421
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/endfolding79421/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/endfolding79421/
+- X profile: https://x.com/endfolding79421
+- Roles: video
+- Published cases: 5
+- Complete public Prompts: 4
+- Source-checked tutorials: 0
+
+### @umesh_ai
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/umesh_ai/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/umesh_ai/
+- X profile: https://x.com/umesh_ai
+- Roles: video
+- Published cases: 3
+- Complete public Prompts: 3
+- Source-checked tutorials: 0
+
+### @nsitnovsitnov
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/nsitnovsitnov/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/nsitnovsitnov/
+- X profile: https://x.com/nsitnovsitnov
+- Roles: video
+- Published cases: 10
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @abulu8
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/abulu8/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/abulu8/
+- X profile: https://x.com/abulu8
+- Roles: video
+- Published cases: 4
+- Complete public Prompts: 4
+- Source-checked tutorials: 0
+
+### @noorlewisx
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/noorlewisx/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/noorlewisx/
+- X profile: https://x.com/noorlewisx
+- Roles: video
+- Published cases: 3
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @kiber_alla
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/kiber_alla/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/kiber_alla/
+- X profile: https://x.com/kiber_alla
+- Roles: video
+- Published cases: 3
+- Complete public Prompts: 3
+- Source-checked tutorials: 0
+
+### @charaspowerai
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/charaspowerai/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/charaspowerai/
+- X profile: https://x.com/charaspowerai
+- Roles: video
+- Published cases: 4
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @stelsray2
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/stelsray2/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/stelsray2/
+- X profile: https://x.com/stelsray2
+- Roles: video
+- Published cases: 10
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @ou_zhen599
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/ou_zhen599/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/ou_zhen599/
+- X profile: https://x.com/ou_zhen599
+- Roles: video
+- Published cases: 4
+- Complete public Prompts: 3
+- Source-checked tutorials: 0
+
+### @sebatheepan
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/sebatheepan/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/sebatheepan/
+- X profile: https://x.com/sebatheepan
+- Roles: video
+- Published cases: 3
+- Complete public Prompts: 3
+- Source-checked tutorials: 0
+
+### @underwoodxie96
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/underwoodxie96/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/underwoodxie96/
+- X profile: https://x.com/underwoodxie96
+- Roles: video
+- Published cases: 3
+- Complete public Prompts: 3
+- Source-checked tutorials: 0
+
+### @ponzponz15
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/ponzponz15/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/ponzponz15/
+- X profile: https://x.com/ponzponz15
+- Roles: video
+- Published cases: 4
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @xianshi666123
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/xianshi666123/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/xianshi666123/
+- X profile: https://x.com/xianshi666123
+- Roles: video
+- Published cases: 4
+- Complete public Prompts: 4
+- Source-checked tutorials: 0
+
+### @aiehon_aya
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/aiehon_aya/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/aiehon_aya/
+- X profile: https://x.com/aiehon_aya
+- Roles: video
+- Published cases: 3
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @cardoso
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/cardoso/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/cardoso/
+- X profile: https://x.com/cardoso
+- Roles: video
+- Published cases: 4
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @ayzalnooor24521
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/ayzalnooor24521/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/ayzalnooor24521/
+- X profile: https://x.com/ayzalnooor24521
+- Roles: video
+- Published cases: 3
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @ruzainameer
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/ruzainameer/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/ruzainameer/
+- X profile: https://x.com/ruzainameer
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @aiwarper
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/aiwarper/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/aiwarper/
+- X profile: https://x.com/aiwarper
+- Roles: video
+- Published cases: 3
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @nawalsehar
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/nawalsehar/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/nawalsehar/
+- X profile: https://x.com/nawalsehar
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @alone1moon
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/alone1moon/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/alone1moon/
+- X profile: https://x.com/alone1moon
+- Roles: video
+- Published cases: 6
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @mireilledartois
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/mireilledartois/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/mireilledartois/
+- X profile: https://x.com/mireilledartois
+- Roles: video
+- Published cases: 3
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @aion_2077
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/aion_2077/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/aion_2077/
+- X profile: https://x.com/aion_2077
+- Roles: video
+- Published cases: 5
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @noorwithwifi
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/noorwithwifi/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/noorwithwifi/
+- X profile: https://x.com/noorwithwifi
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @sep_is_heim
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/sep_is_heim/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/sep_is_heim/
+- X profile: https://x.com/sep_is_heim
+- Roles: video
+- Published cases: 8
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @lianaalane
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/lianaalane/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/lianaalane/
+- X profile: https://x.com/lianaalane
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @itoktw
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/itoktw/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/itoktw/
+- X profile: https://x.com/itoktw
+- Roles: video
+- Published cases: 4
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @sadlemonjuice
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/sadlemonjuice/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/sadlemonjuice/
+- X profile: https://x.com/sadlemonjuice
+- Roles: video
+- Published cases: 5
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @arminn_ai
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/arminn_ai/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/arminn_ai/
+- X profile: https://x.com/arminn_ai
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @aiwithaliya
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/aiwithaliya/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/aiwithaliya/
+- X profile: https://x.com/aiwithaliya
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @oggii_0
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/oggii_0/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/oggii_0/
+- X profile: https://x.com/oggii_0
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @maercihh
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/maercihh/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/maercihh/
+- X profile: https://x.com/maercihh
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @techiebysa
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/techiebysa/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/techiebysa/
+- X profile: https://x.com/techiebysa
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @monetizationdon
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/monetizationdon/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/monetizationdon/
+- X profile: https://x.com/monetizationdon
+- Roles: video
+- Published cases: 3
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @glitterpixely
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/glitterpixely/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/glitterpixely/
+- X profile: https://x.com/glitterpixely
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @mi7_crypto
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/mi7_crypto/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/mi7_crypto/
+- X profile: https://x.com/mi7_crypto
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @joshesye
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/joshesye/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/joshesye/
+- X profile: https://x.com/joshesye
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @javawock7618
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/javawock7618/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/javawock7618/
+- X profile: https://x.com/javawock7618
+- Roles: video
+- Published cases: 3
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @stellakjbk
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/stellakjbk/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/stellakjbk/
+- X profile: https://x.com/stellakjbk
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @aiwithjessica
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/aiwithjessica/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/aiwithjessica/
+- X profile: https://x.com/aiwithjessica
+- Roles: video
+- Published cases: 3
+- Complete public Prompts: 3
+- Source-checked tutorials: 0
+
+### @photogenicweeke
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/photogenicweeke/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/photogenicweeke/
+- X profile: https://x.com/photogenicweeke
+- Roles: video
+- Published cases: 4
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @futurevibesai
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/futurevibesai/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/futurevibesai/
+- X profile: https://x.com/futurevibesai
+- Roles: video
+- Published cases: 4
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @aisearchio
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/aisearchio/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/aisearchio/
+- X profile: https://x.com/aisearchio
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @haru_maki_ch
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/haru_maki_ch/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/haru_maki_ch/
+- X profile: https://x.com/haru_maki_ch
+- Roles: video
+- Published cases: 5
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @liketoasters
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/liketoasters/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/liketoasters/
+- X profile: https://x.com/liketoasters
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @madmax_series
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/madmax_series/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/madmax_series/
+- X profile: https://x.com/madmax_series
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @riddi0908
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/riddi0908/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/riddi0908/
+- X profile: https://x.com/riddi0908
+- Roles: video
+- Published cases: 3
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @tebasaki3d
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/tebasaki3d/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/tebasaki3d/
+- X profile: https://x.com/tebasaki3d
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @brjen
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/brjen/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/brjen/
+- X profile: https://x.com/brjen
+- Roles: video
+- Published cases: 5
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @luna_r4ze
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/luna_r4ze/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/luna_r4ze/
+- X profile: https://x.com/luna_r4ze
+- Roles: video
+- Published cases: 5
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @pixelaigc
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/pixelaigc/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/pixelaigc/
+- X profile: https://x.com/pixelaigc
+- Roles: video, tutorial
+- Published cases: 2
+- Complete public Prompts: 1
+- Source-checked tutorials: 1
+
+### @toyxyz3
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/toyxyz3/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/toyxyz3/
+- X profile: https://x.com/toyxyz3
+- Roles: video
+- Published cases: 3
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @adithatipalli
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/adithatipalli/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/adithatipalli/
+- X profile: https://x.com/adithatipalli
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @junwatu
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/junwatu/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/junwatu/
+- X profile: https://x.com/junwatu
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @unrealrafael
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/unrealrafael/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/unrealrafael/
+- X profile: https://x.com/unrealrafael
+- Roles: video
+- Published cases: 3
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @shikoba_86
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/shikoba_86/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/shikoba_86/
+- X profile: https://x.com/shikoba_86
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @allaaisling
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/allaaisling/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/allaaisling/
+- X profile: https://x.com/allaaisling
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @suzuna_ai_girls
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/suzuna_ai_girls/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/suzuna_ai_girls/
+- X profile: https://x.com/suzuna_ai_girls
+- Roles: video
+- Published cases: 3
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @ivanfioravanti
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/ivanfioravanti/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/ivanfioravanti/
+- X profile: https://x.com/ivanfioravanti
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @c12592947592
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/c12592947592/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/c12592947592/
+- X profile: https://x.com/c12592947592
+- Roles: video
+- Published cases: 3
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @0xmomonifty
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/0xmomonifty/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/0xmomonifty/
+- X profile: https://x.com/0xmomonifty
+- Roles: video, tutorial
+- Published cases: 2
+- Complete public Prompts: 1
+- Source-checked tutorials: 1
+
+### @toshi_nyaruo_ai
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/toshi_nyaruo_ai/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/toshi_nyaruo_ai/
+- X profile: https://x.com/toshi_nyaruo_ai
+- Roles: video
+- Published cases: 4
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @derek_wall90176
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/derek_wall90176/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/derek_wall90176/
+- X profile: https://x.com/derek_wall90176
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @brentlynch
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/brentlynch/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/brentlynch/
+- X profile: https://x.com/brentlynch
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @nonameoasis
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/nonameoasis/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/nonameoasis/
+- X profile: https://x.com/nonameoasis
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @isekaibardguild
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/isekaibardguild/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/isekaibardguild/
+- X profile: https://x.com/isekaibardguild
+- Roles: video
+- Published cases: 3
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @airina_xyz
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/airina_xyz/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/airina_xyz/
+- X profile: https://x.com/airina_xyz
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @guicastellanos1
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/guicastellanos1/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/guicastellanos1/
+- X profile: https://x.com/guicastellanos1
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @nakazakifam
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/nakazakifam/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/nakazakifam/
+- X profile: https://x.com/nakazakifam
+- Roles: video
+- Published cases: 3
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @aiaicreate
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/aiaicreate/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/aiaicreate/
+- X profile: https://x.com/aiaicreate
+- Roles: video
+- Published cases: 3
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @haruka1425054
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/haruka1425054/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/haruka1425054/
+- X profile: https://x.com/haruka1425054
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @artedeingenio
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/artedeingenio/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/artedeingenio/
+- X profile: https://x.com/artedeingenio
+- Roles: video
+- Published cases: 3
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @alfredalfer77
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/alfredalfer77/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/alfredalfer77/
+- X profile: https://x.com/alfredalfer77
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @vkuoo
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/vkuoo/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/vkuoo/
+- X profile: https://x.com/vkuoo
+- Roles: video
+- Published cases: 3
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @nokosu_kansoku
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/nokosu_kansoku/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/nokosu_kansoku/
+- X profile: https://x.com/nokosu_kansoku
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @seirdotmk
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/seirdotmk/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/seirdotmk/
+- X profile: https://x.com/seirdotmk
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @wolfriccardo
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/wolfriccardo/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/wolfriccardo/
+- X profile: https://x.com/wolfriccardo
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @awesome_visuals
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/awesome_visuals/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/awesome_visuals/
+- X profile: https://x.com/awesome_visuals
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @codewithhajra
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/codewithhajra/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/codewithhajra/
+- X profile: https://x.com/codewithhajra
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @ozansihay
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/ozansihay/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/ozansihay/
+- X profile: https://x.com/ozansihay
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @egeberkina
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/egeberkina/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/egeberkina/
+- X profile: https://x.com/egeberkina
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @aimeowing
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/aimeowing/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/aimeowing/
+- X profile: https://x.com/aimeowing
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @beginnersblog1
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/beginnersblog1/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/beginnersblog1/
+- X profile: https://x.com/beginnersblog1
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @craftian_keskin
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/craftian_keskin/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/craftian_keskin/
+- X profile: https://x.com/craftian_keskin
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @johnagi168
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/johnagi168/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/johnagi168/
+- X profile: https://x.com/johnagi168
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @just_sharon7
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/just_sharon7/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/just_sharon7/
+- X profile: https://x.com/just_sharon7
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @lukasersil
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/lukasersil/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/lukasersil/
+- X profile: https://x.com/lukasersil
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @nicekate8888
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/nicekate8888/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/nicekate8888/
+- X profile: https://x.com/nicekate8888
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @rahulnanda86
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/rahulnanda86/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/rahulnanda86/
+- X profile: https://x.com/rahulnanda86
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 2
+- Source-checked tutorials: 0
+
+### @aiphotorealgirl
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/aiphotorealgirl/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/aiphotorealgirl/
+- X profile: https://x.com/aiphotorealgirl
+- Roles: video
+- Published cases: 3
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @yourplugai
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/yourplugai/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/yourplugai/
+- X profile: https://x.com/yourplugai
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @squeakalgaib
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/squeakalgaib/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/squeakalgaib/
+- X profile: https://x.com/squeakalgaib
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @ezheng66099
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/ezheng66099/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/ezheng66099/
+- X profile: https://x.com/ezheng66099
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @hackcooking
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/hackcooking/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/hackcooking/
+- X profile: https://x.com/hackcooking
+- Roles: video
+- Published cases: 4
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @icreat_ai
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/icreat_ai/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/icreat_ai/
+- X profile: https://x.com/icreat_ai
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @zeroban_noriba
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/zeroban_noriba/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/zeroban_noriba/
+- X profile: https://x.com/zeroban_noriba
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @mrdasonx
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/mrdasonx/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/mrdasonx/
+- X profile: https://x.com/mrdasonx
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @sada_ai
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/sada_ai/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/sada_ai/
+- X profile: https://x.com/sada_ai
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 1
+- Source-checked tutorials: 0
+
+### @thedarkwebdev
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/thedarkwebdev/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/thedarkwebdev/
+- X profile: https://x.com/thedarkwebdev
+- Roles: video
+- Published cases: 3
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @nilian
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/nilian/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/nilian/
+- X profile: https://x.com/nilian
+- Roles: video
+- Published cases: 3
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @saniaitech
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/saniaitech/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/saniaitech/
+- X profile: https://x.com/saniaitech
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @yukimino_doga
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/yukimino_doga/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/yukimino_doga/
+- X profile: https://x.com/yukimino_doga
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @fnoji
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/fnoji/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/fnoji/
+- X profile: https://x.com/fnoji
+- Roles: video
+- Published cases: 3
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @ojiji2025
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/ojiji2025/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/ojiji2025/
+- X profile: https://x.com/ojiji2025
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @malariadx
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/malariadx/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/malariadx/
+- X profile: https://x.com/malariadx
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @mayz1169
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/mayz1169/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/mayz1169/
+- X profile: https://x.com/mayz1169
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @da2el2da_eichi
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/da2el2da_eichi/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/da2el2da_eichi/
+- X profile: https://x.com/da2el2da_eichi
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @hectorvfx
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/hectorvfx/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/hectorvfx/
+- X profile: https://x.com/hectorvfx
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @developerlin
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/developerlin/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/developerlin/
+- X profile: https://x.com/developerlin
+- Roles: video
+- Published cases: 3
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @jaykay65220066
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/jaykay65220066/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/jaykay65220066/
+- X profile: https://x.com/jaykay65220066
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @creator_pelsan
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/creator_pelsan/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/creator_pelsan/
+- X profile: https://x.com/creator_pelsan
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @spoonful_of_fun
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/spoonful_of_fun/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/spoonful_of_fun/
+- X profile: https://x.com/spoonful_of_fun
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @emma_shiraishi
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/emma_shiraishi/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/emma_shiraishi/
+- X profile: https://x.com/emma_shiraishi
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @modengsir
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/modengsir/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/modengsir/
+- X profile: https://x.com/modengsir
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @ai6377546630069
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/ai6377546630069/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/ai6377546630069/
+- X profile: https://x.com/ai6377546630069
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @xc5_
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/xc5_/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/xc5_/
+- X profile: https://x.com/xc5_
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @yu_ichi_suzuki
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/yu_ichi_suzuki/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/yu_ichi_suzuki/
+- X profile: https://x.com/yu_ichi_suzuki
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @nullpolab
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/nullpolab/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/nullpolab/
+- X profile: https://x.com/nullpolab
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @aireelofficial
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/aireelofficial/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/aireelofficial/
+- X profile: https://x.com/aireelofficial
+- Roles: video
+- Published cases: 3
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @flyfront
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/flyfront/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/flyfront/
+- X profile: https://x.com/flyfront
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @furkangozukara
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/furkangozukara/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/furkangozukara/
+- X profile: https://x.com/furkangozukara
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @lumeroute
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/lumeroute/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/lumeroute/
+- X profile: https://x.com/lumeroute
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @mtarakawa
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/mtarakawa/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/mtarakawa/
+- X profile: https://x.com/mtarakawa
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @yayoi_labo_
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/yayoi_labo_/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/yayoi_labo_/
+- X profile: https://x.com/yayoi_labo_
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @c_of_creativity
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/c_of_creativity/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/c_of_creativity/
+- X profile: https://x.com/c_of_creativity
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @alexshevpm
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/alexshevpm/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/alexshevpm/
+- X profile: https://x.com/alexshevpm
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @hyperboleon
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/hyperboleon/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/hyperboleon/
+- X profile: https://x.com/hyperboleon
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @willowion
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/willowion/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/willowion/
+- X profile: https://x.com/willowion
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @hmetouch
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/hmetouch/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/hmetouch/
+- X profile: https://x.com/hmetouch
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @yamatazen
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/yamatazen/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/yamatazen/
+- X profile: https://x.com/yamatazen
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @48076551super
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/48076551super/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/48076551super/
+- X profile: https://x.com/48076551super
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @kiyoshi_shin
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/kiyoshi_shin/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/kiyoshi_shin/
+- X profile: https://x.com/kiyoshi_shin
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @sumica_rowa
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/sumica_rowa/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/sumica_rowa/
+- X profile: https://x.com/sumica_rowa
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @pin_knuts
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/pin_knuts/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/pin_knuts/
+- X profile: https://x.com/pin_knuts
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @strimando
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/strimando/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/strimando/
+- X profile: https://x.com/strimando
+- Roles: video
+- Published cases: 3
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @jessewelle
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/jessewelle/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/jessewelle/
+- X profile: https://x.com/jessewelle
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @aixsatoshi
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/aixsatoshi/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/aixsatoshi/
+- X profile: https://x.com/aixsatoshi
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @otosa_vt
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/otosa_vt/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/otosa_vt/
+- X profile: https://x.com/otosa_vt
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @reyreinoso
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/reyreinoso/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/reyreinoso/
+- X profile: https://x.com/reyreinoso
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @wavespeed_ai
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/wavespeed_ai/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/wavespeed_ai/
+- X profile: https://x.com/wavespeed_ai
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @ui_nyan
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/ui_nyan/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/ui_nyan/
+- X profile: https://x.com/ui_nyan
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @polaczeksagi
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/polaczeksagi/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/polaczeksagi/
+- X profile: https://x.com/polaczeksagi
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @ameilo_1
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/ameilo_1/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/ameilo_1/
+- X profile: https://x.com/ameilo_1
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @matcha_orange_
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/matcha_orange_/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/matcha_orange_/
+- X profile: https://x.com/matcha_orange_
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @mayorkingai
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/mayorkingai/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/mayorkingai/
+- X profile: https://x.com/mayorkingai
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @synthesarah
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/synthesarah/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/synthesarah/
+- X profile: https://x.com/synthesarah
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @_gai92
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/_gai92/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/_gai92/
+- X profile: https://x.com/_gai92
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @comfyui
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/comfyui/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/comfyui/
+- X profile: https://x.com/comfyui
+- Roles: video, tutorial
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 1
+
+### @iam_mian7
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/iam_mian7/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/iam_mian7/
+- X profile: https://x.com/iam_mian7
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @ostrisai
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/ostrisai/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/ostrisai/
+- X profile: https://x.com/ostrisai
+- Roles: video, tutorial
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 1
+
+### @aji_fry_art
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/aji_fry_art/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/aji_fry_art/
+- X profile: https://x.com/aji_fry_art
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @bi_9527zx
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/bi_9527zx/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/bi_9527zx/
+- X profile: https://x.com/bi_9527zx
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @callmediegojr
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/callmediegojr/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/callmediegojr/
+- X profile: https://x.com/callmediegojr
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @caden_flux
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/caden_flux/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/caden_flux/
+- X profile: https://x.com/caden_flux
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @aidenguoai
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/aidenguoai/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/aidenguoai/
+- X profile: https://x.com/aidenguoai
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @xomushinxo
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/xomushinxo/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/xomushinxo/
+- X profile: https://x.com/xomushinxo
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @jerrod_lew
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/jerrod_lew/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/jerrod_lew/
+- X profile: https://x.com/jerrod_lew
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @seiiiiiiiiiiru
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/seiiiiiiiiiiru/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/seiiiiiiiiiiru/
+- X profile: https://x.com/seiiiiiiiiiiru
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @pan_soramame_da
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/pan_soramame_da/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/pan_soramame_da/
+- X profile: https://x.com/pan_soramame_da
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @rudolphr70469
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/rudolphr70469/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/rudolphr70469/
+- X profile: https://x.com/rudolphr70469
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @muimi_karma
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/muimi_karma/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/muimi_karma/
+- X profile: https://x.com/muimi_karma
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @luta_ai
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/luta_ai/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/luta_ai/
+- X profile: https://x.com/luta_ai
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @nayu_pkpk
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/nayu_pkpk/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/nayu_pkpk/
+- X profile: https://x.com/nayu_pkpk
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @israfill
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/israfill/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/israfill/
+- X profile: https://x.com/israfill
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @aiko_ai_ai
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/aiko_ai_ai/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/aiko_ai_ai/
+- X profile: https://x.com/aiko_ai_ai
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @aiiswonder
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/aiiswonder/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/aiiswonder/
+- X profile: https://x.com/aiiswonder
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @lonely__mh
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/lonely__mh/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/lonely__mh/
+- X profile: https://x.com/lonely__mh
+- Roles: video, tutorial
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 1
+
+### @minima_ai
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/minima_ai/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/minima_ai/
+- X profile: https://x.com/minima_ai
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @8f8d54a4772647b
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/8f8d54a4772647b/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/8f8d54a4772647b/
+- X profile: https://x.com/8f8d54a4772647b
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @pinkshihtzu
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/pinkshihtzu/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/pinkshihtzu/
+- X profile: https://x.com/pinkshihtzu
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @alexutopia
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/alexutopia/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/alexutopia/
+- X profile: https://x.com/alexutopia
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @yuea85035
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/yuea85035/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/yuea85035/
+- X profile: https://x.com/yuea85035
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @juwalbose
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/juwalbose/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/juwalbose/
+- X profile: https://x.com/juwalbose
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @bhavani_00007
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/bhavani_00007/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/bhavani_00007/
+- X profile: https://x.com/bhavani_00007
+- Roles: video
+- Published cases: 1
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @aihonobono2023
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/aihonobono2023/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/aihonobono2023/
+- X profile: https://x.com/aihonobono2023
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @hetzerlin
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/hetzerlin/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/hetzerlin/
+- X profile: https://x.com/hetzerlin
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @mix_buchi_
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/mix_buchi_/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/mix_buchi_/
+- X profile: https://x.com/mix_buchi_
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @funtheoryx
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/funtheoryx/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/funtheoryx/
+- X profile: https://x.com/funtheoryx
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @cencencahya12
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/cencencahya12/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/cencencahya12/
+- X profile: https://x.com/cencencahya12
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @exportanything
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/exportanything/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/exportanything/
+- X profile: https://x.com/exportanything
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @redbickey
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/redbickey/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/redbickey/
+- X profile: https://x.com/redbickey
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @photox86
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/photox86/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/photox86/
+- X profile: https://x.com/photox86
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @shiokotoba
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/shiokotoba/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/shiokotoba/
+- X profile: https://x.com/shiokotoba
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @oxide39
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/oxide39/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/oxide39/
+- X profile: https://x.com/oxide39
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @newtonmark13
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/newtonmark13/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/newtonmark13/
+- X profile: https://x.com/newtonmark13
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @ehcorelay
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/ehcorelay/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/ehcorelay/
+- X profile: https://x.com/ehcorelay
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @sellingshovels
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/sellingshovels/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/sellingshovels/
+- X profile: https://x.com/sellingshovels
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @lucasyao99261
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/lucasyao99261/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/lucasyao99261/
+- X profile: https://x.com/lucasyao99261
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
+### @worldofray
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/worldofray/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/worldofray/
+- X profile: https://x.com/worldofray
+- Roles: video
+- Published cases: 2
+- Complete public Prompts: 0
+- Source-checked tutorials: 0
+
 
 ## Tutorials
 

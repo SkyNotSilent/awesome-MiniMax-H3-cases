@@ -1,0 +1,37 @@
+name: Correct, merge, or remove a creator profile
+description: Request attribution correction, handle migration, profile merge, or creator-profile removal.
+title: "[Creator profile]: "
+labels: ["creator-attribution"]
+body:
+  - type: dropdown
+    id: request_type
+    attributes:
+      label: Request type
+      options:
+        - Correct the creator name or handle
+        - Merge duplicate creator profiles
+        - Move cases or tutorials to the correct creator
+        - Remove the creator profile or attributed content
+    validations:
+      required: true
+  - type: input
+    id: profile
+    attributes:
+      label: Affected creator profile or handle
+      placeholder: https://h3-field-notes-production.up.railway.app/creators/example/ or @example
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Canonical X profile or public evidence
+      description: Link the current creator account or another public source that verifies the requested change.
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Requested change
+      description: List affected cases/tutorials and explain the correct attribution. Do not post private identity documents; maintainers can arrange private verification if needed.
+    validations:
+      required: true

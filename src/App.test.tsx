@@ -3,6 +3,7 @@ import { act, cleanup, fireEvent, render, screen, waitFor, within } from '@testi
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import App from './App'
 import { languagePreferenceKey } from './i18n'
+import { updatesSeenThroughKey } from './updates'
 
 vi.mock('../data/cases.json', async (importOriginal) => {
   const original = await importOriginal<typeof import('../data/cases.json')>()
@@ -12,6 +13,7 @@ vi.mock('../data/cases.json', async (importOriginal) => {
     'official-ref2va-lamb',
     'official-fl2va-ramen',
     'x-icreat-time-freeze-diner',
+    'x-2087443463432466682',
     'x-yukyuk-h3-seedance-same-prompt',
     'x-2086641782839005498',
     'x-2090180874222588332',
@@ -109,6 +111,7 @@ describe('case-first routes', () => {
     renderAt('/')
     expect(screen.getByRole('link', { name: '案例' })).toHaveAttribute('href', '/')
     expect(screen.getByRole('link', { name: '教程' })).toHaveAttribute('href', '/tutorials/')
+    expect(screen.getByRole('link', { name: '创作者' })).toHaveAttribute('href', '/creators/')
     expect(screen.getByRole('link', { name: '常见问题' })).toHaveAttribute('href', '/faq/')
     expect(screen.getByRole('link', { name: '在 GitHub 查看源码' })).toHaveAttribute(
       'href',
@@ -186,6 +189,59 @@ describe('case-first routes', () => {
     expect(screen.getByText('粉色西装与黑色羔羊')).toBeInTheDocument()
     expect(screen.queryByText('舰桥上的跃迁余震')).not.toBeInTheDocument()
     expect(window.location.search).toBe('?collection=official')
+  })
+
+  it('initializes first-time visitors without treating the archive as unread', () => {
+    renderAt('/')
+
+    expect(within(screen.getByRole('group', { name: '本站收录时间' })).getByRole('button', { name: /^全部$/ })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByRole('heading', { name: '已是最新。' })).toBeInTheDocument()
+    expect(window.localStorage.getItem(updatesSeenThroughKey)).toBe('2026-08-23T02:34:28+08:00')
+    expect(screen.getByText('舰桥上的跃迁余震')).toBeInTheDocument()
+  })
+
+  it('opens a fixed since-last-visit snapshot for returning visitors and marks it seen for next time', () => {
+    window.localStorage.setItem(updatesSeenThroughKey, '2026-08-10T05:52:30.476Z')
+    renderAt('/')
+
+    expect(screen.getByRole('button', { name: /本次新增/ })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByRole('heading', { name: '新增 2 个案例 · 24 篇教程' })).toBeInTheDocument()
+    expect(screen.getByText('羊皮纸上的绝地光明史诗')).toBeInTheDocument()
+    expect(screen.queryByText('舰桥上的跃迁余震')).not.toBeInTheDocument()
+    expect(window.localStorage.getItem(updatesSeenThroughKey)).toBe('2026-08-23T02:34:28+08:00')
+    expect(screen.getByRole('link', { name: /查看 24 篇新增教程/ })).toHaveAttribute(
+      'href',
+      '/tutorials/?added=unseen&since=2026-08-10T05%3A52%3A30.476Z',
+    )
+
+    cleanup()
+    renderAt('/')
+    expect(screen.getByRole('heading', { name: '已是最新。' })).toBeInTheDocument()
+    expect(within(screen.getByRole('group', { name: '本站收录时间' })).getByRole('button', { name: /^全部$/ })).toHaveAttribute('aria-pressed', 'true')
+  })
+
+  it('lets explicit URL filters override automatic returning-visitor behavior', () => {
+    window.localStorage.setItem(updatesSeenThroughKey, '2026-08-10T05:52:30.476Z')
+    renderAt('/?collection=official')
+
+    expect(screen.getByRole('button', { name: '官方案例' })).toHaveAttribute('aria-pressed', 'true')
+    expect(within(screen.getByRole('group', { name: '本站收录时间' })).getByRole('button', { name: /^全部$/ })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByText('舰桥上的跃迁余震')).toBeInTheDocument()
+  })
+
+  it('combines added-date presets with case filters and removes invalid URL state', () => {
+    vi.useFakeTimers()
+    vi.setSystemTime(new Date(2026, 7, 23, 12, 0, 0))
+    renderAt('/?added=7d')
+
+    expect(screen.getByRole('button', { name: '近 7 天' })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByText('羊皮纸上的绝地光明史诗')).toBeInTheDocument()
+    expect(screen.queryByText('舰桥上的跃迁余震')).not.toBeInTheDocument()
+
+    cleanup()
+    renderAt('/?added=unseen&since=not-a-date')
+    expect(within(screen.getByRole('group', { name: '本站收录时间' })).getByRole('button', { name: /^全部$/ })).toHaveAttribute('aria-pressed', 'true')
+    expect(window.location.search).toBe('')
   })
 
   it('stores anonymous favorites locally and restores the saved collection', () => {
@@ -276,12 +332,75 @@ describe('case-first routes', () => {
     expect(screen.queryByText('打开官方仓库')).not.toBeInTheDocument()
   }, 15_000)
 
+  it('publishes a bilingual creator leaderboard with separate video and tutorial ranks', () => {
+    renderAt('/creators/')
+
+    expect(screen.getByRole('heading', { name: '持续做出好作品的人。' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '本期前三' })).toBeInTheDocument()
+    expect(screen.getAllByRole('link', { name: /查看作者主页/ }).length).toBeGreaterThan(3)
+    expect(screen.getByRole('tab', { name: '综合优质' })).toHaveAttribute('aria-selected', 'true')
+
+    fireEvent.click(screen.getByRole('button', { name: '教程作者' }))
+    expect(screen.queryByRole('tab', { name: '综合优质' })).not.toBeInTheDocument()
+    expect(screen.getByText('@servasyy_ai')).toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('link', { name: '切换到英文' }))
+    expect(window.location.pathname).toBe('/en/creators/')
+    expect(screen.getByRole('heading', { name: 'Follow the people who keep making.' })).toBeInTheDocument()
+  })
+
+  it('stores creator bookmarks locally and restores the saved creator view', () => {
+    renderAt('/creators/')
+    const creatorCard = screen.getAllByText('@manuagi01')[0].closest('article')
+    expect(creatorCard).not.toBeNull()
+    fireEvent.click(within(creatorCard!).getByRole('button', { name: '收藏作者' }))
+    expect(JSON.parse(window.localStorage.getItem('minimax-h3-favorite-creators') || '[]')).toContain('x-manuagi01')
+
+    fireEvent.click(screen.getByRole('button', { name: /我的关注/ }))
+    const savedGrid = document.querySelector('.creator-grid')
+    expect(savedGrid).not.toBeNull()
+    expect(within(savedGrid as HTMLElement).getByText('@manuagi01')).toBeInTheDocument()
+    expect(within(savedGrid as HTMLElement).queryByText('@strength04_x')).not.toBeInTheDocument()
+  })
+
+  it('shows an author profile with X attribution and composable case filters', () => {
+    renderAt('/creators/icreat_ai/')
+
+    expect(screen.getByRole('heading', { name: 'ICREAT AI' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: '去 X 关注' })).toHaveAttribute('href', 'https://x.com/icreat_ai')
+    expect(screen.getByText('餐厅时间冻结与逆向复原')).toBeInTheDocument()
+
+    fireEvent.change(screen.getByRole('combobox', { name: /内容分类/ }), { target: { value: 'Model Comparison' } })
+    expect(screen.queryByText('餐厅时间冻结与逆向复原')).not.toBeInTheDocument()
+    expect(screen.getByText('两种生成模型再次对照')).toBeInTheDocument()
+    fireEvent.change(screen.getByRole('combobox', { name: /内容分类/ }), { target: { value: 'ALL' } })
+
+    fireEvent.click(screen.getByRole('switch', { name: /只看有 Prompt/ }))
+    expect(window.location.search).toBe('?prompt=1')
+    expect(screen.getByText('餐厅时间冻结与逆向复原')).toBeInTheDocument()
+  })
+
+  it('renders an explicit 404 for an unknown creator', () => {
+    renderAt('/creators/not-a-real-creator/')
+    expect(screen.getByRole('heading', { name: '这位创作者暂未进入榜单。' })).toBeInTheDocument()
+  })
+
   it('filters tutorial routes without mixing them into the case catalog', () => {
     renderAt('/tutorials/')
     fireEvent.click(screen.getByRole('button', { name: '长视频' }))
     expect(screen.getByRole('heading', { name: 'H3 WebUI：Motion Context + 内置升频' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '4070 12GB：5 秒分块续接 13 秒角色舞蹈' })).toBeInTheDocument()
     expect(screen.queryByRole('heading', { name: 'Mac Studio 上用 Phosphene 跑 Turbo' })).not.toBeInTheDocument()
+  })
+
+  it('keeps the homepage update baseline when opening new tutorials', () => {
+    renderAt('/tutorials/?added=unseen&since=2026-08-22T00%3A00%3A00.000Z')
+
+    expect(screen.getByRole('button', { name: /本次新增/ })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByRole('heading', { name: '基础路线' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '社区教程' })).toBeInTheDocument()
+    expect(screen.getAllByText('新收录')).toHaveLength(24)
+    expect(screen.getAllByRole('link', { name: /打开教程/ })).toHaveLength(24)
   })
 
   it('filters community tutorials by hardware and keeps the source behind the internal guide', () => {

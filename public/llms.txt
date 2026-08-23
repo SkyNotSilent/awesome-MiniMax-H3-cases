@@ -9,6 +9,7 @@
 - 994 source-attributed X community examples
 - 317 examples with complete verbatim public Prompts
 - 4 foundation tutorial routes and 20 source-attributed community field guides
+- 213 featured creators ranked from 615 source-attributed X authors
 - Missing prompts are never inferred, reconstructed, translated into an alleged original, or completed
 
 ## Primary routes
@@ -19,6 +20,8 @@
 - https://h3-field-notes-production.up.railway.app/en/tutorials/ — English H3 ecosystem guide
 - https://h3-field-notes-production.up.railway.app/tutorials/ecosystem/ — Chinese comparison of source-checked H3 tools and open-source projects
 - https://h3-field-notes-production.up.railway.app/en/tutorials/ecosystem/ — English H3 tool and project comparison
+- https://h3-field-notes-production.up.railway.app/creators/ — Chinese featured creator leaderboard
+- https://h3-field-notes-production.up.railway.app/en/creators/ — English featured creator leaderboard
 - https://h3-field-notes-production.up.railway.app/faq/ — source, prompt, playback, and review policy
 - https://h3-field-notes-production.up.railway.app/llms-full.txt — complete machine-readable case index
 - https://github.com/SkyNotSilent/awesome-minimax-h3-cases/blob/main/data/cases.json — source dataset
@@ -72,6 +75,59 @@
 - https://h3-field-notes-production.up.railway.app/en/tutorials/webui-motion-context/ — H3 WebUI: Motion Context plus built-in upscaling; long-video; source checked 2026-08-23; original: https://x.com/core_tan/status/2087415961293144516
 - https://h3-field-notes-production.up.railway.app/en/tutorials/ref2v-motion-context-chunks/ — 4070 12GB: chain three five-second chunks into a character dance; long-video; source checked 2026-08-23; original: https://x.com/cla_kuro37459/status/2087892024410480796
 - https://h3-field-notes-production.up.railway.app/en/tutorials/lightx2v-vs-larryvrh/ — Four-step vs eight-step LoRA: a 30-second chaining A/B; acceleration; source checked 2026-08-23; original: https://x.com/core_tan/status/2088147718732734936
+
+## Featured creators
+
+- https://h3-field-notes-production.up.railway.app/en/creators/manuagi01/ — #1 @manuagi01; 22 cases; 14 complete public Prompts; X: https://x.com/manuagi01
+- https://h3-field-notes-production.up.railway.app/en/creators/strength04_x/ — #2 @strength04_x; 19 cases; 12 complete public Prompts; X: https://x.com/strength04_x
+- https://h3-field-notes-production.up.railway.app/en/creators/cocktailpeanut/ — #3 @cocktailpeanut; 13 cases; 7 complete public Prompts; X: https://x.com/cocktailpeanut
+- https://h3-field-notes-production.up.railway.app/en/creators/haruuraeadss/ — #4 @haruuraeadss; 9 cases; 8 complete public Prompts; X: https://x.com/haruuraeadss
+- https://h3-field-notes-production.up.railway.app/en/creators/aimikoda/ — #5 @aimikoda; 8 cases; 6 complete public Prompts; X: https://x.com/aimikoda
+- https://h3-field-notes-production.up.railway.app/en/creators/ludoviccreator/ — #6 @ludoviccreator; 7 cases; 6 complete public Prompts; X: https://x.com/ludoviccreator
+- https://h3-field-notes-production.up.railway.app/en/creators/tanabe_fragm/ — #7 @tanabe_fragm; 8 cases; 5 complete public Prompts; X: https://x.com/tanabe_fragm
+- https://h3-field-notes-production.up.railway.app/en/creators/cia0_exe/ — #8 @cia0_exe; 6 cases; 5 complete public Prompts; X: https://x.com/cia0_exe
+- https://h3-field-notes-production.up.railway.app/en/creators/hbcoop_/ — #9 @hbcoop_; 7 cases; 3 complete public Prompts; X: https://x.com/hbcoop_
+- https://h3-field-notes-production.up.railway.app/en/creators/opener_ai/ — #10 @opener_ai; 6 cases; 6 complete public Prompts; X: https://x.com/opener_ai
+- https://h3-field-notes-production.up.railway.app/en/creators/aiwithaly/ — #11 @aiwithaly; 5 cases; 3 complete public Prompts; X: https://x.com/aiwithaly
+- https://h3-field-notes-production.up.railway.app/en/creators/dheepanratnam/ — #12 @dheepanratnam; 6 cases; 4 complete public Prompts; X: https://x.com/dheepanratnam
+- https://h3-field-notes-production.up.railway.app/en/creators/diplomeme/ — #13 @diplomeme; 4 cases; 4 complete public Prompts; X: https://x.com/diplomeme
+- https://h3-field-notes-production.up.railway.app/en/creators/itxabdullaa/ — #14 @itxabdullaa; 4 cases; 4 complete public Prompts; X: https://x.com/itxabdullaa
+- https://h3-field-notes-production.up.railway.app/en/creators/doctorwasif/ — #15 @doctorwasif; 4 cases; 4 complete public Prompts; X: https://x.com/doctorwasif
+- https://h3-field-notes-production.up.railway.app/en/creators/su_nagomi/ — #16 @su_nagomi; 6 cases; 3 complete public Prompts; X: https://x.com/su_nagomi
+- https://h3-field-notes-production.up.railway.app/en/creators/drjoetw/ — #17 @drjoetw; 5 cases; 5 complete public Prompts; X: https://x.com/drjoetw
+- https://h3-field-notes-production.up.railway.app/en/creators/core_tan/ — #18 @core_tan; 9 cases; 1 complete public Prompts; X: https://x.com/core_tan
+- https://h3-field-notes-production.up.railway.app/en/creators/endfolding79421/ — #19 @endfolding79421; 5 cases; 4 complete public Prompts; X: https://x.com/endfolding79421
+- https://h3-field-notes-production.up.railway.app/en/creators/umesh_ai/ — #20 @umesh_ai; 3 cases; 3 complete public Prompts; X: https://x.com/umesh_ai
+- https://h3-field-notes-production.up.railway.app/en/creators/nsitnovsitnov/ — #21 @nsitnovsitnov; 10 cases; 1 complete public Prompts; X: https://x.com/nsitnovsitnov
+- https://h3-field-notes-production.up.railway.app/en/creators/abulu8/ — #22 @abulu8; 4 cases; 4 complete public Prompts; X: https://x.com/abulu8
+- https://h3-field-notes-production.up.railway.app/en/creators/noorlewisx/ — #23 @noorlewisx; 3 cases; 2 complete public Prompts; X: https://x.com/noorlewisx
+- https://h3-field-notes-production.up.railway.app/en/creators/kiber_alla/ — #24 @kiber_alla; 3 cases; 3 complete public Prompts; X: https://x.com/kiber_alla
+- https://h3-field-notes-production.up.railway.app/en/creators/charaspowerai/ — #25 @charaspowerai; 4 cases; 2 complete public Prompts; X: https://x.com/charaspowerai
+- https://h3-field-notes-production.up.railway.app/en/creators/stelsray2/ — #26 @stelsray2; 10 cases; 0 complete public Prompts; X: https://x.com/stelsray2
+- https://h3-field-notes-production.up.railway.app/en/creators/ou_zhen599/ — #27 @ou_zhen599; 4 cases; 3 complete public Prompts; X: https://x.com/ou_zhen599
+- https://h3-field-notes-production.up.railway.app/en/creators/sebatheepan/ — #28 @sebatheepan; 3 cases; 3 complete public Prompts; X: https://x.com/sebatheepan
+- https://h3-field-notes-production.up.railway.app/en/creators/underwoodxie96/ — #29 @underwoodxie96; 3 cases; 3 complete public Prompts; X: https://x.com/underwoodxie96
+- https://h3-field-notes-production.up.railway.app/en/creators/ponzponz15/ — #30 @ponzponz15; 4 cases; 1 complete public Prompts; X: https://x.com/ponzponz15
+- https://h3-field-notes-production.up.railway.app/en/creators/xianshi666123/ — #31 @xianshi666123; 4 cases; 4 complete public Prompts; X: https://x.com/xianshi666123
+- https://h3-field-notes-production.up.railway.app/en/creators/aiehon_aya/ — #32 @aiehon_aya; 3 cases; 2 complete public Prompts; X: https://x.com/aiehon_aya
+- https://h3-field-notes-production.up.railway.app/en/creators/cardoso/ — #33 @cardoso; 4 cases; 1 complete public Prompts; X: https://x.com/cardoso
+- https://h3-field-notes-production.up.railway.app/en/creators/ayzalnooor24521/ — #34 @ayzalnooor24521; 3 cases; 2 complete public Prompts; X: https://x.com/ayzalnooor24521
+- https://h3-field-notes-production.up.railway.app/en/creators/ruzainameer/ — #35 @ruzainameer; 2 cases; 2 complete public Prompts; X: https://x.com/ruzainameer
+- https://h3-field-notes-production.up.railway.app/en/creators/aiwarper/ — #36 @aiwarper; 3 cases; 1 complete public Prompts; X: https://x.com/aiwarper
+- https://h3-field-notes-production.up.railway.app/en/creators/nawalsehar/ — #37 @nawalsehar; 2 cases; 2 complete public Prompts; X: https://x.com/nawalsehar
+- https://h3-field-notes-production.up.railway.app/en/creators/alone1moon/ — #38 @alone1moon; 6 cases; 0 complete public Prompts; X: https://x.com/alone1moon
+- https://h3-field-notes-production.up.railway.app/en/creators/mireilledartois/ — #39 @mireilledartois; 3 cases; 2 complete public Prompts; X: https://x.com/mireilledartois
+- https://h3-field-notes-production.up.railway.app/en/creators/aion_2077/ — #40 @aion_2077; 5 cases; 1 complete public Prompts; X: https://x.com/aion_2077
+- https://h3-field-notes-production.up.railway.app/en/creators/noorwithwifi/ — #41 @noorwithwifi; 2 cases; 2 complete public Prompts; X: https://x.com/noorwithwifi
+- https://h3-field-notes-production.up.railway.app/en/creators/sep_is_heim/ — #42 @sep_is_heim; 8 cases; 0 complete public Prompts; X: https://x.com/sep_is_heim
+- https://h3-field-notes-production.up.railway.app/en/creators/lianaalane/ — #43 @lianaalane; 2 cases; 2 complete public Prompts; X: https://x.com/lianaalane
+- https://h3-field-notes-production.up.railway.app/en/creators/itoktw/ — #44 @itoktw; 4 cases; 1 complete public Prompts; X: https://x.com/itoktw
+- https://h3-field-notes-production.up.railway.app/en/creators/sadlemonjuice/ — #45 @sadlemonjuice; 5 cases; 1 complete public Prompts; X: https://x.com/sadlemonjuice
+- https://h3-field-notes-production.up.railway.app/en/creators/arminn_ai/ — #46 @arminn_ai; 2 cases; 2 complete public Prompts; X: https://x.com/arminn_ai
+- https://h3-field-notes-production.up.railway.app/en/creators/aiwithaliya/ — #47 @aiwithaliya; 2 cases; 1 complete public Prompts; X: https://x.com/aiwithaliya
+- https://h3-field-notes-production.up.railway.app/en/creators/oggii_0/ — #48 @oggii_0; 2 cases; 2 complete public Prompts; X: https://x.com/oggii_0
+- https://h3-field-notes-production.up.railway.app/en/creators/maercihh/ — #49 @maercihh; 2 cases; 2 complete public Prompts; X: https://x.com/maercihh
+- https://h3-field-notes-production.up.railway.app/en/creators/techiebysa/ — #50 @techiebysa; 2 cases; 1 complete public Prompts; X: https://x.com/techiebysa
 
 ## Retrieval rules
 

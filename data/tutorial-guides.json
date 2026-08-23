@@ -17,6 +17,7 @@
     "relatedResourceIds": ["official-minimax-h3", "minimax-h3-easy", "huangserva-director-workflows", "comfyui-wiki"],
     "source": { "platform": "docs", "url": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3", "author": "ComfyUI", "originalLanguage": "en" },
     "verifiedAt": "2026-08-23",
+    "addedAt": "2026-08-23T02:34:28+08:00",
     "flagship": true,
     "difficulty": "beginner",
     "estimatedMinutes": 90,
@@ -50,6 +51,7 @@
     "relatedResourceIds": ["turbo-lora", "modeltc-h3-turbo", "spectrum-h3", "minimax-h3-easy"],
     "source": { "platform": "github", "url": "https://github.com/Larryvrh/ComfyUI-MiniMax-H3-Turbo", "author": "Larryvrh", "originalLanguage": "en" },
     "verifiedAt": "2026-08-23",
+    "addedAt": "2026-08-23T02:34:28+08:00",
     "flagship": true,
     "difficulty": "intermediate",
     "estimatedMinutes": 45,
@@ -83,6 +85,7 @@
     "relatedResourceIds": ["antirez-h3-metal", "awesome-h3-resources"],
     "source": { "platform": "github", "url": "https://github.com/antirez/h3.c", "author": "antirez", "originalLanguage": "en" },
     "verifiedAt": "2026-08-23",
+    "addedAt": "2026-08-23T02:34:28+08:00",
     "flagship": true,
     "difficulty": "intermediate",
     "estimatedMinutes": 120,
@@ -116,6 +119,7 @@
     "relatedResourceIds": ["motion-context", "audio-t8", "official-minimax-h3"],
     "source": { "platform": "github", "url": "https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context", "author": "NikoDemon80", "originalLanguage": "en" },
     "verifiedAt": "2026-08-23",
+    "addedAt": "2026-08-23T02:34:28+08:00",
     "flagship": true,
     "difficulty": "advanced",
     "estimatedMinutes": 70,
@@ -148,7 +152,8 @@
     "relatedResourceIds": ["official-minimax-h3", "huangserva-director-workflows"],
     "source": { "platform": "x", "url": "https://x.com/servasyy_ai/status/2085251627880255525", "author": "huangserva", "handle": "@servasyy_ai", "publishedAt": "2026-08-06", "originalLanguage": "zh" },
     "engagement": { "replies": 51, "reposts": 167, "likes": 842, "views": 354287, "snapshotAt": "2026-08-23" },
-    "verifiedAt": "2026-08-23"
+    "verifiedAt": "2026-08-23",
+    "addedAt": "2026-08-23T02:34:28+08:00"
   },
   {
     "id": "four-essential-h3-repositories",
@@ -167,7 +172,8 @@
     "relatedResourceIds": ["official-minimax-h3", "turbo-lora", "motion-context", "audio-t8"],
     "source": { "platform": "x", "url": "https://x.com/servasyy_ai/status/2086101388132835743", "author": "huangserva", "handle": "@servasyy_ai", "publishedAt": "2026-08-08", "originalLanguage": "zh" },
     "engagement": { "replies": 78, "reposts": 132, "likes": 894, "views": 101806, "snapshotAt": "2026-08-23" },
-    "verifiedAt": "2026-08-23"
+    "verifiedAt": "2026-08-23",
+    "addedAt": "2026-08-23T02:34:28+08:00"
   },
   {
     "id": "attention-low-vram-lora",
@@ -186,7 +192,8 @@
     "relatedResourceIds": ["spectrum-h3", "h3-finetuning", "awesome-h3-resources"],
     "source": { "platform": "x", "url": "https://x.com/servasyy_ai/status/2087562850781020535", "author": "huangserva", "handle": "@servasyy_ai", "publishedAt": "2026-08-12", "originalLanguage": "zh" },
     "engagement": { "replies": 98, "reposts": 125, "likes": 526, "views": 55196, "snapshotAt": "2026-08-23" },
-    "verifiedAt": "2026-08-23"
+    "verifiedAt": "2026-08-23",
+    "addedAt": "2026-08-23T02:34:28+08:00"
   },
   {
     "id": "context-ir-local-pipeline",
@@ -205,7 +212,8 @@
     "relatedResourceIds": ["official-minimax-h3", "minimax-h3-easy"],
     "source": { "platform": "x", "url": "https://x.com/servasyy_ai/status/2086814254066434076", "author": "huangserva", "handle": "@servasyy_ai", "publishedAt": "2026-08-10", "originalLanguage": "zh" },
     "engagement": { "replies": 42, "reposts": 17, "likes": 104, "views": 8824, "snapshotAt": "2026-08-23" },
-    "verifiedAt": "2026-08-23"
+    "verifiedAt": "2026-08-23",
+    "addedAt": "2026-08-23T02:34:28+08:00"
   },
   {
     "id": "video-pov-camera-angles",
@@ -224,7 +232,8 @@
     "relatedResourceIds": ["official-minimax-h3", "aimixer-h3-director"],
     "source": { "platform": "x", "url": "https://x.com/magnific/status/2090423731055448271", "author": "Magnific", "handle": "@magnific", "publishedAt": "2026-08-20", "originalLanguage": "en" },
     "engagement": { "replies": 28, "reposts": 58, "likes": 379, "views": 120000, "snapshotAt": "2026-08-23" },
-    "verifiedAt": "2026-08-23"
+    "verifiedAt": "2026-08-23",
+    "addedAt": "2026-08-23T02:34:28+08:00"
   },
   {
     "id": "storyboard-to-trailer",
@@ -243,7 +252,8 @@
     "relatedResourceIds": ["aimixer-h3-director", "huangserva-director-workflows", "openmontage"],
     "source": { "platform": "x", "url": "https://x.com/magnific/status/2090508187875356957", "author": "Magnific", "handle": "@magnific", "publishedAt": "2026-08-21", "originalLanguage": "en" },
     "engagement": { "replies": 7, "reposts": 10, "likes": 141, "views": 11000, "snapshotAt": "2026-08-23" },
-    "verifiedAt": "2026-08-23"
+    "verifiedAt": "2026-08-23",
+    "addedAt": "2026-08-23T02:34:28+08:00"
   },
   {
     "id": "3060-turbo-trailer",
@@ -262,7 +272,8 @@
     "relatedResourceIds": ["turbo-lora", "aimixer-h3-director"],
     "source": { "platform": "x", "url": "https://x.com/PixelAigc/status/2086958485741441240", "author": "PixelAIGC", "handle": "@PixelAigc", "publishedAt": "2026-08-11", "originalLanguage": "zh" },
     "engagement": { "replies": 30, "reposts": 25, "likes": 261, "views": 22584, "snapshotAt": "2026-08-23" },
-    "verifiedAt": "2026-08-23"
+    "verifiedAt": "2026-08-23",
+    "addedAt": "2026-08-23T02:34:28+08:00"
   },
   {
     "id": "maestro-six-step-turbo",
@@ -281,7 +292,8 @@
     "relatedResourceIds": ["turbo-lora", "modeltc-h3-turbo"],
     "source": { "platform": "x", "url": "https://x.com/blizaine/status/2085554573494657328", "author": "Blaine Brown", "handle": "@blizaine", "publishedAt": "2026-08-07", "originalLanguage": "en" },
     "engagement": { "replies": 9, "reposts": 7, "likes": 103, "views": 27115, "snapshotAt": "2026-08-23" },
-    "verifiedAt": "2026-08-23"
+    "verifiedAt": "2026-08-23",
+    "addedAt": "2026-08-23T02:34:28+08:00"
   },
   {
     "id": "maestro-pruned-20b",
@@ -300,7 +312,8 @@
     "relatedResourceIds": ["turbo-lora", "awesome-h3-resources"],
     "source": { "platform": "x", "url": "https://x.com/cocktailpeanut/status/2086119385757041048", "author": "cocktail peanut", "handle": "@cocktailpeanut", "publishedAt": "2026-08-08", "originalLanguage": "en" },
     "engagement": { "replies": 10, "reposts": 11, "likes": 130, "views": 12486, "snapshotAt": "2026-08-23" },
-    "verifiedAt": "2026-08-23"
+    "verifiedAt": "2026-08-23",
+    "addedAt": "2026-08-23T02:34:28+08:00"
   },
   {
     "id": "3060-turbo-benchmark",
@@ -319,7 +332,8 @@
     "relatedResourceIds": ["turbo-lora"],
     "source": { "platform": "x", "url": "https://x.com/AIPixLab/status/2088797656118390866", "author": "AI Photo Lab", "handle": "@AIPixLab", "publishedAt": "2026-08-16", "originalLanguage": "ja" },
     "engagement": { "replies": 1, "reposts": 1, "likes": 48, "views": 11943, "snapshotAt": "2026-08-23" },
-    "verifiedAt": "2026-08-23"
+    "verifiedAt": "2026-08-23",
+    "addedAt": "2026-08-23T02:34:28+08:00"
   },
   {
     "id": "mac-phosphene-turbo",
@@ -338,7 +352,8 @@
     "relatedResourceIds": ["antirez-h3-metal", "turbo-lora"],
     "source": { "platform": "x", "url": "https://x.com/cocktailpeanut/status/2085765919079350355", "author": "cocktail peanut", "handle": "@cocktailpeanut", "publishedAt": "2026-08-08", "originalLanguage": "en" },
     "engagement": { "replies": 4, "reposts": 11, "likes": 76, "views": 9875, "snapshotAt": "2026-08-23" },
-    "verifiedAt": "2026-08-23"
+    "verifiedAt": "2026-08-23",
+    "addedAt": "2026-08-23T02:34:28+08:00"
   },
   {
     "id": "rent-gpu-comfyui",
@@ -357,7 +372,8 @@
     "relatedResourceIds": ["official-minimax-h3", "awesome-h3-resources"],
     "source": { "platform": "x", "url": "https://x.com/Lonely__MH/status/2085302359971053826", "author": "Lonely", "handle": "@Lonely__MH", "publishedAt": "2026-08-06", "originalLanguage": "zh" },
     "engagement": { "replies": 63, "reposts": 109, "likes": 633, "views": 92000, "snapshotAt": "2026-08-23" },
-    "verifiedAt": "2026-08-23"
+    "verifiedAt": "2026-08-23",
+    "addedAt": "2026-08-23T02:34:28+08:00"
   },
   {
     "id": "dual-clock-audio",
@@ -378,6 +394,7 @@
     "source": { "platform": "x", "url": "https://x.com/0xmomonifty/status/2085377094461333550", "author": "0xMomo", "handle": "@0xmomonifty", "publishedAt": "2026-08-06", "originalLanguage": "zh" },
     "engagement": { "replies": 25, "reposts": 61, "likes": 443, "views": 57000, "snapshotAt": "2026-08-23" },
     "verifiedAt": "2026-08-23",
+    "addedAt": "2026-08-23T02:34:28+08:00",
     "flagship": true,
     "difficulty": "advanced",
     "estimatedMinutes": 75,
@@ -410,7 +427,8 @@
     "relatedResourceIds": ["official-minimax-h3", "minimax-h3-easy"],
     "source": { "platform": "x", "url": "https://x.com/ComfyUI/status/2084110113078751465", "author": "ComfyUI", "handle": "@ComfyUI", "publishedAt": "2026-08-03", "originalLanguage": "en" },
     "engagement": { "replies": 59, "reposts": 138, "likes": 2299, "views": 230000, "snapshotAt": "2026-08-23" },
-    "verifiedAt": "2026-08-23"
+    "verifiedAt": "2026-08-23",
+    "addedAt": "2026-08-23T02:34:28+08:00"
   },
   {
     "id": "4080-int8-pruned",
@@ -431,6 +449,7 @@
     "source": { "platform": "x", "url": "https://x.com/eternityspring/status/2084666970558074971", "author": "Shuohao", "handle": "@eternityspring", "publishedAt": "2026-08-04", "originalLanguage": "zh" },
     "engagement": { "replies": 34, "reposts": 140, "likes": 734, "views": 180000, "snapshotAt": "2026-08-23" },
     "verifiedAt": "2026-08-23",
+    "addedAt": "2026-08-23T02:34:28+08:00",
     "flagship": true,
     "difficulty": "intermediate",
     "estimatedMinutes": 120,
@@ -465,6 +484,7 @@
     "source": { "platform": "x", "url": "https://x.com/ModelScope2022/status/2084625441940279770", "author": "ModelScope", "handle": "@ModelScope2022", "publishedAt": "2026-08-04", "originalLanguage": "en" },
     "engagement": { "replies": 33, "reposts": 169, "likes": 1498, "views": 132704, "snapshotAt": "2026-08-23" },
     "verifiedAt": "2026-08-23",
+    "addedAt": "2026-08-23T02:34:28+08:00",
     "flagship": true,
     "difficulty": "intermediate",
     "estimatedMinutes": 150,
@@ -499,6 +519,7 @@
     "source": { "platform": "x", "url": "https://x.com/ostrisai/status/2090540475199680543", "author": "Ostris", "handle": "@ostrisai", "publishedAt": "2026-08-21", "originalLanguage": "en" },
     "engagement": { "replies": 14, "reposts": 33, "likes": 342, "views": 14000, "snapshotAt": "2026-08-23" },
     "verifiedAt": "2026-08-23",
+    "addedAt": "2026-08-23T02:34:28+08:00",
     "flagship": true,
     "difficulty": "advanced",
     "estimatedMinutes": 240,
@@ -532,7 +553,8 @@
     "relatedResourceIds": ["motion-context", "antirez-h3-metal"],
     "source": { "platform": "x", "url": "https://x.com/core_tan/status/2087415961293144516", "author": "CALMDUST", "handle": "@core_tan", "publishedAt": "2026-08-12", "originalLanguage": "ja" },
     "engagement": { "replies": 6, "reposts": 28, "likes": 336, "views": 44501, "snapshotAt": "2026-08-23" },
-    "verifiedAt": "2026-08-23"
+    "verifiedAt": "2026-08-23",
+    "addedAt": "2026-08-23T02:34:28+08:00"
   },
   {
     "id": "ref2v-motion-context-chunks",
@@ -551,7 +573,8 @@
     "relatedResourceIds": ["motion-context", "turbo-lora"],
     "source": { "platform": "x", "url": "https://x.com/cla_kuro37459/status/2087892024410480796", "author": "Clakuro", "handle": "@cla_kuro37459", "publishedAt": "2026-08-13", "originalLanguage": "ja" },
     "engagement": { "replies": 3, "reposts": 145, "likes": 1256, "views": 101090, "snapshotAt": "2026-08-23" },
-    "verifiedAt": "2026-08-23"
+    "verifiedAt": "2026-08-23",
+    "addedAt": "2026-08-23T02:34:28+08:00"
   },
   {
     "id": "lightx2v-vs-larryvrh",
@@ -570,6 +593,7 @@
     "relatedResourceIds": ["turbo-lora", "modeltc-h3-turbo", "motion-context"],
     "source": { "platform": "x", "url": "https://x.com/core_tan/status/2088147718732734936", "author": "CALMDUST", "handle": "@core_tan", "publishedAt": "2026-08-14", "originalLanguage": "ja" },
     "engagement": { "replies": 1, "reposts": 4, "likes": 66, "views": 9745, "snapshotAt": "2026-08-23" },
-    "verifiedAt": "2026-08-23"
+    "verifiedAt": "2026-08-23",
+    "addedAt": "2026-08-23T02:34:28+08:00"
   }
 ]

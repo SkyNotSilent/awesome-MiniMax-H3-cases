@@ -60,7 +60,7 @@ export function partitionCandidates(candidates, publishedGuides = []) {
   return { ready, blocked }
 }
 
-export function toPublicTutorial(candidate) {
+export function toPublicTutorial(candidate, addedAt = new Date().toISOString()) {
   const {
     id, contentType, category, title, outcome, audience, hardware, prerequisites,
     steps, commands, caveats, posterUrl, tags, relatedResourceIds, source,
@@ -71,6 +71,7 @@ export function toPublicTutorial(candidate) {
     steps, commands, caveats, posterUrl, tags, relatedResourceIds, source,
     ...(engagement ? { engagement } : {}),
     verifiedAt,
+    addedAt,
   }
 }
 

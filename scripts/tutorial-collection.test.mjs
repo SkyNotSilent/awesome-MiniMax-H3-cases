@@ -64,10 +64,11 @@ describe('weekly tutorial collection safeguards', () => {
   })
 
   it('keeps private review metadata out of the public tutorial record', () => {
-    const publicItem = toPublicTutorial(candidate())
+    const publicItem = toPublicTutorial(candidate(), '2026-08-23T12:00:00.000Z')
     expect(publicItem).not.toHaveProperty('verification')
     expect(publicItem).not.toHaveProperty('privateDiscoveryQuery')
     expect(publicItem.source.url).toContain('/status/1234567890')
+    expect(publicItem.addedAt).toBe('2026-08-23T12:00:00.000Z')
   })
 
   it('blocks duplicate candidates in the same batch', () => {
