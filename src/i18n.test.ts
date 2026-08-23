@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import rawCases from '../data/cases.json'
-import { detectVisitorLanguage, metadataValue, modelLabel, resolveRoute, tutorialEcosystemPath, tutorialPath } from './i18n'
+import { creatorPath, detectVisitorLanguage, metadataValue, modelLabel, resolveRoute, tutorialEcosystemPath, tutorialPath } from './i18n'
 import type { VideoCase } from './types'
 
 const cases = rawCases as VideoCase[]
@@ -36,5 +36,16 @@ describe('tutorial routes', () => {
     expect(resolveRoute('/en/tutorials/ecosystem/')).toEqual({ language: 'en', page: 'tutorial-ecosystem', tutorialSlug: 'ecosystem' })
     expect(tutorialEcosystemPath('zh')).toBe('/tutorials/ecosystem/')
     expect(tutorialEcosystemPath('en')).toBe('/en/tutorials/ecosystem/')
+  })
+})
+
+describe('creator routes', () => {
+  it('resolves bilingual creator indexes and detail pages', () => {
+    expect(resolveRoute('/creators/')).toEqual({ language: 'zh', page: 'creators' })
+    expect(resolveRoute('/en/creators/')).toEqual({ language: 'en', page: 'creators' })
+    expect(resolveRoute('/creators/manuagi01/')).toEqual({ language: 'zh', page: 'creator-detail', creatorSlug: 'manuagi01' })
+    expect(resolveRoute('/en/creators/manuagi01/')).toEqual({ language: 'en', page: 'creator-detail', creatorSlug: 'manuagi01' })
+    expect(creatorPath('zh', 'manuagi01')).toBe('/creators/manuagi01/')
+    expect(creatorPath('en', 'manuagi01')).toBe('/en/creators/manuagi01/')
   })
 })

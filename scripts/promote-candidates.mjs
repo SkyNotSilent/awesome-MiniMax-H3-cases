@@ -231,6 +231,7 @@ function buildCase(candidate, tweet, video) {
   const outputZh = `${duration} 秒 · ${video.width}×${video.height}`
   const outputEn = `${duration}s · ${video.width}×${video.height}`
   const editorial = requireEditorialCopy(candidate)
+  const addedAt = new Date().toISOString()
 
   return {
     id: candidate.id,
@@ -246,6 +247,7 @@ function buildCase(candidate, tweet, video) {
     sourceLabel: `X 原帖 · ${authorHandle}`,
     author: tweet.author?.name || candidate.author,
     publishedAt,
+    addedAt,
     mediaUrl: null,
     posterUrl: `/posters/x/${postId}.jpg`,
     duration,
@@ -261,7 +263,7 @@ function buildCase(candidate, tweet, video) {
     verified: false,
     sourceCaption: caption,
     engagement: engagementFor(candidate, tweet),
-    approvedAt: new Date().toISOString(),
+    approvedAt: addedAt,
     editorialBasis: editorial.basis,
     ...(candidate.attributionNote ? { attributionNote: candidate.attributionNote } : {}),
   }

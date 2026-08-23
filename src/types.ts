@@ -16,6 +16,7 @@ export interface VideoCase {
   sourceLabel: string
   author: string
   publishedAt: string
+  addedAt: string
   mediaUrl?: string | null
   posterUrl: string
   duration: number
@@ -119,6 +120,7 @@ export interface TutorialGuide {
     snapshotAt: string
   }
   verifiedAt: string
+  addedAt: string
   flagship?: boolean
   difficulty?: 'beginner' | 'intermediate' | 'advanced'
   estimatedMinutes?: number
@@ -134,4 +136,63 @@ export interface TutorialGuide {
     title: string
     url: string
   }>
+}
+
+export type CreatorRole = 'video' | 'tutorial'
+export type CreatorRankKey = 'overall' | 'active' | 'cases' | 'prompts' | 'rising' | 'tutorials'
+export type CreatorBadge =
+  | 'prolific'
+  | 'prompt-contributor'
+  | 'recently-active'
+  | 'rising'
+  | 'breakout'
+  | 'guide-author'
+  | 'consistent'
+export type CreatorReason =
+  | 'high-output'
+  | 'prompt-contributor'
+  | 'recently-active'
+  | 'breakout'
+  | 'tutorial-author'
+  | 'consistent'
+
+export interface CreatorProfile {
+  id: string
+  slug: string
+  handle: string
+  aliases: string[]
+  displayName: string
+  xUrl: string
+  roles: CreatorRole[]
+  caseIds: string[]
+  promptCaseIds: string[]
+  tutorialIds: string[]
+  representativeCaseIds: string[]
+  latestCaseIds: string[]
+  caseCount: number
+  promptCount: number
+  promptRate: number
+  tutorialCount: number
+  recentCaseCount: number
+  activeWeeks: number
+  firstAddedAt: string | null
+  lastAddedAt: string | null
+  engagementPercentile: number
+  badges: CreatorBadge[]
+  reasons: CreatorReason[]
+  ranks: Record<CreatorRankKey, number | null>
+  rankDelta: Record<CreatorRankKey, number | null>
+}
+
+export interface CreatorCatalog {
+  version: number
+  generatedAt: string
+  methodology: 'site-verified-content'
+  stats: {
+    sourceCreators: number
+    rankedCreators: number
+    videoCreators: number
+    tutorialCreators: number
+  }
+  creators: CreatorProfile[]
 }

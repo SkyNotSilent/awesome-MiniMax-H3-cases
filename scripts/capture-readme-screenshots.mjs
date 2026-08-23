@@ -8,9 +8,13 @@ const execFile = promisify(execFileCallback)
 const root = resolve(import.meta.dirname, '..')
 const screenshotDir = resolve(root, 'docs/screenshots')
 const stats = JSON.parse(await readFile(resolve(root, 'data/project-stats.json'), 'utf8'))
+const cases = JSON.parse(await readFile(resolve(root, 'data/cases.json'), 'utf8'))
 const guides = JSON.parse(await readFile(resolve(root, 'data/tutorial-guides.json'), 'utf8'))
 const configuredBase = process.env.SCREENSHOT_BASE_URL
 const baseUrl = configuredBase || 'http://127.0.0.1:4173'
+const latestCaseAddedAt = Math.max(...cases.map((item) => Date.parse(item.addedAt)))
+const latestGuideAddedAt = Math.max(...guides.map((item) => Date.parse(item.addedAt)))
+const screenshotUpdateBaseline = new Date(Math.min(latestCaseAddedAt, latestGuideAddedAt) - 1).toISOString()
 
 const wait = (milliseconds) => new Promise((resolveWait) => setTimeout(resolveWait, milliseconds))
 
@@ -45,6 +49,20 @@ async function verifyPage(page, path, language, heading) {
 async function dismissIntro(page, label) {
   const button = page.getByRole('button', { name: label })
   if (await button.count()) await button.evaluate((element) => element.click()).catch(() => {})
+}
+
+async function focusUpdateSnapshot(page) {
+  const summary = page.locator('.update-summary.has-updates')
+  await summary.waitFor()
+  await summary.scrollIntoViewIfNeeded()
+  await page.waitForTimeout(250)
+}
+
+async function focusTutorialUpdates(page) {
+  const filter = page.locator('.added-date-filter')
+  await filter.waitFor()
+  await filter.scrollIntoViewIfNeeded()
+  await page.waitForTimeout(250)
 }
 
 function escapeHtml(value) {
@@ -116,6 +134,17 @@ let preview
 let browser
 const browserProblems = []
 
+function recordConsoleError(prefix, message) {
+  if (message.type() !== 'error') return
+  const text = message.text()
+  const location = message.location()?.url || ''
+  const externalResourceFailure = text.startsWith('Failed to load resource: net::')
+    && location
+    && !location.startsWith(baseUrl)
+  if (externalResourceFailure) return
+  browserProblems.push(`${prefix}console: ${text}${location ? ` (${location})` : ''}`)
+}
+
 try {
   if (!configuredBase) {
     preview = spawn(resolve(root, 'node_modules/.bin/vite'), ['preview', '--host', '127.0.0.1', '--port', '4173'], {
@@ -127,29 +156,36 @@ try {
 
   browser = await chromium.launch({ headless: true })
   const desktop = await browser.newContext({ viewport: { width: 1440, height: 1000 }, deviceScaleFactor: 1 })
-  await desktop.addInitScript(() => localStorage.setItem('minimax-h3-language', 'zh'))
+  await desktop.addInitScript((baseline) => {
+    localStorage.setItem('minimax-h3-language', 'zh')
+    localStorage.setItem('minimax-h3-updates-seen-through-v1', baseline)
+  }, screenshotUpdateBaseline)
   const page = await desktop.newPage()
   page.on('pageerror', (error) => browserProblems.push(`pageerror: ${error.message}`))
-  page.on('console', (message) => message.type() === 'error' && browserProblems.push(`console: ${message.text()}`))
+  page.on('console', (message) => recordConsoleError('', message))
 
   await verifyPage(page, '/', 'zh-CN', '先看 MiniMax H3 的真实效果。')
   await dismissIntro(page, '跳过开场')
   await page.getByRole('button', { name: '编辑精选' }).click()
   if (!(await page.url()).includes('collection=featured')) throw new Error('Collection URL was not persisted')
   await page.getByRole('button', { name: '全部案例' }).click()
+  await focusUpdateSnapshot(page)
   await page.screenshot({ path: resolve(screenshotDir, 'case-library-zh.jpg'), type: 'jpeg', quality: 88 })
 
   await verifyPage(page, '/en/', 'en', 'See what MiniMax H3 actually makes.')
   await dismissIntro(page, 'Skip intro')
+  await focusUpdateSnapshot(page)
   await page.screenshot({ path: resolve(screenshotDir, 'case-library-en.jpg'), type: 'jpeg', quality: 88 })
 
   await verifyPage(page, '/tutorials/', 'zh-CN', 'MiniMax H3 教程')
   await page.getByRole('button', { name: '8GB 显存' }).click()
   await page.getByRole('heading', { name: '4-bit + DiffSynth：最低 8GB 显存路线' }).waitFor()
   await page.getByRole('button', { name: '全部硬件' }).click()
+  await focusTutorialUpdates(page)
   await page.screenshot({ path: resolve(screenshotDir, 'tutorials-zh.png') })
 
   await verifyPage(page, '/en/tutorials/', 'en', 'MiniMax H3 Tutorials')
+  await focusTutorialUpdates(page)
   await page.screenshot({ path: resolve(screenshotDir, 'tutorials-en.png') })
 
   await verifyPage(page, '/tutorials/ecosystem/', 'zh-CN', '教程与工具生态')
@@ -160,27 +196,44 @@ try {
   await page.getByText(`Stars snapshot: ${stats.generatedAt}`).first().waitFor()
   await page.screenshot({ path: resolve(screenshotDir, 'tutorial-ecosystem-en.png') })
 
+  await verifyPage(page, '/creators/', 'zh-CN', '持续做出好作品的人。')
+  await page.screenshot({ path: resolve(screenshotDir, 'creators-zh.png') })
+
+  await verifyPage(page, '/en/creators/', 'en', 'Follow the people who keep making.')
+  await page.screenshot({ path: resolve(screenshotDir, 'creators-en.png') })
+
   const mobile = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1 })
-  await mobile.addInitScript(() => localStorage.setItem('minimax-h3-language', 'zh'))
+  await mobile.addInitScript((baseline) => {
+    localStorage.setItem('minimax-h3-language', 'zh')
+    localStorage.setItem('minimax-h3-updates-seen-through-v1', baseline)
+  }, screenshotUpdateBaseline)
   const mobilePage = await mobile.newPage()
   mobilePage.on('pageerror', (error) => browserProblems.push(`mobile pageerror: ${error.message}`))
-  mobilePage.on('console', (message) => message.type() === 'error' && browserProblems.push(`mobile console: ${message.text()}`))
+  mobilePage.on('console', (message) => recordConsoleError('mobile ', message))
   await verifyPage(mobilePage, '/', 'zh-CN', '先看 MiniMax H3 的真实效果。')
   await dismissIntro(mobilePage, '跳过开场')
+  await focusUpdateSnapshot(mobilePage)
   await mobilePage.screenshot({ path: resolve(screenshotDir, 'case-library-zh-mobile.jpg'), type: 'jpeg', quality: 86 })
   await verifyPage(mobilePage, '/tutorials/', 'zh-CN', 'MiniMax H3 教程')
+  await focusTutorialUpdates(mobilePage)
   await mobilePage.screenshot({ path: resolve(screenshotDir, 'tutorials-zh-mobile.png') })
   await verifyPage(mobilePage, '/en/', 'en', 'See what MiniMax H3 actually makes.')
   await dismissIntro(mobilePage, 'Skip intro')
+  await focusUpdateSnapshot(mobilePage)
   await mobilePage.screenshot({ path: resolve(screenshotDir, 'case-library-en-mobile.jpg'), type: 'jpeg', quality: 86 })
   await verifyPage(mobilePage, '/en/tutorials/', 'en', 'MiniMax H3 Tutorials')
+  await focusTutorialUpdates(mobilePage)
   await mobilePage.screenshot({ path: resolve(screenshotDir, 'tutorials-en-mobile.png') })
+  await verifyPage(mobilePage, '/creators/', 'zh-CN', '持续做出好作品的人。')
+  await mobilePage.screenshot({ path: resolve(screenshotDir, 'creators-zh-mobile.png') })
+  await verifyPage(mobilePage, '/en/creators/', 'en', 'Follow the people who keep making.')
+  await mobilePage.screenshot({ path: resolve(screenshotDir, 'creators-en-mobile.png') })
   await mobile.close()
   await desktop.close()
 
   await captureSkillOutput(browser)
   if (browserProblems.length) throw new Error(browserProblems.join('\n'))
-  console.log(`Captured bilingual README screenshots from ${stats.cases} cases and ${stats.tutorials} tutorials.`)
+  console.log(`Captured bilingual README screenshots from ${stats.cases} cases, ${stats.tutorials} tutorials, and ${stats.rankedCreators} creators.`)
 } finally {
   if (browser) await browser.close()
   if (preview) preview.kill('SIGTERM')

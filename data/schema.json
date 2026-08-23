@@ -24,7 +24,8 @@
     "duration",
     "resolution",
     "aspectRatio",
-    "publishedAt"
+    "publishedAt",
+    "addedAt"
   ],
   "properties": {
     "id": {
@@ -99,6 +100,10 @@
     "publishedAt": {
       "type": "string",
       "minLength": 1
+    },
+    "addedAt": {
+      "type": "string",
+      "format": "date-time"
     },
     "sourceCaption": {
       "type": "string",
