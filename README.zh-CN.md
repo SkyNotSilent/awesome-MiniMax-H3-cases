@@ -5,7 +5,7 @@
 # MiniMax H3 Cases & Guides｜案例与实战教程
 
 <!-- project-stats:start -->
-**更完整、更可信的 MiniMax H3 案例与教程库：997 个可播放视频、309 条完整公开 Prompt、24 篇实用教程。**
+**更完整、更可信的 MiniMax H3 案例与教程库：997 个可播放视频、317 条完整公开 Prompt、24 篇实用教程。**
 <!-- project-stats:end -->
 
 [English](./README.md) · **简体中文**
@@ -90,7 +90,7 @@ npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
 ## 数据、自动化与可信度
 
 <!-- project-snapshot:start -->
-**当前自动统计：** 997 个案例 · 309 条完整公开 Prompt · 24 篇教程 · 8 篇旗舰教程 · 15 个生态资源 · 内容核验至 2026-08-23。
+**当前自动统计：** 997 个案例 · 317 条完整公开 Prompt · 24 篇教程 · 8 篇旗舰教程 · 15 个生态资源 · 内容核验至 2026-08-23。
 <!-- project-snapshot:end -->
 
 - [`data/project-stats.json`](./data/project-stats.json) 是公开数字的唯一快照；网站与 README 数字过期会让 CI 失败；
