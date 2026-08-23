@@ -14,6 +14,7 @@ All notable public changes are documented here. Release dates use YYYY-MM-DD.
 ### Security
 
 - Updated the transitive Nano ID dependency to a patched release.
+- Updated GitHub checkout and Node setup actions to their maintained Node 24 releases.
 
 ## [0.2.0] - 2026-08-23
 
