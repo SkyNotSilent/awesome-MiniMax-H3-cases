@@ -5,7 +5,7 @@
 # MiniMax H3 Cases & Guides
 
 <!-- project-stats:start -->
-**The most complete source-attributed MiniMax H3 case and tutorial library: 997 playable videos, 309 complete public Prompts, and 24 practical guides.**
+**The most complete source-attributed MiniMax H3 case and tutorial library: 997 playable videos, 317 complete public Prompts, and 24 practical guides.**
 <!-- project-stats:end -->
 
 **English** · [简体中文](./README.zh-CN.md)
@@ -90,7 +90,7 @@ Example output is structured as a recommended route, environment check, executio
 ## Data, automation, and trust
 
 <!-- project-snapshot:start -->
-**Current generated snapshot:** 997 cases · 309 complete public Prompts · 24 tutorials · 8 flagship guides · 15 ecosystem resources · content checked through 2026-08-23.
+**Current generated snapshot:** 997 cases · 317 complete public Prompts · 24 tutorials · 8 flagship guides · 15 ecosystem resources · content checked through 2026-08-23.
 <!-- project-snapshot:end -->
 
 - [`data/project-stats.json`](./data/project-stats.json) is the canonical public count snapshot; CI rejects stale website and README numbers.

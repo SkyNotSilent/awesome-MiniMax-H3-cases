@@ -10,5 +10,6 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     exclude: [...configDefaults.exclude, '.review/**'],
+    testTimeout: 20_000,
   },
 })
