@@ -133,6 +133,10 @@ for (const [index, item] of tutorials.entries()) {
   tutorialCodes.add(item.code)
   if (!tutorialCategories.has(item.category)) errors.push(`${at}.category is invalid: ${item.category}`)
   if (Number.isNaN(Date.parse(item.verifiedAt))) errors.push(`${at}.verifiedAt must be a valid date`)
+  if (item.stars !== undefined && (!Number.isInteger(item.stars) || item.stars < 0)) errors.push(`${at}.stars must be a non-negative integer`)
+  if (item.forks !== undefined && (!Number.isInteger(item.forks) || item.forks < 0)) errors.push(`${at}.forks must be a non-negative integer`)
+  if (item.snapshotAt && Number.isNaN(Date.parse(item.snapshotAt))) errors.push(`${at}.snapshotAt must be a valid date`)
+  if (item.pushedAt && Number.isNaN(Date.parse(item.pushedAt))) errors.push(`${at}.pushedAt must be a valid date`)
   try {
     new URL(item.url)
   } catch {
@@ -209,6 +213,20 @@ for (const [index, item] of tutorialGuides.entries()) {
     }
     if (Number.isNaN(Date.parse(item.engagement.snapshotAt))) errors.push(`${at}.engagement.snapshotAt must be a valid date`)
   }
+  if (item.flagship) {
+    for (const key of ['difficulty', 'estimatedMinutes', 'hardwareProfiles', 'testedVersions', 'expectedResult', 'troubleshooting', 'uninstall', 'sourceRefs']) {
+      if (!item[key] || (Array.isArray(item[key]) && item[key].length === 0)) errors.push(`${at}.${key} is required for flagship guides`)
+    }
+    if (item.commands.length === 0) errors.push(`${at}.commands must be non-empty for flagship guides`)
+    if (!item.checks?.zh?.length || !item.checks?.en?.length) errors.push(`${at}.checks is required for flagship guides`)
+  }
+  if (item.expectedResult && (!item.expectedResult.zh || !item.expectedResult.en)) errors.push(`${at}.expectedResult requires zh and en values`)
+  for (const issue of item.troubleshooting || []) {
+    if (!issue.problem?.zh || !issue.problem?.en || !issue.solution?.zh || !issue.solution?.en) errors.push(`${at}.troubleshooting items require bilingual problem and solution`)
+  }
+  for (const reference of item.sourceRefs || []) {
+    try { new URL(reference.url) } catch { errors.push(`${at}.sourceRefs contains an invalid URL`) }
+  }
   if (item.posterUrl?.startsWith('/')) {
     try {
       await access(resolve(root, 'public', item.posterUrl.slice(1)))
@@ -222,6 +240,8 @@ const foundationCount = tutorialGuides.filter((item) => item.contentType === 'fo
 const communityCount = tutorialGuides.filter((item) => item.contentType === 'community').length
 if (foundationCount !== 4) errors.push(`tutorialGuides must contain exactly 4 foundation routes; found ${foundationCount}`)
 if (communityCount < 20) errors.push(`tutorialGuides must contain at least 20 community guides; found ${communityCount}`)
+const flagshipCount = tutorialGuides.filter((item) => item.flagship).length
+if (flagshipCount !== 8) errors.push(`tutorialGuides must contain exactly 8 flagship guides; found ${flagshipCount}`)
 
 if (errors.length) {
   console.error(errors.join('\n'))

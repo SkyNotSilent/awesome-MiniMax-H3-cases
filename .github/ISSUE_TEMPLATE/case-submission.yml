@@ -1,0 +1,44 @@
+name: Submit a video case
+description: Propose an original, publicly attributable MiniMax H3 video case.
+title: "[Case]: "
+labels: ["submission", "case"]
+body:
+  - type: input
+    id: source
+    attributes:
+      label: Original source URL
+      description: Link to the creator's original X post or an official reproducible example.
+    validations:
+      required: true
+  - type: input
+    id: creator
+    attributes:
+      label: Creator
+      description: Name and handle shown by the original source.
+    validations:
+      required: true
+  - type: dropdown
+    id: prompt
+    attributes:
+      label: Complete public Prompt
+      options:
+        - The source publishes the complete Prompt
+        - The source does not publish a complete Prompt
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: MiniMax H3 evidence and notes
+      description: Explain where the original post identifies MiniMax H3 / Hailuo H3 and any media-access details.
+    validations:
+      required: true
+  - type: checkboxes
+    id: rights
+    attributes:
+      label: Submission checks
+      options:
+        - label: This is the original source, not a repost or compilation.
+          required: true
+        - label: I understand that the Prompt will not be inferred, completed, or rewritten.
+          required: true

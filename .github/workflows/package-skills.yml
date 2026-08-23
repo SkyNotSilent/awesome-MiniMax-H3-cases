@@ -1,0 +1,31 @@
+name: Validate Agent Skills
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'agents/skills/**'
+      - '.claude-plugin/marketplace.json'
+      - 'scripts/verify-skills.mjs'
+  pull_request:
+    paths:
+      - 'agents/skills/**'
+      - '.claude-plugin/marketplace.json'
+      - 'scripts/verify-skills.mjs'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/verify-skills.mjs
+      - run: npm pack --dry-run
+        working-directory: agents/skills/minimax-h3-prompt-library
+      - run: npm pack --dry-run
+        working-directory: agents/skills/minimax-h3-tutorial-guide

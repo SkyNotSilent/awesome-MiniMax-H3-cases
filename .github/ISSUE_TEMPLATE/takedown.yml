@@ -1,0 +1,25 @@
+name: Request correction or removal
+description: For creators or rights holders requesting correction or removal of attributed material.
+title: "[Removal]: "
+labels: ["takedown"]
+body:
+  - type: input
+    id: item
+    attributes:
+      label: Affected case, tutorial, or source URL
+    validations:
+      required: true
+  - type: input
+    id: relationship
+    attributes:
+      label: Your relationship to the material
+      description: Creator, rights holder, authorized representative, or another role.
+    validations:
+      required: true
+  - type: textarea
+    id: request
+    attributes:
+      label: Requested action and contact evidence
+      description: State what should be corrected or removed and how maintainers can verify the request.
+    validations:
+      required: true

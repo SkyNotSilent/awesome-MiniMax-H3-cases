@@ -14,9 +14,23 @@
     "caveats": { "zh": ["模型文件很大；磁盘空间、下载中断和文件放错目录是最常见的首次失败原因。", "T2V/I2V 使用 FL2VA，R2V 使用 Ref2VA；权重混用会导致节点找不到模型或结果异常。", "H3 分辨率需为 32 的倍数；高分辨率和长时长会显著增加显存与等待时间。", "官方模板和文件名会更新；执行前用参考资料复核当前版本，不照抄过期截图。"], "en": ["Model files are large; storage, interrupted downloads, and wrong folders are the most common first-run failures.", "T2V and I2V use FL2VA while R2V uses Ref2VA; mixing weight families causes missing models or bad output.", "H3 resolutions must be multiples of 32, and higher resolution or duration sharply increases VRAM and wait time.", "Templates and filenames evolve; verify the current reference before following an old screenshot."] },
     "posterUrl": "/tutorial-posters/foundation-official.svg",
     "tags": ["ComfyUI", "T2VA", "Beginner"],
-    "relatedResourceIds": ["official-minimax-h3", "minimax-h3-easy", "huangserva-director-workflows"],
+    "relatedResourceIds": ["official-minimax-h3", "minimax-h3-easy", "huangserva-director-workflows", "comfyui-wiki"],
     "source": { "platform": "docs", "url": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3", "author": "ComfyUI", "originalLanguage": "en" },
-    "verifiedAt": "2026-08-23"
+    "verifiedAt": "2026-08-23",
+    "flagship": true,
+    "difficulty": "beginner",
+    "estimatedMinutes": 90,
+    "hardwareProfiles": ["vram-16", "vram-24-plus", "cloud-gpu"],
+    "testedVersions": ["ComfyUI 0.30+", "Python 3.13 / 3.12 fallback"],
+    "expectedResult": { "zh": "生成一条可在普通播放器打开、包含同步声音的短 MP4，并保存一份未叠加第三方节点的 baseline 工作流。", "en": "Render a short MP4 with synchronized audio that opens in a regular player, and save an untouched baseline workflow before adding third-party nodes." },
+    "troubleshooting": [
+      { "problem": { "zh": "Loader 中找不到模型", "en": "A model is missing from a Loader" }, "solution": { "zh": "核对五个文件的原始文件名与目录，刷新模型列表并彻底重启 ComfyUI。", "en": "Check the original filename and folder for all five files, refresh the model list, and fully restart ComfyUI." } },
+      { "problem": { "zh": "输出静音或音画不同步", "en": "The output is silent or out of sync" }, "solution": { "zh": "确认 audio VAE 已加载，并先在不含第三方节点的 20 步短片上复现。", "en": "Confirm the audio VAE is loaded and reproduce a short 20-step render without third-party nodes." } }
+    ],
+    "uninstall": { "zh": ["删除本教程新增的模型文件前先确认没有其他工作流引用。", "保留 baseline JSON，出现兼容问题时退回官方模板。"], "en": ["Before deleting downloaded model files, confirm no other workflow references them.", "Keep the baseline JSON and return to the official template when compatibility breaks."] },
+    "sourceRefs": [
+      { "title": "MiniMax H3 official repository", "url": "https://github.com/MiniMax-AI/MiniMax-H3" }
+    ]
   },
   {
     "id": "nvidia-comfyui",
@@ -35,7 +49,21 @@
     "tags": ["Turbo", "Low VRAM", "6–8 Steps"],
     "relatedResourceIds": ["turbo-lora", "modeltc-h3-turbo", "spectrum-h3", "minimax-h3-easy"],
     "source": { "platform": "github", "url": "https://github.com/Larryvrh/ComfyUI-MiniMax-H3-Turbo", "author": "Larryvrh", "originalLanguage": "en" },
-    "verifiedAt": "2026-08-23"
+    "verifiedAt": "2026-08-23",
+    "flagship": true,
+    "difficulty": "intermediate",
+    "estimatedMinutes": 45,
+    "hardwareProfiles": ["vram-12", "vram-16", "vram-24-plus", "cloud-gpu"],
+    "testedVersions": ["ComfyUI-MiniMax-H3-Turbo v4 step600 EMA", "6–8 step workflow"],
+    "expectedResult": { "zh": "在相同 seed、输入、分辨率和时长下得到 6–8 步带声视频，并留下原生 20 步与 Turbo 的耗时和质量对照。", "en": "Render a 6–8 step video with audio from the same seed, input, resolution, and duration, with a native 20-step comparison saved beside it." },
+    "troubleshooting": [
+      { "problem": { "zh": "新节点没有出现在搜索中", "en": "The new nodes do not appear in search" }, "solution": { "zh": "确认仓库位于 custom_nodes，查看启动日志中的导入错误并完全重启。", "en": "Confirm the repository is under custom_nodes, inspect startup import errors, and fully restart." } },
+      { "problem": { "zh": "4 步画面拖影或声音变差", "en": "Four-step output smears or loses audio quality" }, "solution": { "zh": "先回到 8 步、strength 1.0；不要叠加 Spectrum 或 EasyCache。", "en": "Return to eight steps at strength 1.0 and remove Spectrum or EasyCache from the comparison." } }
+    ],
+    "uninstall": { "zh": ["删除 ComfyUI/custom_nodes/ComfyUI-MiniMax-H3-Turbo 并重启。", "移除工作流中的 Turbo LoRA 与 Turbo Sampler 节点即可回到原生采样。"], "en": ["Delete ComfyUI/custom_nodes/ComfyUI-MiniMax-H3-Turbo and restart.", "Remove the Turbo LoRA and Turbo Sampler nodes to restore native sampling."] },
+    "sourceRefs": [
+      { "title": "Turbo LoRA weights", "url": "https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora" }
+    ]
   },
   {
     "id": "mac-native",
@@ -54,7 +82,21 @@
     "tags": ["Apple Silicon", "Metal", "0→1"],
     "relatedResourceIds": ["antirez-h3-metal", "awesome-h3-resources"],
     "source": { "platform": "github", "url": "https://github.com/antirez/h3.c", "author": "antirez", "originalLanguage": "en" },
-    "verifiedAt": "2026-08-23"
+    "verifiedAt": "2026-08-23",
+    "flagship": true,
+    "difficulty": "intermediate",
+    "estimatedMinutes": 120,
+    "hardwareProfiles": ["apple-silicon"],
+    "testedVersions": ["h3.c main @ 2026-08-23", "macOS Apple Silicon", "FFmpeg"],
+    "expectedResult": { "zh": "h3 --info 识别模型与 Metal 设备，并生成 outputs/fox-fast.mp4；文件包含可解码的视频轨和声音轨。", "en": "h3 --info identifies the model and Metal device, and outputs/fox-fast.mp4 contains decodable video and audio tracks." },
+    "troubleshooting": [
+      { "problem": { "zh": "编译器或 Metal 构建失败", "en": "Compiler or Metal build failure" }, "solution": { "zh": "重新运行 xcode-select --install，确认使用 Apple clang，再执行 make clean 后重新编译。", "en": "Run xcode-select --install, confirm Apple clang is active, then run make clean and rebuild." } },
+      { "problem": { "zh": "--info 报模型文件缺失", "en": "--info reports missing model files" }, "solution": { "zh": "重新核对完整 Hugging Face snapshot，不要只下载主权重或修改文件名。", "en": "Recheck the complete Hugging Face snapshot; do not download only the main checkpoint or rename files." } }
+    ],
+    "uninstall": { "zh": ["删除 h3.c 工作目录即可移除程序；模型目录可独立保留。", "用 brew uninstall ffmpeg 移除本教程安装的 FFmpeg，但先确认没有其他项目依赖。"], "en": ["Remove the h3.c working directory to uninstall the program; the model directory can be kept separately.", "Use brew uninstall ffmpeg only after confirming no other project depends on it."] },
+    "sourceRefs": [
+      { "title": "MiniMax H3 weights", "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3" }
+    ]
   },
   {
     "id": "prompt-agent-skill",
@@ -73,7 +115,21 @@
     "tags": ["Motion Context", "Long Video", "Audio"],
     "relatedResourceIds": ["motion-context", "audio-t8", "official-minimax-h3"],
     "source": { "platform": "github", "url": "https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context", "author": "NikoDemon80", "originalLanguage": "en" },
-    "verifiedAt": "2026-08-23"
+    "verifiedAt": "2026-08-23",
+    "flagship": true,
+    "difficulty": "advanced",
+    "estimatedMinutes": 70,
+    "hardwareProfiles": ["vram-16", "vram-24-plus", "cloud-gpu"],
+    "testedVersions": ["ComfyUI 0.32–0.33", "Motion Context main @ 2026-08-23"],
+    "expectedResult": { "zh": "第二段延续第一段的运动方向与声音，并在 Trim 后移除重复上下文；两段分辨率一致、接缝可检查。", "en": "Clip B continues clip A's motion direction and sound, duplicate context is removed after Trim, and both clips share one resolution with an inspectable join." },
+    "troubleshooting": [
+      { "problem": { "zh": "Load Latent 形成循环连接", "en": "Load Latent creates a circular graph" }, "solution": { "zh": "使用插件自带的 Save/Load Latent 跨运行传递，并明确设置上一段与当前段的 clip_index。", "en": "Use the pack's Save/Load Latent nodes across runs and set the previous/current clip_index explicitly." } },
+      { "problem": { "zh": "接缝重复或音频错位", "en": "The join repeats or audio drifts" }, "solution": { "zh": "把 trim_frames 接到 Motion Context Trim，保持 match_tail，并从 22 帧视频、24 帧音频上下文重新测试。", "en": "Wire trim_frames into Motion Context Trim, keep match_tail enabled, and retry with 22 video and 24 audio context frames." } }
+    ],
+    "uninstall": { "zh": ["删除 ComfyUI/custom_nodes/ComfyUI-H3-Motion-Context 并重启。", "移除 Motion Context、Save/Load Latent 与 Trim 节点后恢复普通 H3 图。"], "en": ["Delete ComfyUI/custom_nodes/ComfyUI-H3-Motion-Context and restart.", "Remove Motion Context, Save/Load Latent, and Trim nodes to restore a standard H3 graph."] },
+    "sourceRefs": [
+      { "title": "ComfyUI native H3 guide", "url": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3" }
+    ]
   },
   {
     "id": "local-deployment-zero-to-output",
@@ -184,7 +240,7 @@
     "caveats": { "zh": ["镜头间一致性仍需人工挑片与后期，不应一次生成整条预告。"], "en": ["Cross-shot consistency still needs curation and post; do not expect one-pass trailer generation."] },
     "posterUrl": "/tutorial-posters/storyboard.jpg",
     "tags": ["Storyboard", "Trailer", "Consistency"],
-    "relatedResourceIds": ["aimixer-h3-director", "huangserva-director-workflows"],
+    "relatedResourceIds": ["aimixer-h3-director", "huangserva-director-workflows", "openmontage"],
     "source": { "platform": "x", "url": "https://x.com/magnific/status/2090508187875356957", "author": "Magnific", "handle": "@magnific", "publishedAt": "2026-08-21", "originalLanguage": "en" },
     "engagement": { "replies": 7, "reposts": 10, "likes": 141, "views": 11000, "snapshotAt": "2026-08-23" },
     "verifiedAt": "2026-08-23"
@@ -312,15 +368,30 @@
     "audience": { "zh": "对声音质量、同步和生成速度都敏感的进阶用户。", "en": "Advanced users balancing sound quality, sync, and generation speed." },
     "hardware": { "zh": "能运行 H3 ComfyUI 的 NVIDIA 环境。", "en": "An NVIDIA environment capable of running H3 in ComfyUI." },
     "prerequisites": { "zh": ["T8 音画节点", "官方 H3 工作流", "固定音画测试 Prompt"], "en": ["The T8 audio-video nodes", "A native H3 workflow", "A fixed audio-video test prompt"] },
-    "steps": { "zh": ["安装 T8 节点并先跑稳定基础链路。", "分别调整视频与音频步数，记录耗时和同步。", "需要时再加入加速 LoRA，并与未加速基线对比。"], "en": ["Install the T8 nodes and run the stable base path first.", "Adjust video and audio steps separately while recording time and sync.", "Add an acceleration LoRA only if needed and compare against the native baseline."] },
-    "commands": [],
+    "steps": { "zh": ["先确认官方 H3 ComfyUI 基线可以输出带声 MP4，并保存固定 seed、Prompt、画布、帧数和 20 步结果。", "在 ComfyUI Manager 搜索 MiniMax H3 Audio T8，或用 comfy CLI 安装；完成后彻底重启 ComfyUI。", "打开 examples/workflows/01-basic-generation，替换成自己的模型与素材；首轮使用 22 帧、小画布和 stock sampler。", "先接 MiniMaxH3AudioConditioningT8、MiniMaxH3DualClockSamplerT8、MiniMaxH3AVDecodeT8 和 MiniMaxH3PreflightT8，运行预检并修复尺寸、标签或显存错误。", "固定视频步数，只改变音频时钟；再固定音频步数，只改变视频时钟。每次记录总耗时、声音清晰度、事件同步和输出轨道信息。", "只有稳定链路通过后才加入 Turbo LoRA；实验节点、SageAttention 和长视频链路分开验证，不在第一轮叠加。"], "en": ["Confirm the official H3 ComfyUI baseline outputs an MP4 with audio, then save its seed, prompt, canvas, frame count, and 20-step result.", "Find MiniMax H3 Audio T8 in ComfyUI Manager or install it with the comfy CLI, then fully restart ComfyUI.", "Open examples/workflows/01-basic-generation and replace the models and media. Start with 22 frames, a small canvas, and the stock sampler.", "Wire MiniMaxH3AudioConditioningT8, MiniMaxH3DualClockSamplerT8, MiniMaxH3AVDecodeT8, and MiniMaxH3PreflightT8 first. Run preflight and fix size, tag, or VRAM errors.", "Hold video steps constant while changing the audio clock, then reverse the test. Record total time, speech clarity, event sync, and output stream metadata each time.", "Add Turbo LoRA only after the stable path passes. Test experimental nodes, SageAttention, and long-video graphs separately rather than stacking them in the first run."] },
+    "commands": ["comfy node install minimax-h3-audio-t8", "cd ComfyUI/custom_nodes && git clone https://github.com/T8mars/comfyui-minimax-h3-audio-T8.git minimax-h3-audio-T8"],
+    "checks": { "zh": ["启动日志显示插件成功注册且没有导入错误", "Preflight 没有模型、尺寸、标签或显存阻塞", "基础双时钟工作流输出含视频轨和 32kHz 立体声音频轨", "已保存仅改变一个时钟参数的 A/B 结果"], "en": ["Startup logs show the plugin registered without import errors", "Preflight reports no blocking model, size, tag, or VRAM errors", "The base dual-clock graph outputs video plus a 32kHz stereo audio stream", "A/B results change only one clock parameter at a time"] },
     "caveats": { "zh": ["社区宣称的速度提升需在自己的机器上复测；实验节点与稳定节点要分开。"], "en": ["Re-test community speed claims on your own hardware and keep experimental nodes separate from stable ones."] },
     "posterUrl": "/tutorial-posters/dual-clock.jpg",
     "tags": ["Audio", "Dual Clock", "ComfyUI"],
     "relatedResourceIds": ["audio-t8", "turbo-lora"],
     "source": { "platform": "x", "url": "https://x.com/0xmomonifty/status/2085377094461333550", "author": "0xMomo", "handle": "@0xmomonifty", "publishedAt": "2026-08-06", "originalLanguage": "zh" },
     "engagement": { "replies": 25, "reposts": 61, "likes": 443, "views": 57000, "snapshotAt": "2026-08-23" },
-    "verifiedAt": "2026-08-23"
+    "verifiedAt": "2026-08-23",
+    "flagship": true,
+    "difficulty": "advanced",
+    "estimatedMinutes": 75,
+    "hardwareProfiles": ["vram-16", "vram-24-plus", "cloud-gpu"],
+    "testedVersions": ["MiniMax H3 Audio T8 1.44.0", "ComfyUI native H3"],
+    "expectedResult": { "zh": "得到一组只改变视频或音频时钟的带声 MP4 对照，并能用 Preflight 报告说明所用模型、帧数、尺寸与显存风险。", "en": "Produce an MP4 comparison that changes only the video or audio clock, with a Preflight report documenting models, frames, dimensions, and VRAM risk." },
+    "troubleshooting": [
+      { "problem": { "zh": "prompt media tag validation failed", "en": "prompt media tag validation failed" }, "solution": { "zh": "检查 <Picture 1>、<Video 1>、<Audio 1> 的编号与实际接入顺序，多个参考输入不得省略编号。", "en": "Match <Picture 1>, <Video 1>, and <Audio 1> numbering to the wired inputs; do not omit indices with multiple references." } },
+      { "problem": { "zh": "OOM、NaN 或音频丢失", "en": "OOM, NaN, or missing audio" }, "solution": { "zh": "保存完整 Error Report，从 22 帧小画布和稳定节点重跑，并清理实验 patch 与缓存。", "en": "Save the complete Error Report, retry at 22 frames on a small canvas with stable nodes, and remove experimental patches and stale caches." } }
+    ],
+    "uninstall": { "zh": ["删除 ComfyUI/custom_nodes/minimax-h3-audio-T8 后重启。", "可选提示词重写器依赖只在使用该功能时安装，不要为基础音频工作流全局升级 Transformers。"], "en": ["Delete ComfyUI/custom_nodes/minimax-h3-audio-T8 and restart.", "Install optional prompt-rewriter dependencies only when using that feature; do not globally upgrade Transformers for the base audio graph."] },
+    "sourceRefs": [
+      { "title": "MiniMax H3 Audio T8", "url": "https://github.com/T8mars/comfyui-minimax-h3-audio-T8" }
+    ]
   },
   {
     "id": "native-comfyui-modes",
@@ -350,15 +421,30 @@
     "audience": { "zh": "4080 16GB 或相近显存、需要低显存路线的用户。", "en": "Users around 16GB VRAM who need a reduced-memory path." },
     "hardware": { "zh": "RTX 4080 16GB（原帖实测）；约 10 分钟生成 10 秒视频。", "en": "RTX 4080 16GB as reported by the source; roughly ten minutes for a ten-second clip." },
     "prerequisites": { "zh": ["ComfyUI 原生工作流", "匹配的 pruned 与 INT8 权重", "正确模型目录"], "en": ["The native ComfyUI workflow", "Matching pruned and INT8 weights", "Correct model directories"] },
-    "steps": { "zh": ["严格按权重说明放置模型，不混用版本。", "先导入固定 10 秒测试工作流。", "确认显存与输出后再提高分辨率或时长。"], "en": ["Place models exactly as documented and do not mix versions.", "Import a fixed ten-second test workflow first.", "Confirm VRAM and output before increasing resolution or duration."] },
-    "commands": [],
+    "steps": { "zh": ["记录原帖的 4080 16GB 结果只作为硬件快照，不把约 10 分钟耗时当成所有机器的承诺。", "从源码安装 DiffSynth-Studio，并额外安装 quant 依赖；使用独立 Python 环境，避免改坏现有 ComfyUI。", "打开低显存示例 MiniMax-H3-Int8-ConvRot-Pruned-FL2VA.py，先核对模型 ID、origin_file_pattern、vram_limit 与输出路径。", "先运行示例默认的短片和低画布；监控峰值显存、系统内存、下载与 VAE 解码，不要一开始改成 10 秒或原生高分辨率。", "确认 MP4 含视频与声音后，再固定 seed 逐步增加帧数或画布。一次只改一个规模参数，并保留 OOM 前最后成功配置。", "量化结果与原生基线使用相同 Prompt、seed 和输出规格做画质与声音对照，不能只以能跑通判断质量。"], "en": ["Treat the source's RTX 4080 16GB result as a hardware snapshot, not a universal ten-minute promise.", "Install DiffSynth-Studio from source with its quant extras in a separate Python environment so the ComfyUI environment remains untouched.", "Open MiniMax-H3-Int8-ConvRot-Pruned-FL2VA.py under model_inference_low_vram and verify model IDs, origin_file_pattern, vram_limit, and output path.", "Run the example first at its short duration and small canvas. Monitor peak VRAM, system memory, downloads, and VAE decode before increasing duration or resolution.", "After an MP4 with video and audio succeeds, hold the seed constant and increase frames or canvas one variable at a time. Keep the last successful configuration before OOM.", "Compare quantized and native outputs with the same prompt, seed, and output specification; fitting in memory is not a quality verdict."] },
+    "commands": ["git clone https://github.com/modelscope/DiffSynth-Studio.git", "cd DiffSynth-Studio && pip install -e .", "pip install \"diffsynth[quant]\"", "python examples/minimax_h3/model_inference_low_vram/MiniMax-H3-Int8-ConvRot-Pruned-FL2VA.py"],
+    "checks": { "zh": ["量化依赖可以导入且低显存示例开始加载匹配的 FL2VA 权重", "一次短片成功输出含视频轨和声音轨的 MP4", "已记录峰值显存、总耗时、画布、帧数与 seed", "与原生基线的画面和声音差异已人工检查"], "en": ["Quantization dependencies import and the low-VRAM example loads matching FL2VA weights", "A short run produces an MP4 with video and audio streams", "Peak VRAM, total time, canvas, frames, and seed are recorded", "Visual and audio differences from the native baseline are reviewed"] },
     "caveats": { "zh": ["量化与剪枝可能影响质量；先复现，再做画质判断。"], "en": ["Quantization and pruning may affect quality; reproduce first, then evaluate."] },
     "posterUrl": "/tutorial-posters/4080-int8.jpg",
     "tags": ["RTX 4080", "INT8", "Pruned"],
     "relatedResourceIds": ["awesome-h3-resources", "official-minimax-h3"],
     "source": { "platform": "x", "url": "https://x.com/eternityspring/status/2084666970558074971", "author": "Shuohao", "handle": "@eternityspring", "publishedAt": "2026-08-04", "originalLanguage": "zh" },
     "engagement": { "replies": 34, "reposts": 140, "likes": 734, "views": 180000, "snapshotAt": "2026-08-23" },
-    "verifiedAt": "2026-08-23"
+    "verifiedAt": "2026-08-23",
+    "flagship": true,
+    "difficulty": "intermediate",
+    "estimatedMinutes": 120,
+    "hardwareProfiles": ["vram-16", "cloud-gpu"],
+    "testedVersions": ["DiffSynth-Studio main @ 2026-08-23", "INT8 ConvRot pruned FL2VA low-VRAM example"],
+    "expectedResult": { "zh": "在 16GB 级显卡上完成一个短时长 INT8 pruned FL2VA 带声视频，并记录可复现的显存、耗时和质量基线。", "en": "Complete one short INT8 pruned FL2VA video with audio on a 16GB-class GPU and record reproducible VRAM, timing, and quality baselines." },
+    "troubleshooting": [
+      { "problem": { "zh": "comfy-kitchen 或量化后端无法导入", "en": "comfy-kitchen or the quant backend will not import" }, "solution": { "zh": "确认在 DiffSynth 独立环境安装 diffsynth[quant]，并让 Torch/CUDA 版本与显卡匹配。", "en": "Install diffsynth[quant] inside the isolated DiffSynth environment and match Torch/CUDA to the GPU." } },
+      { "problem": { "zh": "加载成功但生成时 OOM", "en": "The model loads but generation OOMs" }, "solution": { "zh": "回到低显存示例默认画布与帧数，减少 vram_limit 预留之外的并行程序，再逐级放大。", "en": "Return to the example's default canvas and frames, close competing GPU processes, and scale one step at a time." } }
+    ],
+    "uninstall": { "zh": ["删除独立 DiffSynth 虚拟环境与仓库即可，不要在 ComfyUI 环境直接批量卸载依赖。"], "en": ["Remove the isolated DiffSynth environment and repository; do not bulk-uninstall dependencies from the ComfyUI environment."] },
+    "sourceRefs": [
+      { "title": "DiffSynth MiniMax H3 documentation", "url": "https://github.com/modelscope/DiffSynth-Studio/blob/main/docs/en/Model_Details/MiniMax-H3.md" }
+    ]
   },
   {
     "id": "four-bit-eight-gb",
@@ -369,15 +455,30 @@
     "audience": { "zh": "8GB 显存或希望在 Mac 上尝试量化 H3 的用户。", "en": "Users with 8GB VRAM or those testing a quantized H3 path on Mac." },
     "hardware": { "zh": "最低 8GB VRAM 为来源公布下限；实际速度和可用模式需复核。", "en": "The source reports an 8GB minimum; verify actual speed and supported modes." },
     "prerequisites": { "zh": ["DiffSynth-Studio", "匹配的 4-bit H3 权重", "足够系统内存与磁盘"], "en": ["DiffSynth-Studio", "Matching 4-bit H3 weights", "Enough system memory and storage"] },
-    "steps": { "zh": ["从来源页面确认当前 4-bit 模型与 DiffSynth 版本。", "按可用显存启用自适应推理设置。", "先生成低时长基线，再逐步测试分辨率与模式。"], "en": ["Confirm the current 4-bit model and DiffSynth version from the source.", "Enable VRAM-adaptive inference for the available memory.", "Start with a short baseline, then test resolution and modes gradually."] },
-    "commands": [],
+    "steps": { "zh": ["新建独立 Python 环境，从源码安装 DiffSynth-Studio；先查看 H3 文档当前是否仍标注 NF4 最低约 7GB VRAM。", "打开 model_inference_low_vram/MiniMax-H3-NF4-FL2VA.py，保留四个 NF4 模型文件的匹配 origin_file_pattern。", "让 vram_limit 使用可用显存减 2GB 的文档默认策略；不要伪装或硬编码比物理显存更大的数值。", "第一轮使用 480×832、124 帧或示例更小设置，固定 seed，等待模型按需在 CPU/GPU 间调度。", "用 ffprobe 检查输出 t2va.mp4 的视频、24fps、32kHz 立体声音频轨，并人工试听同步。", "低显存基线通过后再分别尝试 Ref2VA、画布或帧数；记录每次总耗时和系统内存，避免只报告 GPU 显存。"], "en": ["Create an isolated Python environment and install DiffSynth-Studio from source. Confirm the current H3 documentation still reports an approximately 7GB NF4 minimum.", "Open model_inference_low_vram/MiniMax-H3-NF4-FL2VA.py and preserve the four matching NF4 origin_file_pattern values.", "Keep the documented vram_limit strategy of available VRAM minus 2GB; never spoof a limit larger than physical memory.", "Start at 480×832 and 124 frames or the example's smaller setting, hold the seed constant, and allow CPU/GPU parameter movement to finish.", "Use ffprobe to confirm t2va.mp4 contains video, 24fps, and a 32kHz stereo audio stream, then listen for sync.", "After the low-VRAM baseline passes, test Ref2VA, canvas, or frame count separately. Record total time and system memory instead of reporting GPU VRAM alone."] },
+    "commands": ["git clone https://github.com/modelscope/DiffSynth-Studio.git", "cd DiffSynth-Studio && pip install -e .", "python examples/minimax_h3/model_inference_low_vram/MiniMax-H3-NF4-FL2VA.py", "ffprobe -v error -show_streams t2va.mp4"],
+    "checks": { "zh": ["NF4 四个组件与 FL2VA processor 成功加载", "任务没有伪造 vram_limit，且在物理显存范围内完成", "t2va.mp4 包含视频与 32kHz 立体声音频", "已记录 GPU 显存、系统内存、总耗时与量化质量差异"], "en": ["All four NF4 components plus the FL2VA processor load", "The job completes within physical VRAM without spoofing vram_limit", "t2va.mp4 contains video and 32kHz stereo audio", "GPU VRAM, system memory, total time, and quantization differences are recorded"] },
     "caveats": { "zh": ["低显存可运行不等于速度快；量化质量与原生模型不同。"], "en": ["Running in low VRAM does not imply speed, and quantized quality differs from native weights."] },
     "posterUrl": "/tutorial-posters/brand-low-vram.svg",
     "tags": ["4-bit", "DiffSynth", "8GB VRAM"],
     "relatedResourceIds": ["awesome-h3-resources", "official-minimax-h3"],
     "source": { "platform": "x", "url": "https://x.com/ModelScope2022/status/2084625441940279770", "author": "ModelScope", "handle": "@ModelScope2022", "publishedAt": "2026-08-04", "originalLanguage": "en" },
     "engagement": { "replies": 33, "reposts": 169, "likes": 1498, "views": 132704, "snapshotAt": "2026-08-23" },
-    "verifiedAt": "2026-08-23"
+    "verifiedAt": "2026-08-23",
+    "flagship": true,
+    "difficulty": "intermediate",
+    "estimatedMinutes": 150,
+    "hardwareProfiles": ["vram-8", "vram-12"],
+    "testedVersions": ["DiffSynth-Studio main @ 2026-08-23", "MiniMax-H3-NF4 low-VRAM example"],
+    "expectedResult": { "zh": "在约 7–8GB 可用显存的 NVIDIA 环境完成一条 NF4 FL2VA 带声短片，并清楚记录速度与质量代价。", "en": "Complete one NF4 FL2VA short video with audio in an NVIDIA environment with roughly 7–8GB usable VRAM, with speed and quality costs documented." },
+    "troubleshooting": [
+      { "problem": { "zh": "下载或载入 NF4 组件失败", "en": "An NF4 component fails to download or load" }, "solution": { "zh": "逐一核对四个 origin_file_pattern 与模型 ID；FL2VA 和 Ref2VA 组件不能混用。", "en": "Check each of the four origin_file_pattern values and model IDs; do not mix FL2VA and Ref2VA components." } },
+      { "problem": { "zh": "显存够但系统卡死", "en": "VRAM fits but the system stalls" }, "solution": { "zh": "量化低显存依赖 CPU offload；检查系统内存和交换空间，减小画布或帧数后重试。", "en": "Low-VRAM quantization relies on CPU offload; inspect system RAM and swap, then reduce canvas or frames." } }
+    ],
+    "uninstall": { "zh": ["删除独立 DiffSynth 环境与下载缓存前先确认其他模型未共用。"], "en": ["Before removing the isolated DiffSynth environment and download cache, confirm no other model shares them."] },
+    "sourceRefs": [
+      { "title": "DiffSynth MiniMax H3 documentation", "url": "https://github.com/modelscope/DiffSynth-Studio/blob/main/docs/en/Model_Details/MiniMax-H3.md" }
+    ]
   },
   {
     "id": "train-ref2va-lora",
@@ -388,15 +489,31 @@
     "audience": { "zh": "有训练经验、数据和高显存 GPU 的开发者。", "en": "Developers with training experience, data, and a high-memory GPU." },
     "hardware": { "zh": "高显存 NVIDIA GPU；具体要求以 AI Toolkit 与当前 H3 训练文档为准。", "en": "A high-memory NVIDIA GPU; use current AI Toolkit and H3 training docs for exact requirements." },
     "prerequisites": { "zh": ["有权使用的视频数据", "AI Toolkit 当前版本", "基础模型许可已核对"], "en": ["Video data you are allowed to use", "A current AI Toolkit release", "The base-model license has been reviewed"] },
-    "steps": { "zh": ["把目标能力定义成可验证的数据对。", "按教程配置 Ref2VA LoRA，而不是直接套用图像 LoRA 参数。", "先跑短训练和固定验证集，再决定是否扩大训练。"], "en": ["Define the target behavior as verifiable data pairs.", "Configure a Ref2VA LoRA from the tutorial instead of copying image-LoRA settings.", "Run a short training and fixed validation set before scaling up."] },
-    "commands": [],
+    "steps": { "zh": ["先阅读 H3 Community License 和训练仓库限制；确认训练视频、声音、人物与衍生权重都有合法使用范围。", "克隆 MiniMax-H3-FineTuning，在 Python 3.11 环境运行 install_env.sh；它会安装仓库固定的 Diffusers 集成，不要改成普通已发布 wheel。", "按照 examples 中的 schema 创建 train.jsonl，用 validate_manifest.py 检查字段与所有媒体文件。训练/验证样本必须能追溯。", "先以 256×256、22 帧运行 prepare_cache.py，并启用 encode-text 与 encode-audio；检查每条样本生成一个缓存文件。", "使用 trainable=heads、max-steps=10 做单卡 smoke test。只有 loss 保持有限、checkpoint 写入、所有 rank 同步完成，才进入 LoRA。", "准备固定验证集并保留 seed；LoRA 训练前明确 17n+5 帧约束、32 像素倍数、24fps、32kHz 立体声和序列 token 预算。", "生产 LoRA 使用 DeepSpeed ZeRO-3 与仓库脚本，从短 run 开始；保存训练日志、VAL 曲线、版本、数据指纹和恢复点。", "把 LoRA 接回匹配的 Ref2VA 推理路径，在固定样例上同时比较参考遵循、画面、运动、声音和过拟合；不只看训练 loss。"], "en": ["Read the H3 Community License and repository limitations first. Confirm rights for training video, audio, people, and derivative weights.", "Clone MiniMax-H3-FineTuning and run install_env.sh under Python 3.11. It installs a pinned Diffusers integration; do not replace it with the regular released wheel.", "Create train.jsonl from the examples schema and validate every field and media file with validate_manifest.py. Training and validation samples must remain traceable.", "Run prepare_cache.py first at 256×256 and 22 frames with encode-text and encode-audio. Confirm every sample produces one cache file.", "Run a one-GPU smoke test with trainable=heads and max-steps=10. Move to LoRA only when loss stays finite, a checkpoint writes, and all ranks finish together.", "Prepare a fixed validation set and seed. Before LoRA, document 17n+5 frames, dimensions divisible by 32, 24fps, 32kHz stereo, and the sequence-token budget.", "Use DeepSpeed ZeRO-3 and the repository script for production LoRA, beginning with a short run. Save logs, VAL curves, versions, data fingerprints, and recovery checkpoints.", "Load the LoRA into the matching Ref2VA inference path and compare reference adherence, picture, motion, audio, and overfitting on fixed samples rather than relying on training loss alone."] },
+    "commands": ["git clone https://github.com/IAmIronMan42/MiniMax-H3-FineTuning.git && cd MiniMax-H3-FineTuning", "bash install_env.sh", "python validate_manifest.py --manifest path/to/train.jsonl --check-files", "python prepare_cache.py --metadata path/to/train.jsonl --output cache/train --model /path/to/MiniMax-H3 --height 256 --width 256 --frames 22 --encode-text --encode-audio", "CUDA_VISIBLE_DEVICES=0 python train.py --model /path/to/MiniMax-H3 --variant ref2va --cache cache/train --output runs/smoke --max-steps 10 --trainable heads --strategy ddp", "deepspeed --num_gpus 8 train.py --model /path/to/MiniMax-H3 --variant ref2va --cache cache/train --output runs/lora --max-steps 800 --trainable lora --strategy deepspeed"],
+    "checks": { "zh": ["manifest 校验通过且所有训练媒体都有权利记录", "缓存数量与有效样本数量一致，音频没有被零占位误当作真实输入", "10 步 heads smoke test loss 有限且 checkpoint 可读取", "固定验证集、环境版本、数据指纹与恢复点均已保存"], "en": ["The manifest validates and every training asset has a rights record", "Cache count matches valid samples and zero-placeholder audio is not mistaken for real audio", "The ten-step heads smoke loss stays finite and its checkpoint can be read", "The fixed validation set, environment versions, data fingerprint, and recovery point are saved"] },
     "caveats": { "zh": ["训练会消耗大量算力；数据版权和模型许可必须先确认。"], "en": ["Training is compute-intensive; confirm dataset rights and model licensing first."] },
     "posterUrl": "/tutorial-posters/train-ref2va.jpg",
     "tags": ["Training", "Ref2VA", "LoRA"],
     "relatedResourceIds": ["h3-finetuning", "official-minimax-h3"],
     "source": { "platform": "x", "url": "https://x.com/ostrisai/status/2090540475199680543", "author": "Ostris", "handle": "@ostrisai", "publishedAt": "2026-08-21", "originalLanguage": "en" },
     "engagement": { "replies": 14, "reposts": 33, "likes": 342, "views": 14000, "snapshotAt": "2026-08-23" },
-    "verifiedAt": "2026-08-23"
+    "verifiedAt": "2026-08-23",
+    "flagship": true,
+    "difficulty": "advanced",
+    "estimatedMinutes": 240,
+    "hardwareProfiles": ["vram-24-plus", "cloud-gpu"],
+    "testedVersions": ["MiniMax-H3-FineTuning main @ 2026-08-23", "Python 3.11", "Torch 2.8+"],
+    "expectedResult": { "zh": "完成一次可审计的 heads smoke test 与一个短 LoRA run，保留有效 loss、固定验证结果、checkpoint、版本和数据指纹。", "en": "Complete an auditable heads smoke test and short LoRA run with finite loss, fixed validation output, checkpoints, versions, and a data fingerprint." },
+    "troubleshooting": [
+      { "problem": { "zh": "loss 上升或快速变成 NaN", "en": "Loss rises or becomes NaN quickly" }, "solution": { "zh": "停止训练并核对仓库 FIXES.md 中的 timestep 方向、velocity 符号、音频权重和缓存格式，不要继续烧算力。", "en": "Stop and check FIXES.md for timestep direction, velocity sign, audio weighting, and cache format before spending more compute." } },
+      { "problem": { "zh": "长序列 OOM", "en": "Long-sequence OOM" }, "solution": { "zh": "用 H3_MAX_LF 和 --max-seq-tokens 限制序列，降低分辨率/时长；记录跳过样本，不静默丢数据。", "en": "Use H3_MAX_LF and --max-seq-tokens, reduce resolution or duration, and record skipped samples rather than dropping them silently." } }
+    ],
+    "uninstall": { "zh": ["停止所有训练进程后删除独立虚拟环境、cache 与 runs；先备份配置、日志和需要保留的 checkpoint。"], "en": ["Stop every training process, then remove the isolated environment, cache, and runs after backing up configs, logs, and required checkpoints."] },
+    "sourceRefs": [
+      { "title": "MiniMax-H3-FineTuning", "url": "https://github.com/IAmIronMan42/MiniMax-H3-FineTuning" },
+      { "title": "H3 Community License", "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/LICENSE" }
+    ]
   },
   {
     "id": "webui-motion-context",

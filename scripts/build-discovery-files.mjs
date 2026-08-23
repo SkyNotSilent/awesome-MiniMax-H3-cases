@@ -38,6 +38,8 @@ const llms = `# MiniMax H3 Cases & Guides
 - ${baseUrl}/en/ — English case library
 - ${baseUrl}/tutorials/ — Chinese H3 ecosystem guide: setup, workflows, acceleration, long video, audio, training, and resources
 - ${baseUrl}/en/tutorials/ — English H3 ecosystem guide
+- ${baseUrl}/tutorials/ecosystem/ — Chinese comparison of source-checked H3 tools and open-source projects
+- ${baseUrl}/en/tutorials/ecosystem/ — English H3 tool and project comparison
 - ${baseUrl}/faq/ — source, prompt, playback, and review policy
 - ${baseUrl}/llms-full.txt — complete machine-readable case index
 - https://github.com/SkyNotSilent/awesome-minimax-h3-cases/blob/main/data/cases.json — source dataset
@@ -76,10 +78,15 @@ ${tutorialGuides.map((item) => `### ${item.title.en}
 - Goal: ${item.outcome.en}
 - Hardware: ${item.hardware.en}
 - Source checked: ${item.verifiedAt}
+- Difficulty: ${item.difficulty ?? 'not rated'}
+- Estimated time: ${item.estimatedMinutes ? `${item.estimatedMinutes} minutes` : 'not specified'}
+${item.testedVersions?.length ? `- Verified versions: ${item.testedVersions.join(' · ')}` : ''}
 - Original source: ${item.source.url}
 - Start here:
 ${item.steps.en.map((step, index) => `  ${index + 1}. ${step}`).join('\n')}
 ${item.commands.length ? `- Commands:\n${item.commands.map((command) => `  - ${command}`).join('\n')}` : ''}
+${item.expectedResult ? `- Expected result: ${item.expectedResult.en}` : ''}
+${item.troubleshooting?.length ? `- Troubleshooting:\n${item.troubleshooting.map((issue) => `  - ${issue.problem.en}: ${issue.solution.en}`).join('\n')}` : ''}
 `).join('\n')}
 
 ## Related project resources

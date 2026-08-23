@@ -1,0 +1,13 @@
+changelog:
+  exclude:
+    labels:
+      - ignore-for-release
+  categories:
+    - title: Cases and public Prompts
+      labels: [case, catalog, prompt-provenance]
+    - title: Tutorials and tools
+      labels: [tutorial, documentation]
+    - title: Product and engineering
+      labels: [enhancement, bug, infrastructure]
+    - title: Other changes
+      labels: ['*']

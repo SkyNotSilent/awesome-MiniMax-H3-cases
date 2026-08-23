@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react'
 import {
   ArrowUpRight,
+  Bookmark,
+  BookOpen,
   Check,
   ChevronDown,
   ChevronRight,
@@ -10,10 +12,12 @@ import {
   Search,
   SlidersHorizontal,
   Sparkles,
+  Star,
   TriangleAlert,
   X,
 } from 'lucide-react'
 import rawCases from '../data/cases.json'
+import rawProjectStats from '../data/project-stats.json'
 import rawTutorialGuides from '../data/tutorial-guides.json'
 import rawTutorials from '../data/tutorials.json'
 import {
@@ -32,20 +36,20 @@ import {
   resolveRoute,
   sourceLabel,
   taxonomyLabel,
+  tutorialEcosystemPath,
   tutorialPath,
   type AppPage,
   type Language,
 } from './i18n'
-import type { TutorialCategory, TutorialGuide, TutorialResource, VideoCase } from './types'
+import type { TutorialCategory, TutorialGuide, TutorialHardwareProfile, TutorialResource, VideoCase } from './types'
 import { XPostEmbed } from './XPostEmbed'
 
 const cases = rawCases as VideoCase[]
 const tutorialResources = rawTutorials as TutorialResource[]
 const tutorialGuides = rawTutorialGuides as TutorialGuide[]
-const completePromptCount = cases.filter((item) => (
-  item.promptProvenance !== 'not-published' && Boolean(item.prompt?.trim())
-)).length
-const unpublishedPromptCount = cases.length - completePromptCount
+const projectStats = rawProjectStats
+const completePromptCount = projectStats.completePrompts
+const unpublishedPromptCount = projectStats.cases - completePromptCount
 const bootStartedAt = (window as Window & { __H3_BOOT_AT?: number }).__H3_BOOT_AT
 const initialIntroOffset = bootStartedAt
   ? Math.max(0, Math.min(1_600, performance.now() - bootStartedAt))
@@ -65,6 +69,25 @@ type DurationRange = (typeof durationRanges)[number]
 const allCategories = [...new Set(cases.map((item) => item.category))]
 const allStyles = [...new Set(cases.flatMap((item) => item.styles))]
 const allScenes = [...new Set(cases.flatMap((item) => item.scenes))]
+const favoriteStorageKey = 'minimax-h3-favorite-cases'
+const collectionKeys = ['all', 'featured', 'latest', 'prompt', 'official', 'long', 'favorites'] as const
+type CaseCollection = (typeof collectionKeys)[number]
+const featuredCaseIds = new Set(cases
+  .filter((item) => item.verified && Boolean(item.mediaUrl) && item.promptProvenance !== 'not-published')
+  .slice(0, 24)
+  .map((item) => item.id))
+const latestCaseIds = new Set([...cases]
+  .sort((a, b) => Date.parse(b.approvedAt ?? b.publishedAt) - Date.parse(a.approvedAt ?? a.publishedAt))
+  .slice(0, 48)
+  .map((item) => item.id))
+const hardwareProfiles: TutorialHardwareProfile[] = [
+  'apple-silicon',
+  'vram-8',
+  'vram-12',
+  'vram-16',
+  'vram-24-plus',
+  'cloud-gpu',
+]
 
 function initialRoute() {
   const route = resolveRoute(window.location.pathname)
@@ -172,7 +195,7 @@ function App() {
     : undefined
   const pageDescription = activeTutorial
     ? activeTutorial.outcome[language]
-    : route.page === 'tutorials'
+    : route.page === 'tutorials' || route.page === 'tutorial-ecosystem'
     ? t.tutorials.description
     : route.page === 'faq'
       ? t.faq.description
@@ -185,6 +208,10 @@ function App() {
       ? language === 'zh'
         ? 'MiniMax H3 教程与工具：部署、工作流、加速、训练 — MiniMax H3 Cases & Guides'
         : 'MiniMax H3 Tutorials and Tools: Setup, Workflows, Speed, Training — MiniMax H3 Cases & Guides'
+      : route.page === 'tutorial-ecosystem'
+        ? language === 'zh'
+          ? 'MiniMax H3 教程与工具生态 — MiniMax H3 Cases & Guides'
+          : 'MiniMax H3 Tutorial and Tool Ecosystem — MiniMax H3 Cases & Guides'
       : language === 'zh'
         ? 'MiniMax H3 视频案例库常见问题 — MiniMax H3 Cases & Guides'
         : 'MiniMax H3 Video Library FAQ — MiniMax H3 Cases & Guides'
@@ -210,7 +237,9 @@ function App() {
     }
     const nextBasePath = route.page === 'tutorial-detail' && route.tutorialSlug
       ? tutorialPath(nextLanguage, route.tutorialSlug)
-      : pathFor(nextLanguage, route.page as Exclude<AppPage, 'tutorial-detail'>)
+      : route.page === 'tutorial-ecosystem'
+        ? tutorialEcosystemPath(nextLanguage)
+        : pathFor(nextLanguage, route.page as Exclude<AppPage, 'tutorial-detail' | 'tutorial-ecosystem'>)
     const nextPath = `${nextBasePath}${window.location.search}${window.location.hash}`
     window.history.pushState(window.history.state, '', nextPath)
     setRoute({ ...route, language: nextLanguage })
@@ -222,6 +251,7 @@ function App() {
       <Header language={language} page={route.page} onLanguageChange={switchLanguage} />
       {route.page === 'home' && <HomePage language={language} />}
       {route.page === 'tutorials' && <TutorialsPage language={language} />}
+      {route.page === 'tutorial-ecosystem' && <TutorialEcosystemPage language={language} />}
       {route.page === 'tutorial-detail' && activeTutorial && <TutorialDetailPage language={language} tutorial={activeTutorial} />}
       {route.page === 'tutorial-detail' && !activeTutorial && <TutorialNotFound language={language} />}
       {route.page === 'faq' && <FaqPage language={language} />}
@@ -244,7 +274,9 @@ function Header({
   const githubLabel = language === 'zh' ? '在 GitHub 查看源码' : 'View source on GitHub'
   const languageHref = page === 'tutorial-detail'
     ? tutorialPath(otherLanguage, resolveRoute(window.location.pathname).tutorialSlug || '')
-    : pathFor(otherLanguage, page)
+    : page === 'tutorial-ecosystem'
+      ? tutorialEcosystemPath(otherLanguage)
+      : pathFor(otherLanguage, page)
 
   return (
     <header className="site-header-wrap">
@@ -255,7 +287,7 @@ function Header({
         </a>
         <nav aria-label={language === 'zh' ? '主导航' : 'Primary navigation'}>
           <a href={pathFor(language, 'home')} aria-current={page === 'home' ? 'page' : undefined}>{t.nav.cases}</a>
-          <a href={pathFor(language, 'tutorials')} aria-current={page === 'tutorials' || page === 'tutorial-detail' ? 'page' : undefined}>{t.nav.tutorials}</a>
+          <a href={pathFor(language, 'tutorials')} aria-current={page === 'tutorials' || page === 'tutorial-detail' || page === 'tutorial-ecosystem' ? 'page' : undefined}>{t.nav.tutorials}</a>
           <a href={pathFor(language, 'faq')} aria-current={page === 'faq' ? 'page' : undefined}>{t.nav.faq}</a>
         </nav>
         <div className="header-actions">
@@ -348,7 +380,7 @@ function IntroSplash({ language }: { language: Language }) {
       </div>
       <div className="intro-proof-card intro-proof-cases">
         <small>{t.caseEyebrow}</small>
-        <strong>{cases.length}</strong>
+        <strong>{projectStats.cases}</strong>
         <p>{t.caseLabel}</p>
         <em>
           <span>{completePromptCount} {t.promptAvailableLabel}</span>
@@ -380,12 +412,12 @@ function IntroSplash({ language }: { language: Language }) {
       </div>
       <div className="intro-proof-verdict" aria-hidden="true">
         <i />
-        <span><b>{cases.length}</b> {t.proofLine}</span>
+        <span><b>{projectStats.cases}</b> {t.proofLine}</span>
         <i />
       </div>
       <div className="intro-bottomline">
         <p>{t.summary}</p>
-        <div className="intro-ready"><span /> {t.ready} · {cases.length}</div>
+        <div className="intro-ready"><span /> {t.ready} · {projectStats.cases}</div>
       </div>
       <div className="intro-progress" aria-hidden="true"><span /></div>
     </aside>
@@ -396,6 +428,18 @@ function HomePage({ language }: { language: Language }) {
   const t = copy[language]
   const [activeDuration, setActiveDuration] = useState<DurationRange>('ALL')
   const [promptOnly, setPromptOnly] = useState(() => new URLSearchParams(window.location.search).get('prompt') === '1')
+  const [activeCollection, setActiveCollection] = useState<CaseCollection>(() => {
+    const requested = new URLSearchParams(window.location.search).get('collection')
+    return collectionKeys.includes(requested as CaseCollection) ? requested as CaseCollection : 'all'
+  })
+  const [favorites, setFavorites] = useState<Set<string>>(() => {
+    try {
+      const saved = JSON.parse(window.localStorage.getItem(favoriteStorageKey) || '[]')
+      return new Set(Array.isArray(saved) ? saved.filter((id): id is string => typeof id === 'string') : [])
+    } catch {
+      return new Set()
+    }
+  })
   const [activeCategory, setActiveCategory] = useState('ALL')
   const [activeStyle, setActiveStyle] = useState('ALL')
   const [activeScene, setActiveScene] = useState('ALL')
@@ -406,12 +450,28 @@ function HomePage({ language }: { language: Language }) {
     const url = new URL(window.location.href)
     if (promptOnly) url.searchParams.set('prompt', '1')
     else url.searchParams.delete('prompt')
+    if (activeCollection !== 'all') url.searchParams.set('collection', activeCollection)
+    else url.searchParams.delete('collection')
     window.history.replaceState(window.history.state, '', `${url.pathname}${url.search}${url.hash}`)
-  }, [promptOnly])
+  }, [activeCollection, promptOnly])
+
+  const toggleFavorite = (id: string) => {
+    setFavorites((current) => {
+      const next = new Set(current)
+      if (next.has(id)) next.delete(id)
+      else next.add(id)
+      try {
+        window.localStorage.setItem(favoriteStorageKey, JSON.stringify([...next]))
+      } catch {
+        // Favorites remain available for the current session when storage is blocked.
+      }
+      return next
+    })
+  }
 
   const filtered = useMemo(() => {
     const needle = query.trim().toLowerCase()
-    return cases.filter((item) => {
+    const matching = cases.filter((item) => {
       const matchesDuration = activeDuration === 'ALL'
         || (activeDuration === 'UP_TO_5' && item.duration <= 5)
         || (activeDuration === 'SIX_TO_10' && item.duration > 5 && item.duration <= 10)
@@ -422,13 +482,23 @@ function HomePage({ language }: { language: Language }) {
       const matchesScene = activeScene === 'ALL' || item.scenes.includes(activeScene)
       const prompt = casePrompt(item, language)
       const matchesPrompt = !promptOnly || (typeof prompt === 'string' && prompt.trim().length > 0)
+      const matchesCollection = activeCollection === 'all'
+        || (activeCollection === 'featured' && featuredCaseIds.has(item.id))
+        || (activeCollection === 'latest' && latestCaseIds.has(item.id))
+        || (activeCollection === 'prompt' && item.promptProvenance !== 'not-published' && Boolean(item.prompt?.trim()))
+        || (activeCollection === 'official' && item.sourceType === 'official')
+        || (activeCollection === 'long' && item.duration > 15)
+        || (activeCollection === 'favorites' && favorites.has(item.id))
       const haystack = language === 'zh'
         ? [item.title, item.summary, prompt, item.author, item.sourceLabel, ...item.tags, item.category, ...item.styles, ...item.scenes]
         : [item.titleEn, item.summaryEn, prompt, item.author, item.category, ...item.styles, ...item.scenes]
-      return matchesDuration && matchesCategory && matchesStyle && matchesScene && matchesPrompt
+      return matchesDuration && matchesCategory && matchesStyle && matchesScene && matchesPrompt && matchesCollection
         && (!needle || haystack.filter(Boolean).join(' ').toLowerCase().includes(needle))
     })
-  }, [activeCategory, activeDuration, activeScene, activeStyle, language, promptOnly, query])
+    return activeCollection === 'latest'
+      ? matching.sort((a, b) => Date.parse(b.approvedAt ?? b.publishedAt) - Date.parse(a.approvedAt ?? a.publishedAt))
+      : matching
+  }, [activeCategory, activeCollection, activeDuration, activeScene, activeStyle, favorites, language, promptOnly, query])
 
   const advancedCount = [activeCategory, activeStyle, activeScene].filter((value) => value !== 'ALL').length
 
@@ -489,6 +559,24 @@ function HomePage({ language }: { language: Language }) {
           </div>
         </div>
 
+        <div className="case-collections" role="group" aria-label={t.catalog.collectionsLabel}>
+          <span><Star size={13} aria-hidden="true" /> {t.catalog.collectionsLabel}</span>
+          <div>
+            {collectionKeys.map((collection) => (
+              <button
+                type="button"
+                key={collection}
+                className={activeCollection === collection ? 'active' : ''}
+                aria-pressed={activeCollection === collection}
+                onClick={() => setActiveCollection(collection)}
+              >
+                {t.catalog.collections[collection]}
+                {collection === 'favorites' && favorites.size > 0 ? <small>{favorites.size}</small> : null}
+              </button>
+            ))}
+          </div>
+        </div>
+
         <details className="advanced-filters">
           <summary>
             <span><SlidersHorizontal size={14} /> {advancedCount ? t.catalog.advancedActive : t.catalog.advanced}</span>
@@ -507,7 +595,15 @@ function HomePage({ language }: { language: Language }) {
 
         <div className="case-grid">
           {filtered.map((item, index) => (
-            <CaseCard key={item.id} item={item} index={index} language={language} onOpen={() => setSelected(item)} />
+            <CaseCard
+              key={item.id}
+              item={item}
+              index={index}
+              language={language}
+              onOpen={() => setSelected(item)}
+              isFavorite={favorites.has(item.id)}
+              onFavorite={() => toggleFavorite(item.id)}
+            />
           ))}
         </div>
 
@@ -557,11 +653,15 @@ function CaseCard({
   index,
   language,
   onOpen,
+  isFavorite,
+  onFavorite,
 }: {
   item: VideoCase
   index: number
   language: Language
   onOpen: () => void
+  isFavorite: boolean
+  onFavorite: () => void
 }) {
   const t = copy[language].card
   const title = caseTitle(item, language)
@@ -578,6 +678,16 @@ function CaseCard({
 
   return (
     <article className="case-card" style={{ '--order': index } as React.CSSProperties}>
+      <button
+        className={`case-favorite${isFavorite ? ' active' : ''}`}
+        type="button"
+        aria-label={isFavorite ? copy[language].catalog.favoriteRemove : copy[language].catalog.favoriteAdd}
+        aria-pressed={isFavorite}
+        title={isFavorite ? copy[language].catalog.favoriteRemove : copy[language].catalog.favoriteAdd}
+        onClick={onFavorite}
+      >
+        <Bookmark size={16} fill={isFavorite ? 'currentColor' : 'none'} />
+      </button>
       <button className="media" type="button" onClick={onOpen} aria-label={t.open(title)}>
         <img
           src={item.posterUrl}
@@ -641,6 +751,11 @@ function buildTutorialAiTask(tutorial: TutorialGuide, language: Language) {
     ? `${t.commands}:\n${tutorial.commands.map((command) => `- ${command}`).join('\n')}`
     : ''
   const checks = tutorial.checks ? section(t.checks, tutorial.checks[language]) : ''
+  const expectedResult = tutorial.expectedResult ? `${t.expectedResult}: ${tutorial.expectedResult[language]}` : ''
+  const troubleshooting = tutorial.troubleshooting?.length
+    ? `${t.troubleshooting}:\n${tutorial.troubleshooting.map((item) => `- ${item.problem[language]} → ${item.solution[language]}`).join('\n')}`
+    : ''
+  const versions = tutorial.testedVersions?.length ? `${t.testedVersions}: ${tutorial.testedVersions.join(' · ')}` : ''
   const guardrail = language === 'zh'
     ? '执行约束：先核验来源项目的最新 README 与版本；不得猜测缺失步骤、命令、参数或素材；涉及付费云资源时先估算费用；任何不确定项先停下说明。'
     : 'Execution guardrail: verify the latest source README and versions first; never guess missing steps, commands, parameters, or media; estimate cost before using paid cloud resources; stop and explain any uncertainty.'
@@ -654,10 +769,38 @@ function buildTutorialAiTask(tutorial: TutorialGuide, language: Language) {
     section(t.steps, tutorial.steps[language]),
     commands,
     checks,
+    expectedResult,
+    troubleshooting,
+    versions,
     section(t.caveats, tutorial.caveats[language]),
     `${t.source}: ${tutorial.source.url}`,
     guardrail,
   ].filter(Boolean).join('\n\n')
+}
+
+function CopyCommandButton({ command, language }: { command: string; language: Language }) {
+  const [state, setState] = useState<'idle' | 'copied' | 'failed'>('idle')
+  const label = language === 'zh' ? '复制命令' : 'Copy command'
+  const copyCommand = async () => {
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error('clipboard unavailable')
+      await navigator.clipboard.writeText(command)
+      setState('copied')
+    } catch {
+      setState('failed')
+    }
+    window.setTimeout(() => setState('idle'), 1_800)
+  }
+  return (
+    <button type="button" onClick={copyCommand} aria-label={`${label}: ${command}`}>
+      {state === 'copied' ? <Check size={13} /> : <Clipboard size={13} />}
+      {state === 'copied'
+        ? (language === 'zh' ? '已复制' : 'Copied')
+        : state === 'failed'
+          ? (language === 'zh' ? '复制失败，请手动选择' : 'Copy failed; select manually')
+          : label}
+    </button>
+  )
 }
 
 function CopyTutorialButton({ tutorial, language, compact = false }: { tutorial: TutorialGuide; language: Language; compact?: boolean }) {
@@ -694,15 +837,9 @@ function CopyTutorialButton({ tutorial, language, compact = false }: { tutorial:
 
 function TutorialCardActions({ tutorial, language }: { tutorial: TutorialGuide; language: Language }) {
   const t = copy[language].tutorials
-  const isFoundation = tutorial.contentType === 'foundation'
   return (
     <div className="tutorial-card-actions">
-      <a
-        href={isFoundation ? tutorialPath(language, tutorial.id) : tutorial.source.url}
-        {...(!isFoundation ? { target: '_blank', rel: 'noreferrer' } : {})}
-      >
-        {isFoundation ? t.openGuide : t.openSource} <ArrowUpRight size={13} />
-      </a>
+      <a href={tutorialPath(language, tutorial.id)}>{t.openGuide} <ArrowUpRight size={13} /></a>
       <CopyTutorialButton tutorial={tutorial} language={language} compact />
     </div>
   )
@@ -711,6 +848,7 @@ function TutorialCardActions({ tutorial, language }: { tutorial: TutorialGuide; 
 function TutorialsPage({ language }: { language: Language }) {
   const t = copy[language].tutorials
   const [activeCategory, setActiveCategory] = useState<(typeof tutorialCategories)[number]>('all')
+  const [activeHardware, setActiveHardware] = useState<'all' | TutorialHardwareProfile>('all')
   const [query, setQuery] = useState('')
   const foundations = tutorialGuides.filter((item) => item.contentType === 'foundation')
 
@@ -719,6 +857,7 @@ function TutorialsPage({ language }: { language: Language }) {
     return tutorialGuides.filter((item) => {
       if (item.contentType !== 'community') return false
       const categoryMatches = activeCategory === 'all' || item.category === activeCategory
+      const hardwareMatches = activeHardware === 'all' || item.hardwareProfiles?.includes(activeHardware)
       const searchable = [
         item.title[language],
         item.outcome[language],
@@ -730,9 +869,27 @@ function TutorialsPage({ language }: { language: Language }) {
         item.source.author,
         item.source.handle || '',
       ].join(' ').toLowerCase()
-      return categoryMatches && (!needle || searchable.includes(needle))
+      return categoryMatches && hardwareMatches && (!needle || searchable.includes(needle))
     })
-  }, [activeCategory, language, query])
+  }, [activeCategory, activeHardware, language, query])
+
+  const hardwareLabels: Record<'all' | TutorialHardwareProfile, string> = language === 'zh' ? {
+    all: '全部硬件',
+    'apple-silicon': 'Apple Silicon',
+    'vram-8': '8GB 显存',
+    'vram-12': '12GB 显存',
+    'vram-16': '16GB 显存',
+    'vram-24-plus': '24GB+ 显存',
+    'cloud-gpu': '云 GPU',
+  } : {
+    all: 'All hardware',
+    'apple-silicon': 'Apple Silicon',
+    'vram-8': '8GB VRAM',
+    'vram-12': '12GB VRAM',
+    'vram-16': '16GB VRAM',
+    'vram-24-plus': '24GB+ VRAM',
+    'cloud-gpu': 'Cloud GPU',
+  }
 
   return (
     <div className="standalone-page tutorials-page">
@@ -765,6 +922,37 @@ function TutorialsPage({ language }: { language: Language }) {
           <h2>{t.communityTitle}</h2>
           <span>{String(tutorialGuides.filter((item) => item.contentType === 'community').length).padStart(2, '0')}</span>
         </header>
+        <div className="tutorial-pathways">
+          <div>
+            <small>{t.learnByGoal}</small>
+            <nav aria-label={t.learnByGoal}>
+              {tutorialCategories.map((category) => (
+                <button
+                  type="button"
+                  key={category}
+                  className={activeCategory === category ? 'active' : ''}
+                  aria-pressed={activeCategory === category}
+                  onClick={() => setActiveCategory(category)}
+                >{t.categories[category]}</button>
+              ))}
+            </nav>
+          </div>
+          <div>
+            <small>{t.learnByHardware}</small>
+            <nav aria-label={t.learnByHardware}>
+              {(['all', ...hardwareProfiles] as const).map((profile) => (
+                <button
+                  type="button"
+                  key={profile}
+                  className={activeHardware === profile ? 'active' : ''}
+                  aria-pressed={activeHardware === profile}
+                  onClick={() => setActiveHardware(profile)}
+                >{hardwareLabels[profile]}</button>
+              ))}
+            </nav>
+          </div>
+          <a href={tutorialEcosystemPath(language)}><BookOpen size={17} /> <span><strong>{t.ecosystemTitle}</strong><small>{t.ecosystemCta}</small></span><ChevronRight size={18} /></a>
+        </div>
         <div className="tutorial-controls">
           <label className="tutorial-search">
             <Search size={16} aria-hidden="true" />
@@ -772,19 +960,7 @@ function TutorialsPage({ language }: { language: Language }) {
             <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={t.searchPlaceholder} />
             {query && <button type="button" onClick={() => setQuery('')} aria-label={t.clearSearch}><X size={14} /></button>}
           </label>
-          <div className="tutorial-filters" role="group" aria-label={t.filterLabel}>
-            {tutorialCategories.map((category) => (
-              <button
-                type="button"
-                key={category}
-                className={activeCategory === category ? 'active' : ''}
-                aria-pressed={activeCategory === category}
-                onClick={() => setActiveCategory(category)}
-              >
-                {t.categories[category]}
-              </button>
-            ))}
-          </div>
+          <p className="tutorial-active-filter" aria-live="polite">{t.categories[activeCategory]} · {hardwareLabels[activeHardware]}</p>
         </div>
 
         {community.length > 0 ? (
@@ -850,12 +1026,25 @@ function TutorialDetailPage({ language, tutorial }: { language: Language; tutori
 
         <div className="tutorial-detail-layout">
           <main className="tutorial-detail-content">
+            {(tutorial.difficulty || tutorial.estimatedMinutes || tutorial.testedVersions?.length) && (
+              <section className="tutorial-run-profile">
+                <h2>{language === 'zh' ? '执行概览' : 'Run profile'}</h2>
+                <dl>
+                  {tutorial.difficulty && <div><dt>{t.difficulty}</dt><dd>{tutorial.difficulty}</dd></div>}
+                  {tutorial.estimatedMinutes && <div><dt>{t.estimatedTime}</dt><dd>{tutorial.estimatedMinutes} {t.minutes}</dd></div>}
+                  {tutorial.testedVersions?.length && <div><dt>{t.testedVersions}</dt><dd>{tutorial.testedVersions.join(' · ')}</dd></div>}
+                </dl>
+              </section>
+            )}
             <section><h2>{t.audience}</h2><p>{tutorial.audience[language]}</p></section>
             <section><h2>{t.hardware}</h2><p>{tutorial.hardware[language]}</p></section>
             <section><h2>{t.prerequisites}</h2><ul>{tutorial.prerequisites[language].map((item) => <li key={item}>{item}</li>)}</ul></section>
             <section className="tutorial-detail-steps"><h2>{t.steps}</h2><ol>{tutorial.steps[language].map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, '0')}</span><p>{item}</p></li>)}</ol></section>
-            {tutorial.commands.length > 0 && <section><h2>{t.commands}</h2><div className="tutorial-detail-commands">{tutorial.commands.map((command) => <code key={command}>{command}</code>)}</div></section>}
+            {tutorial.commands.length > 0 && <section><h2>{t.commands}</h2><div className="tutorial-detail-commands">{tutorial.commands.map((command) => <div key={command}><code>{command}</code><CopyCommandButton command={command} language={language} /></div>)}</div></section>}
             {tutorial.checks && <section className="tutorial-detail-checks"><h2>{t.checks}</h2><ul>{tutorial.checks[language].map((item) => <li key={item}><Check size={15} aria-hidden="true" /> <span>{item}</span></li>)}</ul></section>}
+            {tutorial.expectedResult && <section className="tutorial-expected-result"><h2>{t.expectedResult}</h2><p>{tutorial.expectedResult[language]}</p></section>}
+            {tutorial.troubleshooting?.length && <section className="tutorial-troubleshooting"><h2>{t.troubleshooting}</h2><dl>{tutorial.troubleshooting.map((item) => <div key={item.problem[language]}><dt>{item.problem[language]}</dt><dd>{item.solution[language]}</dd></div>)}</dl></section>}
+            {tutorial.uninstall && <section><h2>{t.uninstall}</h2><ul>{tutorial.uninstall[language].map((item) => <li key={item}>{item}</li>)}</ul></section>}
             <section><h2>{t.caveats}</h2><ul>{tutorial.caveats[language].map((item) => <li key={item}>{item}</li>)}</ul><small className="tutorial-source-note">{t.sourceNote}</small></section>
           </main>
           <aside className="tutorial-detail-meta">
@@ -867,6 +1056,7 @@ function TutorialDetailPage({ language, tutorial }: { language: Language; tutori
             </dl>
             {engagementItems.length > 0 && <div className="tutorial-engagement"><small>{t.snapshot} / {tutorial.engagement?.snapshotAt}</small>{engagementItems.map(([label, value]) => <span key={label}><strong>{formatMetric(value, language)}</strong>{label}</span>)}</div>}
             <a className="tutorial-meta-source" href={tutorial.source.url} target="_blank" rel="noreferrer">{tutorial.contentType === 'foundation' ? t.openReference : t.openSource} <ArrowUpRight size={14} /></a>
+            {tutorial.sourceRefs?.map((reference) => <a className="tutorial-meta-source secondary" key={reference.url} href={reference.url} target="_blank" rel="noreferrer">{reference.title} <ArrowUpRight size={14} /></a>)}
           </aside>
         </div>
 
@@ -883,6 +1073,77 @@ function TutorialDetailPage({ language, tutorial }: { language: Language; tutori
           </section>
         )}
       </article>
+    </div>
+  )
+}
+
+function TutorialEcosystemPage({ language }: { language: Language }) {
+  const t = copy[language].tutorials
+  const guidesByResource = new Map<string, TutorialGuide>()
+  tutorialGuides
+    .slice()
+    .sort((a, b) => Number(Boolean(b.flagship)) - Number(Boolean(a.flagship)))
+    .forEach((guide) => guide.relatedResourceIds.forEach((resourceId) => {
+      if (!guidesByResource.has(resourceId)) guidesByResource.set(resourceId, guide)
+    }))
+  const limitationByCategory: Record<TutorialResource['category'], string> = language === 'zh' ? {
+    mac: '仅适用于 Apple Silicon；完整权重会占用较多内存与磁盘。',
+    official: '官方基线优先保证可复现，不代表当前硬件上的最快配置。',
+    workflow: '必须先跑通对应基础模型与依赖，再导入工作流。',
+    acceleration: '加速结论依赖显卡、分辨率与步数，必须在自己的机器上复测。',
+    'long-video': '跨片段连续性仍属实验能力，连接点需要逐段检查。',
+    audio: '实验节点较多，应从稳定链路开始并单独核验声音。',
+    training: '训练成本高，先用小数据集和固定验证样例做短跑。',
+    resources: '资源目录用于发现，命令与版本必须回到原仓库核验。',
+  } : {
+    mac: 'Apple Silicon only; full weights require substantial memory and disk space.',
+    official: 'The official baseline prioritizes reproducibility, not the fastest configuration for every machine.',
+    workflow: 'Get the base model and dependencies working before importing any workflow.',
+    acceleration: 'Speed claims vary by GPU, resolution, and step count; benchmark on your own machine.',
+    'long-video': 'Cross-clip continuity is experimental and every join needs inspection.',
+    audio: 'Several nodes are experimental; start from the stable path and verify audio separately.',
+    training: 'Training is expensive; begin with a small dataset and a fixed validation sample.',
+    resources: 'Directories are for discovery; verify commands and versions in the source repository.',
+  }
+
+  return (
+    <div className="standalone-page ecosystem-page">
+      <section className="ecosystem shell">
+        <a className="tutorial-back" href={pathFor(language, 'tutorials')}><ChevronRight size={14} /> {t.back}</a>
+        <header className="ecosystem-hero">
+          <p>03 / OPEN SOURCE MAP</p>
+          <h1>{t.ecosystemTitle}</h1>
+          <span>{t.ecosystemDescription}</span>
+        </header>
+        <div className="ecosystem-grid">
+          {tutorialResources
+            .slice()
+            .sort((a, b) => (b.stars ?? 0) - (a.stars ?? 0))
+            .map((resource) => {
+              const relatedGuide = guidesByResource.get(resource.id)
+              return <article key={resource.id} className="ecosystem-card">
+                <header>
+                  <small>{resource.code} / {resource.kind[language]}</small>
+                  {resource.stars !== undefined && <span><Star size={12} fill="currentColor" /> {formatMetric(resource.stars, language)}</span>}
+                </header>
+                <h2>{resource.title}</h2>
+                <p>{resource.description[language]}</p>
+                <dl>
+                  <div><dt>{t.requirements}</dt><dd>{resource.requirements?.[language] ?? resource.audience[language]}</dd></div>
+                  <div><dt>{t.strengths}</dt><dd>{resource.strengths?.[language]?.join(' · ') ?? resource.facts.join(' · ')}</dd></div>
+                  <div><dt>{t.limitations}</dt><dd>{resource.limitations?.[language]?.join(' ') ?? limitationByCategory[resource.category]}</dd></div>
+                </dl>
+                <footer>
+                  <small>{t.starsSnapshot}: {resource.snapshotAt ?? resource.verifiedAt}</small>
+                  <div>
+                    {relatedGuide && <a className="ecosystem-site-guide" href={tutorialPath(language, relatedGuide.id)}>{t.openSiteGuide} <ChevronRight size={14} /></a>}
+                    <a href={resource.url} target="_blank" rel="noreferrer">{resource.action[language]} <ArrowUpRight size={14} /></a>
+                  </div>
+                </footer>
+              </article>
+            })}
+        </div>
+      </section>
     </div>
   )
 }
