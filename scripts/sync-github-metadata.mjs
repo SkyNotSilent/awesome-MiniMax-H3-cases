@@ -26,7 +26,13 @@ if (!process.argv.includes('--write')) {
   process.exit(0)
 }
 
-const args = ['repo', 'edit', repository, '--description', description, '--homepage', homepage, '--enable-discussions']
-for (const topic of topics) args.push('--add-topic', topic)
-await execFile('gh', args, { cwd: root })
+await execFile(
+  'gh',
+  ['repo', 'edit', repository, '--description', description, '--homepage', homepage, '--enable-discussions'],
+  { cwd: root },
+)
+
+const topicArgs = ['api', '--method', 'PUT', `repos/${repository}/topics`]
+for (const topic of topics) topicArgs.push('-f', `names[]=${topic}`)
+await execFile('gh', topicArgs, { cwd: root })
 console.log(`Synced GitHub description, homepage, Discussions, and ${topics.length} topics from project stats.`)
