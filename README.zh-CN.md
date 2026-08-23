@@ -1,14 +1,12 @@
 <div align="center">
 
-<img src="./public/icon.svg" alt="MiniMax H3 Cases & Guides 图标" width="96" height="96">
+<a href="https://h3-field-notes-production.up.railway.app/">
+  <img src="./public/icon.svg" alt="MiniMax H3 Cases & Guides 图标" width="112" height="112">
+</a>
 
 # MiniMax H3 Cases & Guides｜视频案例与实用教程
 
-### MiniMax H3 / Hailuo H3 视频案例、完整 Prompt、ComfyUI 工作流与本地部署教程
-
-**997 个来源可追溯的视频案例 · 309 条完整公开 Prompt · 4 条基础路线 + 20 篇社区教程**
-
-**[简体中文](./README.zh-CN.md)** · **[English](./README.md)**
+**先看 MiniMax H3 到底能生成什么：997 个可播放案例、309 条完整公开 Prompt 和 24 篇实用教程，集中在一个中英双语案例库。**
 
 [![视频案例库](https://img.shields.io/badge/立即观看-视频案例库-d8ff3e?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/)
 [![案例数量](https://img.shields.io/badge/视频案例-997-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
@@ -17,8 +15,6 @@
 [![GitHub Stars](https://img.shields.io/github/stars/SkyNotSilent/awesome-minimax-h3-cases?style=flat-square&labelColor=0a0b09&color=d8ff3e)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/stargazers)
 [![CI](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/actions/workflows/ci.yml/badge.svg)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg?style=flat-square)](./LICENSE)
-
-[▶ 浏览全部 997 个视频案例](https://h3-field-notes-production.up.railway.app/) · [在 GitHub 查看案例](./CATALOG.md) · [English](./README.md) · [参与贡献](./CONTRIBUTING.md)
 
 </div>
 
@@ -29,7 +25,11 @@
   </picture>
 </a>
 
-**在花时间安装模型或研究参数之前，先看 MiniMax H3 实际能生成什么。** MiniMax H3 也常被搜索为 Hailuo H3、Hailuo 3.0、海螺 H3 或海螺 3.0。这里汇总来自 X 与 MiniMax 官方公开示例的真实输出，首页按时长逐级浏览；打开 **只看有 Prompt**，即可集中查看原作者或官方完整公开提示词的案例。内容分类、风格与场景仍可继续组合筛选，任意案例均可站内观看并回到原作者帖子。
+<p align="center"><strong>先看成片，有完整公开 Prompt 就直接查看，再跟着来源核验过的教程把 MiniMax H3 真正跑起来。</strong></p>
+
+<p align="center"><strong><a href="./README.zh-CN.md">简体中文</a></strong> · <strong><a href="./README.md">English</a></strong> · <a href="./CATALOG.md">GitHub 案例目录</a> · <a href="./CONTRIBUTING.md">参与贡献</a></p>
+
+MiniMax H3 也常被搜索为 Hailuo H3、Hailuo 3.0、海螺 H3 或海螺 3.0。这里汇总来自 X 与 MiniMax 官方公开示例的真实输出，首页按时长逐级浏览；打开 **只看有 Prompt**，即可集中查看原作者或官方完整公开提示词的案例。内容分类、风格与场景仍可继续组合筛选，任意案例均可站内观看并回到原作者帖子。
 
 <a href="https://h3-field-notes-production.up.railway.app/tutorials/">
   <picture>

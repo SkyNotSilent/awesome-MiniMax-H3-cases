@@ -1,14 +1,12 @@
 <div align="center">
 
-<img src="./public/icon.svg" alt="MiniMax H3 Cases & Guides icon" width="96" height="96">
+<a href="https://h3-field-notes-production.up.railway.app/en/">
+  <img src="./public/icon.svg" alt="MiniMax H3 Cases & Guides icon" width="112" height="112">
+</a>
 
 # MiniMax H3 Cases & Guides
 
-### MiniMax H3 / Hailuo H3 video examples, public Prompts, ComfyUI workflows & deployment tutorials
-
-**997 source-attributed videos · 309 complete public Prompts · 4 foundation routes + 20 community tutorials**
-
-**[English](./README.md)** · **[简体中文](./README.zh-CN.md)**
+**See what MiniMax H3 can actually make—997 playable cases, 309 complete public Prompts, and 24 practical guides in one bilingual library.**
 
 [![Video Gallery](https://img.shields.io/badge/Watch-Live_Video_Gallery-d8ff3e?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/en/)
 [![Examples](https://img.shields.io/badge/video_examples-997-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
@@ -17,8 +15,6 @@
 [![GitHub Stars](https://img.shields.io/github/stars/SkyNotSilent/awesome-minimax-h3-cases?style=flat-square&labelColor=0a0b09&color=d8ff3e)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/stargazers)
 [![CI](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/actions/workflows/ci.yml/badge.svg)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg?style=flat-square)](./LICENSE)
-
-[▶ Browse all 997 video examples](https://h3-field-notes-production.up.railway.app/en/) · [Browse on GitHub](./CATALOG.md) · [中文说明](./README.zh-CN.md) · [Contribute](./CONTRIBUTING.md)
 
 </div>
 
@@ -29,7 +25,11 @@
   </picture>
 </a>
 
-**See what MiniMax H3 can actually produce before you spend time setting it up.** MiniMax H3 is also commonly searched as Hailuo H3 or Hailuo 3.0. Browse real outputs from X and MiniMax's official examples through duration-first filters, then switch on **With Prompt** to focus on 309 cases with complete public Prompt text. Truncated excerpts are excluded. Category, style, and scene remain available as deeper filters. Open any case to watch it inside the gallery and jump back to the original source.
+<p align="center"><strong>Watch the result, inspect the public Prompt when available, then follow a source-checked guide to run MiniMax H3 yourself.</strong></p>
+
+<p align="center"><strong><a href="./README.md">English</a></strong> · <strong><a href="./README.zh-CN.md">简体中文</a></strong> · <a href="./CATALOG.md">GitHub catalog</a> · <a href="./CONTRIBUTING.md">Contribute</a></p>
+
+MiniMax H3 is also commonly searched as Hailuo H3 or Hailuo 3.0. Browse real outputs from X and MiniMax's official examples through duration-first filters, then switch on **With Prompt** to focus on 309 cases with complete public Prompt text. Truncated excerpts are excluded. Category, style, and scene remain available as deeper filters. Open any case to watch it inside the gallery and jump back to the original source.
 
 <a href="https://h3-field-notes-production.up.railway.app/en/tutorials/">
   <picture>
