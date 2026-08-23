@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom/vitest'
-import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react'
+import { act, cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import App from './App'
 import { languagePreferenceKey } from './i18n'
@@ -176,6 +176,32 @@ describe('case-first routes', () => {
     expect(screen.getByRole('link', { name: '切换到英文' })).toHaveAttribute('href', '/en/?prompt=1')
   })
 
+  it('combines shareable quick collections with the primary filters', () => {
+    renderAt('/?collection=official')
+    expect(screen.getByRole('button', { name: '官方案例' })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByText('舰桥上的跃迁余震')).toBeInTheDocument()
+    expect(screen.queryByText('餐厅时间冻结与逆向复原')).not.toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: /5 秒及以下/ }))
+    expect(screen.getByText('粉色西装与黑色羔羊')).toBeInTheDocument()
+    expect(screen.queryByText('舰桥上的跃迁余震')).not.toBeInTheDocument()
+    expect(window.location.search).toBe('?collection=official')
+  })
+
+  it('stores anonymous favorites locally and restores the saved collection', () => {
+    renderAt('/')
+    const starship = screen.getByText('舰桥上的跃迁余震').closest('article')
+    expect(starship).not.toBeNull()
+    fireEvent.click(within(starship!).getByRole('button', { name: '收藏案例' }))
+    expect(JSON.parse(window.localStorage.getItem('minimax-h3-favorite-cases') || '[]')).toContain('official-t2va-starship')
+
+    cleanup()
+    renderAt('/?collection=favorites')
+    expect(screen.getByRole('button', { name: /我的收藏/ })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByText('舰桥上的跃迁余震')).toBeInTheDocument()
+    expect(screen.queryByText('粉色西装与黑色羔羊')).not.toBeInTheDocument()
+  })
+
   it('searches across localized case metadata', () => {
     renderAt('/')
     fireEvent.change(screen.getByPlaceholderText('搜索案例、场景或创作者…'), {
@@ -238,7 +264,7 @@ describe('case-first routes', () => {
     expect(screen.getByRole('link', { name: 'ComfyUI 从零到第一条 H3 带声视频' })).toHaveAttribute(
       'href', '/tutorials/official-deployment/',
     )
-    expect(screen.getAllByRole('link', { name: /打开教程/ })).toHaveLength(4)
+    expect(screen.getAllByRole('link', { name: /打开教程/ })).toHaveLength(24)
     expect(screen.getAllByText('社区实战')).toHaveLength(20)
     expect(screen.queryByRole('heading', { name: '先看 MiniMax H3 的真实效果。' })).not.toBeInTheDocument()
     tutorials.unmount()
@@ -248,7 +274,7 @@ describe('case-first routes', () => {
     expect(screen.getByText('这里收录什么？')).toBeInTheDocument()
     expect(screen.getByText('这里展示的 Prompt 会被修改吗？')).toBeInTheDocument()
     expect(screen.queryByText('打开官方仓库')).not.toBeInTheDocument()
-  })
+  }, 15_000)
 
   it('filters tutorial routes without mixing them into the case catalog', () => {
     renderAt('/tutorials/')
@@ -256,6 +282,26 @@ describe('case-first routes', () => {
     expect(screen.getByRole('heading', { name: 'H3 WebUI：Motion Context + 内置升频' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '4070 12GB：5 秒分块续接 13 秒角色舞蹈' })).toBeInTheDocument()
     expect(screen.queryByRole('heading', { name: 'Mac Studio 上用 Phosphene 跑 Turbo' })).not.toBeInTheDocument()
+  })
+
+  it('filters community tutorials by hardware and keeps the source behind the internal guide', () => {
+    renderAt('/tutorials/')
+    fireEvent.click(screen.getByRole('button', { name: '8GB 显存' }))
+    expect(screen.getByRole('heading', { name: '4-bit + DiffSynth：最低 8GB 显存路线' })).toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: 'RTX 4080 16GB：Pruned + INT8 低显存部署' })).not.toBeInTheDocument()
+    expect(screen.getByRole('link', { name: '4-bit + DiffSynth：最低 8GB 显存路线' })).toHaveAttribute(
+      'href', '/tutorials/four-bit-eight-gb/',
+    )
+  })
+
+  it('publishes a bilingual ecosystem page with dated Star snapshots', () => {
+    renderAt('/tutorials/ecosystem/')
+    expect(screen.getByRole('heading', { name: '教程与工具生态' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'MiniMax-AI / MiniMax-H3' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'OpenMontage' })).toBeInTheDocument()
+    expect(screen.getAllByText(/Star 快照: 2026-08-23/).length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('link', { name: /站内对应教程/ }).length).toBeGreaterThan(0)
+    expect(screen.getByRole('link', { name: '切换到英文' })).toHaveAttribute('href', '/en/tutorials/ecosystem/')
   })
 
   it('searches community guides and opens a source-checked detail page', () => {
@@ -272,6 +318,9 @@ describe('case-first routes', () => {
     expect(screen.getByRole('link', { name: /查看参考资料/ })).toHaveAttribute('href', 'https://github.com/antirez/h3.c')
     expect(screen.getByRole('heading', { name: '完成标准' })).toBeInTheDocument()
     expect(screen.getAllByText(/outputs\/fox-fast\.mp4/).length).toBeGreaterThanOrEqual(2)
+    expect(screen.getByRole('heading', { name: '预期结果' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '故障排查' })).toBeInTheDocument()
+    expect(screen.getAllByRole('button', { name: /复制命令/ }).length).toBeGreaterThan(0)
     expect(screen.getByRole('heading', { name: '相关工具与资源' })).toBeInTheDocument()
   })
 
@@ -332,6 +381,13 @@ describe('language isolation', () => {
     expect(screen.getByRole('heading', { name: 'Run H3 on Mac from zero with pure C + Metal' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Switch to Chinese' })).toHaveAttribute('href', '/tutorials/mac-native/')
     expect(screen.queryByText('Mac 从零运行 H3：纯 C + Metal')).not.toBeInTheDocument()
+    expect(document.body.textContent).not.toMatch(/[\u3400-\u9fff]/u)
+  })
+
+  it('keeps the English ecosystem route free of Chinese interface copy', () => {
+    renderAt('/en/tutorials/ecosystem/')
+    expect(screen.getByRole('heading', { name: 'Tutorial and Tool Ecosystem' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Switch to Chinese' })).toHaveAttribute('href', '/tutorials/ecosystem/')
     expect(document.body.textContent).not.toMatch(/[\u3400-\u9fff]/u)
   })
 

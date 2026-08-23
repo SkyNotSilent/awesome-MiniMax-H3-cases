@@ -31,7 +31,7 @@
         "author": { "type": "string", "minLength": 1 },
         "handle": { "type": "string" },
         "publishedAt": { "type": "string", "format": "date" },
-        "originalLanguage": { "enum": ["zh", "en", "other"] }
+        "originalLanguage": { "enum": ["zh", "en", "ja", "other"] }
       }
     },
     "engagement": {
@@ -46,7 +46,44 @@
         "snapshotAt": { "type": "string", "format": "date" }
       }
     },
-    "verifiedAt": { "type": "string", "format": "date" }
+    "verifiedAt": { "type": "string", "format": "date" },
+    "flagship": { "type": "boolean" },
+    "difficulty": { "enum": ["beginner", "intermediate", "advanced"] },
+    "estimatedMinutes": { "type": "integer", "minimum": 1 },
+    "hardwareProfiles": {
+      "type": "array",
+      "items": { "enum": ["apple-silicon", "vram-8", "vram-12", "vram-16", "vram-24-plus", "cloud-gpu"] },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "testedVersions": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 },
+    "expectedResult": { "$ref": "#/$defs/localizedText" },
+    "troubleshooting": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["problem", "solution"],
+        "properties": {
+          "problem": { "$ref": "#/$defs/localizedText" },
+          "solution": { "$ref": "#/$defs/localizedText" }
+        }
+      }
+    },
+    "uninstall": { "$ref": "#/$defs/localizedList" },
+    "sourceRefs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title", "url"],
+        "properties": {
+          "title": { "type": "string", "minLength": 1 },
+          "url": { "type": "string", "format": "uri" }
+        }
+      }
+    }
   },
   "$defs": {
     "localizedText": {

@@ -1,0 +1,16 @@
+{
+  "name": "minimax-h3-tutorial-guide",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Agent Skill for choosing source-checked MiniMax H3 tutorials by hardware and goal.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SkyNotSilent/awesome-minimax-h3-cases.git",
+    "directory": "agents/skills/minimax-h3-tutorial-guide"
+  },
+  "files": [
+    "SKILL.md",
+    "agents/openai.yaml"
+  ]
+}

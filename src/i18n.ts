@@ -1,7 +1,8 @@
 import type { CaseMode, VideoCase } from './types'
+import projectStats from '../data/project-stats.json'
 
 export type Language = 'zh' | 'en'
-export type AppPage = 'home' | 'tutorials' | 'tutorial-detail' | 'faq'
+export type AppPage = 'home' | 'tutorials' | 'tutorial-detail' | 'tutorial-ecosystem' | 'faq'
 
 export const languagePreferenceKey = 'minimax-h3-language'
 
@@ -32,8 +33,10 @@ export function resolveRoute(pathname: string): AppRoute {
     ? segments[language === 'en' ? 2 : 1]
     : undefined
   const page: AppPage = pageSegment === 'tutorials' || pageSegment === 'toolkit'
-    ? tutorialSlug
-      ? 'tutorial-detail'
+    ? tutorialSlug === 'ecosystem'
+      ? 'tutorial-ecosystem'
+      : tutorialSlug
+        ? 'tutorial-detail'
       : 'tutorials'
     : pageSegment === 'faq'
       ? 'faq'
@@ -41,9 +44,13 @@ export function resolveRoute(pathname: string): AppRoute {
   return { language, page, tutorialSlug }
 }
 
-export function pathFor(language: Language, page: Exclude<AppPage, 'tutorial-detail'>) {
+export function pathFor(language: Language, page: Exclude<AppPage, 'tutorial-detail' | 'tutorial-ecosystem'>) {
   const prefix = language === 'en' ? '/en' : ''
   return page === 'home' ? `${prefix}/` : `${prefix}/${page}/`
+}
+
+export function tutorialEcosystemPath(language: Language) {
+  return `${language === 'en' ? '/en' : ''}/tutorials/ecosystem/`
 }
 
 export function tutorialPath(language: Language, slug: string) {
@@ -58,7 +65,7 @@ export const copy = {
   zh: {
     htmlLang: 'zh-CN',
     siteTitle: 'MiniMax H3 Cases & Guides — 视频案例、公开 Prompt 与教程',
-    siteDescription: '997 个可筛选、可追溯、可站内观看的 MiniMax H3 / Hailuo 3.0 视频案例，含 309 条完整公开 Prompt 与来源核验教程。',
+    siteDescription: `${projectStats.cases} 个可筛选、可追溯、可站内观看的 MiniMax H3 / Hailuo 3.0 视频案例，含 ${projectStats.completePrompts} 条完整公开 Prompt 与 ${projectStats.tutorials} 篇来源核验教程。`,
     nav: { cases: '案例', tutorials: '教程', faq: '常见问题', source: '源码', language: 'EN' },
     intro: {
       kicker: 'COMMUNITY VIDEO ARCHIVE / 2026',
@@ -88,6 +95,18 @@ export const copy = {
       filterLabel: '案例筛选',
       duration: '视频时长',
       promptOnly: '只看有 Prompt',
+      collectionsLabel: '快速集合',
+      collections: {
+        all: '全部案例',
+        featured: '编辑精选',
+        latest: '最新收录',
+        prompt: '完整 Prompt',
+        official: '官方案例',
+        long: '长视频',
+        favorites: '我的收藏',
+      },
+      favoriteAdd: '收藏案例',
+      favoriteRemove: '取消收藏',
       advanced: '更多筛选',
       advancedActive: '更多筛选 · 已启用',
       category: '内容分类',
@@ -121,7 +140,7 @@ export const copy = {
     tutorials: {
       index: '02 / H3 教程',
       title: 'MiniMax H3 教程',
-      description: '四条基础路线建立可靠起点；20 篇全球社区实战教程，整理成可学习、可执行、可复制给 AI 的双语工作台。',
+      description: `${projectStats.foundationTutorials} 条基础路线建立可靠起点；${projectStats.communityTutorials} 篇全球社区实战教程，整理成可学习、可执行、可复制给 AI 的双语工作台。`,
       foundationIndex: '01 / 基础路线',
       foundationTitle: '基础路线',
       foundationDescription: '四条可直接照做的 0→1 路线：ComfyUI 首条带声视频、Turbo 低显存加速、Mac 原生运行、Motion Context 长视频续接。',
@@ -171,6 +190,23 @@ export const copy = {
       views: '浏览',
       noResults: '没有匹配的教程，换一个关键词或分类试试。',
       sourceNote: '执行前先核验最新 README，不猜测缺失步骤、命令或参数。',
+      learnByGoal: '按目标学习',
+      learnByHardware: '按硬件学习',
+      ecosystemTitle: '教程与工具生态',
+      ecosystemDescription: '先弄清每个开源项目解决什么问题、适合什么硬件，再进入对应的完整教程。',
+      ecosystemCta: '查看工具生态',
+      openSiteGuide: '站内对应教程',
+      expectedResult: '预期结果',
+      troubleshooting: '故障排查',
+      uninstall: '回退与卸载',
+      testedVersions: '核验版本',
+      estimatedTime: '预计耗时',
+      difficulty: '难度',
+      minutes: '分钟',
+      requirements: '适用环境',
+      strengths: '适合用来做什么',
+      limitations: '使用前注意',
+      starsSnapshot: 'Star 快照',
     },
     faq: {
       index: '03 / 常见问题',
@@ -180,7 +216,7 @@ export const copy = {
         ['这里收录什么？', '公开发布的 MiniMax H3 视频案例。每个案例优先展示真实视频，并链接原始来源。'],
         ['为什么有些案例没有 Prompt？', '只有来源明确公开 Prompt 时才会展示；没有公开的案例只展示视频和公开信息。'],
         ['这里展示的 Prompt 会被修改吗？', '不会。Prompt 保留来源中的语言、内容和格式；本站不补写、不改写，也不根据视频反推。'],
-        ['X 上发现的案例会自动发布吗？', '不会。候选案例必须经人工核对模型、作者、原帖、Prompt 来源和版权风险后，才进入公开案例库。'],
+        ['X 上发现的案例会自动发布吗？', '来源、模型、媒体、存储和站内播放校验全部通过的明确案例可以直接发布；模糊项继续留在审核队列。'],
       ],
     },
     footer: {
@@ -191,7 +227,7 @@ export const copy = {
   en: {
     htmlLang: 'en',
     siteTitle: 'MiniMax H3 Cases & Guides — Videos, Public Prompts & Tutorials',
-    siteDescription: '997 filterable, source-attributed MiniMax H3 / Hailuo 3.0 video examples with in-site playback, 309 complete public Prompts, and source-checked tutorials.',
+    siteDescription: `${projectStats.cases} filterable, source-attributed MiniMax H3 / Hailuo 3.0 video examples with in-site playback, ${projectStats.completePrompts} complete public Prompts, and ${projectStats.tutorials} source-checked tutorials.`,
     nav: { cases: 'Cases', tutorials: 'Tutorials', faq: 'FAQ', source: 'Source', language: 'ZH' },
     intro: {
       kicker: 'COMMUNITY VIDEO ARCHIVE / 2026',
@@ -221,6 +257,18 @@ export const copy = {
       filterLabel: 'Case filters',
       duration: 'Duration',
       promptOnly: 'With Prompt',
+      collectionsLabel: 'Quick collections',
+      collections: {
+        all: 'All cases',
+        featured: 'Editor picks',
+        latest: 'Latest',
+        prompt: 'Complete Prompt',
+        official: 'Official',
+        long: 'Long video',
+        favorites: 'Saved',
+      },
+      favoriteAdd: 'Save case',
+      favoriteRemove: 'Remove from saved',
       advanced: 'More filters',
       advancedActive: 'More filters · Active',
       category: 'Category',
@@ -254,7 +302,7 @@ export const copy = {
     tutorials: {
       index: '02 / H3 TUTORIALS',
       title: 'MiniMax H3 Tutorials',
-      description: 'Four foundation routes establish a reliable baseline, followed by 20 global community field guides that are bilingual, executable, and ready to copy into an AI agent.',
+      description: `${projectStats.foundationTutorials} foundation routes establish a reliable baseline, followed by ${projectStats.communityTutorials} global community field guides that are bilingual, executable, and ready to copy into an AI agent.`,
       foundationIndex: '01 / FOUNDATION ROUTES',
       foundationTitle: 'Foundation Routes',
       foundationDescription: 'Four complete zero-to-one routes: first ComfyUI video with audio, Turbo for lower VRAM, native Mac inference, and Motion Context clip chaining.',
@@ -304,6 +352,23 @@ export const copy = {
       views: 'views',
       noResults: 'No tutorial matches this search. Try another term or category.',
       sourceNote: 'Verify the latest README before running. Never guess missing steps, commands, or parameters.',
+      learnByGoal: 'Learn by goal',
+      learnByHardware: 'Learn by hardware',
+      ecosystemTitle: 'Tutorial and Tool Ecosystem',
+      ecosystemDescription: 'Understand what each open-source project solves and which hardware it fits before opening the complete guide.',
+      ecosystemCta: 'Explore the ecosystem',
+      openSiteGuide: 'Related site guide',
+      expectedResult: 'Expected result',
+      troubleshooting: 'Troubleshooting',
+      uninstall: 'Rollback and uninstall',
+      testedVersions: 'Verified versions',
+      estimatedTime: 'Estimated time',
+      difficulty: 'Difficulty',
+      minutes: 'min',
+      requirements: 'Requirements',
+      strengths: 'Best used for',
+      limitations: 'Know before use',
+      starsSnapshot: 'Stars snapshot',
     },
     faq: {
       index: '03 / FAQ',
@@ -313,7 +378,7 @@ export const copy = {
         ['What does this library include?', 'Publicly shared MiniMax H3 video examples. Every case prioritizes the actual video and links to its original source.'],
         ['Why do some cases have no prompt?', 'A prompt appears only when the source explicitly publishes it. Otherwise, the page shows the video and public details only.'],
         ['Are published prompts modified?', 'No. Prompts preserve the language, content, and formatting used by the source. We never complete, rewrite, or infer them from a video.'],
-        ['Are cases found on X published automatically?', 'No. A human verifies the model, creator, original post, prompt source, and rights risk before a case becomes public.'],
+        ['Are cases found on X published automatically?', 'Clear cases can publish after source, model, media, storage, and in-site playback checks pass; ambiguous items stay in the review queue.'],
       ],
     },
     footer: {

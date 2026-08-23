@@ -6,6 +6,7 @@ const dist = resolve(root, 'dist')
 const baseUrl = (process.env.PUBLIC_SITE_URL || 'https://h3-field-notes-production.up.railway.app').replace(/\/$/, '')
 const cases = JSON.parse(await readFile(resolve(root, 'data/cases.json'), 'utf8'))
 const tutorialGuides = JSON.parse(await readFile(resolve(root, 'data/tutorial-guides.json'), 'utf8'))
+const tutorialResources = JSON.parse(await readFile(resolve(root, 'data/tutorials.json'), 'utf8'))
 const completePromptCount = cases.filter((item) => item.promptProvenance !== 'not-published' && item.prompt?.trim()).length
 
 const locales = ['zh-CN', 'en']
@@ -65,6 +66,23 @@ const pageDefinitions = [
         title: 'MiniMax H3 Tutorials and Tools: Setup, Workflows, Speed, Training — MiniMax H3 Cases & Guides',
         description: 'Four foundation routes and 20 source-attributed MiniMax H3 community tutorials for official setup, Apple Silicon, ComfyUI, prompts, Turbo, long video, audio, and training.',
         keywords: 'MiniMax H3 tutorials,MiniMax H3 Mac,h3.c,MiniMax H3 deployment,ComfyUI H3,H3 Director,MiniMax H3 Turbo,H3 Motion Context,H3 Audio,MiniMax H3 fine-tuning',
+      },
+    },
+  },
+  {
+    id: 'tutorial-ecosystem',
+    paths: { 'zh-CN': '/tutorials/ecosystem/', en: '/en/tutorials/ecosystem/' },
+    schemaType: 'CollectionPage',
+    copy: {
+      'zh-CN': {
+        title: 'MiniMax H3 教程与工具生态 — 部署、加速、音频、长视频与训练',
+        description: '比较 MiniMax H3 官方仓库、h3.c、ComfyUI、Turbo、Motion Context、Audio T8、低显存与训练项目，按用途和硬件进入对应教程。',
+        keywords: 'MiniMax H3 开源项目,MiniMax H3 工具,h3.c,MiniMax H3 ComfyUI,MiniMax H3 Turbo,H3 Motion Context,H3 Audio T8,H3 低显存,H3 训练',
+      },
+      en: {
+        title: 'MiniMax H3 Tutorial and Tool Ecosystem — Setup, Speed, Audio, Long Video, Training',
+        description: 'Compare the official MiniMax H3 repository, h3.c, ComfyUI, Turbo, Motion Context, Audio T8, low-VRAM, and training projects by use case and hardware.',
+        keywords: 'MiniMax H3 open source,MiniMax H3 tools,h3.c,MiniMax H3 ComfyUI,MiniMax H3 Turbo,H3 Motion Context,H3 Audio T8,H3 low VRAM,H3 training',
       },
     },
   },
@@ -350,6 +368,23 @@ function appStructuredData(page, locale) {
     }
   }
 
+  if (page.id === 'tutorial-ecosystem') {
+    pageNode.mainEntity = {
+      '@type': 'ItemList',
+      numberOfItems: tutorialResources.length,
+      itemListElement: tutorialResources
+        .slice()
+        .sort((a, b) => (b.stars ?? 0) - (a.stars ?? 0))
+        .map((item, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: item.title,
+          description: item.description[locale === 'en' ? 'en' : 'zh'],
+          url: item.url,
+        })),
+    }
+  }
+
   if (page.id === 'faq') {
     pageNode.mainEntity = faqItems[locale].map(([question, answer]) => ({
       '@type': 'Question',
@@ -426,6 +461,12 @@ function fallbackMarkup(page, locale) {
       const localized = localizedTutorial(item, locale)
       return `<li><a href="${escapeHtml(tutorialPath(locale, item.id))}">${escapeHtml(localized.title)}</a><p>${escapeHtml(localized.outcome)}</p></li>`
     }).join('')}</ol>`
+  } else if (page.id === 'tutorial-ecosystem') {
+    content = `<ol>${tutorialResources
+      .slice()
+      .sort((a, b) => (b.stars ?? 0) - (a.stars ?? 0))
+      .map((item) => `<li><a href="${escapeHtml(item.url)}" rel="nofollow noopener">${escapeHtml(item.title)}</a><p>${escapeHtml(item.description[locale === 'en' ? 'en' : 'zh'])}</p><small>${escapeHtml(locale === 'en' ? 'Star snapshot' : 'Star 快照')}: ${escapeHtml(item.stars ?? '—')} · ${escapeHtml(item.snapshotAt ?? item.verifiedAt)}</small></li>`)
+      .join('')}</ol>`
   } else if (page.tutorial) {
     const item = page.tutorial
     const localized = localizedTutorial(item, locale)

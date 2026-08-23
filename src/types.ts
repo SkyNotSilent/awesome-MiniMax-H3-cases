@@ -70,7 +70,22 @@ export interface TutorialResource {
   tags: string[]
   action: LocalizedText
   verifiedAt: string
+  stars?: number
+  forks?: number
+  pushedAt?: string
+  snapshotAt?: string
+  requirements?: LocalizedText
+  strengths?: LocalizedList
+  limitations?: LocalizedList
 }
+
+export type TutorialHardwareProfile =
+  | 'apple-silicon'
+  | 'vram-8'
+  | 'vram-12'
+  | 'vram-16'
+  | 'vram-24-plus'
+  | 'cloud-gpu'
 
 export interface TutorialGuide {
   id: string
@@ -104,4 +119,19 @@ export interface TutorialGuide {
     snapshotAt: string
   }
   verifiedAt: string
+  flagship?: boolean
+  difficulty?: 'beginner' | 'intermediate' | 'advanced'
+  estimatedMinutes?: number
+  hardwareProfiles?: TutorialHardwareProfile[]
+  testedVersions?: string[]
+  expectedResult?: LocalizedText
+  troubleshooting?: Array<{
+    problem: LocalizedText
+    solution: LocalizedText
+  }>
+  uninstall?: LocalizedList
+  sourceRefs?: Array<{
+    title: string
+    url: string
+  }>
 }

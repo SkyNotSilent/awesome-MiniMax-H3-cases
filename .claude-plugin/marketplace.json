@@ -1,0 +1,24 @@
+{
+  "name": "minimax-h3-cases-and-guides",
+  "owner": {
+    "name": "SkyNotSilent",
+    "url": "https://github.com/SkyNotSilent"
+  },
+  "metadata": {
+    "description": "Source-attributed MiniMax H3 case, public Prompt, and tutorial skills"
+  },
+  "plugins": [
+    {
+      "name": "minimax-h3-prompt-library",
+      "description": "Retrieve real H3 cases and verbatim public Prompts without reconstruction.",
+      "source": "./agents/skills/minimax-h3-prompt-library",
+      "version": "0.2.0"
+    },
+    {
+      "name": "minimax-h3-tutorial-guide",
+      "description": "Choose a source-checked H3 tutorial for a target and hardware profile.",
+      "source": "./agents/skills/minimax-h3-tutorial-guide",
+      "version": "0.2.0"
+    }
+  ]
+}

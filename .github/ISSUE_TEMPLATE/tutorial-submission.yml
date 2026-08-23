@@ -1,0 +1,46 @@
+name: Submit a tutorial
+description: Propose an original MiniMax H3 tutorial or open-source workflow.
+title: "[Tutorial]: "
+labels: ["submission", "tutorial"]
+body:
+  - type: input
+    id: source
+    attributes:
+      label: Original tutorial URL
+    validations:
+      required: true
+  - type: input
+    id: repository
+    attributes:
+      label: Related repository or documentation
+      description: Link the README or documentation that supports the commands.
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Goal and expected result
+      description: State what a reader will produce and how they can tell it worked.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Tested environment
+      description: Include OS, GPU/Apple chip, VRAM or memory, versions, disk needs, and approximate time.
+    validations:
+      required: true
+  - type: textarea
+    id: commands
+    attributes:
+      label: Verified commands and known failures
+      description: Provide executable commands, common errors, and rollback or uninstall steps.
+    validations:
+      required: true
+  - type: checkboxes
+    id: originality
+    attributes:
+      label: Source checks
+      options:
+        - label: The linked source is original and specifically applies to MiniMax H3.
+          required: true
+        - label: I have not guessed missing commands, versions, or compatibility claims.
+          required: true

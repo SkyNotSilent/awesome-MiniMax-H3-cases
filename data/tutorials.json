@@ -30,13 +30,26 @@
         "Start without -p for an interactive session; set !first, !last, or !ref-image before entering a prompt."
       ]
     },
-    "facts": ["Pure C + Metal", "No Python / PyTorch", "T2VA · FL2VA · Ref2VA"],
-    "tags": ["Apple Silicon", "Metal", "CLI", "FFmpeg"],
+    "facts": [
+      "Pure C + Metal",
+      "No Python / PyTorch",
+      "T2VA · FL2VA · Ref2VA"
+    ],
+    "tags": [
+      "Apple Silicon",
+      "Metal",
+      "CLI",
+      "FFmpeg"
+    ],
     "action": {
       "zh": "阅读 Mac 原生教程",
       "en": "Read the native Mac tutorial"
     },
-    "verifiedAt": "2026-08-16"
+    "verifiedAt": "2026-08-23",
+    "stars": 2358,
+    "forks": 166,
+    "pushedAt": "2026-08-11T13:53:32Z",
+    "snapshotAt": "2026-08-23"
   },
   {
     "id": "official-minimax-h3",
@@ -69,13 +82,26 @@
         "Pick SGLang, vLLM, Diffusers, or the official ComfyUI tutorial for your hardware, then reproduce a published example first."
       ]
     },
-    "facts": ["9 Agent Skills", "Official Weights", "4–15s · 24 FPS"],
-    "tags": ["Official", "Prompt Writing", "SGLang", "ComfyUI"],
+    "facts": [
+      "9 Agent Skills",
+      "Official Weights",
+      "4–15s · 24 FPS"
+    ],
+    "tags": [
+      "Official",
+      "Prompt Writing",
+      "SGLang",
+      "ComfyUI"
+    ],
     "action": {
       "zh": "打开官方部署文档",
       "en": "Open official deployment docs"
     },
-    "verifiedAt": "2026-08-16"
+    "verifiedAt": "2026-08-23",
+    "stars": 6732,
+    "forks": 421,
+    "pushedAt": "2026-08-15T08:31:17Z",
+    "snapshotAt": "2026-08-23"
   },
   {
     "id": "turbo-lora",
@@ -108,13 +134,26 @@
         "Keep the scheduler on simple and strength at 1.0; use six to eight steps for finals and four for quick previews."
       ]
     },
-    "facts": ["4–8 Steps", "v4 EMA", "Synchronized Audio"],
-    "tags": ["LoRA", "ComfyUI", "Acceleration", "Audio + Video"],
+    "facts": [
+      "4–8 Steps",
+      "v4 EMA",
+      "Synchronized Audio"
+    ],
+    "tags": [
+      "LoRA",
+      "ComfyUI",
+      "Acceleration",
+      "Audio + Video"
+    ],
     "action": {
       "zh": "查看权重与工作流",
       "en": "View weights and workflow"
     },
-    "verifiedAt": "2026-08-16"
+    "verifiedAt": "2026-08-23",
+    "stars": 495,
+    "forks": 35,
+    "pushedAt": "2026-08-14T14:14:50Z",
+    "snapshotAt": "2026-08-23"
   },
   {
     "id": "motion-context",
@@ -147,13 +186,26 @@
         "Start with context_length 22, audio_context_length 24, match_tail enabled, and Spectrum off."
       ]
     },
-    "facts": ["Latent Chaining", "Motion Continuity", "Audio Continuity"],
-    "tags": ["Long Video", "ComfyUI", "Context", "Audio"],
+    "facts": [
+      "Latent Chaining",
+      "Motion Continuity",
+      "Audio Continuity"
+    ],
+    "tags": [
+      "Long Video",
+      "ComfyUI",
+      "Context",
+      "Audio"
+    ],
     "action": {
       "zh": "阅读续接教程",
       "en": "Read the chaining tutorial"
     },
-    "verifiedAt": "2026-08-16"
+    "verifiedAt": "2026-08-23",
+    "stars": 697,
+    "forks": 85,
+    "pushedAt": "2026-08-15T21:17:20Z",
+    "snapshotAt": "2026-08-23"
   },
   {
     "id": "audio-t8",
@@ -186,13 +238,26 @@
         "Long-video, speech, multi-keyframe, and source-AV paths are experimental and should be enabled one at a time against the repository's validation notes."
       ]
     },
-    "facts": ["86 Nodes", "Dual Clock", "Stable + Experimental"],
-    "tags": ["Audio", "ComfyUI", "Mixing", "Ref2VA"],
+    "facts": [
+      "86 Nodes",
+      "Dual Clock",
+      "Stable + Experimental"
+    ],
+    "tags": [
+      "Audio",
+      "ComfyUI",
+      "Mixing",
+      "Ref2VA"
+    ],
     "action": {
       "zh": "打开音画节点文档",
       "en": "Open the audio-video node docs"
     },
-    "verifiedAt": "2026-08-16"
+    "verifiedAt": "2026-08-23",
+    "stars": 788,
+    "forks": 49,
+    "pushedAt": "2026-08-22T11:55:21Z",
+    "snapshotAt": "2026-08-23"
   },
   {
     "id": "aimixer-h3-director",
@@ -225,13 +290,26 @@
         "Import a bundled example and test one five-second shot before adding media groups, a timeline, and optional Refine passes."
       ]
     },
-    "facts": ["Multi-shot Timeline", "6 Task Modes", "Segment Refine"],
-    "tags": ["ComfyUI", "Director", "V2V", "Storyboards"],
+    "facts": [
+      "Multi-shot Timeline",
+      "6 Task Modes",
+      "Segment Refine"
+    ],
+    "tags": [
+      "ComfyUI",
+      "Director",
+      "V2V",
+      "Storyboards"
+    ],
     "action": {
       "zh": "打开导演台插件",
       "en": "Open the director plugin"
     },
-    "verifiedAt": "2026-08-16"
+    "verifiedAt": "2026-08-23",
+    "stars": 774,
+    "forks": 81,
+    "pushedAt": "2026-08-21T06:31:07Z",
+    "snapshotAt": "2026-08-23"
   },
   {
     "id": "huangserva-director-workflows",
@@ -264,13 +342,26 @@
         "Reproduce a fixed five-second test first; R2V, V2V, and RV2V are the routes explicitly verified in the repository's 4090 environment."
       ]
     },
-    "facts": ["5 Importable JSONs", "4090-checked Ref2VA", "Upstream Required"],
-    "tags": ["ComfyUI", "Workflow Pack", "Director", "RV2V"],
+    "facts": [
+      "5 Importable JSONs",
+      "4090-checked Ref2VA",
+      "Upstream Required"
+    ],
+    "tags": [
+      "ComfyUI",
+      "Workflow Pack",
+      "Director",
+      "RV2V"
+    ],
     "action": {
       "zh": "下载工作流模板",
       "en": "Download workflow templates"
     },
-    "verifiedAt": "2026-08-16"
+    "verifiedAt": "2026-08-23",
+    "stars": 722,
+    "forks": 73,
+    "pushedAt": "2026-08-04T10:45:16Z",
+    "snapshotAt": "2026-08-23"
   },
   {
     "id": "spectrum-h3",
@@ -303,13 +394,26 @@
         "Run enabled-versus-disabled A/B tests with the same seed, prompt, model, media, and sampler; do not stack EasyCache or LazyCache on the same model branch."
       ]
     },
-    "facts": ["11 Actual + 9 Forecasts", "T2VA · FL2VA · Ref2VA", "Fail-closed"],
-    "tags": ["ComfyUI", "Acceleration", "Spectrum", "A/B Testing"],
+    "facts": [
+      "11 Actual + 9 Forecasts",
+      "T2VA · FL2VA · Ref2VA",
+      "Fail-closed"
+    ],
+    "tags": [
+      "ComfyUI",
+      "Acceleration",
+      "Spectrum",
+      "A/B Testing"
+    ],
     "action": {
       "zh": "阅读 Spectrum 配置",
       "en": "Read Spectrum setup"
     },
-    "verifiedAt": "2026-08-16"
+    "verifiedAt": "2026-08-23",
+    "stars": 555,
+    "forks": 29,
+    "pushedAt": "2026-08-22T09:15:32Z",
+    "snapshotAt": "2026-08-23"
   },
   {
     "id": "minimax-h3-easy",
@@ -342,13 +446,26 @@
         "Reproduce the base workflow with external prompt optimization off, then configure a compatible API only if needed and review media-format limits."
       ]
     },
-    "facts": ["One Media Port", "@ References", "Prompt Guides"],
-    "tags": ["ComfyUI", "Easy Workflow", "Multimodal", "Prompt Editor"],
+    "facts": [
+      "One Media Port",
+      "@ References",
+      "Prompt Guides"
+    ],
+    "tags": [
+      "ComfyUI",
+      "Easy Workflow",
+      "Multimodal",
+      "Prompt Editor"
+    ],
     "action": {
       "zh": "打开简化工作流",
       "en": "Open the easier workflow"
     },
-    "verifiedAt": "2026-08-16"
+    "verifiedAt": "2026-08-23",
+    "stars": 521,
+    "forks": 39,
+    "pushedAt": "2026-08-22T03:29:14Z",
+    "snapshotAt": "2026-08-23"
   },
   {
     "id": "h3-finetuning",
@@ -381,13 +498,26 @@
         "Run a ten-step single-GPU heads smoke test before moving to LoRA and multi-GPU ZeRO-3 training."
       ]
     },
-    "facts": ["Rectified-flow Trainer", "LoRA + ZeRO-3", "Audio in Loss"],
-    "tags": ["Fine-tuning", "Training", "LoRA", "Multi-GPU"],
+    "facts": [
+      "Rectified-flow Trainer",
+      "LoRA + ZeRO-3",
+      "Audio in Loss"
+    ],
+    "tags": [
+      "Fine-tuning",
+      "Training",
+      "LoRA",
+      "Multi-GPU"
+    ],
     "action": {
       "zh": "阅读微调文档",
       "en": "Read the fine-tuning guide"
     },
-    "verifiedAt": "2026-08-16"
+    "verifiedAt": "2026-08-23",
+    "stars": 66,
+    "forks": 7,
+    "pushedAt": "2026-08-10T07:06:00Z",
+    "snapshotAt": "2026-08-23"
   },
   {
     "id": "modeltc-h3-turbo",
@@ -420,13 +550,26 @@
         "Preserve reference-image aspect ratio and start with the training-matched reference-resize-mode=match before comparing against the native model."
       ]
     },
-    "facts": ["FL2VA + Ref2VA", "4 / 8 NFE", "Diffusers + ComfyUI"],
-    "tags": ["Turbo", "Distillation", "Diffusers", "ComfyUI"],
+    "facts": [
+      "FL2VA + Ref2VA",
+      "4 / 8 NFE",
+      "Diffusers + ComfyUI"
+    ],
+    "tags": [
+      "Turbo",
+      "Distillation",
+      "Diffusers",
+      "ComfyUI"
+    ],
     "action": {
       "zh": "查看 Turbo 模型与示例",
       "en": "View Turbo models and examples"
     },
-    "verifiedAt": "2026-08-16"
+    "verifiedAt": "2026-08-23",
+    "stars": 303,
+    "forks": 12,
+    "pushedAt": "2026-08-15T05:38:49Z",
+    "snapshotAt": "2026-08-23"
   },
   {
     "id": "awesome-h3-resources",
@@ -459,13 +602,26 @@
         "Before downloading, return to each original project to verify its license, dependencies, latest update, and tested environment."
       ]
     },
-    "facts": ["Models + Quants", "LoRA + Nodes", "Guides + Workflows"],
-    "tags": ["Awesome List", "Models", "ComfyUI", "Resources"],
+    "facts": [
+      "Models + Quants",
+      "LoRA + Nodes",
+      "Guides + Workflows"
+    ],
+    "tags": [
+      "Awesome List",
+      "Models",
+      "ComfyUI",
+      "Resources"
+    ],
     "action": {
       "zh": "浏览 H3 资源地图",
       "en": "Browse the H3 resource map"
     },
-    "verifiedAt": "2026-08-16"
+    "verifiedAt": "2026-08-23",
+    "stars": 352,
+    "forks": 15,
+    "pushedAt": "2026-08-20T09:35:21Z",
+    "snapshotAt": "2026-08-23"
   },
   {
     "id": "beatapi-prompt-gallery",
@@ -498,12 +654,183 @@
         "Open the source to verify the creator and post before reuse; workflow, reference media, and model-version differences can change results."
       ]
     },
-    "facts": ["300 Prompts", "Playable WebM", "Creator Attribution"],
-    "tags": ["Prompt Gallery", "Examples", "WebM", "Attribution"],
+    "facts": [
+      "300 Prompts",
+      "Playable WebM",
+      "Creator Attribution"
+    ],
+    "tags": [
+      "Prompt Gallery",
+      "Examples",
+      "WebM",
+      "Attribution"
+    ],
     "action": {
       "zh": "浏览 Prompt 图库",
       "en": "Browse the prompt gallery"
     },
-    "verifiedAt": "2026-08-16"
+    "verifiedAt": "2026-08-23",
+    "stars": 117,
+    "forks": 5,
+    "pushedAt": "2026-08-18T10:15:32Z",
+    "snapshotAt": "2026-08-23"
+  },
+  {
+    "id": "comfyui-wiki",
+    "code": "T14",
+    "category": "resources",
+    "featured": false,
+    "title": "ComfyUI Wiki",
+    "url": "https://github.com/602387193c/ComfyUI-wiki",
+    "kind": {
+      "zh": "基础知识 / COMFYUI",
+      "en": "FOUNDATIONS / COMFYUI"
+    },
+    "description": {
+      "zh": "覆盖 ComfyUI 安装、节点、模型、工作流与故障排查的中英双语知识库。它不是 H3 专用项目，但适合补齐 H3 教程默认读者已经掌握的 ComfyUI 基础。",
+      "en": "A bilingual knowledge base for ComfyUI setup, nodes, models, workflows, and troubleshooting. It is not H3-specific, but fills the ComfyUI fundamentals assumed by many H3 guides."
+    },
+    "audience": {
+      "zh": "适合第一次接触 ComfyUI，或遇到节点、模型路径和工作流导入问题的 H3 用户。",
+      "en": "For first-time ComfyUI users and H3 users debugging nodes, model paths, or workflow imports."
+    },
+    "steps": {
+      "zh": [
+        "先从安装和界面基础开始，确认 ComfyUI 能独立启动并保存普通工作流。",
+        "再学习模型目录、custom_nodes 与工作流 JSON 的导入方式，最后进入 H3 专用教程。",
+        "遇到 H3 错误时先区分 ComfyUI 通用问题与 H3 节点问题，再回到对应项目 README 核验版本。"
+      ],
+      "en": [
+        "Start with installation and interface basics until ComfyUI launches and saves a basic workflow reliably.",
+        "Learn model paths, custom_nodes, and workflow JSON imports before opening an H3-specific guide.",
+        "Separate generic ComfyUI failures from H3-node failures, then verify versions in the relevant project README."
+      ]
+    },
+    "facts": [
+      "Bilingual Docs",
+      "Nodes + Models",
+      "Workflow Basics"
+    ],
+    "tags": [
+      "ComfyUI",
+      "Getting Started",
+      "Troubleshooting",
+      "Documentation"
+    ],
+    "requirements": {
+      "zh": "无需先安装 H3；适合作为 ComfyUI 新手前置阅读。",
+      "en": "No H3 installation required; use it as prerequisite reading for ComfyUI beginners."
+    },
+    "strengths": {
+      "zh": [
+        "中文基础内容",
+        "通用故障排查",
+        "工作流与节点概念"
+      ],
+      "en": [
+        "Bilingual fundamentals",
+        "General troubleshooting",
+        "Workflow and node concepts"
+      ]
+    },
+    "limitations": {
+      "zh": [
+        "不是 H3 专用教程",
+        "具体 H3 命令仍须回到对应仓库核验"
+      ],
+      "en": [
+        "Not H3-specific",
+        "H3 commands still require verification in their source repository"
+      ]
+    },
+    "action": {
+      "zh": "补齐 ComfyUI 基础",
+      "en": "Learn ComfyUI fundamentals"
+    },
+    "verifiedAt": "2026-08-23",
+    "stars": 1150,
+    "forks": 166,
+    "pushedAt": "2026-08-21T08:35:43Z",
+    "snapshotAt": "2026-08-23"
+  },
+  {
+    "id": "openmontage",
+    "code": "T15",
+    "category": "workflow",
+    "featured": false,
+    "title": "OpenMontage",
+    "url": "https://github.com/calesthio/OpenMontage",
+    "kind": {
+      "zh": "AGENT 生产系统 / 质量门禁",
+      "en": "AGENT PRODUCTION / QUALITY GATES"
+    },
+    "description": {
+      "zh": "开源 Agent 视频生产系统，组织分镜、资产、剪辑、质量门禁与多条制作流水线。它不直接替代 H3 推理，而是提供把 H3 接入完整生产流程时可借鉴的工程结构。",
+      "en": "An open-source agentic video-production system spanning storyboards, assets, editing, quality gates, and multiple pipelines. It does not replace H3 inference; it is an architectural reference for putting H3 inside a production system."
+    },
+    "audience": {
+      "zh": "适合已经能生成 H3 片段，下一步要做自动分镜、批量生产、剪辑和质量检查的团队或高级创作者。",
+      "en": "For teams and advanced creators who can already render H3 clips and now need automated planning, batch production, editing, and quality checks."
+    },
+    "steps": {
+      "zh": [
+        "先在站内跑通 H3 单镜头与素材管理，不要把 OpenMontage 当作 H3 安装器。",
+        "阅读它的生产流水线、技能与质量门禁结构，选择一个最小流程映射 H3 输出、FFmpeg 和剪辑步骤。",
+        "用固定样片验证素材命名、失败重试、人工审核点与最终导出，再逐步扩大自动化范围。"
+      ],
+      "en": [
+        "Get one H3 shot and asset handling working first; do not treat OpenMontage as an H3 installer.",
+        "Study its pipelines, skills, and quality-gate structure, then map one minimal flow to H3 output, FFmpeg, and editing.",
+        "Use a fixed sample to verify naming, retries, human review gates, and export before expanding automation."
+      ]
+    },
+    "facts": [
+      "12 Pipelines",
+      "100+ Tools",
+      "700+ Skills + Knowledge Files"
+    ],
+    "tags": [
+      "Agent",
+      "Video Production",
+      "Quality Gates",
+      "Pipeline"
+    ],
+    "requirements": {
+      "zh": "先有可工作的 H3 生成链路；适合阅读 Python 与 Agent 工作流的用户。",
+      "en": "Requires a working H3 generation path and comfort with Python and agent workflows."
+    },
+    "strengths": {
+      "zh": [
+        "完整生产架构",
+        "质量门禁",
+        "多 Agent 与工具组织"
+      ],
+      "en": [
+        "End-to-end production architecture",
+        "Quality gates",
+        "Agent and tool organization"
+      ]
+    },
+    "limitations": {
+      "zh": [
+        "不是 H3 专用项目",
+        "AGPL-3.0 许可需单独评估",
+        "接入 H3 需要自行实现适配层"
+      ],
+      "en": [
+        "Not H3-specific",
+        "AGPL-3.0 requires separate review",
+        "H3 integration needs a custom adapter"
+      ]
+    },
+    "action": {
+      "zh": "研究 Agent 视频流水线",
+      "en": "Study the agentic video pipeline"
+    },
+    "verifiedAt": "2026-08-23",
+    "stars": 49499,
+    "forks": 6216,
+    "pushedAt": "2026-08-22T18:22:24Z",
+    "snapshotAt": "2026-08-23"
   }
 ]

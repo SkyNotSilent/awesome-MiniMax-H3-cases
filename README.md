@@ -1,177 +1,117 @@
 <div align="center">
 
-<a href="https://h3-field-notes-production.up.railway.app/en/">
-  <img src="./public/icon.svg" alt="MiniMax H3 Cases & Guides icon" width="112" height="112">
-</a>
+<a href="https://h3-field-notes-production.up.railway.app/en/"><img src="./public/icon.svg" alt="MiniMax H3 Cases & Guides" width="104" height="104"></a>
 
 # MiniMax H3 Cases & Guides
 
-**See what MiniMax H3 can actually make—997 playable cases, 309 complete public Prompts, and 24 practical guides in one bilingual library.**
+<!-- project-stats:start -->
+**The most complete source-attributed MiniMax H3 case and tutorial library: 997 playable videos, 309 complete public Prompts, and 24 practical guides.**
+<!-- project-stats:end -->
 
-[![Video Gallery](https://img.shields.io/badge/Watch-Live_Video_Gallery-d8ff3e?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/en/)
-[![Examples](https://img.shields.io/badge/video_examples-997-d8ff3e?style=flat-square&labelColor=0a0b09)](./CATALOG.md)
-[![Complete Prompts](https://img.shields.io/badge/complete_prompts-309-f5f5ed?style=flat-square&labelColor=0a0b09)](./data/cases.json)
-[![Tutorials](https://img.shields.io/badge/source--checked_tutorials-24-f5f5ed?style=flat-square&labelColor=0a0b09)](https://h3-field-notes-production.up.railway.app/en/tutorials/)
-[![GitHub Stars](https://img.shields.io/github/stars/SkyNotSilent/awesome-minimax-h3-cases?style=flat-square&labelColor=0a0b09&color=d8ff3e)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/stargazers)
-[![CI](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/actions/workflows/ci.yml/badge.svg)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg?style=flat-square)](./LICENSE)
+**English** · [简体中文](./README.zh-CN.md)
+
+[![Stars](https://img.shields.io/github/stars/SkyNotSilent/awesome-minimax-h3-cases?style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/stargazers)
+[![Forks](https://img.shields.io/github/forks/SkyNotSilent/awesome-minimax-h3-cases?style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/forks)
+[![Cases](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json&query=%24.cases&label=cases&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/en/)
+[![Prompts](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json&query=%24.completePrompts&label=public%20prompts&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/en/?collection=prompt)
+[![Tutorials](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json&query=%24.tutorials&label=tutorials&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/en/tutorials/)
+[![CI](https://img.shields.io/github/actions/workflow/status/SkyNotSilent/awesome-minimax-h3-cases/ci.yml?style=for-the-badge&label=CI&labelColor=0a0b09)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/SkyNotSilent/awesome-minimax-h3-cases?style=for-the-badge&labelColor=0a0b09)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/releases)
+[![License](https://img.shields.io/badge/license-MIT-6ba4ff?style=for-the-badge&labelColor=0a0b09)](./LICENSE)
 
 </div>
 
-<a href="https://h3-field-notes-production.up.railway.app/en/">
-  <picture>
-    <source media="(max-width: 600px)" srcset="./docs/screenshots/case-library-en-mobile.jpg">
-    <img src="./docs/screenshots/case-library-en.jpg" alt="MiniMax H3 and Hailuo H3 video example gallery with duration and complete public Prompt filters" width="100%">
-  </picture>
-</a>
+[![MiniMax H3 Cases and Guides animated opening screen](./docs/screenshots/intro-en.jpg)](https://h3-field-notes-production.up.railway.app/en/)
 
-<p align="center"><strong>Watch the result, inspect the public Prompt when available, then follow a source-checked guide to run MiniMax H3 yourself.</strong></p>
+<p align="center"><strong>Watch real H3 output first. Inspect a Prompt only when its source publishes the complete text. Then follow a verified route to run it yourself.</strong></p>
 
-<p align="center"><strong><a href="./README.md">English</a></strong> · <strong><a href="./README.zh-CN.md">简体中文</a></strong> · <a href="./CATALOG.md">GitHub catalog</a> · <a href="./CONTRIBUTING.md">Contribute</a></p>
+[![MiniMax H3 playable case browser with duration, Prompt, collection, content, style, and scene filters](./docs/screenshots/case-library-en.jpg)](https://h3-field-notes-production.up.railway.app/en/)
 
-MiniMax H3 is also commonly searched as Hailuo H3 or Hailuo 3.0. Browse real outputs from X and MiniMax's official examples through duration-first filters, then switch on **With Prompt** to focus on 309 cases with complete public Prompt text. Truncated excerpts are excluded. Category, style, and scene remain available as deeper filters. Open any case to watch it inside the gallery and jump back to the original source.
+## Start here
 
-<a href="https://h3-field-notes-production.up.railway.app/en/tutorials/">
-  <picture>
-    <source media="(max-width: 600px)" srcset="./docs/screenshots/tutorials-en-mobile.png">
-    <img src="./docs/screenshots/tutorials-en.png" alt="MiniMax H3 tutorials covering Hailuo H3 setup, NVIDIA ComfyUI, native Mac inference, Prompts, acceleration, audio, long video, and LoRA training" width="100%">
-  </picture>
-</a>
+| Browse cases | With complete Prompt | Learn from zero | Install Agent Skills |
+| --- | --- | --- | --- |
+| [Watch every case](https://h3-field-notes-production.up.railway.app/en/) | [Open Prompt collection](https://h3-field-notes-production.up.railway.app/en/?collection=prompt) | [Open tutorials](https://h3-field-notes-production.up.railway.app/en/tutorials/) | [Jump to install](#agent-skills) |
 
-**Move from examples to execution.** Follow four complete MiniMax H3 zero-to-one tutorials—first ComfyUI video with audio, Turbo + low-VRAM acceleration, native Apple Silicon inference, and Motion Context clip chaining—or open 20 source-checked community field guides. Every guide keeps its references and can be copied as a structured AI task.
+MiniMax H3 is also searched as **Hailuo H3**, **Hailuo 3.0**, and **海螺 H3**. Every published case plays inside the gallery, keeps its original source and creator, and clearly distinguishes a complete verbatim Prompt from an unpublished one. The library never reconstructs, rewrites, or reverse-engineers missing Prompts.
 
-**Topics covered:** MiniMax H3 · Hailuo H3 · Hailuo 3.0 · AI video examples · MiniMax H3 prompts · ComfyUI workflows · local deployment · Apple Silicon / Metal · Turbo LoRA · long video · audio generation · Ref2VA training.
+## Find the useful cases faster
 
-> **Largest public collection in our 2026-08-16 comparison:** the library now contains 997 playable, source-attributed MiniMax H3 video cases. The closest public case or prompt galleries found in that search contained 300, 222, 135, 67, and 28 examples. Prompt-only lists are not counted as video case libraries.
+The homepage remains case-first. Quick collections work together with duration, Prompt, content, style, scene, and search filters:
 
-<details>
-<summary>How the collection-size claim was checked</summary>
+- [Editor picks](https://h3-field-notes-production.up.railway.app/en/?collection=featured) — verified, playable cases with a complete public Prompt.
+- [Latest additions](https://h3-field-notes-production.up.railway.app/en/?collection=latest) — generated from publication data, never a duplicated manual list.
+- [Official examples](https://h3-field-notes-production.up.railway.app/en/?collection=official) — reproducible MiniMax scripts and source evidence.
+- [Long videos](https://h3-field-notes-production.up.railway.app/en/?collection=long) — outputs longer than 15 seconds.
+- **My saved cases** — anonymous browser-local bookmarks; no login, tracking, or cloud account.
 
-We searched public GitHub repositories and web results for MiniMax H3 / Hailuo H3 video examples, cases, galleries, and prompts on 2026-08-16. The five largest comparable collections found in that snapshot contained 300, 222, 135, 67, and 28 entries. General resource lists and prompt-only collections without matching playable case videos were excluded. This is a dated comparison—not a permanent claim about every future site.
+Browse visually by **cinematic**, **live action**, **animation**, **dialogue**, **visual effects**, **product**, **character**, and **comparison** tags, then open any card for hosted playback, public metadata, Prompt provenance, and the original X link.
 
-</details>
+## Learn by goal or hardware
 
-## Why use this library?
+[![MiniMax H3 tutorial workspace](./docs/screenshots/tutorials-en.png)](https://h3-field-notes-production.up.railway.app/en/tutorials/)
 
-| What you get | Why it matters |
+The tutorial workspace starts with four zero-to-one routes and then exposes community field guides directly—no link-directory detour. Eight flagship guides include tested versions, exact commands, expected output, success checks, troubleshooting, and rollback steps.
+
+| Goal | Best starting point |
 | --- | --- |
-| **997 watchable video examples** | Judge MiniMax H3 / Hailuo H3 by real output, not a feature list |
-| **Duration-first browsing** | Jump directly to ≤5s, 6–10s, 11–15s, or >15s outputs, then narrow by content, style, or scene |
-| **One-switch public Prompt view** | Show 309 cases with complete public Prompts; truncated excerpts are excluded |
-| **Case-specific covers and loading states** | Know what each video contains before opening it and whether the X player is still loading |
-| **Original creator and source on every case** | Verify context, publication date, and attribution without hunting for the post |
-| **Verbatim public prompts when available** | Copy the exact prompt only when the creator or official script published it; missing prompts are never invented |
-| **Chinese and English routes** | Browse the same library in either language without mixed-language pages |
+| First generated video | [Official / NVIDIA + ComfyUI route](https://h3-field-notes-production.up.railway.app/en/tutorials/official-deployment/) |
+| Apple Silicon | [Native C + Metal route](https://h3-field-notes-production.up.railway.app/en/tutorials/mac-native/) |
+| 8–12 GB VRAM | [Low-VRAM and quantized routes](https://h3-field-notes-production.up.railway.app/en/tutorials/four-bit-eight-gb/) |
+| Faster previews and final output | [Turbo route](https://h3-field-notes-production.up.railway.app/en/tutorials/nvidia-comfyui/) |
+| Long video, audio, or training | [Browse by goal and hardware](https://h3-field-notes-production.up.railway.app/en/tutorials/) |
+| Compare open-source tools | [Tutorial and tool ecosystem](https://h3-field-notes-production.up.railway.app/en/tutorials/ecosystem/) |
 
-**Current snapshot:** 997 video examples · 994 X-attributed cases · 3 official reproductions · 309 complete public Prompts · 0 Prompt excerpts.
+Each guide has a **Copy for AI** action that creates an execution package from structured fields. It requires the agent to verify the latest upstream README and forbids guessed commands or compatibility claims.
 
-No account, API key, or local model setup is required to browse the public gallery.
+## Agent Skills
 
-### A complete case: hosted video, metadata, source, and public Prompt
+Install both repository Skills for Codex and Claude Code:
 
-[![MiniMax H3 case detail with hosted video metadata and a verbatim public prompt](./docs/screenshots/case-detail-prompt-en.png)](https://h3-field-notes-production.up.railway.app/en/cases/x-2088844629093601702/)
+```bash
+npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
+  --skill minimax-h3-prompt-library minimax-h3-tutorial-guide \
+  --agent codex claude-code
+```
 
-## Start exploring
-
-| What you want to do | Open |
-| --- | --- |
-| Watch and filter every MiniMax H3 video example | [Live visual gallery](https://h3-field-notes-production.up.railway.app/en/) |
-| Scan all cases without leaving GitHub | [`CATALOG.md`](./CATALOG.md) |
-| Query the source-attributed dataset | [`data/cases.json`](./data/cases.json) or [`llms-full.txt`](./public/llms-full.txt) |
-| Find a case through an Agent Skill | [`minimax-h3-prompt-library`](./agents/skills/minimax-h3-prompt-library/) |
-| Follow a setup route or copy an executable tutorial into an AI agent | [MiniMax H3 tutorial workspace](https://h3-field-notes-production.up.railway.app/en/tutorials/) |
-
-## MiniMax H3 tutorial workspace
-
-The tutorial hub is now a learning and execution workspace instead of a GitHub link list:
-
-- **4 complete zero-to-one routes:** first H3 video with audio in ComfyUI, Turbo + low-VRAM acceleration, native Mac inference, and Motion Context clip chaining.
-- **20 community field guides:** source-attributed X tutorials selected for reach and executability across setup, ComfyUI, prompts, acceleration, long video, audio, and training.
-- **Bilingual detail pages:** every guide has separate Chinese and English routes, installation steps, exact commands, hardware notes, troubleshooting, completion checks, references, and verification dates.
-- **Copy for AI:** one action creates a structured task package with environment checks, commands, risks, sources, and a guardrail to verify the latest README instead of guessing missing steps.
-
-The 13 source-checked ecosystem projects still exist, but now appear as related tools inside the route where they are useful. Community posts are summarized and structured; their full text is not copied.
-
-Weekly discovery follows the source-verification and privacy rules in [`docs/WEEKLY_TUTORIAL_COLLECTION.md`](./docs/WEEKLY_TUTORIAL_COLLECTION.md).
-
-## Generation modes
-
-- **T2VA — text-to-video with audio:** cinematic shots, camera movement, dialogue, music, ambience, and timeline cues from text.
-- **FL2VA — first/last-frame video with audio:** image-conditioned motion, transitions, rack focus, composition, and synchronized sound.
-- **Ref2VA — multimodal reference-to-video with audio:** video editing, identity and character consistency, audio reference, lip sync, and controlled dialogue.
-
-## Official public examples
-
-| Mode | Example | Public source |
+| Skill | What it does | Hard boundary |
 | --- | --- | --- |
-| T2VA | After the Fleet Jumps | [MiniMax public script](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-t2va-request.sh) |
-| FL2VA | Ramen Rack Focus | [MiniMax public script](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-fl2va-request.sh) |
-| Ref2VA | Follow the Wind | [MiniMax public script](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/scripts/readme/reproducible-768p-ref2va-request.sh) |
+| [`minimax-h3-prompt-library`](./agents/skills/minimax-h3-prompt-library/) | Finds real cases and returns a complete source-published Prompt when available | Never generates, rewrites, translates, or infers a Prompt |
+| [`minimax-h3-tutorial-guide`](./agents/skills/minimax-h3-tutorial-guide/) | Selects a checked route by OS, GPU, VRAM, time, and goal | Never guesses missing commands, versions, or compatibility |
 
-The catalog now contains 997 public cases: three official reproducible examples and 994 X-attributed community cases. Three hundred nine records preserve complete public Prompts; truncated excerpts are excluded from display and filtering. Archive-backed records disclose and link the public archive used for recovery. Every other entry explicitly marks the Prompt as not completely published. Every published case plays inside the gallery through project storage and keeps its original source link.
+Example output is structured as a recommended route, environment check, execution plan, success criteria, rollback, and dated sources.
 
-## Discovery and review pipeline
+## Data, automation, and trust
 
-```text
-Signed-in X browser search
-          ↓
-Original post URL + public metadata
-          ↓
-Deterministic deduplication and filtering
-          ↓
-MiMo V2.5 Pro public-text classification
-          ↓
-Shortlisted video → MiMo V2.5 low-FPS review
-          ↓
-data/candidates.json
-          ↓
-Eligibility + playback verification
-          ↓
-data/cases.json → website / catalog / Agent Skill
-```
+<!-- project-snapshot:start -->
+**Current generated snapshot:** 997 cases · 309 complete public Prompts · 24 tutorials · 8 flagship guides · 15 ecosystem resources · content checked through 2026-08-23.
+<!-- project-snapshot:end -->
 
-X discovery uses the maintainer's existing signed-in browser session, not an X developer token, and never bypasses access controls. Discovery stores public metadata and copies a prompt only when the exact text is visibly published in the source post; it never asks a model to recover a missing prompt. Clear cases are published only after source, model, media, storage, and in-site playback checks pass, while ambiguous or failed cases remain in the review queue. Published videos use project storage for reliable in-site playback and always retain the original X source link. The recurring task prompt lives in [`docs/DAILY_COLLECTION_PROMPT.md`](./docs/DAILY_COLLECTION_PROMPT.md).
+- [`data/project-stats.json`](./data/project-stats.json) is the canonical public count snapshot; CI rejects stale website and README numbers.
+- [`data/cases.json`](./data/cases.json) stores source-attributed case metadata; creator videos live outside Git in project storage.
+- [`data/tutorial-guides.json`](./data/tutorial-guides.json) stores bilingual structured guides; [`data/tutorials.json`](./data/tutorials.json) stores dated ecosystem snapshots.
+- Daily case discovery and weekly tutorial discovery keep private candidates in `.review/`; credentials and discovery labels never enter Git, the frontend, or SEO.
+- Builds generate localized case/tutorial pages, canonical and hreflang links, `VideoObject`/`HowTo` JSON-LD, sitemap, Open Graph data, [`llms.txt`](./public/llms.txt), and [`llms-full.txt`](./public/llms-full.txt).
 
-## Model routing
+## Contribute or report a problem
 
-This repository uses the existing Xiaomi MiMo Token Plan:
+Read [CONTRIBUTING.md](./CONTRIBUTING.md), then use the focused form:
 
-- `mimo-v2.5-pro` for classification of public post text and metadata. It does not generate, rewrite, or infer prompts.
-- `mimo-v2.5` for limited video/audio verification of shortlisted cases, never for prompt reconstruction or workflow decomposition.
+- [Submit a video case](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/issues/new?template=case-submission.yml)
+- [Submit a tutorial](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/issues/new?template=tutorial-submission.yml)
+- [Report broken media](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/issues/new?template=broken-media.yml)
+- [Challenge Prompt provenance](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/issues/new?template=prompt-dispute.yml)
+- [Request correction or removal](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/issues/new?template=takedown.yml)
+- [Show work or suggest a guide](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/discussions)
 
-Copy `.env.example` to `.env` locally. Never commit a real API key. The static public website does not receive or need model credentials.
+## Releases and growth
 
-## Quick start
+[Read the changelog](./CHANGELOG.md) · [Follow releases](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/releases) · [Browse the GitHub catalog](./CATALOG.md)
 
-Requires Node.js 22 or later.
+[![Star History Chart](https://api.star-history.com/svg?repos=SkyNotSilent/awesome-minimax-h3-cases&type=Date)](https://www.star-history.com/#SkyNotSilent/awesome-minimax-h3-cases&Date)
 
-```bash
-npm install
-npm run dev
-```
+## License and acknowledgements
 
-Run the full quality gate:
+Code is MIT licensed. Videos, Prompts, names, and other collected material remain subject to their original owners and source-platform terms. This community project is not affiliated with MiniMax.
 
-```bash
-npm test
-npm run lint
-npm run validate:data
-npm run build
-npm run catalog
-```
-
-The build creates localized case and tutorial pages, `VideoObject` and `HowTo` structured data, sitemap and hreflang links, Open Graph metadata, `robots.txt`, and [`llms.txt`](./public/llms.txt) for AI search and answer engines.
-
-## Deployment
-
-The live website runs on Railway. The Railway service tracks the public GitHub repository's `main` branch, so every accepted push triggers a fresh build and deployment. Runtime secrets are unnecessary for the public frontend; local MiMo credentials stay outside Git.
-
-## Contribution and copyright
-
-Read [`CONTRIBUTING.md`](./CONTRIBUTING.md) before submitting a case. Link the original creator and identify the prompt provenance. Include prompt text only when it can be copied verbatim from the original post or an official public script. Videos are stored outside Git in project storage; do not commit downloaded creator media to the repository. Creators may open an Issue to request correction or removal.
-
-Code is MIT licensed. Videos, prompts, names, and other collected material remain subject to their original owners and source-platform terms. MiniMax H3 is distributed under its own license; this community project is not affiliated with MiniMax.
-
-## Inspiration
-
-The information architecture learns from successful open prompt libraries such as [awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2), [awesome-seedance](https://github.com/ZeroLu/awesome-seedance), and [awesome-seedance-2-prompts](https://github.com/YouMind-OpenLab/awesome-seedance-2-prompts). Content, data, visual design, and implementation in this repository are original and specific to MiniMax H3.
+The product packaging studies strong open libraries such as [awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2); tutorial organization also learns from [MiniMax-H3](https://github.com/MiniMax-AI/MiniMax-H3), [h3.c](https://github.com/antirez/h3.c), [ComfyUI-wiki](https://github.com/602387193c/ComfyUI-wiki), and [OpenMontage](https://github.com/calesthio/OpenMontage). All case data, tutorial structure, visual design, and implementation here are specific to MiniMax H3 Cases & Guides.

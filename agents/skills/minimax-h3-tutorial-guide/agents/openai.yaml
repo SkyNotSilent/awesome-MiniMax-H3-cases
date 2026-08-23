@@ -1,0 +1,7 @@
+interface:
+  display_name: "MiniMax H3 Tutorial Guide"
+  short_description: "Choose a source-checked H3 setup path for your hardware"
+  default_prompt: "Select the safest verified MiniMax H3 tutorial for my hardware and goal, then produce an executable task package with checks and rollback steps."
+
+policy:
+  allow_implicit_invocation: true

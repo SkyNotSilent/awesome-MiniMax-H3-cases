@@ -1,0 +1,24 @@
+name: Report a Prompt provenance problem
+description: Challenge Prompt completeness, wording, attribution, or source evidence.
+title: "[Prompt dispute]: "
+labels: ["prompt-provenance"]
+body:
+  - type: input
+    id: case
+    attributes:
+      label: Case page or ID
+    validations:
+      required: true
+  - type: input
+    id: evidence
+    attributes:
+      label: Original evidence URL
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Describe the discrepancy
+      description: Explain whether the text is incomplete, changed, misattributed, or unavailable at the source.
+    validations:
+      required: true

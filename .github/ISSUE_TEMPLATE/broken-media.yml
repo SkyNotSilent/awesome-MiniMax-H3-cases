@@ -1,0 +1,25 @@
+name: Report broken media
+description: Report a video, cover, source, or tutorial link that no longer works.
+title: "[Broken]: "
+labels: ["broken-media"]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: Affected page or case ID
+    validations:
+      required: true
+  - type: dropdown
+    id: failure
+    attributes:
+      label: What failed?
+      options: [Video playback, Video cover, Original source link, Prompt source link, Tutorial link, Other]
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: What happened?
+      description: Include browser/device, time, error text, and a screenshot when possible.
+    validations:
+      required: true
