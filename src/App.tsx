@@ -250,7 +250,8 @@ function Header({
     <header className="site-header-wrap">
       <div className="shell site-header">
         <a className="brand" href={pathFor(language, 'home')} aria-label="MiniMax H3 Cases & Guides">
-          MiniMax H3<span> Cases & Guides</span>
+          <img className="brand-icon" src="/icon.svg" alt="" width="32" height="32" />
+          <span className="brand-name">MiniMax H3<strong> Cases &amp; Guides</strong></span>
         </a>
         <nav aria-label={language === 'zh' ? '主导航' : 'Primary navigation'}>
           <a href={pathFor(language, 'home')} aria-current={page === 'home' ? 'page' : undefined}>{t.nav.cases}</a>

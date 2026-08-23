@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="./public/icon.svg" alt="MiniMax H3 Cases & Guides icon" width="96" height="96">
+
 # MiniMax H3 Cases & Guides
 
 ### MiniMax H3 / Hailuo H3 video examples, public Prompts, ComfyUI workflows & deployment tutorials

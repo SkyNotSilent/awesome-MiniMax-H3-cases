@@ -1,12 +1,30 @@
 {
   "name": "MiniMax H3 Cases & Guides",
   "short_name": "H3 Cases",
-  "description": "997 source-attributed MiniMax H3 video examples with in-site playback, 309 complete public Prompts, and 13 source-checked tutorials.",
+  "description": "Playable MiniMax H3 video cases, complete public prompts, and practical guides.",
   "id": "/",
   "start_url": "/",
   "scope": "/",
   "lang": "zh-CN",
   "display": "standalone",
   "background_color": "#0a0b09",
-  "theme_color": "#0a0b09"
+  "theme_color": "#0a0b09",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
 }
