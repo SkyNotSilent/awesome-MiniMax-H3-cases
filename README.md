@@ -47,6 +47,10 @@ The homepage remains case-first. Quick collections work together with duration, 
 
 Browse visually by **cinematic**, **live action**, **animation**, **dialogue**, **visual effects**, **product**, **character**, and **comparison** tags, then open any card for hosted playback, public metadata, Prompt provenance, and the original X link.
 
+| Cinematic & VFX | Live action & dialogue | Animation & characters | Product & comparison |
+| --- | --- | --- | --- |
+| Film-grade shots, camera moves, transformations | People, performance, speech, emotion | Anime, illustration, creatures, stylized worlds | Ads, product demos, model comparisons |
+
 ## Learn by goal or hardware
 
 [![MiniMax H3 tutorial workspace](./docs/screenshots/tutorials-en.png)](https://h3-field-notes-production.up.railway.app/en/tutorials/)
@@ -74,6 +78,8 @@ npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
   --agent codex claude-code
 ```
 
+![Actual Agent Skill discovery and a structured tutorial routing result](./docs/screenshots/agent-skills-output.png)
+
 | Skill | What it does | Hard boundary |
 | --- | --- | --- |
 | [`minimax-h3-prompt-library`](./agents/skills/minimax-h3-prompt-library/) | Finds real cases and returns a complete source-published Prompt when available | Never generates, rewrites, translates, or infers a Prompt |
@@ -92,6 +98,7 @@ Example output is structured as a recommended route, environment check, executio
 - [`data/tutorial-guides.json`](./data/tutorial-guides.json) stores bilingual structured guides; [`data/tutorials.json`](./data/tutorials.json) stores dated ecosystem snapshots.
 - Daily case discovery and weekly tutorial discovery keep private candidates in `.review/`; credentials and discovery labels never enter Git, the frontend, or SEO.
 - Builds generate localized case/tutorial pages, canonical and hreflang links, `VideoObject`/`HowTo` JSON-LD, sitemap, Open Graph data, [`llms.txt`](./public/llms.txt), and [`llms-full.txt`](./public/llms-full.txt).
+- `npm run screenshots` rebuilds the site, checks desktop/mobile routes, reads current stats and tutorial data, and refreshes every README screenshot.
 
 ## Contribute or report a problem
 

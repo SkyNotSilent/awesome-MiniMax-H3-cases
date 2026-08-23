@@ -1,7 +1,7 @@
 {
   "name": "awesome-minimax-h3-cases",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.2.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -26,6 +26,7 @@
     "tutorials:publish": "node scripts/tutorial-collection.mjs --publish",
     "skills:verify": "node scripts/verify-skills.mjs",
     "skills:install": "npx skills add . --skill minimax-h3-prompt-library minimax-h3-tutorial-guide --agent codex claude-code",
+    "screenshots": "npm run build && node scripts/capture-readme-screenshots.mjs",
     "seo": "node scripts/build-seo-pages.mjs"
   },
   "dependencies": {
@@ -51,6 +52,7 @@
     "eslint-plugin-react-refresh": "latest",
     "globals": "latest",
     "jsdom": "latest",
+    "playwright": "^1.62.1",
     "typescript-eslint": "latest",
     "vitest": "latest"
   }

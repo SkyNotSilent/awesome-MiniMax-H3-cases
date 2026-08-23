@@ -5,3 +5,5 @@ Open X in the available signed-in Mac browser and search the latest posts with t
 ```
 
 Before the normal validation sequence, run `npm run sync:stats`. This refreshes the canonical statistics JSON, the public website snapshot, and both README summary blocks; validation must fail if any of those values diverge.
+
+When published counts or first-screen content change, run `npm run screenshots` so README visuals are regenerated from the same snapshot.

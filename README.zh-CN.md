@@ -47,6 +47,10 @@ MiniMax H3 也常被搜索为 **Hailuo H3**、**Hailuo 3.0**、**海螺 H3** 和
 
 还可继续浏览 **电影感、真人、动画、人物对白、纯特效、产品、角色、模型对比** 等内容标签；打开卡片即可查看站内视频、公开元数据、Prompt 来源说明和原始 X 链接。
 
+| 电影感与特效 | 真人与对白 | 动画与角色 | 产品与对比 |
+| --- | --- | --- | --- |
+| 电影级镜头、运镜、变形和视觉效果 | 真人表演、对白、情绪与生活场景 | 动漫、插画、生物和风格化世界 | 广告、产品演示与模型对比 |
+
 ## 按目标或硬件学会 H3
 
 [![MiniMax H3 中文教程工作台](./docs/screenshots/tutorials-zh.png)](https://h3-field-notes-production.up.railway.app/tutorials/)
@@ -74,6 +78,8 @@ npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
   --agent codex claude-code
 ```
 
+![Agent Skill 的真实发现结果与结构化教程路线输出](./docs/screenshots/agent-skills-output.png)
+
 | Skill | 能做什么 | 不会做什么 |
 | --- | --- | --- |
 | [`minimax-h3-prompt-library`](./agents/skills/minimax-h3-prompt-library/) | 查真实案例；来源完整公开时返回逐字 Prompt | 不生成、不改写、不翻译、不反推 Prompt |
@@ -92,6 +98,7 @@ npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
 - [`data/tutorial-guides.json`](./data/tutorial-guides.json) 保存双语结构化教程；[`data/tutorials.json`](./data/tutorials.json) 保存带日期的生态快照；
 - 每日案例发现与每周教程发现的私有候选只进 `.review/`；凭据和发现来源标签不会进入 Git、前端或 SEO；
 - 构建会生成中英文案例/教程页、canonical、hreflang、`VideoObject`/`HowTo` JSON-LD、sitemap、OG、[`llms.txt`](./public/llms.txt) 与 [`llms-full.txt`](./public/llms-full.txt)。
+- `npm run screenshots` 会重新构建网站、验证桌面与手机路由，并从当前统计和教程数据自动刷新 README 全部截图。
 
 ## 投稿、纠错与下架
 
