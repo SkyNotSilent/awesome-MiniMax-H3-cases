@@ -10,6 +10,9 @@ const screenshotDir = resolve(root, 'docs/screenshots')
 const stats = JSON.parse(await readFile(resolve(root, 'data/project-stats.json'), 'utf8'))
 const cases = JSON.parse(await readFile(resolve(root, 'data/cases.json'), 'utf8'))
 const guides = JSON.parse(await readFile(resolve(root, 'data/tutorial-guides.json'), 'utf8'))
+const resources = JSON.parse(await readFile(resolve(root, 'data/tutorials.json'), 'utf8'))
+const resourceSnapshotAt = resources.find((item) => item.snapshotAt)?.snapshotAt
+if (!resourceSnapshotAt) throw new Error('Tutorial resources are missing a Star snapshot date')
 const configuredBase = process.env.SCREENSHOT_BASE_URL
 const baseUrl = configuredBase || 'http://127.0.0.1:4173'
 const latestCaseAddedAt = Math.max(...cases.map((item) => Date.parse(item.addedAt)))
@@ -189,11 +192,11 @@ try {
   await page.screenshot({ path: resolve(screenshotDir, 'tutorials-en.png') })
 
   await verifyPage(page, '/tutorials/ecosystem/', 'zh-CN', '教程与工具生态')
-  await page.getByText(`Star 快照: ${stats.generatedAt}`).first().waitFor()
+  await page.getByText(`Star 快照: ${resourceSnapshotAt}`).first().waitFor()
   await page.screenshot({ path: resolve(screenshotDir, 'tutorial-ecosystem-zh.png') })
 
   await verifyPage(page, '/en/tutorials/ecosystem/', 'en', 'Tutorial and Tool Ecosystem')
-  await page.getByText(`Stars snapshot: ${stats.generatedAt}`).first().waitFor()
+  await page.getByText(`Stars snapshot: ${resourceSnapshotAt}`).first().waitFor()
   await page.screenshot({ path: resolve(screenshotDir, 'tutorial-ecosystem-en.png') })
 
   await verifyPage(page, '/creators/', 'zh-CN', '持续做出好作品的人。')
