@@ -3,247 +3,70 @@
   "title": "MiniMax H3 Cases & Guides case",
   "type": "object",
   "required": [
-    "id",
-    "title",
-    "titleEn",
-    "summary",
-    "summaryEn",
-    "model",
-    "mode",
-    "prompt",
-    "sourceUrl",
-    "mediaUrl",
-    "author",
-    "posterUrl",
-    "category",
-    "styles",
-    "scenes",
-    "inputTypes",
-    "promptProvenance",
-    "verified",
-    "duration",
-    "resolution",
-    "aspectRatio",
-    "publishedAt",
-    "addedAt"
+    "id", "title", "titleEn", "summary", "summaryEn", "model", "mode", "prompt", "sourceUrl", "mediaUrl", "author", "posterUrl",
+    "category", "styles", "scenes", "inputTypes", "promptProvenance", "verified", "duration", "resolution", "aspectRatio", "publishedAt", "addedAt"
   ],
   "properties": {
-    "id": {
-      "type": "string",
-      "minLength": 3
-    },
-    "title": {
-      "type": "string",
-      "minLength": 1,
-      "pattern": "^[^@]*$"
-    },
-    "titleEn": {
-      "type": "string",
-      "minLength": 1,
-      "pattern": "^[^@]*$"
-    },
-    "summary": {
-      "type": "string",
-      "minLength": 1,
-      "pattern": "^[^@]*$"
-    },
-    "summaryEn": {
-      "type": "string",
-      "minLength": 1,
-      "pattern": "^[^@]*$"
-    },
-    "model": {
-      "type": "string"
-    },
-    "mode": {
-      "enum": [
-        "T2VA",
-        "FL2VA",
-        "Ref2VA",
-        "Unknown"
-      ]
-    },
-    "prompt": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "minLength": 1
-    },
-    "promptCompleteness": {
-      "const": "complete"
-    },
-    "mediaUrl": {
-      "type": "string",
-      "pattern": "^/media/[a-zA-Z0-9_-]+\\.mp4$"
-    },
-    "sourceUrl": {
-      "type": "string",
-      "format": "uri"
-    },
-    "posterUrl": {
-      "type": "string",
-      "minLength": 1
-    },
-    "duration": {
-      "type": "number",
-      "exclusiveMinimum": 0
-    },
-    "resolution": {
-      "type": "string",
-      "minLength": 1
-    },
-    "aspectRatio": {
-      "type": "string",
-      "minLength": 1
-    },
-    "publishedAt": {
-      "type": "string",
-      "minLength": 1
-    },
-    "addedAt": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "sourceCaption": {
-      "type": "string",
-      "minLength": 1
-    },
-    "approvedAt": {
-      "type": "string",
-      "minLength": 1
-    },
-    "attributionNote": {
-      "type": "string",
-      "minLength": 1
-    },
-    "editorialBasis": {
-      "type": "string",
-      "minLength": 1
-    },
+    "id": { "type": "string", "minLength": 3 },
+    "title": { "type": "string", "minLength": 1, "pattern": "^[^@]*$" },
+    "titleEn": { "type": "string", "minLength": 1, "pattern": "^[^@]*$" },
+    "summary": { "type": "string", "minLength": 1, "pattern": "^[^@]*$" },
+    "summaryEn": { "type": "string", "minLength": 1, "pattern": "^[^@]*$" },
+    "model": { "type": "string" },
+    "mode": { "enum": ["T2VA", "FL2VA", "Ref2VA", "Unknown"] },
+    "prompt": { "type": ["string", "null"], "minLength": 1 },
+    "promptCompleteness": { "const": "complete" },
+    "mediaUrl": { "type": "string", "pattern": "^/media/[a-zA-Z0-9_-]+\\.mp4$" },
+    "sourceUrl": { "type": "string", "format": "uri" },
+    "posterUrl": { "type": "string", "minLength": 1 },
+    "duration": { "type": "number", "exclusiveMinimum": 0 },
+    "resolution": { "type": "string", "minLength": 1 },
+    "aspectRatio": { "type": "string", "minLength": 1 },
+    "publishedAt": { "type": "string", "minLength": 1 },
+    "addedAt": { "type": "string", "format": "date-time" },
+    "sourceCaption": { "type": "string", "minLength": 1 },
+    "approvedAt": { "type": "string", "minLength": 1 },
+    "attributionNote": { "type": "string", "minLength": 1 },
+    "editorialBasis": { "type": "string", "minLength": 1 },
     "engagement": {
       "type": "object",
-      "required": [
-        "replies",
-        "reposts",
-        "likes",
-        "views"
-      ],
+      "required": ["replies", "reposts", "likes", "views"],
       "anyOf": [
-        {
-          "required": [
-            "snapshotAt"
-          ]
-        },
-        {
-          "required": [
-            "capturedAt"
-          ]
-        }
+        { "required": ["snapshotAt"] },
+        { "required": ["capturedAt"] }
       ],
       "properties": {
-        "replies": {
-          "type": "number",
-          "minimum": 0
-        },
-        "reposts": {
-          "type": "number",
-          "minimum": 0
-        },
-        "likes": {
-          "type": "number",
-          "minimum": 0
-        },
-        "views": {
-          "type": "number",
-          "minimum": 0
-        },
-        "snapshotAt": {
-          "type": "string",
-          "minLength": 1
-        },
-        "capturedAt": {
-          "type": "string",
-          "minLength": 1
-        }
+        "replies": { "type": "number", "minimum": 0 },
+        "reposts": { "type": "number", "minimum": 0 },
+        "likes": { "type": "number", "minimum": 0 },
+        "views": { "type": "number", "minimum": 0 },
+        "snapshotAt": { "type": "string", "minLength": 1 },
+        "capturedAt": { "type": "string", "minLength": 1 }
       }
     },
-    "author": {
-      "type": "string"
-    },
-    "category": {
-      "type": "string"
-    },
-    "styles": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "uniqueItems": true
-    },
-    "scenes": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "uniqueItems": true
-    },
+    "author": { "type": "string" },
+    "category": { "type": "string" },
+    "styles": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "scenes": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
     "inputTypes": {
       "type": "array",
-      "items": {
-        "enum": [
-          "text",
-          "image",
-          "video",
-          "audio",
-          "unknown"
-        ]
-      },
+      "items": { "enum": ["text", "image", "video", "audio", "unknown"] },
       "uniqueItems": true
     },
     "promptProvenance": {
-      "enum": [
-        "official-verbatim",
-        "creator-verbatim",
-        "not-published",
-        "not-published"
-      ]
+      "enum": ["official-verbatim", "creator-verbatim", "not-published"]
     },
-    "promptSourceUrl": {
-      "type": "string",
-      "format": "uri"
-    },
-    "verified": {
-      "type": "boolean"
-    }
+    "promptSourceUrl": { "type": "string", "format": "uri" },
+    "verified": { "type": "boolean" }
   },
   "allOf": [
     {
       "if": {
-        "properties": {
-          "promptProvenance": {
-            "const": "not-published"
-          }
-        },
-        "required": [
-          "promptProvenance"
-        ]
+        "properties": { "promptProvenance": { "const": "not-published" } },
+        "required": ["promptProvenance"]
       },
-      "then": {
-        "properties": {
-          "prompt": {
-            "type": "null"
-          }
-        }
-      },
-      "else": {
-        "properties": {
-          "prompt": {
-            "type": "string",
-            "minLength": 1
-          }
-        }
-      }
+      "then": { "properties": { "prompt": { "type": "null" } } },
+      "else": { "properties": { "prompt": { "type": "string", "minLength": 1 } } }
     }
   ]
 }

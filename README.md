@@ -113,7 +113,7 @@ Example output is structured as a recommended route, environment check, executio
 ## Data, automation, and trust
 
 <!-- project-snapshot:start -->
-**Current generated snapshot:** 1020 cases · 317 complete public Prompts · 24 tutorials · 215 ranked creators from 627 source authors · 8 flagship guides · 15 ecosystem resources · content checked through 2026-08-24.
+**Current generated snapshot:** 1020 cases · 317 complete public Prompts · 24 tutorials · 215 ranked creators from 627 source authors · 8 flagship guides · 14 ecosystem resources · content checked through 2026-08-24.
 <!-- project-snapshot:end -->
 
 - [`data/project-stats.json`](./data/project-stats.json) is the canonical public count snapshot; CI rejects stale website and README numbers.
