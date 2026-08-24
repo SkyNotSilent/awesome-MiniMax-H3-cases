@@ -10,7 +10,6 @@ export interface VideoCase {
   summaryEn: string
   prompt: string | null
   promptSourceUrl?: string
-  archiveSourceUrl?: string
   promptCompleteness?: 'complete'
   sourceUrl: string
   sourceLabel: string
@@ -27,7 +26,7 @@ export interface VideoCase {
   styles: string[]
   scenes: string[]
   inputTypes: Array<'text' | 'image' | 'video' | 'audio' | 'unknown'>
-  promptProvenance: 'official-verbatim' | 'creator-verbatim' | 'external-archive-verbatim' | 'not-published'
+  promptProvenance: 'official-verbatim' | 'creator-verbatim' | 'not-published'
   sourceType: 'official' | 'x' | 'community'
   verified: boolean
   sourceCaption?: string

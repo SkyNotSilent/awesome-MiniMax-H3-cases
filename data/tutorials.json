@@ -624,58 +624,6 @@
     "snapshotAt": "2026-08-23"
   },
   {
-    "id": "beatapi-prompt-gallery",
-    "code": "T13",
-    "category": "resources",
-    "featured": false,
-    "title": "BeatAPI MiniMax H3 Prompt Gallery",
-    "url": "https://github.com/BeatAPI/awesome-minimax-h3-prompts",
-    "kind": {
-      "zh": "案例参考 / PROMPT + 视频",
-      "en": "CASE REFERENCE / PROMPTS + VIDEO"
-    },
-    "description": {
-      "zh": "一个按用途组织的 H3 Prompt 图库，收录 300 条 Prompt、WebM 示例与创作者来源，覆盖故事、动作、广告、音乐和社交视频。",
-      "en": "A use-case-organized H3 prompt gallery with 300 prompts, WebM examples, and creator attribution across stories, action, ads, music, and social video."
-    },
-    "audience": {
-      "zh": "适合想从“成片 + Prompt”配对中学习结构，再回到原作者核对上下文的用户。",
-      "en": "For users who want to learn from paired outputs and prompts, then return to the original creator for context."
-    },
-    "steps": {
-      "zh": [
-        "先按 Stories、Action、Ads、Music 或 Social 用途进入对应分类。",
-        "先观看 WebM 成片，再展开 Prompt，观察镜头、动作、环境和声音如何被组织。",
-        "复制前打开 Source 核对原作者与原帖；不同工作流、参考素材和模型版本可能产生不同结果。"
-      ],
-      "en": [
-        "Start with the Stories, Action, Ads, Music, or Social use-case category that matches your goal.",
-        "Watch the WebM result before expanding the prompt to study how shots, action, environment, and sound are structured.",
-        "Open the source to verify the creator and post before reuse; workflow, reference media, and model-version differences can change results."
-      ]
-    },
-    "facts": [
-      "300 Prompts",
-      "Playable WebM",
-      "Creator Attribution"
-    ],
-    "tags": [
-      "Prompt Gallery",
-      "Examples",
-      "WebM",
-      "Attribution"
-    ],
-    "action": {
-      "zh": "浏览 Prompt 图库",
-      "en": "Browse the prompt gallery"
-    },
-    "verifiedAt": "2026-08-23",
-    "stars": 117,
-    "forks": 5,
-    "pushedAt": "2026-08-18T10:15:32Z",
-    "snapshotAt": "2026-08-23"
-  },
-  {
     "id": "comfyui-wiki",
     "code": "T14",
     "category": "resources",

@@ -9,8 +9,15 @@ const tutorials = JSON.parse(await readFile(resolve(root, 'data/tutorials.json')
 const tutorialGuides = JSON.parse(await readFile(resolve(root, 'data/tutorial-guides.json'), 'utf8'))
 const creatorCatalog = JSON.parse(await readFile(resolve(root, 'data/creators.json'), 'utf8'))
 const modes = new Set(['T2VA', 'FL2VA', 'Ref2VA', 'Unknown'])
-const provenance = new Set(['official-verbatim', 'creator-verbatim', 'external-archive-verbatim', 'not-published'])
+const provenance = new Set(['official-verbatim', 'creator-verbatim', 'not-published'])
 const promptCompleteness = new Set(['complete'])
+const publicCaseKeys = new Set([
+  'addedAt', 'approvedAt', 'aspectRatio', 'attributionNote', 'author', 'category', 'duration', 'editorialBasis',
+  'engagement', 'id', 'inputTypes', 'mediaCount', 'mediaItems', 'mediaMetadata', 'mediaUrl', 'mode', 'model',
+  'posterUrl', 'prompt', 'promptCompleteness', 'promptProvenance', 'promptSourceUrl', 'publishedAt', 'resolution',
+  'scenes', 'sourceCaption', 'sourceLabel', 'sourceType', 'sourceUrl', 'styles', 'summary', 'summaryEn', 'tags',
+  'title', 'titleEn', 'verified',
+])
 const ids = new Set()
 const sourceUrls = new Set()
 const errors = []
@@ -18,6 +25,9 @@ const isoDateTimePattern = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,3})?(?
 
 for (const [index, item] of cases.entries()) {
   const at = `cases[${index}]`
+  for (const key of Object.keys(item)) {
+    if (!publicCaseKeys.has(key)) errors.push(`${at}.${key} is not allowed in public case data`)
+  }
   for (const key of ['id', 'title', 'titleEn', 'summary', 'summaryEn', 'model', 'mode', 'sourceUrl', 'sourceLabel', 'author', 'publishedAt', 'addedAt', 'category', 'posterUrl', 'resolution', 'aspectRatio']) {
     if (!item[key]) errors.push(`${at}.${key} is required`)
   }
@@ -59,7 +69,6 @@ for (const [index, item] of cases.entries()) {
   } else if (item.promptCompleteness && !promptCompleteness.has(item.promptCompleteness)) {
     errors.push(`${at}.promptCompleteness is invalid`)
   }
-  if (item.promptProvenance === 'external-archive-verbatim' && !item.archiveSourceUrl) errors.push(`${at}.archiveSourceUrl is required for external archive provenance`)
   if (item.promptSourceUrl) {
     try {
       const promptSource = new URL(item.promptSourceUrl)
@@ -71,14 +80,6 @@ for (const [index, item] of cases.entries()) {
       }
     } catch {
       errors.push(`${at}.promptSourceUrl is invalid`)
-    }
-  }
-  if (item.archiveSourceUrl) {
-    try {
-      const archiveSource = new URL(item.archiveSourceUrl)
-      if (archiveSource.protocol !== 'https:') errors.push(`${at}.archiveSourceUrl must use HTTPS`)
-    } catch {
-      errors.push(`${at}.archiveSourceUrl is invalid`)
     }
   }
   if (item.sourceType === 'x' && !item.posterUrl?.startsWith('/posters/x/')) {

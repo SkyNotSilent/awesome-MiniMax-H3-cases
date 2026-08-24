@@ -113,7 +113,7 @@ npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
 ## 数据、自动化与可信度
 
 <!-- project-snapshot:start -->
-**当前自动统计：** 1020 个案例 · 317 条完整公开 Prompt · 24 篇教程 · 627 位来源作者中的 215 位优质创作者 · 8 篇旗舰教程 · 15 个生态资源 · 内容核验至 2026-08-24。
+**当前自动统计：** 1020 个案例 · 317 条完整公开 Prompt · 24 篇教程 · 627 位来源作者中的 215 位优质创作者 · 8 篇旗舰教程 · 14 个生态资源 · 内容核验至 2026-08-24。
 <!-- project-snapshot:end -->
 
 - [`data/project-stats.json`](./data/project-stats.json) 是公开数字的唯一快照；网站与 README 数字过期会让 CI 失败；

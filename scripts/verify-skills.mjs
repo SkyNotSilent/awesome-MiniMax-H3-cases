@@ -15,7 +15,7 @@ for (const skill of skills) {
   if (!markdown.startsWith('---\n')) throw new Error(`${skill}: SKILL.md is missing YAML frontmatter`)
   if (!markdown.includes(`name: ${skill}`)) throw new Error(`${skill}: frontmatter name does not match directory`)
   if (manifest.name !== skill) throw new Error(`${skill}: package name does not match directory`)
-  if (!markdown.includes(`version: ${manifest.version}`)) throw new Error(`${skill}: package and skill versions differ`)
+  if (!/^\d+\.\d+\.\d+$/.test(manifest.version)) throw new Error(`${skill}: package version must use semantic versioning`)
   if (!metadata.includes('display_name:')) throw new Error(`${skill}: OpenAI interface metadata is incomplete`)
 }
 

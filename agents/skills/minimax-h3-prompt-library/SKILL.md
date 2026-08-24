@@ -1,7 +1,6 @@
 ---
 name: minimax-h3-prompt-library
 description: This skill should be used when the user asks to "find a MiniMax H3 case", "show the original prompt", "look up a Hailuo 3.0 example", "verify whether a prompt was published", or "retrieve source-attributed H3 examples". It retrieves real cases and verbatim public prompts only; it refuses prompt generation, rewriting, reconstruction, reverse engineering, translation, or workflow decomposition.
-version: 0.2.0
 ---
 
 # MiniMax H3 Case and Public Prompt Lookup
@@ -22,11 +21,10 @@ Use case metadata to search by model, mode, category, style, scene, creator, tit
 2. Search `data/cases.json` for the closest factual matches.
 3. Return the case title, short factual summary, model, mode, author, catalog identifier, and original source URL.
 4. Check `promptProvenance` before returning prompt text.
-5. Return a complete prompt only when `promptCompleteness` is `complete` (or omitted for legacy records) and provenance is `official-verbatim`, `creator-verbatim`, or `external-archive-verbatim`.
+5. Return a complete prompt only when `promptCompleteness` is `complete` (or omitted for legacy records) and provenance is `official-verbatim` or `creator-verbatim`.
 6. Never return a Prompt whose text is truncated or ends as an incomplete excerpt; treat it as unavailable.
-7. For `external-archive-verbatim`, disclose the archive source instead of claiming creator re-verification.
-8. Treat `unknown`, `official-adapted`, `reconstructed`, or any unrecognized provenance as unavailable. Do not present stored text under those labels as an original prompt.
-9. Preserve public prompt wording, order, punctuation, timestamps, formatting, and language exactly. Do not clean, translate, shorten, expand, or normalize it.
+7. Treat `unknown`, `official-adapted`, `reconstructed`, or any unrecognized provenance as unavailable. Do not present stored text under those labels as an original prompt.
+8. Preserve public prompt wording, order, punctuation, timestamps, formatting, and language exactly. Do not clean, translate, shorten, expand, or normalize it.
 
 ## Output contract
 
@@ -66,6 +64,7 @@ Never combine multiple public prompts into a new prompt. Never turn a caption, v
 
 - Prefer the original creator post over reposts, compilations, screenshots, or copied captions.
 - Preserve the exact source URL with every returned prompt.
+- Never expose internal discovery channels, review notes, or private catalog metadata.
 - Keep a missing or uncertain prompt explicitly unavailable.
 - Avoid claiming that an observed result proves which prompt wording or workflow produced it.
 - Separate public facts from editorial metadata.

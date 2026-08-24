@@ -64,9 +64,8 @@ ${creatorCatalog.creators.filter((item) => item.ranks.overall).slice(0, 50).map(
 ## Retrieval rules
 
 - Cite the original source URL when discussing a case.
-- Copy a prompt only when promptCompleteness is complete (or omitted for legacy records) and promptProvenance is official-verbatim, creator-verbatim, or external-archive-verbatim.
+- Copy a prompt only when promptCompleteness is complete (or omitted for legacy records) and promptProvenance is official-verbatim or creator-verbatim.
 - Never publish or return a truncated Prompt excerpt.
-- When promptProvenance is external-archive-verbatim, cite archiveSourceUrl and do not claim that the original X post was re-verified.
 - When promptProvenance is not-published, state that the source did not publish a complete prompt.
 - Do not derive a prompt or hidden workflow from a finished video.
 `
@@ -135,7 +134,6 @@ ${cases.map((item) => `## ${item.titleEn}
 - Output: ${item.duration}s, ${item.resolution}, ${item.aspectRatio}
 - Prompt provenance: ${item.promptProvenance}
 - Prompt completeness: ${item.prompt ? (item.promptCompleteness ?? 'complete') : 'not-published'}
-${item.archiveSourceUrl ? `- Archive source: ${item.archiveSourceUrl}` : ''}
 - Chinese summary: ${item.summary}
 - English summary: ${item.summaryEn}
 ${item.prompt ? `- Complete verbatim public prompt:\n\n\`\`\`text\n${item.prompt}\n\`\`\`` : '- Public prompt: not published completely by the source'}

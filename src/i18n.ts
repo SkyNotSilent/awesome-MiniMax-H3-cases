@@ -168,7 +168,6 @@ export const copy = {
       copy: '复制 Prompt',
       copied: '已复制',
       promptSource: '查看 Prompt 原帖',
-      archiveSource: '查看归档来源',
       source: '查看原始来源',
     },
     tutorials: {
@@ -410,7 +409,6 @@ export const copy = {
       copy: 'Copy Prompt',
       copied: 'Copied',
       promptSource: 'View Prompt source',
-      archiveSource: 'View archive source',
       source: 'View original source',
     },
     tutorials: {
@@ -756,7 +754,6 @@ export function modelLabel(item: VideoCase, language: Language) {
   return item.model
     .replace('（创作者标注）', ' (creator-identified)')
     .replace('（来源标注）', ' (source-identified)')
-    .replace('（公开归档标注）', ' (public-archive-identified)')
     .replace(/^MiniMax H3 与 (.+) 对比$/, 'MiniMax H3 vs $1')
     .replaceAll(' 与 ', ' vs ')
 }
@@ -770,14 +767,12 @@ export function metadataValue(value: string, language: Language) {
 const provenanceZh: Record<VideoCase['promptProvenance'], string> = {
   'official-verbatim': '官方原文',
   'creator-verbatim': '创作者原文',
-  'external-archive-verbatim': '外部归档原文',
   'not-published': '来源未公开',
 }
 
 const provenanceEn: Record<VideoCase['promptProvenance'], string> = {
   'official-verbatim': 'Official verbatim',
   'creator-verbatim': 'Creator verbatim',
-  'external-archive-verbatim': 'External archive verbatim',
   'not-published': 'Not published by source',
 }
 

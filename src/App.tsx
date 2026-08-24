@@ -1775,11 +1775,6 @@ function CaseDialog({ item, language, onClose }: { item: VideoCase; language: La
                     {t.promptSource} <ArrowUpRight size={11} />
                   </a>
                 ) : null}
-                {item.archiveSourceUrl ? (
-                  <a href={item.archiveSourceUrl} target="_blank" rel="noreferrer">
-                    {t.archiveSource} <ArrowUpRight size={11} />
-                  </a>
-                ) : null}
               </p>
               <pre>{prompt}</pre>
             </div>
@@ -1789,11 +1784,6 @@ function CaseDialog({ item, language, onClose }: { item: VideoCase; language: La
           <a className="original-link" href={item.sourceUrl} target="_blank" rel="noreferrer">
             {t.source} · {sourceLabel(item, language)} <ArrowUpRight size={15} />
           </a>
-          {!hasPublishedPrompt && item.archiveSourceUrl ? (
-            <a className="original-link" href={item.archiveSourceUrl} target="_blank" rel="noreferrer">
-              {t.archiveSource} <ArrowUpRight size={15} />
-            </a>
-          ) : null}
         </div>
       </section>
     </div>
