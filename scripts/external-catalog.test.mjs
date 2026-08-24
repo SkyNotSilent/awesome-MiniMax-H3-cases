@@ -75,6 +75,29 @@ describe('external catalog ledger', () => {
     expect(ledger.entries[0]).toMatchObject({ status: 'published', action: null, caseId: 'case-107' })
   })
 
+  it('does not requeue an unchanged Prompt enrichment that was already blocked', () => {
+    const source = entry('truncated', '108', 'An upstream Prompt excerpt that ends before the source does.')
+    const previous = ledgerFor([source], {
+      publicCases: [{ id: 'case-108', sourceUrl: 'https://x.com/creator/status/108', prompt: null }],
+    })
+    previous.entries[0] = {
+      ...previous.entries[0],
+      status: 'blocked',
+      action: 'enrich-prompt',
+      lastError: 'The original X status only exposes a truncated Prompt.',
+    }
+    const ledger = ledgerFor([source], {
+      previousLedger: previous,
+      publicCases: [{ id: 'case-108', sourceUrl: 'https://x.com/creator/status/108', prompt: null }],
+    })
+    expect(ledger.entries[0]).toMatchObject({
+      status: 'blocked',
+      action: 'enrich-prompt',
+      caseId: 'case-108',
+      lastError: 'The original X status only exposes a truncated Prompt.',
+    })
+  })
+
   it('is idempotent for the same input and timestamp', () => {
     const first = ledgerFor([entry('stable', '106')])
     const second = ledgerFor([entry('stable', '106')], { previousLedger: first })

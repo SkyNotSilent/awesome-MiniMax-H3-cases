@@ -76,6 +76,14 @@ function classifyEntry(entry, previous, publicCase, candidate) {
       return { status: 'published', action: null, caseId: publicCase.id, lastError: null }
     }
     if (!localHash) {
+      if (previous?.sourceFingerprint === entry.sourceFingerprint && terminalStatuses.has(previous.status)) {
+        return {
+          status: previous.status,
+          action: previous.action ?? null,
+          caseId: publicCase.id,
+          lastError: previous.lastError ?? null,
+        }
+      }
       return { status: 'pending', action: 'enrich-prompt', caseId: publicCase.id, lastError: null }
     }
     return {
