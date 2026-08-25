@@ -1,6 +1,7 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
 import { buildExternalLedger, sha256 } from './external-catalog.mjs'
+import { candidatesPath } from './review-paths.mjs'
 
 const root = resolve(import.meta.dirname, '..')
 
@@ -55,7 +56,7 @@ const catalogCommit = await remoteCommit(config.commitApiUrl)
 const force = process.argv.includes('--force')
 const dryRun = process.argv.includes('--dry-run')
 const publicCases = await readJson(resolve(root, 'data/cases.json'), [])
-const candidates = await readJson(resolve(root, 'data/candidates.json'), [])
+const candidates = await readJson(candidatesPath, [])
 const localDataHash = sha256(JSON.stringify({ publicCases, candidates }))
 
 if (!force && previousLedger?.catalogCommit === catalogCommit && previousLedger?.localDataHash === localDataHash) {

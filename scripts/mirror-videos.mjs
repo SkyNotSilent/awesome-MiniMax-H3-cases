@@ -8,9 +8,16 @@ import { Readable } from 'node:stream'
 import { pipeline } from 'node:stream/promises'
 import { HeadObjectCommand, PutObjectCommand, S3Client } from '@aws-sdk/client-s3'
 import { NodeHttpHandler } from '@smithy/node-http-handler'
+import { resolvePublishStagingPath } from './review-paths.mjs'
 
 const root = resolve(import.meta.dirname, '..')
-const casesPath = resolve(root, 'data/cases.json')
+function argumentValue(name) {
+  const index = process.argv.indexOf(name)
+  return index === -1 ? null : process.argv[index + 1]
+}
+
+const stagingArgument = argumentValue('--staging')
+const casesPath = stagingArgument ? resolvePublishStagingPath(stagingArgument) : resolve(root, 'data/cases.json')
 const apply = process.argv.includes('--apply')
 const concurrency = Number(process.env.VIDEO_MIRROR_CONCURRENCY || 4)
 const credentialsFromStdin = process.argv.includes('--credentials-stdin')

@@ -1,8 +1,7 @@
 import { readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
+import { candidatesPath, root } from './review-paths.mjs'
 
-const root = resolve(import.meta.dirname, '..')
-const candidatesPath = resolve(root, 'data/candidates.json')
 const config = JSON.parse(await readFile(resolve(root, 'config/model-routing.json'), 'utf8'))
 
 if (!process.env.MIMO_API_KEY) throw new Error('Missing MIMO_API_KEY.')

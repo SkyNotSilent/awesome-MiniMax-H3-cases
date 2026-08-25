@@ -1,8 +1,7 @@
 import { readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
+import { candidatesPath, root } from './review-paths.mjs'
 
-const root = resolve(import.meta.dirname, '..')
-const candidatesPath = resolve(root, 'data/candidates.json')
 const config = JSON.parse(await readFile(resolve(root, 'config/model-routing.json'), 'utf8'))
 const candidates = JSON.parse(await readFile(candidatesPath, 'utf8'))
 const pending = candidates

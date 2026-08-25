@@ -3,4 +3,6 @@ dist
 .DS_Store
 .env
 .review/
+/data/candidates.json
+/AGENTS.md
 *.tsbuildinfo
