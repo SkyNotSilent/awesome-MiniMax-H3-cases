@@ -49,7 +49,6 @@ import {
 import type { CreatorCatalog, CreatorProfile, CreatorRankKey, TutorialCategory, TutorialGuide, TutorialHardwareProfile, TutorialResource, VideoCase } from './types'
 import { XPostEmbed } from './XPostEmbed'
 import {
-  addedDateHref,
   addedDatePresets,
   formatAddedDate,
   matchesAddedDate,
@@ -550,7 +549,7 @@ function AddedDateFilter({
             onClick={() => onChange(preset)}
           >
             {t.addedDatePresets[preset]}
-            {preset === 'unseen' ? <small>{unseenCount}</small> : null}
+            {preset === 'unseen' && unseenCount > 0 ? <small>{unseenCount}</small> : null}
           </button>
         ))}
       </div>
@@ -558,29 +557,25 @@ function AddedDateFilter({
   )
 }
 
-function UpdateSummary({ language, updateSession }: { language: Language; updateSession: UpdateSession }) {
+function UpdateSummary({ language }: { language: Language }) {
   const t = copy[language].catalog
-  const caseCount = updateSession.caseIds.size
-  const tutorialCount = updateSession.tutorialIds.size
-  const hasUpdates = caseCount + tutorialCount > 0
-  const tutorialHref = addedDateHref(pathFor(language, 'tutorials'), 'unseen', updateSession.since)
+  const latestUpdate = projectStats.latestUpdate
+  if (!latestUpdate || latestUpdate.casesAdded + latestUpdate.promptsAdded + latestUpdate.tutorialsAdded === 0) return null
 
   return (
-    <section className={`update-summary${hasUpdates ? ' has-updates' : ''}`} aria-live="polite">
+    <section className="update-summary has-updates" aria-live="polite">
       <div className="update-summary-index">
         <span>{t.updateSummaryIndex}</span>
-        <strong>{hasUpdates ? t.updateSummaryStatus : t.upToDateStatus}</strong>
+        <strong>{t.updateSummaryStatus}</strong>
       </div>
       <div className="update-summary-copy">
-        <h2>{hasUpdates ? t.updateSummaryTitle(caseCount, tutorialCount) : t.upToDateTitle}</h2>
-        <p>{hasUpdates ? t.updateSummaryDescription : t.upToDateDescription}</p>
+        <h2>{t.updateSummaryTitle(latestUpdate.casesAdded, latestUpdate.promptsAdded, latestUpdate.tutorialsAdded)}</h2>
+        <p>{t.updateSummaryDescription}</p>
       </div>
       <div className="update-summary-meta">
         <span>{t.lastAddedLabel}</span>
-        <time dateTime={updateSession.through}>{formatAddedDate(updateSession.through, language)}</time>
-        {tutorialCount > 0 ? (
-          <a href={tutorialHref}>{t.viewTutorialUpdates(tutorialCount)} <ArrowUpRight size={14} /></a>
-        ) : null}
+        <time dateTime={latestUpdate.publishedAt}>{formatAddedDate(latestUpdate.publishedAt, language)}</time>
+        {latestUpdate.creatorRankingUpdated ? <strong>{t.creatorRankingUpdated}</strong> : null}
       </div>
     </section>
   )
@@ -696,7 +691,7 @@ function HomePage({ language, updateSession }: { language: Language; updateSessi
           </div>
         </div>
 
-        <UpdateSummary language={language} updateSession={updateSession} />
+        <UpdateSummary language={language} />
 
         <AddedDateFilter
           language={language}

@@ -12,6 +12,17 @@ const dates = [
   ...guides.map((item) => item.addedAt),
   ...resources.map((item) => item.verifiedAt),
 ].filter(Boolean).sort()
+const publishedDates = [
+  ...cases.map((item) => item.addedAt),
+  ...guides.map((item) => item.addedAt),
+].filter(Boolean).sort()
+const latestPublishedAt = publishedDates.at(-1)?.slice(0, 10) ?? null
+const latestCases = latestPublishedAt
+  ? cases.filter((item) => item.addedAt?.slice(0, 10) === latestPublishedAt)
+  : []
+const latestGuides = latestPublishedAt
+  ? guides.filter((item) => item.addedAt?.slice(0, 10) === latestPublishedAt)
+  : []
 
 const stats = {
   generatedAt: new Date().toISOString().slice(0, 10),
@@ -30,6 +41,13 @@ const stats = {
   videoCreators: creatorCatalog.stats.videoCreators,
   tutorialCreators: creatorCatalog.stats.tutorialCreators,
   latestContentAt: dates.at(-1)?.slice(0, 10) ?? null,
+  latestUpdate: latestPublishedAt ? {
+    publishedAt: latestPublishedAt,
+    casesAdded: latestCases.length,
+    promptsAdded: latestCases.filter((item) => item.promptProvenance !== 'not-published' && item.prompt?.trim()).length,
+    tutorialsAdded: latestGuides.length,
+    creatorRankingUpdated: latestCases.length + latestGuides.length > 0,
+  } : null,
 }
 
 const canonicalPath = resolve(root, 'data/project-stats.json')

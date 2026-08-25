@@ -3483,6 +3483,13 @@ body.intro-open {
   letter-spacing: -0.02em;
 }
 
+.update-summary-meta strong {
+  color: var(--acid);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+
 .update-summary-meta a {
   display: inline-flex;
   align-items: center;
