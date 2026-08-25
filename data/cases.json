@@ -50421,5 +50421,1039 @@
     },
     "approvedAt": "2026-08-24T01:35:51.926Z",
     "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2091749172361978149",
+    "title": "从洗衣到晾晒的连续家务",
+    "titleEn": "A Continuous Laundry Day from Sorting to Folding",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "T2VA",
+    "summary": "一名女子从分类衣物、装入洗衣机，到阳台晾晒和桌边折叠，连续完成一整套日常家务。 原生视频规格为 15 秒 · 2560×1440。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A woman moves continuously from sorting and loading laundry to balcony drying and table-side folding. Native-video output: 15s · 2560×1440. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "A young Japanese woman carries a full laundry basket from her bedroom to a small laundry area, kneels down, and actively sorts white and dark clothes into separate piles. She then picks up the laundry, walks several steps to the washing machine, loads the clothes one by one, closes the door, and starts the machine. The scene transitions to her walking onto the balcony with freshly washed laundry, placing the basket down, shaking out a wet white shirt, putting it on a hanger, and hanging it on the drying rack as a gentle breeze moves the clothes naturally. After the clothes dry, she walks back inside carrying a stack of laundry, places it on a table, and actively folds a T-shirt by shaking it open, folding the sleeves inward, folding it in half, and placing it onto the stack before starting the next garment. Photorealistic Japanese lifestyle video, natural handheld camera, realistic household physics, authentic walking and body movement, natural fabric behavior, realistic washing-machine motion, subtle wind, continuous action, neutral morning daylight, consistent character and environment, seamless transitions, no static posing, no teleportation, no floating objects, no distorted hands, no CGI appearance, no text overlays, logos, or watermarks.",
+    "promptSourceUrl": "https://x.com/aiwithaly/status/2091749172361978149",
+    "sourceUrl": "https://x.com/aiwithaly/status/2091749172361978149",
+    "sourceLabel": "X 原帖 · @aiwithaly",
+    "author": "Ali",
+    "publishedAt": "2026-08-24T04:47:20.000Z",
+    "addedAt": "2026-08-25T10:30:31.572Z",
+    "mediaUrl": "/media/x-2091749172361978149.mp4",
+    "posterUrl": "/posters/x/2091749172361978149.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "A simple laundry day, brought to life with natural movement and everyday realism. \n\nFrom sorting and washing to hanging and folding, every step feels authentic and continuous.\n\nCreated with MiniMax H3.\n\nPrompt:\n\nA young Japanese woman carries a full laundry basket from her bedroom to a small laundry area, kneels down, and actively sorts white and dark clothes into separate piles. She then picks up the laundry, walks several steps to the washing machine, loads the clothes one by one, closes the door, and starts the machine. The scene transitions to her walking onto the balcony with freshly washed laundry, placing the basket down, shaking out a wet white shirt, putting it on a hanger, and hanging it on the drying rack as a gentle breeze moves the clothes naturally. After the clothes dry, she walks back inside carrying a stack of laundry, places it on a table, and actively folds a T-shirt by shaking it open, folding the sleeves inward, folding it in half, and placing it onto the stack before starting the next garment. Photorealistic Japanese lifestyle video, natural handheld camera, realistic household physics, authentic walking and body movement, natural fabric behavior, realistic washing-machine motion, subtle wind, continuous action, neutral morning daylight, consistent character and environment, seamless transitions, no static posing, no teleportation, no floating objects, no distorted hands, no CGI appearance, no text overlays, logos, or watermarks.",
+    "engagement": {
+      "replies": 49,
+      "reposts": 5,
+      "likes": 217,
+      "views": 9905,
+      "snapshotAt": "2026-08-25T10:30:31.572Z"
+    },
+    "approvedAt": "2026-08-25T10:30:31.572Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2091775336849789065",
+    "title": "喷漆唤醒墙上巨龙",
+    "titleEn": "Graffiti Paint Awakens a Wall-Bound Dragon",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "蓝发涂鸦师按下喷漆罐，金色笔触穿过标题卡并唤醒墙上的彩色巨龙。 原生视频规格为 29 秒 · 3840×2160。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A blue-haired graffiti artist sprays a golden stroke through a title card and awakens a colorful dragon in the wall. Native-video output: 29s · 3840×2160. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Cia0_exe/status/2091775336849789065",
+    "sourceLabel": "X 原帖 · @Cia0_exe",
+    "author": "Cia0",
+    "publishedAt": "2026-08-24T06:31:18.000Z",
+    "addedAt": "2026-08-25T10:30:31.572Z",
+    "mediaUrl": "/media/x-2091775336849789065.mp4",
+    "posterUrl": "/posters/x/2091775336849789065.jpg",
+    "duration": 29,
+    "aspectRatio": "landscape",
+    "resolution": "3840×2160",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Action"
+    ],
+    "scenes": [
+      "Action Test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3\n\nGraffiti soul - Painting brings dragon to life\n\n4,567 Chinese prompt",
+    "engagement": {
+      "replies": 24,
+      "reposts": 4,
+      "likes": 36,
+      "views": 6785,
+      "snapshotAt": "2026-08-25T10:30:31.572Z"
+    },
+    "approvedAt": "2026-08-25T10:30:31.572Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2091893350748025010",
+    "title": "一根金线织出奇幻世界与徽标",
+    "titleEn": "One Golden Thread Weaves a Fantasy World and Emblem",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "一根发光金线在黑色织物上分叉，编织出山脉、城邦和道路，最终汇成浮雕徽标。 原生视频规格为 15 秒 · 2560×1440。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A glowing golden thread branches across dark fabric, weaving mountains, kingdoms, and roads before converging into an embossed emblem. Native-video output: 15s · 2560×1440. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "Create an epic fantasy title sequence built around a vast living tapestry. The sequence must feel like an entire world is being born from a single thread.\n\nBegin in near darkness. Only the faint texture of woven fabric is visible. At the very center, one lone thread awakens. It trembles, pulls tight, glows faintly, and begins moving across the surface like a living force. As it races forward, it splits into more threads. Those threads split again, multiplying rapidly into branching strands of gold, crimson, ivory, midnight blue, and ash-gray. Everything in the sequence must originate from this first thread and its descendants. The world should feel as if it is being generated from one living source.\n\nThe camera moves dynamically and continuously through the tapestry, never static. It races low across the woven surface, whips past rising embroidered forms, glides along rivers made of flowing thread, dives through deep folds and valleys of cloth, and sweeps between giant raised textile structures. The camera must always remain on the exposed upper surface of the tapestry. It may skim across folds and pass through openings between raised embroidered forms, but it must never travel beneath the fabric.\n\nThe world should not simply appear. It must actively weave itself into existence in real time. At every moment, visible threads must remain in motion, constantly splitting, branching, knotting, braiding, tightening, and constructing new terrain, landmarks, symbols, and regions ahead of the camera. The world must never feel complete until the final logo reveal. The strongest visual rule is this: if something appears, it should be because threads are physically making it.\n\nCities, kingdoms, and landmarks must all be built through textile transformation. Threads knot together into towers, fortresses, ceremonial structures, bridges, and gates. Layers of cloth fold upward into cliffs, walls, and ridges. Roads are sewn rapidly across the land. Banners unfurl from the weave. Forests spread outward stitch by stitch as fibers become roots, trunks, branches, and canopies. Rivers are pulled into place by shimmering strands. Coastlines tighten into shape like stretched cloth under tension. Nothing should materialize passively. Everything must be woven, stitched, tied, pulled, or braided into existence by moving thread.\n\nEach major region should feel like its own construction event. In one kingdom, royal motifs and heraldic embroidery bloom outward in ornate patterns. In another, scorched threads blacken and curl as if marked by war. In a frozen region, pale threads crystallize into icy stitched structures. In a desert realm, sand-colored silk folds into dunes and radiant sun motifs. In a battlefield region, red threads race violently across the surface like spreading conflict. In every case, the region should be visibly built by thread activity, not simply revealed.\n\nUse aggressive but elegant camera choreography: fast push-ins, sweeping arcs, sharp climbs, dramatic pull-backs, overhead reveals, and low-angle passes through giant stitched landmarks and dense moving fibers. Let the camera chase the leading edge of construction. Often follow one strand as it races into empty fabric and begins creating the next formation. The camera should feel as if it is surfing the growth of the world itself.\n\nThe tapestry should feel handcrafted, ancient, ceremonial, and mythic. Show rich textile detail everywhere: layered cloth, frayed edges, gold thread, dense embroidery, woven symbols, stitched heraldry, seams, folds, braided cords, hanging fibers, and visible tension in the fabric. If desired, briefly glimpse looms, spools, or unseen weaving forces at the edges of the frame, but keep the main focus on the living tapestry and its self-weaving world.\n\nThe pacing should escalate constantly. Start with the mystery of one awakened thread. Then let that thread multiply into many. Then let those many threads begin forming entire regions. Then let multiple regions awaken at once as long strands travel across the tapestry and connect distant kingdoms, roads, battles, and symbols. The sequence should feel as if history, bloodlines, war, and power are all being woven from one original source.\n\nLighting should be dramatic and cinematic, with warm highlights skimming across thread textures, deep shadows in folds of cloth, soft glow passing through thin fabric, and floating dust in the air. The tone should feel majestic, ancient, noble, immersive, and alive.\n\nToward the climax, reveal that all kingdoms, roads, battles, and symbols are interconnected through one vast woven design. Long threads travel across the entire tapestry and begin drawing everything toward a central point. Regional patterns, sigils, and story elements align into one unified composition.\n\nIf a logo reference image is supplied, use that logo as the exact design authority for the ending. Preserve its silhouette, proportions, and core graphic structure. Do not simply reveal, overlay, or fade in the logo. Instead, the final logo must be physically built in real time from the same thread lineage that created the world. The first awakened thread and all the threads that descended from it should ultimately converge and construct the final emblem. Kingdoms, roads, rivers, banners, heraldic motifs, and regional patterns must unravel back into fibers and feed the final construction. Braided cords define the main silhouette. Dense embroidery fills the interior forms. Fine metallic threads complete the small details. The final logo should feel as if the whole world has transformed into it.\n\nIf no logo reference image is supplied, end with an original fantasy crest or title emblem emerging through the same thread-construction logic.\n\nEnd with the completed logo fully stitched into the tapestry as a monumental embroidered insignia. The surrounding lands continue to ripple subtly with life as a few final strands glide into place, tighten, and lock the design.\n\nTone: majestic, ancient, dramatic, elegant, immersive, ceremonial, and alive.\nStyle keywords: living tapestry, single-origin thread, embroidered fantasy world, woven kingdoms, dynamic textile transformation, cinematic title sequence, mythic handcrafted world-building, epic camera motion.\nFormat: 16:9, highly detailed, no modern elements, no direct copy of any existing franchise.",
+    "promptSourceUrl": "https://x.com/aimikoda/status/2091893704101367936",
+    "sourceUrl": "https://x.com/aimikoda/status/2091893350748025010",
+    "sourceLabel": "X 原帖 · @aimikoda",
+    "author": "Kōda",
+    "publishedAt": "2026-08-24T14:20:14.000Z",
+    "addedAt": "2026-08-25T10:30:31.572Z",
+    "mediaUrl": "/media/x-2091893350748025010.mp4",
+    "posterUrl": "/posters/x/2091893350748025010.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3 - Tapestry\n\nOne thread turns into a whole world.\n\nIt splits, travels across the tapestry and keeps building everything in its path, all the way to the final logo. \n\nJust give your logo as a reference. Prompt in the replies.",
+    "engagement": {
+      "replies": 13,
+      "reposts": 10,
+      "likes": 134,
+      "views": 5149,
+      "snapshotAt": "2026-08-25T10:30:31.572Z"
+    },
+    "approvedAt": "2026-08-25T10:30:31.572Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2091936838944715142",
+    "title": "后室空间的一镜长途穿行",
+    "titleEn": "A One-Shot Journey Through the Backrooms",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "镜头从空旷后室走廊持续前进，穿入地铁车厢并来到站台，完成近一分钟的空间续接实验。 原生视频规格为 56 秒 · 1280×704。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "The camera advances through empty backrooms corridors, enters a subway car, and reaches a platform in a nearly one-minute continuation experiment. Native-video output: 56s · 1280×704. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/cocktailpeanut/status/2091936838944715142",
+    "sourceLabel": "X 原帖 · @cocktailpeanut",
+    "author": "cocktail peanut",
+    "publishedAt": "2026-08-24T17:13:03.000Z",
+    "addedAt": "2026-08-25T10:30:31.572Z",
+    "mediaUrl": "/media/x-2091936838944715142.mp4",
+    "posterUrl": "/posters/x/2091936838944715142.jpg",
+    "duration": 56,
+    "aspectRatio": "landscape",
+    "resolution": "1280×704",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Long video generation experiment -- Generated the entire 1 minute Backrooms short film with MiniMax H3, on my PC.\n\nDidn't have to stitch short clips or anything, generated in one shot. Yes there are some quirks but this was the first attempt, it will only get better.",
+    "engagement": {
+      "replies": 5,
+      "reposts": 6,
+      "likes": 66,
+      "views": 3569,
+      "snapshotAt": "2026-08-25T10:30:31.572Z"
+    },
+    "approvedAt": "2026-08-25T10:30:31.572Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2092053560989270489",
+    "title": "女学生穿越高密度动漫动态图形",
+    "titleEn": "A Schoolgirl Races Through Dense Anime Motion Graphics",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "动漫女学生骑车、奔跑并穿过眼睛特写和物件转场，在高密度图形层之间保持连续动作。 原生视频规格为 17 秒 · 864×480。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "An anime schoolgirl cycles and runs through eye close-ups and object-driven transitions across dense motion-graphic layers. Native-video output: 17s · 864×480. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "Create an extremely dense, highly sophisticated 18-second Japanese anime motion-graphics video.\n\nUse the supplied reference video as a visual and editing reference.\n\nThe goal is NOT to reproduce the reference literally.\n\nInstead, create a more complex evolution of its visual language:\nanime character animation + everyday objects + manga graphics + cinematic camera movement + layered 2.5D compositing + rapid transformations + strong easing and acceleration.\n\nThe result should look like an exceptionally detailed Adobe After Effects composition made from many independently animated layers.\n\nIMPORTANT:\nDo NOT use the visual technique of large rectangles sliding across the screen as transitions.\n\nDo NOT make scenes transition by moving rectangular panels.\n\nDo NOT create the impression of PowerPoint slides or template motion graphics.\n\nTransitions must be caused by actual objects, character movement, camera movement, depth, perspective, particles, paper, hair, environmental objects or rapidly changing compositions.\n\nMAIN CHARACTER:\n\nA short Japanese middle-school girl, approximately 13–14 years old, anime style.\n\nShoulder-length dark brown hair.\nExpressive brown eyes.\nJapanese middle-school sailor-style school uniform.\nWhite blouse.\nNavy skirt.\n\nKeep her appearance consistent throughout the entire video.\n\nShe is the central character.\n\nHer entire body should remain anatomically correct whenever she is shown in a full-body shot.\n\nAnimate:\nhair,\nskirt,\narms,\nhands,\nlegs,\nfeet,\nfacial expression,\neyes,\nbody weight,\nand secondary motion.\n\nThe girl must never appear frozen while only the camera moves.\n\n==================================================\nCORE MOTION PRINCIPLE\n=====================\n\nUse extremely strong Adobe After Effects-style easing.\n\nMotion must NOT have constant velocity.\n\nUse:\n\nslow anticipation,\nrapid acceleration,\nstrong motion blur,\nrapid deceleration,\novershoot,\nsettling,\nbrief holds,\nthen sudden acceleration again.\n\nUse different easing curves for different objects.\n\nSome objects should accelerate immediately.\n\nSome objects should move slowly and then suddenly accelerate.\n\nSome objects should overshoot their destination slightly and settle back.\n\nSome objects should stop abruptly.\n\nCreate rhythmic contrast between extremely fast movement and brief moments of stillness.\n\nThe video should breathe.\n\nDo NOT make everything move at the same speed.\n\nDo NOT make every movement smooth.\n\nUse deliberate timing similar to professional motion-graphics animation.\n\n==================================================\nINFORMATION DENSITY\n===================\n\nDouble the visual information density compared with a normal 18-second AI video.\n\nThis does NOT mean simply adding random objects.\n\nAt almost every moment, multiple independent events should occur simultaneously.\n\nFor example:\n\nthe girl is running,\nher hair is moving,\npapers are flying,\na bicycle wheel is rotating,\nbackground buildings are moving with parallax,\nsmall graphic lines are animating,\nthe camera is orbiting,\nand a foreground object is crossing the lens.\n\nAll movements must have different timing and different speeds.\n\nCreate a layered hierarchy:\n\nFOREGROUND:\nlarge objects extremely close to the camera.\n\nMIDGROUND:\ngirl and important objects.\n\nBACKGROUND:\nenvironment, buildings, sky, graphic elements.\n\nEach layer should move at a different speed.\n\n==================================================\n0–2 SECONDS\n===========\n\nBegin almost completely still.\n\nThe girl is standing in a quiet street.\n\nVery subtle movement:\nhair moving slightly,\na paper sheet on the ground,\nclouds slowly moving,\na bicycle wheel turning very slowly.\n\nHold this calm composition briefly.\n\nThen suddenly:\n\nthe girl's eyes look toward the camera.\n\nA paper airplane rapidly enters the frame.\n\nIt accelerates extremely quickly.\n\nThe camera instantly follows the paper airplane with a strong whip-pan.\n\nStrong motion blur.\n\nThe paper airplane passes extremely close to the lens and completely fills the frame naturally.\n\nThis is the transition.\n\nNO RECTANGULAR TRANSITION.\n\n==================================================\n2–4 SECONDS\n===========\n\nThe camera emerges from behind the paper airplane into a dense anime city.\n\nThe girl is running.\n\nThe camera tracks sideways.\n\nShe runs from right to left.\n\nBackground buildings move in strong parallax.\n\nForeground:\ntelephone pole,\ntree branches,\npaper,\nbicycle,\nschool bag.\n\nSome pass extremely close to the lens.\n\nThe girl suddenly jumps.\n\nUse a strong anticipation movement before the jump.\n\nShe crouches slightly.\n\nThen accelerates upward rapidly.\n\nAt the peak of the jump:\n\nTHE CAMERA SUDDENLY STOPS.\n\nThe girl continues moving.\n\nHer hair and skirt continue with secondary motion.\n\nThen the camera rapidly rotates approximately 90 degrees.\n\nThe entire environment transforms into a monochrome manga world.\n\nThe girl remains in full color.\n\n==================================================\n4–6 SECONDS\n===========\n\nThe manga environment becomes extremely dense.\n\nMultiple recognizable objects appear simultaneously:\n\nschool bag,\nnotebook,\npencil,\nsneakers,\nbicycle,\npaper airplane,\nschool bell,\napple,\nglass of water.\n\nDo not arrange them as static icons.\n\nEvery object has independent movement.\n\nThe bicycle wheel rotates.\n\nThe paper airplane flies.\n\nThe pencil rolls.\n\nThe notebook pages flutter.\n\nThe school bell swings.\n\nThe apple rotates slowly.\n\nThe water inside the glass moves naturally.\n\nThe camera travels diagonally between the objects.\n\nThe objects move at different depths.\n\nSuddenly the pencil accelerates toward the camera.\n\nIt passes directly in front of the lens.\n\nUse the pencil itself as the transition.\n\nNO RECTANGLES.\n\n==================================================\n6–8 SECONDS\n===========\n\nThe camera emerges from behind the pencil into a colorful anime music-video environment.\n\nThe girl is standing in the center.\n\nBehind her:\nfictional school-band performers,\nguitar,\nbass,\ndrums,\nmicrophone,\nspeakers,\nstage lights.\n\nEverything moves.\n\nThe drummer's arms move.\n\nThe guitar player moves.\n\nThe speaker cones vibrate.\n\nStage lights sweep across the scene.\n\nThe girl turns her head.\n\nHer hair follows with delayed secondary motion.\n\nThen she suddenly turns her entire body.\n\nThe camera performs a fast orbit around her.\n\nDuring the orbit, the background changes from the band stage into a summer landscape.\n\nUse a strong acceleration at the beginning of the orbit.\n\nSlow down dramatically near the end.\n\nBriefly hold the final position.\n\n==================================================\n8–10 SECONDS\n============\n\nExtreme close-up of the girl's face.\n\nVery calm.\n\nShe blinks.\n\nHer expression changes subtly.\n\nThe camera slowly moves sideways across her eye.\n\nThe iris contains a reflection of a completely different scene.\n\nThe camera suddenly accelerates toward the reflection.\n\nThe eye reflection expands naturally.\n\nEnter the reflected scene.\n\nNO SIMPLE ZOOM TRANSITION.\n\n==================================================\n10–12 SECONDS\n=============\n\nInside the reflection:\n\na table filled with recognizable everyday objects.\n\nGlass of water.\nPlate with cake.\nApple.\nNotebook.\nPencil.\nAlarm clock.\nSchool bag.\nSmall fan.\nPaper airplane.\n\nAll objects are alive with subtle independent animation.\n\nThe fan rotates.\n\nThe water moves.\n\nThe clock hands move.\n\nThe paper flutters.\n\nThe apple slowly rotates.\n\nThe cake remains physically stable.\n\nThe girl's hair moves from the airflow of the fan.\n\nShe reaches toward the glass.\n\nHer hand moves slowly.\n\nThen suddenly accelerates.\n\nShe touches the glass.\n\nThe water ripples.\n\nAt the exact same moment, the camera performs a rapid lateral movement.\n\nThe glass passes directly in front of the lens.\n\nUse the glass as the transition.\n\n==================================================\n12–14 SECONDS\n=============\n\nThe camera emerges from behind the glass.\n\nThe girl is running outdoors again.\n\nLow-angle camera.\n\nVery fast lateral tracking.\n\nTrees, houses, utility poles, clouds and bicycles move at different speeds.\n\nA bicycle suddenly crosses the foreground.\n\nThe camera follows the bicycle wheel.\n\nThe wheel rotates rapidly.\n\nThen the wheel slows dramatically.\n\nThe camera slows with it.\n\nEverything almost freezes.\n\nBrief moment of silence and visual stillness.\n\nThen:\n\nTHE WHEEL SUDDENLY ACCELERATES.\n\nThe camera is pulled into the spinning wheel.\n\n==================================================\n14–16 SECONDS\n=============\n\nThe spinning wheel transforms into a large technical illustration of the bicycle and motorcycle.\n\nBut do NOT use static technical diagrams.\n\nThe mechanical components move independently.\n\nWheel rotates.\n\nHandlebar turns.\n\nBrake lever moves.\n\nSuspension compresses.\n\nChain moves.\n\nSmall graphic lines animate around the machine.\n\nUse only meaningful readable labels:\n\n\"WHEEL\"\n\"BRAKE\"\n\"ENGINE\"\n\nThe girl walks through the technical layers.\n\nThe camera travels diagonally through the machine.\n\nShe reaches toward the camera.\n\nHer hand becomes extremely large in perspective.\n\nShe suddenly snaps her fingers.\n\nEverything freezes.\n\n==================================================\n16–18 SECONDS\n=============\n\nAbsolute stillness for a brief moment.\n\nThe girl looks directly at the camera.\n\nThen:\n\nALL ELEMENTS EXPLODE INTO MOTION.\n\nPaper airplanes.\nNotebook pages.\nComic lines.\nLeaves.\nGraphic circles.\nSmall photographs.\nPencils.\nMusical notes.\nBicycle parts.\nClouds.\nColored particles.\n\nAll move outward with different acceleration curves.\n\nThe camera rapidly orbits around the girl approximately 180 degrees.\n\nStrong motion blur.\n\nThe girl spins once.\n\nHer hair and skirt follow naturally.\n\nThe camera decelerates sharply.\n\nEverything suddenly becomes clean white.\n\nThe girl remains alone.\n\nShe looks toward the camera.\n\nSmall smile.\n\nReadable Japanese text:\n\n「行こう！」\n\nThe text appears cleanly.\n\nThe girl suddenly runs sideways out of frame.\n\nThe camera follows her for a fraction of a second.\n\nThen abrupt white flash.\n\nEND.\n\n==================================================\nCAMERA LANGUAGE\n===============\n\nCamera movement is a major part of the animation.\n\nUse:\n\nfast lateral tracking,\nslow lateral tracking,\ndiagonal tracking,\ncamera orbit,\n90-degree rotation,\n180-degree orbit,\nlow-angle tracking,\noverhead movement,\nwhip-pan,\nrapid parallax,\nforeground occlusion,\nlens-level object passes,\nsudden stops,\nsudden acceleration.\n\nDo NOT repeatedly move only forward and backward.\n\nDo NOT make the camera continuously fly through tunnels.\n\nCamera movement must have rhythm.\n\nUse:\n\nslow → fast → stop → slow → explosive acceleration → deceleration → hold → fast.\n\n==================================================\nSECONDARY MOTION\n================\n\nEverything should have secondary motion.\n\nHair follows the head with slight delay.\n\nSkirt follows body movement.\n\nPaper bends and rotates.\n\nWater ripples.\n\nClock hands move.\n\nWheels rotate.\n\nClouds drift.\n\nLeaves react to wind.\n\nBicycle components move.\n\nMusicians perform.\n\nSpeakers vibrate.\n\nGraphic elements react to nearby movement.\n\nDo not freeze background objects.\n\n==================================================\nTEXT\n====\n\nUse very little text.\n\nOnly use clearly readable real words.\n\nAllowed examples:\n\n\"START\"\n\"READY?\"\n\"GO!\"\n\"AFTER SCHOOL\"\n\"WHEEL\"\n\"BRAKE\"\n\"ENGINE\"\n\nJapanese:\n\n「放課後」\n「行こう！」\n\nNever generate meaningless text.\n\nNever generate fake Japanese.\n\nNever generate random alphabet strings.\n\nNever generate distorted pseudo-typography.\n\n==================================================\nVISUAL QUALITY\n==============\n\nHigh-quality Japanese anime.\n\nClean line art.\n\nDetailed character animation.\n\nProfessional motion-graphics composition.\n\nDense layered composition.\n\n2.5D depth.\n\nStrong parallax.\n\nCinematic lighting.\n\nControlled motion blur.\n\nSophisticated easing.\n\nStrong anticipation and follow-through.\n\nClear visual hierarchy.\n\nEven though the information density is extremely high, the main character must always remain visually understandable.\n\nThe video should feel like an ambitious professional Adobe After Effects music-video sequence rather than a collection of unrelated AI shots.\n\nNO large sliding rectangles.\n\nNO PowerPoint-like transitions.\n\nNO static object arrangements.\n\nNO meaningless text.\n\nNO random symbols.\n\nNO gibberish.\n\nNO repetitive camera movement.\n\nNO constant velocity.\n\nNO frozen characters.\n\nNO missing limbs.\n\nNO missing lower body.\n\nNO duplicated characters.\n\nNO deformed hands.\n\nPrioritize complex simultaneous motion, strong easing, camera choreography and physical object-based transitions.",
+    "promptSourceUrl": "https://x.com/goldwing_zoome/status/2092053560989270489",
+    "sourceUrl": "https://x.com/goldwing_zoome/status/2092053560989270489",
+    "sourceLabel": "X 原帖 · @goldwing_zoome",
+    "author": "goldwing",
+    "publishedAt": "2026-08-25T00:56:52.000Z",
+    "addedAt": "2026-08-25T10:30:31.572Z",
+    "mediaUrl": "/media/x-2092053560989270489.mp4",
+    "posterUrl": "/posters/x/2092053560989270489.jpg",
+    "duration": 17,
+    "aspectRatio": "landscape",
+    "resolution": "864×480",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Music Video",
+    "styles": [
+      "Music Video"
+    ],
+    "scenes": [
+      "Music Video"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "こんにちは動画。\n#MiniMaxH3\n\nプロンプトは以下です。\nCreate an extremely dense, highly sophisticated 18-second Japanese anime motion-graphics video.\n\nUse the supplied reference video as a visual and editing reference.\n\nThe goal is NOT to reproduce the reference literally.\n\nInstead, create a more complex evolution of its visual language:\nanime character animation + everyday objects + manga graphics + cinematic camera movement + layered 2.5D compositing + rapid transformations + strong easing and acceleration.\n\nThe result should look like an exceptionally detailed Adobe After Effects composition made from many independently animated layers.\n\nIMPORTANT:\nDo NOT use the visual technique of large rectangles sliding across the screen as transitions.\n\nDo NOT make scenes transition by moving rectangular panels.\n\nDo NOT create the impression of PowerPoint slides or template motion graphics.\n\nTransitions must be caused by actual objects, character movement, camera movement, depth, perspective, particles, paper, hair, environmental objects or rapidly changing compositions.\n\nMAIN CHARACTER:\n\nA short Japanese middle-school girl, approximately 13–14 years old, anime style.\n\nShoulder-length dark brown hair.\nExpressive brown eyes.\nJapanese middle-school sailor-style school uniform.\nWhite blouse.\nNavy skirt.\n\nKeep her appearance consistent throughout the entire video.\n\nShe is the central character.\n\nHer entire body should remain anatomically correct whenever she is shown in a full-body shot.\n\nAnimate:\nhair,\nskirt,\narms,\nhands,\nlegs,\nfeet,\nfacial expression,\neyes,\nbody weight,\nand secondary motion.\n\nThe girl must never appear frozen while only the camera moves.\n\n==================================================\nCORE MOTION PRINCIPLE\n=====================\n\nUse extremely strong Adobe After Effects-style easing.\n\nMotion must NOT have constant velocity.\n\nUse:\n\nslow anticipation,\nrapid acceleration,\nstrong motion blur,\nrapid deceleration,\novershoot,\nsettling,\nbrief holds,\nthen sudden acceleration again.\n\nUse different easing curves for different objects.\n\nSome objects should accelerate immediately.\n\nSome objects should move slowly and then suddenly accelerate.\n\nSome objects should overshoot their destination slightly and settle back.\n\nSome objects should stop abruptly.\n\nCreate rhythmic contrast between extremely fast movement and brief moments of stillness.\n\nThe video should breathe.\n\nDo NOT make everything move at the same speed.\n\nDo NOT make every movement smooth.\n\nUse deliberate timing similar to professional motion-graphics animation.\n\n==================================================\nINFORMATION DENSITY\n===================\n\nDouble the visual information density compared with a normal 18-second AI video.\n\nThis does NOT mean simply adding random objects.\n\nAt almost every moment, multiple independent events should occur simultaneously.\n\nFor example:\n\nthe girl is running,\nher hair is moving,\npapers are flying,\na bicycle wheel is rotating,\nbackground buildings are moving with parallax,\nsmall graphic lines are animating,\nthe camera is orbiting,\nand a foreground object is crossing the lens.\n\nAll movements must have different timing and different speeds.\n\nCreate a layered hierarchy:\n\nFOREGROUND:\nlarge objects extremely close to the camera.\n\nMIDGROUND:\ngirl and important objects.\n\nBACKGROUND:\nenvironment, buildings, sky, graphic elements.\n\nEach layer should move at a different speed.\n\n==================================================\n0–2 SECONDS\n===========\n\nBegin almost completely still.\n\nThe girl is standing in a quiet street.\n\nVery subtle movement:\nhair moving slightly,\na paper sheet on the ground,\nclouds slowly moving,\na bicycle wheel turning very slowly.\n\nHold this calm composition briefly.\n\nThen suddenly:\n\nthe girl's eyes look toward the camera.\n\nA paper airplane rapidly enters the frame.\n\nIt accelerates extremely quickly.\n\nThe camera instantly follows the paper airplane with a strong whip-pan.\n\nStrong motion blur.\n\nThe paper airplane passes extremely close to the lens and completely fills the frame naturally.\n\nThis is the transition.\n\nNO RECTANGULAR TRANSITION.\n\n==================================================\n2–4 SECONDS\n===========\n\nThe camera emerges from behind the paper airplane into a dense anime city.\n\nThe girl is running.\n\nThe camera tracks sideways.\n\nShe runs from right to left.\n\nBackground buildings move in strong parallax.\n\nForeground:\ntelephone pole,\ntree branches,\npaper,\nbicycle,\nschool bag.\n\nSome pass extremely close to the lens.\n\nThe girl suddenly jumps.\n\nUse a strong anticipation movement before the jump.\n\nShe crouches slightly.\n\nThen accelerates upward rapidly.\n\nAt the peak of the jump:\n\nTHE CAMERA SUDDENLY STOPS.\n\nThe girl continues moving.\n\nHer hair and skirt continue with secondary motion.\n\nThen the camera rapidly rotates approximately 90 degrees.\n\nThe entire environment transforms into a monochrome manga world.\n\nThe girl remains in full color.\n\n==================================================\n4–6 SECONDS\n===========\n\nThe manga environment becomes extremely dense.\n\nMultiple recognizable objects appear simultaneously:\n\nschool bag,\nnotebook,\npencil,\nsneakers,\nbicycle,\npaper airplane,\nschool bell,\napple,\nglass of water.\n\nDo not arrange them as static icons.\n\nEvery object has independent movement.\n\nThe bicycle wheel rotates.\n\nThe paper airplane flies.\n\nThe pencil rolls.\n\nThe notebook pages flutter.\n\nThe school bell swings.\n\nThe apple rotates slowly.\n\nThe water inside the glass moves naturally.\n\nThe camera travels diagonally between the objects.\n\nThe objects move at different depths.\n\nSuddenly the pencil accelerates toward the camera.\n\nIt passes directly in front of the lens.\n\nUse the pencil itself as the transition.\n\nNO RECTANGLES.\n\n==================================================\n6–8 SECONDS\n===========\n\nThe camera emerges from behind the pencil into a colorful anime music-video environment.\n\nThe girl is standing in the center.\n\nBehind her:\nfictional school-band performers,\nguitar,\nbass,\ndrums,\nmicrophone,\nspeakers,\nstage lights.\n\nEverything moves.\n\nThe drummer's arms move.\n\nThe guitar player moves.\n\nThe speaker cones vibrate.\n\nStage lights sweep across the scene.\n\nThe girl turns her head.\n\nHer hair follows with delayed secondary motion.\n\nThen she suddenly turns her entire body.\n\nThe camera performs a fast orbit around her.\n\nDuring the orbit, the background changes from the band stage into a summer landscape.\n\nUse a strong acceleration at the beginning of the orbit.\n\nSlow down dramatically near the end.\n\nBriefly hold the final position.\n\n==================================================\n8–10 SECONDS\n============\n\nExtreme close-up of the girl's face.\n\nVery calm.\n\nShe blinks.\n\nHer expression changes subtly.\n\nThe camera slowly moves sideways across her eye.\n\nThe iris contains a reflection of a completely different scene.\n\nThe camera suddenly accelerates toward the reflection.\n\nThe eye reflection expands naturally.\n\nEnter the reflected scene.\n\nNO SIMPLE ZOOM TRANSITION.\n\n==================================================\n10–12 SECONDS\n=============\n\nInside the reflection:\n\na table filled with recognizable everyday objects.\n\nGlass of water.\nPlate with cake.\nApple.\nNotebook.\nPencil.\nAlarm clock.\nSchool bag.\nSmall fan.\nPaper airplane.\n\nAll objects are alive with subtle independent animation.\n\nThe fan rotates.\n\nThe water moves.\n\nThe clock hands move.\n\nThe paper flutters.\n\nThe apple slowly rotates.\n\nThe cake remains physically stable.\n\nThe girl's hair moves from the airflow of the fan.\n\nShe reaches toward the glass.\n\nHer hand moves slowly.\n\nThen suddenly accelerates.\n\nShe touches the glass.\n\nThe water ripples.\n\nAt the exact same moment, the camera performs a rapid lateral movement.\n\nThe glass passes directly in front of the lens.\n\nUse the glass as the transition.\n\n==================================================\n12–14 SECONDS\n=============\n\nThe camera emerges from behind the glass.\n\nThe girl is running outdoors again.\n\nLow-angle camera.\n\nVery fast lateral tracking.\n\nTrees, houses, utility poles, clouds and bicycles move at different speeds.\n\nA bicycle suddenly crosses the foreground.\n\nThe camera follows the bicycle wheel.\n\nThe wheel rotates rapidly.\n\nThen the wheel slows dramatically.\n\nThe camera slows with it.\n\nEverything almost freezes.\n\nBrief moment of silence and visual stillness.\n\nThen:\n\nTHE WHEEL SUDDENLY ACCELERATES.\n\nThe camera is pulled into the spinning wheel.\n\n==================================================\n14–16 SECONDS\n=============\n\nThe spinning wheel transforms into a large technical illustration of the bicycle and motorcycle.\n\nBut do NOT use static technical diagrams.\n\nThe mechanical components move independently.\n\nWheel rotates.\n\nHandlebar turns.\n\nBrake lever moves.\n\nSuspension compresses.\n\nChain moves.\n\nSmall graphic lines animate around the machine.\n\nUse only meaningful readable labels:\n\n\"WHEEL\"\n\"BRAKE\"\n\"ENGINE\"\n\nThe girl walks through the technical layers.\n\nThe camera travels diagonally through the machine.\n\nShe reaches toward the camera.\n\nHer hand becomes extremely large in perspective.\n\nShe suddenly snaps her fingers.\n\nEverything freezes.\n\n==================================================\n16–18 SECONDS\n=============\n\nAbsolute stillness for a brief moment.\n\nThe girl looks directly at the camera.\n\nThen:\n\nALL ELEMENTS EXPLODE INTO MOTION.\n\nPaper airplanes.\nNotebook pages.\nComic lines.\nLeaves.\nGraphic circles.\nSmall photographs.\nPencils.\nMusical notes.\nBicycle parts.\nClouds.\nColored particles.\n\nAll move outward with different acceleration curves.\n\nThe camera rapidly orbits around the girl approximately 180 degrees.\n\nStrong motion blur.\n\nThe girl spins once.\n\nHer hair and skirt follow naturally.\n\nThe camera decelerates sharply.\n\nEverything suddenly becomes clean white.\n\nThe girl remains alone.\n\nShe looks toward the camera.\n\nSmall smile.\n\nReadable Japanese text:\n\n「行こう！」\n\nThe text appears cleanly.\n\nThe girl suddenly runs sideways out of frame.\n\nThe camera follows her for a fraction of a second.\n\nThen abrupt white flash.\n\nEND.\n\n==================================================\nCAMERA LANGUAGE\n===============\n\nCamera movement is a major part of the animation.\n\nUse:\n\nfast lateral tracking,\nslow lateral tracking,\ndiagonal tracking,\ncamera orbit,\n90-degree rotation,\n180-degree orbit,\nlow-angle tracking,\noverhead movement,\nwhip-pan,\nrapid parallax,\nforeground occlusion,\nlens-level object passes,\nsudden stops,\nsudden acceleration.\n\nDo NOT repeatedly move only forward and backward.\n\nDo NOT make the camera continuously fly through tunnels.\n\nCamera movement must have rhythm.\n\nUse:\n\nslow → fast → stop → slow → explosive acceleration → deceleration → hold → fast.\n\n==================================================\nSECONDARY MOTION\n================\n\nEverything should have secondary motion.\n\nHair follows the head with slight delay.\n\nSkirt follows body movement.\n\nPaper bends and rotates.\n\nWater ripples.\n\nClock hands move.\n\nWheels rotate.\n\nClouds drift.\n\nLeaves react to wind.\n\nBicycle components move.\n\nMusicians perform.\n\nSpeakers vibrate.\n\nGraphic elements react to nearby movement.\n\nDo not freeze background objects.\n\n==================================================\nTEXT\n====\n\nUse very little text.\n\nOnly use clearly readable real words.\n\nAllowed examples:\n\n\"START\"\n\"READY?\"\n\"GO!\"\n\"AFTER SCHOOL\"\n\"WHEEL\"\n\"BRAKE\"\n\"ENGINE\"\n\nJapanese:\n\n「放課後」\n「行こう！」\n\nNever generate meaningless text.\n\nNever generate fake Japanese.\n\nNever generate random alphabet strings.\n\nNever generate distorted pseudo-typography.\n\n==================================================\nVISUAL QUALITY\n==============\n\nHigh-quality Japanese anime.\n\nClean line art.\n\nDetailed character animation.\n\nProfessional motion-graphics composition.\n\nDense layered composition.\n\n2.5D depth.\n\nStrong parallax.\n\nCinematic lighting.\n\nControlled motion blur.\n\nSophisticated easing.\n\nStrong anticipation and follow-through.\n\nClear visual hierarchy.\n\nEven though the information density is extremely high, the main character must always remain visually understandable.\n\nThe video should feel like an ambitious professional Adobe After Effects music-video sequence rather than a collection of unrelated AI shots.\n\nNO large sliding rectangles.\n\nNO PowerPoint-like transitions.\n\nNO static object arrangements.\n\nNO meaningless text.\n\nNO random symbols.\n\nNO gibberish.\n\nNO repetitive camera movement.\n\nNO constant velocity.\n\nNO frozen characters.\n\nNO missing limbs.\n\nNO missing lower body.\n\nNO duplicated characters.\n\nNO deformed hands.\n\nPrioritize complex simultaneous motion, strong easing, camera choreography and physical object-based transitions.",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "views": 181,
+      "snapshotAt": "2026-08-25T10:30:31.572Z"
+    },
+    "approvedAt": "2026-08-25T10:30:31.572Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2092055357074121025",
+    "title": "忍者分身包围林间决斗",
+    "titleEn": "Ninja Clones Surround a Forest Duel",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "两名忍者在林地对峙，随后被成群分身包围并释放发光攻击，展示本地设备生成结果。 原生视频规格为 15 秒 · 1280×720。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Two ninjas confront each other in a forest before a crowd of clones surrounds them and luminous attacks erupt in a local-generation test. Native-video output: 15s · 1280×720. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ai_xiaomu/status/2092055357074121025",
+    "sourceLabel": "X 原帖 · @ai_xiaomu",
+    "author": "黄小木",
+    "publishedAt": "2026-08-25T01:04:00.000Z",
+    "addedAt": "2026-08-25T10:30:31.572Z",
+    "mediaUrl": "/media/x-2092055357074121025.mp4",
+    "posterUrl": "/posters/x/2092055357074121025.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1280×720",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Action"
+    ],
+    "scenes": [
+      "Action Test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "dgx spark 跑 minimax h3 数据：\n\n15 秒  720p  24fps  h.264   生成耗时 26 分钟。",
+    "engagement": {
+      "replies": 2,
+      "reposts": 0,
+      "likes": 2,
+      "views": 1204,
+      "snapshotAt": "2026-08-25T10:30:31.572Z"
+    },
+    "approvedAt": "2026-08-25T10:30:31.572Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2092056698584547695",
+    "title": "苹果猫吉祥物的明快广告短片",
+    "titleEn": "A Bright Apple-Cat Mascot Spot",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "苹果装扮的猫咪和兔子在鲜黄色果园图形中跳跃，最后组成彩色日文产品式收尾。 原生视频规格为 10 秒 · 1890×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Apple-costumed cats and a rabbit bounce through bright orchard graphics before assembling into a colorful Japanese product-style finale. Native-video output: 10s · 1890×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/fated_oath/status/2092056698584547695",
+    "sourceLabel": "X 原帖 · @fated_oath",
+    "author": "Ringoame（りんごあめ）@小説Fated Oath",
+    "publishedAt": "2026-08-25T01:09:20.000Z",
+    "addedAt": "2026-08-25T10:30:31.572Z",
+    "mediaUrl": "/media/x-2092056698584547695.mp4",
+    "posterUrl": "/posters/x/2092056698584547695.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "1890×1080",
+    "tags": [
+      "MiniMax H3",
+      "广告视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "UGC & Advertising",
+    "styles": [
+      "Advertising"
+    ],
+    "scenes": [
+      "Product Advertising"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "おはようございます☀\n今日も暑いですが頑張りましょう🫠\nもう8月後半なのに驚き…\n\nMiniMaX H3で作ってみたけど日本語壊れてるw😂\n\nCapCut AIを使用して動画制作しています\n@capcutapp_jp #capcutcpp",
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 6,
+      "views": 86,
+      "snapshotAt": "2026-08-25T10:30:31.572Z"
+    },
+    "approvedAt": "2026-08-25T10:30:31.572Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2092062197497397485",
+    "title": "键盘、阶梯与文字构成的霓虹轨道",
+    "titleEn": "A Neon Orbit of Keyboards, Steps, and Typography",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "合成器键盘绕地球旋转，几何阶梯持续抬升，并以高速英文排版完成抽象视觉段落。 原生视频规格为 15 秒 · 1280×720。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A synthesizer orbits Earth, geometric steps keep rising, and high-speed English typography completes the abstract visual sequence. Native-video output: 15s · 1280×720. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/aidoga_lab/status/2092062197497397485",
+    "sourceLabel": "X 原帖 · @aidoga_lab",
+    "author": "AI動画ラボ | AI contents director",
+    "publishedAt": "2026-08-25T01:31:11.000Z",
+    "addedAt": "2026-08-25T10:30:31.572Z",
+    "mediaUrl": "/media/x-2092062197497397485.mp4",
+    "posterUrl": "/posters/x/2092062197497397485.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1280×720",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Music Video",
+    "styles": [
+      "Music Video"
+    ],
+    "scenes": [
+      "Music Video"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3　「NEON ORBIT 2」👇",
+    "engagement": {
+      "replies": 3,
+      "reposts": 0,
+      "likes": 3,
+      "views": 45,
+      "snapshotAt": "2026-08-25T10:30:31.572Z"
+    },
+    "approvedAt": "2026-08-25T10:30:31.572Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2092064985027629562",
+    "title": "角色用巨型文字打破规则",
+    "titleEn": "A Character Battles with Giant Typography",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "FL2VA",
+    "summary": "动漫角色挥拳、冲刺并撞击立体 BREAK THE RULES 字样，让动作和排版在黑底空间中相互反应。 原生视频规格为 15 秒 · 1890×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "An anime character punches, sprints, and collides with giant BREAK THE RULES typography inside a black graphic space. Native-video output: 15s · 1890×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/neru_pipipi/status/2092064985027629562",
+    "sourceLabel": "X 原帖 · @neru_pipipi",
+    "author": "ねるぴ",
+    "publishedAt": "2026-08-25T01:42:15.000Z",
+    "addedAt": "2026-08-25T10:30:31.572Z",
+    "mediaUrl": "/media/x-2092064985027629562.mp4",
+    "posterUrl": "/posters/x/2092064985027629562.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1890×1080",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Action"
+    ],
+    "scenes": [
+      "Action Test"
+    ],
+    "inputTypes": [
+      "text",
+      "image"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "AIスタジオワンルームさんのを参考にアレンジ。CapCutのMiniMax H3で生成してキャラクターに文字で戦ってもらいました！ルールをぶっ壊せ！\n\nアレンジ後のプロンプトは↓\n（長いので2つに分けてます）\n\nPR #capcutcpp @capcutapp_jp",
+    "engagement": {
+      "replies": 1,
+      "reposts": 1,
+      "likes": 1,
+      "views": 339,
+      "snapshotAt": "2026-08-25T10:30:31.572Z"
+    },
+    "approvedAt": "2026-08-25T10:30:31.572Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2092066514992242959",
+    "title": "雷雨夜里赶作业的漫画家庭",
+    "titleEn": "A Manga Family Races Through Homework on a Stormy Night",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "雷电环绕的漫画母亲催促孩子写作业，黄色日文标题和夸张表情逐步填满画面。 原生视频规格为 12 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A lightning-framed manga mother urges a child through homework as yellow Japanese captions and exaggerated expressions fill the frame. Native-video output: 12s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ai_de_create/status/2092066514992242959",
+    "sourceLabel": "X 原帖 · @ai_de_create",
+    "author": "ゆきたか // AI Creative",
+    "publishedAt": "2026-08-25T01:48:20.000Z",
+    "addedAt": "2026-08-25T10:30:31.572Z",
+    "mediaUrl": "/media/x-2092066514992242959.mp4",
+    "posterUrl": "/posters/x/2092066514992242959.jpg",
+    "duration": 12,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "角色对白",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Character & Dialogue",
+    "styles": [
+      "Dialogue"
+    ],
+    "scenes": [
+      "Dialogue"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "わが家なう\n\n楽しかった夏休みも、そろそろ終わりが近づいてきましたね…\n\nMiniMax H3",
+    "engagement": {
+      "replies": 2,
+      "reposts": 0,
+      "likes": 0,
+      "views": 81,
+      "snapshotAt": "2026-08-25T10:30:31.572Z"
+    },
+    "approvedAt": "2026-08-25T10:30:31.572Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2092069451042795678",
+    "title": "白底动漫女孩的姿态切换",
+    "titleEn": "An Anime Girl Changes Poses on White",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "同一名校服动漫女孩在纯白背景中切换站姿、手势和表情，保持角色外观一致。 原生视频规格为 15 秒 · 640×992。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "The same uniformed anime girl changes standing poses, gestures, and expressions against a white background while keeping her appearance consistent. Native-video output: 15s · 640×992. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Alone1Moon/status/2092069451042795678",
+    "sourceLabel": "X 原帖 · @Alone1Moon",
+    "author": "Alone1M",
+    "publishedAt": "2026-08-25T02:00:00.000Z",
+    "addedAt": "2026-08-25T10:30:31.572Z",
+    "mediaUrl": "/media/x-2092069451042795678.mp4",
+    "posterUrl": "/posters/x/2092069451042795678.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "640×992",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "別パターン #AI眼鏡部 #AI田中さん\nMiniMaxH3ローカル",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 6,
+      "views": 142,
+      "snapshotAt": "2026-08-25T10:30:31.572Z"
+    },
+    "approvedAt": "2026-08-25T10:30:31.572Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2092069676272832714",
+    "title": "角色设定图变成时装宣传片",
+    "titleEn": "A Character Sheet Becomes a Fashion Promo",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "红色服装角色从设定图分栏走入黑白伸展台，镜头以近景、阵列和品牌式图形完成宣传片。 原生视频规格为 20 秒 · 1080×1440。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A red-outfit character moves from character-sheet panels into a black-and-white runway through close-ups, lineups, and brand-like graphics. Native-video output: 20s · 1080×1440. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/varts_works/status/2092069676272832714",
+    "sourceLabel": "X 原帖 · @varts_works",
+    "author": "rui｜∫varts (シュバルツ)",
+    "publishedAt": "2026-08-25T02:00:54.000Z",
+    "addedAt": "2026-08-25T10:30:31.572Z",
+    "mediaUrl": "/media/x-2092069676272832714.mp4",
+    "posterUrl": "/posters/x/2092069676272832714.jpg",
+    "duration": 20,
+    "aspectRatio": "portrait",
+    "resolution": "1080×1440",
+    "tags": [
+      "MiniMax H3",
+      "广告视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "UGC & Advertising",
+    "styles": [
+      "Advertising"
+    ],
+    "scenes": [
+      "Product Advertising"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "TapNowキャンバス内のMiniMax H3で制作\nキャラシート1枚で作った15秒PV👠\n\nキャラシートだけでここまで出来るなら素材作らなくて済む😲みんなもやってみてね〜✨\n\n制作: @TapNow_JP @TapNow_AI #TapNow \n衣装: LUCY @ParallaxTalent #ParallaxAgency \n\nプロンプト長いので2つに分けてます🔻",
+    "engagement": {
+      "replies": 1,
+      "reposts": 1,
+      "likes": 6,
+      "views": 174,
+      "snapshotAt": "2026-08-25T10:30:31.572Z"
+    },
+    "approvedAt": "2026-08-25T10:30:31.572Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2092070808361525604",
+    "title": "白色展台上的时装群像变换",
+    "titleEn": "Fashion Figures Transform Across a White Stage",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "多名时装人物在白色展台列队，经过红黑杂志排版和人物复制，形成快速剪辑的时装视觉片。 原生视频规格为 45 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Fashion figures line up on a white stage, move through red-and-black editorial graphics, and multiply into a fast-cut fashion visual. Native-video output: 45s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/applete77191758/status/2092070808361525604",
+    "sourceLabel": "X 原帖 · @applete77191758",
+    "author": "appletea 🍎アップルティ☕丨AI動画制作",
+    "publishedAt": "2026-08-25T02:05:24.000Z",
+    "addedAt": "2026-08-25T10:30:31.572Z",
+    "mediaUrl": "/media/x-2092070808361525604.mp4",
+    "posterUrl": "/posters/x/2092070808361525604.jpg",
+    "duration": 45,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "广告视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "UGC & Advertising",
+    "styles": [
+      "Advertising"
+    ],
+    "scenes": [
+      "Product Advertising"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "昨日MiniMaxDesignで、画像数枚とBGM入れて、「MiniMaxH3で生成して、45秒で」と指定するとお風呂入ってる間に仕上がってました。なんか生成して勝手に編集までやってくれてました😅\n自分でも編集しようとしたんだけど、AIの編集の方がおもしろい仕上がり😅\n\n#MiniMaxH3  #MiniMaxDesign",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 5,
+      "views": 300,
+      "snapshotAt": "2026-08-25T10:30:31.572Z"
+    },
+    "approvedAt": "2026-08-25T10:30:31.572Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2092072494232449336",
+    "title": "海岸上空的陨石冲击",
+    "titleEn": "Meteor Impact over a Coastline",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "人物在海岸望向天空，巨大坠落体掠过水面并触发冲击波，展示多次本地生成尝试。 原生视频规格为 55 秒 · 1280×720。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A figure watches from the coast as a massive falling object crosses the water and triggers an impact wave across several local-generation attempts. Native-video output: 55s · 1280×720. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/AlmostYeti/status/2092072494232449336",
+    "sourceLabel": "X 原帖 · @AlmostYeti",
+    "author": "Yeti",
+    "publishedAt": "2026-08-25T02:12:06.000Z",
+    "addedAt": "2026-08-25T10:30:31.572Z",
+    "mediaUrl": "/media/x-2092072494232449336.mp4",
+    "posterUrl": "/posters/x/2092072494232449336.jpg",
+    "duration": 55,
+    "aspectRatio": "landscape",
+    "resolution": "1280×720",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Action"
+    ],
+    "scenes": [
+      "Action Test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Holy F*n shit it's a Meteor! Minimax H3 with Maestro in Pinokio. I never quite got the clip i wanted but got close, here are a few attempts.",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 15,
+      "snapshotAt": "2026-08-25T10:30:31.572Z"
+    },
+    "approvedAt": "2026-08-25T10:30:31.572Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2092073771205312938",
+    "title": "橙色 ADP 字样的角色图形秀",
+    "titleEn": "A Character Motion Show Built Around ADP Typography",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "白衣角色用手势操控橙色 ADP 字样，镜头在全身姿态、巨型文字和面部特写间切换。 原生视频规格为 15 秒 · 2544×1456。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A white-clad character controls orange ADP typography with gestures as the camera cuts between full-body poses, giant letters, and facial close-ups. Native-video output: 15s · 2544×1456. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/korosuke_tv/status/2092073771205312938",
+    "sourceLabel": "X 原帖 · @korosuke_tv",
+    "author": "Ryosuke Komuro(ころすけ）@ADP代表/Genspark Genius",
+    "publishedAt": "2026-08-25T02:17:10.000Z",
+    "addedAt": "2026-08-25T10:30:31.572Z",
+    "mediaUrl": "/media/x-2092073771205312938.mp4",
+    "posterUrl": "/posters/x/2092073771205312938.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2544×1456",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Music Video",
+    "styles": [
+      "Music Video"
+    ],
+    "scenes": [
+      "Music Video"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3はGensparkのAI動画にもあるから\nこのプロンプトで作ってみましたよ！",
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 3,
+      "views": 75,
+      "snapshotAt": "2026-08-25T10:30:31.572Z"
+    },
+    "approvedAt": "2026-08-25T10:30:31.572Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2092075145687080996",
+    "title": "黑白刀锋中的动漫动作片段",
+    "titleEn": "Anime Action Cut Through Black-and-White Blades",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "动漫人物在强透视姿态、室内躺姿和刀锋剪影间切换，黑白光线把片段串成动作蒙太奇。 原生视频规格为 32 秒 · 3840×2160。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "An anime figure moves through foreshortened poses, an interior recline, and blade-lit silhouettes in a black-and-white action montage. Native-video output: 32s · 3840×2160. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/mxvdxn_anime/status/2092075145687080996",
+    "sourceLabel": "X 原帖 · @mxvdxn_anime",
+    "author": "𝐌𝐗𝐕𝐃𝐗𝐍 // 𝐓𝐇𝐄 𝐀𝐍𝐈𝐌𝐄 𝐃𝐄𝐏𝐓",
+    "publishedAt": "2026-08-25T02:22:38.000Z",
+    "addedAt": "2026-08-25T10:30:31.572Z",
+    "mediaUrl": "/media/x-2092075145687080996.mp4",
+    "posterUrl": "/posters/x/2092075145687080996.jpg",
+    "duration": 32,
+    "aspectRatio": "landscape",
+    "resolution": "3840×2160",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Action"
+    ],
+    "scenes": [
+      "Action Test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "at least bro went down with a view 😮‍💨 minimax h3",
+    "engagement": {
+      "replies": 0,
+      "reposts": 2,
+      "likes": 4,
+      "views": 211,
+      "snapshotAt": "2026-08-25T10:30:31.572Z"
+    },
+    "approvedAt": "2026-08-25T10:30:31.572Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2092076062712950995",
+    "title": "女跑者穿过彩色几何赛道",
+    "titleEn": "A Female Runner Crosses a Color-Blocked Course",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "T2VA",
+    "summary": "黑色女跑者剪影跃过高台并冲进粉、青、红色几何空间，速度线随每次跨越重新组合。 原生视频规格为 15 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A female runner silhouette clears platforms and charges through pink, cyan, and red geometric spaces as speed lines recompose around each leap. Native-video output: 15s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Ayu_AI_0912/status/2092076062712950995",
+    "sourceLabel": "X 原帖 · @Ayu_AI_0912",
+    "author": "アユネオ",
+    "publishedAt": "2026-08-25T02:26:16.000Z",
+    "addedAt": "2026-08-25T10:30:31.572Z",
+    "mediaUrl": "/media/x-2092076062712950995.mp4",
+    "posterUrl": "/posters/x/2092076062712950995.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Action"
+    ],
+    "scenes": [
+      "Action Test"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "うひゃあ～！Minimax H3楽しい！\n引用元の神プロンプトを拝借して\n女性バージョンを作った！\n\n（超モーションがかっこいいのに、\nポニーテールが長すぎいいいｗ）",
+    "engagement": {
+      "replies": 1,
+      "reposts": 1,
+      "likes": 1,
+      "views": 130,
+      "snapshotAt": "2026-08-25T10:30:31.572Z"
+    },
+    "approvedAt": "2026-08-25T10:30:31.572Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2092077793156935793",
+    "title": "废墟城市里的银发动漫少女",
+    "titleEn": "A Silver-Haired Anime Girl in an Abandoned City",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "银发少女站在积水的废弃街道中，镜头缓慢绕行并展示被植被覆盖的楼宇和角色近景。 原生视频规格为 5 秒 · 608×352。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A silver-haired girl stands on a flooded abandoned street as the camera moves around her and reveals overgrown buildings and character close-ups. Native-video output: 5s · 608×352. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/yukkii114/status/2092077793156935793",
+    "sourceLabel": "X 原帖 · @yukkii114",
+    "author": "白猫さん👯‍♀️@WCGTA運営の人",
+    "publishedAt": "2026-08-25T02:33:09.000Z",
+    "addedAt": "2026-08-25T10:30:31.572Z",
+    "mediaUrl": "/media/x-2092077793156935793.mp4",
+    "posterUrl": "/posters/x/2092077793156935793.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "608×352",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "没になった生成したアニメーションを供養\nMinimaxH3×CodeX for RTX4070Ti \n#MinimaxH3 #ChatGPT #CodeX #生成AI動画",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 31,
+      "snapshotAt": "2026-08-25T10:30:31.572Z"
+    },
+    "approvedAt": "2026-08-25T10:30:31.572Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2092078428707336696",
+    "title": "彩色几何节拍中的篮球剪影",
+    "titleEn": "A Basketball Silhouette Plays Through Geometric Beats",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "T2VA",
+    "summary": "黑色球员剪影在鲜黄、青蓝和粉色背景间运球、冲刺和扣篮，巨型英文排版跟随节拍切换。 原生视频规格为 15 秒 · 2560×1440。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A black player silhouette dribbles, sprints, and dunks across yellow, cyan, and pink backgrounds as giant English typography hits the beat. Native-video output: 15s · 2560×1440. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "MiniMax H3を使用して、15秒・2Kのスタイリッシュなモーショングラフィック＆キネティック・タイポグラフィーによるバスケットボール動画を制作する。\n\n主人公は、全身が黒一色で描かれたシンプルな人間のシルエット。バスケットボールも模様やラインのない黒一色の球体として描く。人物の顔、髪、服装などの細部は描かず、プロのバスケットボール選手を思わせる、しなやかで洗練された体型のシルエットとして表現する。背景には明るく鮮やかな色を使用し、黒い人物とボールの輪郭が明確に見える強いコントラストを維持する。\n\n主人公は、抽象的でスタイリッシュなバスケットボールコートで、余裕と自信を感じさせる華麗なボールハンドリングを披露する。低い姿勢での高速ドリブルから始まり、左右のクロスオーバー、レッグスルー、ビハインド・ザ・バック、イン・アンド・アウト、スピンムーブを滑らかに連続させる。単に技を並べるのではなく、それぞれの動きを自然につなげ、プロのストリートボーラーによる一続きのクールなコンビネーションとして見せる。\n\nドリブルコンビネーションの後、主人公は鋭く方向を変えてゴールへ加速する。力強く踏み切り、黒一色のボールを片手で保持しながら高く跳び、最後はダイナミックなワンハンドダンクを決める。ダンクは大げさな曲芸ではなく、スピード、跳躍力、身体の美しいラインを強調した、スタイリッシュで説得力のある動きにする。スローモーションは使用せず、15秒間を通してテンポと疾走感を維持する。\n\nボールが床に接触するタイミング、手から手へ移る瞬間、踏み切り、ジャンプ、リングへの到達、ダンク、着地を、力強いヒップホップまたはエレクトロニック・ミュージックのキック、スネア、ベースに正確にシンクロさせる。ボールが床に当たるたびに円形の波紋が広がり、クロスオーバーに合わせて鋭いラインが左右へ走り、方向転換すると背景の色面が瞬時に切り替わる。ダンクの瞬間には、すべてのシェイプとタイポグラフィーがビートに合わせて大きく反応する。\n\n背景では、長方形、円、三角形、太いライン、グリッド、コートラインなどのシェイプが、画面の上下左右や奥行き方向から勢いよくスライドインし、次のビートでスライドアウトする。複数のシェイプが異なる方向から重なり合い、分割、回転、拡大、縮小を繰り返しながら、リズミカルに画面構成を作り替えていく。ただし、シェイプで人物、ボール、リングを完全に隠さず、プレーの流れが常に明確に見えるようにする。\n\n背景には「BASKETBALL」「DRIBBLE」「DUNK」という単語を、正確なスペルの大文字でキネティック・タイポグラフィーとして登場させる。文字は一度表示されて終わるのではなく、登場後も音楽のビートに合わせて脈打つように拡大・縮小を繰り返し、前後左右への3D回転、奥行き方向への移動、軽い伸縮、色の切り替えを続ける。\n\n3D回転した文字は再び正面を向き、各単語が明確に読める瞬間を必ず作る。文字の欠落、重複、誤字、別の文字への変化は起こさず、「BASKETBALL」「DRIBBLE」「DUNK」以外の文字は表示しない。タイポグラフィーは人物とボールの背後や周囲で動かし、プレーを妨げない背景のグラフィック要素として使用する。\n\nカメラは基本的に人物の全身とボールを正面から捉えながら、音楽の強いビートに合わせてアングルを大胆に切り替える。正面からの構図に加えて、人物を斜め上から見下ろす俯瞰ショットと、斜め下から見上げる力強いローアングルショットを入れる。\n\n俯瞰ショットでは、コート上を動く足、ドリブルの軌道、床面を流れるシェイプやタイポグラフィーを印象的に見せる。ローアングルショットでは、黒いボールが床へ迫って跳ね返る瞬間、主人公の鋭い方向転換、ゴールへ向かう加速、踏み切りからダンクまでの高さと迫力を強調する。さらに、真横からの高速追従、短いズームインとズームアウト、左右へのスライド、リング付近から人物を見下ろす構図、ダンクする主人公を斜め下から捉える構図を加える。\n\nカットが切り替わっても、人物の動作、進行方向、ボールの位置、ドリブルのリズムを途切れさせず、同じ人物による一続きのプレーとして自然につなげる。アングルが変わっても、同一人物、同一の黒いボール、同一のコートとゴールを維持する。\n\nボールは映像全体を通して必ず1個だけにする。ボールの大きさと完全な球形を維持し、複製、変形、消失、瞬間移動、色の変化を発生させない。手、床、リングとの接触を物理的に正しく表現し、ボールが手や床をすり抜けないようにする。黒いボールが黒い身体と重なる場面でも、腕の位置と背景の色によって、ボールの丸い輪郭を判別できるようにする。\n\n人物の形状、体格、手足の本数を15秒間一貫させ、手足の変形、身体の分裂、不自然な残像を発生させない。リング、バックボード、ネットもシンプルな形状を維持し、ダンクの前後で位置や大きさを変化させない。\n\n大胆でありながら統一感のある配色、シャープなグラフィック、強いコントラスト、正確なビートシンクによって、とにかくカッコよく、スタイリッシュで、ファッション性の高い映像に仕上げる。終盤に向けてドリブル、カメラワーク、シェイプ、タイポグラフィーの動きを徐々に高密度にし、最後の強いビートでワンハンドダンクを決める。\n\nダンク後は大げさに喜んだり決めポーズを取ったりしない。主人公は軽やかに着地し、リングを通過した黒いボールが床で一度だけ弾む。そのまま主人公が余裕のある動きでカメラの横を通り過ぎ、背景のグラフィックがビートの余韻に合わせて整列して、クールに終了する。SNSで拡散されそうな、センスが良く、中毒性があり、何度も見返したくなる高品質な映像にする。",
+    "promptSourceUrl": "https://x.com/Naonekozamurai/status/2092078428707336696",
+    "sourceUrl": "https://x.com/Naonekozamurai/status/2092078428707336696",
+    "sourceLabel": "X 原帖 · @Naonekozamurai",
+    "author": "なお｜AI動画・AI音楽",
+    "publishedAt": "2026-08-25T02:35:40.000Z",
+    "addedAt": "2026-08-25T10:30:31.572Z",
+    "mediaUrl": "/media/x-2092078428707336696.mp4",
+    "posterUrl": "/posters/x/2092078428707336696.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Action"
+    ],
+    "scenes": [
+      "Action Test"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "「MiniMax H3 x バスケ」\nスポーツも良い\n\nMiniMax H3のt2vで生成\n@Hailuo_AI \n\nプロンプト↓\nMiniMax H3を使用して、15秒・2Kのスタイリッシュなモーショングラフィック＆キネティック・タイポグラフィーによるバスケットボール動画を制作する。\n\n主人公は、全身が黒一色で描かれたシンプルな人間のシルエット。バスケットボールも模様やラインのない黒一色の球体として描く。人物の顔、髪、服装などの細部は描かず、プロのバスケットボール選手を思わせる、しなやかで洗練された体型のシルエットとして表現する。背景には明るく鮮やかな色を使用し、黒い人物とボールの輪郭が明確に見える強いコントラストを維持する。\n\n主人公は、抽象的でスタイリッシュなバスケットボールコートで、余裕と自信を感じさせる華麗なボールハンドリングを披露する。低い姿勢での高速ドリブルから始まり、左右のクロスオーバー、レッグスルー、ビハインド・ザ・バック、イン・アンド・アウト、スピンムーブを滑らかに連続させる。単に技を並べるのではなく、それぞれの動きを自然につなげ、プロのストリートボーラーによる一続きのクールなコンビネーションとして見せる。\n\nドリブルコンビネーションの後、主人公は鋭く方向を変えてゴールへ加速する。力強く踏み切り、黒一色のボールを片手で保持しながら高く跳び、最後はダイナミックなワンハンドダンクを決める。ダンクは大げさな曲芸ではなく、スピード、跳躍力、身体の美しいラインを強調した、スタイリッシュで説得力のある動きにする。スローモーションは使用せず、15秒間を通してテンポと疾走感を維持する。\n\nボールが床に接触するタイミング、手から手へ移る瞬間、踏み切り、ジャンプ、リングへの到達、ダンク、着地を、力強いヒップホップまたはエレクトロニック・ミュージックのキック、スネア、ベースに正確にシンクロさせる。ボールが床に当たるたびに円形の波紋が広がり、クロスオーバーに合わせて鋭いラインが左右へ走り、方向転換すると背景の色面が瞬時に切り替わる。ダンクの瞬間には、すべてのシェイプとタイポグラフィーがビートに合わせて大きく反応する。\n\n背景では、長方形、円、三角形、太いライン、グリッド、コートラインなどのシェイプが、画面の上下左右や奥行き方向から勢いよくスライドインし、次のビートでスライドアウトする。複数のシェイプが異なる方向から重なり合い、分割、回転、拡大、縮小を繰り返しながら、リズミカルに画面構成を作り替えていく。ただし、シェイプで人物、ボール、リングを完全に隠さず、プレーの流れが常に明確に見えるようにする。\n\n背景には「BASKETBALL」「DRIBBLE」「DUNK」という単語を、正確なスペルの大文字でキネティック・タイポグラフィーとして登場させる。文字は一度表示されて終わるのではなく、登場後も音楽のビートに合わせて脈打つように拡大・縮小を繰り返し、前後左右への3D回転、奥行き方向への移動、軽い伸縮、色の切り替えを続ける。\n\n3D回転した文字は再び正面を向き、各単語が明確に読める瞬間を必ず作る。文字の欠落、重複、誤字、別の文字への変化は起こさず、「BASKETBALL」「DRIBBLE」「DUNK」以外の文字は表示しない。タイポグラフィーは人物とボールの背後や周囲で動かし、プレーを妨げない背景のグラフィック要素として使用する。\n\nカメラは基本的に人物の全身とボールを正面から捉えながら、音楽の強いビートに合わせてアングルを大胆に切り替える。正面からの構図に加えて、人物を斜め上から見下ろす俯瞰ショットと、斜め下から見上げる力強いローアングルショットを入れる。\n\n俯瞰ショットでは、コート上を動く足、ドリブルの軌道、床面を流れるシェイプやタイポグラフィーを印象的に見せる。ローアングルショットでは、黒いボールが床へ迫って跳ね返る瞬間、主人公の鋭い方向転換、ゴールへ向かう加速、踏み切りからダンクまでの高さと迫力を強調する。さらに、真横からの高速追従、短いズームインとズームアウト、左右へのスライド、リング付近から人物を見下ろす構図、ダンクする主人公を斜め下から捉える構図を加える。\n\nカットが切り替わっても、人物の動作、進行方向、ボールの位置、ドリブルのリズムを途切れさせず、同じ人物による一続きのプレーとして自然につなげる。アングルが変わっても、同一人物、同一の黒いボール、同一のコートとゴールを維持する。\n\nボールは映像全体を通して必ず1個だけにする。ボールの大きさと完全な球形を維持し、複製、変形、消失、瞬間移動、色の変化を発生させない。手、床、リングとの接触を物理的に正しく表現し、ボールが手や床をすり抜けないようにする。黒いボールが黒い身体と重なる場面でも、腕の位置と背景の色によって、ボールの丸い輪郭を判別できるようにする。\n\n人物の形状、体格、手足の本数を15秒間一貫させ、手足の変形、身体の分裂、不自然な残像を発生させない。リング、バックボード、ネットもシンプルな形状を維持し、ダンクの前後で位置や大きさを変化させない。\n\n大胆でありながら統一感のある配色、シャープなグラフィック、強いコントラスト、正確なビートシンクによって、とにかくカッコよく、スタイリッシュで、ファッション性の高い映像に仕上げる。終盤に向けてドリブル、カメラワーク、シェイプ、タイポグラフィーの動きを徐々に高密度にし、最後の強いビートでワンハンドダンクを決める。\n\nダンク後は大げさに喜んだり決めポーズを取ったりしない。主人公は軽やかに着地し、リングを通過した黒いボールが床で一度だけ弾む。そのまま主人公が余裕のある動きでカメラの横を通り過ぎ、背景のグラフィックがビートの余韻に合わせて整列して、クールに終了する。SNSで拡散されそうな、センスが良く、中毒性があり、何度も見返したくなる高品質な映像にする。",
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 3,
+      "views": 156,
+      "snapshotAt": "2026-08-25T10:30:31.572Z"
+    },
+    "approvedAt": "2026-08-25T10:30:31.572Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2092079093273796878",
+    "title": "机甲在长镜头中迎击坠落弹体",
+    "titleEn": "A Mecha Faces a Falling Projectile in a Long Sequence",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "白色机甲在荒地升空，镜头跟随高速坠落弹体穿越云层，并回到机甲迎击的连续动作。 原生视频规格为 51 秒 · 608×352。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A white mecha lifts off over a wasteland as the camera follows a fast projectile through clouds and returns to the machine bracing for impact. Native-video output: 51s · 608×352. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/palealloy/status/2092079093273796878",
+    "sourceLabel": "X 原帖 · @palealloy",
+    "author": "つみき/palealloy",
+    "publishedAt": "2026-08-25T02:38:19.000Z",
+    "addedAt": "2026-08-25T10:30:31.572Z",
+    "mediaUrl": "/media/x-2092079093273796878.mp4",
+    "posterUrl": "/posters/x/2092079093273796878.jpg",
+    "duration": 51,
+    "aspectRatio": "landscape",
+    "resolution": "608×352",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Action"
+    ],
+    "scenes": [
+      "Action Test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "50秒動画を10秒×5で一発生成。参照画像6枚。\n後半ダブってるのはプロンプトのせい🥹\n#minimaxH3 #comfyUI",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "views": 41,
+      "snapshotAt": "2026-08-25T10:30:31.572Z"
+    },
+    "approvedAt": "2026-08-25T10:30:31.572Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2092080680431915223",
+    "title": "粉发角色身边的五秒微动",
+    "titleEn": "Five Seconds of Subtle Motion Around a Pink-Haired Character",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "粉发动漫角色坐在废墟边缘，披风和背景光线产生轻微运动，展示五秒本地生成速度测试。 原生视频规格为 5 秒 · 1280×704。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A pink-haired anime character sits above ruins while the cape and background light move subtly in a five-second local-generation preview. Native-video output: 5s · 1280×704. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/hypoxia_021/status/2092080680431915223",
+    "sourceLabel": "X 原帖 · @hypoxia_021",
+    "author": "兎羽",
+    "publishedAt": "2026-08-25T02:44:37.000Z",
+    "addedAt": "2026-08-25T10:30:31.572Z",
+    "mediaUrl": "/media/x-2092080680431915223.mp4",
+    "posterUrl": "/posters/x/2092080680431915223.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "1280×704",
+    "tags": [
+      "MiniMax H3",
+      "本地生成",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Technical"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "minimax h3 在5080上能做到720p 5s 生成只要5分钟以内，但是时长5s就极限了，生成10s会OOM。或者生成540p 10s，不过需要超分，目前好像没啥好用的超分方案",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 6,
+      "snapshotAt": "2026-08-25T10:30:31.572Z"
+    },
+    "approvedAt": "2026-08-25T10:30:31.572Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
   }
 ]
