@@ -20,7 +20,8 @@ try {
 }
 
 const generatedAt = new Date().toISOString()
-let catalog = buildCreatorCatalog(cases, tutorials, { aliasConfig, previousCatalog, now: generatedAt })
+const comparisonAt = previousCatalog?.generatedAt ?? generatedAt
+let catalog = buildCreatorCatalog(cases, tutorials, { aliasConfig, previousCatalog, now: comparisonAt })
 
 function comparableCatalog(value) {
   return {
@@ -28,6 +29,10 @@ function comparableCatalog(value) {
     generatedAt: null,
     creators: value.creators.map((creator) => ({ ...creator, rankDelta: null })),
   }
+}
+
+if (previousCatalog && JSON.stringify(comparableCatalog(previousCatalog)) !== JSON.stringify(comparableCatalog(catalog))) {
+  catalog = buildCreatorCatalog(cases, tutorials, { aliasConfig, previousCatalog, now: generatedAt })
 }
 
 if (previousCatalog && JSON.stringify(comparableCatalog(previousCatalog)) === JSON.stringify(comparableCatalog(catalog))) {

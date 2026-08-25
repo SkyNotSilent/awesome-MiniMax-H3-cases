@@ -138,14 +138,21 @@ export const copy = {
         '30d': '近 30 天',
         all: '全部',
       },
-      updateSummaryIndex: '00 / 本次更新',
-      updateSummaryStatus: '有新内容',
+      updateSummaryIndex: '00 / 最近更新',
+      updateSummaryStatus: '持续收录',
       upToDateStatus: '已同步',
-      updateSummaryTitle: (cases: number, tutorials: number) => `新增 ${cases} 个案例 · ${tutorials} 篇教程`,
-      updateSummaryDescription: '这是你上次访问后进入本站的内容。本次打开后会记为已读，但当前页面会继续保留。',
+      updateSummaryTitle: (cases: number, prompts: number, tutorials: number) => {
+        const items = []
+        if (cases > 0) items.push(`新增 ${cases} 个案例`)
+        if (prompts > 0) items.push(`${prompts} 条完整 Prompt`)
+        if (tutorials > 0) items.push(`新增 ${tutorials} 篇教程`)
+        return items.slice(0, 2).join(' · ')
+      },
+      updateSummaryDescription: '最新入库内容均已完成来源核验与站内播放检查。',
       upToDateTitle: '已是最新。',
       upToDateDescription: '暂时没有新的案例或教程，可以继续浏览完整案例库。',
-      lastAddedLabel: '最后收录',
+      lastAddedLabel: '更新日期',
+      creatorRankingUpdated: '创作者榜已更新',
       viewTutorialUpdates: (count: number) => `查看 ${count} 篇新增教程`,
       newlyAdded: '新收录',
       addedOn: (date: string) => `收录于 ${date}`,
@@ -379,14 +386,21 @@ export const copy = {
         '30d': 'Last 30 days',
         all: 'All dates',
       },
-      updateSummaryIndex: '00 / YOUR UPDATE',
-      updateSummaryStatus: 'NEW MATERIAL',
+      updateSummaryIndex: '00 / LATEST UPDATE',
+      updateSummaryStatus: 'GROWING',
       upToDateStatus: 'IN SYNC',
-      updateSummaryTitle: (cases: number, tutorials: number) => `${cases} new case${cases === 1 ? '' : 's'} · ${tutorials} new guide${tutorials === 1 ? '' : 's'}`,
-      updateSummaryDescription: 'These entered the library after your previous visit. Opening this update marks it as seen while keeping it visible for this page.',
+      updateSummaryTitle: (cases: number, prompts: number, tutorials: number) => {
+        const items = []
+        if (cases > 0) items.push(`${cases} new case${cases === 1 ? '' : 's'}`)
+        if (prompts > 0) items.push(`${prompts} complete Prompt${prompts === 1 ? '' : 's'}`)
+        if (tutorials > 0) items.push(`${tutorials} new guide${tutorials === 1 ? '' : 's'}`)
+        return items.slice(0, 2).join(' · ')
+      },
+      updateSummaryDescription: 'Every newly published item has passed source and in-site playback checks.',
       upToDateTitle: 'You are up to date.',
       upToDateDescription: 'There are no new cases or guides yet. The complete library is ready to browse.',
-      lastAddedLabel: 'Last added',
+      lastAddedLabel: 'Updated',
+      creatorRankingUpdated: 'Creator board updated',
       viewTutorialUpdates: (count: number) => `View ${count} new guide${count === 1 ? '' : 's'}`,
       newlyAdded: 'Newly added',
       addedOn: (date: string) => `Added ${date}`,

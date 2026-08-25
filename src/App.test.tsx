@@ -195,7 +195,9 @@ describe('case-first routes', () => {
     renderAt('/')
 
     expect(within(screen.getByRole('group', { name: '本站收录时间' })).getByRole('button', { name: /^全部$/ })).toHaveAttribute('aria-pressed', 'true')
-    expect(screen.getByRole('heading', { name: '已是最新。' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '新增 21 个案例 · 4 条完整 Prompt' })).toBeInTheDocument()
+    expect(screen.getByText('创作者榜已更新')).toBeInTheDocument()
+    expect(screen.queryByText(/新增 0/)).not.toBeInTheDocument()
     expect(window.localStorage.getItem(updatesSeenThroughKey)).toBe('2026-08-23T02:34:28+08:00')
     expect(screen.getByText('舰桥上的跃迁余震')).toBeInTheDocument()
   })
@@ -205,18 +207,15 @@ describe('case-first routes', () => {
     renderAt('/')
 
     expect(screen.getByRole('button', { name: /本次新增/ })).toHaveAttribute('aria-pressed', 'true')
-    expect(screen.getByRole('heading', { name: '新增 2 个案例 · 24 篇教程' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '新增 21 个案例 · 4 条完整 Prompt' })).toBeInTheDocument()
     expect(screen.getByText('羊皮纸上的绝地光明史诗')).toBeInTheDocument()
     expect(screen.queryByText('舰桥上的跃迁余震')).not.toBeInTheDocument()
     expect(window.localStorage.getItem(updatesSeenThroughKey)).toBe('2026-08-23T02:34:28+08:00')
-    expect(screen.getByRole('link', { name: /查看 24 篇新增教程/ })).toHaveAttribute(
-      'href',
-      '/tutorials/?added=unseen&since=2026-08-10T05%3A52%3A30.476Z',
-    )
+    expect(screen.queryByText(/24 篇教程/)).not.toBeInTheDocument()
 
     cleanup()
     renderAt('/')
-    expect(screen.getByRole('heading', { name: '已是最新。' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '新增 21 个案例 · 4 条完整 Prompt' })).toBeInTheDocument()
     expect(within(screen.getByRole('group', { name: '本站收录时间' })).getByRole('button', { name: /^全部$/ })).toHaveAttribute('aria-pressed', 'true')
   })
 
