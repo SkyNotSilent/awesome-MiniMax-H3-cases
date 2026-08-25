@@ -12,7 +12,7 @@ Thanks for helping document MiniMax H3 experiments. This catalog values playable
 6. Host approved videos in project storage and keep the original creator's source link. Discovery channels and internal review sources belong only in ignored `.review/` files.
 7. Run `npm run sync:stats`, `npm test`, `npm run lint`, `npm run validate:data`, `npm run skills:verify`, `npm run build`, and `npm run catalog`.
 
-Use `data/candidates.json` and `reviewStatus` for unpublished review work. In the public case dataset, `verified: true` is reserved for official reproducible examples; human-reviewed X community cases remain `verified: false` and are labeled as community sources. Publication approval never authorizes filling a missing prompt.
+Unpublished review records never belong in a pull request or public data file; use the case-submission Issue form instead. Maintainers keep review state under ignored `.review/`. In the public case dataset, `verified: true` is reserved for official reproducible examples; human-reviewed X community cases remain `verified: false` and are labeled as community sources. Publication approval never authorizes filling a missing prompt.
 
 Do not edit `data/creators.json` by hand. It is generated from published cases and community X tutorials by `npm run sync:stats`. Verified handle migrations belong in `data/creator-aliases.json`; use a stable creator ID, current handle, and previous aliases so old public profile links can redirect. Creator monitoring scores, statuses, empty checks, rejected posts, and discovery sources belong only in ignored `.review/` files.
 

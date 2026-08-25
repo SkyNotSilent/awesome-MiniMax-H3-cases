@@ -1,12 +1,21 @@
 import { access, mkdir, readFile, writeFile } from 'node:fs/promises'
-import { resolve } from 'node:path'
+import { relative, resolve } from 'node:path'
 import { requireEditorialCopy } from './editorial-copy.mjs'
+import { candidatesPath, createPublishRunId, publishStagingRoot, root, writeJsonAtomic } from './review-paths.mjs'
 
-const root = resolve(import.meta.dirname, '..')
-const candidatesPath = resolve(root, 'data/candidates.json')
 const casesPath = resolve(root, 'data/cases.json')
-const posterDirectory = resolve(root, 'public/posters/x')
 const apply = process.argv.includes('--apply')
+
+function argumentValue(name) {
+  const index = process.argv.indexOf(name)
+  return index === -1 ? null : process.argv[index + 1]
+}
+
+const requestedRunId = argumentValue('--run-id')
+if (requestedRunId && !/^[a-zA-Z0-9_-]+$/.test(requestedRunId)) throw new Error('--run-id may contain only letters, numbers, underscores, and hyphens')
+const runId = requestedRunId || createPublishRunId()
+const stagingPath = resolve(publishStagingRoot, `${runId}.json`)
+const posterDirectory = resolve(publishStagingRoot, runId, 'posters')
 
 const candidates = JSON.parse(await readFile(candidatesPath, 'utf8'))
 const cases = JSON.parse(await readFile(casesPath, 'utf8'))
@@ -312,21 +321,18 @@ if (!apply) {
     publicPromptsAdded: promptCount,
     categories: Object.fromEntries(Object.entries(categoryCounts).map(([key, items]) => [key, items.length])),
   }, null, 2))
-  console.log('Re-run with --apply to cache posters, append cases, and clear the pending queue.')
+  console.log('Re-run with --apply to create a private publication staging batch.')
   process.exit(0)
 }
 
 await mkdir(posterDirectory, { recursive: true })
 await mapConcurrent(enriched, 6, downloadPoster)
-await writeFile(casesPath, `${JSON.stringify([...cases, ...promoted], null, 2)}\n`)
-const deferredQueue = candidates
-  .filter((item) => item.reviewStatus !== 'pending' || deferredReasons.has(sourcePostId(item)))
-  .map((item) => {
-    const deferredReason = deferredReasons.get(sourcePostId(item))
-    return deferredReason
-      ? { ...item, reviewStatus: 'needs-context', reviewNote: deferredReason }
-      : item
-  })
-await writeFile(candidatesPath, `${JSON.stringify(deferredQueue, null, 2)}\n`)
-
-console.log(`Promoted ${promoted.length} candidates. Public catalog now contains ${cases.length + promoted.length} cases; ${deferredQueue.length} candidate records remain deferred or rejected.`)
+await writeJsonAtomic(stagingPath, promoted)
+console.log(JSON.stringify({
+  status: 'staged',
+  runId,
+  staging: relative(root, stagingPath),
+  stagedCases: promoted.length,
+  publicCasesUnchanged: cases.length,
+  privateCandidatesUnchanged: candidates.length,
+}, null, 2))
