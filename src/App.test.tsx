@@ -2,6 +2,7 @@ import '@testing-library/jest-dom/vitest'
 import { act, cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import App from './App'
+import projectStats from '../data/project-stats.json'
 import { languagePreferenceKey } from './i18n'
 import { updatesSeenThroughKey } from './updates'
 
@@ -45,6 +46,12 @@ afterEach(() => {
 })
 
 describe('case-first routes', () => {
+  const latestUpdateHeading = [
+    projectStats.latestUpdate.casesAdded > 0 ? `新增 ${projectStats.latestUpdate.casesAdded} 个案例` : null,
+    projectStats.latestUpdate.promptsAdded > 0 ? `${projectStats.latestUpdate.promptsAdded} 条完整 Prompt` : null,
+    projectStats.latestUpdate.tutorialsAdded > 0 ? `新增 ${projectStats.latestUpdate.tutorialsAdded} 篇教程` : null,
+  ].filter(Boolean).slice(0, 2).join(' · ')
+
   it('renders the case browser underneath a two-second intro and then removes the intro', () => {
     vi.useFakeTimers()
     renderAt('/')
@@ -195,7 +202,7 @@ describe('case-first routes', () => {
     renderAt('/')
 
     expect(within(screen.getByRole('group', { name: '本站收录时间' })).getByRole('button', { name: /^全部$/ })).toHaveAttribute('aria-pressed', 'true')
-    expect(screen.getByRole('heading', { name: '新增 21 个案例 · 4 条完整 Prompt' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: latestUpdateHeading })).toBeInTheDocument()
     expect(screen.getByText('创作者榜已更新')).toBeInTheDocument()
     expect(screen.queryByText(/新增 0/)).not.toBeInTheDocument()
     expect(window.localStorage.getItem(updatesSeenThroughKey)).toBe('2026-08-23T02:34:28+08:00')
@@ -207,7 +214,7 @@ describe('case-first routes', () => {
     renderAt('/')
 
     expect(screen.getByRole('button', { name: /本次新增/ })).toHaveAttribute('aria-pressed', 'true')
-    expect(screen.getByRole('heading', { name: '新增 21 个案例 · 4 条完整 Prompt' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: latestUpdateHeading })).toBeInTheDocument()
     expect(screen.getByText('羊皮纸上的绝地光明史诗')).toBeInTheDocument()
     expect(screen.queryByText('舰桥上的跃迁余震')).not.toBeInTheDocument()
     expect(window.localStorage.getItem(updatesSeenThroughKey)).toBe('2026-08-23T02:34:28+08:00')
@@ -215,7 +222,7 @@ describe('case-first routes', () => {
 
     cleanup()
     renderAt('/')
-    expect(screen.getByRole('heading', { name: '新增 21 个案例 · 4 条完整 Prompt' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: latestUpdateHeading })).toBeInTheDocument()
     expect(within(screen.getByRole('group', { name: '本站收录时间' })).getByRole('button', { name: /^全部$/ })).toHaveAttribute('aria-pressed', 'true')
   })
 
