@@ -5,7 +5,7 @@
 # MiniMax H3 Cases & Guides
 
 <!-- project-stats:start -->
-**The most complete source-attributed MiniMax H3 case and tutorial library: 1041 playable videos, 321 complete public Prompts, and 24 practical guides.**
+**The most complete source-attributed MiniMax H3 case and tutorial library: 1065 playable videos, 329 complete public Prompts, and 24 practical guides.**
 <!-- project-stats:end -->
 
 **English** · [简体中文](./README.zh-CN.md)
@@ -66,7 +66,7 @@ Browse visually by **cinematic**, **live action**, **animation**, **dialogue**, 
 [![MiniMax H3 featured creator leaderboard](./docs/screenshots/creators-en.png)](https://h3-field-notes-production.up.railway.app/en/creators/)
 
 <!-- creator-stats:start -->
-The dynamic creator board turns the archive into a compounding discovery system. It currently ranks **216 featured creators from 641 source-attributed X authors**, with separate views for overall quality, recent activity, case volume, complete Prompt contribution, rising creators, and tutorial authors.
+The dynamic creator board turns the archive into a compounding discovery system. It currently ranks **220 featured creators from 653 source-attributed X authors**, with separate views for overall quality, recent activity, case volume, complete Prompt contribution, rising creators, and tutorial authors.
 <!-- creator-stats:end -->
 
 - Every profile aggregates the creator's playable cases, complete public Prompts, and source-checked tutorials.
@@ -113,7 +113,7 @@ Example output is structured as a recommended route, environment check, executio
 ## Data, automation, and trust
 
 <!-- project-snapshot:start -->
-**Current generated snapshot:** 1041 cases · 321 complete public Prompts · 24 tutorials · 216 ranked creators from 641 source authors · 8 flagship guides · 14 ecosystem resources · content checked through 2026-08-25.
+**Current generated snapshot:** 1065 cases · 329 complete public Prompts · 24 tutorials · 220 ranked creators from 653 source authors · 8 flagship guides · 14 ecosystem resources · content checked through 2026-08-26.
 <!-- project-snapshot:end -->
 
 - [`data/project-stats.json`](./data/project-stats.json) is the canonical public count snapshot; CI rejects stale website and README numbers.
