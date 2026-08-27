@@ -1,14 +1,14 @@
 const sleep = (milliseconds) => new Promise((resolvePromise) => setTimeout(resolvePromise, milliseconds))
 
-async function cancelBody(response) {
+async function drainBody(response) {
   try {
-    await response.body?.cancel()
+    await response.arrayBuffer()
   } catch {
-    // The response body may already be closed.
+    // A redirect may not expose a readable body.
   }
 }
 
-export async function verifyVideoRoute({ siteBaseUrl, caseId, fetchImpl = fetch, attempts = 3 }) {
+export async function verifyVideoRoute({ siteBaseUrl, caseId, fetchImpl = fetch, attempts = 3, timeoutMs = 15_000 }) {
   const routeUrl = `${siteBaseUrl.replace(/\/$/, '')}/media/${encodeURIComponent(caseId)}.mp4`
   let lastError
 
@@ -18,8 +18,9 @@ export async function verifyVideoRoute({ siteBaseUrl, caseId, fetchImpl = fetch,
         method: 'GET',
         redirect: 'manual',
         headers: { Range: 'bytes=0-1' },
+        signal: AbortSignal.timeout(timeoutMs),
       })
-      await cancelBody(redirect)
+      await drainBody(redirect)
       if (redirect.status !== 307) throw new Error(`App media route returned ${redirect.status}; expected 307`)
       const location = redirect.headers.get('location')
       if (!location) throw new Error('App media redirect is missing Location')
@@ -30,9 +31,10 @@ export async function verifyVideoRoute({ siteBaseUrl, caseId, fetchImpl = fetch,
         method: 'GET',
         redirect: 'manual',
         headers: { Range: 'bytes=0-1' },
+        signal: AbortSignal.timeout(timeoutMs),
       })
       const contentRange = ranged.headers.get('content-range')
-      await cancelBody(ranged)
+      await drainBody(ranged)
       if (ranged.status !== 206) throw new Error(`Bucket range request returned ${ranged.status}; expected 206`)
       if (!/^bytes 0-1\/\d+$/i.test(contentRange || '')) throw new Error('Bucket response is missing a valid Content-Range')
       return { appStatus: 307, bucketStatus: 206, contentRange }
