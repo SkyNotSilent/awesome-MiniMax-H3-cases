@@ -53579,5 +53579,1088 @@
     },
     "approvedAt": "2026-08-27T05:34:46.856Z",
     "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2093137271067427119",
+    "title": "窗边手作时光的细腻循环",
+    "titleEn": "A Quiet Crafting Loop by the Window",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "动画角色在雨窗旁整理布料、端杯饮水，细小手部动作与柔和光线构成安静的生活片段。 原生视频规格为 15 秒 · 1024×576。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "An animated character works with fabric and takes a drink beside a rain-streaked window, forming a quiet slice of life through small hand movements and soft light. Native-video output: 15s · 1024×576. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/imaginaldomain/status/2093137271067427119",
+    "sourceLabel": "X 原帖 · @imaginaldomain",
+    "author": "空想圏域 / Imaginal Domain｜編纂室",
+    "publishedAt": "2026-08-28T00:43:08.000Z",
+    "addedAt": "2026-08-28T01:32:58.034Z",
+    "mediaUrl": "/media/x-2093137271067427119.mp4",
+    "posterUrl": "/posters/x/2093137271067427119.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1024×576",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "minimax h3 完全に理解しました。",
+    "engagement": {
+      "replies": 2,
+      "reposts": 0,
+      "likes": 8,
+      "views": 90,
+      "snapshotAt": "2026-08-28T01:32:58.034Z"
+    },
+    "approvedAt": "2026-08-28T01:32:58.034Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2093133440359317751",
+    "title": "白纸上的少女逐笔成形",
+    "titleEn": "An Anime Girl Takes Shape Stroke by Stroke",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "FL2VA",
+    "summary": "画笔从空白画布勾出少女姿态，再逐步补齐线稿、颜色和盆栽，呈现完整绘画延时过程。 原生视频规格为 15 秒 · 1920×1070。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A stylus builds a girl from a blank canvas, adding line art, color, and a potted plant through a complete drawing-timelapse sequence. Native-video output: 15s · 1920×1070. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video.\n\nintegrated_multimodal_description: [Shot 1] 2D anime digital illustration, a high-quality digital drawing recorded as a timelapse, with the artist's hand holding a stylus pen visibly drawing on the canvas. The video starts from a white digital canvas and draws the basic forms and shapes first, starting from the general (big) outline sketch of the pose, then adding line after line to add new details on the face, hair, and clothes until a complete lineart sketch for the character is done. Then the coloring phase begins: flat base colors are filled evenly within the lineart, soft shading and highlights are layered on the face, hair, and clothes, and final finishing touches are added until the completed artwork matches <Picture 1> exactly.\n\noverall_soundscape: The soft scratch of the stylus on the tablet screen, light desk ambience.\n\nnon_diegetic_music: N/A",
+    "promptSourceUrl": "https://x.com/PhotogenicWeekE/status/2093133529785983467",
+    "sourceUrl": "https://x.com/PhotogenicWeekE/status/2093133440359317751",
+    "sourceLabel": "X 原帖 · @PhotogenicWeekE",
+    "author": "Photogenic Weekend",
+    "publishedAt": "2026-08-28T00:27:55.000Z",
+    "addedAt": "2026-08-28T01:32:58.034Z",
+    "mediaUrl": "/media/x-2093133440359317751.mp4",
+    "posterUrl": "/posters/x/2093133440359317751.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1070",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "text",
+      "image"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "実は俺、絵も描ける(笑) < 嘘、全くダメw MiniMax H3 f2v。Prompt、短いからコメントに",
+    "engagement": {
+      "replies": 1,
+      "reposts": 4,
+      "likes": 20,
+      "views": 1063,
+      "snapshotAt": "2026-08-28T01:32:58.034Z"
+    },
+    "approvedAt": "2026-08-28T01:32:58.034Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2093130319033663506",
+    "title": "红月下的暗夜角色片头",
+    "titleEn": "A Dark Character Opener Under a Red Moon",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "黑红角色在月蚀、蝙蝠剪影和书法标题间登场，连续特写组成十五秒动画片头。 原生视频规格为 15 秒 · 1920×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A black-and-red character appears amid an eclipse, bat silhouettes, and calligraphic titles in a fifteen-second animated opener. Native-video output: 15s · 1920×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/SushiNFTart/status/2093130319033663506",
+    "sourceLabel": "X 原帖 · @SushiNFTart",
+    "author": "🍣お寿司職人｜AIゲーム・アニメ",
+    "publishedAt": "2026-08-28T00:15:31.000Z",
+    "addedAt": "2026-08-28T01:32:58.034Z",
+    "mediaUrl": "/media/x-2093130319033663506.mp4",
+    "posterUrl": "/posters/x/2093130319033663506.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "#月蝕綺譚 \nサスラ・トバリのアニメOP風ショートアニメ🦇\nMiniMax H3 Maxで作ってみました🎬\n（ロゴとキャラをお借りした非公式二次創作です）",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 7,
+      "views": 1742,
+      "snapshotAt": "2026-08-28T01:32:58.034Z"
+    },
+    "approvedAt": "2026-08-28T01:32:58.034Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2093130098761433420",
+    "title": "夏日校园疾驰的动画片头",
+    "titleEn": "A High-Speed Summer School Anime Opener",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "T2VA",
+    "summary": "夏装少女从校园奔跑、骑车一路切入摩托疾驰，动能排版和高速转场维持音乐片头节奏。 原生视频规格为 17 秒 · 864×480。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "Girls in summer uniforms run and cycle from school into a racing-motorcycle sequence as kinetic type and rapid transitions sustain an opening-theme pace. Native-video output: 17s · 864×480. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "CHARACTER STYLE — SUMMER UNIFORMS:\n\nAll high-school girls wear modern, cute, contemporary SUMMER school uniforms.\n\nThe uniforms must clearly look like Japanese summer school uniforms.\n\nUse lightweight short-sleeved blouses, short-sleeved shirts, lightweight summer knit vests, breathable cardigans used only very lightly, cute ribbons, slim neckties, pleated skirts, subtle plaid skirts, and modern school bags.\n\nThe girls should look cool, fresh, youthful, and comfortable in summer.\n\nUse refreshing summer colors such as white, light blue, pale blue, soft navy, cream, pale pink, mint, and light gray.\n\nPrefer white and light-colored tops combined with cool-toned skirts.\n\nThe uniforms should feel light and airy.\n\nShow natural movement of short sleeves, ribbons, loose hair, pleated skirts, and lightweight fabric.\n\nHair and clothing should react strongly to wind and movement.\n\nThe overall impression should be:\n\ncool summer morning,\nfresh breeze,\nyouthful Japanese summer,\nbright sunlight,\nlightweight clothing,\nrefreshing atmosphere,\nclean contemporary anime aesthetic.\n\nAvoid heavy winter uniforms.\n\nAvoid thick jackets.\n\nAvoid long-sleeved blazers.\n\nAvoid heavy sweaters.\n\nAvoid scarves.\n\nAvoid winter fashion.\n\nAvoid dark, heavy clothing dominating the frame.\n\nThe summer uniforms should remain stylish and cute while clearly being school-appropriate.\n\nEach girl can have a slightly different summer uniform variation.\n\nTYPOGRAPHY — EXTREMELY HIGH DENSITY:\n\nTypography is one of the PRIMARY visual elements of the entire video.\n\nIncrease the amount of readable typography to approximately TWICE the previous version.\n\nThe screen should frequently contain many readable words simultaneously.\n\nHowever, every word must remain visually recognizable.\n\nNever generate random letters, fake words, pseudo-English, corrupted text, meaningless symbols, or unreadable paragraphs.\n\nUse many short readable words and phrases.\n\nUse combinations of large, medium, and small typography simultaneously.\n\nExamples:\n\n\"MUSIC\"\n\"LIVE\"\n\"START\"\n\"ARE YOU READY?\"\n\"COMING SOON\"\n\"LET'S GO\"\n\"RUN\"\n\"JUMP\"\n\"DANCE\"\n\"PLAY\"\n\"ROCK\"\n\"GO!\"\n\"HEY!\"\n\"FEEL THE MUSIC\"\n\"KEEP MOVING\"\n\"NEVER STOP\"\n\"RIGHT NOW\"\n\"ONE MORE TIME\"\n\"READY?\"\n\"GO GO GO\"\n\"MAKE SOME NOISE\"\n\"TONIGHT\"\n\"GOOD VIBES\"\n\"SUPER!\"\n\"YOUTH\"\n\"SUMMER\"\n\"FRIENDS\"\n\"DREAM\"\n\"LOVE\"\n\"SMILE\"\n\"START NOW\"\n\"SUMMER DAYS\"\n\"SUMMER VIBES\"\n\"FEEL FREE\"\n\"GOOD DAY\"\n\"KEEP GOING\"\n\"JUST MOVE\"\n\"TURN IT UP\"\n\"ALL RIGHT\"\n\"LET'S RIDE\"\n\"FASTER\"\n\"FULL SPEED\"\n\"RIDE ON\"\n\"TAKE OFF\"\n\"GO FASTER\"\n\"ONE MORE\"\n\"RIGHT NOW\"\n\"THIS MOMENT\"\n\"FEEL ALIVE\"\n\nUse many of these words throughout the video.\n\nDo not display all words at once.\n\nInstead, distribute them dynamically across foreground, middle-ground, and background.\n\nUse approximately twice as many typography elements as the previous version.\n\nAt many moments, 5–15 separate readable typography elements may exist simultaneously at different depths and sizes.\n\nSome can be very small but still clearly readable.\n\nLarge typography should occasionally dominate the composition.\n\nSmall typography should create visual richness around the characters.\n\nTYPOGRAPHY PLACEMENT:\n\nPlace readable text:\n\nbehind characters,\nin front of characters,\nabove characters,\nbelow characters,\nalong motion trails,\ninside manga panels,\non school papers,\non signs,\non walls,\nalong roads,\naround motorcycles,\naround musical instruments,\ninside circular graphics,\nbetween characters,\nnear hands and feet,\nfollowing hair movement,\nfollowing skirts and ribbons,\ninside particles,\nalong camera paths,\nand extremely close to the camera.\n\nTypography should exist in 3D space.\n\nSome words should pass extremely close to the camera.\n\nSome words should remain far in the background.\n\nCreate strong typographic parallax.\n\nTYPOGRAPHY MOTION:\n\nEvery typography element should have intentional movement.\n\nUse:\n\nhorizontal sliding,\nvertical sliding,\ndiagonal movement,\nrotation,\nscaling,\nstretching,\ncompression,\nletter-by-letter appearance,\nmotion trails,\ncircular orbiting,\ndepth movement,\nforeground passes,\nbackground passes,\ntypographic wipes,\ntypographic explosions,\ntypographic transitions,\ntypographic collisions,\ntypographic stacking,\ntypographic scattering.\n\nCharacter movement should directly influence the typography.\n\nA girl's running motion creates:\n\n\"RUN\"\n\"FASTER\"\n\"KEEP GOING\"\n\nA jump creates:\n\n\"JUMP\"\n\"GO!\"\n\"TAKE OFF\"\n\nA dance creates:\n\n\"DANCE\"\n\"FEEL THE MUSIC\"\n\"TURN IT UP\"\n\nA guitar performance creates:\n\n\"MUSIC\"\n\"PLAY\"\n\"ROCK\"\n\"LIVE\"\n\nA motorcycle creates:\n\n\"RIDE\"\n\"FULL SPEED\"\n\"FASTER\"\n\"GO FASTER\"\n\nWind moving through the girl's summer uniform creates:\n\n\"SUMMER\"\n\"SUMMER DAYS\"\n\"FEEL FREE\"\n\nDo not treat typography as subtitles.\n\nTypography is part of the physical motion-graphics environment.\n\nSUMMER ATMOSPHERE:\n\nCreate a subtle refreshing summer atmosphere throughout the video.\n\nUse bright natural light, clear skies, soft sunlight, gentle wind, light shadows, and a clean colorful anime palette.\n\nThe girls' hair, ribbons, sleeves, skirts, and loose clothing should frequently respond to wind.\n\nUse occasional subtle summer elements:\n\nsunlight,\nblue sky,\nsummer breeze,\nfloating paper,\nsmall leaves,\nlight particles,\nreflections,\nbright school corridors,\nopen windows,\nsummer streets.\n\nDo not make the video feel like a generic beach vacation.\n\nThe primary environment remains a dynamic Japanese youth / school / music-video world.\n\nMOTORCYCLE CHANGE:\n\nReplace all cruiser / American-style motorcycles with modern Japanese-style full-fairing sport motorcycles.\n\nThe motorcycle must be a sleek Japanese-style racer replica / supersport motorcycle.\n\nUse:\n\nfull aerodynamic fairings,\naggressive front cowl,\nsport riding position,\nclip-on handlebars,\nrear-set footpegs,\nlarge front brake discs,\nsport tires,\nhigh-performance wheels,\nsharp aerodynamic bodywork,\ncompact tail section,\nracing-inspired graphics.\n\nThe rider uses a clearly forward-leaning sport riding posture.\n\nThe motorcycle must visually resemble a modern racer replica rather than a cruiser.\n\nIMPORTANT:\n\nNO American cruiser motorcycle.\n\nNO chopper.\n\nNO long low cruiser.\n\nNO large relaxed handlebars.\n\nNO chrome-heavy cruiser styling.\n\nNO cruiser riding posture.\n\nNO classic Harley-style silhouette.\n\nInstead:\n\nJapanese sportbike.\n\nRacer replica.\n\nFull fairing.\n\nAggressive aerodynamic silhouette.\n\nForward-leaning riding position.\n\nHigh-speed cornering.\n\nMOTORCYCLE ACTION:\n\nThe girl actively controls the motorcycle.\n\nShe accelerates hard.\n\nShe shifts her body.\n\nShe leans deeply into a corner.\n\nThe motorcycle banks dramatically.\n\nThe tires maintain strong contact with the road.\n\nThe camera tracks beside the motorcycle at high speed.\n\nThen the camera moves slightly ahead of the motorcycle.\n\nThe camera swings around the front.\n\nThe front wheel and brake disc fill the frame.\n\nThe spinning wheel transforms into a circular graphic.\n\nThe brake disc becomes a rotating typography ring.\n\nWords such as:\n\n\"FULL SPEED\"\n\"FASTER\"\n\"RIDE\"\n\"GO FASTER\"\n\nrotate around the wheel.\n\nThe motorcycle accelerates again.\n\nIts motion trail becomes enormous kinetic typography.\n\n\"GO!\"\n\nstretches across the screen.\n\nThen:\n\n\"TAKE OFF\"\n\nbecomes the transition into the next scene.\n\nThe motorcycle sequence should feel like a Japanese racing-anime music video rather than a motorcycle advertisement.\n\nCAMERA DIRECTION:\n\nContinue using extremely varied camera movement.\n\nPrioritize:\n\nleft-to-right tracking,\nright-to-left tracking,\ndiagonal tracking,\nside tracking,\ncamera moving beside characters,\ncamera moving between characters,\ncamera overtaking the sport motorcycle,\ncamera moving around the front wheel,\ncamera circling musicians,\ncamera rotating around dancers,\ncamera dropping vertically,\ncamera rising vertically,\nDutch angles,\nrapid push-ins,\nrapid pull-backs,\nwhip pans,\nrotational transitions,\nextreme close passes,\nforeground object wipes,\nperspective distortion,\nfocus changes,\nstrong parallax,\ntypography passing the lens.\n\nDo NOT rely primarily on forward and backward camera movement.\n\nVISUAL DENSITY:\n\nIncrease the overall visual information density.\n\nCharacters, summer uniforms, objects, manga panels, typography, motion trails, particles, musical instruments, school environments, bicycles, sport motorcycles, school bags, papers, signs, and graphic elements should coexist.\n\nNever leave large empty areas.\n\nAt many moments, several independent visual events should happen simultaneously.\n\nFor example:\n\na girl running in the foreground,\n\nanother girl jumping in the middle-ground,\n\na sport motorcycle passing in the background,\n\nlarge typography crossing diagonally,\n\nsmall typography floating behind the characters,\n\nmotion trails connecting all elements,\n\nand manga panels transforming around them.\n\nThe scene should feel extremely rich but still intentionally composed.\n\nThe complexity should come from meaningful simultaneous actions and readable typography.\n\nFINAL VISUAL TARGET:\n\nModern Japanese anime music-video opening.\n\nCute contemporary Japanese summer uniforms.\n\nRefreshing summer atmosphere.\n\nBeautiful energetic high-school girls.\n\nExtremely dynamic action.\n\nHigh-speed Japanese sport motorcycle.\n\nKinetic typography.\n\nApproximately TWICE the previous typography density.\n\nMany readable words.\n\nTypography integrated into character movement.\n\nTypography integrated into camera movement.\n\nTypography integrated into environmental transitions.\n\nFast editing.\n\nContinuous transformation.\n\nStrong parallax.\n\nStrong lateral camera movement.\n\nStrong rotational camera movement.\n\nHigh information density.\n\nStylish contemporary Japanese graphic design.\n\nMid-2000s Japanese music-video energy combined with modern anime motion graphics and contemporary kinetic typography.\n\nMOST IMPORTANT:\n\nSUMMER UNIFORMS.\n\nREFRESHING SUMMER ATMOSPHERE.\n\nCUTE MODERN JAPANESE HIGH-SCHOOL FASHION.\n\nTWICE THE PREVIOUS AMOUNT OF READABLE TYPOGRAPHY.\n\nALL TEXT MUST BE READABLE.\n\nSPORT RACING MOTORCYCLE, NOT AMERICAN CRUISER.\n\nSHOW GIRLS DOING THINGS.\n\nSHOW TYPOGRAPHY MOVING.\n\nSHOW THE ENTIRE BODY OF THE CHARACTERS WHEN POSSIBLE.\n\nNEVER LET THE VIDEO BECOME A COLLECTION OF STATIC PORTRAITS.",
+    "promptSourceUrl": "https://x.com/goldwing_zoome/status/2093130098761433420",
+    "sourceUrl": "https://x.com/goldwing_zoome/status/2093130098761433420",
+    "sourceLabel": "X 原帖 · @goldwing_zoome",
+    "author": "goldwing",
+    "publishedAt": "2026-08-28T00:14:38.000Z",
+    "addedAt": "2026-08-28T01:32:58.034Z",
+    "mediaUrl": "/media/x-2093130098761433420.mp4",
+    "posterUrl": "/posters/x/2093130098761433420.jpg",
+    "duration": 17,
+    "aspectRatio": "landscape",
+    "resolution": "864×480",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Music Video",
+    "styles": [
+      "Music Video"
+    ],
+    "scenes": [
+      "Music Video"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "おはようバイク女子動画。\n#MiniMaxH3\n\nプロンプトは以下です。\nCHARACTER STYLE — SUMMER UNIFORMS:\n\nAll high-school girls wear modern, cute, contemporary SUMMER school uniforms.\n\nThe uniforms must clearly look like Japanese summer school uniforms.\n\nUse lightweight short-sleeved blouses, short-sleeved shirts, lightweight summer knit vests, breathable cardigans used only very lightly, cute ribbons, slim neckties, pleated skirts, subtle plaid skirts, and modern school bags.\n\nThe girls should look cool, fresh, youthful, and comfortable in summer.\n\nUse refreshing summer colors such as white, light blue, pale blue, soft navy, cream, pale pink, mint, and light gray.\n\nPrefer white and light-colored tops combined with cool-toned skirts.\n\nThe uniforms should feel light and airy.\n\nShow natural movement of short sleeves, ribbons, loose hair, pleated skirts, and lightweight fabric.\n\nHair and clothing should react strongly to wind and movement.\n\nThe overall impression should be:\n\ncool summer morning,\nfresh breeze,\nyouthful Japanese summer,\nbright sunlight,\nlightweight clothing,\nrefreshing atmosphere,\nclean contemporary anime aesthetic.\n\nAvoid heavy winter uniforms.\n\nAvoid thick jackets.\n\nAvoid long-sleeved blazers.\n\nAvoid heavy sweaters.\n\nAvoid scarves.\n\nAvoid winter fashion.\n\nAvoid dark, heavy clothing dominating the frame.\n\nThe summer uniforms should remain stylish and cute while clearly being school-appropriate.\n\nEach girl can have a slightly different summer uniform variation.\n\nTYPOGRAPHY — EXTREMELY HIGH DENSITY:\n\nTypography is one of the PRIMARY visual elements of the entire video.\n\nIncrease the amount of readable typography to approximately TWICE the previous version.\n\nThe screen should frequently contain many readable words simultaneously.\n\nHowever, every word must remain visually recognizable.\n\nNever generate random letters, fake words, pseudo-English, corrupted text, meaningless symbols, or unreadable paragraphs.\n\nUse many short readable words and phrases.\n\nUse combinations of large, medium, and small typography simultaneously.\n\nExamples:\n\n\"MUSIC\"\n\"LIVE\"\n\"START\"\n\"ARE YOU READY?\"\n\"COMING SOON\"\n\"LET'S GO\"\n\"RUN\"\n\"JUMP\"\n\"DANCE\"\n\"PLAY\"\n\"ROCK\"\n\"GO!\"\n\"HEY!\"\n\"FEEL THE MUSIC\"\n\"KEEP MOVING\"\n\"NEVER STOP\"\n\"RIGHT NOW\"\n\"ONE MORE TIME\"\n\"READY?\"\n\"GO GO GO\"\n\"MAKE SOME NOISE\"\n\"TONIGHT\"\n\"GOOD VIBES\"\n\"SUPER!\"\n\"YOUTH\"\n\"SUMMER\"\n\"FRIENDS\"\n\"DREAM\"\n\"LOVE\"\n\"SMILE\"\n\"START NOW\"\n\"SUMMER DAYS\"\n\"SUMMER VIBES\"\n\"FEEL FREE\"\n\"GOOD DAY\"\n\"KEEP GOING\"\n\"JUST MOVE\"\n\"TURN IT UP\"\n\"ALL RIGHT\"\n\"LET'S RIDE\"\n\"FASTER\"\n\"FULL SPEED\"\n\"RIDE ON\"\n\"TAKE OFF\"\n\"GO FASTER\"\n\"ONE MORE\"\n\"RIGHT NOW\"\n\"THIS MOMENT\"\n\"FEEL ALIVE\"\n\nUse many of these words throughout the video.\n\nDo not display all words at once.\n\nInstead, distribute them dynamically across foreground, middle-ground, and background.\n\nUse approximately twice as many typography elements as the previous version.\n\nAt many moments, 5–15 separate readable typography elements may exist simultaneously at different depths and sizes.\n\nSome can be very small but still clearly readable.\n\nLarge typography should occasionally dominate the composition.\n\nSmall typography should create visual richness around the characters.\n\nTYPOGRAPHY PLACEMENT:\n\nPlace readable text:\n\nbehind characters,\nin front of characters,\nabove characters,\nbelow characters,\nalong motion trails,\ninside manga panels,\non school papers,\non signs,\non walls,\nalong roads,\naround motorcycles,\naround musical instruments,\ninside circular graphics,\nbetween characters,\nnear hands and feet,\nfollowing hair movement,\nfollowing skirts and ribbons,\ninside particles,\nalong camera paths,\nand extremely close to the camera.\n\nTypography should exist in 3D space.\n\nSome words should pass extremely close to the camera.\n\nSome words should remain far in the background.\n\nCreate strong typographic parallax.\n\nTYPOGRAPHY MOTION:\n\nEvery typography element should have intentional movement.\n\nUse:\n\nhorizontal sliding,\nvertical sliding,\ndiagonal movement,\nrotation,\nscaling,\nstretching,\ncompression,\nletter-by-letter appearance,\nmotion trails,\ncircular orbiting,\ndepth movement,\nforeground passes,\nbackground passes,\ntypographic wipes,\ntypographic explosions,\ntypographic transitions,\ntypographic collisions,\ntypographic stacking,\ntypographic scattering.\n\nCharacter movement should directly influence the typography.\n\nA girl's running motion creates:\n\n\"RUN\"\n\"FASTER\"\n\"KEEP GOING\"\n\nA jump creates:\n\n\"JUMP\"\n\"GO!\"\n\"TAKE OFF\"\n\nA dance creates:\n\n\"DANCE\"\n\"FEEL THE MUSIC\"\n\"TURN IT UP\"\n\nA guitar performance creates:\n\n\"MUSIC\"\n\"PLAY\"\n\"ROCK\"\n\"LIVE\"\n\nA motorcycle creates:\n\n\"RIDE\"\n\"FULL SPEED\"\n\"FASTER\"\n\"GO FASTER\"\n\nWind moving through the girl's summer uniform creates:\n\n\"SUMMER\"\n\"SUMMER DAYS\"\n\"FEEL FREE\"\n\nDo not treat typography as subtitles.\n\nTypography is part of the physical motion-graphics environment.\n\nSUMMER ATMOSPHERE:\n\nCreate a subtle refreshing summer atmosphere throughout the video.\n\nUse bright natural light, clear skies, soft sunlight, gentle wind, light shadows, and a clean colorful anime palette.\n\nThe girls' hair, ribbons, sleeves, skirts, and loose clothing should frequently respond to wind.\n\nUse occasional subtle summer elements:\n\nsunlight,\nblue sky,\nsummer breeze,\nfloating paper,\nsmall leaves,\nlight particles,\nreflections,\nbright school corridors,\nopen windows,\nsummer streets.\n\nDo not make the video feel like a generic beach vacation.\n\nThe primary environment remains a dynamic Japanese youth / school / music-video world.\n\nMOTORCYCLE CHANGE:\n\nReplace all cruiser / American-style motorcycles with modern Japanese-style full-fairing sport motorcycles.\n\nThe motorcycle must be a sleek Japanese-style racer replica / supersport motorcycle.\n\nUse:\n\nfull aerodynamic fairings,\naggressive front cowl,\nsport riding position,\nclip-on handlebars,\nrear-set footpegs,\nlarge front brake discs,\nsport tires,\nhigh-performance wheels,\nsharp aerodynamic bodywork,\ncompact tail section,\nracing-inspired graphics.\n\nThe rider uses a clearly forward-leaning sport riding posture.\n\nThe motorcycle must visually resemble a modern racer replica rather than a cruiser.\n\nIMPORTANT:\n\nNO American cruiser motorcycle.\n\nNO chopper.\n\nNO long low cruiser.\n\nNO large relaxed handlebars.\n\nNO chrome-heavy cruiser styling.\n\nNO cruiser riding posture.\n\nNO classic Harley-style silhouette.\n\nInstead:\n\nJapanese sportbike.\n\nRacer replica.\n\nFull fairing.\n\nAggressive aerodynamic silhouette.\n\nForward-leaning riding position.\n\nHigh-speed cornering.\n\nMOTORCYCLE ACTION:\n\nThe girl actively controls the motorcycle.\n\nShe accelerates hard.\n\nShe shifts her body.\n\nShe leans deeply into a corner.\n\nThe motorcycle banks dramatically.\n\nThe tires maintain strong contact with the road.\n\nThe camera tracks beside the motorcycle at high speed.\n\nThen the camera moves slightly ahead of the motorcycle.\n\nThe camera swings around the front.\n\nThe front wheel and brake disc fill the frame.\n\nThe spinning wheel transforms into a circular graphic.\n\nThe brake disc becomes a rotating typography ring.\n\nWords such as:\n\n\"FULL SPEED\"\n\"FASTER\"\n\"RIDE\"\n\"GO FASTER\"\n\nrotate around the wheel.\n\nThe motorcycle accelerates again.\n\nIts motion trail becomes enormous kinetic typography.\n\n\"GO!\"\n\nstretches across the screen.\n\nThen:\n\n\"TAKE OFF\"\n\nbecomes the transition into the next scene.\n\nThe motorcycle sequence should feel like a Japanese racing-anime music video rather than a motorcycle advertisement.\n\nCAMERA DIRECTION:\n\nContinue using extremely varied camera movement.\n\nPrioritize:\n\nleft-to-right tracking,\nright-to-left tracking,\ndiagonal tracking,\nside tracking,\ncamera moving beside characters,\ncamera moving between characters,\ncamera overtaking the sport motorcycle,\ncamera moving around the front wheel,\ncamera circling musicians,\ncamera rotating around dancers,\ncamera dropping vertically,\ncamera rising vertically,\nDutch angles,\nrapid push-ins,\nrapid pull-backs,\nwhip pans,\nrotational transitions,\nextreme close passes,\nforeground object wipes,\nperspective distortion,\nfocus changes,\nstrong parallax,\ntypography passing the lens.\n\nDo NOT rely primarily on forward and backward camera movement.\n\nVISUAL DENSITY:\n\nIncrease the overall visual information density.\n\nCharacters, summer uniforms, objects, manga panels, typography, motion trails, particles, musical instruments, school environments, bicycles, sport motorcycles, school bags, papers, signs, and graphic elements should coexist.\n\nNever leave large empty areas.\n\nAt many moments, several independent visual events should happen simultaneously.\n\nFor example:\n\na girl running in the foreground,\n\nanother girl jumping in the middle-ground,\n\na sport motorcycle passing in the background,\n\nlarge typography crossing diagonally,\n\nsmall typography floating behind the characters,\n\nmotion trails connecting all elements,\n\nand manga panels transforming around them.\n\nThe scene should feel extremely rich but still intentionally composed.\n\nThe complexity should come from meaningful simultaneous actions and readable typography.\n\nFINAL VISUAL TARGET:\n\nModern Japanese anime music-video opening.\n\nCute contemporary Japanese summer uniforms.\n\nRefreshing summer atmosphere.\n\nBeautiful energetic high-school girls.\n\nExtremely dynamic action.\n\nHigh-speed Japanese sport motorcycle.\n\nKinetic typography.\n\nApproximately TWICE the previous typography density.\n\nMany readable words.\n\nTypography integrated into character movement.\n\nTypography integrated into camera movement.\n\nTypography integrated into environmental transitions.\n\nFast editing.\n\nContinuous transformation.\n\nStrong parallax.\n\nStrong lateral camera movement.\n\nStrong rotational camera movement.\n\nHigh information density.\n\nStylish contemporary Japanese graphic design.\n\nMid-2000s Japanese music-video energy combined with modern anime motion graphics and contemporary kinetic typography.\n\nMOST IMPORTANT:\n\nSUMMER UNIFORMS.\n\nREFRESHING SUMMER ATMOSPHERE.\n\nCUTE MODERN JAPANESE HIGH-SCHOOL FASHION.\n\nTWICE THE PREVIOUS AMOUNT OF READABLE TYPOGRAPHY.\n\nALL TEXT MUST BE READABLE.\n\nSPORT RACING MOTORCYCLE, NOT AMERICAN CRUISER.\n\nSHOW GIRLS DOING THINGS.\n\nSHOW TYPOGRAPHY MOVING.\n\nSHOW THE ENTIRE BODY OF THE CHARACTERS WHEN POSSIBLE.\n\nNEVER LET THE VIDEO BECOME A COLLECTION OF STATIC PORTRAITS.",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "views": 115,
+      "snapshotAt": "2026-08-28T01:32:58.034Z"
+    },
+    "approvedAt": "2026-08-28T01:32:58.034Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2093126466792034728",
+    "title": "刀光、雨伞与马蹄组成文字节拍",
+    "titleEn": "Blades, Umbrellas, and Hooves Form a Typographic Beat",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "T2VA",
+    "summary": "刀刃、雨伞和马蹄分别触发英文标题，声音同步的物件运动把三段文字变成短促节拍。 原生视频规格为 15 秒 · 1920×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A blade, umbrella, and galloping hooves each trigger an English title, turning three object actions into a sound-synced typographic rhythm. Native-video output: 15s · 1920×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/PixVerse/status/2093126466792034728",
+    "sourceLabel": "X 原帖 · @PixVerse",
+    "author": "PixVerse",
+    "publishedAt": "2026-08-28T00:00:12.000Z",
+    "addedAt": "2026-08-28T01:32:58.034Z",
+    "mediaUrl": "/media/x-2093126466792034728.mp4",
+    "posterUrl": "/posters/x/2093126466792034728.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "广告视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "UGC & Advertising",
+    "styles": [
+      "Advertising"
+    ],
+    "scenes": [
+      "Product Advertising"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "We tested MiniMax H3 on sound-synced typography. All from a text prompt.\n\nA blade slashes THE LAST DRAW. An umbrella unfolds UNDER THE RAIN. Hoofbeats pound out NO ROAD BACK.\n\nPixVerse members get 50% OFF MiniMax H3, or 60% OFF with Ultra or Team Ultra. The offer ends on September 4, 2026, at 11:59 PM PDT.\n\nPrompt below",
+    "engagement": {
+      "replies": 2,
+      "reposts": 2,
+      "likes": 16,
+      "views": 658,
+      "snapshotAt": "2026-08-28T01:32:58.034Z"
+    },
+    "approvedAt": "2026-08-28T01:32:58.034Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2093124872608297470",
+    "title": "考拉角色举起产品发布标牌",
+    "titleEn": "A Koala Mascot Raises a Product Launch Sign",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "卡通考拉举起发布标牌，箭头旋转后回到正面，用简单角色动作完成一段产品上线提示。 原生视频规格为 7 秒 · 1888×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A cartoon koala lifts a launch sign, spins the arrow, and returns it to camera in a compact product-release announcement. Native-video output: 7s · 1888×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/BeatsOnBase/status/2093124872608297470",
+    "sourceLabel": "X 原帖 · @BeatsOnBase",
+    "author": "Beats on Base",
+    "publishedAt": "2026-08-27T23:53:52.000Z",
+    "addedAt": "2026-08-28T01:32:58.034Z",
+    "mediaUrl": "/media/x-2093124872608297470.mp4",
+    "posterUrl": "/posters/x/2093124872608297470.jpg",
+    "duration": 7,
+    "aspectRatio": "landscape",
+    "resolution": "1888×1080",
+    "tags": [
+      "MiniMax H3",
+      "广告视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "UGC & Advertising",
+    "styles": [
+      "Advertising"
+    ],
+    "scenes": [
+      "Product Advertising"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Consider this your sign 🪧\n\nMiniMax H3 Max image-to-video and text-to-video just landed across the base:0x315b8c9a1123c10228d469551033440441b41f0b infrastructure.\n\nFast. Cheap. Incredibly high quality.\n\nSpin that shit. LFG ♻️",
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 6,
+      "views": 202,
+      "snapshotAt": "2026-08-28T01:32:58.034Z"
+    },
+    "approvedAt": "2026-08-28T01:32:58.034Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2093124514284712336",
+    "title": "漫画分镜切入动画片头",
+    "titleEn": "Manga Panels Cut into an Animated Opener",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "黑白漫画墙、彩色角色与粗体标题连续切换，手绘质感和快速排版组成动画开场。 原生视频规格为 15 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Black-and-white manga walls, colored characters, and bold titles switch in sequence, combining drawn texture and rapid typography into an animated opening. Native-video output: 15s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/studio_oneroom/status/2093124514284712336",
+    "sourceLabel": "X 原帖 · @studio_oneroom",
+    "author": "AIスタジオワンルーム（AIアニメ、動画、漫画）",
+    "publishedAt": "2026-08-27T23:52:27.000Z",
+    "addedAt": "2026-08-28T01:32:58.034Z",
+    "mediaUrl": "/media/x-2093124514284712336.mp4",
+    "posterUrl": "/posters/x/2093124514284712336.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "TapNowのMiniMax H3でモーショングラフィックアニメを制作しました。\n\nやっぱりMidjourneyはいいですね。\n雰囲気のある絵が作れて楽しいです。\n\nまだ、研究中ですけどアニメとモーショングラフィックを混ぜたらアニメのオープニング映像とかに良さそうだと思いました。\n\nTapTVに制作過程を公開\n\nhttps://app.tapnow.ai/home/taptv/9/24e94c12-7781-49fa-9ace-0abea325cd16?order=created_at\n\nまぁ制作過程などと言ってもリファレンス画像と制作プロンプトしかないのですが😆\n\n@TapNow_AI \n#TapNow",
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 20,
+      "views": 865,
+      "snapshotAt": "2026-08-28T01:32:58.034Z"
+    },
+    "approvedAt": "2026-08-28T01:32:58.034Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2093122577170592135",
+    "title": "花魁穿行灯笼街巷",
+    "titleEn": "An Oiran Moves Through a Lantern-Lit Street",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "镜头从昏暗花街推进到盛装花魁近景，再回到灯笼与人群，形成夜色中的古风角色展示。 原生视频规格为 23 秒 · 960×544。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "The camera moves from a dim pleasure-quarter street to a close portrait of an elaborately dressed oiran, then back to lanterns and crowds for a period character vignette. Native-video output: 23s · 960×544. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/suizenji98/status/2093122577170592135",
+    "sourceLabel": "X 原帖 · @suizenji98",
+    "author": "どっと",
+    "publishedAt": "2026-08-27T23:44:45.000Z",
+    "addedAt": "2026-08-28T01:32:58.034Z",
+    "mediaUrl": "/media/x-2093122577170592135.mp4",
+    "posterUrl": "/posters/x/2093122577170592135.jpg",
+    "duration": 23,
+    "aspectRatio": "landscape",
+    "resolution": "960×544",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "花魁\n#MiniMaxH3",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 9,
+      "snapshotAt": "2026-08-28T01:32:58.034Z"
+    },
+    "approvedAt": "2026-08-28T01:32:58.034Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2093119842534801746",
+    "title": "秋日穿搭变成杂志广告",
+    "titleEn": "An Autumn Outfit Becomes a Magazine Ad",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "枫叶、咖啡和棕色穿搭在杂志版式间切换，以暖色静物和人物卡完成秋季时尚短片。 原生视频规格为 15 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Maple leaves, coffee, and a brown outfit move through magazine layouts, combining warm still life and character cards into an autumn fashion spot. Native-video output: 15s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/kik0ai1jikake/status/2093119842534801746",
+    "sourceLabel": "X 原帖 · @kik0ai1jikake",
+    "author": "あぁく",
+    "publishedAt": "2026-08-27T23:33:53.000Z",
+    "addedAt": "2026-08-28T01:32:58.034Z",
+    "mediaUrl": "/media/x-2093119842534801746.mp4",
+    "posterUrl": "/posters/x/2093119842534801746.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "广告视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "UGC & Advertising",
+    "styles": [
+      "Advertising"
+    ],
+    "scenes": [
+      "Product Advertising"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "H3色々試した\n#chatgpt #MinimaxH3",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 2,
+      "views": 359,
+      "snapshotAt": "2026-08-28T01:32:58.034Z"
+    },
+    "approvedAt": "2026-08-28T01:32:58.034Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2093119206581809545",
+    "title": "粉发乐队在白色影棚演奏",
+    "titleEn": "A Pink-Haired Band Performs in a White Studio",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "同一粉发角色分饰吉他手与鼓手，乐器动作、演唱口型和白色影棚镜头组成短乐队表演。 原生视频规格为 15 秒 · 1260×720。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "The same pink-haired character appears as guitarists and a drummer, combining instrument motion, singing, and a white studio into a short band performance. Native-video output: 15s · 1260×720. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/mari_69_pink/status/2093119206581809545",
+    "sourceLabel": "X 原帖 · @mari_69_pink",
+    "author": "山中 まり",
+    "publishedAt": "2026-08-27T23:31:21.000Z",
+    "addedAt": "2026-08-28T01:32:58.034Z",
+    "mediaUrl": "/media/x-2093119206581809545.mp4",
+    "posterUrl": "/posters/x/2093119206581809545.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1260×720",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Music Video",
+    "styles": [
+      "Music Video"
+    ],
+    "scenes": [
+      "Music Video"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "H3 Max、試してみた。\n\nこれはすごい！ヤバい！\n(語彙力)\n\nプロンプトも素直に効いて、\n生成音源とのリップシンク、\n楽器の動きも完璧👌\n\n顔の破綻もほぼない！\n\n…AIの進化スピードが早すぎてヤバい…\n\n#H3Max\n#minimaxH3",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 1,
+      "views": 64,
+      "snapshotAt": "2026-08-28T01:32:58.034Z"
+    },
+    "approvedAt": "2026-08-28T01:32:58.034Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2093118957628821666",
+    "title": "橙黑文字在玩具节奏中弹跳",
+    "titleEn": "Orange-and-Black Type Bounces Like a Toy",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "T2VA",
+    "summary": "线条、圆点和日英文字在橙黑配色中聚合、滚动与弹跳，十五秒内完成九段高速动态图形。 原生视频规格为 15 秒 · 1344×768。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "Lines, circles, and Japanese-English type assemble, roll, and bounce in an orange-and-black palette across nine fast motion-graphics beats. Native-video output: 15s · 1344×768. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "【基本】\n・15秒／9ショット／未就学児〜小学校低学年がワクワクする、明るく楽しい超高速モーショングラフィック\n・オフホワイト、インクブラック、高彩度オレンジのみ\n・文字は太く丸みのあるポップな書体。日本語は太いゴシック\n・文字を「おもちゃ」のように弾ませる、転がす、積む、跳ねる、吸い込む\n・表示文字は9種のみ。綴り・大小文字・空白を完全維持。余計な文字、数字、記号、文字化け禁止\n①【みにまっくす えいち3】\n②【もーしょん】\n③【ぐらふぃくす】\n④【のーえでいっと】\n⑤【わんしょっと】\n⑥【コピペで】\n⑦【かんたん】\n⑧【みんみん】\n⑨【minmin】\n\n【SHOTS】\n1｜黒地。大量の線分が四方から「びゅーん！」と中央へ集合。オレンジ円がポンッと大ジャンプして激突。\n2｜00:01。線分がパズルのようにパチパチ結合し【①】完成。黒→白。\n3｜00:02.6。オレンジ文字がカメラへ急接近。画面いっぱいになり、一瞬ピタッと停止。\n4｜00:03.4。Hの縦棒がニョキッと上下へ伸び、画面を3列に分割。列が上下に楽しく高速スクロール。\n5｜00:05.2。3列が「ピタッ！」と停止。【②】が巨大なゴムボールのように跳ね込む。\n6｜00:06.4。黒地。3Dグリッドがジェットコースターのように奥へ走り、【③】が次々増殖。\n7｜00:08。4枚のカラーカードがパッパッと切替。【④】【⑤】【⑥】【⑦】を順番に表示。\n8｜00:10。4カードが渦に吸い込まれ、オレンジの光玉に変化。左右から【⑧】が飛び込みドーン！衝撃波。\n9｜00:12。【⑧】がポンッと着地。その上に【⑨】。中央2行＋オレンジ線。最後は00:13.8〜15.0完全静止。",
+    "promptSourceUrl": "https://x.com/minmin_4410/status/2093118957628821666",
+    "sourceUrl": "https://x.com/minmin_4410/status/2093118957628821666",
+    "sourceLabel": "X 原帖 · @minmin_4410",
+    "author": "minmin みんみん｜変なAI Creator",
+    "publishedAt": "2026-08-27T23:30:22.000Z",
+    "addedAt": "2026-08-28T01:32:58.034Z",
+    "mediaUrl": "/media/x-2093118957628821666.mp4",
+    "posterUrl": "/posters/x/2093118957628821666.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "广告视频",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "UGC & Advertising",
+    "styles": [
+      "Advertising"
+    ],
+    "scenes": [
+      "Product Advertising"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "またワンルームさんの神プロンプトが！！🤩\nプロンプト文をさらに圧縮してテイスト超改変して遊んでみてます✨️\n\n#MiniMaxH3 @Hailuo_AI\nプロンプト⬇️\n【基本】\n・15秒／9ショット／未就学児〜小学校低学年がワクワクする、明るく楽しい超高速モーショングラフィック\n・オフホワイト、インクブラック、高彩度オレンジのみ\n・文字は太く丸みのあるポップな書体。日本語は太いゴシック\n・文字を「おもちゃ」のように弾ませる、転がす、積む、跳ねる、吸い込む\n・表示文字は9種のみ。綴り・大小文字・空白を完全維持。余計な文字、数字、記号、文字化け禁止\n①【みにまっくす えいち3】\n②【もーしょん】\n③【ぐらふぃくす】\n④【のーえでいっと】\n⑤【わんしょっと】\n⑥【コピペで】\n⑦【かんたん】\n⑧【みんみん】\n⑨【minmin】\n\n【SHOTS】\n1｜黒地。大量の線分が四方から「びゅーん！」と中央へ集合。オレンジ円がポンッと大ジャンプして激突。\n2｜00:01。線分がパズルのようにパチパチ結合し【①】完成。黒→白。\n3｜00:02.6。オレンジ文字がカメラへ急接近。画面いっぱいになり、一瞬ピタッと停止。\n4｜00:03.4。Hの縦棒がニョキッと上下へ伸び、画面を3列に分割。列が上下に楽しく高速スクロール。\n5｜00:05.2。3列が「ピタッ！」と停止。【②】が巨大なゴムボールのように跳ね込む。\n6｜00:06.4。黒地。3Dグリッドがジェットコースターのように奥へ走り、【③】が次々増殖。\n7｜00:08。4枚のカラーカードがパッパッと切替。【④】【⑤】【⑥】【⑦】を順番に表示。\n8｜00:10。4カードが渦に吸い込まれ、オレンジの光玉に変化。左右から【⑧】が飛び込みドーン！衝撃波。\n9｜00:12。【⑧】がポンッと着地。その上に【⑨】。中央2行＋オレンジ線。最後は00:13.8〜15.0完全静止。",
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 5,
+      "views": 325,
+      "snapshotAt": "2026-08-28T01:32:58.034Z"
+    },
+    "approvedAt": "2026-08-28T01:32:58.034Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2093116596915192075",
+    "title": "巧克力牛奶完成旋转倒杯广告",
+    "titleEn": "Chocolate Milk Gets a Twist-and-Pour Commercial",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "巧克力牛奶盒旋转进入厨房，饮料倒入玻璃杯并以品牌口号收尾，液体和包装运动连贯。 原生视频规格为 27 秒 · 1280×720。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A chocolate-milk carton spins into a kitchen, pours into a glass, and ends on a branded line with coherent liquid and packaging motion. Native-video output: 27s · 1280×720. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Creatify_AI/status/2093116596915192075",
+    "sourceLabel": "X 原帖 · @Creatify_AI",
+    "author": "Creatify AI",
+    "publishedAt": "2026-08-27T23:20:59.000Z",
+    "addedAt": "2026-08-28T01:32:58.034Z",
+    "mediaUrl": "/media/x-2093116596915192075.mp4",
+    "posterUrl": "/posters/x/2093116596915192075.jpg",
+    "duration": 27,
+    "aspectRatio": "landscape",
+    "resolution": "1280×720",
+    "tags": [
+      "MiniMax H3",
+      "广告视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "UGC & Advertising",
+    "styles": [
+      "Advertising"
+    ],
+    "scenes": [
+      "Product Advertising"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "We made a commercial-grade chocolate milk ad using Hailuo MiniMax H3, generated in Creatify.  \n\nLiquid is the hardest thing in AI video. From the viscosity to the swirl to the pour catching the light. \n\n> Multimodal input: text, image, video, audio together >Character consistency across shots \n>2K resolution \n>5 to 15 second clips  \n\nTwist, pour, and pop.",
+    "engagement": {
+      "replies": 3,
+      "reposts": 2,
+      "likes": 8,
+      "views": 292,
+      "snapshotAt": "2026-08-28T01:32:58.034Z"
+    },
+    "approvedAt": "2026-08-28T01:32:58.034Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2093116428790698074",
+    "title": "书店角色转身穿过姓名排版",
+    "titleEn": "A Bookstore Character Gets a Motion Identity",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "围裙角色在姓名排版、转身动作和多角度展示间切换，把参考角色表扩展为完整身份短片。 原生视频规格为 15 秒 · 864×480。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "An apron-clad character moves through name typography, a turn, and multiple views, extending a reference sheet into a complete motion-identity clip. Native-video output: 15s · 864×480. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/MizukiAMANO1/status/2093116428790698074",
+    "sourceLabel": "X 原帖 · @MizukiAMANO1",
+    "author": "天野水樹@ノクタ民エンジョイ勢",
+    "publishedAt": "2026-08-27T23:20:19.000Z",
+    "addedAt": "2026-08-28T01:32:58.034Z",
+    "mediaUrl": "/media/x-2093116428790698074.mp4",
+    "posterUrl": "/posters/x/2093116428790698074.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "864×480",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "四分割画像の次は、プロンプトをお借りして、MiniMax H3で遊んでみる\n新作で使おうと思っている書店員「貝淵茜子」のカッコイイ動画\n分割画像を作ったときに、レファレンスとして使えるキャラシートも生成したので、それをベースに\nrtx3060環境かつ高速化不使用なので１時間かかったT_T",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 1,
+      "views": 99,
+      "snapshotAt": "2026-08-28T01:32:58.034Z"
+    },
+    "approvedAt": "2026-08-28T01:32:58.034Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2093115527791288580",
+    "title": "雨夜古装对白铺开一分钟故事",
+    "titleEn": "Rainy-Night Period Dialogue Unfolds for a Minute",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "提灯男子与室内女子在雨夜往返对白，竖屏字幕、环境声和口型共同支撑近一分钟古装片段。 原生视频规格为 61 秒 · 768×1344。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A lantern-carrying man and an indoor woman exchange dialogue on a rainy night as vertical subtitles, ambience, and lip sync support a nearly minute-long period scene. Native-video output: 61s · 768×1344. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/TristanLi99/status/2093115527791288580",
+    "sourceLabel": "X 原帖 · @TristanLi99",
+    "author": "Tristan Lee",
+    "publishedAt": "2026-08-27T23:16:44.000Z",
+    "addedAt": "2026-08-28T01:32:58.034Z",
+    "mediaUrl": "/media/x-2093115527791288580.mp4",
+    "posterUrl": "/posters/x/2093115527791288580.jpg",
+    "duration": 61,
+    "aspectRatio": "portrait",
+    "resolution": "768×1344",
+    "tags": [
+      "MiniMax H3",
+      "角色对白",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Character & Dialogue",
+    "styles": [
+      "Dialogue"
+    ],
+    "scenes": [
+      "Dialogue"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "《画皮·雨夜》约61秒字幕版已经完成。全片配音、环境声和口型均由 MiniMax H3 + ComfyUI 原生生成，未使用 QwenTTS。\n\n规格：60.801秒、9:16、768×1344、24fps、H.264、AAC双声道32kHz。已抽帧检查人物连续性、说话时嘴部状态、画皮变化和字幕显示；没有额外使用语音识别逐字转录音轨。\n\n感觉再摸索摸索，可以去作短剧了",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 51,
+      "snapshotAt": "2026-08-28T01:32:58.034Z"
+    },
+    "approvedAt": "2026-08-28T01:32:58.034Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2093114211555770764",
+    "title": "地下车库里的武士肖像",
+    "titleEn": "A Samurai Portrait in an Underground Garage",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "披甲武士站在地下车库，镜头从中景推到面部特写，以写实灯光呈现短促角色肖像。 原生视频规格为 5 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "An armored samurai stands in an underground garage as the camera moves from a medium view into a close portrait under realistic lighting. Native-video output: 5s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/yasisreal/status/2093114211555770764",
+    "sourceLabel": "X 原帖 · @yasisreal",
+    "author": "Cycle",
+    "publishedAt": "2026-08-27T23:11:30.000Z",
+    "addedAt": "2026-08-28T01:32:58.034Z",
+    "mediaUrl": "/media/x-2093114211555770764.mp4",
+    "posterUrl": "/posters/x/2093114211555770764.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3でつくってみたけど\nなぜ地下駐車場なんだ。",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 35,
+      "snapshotAt": "2026-08-28T01:32:58.034Z"
+    },
+    "approvedAt": "2026-08-28T01:32:58.034Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2093113408002429285",
+    "title": "能量饮料罐缠上红蓝光轨",
+    "titleEn": "Light Trails Wrap an Energy-Drink Can",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "饮料罐在黑色影棚中旋转，红蓝光轨环绕包装并以横置产品镜头结束。 原生视频规格为 10 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "An energy-drink can rotates in a black studio as red and blue light trails wrap the package before a horizontal product shot closes the clip. Native-video output: 10s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ksa8Turky/status/2093113408002429285",
+    "sourceLabel": "X 原帖 · @ksa8Turky",
+    "author": "‏تركي",
+    "publishedAt": "2026-08-27T23:08:19.000Z",
+    "addedAt": "2026-08-28T01:32:58.034Z",
+    "mediaUrl": "/media/x-2093113408002429285.mp4",
+    "posterUrl": "/posters/x/2093113408002429285.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "广告视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "UGC & Advertising",
+    "styles": [
+      "Advertising"
+    ],
+    "scenes": [
+      "Product Advertising"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "@higgsfield \n#MiniMaxH3",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 2,
+      "views": 161,
+      "snapshotAt": "2026-08-28T01:32:58.034Z"
+    },
+    "approvedAt": "2026-08-28T01:32:58.034Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2093110975649956226",
+    "title": "光头英雄闯入霓虹动画片头",
+    "titleEn": "A Bald Hero Bursts into a Neon Anime Opener",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "光头角色在霓虹特写、英雄姿态和动能标题间高速切换，形成带音乐感的动作动画片头。 原生视频规格为 15 秒 · 1440×2560。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A bald character cuts rapidly between neon close-ups, heroic poses, and kinetic titles in an action-anime opening with a musical pulse. Native-video output: 15s · 1440×2560. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "مشهد انمي اكشن مدته ١٥ ثانية، يظهر @ Image1 باقوى مقدمة انمي اكشن بطابع بطولي وخيال علمي وقوى خارقة، يظهر كبداية شارة انمي مع اغنية مخصصة له بعنوان Bald Man يظهر فيها كيناتيك تايبوغرافي بطابع قوي وهوك بصري مجنون يجعل المشاهد يراقب المقدمة لاخر لحظة، لقطات من زوايا مختلفة و حركات كاميرا متعددة وفلاش كت سريع يبرز الاكشن و قوة البطل وابرازه بشكل قوي بصريا، الوان فايبرانت ونيون مع قلو ، تتابع مشاهد وسببيه لكل حدث وماتش كت قوي يجذب المشاهد حتى اخر لحظة، تاثيرات بصرية مبهرة ونهاية مرضية تظهر البطل في اقوى حالاته",
+    "promptSourceUrl": "https://x.com/aziz4ai/status/2093110980624499026",
+    "sourceUrl": "https://x.com/aziz4ai/status/2093110975649956226",
+    "sourceLabel": "X 原帖 · @aziz4ai",
+    "author": "AZIZ | AI 🇸🇦",
+    "publishedAt": "2026-08-27T22:58:39.000Z",
+    "addedAt": "2026-08-28T01:32:58.034Z",
+    "mediaUrl": "/media/x-2093110975649956226.mp4",
+    "posterUrl": "/posters/x/2093110975649956226.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "1440×2560",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Direct prompting with only character sheet 😍\n\nI made this short video using #MiniMaxH3 by @Hailuo_AI \n\nLove the capabilities and prompt coherence and understanding even Arabic language for prompting 🚀\n\nThe prompt in Arabic in next comment ⬇️",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 4,
+      "views": 851,
+      "snapshotAt": "2026-08-28T01:32:58.034Z"
+    },
+    "approvedAt": "2026-08-28T01:32:58.034Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2093109176671359184",
+    "title": "纸板剧场解释原子状态变化",
+    "titleEn": "A Cardboard Theater Explains Atomic States",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "纸板科学家与粒子模型演示固体、液体和气体，标签与手写提示把概念转成直观教学短片。 原生视频规格为 43 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A cardboard scientist and particle models demonstrate solids, liquids, and gases, turning the concept into a clear educational film with labels and handwritten cues. Native-video output: 43s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Arkatech/status/2093109176671359184",
+    "sourceLabel": "X 原帖 · @Arkatech",
+    "author": "Arkatech",
+    "publishedAt": "2026-08-27T22:51:30.000Z",
+    "addedAt": "2026-08-28T01:32:58.034Z",
+    "mediaUrl": "/media/x-2093109176671359184.mp4",
+    "posterUrl": "/posters/x/2093109176671359184.jpg",
+    "duration": 43,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Used MiniMax Design explainer flow to make this educational film about atoms....let the series begin🛸 \n#minimaxh3 on #MiniMaxDesign @Hailuo_AI",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 2,
+      "views": 123,
+      "snapshotAt": "2026-08-28T01:32:58.034Z"
+    },
+    "approvedAt": "2026-08-28T01:32:58.034Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2093104167321825301",
+    "title": "动漫角色穿过霓虹几何空间",
+    "titleEn": "An Anime Character Crosses a Neon Geometric Space",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "动漫角色从眼部特写进入发光网格、立方体和圆环空间，竖屏镜头用高速几何转场延续角色设计。 原生视频规格为 15 秒 · 2160×3840。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "An anime character moves from an eye close-up into glowing grids, cubes, and rings as fast geometric transitions preserve the design in a vertical clip. Native-video output: 15s · 2160×3840. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/mugi_AI_Art/status/2093104167321825301",
+    "sourceLabel": "X 原帖 · @mugi_AI_Art",
+    "author": "むぎ@AIアートのセカイ",
+    "publishedAt": "2026-08-27T22:31:36.000Z",
+    "addedAt": "2026-08-28T01:32:58.034Z",
+    "mediaUrl": "/media/x-2093104167321825301.mp4",
+    "posterUrl": "/posters/x/2093104167321825301.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "2160×3840",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Music Video",
+    "styles": [
+      "Music Video"
+    ],
+    "scenes": [
+      "Music Video"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "想像神ちゃん × シネマティック・モーショングラフィック⚡️\n今回はPollo AIの「MiniMax H3」を使って、15秒の映像作品を制作しました！\n細かなショット切り替えや高速カメラワーク、リングやキューブが連動するモーションを詰め込みつつ、想像神ちゃんの表情やデザインもしっかり残せたのが印象的でした。\nテンポの速い映像でも、キャラクターとグラフィックを自然につないでくれるので、短尺作品やMV風の映像にも使いやすそうです。\n現在、Pollo AIではMiniMax H3のUnlimitedキャンペーンが開催中！\n・Proプラン：10日間 Unlimited\n・Ultraプラン：365日間 Unlimited\n生成回数を気にせず、構成やカメラワークを何度も試せるのは嬉しいですね。気になっていた方はぜひチェックしてみてください🙌\n※対象プランやキャンペーンの詳細は公式サイト公式ページをご確認ください。\n@PolloAIJP",
+    "engagement": {
+      "replies": 1,
+      "reposts": 1,
+      "likes": 22,
+      "views": 535,
+      "snapshotAt": "2026-08-28T01:32:58.034Z"
+    },
+    "approvedAt": "2026-08-28T01:32:58.034Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2093103976644493667",
+    "title": "街头骑行对白配上动能字幕",
+    "titleEn": "Street Cycling Dialogue Gets Kinetic Captions",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "两名骑行者边穿过街区边交谈，跟随人物的英文字幕和连续机位让日常对话更有节奏。 原生视频规格为 15 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Two cyclists talk while moving through a neighborhood, with character-following English captions and continuous framing adding rhythm to the exchange. Native-video output: 15s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/hadiprassetyo_/status/2093103976644493667",
+    "sourceLabel": "X 原帖 · @hadiprassetyo_",
+    "author": "Hadi Prasetyo",
+    "publishedAt": "2026-08-27T22:30:50.000Z",
+    "addedAt": "2026-08-28T01:32:58.034Z",
+    "mediaUrl": "/media/x-2093103976644493667.mp4",
+    "posterUrl": "/posters/x/2093103976644493667.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "角色对白",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Character & Dialogue",
+    "styles": [
+      "Dialogue"
+    ],
+    "scenes": [
+      "Dialogue"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Lagi nyoba bikin video AI dengan percakapan yang terasa lebih natural👀\n\nBukan cuma karakter berdiri terus ngomong, tapi tetap gerakan, saling respons, plus kinetic subtitle biar scene-nya lebih hidup.\n\nPelan-pelan makin berasa kayak real footage.\n\nMINIMAX H3 on @Sogni_Protocol",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "views": 94,
+      "snapshotAt": "2026-08-28T01:32:58.034Z"
+    },
+    "approvedAt": "2026-08-28T01:32:58.034Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2093103449223082308",
+    "title": "绿幕前的猫咪轻快伸展",
+    "titleEn": "A Cat Stretches Playfully Against Green",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "浅色猫咪在纯绿色背景前俯身、抬头并摆动尾巴，短镜头集中测试连续身体运动。 原生视频规格为 7 秒 · 512×704。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A pale cat crouches, looks up, and moves its tail against a solid green background in a short continuity test of body motion. Native-video output: 7s · 512×704. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/nyymisfw/status/2093103449223082308",
+    "sourceLabel": "X 原帖 · @nyymisfw",
+    "author": "NyymiSFW",
+    "publishedAt": "2026-08-27T22:28:44.000Z",
+    "addedAt": "2026-08-28T01:32:58.034Z",
+    "mediaUrl": "/media/x-2093103449223082308.mp4",
+    "posterUrl": "/posters/x/2093103449223082308.jpg",
+    "duration": 7,
+    "aspectRatio": "portrait",
+    "resolution": "512×704",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Minimax H3 test",
+    "engagement": {
+      "replies": 2,
+      "reposts": 3,
+      "likes": 6,
+      "views": 167,
+      "snapshotAt": "2026-08-28T01:32:58.034Z"
+    },
+    "approvedAt": "2026-08-28T01:32:58.034Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2093101101298119086",
+    "title": "女仆角色在室内轻轻转身",
+    "titleEn": "A Maid Character Comes to Life Indoors",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "金发女仆角色在室内场景中保持造型并产生细微动作，展示 Apple Silicon 本地生成的短片结果。 原生视频规格为 5 秒 · 960×544。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A blonde maid character retains her design while moving subtly in an interior, showing a short result generated locally on Apple Silicon. Native-video output: 5s · 960×544. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ruku_practice/status/2093101101298119086",
+    "sourceLabel": "X 原帖 · @ruku_practice",
+    "author": "ルク｜ゲームポータル運営＆再起動日記",
+    "publishedAt": "2026-08-27T22:19:25.000Z",
+    "addedAt": "2026-08-28T01:32:58.034Z",
+    "mediaUrl": "/media/x-2093101101298119086.mp4",
+    "posterUrl": "/posters/x/2093101101298119086.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "960×544",
+    "tags": [
+      "MiniMax H3",
+      "本地生成",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation",
+    "styles": [
+      "Technical"
+    ],
+    "scenes": [
+      "Local H3 generation test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "早速、Minimax H3動画生成を128GB Macで試しました。\nローカル mlx-serveを利用することで、時間はかかるけどそこまで破綻なく生成に成功。（自分はよくわかってない）\n昼間に急ぐときはfal、夜にガチャを回しておくときはこちら、ということができそうです。\n詳しいやり方はまたどこかでまとめます。",
+    "engagement": {
+      "replies": 2,
+      "reposts": 0,
+      "likes": 8,
+      "views": 208,
+      "snapshotAt": "2026-08-28T01:32:58.034Z"
+    },
+    "approvedAt": "2026-08-28T01:32:58.034Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
   }
 ]
