@@ -624,6 +624,19 @@ a {
   font-size: 13px;
 }
 
+.empty-state small {
+  max-width: 520px;
+  margin: 0 auto 16px;
+  color: #747970;
+  font-family: var(--mono);
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.empty-state button {
+  justify-self: center;
+}
+
 .templates {
   padding: 120px 0;
   display: grid;
@@ -3412,7 +3425,8 @@ body.intro-open {
   line-height: 0.94;
   letter-spacing: -0.06em;
   text-transform: uppercase;
-  white-space: nowrap;
+  white-space: normal;
+  text-wrap: balance;
 }
 
 .catalog-heading .section-index {
@@ -3509,6 +3523,41 @@ body.intro-open {
   line-height: 1.65;
 }
 
+.update-summary-actions {
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.update-summary-actions a,
+.update-summary-actions button,
+.empty-state button,
+.tutorial-empty button {
+  min-height: 34px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: var(--acid);
+  background: #11140f;
+  border: 1px solid #3d4337;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.04em;
+}
+
+.update-summary-actions a:hover,
+.update-summary-actions button:hover,
+.empty-state button:hover,
+.tutorial-empty button:hover {
+  color: #090a08;
+  background: var(--acid);
+  border-color: var(--acid);
+}
+
 .update-summary-meta {
   display: flex;
   flex-direction: column;
@@ -3573,6 +3622,16 @@ body.intro-open {
   overflow-x: auto;
 }
 
+.added-date-filter-hint {
+  grid-column: 2;
+  padding: 8px 14px;
+  color: #747970;
+  border-top: 1px solid #1e211c;
+  font-family: var(--mono);
+  font-size: 9px;
+  line-height: 1.5;
+}
+
 .added-date-filter button {
   min-height: 58px;
   padding: 0 16px;
@@ -3601,6 +3660,17 @@ body.intro-open {
   background: var(--acid);
 }
 
+.added-date-filter button:disabled {
+  color: #565b52;
+  background: #0b0d0a;
+  cursor: not-allowed;
+}
+
+.added-date-filter button:disabled small {
+  color: #747970;
+  background: #252921;
+}
+
 .added-date-filter button small {
   min-width: 19px;
   height: 19px;
@@ -3614,6 +3684,22 @@ body.intro-open {
 
 .added-date-filter + .primary-filter {
   margin-top: 0;
+}
+
+.update-visibility-sentinel {
+  width: 100%;
+  height: 1px;
+  grid-column: 1 / -1;
+  pointer-events: none;
+}
+
+.update-read-status {
+  min-height: 22px;
+  padding-top: 8px;
+  color: #777d72;
+  font-family: var(--mono);
+  font-size: 9px;
+  text-align: right;
 }
 
 .primary-filter {
@@ -4431,6 +4517,12 @@ body.intro-open {
   color: var(--acid);
   font-family: var(--display);
   font-size: 54px;
+}
+
+.tutorial-empty small {
+  max-width: 520px;
+  text-align: center;
+  line-height: 1.6;
 }
 
 .creators {
@@ -5287,6 +5379,10 @@ footer {
     grid-area: brand;
   }
 
+  .brand-name strong {
+    display: none;
+  }
+
   .brand-icon {
     width: 28px;
     height: 28px;
@@ -5460,6 +5556,11 @@ footer {
 
   .added-date-filter > div {
     grid-template-columns: repeat(5, minmax(138px, 1fr));
+  }
+
+  .added-date-filter-hint {
+    grid-column: 1;
+    padding-inline: 0;
   }
 
   .added-date-filter button:first-child {

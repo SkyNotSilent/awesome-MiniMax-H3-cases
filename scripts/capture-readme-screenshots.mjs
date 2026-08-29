@@ -17,7 +17,10 @@ const configuredBase = process.env.SCREENSHOT_BASE_URL
 const baseUrl = configuredBase || 'http://127.0.0.1:4173'
 const latestCaseAddedAt = Math.max(...cases.map((item) => Date.parse(item.addedAt)))
 const latestGuideAddedAt = Math.max(...guides.map((item) => Date.parse(item.addedAt)))
-const screenshotCurrentBaseline = new Date(Math.max(latestCaseAddedAt, latestGuideAddedAt)).toISOString()
+const screenshotCurrentBaselines = {
+  cases: new Date(latestCaseAddedAt).toISOString(),
+  tutorials: new Date(latestGuideAddedAt).toISOString(),
+}
 
 const wait = (milliseconds) => new Promise((resolveWait) => setTimeout(resolveWait, milliseconds))
 
@@ -35,11 +38,15 @@ async function waitForPreview() {
 }
 
 async function verifyPage(page, path, language, heading) {
-  const response = await page.goto(`${baseUrl}${path}`, { waitUntil: 'networkidle' })
+  const response = await page.goto(`${baseUrl}${path}`, { waitUntil: 'domcontentloaded', timeout: 60_000 })
   if (!response || response.status() !== 200) throw new Error(`${path} returned ${response?.status()}`)
   if ((await page.locator('html').getAttribute('lang')) !== language) throw new Error(`${path} language mismatch`)
   await page.getByRole('heading', { name: heading }).waitFor()
-  if (path === '/' || path === '/en/') await page.waitForTimeout(1800)
+  if (path === '/' || path === '/en/' || path.includes('collection=latest')) {
+    await page.locator('.case-card:not(.case-card-skeleton)').first().waitFor({ timeout: 30_000 })
+    if (path === '/' || path === '/en/') await page.waitForTimeout(1800)
+  }
+  await page.waitForTimeout(350)
   const dimensions = await page.evaluate(() => ({
     viewport: globalThis.innerWidth,
     document: globalThis.document.documentElement.scrollWidth,
@@ -55,7 +62,7 @@ async function dismissIntro(page, label) {
 }
 
 async function focusUpdateSnapshot(page) {
-  const summary = page.locator('.update-summary.has-updates')
+  const summary = page.locator('.update-summary')
   await summary.waitFor()
   await summary.scrollIntoViewIfNeeded()
   await page.waitForTimeout(250)
@@ -148,6 +155,10 @@ function recordConsoleError(prefix, message) {
   browserProblems.push(`${prefix}console: ${text}${location ? ` (${location})` : ''}`)
 }
 
+async function blockRemoteFonts(context) {
+  await context.route(/https:\/\/fonts\.(?:googleapis|gstatic)\.com\/.*/, (route) => route.abort())
+}
+
 try {
   if (!configuredBase) {
     preview = spawn(resolve(root, 'node_modules/.bin/vite'), ['preview', '--host', '127.0.0.1', '--port', '4173'], {
@@ -159,10 +170,12 @@ try {
 
   browser = await chromium.launch({ headless: true })
   const desktop = await browser.newContext({ viewport: { width: 1440, height: 1000 }, deviceScaleFactor: 1 })
-  await desktop.addInitScript((baseline) => {
+  await blockRemoteFonts(desktop)
+  await desktop.addInitScript((baselines) => {
     localStorage.setItem('minimax-h3-language', 'zh')
-    localStorage.setItem('minimax-h3-updates-seen-through-v1', baseline)
-  }, screenshotCurrentBaseline)
+    localStorage.setItem('minimax-h3-cases-seen-through-v2', baselines.cases)
+    localStorage.setItem('minimax-h3-tutorials-seen-through-v2', baselines.tutorials)
+  }, screenshotCurrentBaselines)
   const page = await desktop.newPage()
   page.on('pageerror', (error) => browserProblems.push(`pageerror: ${error.message}`))
   page.on('console', (message) => recordConsoleError('', message))
@@ -213,10 +226,12 @@ try {
   await page.screenshot({ path: resolve(screenshotDir, 'creators-en.png') })
 
   const mobile = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1 })
-  await mobile.addInitScript((baseline) => {
+  await blockRemoteFonts(mobile)
+  await mobile.addInitScript((baselines) => {
     localStorage.setItem('minimax-h3-language', 'zh')
-    localStorage.setItem('minimax-h3-updates-seen-through-v1', baseline)
-  }, screenshotCurrentBaseline)
+    localStorage.setItem('minimax-h3-cases-seen-through-v2', baselines.cases)
+    localStorage.setItem('minimax-h3-tutorials-seen-through-v2', baselines.tutorials)
+  }, screenshotCurrentBaselines)
   const mobilePage = await mobile.newPage()
   mobilePage.on('pageerror', (error) => browserProblems.push(`mobile pageerror: ${error.message}`))
   mobilePage.on('console', (message) => recordConsoleError('mobile ', message))
