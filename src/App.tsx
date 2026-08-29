@@ -997,7 +997,7 @@ function HomePage({
               item={item}
               index={index}
               language={language}
-              onOpen={() => setSelected({ item, video: prepareHostedVideo(item) })}
+              onOpen={(video) => setSelected({ item, video })}
               isFavorite={favorites.has(item.id)}
               onFavorite={() => toggleFavorite(item.id)}
               isNew={updateSession?.caseIds.has(item.id) ?? false}
@@ -1069,13 +1069,22 @@ function CaseCard({
   item: CatalogCase
   index: number
   language: Language
-  onOpen: () => void
+  onOpen: (video: HTMLVideoElement | null) => void
   isFavorite: boolean
   onFavorite: () => void
   isNew: boolean
 }) {
   const t = copy[language].card
   const title = caseTitle(item, language)
+  const preparedVideoRef = useRef<HTMLVideoElement | null>(null)
+  const prepareVideo = () => {
+    if (!preparedVideoRef.current) preparedVideoRef.current = prepareHostedVideo(item)
+  }
+  const openCase = () => {
+    const video = preparedVideoRef.current ?? prepareHostedVideo(item)
+    preparedVideoRef.current = null
+    onOpen(video)
+  }
   const chips = [
     item.styles[0] && {
       key: `style:${item.styles[0]}`,
@@ -1099,7 +1108,16 @@ function CaseCard({
       >
         <Bookmark size={16} fill={isFavorite ? 'currentColor' : 'none'} />
       </button>
-      <button className="media" type="button" onClick={onOpen} aria-label={t.open(title)}>
+      <button
+        className="media"
+        type="button"
+        onPointerDown={prepareVideo}
+        onKeyDown={(event) => {
+          if (event.key === 'Enter' || event.key === ' ') prepareVideo()
+        }}
+        onClick={openCase}
+        aria-label={t.open(title)}
+      >
         <PosterImage item={item} title={t.cover(title)} priority={index < 4} />
         <span className="media-scan" aria-hidden="true" />
         <span className="case-number">{String(index + 1).padStart(2, '0')}</span>
@@ -1912,7 +1930,7 @@ function CreatorDetailPage({ language, creator, cases, tutorialGuides }: { langu
               </div>
             </header>
             <div className="case-grid">
-              {filteredCases.map((item, index) => <CaseCard key={item.id} item={item} index={index} language={language} onOpen={() => setSelected({ item, video: prepareHostedVideo(item) })} isFavorite={favoriteCases.has(item.id)} onFavorite={() => toggleCase(item.id)} isNew={false} />)}
+              {filteredCases.map((item, index) => <CaseCard key={item.id} item={item} index={index} language={language} onOpen={(video) => setSelected({ item, video })} isFavorite={favoriteCases.has(item.id)} onFavorite={() => toggleCase(item.id)} isNew={false} />)}
             </div>
             {filteredCases.length === 0 && <div className="creator-empty"><p>{t.noCases}</p></div>}
           </section>

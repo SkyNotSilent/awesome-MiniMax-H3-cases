@@ -5,7 +5,7 @@ const baseUrl = (process.env.PERF_BASE_URL || 'http://127.0.0.1:4173').replace(/
 const currentBaseline = '9999-12-31T23:59:59.999Z'
 
 async function ready(page, path = '/') {
-  await page.goto(`${baseUrl}${path}`, { waitUntil: 'networkidle' })
+  await page.goto(`${baseUrl}${path}`, { waitUntil: 'networkidle', timeout: 60_000 })
   const skip = page.getByRole('button', { name: /跳过开场|Skip intro/i })
   if (await skip.count()) await skip.click()
   await page.locator('.case-card:not(.case-card-skeleton)').first().waitFor()
@@ -22,9 +22,11 @@ async function checkDesktop(browser) {
       disconnect() {}
     }
     window.__h3PerfClickAt = null
-    document.addEventListener('click', (event) => {
-      if (event.target.closest?.('.case-card .media')) window.__h3PerfClickAt = performance.now()
-    }, true)
+    const recordInteraction = (event) => {
+      if (event.target.closest?.('.case-card .media') && window.__h3PerfClickAt === null) window.__h3PerfClickAt = performance.now()
+    }
+    document.addEventListener('pointerdown', recordInteraction, true)
+    document.addEventListener('click', recordInteraction, true)
   }, currentBaseline)
   const page = await context.newPage()
   const mediaRequests = []
