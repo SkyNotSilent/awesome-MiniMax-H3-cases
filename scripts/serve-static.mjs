@@ -43,8 +43,9 @@ function isPathInside(root, candidate) {
 
 function cacheControl(filePath, statusCode) {
   if (statusCode !== 200) return 'no-store'
-  if (extname(filePath).toLowerCase() === '.html') return 'public, max-age=0, must-revalidate'
+  const extension = extname(filePath).toLowerCase()
   if (/(?:^|[.-])[a-z0-9_-]{8,}\.[^.]+$/i.test(basename(filePath))) return 'public, max-age=31536000, immutable'
+  if (extension === '.html' || extension === '.json') return 'public, max-age=0, s-maxage=60, stale-while-revalidate=300'
   return 'public, max-age=3600'
 }
 
@@ -190,7 +191,7 @@ async function redirectVideo(request, response, videoStore, decodedPath) {
 
   const signedUrl = await videoStore.sign(match[1], request.method)
   response.writeHead(307, {
-    'Cache-Control': 'private, max-age=300',
+    'Cache-Control': 'public, max-age=60, s-maxage=300, stale-while-revalidate=60',
     Location: signedUrl,
     'X-Content-Type-Options': 'nosniff',
   })

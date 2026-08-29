@@ -9,6 +9,7 @@ import { pipeline } from 'node:stream/promises'
 import { HeadObjectCommand, PutObjectCommand, S3Client } from '@aws-sdk/client-s3'
 import { NodeHttpHandler } from '@smithy/node-http-handler'
 import { resolvePublishStagingPath } from './review-paths.mjs'
+import { ensureFaststart } from './video-faststart.mjs'
 
 const root = resolve(import.meta.dirname, '..')
 function argumentValue(name) {
@@ -149,16 +150,18 @@ async function mirror(item) {
       await pipeline(Readable.fromWeb(response.body), createWriteStream(filePath))
     })
   }
-  const fileStats = await stat(filePath)
-  if (fileStats.size < 10_000) throw new Error(`Downloaded file is too small (${fileStats.size} bytes)`)
+  const downloadedStats = await stat(filePath)
+  if (downloadedStats.size < 10_000) throw new Error(`Downloaded file is too small (${downloadedStats.size} bytes)`)
+  const prepared = await ensureFaststart(filePath, tempDirectory)
+  const fileStats = await stat(prepared.path)
   await retry(`Upload ${item.id}`, () => client.send(new PutObjectCommand({
     Bucket: storage.bucket,
     Key: key,
-    Body: createReadStream(filePath),
+    Body: createReadStream(prepared.path),
     ContentLength: fileStats.size,
     ContentType: 'video/mp4',
     CacheControl: 'public, max-age=31536000, immutable',
-    Metadata: { source: item.sourceUrl, caseid: item.id },
+    Metadata: { source: item.sourceUrl, caseid: item.id, faststart: 'true' },
   })))
   await rm(filePath, { force: true })
   return { id: item.id, key, bytes: fileStats.size, state: 'uploaded' }

@@ -10,12 +10,17 @@ All notable public changes are documented here. Release dates use YYYY-MM-DD.
 - Immutable ISO `addedAt` timestamps for every public case and guide, plus publishing and validation safeguards.
 - A bilingual creator discovery module with dynamic video and tutorial leaderboards, creator profiles, local creator bookmarks, and source-linked case/tutorial collections.
 - A private creator radar that bootstraps from published cases, schedules due-author checks, backfills H3 history, and preserves at least half of daily discovery capacity for new authors.
+- A compact runtime catalog, per-case detail files, lazy bilingual search indexes, 48-item static archive pages, and 360px/720px WebP poster derivatives.
+- Repeatable static and Playwright performance budgets for JavaScript, HTML, runtime data, DOM size, progressive loading, search response, media request timing, and mobile overflow.
 
 ### Changed
 
 - Case and tutorial cards now show catalog-added dates and text labels for newly added material; the compatible `collection=latest` view now sorts by `addedAt`.
 - Bilingual README screenshots and documentation now cover the update summary, date filters, URL state, and local-only seen state.
 - Creator counts, public rankings, SEO pages, sitemap entries, README metrics, and `llms.txt` are generated from the same published-data source of truth.
+- The homepage now renders 36 cases initially and appends 24 at a time; case details load independently from immediate hosted playback.
+- Card entrance motion is capped at the first nine cards, and reduced-motion mode keeps every card immediately visible.
+- Static responses and hosted-video redirects now expose Railway CDN-compatible shared-cache headers; new video mirrors must pass faststart validation.
 
 ## [0.2.1] - 2026-08-23
 

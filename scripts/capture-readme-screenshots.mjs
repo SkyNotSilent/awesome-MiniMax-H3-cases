@@ -17,7 +17,7 @@ const configuredBase = process.env.SCREENSHOT_BASE_URL
 const baseUrl = configuredBase || 'http://127.0.0.1:4173'
 const latestCaseAddedAt = Math.max(...cases.map((item) => Date.parse(item.addedAt)))
 const latestGuideAddedAt = Math.max(...guides.map((item) => Date.parse(item.addedAt)))
-const screenshotUpdateBaseline = new Date(Math.min(latestCaseAddedAt, latestGuideAddedAt) - 1).toISOString()
+const screenshotCurrentBaseline = new Date(Math.max(latestCaseAddedAt, latestGuideAddedAt)).toISOString()
 
 const wait = (milliseconds) => new Promise((resolveWait) => setTimeout(resolveWait, milliseconds))
 
@@ -162,23 +162,30 @@ try {
   await desktop.addInitScript((baseline) => {
     localStorage.setItem('minimax-h3-language', 'zh')
     localStorage.setItem('minimax-h3-updates-seen-through-v1', baseline)
-  }, screenshotUpdateBaseline)
+  }, screenshotCurrentBaseline)
   const page = await desktop.newPage()
   page.on('pageerror', (error) => browserProblems.push(`pageerror: ${error.message}`))
   page.on('console', (message) => recordConsoleError('', message))
 
   await verifyPage(page, '/', 'zh-CN', '先看 MiniMax H3 的真实效果。')
   await dismissIntro(page, '跳过开场')
-  await page.getByRole('button', { name: '编辑精选' }).click()
-  if (!(await page.url()).includes('collection=featured')) throw new Error('Collection URL was not persisted')
-  await page.getByRole('button', { name: '全部案例' }).click()
   await focusUpdateSnapshot(page)
   await page.screenshot({ path: resolve(screenshotDir, 'case-library-zh.jpg'), type: 'jpeg', quality: 88 })
+
+  await verifyPage(page, '/?collection=latest', 'zh-CN', '先看 MiniMax H3 的真实效果。')
+  await dismissIntro(page, '跳过开场')
+  await page.getByRole('button', { name: '最新收录' }).waitFor()
+  await page.screenshot({ path: resolve(screenshotDir, 'latest-collection-zh.jpg'), type: 'jpeg', quality: 88 })
 
   await verifyPage(page, '/en/', 'en', 'See what MiniMax H3 actually makes.')
   await dismissIntro(page, 'Skip intro')
   await focusUpdateSnapshot(page)
   await page.screenshot({ path: resolve(screenshotDir, 'case-library-en.jpg'), type: 'jpeg', quality: 88 })
+
+  await verifyPage(page, '/en/?collection=latest', 'en', 'See what MiniMax H3 actually makes.')
+  await dismissIntro(page, 'Skip intro')
+  await page.getByRole('button', { name: 'Latest' }).waitFor()
+  await page.screenshot({ path: resolve(screenshotDir, 'latest-collection-en.jpg'), type: 'jpeg', quality: 88 })
 
   await verifyPage(page, '/tutorials/', 'zh-CN', 'MiniMax H3 教程')
   await page.getByRole('button', { name: '8GB 显存' }).click()
@@ -209,7 +216,7 @@ try {
   await mobile.addInitScript((baseline) => {
     localStorage.setItem('minimax-h3-language', 'zh')
     localStorage.setItem('minimax-h3-updates-seen-through-v1', baseline)
-  }, screenshotUpdateBaseline)
+  }, screenshotCurrentBaseline)
   const mobilePage = await mobile.newPage()
   mobilePage.on('pageerror', (error) => browserProblems.push(`mobile pageerror: ${error.message}`))
   mobilePage.on('console', (message) => recordConsoleError('mobile ', message))

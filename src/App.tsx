@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react'
+import { useCallback, useDeferredValue, useEffect, useLayoutEffect, useMemo, useRef, useState, useTransition, type CSSProperties } from 'react'
 import {
   ArrowUpRight,
   ArrowDownRight,
@@ -25,9 +25,15 @@ import rawProjectStats from '../data/project-stats.json'
 import rawTutorialGuides from '../data/tutorial-guides.json'
 import rawTutorials from '../data/tutorials.json'
 import {
+  loadCaseDetail,
+  loadCatalog,
+  loadCreators,
+  loadSearchIndex,
+  loadTutorialGuides,
+  loadTutorialResources,
+} from './data-client'
+import {
   casePath,
-  casePrompt,
-  caseSummary,
   caseTitle,
   copy,
   creatorPath,
@@ -46,7 +52,7 @@ import {
   type AppPage,
   type Language,
 } from './i18n'
-import type { CreatorCatalog, CreatorProfile, CreatorRankKey, TutorialCategory, TutorialGuide, TutorialHardwareProfile, TutorialResource, VideoCase } from './types'
+import type { CaseDetail, CatalogCase, CatalogPayload, CreatorCatalog, CreatorProfile, CreatorRankKey, SearchRecord, TutorialCategory, TutorialGuide, TutorialHardwareProfile, TutorialResource, VideoCase } from './types'
 import { XPostEmbed } from './XPostEmbed'
 import {
   addedDatePresets,
@@ -59,11 +65,10 @@ import {
   type AddedDatePreset,
 } from './updates'
 
-const cases = rawCases as VideoCase[]
-const creatorCatalog = rawCreators as CreatorCatalog
-const creators = creatorCatalog.creators
-const tutorialResources = rawTutorials as TutorialResource[]
-const tutorialGuides = rawTutorialGuides as TutorialGuide[]
+const testCases = import.meta.env.MODE === 'test' ? rawCases as VideoCase[] : null
+const testCreatorCatalog = import.meta.env.MODE === 'test' ? rawCreators as CreatorCatalog : null
+const testTutorialResources = import.meta.env.MODE === 'test' ? rawTutorials as TutorialResource[] : null
+const testTutorialGuides = import.meta.env.MODE === 'test' ? rawTutorialGuides as TutorialGuide[] : null
 const projectStats = rawProjectStats
 const completePromptCount = projectStats.completePrompts
 const unpublishedPromptCount = projectStats.cases - completePromptCount
@@ -83,22 +88,10 @@ const tutorialCategories: Array<'all' | TutorialCategory> = [
 ]
 const durationRanges = ['ALL', 'UP_TO_5', 'SIX_TO_10', 'ELEVEN_TO_15', 'OVER_15'] as const
 type DurationRange = (typeof durationRanges)[number]
-const allCategories = [...new Set(cases.map((item) => item.category))]
-const allStyles = [...new Set(cases.flatMap((item) => item.styles))]
-const allScenes = [...new Set(cases.flatMap((item) => item.scenes))]
 const favoriteStorageKey = 'minimax-h3-favorite-cases'
 const favoriteCreatorStorageKey = 'minimax-h3-favorite-creators'
 const collectionKeys = ['all', 'featured', 'latest', 'prompt', 'official', 'long', 'favorites'] as const
 type CaseCollection = (typeof collectionKeys)[number]
-const featuredCaseIds = new Set(cases
-  .filter((item) => item.verified && Boolean(item.mediaUrl) && item.promptProvenance !== 'not-published')
-  .slice(0, 24)
-  .map((item) => item.id))
-const latestCaseIds = new Set([...cases]
-  .sort((a, b) => Date.parse(b.addedAt) - Date.parse(a.addedAt))
-  .slice(0, 48)
-  .map((item) => item.id))
-const latestAddedAt = maxAddedAt([...cases, ...tutorialGuides])
 const hardwareProfiles: TutorialHardwareProfile[] = [
   'apple-silicon',
   'vram-8',
@@ -117,7 +110,55 @@ interface UpdateSession {
   storageAvailable: boolean
 }
 
-function createUpdateSession(): UpdateSession {
+function catalogCase(item: VideoCase): CatalogCase {
+  return {
+    id: item.id,
+    title: item.title,
+    titleEn: item.titleEn,
+    mode: item.mode,
+    posterUrl: item.posterUrl,
+    duration: item.duration,
+    category: item.category,
+    styles: item.styles,
+    scenes: item.scenes,
+    tags: item.tags,
+    author: item.author,
+    addedAt: item.addedAt,
+    mediaUrl: item.mediaUrl ?? null,
+    sourceUrl: item.sourceUrl,
+    sourceType: item.sourceType,
+    verified: item.verified,
+    hasPrompt: item.promptProvenance !== 'not-published' && Boolean(item.prompt?.trim()),
+  }
+}
+
+function caseDetail(item: VideoCase): CaseDetail {
+  return {
+    id: item.id,
+    summary: item.summary,
+    summaryEn: item.summaryEn,
+    prompt: item.prompt,
+    ...(item.promptSourceUrl ? { promptSourceUrl: item.promptSourceUrl } : {}),
+    model: item.model,
+    sourceLabel: item.sourceLabel,
+    publishedAt: item.publishedAt,
+    aspectRatio: item.aspectRatio,
+    resolution: item.resolution,
+    promptProvenance: item.promptProvenance,
+  }
+}
+
+const testCatalog: CatalogPayload | null = testCases && testTutorialGuides ? {
+  version: 1,
+  generatedAt: maxAddedAt([...testCases, ...testTutorialGuides]),
+  cases: testCases.map(catalogCase),
+  tutorials: testTutorialGuides.map(({ id, addedAt }) => ({ id, addedAt })),
+} : null
+const testDetails = new Map(testCases?.map((item) => [item.id, caseDetail(item)]) ?? [])
+const emptyCatalogCases: CatalogCase[] = []
+
+function createUpdateSession(cases: readonly CatalogCase[], tutorials: ReadonlyArray<{ id: string; addedAt: string }>): UpdateSession {
+  const latestAddedAt = maxAddedAt([...cases, ...tutorials])
   const params = new URLSearchParams(window.location.search)
   const rawPreset = params.get('added')
   const requestedPreset = parseAddedDatePreset(rawPreset)
@@ -138,7 +179,7 @@ function createUpdateSession(): UpdateSession {
     ? requestedSince
     : storedSince ?? latestAddedAt
   const caseIds = new Set(cases.filter((item) => matchesAddedDate(item.addedAt, 'unseen', since)).map((item) => item.id))
-  const tutorialIds = new Set(tutorialGuides.filter((item) => matchesAddedDate(item.addedAt, 'unseen', since)).map((item) => item.id))
+  const tutorialIds = new Set(tutorials.filter((item) => matchesAddedDate(item.addedAt, 'unseen', since)).map((item) => item.id))
   const hasExplicitFilter = ['collection', 'added', 'since', 'prompt'].some((key) => params.has(key))
   const shouldAutoOpen = storageAvailable && Boolean(storedSince) && !hasExplicitFilter && caseIds.size + tutorialIds.size > 0
   const initialPreset = invalidPreset || invalidSince
@@ -199,25 +240,67 @@ function GitHubMark({ size = 21 }: { size?: number }) {
   )
 }
 
-function HostedVideo({ item, language, title }: { item: VideoCase; language: Language; title: string }) {
+interface OpenedCase {
+  item: CatalogCase
+  video: HTMLVideoElement | null
+}
+
+function prepareHostedVideo(item: CatalogCase) {
+  if (!item.mediaUrl) return null
+  if (import.meta.env.MODE !== 'test') {
+    void fetch(item.mediaUrl, {
+      headers: { Range: 'bytes=0-65535' },
+      mode: 'no-cors',
+    }).catch(() => undefined)
+  }
+  const video = document.createElement('video')
+  video.poster = item.posterUrl
+  video.controls = true
+  video.autoplay = true
+  video.playsInline = true
+  video.preload = 'metadata'
+  video.style.cssText = 'position:fixed;left:-2px;bottom:-2px;width:1px;height:1px;opacity:0;pointer-events:none'
+  document.body.append(video)
+  video.src = item.mediaUrl
+  if (import.meta.env.MODE !== 'test') {
+    video.load()
+    video.play()?.catch(() => undefined)
+  }
+  return video
+}
+
+function HostedVideo({ item, language, title, preparedVideo }: { item: CatalogCase; language: Language; title: string; preparedVideo: HTMLVideoElement | null }) {
   const [state, setState] = useState<'loading' | 'ready' | 'error'>('loading')
+  const [video] = useState(() => preparedVideo ?? prepareHostedVideo(item))
+  const mountRef = useRef<HTMLDivElement | null>(null)
   const loading = language === 'zh' ? '正在加载站内视频…' : 'Loading hosted video…'
   const failed = language === 'zh' ? '视频暂时无法加载' : 'Video is temporarily unavailable'
   const openX = language === 'zh' ? '在 X 打开原帖' : 'Open original post on X'
 
+  useLayoutEffect(() => {
+    if (!video || !mountRef.current) return
+    const loading = () => setState('loading')
+    const ready = () => setState('ready')
+    const failed = () => setState('error')
+    video.addEventListener('loadstart', loading)
+    video.addEventListener('canplay', ready)
+    video.addEventListener('error', failed)
+    video.removeAttribute('style')
+    mountRef.current.prepend(video)
+    if (video.error) failed()
+    else if (video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) ready()
+    if (import.meta.env.MODE !== 'test') video.play()?.catch(() => undefined)
+    return () => {
+      if (import.meta.env.MODE !== 'test') video.pause()
+      video.removeEventListener('loadstart', loading)
+      video.removeEventListener('canplay', ready)
+      video.removeEventListener('error', failed)
+      video.remove()
+    }
+  }, [video])
+
   return (
-    <div className="hosted-video" data-state={state}>
-      <video
-        src={item.mediaUrl || undefined}
-        poster={item.posterUrl}
-        controls
-        autoPlay
-        playsInline
-        preload="metadata"
-        onLoadStart={() => setState('loading')}
-        onCanPlay={() => setState('ready')}
-        onError={() => setState('error')}
-      />
+    <div className="hosted-video" data-state={state} ref={mountRef}>
       {state === 'loading' && (
         <div className="hosted-video-status" role="status" aria-live="polite">
           <span className="hosted-video-spinner" aria-hidden="true" />
@@ -249,13 +332,61 @@ function HostedVideo({ item, language, title }: { item: VideoCase; language: Lan
 
 function App() {
   const [route, setRoute] = useState(initialRoute)
-  const [updateSession] = useState(createUpdateSession)
+  const [catalog, setCatalog] = useState<CatalogPayload | null>(testCatalog)
+  const [catalogError, setCatalogError] = useState(false)
+  const [tutorialGuides, setTutorialGuides] = useState<TutorialGuide[] | null>(testTutorialGuides)
+  const [tutorialResources, setTutorialResources] = useState<TutorialResource[] | null>(testTutorialResources)
+  const [creatorCatalog, setCreatorCatalog] = useState<CreatorCatalog | null>(testCreatorCatalog)
+  const [routeDataError, setRouteDataError] = useState(false)
   const language = route.language
   const t = copy[language]
-  const activeTutorial = route.page === 'tutorial-detail'
+  const reloadCatalog = useCallback(() => {
+    setCatalogError(false)
+    loadCatalog(true).then(setCatalog).catch(() => setCatalogError(true))
+  }, [])
+
+  useEffect(() => {
+    if (catalog) return
+    loadCatalog().then(setCatalog).catch(() => setCatalogError(true))
+  }, [catalog])
+
+  const needsTutorials = route.page === 'tutorials'
+    || route.page === 'tutorial-detail'
+    || route.page === 'tutorial-ecosystem'
+    || route.page === 'creators'
+    || route.page === 'creator-detail'
+  const needsCreators = route.page === 'creators' || route.page === 'creator-detail'
+
+  const reloadRouteData = useCallback(() => {
+    setRouteDataError(false)
+    const requests: Promise<unknown>[] = []
+    if (needsTutorials) {
+      requests.push(loadTutorialGuides(true).then(setTutorialGuides))
+      requests.push(loadTutorialResources(true).then(setTutorialResources))
+    }
+    if (needsCreators) requests.push(loadCreators(true).then(setCreatorCatalog))
+    Promise.all(requests).catch(() => setRouteDataError(true))
+  }, [needsCreators, needsTutorials])
+
+  useEffect(() => {
+    const requests: Promise<unknown>[] = []
+    if (needsTutorials && !tutorialGuides) {
+      requests.push(loadTutorialGuides().then(setTutorialGuides))
+      requests.push(loadTutorialResources().then(setTutorialResources))
+    }
+    if (needsCreators && !creatorCatalog) requests.push(loadCreators().then(setCreatorCatalog))
+    if (requests.length) Promise.all(requests).catch(() => setRouteDataError(true))
+  }, [creatorCatalog, needsCreators, needsTutorials, tutorialGuides])
+
+  const updateSession = useMemo(
+    () => catalog ? createUpdateSession(catalog.cases, catalog.tutorials) : null,
+    [catalog],
+  )
+  const creators = creatorCatalog?.creators ?? []
+  const activeTutorial = route.page === 'tutorial-detail' && tutorialGuides
     ? tutorialGuides.find((item) => item.id === route.tutorialSlug)
     : undefined
-  const activeCreator = route.page === 'creator-detail'
+  const activeCreator = route.page === 'creator-detail' && creatorCatalog
     ? creators.find((item) => item.slug === route.creatorSlug || item.aliases.includes(route.creatorSlug ?? ''))
     : undefined
   const pageDescription = activeTutorial
@@ -312,7 +443,7 @@ function App() {
   }, [])
 
   useEffect(() => {
-    if (!updateSession.storageAvailable || !updateSession.through) return
+    if (!updateSession?.storageAvailable || !updateSession.through) return
     try {
       window.localStorage.setItem(updatesSeenThroughKey, updateSession.through)
     } catch {
@@ -343,17 +474,31 @@ function App() {
     <main id="top">
       <div className="grain" aria-hidden="true" />
       <Header language={language} page={route.page} onLanguageChange={switchLanguage} />
-      {route.page === 'home' && <HomePage language={language} updateSession={updateSession} />}
-      {route.page === 'tutorials' && <TutorialsPage language={language} updateSession={updateSession} />}
-      {route.page === 'tutorial-ecosystem' && <TutorialEcosystemPage language={language} />}
-      {route.page === 'tutorial-detail' && activeTutorial && <TutorialDetailPage language={language} tutorial={activeTutorial} />}
-      {route.page === 'tutorial-detail' && !activeTutorial && <TutorialNotFound language={language} />}
-      {route.page === 'creators' && <CreatorsPage language={language} />}
-      {route.page === 'creator-detail' && activeCreator && <CreatorDetailPage language={language} creator={activeCreator} />}
-      {route.page === 'creator-detail' && !activeCreator && <CreatorNotFound language={language} />}
+      {route.page === 'home' && <HomePage language={language} updateSession={updateSession} catalog={catalog} catalogError={catalogError} onRetryCatalog={reloadCatalog} />}
+      {route.page === 'tutorials' && tutorialGuides && updateSession && <TutorialsPage language={language} updateSession={updateSession} tutorialGuides={tutorialGuides} />}
+      {route.page === 'tutorial-ecosystem' && tutorialGuides && tutorialResources && <TutorialEcosystemPage language={language} tutorialGuides={tutorialGuides} tutorialResources={tutorialResources} />}
+      {route.page === 'tutorial-detail' && activeTutorial && tutorialGuides && tutorialResources && <TutorialDetailPage language={language} tutorial={activeTutorial} tutorialGuides={tutorialGuides} tutorialResources={tutorialResources} />}
+      {route.page === 'tutorial-detail' && tutorialGuides && !activeTutorial && <TutorialNotFound language={language} />}
+      {route.page === 'creators' && creatorCatalog && catalog && tutorialGuides && <CreatorsPage language={language} creatorCatalog={creatorCatalog} cases={catalog.cases} tutorialGuides={tutorialGuides} />}
+      {route.page === 'creator-detail' && activeCreator && catalog && tutorialGuides && <CreatorDetailPage language={language} creator={activeCreator} cases={catalog.cases} tutorialGuides={tutorialGuides} />}
+      {route.page === 'creator-detail' && creatorCatalog && !activeCreator && <CreatorNotFound language={language} />}
+      {route.page !== 'home' && route.page !== 'faq' && ((!catalog && catalogError) || routeDataError) && <ResourceState language={language} failed onRetry={() => { reloadCatalog(); reloadRouteData() }} />}
+      {route.page !== 'home' && route.page !== 'faq' && !routeDataError && (!catalog || (needsTutorials && !tutorialGuides) || (needsCreators && !creatorCatalog)) && <ResourceState language={language} />}
       {route.page === 'faq' && <FaqPage language={language} />}
       <Footer language={language} />
     </main>
+  )
+}
+
+function ResourceState({ language, failed = false, onRetry }: { language: Language; failed?: boolean; onRetry?: () => void }) {
+  return (
+    <section className="resource-state shell" role={failed ? 'alert' : 'status'} aria-live="polite">
+      <span>{failed ? '!' : '…'}</span>
+      <p>{failed
+        ? (language === 'zh' ? '内容加载失败，请重试。' : 'Content failed to load. Please retry.')
+        : (language === 'zh' ? '正在加载内容…' : 'Loading content…')}</p>
+      {failed && onRetry ? <button type="button" onClick={onRetry}>{language === 'zh' ? '重试' : 'Retry'}</button> : null}
+    </section>
   )
 }
 
@@ -581,15 +726,28 @@ function UpdateSummary({ language }: { language: Language }) {
   )
 }
 
-function HomePage({ language, updateSession }: { language: Language; updateSession: UpdateSession }) {
+function HomePage({
+  language,
+  updateSession,
+  catalog,
+  catalogError,
+  onRetryCatalog,
+}: {
+  language: Language
+  updateSession: UpdateSession | null
+  catalog: CatalogPayload | null
+  catalogError: boolean
+  onRetryCatalog: () => void
+}) {
   const t = copy[language]
+  const cases = catalog?.cases ?? emptyCatalogCases
   const [activeDuration, setActiveDuration] = useState<DurationRange>('ALL')
   const [promptOnly, setPromptOnly] = useState(() => new URLSearchParams(window.location.search).get('prompt') === '1')
   const [activeCollection, setActiveCollection] = useState<CaseCollection>(() => {
     const requested = new URLSearchParams(window.location.search).get('collection')
     return collectionKeys.includes(requested as CaseCollection) ? requested as CaseCollection : 'all'
   })
-  const [activeAddedDate, setActiveAddedDate] = useState<AddedDatePreset>(updateSession.initialPreset)
+  const [activeAddedDate, setActiveAddedDate] = useState<AddedDatePreset>(updateSession?.initialPreset ?? 'all')
   const [favorites, setFavorites] = useState<Set<string>>(() => {
     try {
       const saved = JSON.parse(window.localStorage.getItem(favoriteStorageKey) || '[]')
@@ -602,7 +760,54 @@ function HomePage({ language, updateSession }: { language: Language; updateSessi
   const [activeStyle, setActiveStyle] = useState('ALL')
   const [activeScene, setActiveScene] = useState('ALL')
   const [query, setQuery] = useState('')
-  const [selected, setSelected] = useState<VideoCase | null>(null)
+  const deferredQuery = useDeferredValue(query)
+  const [selected, setSelected] = useState<OpenedCase | null>(null)
+  const [visibleCount, setVisibleCount] = useState(36)
+  const [, startTransition] = useTransition()
+  const sentinelRef = useRef<HTMLDivElement | null>(null)
+  const updateInitializedRef = useRef(Boolean(updateSession))
+  const testSearchMap = useMemo(() => {
+    if (!testCases) return null
+    return new Map(testCases.map((item) => [item.id, (language === 'zh'
+      ? [item.title, item.summary, item.prompt, item.author, item.sourceLabel, ...item.tags, item.category, ...item.styles, ...item.scenes]
+      : [item.titleEn, item.summaryEn, item.prompt, item.author, item.category, ...item.styles, ...item.scenes]
+    ).filter(Boolean).join(' ').replace(/\s+/g, ' ').trim().toLocaleLowerCase()]))
+  }, [language])
+  const [searchResource, setSearchResource] = useState<{
+    language: Language
+    state: 'idle' | 'loading' | 'ready' | 'error'
+    records: Map<string, string> | null
+  }>(() => ({ language, state: testSearchMap ? 'ready' : 'idle', records: testSearchMap }))
+  const searchRecords = testSearchMap ?? (searchResource.language === language ? searchResource.records : null)
+  const searchState = testSearchMap ? 'ready' : searchResource.language === language ? searchResource.state : 'idle'
+
+  useEffect(() => {
+    if (!updateSession || updateInitializedRef.current) return
+    updateInitializedRef.current = true
+    startTransition(() => setActiveAddedDate(updateSession.initialPreset))
+  }, [updateSession])
+
+  const enableFullSearch = useCallback((force = false) => {
+    if (!force && (searchState === 'loading' || searchState === 'ready')) return
+    setSearchResource({ language, state: 'loading', records: null })
+    loadSearchIndex(language, force).then((records: SearchRecord[]) => {
+      startTransition(() => {
+        setSearchResource({ language, state: 'ready', records: new Map(records.map((record) => [record.id, record.text])) })
+      })
+    }).catch(() => setSearchResource({ language, state: 'error', records: null }))
+  }, [language, searchState])
+
+  const allCategories = useMemo(() => [...new Set(cases.map((item) => item.category))], [cases])
+  const allStyles = useMemo(() => [...new Set(cases.flatMap((item) => item.styles))], [cases])
+  const allScenes = useMemo(() => [...new Set(cases.flatMap((item) => item.scenes))], [cases])
+  const featuredCaseIds = useMemo(() => new Set(cases
+    .filter((item) => item.verified && Boolean(item.mediaUrl) && item.hasPrompt)
+    .slice(0, 24)
+    .map((item) => item.id)), [cases])
+  const latestCaseIds = useMemo(() => new Set([...cases]
+    .sort((a, b) => Date.parse(b.addedAt) - Date.parse(a.addedAt))
+    .slice(0, 48)
+    .map((item) => item.id)), [cases])
 
   useEffect(() => {
     const url = new URL(window.location.href)
@@ -612,10 +817,10 @@ function HomePage({ language, updateSession }: { language: Language; updateSessi
     else url.searchParams.delete('collection')
     if (activeAddedDate !== 'all') url.searchParams.set('added', activeAddedDate)
     else url.searchParams.delete('added')
-    if (activeAddedDate === 'unseen' && updateSession.since) url.searchParams.set('since', updateSession.since)
+    if (activeAddedDate === 'unseen' && updateSession?.since) url.searchParams.set('since', updateSession.since)
     else url.searchParams.delete('since')
     window.history.replaceState(window.history.state, '', `${url.pathname}${url.search}${url.hash}`)
-  }, [activeAddedDate, activeCollection, promptOnly, updateSession.since])
+  }, [activeAddedDate, activeCollection, promptOnly, updateSession?.since])
 
   const toggleFavorite = (id: string) => {
     setFavorites((current) => {
@@ -632,7 +837,7 @@ function HomePage({ language, updateSession }: { language: Language; updateSessi
   }
 
   const filtered = useMemo(() => {
-    const needle = query.trim().toLowerCase()
+    const needle = deferredQuery.trim().toLocaleLowerCase()
     const matching = cases.filter((item) => {
       const matchesDuration = activeDuration === 'ALL'
         || (activeDuration === 'UP_TO_5' && item.duration <= 5)
@@ -642,24 +847,39 @@ function HomePage({ language, updateSession }: { language: Language; updateSessi
       const matchesCategory = activeCategory === 'ALL' || item.category === activeCategory
       const matchesStyle = activeStyle === 'ALL' || item.styles.includes(activeStyle)
       const matchesScene = activeScene === 'ALL' || item.scenes.includes(activeScene)
-      const prompt = casePrompt(item, language)
-      const matchesPrompt = !promptOnly || (typeof prompt === 'string' && prompt.trim().length > 0)
-      const matchesAdded = matchesAddedDate(item.addedAt, activeAddedDate, updateSession.since)
+      const matchesPrompt = !promptOnly || item.hasPrompt
+      const matchesAdded = matchesAddedDate(item.addedAt, activeAddedDate, updateSession?.since ?? null)
       const matchesCollection = activeCollection === 'all'
         || (activeCollection === 'featured' && featuredCaseIds.has(item.id))
         || (activeCollection === 'latest' && latestCaseIds.has(item.id))
-        || (activeCollection === 'prompt' && item.promptProvenance !== 'not-published' && Boolean(item.prompt?.trim()))
+        || (activeCollection === 'prompt' && item.hasPrompt)
         || (activeCollection === 'official' && item.sourceType === 'official')
         || (activeCollection === 'long' && item.duration > 15)
         || (activeCollection === 'favorites' && favorites.has(item.id))
-      const haystack = language === 'zh'
-        ? [item.title, item.summary, prompt, item.author, item.sourceLabel, ...item.tags, item.category, ...item.styles, ...item.scenes]
-        : [item.titleEn, item.summaryEn, prompt, item.author, item.category, ...item.styles, ...item.scenes]
+      const basicHaystack = language === 'zh'
+        ? [item.title, item.author, ...item.tags, item.category, ...item.styles, ...item.scenes]
+        : [item.titleEn, item.author, item.category, ...item.styles, ...item.scenes]
+      const haystack = searchRecords?.get(item.id) ?? basicHaystack.filter(Boolean).join(' ').toLocaleLowerCase()
       return matchesDuration && matchesCategory && matchesStyle && matchesScene && matchesPrompt && matchesCollection && matchesAdded
-        && (!needle || haystack.filter(Boolean).join(' ').toLowerCase().includes(needle))
+        && (!needle || haystack.includes(needle))
     })
     return matching.sort((a, b) => Date.parse(b.addedAt) - Date.parse(a.addedAt))
-  }, [activeAddedDate, activeCategory, activeCollection, activeDuration, activeScene, activeStyle, favorites, language, promptOnly, query, updateSession.since])
+  }, [activeAddedDate, activeCategory, activeCollection, activeDuration, activeScene, activeStyle, cases, deferredQuery, favorites, featuredCaseIds, language, latestCaseIds, promptOnly, searchRecords, updateSession?.since])
+
+  const hasMore = visibleCount < filtered.length
+  const loadMore = useCallback(() => setVisibleCount((current) => Math.min(current + 24, filtered.length)), [filtered.length])
+
+  useEffect(() => {
+    const sentinel = sentinelRef.current
+    if (!sentinel || !hasMore || !('IntersectionObserver' in window)) return
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) loadMore()
+    }, { rootMargin: '1200px 0px' })
+    observer.observe(sentinel)
+    return () => observer.disconnect()
+  }, [hasMore, loadMore])
+
+  const visibleCases = filtered.slice(0, visibleCount)
 
   const advancedCount = [activeCategory, activeStyle, activeScene].filter((value) => value !== 'ALL').length
 
@@ -679,15 +899,22 @@ function HomePage({ language, updateSession }: { language: Language; updateSessi
               <span className="sr-only">{t.catalog.searchLabel}</span>
               <input
                 value={query}
-                onChange={(event) => setQuery(event.target.value)}
+                onChange={(event) => { setQuery(event.target.value); setVisibleCount(36) }}
+                onFocus={() => enableFullSearch()}
                 placeholder={t.catalog.searchPlaceholder}
               />
               {query && (
-                <button type="button" onClick={() => setQuery('')} aria-label={t.catalog.clearSearch}>
+                <button type="button" onClick={() => { setQuery(''); setVisibleCount(36) }} aria-label={t.catalog.clearSearch}>
                   <X size={17} />
                 </button>
               )}
             </label>
+            <div className="search-index-status" aria-live="polite">
+              {searchState === 'loading' ? (language === 'zh' ? '正在启用完整 Prompt 搜索…' : 'Enabling full Prompt search…') : null}
+              {searchState === 'error' ? (
+                <span>{language === 'zh' ? '完整搜索加载失败，当前使用基础搜索。' : 'Full search failed; basic search remains available.'} <button type="button" onClick={() => enableFullSearch(true)}>{language === 'zh' ? '重试' : 'Retry'}</button></span>
+              ) : null}
+            </div>
           </div>
         </div>
 
@@ -696,8 +923,8 @@ function HomePage({ language, updateSession }: { language: Language; updateSessi
         <AddedDateFilter
           language={language}
           value={activeAddedDate}
-          onChange={setActiveAddedDate}
-          unseenCount={updateSession.caseIds.size}
+          onChange={(value) => startTransition(() => { setActiveAddedDate(value); setVisibleCount(36) })}
+          unseenCount={updateSession?.caseIds.size ?? 0}
         />
 
         <div className="primary-filter" aria-label={t.catalog.filterLabel}>
@@ -709,7 +936,7 @@ function HomePage({ language, updateSession }: { language: Language; updateSessi
                   type="button"
                   key={range}
                   className={range === activeDuration ? 'active' : ''}
-                  onClick={() => setActiveDuration(range)}
+                  onClick={() => startTransition(() => { setActiveDuration(range); setVisibleCount(36) })}
                 >
                   <span>{String(index).padStart(2, '0')}</span>{durationLabel(range, language)}
                 </button>
@@ -720,7 +947,7 @@ function HomePage({ language, updateSession }: { language: Language; updateSessi
               className={`prompt-only-toggle${promptOnly ? ' active' : ''}`}
               role="switch"
               aria-checked={promptOnly}
-              onClick={() => setPromptOnly((current) => !current)}
+              onClick={() => startTransition(() => { setPromptOnly((current) => !current); setVisibleCount(36) })}
             >
               <Sparkles size={14} aria-hidden="true" />
               <span>{t.catalog.promptOnly}</span>
@@ -738,7 +965,7 @@ function HomePage({ language, updateSession }: { language: Language; updateSessi
                 key={collection}
                 className={activeCollection === collection ? 'active' : ''}
                 aria-pressed={activeCollection === collection}
-                onClick={() => setActiveCollection(collection)}
+                onClick={() => startTransition(() => { setActiveCollection(collection); setVisibleCount(36) })}
               >
                 {t.catalog.collections[collection]}
                 {collection === 'favorites' && favorites.size > 0 ? <small>{favorites.size}</small> : null}
@@ -753,9 +980,9 @@ function HomePage({ language, updateSession }: { language: Language; updateSessi
             <span>{advancedCount || '—'} <ChevronDown size={14} /></span>
           </summary>
           <div className="filter-panel">
-            <FilterGroup language={language} kind="category" label={t.catalog.category} options={['ALL', ...allCategories]} value={activeCategory} onChange={setActiveCategory} />
-            <FilterGroup language={language} kind="style" label={t.catalog.style} options={['ALL', ...allStyles]} value={activeStyle} onChange={setActiveStyle} />
-            <FilterGroup language={language} kind="scene" label={t.catalog.scene} options={['ALL', ...allScenes]} value={activeScene} onChange={setActiveScene} />
+            <FilterGroup language={language} kind="category" label={t.catalog.category} options={['ALL', ...allCategories]} value={activeCategory} onChange={(value) => startTransition(() => { setActiveCategory(value); setVisibleCount(36) })} />
+            <FilterGroup language={language} kind="style" label={t.catalog.style} options={['ALL', ...allStyles]} value={activeStyle} onChange={(value) => startTransition(() => { setActiveStyle(value); setVisibleCount(36) })} />
+            <FilterGroup language={language} kind="scene" label={t.catalog.scene} options={['ALL', ...allScenes]} value={activeScene} onChange={(value) => startTransition(() => { setActiveScene(value); setVisibleCount(36) })} />
           </div>
         </details>
 
@@ -764,28 +991,39 @@ function HomePage({ language, updateSession }: { language: Language; updateSessi
         </div>
 
         <div className="case-grid">
-          {filtered.map((item, index) => (
+          {visibleCases.map((item, index) => (
             <CaseCard
               key={item.id}
               item={item}
               index={index}
               language={language}
-              onOpen={() => setSelected(item)}
+              onOpen={() => setSelected({ item, video: prepareHostedVideo(item) })}
               isFavorite={favorites.has(item.id)}
               onFavorite={() => toggleFavorite(item.id)}
-              isNew={updateSession.caseIds.has(item.id)}
+              isNew={updateSession?.caseIds.has(item.id) ?? false}
             />
           ))}
+          {!catalog && !catalogError ? Array.from({ length: 12 }, (_, index) => <div className="case-card case-card-skeleton" key={index} aria-hidden="true"><span /></div>) : null}
         </div>
 
-        {filtered.length === 0 && (
+        {catalogError ? (
+          <div className="catalog-load-error" role="alert"><p>{language === 'zh' ? '案例目录加载失败。' : 'The case catalog failed to load.'}</p><button type="button" onClick={onRetryCatalog}>{language === 'zh' ? '重试' : 'Retry'}</button></div>
+        ) : null}
+
+        {hasMore ? (
+          <div className="catalog-pagination" ref={sentinelRef}>
+            <button type="button" onClick={loadMore}>{language === 'zh' ? '加载更多案例' : 'Load more cases'} <span>+24</span></button>
+          </div>
+        ) : null}
+
+        {catalog && filtered.length === 0 && (
           <div className="empty-state">
             <span>{t.catalog.noMatchesEyebrow}</span>
             <p>{t.catalog.noMatches}</p>
           </div>
         )}
       </section>
-      {selected && <CaseDialog item={selected} language={language} onClose={() => setSelected(null)} />}
+      {selected && <CaseDialog item={selected.item} preparedVideo={selected.video} language={language} onClose={() => setSelected(null)} />}
     </>
   )
 }
@@ -828,7 +1066,7 @@ function CaseCard({
   onFavorite,
   isNew,
 }: {
-  item: VideoCase
+  item: CatalogCase
   index: number
   language: Language
   onOpen: () => void
@@ -850,7 +1088,7 @@ function CaseCard({
   ].filter((chip): chip is { key: string; label: string } => Boolean(chip))
 
   return (
-    <article className="case-card" style={{ '--order': index } as React.CSSProperties}>
+    <article className={`case-card${index < 9 ? ' case-card-enter' : ''}`} style={{ '--order': Math.min(index, 8) } as React.CSSProperties}>
       <button
         className={`case-favorite${isFavorite ? ' active' : ''}`}
         type="button"
@@ -862,16 +1100,7 @@ function CaseCard({
         <Bookmark size={16} fill={isFavorite ? 'currentColor' : 'none'} />
       </button>
       <button className="media" type="button" onClick={onOpen} aria-label={t.open(title)}>
-        <img
-          src={item.posterUrl}
-          alt={t.cover(title)}
-          loading="lazy"
-          decoding="async"
-          onError={(event) => {
-            event.currentTarget.onerror = null
-            event.currentTarget.src = '/posters/x-community.svg'
-          }}
-        />
+        <PosterImage item={item} title={t.cover(title)} priority={index < 4} />
         <span className="media-scan" aria-hidden="true" />
         <span className="case-number">{String(index + 1).padStart(2, '0')}</span>
         <span className="duration"><Clock3 size={12} /> {item.duration}s</span>
@@ -900,6 +1129,34 @@ function CaseCard({
         </div>
       </div>
     </article>
+  )
+}
+
+function PosterImage({ item, title, priority = false }: { item: CatalogCase; title: string; priority?: boolean }) {
+  const optimizedBase = item.posterUrl.match(/^\/posters\/(.+)\.(?:jpe?g)$/i)?.[1]
+  return (
+    <picture>
+      {optimizedBase ? (
+        <source
+          type="image/webp"
+          srcSet={`/posters-optimized/${optimizedBase}-360.webp 360w, /posters-optimized/${optimizedBase}-720.webp 720w`}
+          sizes="(max-width: 720px) 100vw, (max-width: 1100px) 50vw, 33vw"
+        />
+      ) : null}
+      <img
+        src={item.posterUrl}
+        alt={title}
+        width="720"
+        height="450"
+        loading={priority ? 'eager' : 'lazy'}
+        fetchPriority={priority ? 'high' : 'auto'}
+        decoding="async"
+        onError={(event) => {
+          event.currentTarget.onerror = null
+          event.currentTarget.src = '/posters/x-community.svg'
+        }}
+      />
+    </picture>
   )
 }
 
@@ -1022,7 +1279,7 @@ function TutorialCardActions({ tutorial, language }: { tutorial: TutorialGuide; 
   )
 }
 
-function TutorialsPage({ language, updateSession }: { language: Language; updateSession: UpdateSession }) {
+function TutorialsPage({ language, updateSession, tutorialGuides }: { language: Language; updateSession: UpdateSession; tutorialGuides: TutorialGuide[] }) {
   const t = copy[language].tutorials
   const [activeCategory, setActiveCategory] = useState<(typeof tutorialCategories)[number]>('all')
   const [activeHardware, setActiveHardware] = useState<'all' | TutorialHardwareProfile>('all')
@@ -1031,7 +1288,7 @@ function TutorialsPage({ language, updateSession }: { language: Language; update
   const foundations = useMemo(() => tutorialGuides
     .filter((item) => item.contentType === 'foundation' && matchesAddedDate(item.addedAt, activeAddedDate, updateSession.since))
     .sort((a, b) => Date.parse(b.addedAt) - Date.parse(a.addedAt)),
-  [activeAddedDate, updateSession.since])
+  [activeAddedDate, tutorialGuides, updateSession.since])
 
   useEffect(() => {
     const url = new URL(window.location.href)
@@ -1063,7 +1320,7 @@ function TutorialsPage({ language, updateSession }: { language: Language; update
       return categoryMatches && hardwareMatches && addedMatches && (!needle || searchable.includes(needle))
     })
       .sort((a, b) => Date.parse(b.addedAt) - Date.parse(a.addedAt))
-  }, [activeAddedDate, activeCategory, activeHardware, language, query, updateSession.since])
+  }, [activeAddedDate, activeCategory, activeHardware, language, query, tutorialGuides, updateSession.since])
 
   const hardwareLabels: Record<'all' | TutorialHardwareProfile, string> = language === 'zh' ? {
     all: '全部硬件',
@@ -1203,7 +1460,7 @@ function TutorialsPage({ language, updateSession }: { language: Language; update
   )
 }
 
-function TutorialDetailPage({ language, tutorial }: { language: Language; tutorial: TutorialGuide }) {
+function TutorialDetailPage({ language, tutorial, tutorialGuides, tutorialResources }: { language: Language; tutorial: TutorialGuide; tutorialGuides: TutorialGuide[]; tutorialResources: TutorialResource[] }) {
   const t = copy[language].tutorials
   const resources = tutorial.relatedResourceIds
     .map((id) => tutorialResources.find((resource) => resource.id === id))
@@ -1289,7 +1546,7 @@ function TutorialDetailPage({ language, tutorial }: { language: Language; tutori
   )
 }
 
-function TutorialEcosystemPage({ language }: { language: Language }) {
+function TutorialEcosystemPage({ language, tutorialGuides, tutorialResources }: { language: Language; tutorialGuides: TutorialGuide[]; tutorialResources: TutorialResource[] }) {
   const t = copy[language].tutorials
   const guidesByResource = new Map<string, TutorialGuide>()
   tutorialGuides
@@ -1387,7 +1644,7 @@ function saveStoredSet(key: string, value: Set<string>) {
   }
 }
 
-function creatorPosters(creator: CreatorProfile) {
+function creatorPosters(creator: CreatorProfile, cases: CatalogCase[], tutorialGuides: TutorialGuide[]) {
   const casePosters = creator.representativeCaseIds
     .map((id) => cases.find((item) => item.id === id)?.posterUrl)
     .filter((poster): poster is string => Boolean(poster))
@@ -1407,8 +1664,8 @@ function rankTrend(creator: CreatorProfile, rankKey: CreatorRankKey, language: L
   return { label: t.rankSame, direction: 'same' }
 }
 
-function CreatorMosaic({ creator }: { creator: CreatorProfile }) {
-  const posters = creatorPosters(creator)
+function CreatorMosaic({ creator, cases, tutorialGuides }: { creator: CreatorProfile; cases: CatalogCase[]; tutorialGuides: TutorialGuide[] }) {
+  const posters = creatorPosters(creator, cases, tutorialGuides)
   return (
     <div className={`creator-mosaic count-${posters.length}`} aria-hidden="true">
       {posters.map((poster, index) => (
@@ -1435,6 +1692,8 @@ function CreatorCard({
   language,
   saved,
   onToggleSave,
+  cases,
+  tutorialGuides,
   compact = false,
 }: {
   creator: CreatorProfile
@@ -1442,6 +1701,8 @@ function CreatorCard({
   language: Language
   saved: boolean
   onToggleSave: () => void
+  cases: CatalogCase[]
+  tutorialGuides: TutorialGuide[]
   compact?: boolean
 }) {
   const t = copy[language].creators
@@ -1450,7 +1711,7 @@ function CreatorCard({
   return (
     <article className={`creator-card${compact ? ' is-podium' : ''}`}>
       <a className="creator-card-visual" href={creatorPath(language, creator.slug)} aria-label={`${t.openProfile}: ${creator.displayName}`}>
-        <CreatorMosaic creator={creator} />
+        <CreatorMosaic creator={creator} cases={cases} tutorialGuides={tutorialGuides} />
         <strong>{rank ? `#${String(rank).padStart(2, '0')}` : '—'}</strong>
         <span className={`creator-rank-trend is-${trend.direction}`}>
           {trend.direction === 'up' ? <TrendUp size={13} /> : trend.direction === 'down' ? <ArrowDownRight size={13} /> : null}
@@ -1487,8 +1748,9 @@ function CreatorCard({
   )
 }
 
-function CreatorsPage({ language }: { language: Language }) {
+function CreatorsPage({ language, creatorCatalog, cases, tutorialGuides }: { language: Language; creatorCatalog: CreatorCatalog; cases: CatalogCase[]; tutorialGuides: TutorialGuide[] }) {
   const t = copy[language].creators
+  const creators = creatorCatalog.creators
   const [view, setView] = useState<'video' | 'tutorial' | 'saved'>('video')
   const [rankKey, setRankKey] = useState<CreatorRankKey>('overall')
   const [savedCreators, setSavedCreators] = useState(() => loadStoredSet(favoriteCreatorStorageKey))
@@ -1518,7 +1780,7 @@ function CreatorsPage({ language }: { language: Language }) {
     return creators
       .filter((creator) => creator.ranks[key])
       .sort((a, b) => (a.ranks[key] ?? 999) - (b.ranks[key] ?? 999))
-  }, [rankKey, savedCreators, view])
+  }, [creators, rankKey, savedCreators, view])
   const activeRankKey: CreatorRankKey = view === 'tutorial' ? 'tutorials' : rankKey
 
   return (
@@ -1539,7 +1801,7 @@ function CreatorsPage({ language }: { language: Language }) {
 
         <section className="creator-podium" aria-labelledby="creator-podium-title">
           <header><span>01</span><h2 id="creator-podium-title">{t.podium}</h2><small>{t.methodology}</small></header>
-          <div>{podium.map((creator) => <CreatorCard key={creator.id} creator={creator} rankKey="overall" language={language} saved={savedCreators.has(creator.id)} onToggleSave={() => toggleSaved(creator.id)} compact />)}</div>
+          <div>{podium.map((creator) => <CreatorCard key={creator.id} creator={creator} rankKey="overall" language={language} saved={savedCreators.has(creator.id)} onToggleSave={() => toggleSaved(creator.id)} cases={cases} tutorialGuides={tutorialGuides} compact />)}</div>
         </section>
 
         <section className="creator-leaderboard" aria-labelledby="creator-leaderboard-title">
@@ -1557,7 +1819,7 @@ function CreatorsPage({ language }: { language: Language }) {
             </div>
           )}
           <div className="creator-grid">
-            {ranked.map((creator) => <CreatorCard key={creator.id} creator={creator} rankKey={activeRankKey} language={language} saved={savedCreators.has(creator.id)} onToggleSave={() => toggleSaved(creator.id)} />)}
+            {ranked.map((creator) => <CreatorCard key={creator.id} creator={creator} rankKey={activeRankKey} language={language} saved={savedCreators.has(creator.id)} onToggleSave={() => toggleSaved(creator.id)} cases={cases} tutorialGuides={tutorialGuides} />)}
           </div>
           {ranked.length === 0 && <div className="creator-empty"><Bookmark size={22} /><p>{t.noSaved}</p></div>}
         </section>
@@ -1566,15 +1828,15 @@ function CreatorsPage({ language }: { language: Language }) {
   )
 }
 
-function CreatorDetailPage({ language, creator }: { language: Language; creator: CreatorProfile }) {
+function CreatorDetailPage({ language, creator, cases, tutorialGuides }: { language: Language; creator: CreatorProfile; cases: CatalogCase[]; tutorialGuides: TutorialGuide[] }) {
   const t = copy[language].creators
   const [savedCreators, setSavedCreators] = useState(() => loadStoredSet(favoriteCreatorStorageKey))
   const [favoriteCases, setFavoriteCases] = useState(() => loadStoredSet(favoriteStorageKey))
   const [promptOnly, setPromptOnly] = useState(() => new URLSearchParams(window.location.search).get('prompt') === '1')
   const [activeDuration, setActiveDuration] = useState<DurationRange>('ALL')
   const [activeCategory, setActiveCategory] = useState('ALL')
-  const [selected, setSelected] = useState<VideoCase | null>(null)
-  const creatorCases = creator.caseIds.map((id) => cases.find((item) => item.id === id)).filter((item): item is VideoCase => Boolean(item))
+  const [selected, setSelected] = useState<OpenedCase | null>(null)
+  const creatorCases = creator.caseIds.map((id) => cases.find((item) => item.id === id)).filter((item): item is CatalogCase => Boolean(item))
   const creatorCategories = [...new Set(creatorCases.map((item) => item.category))]
   const creatorTutorials = creator.tutorialIds.map((id) => tutorialGuides.find((item) => item.id === id)).filter((item): item is TutorialGuide => Boolean(item))
   const saved = savedCreators.has(creator.id)
@@ -1593,7 +1855,7 @@ function CreatorDetailPage({ language, creator }: { language: Language; creator:
       || (activeDuration === 'ELEVEN_TO_15' && item.duration > 10 && item.duration <= 15)
       || (activeDuration === 'OVER_15' && item.duration > 15)
     const categoryMatches = activeCategory === 'ALL' || item.category === activeCategory
-    return durationMatches && categoryMatches && (!promptOnly || (item.promptProvenance !== 'not-published' && Boolean(item.prompt?.trim())))
+    return durationMatches && categoryMatches && (!promptOnly || item.hasPrompt)
   })
 
   const toggleCreator = () => {
@@ -1621,7 +1883,7 @@ function CreatorDetailPage({ language, creator }: { language: Language; creator:
       <article className="creator-profile shell">
         <a className="tutorial-back" href={pathFor(language, 'creators')}><ChevronRight size={14} /> {t.back}</a>
         <header className="creator-profile-hero">
-          <div className="creator-profile-visual"><CreatorMosaic creator={creator} /><strong>{primaryRank ? `#${String(primaryRank).padStart(2, '0')}` : '—'}</strong></div>
+          <div className="creator-profile-visual"><CreatorMosaic creator={creator} cases={cases} tutorialGuides={tutorialGuides} /><strong>{primaryRank ? `#${String(primaryRank).padStart(2, '0')}` : '—'}</strong></div>
           <div className="creator-profile-copy">
             <p>@{creator.handle}</p>
             <h1>{creator.displayName}</h1>
@@ -1650,7 +1912,7 @@ function CreatorDetailPage({ language, creator }: { language: Language; creator:
               </div>
             </header>
             <div className="case-grid">
-              {filteredCases.map((item, index) => <CaseCard key={item.id} item={item} index={index} language={language} onOpen={() => setSelected(item)} isFavorite={favoriteCases.has(item.id)} onFavorite={() => toggleCase(item.id)} isNew={false} />)}
+              {filteredCases.map((item, index) => <CaseCard key={item.id} item={item} index={index} language={language} onOpen={() => setSelected({ item, video: prepareHostedVideo(item) })} isFavorite={favoriteCases.has(item.id)} onFavorite={() => toggleCase(item.id)} isNew={false} />)}
             </div>
             {filteredCases.length === 0 && <div className="creator-empty"><p>{t.noCases}</p></div>}
           </section>
@@ -1668,7 +1930,7 @@ function CreatorDetailPage({ language, creator }: { language: Language; creator:
           <a href={`https://github.com/SkyNotSilent/awesome-minimax-h3-cases/issues/new?template=creator-correction.yml&title=${encodeURIComponent(`[Creator profile] @${creator.handle}`)}`} target="_blank" rel="noreferrer">{t.correctionCta} <ArrowUpRight size={14} /></a>
         </footer>
       </article>
-      {selected && <CaseDialog item={selected} language={language} onClose={() => setSelected(null)} />}
+      {selected && <CaseDialog item={selected.item} preparedVideo={selected.video} language={language} onClose={() => setSelected(null)} />}
     </div>
   )
 }
@@ -1703,14 +1965,37 @@ function FaqPage({ language }: { language: Language }) {
   )
 }
 
-function CaseDialog({ item, language, onClose }: { item: VideoCase; language: Language; onClose: () => void }) {
+function CaseDialog({ item, preparedVideo, language, onClose }: { item: CatalogCase; preparedVideo: HTMLVideoElement | null; language: Language; onClose: () => void }) {
   const [copied, setCopied] = useState(false)
+  const [detail, setDetail] = useState<CaseDetail | null>(() => testDetails.get(item.id) ?? null)
+  const [detailState, setDetailState] = useState<'loading' | 'ready' | 'error'>(detail ? 'ready' : 'loading')
   const copyTimerRef = useRef<number | null>(null)
   const mountedRef = useRef(true)
   const t = copy[language].dialog
   const title = caseTitle(item, language)
-  const prompt = casePrompt(item, language)
-  const hasPublishedPrompt = item.promptProvenance !== 'not-published' && Boolean(prompt)
+  const prompt = detail?.prompt ?? null
+  const hasPublishedPrompt = detail?.promptProvenance !== 'not-published' && Boolean(prompt)
+
+  const retryDetail = useCallback(() => {
+    setDetailState('loading')
+    loadCaseDetail(item.id, true).then((value) => {
+      setDetail(value)
+      setDetailState('ready')
+    }).catch(() => setDetailState('error'))
+  }, [item.id])
+
+  useEffect(() => {
+    if (detail) return
+    let active = true
+    loadCaseDetail(item.id).then((value) => {
+      if (!active) return
+      setDetail(value)
+      setDetailState('ready')
+    }).catch(() => {
+      if (active) setDetailState('error')
+    })
+    return () => { active = false }
+  }, [detail, item.id])
 
   useEffect(() => {
     mountedRef.current = true
@@ -1740,44 +2025,41 @@ function CaseDialog({ item, language, onClose }: { item: VideoCase; language: La
         <button className="dialog-close" type="button" onClick={onClose} aria-label={t.close}><X size={19} /></button>
         <div className="dialog-video">
           {item.mediaUrl ? (
-            <HostedVideo item={item} language={language} title={title} />
+            <HostedVideo item={item} language={language} title={title} preparedVideo={preparedVideo} />
           ) : (
             <XPostEmbed sourceUrl={item.sourceUrl} title={title} posterUrl={item.posterUrl} language={language} />
           )}
         </div>
         <div className="dialog-copy">
-          <div className="dialog-eyebrow">
-            <span>{item.mode}</span>
-            <span>{metadataValue(item.resolution, language)}</span>
-            <span>{metadataValue(item.aspectRatio, language)}</span>
-            <span>{item.duration} {t.seconds}</span>
-          </div>
+          <div className="dialog-eyebrow"><span>{item.mode}</span>{detail ? <><span>{metadataValue(detail.resolution, language)}</span><span>{metadataValue(detail.aspectRatio, language)}</span></> : null}<span>{item.duration} {t.seconds}</span></div>
           <h2 id="dialog-title">{title}</h2>
-          <p className="summary">{caseSummary(item, language)}</p>
-          <div className="case-model-line">{modelLabel(item, language)}</div>
-          {hasPublishedPrompt ? (
+          {detailState === 'loading' ? <div className="detail-skeleton" role="status" aria-live="polite"><span /><span /><span /></div> : null}
+          {detailState === 'error' ? <div className="detail-error" role="alert"><p>{language === 'zh' ? '文字详情加载失败，视频仍可继续播放。' : 'Text details failed to load. The video can still play.'}</p><button type="button" onClick={retryDetail}>{language === 'zh' ? '重试详情' : 'Retry details'}</button></div> : null}
+          {detail ? <p className="summary">{language === 'zh' ? detail.summary : detail.summaryEn}</p> : null}
+          {detail ? <div className="case-model-line">{modelLabel(detail, language)}</div> : null}
+          {detail && hasPublishedPrompt ? (
             <div className="published-prompt">
               <div className="prompt-heading">
-                <span>{t.prompt} · {provenanceLabel(item.promptProvenance, language)}</span>
+                <span>{t.prompt} · {provenanceLabel(detail.promptProvenance, language)}</span>
                 <button type="button" onClick={copyPrompt}>
                   {copied ? <Check size={14} /> : <Clipboard size={14} />}{copied ? t.copied : t.copy}
                 </button>
               </div>
               <p className="prompt-notice">
                 {t.promptPublished} · {t.promptNotice}
-                {item.promptSourceUrl ? (
-                  <a href={item.promptSourceUrl} target="_blank" rel="noreferrer">
+                {detail.promptSourceUrl ? (
+                  <a href={detail.promptSourceUrl} target="_blank" rel="noreferrer">
                     {t.promptSource} <ArrowUpRight size={11} />
                   </a>
                 ) : null}
               </p>
               <pre>{prompt}</pre>
             </div>
-          ) : (
+          ) : detail ? (
             <p className="prompt-unavailable">{t.promptUnavailable}</p>
-          )}
+          ) : null}
           <a className="original-link" href={item.sourceUrl} target="_blank" rel="noreferrer">
-            {t.source} · {sourceLabel(item, language)} <ArrowUpRight size={15} />
+            {t.source}{detail ? ` · ${sourceLabel({ ...item, sourceLabel: detail.sourceLabel }, language)}` : ''} <ArrowUpRight size={15} />
           </a>
         </div>
       </section>

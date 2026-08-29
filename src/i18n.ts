@@ -743,7 +743,7 @@ export function taxonomyLabel(value: string, language: Language, kind: TaxonomyK
   return sceneZh[value] ?? value
 }
 
-export function caseTitle(item: VideoCase, language: Language) {
+export function caseTitle(item: Pick<VideoCase, 'title' | 'titleEn'>, language: Language) {
   return language === 'zh' ? item.title : item.titleEn
 }
 
@@ -756,14 +756,14 @@ export function casePrompt(item: VideoCase, language: Language) {
   return item.prompt
 }
 
-export function sourceLabel(item: VideoCase, language: Language) {
+export function sourceLabel(item: Pick<VideoCase, 'sourceLabel' | 'sourceType' | 'sourceUrl' | 'author'>, language: Language) {
   if (language === 'zh') return item.sourceLabel
   if (item.sourceType === 'official') return 'MiniMax official reproduction script'
   const handle = item.sourceUrl.match(/x\.com\/([^/]+)/)?.[1]
   return item.sourceType === 'x' ? `Original X post${handle ? ` · @${handle}` : ''}` : `Community source · ${item.author}`
 }
 
-export function modelLabel(item: VideoCase, language: Language) {
+export function modelLabel(item: Pick<VideoCase, 'model'>, language: Language) {
   if (language === 'zh') return item.model
   return item.model
     .replace('（创作者标注）', ' (creator-identified)')
