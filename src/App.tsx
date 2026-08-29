@@ -765,6 +765,8 @@ function HomePage({
   const [visibleCount, setVisibleCount] = useState(36)
   const [, startTransition] = useTransition()
   const sentinelRef = useRef<HTMLDivElement | null>(null)
+  const filteredLengthRef = useRef(0)
+  const lastAutomaticLoadAtRef = useRef(Number.NEGATIVE_INFINITY)
   const updateInitializedRef = useRef(Boolean(updateSession))
   const testSearchMap = useMemo(() => {
     if (!testCases) return null
@@ -867,17 +869,31 @@ function HomePage({
   }, [activeAddedDate, activeCategory, activeCollection, activeDuration, activeScene, activeStyle, cases, deferredQuery, favorites, featuredCaseIds, language, latestCaseIds, promptOnly, searchRecords, updateSession?.since])
 
   const hasMore = visibleCount < filtered.length
-  const loadMore = useCallback(() => setVisibleCount((current) => Math.min(current + 24, filtered.length)), [filtered.length])
+  useEffect(() => {
+    filteredLengthRef.current = filtered.length
+  }, [filtered.length])
+  const loadMore = useCallback(() => {
+    setVisibleCount((current) => Math.min(current + 24, filteredLengthRef.current))
+  }, [])
+  const loadMoreAutomatically = useCallback(() => {
+    lastAutomaticLoadAtRef.current = performance.now()
+    loadMore()
+  }, [loadMore])
+  const loadMoreManually = useCallback(() => {
+    if (performance.now() - lastAutomaticLoadAtRef.current < 1_500) return
+    loadMore()
+  }, [loadMore])
+  const catalogReady = Boolean(catalog)
 
   useEffect(() => {
     const sentinel = sentinelRef.current
-    if (!sentinel || !hasMore || !('IntersectionObserver' in window)) return
+    if (!sentinel || !catalogReady || !('IntersectionObserver' in window)) return
     const observer = new IntersectionObserver((entries) => {
-      if (entries.some((entry) => entry.isIntersecting)) loadMore()
+      if (entries.some((entry) => entry.isIntersecting)) loadMoreAutomatically()
     }, { rootMargin: '1200px 0px' })
     observer.observe(sentinel)
     return () => observer.disconnect()
-  }, [hasMore, loadMore])
+  }, [catalogReady, loadMoreAutomatically])
 
   const visibleCases = filtered.slice(0, visibleCount)
 
@@ -1010,9 +1026,9 @@ function HomePage({
           <div className="catalog-load-error" role="alert"><p>{language === 'zh' ? '案例目录加载失败。' : 'The case catalog failed to load.'}</p><button type="button" onClick={onRetryCatalog}>{language === 'zh' ? '重试' : 'Retry'}</button></div>
         ) : null}
 
-        {hasMore ? (
-          <div className="catalog-pagination" ref={sentinelRef}>
-            <button type="button" onClick={loadMore}>{language === 'zh' ? '加载更多案例' : 'Load more cases'} <span>+24</span></button>
+        {catalog ? (
+          <div className={`catalog-pagination${hasMore ? '' : ' is-complete'}`} ref={sentinelRef}>
+            {hasMore ? <button type="button" onClick={loadMoreManually}>{language === 'zh' ? '加载更多案例' : 'Load more cases'} <span>+24</span></button> : null}
           </div>
         ) : null}
 
