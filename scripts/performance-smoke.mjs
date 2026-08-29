@@ -104,6 +104,22 @@ async function checkAutomaticLoading(browser) {
   await context.close()
 }
 
+async function checkCombinedLoading(browser) {
+  const context = await browser.newContext({ viewport: { width: 1440, height: 1000 } })
+  await context.addInitScript((baseline) => {
+    localStorage.setItem('minimax-h3-language', 'zh')
+    localStorage.setItem('minimax-h3-updates-seen-through-v1', baseline)
+  }, currentBaseline)
+  const page = await context.newPage()
+  await ready(page)
+  await page.getByRole('button', { name: /加载更多案例/ }).click()
+  await page.waitForTimeout(2_000)
+  const count = await page.locator('.case-card').count()
+  if (count !== 60) throw new Error(`Combined observer/button loading should add exactly 24 cards, received ${count}`)
+  console.log(JSON.stringify({ combinedLoading: { count } }))
+  await context.close()
+}
+
 async function checkMobile(browser) {
   const context = await browser.newContext({ ...devices['iPhone 13'] })
   await context.addInitScript((baseline) => {
@@ -123,6 +139,7 @@ const browser = await chromium.launch({ headless: true })
 try {
   await checkDesktop(browser)
   await checkAutomaticLoading(browser)
+  await checkCombinedLoading(browser)
   await checkMobile(browser)
 } finally {
   await browser.close()
