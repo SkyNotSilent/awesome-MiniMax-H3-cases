@@ -55,14 +55,25 @@ import {
 import type { CaseDetail, CatalogCase, CatalogPayload, CreatorCatalog, CreatorProfile, CreatorRankKey, SearchRecord, TutorialCategory, TutorialGuide, TutorialHardwareProfile, TutorialResource, VideoCase } from './types'
 import { XPostEmbed } from './XPostEmbed'
 import {
+  addedDateHref,
   addedDatePresets,
+  caseUpdatesSeenThroughKey,
+  clampAddedAt,
   formatAddedDate,
+  legacyUpdatesSeenThroughKey,
   matchesAddedDate,
   maxAddedAt,
   parseAddedDatePreset,
   parseSince,
-  updatesSeenThroughKey,
+  parseStoredUpdateSession,
+  sortByAddedAtDescending,
+  tutorialUpdatesSeenThroughKey,
+  updateSessionStorageKey,
+  validUpdateWindow,
   type AddedDatePreset,
+  type StoredUpdateSession,
+  type StoredUpdateWindow,
+  type UpdateChannel,
 } from './updates'
 
 const testCases = import.meta.env.MODE === 'test' ? rawCases as VideoCase[] : null
@@ -101,13 +112,21 @@ const hardwareProfiles: TutorialHardwareProfile[] = [
   'cloud-gpu',
 ]
 
+interface ChannelUpdateSession extends StoredUpdateWindow {
+  ids: Set<string>
+  explicit: boolean
+}
+
 interface UpdateSession {
-  since: string | null
-  through: string
-  caseIds: Set<string>
-  tutorialIds: Set<string>
-  initialPreset: AddedDatePreset
+  cases: ChannelUpdateSession
+  tutorials: ChannelUpdateSession
+  initialCasePreset: AddedDatePreset
+  initialTutorialPreset: AddedDatePreset
+  firstVisit: boolean
+  persistentBaselines: Record<UpdateChannel, string>
+  storedSession: StoredUpdateSession
   storageAvailable: boolean
+  sessionStorageAvailable: boolean
 }
 
 function catalogCase(item: VideoCase): CatalogCase {
@@ -157,38 +176,137 @@ const testCatalog: CatalogPayload | null = testCases && testTutorialGuides ? {
 const testDetails = new Map(testCases?.map((item) => [item.id, caseDetail(item)]) ?? [])
 const emptyCatalogCases: CatalogCase[] = []
 
-function createUpdateSession(cases: readonly CatalogCase[], tutorials: ReadonlyArray<{ id: string; addedAt: string }>): UpdateSession {
-  const latestAddedAt = maxAddedAt([...cases, ...tutorials])
+function createUpdateSession(
+  cases: readonly CatalogCase[],
+  tutorials: ReadonlyArray<{ id: string; addedAt: string }>,
+  routePage: AppPage,
+): UpdateSession {
+  const maxima = {
+    cases: maxAddedAt(cases),
+    tutorials: maxAddedAt(tutorials),
+  }
   const params = new URLSearchParams(window.location.search)
   const rawPreset = params.get('added')
   const requestedPreset = parseAddedDatePreset(rawPreset)
   const invalidPreset = rawPreset !== null && requestedPreset === 'all' && rawPreset !== 'all'
   const rawSince = params.get('since')
   const requestedSince = parseSince(rawSince)
+  const rawThrough = params.get('through')
+  const requestedThrough = parseSince(rawThrough)
   const invalidSince = requestedPreset === 'unseen' && rawSince !== null && requestedSince === null
+  const invalidThrough = requestedPreset === 'unseen' && rawThrough !== null && requestedThrough === null
 
-  let storedSince: string | null = null
   let storageAvailable = true
+  let sessionStorageAvailable = true
+  let legacyBaseline: string | null = null
+  let storedCaseBaseline: string | null = null
+  let storedTutorialBaseline: string | null = null
+  let restoredSession: StoredUpdateSession | null = null
   try {
-    storedSince = parseSince(window.localStorage.getItem(updatesSeenThroughKey))
+    legacyBaseline = parseSince(window.localStorage.getItem(legacyUpdatesSeenThroughKey))
+    storedCaseBaseline = parseSince(window.localStorage.getItem(caseUpdatesSeenThroughKey))
+    storedTutorialBaseline = parseSince(window.localStorage.getItem(tutorialUpdatesSeenThroughKey))
   } catch {
     storageAvailable = false
   }
+  try {
+    restoredSession = parseStoredUpdateSession(window.sessionStorage.getItem(updateSessionStorageKey))
+  } catch {
+    sessionStorageAvailable = false
+  }
 
-  const since = requestedPreset === 'unseen' && requestedSince
-    ? requestedSince
-    : storedSince ?? latestAddedAt
-  const caseIds = new Set(cases.filter((item) => matchesAddedDate(item.addedAt, 'unseen', since)).map((item) => item.id))
-  const tutorialIds = new Set(tutorials.filter((item) => matchesAddedDate(item.addedAt, 'unseen', since)).map((item) => item.id))
-  const hasExplicitFilter = ['collection', 'added', 'since', 'prompt'].some((key) => params.has(key))
-  const shouldAutoOpen = storageAvailable && Boolean(storedSince) && !hasExplicitFilter && caseIds.size + tutorialIds.size > 0
-  const initialPreset = invalidPreset || invalidSince
-    ? 'all'
-    : shouldAutoOpen
-      ? 'unseen'
-      : requestedPreset
+  const hadHistory = Boolean(storedCaseBaseline || storedTutorialBaseline || legacyBaseline)
+  const persistentBaselines = {
+    cases: clampAddedAt(storedCaseBaseline ?? legacyBaseline, maxima.cases) ?? maxima.cases,
+    tutorials: clampAddedAt(storedTutorialBaseline ?? legacyBaseline, maxima.tutorials) ?? maxima.tutorials,
+  }
 
-  return { since, through: latestAddedAt, caseIds, tutorialIds, initialPreset, storageAvailable }
+  const buildWindow = <T extends { id: string; addedAt: string }>(
+    channel: UpdateChannel,
+    items: readonly T[],
+  ): ChannelUpdateSession => {
+    const maximum = maxima[channel]
+    const restored = restoredSession?.[channel]
+      ? validUpdateWindow(restoredSession[channel], maximum)
+      : null
+    const window = restored ?? { since: persistentBaselines[channel], through: maximum }
+    const ids = new Set(items
+      .filter((item) => matchesAddedDate(item.addedAt, 'unseen', window))
+      .map((item) => item.id))
+    return { ...window, ids, explicit: false }
+  }
+
+  let caseWindow = buildWindow('cases', cases)
+  let tutorialWindow = buildWindow('tutorials', tutorials)
+  let firstVisit = restoredSession?.firstVisit ?? !hadHistory
+  if (caseWindow.ids.size + tutorialWindow.ids.size > 0) firstVisit = false
+
+  const currentChannel: UpdateChannel = routePage === 'tutorials' ? 'tutorials' : 'cases'
+  const currentItems = currentChannel === 'cases' ? cases : tutorials
+  const currentMaximum = maxima[currentChannel]
+  const invalidRangeOrder = Boolean(requestedSince && requestedThrough)
+    && Date.parse(requestedThrough!) < Date.parse(requestedSince!)
+  const invalidExplicitWindow = invalidSince || invalidThrough || invalidRangeOrder
+
+  if (requestedPreset === 'unseen' && !invalidExplicitWindow && rawSince !== null && requestedSince) {
+    const since = clampAddedAt(requestedSince, currentMaximum) ?? currentMaximum
+    const through = clampAddedAt(requestedThrough ?? currentMaximum, currentMaximum) ?? currentMaximum
+    const explicitWindow: ChannelUpdateSession = {
+      since,
+      through,
+      ids: new Set(currentItems
+        .filter((item) => matchesAddedDate(item.addedAt, 'unseen', { since, through }))
+        .map((item) => item.id)),
+      explicit: true,
+    }
+    if (currentChannel === 'cases') caseWindow = explicitWindow
+    else tutorialWindow = explicitWindow
+    firstVisit = false
+  }
+
+  const storedSession: StoredUpdateSession = {
+    version: 2,
+    firstVisit,
+    ...(caseWindow.ids.size > 0 && !caseWindow.explicit
+      ? { cases: { since: caseWindow.since, through: caseWindow.through } }
+      : {}),
+    ...(tutorialWindow.ids.size > 0 && !tutorialWindow.explicit
+      ? { tutorials: { since: tutorialWindow.since, through: tutorialWindow.through } }
+      : {}),
+  }
+
+  const hasExplicitHomeFilter = ['collection', 'added', 'since', 'through', 'prompt'].some((key) => params.has(key))
+  const hasExplicitTutorialFilter = ['added', 'since', 'through'].some((key) => params.has(key))
+  const missingPersonalBaseline = requestedPreset === 'unseen'
+    && rawSince === null
+    && (!storageAvailable || firstVisit)
+  const requestedPresetIsValid = !invalidPreset && !invalidExplicitWindow && !missingPersonalBaseline
+  const initialCasePreset = routePage === 'home'
+    ? rawPreset !== null
+      ? requestedPresetIsValid ? requestedPreset : 'all'
+      : storageAvailable && !firstVisit && !hasExplicitHomeFilter && caseWindow.ids.size > 0
+        ? 'unseen'
+        : 'all'
+    : 'all'
+  const initialTutorialPreset = routePage === 'tutorials'
+    ? rawPreset !== null
+      ? requestedPresetIsValid ? requestedPreset : 'all'
+      : storageAvailable && !firstVisit && !hasExplicitTutorialFilter && tutorialWindow.ids.size > 0
+        ? 'unseen'
+        : 'all'
+    : 'all'
+
+  return {
+    cases: caseWindow,
+    tutorials: tutorialWindow,
+    initialCasePreset,
+    initialTutorialPreset,
+    firstVisit,
+    persistentBaselines,
+    storedSession,
+    storageAvailable,
+    sessionStorageAvailable,
+  }
 }
 
 function initialRoute() {
@@ -347,6 +465,7 @@ function App() {
   const [tutorialResources, setTutorialResources] = useState<TutorialResource[] | null>(testTutorialResources)
   const [creatorCatalog, setCreatorCatalog] = useState<CreatorCatalog | null>(testCreatorCatalog)
   const [routeDataError, setRouteDataError] = useState(false)
+  const [acknowledgedChannels, setAcknowledgedChannels] = useState<Set<UpdateChannel>>(new Set())
   const language = route.language
   const t = copy[language]
   const reloadCatalog = useCallback(() => {
@@ -388,8 +507,8 @@ function App() {
   }, [creatorCatalog, needsCreators, needsTutorials, tutorialGuides])
 
   const updateSession = useMemo(
-    () => catalog ? createUpdateSession(catalog.cases, catalog.tutorials) : null,
-    [catalog],
+    () => catalog ? createUpdateSession(catalog.cases, catalog.tutorials, route.page) : null,
+    [catalog, route.page],
   )
   const creators = creatorCatalog?.creators ?? []
   const activeTutorial = route.page === 'tutorial-detail' && tutorialGuides
@@ -452,11 +571,42 @@ function App() {
   }, [])
 
   useEffect(() => {
-    if (!updateSession?.storageAvailable || !updateSession.through) return
+    if (!updateSession) return
+    if (updateSession.storageAvailable) {
+      try {
+        window.localStorage.setItem(caseUpdatesSeenThroughKey, updateSession.persistentBaselines.cases)
+        window.localStorage.setItem(tutorialUpdatesSeenThroughKey, updateSession.persistentBaselines.tutorials)
+      } catch {
+        // Date filters remain usable when local update state cannot be persisted.
+      }
+    }
+    if (updateSession.sessionStorageAvailable) {
+      try {
+        window.sessionStorage.setItem(updateSessionStorageKey, JSON.stringify(updateSession.storedSession))
+      } catch {
+        // The current in-memory snapshot still works when session storage is unavailable.
+      }
+    }
+  }, [updateSession])
+
+  const acknowledgeUpdates = useCallback((channel: UpdateChannel) => {
+    if (!updateSession?.storageAvailable) return false
+    const activeWindow = updateSession[channel]
+    const key = channel === 'cases' ? caseUpdatesSeenThroughKey : tutorialUpdatesSeenThroughKey
     try {
-      window.localStorage.setItem(updatesSeenThroughKey, updateSession.through)
+      const current = parseSince(window.localStorage.getItem(key))
+      if (!current || Date.parse(activeWindow.through) > Date.parse(current)) {
+        window.localStorage.setItem(key, activeWindow.through)
+      }
+      setAcknowledgedChannels((previous) => {
+        if (previous.has(channel)) return previous
+        const next = new Set(previous)
+        next.add(channel)
+        return next
+      })
+      return true
     } catch {
-      // Date filters remain usable when local update state cannot be persisted.
+      return false
     }
   }, [updateSession])
 
@@ -483,8 +633,8 @@ function App() {
     <main id="top">
       <div className="grain" aria-hidden="true" />
       <Header language={language} page={route.page} onLanguageChange={switchLanguage} />
-      {route.page === 'home' && <HomePage language={language} updateSession={updateSession} catalog={catalog} catalogError={catalogError} onRetryCatalog={reloadCatalog} />}
-      {route.page === 'tutorials' && tutorialGuides && updateSession && <TutorialsPage language={language} updateSession={updateSession} tutorialGuides={tutorialGuides} />}
+      {route.page === 'home' && <HomePage language={language} updateSession={updateSession} catalog={catalog} catalogError={catalogError} onRetryCatalog={reloadCatalog} onAcknowledgeUpdates={acknowledgeUpdates} acknowledged={acknowledgedChannels.has('cases')} />}
+      {route.page === 'tutorials' && tutorialGuides && updateSession && <TutorialsPage language={language} updateSession={updateSession} tutorialGuides={tutorialGuides} onAcknowledgeUpdates={acknowledgeUpdates} acknowledged={acknowledgedChannels.has('tutorials')} />}
       {route.page === 'tutorial-ecosystem' && tutorialGuides && tutorialResources && <TutorialEcosystemPage language={language} tutorialGuides={tutorialGuides} tutorialResources={tutorialResources} />}
       {route.page === 'tutorial-detail' && activeTutorial && tutorialGuides && tutorialResources && <TutorialDetailPage language={language} tutorial={activeTutorial} tutorialGuides={tutorialGuides} tutorialResources={tutorialResources} />}
       {route.page === 'tutorial-detail' && tutorialGuides && !activeTutorial && <TutorialNotFound language={language} />}
@@ -573,7 +723,49 @@ function Header({
   )
 }
 
-function IntroSplash({ language }: { language: Language }) {
+function useVisibleAcknowledgement(
+  target: HTMLElement | null,
+  enabled: boolean,
+  acknowledge: () => void,
+) {
+  useEffect(() => {
+    if (!enabled || !target) return
+    let completed = false
+    const commit = () => {
+      if (completed || document.visibilityState !== 'visible') return
+      completed = true
+      acknowledge()
+    }
+
+    const Observer = window.IntersectionObserver
+    if (typeof Observer === 'function') {
+      const observer = new Observer((entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          commit()
+          observer.disconnect()
+        }
+      }, { threshold: 0.1 })
+      observer.observe(target)
+      return () => observer.disconnect()
+    }
+
+    const checkVisibility = () => {
+      const bounds = target.getBoundingClientRect()
+      if (bounds.bottom >= 0 && bounds.top <= window.innerHeight) commit()
+    }
+    checkVisibility()
+    window.addEventListener('scroll', checkVisibility, { passive: true })
+    window.addEventListener('resize', checkVisibility)
+    document.addEventListener('visibilitychange', checkVisibility)
+    return () => {
+      window.removeEventListener('scroll', checkVisibility)
+      window.removeEventListener('resize', checkVisibility)
+      document.removeEventListener('visibilitychange', checkVisibility)
+    }
+  }, [acknowledge, enabled, target])
+}
+
+function IntroSplash({ language, onComplete }: { language: Language; onComplete?: () => void }) {
   const [phase, setPhase] = useState<'visible' | 'leaving' | 'gone'>('visible')
   const t = copy[language].intro
   const introStyle = { '--intro-offset': `-${initialIntroOffset}ms` } as CSSProperties
@@ -607,12 +799,13 @@ function IntroSplash({ language }: { language: Language }) {
   useEffect(() => {
     if (phase === 'gone') {
       document.body.classList.remove('intro-open')
+      onComplete?.()
       return
     }
     if (phase !== 'leaving') return
     const removeTimer = window.setTimeout(() => setPhase('gone'), 500)
     return () => window.clearTimeout(removeTimer)
-  }, [phase])
+  }, [onComplete, phase])
 
   const skip = () => {
     document.body.classList.remove('intro-open')
@@ -683,53 +876,115 @@ function AddedDateFilter({
   value,
   onChange,
   unseenCount,
+  unseenDisabled,
+  unseenHint,
+  idPrefix,
 }: {
   language: Language
   value: AddedDatePreset
   onChange: (value: AddedDatePreset) => void
   unseenCount: number
+  unseenDisabled: boolean
+  unseenHint: string
+  idPrefix: string
 }) {
   const t = copy[language].catalog
+  const hintId = `${idPrefix}-unseen-hint`
   return (
     <div className="added-date-filter" role="group" aria-label={t.addedDateFilterLabel}>
       <span><Clock3 size={13} aria-hidden="true" /> {t.addedDateFilterLabel}</span>
       <div>
-        {addedDatePresets.map((preset) => (
-          <button
-            type="button"
-            key={preset}
-            className={value === preset ? 'active' : ''}
-            aria-pressed={value === preset}
-            onClick={() => onChange(preset)}
-          >
-            {t.addedDatePresets[preset]}
-            {preset === 'unseen' && unseenCount > 0 ? <small>{unseenCount}</small> : null}
-          </button>
-        ))}
+        {addedDatePresets.map((preset) => {
+          const disabled = preset === 'unseen' && unseenDisabled
+          return (
+            <button
+              type="button"
+              key={preset}
+              className={value === preset ? 'active' : ''}
+              aria-pressed={value === preset}
+              aria-describedby={preset === 'unseen' ? hintId : undefined}
+              disabled={disabled}
+              onClick={() => onChange(preset)}
+            >
+              {t.addedDatePresets[preset]}
+              {preset === 'unseen' ? <small>{unseenCount}</small> : null}
+            </button>
+          )
+        })}
       </div>
+      <small className="added-date-filter-hint" id={hintId}>{unseenHint}</small>
     </div>
   )
 }
 
-function UpdateSummary({ language }: { language: Language }) {
+function UpdateSummary({
+  language,
+  updateSession,
+  catalog,
+  onViewDate,
+  onViewLatest,
+}: {
+  language: Language
+  updateSession: UpdateSession
+  catalog: CatalogPayload
+  onViewDate: (preset: AddedDatePreset) => void
+  onViewLatest: () => void
+}) {
   const t = copy[language].catalog
   const latestUpdate = projectStats.latestUpdate
-  if (!latestUpdate || latestUpdate.casesAdded + latestUpdate.promptsAdded + latestUpdate.tutorialsAdded === 0) return null
+  const caseCount = updateSession.cases.ids.size
+  const tutorialCount = updateSession.tutorials.ids.size
+  const hasPersonalUpdates = caseCount + tutorialCount > 0
+  const todayCaseCount = catalog.cases.filter((item) => matchesAddedDate(item.addedAt, 'today')).length
+  const todayTutorialCount = catalog.tutorials.filter((item) => matchesAddedDate(item.addedAt, 'today')).length
+  const latestAddedAt = maxAddedAt([...catalog.cases, ...catalog.tutorials])
+  const status = !updateSession.storageAvailable
+    ? t.upToDateStatus
+    : updateSession.firstVisit
+      ? t.firstVisitStatus
+      : hasPersonalUpdates
+        ? t.updateSummaryStatus
+        : t.upToDateStatus
+  const title = !updateSession.storageAvailable
+    ? t.storageUnavailableTitle
+    : updateSession.firstVisit
+      ? t.firstVisitTitle
+      : hasPersonalUpdates
+        ? t.personalUpdateTitle(caseCount, tutorialCount)
+        : t.upToDateTitle
+  const description = !updateSession.storageAvailable
+    ? t.storageUnavailableDescription
+    : updateSession.firstVisit
+      ? t.firstVisitDescription
+      : hasPersonalUpdates
+        ? t.personalUpdateDescription
+        : t.upToDateDescription
 
   return (
-    <section className="update-summary has-updates" aria-live="polite">
+    <section className={`update-summary${hasPersonalUpdates ? ' has-updates' : ' is-current'}`} aria-live="polite">
       <div className="update-summary-index">
         <span>{t.updateSummaryIndex}</span>
-        <strong>{t.updateSummaryStatus}</strong>
+        <strong>{status}</strong>
       </div>
       <div className="update-summary-copy">
-        <h2>{t.updateSummaryTitle(latestUpdate.casesAdded, latestUpdate.promptsAdded, latestUpdate.tutorialsAdded)}</h2>
-        <p>{t.updateSummaryDescription}</p>
+        <h2>{title}</h2>
+        <p>{description}</p>
+        <div className="update-summary-actions">
+          {caseCount > 0 ? <button type="button" onClick={() => onViewDate('unseen')}>{t.viewCaseUpdates(caseCount)} <ArrowDownRight size={14} /></button> : null}
+          {tutorialCount > 0 ? (
+            <a href={addedDateHref(pathFor(language, 'tutorials'), 'unseen', updateSession.tutorials)}>
+              {t.viewTutorialUpdates(tutorialCount)} <ArrowUpRight size={14} />
+            </a>
+          ) : null}
+          {!hasPersonalUpdates && todayCaseCount > 0 ? <button type="button" onClick={() => onViewDate('today')}>{t.viewTodayCases(todayCaseCount)} <ArrowDownRight size={14} /></button> : null}
+          {!hasPersonalUpdates && todayCaseCount === 0 ? <button type="button" onClick={onViewLatest}>{t.viewLatestCases} <ArrowDownRight size={14} /></button> : null}
+          {!hasPersonalUpdates && todayTutorialCount > 0 ? <a href={addedDateHref(pathFor(language, 'tutorials'), 'today')}>{language === 'zh' ? `查看今天新增的 ${todayTutorialCount} 篇教程` : `View ${todayTutorialCount} guide${todayTutorialCount === 1 ? '' : 's'} added today`} <ArrowUpRight size={14} /></a> : null}
+        </div>
       </div>
       <div className="update-summary-meta">
         <span>{t.lastAddedLabel}</span>
-        <time dateTime={latestUpdate.publishedAt}>{formatAddedDate(latestUpdate.publishedAt, language)}</time>
-        {latestUpdate.creatorRankingUpdated ? <strong>{t.creatorRankingUpdated}</strong> : null}
+        {latestAddedAt ? <time dateTime={latestAddedAt}>{formatAddedDate(latestAddedAt, language)}</time> : null}
+        {latestUpdate?.creatorRankingUpdated ? <strong>{t.creatorRankingUpdated}</strong> : null}
       </div>
     </section>
   )
@@ -741,12 +996,16 @@ function HomePage({
   catalog,
   catalogError,
   onRetryCatalog,
+  onAcknowledgeUpdates,
+  acknowledged,
 }: {
   language: Language
   updateSession: UpdateSession | null
   catalog: CatalogPayload | null
   catalogError: boolean
   onRetryCatalog: () => void
+  onAcknowledgeUpdates: (channel: UpdateChannel) => boolean
+  acknowledged: boolean
 }) {
   const t = copy[language]
   const cases = catalog?.cases ?? emptyCatalogCases
@@ -756,7 +1015,7 @@ function HomePage({
     const requested = new URLSearchParams(window.location.search).get('collection')
     return collectionKeys.includes(requested as CaseCollection) ? requested as CaseCollection : 'all'
   })
-  const [activeAddedDate, setActiveAddedDate] = useState<AddedDatePreset>(updateSession?.initialPreset ?? 'all')
+  const [activeAddedDate, setActiveAddedDate] = useState<AddedDatePreset>(updateSession?.initialCasePreset ?? 'all')
   const [favorites, setFavorites] = useState<Set<string>>(() => {
     try {
       const saved = JSON.parse(window.localStorage.getItem(favoriteStorageKey) || '[]')
@@ -774,9 +1033,11 @@ function HomePage({
   const [visibleCount, setVisibleCount] = useState(36)
   const [, startTransition] = useTransition()
   const sentinelRef = useRef<HTMLDivElement | null>(null)
+  const [updateVisibilityTarget, setUpdateVisibilityTarget] = useState<HTMLDivElement | null>(null)
   const filteredLengthRef = useRef(0)
   const lastAutomaticLoadAtRef = useRef(Number.NEGATIVE_INFINITY)
   const updateInitializedRef = useRef(Boolean(updateSession))
+  const [introReady, setIntroReady] = useState(false)
   const testSearchMap = useMemo(() => {
     if (!testCases) return null
     return new Map(testCases.map((item) => [item.id, (language === 'zh'
@@ -795,7 +1056,7 @@ function HomePage({
   useEffect(() => {
     if (!updateSession || updateInitializedRef.current) return
     updateInitializedRef.current = true
-    startTransition(() => setActiveAddedDate(updateSession.initialPreset))
+    startTransition(() => setActiveAddedDate(updateSession.initialCasePreset))
   }, [updateSession])
 
   const enableFullSearch = useCallback((force = false) => {
@@ -828,10 +1089,15 @@ function HomePage({
     else url.searchParams.delete('collection')
     if (activeAddedDate !== 'all') url.searchParams.set('added', activeAddedDate)
     else url.searchParams.delete('added')
-    if (activeAddedDate === 'unseen' && updateSession?.since) url.searchParams.set('since', updateSession.since)
-    else url.searchParams.delete('since')
+    if (activeAddedDate === 'unseen' && updateSession?.cases.since) {
+      url.searchParams.set('since', updateSession.cases.since)
+      url.searchParams.set('through', updateSession.cases.through)
+    } else {
+      url.searchParams.delete('since')
+      url.searchParams.delete('through')
+    }
     window.history.replaceState(window.history.state, '', `${url.pathname}${url.search}${url.hash}`)
-  }, [activeAddedDate, activeCollection, promptOnly, updateSession?.since])
+  }, [activeAddedDate, activeCollection, promptOnly, updateSession?.cases.since, updateSession?.cases.through])
 
   const toggleFavorite = (id: string) => {
     setFavorites((current) => {
@@ -859,7 +1125,7 @@ function HomePage({
       const matchesStyle = activeStyle === 'ALL' || item.styles.includes(activeStyle)
       const matchesScene = activeScene === 'ALL' || item.scenes.includes(activeScene)
       const matchesPrompt = !promptOnly || item.hasPrompt
-      const matchesAdded = matchesAddedDate(item.addedAt, activeAddedDate, updateSession?.since ?? null)
+      const matchesAdded = matchesAddedDate(item.addedAt, activeAddedDate, updateSession?.cases)
       const matchesCollection = activeCollection === 'all'
         || (activeCollection === 'featured' && featuredCaseIds.has(item.id))
         || (activeCollection === 'latest' && latestCaseIds.has(item.id))
@@ -874,8 +1140,8 @@ function HomePage({
       return matchesDuration && matchesCategory && matchesStyle && matchesScene && matchesPrompt && matchesCollection && matchesAdded
         && (!needle || haystack.includes(needle))
     })
-    return matching.sort((a, b) => Date.parse(b.addedAt) - Date.parse(a.addedAt))
-  }, [activeAddedDate, activeCategory, activeCollection, activeDuration, activeScene, activeStyle, cases, deferredQuery, favorites, featuredCaseIds, language, latestCaseIds, promptOnly, searchRecords, updateSession?.since])
+    return sortByAddedAtDescending(matching)
+  }, [activeAddedDate, activeCategory, activeCollection, activeDuration, activeScene, activeStyle, cases, deferredQuery, favorites, featuredCaseIds, language, latestCaseIds, promptOnly, searchRecords, updateSession?.cases])
 
   const hasMore = visibleCount < filtered.length
   useEffect(() => {
@@ -896,8 +1162,9 @@ function HomePage({
 
   useEffect(() => {
     const sentinel = sentinelRef.current
-    if (!sentinel || !catalogReady || !('IntersectionObserver' in window)) return
-    const observer = new IntersectionObserver((entries) => {
+    const Observer = window.IntersectionObserver
+    if (!sentinel || !catalogReady || typeof Observer !== 'function') return
+    const observer = new Observer((entries) => {
       if (entries.some((entry) => entry.isIntersecting)) loadMoreAutomatically()
     }, { rootMargin: '1200px 0px' })
     observer.observe(sentinel)
@@ -907,10 +1174,57 @@ function HomePage({
   const visibleCases = filtered.slice(0, visibleCount)
 
   const advancedCount = [activeCategory, activeStyle, activeScene].filter((value) => value !== 'ALL').length
+  const resetCaseFilters = useCallback((preset: AddedDatePreset = 'all') => {
+    startTransition(() => {
+      setQuery('')
+      setActiveDuration('ALL')
+      setPromptOnly(false)
+      setActiveCollection('all')
+      setActiveCategory('ALL')
+      setActiveStyle('ALL')
+      setActiveScene('ALL')
+      setActiveAddedDate(preset)
+      setVisibleCount(36)
+    })
+  }, [])
+  const viewLatestCases = useCallback(() => {
+    resetCaseFilters('all')
+    startTransition(() => setActiveCollection('latest'))
+  }, [resetCaseFilters])
+  const handleIntroComplete = useCallback(() => setIntroReady(true), [])
+  const activeCaseWindow = updateSession?.cases
+  const caseAlreadyAcknowledged = Boolean(activeCaseWindow && updateSession
+    && Date.parse(updateSession.persistentBaselines.cases) >= Date.parse(activeCaseWindow.through))
+  const acknowledgeVisibleCases = useCallback(() => {
+    onAcknowledgeUpdates('cases')
+  }, [onAcknowledgeUpdates])
+  useVisibleAcknowledgement(
+    updateVisibilityTarget,
+    Boolean(
+      introReady
+      && activeAddedDate === 'unseen'
+      && activeCaseWindow
+      && activeCaseWindow.ids.size > 0
+      && filtered.length > 0
+      && !acknowledged
+      && !caseAlreadyAcknowledged
+      && updateSession?.storageAvailable,
+    ),
+    acknowledgeVisibleCases,
+  )
+  const unseenDisabled = !updateSession || (!updateSession.cases.explicit
+    && (!updateSession.storageAvailable || updateSession.cases.ids.size === 0))
+  const unseenHint = !updateSession?.storageAvailable
+    ? t.catalog.storageUnavailableHint
+    : updateSession.firstVisit
+      ? t.catalog.trackingStartsNow
+      : updateSession.cases.ids.size === 0 && !updateSession.cases.explicit
+        ? t.catalog.noUnseenUpdates
+        : t.catalog.personalUpdateDescription
 
   return (
     <>
-      <IntroSplash language={language} />
+      <IntroSplash language={language} onComplete={handleIntroComplete} />
       <section className="catalog shell" id="catalog">
         <div className="catalog-bar">
           <div className="catalog-heading">
@@ -943,13 +1257,24 @@ function HomePage({
           </div>
         </div>
 
-        <UpdateSummary language={language} />
+        {catalog && updateSession ? (
+          <UpdateSummary
+            language={language}
+            updateSession={updateSession}
+            catalog={catalog}
+            onViewDate={resetCaseFilters}
+            onViewLatest={viewLatestCases}
+          />
+        ) : null}
 
         <AddedDateFilter
           language={language}
           value={activeAddedDate}
           onChange={(value) => startTransition(() => { setActiveAddedDate(value); setVisibleCount(36) })}
-          unseenCount={updateSession?.caseIds.size ?? 0}
+          unseenCount={updateSession?.cases.ids.size ?? 0}
+          unseenDisabled={unseenDisabled}
+          unseenHint={unseenHint}
+          idPrefix="case-added-date"
         />
 
         <div className="primary-filter" aria-label={t.catalog.filterLabel}>
@@ -1016,6 +1341,7 @@ function HomePage({
         </div>
 
         <div className="case-grid">
+          {activeAddedDate === 'unseen' && filtered.length > 0 ? <div className="update-visibility-sentinel" ref={setUpdateVisibilityTarget} aria-hidden="true" /> : null}
           {visibleCases.map((item, index) => (
             <CaseCard
               key={item.id}
@@ -1025,7 +1351,7 @@ function HomePage({
               onOpen={(video) => setSelected({ item, video })}
               isFavorite={favorites.has(item.id)}
               onFavorite={() => toggleFavorite(item.id)}
-              isNew={updateSession?.caseIds.has(item.id) ?? false}
+              isNew={updateSession?.cases.ids.has(item.id) ?? false}
             />
           ))}
           {!catalog && !catalogError ? Array.from({ length: 12 }, (_, index) => <div className="case-card case-card-skeleton" key={index} aria-hidden="true"><span /></div>) : null}
@@ -1043,10 +1369,19 @@ function HomePage({
 
         {catalog && filtered.length === 0 && (
           <div className="empty-state">
-            <span>{t.catalog.noMatchesEyebrow}</span>
-            <p>{t.catalog.noMatches}</p>
+            <span>{activeAddedDate === 'unseen' ? t.catalog.addedDatePresets.unseen : t.catalog.noMatchesEyebrow}</span>
+            <p>{activeAddedDate === 'unseen' && (updateSession?.cases.ids.size ?? 0) > 0
+              ? t.catalog.filteredUpdatesTitle
+              : activeAddedDate === 'unseen'
+                ? t.catalog.snapshotEmptyTitle
+                : t.catalog.noMatches}</p>
+            {activeAddedDate === 'unseen' ? <small>{(updateSession?.cases.ids.size ?? 0) > 0 ? t.catalog.filteredUpdatesDescription : t.catalog.snapshotEmptyDescription}</small> : null}
+            {activeAddedDate === 'unseen' ? <button type="button" onClick={() => resetCaseFilters((updateSession?.cases.ids.size ?? 0) > 0 ? 'unseen' : 'all')}>{(updateSession?.cases.ids.size ?? 0) > 0 ? t.catalog.resetFilters : t.catalog.viewAll}</button> : null}
           </div>
         )}
+        <div className="update-read-status" aria-live="polite">
+          {acknowledged && activeAddedDate === 'unseen' ? t.catalog.markedForNextVisit : null}
+        </div>
       </section>
       {selected && <CaseDialog item={selected.item} preparedVideo={selected.video} language={language} onClose={() => setSelected(null)} />}
     </>
@@ -1340,25 +1675,42 @@ function TutorialCardActions({ tutorial, language }: { tutorial: TutorialGuide; 
   )
 }
 
-function TutorialsPage({ language, updateSession, tutorialGuides }: { language: Language; updateSession: UpdateSession; tutorialGuides: TutorialGuide[] }) {
+function TutorialsPage({
+  language,
+  updateSession,
+  tutorialGuides,
+  onAcknowledgeUpdates,
+  acknowledged,
+}: {
+  language: Language
+  updateSession: UpdateSession
+  tutorialGuides: TutorialGuide[]
+  onAcknowledgeUpdates: (channel: UpdateChannel) => boolean
+  acknowledged: boolean
+}) {
   const t = copy[language].tutorials
   const [activeCategory, setActiveCategory] = useState<(typeof tutorialCategories)[number]>('all')
   const [activeHardware, setActiveHardware] = useState<'all' | TutorialHardwareProfile>('all')
-  const [activeAddedDate, setActiveAddedDate] = useState<AddedDatePreset>(updateSession.initialPreset)
+  const [activeAddedDate, setActiveAddedDate] = useState<AddedDatePreset>(updateSession.initialTutorialPreset)
   const [query, setQuery] = useState('')
-  const foundations = useMemo(() => tutorialGuides
-    .filter((item) => item.contentType === 'foundation' && matchesAddedDate(item.addedAt, activeAddedDate, updateSession.since))
-    .sort((a, b) => Date.parse(b.addedAt) - Date.parse(a.addedAt)),
-  [activeAddedDate, tutorialGuides, updateSession.since])
+  const [updateVisibilityTarget, setUpdateVisibilityTarget] = useState<HTMLDivElement | null>(null)
+  const foundations = useMemo(() => sortByAddedAtDescending(tutorialGuides
+    .filter((item) => item.contentType === 'foundation' && matchesAddedDate(item.addedAt, activeAddedDate, updateSession.tutorials))),
+  [activeAddedDate, tutorialGuides, updateSession.tutorials])
 
   useEffect(() => {
     const url = new URL(window.location.href)
     if (activeAddedDate !== 'all') url.searchParams.set('added', activeAddedDate)
     else url.searchParams.delete('added')
-    if (activeAddedDate === 'unseen' && updateSession.since) url.searchParams.set('since', updateSession.since)
-    else url.searchParams.delete('since')
+    if (activeAddedDate === 'unseen') {
+      url.searchParams.set('since', updateSession.tutorials.since)
+      url.searchParams.set('through', updateSession.tutorials.through)
+    } else {
+      url.searchParams.delete('since')
+      url.searchParams.delete('through')
+    }
     window.history.replaceState(window.history.state, '', `${url.pathname}${url.search}${url.hash}`)
-  }, [activeAddedDate, updateSession.since])
+  }, [activeAddedDate, updateSession.tutorials.since, updateSession.tutorials.through])
 
   const community = useMemo(() => {
     const needle = query.trim().toLowerCase()
@@ -1366,7 +1718,7 @@ function TutorialsPage({ language, updateSession, tutorialGuides }: { language: 
       if (item.contentType !== 'community') return false
       const categoryMatches = activeCategory === 'all' || item.category === activeCategory
       const hardwareMatches = activeHardware === 'all' || item.hardwareProfiles?.includes(activeHardware)
-      const addedMatches = matchesAddedDate(item.addedAt, activeAddedDate, updateSession.since)
+      const addedMatches = matchesAddedDate(item.addedAt, activeAddedDate, updateSession.tutorials)
       const searchable = [
         item.title[language],
         item.outcome[language],
@@ -1380,8 +1732,38 @@ function TutorialsPage({ language, updateSession, tutorialGuides }: { language: 
       ].join(' ').toLowerCase()
       return categoryMatches && hardwareMatches && addedMatches && (!needle || searchable.includes(needle))
     })
-      .sort((a, b) => Date.parse(b.addedAt) - Date.parse(a.addedAt))
-  }, [activeAddedDate, activeCategory, activeHardware, language, query, tutorialGuides, updateSession.since])
+  }, [activeAddedDate, activeCategory, activeHardware, language, query, tutorialGuides, updateSession.tutorials])
+  const sortedCommunity = useMemo(() => sortByAddedAtDescending(community), [community])
+
+  const resetTutorialFilters = useCallback((preset: AddedDatePreset = 'all') => {
+    setActiveCategory('all')
+    setActiveHardware('all')
+    setQuery('')
+    setActiveAddedDate(preset)
+  }, [])
+  const tutorialAlreadyAcknowledged = Date.parse(updateSession.persistentBaselines.tutorials) >= Date.parse(updateSession.tutorials.through)
+  const acknowledgeVisibleTutorials = useCallback(() => {
+    onAcknowledgeUpdates('tutorials')
+  }, [onAcknowledgeUpdates])
+  useVisibleAcknowledgement(
+    updateVisibilityTarget,
+    activeAddedDate === 'unseen'
+      && foundations.length + sortedCommunity.length > 0
+      && updateSession.tutorials.ids.size > 0
+      && updateSession.storageAvailable
+      && !acknowledged
+      && !tutorialAlreadyAcknowledged,
+    acknowledgeVisibleTutorials,
+  )
+  const unseenDisabled = !updateSession.tutorials.explicit
+    && (!updateSession.storageAvailable || updateSession.tutorials.ids.size === 0)
+  const unseenHint = !updateSession.storageAvailable
+    ? copy[language].catalog.storageUnavailableHint
+    : updateSession.firstVisit
+      ? copy[language].catalog.trackingStartsNow
+      : updateSession.tutorials.ids.size === 0 && !updateSession.tutorials.explicit
+        ? copy[language].catalog.noUnseenUpdates
+        : copy[language].catalog.personalUpdateDescription
 
   const hardwareLabels: Record<'all' | TutorialHardwareProfile, string> = language === 'zh' ? {
     all: '全部硬件',
@@ -1408,6 +1790,7 @@ function TutorialsPage({ language, updateSession, tutorialGuides }: { language: 
           <p>{t.index} / {tutorialGuides.length}</p>
           <h1>{t.title}</h1>
         </header>
+        {activeAddedDate === 'unseen' && foundations.length + sortedCommunity.length > 0 ? <div className="update-visibility-sentinel" ref={setUpdateVisibilityTarget} aria-hidden="true" /> : null}
         {foundations.length > 0 ? (
           <>
             <header className="tutorial-list-heading">
@@ -1423,7 +1806,7 @@ function TutorialsPage({ language, updateSession, tutorialGuides }: { language: 
                   </a>
                   <div className="foundation-route-copy">
                     <div className="added-at-meta">
-                      {updateSession.tutorialIds.has(tutorial.id) ? <strong>{copy[language].catalog.newlyAdded}</strong> : null}
+                      {updateSession.tutorials.ids.has(tutorial.id) ? <strong>{copy[language].catalog.newlyAdded}</strong> : null}
                       <time dateTime={tutorial.addedAt}>{copy[language].catalog.addedOn(formatAddedDate(tutorial.addedAt, language))}</time>
                     </div>
                     <small>{t.routeLabel} / {tutorial.tags[0]}</small>
@@ -1436,10 +1819,10 @@ function TutorialsPage({ language, updateSession, tutorialGuides }: { language: 
           </>
         ) : null}
 
-        {community.length > 0 ? (
+        {sortedCommunity.length > 0 ? (
           <header className="tutorial-list-heading is-community">
             <h2>{t.communityTitle}</h2>
-            <span>{String(community.length).padStart(2, '0')}</span>
+            <span>{String(sortedCommunity.length).padStart(2, '0')}</span>
           </header>
         ) : null}
         <div className="tutorial-pathways">
@@ -1477,7 +1860,10 @@ function TutorialsPage({ language, updateSession, tutorialGuides }: { language: 
           language={language}
           value={activeAddedDate}
           onChange={setActiveAddedDate}
-          unseenCount={updateSession.tutorialIds.size}
+          unseenCount={updateSession.tutorials.ids.size}
+          unseenDisabled={unseenDisabled}
+          unseenHint={unseenHint}
+          idPrefix="tutorial-added-date"
         />
         <div className="tutorial-controls">
           <label className="tutorial-search">
@@ -1489,9 +1875,9 @@ function TutorialsPage({ language, updateSession, tutorialGuides }: { language: 
           <p className="tutorial-active-filter" aria-live="polite">{t.categories[activeCategory]} · {hardwareLabels[activeHardware]} · {copy[language].catalog.addedDatePresets[activeAddedDate]}</p>
         </div>
 
-        {community.length > 0 ? (
+        {sortedCommunity.length > 0 ? (
           <div className="community-tutorial-grid">
-            {community.map((tutorial) => (
+            {sortedCommunity.map((tutorial) => (
               <article className="community-tutorial-card" key={tutorial.id}>
                 <a className="community-tutorial-poster" href={tutorialPath(language, tutorial.id)}>
                   <img src={tutorial.posterUrl} alt={tutorial.title[language]} loading="lazy" />
@@ -1502,7 +1888,7 @@ function TutorialsPage({ language, updateSession, tutorialGuides }: { language: 
                 </a>
                 <div className="community-tutorial-copy">
                   <div className="added-at-meta">
-                    {updateSession.tutorialIds.has(tutorial.id) ? <strong>{copy[language].catalog.newlyAdded}</strong> : null}
+                    {updateSession.tutorials.ids.has(tutorial.id) ? <strong>{copy[language].catalog.newlyAdded}</strong> : null}
                     <time dateTime={tutorial.addedAt}>{copy[language].catalog.addedOn(formatAddedDate(tutorial.addedAt, language))}</time>
                   </div>
                   <small>{t.categories[tutorial.category]} / {tutorial.source.handle || tutorial.source.author}</small>
@@ -1514,8 +1900,20 @@ function TutorialsPage({ language, updateSession, tutorialGuides }: { language: 
             ))}
           </div>
         ) : foundations.length === 0 ? (
-          <div className="tutorial-empty"><span>00</span><p>{t.noResults}</p></div>
+          <div className="tutorial-empty">
+            <span>00</span>
+            <p>{activeAddedDate === 'unseen' && updateSession.tutorials.ids.size > 0
+              ? copy[language].catalog.filteredUpdatesTitle
+              : activeAddedDate === 'unseen'
+                ? copy[language].catalog.snapshotEmptyTitle
+                : t.noResults}</p>
+            {activeAddedDate === 'unseen' ? <small>{updateSession.tutorials.ids.size > 0 ? copy[language].catalog.filteredUpdatesDescription : copy[language].catalog.snapshotEmptyDescription}</small> : null}
+            {activeAddedDate === 'unseen' ? <button type="button" onClick={() => resetTutorialFilters(updateSession.tutorials.ids.size > 0 ? 'unseen' : 'all')}>{updateSession.tutorials.ids.size > 0 ? copy[language].catalog.resetFilters : copy[language].catalog.viewAll}</button> : null}
+          </div>
         ) : null}
+        <div className="update-read-status" aria-live="polite">
+          {acknowledged && activeAddedDate === 'unseen' ? copy[language].catalog.markedForNextVisit : null}
+        </div>
       </section>
     </div>
   )

@@ -2,9 +2,13 @@ import '@testing-library/jest-dom/vitest'
 import { act, cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import App from './App'
-import projectStats from '../data/project-stats.json'
 import { languagePreferenceKey } from './i18n'
-import { updatesSeenThroughKey } from './updates'
+import {
+  caseUpdatesSeenThroughKey,
+  legacyUpdatesSeenThroughKey,
+  tutorialUpdatesSeenThroughKey,
+  updateSessionStorageKey,
+} from './updates'
 
 vi.mock('../data/cases.json', async (importOriginal) => {
   const original = await importOriginal<typeof import('../data/cases.json')>()
@@ -32,7 +36,11 @@ function renderAt(pathname: string) {
 }
 
 beforeEach(() => {
+  window.localStorage.clear()
+  window.sessionStorage.clear()
   window.localStorage.setItem(languagePreferenceKey, 'zh')
+  Object.defineProperty(document, 'visibilityState', { configurable: true, value: 'visible' })
+  Object.defineProperty(window, 'IntersectionObserver', { configurable: true, value: undefined })
 })
 
 afterEach(() => {
@@ -41,17 +49,12 @@ afterEach(() => {
   window.history.replaceState({}, '', '/')
   document.body.classList.remove('intro-open', 'modal-open')
   window.localStorage.clear()
+  window.sessionStorage.clear()
   Object.defineProperty(navigator, 'clipboard', { configurable: true, value: undefined })
   delete window.twttr
 })
 
 describe('case-first routes', () => {
-  const latestUpdateHeading = [
-    projectStats.latestUpdate.casesAdded > 0 ? `新增 ${projectStats.latestUpdate.casesAdded} 个案例` : null,
-    projectStats.latestUpdate.promptsAdded > 0 ? `${projectStats.latestUpdate.promptsAdded} 条完整 Prompt` : null,
-    projectStats.latestUpdate.tutorialsAdded > 0 ? `新增 ${projectStats.latestUpdate.tutorialsAdded} 篇教程` : null,
-  ].filter(Boolean).slice(0, 2).join(' · ')
-
   it('renders the case browser underneath a two-second intro and then removes the intro', () => {
     vi.useFakeTimers()
     renderAt('/')
@@ -202,37 +205,136 @@ describe('case-first routes', () => {
     renderAt('/')
 
     expect(within(screen.getByRole('group', { name: '本站收录时间' })).getByRole('button', { name: /^全部$/ })).toHaveAttribute('aria-pressed', 'true')
-    expect(screen.getByRole('heading', { name: latestUpdateHeading })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /本次新增/ })).toBeDisabled()
+    expect(screen.getByRole('heading', { name: '从本次访问开始记录更新。' })).toBeInTheDocument()
     expect(screen.getByText('创作者榜已更新')).toBeInTheDocument()
-    expect(screen.queryByText(/新增 0/)).not.toBeInTheDocument()
-    expect(window.localStorage.getItem(updatesSeenThroughKey)).toBe('2026-08-23T02:34:28+08:00')
+    expect(screen.getByText('从本次访问开始记录；当前没有可比较的上次访问。')).toBeInTheDocument()
+    expect(window.localStorage.getItem(caseUpdatesSeenThroughKey)).toBe('2026-08-20T12:20:35.382Z')
+    expect(window.localStorage.getItem(tutorialUpdatesSeenThroughKey)).toBe('2026-08-23T02:34:28+08:00')
+    const cards = document.querySelectorAll('.case-card')
+    expect(cards[0]).toHaveTextContent('羊皮纸上的绝地光明史诗')
     expect(screen.getByText('舰桥上的跃迁余震')).toBeInTheDocument()
   })
 
-  it('opens a fixed since-last-visit snapshot for returning visitors and marks it seen for next time', () => {
-    window.localStorage.setItem(updatesSeenThroughKey, '2026-08-10T05:52:30.476Z')
+  it('keeps a fixed update snapshot until it is visible and preserves it across refreshes in the same tab', async () => {
+    window.localStorage.setItem(legacyUpdatesSeenThroughKey, '2026-08-10T05:52:30.476Z')
     renderAt('/')
 
     expect(screen.getByRole('button', { name: /本次新增/ })).toHaveAttribute('aria-pressed', 'true')
-    expect(screen.getByRole('heading', { name: latestUpdateHeading })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '自上次访问新增 2 个案例、24 篇教程' })).toBeInTheDocument()
     expect(screen.getByText('羊皮纸上的绝地光明史诗')).toBeInTheDocument()
     expect(screen.queryByText('舰桥上的跃迁余震')).not.toBeInTheDocument()
-    expect(window.localStorage.getItem(updatesSeenThroughKey)).toBe('2026-08-23T02:34:28+08:00')
-    expect(screen.queryByText(/24 篇教程/)).not.toBeInTheDocument()
+    expect(window.localStorage.getItem(caseUpdatesSeenThroughKey)).toBe('2026-08-10T05:52:30.476Z')
+    expect(window.localStorage.getItem(tutorialUpdatesSeenThroughKey)).toBe('2026-08-10T05:52:30.476Z')
+
+    fireEvent.pointerDown(window)
+    await waitFor(() => expect(window.localStorage.getItem(caseUpdatesSeenThroughKey)).toBe('2026-08-20T12:20:35.382Z'))
+    expect(window.localStorage.getItem(tutorialUpdatesSeenThroughKey)).toBe('2026-08-10T05:52:30.476Z')
+    expect(screen.getByText('这批内容已显示；下次访问将标记为已读。')).toBeInTheDocument()
+    expect(JSON.parse(window.sessionStorage.getItem(updateSessionStorageKey) || '{}').cases).toEqual({
+      since: '2026-08-10T05:52:30.476Z',
+      through: '2026-08-20T12:20:35.382Z',
+    })
 
     cleanup()
     renderAt('/')
-    expect(screen.getByRole('heading', { name: latestUpdateHeading })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /本次新增/ })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByText('羊皮纸上的绝地光明史诗')).toBeInTheDocument()
+
+    cleanup()
+    window.sessionStorage.clear()
+    renderAt('/')
     expect(within(screen.getByRole('group', { name: '本站收录时间' })).getByRole('button', { name: /^全部$/ })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByRole('heading', { name: '自上次访问新增 0 个案例、24 篇教程' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /本次新增/ })).toBeDisabled()
+    expect(screen.getByRole('link', { name: /查看 24 篇新增教程/ })).toHaveAttribute(
+      'href',
+      '/tutorials/?added=unseen&since=2026-08-10T05%3A52%3A30.476Z&through=2026-08-23T02%3A34%3A28%2B08%3A00',
+    )
+  })
+
+  it('does not mark an update batch seen when other filters hide every new case', async () => {
+    window.localStorage.setItem(caseUpdatesSeenThroughKey, '2026-08-10T05:52:30.476Z')
+    window.localStorage.setItem(tutorialUpdatesSeenThroughKey, '2026-08-22T18:34:28.000Z')
+    renderAt('/')
+
+    fireEvent.change(screen.getByPlaceholderText('搜索案例、场景或创作者…'), { target: { value: '舰桥' } })
+    fireEvent.pointerDown(window)
+    expect(screen.getByText('有新增内容，但不符合当前筛选。')).toBeInTheDocument()
+    expect(window.localStorage.getItem(caseUpdatesSeenThroughKey)).toBe('2026-08-10T05:52:30.476Z')
+
+    fireEvent.click(screen.getByRole('button', { name: '清除其他筛选' }))
+    await waitFor(() => expect(window.localStorage.getItem(caseUpdatesSeenThroughKey)).toBe('2026-08-20T12:20:35.382Z'))
+  })
+
+  it('keeps date browsing available when local visit storage is unavailable', () => {
+    const originalStorage = window.localStorage
+    const unavailableStorage = {
+      getItem() { throw new Error('blocked') },
+      setItem() { throw new Error('blocked') },
+      removeItem() { throw new Error('blocked') },
+      clear() { throw new Error('blocked') },
+      key() { return null },
+      length: 0,
+    }
+    Object.defineProperty(window, 'localStorage', { configurable: true, value: unavailableStorage })
+    try {
+      renderAt('/')
+      expect(screen.getByRole('heading', { name: '日期浏览仍可使用。' })).toBeInTheDocument()
+      expect(screen.getByRole('button', { name: /本次新增/ })).toBeDisabled()
+      expect(screen.getByRole('button', { name: '今天' })).toBeEnabled()
+      expect(screen.getByText('浏览器存储不可用，无法计算自上次访问新增。')).toBeInTheDocument()
+    } finally {
+      cleanup()
+      Object.defineProperty(window, 'localStorage', { configurable: true, value: originalStorage })
+    }
+  })
+
+  it('falls back to an in-memory batch when session storage is unavailable', async () => {
+    window.localStorage.setItem(caseUpdatesSeenThroughKey, '2026-08-10T05:52:30.476Z')
+    window.localStorage.setItem(tutorialUpdatesSeenThroughKey, '2026-08-22T18:34:28.000Z')
+    const originalStorage = window.sessionStorage
+    const unavailableStorage = {
+      getItem() { throw new Error('blocked') },
+      setItem() { throw new Error('blocked') },
+      removeItem() { throw new Error('blocked') },
+      clear() { throw new Error('blocked') },
+      key() { return null },
+      length: 0,
+    }
+    Object.defineProperty(window, 'sessionStorage', { configurable: true, value: unavailableStorage })
+    try {
+      renderAt('/')
+      expect(screen.getByRole('button', { name: /本次新增/ })).toHaveAttribute('aria-pressed', 'true')
+      fireEvent.pointerDown(window)
+      await waitFor(() => expect(window.localStorage.getItem(caseUpdatesSeenThroughKey)).toBe('2026-08-20T12:20:35.382Z'))
+    } finally {
+      cleanup()
+      Object.defineProperty(window, 'sessionStorage', { configurable: true, value: originalStorage })
+    }
+  })
+
+  it('allows an explicit empty snapshot without exposing a broken blank page', () => {
+    renderAt('/?added=unseen&since=2026-08-20T12%3A20%3A35.382Z&through=2026-08-20T12%3A20%3A35.382Z')
+
+    expect(screen.getByRole('button', { name: /本次新增/ })).toBeEnabled()
+    expect(screen.getByRole('button', { name: /本次新增/ })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByText('这个时间段没有新增内容。')).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: '查看全部' }))
+    expect(screen.getByText('舰桥上的跃迁余震')).toBeInTheDocument()
+    expect(window.location.search).toBe('')
   })
 
   it('lets explicit URL filters override automatic returning-visitor behavior', () => {
-    window.localStorage.setItem(updatesSeenThroughKey, '2026-08-10T05:52:30.476Z')
+    window.localStorage.setItem(caseUpdatesSeenThroughKey, '2026-08-10T05:52:30.476Z')
+    window.localStorage.setItem(tutorialUpdatesSeenThroughKey, '2026-08-22T18:34:28.000Z')
     renderAt('/?collection=official')
 
     expect(screen.getByRole('button', { name: '官方案例' })).toHaveAttribute('aria-pressed', 'true')
     expect(within(screen.getByRole('group', { name: '本站收录时间' })).getByRole('button', { name: /^全部$/ })).toHaveAttribute('aria-pressed', 'true')
     expect(screen.getByText('舰桥上的跃迁余震')).toBeInTheDocument()
+    fireEvent.pointerDown(window)
+    expect(window.localStorage.getItem(caseUpdatesSeenThroughKey)).toBe('2026-08-10T05:52:30.476Z')
   })
 
   it('combines added-date presets with case filters and removes invalid URL state', () => {
@@ -246,6 +348,11 @@ describe('case-first routes', () => {
 
     cleanup()
     renderAt('/?added=unseen&since=not-a-date')
+    expect(within(screen.getByRole('group', { name: '本站收录时间' })).getByRole('button', { name: /^全部$/ })).toHaveAttribute('aria-pressed', 'true')
+    expect(window.location.search).toBe('')
+
+    cleanup()
+    renderAt('/?added=unseen&since=2026-08-20T00%3A00%3A00.000Z&through=2026-08-19T00%3A00%3A00.000Z')
     expect(within(screen.getByRole('group', { name: '本站收录时间' })).getByRole('button', { name: /^全部$/ })).toHaveAttribute('aria-pressed', 'true')
     expect(window.location.search).toBe('')
   })
@@ -440,7 +547,9 @@ describe('case-first routes', () => {
     expect(screen.queryByRole('heading', { name: 'Mac Studio 上用 Phosphene 跑 Turbo' })).not.toBeInTheDocument()
   })
 
-  it('keeps the homepage update baseline when opening new tutorials', () => {
+  it('keeps tutorial updates independent and upgrades an old since-only snapshot URL', async () => {
+    window.localStorage.setItem(caseUpdatesSeenThroughKey, '2026-08-10T05:52:30.476Z')
+    window.localStorage.setItem(tutorialUpdatesSeenThroughKey, '2026-08-10T05:52:30.476Z')
     renderAt('/tutorials/?added=unseen&since=2026-08-22T00%3A00%3A00.000Z')
 
     expect(screen.getByRole('button', { name: /本次新增/ })).toHaveAttribute('aria-pressed', 'true')
@@ -448,6 +557,9 @@ describe('case-first routes', () => {
     expect(screen.getByRole('heading', { name: '社区教程' })).toBeInTheDocument()
     expect(screen.getAllByText('新收录')).toHaveLength(24)
     expect(screen.getAllByRole('link', { name: /打开教程/ })).toHaveLength(24)
+    expect(window.location.search).toContain('through=2026-08-22T18%3A34%3A28.000Z')
+    await waitFor(() => expect(window.localStorage.getItem(tutorialUpdatesSeenThroughKey)).toBe('2026-08-22T18:34:28.000Z'))
+    expect(window.localStorage.getItem(caseUpdatesSeenThroughKey)).toBe('2026-08-10T05:52:30.476Z')
   })
 
   it('filters community tutorials by hardware and keeps the source behind the internal guide', () => {

@@ -1,13 +1,18 @@
-/* global document, getComputedStyle, innerWidth, window */
+/* global document, getComputedStyle, innerWidth, MutationObserver, window */
 import { chromium, devices } from 'playwright'
 
 const baseUrl = (process.env.PERF_BASE_URL || 'http://127.0.0.1:4173').replace(/\/$/, '')
 const currentBaseline = '9999-12-31T23:59:59.999Z'
 
-async function ready(page, path = '/') {
-  await page.goto(`${baseUrl}${path}`, { waitUntil: 'networkidle', timeout: 60_000 })
+async function dismissIntro(page) {
   const skip = page.getByRole('button', { name: /跳过开场|Skip intro/i })
-  if (await skip.count()) await skip.click()
+  if (await skip.count()) await skip.evaluate((element) => element.click()).catch(() => {})
+  await page.locator('.intro-splash').waitFor({ state: 'detached', timeout: 3_000 }).catch(() => {})
+}
+
+async function ready(page, path = '/') {
+  await page.goto(`${baseUrl}${path}`, { waitUntil: 'domcontentloaded', timeout: 60_000 })
+  await dismissIntro(page)
   await page.locator('.case-card:not(.case-card-skeleton)').first().waitFor()
 }
 
@@ -15,7 +20,8 @@ async function checkDesktop(browser) {
   const context = await browser.newContext({ viewport: { width: 1440, height: 1000 } })
   await context.addInitScript((baseline) => {
     localStorage.setItem('minimax-h3-language', 'zh')
-    localStorage.setItem('minimax-h3-updates-seen-through-v1', baseline)
+    localStorage.setItem('minimax-h3-cases-seen-through-v2', baseline)
+    localStorage.setItem('minimax-h3-tutorials-seen-through-v2', baseline)
     window.IntersectionObserver = class {
       observe() {}
       unobserve() {}
@@ -52,16 +58,29 @@ async function checkDesktop(browser) {
 
   const mediaRequest = page.waitForRequest((request) => request.url().includes('/media/'), { timeout: 2_000 })
   const playerRequest = page.waitForRequest((request) => request.url().includes('/media/') && request.resourceType() === 'media', { timeout: 2_000 })
+  await page.evaluate(() => {
+    window.__h3PerfVideoSrcAt = null
+    const observer = new MutationObserver(() => {
+      if (!document.querySelector('video[src*="/media/"]')) return
+      window.__h3PerfVideoSrcAt = performance.now()
+      observer.disconnect()
+    })
+    observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['src'] })
+  })
   await page.locator('.case-card .media').first().click()
+  await page.locator('video[src*="/media/"]').waitFor({ state: 'attached' })
   await mediaRequest
   await playerRequest
   const clickEpoch = await page.evaluate(() => performance.timeOrigin + window.__h3PerfClickAt)
+  const playerAttachedEpoch = await page.evaluate(() => performance.timeOrigin + window.__h3PerfVideoSrcAt)
+  const playerAttachDelay = playerAttachedEpoch - clickEpoch
   const mediaDelay = mediaRequests[0].at - clickEpoch
   const videoDelay = mediaRequests.find((request) => request.type === 'media').at - clickEpoch
-  // Gate on the <video> element's own request. The app hands the browser a
-  // src within ~10ms of the press; the remainder is Chrome's one-time media
-  // pipeline start-up (~150ms cold, ~30ms warm), so allow 250ms here.
-  if (videoDelay > 250) throw new Error(`Player request started after ${videoDelay.toFixed(1)}ms`)
+  if (playerAttachDelay > 50) throw new Error(`Player source attached after ${playerAttachDelay.toFixed(1)}ms`)
+  // Chromium's first media pipeline can add a cold-start delay after the app
+  // has already attached src. Keep that browser-owned timing separate from
+  // the strict 50ms application handoff budget.
+  if (videoDelay > 350) throw new Error(`Browser media request started after ${videoDelay.toFixed(1)}ms`)
   await page.locator('.detail-skeleton').waitFor()
   // Every media request must come from the <video> element itself. A fetch()
   // or XHR for the same file is a duplicate download (a no-cors fetch drops
@@ -76,10 +95,30 @@ async function checkDesktop(browser) {
   const searchIndexResponse = page.waitForResponse((response) => response.url().endsWith('/data/search-index.zh.json'))
   await search.focus()
   await searchIndexResponse
-  const searchStarted = performance.now()
+  await page.evaluate(() => {
+    window.__h3SearchStartedAt = null
+    window.__h3SearchRenderedAt = null
+    const input = document.querySelector('.search-box input')
+    input.addEventListener('input', () => {
+      window.__h3SearchStartedAt = performance.now()
+      const checkResult = () => {
+        const rendered = [...document.querySelectorAll('.case-card')]
+          .some((element) => element.textContent.includes('餐厅时间冻结与逆向复原'))
+        if (!rendered) return false
+        window.__h3SearchRenderedAt = performance.now()
+        return true
+      }
+      const observer = new MutationObserver(() => {
+        if (checkResult()) observer.disconnect()
+      })
+      observer.observe(document.querySelector('.case-grid'), { childList: true, subtree: true })
+      if (checkResult()) observer.disconnect()
+    }, { once: true })
+  })
   await search.fill('时间冻结')
   await page.getByText('餐厅时间冻结与逆向复原').waitFor()
-  const searchDelay = performance.now() - searchStarted
+  await page.waitForFunction(() => window.__h3SearchRenderedAt !== null, null, { polling: 'raf' })
+  const searchDelay = await page.evaluate(() => window.__h3SearchRenderedAt - window.__h3SearchStartedAt)
   if (searchDelay > 100) throw new Error(`Search response took ${searchDelay.toFixed(1)}ms`)
   await search.fill('')
 
@@ -94,7 +133,7 @@ async function checkDesktop(browser) {
   await loadButton.focus()
   if (!(await loadButton.evaluate((element) => element === document.activeElement))) throw new Error('Load-more button cannot receive keyboard focus.')
   if (!(await page.locator('.catalog-count[aria-live="polite"]').count())) throw new Error('Result count is missing aria-live.')
-  console.log(JSON.stringify({ desktop: { initialCards, domNodes, mediaDelay, videoDelay, searchDelay } }))
+  console.log(JSON.stringify({ desktop: { initialCards, domNodes, playerAttachDelay, mediaDelay, videoDelay, searchDelay } }))
   await context.close()
 }
 
@@ -102,7 +141,8 @@ async function checkAutomaticLoading(browser) {
   const context = await browser.newContext({ viewport: { width: 1440, height: 1000 } })
   await context.addInitScript((baseline) => {
     localStorage.setItem('minimax-h3-language', 'zh')
-    localStorage.setItem('minimax-h3-updates-seen-through-v1', baseline)
+    localStorage.setItem('minimax-h3-cases-seen-through-v2', baseline)
+    localStorage.setItem('minimax-h3-tutorials-seen-through-v2', baseline)
   }, currentBaseline)
   const page = await context.newPage()
   await ready(page)
@@ -118,7 +158,8 @@ async function checkCombinedLoading(browser) {
   const context = await browser.newContext({ viewport: { width: 1440, height: 1000 } })
   await context.addInitScript((baseline) => {
     localStorage.setItem('minimax-h3-language', 'zh')
-    localStorage.setItem('minimax-h3-updates-seen-through-v1', baseline)
+    localStorage.setItem('minimax-h3-cases-seen-through-v2', baseline)
+    localStorage.setItem('minimax-h3-tutorials-seen-through-v2', baseline)
   }, currentBaseline)
   const page = await context.newPage()
   await ready(page)
@@ -134,7 +175,8 @@ async function checkMobile(browser) {
   const context = await browser.newContext({ ...devices['iPhone 13'] })
   await context.addInitScript((baseline) => {
     localStorage.setItem('minimax-h3-language', 'zh')
-    localStorage.setItem('minimax-h3-updates-seen-through-v1', baseline)
+    localStorage.setItem('minimax-h3-cases-seen-through-v2', baseline)
+    localStorage.setItem('minimax-h3-tutorials-seen-through-v2', baseline)
   }, currentBaseline)
   const page = await context.newPage()
   await ready(page)
@@ -145,12 +187,96 @@ async function checkMobile(browser) {
   await context.close()
 }
 
+async function checkUpdateLifecycle(browser) {
+  const response = await fetch(`${baseUrl}/data/catalog.json`)
+  if (!response.ok) throw new Error(`Could not load the catalog for update lifecycle checks (${response.status})`)
+  const catalog = await response.json()
+  const latestCaseAt = catalog.cases.reduce(
+    (latest, item) => Date.parse(item.addedAt) > Date.parse(latest) ? item.addedAt : latest,
+    catalog.cases[0].addedAt,
+  )
+  const latestCaseDay = latestCaseAt.slice(0, 10)
+  const priorCaseAt = catalog.cases
+    .filter((item) => item.addedAt.slice(0, 10) < latestCaseDay)
+    .reduce(
+      (latest, item) => Date.parse(item.addedAt) > Date.parse(latest) ? item.addedAt : latest,
+      '1970-01-01T00:00:00.000Z',
+    )
+  const latestTutorialAt = catalog.tutorials.reduce(
+    (latest, item) => Date.parse(item.addedAt) > Date.parse(latest) ? item.addedAt : latest,
+    catalog.tutorials[0].addedAt,
+  )
+  const expectedCount = catalog.cases.filter((item) => (
+    Date.parse(item.addedAt) > Date.parse(priorCaseAt)
+    && Date.parse(item.addedAt) <= Date.parse(latestCaseAt)
+  )).length
+  if (!expectedCount) throw new Error('Update lifecycle fixture did not produce any unseen cases.')
+
+  // Keep the first case row below the fold so this scenario can prove that
+  // viewing the update summary alone does not acknowledge the batch.
+  const context = await browser.newContext({ viewport: { width: 1440, height: 600 } })
+  await context.addInitScript(({ caseBaseline, tutorialBaseline }) => {
+    localStorage.setItem('minimax-h3-language', 'zh')
+    if (!localStorage.getItem('minimax-h3-cases-seen-through-v2')) {
+      localStorage.setItem('minimax-h3-cases-seen-through-v2', caseBaseline)
+    }
+    if (!localStorage.getItem('minimax-h3-tutorials-seen-through-v2')) {
+      localStorage.setItem('minimax-h3-tutorials-seen-through-v2', tutorialBaseline)
+    }
+  }, { caseBaseline: priorCaseAt, tutorialBaseline: latestTutorialAt })
+
+  const page = await context.newPage()
+  await page.goto(baseUrl, { waitUntil: 'domcontentloaded', timeout: 60_000 })
+  await dismissIntro(page)
+  await page.locator('.case-card:not(.case-card-skeleton)').first().waitFor()
+  const activeAddedFilter = page.locator('.added-date-filter button[aria-pressed="true"]')
+  await activeAddedFilter.filter({ hasText: '本次新增' }).waitFor()
+  const initialCount = Number(await page.locator('.catalog-count span').textContent())
+  if (initialCount !== expectedCount) {
+    throw new Error(`Expected ${expectedCount} frozen unseen cases, received ${initialCount}`)
+  }
+  if (await page.evaluate(() => localStorage.getItem('minimax-h3-cases-seen-through-v2')) !== priorCaseAt) {
+    throw new Error('Case baseline advanced before an unseen card entered the viewport.')
+  }
+
+  await page.locator('.update-visibility-sentinel').scrollIntoViewIfNeeded()
+  await page.waitForFunction((latest) => (
+    localStorage.getItem('minimax-h3-cases-seen-through-v2') === latest
+  ), latestCaseAt)
+  await page.locator('.update-read-status').filter({ hasText: '下次访问' }).waitFor()
+
+  await page.reload({ waitUntil: 'domcontentloaded' })
+  await dismissIntro(page)
+  await page.locator('.case-card:not(.case-card-skeleton)').first().waitFor()
+  await activeAddedFilter.filter({ hasText: '本次新增' }).waitFor()
+  const refreshedCount = Number(await page.locator('.catalog-count span').textContent())
+  if (refreshedCount !== expectedCount) {
+    throw new Error(`Same-tab refresh lost the frozen update window (${refreshedCount}/${expectedCount}).`)
+  }
+
+  await page.close()
+  const nextVisit = await context.newPage()
+  await nextVisit.goto(baseUrl, { waitUntil: 'domcontentloaded', timeout: 60_000 })
+  await dismissIntro(nextVisit)
+  await nextVisit.locator('.case-card:not(.case-card-skeleton)').first().waitFor()
+  await nextVisit.locator('.added-date-filter button[aria-pressed="true"]').filter({ hasText: '全部' }).waitFor()
+  const unseenButton = nextVisit.locator('.added-date-filter button').filter({ hasText: '本次新增' })
+  if (!(await unseenButton.isDisabled())) throw new Error('A new visit should disable an empty unseen filter.')
+  if (await nextVisit.locator('.case-card:not(.case-card-skeleton)').count() !== 36) {
+    throw new Error('A new up-to-date visit should return to the latest 36 cases in the complete library.')
+  }
+
+  console.log(JSON.stringify({ updateLifecycle: { expectedCount, initialCount, refreshedCount, nextVisit: 'all' } }))
+  await context.close()
+}
+
 const browser = await chromium.launch({ headless: true })
 try {
   await checkDesktop(browser)
   await checkAutomaticLoading(browser)
   await checkCombinedLoading(browser)
   await checkMobile(browser)
+  await checkUpdateLifecycle(browser)
 } finally {
   await browser.close()
 }

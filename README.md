@@ -38,12 +38,13 @@ MiniMax H3 is also searched as **Hailuo H3**, **Hailuo 3.0**, and **海螺 H3**.
 
 ## See what changed since your last visit
 
-First-time visitors start with the complete case library, so the existing archive is never presented as hundreds of unread items. Returning visitors with new material automatically open a fixed **Since last visit** snapshot. The summary reports new cases and guides together, shows the latest catalog date, and keeps the current snapshot visible after it has been marked as seen.
+First-time visitors start with the complete case library ordered by catalog date, so the newest work appears first without presenting the existing archive as hundreds of unread items. Returning visitors with new cases automatically open a fixed **Since last visit** snapshot. A batch is marked seen only after an update card actually enters the viewport, and the current tab keeps that snapshot across refreshes and case/guide navigation.
 
 - Filter cases and guides by **Since last visit**, **Today**, **Last 7 days**, **Last 30 days**, or **All**. Date conditions combine with search, duration, Prompt, collection, content, style, scene, goal, and hardware filters.
 - Every case and guide shows its catalog-added date; current-snapshot items also carry a text **Newly added** label instead of relying on color alone.
-- The homepage links directly to the same batch of new tutorials with a shareable `added=unseen&since=<ISO date-time>` URL. Other date views use `added=today|7d|30d`.
-- Seen state stays only in this browser under `minimax-h3-updates-seen-through-v1`. There is no account, server-side history, notification subscription, or tracking.
+- Cases and guides have independent seen-through marks, so viewing new cases never clears an unseen guide. When no personal update exists, the summary shows **You are up to date** and links to today's additions or the latest 48 cases instead of opening an empty view.
+- Fixed snapshots use shareable `added=unseen&since=<ISO date-time>&through=<ISO date-time>` URLs; older `since`-only links remain compatible. Other date views use `added=today|7d|30d`.
+- Seen state stays only in this browser under separate v2 case/guide keys, while `minimax-h3-update-session-v2` keeps the current tab's frozen batch. There is no account, server-side history, notification subscription, or tracking.
 
 ## Find the useful cases faster
 
