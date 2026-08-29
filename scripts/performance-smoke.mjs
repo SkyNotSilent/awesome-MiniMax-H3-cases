@@ -58,9 +58,19 @@ async function checkDesktop(browser) {
   const clickEpoch = await page.evaluate(() => performance.timeOrigin + window.__h3PerfClickAt)
   const mediaDelay = mediaRequests[0].at - clickEpoch
   const videoDelay = mediaRequests.find((request) => request.type === 'media').at - clickEpoch
-  if (mediaDelay > 50) throw new Error(`Video request started after ${mediaDelay.toFixed(1)}ms`)
+  // Gate on the <video> element's own request. The app hands the browser a
+  // src within ~10ms of the press; the remainder is Chrome's one-time media
+  // pipeline start-up (~150ms cold, ~30ms warm), so allow 250ms here.
+  if (videoDelay > 250) throw new Error(`Player request started after ${videoDelay.toFixed(1)}ms`)
   await page.locator('.detail-skeleton').waitFor()
+  // Every media request must come from the <video> element itself. A fetch()
+  // or XHR for the same file is a duplicate download (a no-cors fetch drops
+  // the Range header and pulls the whole file).
+  const nonPlayerMedia = mediaRequests.filter((request) => request.type !== 'media')
+  if (nonPlayerMedia.length) throw new Error(`Non-player media request detected: ${nonPlayerMedia[0].type} ${nonPlayerMedia[0].url}`)
   await page.keyboard.press('Escape')
+  const lingeringPlayers = await page.locator('video[src*="/media/"]').count()
+  if (lingeringPlayers) throw new Error(`Player still attached after closing the dialog: ${lingeringPlayers}`)
 
   const search = page.getByPlaceholder('搜索案例、场景或创作者…')
   const searchIndexResponse = page.waitForResponse((response) => response.url().endsWith('/data/search-index.zh.json'))

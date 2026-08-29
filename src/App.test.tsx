@@ -288,6 +288,47 @@ describe('case-first routes', () => {
     expect(screen.getByText('正在加载站内视频…')).toBeInTheDocument()
   })
 
+  it('issues no fetch for the hosted video and removes the player when the dialog closes', () => {
+    const fetchSpy = vi.spyOn(globalThis, 'fetch')
+    renderAt('/')
+    fireEvent.change(screen.getByPlaceholderText('搜索案例、场景或创作者…'), {
+      target: { value: '时间冻结' },
+    })
+    const open = screen.getByRole('button', { name: '查看 餐厅时间冻结与逆向复原 详情' })
+
+    // A press starts the player early, but a cancelled press must dispose it.
+    fireEvent.pointerDown(open)
+    expect(document.querySelectorAll('video[src*="/media/"]')).toHaveLength(1)
+    fireEvent.pointerCancel(open)
+    expect(document.querySelectorAll('video[src*="/media/"]')).toHaveLength(0)
+    fireEvent.pointerDown(open)
+    fireEvent.pointerLeave(open)
+    expect(document.querySelectorAll('video[src*="/media/"]')).toHaveLength(0)
+
+    // Press followed by click reuses the single prepared player.
+    fireEvent.pointerDown(open)
+    fireEvent.click(open)
+    const players = document.querySelectorAll('video[src*="/media/"]')
+    expect(players).toHaveLength(1)
+    expect(fetchSpy.mock.calls.some(([input]) => String(input instanceof Request ? input.url : input).includes('/media/'))).toBe(false)
+
+    fireEvent.keyDown(document, { key: 'Escape' })
+    expect(document.querySelectorAll('video[src*="/media/"]')).toHaveLength(0)
+    fetchSpy.mockRestore()
+  })
+
+  it('disposes a prepared player that is never opened once its TTL elapses', () => {
+    vi.useFakeTimers()
+    renderAt('/')
+    fireEvent.change(screen.getByPlaceholderText('搜索案例、场景或创作者…'), {
+      target: { value: '时间冻结' },
+    })
+    fireEvent.pointerDown(screen.getByRole('button', { name: '查看 餐厅时间冻结与逆向复原 详情' }))
+    expect(document.querySelectorAll('video[src*="/media/"]')).toHaveLength(1)
+    act(() => { vi.advanceTimersByTime(4_100) })
+    expect(document.querySelectorAll('video[src*="/media/"]')).toHaveLength(0)
+  })
+
   it('links a creator-verbatim Prompt back to the original X reply', () => {
     renderAt('/')
     fireEvent.change(screen.getByPlaceholderText('搜索案例、场景或创作者…'), {

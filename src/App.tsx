@@ -247,12 +247,9 @@ interface OpenedCase {
 
 function prepareHostedVideo(item: CatalogCase) {
   if (!item.mediaUrl) return null
-  if (import.meta.env.MODE !== 'test') {
-    void fetch(item.mediaUrl, {
-      headers: { Range: 'bytes=0-65535' },
-      mode: 'no-cors',
-    }).catch(() => undefined)
-  }
+  // The <video> element issues the only media request. Never add a parallel
+  // fetch() here: a no-cors fetch drops the Range header and downloads the
+  // whole file, competing with the player and continuing after close.
   const video = document.createElement('video')
   video.poster = item.posterUrl
   video.controls = true
@@ -268,6 +265,19 @@ function prepareHostedVideo(item: CatalogCase) {
   }
   return video
 }
+
+// Stop the in-flight download and drop the element. Used both when a dialog
+// closes and when a pressed card never turns into a click.
+function disposeHostedVideo(video: HTMLVideoElement) {
+  if (import.meta.env.MODE !== 'test') {
+    video.pause()
+    video.removeAttribute('src')
+    video.load()
+  }
+  video.remove()
+}
+
+const PREPARED_VIDEO_TTL_MS = 4_000
 
 function HostedVideo({ item, language, title, preparedVideo }: { item: CatalogCase; language: Language; title: string; preparedVideo: HTMLVideoElement | null }) {
   const [state, setState] = useState<'loading' | 'ready' | 'error'>('loading')
@@ -291,11 +301,10 @@ function HostedVideo({ item, language, title, preparedVideo }: { item: CatalogCa
     else if (video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) ready()
     if (import.meta.env.MODE !== 'test') video.play()?.catch(() => undefined)
     return () => {
-      if (import.meta.env.MODE !== 'test') video.pause()
       video.removeEventListener('loadstart', loading)
       video.removeEventListener('canplay', ready)
       video.removeEventListener('error', failed)
-      video.remove()
+      disposeHostedVideo(video)
     }
   }, [video])
 
@@ -1092,15 +1101,31 @@ function CaseCard({
 }) {
   const t = copy[language].card
   const title = caseTitle(item, language)
+  // Start the player on press so the media request is already in flight when
+  // the click lands. Anything prepared but never opened is disposed, otherwise
+  // a cancelled press (touch scroll, drag-away) would keep downloading.
   const preparedVideoRef = useRef<HTMLVideoElement | null>(null)
+  const preparedTimerRef = useRef<number | null>(null)
+  const disposePrepared = useCallback(() => {
+    if (preparedTimerRef.current !== null) window.clearTimeout(preparedTimerRef.current)
+    preparedTimerRef.current = null
+    const video = preparedVideoRef.current
+    preparedVideoRef.current = null
+    if (video) disposeHostedVideo(video)
+  }, [])
   const prepareVideo = () => {
-    if (!preparedVideoRef.current) preparedVideoRef.current = prepareHostedVideo(item)
+    if (preparedVideoRef.current) return
+    preparedVideoRef.current = prepareHostedVideo(item)
+    if (preparedVideoRef.current) preparedTimerRef.current = window.setTimeout(disposePrepared, PREPARED_VIDEO_TTL_MS)
   }
   const openCase = () => {
+    if (preparedTimerRef.current !== null) window.clearTimeout(preparedTimerRef.current)
+    preparedTimerRef.current = null
     const video = preparedVideoRef.current ?? prepareHostedVideo(item)
     preparedVideoRef.current = null
     onOpen(video)
   }
+  useEffect(() => disposePrepared, [disposePrepared])
   const chips = [
     item.styles[0] && {
       key: `style:${item.styles[0]}`,
@@ -1128,6 +1153,8 @@ function CaseCard({
         className="media"
         type="button"
         onPointerDown={prepareVideo}
+        onPointerCancel={disposePrepared}
+        onPointerLeave={disposePrepared}
         onKeyDown={(event) => {
           if (event.key === 'Enter' || event.key === ' ') prepareVideo()
         }}
