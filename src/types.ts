@@ -43,6 +43,52 @@ export interface VideoCase {
   editorialBasis?: string
 }
 
+export interface CatalogCase {
+  id: string
+  title: string
+  titleEn: string
+  mode: CaseMode
+  posterUrl: string
+  duration: number
+  category: string
+  styles: string[]
+  scenes: string[]
+  tags: string[]
+  author: string
+  addedAt: string
+  mediaUrl: string | null
+  sourceUrl: string
+  sourceType: VideoCase['sourceType']
+  verified: boolean
+  hasPrompt: boolean
+}
+
+export interface CaseDetail {
+  id: string
+  summary: string
+  summaryEn: string
+  prompt: string | null
+  promptSourceUrl?: string
+  model: string
+  sourceLabel: string
+  publishedAt: string
+  aspectRatio: string
+  resolution: string
+  promptProvenance: VideoCase['promptProvenance']
+}
+
+export interface SearchRecord {
+  id: string
+  text: string
+}
+
+export interface CatalogPayload {
+  version: number
+  generatedAt: string
+  cases: CatalogCase[]
+  tutorials: Array<{ id: string; addedAt: string }>
+}
+
 export type LocalizedText = Record<'zh' | 'en', string>
 export type LocalizedList = Record<'zh' | 'en', string[]>
 

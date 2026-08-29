@@ -5,6 +5,9 @@ const root = resolve(import.meta.dirname, '..')
 const dist = resolve(root, 'dist')
 const baseUrl = (process.env.PUBLIC_SITE_URL || 'https://h3-field-notes-production.up.railway.app').replace(/\/$/, '')
 const cases = JSON.parse(await readFile(resolve(root, 'data/cases.json'), 'utf8'))
+const archivePageSize = 48
+const sortedCases = [...cases].sort((a, b) => Date.parse(b.addedAt) - Date.parse(a.addedAt))
+const archivePageCount = Math.ceil(sortedCases.length / archivePageSize)
 const tutorialGuides = JSON.parse(await readFile(resolve(root, 'data/tutorial-guides.json'), 'utf8'))
 const tutorialResources = JSON.parse(await readFile(resolve(root, 'data/tutorials.json'), 'utf8'))
 const creatorCatalog = JSON.parse(await readFile(resolve(root, 'data/creators.json'), 'utf8'))
@@ -215,6 +218,9 @@ const otherLocale = (locale) => locale === 'en' ? 'zh-CN' : 'en'
 const casePath = (locale, id) => `${locale === 'en' ? '/en' : ''}/cases/${encodeURIComponent(id)}/`
 const tutorialPath = (locale, id) => `${locale === 'en' ? '/en' : ''}/tutorials/${encodeURIComponent(id)}/`
 const creatorPath = (locale, slug) => `${locale === 'en' ? '/en' : ''}/creators/${encodeURIComponent(slug)}/`
+const archivePath = (locale, page) => page === 1
+  ? `${locale === 'en' ? '/en' : ''}/`
+  : `${locale === 'en' ? '/en' : ''}/cases/page/${page}/`
 const compactWhitespace = (value) => String(value).replace(/\s+/g, ' ').trim()
 const truncateMeta = (value, maxLength = 155) => {
   const normalized = compactWhitespace(value)
@@ -400,7 +406,7 @@ function appStructuredData(page, locale) {
     pageNode.mainEntity = {
       '@type': 'ItemList',
       numberOfItems: cases.length,
-      itemListElement: cases.map((item, index) => ({
+      itemListElement: sortedCases.slice(0, archivePageSize).map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: localizedCase(item, locale).title,
@@ -562,7 +568,7 @@ function fallbackMarkup(page, locale) {
   let content
 
   if (page.id === 'catalog') {
-    const links = cases.map((item) => {
+    const links = sortedCases.slice(0, archivePageSize).map((item) => {
       const localized = localizedCase(item, locale)
       return `<li><a href="${casePath(locale, item.id)}">${escapeHtml(localized.title)}</a><small>${escapeHtml(item.mode)} · ${escapeHtml(localized.author)}</small></li>`
     }).join('')
@@ -854,6 +860,54 @@ function extractAssetTags(builtIndex) {
   return [...new Set([...links, ...scripts])]
 }
 
+function renderArchivePage(locale, pageNumber) {
+  const start = (pageNumber - 1) * archivePageSize
+  const items = sortedCases.slice(start, start + archivePageSize)
+  const paths = {
+    'zh-CN': archivePath('zh-CN', pageNumber),
+    en: archivePath('en', pageNumber),
+  }
+  const canonical = absolute(paths[locale])
+  const previous = archivePath(locale, pageNumber - 1)
+  const next = pageNumber < archivePageCount ? archivePath(locale, pageNumber + 1) : null
+  const title = locale === 'en'
+    ? `MiniMax H3 case archive — page ${pageNumber} of ${archivePageCount}`
+    : `MiniMax H3 案例归档 — 第 ${pageNumber} / ${archivePageCount} 页`
+  const description = locale === 'en'
+    ? `Browse source-attributed MiniMax H3 video cases ${start + 1}–${start + items.length} of ${cases.length}.`
+    : `浏览第 ${start + 1}–${start + items.length} 个来源可追溯、可站内播放的 MiniMax H3 视频案例，共 ${cases.length} 个。`
+  const list = items.map((item, index) => {
+    const localized = localizedCase(item, locale)
+    return `<li><a href="${escapeHtml(casePath(locale, item.id))}"><img src="${escapeHtml(item.posterUrl)}" alt="" width="360" height="225" loading="lazy"><span><small>${start + index + 1} · ${escapeHtml(item.mode)} · ${escapeHtml(item.addedAt.slice(0, 10))}</small><strong>${escapeHtml(localized.title)}</strong><em>${escapeHtml(localized.author)}</em></span></a></li>`
+  }).join('')
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: title,
+    description,
+    url: canonical,
+    inLanguage: locale,
+    numberOfItems: cases.length,
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: items.length,
+      itemListElement: items.map((item, index) => ({
+        '@type': 'ListItem',
+        position: start + index + 1,
+        name: localizedCase(item, locale).title,
+        url: absolute(casePath(locale, item.id)),
+      })),
+    },
+  }
+  return `<!doctype html><html lang="${locale}"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="${escapeHtml(description)}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="${canonical}">${alternateHeadLinks(paths)}<link rel="prev" href="${escapeHtml(absolute(previous))}">${next ? `<link rel="next" href="${escapeHtml(absolute(next))}">` : ''}<link rel="icon" href="/icon.svg" type="image/svg+xml"><title>${escapeHtml(title)}</title><script type="application/ld+json">${jsonForHtml(structuredData)}</script><style>body{margin:0;background:#090a08;color:#f0f0e8;font:15px/1.5 system-ui,sans-serif}main{width:min(1180px,calc(100% - 36px));margin:auto;padding:42px 0 80px}nav{display:flex;justify-content:space-between;gap:16px}a{color:inherit;text-decoration:none}nav a,.pager a{color:#d9ff43}h1{font-size:clamp(2.4rem,7vw,5.6rem);line-height:.94;letter-spacing:-.055em}main>p{color:#a7aba1}ol{margin:42px 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 22px;list-style:none}li a{display:block}img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;background:#151712}li span{display:grid;gap:7px;padding-top:12px}small,em{color:#858a80;font:normal 9px ui-monospace,monospace;text-transform:uppercase}strong{font-size:19px;line-height:1.18}.pager{display:flex;justify-content:space-between;gap:18px;padding-top:24px;border-top:1px solid #33372f}@media(max-width:800px){ol{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:520px){ol{grid-template-columns:1fr}}</style></head><body><main><nav><a href="${escapeHtml(archivePath(locale, 1))}">MiniMax H3 Cases &amp; Guides</a><a href="${escapeHtml(paths[otherLocale(locale)])}" hreflang="${otherLocale(locale)}">${locale === 'en' ? 'ZH' : 'EN'}</a></nav><h1>${escapeHtml(title)}</h1><p>${escapeHtml(description)}</p><ol>${list}</ol><div class="pager"><a href="${escapeHtml(previous)}">← ${escapeHtml(locale === 'en' ? 'Previous' : '上一页')}</a>${next ? `<a href="${escapeHtml(next)}">${escapeHtml(locale === 'en' ? 'Next' : '下一页')} →</a>` : '<span></span>'}</div></main></body></html>`
+}
+
+function redirectPage(locale, to) {
+  const label = locale === 'en' ? 'Archive page moved. Redirecting.' : '归档首页已迁移，正在跳转。'
+  const target = absolute(to)
+  return `<!doctype html><html lang="${locale}"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=${escapeHtml(target)}"><meta name="robots" content="noindex,follow"><link rel="canonical" href="${escapeHtml(target)}"><title>${escapeHtml(label)}</title><script>location.replace(${jsonForHtml(target)})</script></head><body><p>${escapeHtml(label)} <a href="${escapeHtml(target)}">${escapeHtml(target)}</a></p></body></html>`
+}
+
 const builtIndex = await readFile(resolve(dist, 'index.html'), 'utf8')
 const assetTags = extractAssetTags(builtIndex)
 
@@ -866,6 +920,20 @@ for (const page of pageDefinitions) {
     await mkdir(pageDir, { recursive: true })
     await writeFile(resolve(pageDir, 'index.html'), html)
   }
+}
+
+for (const locale of locales) {
+  for (let pageNumber = 2; pageNumber <= archivePageCount; pageNumber += 1) {
+    const pageDir = resolve(dist, archivePath(locale, pageNumber).replace(/^\//, ''))
+    const html = renderArchivePage(locale, pageNumber)
+    assertLanguageIsolation(html, locale, archivePath(locale, pageNumber))
+    await mkdir(pageDir, { recursive: true })
+    await writeFile(resolve(pageDir, 'index.html'), html)
+  }
+  const pageOnePath = `${locale === 'en' ? '/en' : ''}/cases/page/1/`
+  const pageOneDir = resolve(dist, pageOnePath.replace(/^\//, ''))
+  await mkdir(pageOneDir, { recursive: true })
+  await writeFile(resolve(pageOneDir, 'index.html'), redirectPage(locale, archivePath(locale, 1)))
 }
 
 for (const page of tutorialPageDefinitions) {
@@ -971,8 +1039,22 @@ ${alternateSitemapLinks(page.paths)}
   </url>`
 }
 
+function sitemapArchiveEntry(pageNumber, locale) {
+  const paths = {
+    'zh-CN': archivePath('zh-CN', pageNumber),
+    en: archivePath('en', pageNumber),
+  }
+  return `  <url>
+    <loc>${escapeHtml(absolute(paths[locale]))}</loc>
+    <lastmod>${escapeHtml(latestPublishedDate)}</lastmod>
+${alternateSitemapLinks(paths)}
+  </url>`
+}
+
 const sitemapEntries = [
   ...pageDefinitions.flatMap((page) => locales.map((locale) => sitemapPageEntry(page, locale))),
+  ...Array.from({ length: Math.max(0, archivePageCount - 1) }, (_, index) => index + 2)
+    .flatMap((pageNumber) => locales.map((locale) => sitemapArchiveEntry(pageNumber, locale))),
   ...tutorialPageDefinitions.flatMap((page) => locales.map((locale) => sitemapPageEntry(page, locale))),
   ...creatorPageDefinitions.flatMap((page) => locales.map((locale) => sitemapCreatorEntry(page, locale))),
   ...cases.flatMap((item) => locales.map((locale) => sitemapCaseEntry(item, locale))),
@@ -991,4 +1073,4 @@ const notFoundCopy = {
 const notFoundHtml = `<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow"><title>404 — MiniMax H3 Cases &amp; Guides</title><style>body{margin:0;background:#0a0b09;color:#f5f5ed;font:16px/1.6 system-ui,sans-serif}main{max-width:760px;margin:15vh auto;padding:24px}h1{font-size:clamp(3rem,12vw,8rem);margin:0;color:#d8ff3e}a{color:#d8ff3e}</style></head><body><main><p>404</p><h1>${notFoundCopy['zh-CN'][0]}</h1><p>${notFoundCopy['zh-CN'][1]}</p><p><a href="/">${notFoundCopy['zh-CN'][2]}</a> · <a href="/en/">${notFoundCopy.en[2]}</a></p></main></body></html>`
 await writeFile(resolve(dist, '404.html'), notFoundHtml)
 
-console.log(`Generated ${pageDefinitions.length * locales.length} app routes, ${tutorialGuides.length * locales.length} localized tutorial pages, ${creators.length * locales.length} localized creator pages, ${cases.length * locales.length} localized case pages, ${cases.length * locales.length} video sitemap entries, and a strict 404 page for ${baseUrl}.`)
+console.log(`Generated ${pageDefinitions.length * locales.length} app routes, ${(archivePageCount - 1) * locales.length} archive pages, ${tutorialGuides.length * locales.length} localized tutorial pages, ${creators.length * locales.length} localized creator pages, ${cases.length * locales.length} localized case pages, ${cases.length * locales.length} video sitemap entries, and a strict 404 page for ${baseUrl}.`)

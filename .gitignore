@@ -1,5 +1,7 @@
 node_modules
 dist
+public/data
+public/posters-optimized
 .DS_Store
 .env
 .review/

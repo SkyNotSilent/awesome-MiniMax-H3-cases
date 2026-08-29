@@ -49,6 +49,8 @@ First-time visitors start with the complete case library, so the existing archiv
 
 The homepage remains case-first. Quick collections work together with duration, Prompt, content, style, scene, and search filters:
 
+[![MiniMax H3 latest additions ordered by catalog date](./docs/screenshots/latest-collection-en.jpg)](https://h3-field-notes-production.up.railway.app/en/?collection=latest)
+
 - [Editor picks](https://h3-field-notes-production.up.railway.app/en/?collection=featured) — verified, playable cases with a complete public Prompt.
 - [Latest additions](https://h3-field-notes-production.up.railway.app/en/?collection=latest) — the existing compatible link, now ordered by first catalog addition rather than source publication date.
 - [Official examples](https://h3-field-notes-production.up.railway.app/en/?collection=official) — reproducible MiniMax scripts and source evidence.
@@ -124,6 +126,21 @@ Example output is structured as a recommended route, environment check, executio
 - Daily case discovery and weekly tutorial discovery keep private candidates in `.review/`; credentials and discovery labels never enter Git, the frontend, or SEO.
 - Builds generate localized case/tutorial pages, canonical and hreflang links, `VideoObject`/`HowTo` JSON-LD, sitemap, Open Graph data, [`llms.txt`](./public/llms.txt), and [`llms-full.txt`](./public/llms-full.txt).
 - `npm run screenshots` rebuilds the site, simulates a returning-user update snapshot, checks bilingual desktop/mobile routes, reads current stats and tutorial data, and refreshes every README screenshot.
+
+## Performance architecture
+
+The source of truth remains `data/cases.json`, but production builds no longer ship it in the homepage JavaScript. The build derives a compact `/data/catalog.json`, one `/data/cases/{id}.json` detail file per case, and language-specific search indexes. The catalog retains the media URL, original-source URL, poster, filters, and `addedAt`, so playback and filtering never wait for detail text.
+
+- The homepage renders 36 matching cards, then adds 24 near the list end or through a keyboard-focusable **Load more** button. Filters still evaluate the complete compact catalog and report the true total.
+- The first nine cards may animate for at most 720ms; every later card is immediately visible. Reduced-motion mode disables card motion completely.
+- Clicking a hosted case starts `/media/` during the same interaction, mounts the player independently, and fetches Prompt/summary detail in parallel. A detail failure cannot block video or the original-source link.
+- Full Prompt/summary search loads only after the search field is focused. Until then, title, author, taxonomy, and tag search remain available locally; there is no search server or user tracking.
+- Local JPEG posters receive 360px and 720px WebP derivatives during builds, while the original image remains the fallback. New publishing builds generate the same variants automatically.
+- Homepage JSON-LD and `<noscript>` expose the latest 48 cases. Static bilingual archive pages expose the rest in groups of 48, while every case detail page remains independently indexable.
+- Fingerprinted JS/CSS are immutable; HTML and runtime JSON use one-minute shared-cache freshness with stale revalidation. `/media/` redirects use a five-minute shared-cache window, while signed object URLs remain valid for one hour.
+- Every newly mirrored MP4 must pass a faststart gate. Non-compliant media is losslessly remuxed and revalidated before upload; the three legacy official files were migrated with retained object-storage backups.
+
+Current production-build checks: **95KB homepage JS gzip**, **10KB homepage HTML gzip**, **126KB catalog gzip**, **618KB Chinese / 588KB English search index gzip**, **36 initial cards**, and **1687 initial DOM nodes**. Run `npm run performance:budget` for static budgets and, against a local production server, `npm run performance:browser` for browser behavior.
 
 ## Contribute or report a problem
 

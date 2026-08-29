@@ -49,6 +49,8 @@ MiniMax H3 也常被搜索为 **Hailuo H3**、**Hailuo 3.0**、**海螺 H3** 和
 
 首页继续案例优先。快捷集合可以与时长、Prompt、内容、风格、场景和搜索组合使用：
 
+[![按本站收录日期排列的 MiniMax H3 最新案例](./docs/screenshots/latest-collection-zh.jpg)](https://h3-field-notes-production.up.railway.app/?collection=latest)
+
 - [编辑精选](https://h3-field-notes-production.up.railway.app/?collection=featured)：可播放、来源明确且带完整公开 Prompt 的代表案例；
 - [最新收录](https://h3-field-notes-production.up.railway.app/?collection=latest)：保留原兼容入口，现按首次进入本站目录的时间排序，而不是来源发布时间；
 - [官方案例](https://h3-field-notes-production.up.railway.app/?collection=official)：MiniMax 可复现脚本与公开证据；
@@ -124,6 +126,21 @@ npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
 - 每日案例发现与每周教程发现的私有候选只进 `.review/`；凭据和发现来源标签不会进入 Git、前端或 SEO；
 - 构建会生成中英文案例/教程页、canonical、hreflang、`VideoObject`/`HowTo` JSON-LD、sitemap、OG、[`llms.txt`](./public/llms.txt) 与 [`llms-full.txt`](./public/llms-full.txt)。
 - `npm run screenshots` 会重新构建网站、模拟老用户回访快照、验证中英文桌面与手机路由，并从当前统计和教程数据自动刷新 README 全部截图。
+
+## 性能架构
+
+唯一权威数据源仍是 `data/cases.json`，但生产首页 JS 不再打包完整案例数据。构建会生成轻量 `/data/catalog.json`、每条案例一个 `/data/cases/{id}.json` 详情文件，以及中英文独立搜索索引。轻量目录保留播放地址、原帖地址、封面、筛选字段和 `addedAt`，因此播放与筛选都不需要等待文字详情。
+
+- 首页先渲染 36 条匹配案例，接近底部或按下可聚焦的“加载更多”按钮时增加 24 条；筛选仍针对完整轻量目录执行，结果总数始终是真实总数。
+- 只有前 9 张卡片允许入场动画，最长 720ms；第 10 张起立即可见。系统启用“减少动态效果”时，卡片动画完全关闭。
+- 点击站内视频时，同一次交互立即发起 `/media/` 请求并挂载播放器，同时并行加载 Prompt 与摘要；详情失败不影响视频和原帖入口。
+- 用户第一次聚焦搜索框时才加载完整 Prompt/摘要搜索索引；此前标题、作者、标签和分类等基础搜索仍在本地可用，不建设搜索后端，也不跟踪用户。
+- 本地 JPG 封面在构建时自动生成 360px、720px WebP，原图继续作为兼容与 SEO 兜底；后续发布新案例也走同一管线。
+- 首页 JSON-LD 与 `<noscript>` 只列最新 48 条；其余案例按每页 48 条生成中英文静态归档，全部案例详情页仍可独立索引。
+- 带哈希的 JS/CSS 永久缓存；HTML 与运行时 JSON 使用 1 分钟共享缓存和过期继续服务；`/media/` 跳转共享缓存 5 分钟，而对象签名保持 1 小时有效。
+- 每条新镜像 MP4 都必须通过 faststart 门槛；不合格视频先无损重排并重新核验再上传。3 条历史官方视频已迁移，原对象备份仍保留在存储桶。
+
+当前生产构建实测：**首页 JS 95KB gzip、首页 HTML 10KB gzip、目录 126KB gzip、中文/英文搜索索引 618KB/588KB gzip、首屏 36 张卡片、1687 个 DOM 节点**。静态预算运行 `npm run performance:budget`；启动本地生产服务后运行 `npm run performance:browser` 验证真实浏览器行为。
 
 ## 投稿、纠错与下架
 

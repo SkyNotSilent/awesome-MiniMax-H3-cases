@@ -34,10 +34,12 @@ before(async () => {
   outsideDir = await mkdtemp(join(tmpdir(), 'h3-static-outside-'))
   await mkdir(join(rootDir, 'faq'))
   await mkdir(join(rootDir, 'assets'))
+  await mkdir(join(rootDir, 'data'))
   await writeFile(join(rootDir, 'index.html'), '<h1>Home</h1>')
   await writeFile(join(rootDir, '404.html'), '<h1>Custom missing</h1>')
   await writeFile(join(rootDir, 'faq', 'index.html'), '<h1>FAQ</h1>')
   await writeFile(join(rootDir, 'assets', 'index-BaL42Ee8.js'), 'console.log("asset")')
+  await writeFile(join(rootDir, 'data', 'catalog.json'), '{"cases":[]}')
   await writeFile(join(outsideDir, 'secret.txt'), 'do not serve')
   await symlink(join(outsideDir, 'secret.txt'), join(rootDir, 'leak.txt'))
 
@@ -62,7 +64,7 @@ test('serves files and directory index pages with strict routing', async () => {
   const home = await fetch(`${baseUrl}/`)
   assert.equal(home.status, 200)
   assert.match(home.headers.get('content-type'), /^text\/html/)
-  assert.equal(home.headers.get('cache-control'), 'public, max-age=0, must-revalidate')
+  assert.equal(home.headers.get('cache-control'), 'public, max-age=0, s-maxage=60, stale-while-revalidate=300')
   assert.equal(await home.text(), '<h1>Home</h1>')
 
   const redirect = await fetch(`${baseUrl}/faq?lang=en`, { redirect: 'manual' })
@@ -77,6 +79,12 @@ test('serves files and directory index pages with strict routing', async () => {
   assert.equal(head.status, 200)
   assert.equal(head.headers.get('content-length'), String(Buffer.byteLength('<h1>FAQ</h1>')))
   assert.equal(await head.text(), '')
+})
+
+test('adds shared-cache headers to non-fingerprinted JSON', async () => {
+  const catalog = await fetch(`${baseUrl}/data/catalog.json`)
+  assert.equal(catalog.status, 200)
+  assert.equal(catalog.headers.get('cache-control'), 'public, max-age=0, s-maxage=60, stale-while-revalidate=300')
 })
 
 test('adds immutable caching and honors conditional requests for fingerprinted assets', async () => {
@@ -130,6 +138,7 @@ test('redirects hosted video requests through a short-lived signed URL', async (
   const response = await fetch(`${baseUrl}/media/x-123.mp4`, { redirect: 'manual' })
   assert.equal(response.status, 307)
   assert.equal(response.headers.get('location'), 'https://storage.example/x-123.mp4?signature=test')
+  assert.equal(response.headers.get('cache-control'), 'public, max-age=60, s-maxage=300, stale-while-revalidate=60')
   assert.deepEqual(signedRequests, [{ key: 'x-123', method: 'GET' }])
 })
 
