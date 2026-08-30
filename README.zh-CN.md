@@ -5,7 +5,7 @@
 # MiniMax H3 Cases & Guides｜案例与实战教程
 
 <!-- project-stats:start -->
-**更完整、更可信的 MiniMax H3 案例与教程库：1133 个可播放视频、337 条完整公开 Prompt、24 篇实用教程。**
+**更完整、更可信的 MiniMax H3 案例与教程库：1167 个可播放视频、343 条完整公开 Prompt、24 篇实用教程。**
 <!-- project-stats:end -->
 
 [English](./README.md) · **简体中文**
@@ -69,7 +69,7 @@ MiniMax H3 也常被搜索为 **Hailuo H3**、**Hailuo 3.0**、**海螺 H3** 和
 [![MiniMax H3 优质创作者动态榜单](./docs/screenshots/creators-zh.png)](https://h3-field-notes-production.up.railway.app/creators/)
 
 <!-- creator-stats:start -->
-动态创作者榜把案例库变成持续复利的发现系统。目前从 **691 位来源明确的 X 作者中筛选出 234 位优质创作者**，可查看综合优质、近期活跃、案例最多、Prompt 贡献、新锐作者和教程作者榜。
+动态创作者榜把案例库变成持续复利的发现系统。目前从 **715 位来源明确的 X 作者中筛选出 241 位优质创作者**，可查看综合优质、近期活跃、案例最多、Prompt 贡献、新锐作者和教程作者榜。
 <!-- creator-stats:end -->
 
 - 每位作者都有独立主页，聚合可播放案例、完整公开 Prompt 与来源核验教程；
@@ -116,7 +116,7 @@ npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
 ## 数据、自动化与可信度
 
 <!-- project-snapshot:start -->
-**当前自动统计：** 1133 个案例 · 337 条完整公开 Prompt · 24 篇教程 · 691 位来源作者中的 234 位优质创作者 · 8 篇旗舰教程 · 14 个生态资源 · 内容核验至 2026-08-29。
+**当前自动统计：** 1167 个案例 · 343 条完整公开 Prompt · 24 篇教程 · 715 位来源作者中的 241 位优质创作者 · 8 篇旗舰教程 · 14 个生态资源 · 内容核验至 2026-08-30。
 <!-- project-snapshot:end -->
 
 - [`data/project-stats.json`](./data/project-stats.json) 是公开数字的唯一快照；网站与 README 数字过期会让 CI 失败；
@@ -139,7 +139,9 @@ npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
 - 本地 JPG 封面在构建时自动生成 360px、720px WebP，原图继续作为兼容与 SEO 兜底；后续发布新案例也走同一管线。
 - 首页 JSON-LD 与 `<noscript>` 只列最新 48 条；其余案例按每页 48 条生成中英文静态归档，全部案例详情页仍可独立索引。
 - 带哈希的 JS/CSS 永久缓存；HTML 与运行时 JSON 使用 1 分钟共享缓存和过期继续服务；`/media/` 跳转共享缓存 5 分钟，而对象签名保持 1 小时有效。
-- 每条新镜像 MP4 都必须通过 faststart 门槛；不合格视频先无损重排并重新核验再上传。3 条历史官方视频已迁移，原对象备份仍保留在存储桶。
+- 站内视频使用两层不可变存储：`videos/{id}.mp4` 永久保留最高质量源文件和回滚能力，`play/v1/{id}.mp4` 保存站内播放版；`/media/{id}.mp4` 地址不变，通过 `VIDEO_S3_PLAYBACK_PREFIX` 选择存储层，现有 X 原帖入口继续承担高清观看需求。
+- 站内播放版限制长边 1280、约 3Mbps，统一使用带 faststart 的 H.264/AAC。镜像流程优先选择已经符合标准的最高质量 X 原生 MP4，只有必要时才转码；源文件和播放版必须通过大小、时长、编码、faststart 与 Range 校验后才允许发布。
+- `npm run videos:playback:audit` 执行只读清点，`npm run videos:playback:migrate -- --apply` 生成版本化播放层，切换前后运行 `npm run videos:playback:verify`；迁移报告只保存在被忽略的 `.review/`。
 
 当前生产构建实测：**首页 JS 95KB gzip、首页 HTML 10KB gzip、目录 126KB gzip、中文/英文搜索索引 618KB/588KB gzip、首屏 36 张卡片、1687 个 DOM 节点**。静态预算运行 `npm run performance:budget`；启动本地生产服务后运行 `npm run performance:browser` 验证真实浏览器行为。
 
