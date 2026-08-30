@@ -6,10 +6,12 @@ import { tmpdir } from 'node:os'
 import { join, resolve } from 'node:path'
 import { Readable } from 'node:stream'
 import { pipeline } from 'node:stream/promises'
-import { HeadObjectCommand, PutObjectCommand, S3Client } from '@aws-sdk/client-s3'
+import { GetObjectCommand, HeadObjectCommand, PutObjectCommand, S3Client } from '@aws-sdk/client-s3'
 import { NodeHttpHandler } from '@smithy/node-http-handler'
 import { resolvePublishStagingPath } from './review-paths.mjs'
+import { isPlaybackProfileCompliant, PLAYBACK_PROFILE, preparePlaybackFile, probeVideo, summarizeProbe } from './video-playback-profile.mjs'
 import { ensureFaststart } from './video-faststart.mjs'
+import { fetchXVideoSources } from './video-x-source.mjs'
 
 const root = resolve(import.meta.dirname, '..')
 function argumentValue(name) {
@@ -107,33 +109,75 @@ async function exists(key) {
   }
 }
 
-async function sourceFor(item) {
+async function verifyUploadedObject(key, expectedBytes) {
+  const head = await client.send(new HeadObjectCommand({ Bucket: storage.bucket, Key: key }))
+  if (Number(head.ContentLength || 0) !== expectedBytes) throw new Error(`Remote size mismatch for ${key}`)
+  const range = await client.send(new GetObjectCommand({ Bucket: storage.bucket, Key: key, Range: 'bytes=0-1' }))
+  if (!range.ContentRange?.startsWith('bytes 0-1/')) throw new Error(`Remote Range request failed for ${key}`)
+  if (range.Body) await range.Body.transformToByteArray()
+}
+
+async function sourcesFor(item) {
   const official = officialSources.get(item.id)
-  if (official) return official
-  const postId = item.sourceUrl.match(/status\/(\d+)/)?.[1]
-  if (!postId) throw new Error('Missing X post id')
-  const payload = await retry(`Fetch metadata for ${item.id}`, async () => {
-    const response = await fetch(`https://api.fxtwitter.com/status/${postId}`, { headers: { 'User-Agent': 'awesome-minimax-h3-cases/1.0 video-mirror' } })
-    if (!response.ok) throw new Error(`HTTP ${response.status}`)
-    return response.json()
+  if (official) return { original: official, playbackCandidates: [] }
+  const sources = await retry(`Fetch metadata for ${item.id}`, () => fetchXVideoSources(item))
+  if (!sources) throw new Error('Missing X post id')
+  return sources
+}
+
+async function downloadUrl(url, destination, label) {
+  await retry(label, async () => {
+    const response = await fetch(url, { headers: { 'User-Agent': 'awesome-minimax-h3-cases/1.0 video-mirror' } })
+    if (!response.ok || !response.body) throw new Error(`HTTP ${response.status}`)
+    await pipeline(Readable.fromWeb(response.body), createWriteStream(destination))
   })
-  const video = payload.tweet?.media?.videos?.[0] ?? payload.tweet?.media?.all?.find((entry) => entry.type === 'video')
-  const variants = (video?.variants || []).filter((entry) => entry.content_type === 'video/mp4' && entry.url)
-  const best = variants.sort((a, b) => Number(b.bitrate || 0) - Number(a.bitrate || 0))[0]?.url || video?.url
-  if (!best) throw new Error('No downloadable MP4 variant')
-  return best
+}
+
+async function downloadObject(key, destination) {
+  await retry(`Download stored ${key}`, async () => {
+    const response = await client.send(new GetObjectCommand({ Bucket: storage.bucket, Key: key }))
+    if (!response.Body) throw new Error('Object response has no body')
+    await pipeline(response.Body, createWriteStream(destination))
+  })
+}
+
+async function nativePlaybackCandidate(item, urls) {
+  for (let index = 0; index < urls.length; index += 1) {
+    const candidatePath = join(tempDirectory, `${item.id}.native-${index}.mp4`)
+    try {
+      await downloadUrl(urls[index], candidatePath, `Download playback variant for ${item.id}`)
+      const summary = summarizeProbe(await probeVideo(candidatePath))
+      if (!isPlaybackProfileCompliant(summary)) continue
+      return preparePlaybackFile(candidatePath, tempDirectory)
+    } catch (error) {
+      console.warn(`Playback variant rejected for ${item.id}: ${error?.message || error}`)
+    }
+  }
+  return null
 }
 
 async function mirror(item) {
-  const key = `videos/${item.id}.mp4`
-  const present = await exists(key)
-  if (present.exists) return { id: item.id, key, bytes: present.bytes, state: 'existing' }
-  if (!apply) return { id: item.id, key, bytes: 0, state: 'missing' }
+  const sourceKey = `videos/${item.id}.mp4`
+  const playbackKey = `${PLAYBACK_PROFILE.prefix}/${item.id}.mp4`
+  const [sourcePresent, playbackPresent] = await Promise.all([exists(sourceKey), exists(playbackKey)])
+  if (sourcePresent.exists && playbackPresent.exists) {
+    return { id: item.id, sourceKey, playbackKey, bytes: sourcePresent.bytes, playbackBytes: playbackPresent.bytes, state: 'existing' }
+  }
+  if (!apply) {
+    return {
+      id: item.id,
+      sourceKey,
+      playbackKey,
+      bytes: sourcePresent.bytes,
+      playbackBytes: playbackPresent.bytes,
+      state: sourcePresent.exists ? 'missing-playback' : 'missing-source-and-playback',
+    }
+  }
 
   const filePath = join(tempDirectory, `${item.id}.mp4`)
   const stagedSource = sourceDirectory ? resolve(sourceDirectory, `${item.id}.mp4`) : null
   let staged = false
-  if (stagedSource) {
+  if (!sourcePresent.exists && stagedSource) {
     try {
       await access(stagedSource)
       await pipeline(createReadStream(stagedSource), createWriteStream(filePath))
@@ -142,29 +186,68 @@ async function mirror(item) {
       // Fall back to the original public media source below.
     }
   }
-  if (!staged) {
-    const sourceUrl = await sourceFor(item)
-    await retry(`Download ${item.id}`, async () => {
-      const response = await fetch(sourceUrl, { headers: { 'User-Agent': 'awesome-minimax-h3-cases/1.0 video-mirror' } })
-      if (!response.ok || !response.body) throw new Error(`HTTP ${response.status}`)
-      await pipeline(Readable.fromWeb(response.body), createWriteStream(filePath))
-    })
+  let sources = null
+  if (!sourcePresent.exists && !staged) {
+    sources = await sourcesFor(item)
+    await downloadUrl(sources.original, filePath, `Download ${item.id}`)
+  } else if (sourcePresent.exists) {
+    await downloadObject(sourceKey, filePath)
   }
   const downloadedStats = await stat(filePath)
   if (downloadedStats.size < 10_000) throw new Error(`Downloaded file is too small (${downloadedStats.size} bytes)`)
-  const prepared = await ensureFaststart(filePath, tempDirectory)
-  const fileStats = await stat(prepared.path)
-  await retry(`Upload ${item.id}`, () => client.send(new PutObjectCommand({
-    Bucket: storage.bucket,
-    Key: key,
-    Body: createReadStream(prepared.path),
-    ContentLength: fileStats.size,
-    ContentType: 'video/mp4',
-    CacheControl: 'public, max-age=31536000, immutable',
-    Metadata: { source: item.sourceUrl, caseid: item.id, faststart: 'true' },
-  })))
-  await rm(filePath, { force: true })
-  return { id: item.id, key, bytes: fileStats.size, state: 'uploaded' }
+  const preparedSource = await ensureFaststart(filePath, tempDirectory)
+  const sourceStats = await stat(preparedSource.path)
+  if (!sourcePresent.exists) {
+    await retry(`Upload source ${item.id}`, () => client.send(new PutObjectCommand({
+      Bucket: storage.bucket,
+      Key: sourceKey,
+      Body: createReadStream(preparedSource.path),
+      ContentLength: sourceStats.size,
+      ContentType: 'video/mp4',
+      CacheControl: 'public, max-age=31536000, immutable',
+      Metadata: { source: item.sourceUrl, caseid: item.id, faststart: 'true', tier: 'source' },
+    })))
+    await retry(`Verify source ${item.id}`, () => verifyUploadedObject(sourceKey, sourceStats.size))
+  }
+
+  if (!playbackPresent.exists) {
+    if (!sources && item.sourceType !== 'official') {
+      try {
+        sources = await sourcesFor(item)
+      } catch (error) {
+        console.warn(`Native playback lookup failed for ${item.id}; transcoding stored source: ${error?.message || error}`)
+      }
+    }
+    const playback = await nativePlaybackCandidate(item, sources?.playbackCandidates ?? [])
+      ?? await preparePlaybackFile(preparedSource.path, tempDirectory)
+    await retry(`Upload playback ${item.id}`, () => client.send(new PutObjectCommand({
+      Bucket: storage.bucket,
+      Key: playbackKey,
+      Body: createReadStream(playback.path),
+      ContentLength: playback.bytes,
+      ContentType: 'video/mp4',
+      CacheControl: 'public, max-age=31536000, immutable',
+      Metadata: {
+        source: item.sourceUrl,
+        caseid: item.id,
+        faststart: 'true',
+        tier: 'playback',
+        profile: PLAYBACK_PROFILE.name,
+        preparation: playback.state,
+      },
+    })))
+    await retry(`Verify playback ${item.id}`, () => verifyUploadedObject(playbackKey, playback.bytes))
+    return {
+      id: item.id,
+      sourceKey,
+      playbackKey,
+      bytes: sourceStats.size,
+      playbackBytes: playback.bytes,
+      state: sourcePresent.exists ? 'uploaded-playback' : 'uploaded-source-and-playback',
+      playbackState: playback.state,
+    }
+  }
+  return { id: item.id, sourceKey, playbackKey, bytes: sourceStats.size, playbackBytes: playbackPresent.bytes, state: 'uploaded-source' }
 }
 
 async function worker() {
@@ -194,9 +277,9 @@ try {
     await writeFile(tempCasesPath, `${JSON.stringify(mirrored, null, 2)}\n`)
     await rename(tempCasesPath, casesPath)
   }
-  const uploaded = [...results.values()].filter((result) => result.state === 'uploaded')
+  const uploaded = [...results.values()].filter((result) => result.state.startsWith('uploaded'))
   const existing = [...results.values()].filter((result) => result.state === 'existing')
-  console.log(JSON.stringify({ total: targets.length, uploaded: uploaded.length, existing: existing.length, failed: failed.length, uploadedBytes: uploaded.reduce((sum, result) => sum + result.bytes, 0), failures: failed }, null, 2))
+  console.log(JSON.stringify({ total: targets.length, uploaded: uploaded.length, existing: existing.length, failed: failed.length, uploadedBytes: uploaded.reduce((sum, result) => sum + result.bytes, 0), uploadedPlaybackBytes: uploaded.reduce((sum, result) => sum + (result.playbackBytes || 0), 0), failures: failed }, null, 2))
   if (failed.length) process.exitCode = 1
 } finally {
   await rm(tempDirectory, { recursive: true, force: true })

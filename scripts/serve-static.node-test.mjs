@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { after, before, test } from 'node:test'
 
-import { createStaticServer } from './serve-static.mjs'
+import { createStaticServer, normalizeVideoPlaybackPrefix } from './serve-static.mjs'
 
 let baseUrl
 let outsideDir
@@ -140,6 +140,18 @@ test('redirects hosted video requests through a short-lived signed URL', async (
   assert.equal(response.headers.get('location'), 'https://storage.example/x-123.mp4?signature=test')
   assert.equal(response.headers.get('cache-control'), 'public, max-age=60, s-maxage=300, stale-while-revalidate=60')
   assert.deepEqual(signedRequests, [{ key: 'x-123', method: 'GET' }])
+})
+
+test('normalizes a versioned video playback prefix and rejects unsafe values', () => {
+  assert.equal(normalizeVideoPlaybackPrefix(), 'videos')
+  assert.equal(normalizeVideoPlaybackPrefix('/play/v1/'), 'play/v1')
+  for (const value of ['../videos', 'play//v1', 'play v1', 'play/v1?raw=1', '']) {
+    if (value === '') {
+      assert.equal(normalizeVideoPlaybackPrefix(value), 'videos')
+    } else {
+      assert.throws(() => normalizeVideoPlaybackPrefix(value), /invalid object prefix/)
+    }
+  }
 })
 
 test('blocks traversal syntax and symlinks that escape the static root', async () => {
