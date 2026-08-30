@@ -188,7 +188,7 @@ async function uploadPlayback(item, playback, preparation) {
       preparation,
     },
   })))
-  await retry(`Verify ${key}`, () => verifyRemotePlayback(key, playback.bytes))
+  await retry(`Verify ${key}`, () => verifyRemotePlayback(key, playback.bytes), 8)
 }
 
 async function copyCompliantSource(item, sourceKey, sourceHead, summary) {
@@ -210,7 +210,7 @@ async function copyCompliantSource(item, sourceKey, sourceHead, summary) {
       sourceetag: (sourceHead.etag || '').replaceAll('"', ''),
     },
   })))
-  await retry(`Verify ${playbackKey}`, () => verifyRemotePlayback(playbackKey, sourceHead.bytes))
+  await retry(`Verify ${playbackKey}`, () => verifyRemotePlayback(playbackKey, sourceHead.bytes), 8)
   return { bytes: sourceHead.bytes, output: summary, state: 'copied' }
 }
 
@@ -244,7 +244,7 @@ async function migrate(item) {
 
   if (playbackHead.exists && playbackHead.metadata?.profile === PLAYBACK_PROFILE.name && !replace) {
     try {
-      await retry(`Verify existing ${playbackKey}`, () => verifyRemotePlayback(playbackKey, playbackHead.bytes))
+      await retry(`Verify existing ${playbackKey}`, () => verifyRemotePlayback(playbackKey, playbackHead.bytes), 8)
       return { id: item.id, state: 'existing', sourceBytes: sourceHead.bytes, playbackBytes: playbackHead.bytes }
     } catch (error) {
       if (verifyOnly || !apply) throw error
