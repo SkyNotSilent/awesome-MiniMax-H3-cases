@@ -5,7 +5,7 @@
 # MiniMax H3 Cases & Guides
 
 <!-- project-stats:start -->
-**The most complete source-attributed MiniMax H3 case and tutorial library: 1133 playable videos, 337 complete public Prompts, and 24 practical guides.**
+**The most complete source-attributed MiniMax H3 case and tutorial library: 1167 playable videos, 343 complete public Prompts, and 24 practical guides.**
 <!-- project-stats:end -->
 
 **English** · [简体中文](./README.zh-CN.md)
@@ -69,7 +69,7 @@ Browse visually by **cinematic**, **live action**, **animation**, **dialogue**, 
 [![MiniMax H3 featured creator leaderboard](./docs/screenshots/creators-en.png)](https://h3-field-notes-production.up.railway.app/en/creators/)
 
 <!-- creator-stats:start -->
-The dynamic creator board turns the archive into a compounding discovery system. It currently ranks **234 featured creators from 691 source-attributed X authors**, with separate views for overall quality, recent activity, case volume, complete Prompt contribution, rising creators, and tutorial authors.
+The dynamic creator board turns the archive into a compounding discovery system. It currently ranks **241 featured creators from 715 source-attributed X authors**, with separate views for overall quality, recent activity, case volume, complete Prompt contribution, rising creators, and tutorial authors.
 <!-- creator-stats:end -->
 
 - Every profile aggregates the creator's playable cases, complete public Prompts, and source-checked tutorials.
@@ -116,7 +116,7 @@ Example output is structured as a recommended route, environment check, executio
 ## Data, automation, and trust
 
 <!-- project-snapshot:start -->
-**Current generated snapshot:** 1133 cases · 337 complete public Prompts · 24 tutorials · 234 ranked creators from 691 source authors · 8 flagship guides · 14 ecosystem resources · content checked through 2026-08-29.
+**Current generated snapshot:** 1167 cases · 343 complete public Prompts · 24 tutorials · 241 ranked creators from 715 source authors · 8 flagship guides · 14 ecosystem resources · content checked through 2026-08-30.
 <!-- project-snapshot:end -->
 
 - [`data/project-stats.json`](./data/project-stats.json) is the canonical public count snapshot; CI rejects stale website and README numbers.
@@ -139,7 +139,9 @@ The source of truth remains `data/cases.json`, but production builds no longer s
 - Local JPEG posters receive 360px and 720px WebP derivatives during builds, while the original image remains the fallback. New publishing builds generate the same variants automatically.
 - Homepage JSON-LD and `<noscript>` expose the latest 48 cases. Static bilingual archive pages expose the rest in groups of 48, while every case detail page remains independently indexable.
 - Fingerprinted JS/CSS are immutable; HTML and runtime JSON use one-minute shared-cache freshness with stale revalidation. `/media/` redirects use a five-minute shared-cache window, while signed object URLs remain valid for one hour.
-- Every newly mirrored MP4 must pass a faststart gate. Non-compliant media is losslessly remuxed and revalidated before upload; the three legacy official files were migrated with retained object-storage backups.
+- Hosted video uses two immutable storage tiers: `videos/{id}.mp4` preserves the highest-quality source for rollback, while `play/v1/{id}.mp4` is the site playback copy. `/media/{id}.mp4` stays stable and selects its tier through `VIDEO_S3_PLAYBACK_PREFIX`; the existing X link remains the route to the original post and its highest available presentation.
+- Site playback is capped at a 1280px long edge and about 3Mbps H.264/AAC with faststart. Mirroring prefers the highest native X MP4 that already meets the profile and transcodes only when necessary; publication is blocked until both source and playback objects pass size, duration, codec, faststart, and Range checks.
+- Run `npm run videos:playback:audit` for a read-only inventory, `npm run videos:playback:migrate -- --apply` to populate the versioned playback tier, and `npm run videos:playback:verify` before switching or after a release. Migration reports stay in ignored `.review/` files.
 
 Current production-build checks: **95KB homepage JS gzip**, **10KB homepage HTML gzip**, **126KB catalog gzip**, **618KB Chinese / 588KB English search index gzip**, **36 initial cards**, and **1687 initial DOM nodes**. Run `npm run performance:budget` for static budgets and, against a local production server, `npm run performance:browser` for browser behavior.
 
