@@ -156,6 +156,18 @@ function parseRequestTarget(requestUrl) {
   return { decodedPath, rawPath, search }
 }
 
+export function normalizeVideoPlaybackPrefix(value) {
+  const prefix = (value || 'videos').replace(/^\/+|\/+$/g, '')
+  const segments = prefix.split('/')
+  if (
+    !/^[a-zA-Z0-9._-]+(?:\/[a-zA-Z0-9._-]+)*$/.test(prefix)
+    || segments.some((segment) => segment === '.' || segment === '..')
+  ) {
+    throw new Error('VIDEO_S3_PLAYBACK_PREFIX contains an invalid object prefix.')
+  }
+  return prefix
+}
+
 function createVideoStoreFromEnv() {
   const endpoint = process.env.VIDEO_S3_ENDPOINT
   const accessKeyId = process.env.VIDEO_S3_ACCESS_KEY_ID
@@ -170,9 +182,10 @@ function createVideoStoreFromEnv() {
     credentials: { accessKeyId, secretAccessKey },
   })
 
+  const playbackPrefix = normalizeVideoPlaybackPrefix(process.env.VIDEO_S3_PLAYBACK_PREFIX)
   return {
     async sign(key, method) {
-      const input = { Bucket: bucket, Key: `videos/${key}.mp4` }
+      const input = { Bucket: bucket, Key: `${playbackPrefix}/${key}.mp4` }
       const command = method === 'HEAD'
         ? new HeadObjectCommand(input)
         : new GetObjectCommand({ ...input, ResponseContentType: 'video/mp4' })
