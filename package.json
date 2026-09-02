@@ -28,6 +28,7 @@
     "sync:stats": "node scripts/sync-creators.mjs --write && node scripts/sync-project-stats.mjs --write",
     "sync:github": "node scripts/sync-github-metadata.mjs --write",
     "sync:resource-metrics": "node scripts/sync-resource-metrics.mjs --write",
+    "sync:traffic": "node scripts/sync-traffic-snapshot.mjs --write",
     "catalog": "node scripts/build-catalog.mjs",
     "runtime:data": "node scripts/build-runtime-data.mjs",
     "posters:webp": "node scripts/build-poster-variants.mjs",

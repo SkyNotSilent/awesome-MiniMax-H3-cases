@@ -19,6 +19,7 @@ import {
   Users,
   X,
 } from 'lucide-react'
+import { track } from './analytics'
 import rawCases from '../data/cases.json'
 import rawCreators from '../data/creators.json'
 import rawProjectStats from '../data/project-stats.json'
@@ -410,9 +411,11 @@ function HostedVideo({ item, language, title, preparedVideo }: { item: CatalogCa
     const loading = () => setState('loading')
     const ready = () => setState('ready')
     const failed = () => setState('error')
+    const played = () => track('video-play', { caseId: item.id })
     video.addEventListener('loadstart', loading)
     video.addEventListener('canplay', ready)
     video.addEventListener('error', failed)
+    video.addEventListener('play', played, { once: true })
     video.removeAttribute('style')
     mountRef.current.prepend(video)
     if (video.error) failed()
@@ -422,9 +425,10 @@ function HostedVideo({ item, language, title, preparedVideo }: { item: CatalogCa
       video.removeEventListener('loadstart', loading)
       video.removeEventListener('canplay', ready)
       video.removeEventListener('error', failed)
+      video.removeEventListener('play', played)
       disposeHostedVideo(video)
     }
-  }, [video])
+  }, [video, item.id])
 
   return (
     <div className="hosted-video" data-state={state} ref={mountRef}>
@@ -612,6 +616,7 @@ function App() {
 
   const switchLanguage = (nextLanguage: Language) => {
     if (nextLanguage === language) return
+    track('language-switch', { from: language, to: nextLanguage })
     try {
       window.localStorage.setItem(languagePreferenceKey, nextLanguage)
     } catch {
@@ -1099,7 +1104,17 @@ function HomePage({
     window.history.replaceState(window.history.state, '', `${url.pathname}${url.search}${url.hash}`)
   }, [activeAddedDate, activeCollection, promptOnly, updateSession?.cases.since, updateSession?.cases.through])
 
+  useEffect(() => {
+    const trimmed = deferredQuery.trim()
+    if (!trimmed) return
+    const timer = setTimeout(() => {
+      track('search', { scope: 'cases', query: trimmed.slice(0, 80), resultCount: filteredLengthRef.current })
+    }, 800)
+    return () => clearTimeout(timer)
+  }, [deferredQuery])
+
   const toggleFavorite = (id: string) => {
+    track('favorite-toggle', { caseId: id, action: favorites.has(id) ? 'remove' : 'add' })
     setFavorites((current) => {
       const next = new Set(current)
       if (next.has(id)) next.delete(id)
@@ -1348,7 +1363,7 @@ function HomePage({
               item={item}
               index={index}
               language={language}
-              onOpen={(video) => setSelected({ item, video })}
+              onOpen={(video) => { track('case-open', { caseId: item.id, category: item.category, mode: item.mode, source: 'grid', locale: language }); setSelected({ item, video }) }}
               isFavorite={favorites.has(item.id)}
               onFavorite={() => toggleFavorite(item.id)}
               isNew={updateSession?.cases.ids.has(item.id) ?? false}
@@ -1408,7 +1423,7 @@ function FilterGroup({
       <strong>{label}</strong>
       <div>
         {options.map((option) => (
-          <button type="button" key={option} className={option === value ? 'active' : ''} onClick={() => onChange(option)}>
+          <button type="button" key={option} className={option === value ? 'active' : ''} onClick={() => { track('filter-change', { filterType: kind, value: option, locale: language }); onChange(option) }}>
             {taxonomyLabel(option, language, kind)}
           </button>
         ))}
@@ -1615,6 +1630,7 @@ function CopyCommandButton({ command, language }: { command: string; language: L
     try {
       if (!navigator.clipboard?.writeText) throw new Error('clipboard unavailable')
       await navigator.clipboard.writeText(command)
+      track('copy-command', { command: command.slice(0, 80) })
       setState('copied')
     } catch {
       setState('failed')
@@ -1642,6 +1658,7 @@ function CopyTutorialButton({ tutorial, language, compact = false }: { tutorial:
     try {
       if (!navigator.clipboard?.writeText) throw new Error('clipboard unavailable')
       await navigator.clipboard.writeText(task)
+      track('copy-tutorial', { tutorialId: tutorial.id })
       setState('copied')
       window.setTimeout(() => setState('idle'), 1_800)
     } catch {
@@ -1711,6 +1728,15 @@ function TutorialsPage({
     }
     window.history.replaceState(window.history.state, '', `${url.pathname}${url.search}${url.hash}`)
   }, [activeAddedDate, updateSession.tutorials.since, updateSession.tutorials.through])
+
+  useEffect(() => {
+    const trimmed = query.trim()
+    if (!trimmed) return
+    const timer = setTimeout(() => {
+      track('search', { scope: 'tutorials', query: trimmed.slice(0, 80) })
+    }, 800)
+    return () => clearTimeout(timer)
+  }, [query])
 
   const community = useMemo(() => {
     const needle = query.trim().toLowerCase()
@@ -2371,7 +2397,7 @@ function CreatorDetailPage({ language, creator, cases, tutorialGuides }: { langu
               </div>
             </header>
             <div className="case-grid">
-              {filteredCases.map((item, index) => <CaseCard key={item.id} item={item} index={index} language={language} onOpen={(video) => setSelected({ item, video })} isFavorite={favoriteCases.has(item.id)} onFavorite={() => toggleCase(item.id)} isNew={false} />)}
+              {filteredCases.map((item, index) => <CaseCard key={item.id} item={item} index={index} language={language} onOpen={(video) => { track('case-open', { caseId: item.id, category: item.category, mode: item.mode, source: 'creator', locale: language }); setSelected({ item, video }) }} isFavorite={favoriteCases.has(item.id)} onFavorite={() => toggleCase(item.id)} isNew={false} />)}
             </div>
             {filteredCases.length === 0 && <div className="creator-empty"><p>{t.noCases}</p></div>}
           </section>
@@ -2472,6 +2498,7 @@ function CaseDialog({ item, preparedVideo, language, onClose }: { item: CatalogC
   async function copyPrompt() {
     if (!prompt) return
     await navigator.clipboard.writeText(prompt)
+    track('copy-prompt', { caseId: item.id, provenance: detail?.promptProvenance ?? 'unknown' })
     if (!mountedRef.current) return
     setCopied(true)
     if (copyTimerRef.current !== null) window.clearTimeout(copyTimerRef.current)
