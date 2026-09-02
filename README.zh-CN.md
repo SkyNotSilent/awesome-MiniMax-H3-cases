@@ -5,7 +5,7 @@
 # MiniMax H3 Cases & Guides｜案例与实战教程
 
 <!-- project-stats:start -->
-**更完整、更可信的 MiniMax H3 案例与教程库：1215 个可播放视频、356 条完整公开 Prompt、24 篇实用教程。**
+**更完整、更可信的 MiniMax H3 案例与教程库：1241 个可播放视频、356 条完整公开 Prompt、24 篇实用教程。**
 <!-- project-stats:end -->
 
 [English](./README.md) · **简体中文**
@@ -69,7 +69,7 @@ MiniMax H3 也常被搜索为 **Hailuo H3**、**Hailuo 3.0**、**海螺 H3** 和
 [![MiniMax H3 优质创作者动态榜单](./docs/screenshots/creators-zh.png)](https://h3-field-notes-production.up.railway.app/creators/)
 
 <!-- creator-stats:start -->
-动态创作者榜把案例库变成持续复利的发现系统。目前从 **741 位来源明确的 X 作者中筛选出 249 位优质创作者**，可查看综合优质、近期活跃、案例最多、Prompt 贡献、新锐作者和教程作者榜。
+动态创作者榜把案例库变成持续复利的发现系统。目前从 **753 位来源明确的 X 作者中筛选出 253 位优质创作者**，可查看综合优质、近期活跃、案例最多、Prompt 贡献、新锐作者和教程作者榜。
 <!-- creator-stats:end -->
 
 - 每位作者都有独立主页，聚合可播放案例、完整公开 Prompt 与来源核验教程；
@@ -116,7 +116,7 @@ npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
 ## 数据、自动化与可信度
 
 <!-- project-snapshot:start -->
-**当前自动统计：** 1215 个案例 · 356 条完整公开 Prompt · 24 篇教程 · 741 位来源作者中的 249 位优质创作者 · 8 篇旗舰教程 · 14 个生态资源 · 内容核验至 2026-09-01。
+**当前自动统计：** 1241 个案例 · 356 条完整公开 Prompt · 24 篇教程 · 753 位来源作者中的 253 位优质创作者 · 8 篇旗舰教程 · 14 个生态资源 · 内容核验至 2026-09-02。
 <!-- project-snapshot:end -->
 
 - [`data/project-stats.json`](./data/project-stats.json) 是公开数字的唯一快照；网站与 README 数字过期会让 CI 失败；
