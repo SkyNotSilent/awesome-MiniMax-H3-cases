@@ -278,6 +278,9 @@ describe('case-first routes', () => {
       length: 0,
     }
     Object.defineProperty(window, 'localStorage', { configurable: true, value: unavailableStorage })
+    // With storage blocked the stored 'zh' preference is unreadable, so pin the
+    // visitor language too; otherwise jsdom's en-US redirects '/' to the English home.
+    Object.defineProperty(navigator, 'languages', { configurable: true, value: ['zh-CN'] })
     try {
       renderAt('/')
       expect(screen.getByRole('heading', { name: '日期浏览仍可使用。' })).toBeInTheDocument()
@@ -287,6 +290,7 @@ describe('case-first routes', () => {
     } finally {
       cleanup()
       Object.defineProperty(window, 'localStorage', { configurable: true, value: originalStorage })
+      Reflect.deleteProperty(navigator, 'languages')
     }
   })
 
