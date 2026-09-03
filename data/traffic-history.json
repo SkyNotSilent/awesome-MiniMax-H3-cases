@@ -1,6 +1,6 @@
 {
   "repo": "SkyNotSilent/awesome-minimax-h3-cases",
-  "generatedAt": "2026-09-02T18:08:50.917Z",
+  "generatedAt": "2026-09-03T00:13:13.487Z",
   "days": [
     {
       "date": "2026-08-19",
@@ -106,6 +106,13 @@
       "forks": 2,
       "watchers": 1,
       "openIssues": 3
+    },
+    {
+      "date": "2026-09-03",
+      "stars": 110,
+      "forks": 2,
+      "watchers": 1,
+      "openIssues": 3
     }
   ],
   "referrerSnapshots": [
@@ -163,11 +170,131 @@
           "uniques": 1
         }
       ]
+    },
+    {
+      "date": "2026-09-03",
+      "top": [
+        {
+          "referrer": "reddit.com",
+          "count": 212,
+          "uniques": 96
+        },
+        {
+          "referrer": "github.com",
+          "count": 114,
+          "uniques": 47
+        },
+        {
+          "referrer": "chatgpt.com",
+          "count": 66,
+          "uniques": 26
+        },
+        {
+          "referrer": "com.reddit.frontpage",
+          "count": 41,
+          "uniques": 26
+        },
+        {
+          "referrer": "Google",
+          "count": 29,
+          "uniques": 23
+        },
+        {
+          "referrer": "old.reddit.com",
+          "count": 8,
+          "uniques": 5
+        },
+        {
+          "referrer": "chatgptshare.org",
+          "count": 2,
+          "uniques": 1
+        },
+        {
+          "referrer": "com.twitter.android",
+          "count": 2,
+          "uniques": 1
+        },
+        {
+          "referrer": "Bing",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "referrer": "org.telegram.messenger",
+          "count": 1,
+          "uniques": 1
+        }
+      ]
     }
   ],
   "pathSnapshots": [
     {
       "date": "2026-09-02",
+      "top": [
+        {
+          "path": "/SkyNotSilent/awesome-MiniMax-H3-cases",
+          "title": "Overview",
+          "count": 272,
+          "uniques": 207
+        },
+        {
+          "path": "/SkyNotSilent/awesome-minimax-h3-cases",
+          "title": "Overview",
+          "count": 174,
+          "uniques": 107
+        },
+        {
+          "path": "/SkyNotSilent/awesome-minimax-h3",
+          "title": "Overview",
+          "count": 141,
+          "uniques": 100
+        },
+        {
+          "path": "/SkyNotSilent/awesome-MiniMax-H3-cases/blob/main/README.zh-CN.md",
+          "title": "/blob/main/README.zh-CN.md",
+          "count": 47,
+          "uniques": 33
+        },
+        {
+          "path": "/SkyNotSilent/awesome-minimax-h3-cases/blob/main/CATALOG.md",
+          "title": "/blob/main/CATALOG.md",
+          "count": 11,
+          "uniques": 11
+        },
+        {
+          "path": "/SkyNotSilent/awesome-minimax-h3-cases/blob/main/agents/skills/minimax-h3-prompt-library/SKILL.md",
+          "title": "/blob/main/agents/skills/minimax-h3-prompt-library/SKILL.md",
+          "count": 11,
+          "uniques": 7
+        },
+        {
+          "path": "/SkyNotSilent/awesome-minimax-h3-cases/tree/main/agents/skills/minimax-h3-prompt-library",
+          "title": "/tree/main/agents/skills/minimax-h3-prompt-library",
+          "count": 11,
+          "uniques": 7
+        },
+        {
+          "path": "/SkyNotSilent/awesome-MiniMax-H3-cases/blob/main/agents/skills/minimax-h3-prompt-library/SKILL.md",
+          "title": "/blob/main/agents/skills/minimax-h3-prompt-library/SKILL.md",
+          "count": 11,
+          "uniques": 6
+        },
+        {
+          "path": "/SkyNotSilent/awesome-minimax-h3/blob/main/CATALOG.md",
+          "title": "/blob/main/CATALOG.md",
+          "count": 10,
+          "uniques": 9
+        },
+        {
+          "path": "/SkyNotSilent/awesome-MiniMax-H3-cases/tree/main/agents/skills/minimax-h3-prompt-library",
+          "title": "/tree/main/agents/skills/minimax-h3-prompt-library",
+          "count": 10,
+          "uniques": 8
+        }
+      ]
+    },
+    {
+      "date": "2026-09-03",
       "top": [
         {
           "path": "/SkyNotSilent/awesome-MiniMax-H3-cases",
