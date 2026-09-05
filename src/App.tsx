@@ -1190,6 +1190,11 @@ function HomePage({
   }, [catalogReady, loadMoreAutomatically])
 
   const visibleCases = filtered.slice(0, visibleCount)
+  const validFavoriteCount = useMemo(
+    () => cases.reduce((count, item) => count + Number(favorites.has(item.id)), 0),
+    [cases, favorites],
+  )
+  const hasEmptyFavoriteCollection = activeCollection === 'favorites' && validFavoriteCount === 0
 
   const advancedCount = [activeCategory, activeStyle, activeScene].filter((value) => value !== 'ALL').length
   const resetCaseFilters = useCallback((preset: AddedDatePreset = 'all') => {
@@ -1397,14 +1402,24 @@ function HomePage({
 
         {catalog && filtered.length === 0 && (
           <div className="empty-state">
-            <span>{activeAddedDate === 'unseen' ? t.catalog.addedDatePresets.unseen : t.catalog.noMatchesEyebrow}</span>
-            <p>{activeAddedDate === 'unseen' && (updateSession?.cases.ids.size ?? 0) > 0
+            <span>{hasEmptyFavoriteCollection
+              ? t.catalog.favoritesEmptyEyebrow
+              : activeAddedDate === 'unseen'
+                ? t.catalog.addedDatePresets.unseen
+                : t.catalog.noMatchesEyebrow}</span>
+            <p>{hasEmptyFavoriteCollection
+              ? t.catalog.favoritesEmptyTitle
+              : activeAddedDate === 'unseen' && (updateSession?.cases.ids.size ?? 0) > 0
               ? t.catalog.filteredUpdatesTitle
               : activeAddedDate === 'unseen'
                 ? t.catalog.snapshotEmptyTitle
                 : t.catalog.noMatches}</p>
-            {activeAddedDate === 'unseen' ? <small>{(updateSession?.cases.ids.size ?? 0) > 0 ? t.catalog.filteredUpdatesDescription : t.catalog.snapshotEmptyDescription}</small> : null}
-            {activeAddedDate === 'unseen' ? <button type="button" onClick={() => resetCaseFilters((updateSession?.cases.ids.size ?? 0) > 0 ? 'unseen' : 'all')}>{(updateSession?.cases.ids.size ?? 0) > 0 ? t.catalog.resetFilters : t.catalog.viewAll}</button> : null}
+            {hasEmptyFavoriteCollection
+              ? <small>{t.catalog.favoritesEmptyDescription}</small>
+              : activeAddedDate === 'unseen'
+                ? <small>{(updateSession?.cases.ids.size ?? 0) > 0 ? t.catalog.filteredUpdatesDescription : t.catalog.snapshotEmptyDescription}</small>
+                : null}
+            {!hasEmptyFavoriteCollection && activeAddedDate === 'unseen' ? <button type="button" onClick={() => resetCaseFilters((updateSession?.cases.ids.size ?? 0) > 0 ? 'unseen' : 'all')}>{(updateSession?.cases.ids.size ?? 0) > 0 ? t.catalog.resetFilters : t.catalog.viewAll}</button> : null}
           </div>
         )}
         <div className="update-read-status" aria-live="polite">
