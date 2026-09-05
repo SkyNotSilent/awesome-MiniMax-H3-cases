@@ -11,12 +11,13 @@ const creatorCatalog = JSON.parse(await readFile(resolve(root, 'data/creators.js
 const modes = new Set(['T2VA', 'FL2VA', 'Ref2VA', 'Unknown'])
 const provenance = new Set(['official-verbatim', 'creator-verbatim', 'not-published'])
 const promptCompleteness = new Set(['complete'])
+const featuredBases = new Set(['official', 'manual', 'trending'])
 const publicCaseKeys = new Set([
   'addedAt', 'approvedAt', 'aspectRatio', 'attributionNote', 'author', 'category', 'duration', 'editorialBasis',
   'engagement', 'id', 'inputTypes', 'mediaCount', 'mediaItems', 'mediaMetadata', 'mediaUrl', 'mode', 'model',
   'posterUrl', 'prompt', 'promptCompleteness', 'promptProvenance', 'promptSourceUrl', 'publishedAt', 'resolution',
   'scenes', 'sourceCaption', 'sourceLabel', 'sourceType', 'sourceUrl', 'styles', 'summary', 'summaryEn', 'tags',
-  'title', 'titleEn', 'verified',
+  'title', 'titleEn', 'verified', 'featured',
 ])
 const ids = new Set()
 const sourceUrls = new Set()
@@ -99,6 +100,15 @@ for (const [index, item] of cases.entries()) {
     if (Number.isNaN(Date.parse(engagementTimestamp))) errors.push(`${at}.engagement snapshotAt/capturedAt must be a valid date`)
   }
   if (item.approvedAt && Number.isNaN(Date.parse(item.approvedAt))) errors.push(`${at}.approvedAt must be a valid date`)
+  if (item.featured) {
+    const featuredKeys = Object.keys(item.featured)
+    for (const key of featuredKeys) {
+      if (!['at', 'basis'].includes(key)) errors.push(`${at}.featured.${key} is not allowed in public case data`)
+    }
+    if (!isoDateTimePattern.test(item.featured.at) || Number.isNaN(Date.parse(item.featured.at))) errors.push(`${at}.featured.at must be a valid ISO date-time`)
+    if (!featuredBases.has(item.featured.basis)) errors.push(`${at}.featured.basis is invalid`)
+    if (Date.parse(item.featured.at) < Date.parse(item.addedAt)) errors.push(`${at}.featured.at cannot predate addedAt`)
+  }
   try {
     new URL(item.sourceUrl)
     new URL(item.mediaUrl, 'https://h3-field-notes-production.up.railway.app')
@@ -113,6 +123,9 @@ for (const [index, item] of cases.entries()) {
     }
   }
 }
+
+const featuredCases = cases.filter((item) => item.featured)
+if (featuredCases.length < 24 || featuredCases.length > 28) errors.push(`featured cases must contain 24–28 entries; found ${featuredCases.length}`)
 
 const tutorialIds = new Set()
 const tutorialCodes = new Set()

@@ -174,6 +174,7 @@ function caseDetail(item: VideoCase): CaseDetail {
 const testCatalog: CatalogPayload | null = testCases && testTutorialGuides ? {
   version: 1,
   generatedAt: maxAddedAt([...testCases, ...testTutorialGuides]),
+  featuredCaseIds: ['official-ref2va-lamb', 'official-t2va-starship', 'x-yukyuk-h3-seedance-same-prompt'],
   cases: testCases.map(catalogCase),
   tutorials: testTutorialGuides.map(({ id, addedAt }) => ({ id, addedAt })),
 } : null
@@ -647,7 +648,7 @@ function App() {
       {route.page === 'tutorial-detail' && activeTutorial && tutorialGuides && tutorialResources && <TutorialDetailPage language={language} tutorial={activeTutorial} tutorialGuides={tutorialGuides} tutorialResources={tutorialResources} />}
       {route.page === 'tutorial-detail' && tutorialGuides && !activeTutorial && <TutorialNotFound language={language} />}
       {route.page === 'creators' && creatorCatalog && catalog && tutorialGuides && <CreatorsPage language={language} creatorCatalog={creatorCatalog} cases={catalog.cases} tutorialGuides={tutorialGuides} />}
-      {route.page === 'creator-detail' && activeCreator && catalog && tutorialGuides && <CreatorDetailPage language={language} creator={activeCreator} cases={catalog.cases} tutorialGuides={tutorialGuides} />}
+      {route.page === 'creator-detail' && activeCreator && catalog && tutorialGuides && <CreatorDetailPage language={language} creator={activeCreator} cases={catalog.cases} featuredCaseIds={catalog.featuredCaseIds} tutorialGuides={tutorialGuides} />}
       {route.page === 'creator-detail' && creatorCatalog && !activeCreator && <CreatorNotFound language={language} />}
       {route.page !== 'home' && route.page !== 'faq' && ((!catalog && catalogError) || routeDataError) && <ResourceState language={language} failed onRetry={() => { reloadCatalog(); reloadRouteData() }} />}
       {route.page !== 'home' && route.page !== 'faq' && !routeDataError && (!catalog || (needsTutorials && !tutorialGuides) || (needsCreators && !creatorCatalog)) && <ResourceState language={language} />}
@@ -1070,7 +1071,8 @@ function HomePage({
   const sentinelRef = useRef<HTMLDivElement | null>(null)
   const [updateVisibilityTarget, setUpdateVisibilityTarget] = useState<HTMLDivElement | null>(null)
   const filteredLengthRef = useRef(0)
-  const lastAutomaticLoadAtRef = useRef(Number.NEGATIVE_INFINITY)
+  const lastLoadRef = useRef<{ at: number; source: 'automatic' | 'manual' | null }>({ at: Number.NEGATIVE_INFINITY, source: null })
+  const lastAutomaticScrollYRef = useRef(Number.NEGATIVE_INFINITY)
   const updateInitializedRef = useRef(Boolean(updateSession))
   const [introReady, setIntroReady] = useState(false)
   const testSearchMap = useMemo(() => {
@@ -1107,10 +1109,11 @@ function HomePage({
   const allCategories = useMemo(() => [...new Set(cases.map((item) => item.category))], [cases])
   const allStyles = useMemo(() => [...new Set(cases.flatMap((item) => item.styles))], [cases])
   const allScenes = useMemo(() => [...new Set(cases.flatMap((item) => item.scenes))], [cases])
-  const featuredCaseIds = useMemo(() => new Set(cases
-    .filter((item) => item.verified && Boolean(item.mediaUrl) && item.hasPrompt)
-    .slice(0, 24)
-    .map((item) => item.id)), [cases])
+  const featuredCaseOrder = useMemo(
+    () => new Map((catalog?.featuredCaseIds ?? []).map((id, index) => [id, index])),
+    [catalog?.featuredCaseIds],
+  )
+  const featuredCaseIds = useMemo(() => new Set(featuredCaseOrder.keys()), [featuredCaseOrder])
   const latestCaseIds = useMemo(() => new Set([...cases]
     .sort((a, b) => Date.parse(b.addedAt) - Date.parse(a.addedAt))
     .slice(0, 48)
@@ -1185,8 +1188,11 @@ function HomePage({
       return matchesDuration && matchesCategory && matchesStyle && matchesScene && matchesPrompt && matchesCollection && matchesAdded
         && (!needle || haystack.includes(needle))
     })
+    if (activeCollection === 'featured') {
+      return matching.sort((a, b) => (featuredCaseOrder.get(a.id) ?? Number.MAX_SAFE_INTEGER) - (featuredCaseOrder.get(b.id) ?? Number.MAX_SAFE_INTEGER))
+    }
     return sortByAddedAtDescending(matching)
-  }, [activeAddedDate, activeCategory, activeCollection, activeDuration, activeScene, activeStyle, cases, deferredQuery, favorites, featuredCaseIds, language, latestCaseIds, promptOnly, searchRecords, updateSession?.cases])
+  }, [activeAddedDate, activeCategory, activeCollection, activeDuration, activeScene, activeStyle, cases, deferredQuery, favorites, featuredCaseIds, featuredCaseOrder, language, latestCaseIds, promptOnly, searchRecords, updateSession?.cases])
 
   const hasMore = visibleCount < filtered.length
   useEffect(() => {
@@ -1196,24 +1202,41 @@ function HomePage({
     setVisibleCount((current) => Math.min(current + 24, filteredLengthRef.current))
   }, [])
   const loadMoreAutomatically = useCallback(() => {
-    lastAutomaticLoadAtRef.current = performance.now()
+    const now = performance.now()
+    if (now - lastLoadRef.current.at < 1_500) return
+    lastLoadRef.current = { at: now, source: 'automatic' }
     loadMore()
   }, [loadMore])
   const loadMoreManually = useCallback(() => {
-    if (performance.now() - lastAutomaticLoadAtRef.current < 1_500) return
+    const now = performance.now()
+    if (lastLoadRef.current.source === 'automatic' && now - lastLoadRef.current.at < 1_500) return
+    lastLoadRef.current = { at: now, source: 'manual' }
     loadMore()
   }, [loadMore])
   const catalogReady = Boolean(catalog)
 
   useEffect(() => {
     const sentinel = sentinelRef.current
-    const Observer = window.IntersectionObserver
-    if (!sentinel || !catalogReady || typeof Observer !== 'function') return
-    const observer = new Observer((entries) => {
-      if (entries.some((entry) => entry.isIntersecting)) loadMoreAutomatically()
-    }, { rootMargin: '1200px 0px' })
-    observer.observe(sentinel)
-    return () => observer.disconnect()
+    if (!sentinel || !catalogReady) return
+    let timer: number | null = null
+    const maybeLoad = () => {
+      if (timer !== null) window.clearTimeout(timer)
+      timer = window.setTimeout(() => {
+        timer = null
+        const bounds = sentinel.getBoundingClientRect()
+        const nearViewport = bounds.top <= window.innerHeight + 1_200 && bounds.bottom >= -1_200
+        if (!nearViewport || Math.abs(window.scrollY - lastAutomaticScrollYRef.current) < 120) return
+        lastAutomaticScrollYRef.current = window.scrollY
+        loadMoreAutomatically()
+      }, 500)
+    }
+    window.addEventListener('scroll', maybeLoad, { passive: true })
+    window.addEventListener('resize', maybeLoad)
+    return () => {
+      window.removeEventListener('scroll', maybeLoad)
+      window.removeEventListener('resize', maybeLoad)
+      if (timer !== null) window.clearTimeout(timer)
+    }
   }, [catalogReady, loadMoreAutomatically])
 
   const visibleCases = filtered.slice(0, visibleCount)
@@ -1412,6 +1435,7 @@ function HomePage({
               isFavorite={favorites.has(item.id)}
               onFavorite={() => toggleFavorite(item.id)}
               isNew={updateSession?.cases.ids.has(item.id) ?? false}
+              isFeatured={featuredCaseIds.has(item.id)}
             />
           ))}
           {!catalog && !catalogError ? Array.from({ length: 12 }, (_, index) => <div className="case-card case-card-skeleton" key={index} aria-hidden="true"><span /></div>) : null}
@@ -1495,6 +1519,7 @@ function CaseCard({
   isFavorite,
   onFavorite,
   isNew,
+  isFeatured,
 }: {
   item: CatalogCase
   index: number
@@ -1503,6 +1528,7 @@ function CaseCard({
   isFavorite: boolean
   onFavorite: () => void
   isNew: boolean
+  isFeatured: boolean
 }) {
   const t = copy[language].card
   const title = caseTitle(item, language)
@@ -1577,6 +1603,7 @@ function CaseCard({
       <div className="case-meta">
         <div className="added-at-meta">
           {isNew ? <strong>{copy[language].catalog.newlyAdded}</strong> : null}
+          {isFeatured ? <strong className="featured-label">{copy[language].catalog.featuredLabel}</strong> : null}
           <time dateTime={item.addedAt}>{copy[language].catalog.addedOn(formatAddedDate(item.addedAt, language))}</time>
         </div>
         <div className="mode-line">
@@ -2368,7 +2395,7 @@ function CreatorsPage({ language, creatorCatalog, cases, tutorialGuides }: { lan
   )
 }
 
-function CreatorDetailPage({ language, creator, cases, tutorialGuides }: { language: Language; creator: CreatorProfile; cases: CatalogCase[]; tutorialGuides: TutorialGuide[] }) {
+function CreatorDetailPage({ language, creator, cases, featuredCaseIds, tutorialGuides }: { language: Language; creator: CreatorProfile; cases: CatalogCase[]; featuredCaseIds: string[]; tutorialGuides: TutorialGuide[] }) {
   const t = copy[language].creators
   const [savedCreators, setSavedCreators] = useState(() => loadStoredSet(favoriteCreatorStorageKey))
   const [favoriteCases, setFavoriteCases] = useState(() => loadStoredSet(favoriteStorageKey))
@@ -2380,6 +2407,7 @@ function CreatorDetailPage({ language, creator, cases, tutorialGuides }: { langu
   const creatorCategories = [...new Set(creatorCases.map((item) => item.category))]
   const creatorTutorials = creator.tutorialIds.map((id) => tutorialGuides.find((item) => item.id === id)).filter((item): item is TutorialGuide => Boolean(item))
   const saved = savedCreators.has(creator.id)
+  const featuredIds = useMemo(() => new Set(featuredCaseIds), [featuredCaseIds])
 
   useEffect(() => {
     const url = new URL(window.location.href)
@@ -2452,7 +2480,7 @@ function CreatorDetailPage({ language, creator, cases, tutorialGuides }: { langu
               </div>
             </header>
             <div className="case-grid">
-              {filteredCases.map((item, index) => <CaseCard key={item.id} item={item} index={index} language={language} onOpen={(video) => { track('case-open', { caseId: item.id, category: item.category, mode: item.mode, source: 'creator', locale: language }); setSelected({ item, video }) }} isFavorite={favoriteCases.has(item.id)} onFavorite={() => toggleCase(item.id)} isNew={false} />)}
+              {filteredCases.map((item, index) => <CaseCard key={item.id} item={item} index={index} language={language} onOpen={(video) => { track('case-open', { caseId: item.id, category: item.category, mode: item.mode, source: 'creator', locale: language }); setSelected({ item, video }) }} isFavorite={favoriteCases.has(item.id)} onFavorite={() => toggleCase(item.id)} isNew={false} isFeatured={featuredIds.has(item.id)} />)}
             </div>
             {filteredCases.length === 0 && <div className="creator-empty"><p>{t.noCases}</p></div>}
           </section>

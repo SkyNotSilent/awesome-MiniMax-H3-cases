@@ -41,6 +41,10 @@ export interface VideoCase {
   approvedAt?: string
   attributionNote?: string
   editorialBasis?: string
+  featured?: {
+    at: string
+    basis: 'official' | 'manual' | 'trending'
+  }
 }
 
 export interface CatalogCase {
@@ -85,6 +89,7 @@ export interface SearchRecord {
 export interface CatalogPayload {
   version: number
   generatedAt: string
+  featuredCaseIds: string[]
   cases: CatalogCase[]
   tutorials: Array<{ id: string; addedAt: string }>
 }

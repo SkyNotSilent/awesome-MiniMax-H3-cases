@@ -37,6 +37,16 @@ const catalogCases = cases.map((item) => ({
   hasPrompt: item.promptProvenance !== 'not-published' && Boolean(item.prompt?.trim()),
 }))
 
+const featuredBasisOrder = new Map([['official', 0], ['manual', 1], ['trending', 2]])
+const featuredCaseIds = cases
+  .filter((item) => item.featured)
+  .sort((a, b) => {
+    const basis = (featuredBasisOrder.get(a.featured.basis) ?? 99) - (featuredBasisOrder.get(b.featured.basis) ?? 99)
+    if (basis !== 0) return basis
+    return Date.parse(b.featured.at) - Date.parse(a.featured.at) || a.id.localeCompare(b.id)
+  })
+  .map((item) => item.id)
+
 const detailFor = (item) => ({
   id: item.id,
   summary: item.summary,
@@ -64,6 +74,7 @@ await mkdir(detailRoot, { recursive: true })
 const catalog = {
   version: 1,
   generatedAt: [...cases, ...tutorials].map((item) => item.addedAt).sort().at(-1),
+  featuredCaseIds,
   cases: catalogCases,
   tutorials: tutorials.map(({ id, addedAt }) => ({ id, addedAt })),
 }
