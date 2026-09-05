@@ -608,7 +608,7 @@ describe('case-first routes', () => {
     expect(screen.getByRole('link', { name: '去 X 关注' })).toHaveAttribute('href', 'https://x.com/icreat_ai')
     expect(screen.getByText('餐厅时间冻结与逆向复原')).toBeInTheDocument()
 
-    fireEvent.change(screen.getByRole('combobox', { name: /内容分类/ }), { target: { value: 'Model Comparison' } })
+    fireEvent.change(screen.getByRole('combobox', { name: /内容分类/ }), { target: { value: 'comparison' } })
     expect(screen.queryByText('餐厅时间冻结与逆向复原')).not.toBeInTheDocument()
     expect(screen.getByText('两种生成模型再次对照')).toBeInTheDocument()
     fireEvent.change(screen.getByRole('combobox', { name: /内容分类/ }), { target: { value: 'ALL' } })
@@ -616,6 +616,34 @@ describe('case-first routes', () => {
     fireEvent.click(screen.getByRole('switch', { name: /只看有 Prompt/ }))
     expect(window.location.search).toBe('?prompt=1')
     expect(screen.getByText('餐厅时间冻结与逆向复原')).toBeInTheDocument()
+  })
+
+  it('uses the complete fixed taxonomy with facet counts, disabled zero values, and URL restoration', () => {
+    renderAt('/?category=comparison&style=photoreal&scene=city')
+    const details = document.querySelector('.advanced-filters') as HTMLDetailsElement
+    details.open = true
+
+    const panel = document.querySelector('.advanced-filters .filter-panel') as HTMLElement
+    expect(within(panel).getByRole('button', { name: /模型对比/ })).toHaveAttribute('aria-pressed', 'true')
+    expect(within(panel).getByRole('button', { name: /照片级写实/ })).toHaveAttribute('aria-pressed', 'true')
+    expect(within(panel).getByRole('button', { name: /城市街景/ })).toHaveAttribute('aria-pressed', 'true')
+    expect(panel.querySelectorAll('[data-filter-kind="category"] button')).toHaveLength(11)
+    expect(panel.querySelectorAll('[data-filter-kind="style"] button')).toHaveLength(13)
+    expect(panel.querySelectorAll('[data-filter-kind="scene"] button')).toHaveLength(15)
+    const categoryGroup = panel.querySelector('[data-filter-kind="category"]') as HTMLElement
+    expect(within(categoryGroup).getByRole('button', { name: /舞蹈/ })).toBeDisabled()
+    expect(within(categoryGroup).getByRole('button', { name: /^全部/ })).not.toBeDisabled()
+    expect(window.location.search).toContain('category=comparison')
+    expect(window.location.search).toContain('style=photoreal')
+    expect(window.location.search).toContain('scene=city')
+  })
+
+  it('removes illegal taxonomy URL values and preserves valid ones during language switching', () => {
+    renderAt('/?category=not-real&style=anime&scene=not-real')
+    expect(window.location.search).toBe('?style=anime')
+    fireEvent.click(screen.getByRole('link', { name: '切换到英文' }))
+    expect(window.location.pathname).toBe('/en/')
+    expect(window.location.search).toBe('?style=anime')
   })
 
   it('renders an explicit 404 for an unknown creator', () => {

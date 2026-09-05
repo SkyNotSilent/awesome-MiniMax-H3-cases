@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import taxonomy from '../data/taxonomy.json'
+import schema from '../data/schema.json'
 import {
   classifyLegacyCase,
   migrateCaseTaxonomy,
@@ -32,6 +33,14 @@ describe('fixed case taxonomy', () => {
       scenes: ['city', 'nature'],
       invalidValues: ['styles:not-public'],
     })
+  })
+
+  it('keeps the JSON schema enums synchronized with the taxonomy file', () => {
+    expect(schema.properties.category.enum).toEqual(taxonomy.categories.map((entry) => entry.key))
+    expect(schema.properties.styles.items.enum).toEqual(taxonomy.styles.map((entry) => entry.key))
+    expect(schema.properties.scenes.items.enum).toEqual(taxonomy.scenes.map((entry) => entry.key))
+    expect(schema.properties.styles.maxItems).toBe(2)
+    expect(schema.properties.scenes.maxItems).toBe(2)
   })
 })
 

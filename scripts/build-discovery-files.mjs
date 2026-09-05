@@ -1,5 +1,6 @@
 import { readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
+import { taxonomyLabel } from './taxonomy.mjs'
 
 const root = resolve(import.meta.dirname, '..')
 const baseUrl = (process.env.PUBLIC_SITE_URL || 'https://h3-field-notes-production.up.railway.app').replace(/\/$/, '')
@@ -15,6 +16,11 @@ const withoutTrailingWhitespace = (text) => text.replace(/[ \t]+$/gm, '')
 const caseUrl = (id, locale = 'zh-CN') => `${baseUrl}${locale === 'en' ? '/en' : ''}/cases/${encodeURIComponent(id)}/`
 const tutorialUrl = (id, locale = 'zh-CN') => `${baseUrl}${locale === 'en' ? '/en' : ''}/tutorials/${encodeURIComponent(id)}/`
 const creatorUrl = (slug, locale = 'zh-CN') => `${baseUrl}${locale === 'en' ? '/en' : ''}/creators/${encodeURIComponent(slug)}/`
+const caseTaxonomy = (item, language = 'en') => [
+  taxonomyLabel(item.category, language, 'categories'),
+  ...item.styles.map((value) => taxonomyLabel(value, language, 'styles')),
+  ...item.scenes.map((value) => taxonomyLabel(value, language, 'scenes')),
+]
 
 const representatives = [
   ...promptCases.slice(0, 12),
@@ -51,7 +57,7 @@ const llms = `# MiniMax H3 Cases & Guides
 
 ## Representative examples
 
-${representatives.map((item) => `- ${caseUrl(item.id, 'en')} — ${item.titleEn}; ${item.mode}; ${item.promptProvenance}; source: ${item.sourceUrl}`).join('\n')}
+${representatives.map((item) => `- ${caseUrl(item.id, 'en')} — ${item.titleEn}; ${item.mode}; ${caseTaxonomy(item).join(' · ')}; ${item.promptProvenance}; source: ${item.sourceUrl}`).join('\n')}
 
 ## Tutorial guides
 
@@ -130,7 +136,9 @@ ${cases.map((item) => `## ${item.titleEn}
 - Published: ${item.publishedAt}
 - Model: ${item.model}
 - Mode: ${item.mode}
-- Category: ${item.category}
+- Category: ${taxonomyLabel(item.category, 'en', 'categories')}
+- Visual styles: ${item.styles.map((value) => taxonomyLabel(value, 'en', 'styles')).join(', ') || 'not specified'}
+- Scenes: ${item.scenes.map((value) => taxonomyLabel(value, 'en', 'scenes')).join(', ') || 'not specified'}
 - Output: ${item.duration}s, ${item.resolution}, ${item.aspectRatio}
 - Prompt provenance: ${item.promptProvenance}
 - Prompt completeness: ${item.prompt ? (item.promptCompleteness ?? 'complete') : 'not-published'}

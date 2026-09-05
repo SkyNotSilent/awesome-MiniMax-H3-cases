@@ -23,6 +23,7 @@ import { track } from './analytics'
 import rawCases from '../data/cases.json'
 import rawCreators from '../data/creators.json'
 import rawProjectStats from '../data/project-stats.json'
+import rawTaxonomy from '../data/taxonomy.json'
 import rawTutorialGuides from '../data/tutorial-guides.json'
 import rawTutorials from '../data/tutorials.json'
 import {
@@ -53,7 +54,7 @@ import {
   type AppPage,
   type Language,
 } from './i18n'
-import type { CaseDetail, CatalogCase, CatalogPayload, CreatorCatalog, CreatorProfile, CreatorRankKey, SearchRecord, TutorialCategory, TutorialGuide, TutorialHardwareProfile, TutorialResource, VideoCase } from './types'
+import type { CaseDetail, CatalogCase, CatalogPayload, CreatorCatalog, CreatorProfile, CreatorRankKey, SearchRecord, Taxonomy, TutorialCategory, TutorialGuide, TutorialHardwareProfile, TutorialResource, VideoCase } from './types'
 import { XPostEmbed } from './XPostEmbed'
 import {
   addedDateHref,
@@ -82,6 +83,22 @@ const testCreatorCatalog = import.meta.env.MODE === 'test' ? rawCreators as Crea
 const testTutorialResources = import.meta.env.MODE === 'test' ? rawTutorials as TutorialResource[] : null
 const testTutorialGuides = import.meta.env.MODE === 'test' ? rawTutorialGuides as TutorialGuide[] : null
 const projectStats = rawProjectStats
+const caseTaxonomy = rawTaxonomy as Taxonomy
+const taxonomyFilterOptions = {
+  category: caseTaxonomy.categories.map((entry) => entry.key),
+  style: caseTaxonomy.styles.map((entry) => entry.key),
+  scene: caseTaxonomy.scenes.map((entry) => entry.key),
+}
+const taxonomyFilterKeys = {
+  category: new Set(taxonomyFilterOptions.category),
+  style: new Set(taxonomyFilterOptions.style),
+  scene: new Set(taxonomyFilterOptions.scene),
+}
+
+function initialTaxonomyFilter(kind: keyof typeof taxonomyFilterOptions) {
+  const requested = new URLSearchParams(window.location.search).get(kind)
+  return requested && taxonomyFilterKeys[kind].has(requested) ? requested : 'ALL'
+}
 const completePromptCount = projectStats.completePrompts
 const unpublishedPromptCount = projectStats.cases - completePromptCount
 const bootStartedAt = (window as Window & { __H3_BOOT_AT?: number }).__H3_BOOT_AT
@@ -1060,9 +1077,9 @@ function HomePage({
       return new Set()
     }
   })
-  const [activeCategory, setActiveCategory] = useState('ALL')
-  const [activeStyle, setActiveStyle] = useState('ALL')
-  const [activeScene, setActiveScene] = useState('ALL')
+  const [activeCategory, setActiveCategory] = useState(() => initialTaxonomyFilter('category'))
+  const [activeStyle, setActiveStyle] = useState(() => initialTaxonomyFilter('style'))
+  const [activeScene, setActiveScene] = useState(() => initialTaxonomyFilter('scene'))
   const [query, setQuery] = useState('')
   const deferredQuery = useDeferredValue(query)
   const [selected, setSelected] = useState<OpenedCase | null>(null)
@@ -1106,9 +1123,9 @@ function HomePage({
     }).catch(() => setSearchResource({ language, state: 'error', records: null }))
   }, [language, searchState])
 
-  const allCategories = useMemo(() => [...new Set(cases.map((item) => item.category))], [cases])
-  const allStyles = useMemo(() => [...new Set(cases.flatMap((item) => item.styles))], [cases])
-  const allScenes = useMemo(() => [...new Set(cases.flatMap((item) => item.scenes))], [cases])
+  const allCategories = taxonomyFilterOptions.category
+  const allStyles = taxonomyFilterOptions.style
+  const allScenes = taxonomyFilterOptions.scene
   const featuredCaseOrder = useMemo(
     () => new Map((catalog?.featuredCaseIds ?? []).map((id, index) => [id, index])),
     [catalog?.featuredCaseIds],
@@ -1125,6 +1142,12 @@ function HomePage({
     else url.searchParams.delete('prompt')
     if (activeCollection !== 'all') url.searchParams.set('collection', activeCollection)
     else url.searchParams.delete('collection')
+    if (activeCategory !== 'ALL') url.searchParams.set('category', activeCategory)
+    else url.searchParams.delete('category')
+    if (activeStyle !== 'ALL') url.searchParams.set('style', activeStyle)
+    else url.searchParams.delete('style')
+    if (activeScene !== 'ALL') url.searchParams.set('scene', activeScene)
+    else url.searchParams.delete('scene')
     if (activeAddedDate !== 'all') url.searchParams.set('added', activeAddedDate)
     else url.searchParams.delete('added')
     if (activeAddedDate === 'unseen' && updateSession?.cases.since) {
@@ -1135,7 +1158,7 @@ function HomePage({
       url.searchParams.delete('through')
     }
     window.history.replaceState(window.history.state, '', `${url.pathname}${url.search}${url.hash}`)
-  }, [activeAddedDate, activeCollection, promptOnly, updateSession?.cases.since, updateSession?.cases.through])
+  }, [activeAddedDate, activeCategory, activeCollection, activeScene, activeStyle, promptOnly, updateSession?.cases.since, updateSession?.cases.through])
 
   useEffect(() => {
     const trimmed = deferredQuery.trim()
@@ -1161,38 +1184,57 @@ function HomePage({
     })
   }
 
-  const filtered = useMemo(() => {
+  const caseMatches = useCallback((item: CatalogCase, omittedFacet?: 'category' | 'style' | 'scene') => {
     const needle = deferredQuery.trim().toLocaleLowerCase()
-    const matching = cases.filter((item) => {
-      const matchesDuration = activeDuration === 'ALL'
-        || (activeDuration === 'UP_TO_5' && item.duration <= 5)
-        || (activeDuration === 'SIX_TO_10' && item.duration > 5 && item.duration <= 10)
-        || (activeDuration === 'ELEVEN_TO_15' && item.duration > 10 && item.duration <= 15)
-        || (activeDuration === 'OVER_15' && item.duration > 15)
-      const matchesCategory = activeCategory === 'ALL' || item.category === activeCategory
-      const matchesStyle = activeStyle === 'ALL' || item.styles.includes(activeStyle)
-      const matchesScene = activeScene === 'ALL' || item.scenes.includes(activeScene)
-      const matchesPrompt = !promptOnly || item.hasPrompt
-      const matchesAdded = matchesAddedDate(item.addedAt, activeAddedDate, updateSession?.cases)
-      const matchesCollection = activeCollection === 'all'
-        || (activeCollection === 'featured' && featuredCaseIds.has(item.id))
-        || (activeCollection === 'latest' && latestCaseIds.has(item.id))
-        || (activeCollection === 'prompt' && item.hasPrompt)
-        || (activeCollection === 'official' && item.sourceType === 'official')
-        || (activeCollection === 'long' && item.duration > 15)
-        || (activeCollection === 'favorites' && favorites.has(item.id))
-      const basicHaystack = language === 'zh'
-        ? [item.title, item.author, ...item.tags, item.category, ...item.styles, ...item.scenes]
-        : [item.titleEn, item.author, item.category, ...item.styles, ...item.scenes]
-      const haystack = searchRecords?.get(item.id) ?? basicHaystack.filter(Boolean).join(' ').toLocaleLowerCase()
-      return matchesDuration && matchesCategory && matchesStyle && matchesScene && matchesPrompt && matchesCollection && matchesAdded
-        && (!needle || haystack.includes(needle))
-    })
+    const matchesDuration = activeDuration === 'ALL'
+      || (activeDuration === 'UP_TO_5' && item.duration <= 5)
+      || (activeDuration === 'SIX_TO_10' && item.duration > 5 && item.duration <= 10)
+      || (activeDuration === 'ELEVEN_TO_15' && item.duration > 10 && item.duration <= 15)
+      || (activeDuration === 'OVER_15' && item.duration > 15)
+    const matchesCategory = omittedFacet === 'category' || activeCategory === 'ALL' || item.category === activeCategory
+    const matchesStyle = omittedFacet === 'style' || activeStyle === 'ALL' || item.styles.includes(activeStyle)
+    const matchesScene = omittedFacet === 'scene' || activeScene === 'ALL' || item.scenes.includes(activeScene)
+    const matchesPrompt = !promptOnly || item.hasPrompt
+    const matchesAdded = matchesAddedDate(item.addedAt, activeAddedDate, updateSession?.cases)
+    const matchesCollection = activeCollection === 'all'
+      || (activeCollection === 'featured' && featuredCaseIds.has(item.id))
+      || (activeCollection === 'latest' && latestCaseIds.has(item.id))
+      || (activeCollection === 'prompt' && item.hasPrompt)
+      || (activeCollection === 'official' && item.sourceType === 'official')
+      || (activeCollection === 'long' && item.duration > 15)
+      || (activeCollection === 'favorites' && favorites.has(item.id))
+    const basicHaystack = language === 'zh'
+      ? [item.title, item.author, ...item.tags, item.category, ...item.styles, ...item.scenes]
+      : [item.titleEn, item.author, item.category, ...item.styles, ...item.scenes]
+    const haystack = searchRecords?.get(item.id) ?? basicHaystack.filter(Boolean).join(' ').toLocaleLowerCase()
+    return matchesDuration && matchesCategory && matchesStyle && matchesScene && matchesPrompt && matchesCollection && matchesAdded
+      && (!needle || haystack.includes(needle))
+  }, [activeAddedDate, activeCategory, activeCollection, activeDuration, activeScene, activeStyle, deferredQuery, favorites, featuredCaseIds, language, latestCaseIds, promptOnly, searchRecords, updateSession?.cases])
+
+  const filtered = useMemo(() => {
+    const matching = cases.filter((item) => caseMatches(item))
     if (activeCollection === 'featured') {
       return matching.sort((a, b) => (featuredCaseOrder.get(a.id) ?? Number.MAX_SAFE_INTEGER) - (featuredCaseOrder.get(b.id) ?? Number.MAX_SAFE_INTEGER))
     }
     return sortByAddedAtDescending(matching)
-  }, [activeAddedDate, activeCategory, activeCollection, activeDuration, activeScene, activeStyle, cases, deferredQuery, favorites, featuredCaseIds, featuredCaseOrder, language, latestCaseIds, promptOnly, searchRecords, updateSession?.cases])
+  }, [activeCollection, caseMatches, cases, featuredCaseOrder])
+
+  const facetCounts = useMemo(() => {
+    const countFacet = (kind: 'category' | 'style' | 'scene', options: readonly string[]) => {
+      const eligible = cases.filter((item) => caseMatches(item, kind))
+      return new Map([
+        ['ALL', eligible.length],
+        ...options.map((option) => [option, eligible.filter((item) => kind === 'category'
+          ? item.category === option
+          : item[kind === 'style' ? 'styles' : 'scenes'].includes(option)).length] as const),
+      ])
+    }
+    return {
+      category: countFacet('category', allCategories),
+      style: countFacet('style', allStyles),
+      scene: countFacet('scene', allScenes),
+    }
+  }, [allCategories, allScenes, allStyles, caseMatches, cases])
 
   const hasMore = visibleCount < filtered.length
   useEffect(() => {
@@ -1413,9 +1455,9 @@ function HomePage({
             <span>{advancedCount || '—'} <ChevronDown size={14} /></span>
           </summary>
           <div className="filter-panel">
-            <FilterGroup language={language} kind="category" label={t.catalog.category} options={['ALL', ...allCategories]} value={activeCategory} onChange={(value) => startTransition(() => { setActiveCategory(value); setVisibleCount(36) })} />
-            <FilterGroup language={language} kind="style" label={t.catalog.style} options={['ALL', ...allStyles]} value={activeStyle} onChange={(value) => startTransition(() => { setActiveStyle(value); setVisibleCount(36) })} />
-            <FilterGroup language={language} kind="scene" label={t.catalog.scene} options={['ALL', ...allScenes]} value={activeScene} onChange={(value) => startTransition(() => { setActiveScene(value); setVisibleCount(36) })} />
+            <FilterGroup language={language} kind="category" label={t.catalog.category} options={['ALL', ...allCategories]} counts={facetCounts.category} value={activeCategory} onChange={(value) => startTransition(() => { setActiveCategory(value); setVisibleCount(36) })} />
+            <FilterGroup language={language} kind="style" label={t.catalog.style} options={['ALL', ...allStyles]} counts={facetCounts.style} value={activeStyle} onChange={(value) => startTransition(() => { setActiveStyle(value); setVisibleCount(36) })} />
+            <FilterGroup language={language} kind="scene" label={t.catalog.scene} options={['ALL', ...allScenes]} counts={facetCounts.scene} value={activeScene} onChange={(value) => startTransition(() => { setActiveScene(value); setVisibleCount(36) })} />
           </div>
         </details>
 
@@ -1485,6 +1527,7 @@ function HomePage({
 function FilterGroup({
   label,
   options,
+  counts,
   value,
   onChange,
   language,
@@ -1492,20 +1535,25 @@ function FilterGroup({
 }: {
   label: string
   options: readonly string[]
+  counts: ReadonlyMap<string, number>
   value: string
   onChange: (value: string) => void
   language: Language
   kind: 'category' | 'style' | 'scene'
 }) {
   return (
-    <div className="filter-group">
+    <div className="filter-group" data-filter-kind={kind} aria-label={label}>
       <strong>{label}</strong>
       <div>
-        {options.map((option) => (
-          <button type="button" key={option} className={option === value ? 'active' : ''} onClick={() => { track('filter-change', { filterType: kind, value: option, locale: language }); onChange(option) }}>
-            {taxonomyLabel(option, language, kind)}
+        {options.map((option) => {
+          const count = counts.get(option) ?? 0
+          const disabled = option !== 'ALL' && option !== value && count === 0
+          return (
+          <button type="button" key={option} className={option === value ? 'active' : ''} aria-pressed={option === value} aria-disabled={disabled} disabled={disabled} onClick={() => { track('filter-change', { filterType: kind, value: option, locale: language }); onChange(option) }}>
+            <span>{taxonomyLabel(option, language, kind)}</span><small>{count}</small>
           </button>
-        ))}
+          )
+        })}
       </div>
     </div>
   )
@@ -1567,6 +1615,7 @@ function CaseCard({
       label: taxonomyLabel(item.scenes[0], language, 'scene'),
     },
   ].filter((chip): chip is { key: string; label: string } => Boolean(chip))
+    .filter((chip, index, items) => items.findIndex((candidate) => candidate.label === chip.label) === index)
 
   return (
     <article className={`case-card${index < 9 ? ' case-card-enter' : ''}`} style={{ '--order': Math.min(index, 8) } as React.CSSProperties}>
@@ -2404,7 +2453,8 @@ function CreatorDetailPage({ language, creator, cases, featuredCaseIds, tutorial
   const [activeCategory, setActiveCategory] = useState('ALL')
   const [selected, setSelected] = useState<OpenedCase | null>(null)
   const creatorCases = creator.caseIds.map((id) => cases.find((item) => item.id === id)).filter((item): item is CatalogCase => Boolean(item))
-  const creatorCategories = [...new Set(creatorCases.map((item) => item.category))]
+  const creatorCategorySet = new Set(creatorCases.map((item) => item.category))
+  const creatorCategories = taxonomyFilterOptions.category.filter((category) => creatorCategorySet.has(category))
   const creatorTutorials = creator.tutorialIds.map((id) => tutorialGuides.find((item) => item.id === id)).filter((item): item is TutorialGuide => Boolean(item))
   const saved = savedCreators.has(creator.id)
   const featuredIds = useMemo(() => new Set(featuredCaseIds), [featuredCaseIds])

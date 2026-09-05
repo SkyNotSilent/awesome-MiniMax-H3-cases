@@ -13,7 +13,7 @@ Keep this skill lookup-only. Never create a new prompt, adapt an existing prompt
 
 Read `data/cases.json` as the catalog source of truth. Treat each original `sourceUrl` as the attribution authority.
 
-Use case metadata to search by model, mode, category, style, scene, creator, title, or visible result. Keep editorial summaries separate from source-published prompt text.
+Use case metadata to search by model, mode, category, style, scene, creator, title, or visible result. Valid category, style, and scene keys are defined in `data/taxonomy.json`; present their localized labels to users. Keep editorial summaries separate from source-published prompt text.
 
 ## Retrieval workflow
 

@@ -1,5 +1,6 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
+import { taxonomyLabel } from './taxonomy.mjs'
 
 const root = resolve(import.meta.dirname, '..')
 const dist = resolve(root, 'dist')
@@ -267,6 +268,12 @@ function englishOutputValue(value) {
 }
 
 function localizedCase(item, locale) {
+  const taxonomyLanguage = locale === 'zh-CN' ? 'zh' : 'en'
+  const taxonomyTags = [
+    taxonomyLabel(item.category, taxonomyLanguage, 'categories'),
+    ...item.styles.map((value) => taxonomyLabel(value, taxonomyLanguage, 'styles')),
+    ...item.scenes.map((value) => taxonomyLabel(value, taxonomyLanguage, 'scenes')),
+  ]
   if (locale === 'zh-CN') {
     return {
       title: item.title,
@@ -277,7 +284,7 @@ function localizedCase(item, locale) {
       sourceLabel: item.sourceLabel,
       resolution: item.resolution,
       aspectRatio: item.aspectRatio,
-      tags: item.tags,
+      tags: [...new Set([...item.tags, ...taxonomyTags])],
     }
   }
 
@@ -294,7 +301,7 @@ function localizedCase(item, locale) {
     sourceLabel: englishSourceLabel(item),
     resolution: englishOutputValue(item.resolution),
     aspectRatio: englishOutputValue(item.aspectRatio),
-    tags: [...new Set([item.category, ...item.styles, ...item.scenes])],
+    tags: [...new Set(taxonomyTags)],
   }
 }
 
@@ -746,7 +753,7 @@ function renderCasePage(item, locale) {
   const description = truncateMeta(copy.summary)
   const keywords = [
     'MiniMax H3', 'Hailuo 3.0', 'AI video generation',
-    item.mode, item.category, ...copy.tags,
+    item.mode, ...copy.tags,
     item.promptProvenance === 'not-published' ? 'source-attributed video example' : 'public MiniMax H3 prompt',
   ].join(', ')
   const videoObject = {

@@ -406,6 +406,17 @@ a {
   transition: color 180ms ease, background 180ms ease;
 }
 
+.filter-group button span {
+  min-width: 0;
+}
+
+.filter-group button small {
+  min-width: 1.6em;
+  color: #5f635b;
+  font-size: 9px;
+  text-align: right;
+}
+
 .filter-group button:hover {
   color: var(--ink);
 }
@@ -413,6 +424,20 @@ a {
 .filter-group button.active {
   color: #0a0b09;
   background: var(--acid);
+}
+
+.filter-group button.active small {
+  color: rgba(10, 11, 9, 0.62);
+}
+
+.filter-group button:disabled {
+  color: #474b43;
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.filter-group button:disabled:hover {
+  color: #474b43;
 }
 
 .case-grid {
