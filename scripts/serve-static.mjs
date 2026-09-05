@@ -1,7 +1,7 @@
 import { createReadStream } from 'node:fs'
 import { realpath, stat } from 'node:fs/promises'
 import { createServer } from 'node:http'
-import { basename, extname, isAbsolute, relative, resolve, sep } from 'node:path'
+import { extname, isAbsolute, relative, resolve, sep } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { GetObjectCommand, HeadObjectCommand, S3Client } from '@aws-sdk/client-s3'
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner'
@@ -44,7 +44,8 @@ function isPathInside(root, candidate) {
 function cacheControl(filePath, statusCode) {
   if (statusCode !== 200) return 'no-store'
   const extension = extname(filePath).toLowerCase()
-  if (/(?:^|[.-])[a-z0-9_-]{8,}\.[^.]+$/i.test(basename(filePath))) return 'public, max-age=31536000, immutable'
+  const normalizedPath = filePath.split(sep).join('/')
+  if (/\/assets\/[^/]+-[a-z0-9_-]{8,}\.[^.]+$/i.test(normalizedPath)) return 'public, max-age=31536000, immutable'
   if (extension === '.html' || extension === '.json') return 'public, max-age=0, s-maxage=60, stale-while-revalidate=300'
   return 'public, max-age=3600'
 }
