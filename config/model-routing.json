@@ -26,6 +26,7 @@
     "maxDiscoveredPosts": 200,
     "maxTextCandidates": 80,
     "maxVideoReviews": 20,
+    "maxTaxonomyReviews": 15,
     "maxEscalations": 3
   }
 }

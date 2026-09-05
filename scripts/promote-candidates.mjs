@@ -1,7 +1,9 @@
 import { access, mkdir, readFile, writeFile } from 'node:fs/promises'
 import { relative, resolve } from 'node:path'
+import { resolveCandidateTaxonomy } from './candidate-taxonomy.mjs'
 import { requireEditorialCopy } from './editorial-copy.mjs'
 import { candidatesPath, createPublishRunId, publishStagingRoot, root, writeJsonAtomic } from './review-paths.mjs'
+import { taxonomyLabel } from './taxonomy.mjs'
 
 const casesPath = resolve(root, 'data/cases.json')
 const apply = process.argv.includes('--apply')
@@ -79,6 +81,7 @@ for (const candidate of pending) {
   if (candidate.promptProvenance !== 'not-published' && !candidate.prompt?.trim()) {
     throw new Error(`Published prompt is empty: ${candidate.id}`)
   }
+  resolveCandidateTaxonomy(candidate, candidate.text)
   seenCandidateIds.add(candidate.id)
   seenCandidateSources.add(normalizedSource)
 }
@@ -155,56 +158,6 @@ function modeFor(candidate, caption) {
   return 'Unknown'
 }
 
-function categoryFor(candidate, caption) {
-  const initial = candidate.classification?.category ?? candidate.initialClassification?.category
-  const explicit = {
-    comparison: 'Model Comparison',
-    music: 'Music Video',
-    dance: 'Local Generation & Dance',
-    dialogue: 'Character & Dialogue',
-    action: 'Cinematic & VFX',
-    advertising: 'UGC & Advertising',
-    'local-generation': 'Local Generation',
-    community: 'Community Showcase',
-  }[initial]
-  if (explicit) return explicit
-  if (/\bvs\b|comparison|compare|比較|对比|對比/i.test(caption) || initial === 'comparison') return 'Model Comparison'
-  if (/music|\bMV\b|song|音楽|歌|曲/i.test(caption) || initial === 'music') return 'Music Video'
-  if (/dance|ダンス|舞蹈/i.test(caption) || initial === 'dance') return 'Local Generation & Dance'
-  if (/lip.?sync|dialogue|speech|セリフ|台词|对白|口パク/i.test(caption) || initial === 'dialogue') return 'Character & Dialogue'
-  if (/fight|combat|battle|戦闘|格闘|格斗|战斗|アクション/i.test(caption) || initial === 'action') return 'Cinematic & VFX'
-  if (/advert|commercial|广告|廣告|宣传片|spot ad|\bPV\b/i.test(caption) || initial === 'advertising') return 'UGC & Advertising'
-  if (/\blocal(?:ly)?\b|comfyui|\brtx\b|本地|ローカル/i.test(caption)) return 'Local Generation'
-  return 'Community Showcase'
-}
-
-const categoryMetadata = {
-  'Model Comparison': {
-    style: 'Comparative', scene: 'Model Comparison', tag: '模型对比',
-  },
-  'Music Video': {
-    style: 'Music Video', scene: 'Music Video', tag: '音乐视频',
-  },
-  'Local Generation & Dance': {
-    style: 'Dance', scene: 'Character dance', tag: '舞蹈视频',
-  },
-  'Character & Dialogue': {
-    style: 'Dialogue', scene: 'Dialogue', tag: '角色对白',
-  },
-  'Cinematic & VFX': {
-    style: 'Action', scene: 'Action Test', tag: '动作特效',
-  },
-  'UGC & Advertising': {
-    style: 'Advertising', scene: 'Product Advertising', tag: '广告视频',
-  },
-  'Local Generation': {
-    style: 'Technical', scene: 'Local H3 generation test', tag: '本地生成',
-  },
-  'Community Showcase': {
-    style: 'Unspecified', scene: 'MiniMax H3 test clip', tag: '社区案例',
-  },
-}
-
 function inputTypesFor(mode) {
   if (mode === 'T2VA') return ['text']
   if (mode === 'FL2VA') return ['text', 'image']
@@ -232,8 +185,8 @@ function buildCase(candidate, tweet, video) {
   const authorHandle = `@${handle}`
   const caption = tweet.text?.trim() || candidate.text.trim()
   const mode = modeFor(candidate, caption)
-  const category = categoryFor(candidate, caption)
-  const metadata = categoryMetadata[category]
+  const classification = resolveCandidateTaxonomy(candidate, caption)
+  const categoryTag = taxonomyLabel(classification.category, 'zh', 'categories')
   const duration = Math.max(1, Math.round(video.duration))
   const publishedAt = tweet.created_at ? new Date(tweet.created_at).toISOString() : candidate.publishedAt
   const promptPublished = candidate.promptProvenance !== 'not-published'
@@ -262,10 +215,10 @@ function buildCase(candidate, tweet, video) {
     duration,
     aspectRatio: aspectRatioFor(video.width, video.height),
     resolution: `${video.width}×${video.height}`,
-    tags: ['MiniMax H3', metadata.tag, promptPublished ? '公开 Prompt' : '来源未公开 Prompt', 'X 原帖'],
-    category,
-    styles: [metadata.style],
-    scenes: [metadata.scene],
+    tags: ['MiniMax H3', categoryTag, promptPublished ? '公开 Prompt' : '来源未公开 Prompt', 'X 原帖'],
+    category: classification.category,
+    styles: classification.styles,
+    scenes: classification.scenes,
     inputTypes: inputTypesFor(mode),
     promptProvenance: candidate.promptProvenance,
     sourceType: 'x',
