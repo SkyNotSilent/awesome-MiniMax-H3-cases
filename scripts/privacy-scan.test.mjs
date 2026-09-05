@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { scanText } from './privacy-scan.mjs'
+import { isPrivateTrackedPath, scanText } from './privacy-scan.mjs'
 
 describe('privacy scan', () => {
   it('blocks internal review fields in public artifacts', () => {
@@ -15,5 +15,12 @@ describe('privacy scan', () => {
     const signature = ['X-Amz', 'Signature='].join('-')
     const findings = scanText('public/leak.txt', `https://example.com/video?${signature}secret`, { scanSecrets: true })
     expect(findings).toEqual([{ path: 'public/leak.txt', line: 1, reason: 'signed URL signature' }])
+  })
+
+  it('keeps operational traffic monitoring private without blocking the public Umami client', () => {
+    expect(isPrivateTrackedPath('data/traffic-history.json')).toBe(true)
+    expect(isPrivateTrackedPath('scripts/sync-traffic-snapshot.mjs')).toBe(true)
+    expect(isPrivateTrackedPath('.github/workflows/traffic-snapshot.yml')).toBe(true)
+    expect(isPrivateTrackedPath('src/analytics.ts')).toBe(false)
   })
 })

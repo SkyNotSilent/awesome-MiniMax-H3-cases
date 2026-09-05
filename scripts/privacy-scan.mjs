@@ -5,7 +5,13 @@ import { pathToFileURL } from 'node:url'
 
 const repositoryRoot = resolve(import.meta.dirname, '..')
 const scannerPath = resolve(import.meta.filename)
-const forbiddenTrackedPaths = new Set(['AGENTS.md', 'data/candidates.json'])
+const forbiddenTrackedPaths = new Set([
+  'AGENTS.md',
+  'data/candidates.json',
+  'data/traffic-history.json',
+  'scripts/sync-traffic-snapshot.mjs',
+  '.github/workflows/traffic-snapshot.yml',
+])
 const forbiddenPublicFields = [
   'reviewStatus',
   'reviewNote',
@@ -64,12 +70,16 @@ export function scanText(path, text, { scanPrivateFields = false, scanSecrets = 
   return findings
 }
 
+export function isPrivateTrackedPath(path) {
+  return path.startsWith('.review/') || forbiddenTrackedPaths.has(path)
+}
+
 export function scanRepository(root = repositoryRoot) {
   const tracked = execFileSync('git', ['ls-files', '-z'], { cwd: root, encoding: 'utf8' }).split('\0').filter(Boolean)
   const findings = []
 
   for (const path of tracked) {
-    if (path.startsWith('.review/') || forbiddenTrackedPaths.has(path)) {
+    if (isPrivateTrackedPath(path)) {
       findings.push({ path, line: 1, reason: 'private path is tracked by Git' })
     }
   }
