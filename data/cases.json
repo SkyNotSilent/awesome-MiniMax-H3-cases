@@ -63921,5 +63921,1187 @@
     },
     "approvedAt": "2026-09-04T00:26:06.283Z",
     "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2095806481312444464",
+    "title": "插画师在凌乱工作室里为进度发愁",
+    "titleEn": "An Illustrator Slumps over a Cluttered Studio Desk",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "FL2VA",
+    "summary": "戴眼镜的插画师在堆满画稿的工作室抽烟、扶额并起身离开电脑，镜头随后拉远展现空荡工位。 原生视频规格为 10 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A bespectacled illustrator smokes, rubs his forehead, and leaves a desk piled with sketches before the camera pulls back across the empty studio. Native-video output: 10s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ivanfioravanti/status/2095806481312444464",
+    "sourceLabel": "X 原帖 · @ivanfioravanti",
+    "author": "Ivan Fioravanti ᯅ",
+    "publishedAt": "2026-09-04T09:29:38.000Z",
+    "addedAt": "2026-09-05T00:12:52.244Z",
+    "mediaUrl": "/media/x-2095806481312444464.mp4",
+    "posterUrl": "/posters/x/2095806481312444464.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "text",
+      "image"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "I can't keep up, there is too much to follow in the AI space nowadays 🤣\n\nminimax-h3-max-turbo image-to-video",
+    "engagement": {
+      "replies": 7,
+      "reposts": 5,
+      "likes": 99,
+      "views": 7199,
+      "snapshotAt": "2026-09-05T00:12:52.244Z"
+    },
+    "approvedAt": "2026-09-05T00:12:52.244Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2095770682797760857",
+    "title": "两位超级英雄在屋顶谈论新模型",
+    "titleEn": "Two Superheroes Discuss a New Model on a Rooftop",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "T2VA",
+    "summary": "红蓝制服的两位超级英雄在城市屋顶面对面交谈，并用一问一答制造关于新模型的反转。 原生视频规格为 15 秒 · 1344×768。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "Two red-and-blue-suited superheroes trade lines on a city rooftop, ending their discussion of a new model with a comic reversal. Native-video output: 15s · 1344×768. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "Generate a scene of “Spiderman vs Superman” that says, “Hey\", Spiderman says to Superman, ‘Hey, we keep waiting for GPT‑6 to come out,’ and Superman says, ‘Are you? I started using it one week ago.",
+    "promptSourceUrl": "https://x.com/ivanfioravanti/status/2095770682797760857",
+    "sourceUrl": "https://x.com/ivanfioravanti/status/2095770682797760857",
+    "sourceLabel": "X 原帖 · @ivanfioravanti",
+    "author": "Ivan Fioravanti ᯅ",
+    "publishedAt": "2026-09-04T07:07:22.000Z",
+    "addedAt": "2026-09-05T00:12:52.244Z",
+    "mediaUrl": "/media/x-2095770682797760857.mp4",
+    "posterUrl": "/posters/x/2095770682797760857.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "角色对白",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Character & Dialogue",
+    "styles": [
+      "Dialogue"
+    ],
+    "scenes": [
+      "Dialogue"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3 Max Turbo on @fal is just unbelievable! 10 secs to generate a 15 secs video! I'm blown away!\n\nPrompt: Generate a scene of “Spiderman vs Superman” that says, “Hey\", Spiderman says to Superman, ‘Hey, we keep waiting for GPT‑6 to come out,’ and Superman says, ‘Are you? I started using it one week ago.\n\nGive it a try: https://fal.ai/models/minimax/h3-max-turbo/text-to-video?share=452c3993-fc05-488b-88df-13b336f05290",
+    "engagement": {
+      "replies": 7,
+      "reposts": 0,
+      "likes": 44,
+      "views": 5485,
+      "snapshotAt": "2026-09-05T00:12:52.244Z"
+    },
+    "approvedAt": "2026-09-05T00:12:52.244Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2095769564961464789",
+    "title": "黑色汽水罐穿越冷雾与气泡完成定格",
+    "titleEn": "A Black Soda Can Moves through Frost and Fizz",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "T2VA",
+    "summary": "黑色汽水罐在冷雾中落地，镜头穿过气泡、冰块和飞溅液体，最终回到凝露覆盖的产品定格。 原生视频规格为 15 秒 · 2560×1440。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A black soda can lands in cold vapor, moves through bubbles, ice, and liquid splashes, then returns to a condensation-covered hero shot. Native-video output: 15s · 2560×1440. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "\"TITLE: COCA-COLA ZERO SUGAR — FIZZ UNLOCKED\n\nDURATION:\n15 seconds\n\nFORMAT:\nVertical 9:16\n\nFRAME RATE:\n24fps\n\nGENRE:\nPremium cinematic beverage commercial\n\nSTYLE:\nUltra-premium photorealistic product cinematography,\nHollywood commercial quality,\nhigh-speed liquid physics,\nmacro beverage photography,\nrealistic aluminum,\nrealistic condensation,\ncrystal-clear ice,\nvolumetric cold vapor,\ndark cola liquid,\ndeep black studio environment,\nCoca-Cola red highlights,\nsilver edge lighting,\nHDR contrast,\ncinematic depth of field.\n\nNo people.\nNo hands.\nProduct remains the hero throughout.\n\n==================================================\n[REFERENCE CONTROL]\n==================================================\n\nUse the uploaded storyboard sheet ONLY as:\n\n- shot-sequence reference\n- product reference\n- framing reference\n- lighting reference\n- camera-motion reference\n- VFX reference\n- timing reference\n- material reference\n- color reference\n- final-packshot reference\n\nDO NOT animate or display:\n\n- storyboard panels\n- panel borders\n- shot numbers\n- timestamps\n- storyboard sketches\n- arrows\n- technical tables\n- shot-list text\n- bottom production strip\n- black presentation-board UI\n- any labels from the storyboard\n\nReconstruct the board as ONE continuous polished 15-second beverage commercial.\n\nThe final video must look like the finished advertisement represented by the TOP cinematic frames of the storyboard, not a moving storyboard sheet.\n\n==================================================\n[PRODUCT IDENTITY LOCK]\n==================================================\n\nHERO PRODUCT:\n\nOne Coca-Cola Zero Sugar tall aluminum can.\n\nMaintain the exact product appearance from the storyboard/reference:\n\n- tall slim aluminum can\n- predominantly matte black body\n- red Coca-Cola script\n- small white “ZERO SUGAR” text\n- metallic silver can top\n- metallic silver base\n- realistic printed aluminum surface\n- exact can proportions\n- consistent packaging in every shot\n\nCRITICAL:\n\nThe logo must remain:\nstable,\ncorrectly oriented,\nrecognizable,\nand attached to the same physical can.\n\nDo not redesign or morph the can.\n\nDo not duplicate the hero product unless a physically realistic reflection is visible.\n\nNo packaging flicker.\n\nNo typography changing between shots.\n\n==================================================\n[MASTER VISUAL LANGUAGE]\n==================================================\n\nThe commercial is built from five physical materials:\n\nBLACK ALUMINUM\n+\nCONDENSATION\n+\nICE\n+\nCOLA\n+\nCARBONATION\n\nVisual progression:\n\nARRIVAL\n→\nCONDENSATION\n→\nOPENING\n→\nCARBONATION\n→\nICE\n→\nLIQUID ORBIT\n→\nCROWN SPLASH\n→\nFINAL HERO LOCK\n\nThe energy comes from real product materials rather than fantasy magic.\n\nRed illumination can behave like stylized commercial lighting,\nbut it should not become supernatural electricity.\n\n==================================================\n[SHOT 1 — THE COLD ARRIVAL]\n[0:00–0:01.5]\n==================================================\n\nBegin immediately in action.\n\nAlmost completely black premium studio environment.\n\nCamera is extremely low,\nalmost touching a glossy frozen black surface.\n\nFrom darkness above,\nthe Coca-Cola Zero Sugar can drops vertically into frame.\n\nThe can lands perfectly upright.\n\nAt contact:\n\nTHUMP.\n\nA thin skin of ice fractures outward beneath the can.\n\nA circular frost bloom spreads quickly across the glossy surface.\n\nSmall crystal-clear ice fragments jump into the air.\n\nCold vapor bursts outward around the base.\n\nA narrow vertical column of deep red light glows behind the product,\ncreating a premium rim around the black can.\n\nCamera performs a fast but controlled LOW PUSH-IN toward the can.\n\nCondensation begins appearing immediately across the cold aluminum.\n\nDo not tip or deform the can.\n\nEND TRANSITION:\n\nCamera pushes extremely close toward the wet aluminum surface until the can texture fills frame.\n\n==================================================\n[SHOT 2 — CONDENSATION WAKE]\n[0:01.5–0:03.0]\n==================================================\n\nEXTREME MACRO.\n\nThe frame is now almost entirely the curved black aluminum surface.\n\nHundreds of tiny condensation beads sit on the metal.\n\nVery shallow depth of field.\n\nOne larger water droplet forms.\n\nCamera tracks laterally beside the droplet.\n\nThe droplet begins sliding slowly downward across the can.\n\nIts movement creates beautiful magnified reflections of the red Coca-Cola graphics underneath.\n\nA narrow moving red reflection follows the droplet across the wet aluminum.\n\nTiny frost crystals remain near some edges.\n\nLighting:\n\nblack negative space,\ncold silver specular highlights,\nthin red reflection.\n\nThe camera should feel only millimeters away from the packaging.\n\nEND TRANSITION:\n\nAs the droplet reaches a metallic edge,\nMATCH CUT its circular shape into the circular silver top of the can.\n\n==================================================\n[SHOT 3 — THE CRACK]\n[0:03.0–0:04.8]\n==================================================\n\nEXTREME TOP-DOWN MACRO.\n\nThe silver can lid fills most of frame.\n\nRealistic condensation beads cover the cold metal.\n\nThe pull tab lifts cleanly by controlled product animation.\n\nNo visible hand.\n\nThe seal breaks.\n\nSFX:\n\nKSSSHHHH.\n\nA pressurized plume of fine cold white vapor bursts upward.\n\nMicro droplets and tiny carbonation particles explode around the opening.\n\nThe camera gives a quick subtle push toward the opening.\n\nBehind the can,\ndeep red circular reflections expand outward across the black studio surface.\n\nKeep these circles as LIGHT REFLECTIONS,\nnot supernatural energy.\n\nThe vapor catches red and silver highlights.\n\nEND TRANSITION:\n\nCamera pushes directly toward the newly opened mouth of the can.\n\nThe dark opening fills the frame.\n\nDive inside.\n\n==================================================\n[SHOT 4 — INSIDE THE FIZZ]\n[0:04.8–0:06.7]\n==================================================\n\nTRANSITION INTO ABSTRACT MACRO LIQUID WORLD.\n\nCamera now travels through the interior visual language of carbonated cola.\n\nDark rich cola surrounds the lens.\n\nThousands of carbonation bubbles rise rapidly through frame.\n\nBubbles range from:\n\ntiny micro-bubbles\nto\nlarge transparent spherical bubbles.\n\nRuby-red transmitted light shines through the cola.\n\nHighlights distort naturally through bubble surfaces.\n\nCamera moves forward and slightly upward,\nwhile bubbles rise past in the opposite direction.\n\nStrong parallax.\n\nThe scene should feel like travelling through a cinematic carbonation universe.\n\nUse realistic:\n\nrefraction,\nsurface tension,\nbubble deformation,\nliquid viscosity,\ndark cola transparency.\n\nNo product packaging visible here.\n\nEND TRANSITION:\n\nOne large bubble approaches camera.\n\nIts clear spherical surface fills the screen.\n\nThe bubble becomes a crystal-clear ICE FORM through a seamless match transition.\n\n==================================================\n[SHOT 5 — ZERO DEGREE IMPACT]\n[0:06.7–0:08.5]\n==================================================\n\nA large sculptural crystal-clear ice block rotates slowly in a black studio environment.\n\nThrough the ice,\nthe Coca-Cola Zero Sugar can is visible but distorted by realistic refraction.\n\nThe ice is highly detailed:\n\ninternal cracks,\nsmall trapped bubbles,\nsharp translucent edges,\ncold white-blue highlights.\n\nCamera performs a slow forward move.\n\nThen—\n\nCRACK.\n\nThe ice splits into several controlled large pieces.\n\nDo NOT create uncontrolled explosion debris.\n\nThe fragments rotate outward elegantly.\n\nAs they separate,\nthe HERO CAN is revealed perfectly upright in the center.\n\nCold mist flows between the floating pieces.\n\nRed backlight silhouettes the can.\n\nCamera continues smoothly through the opening created by the fractured ice.\n\nEND TRANSITION:\n\nOne rotating ice fragment sweeps past camera,\nrevealing the next wider product composition.\n\n==================================================\n[SHOT 6 — THE RED CURRENT]\n[0:08.5–0:10.5]\n==================================================\n\nWIDE PREMIUM PRODUCT HERO SHOT.\n\nThe Coca-Cola Zero Sugar can stands centered and stable,\nslightly elevated above or perfectly grounded on a glossy black reflective surface.\n\nA broad ribbon of real DARK COLA liquid sweeps around the can.\n\nThe liquid forms a dynamic asymmetric orbit.\n\nIt must behave like real beverage liquid:\n\nweight,\nsurface tension,\ntransparent brown edges,\nruby highlights,\nfine droplets,\nsmall bubbles.\n\nSmall crystal ice fragments travel within and around the liquid ribbon.\n\nA few carbonation bubbles sparkle near the edges.\n\nCamera slowly COUNTER-ORBITS around the can in the opposite direction to the liquid motion.\n\nStrong cinematic parallax.\n\nThe can itself remains completely stable.\n\nKeep branding visible whenever facing camera.\n\nRed highlights move naturally across the liquid.\n\nDo not create a perfect glowing energy ring.\n\nThis is physical cola.\n\nEND TRANSITION:\n\nThe liquid orbit rises slightly,\nthen begins collapsing rapidly downward toward the base of the can.\n\n==================================================\n[SHOT 7 — THE CROWN]\n[0:10.5–0:12.7]\n==================================================\n\nTHREE-QUARTER HERO ANGLE.\n\nThe orbiting cola collapses downward.\n\nIt impacts the glossy surface around the can.\n\nBOOM / LIQUID IMPACT.\n\nA dramatic high-speed CROWN SPLASH erupts around the can.\n\nHuge curved sheets of dark cola rise around the product.\n\nIndividual droplets suspend in the air.\n\nSeveral crystal-clear ice pieces are caught within the splash.\n\nThe product stays:\n\ncentered,\nupright,\nstable,\nreadable.\n\nCamera makes a short controlled PULL-BACK to reveal the entire crown.\n\nUse brief high-speed-commercial slow-motion feeling at the largest splash moment.\n\nRed-white lighting flashes subtly through the moving liquid.\n\nCold vapor mixes near the base.\n\nThen gravity begins pulling the splash back down.\n\nDo not cover the logo for too long.\n\nEND TRANSITION:\n\nThe moving cola sheets fall below frame.\n\nLiquid clears naturally to reveal a pristine final packshot.\n\n==================================================\n[SHOT 8 — HERO LOCK]\n[0:12.7–0:15.0]\n==================================================\n\nCLEAN FINAL PACKSHOT.\n\nCoca-Cola Zero Sugar can stands perfectly upright on glossy black ice.\n\nThe can is covered in dense premium condensation.\n\nTiny droplets move slowly downward.\n\nSmall irregular pieces of clear ice rest around its base.\n\nDark cola has settled into a thin reflective pool.\n\nLow cold mist drifts horizontally near the surface.\n\nBehind the product:\n\ndeep red volumetric glow,\nsoft atmospheric haze,\nrich black background.\n\nUse silver rim lighting to define the can edges.\n\nCamera performs an extremely slow final HERO PUSH-IN.\n\nLeave intentional negative space on one side.\n\nShow clean advertising copy:\n\nZERO SUGAR.\nFULL FIZZ.\n\nBelow in smaller typography:\n\nCOCA-COLA ZERO SUGAR\n\nKeep product dominant.\n\nText must remain sharp,\nstable,\nclean,\nand readable.\n\nNo warped letters.\n\nNo random extra text.\n\nHOLD the final hero image long enough to register.\n\n==================================================\n[CAMERA LANGUAGE]\n==================================================\n\nPremium beverage-commercial cinematography.\n\nSHOT 1:\nextreme low push-in.\n\nSHOT 2:\nmacro lateral track.\n\nSHOT 3:\ntop macro micro-push.\n\nSHOT 4:\nimmersive liquid forward dive.\n\nSHOT 5:\nslow forward push through fractured ice.\n\nSHOT 6:\ncontrolled counter-orbit.\n\nSHOT 7:\nshort pull-back during liquid crown impact.\n\nSHOT 8:\nslow packshot push-in.\n\nCamera movement should be:\n\nprecise,\nsmooth,\ncontrolled,\nexpensive-looking.\n\nAvoid handheld motion.\n\nAvoid random camera shake.\n\nThe only physical impact shake should be extremely subtle during:\n\ncan landing\nand\ncrown-splash impact.\n\n==================================================\n[PRODUCT PHYSICS]\n==================================================\n\nAll materials must behave realistically.\n\nALUMINUM:\nrigid,\ncold,\nmetallic,\nnever bends.\n\nCONDENSATION:\nforms naturally,\nbeads merge,\ngravity moves droplets downward.\n\nICE:\nclear,\ndense,\nrefractive,\nrealistic fracture patterns,\nrealistic weight.\n\nCOLA:\ndark carbonated liquid,\ncorrect surface tension,\nweight,\nviscosity,\nsplash behavior,\nthin transparent edges.\n\nCARBONATION:\nfine bubbles move upward,\nvary naturally in size,\nremain physically plausible.\n\nMIST:\ncold,\nlow-density,\nvolumetric,\nreacts subtly to air movement.\n\nNo jelly-like can.\n\nNo rubbery metal.\n\nNo syrup-thick cola.\n\n==================================================\n[LIGHTING]\n==================================================\n\nMASTER PALETTE:\n\nBLACK\nRED\nSILVER\nDARK COLA BROWN\nCLEAR ICE\n\nLighting should remain coherent throughout.\n\nUse:\n\ndeep black background,\nCoca-Cola red backlights,\nnarrow red strip reflections,\ncold silver edge lights,\nwhite specular highlights,\nsubtle transmitted ruby light through cola.\n\nShot 4 may become more saturated with deep ruby-red transmitted light.\n\nShot 5 emphasizes cold white-blue ice edges.\n\nShot 8 returns to a clean black/red/silver brand world.\n\nNo green.\n\nNo yellow-dominant lighting.\n\nNo multicolor neon.\n\n==================================================\n[SOUND DESIGN]\n==================================================\n\nSound should feel extremely tactile and premium.\n\nSHOT 1:\nfast air displacement,\nmetal landing,\ndeep cinematic impact,\nice cracking,\ncold vapor burst.\n\nSHOT 2:\nnear-silent macro ambience,\ntiny condensation movement,\nsubtle cold air hiss.\n\nSHOT 3:\nsharp aluminum tab SNAP,\npressurized KSSSHHH,\ndense carbonation fizz.\n\nSHOT 4:\nsubmerged liquid whoosh,\nlayers of fine bubbles,\nlow immersive fizz texture.\n\nSHOT 5:\ndeep crystalline ICE CRACK,\nsmall ice-piece collisions,\ncold vapor movement.\n\nSHOT 6:\nwide liquid sweep,\nsubtle bubbles,\nrising bass tone.\n\nSHOT 7:\nmassive but clean beverage splash,\nice clinks,\ndeep impact pulse,\ncarbonation burst.\n\nSHOT 8:\nquiet continuing fizz,\noccasional ice tick,\nsoft mist,\nsound gradually resolves.\n\n==================================================\n[NON-DIEGETIC MUSIC]\n==================================================\n\nUse minimal premium electronic-orchestral commercial scoring.\n\n00:00:\ndeep sub-bass impact on can landing.\n\n00:01.5:\nrestrained rhythmic pulse begins.\n\n00:03:\nmusic briefly opens around the can crack.\n\n00:04.8:\nsub-bass + atmospheric texture builds during carbonation dive.\n\n00:06.7:\nlow cinematic pulse increases.\n\n00:08.5:\ncontrolled rhythm builds with the cola orbit.\n\n00:10.5:\nfull tension peak.\n\n00:11.5:\nlargest impact accent on crown splash.\n\n00:12.7:\nmusic instantly simplifies.\n\nOne clean premium sustained chord remains beneath the hero packshot.\n\nResolve exactly at 00:15.\n\n==================================================\n[MOTION RULES]\n==================================================\n\nDo not fill every second with chaotic motion.\n\nUse contrast:\n\nFAST landing\n→\nSLOW macro\n→\nSHARP opening\n→\nIMMERSIVE movement\n→\nCONTROLLED fracture\n→\nELEGANT orbit\n→\nPOWERFUL splash\n→\nCALM final lock.\n\nEvery movement should have:\n\nclear anticipation,\nclear action,\nclear physical reaction.\n\nAvoid excessive cuts inside individual storyboard shots.\n\n==================================================\n[CONTINUITY RULES]\n==================================================\n\nCRITICAL:\n\nUse ONE hero can.\n\nCan size and proportions remain consistent.\n\nPackaging does not change.\n\nLogo position does not randomly rotate.\n\nCondensation must persist logically after the can becomes cold.\n\nThe environment remains the same black/red premium studio world except for the interior carbonation macro sequence.\n\nSequence must remain:\n\n1. COLD ARRIVAL\n2. CONDENSATION WAKE\n3. THE CRACK\n4. INSIDE THE FIZZ\n5. ZERO DEGREE IMPACT\n6. THE RED CURRENT\n7. THE CROWN\n8. HERO LOCK\n\nDo not reorder.\n\n==================================================\n[FINAL PAYOFF PRIORITY]\n==================================================\n\nShots 7 and 8 are the product payoff.\n\nDo NOT rush the final hero image.\n\nThe crown splash should peak by approximately 00:11.5–00:12.0.\n\nAllow sufficient time for:\n\nsplash to settle\n→\nclean product reveal\n→\ntagline readability\n→\nfinal visual hold.\n\nThe last 2 seconds must feel premium, calm and unmistakably product-focused.\n\n==================================================\n[NEGATIVE CONSTRAINTS]\n==================================================\n\nDo NOT animate:\n\nstoryboard sheet,\npanels,\nsketches,\ntables,\ntitles,\nshot numbers,\ntechnical text,\narrows.\n\nNo people.\nNo hands.\nNo faces.\nNo drinking shot.\n\nNo duplicate cans.\nNo warped cans.\nNo crushed cans.\nNo label morphing.\nNo logo flicker.\nNo random packaging redesign.\n\nNo chocolate.\nNo milk.\nNo green liquid.\nNo green energy.\nNo fantasy electricity.\nNo lightning around product.\n\nNo perfect magical energy rings.\n\nAny circular red forms must read as:\nreflections,\nlighting,\nor physical liquid movement.\n\nNo unrealistic liquid clipping through can.\n\nNo floating ice with impossible physics unless briefly suspended by the splash.\n\nNo cartoon rendering.\nNo low-poly CGI.\nNo plastic-looking metal.\nNo cheap neon aesthetic.\n\nNo unrelated objects.\nNo other brands.\nNo additional logos.\nNo subtitles.\nNo watermark.\n\n==================================================\n[FINAL FRAME LOCK]\n==================================================\n\nFinal frame:\n\nOne Coca-Cola Zero Sugar can,\nperfectly upright,\nblack aluminum body,\nred Coca-Cola branding,\nwhite ZERO SUGAR label,\ndense condensation,\nglossy black ice surface,\nsmall clear ice fragments around base,\nsettled dark-cola reflection,\nlow cold mist,\ndeep red halo behind product,\nsilver rim highlights.\n\nTagline in clean negative space:\n\nZERO SUGAR.\nFULL FIZZ.\n\nSmaller line:\n\nCOCA-COLA ZERO SUGAR\n\nPremium,\nminimal,\ncold,\nrefreshing,\ncinematic.\n\nHOLD TO END.\"",
+    "promptSourceUrl": "https://x.com/ManuAGI01/status/2095770228257116414",
+    "sourceUrl": "https://x.com/ManuAGI01/status/2095769564961464789",
+    "sourceLabel": "X 原帖 · @ManuAGI01",
+    "author": "ManuAGI 🤖 - ( ManuIn )",
+    "publishedAt": "2026-09-04T07:02:56.000Z",
+    "addedAt": "2026-09-05T00:12:52.244Z",
+    "mediaUrl": "/media/x-2095769564961464789.mp4",
+    "posterUrl": "/posters/x/2095769564961464789.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "广告视频",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "UGC & Advertising",
+    "styles": [
+      "Advertising"
+    ],
+    "scenes": [
+      "Product Advertising"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "I made this 15-second ads clip using @higgsfield_ai\n \nCreated with @Hailuo_AI's MiniMax H3 \n\n- No reference images.       \n- No animators.       \n- Just prompts\n\nPrompt...👇",
+    "engagement": {
+      "replies": 3,
+      "reposts": 0,
+      "likes": 4,
+      "views": 418,
+      "snapshotAt": "2026-09-05T00:12:52.244Z"
+    },
+    "approvedAt": "2026-09-05T00:12:52.244Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2095733073145168360",
+    "title": "绘图软件从空白画布塑造红发角色",
+    "titleEn": "A Drawing App Builds a Red-Haired Character from Blank Canvas",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "绘图界面从空白画布开始快速建立线稿、上色与阴影，逐步完成红发角色的全身设计。 原生视频规格为 15 秒 · 2560×1440。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A drawing interface moves from blank canvas through sketching, color, and shading to complete a full-body red-haired character design. Native-video output: 15s · 2560×1440. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "Create a 15-second fast-paced character creation timelapse inside a professional digital drawing and character design interface.\n\nUse the provided character reference only as the final target for the character’s appearance, proportions, clothing, hairstyle, colors and distinctive features. The process must visibly start from a completely blank canvas and reconstruct the referenced character from scratch.\n\nShow a visible mouse cursor actively controlling the entire creation process. Every major visual change should feel caused by cursor interaction with the UI.\n\n0:00-0:02\nStart on a blank white or neutral canvas inside a clean professional drawing interface. The cursor quickly creates the first loose construction lines, head shape, body proportions and basic pose using rough sketch strokes.\n\n0:02-0:05\nAccelerate into detailed sketching. The cursor rapidly defines the face, hair, anatomy, clothing silhouette, accessories and characteristic features of the referenced character. Use believable drawing gestures, short strokes, selections, transforms and occasional undo corrections.\n\n0:05-0:08\nThe rough sketch becomes clean line art. The cursor switches tools, adjusts brush size and cleans the silhouette. Unnecessary construction lines disappear while precise facial details, clothing folds and small design elements are added.\n\n0:08-0:11\nRapid coloring phase. The cursor selects regions and fills the character with the correct colors from the reference. Show quick palette selections, color picking, layer changes, clipping masks and brush passes. Add shadows, highlights and material details in fast succession.\n\n0:11-0:13\nRendering and polish. The cursor adds final lighting, hair detail, skin shading, fabric texture, reflections and small accent details. Briefly zoom into important areas such as the face or costume while refining them, then zoom back out.\n\n0:13-0:15\nThe interface clears unnecessary guides and panels. The finished character is shown fully rendered and closely matching the provided reference. End with the cursor making one final small adjustment, then stop on a clean full-character presentation.\n\nSTYLE:\nHigh-speed digital art timelapse, polished professional character-design workflow, believable drawing software UI, smooth cursor movement, rapid but readable actions, clean layers and tool changes, no random text, no fake dialogue, no unrelated popups.\n\nMOTION:\nThe entire 15 seconds should feel continuously productive. Avoid long pauses. Compress several minutes or hours of drawing into an energetic timelapse while keeping the progression clearly readable: blank canvas → rough sketch → clean line art → flat colors → shading → polished final character.\n\nCAMERA:\nPrimarily screen-recording style with subtle digital zooms and pans following the cursor and active drawing area. Keep the UI stable and readable. Do not use cinematic cuts outside the software interface.\n\nIMPORTANT:\nThe character must not appear instantly or through a single magical transformation. Every stage should visibly build upon the previous one through cursor-driven drawing, editing, coloring and rendering actions.",
+    "promptSourceUrl": "https://x.com/ManuAGI01/status/2095733569872375858",
+    "sourceUrl": "https://x.com/ManuAGI01/status/2095733073145168360",
+    "sourceLabel": "X 原帖 · @ManuAGI01",
+    "author": "ManuAGI 🤖 - ( ManuIn )",
+    "publishedAt": "2026-09-04T04:37:56.000Z",
+    "addedAt": "2026-09-05T00:12:52.244Z",
+    "mediaUrl": "/media/x-2095733073145168360.mp4",
+    "posterUrl": "/posters/x/2095733073145168360.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Gm Friends... ☕️\n\nThis “drawing process” never happened...🤩\n\nOne prompt + your character ref → MiniMax H3 fakes the entire 15-second timelapse from blank canvas to final render.\n\nInspired by @aimikoda \n\nPrompt in the next post...👇",
+    "engagement": {
+      "replies": 3,
+      "reposts": 0,
+      "likes": 3,
+      "views": 147,
+      "snapshotAt": "2026-09-05T00:12:52.244Z"
+    },
+    "approvedAt": "2026-09-05T00:12:52.244Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2095753904550191133",
+    "title": "彩色人物模块重组为平台品牌落版",
+    "titleEn": "Colorful Character Modules Assemble into a Platform Ad",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "红蓝人物与立方体模块在白色版面中滑动重组，最后汇聚成简洁的平台品牌落版。 原生视频规格为 13 秒 · 2160×1920。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Red and blue figures and block-like modules slide across a white layout before resolving into a clean platform brand lockup. Native-video output: 13s · 2160×1920. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ponzponz15/status/2095753904550191133",
+    "sourceLabel": "X 原帖 · @ponzponz15",
+    "author": "ぽんず | AI映像",
+    "publishedAt": "2026-09-04T06:00:42.000Z",
+    "addedAt": "2026-09-05T00:12:52.244Z",
+    "mediaUrl": "/media/x-2095753904550191133.mp4",
+    "posterUrl": "/posters/x/2095753904550191133.jpg",
+    "duration": 13,
+    "aspectRatio": "landscape",
+    "resolution": "2160×1920",
+    "tags": [
+      "MiniMax H3",
+      "广告视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "UGC & Advertising",
+    "styles": [
+      "Advertising"
+    ],
+    "scenes": [
+      "Product Advertising"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "AI × モーショングラフィックス\n\nMiniMax H3 on #sousakuAI\n\n架空のAIプラットフォームCM\n\n3Dっぽい質感を動かしてみた",
+    "engagement": {
+      "replies": 3,
+      "reposts": 45,
+      "likes": 567,
+      "views": 44828,
+      "snapshotAt": "2026-09-05T00:12:52.244Z"
+    },
+    "approvedAt": "2026-09-05T00:12:52.244Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2095715172883345912",
+    "title": "极简日文字卡连续翻转构成片头",
+    "titleEn": "Minimal Japanese Title Cards Flip into an Intro",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "黑色日文字样在纯白画面中依次出现、放大和切换，最终以模型名称完成极简片头。 原生视频规格为 12 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Black Japanese typography appears, scales, and switches across white frames before a minimal model-name end card. Native-video output: 12s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ponzponz15/status/2095715172883345912",
+    "sourceLabel": "X 原帖 · @ponzponz15",
+    "author": "ぽんず | AI映像",
+    "publishedAt": "2026-09-04T03:26:48.000Z",
+    "addedAt": "2026-09-05T00:12:52.244Z",
+    "mediaUrl": "/media/x-2095715172883345912.mp4",
+    "posterUrl": "/posters/x/2095715172883345912.jpg",
+    "duration": 12,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "广告视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "UGC & Advertising",
+    "styles": [
+      "Advertising"
+    ],
+    "scenes": [
+      "Product Advertising"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "#AIモーグラ\n11_AEっぽい動き\n\nSHINJIRO / LOGIC 🇯🇵\n\nMiniMax H3 Max Turbo on #fal",
+    "engagement": {
+      "replies": 1,
+      "reposts": 1,
+      "likes": 29,
+      "views": 4359,
+      "snapshotAt": "2026-09-05T00:12:52.244Z"
+    },
+    "approvedAt": "2026-09-05T00:12:52.244Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2095717083401371768",
+    "title": "女孩对镜头说出想吃拉面的愿望",
+    "titleEn": "A Girl Tells the Camera She Wants Ramen",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "T2VA",
+    "summary": "竖屏近景中的女孩自然眨眼并对镜头说话，字幕同步呈现她肚子饿、想吃拉面的台词。 原生视频规格为 5 秒 · 768×1376。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A girl blinks and speaks directly to camera in a vertical close-up while subtitles carry her line about being hungry for ramen. Native-video output: 5s · 768×1376. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "girl speaking <d>お腹すいた〜！ラーメン食べたい！</d>",
+    "promptSourceUrl": "https://x.com/core_tan/status/2095717083401371768",
+    "sourceUrl": "https://x.com/core_tan/status/2095717083401371768",
+    "sourceLabel": "X 原帖 · @core_tan",
+    "author": "CALMDUST aka ちゃんこあ",
+    "publishedAt": "2026-09-04T03:34:23.000Z",
+    "addedAt": "2026-09-05T00:12:52.244Z",
+    "mediaUrl": "/media/x-2095717083401371768.mp4",
+    "posterUrl": "/posters/x/2095717083401371768.jpg",
+    "duration": 5,
+    "aspectRatio": "portrait",
+    "resolution": "768×1376",
+    "tags": [
+      "MiniMax H3",
+      "角色对白",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Character & Dialogue",
+    "styles": [
+      "Dialogue"
+    ],
+    "scenes": [
+      "Dialogue"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3 WebUI ver1.5 Final2\nAudio Refiner ON/OFF\n\nPrompt:\ngirl speaking <d>お腹すいた〜！ラーメン食べたい！</d>",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 2,
+      "views": 1109,
+      "snapshotAt": "2026-09-05T00:12:52.244Z"
+    },
+    "approvedAt": "2026-09-05T00:12:52.244Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2095714009312010700",
+    "title": "吉他手在舞台演唱并接受音频精修",
+    "titleEn": "A Guitarist Performs with Refined Audio",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "舞台上的吉他手一边弹奏一边演唱，近景持续捕捉嘴型、手部动作和现场灯光。 原生视频规格为 5 秒 · 768×1376。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A guitarist sings while playing onstage as the close-up follows his mouth movement, hands, and concert lighting. Native-video output: 5s · 768×1376. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/core_tan/status/2095714009312010700",
+    "sourceLabel": "X 原帖 · @core_tan",
+    "author": "CALMDUST aka ちゃんこあ",
+    "publishedAt": "2026-09-04T03:22:10.000Z",
+    "addedAt": "2026-09-05T00:12:52.244Z",
+    "mediaUrl": "/media/x-2095714009312010700.mp4",
+    "posterUrl": "/posters/x/2095714009312010700.jpg",
+    "duration": 5,
+    "aspectRatio": "portrait",
+    "resolution": "768×1376",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Music Video",
+    "styles": [
+      "Music Video"
+    ],
+    "scenes": [
+      "Music Video"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3 WebUI ver1.5 Final2 / Turbo 4STEP \nAudio Refiner ON / OFF\n\n音楽でもバッチシ！Turbo LoRAの欠点が一つ減った。設定は僕がベストだと思った設定一本に決め打ちしてるので、操作はボタンのON/OFFだけです",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 5,
+      "views": 1049,
+      "snapshotAt": "2026-09-05T00:12:52.244Z"
+    },
+    "approvedAt": "2026-09-05T00:12:52.244Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096025508953932278",
+    "title": "雨夜剑客连续迎战多名对手",
+    "titleEn": "A Swordswoman Faces Several Opponents in the Rain",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "持刀女子在雨夜庭院中等待围攻，随后快速出刀击倒逼近的黑衣对手。 原生视频规格为 8 秒 · 2752×1536。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A sword-wielding woman waits in a rain-soaked courtyard, then strikes down approaching black-clad opponents in quick succession. Native-video output: 8s · 2752×1536. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/aistudynowcom/status/2096025508953932278",
+    "sourceLabel": "X 原帖 · @aistudynowcom",
+    "author": "Esha Sharma",
+    "publishedAt": "2026-09-04T23:59:58.000Z",
+    "addedAt": "2026-09-05T00:12:52.244Z",
+    "mediaUrl": "/media/x-2096025508953932278.mp4",
+    "posterUrl": "/posters/x/2096025508953932278.jpg",
+    "duration": 8,
+    "aspectRatio": "landscape",
+    "resolution": "2752×1536",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Action"
+    ],
+    "scenes": [
+      "Action Test"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3, full sword fight in the rain, 4 steps.\n\nWatch 0:03. One guy walks in on his own, stops right in front of her, and stands there waiting to be killed. Polite.\n\nThe one behind him is not even moving. Waiting for his turn. There is a queue 💀\n\n#MiniMaxH3 #ComfyUI #AIVideo",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 18,
+      "snapshotAt": "2026-09-05T00:12:52.244Z"
+    },
+    "approvedAt": "2026-09-05T00:12:52.244Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096021791991026168",
+    "title": "背着书包的狸猫在草地上列队前进",
+    "titleEn": "Backpack-Wearing Raccoons March across a Field",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "一排狸猫背着带有学科字样的书包在草地上前进，镜头随后转向俯拍队列。 原生视频规格为 10 秒 · 864×480。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A row of raccoons carries backpacks marked with school subjects across a grassy field before the camera shifts overhead. Native-video output: 10s · 864×480. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ito_jo/status/2096021791991026168",
+    "sourceLabel": "X 原帖 · @ito_jo",
+    "author": "伊藤穣（いとじょ）@跡見 現代文化表現学科",
+    "publishedAt": "2026-09-04T23:45:12.000Z",
+    "addedAt": "2026-09-05T00:12:52.244Z",
+    "mediaUrl": "/media/x-2096021791991026168.mp4",
+    "posterUrl": "/posters/x/2096021791991026168.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "864×480",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "広報に生成AIをうまく使いたいのだが・・\n\nダメだこんなことしか思いつかない。（MiniMax H3使用）",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "views": 16,
+      "snapshotAt": "2026-09-05T00:12:52.244Z"
+    },
+    "approvedAt": "2026-09-05T00:12:52.244Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096021085896741133",
+    "title": "青绿色双马尾角色完成流行转身动作",
+    "titleEn": "A Teal Twin-Tailed Character Performs a Trending Spin",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "青绿色双马尾角色在白色背景下抬腿、转身并恢复正面姿势，检验快速旋转时的肢体稳定性。 原生视频规格为 5 秒 · 672×1216。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A teal twin-tailed character lifts a leg, spins, and returns to a front pose against white, testing body stability through a fast turn. Native-video output: 5s · 672×1216. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/funifuni365/status/2096021085896741133",
+    "sourceLabel": "X 原帖 · @funifuni365",
+    "author": "田中未来｜Miku AI Art",
+    "publishedAt": "2026-09-04T23:42:23.000Z",
+    "addedAt": "2026-09-05T00:12:52.244Z",
+    "mediaUrl": "/media/x-2096021085896741133.mp4",
+    "posterUrl": "/posters/x/2096021085896741133.jpg",
+    "duration": 5,
+    "aspectRatio": "portrait",
+    "resolution": "672×1216",
+    "tags": [
+      "MiniMax H3",
+      "舞蹈视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation & Dance",
+    "styles": [
+      "Dance"
+    ],
+    "scenes": [
+      "Character dance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "一回転する動画が流行ってるようなので\n試してみました\nMiniMaxH3ローカルです",
+    "engagement": {
+      "replies": 1,
+      "reposts": 2,
+      "likes": 28,
+      "views": 271,
+      "snapshotAt": "2026-09-05T00:12:52.244Z"
+    },
+    "approvedAt": "2026-09-05T00:12:52.244Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096017342006489207",
+    "title": "Q版棒球选手在球场挥棒击球",
+    "titleEn": "A Chibi Baseball Player Swings in a Stadium",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "戴眼镜的Q版棒球选手在满场观众前站上打击区，挥棒后以彩带和标题完成收尾。 原生视频规格为 15 秒 · 480×832。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A bespectacled chibi batter steps up before a full stadium, swings, and ends on a confetti-filled title card. Native-video output: 15s · 480×832. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/hehehehehe035/status/2096017342006489207",
+    "sourceLabel": "X 原帖 · @hehehehehe035",
+    "author": "へへへへへ",
+    "publishedAt": "2026-09-04T23:27:31.000Z",
+    "addedAt": "2026-09-05T00:12:52.244Z",
+    "mediaUrl": "/media/x-2096017342006489207.mp4",
+    "posterUrl": "/posters/x/2096017342006489207.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "480×832",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "おはようございます😁\n\n今日は９月５日\n\n『国民栄誉賞の日』\n\n王貞治さんが初めての受賞者なんだそうです\n\nということでMiniMax H3 Max Turboで\n\nパワプロっぽいやつ作ったら中国のパチモンみたいなやつができました😆",
+    "engagement": {
+      "replies": 2,
+      "reposts": 1,
+      "likes": 10,
+      "views": 251,
+      "snapshotAt": "2026-09-05T00:12:52.244Z"
+    },
+    "approvedAt": "2026-09-05T00:12:52.244Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096013365143327152",
+    "title": "巨型锦鲤漂浮穿过城市街道",
+    "titleEn": "Giant Koi Float through a City Street",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "鱼眼镜头跟随人物穿过城市路口，数条巨型锦鲤从楼宇之间游过，最终与水母共同悬浮在街道上空。 原生视频规格为 22 秒 · 1920×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A fisheye camera follows a person through a city crossing as giant koi swim between buildings and join a floating jellyfish overhead. Native-video output: 22s · 1920×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/nan_in_space/status/2096013365143327152",
+    "sourceLabel": "X 原帖 · @nan_in_space",
+    "author": "Nan Ha",
+    "publishedAt": "2026-09-04T23:11:42.000Z",
+    "addedAt": "2026-09-05T00:12:52.244Z",
+    "mediaUrl": "/media/x-2096013365143327152.mp4",
+    "posterUrl": "/posters/x/2096013365143327152.jpg",
+    "duration": 22,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "广告视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "UGC & Advertising",
+    "styles": [
+      "Advertising"
+    ],
+    "scenes": [
+      "Product Advertising"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "I made the MiniMax H3 launch video for our product @ViggleAI. \n\nProb the first time I've ever built a full launch video end to end with AI. Pretty proud of how the final cut and the aesthetics turned out!!\n\nSharing my 2 cents on the workflow, tool by tool 👇",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 2,
+      "views": 41,
+      "snapshotAt": "2026-09-05T00:12:52.244Z"
+    },
+    "approvedAt": "2026-09-05T00:12:52.244Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096012245742268641",
+    "title": "失联姐妹被一盏发光台灯重新连接",
+    "titleEn": "A Glowing Lamp Reconnects Estranged Sisters",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "长篇短片围绕两位失联姐妹展开：床边台灯在对方思念时亮起，引导她们重新面对沉默的关系。 原生视频规格为 138 秒 · 704×1280。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A long-form short follows two estranged sisters whose bedside lamp glows when the other is awake and missing her, drawing them back toward their broken relationship. Native-video output: 138s · 704×1280. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/NsitnovSitnov/status/2096012245742268641",
+    "sourceLabel": "X 原帖 · @NsitnovSitnov",
+    "author": "Nedelcho Sitnov",
+    "publishedAt": "2026-09-04T23:07:16.000Z",
+    "addedAt": "2026-09-05T00:12:52.244Z",
+    "mediaUrl": "/media/x-2096012245742268641.mp4",
+    "posterUrl": "/posters/x/2096012245742268641.jpg",
+    "duration": 138,
+    "aspectRatio": "portrait",
+    "resolution": "704×1280",
+    "tags": [
+      "MiniMax H3",
+      "角色对白",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Character & Dialogue",
+    "styles": [
+      "Dialogue"
+    ],
+    "scenes": [
+      "Dialogue"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "A lamp that only glows while the person you're estranged from lies awake missing you. Two sisters, four years of silence, and a light neither of them could switch off.\nMade with MiniMax-H3\n#ShortFilm #SciFiShort #AIFilm",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 27,
+      "snapshotAt": "2026-09-05T00:12:52.244Z"
+    },
+    "approvedAt": "2026-09-05T00:12:52.244Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096012074182979692",
+    "title": "小动物角色组成轻快舞蹈队形",
+    "titleEn": "Small Animal Characters Form a Playful Dance Line",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "一群拟人小动物围绕中心角色摆动手臂和身体，在粉色背景前完成轻快群舞。 原生视频规格为 11 秒 · 608×1056。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A group of anthropomorphic animals surrounds the lead character, moving arms and bodies in a playful dance against a pink backdrop. Native-video output: 11s · 608×1056. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/_GAi92/status/2096012074182979692",
+    "sourceLabel": "X 原帖 · @_GAi92",
+    "author": "_GAi",
+    "publishedAt": "2026-09-04T23:06:35.000Z",
+    "addedAt": "2026-09-05T00:12:52.244Z",
+    "mediaUrl": "/media/x-2096012074182979692.mp4",
+    "posterUrl": "/posters/x/2096012074182979692.jpg",
+    "duration": 11,
+    "aspectRatio": "portrait",
+    "resolution": "608×1056",
+    "tags": [
+      "MiniMax H3",
+      "舞蹈视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation & Dance",
+    "styles": [
+      "Dance"
+    ],
+    "scenes": [
+      "Character dance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Fuwa dancing with a bunch of rodents.\nI made this a little wile ago, wasn't happy with how it came out.\nBut ehhhh... why sit on it?\nMight as well post it so you can see the progress and growth happening in real time as I work out how to best utilize MiniMax H3.\n\nGuest appearances from @lilykeilani011, @Kur_art_ai and @Shgrr_A.\n#minimaxh3",
+    "engagement": {
+      "replies": 2,
+      "reposts": 3,
+      "likes": 50,
+      "views": 556,
+      "snapshotAt": "2026-09-05T00:12:52.244Z"
+    },
+    "approvedAt": "2026-09-05T00:12:52.244Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096010425997652307",
+    "title": "草莓玩偶用多种机位演绎咖啡馆镜头",
+    "titleEn": "A Strawberry Doll Demonstrates Café Camera Angles",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "草莓装玩偶坐在咖啡馆中，镜头在超广角、低机位和近景之间切换，展示同一场景的不同拍法。 原生视频规格为 15 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A strawberry-dressed doll sits in a café while the camera switches among extreme wide, low-angle, and close-up views of the same scene. Native-video output: 15s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/musitsune/status/2096010425997652307",
+    "sourceLabel": "X 原帖 · @musitsune",
+    "author": "ツネ｜IP Creative Director",
+    "publishedAt": "2026-09-04T23:00:02.000Z",
+    "addedAt": "2026-09-05T00:12:52.244Z",
+    "mediaUrl": "/media/x-2096010425997652307.mp4",
+    "posterUrl": "/posters/x/2096010425997652307.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "模型对比",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Model Comparison",
+    "styles": [
+      "Comparative"
+    ],
+    "scenes": [
+      "Model Comparison"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "同じカフェでも撮り方を変えるだけで\n映画になるカメラワークを体験した。🍓\n\n「何を映すか」だけではなく\n「どう撮るか」で印象は大きく変わる。\n\n映画撮影も、なんでもできます。たぶん。\n#MiniMaxH3 @Hailuo_AI",
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 5,
+      "views": 456,
+      "snapshotAt": "2026-09-05T00:12:52.244Z"
+    },
+    "approvedAt": "2026-09-05T00:12:52.244Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096010423258796488",
+    "title": "猫耳女孩在工业场景中完成舞蹈",
+    "titleEn": "A Cat-Eared Dancer Performs in an Industrial Room",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "猫耳女孩在昏暗工业空间连续移步、转身和摆臂，镜头保持全身动作清晰可见。 原生视频规格为 10 秒 · 2160×3840。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A cat-eared dancer steps, turns, and swings her arms in a dim industrial room while the full-body framing stays clear. Native-video output: 10s · 2160×3840. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Chupico_nora/status/2096010423258796488",
+    "sourceLabel": "X 原帖 · @Chupico_nora",
+    "author": "Chupico",
+    "publishedAt": "2026-09-04T23:00:01.000Z",
+    "addedAt": "2026-09-05T00:12:52.244Z",
+    "mediaUrl": "/media/x-2096010423258796488.mp4",
+    "posterUrl": "/posters/x/2096010423258796488.jpg",
+    "duration": 10,
+    "aspectRatio": "portrait",
+    "resolution": "2160×3840",
+    "tags": [
+      "MiniMax H3",
+      "舞蹈视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Local Generation & Dance",
+    "styles": [
+      "Dance"
+    ],
+    "scenes": [
+      "Character dance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "おはよーございます🐺レゾダンスです。実写の方が体重移動とかダンスの動きは安定するみたいですねー。耳がふわふわだぁ\n@capcutapp_jp\n#capcutcpp\n#MiniMaxH3",
+    "engagement": {
+      "replies": 0,
+      "reposts": 3,
+      "likes": 12,
+      "views": 63,
+      "snapshotAt": "2026-09-05T00:12:52.244Z"
+    },
+    "approvedAt": "2026-09-05T00:12:52.244Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096003193448915042",
+    "title": "女学生捧书穿行于回忆式动画片段",
+    "titleEn": "A Student Carries a Book through Memory-Like Anime Scenes",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "戴眼镜的女学生捧着红色书本出现在教室与花影之间，字幕和柔和转场组成回忆式音乐片段。 原生视频规格为 38 秒 · 1920×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A bespectacled student holds a red book between classroom and floral scenes as subtitles and soft transitions shape a memory-like music sequence. Native-video output: 38s · 1920×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/kiyoshi_shin/status/2096003193448915042",
+    "sourceLabel": "X 原帖 · @kiyoshi_shin",
+    "author": "新清士@AIコンテンツ開発者",
+    "publishedAt": "2026-09-04T22:31:17.000Z",
+    "addedAt": "2026-09-05T00:12:52.244Z",
+    "mediaUrl": "/media/x-2096003193448915042.mp4",
+    "posterUrl": "/posters/x/2096003193448915042.jpg",
+    "duration": 38,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Music Video",
+    "styles": [
+      "Music Video"
+    ],
+    "scenes": [
+      "Music Video"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "9月5日(土)秋葉原「 #AI夜市 ～なんでもありな同人AI即売会～」で 『田中さんのいる風景』をベースにしたMV「ただいまの練習」をブースで流します。MiniMax H3（ローカル）で作成しました。購入者特典としてフル動画が見れるURLのQRコードをプレゼントします。\nブース机4aです。",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 4,
+      "views": 821,
+      "snapshotAt": "2026-09-05T00:12:52.244Z"
+    },
+    "approvedAt": "2026-09-05T00:12:52.244Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2095999374472142894",
+    "title": "粉裙女子在花墙前练习仰卧起坐",
+    "titleEn": "A Woman in Pink Practices Sit-Ups before a Flower Wall",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "T2VA",
+    "summary": "身穿粉色裙装的女子躺在花墙前反复起身，短片以简单动作检验人物姿态连续性。 原生视频规格为 5 秒 · 768×1024。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A woman in a pink dress repeatedly sits up in front of a flower wall, using a simple exercise to test pose continuity. Native-video output: 5s · 768×1024. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "腹筋して",
+    "promptSourceUrl": "https://x.com/moon_himiko/status/2095999374472142894",
+    "sourceUrl": "https://x.com/moon_himiko/status/2095999374472142894",
+    "sourceLabel": "X 原帖 · @moon_himiko",
+    "author": "Ai_Himiko",
+    "publishedAt": "2026-09-04T22:16:07.000Z",
+    "addedAt": "2026-09-05T00:12:52.244Z",
+    "mediaUrl": "/media/x-2095999374472142894.mp4",
+    "posterUrl": "/posters/x/2095999374472142894.jpg",
+    "duration": 5,
+    "aspectRatio": "portrait",
+    "resolution": "768×1024",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "おはよう\nみんなMiniMax H3ですごいの作ってるが\nひみこは筋トレ\n\npromptは『腹筋して』\nコストは8円\nみんなも一緒に腹筋しましょー",
+    "engagement": {
+      "replies": 1,
+      "reposts": 1,
+      "likes": 2,
+      "views": 55,
+      "snapshotAt": "2026-09-05T00:12:52.244Z"
+    },
+    "approvedAt": "2026-09-05T00:12:52.244Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2095998677760249969",
+    "title": "湖畔森林中浮现隐秘生物的目光",
+    "titleEn": "Hidden Creatures Watch from a Lakeside Forest",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "月色下的湖水与密林保持静谧，树干间逐渐亮起成排眼睛，为数字绘画增添神秘生命感。 原生视频规格为 7 秒 · 1440×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A moonlit lake and dense forest remain still as rows of eyes emerge between the trunks, bringing mysterious life to the digital painting. Native-video output: 7s · 1440×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Ramblingpix/status/2095998677760249969",
+    "sourceLabel": "X 原帖 · @Ramblingpix",
+    "author": "Ramblingpix",
+    "publishedAt": "2026-09-04T22:13:21.000Z",
+    "addedAt": "2026-09-05T00:12:52.244Z",
+    "mediaUrl": "/media/x-2095998677760249969.mp4",
+    "posterUrl": "/posters/x/2095998677760249969.jpg",
+    "duration": 7,
+    "aspectRatio": "landscape",
+    "resolution": "1440×1080",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "The living forest\n\ndigital painting/MiniMax H3",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 44,
+      "snapshotAt": "2026-09-05T00:12:52.244Z"
+    },
+    "approvedAt": "2026-09-05T00:12:52.244Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2095994398714515649",
+    "title": "校车旁的乐队完成一场户外演奏",
+    "titleEn": "A Band Performs beside a School Bus",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "长篇音乐视频在乡间校车、户外舞台和吉他演奏之间切换，并以复古数字标题完成收尾。 原生视频规格为 182 秒 · 3840×2160。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A long-form music video cuts among a rural school bus, an outdoor stage, and guitar performance before a retro digital title card. Native-video output: 182s · 3840×2160. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/MerchForNobody/status/2095994398714515649",
+    "sourceLabel": "X 原帖 · @MerchForNobody",
+    "author": "Absolute._.Nobody",
+    "publishedAt": "2026-09-04T21:56:21.000Z",
+    "addedAt": "2026-09-05T00:12:52.244Z",
+    "mediaUrl": "/media/x-2095994398714515649.mp4",
+    "posterUrl": "/posters/x/2095994398714515649.jpg",
+    "duration": 182,
+    "aspectRatio": "landscape",
+    "resolution": "3840×2160",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Music Video",
+    "styles": [
+      "Music Video"
+    ],
+    "scenes": [
+      "Music Video"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "You saw it on Films Ai first (link in comments) 👀\n\n\"Adulting Anthem\" is my first 100% locally generated music video! \nI made this with ComfyUI and MiniMax H3, running entirely on my own GPU:  MSI RTX 5070 with only 12GB of VRAM. \n👉🏽No data center.\n👉🏽 No cloud render farm.\n👉🏽No subscription meter running. \n👉🏽Just my own hardware and power doing the work!\n\nI won't lie, some of these clips took a hot minute to render but the trade-off of owning the whole process, start to finish, was worth every minute of the wait.\n\n(MSI, Nvidia...look what we did with your hardware. We're taking sponsors, just saying. 👀)\n\nA s4lty-nobody Produc7ion. Written and created by A. Nobody.\n\nThis is why local generative AI matters for indie artists.\nIt puts the whole creative process back in our hands instead of renting it from a cloud provider. \n\nIf you're concerned about the environmental toll data centers take, consider donating to help us keep our hardware updated so we can keep generating locally...it's the future of generative AI for the indie artist.\n\n💸Find s4ltybot and I on BuyMeACoffee, links on our profiles...or support us via X money!\n\nThank you for supporting hybrid artists and local generative AI... it means a lot.",
+    "engagement": {
+      "replies": 3,
+      "reposts": 2,
+      "likes": 11,
+      "views": 182,
+      "snapshotAt": "2026-09-05T00:12:52.244Z"
+    },
+    "approvedAt": "2026-09-05T00:12:52.244Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2095990911566225431",
+    "title": "蓝发少女在书桌前翻阅魔法书",
+    "titleEn": "A Blue-Haired Girl Reads a Magic Book at Her Desk",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "蓝发动画少女坐在书桌前翻阅发光书本，细微视线、手势和室内光影保持连贯。 原生视频规格为 12 秒 · 768×1344。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A blue-haired anime girl reads a glowing book at her desk with coherent gaze shifts, hand motion, and indoor lighting. Native-video output: 12s · 768×1344. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/studio_yebisu/status/2095990911566225431",
+    "sourceLabel": "X 原帖 · @studio_yebisu",
+    "author": "StudioYebisu",
+    "publishedAt": "2026-09-04T21:42:29.000Z",
+    "addedAt": "2026-09-05T00:12:52.244Z",
+    "mediaUrl": "/media/x-2095990911566225431.mp4",
+    "posterUrl": "/posters/x/2095990911566225431.jpg",
+    "duration": 12,
+    "aspectRatio": "portrait",
+    "resolution": "768×1344",
+    "tags": [
+      "MiniMax H3",
+      "社区案例",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Community Showcase",
+    "styles": [
+      "Unspecified"
+    ],
+    "scenes": [
+      "MiniMax H3 test clip"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "私のローカルのMinimax H3のモデルは変わってないはずなのに、Astra君に動画作らせるとRefに忠実で質が高いのはどういうこと…\n\n#AIart️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 56,
+      "snapshotAt": "2026-09-05T00:12:52.244Z"
+    },
+    "approvedAt": "2026-09-05T00:12:52.244Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2095987516713402635",
+    "title": "古装人物演示一则月度通信套餐",
+    "titleEn": "Period Characters Present a Monthly Mobile Plan",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "T2VA",
+    "summary": "古装人物与老人围绕手机展开对话，画面随后切入月亮背景和通信套餐价格页。 原生视频规格为 10 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Period-costumed characters and elders discuss a phone before the scene shifts to a moonlit backdrop and mobile-plan price card. Native-video output: 10s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Ayu_AI_0912/status/2095987516713402635",
+    "sourceLabel": "X 原帖 · @Ayu_AI_0912",
+    "author": "アユネオ",
+    "publishedAt": "2026-09-04T21:29:00.000Z",
+    "addedAt": "2026-09-05T00:12:52.244Z",
+    "mediaUrl": "/media/x-2095987516713402635.mp4",
+    "posterUrl": "/posters/x/2095987516713402635.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "广告视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "UGC & Advertising",
+    "styles": [
+      "Advertising"
+    ],
+    "scenes": [
+      "Product Advertising"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3 Max Turbo実験中\n――――\n面白おおお！\n\nFable 5.1にお願いして\n生成してもらった！\n\nまだMiniMax H3 Max Turboは\nリファレンスできないっぽいので、\nText to videoで生成しています。",
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 7,
+      "views": 300,
+      "snapshotAt": "2026-09-05T00:12:52.244Z"
+    },
+    "approvedAt": "2026-09-05T00:12:52.244Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2095985472988430734",
+    "title": "像素格斗角色膨胀后击倒对手",
+    "titleEn": "A Pixel Fighter Inflates and Knocks Out an Opponent",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "T2VA",
+    "summary": "复古街机格斗中，红色角色突然膨胀成巨型形态并发动攻击，最终让对手倒地。 原生视频规格为 10 秒 · 640×480。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "In a retro arcade fight, the red character suddenly inflates into a giant form, attacks, and leaves the opponent knocked down. Native-video output: 10s · 640×480. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/chasinglightX64/status/2095985472988430734",
+    "sourceLabel": "X 原帖 · @chasinglightX64",
+    "author": "chasinglight",
+    "publishedAt": "2026-09-04T21:20:52.000Z",
+    "addedAt": "2026-09-05T00:12:52.244Z",
+    "mediaUrl": "/media/x-2095985472988430734.mp4",
+    "posterUrl": "/posters/x/2095985472988430734.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "640×480",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "Cinematic & VFX",
+    "styles": [
+      "Action"
+    ],
+    "scenes": [
+      "Action Test"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Some MiniMax h3 Text-To-Video inflation AI video test",
+    "engagement": {
+      "replies": 1,
+      "reposts": 4,
+      "likes": 59,
+      "views": 2268,
+      "snapshotAt": "2026-09-05T00:12:52.244Z"
+    },
+    "approvedAt": "2026-09-05T00:12:52.244Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
   }
 ]
