@@ -67,6 +67,7 @@ const readmeBlocks = [
     creatorStats: `动态创作者榜把案例库变成持续复利的发现系统。目前从 **${stats.sourceCreators} 位来源明确的 X 作者中筛选出 ${stats.rankedCreators} 位优质创作者**，可查看综合优质、近期活跃、案例最多、Prompt 贡献、新锐作者和教程作者榜。`,
   },
 ]
+const statsBadgeVersion = `${stats.cases}-${stats.completePrompts}-${stats.tutorials}-${stats.rankedCreators}`
 
 function replaceBlock(markdown, name, value) {
   const pattern = new RegExp(`(<!-- ${name}:start -->\\n)[\\s\\S]*?(\\n<!-- ${name}:end -->)`)
@@ -74,9 +75,18 @@ function replaceBlock(markdown, name, value) {
   return markdown.replace(pattern, `$1${value}$2`)
 }
 
+function replaceStatsBadgeVersion(markdown) {
+  return markdown.replace(
+    /site-stats\.json(?:%3Fv%3D[0-9-]+)?&query/g,
+    `site-stats.json%3Fv%3D${statsBadgeVersion}&query`,
+  )
+}
+
 async function expectedReadme(block) {
   const markdown = await readFile(block.path, 'utf8')
-  return replaceBlock(replaceBlock(replaceBlock(markdown, 'project-stats', block.stats), 'project-snapshot', block.snapshot), 'creator-stats', block.creatorStats)
+  return replaceStatsBadgeVersion(
+    replaceBlock(replaceBlock(replaceBlock(markdown, 'project-stats', block.stats), 'project-snapshot', block.snapshot), 'creator-stats', block.creatorStats),
+  )
 }
 
 if (write) {
@@ -100,7 +110,9 @@ if (write) {
   if (JSON.stringify(normalizeDate(canonical)) !== JSON.stringify(stats)) throw new Error('data/project-stats.json is stale; run npm run sync:stats')
   if (JSON.stringify(normalizeDate(publicStats)) !== JSON.stringify(stats)) throw new Error('public/site-stats.json is stale; run npm run sync:stats')
   for (const [index, block] of readmeBlocks.entries()) {
-    const expected = replaceBlock(replaceBlock(replaceBlock(readmes[index], 'project-stats', block.stats), 'project-snapshot', block.snapshot), 'creator-stats', block.creatorStats)
+    const expected = replaceStatsBadgeVersion(
+      replaceBlock(replaceBlock(replaceBlock(readmes[index], 'project-stats', block.stats), 'project-snapshot', block.snapshot), 'creator-stats', block.creatorStats),
+    )
     if (expected !== readmes[index]) throw new Error(`${block.path} has stale project statistics; run npm run sync:stats`)
   }
   console.log(`Project stats are current: ${stats.cases} cases, ${stats.completePrompts} Prompts, ${stats.tutorials} tutorials.`)
