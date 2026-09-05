@@ -40,6 +40,7 @@ before(async () => {
   await writeFile(join(rootDir, 'faq', 'index.html'), '<h1>FAQ</h1>')
   await writeFile(join(rootDir, 'assets', 'index-BaL42Ee8.js'), 'console.log("asset")')
   await writeFile(join(rootDir, 'data', 'catalog.json'), '{"cases":[]}')
+  await writeFile(join(rootDir, 'site-stats.json'), '{"cases":1318}')
   await writeFile(join(outsideDir, 'secret.txt'), 'do not serve')
   await symlink(join(outsideDir, 'secret.txt'), join(rootDir, 'leak.txt'))
 
@@ -85,6 +86,10 @@ test('adds shared-cache headers to non-fingerprinted JSON', async () => {
   const catalog = await fetch(`${baseUrl}/data/catalog.json`)
   assert.equal(catalog.status, 200)
   assert.equal(catalog.headers.get('cache-control'), 'public, max-age=0, s-maxage=60, stale-while-revalidate=300')
+
+  const stats = await fetch(`${baseUrl}/site-stats.json`)
+  assert.equal(stats.status, 200)
+  assert.equal(stats.headers.get('cache-control'), 'public, max-age=0, s-maxage=60, stale-while-revalidate=300')
 })
 
 test('adds immutable caching and honors conditional requests for fingerprinted assets', async () => {
