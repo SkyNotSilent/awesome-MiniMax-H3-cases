@@ -102,6 +102,7 @@ async function writeScreenshotManifest() {
     version: 1,
     generatedAt: stats.generatedAt,
     cases: stats.cases,
+    featuredCases: stats.featuredCases,
     completePrompts: stats.completePrompts,
     tutorials: stats.tutorials,
     rankedCreators: stats.rankedCreators,
@@ -165,7 +166,7 @@ async function dismissIntro(page, label) {
 }
 
 async function focusUpdateSnapshot(page) {
-  const summary = page.locator('.update-summary')
+  const summary = page.locator('.update-summary, .update-strip').first()
   await summary.waitFor()
   await summary.scrollIntoViewIfNeeded()
   await page.waitForTimeout(250)

@@ -201,6 +201,20 @@ describe('case-first routes', () => {
     expect(window.location.search).toBe('?collection=official')
   })
 
+  it('renders editor picks from the explicit ordered catalog without requiring a Prompt', () => {
+    renderAt('/?collection=featured')
+
+    const cards = [...document.querySelectorAll('.case-card')]
+    expect(cards).toHaveLength(3)
+    expect(cards.map((card) => card.querySelector('h2')?.textContent)).toEqual([
+      '粉色西装与黑色羔羊',
+      '舰桥上的跃迁余震',
+      '同提示词 H3 与 Seedance 对比',
+    ])
+    expect(cards.every((card) => card.querySelector('.featured-label')?.textContent === '精选')).toBe(true)
+    expect(screen.queryByText('餐厅时间冻结与逆向复原')).not.toBeInTheDocument()
+  })
+
   it('treats quick collections as isolated folders that reset the filters above them', () => {
     renderAt('/')
     const collections = screen.getByRole('group', { name: '快速集合' })

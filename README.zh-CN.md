@@ -52,7 +52,7 @@ MiniMax H3 也常被搜索为 **Hailuo H3**、**Hailuo 3.0**、**海螺 H3** 和
 
 [![按本站收录日期排列的 MiniMax H3 最新案例](./docs/screenshots/latest-collection-zh.jpg)](https://h3-field-notes-production.up.railway.app/?collection=latest)
 
-- [编辑精选](https://h3-field-notes-production.up.railway.app/?collection=featured)：可播放、来源明确且带完整公开 Prompt 的代表案例；
+- [编辑精选](https://h3-field-notes-production.up.railway.app/?collection=featured)：稳定保持 24–28 条可播放案例，基于公开互动表现与人工来源核验定期更新；
 - [最新收录](https://h3-field-notes-production.up.railway.app/?collection=latest)：保留原兼容入口，现按首次进入本站目录的时间排序，而不是来源发布时间；
 - [官方案例](https://h3-field-notes-production.up.railway.app/?collection=official)：MiniMax 可复现脚本与公开证据；
 - [长视频](https://h3-field-notes-production.up.railway.app/?collection=long)：集中查看超过 15 秒的输出；
@@ -116,7 +116,7 @@ npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
 ## 数据、自动化与可信度
 
 <!-- project-snapshot:start -->
-**当前自动统计：** 1318 个案例 · 374 条完整公开 Prompt · 24 篇教程 · 784 位来源作者中的 264 位优质创作者 · 8 篇旗舰教程 · 14 个生态资源 · 内容核验至 2026-09-05。
+**当前自动统计：** 1318 个案例 · 28 条编辑精选 · 374 条完整公开 Prompt · 24 篇教程 · 784 位来源作者中的 264 位优质创作者 · 8 篇旗舰教程 · 14 个生态资源 · 内容核验至 2026-09-05。
 <!-- project-snapshot:end -->
 
 - [`data/project-stats.json`](./data/project-stats.json) 是公开数字的唯一快照；网站与 README 数字过期会让 CI 失败；
@@ -144,7 +144,7 @@ npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
 - `npm run videos:playback:audit` 执行只读清点，`npm run videos:playback:migrate -- --apply` 生成版本化播放层，切换前后运行 `npm run videos:playback:verify`；迁移报告只保存在被忽略的 `.review/`。
 
 <!-- build-metrics:start -->
-**当前生产构建：** 首页 JavaScript gzip 98.4 kB · 中文 / 英文首页 HTML gzip 9.9 kB / 9.2 kB · 目录 gzip 146.9 kB · 中文 / 英文搜索索引 gzip 699.7 kB / 664 kB。静态预算运行 `npm run performance:budget`；启动本地生产服务后运行 `npm run performance:browser` 验证浏览器行为。
+**当前生产构建：** 首页 JavaScript gzip 99.3 kB · 中文 / 英文首页 HTML gzip 9.9 kB / 9.2 kB · 目录 gzip 147.3 kB · 中文 / 英文搜索索引 gzip 699.7 kB / 664 kB。静态预算运行 `npm run performance:budget`；启动本地生产服务后运行 `npm run performance:browser` 验证浏览器行为。
 <!-- build-metrics:end -->
 
 ## 投稿、纠错与下架

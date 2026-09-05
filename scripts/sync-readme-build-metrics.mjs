@@ -62,7 +62,7 @@ if (write) {
 if (!write) {
   const stats = JSON.parse(await readFile(resolve(root, 'data/project-stats.json'), 'utf8'))
   const manifest = JSON.parse(await readFile(resolve(root, 'docs/screenshots/snapshot.json'), 'utf8'))
-  for (const key of ['generatedAt', 'cases', 'completePrompts', 'tutorials', 'rankedCreators']) {
+  for (const key of ['generatedAt', 'cases', 'featuredCases', 'completePrompts', 'tutorials', 'rankedCreators']) {
     if (manifest[key] !== stats[key]) throw new Error(`README screenshot snapshot has stale ${key}; run npm run screenshots:capture`)
   }
   for (const filename of readmeScreenshotFiles) {

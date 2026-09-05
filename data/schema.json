@@ -44,6 +44,15 @@
         "capturedAt": { "type": "string", "minLength": 1 }
       }
     },
+    "featured": {
+      "type": "object",
+      "required": ["at", "basis"],
+      "additionalProperties": false,
+      "properties": {
+        "at": { "type": "string", "format": "date-time" },
+        "basis": { "enum": ["official", "manual", "trending"] }
+      }
+    },
     "author": { "type": "string" },
     "category": { "type": "string" },
     "styles": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },

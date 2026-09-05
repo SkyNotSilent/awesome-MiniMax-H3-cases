@@ -39,7 +39,11 @@
     ],
     "promptProvenance": "official-verbatim",
     "sourceType": "official",
-    "verified": true
+    "verified": true,
+    "featured": {
+      "at": "2026-09-05T15:50:15.694Z",
+      "basis": "official"
+    }
   },
   {
     "id": "official-fl2va-ramen",
@@ -82,7 +86,11 @@
     ],
     "promptProvenance": "official-verbatim",
     "sourceType": "official",
-    "verified": true
+    "verified": true,
+    "featured": {
+      "at": "2026-09-05T15:50:15.694Z",
+      "basis": "official"
+    }
   },
   {
     "id": "official-ref2va-lamb",
@@ -125,7 +133,11 @@
     ],
     "promptProvenance": "official-verbatim",
     "sourceType": "official",
-    "verified": true
+    "verified": true,
+    "featured": {
+      "at": "2026-09-05T15:50:15.694Z",
+      "basis": "official"
+    }
   },
   {
     "id": "x-icreat-time-freeze-diner",
@@ -5392,6 +5404,10 @@
       "durationSeconds": 77.133,
       "resolution": "1280×720",
       "aspectRatio": "landscape"
+    },
+    "featured": {
+      "at": "2026-09-05T15:50:15.673Z",
+      "basis": "trending"
     }
   },
   {
@@ -10214,7 +10230,11 @@
     },
     "approvedAt": "2026-08-10T05:52:30.477Z",
     "attributionNote": "Resolved from the quoted post and native-media publisher metadata.",
-    "editorialBasis": "three-frame-media-review"
+    "editorialBasis": "three-frame-media-review",
+    "featured": {
+      "at": "2026-09-05T15:50:15.692Z",
+      "basis": "trending"
+    }
   },
   {
     "id": "x-2086458310006600101",
@@ -11929,7 +11949,11 @@
       "snapshotAt": "2026-08-11T12:15:52.988Z"
     },
     "approvedAt": "2026-08-11T12:15:52.988Z",
-    "editorialBasis": "three-frame-media-review"
+    "editorialBasis": "three-frame-media-review",
+    "featured": {
+      "at": "2026-09-05T15:50:15.685Z",
+      "basis": "trending"
+    }
   },
   {
     "id": "x-2086647221190303868",
@@ -12027,7 +12051,11 @@
       "snapshotAt": "2026-08-11T12:15:52.989Z"
     },
     "approvedAt": "2026-08-11T12:15:52.989Z",
-    "editorialBasis": "three-frame-media-review"
+    "editorialBasis": "three-frame-media-review",
+    "featured": {
+      "at": "2026-09-05T15:50:15.675Z",
+      "basis": "trending"
+    }
   },
   {
     "id": "x-2086680991981289554",
@@ -12321,7 +12349,11 @@
       "snapshotAt": "2026-08-11T12:15:52.990Z"
     },
     "approvedAt": "2026-08-11T12:15:52.990Z",
-    "editorialBasis": "three-frame-media-review"
+    "editorialBasis": "three-frame-media-review",
+    "featured": {
+      "at": "2026-09-05T15:50:15.684Z",
+      "basis": "trending"
+    }
   },
   {
     "id": "x-2086660959054229833",
@@ -12469,7 +12501,11 @@
       "snapshotAt": "2026-08-11T12:15:52.990Z"
     },
     "approvedAt": "2026-08-11T12:15:52.990Z",
-    "editorialBasis": "three-frame-media-review"
+    "editorialBasis": "three-frame-media-review",
+    "featured": {
+      "at": "2026-09-05T15:50:15.679Z",
+      "basis": "trending"
+    }
   },
   {
     "id": "x-2086794038737539077",
@@ -13305,7 +13341,11 @@
       "snapshotAt": "2026-08-11T12:15:52.990Z"
     },
     "approvedAt": "2026-08-11T12:15:52.990Z",
-    "editorialBasis": "three-frame contact sheet plus sourceCaption explicitly describing the mouse being schooled"
+    "editorialBasis": "three-frame contact sheet plus sourceCaption explicitly describing the mouse being schooled",
+    "featured": {
+      "at": "2026-09-05T15:50:15.676Z",
+      "basis": "trending"
+    }
   },
   {
     "id": "x-2086716748255187134",
@@ -25636,7 +25676,11 @@
       "snapshotAt": "2026-08-13T00:38:33.432Z"
     },
     "approvedAt": "2026-08-13T00:38:33.432Z",
-    "editorialBasis": "sourceCaption: explicit no-reference generation condition and reported motion and 3D-style qualities"
+    "editorialBasis": "sourceCaption: explicit no-reference generation condition and reported motion and 3D-style qualities",
+    "featured": {
+      "at": "2026-09-05T15:50:15.687Z",
+      "basis": "trending"
+    }
   },
   {
     "id": "x-2087451314720854523",
@@ -27547,7 +27591,11 @@
       "snapshotAt": "2026-08-13T00:38:33.433Z"
     },
     "approvedAt": "2026-08-13T00:38:33.433Z",
-    "editorialBasis": "sourceCaption: complete public prompt with character, apartment setting, timed morning routine, and object interactions"
+    "editorialBasis": "sourceCaption: complete public prompt with character, apartment setting, timed morning routine, and object interactions",
+    "featured": {
+      "at": "2026-09-05T15:50:15.672Z",
+      "basis": "trending"
+    }
   },
   {
     "id": "x-2087403153910338029",
@@ -27743,7 +27791,11 @@
       "snapshotAt": "2026-08-13T00:38:33.433Z"
     },
     "approvedAt": "2026-08-13T00:38:33.433Z",
-    "editorialBasis": "sourceCaption: explicit movie-night setting, named subjects, and stated goals"
+    "editorialBasis": "sourceCaption: explicit movie-night setting, named subjects, and stated goals",
+    "featured": {
+      "at": "2026-09-05T15:50:15.682Z",
+      "basis": "trending"
+    }
   },
   {
     "id": "x-2087396157538312419",
@@ -28772,7 +28824,11 @@
       "snapshotAt": "2026-08-13T00:38:33.433Z"
     },
     "approvedAt": "2026-08-13T00:38:33.433Z",
-    "editorialBasis": "sourceCaption: explicit character-reference image, location-reference image, dance-motion reference, and cross-reference composition"
+    "editorialBasis": "sourceCaption: explicit character-reference image, location-reference image, dance-motion reference, and cross-reference composition",
+    "featured": {
+      "at": "2026-09-05T15:50:15.689Z",
+      "basis": "trending"
+    }
   },
   {
     "id": "x-2087375102925316225",
@@ -29458,7 +29514,11 @@
       "snapshotAt": "2026-08-13T00:38:33.433Z"
     },
     "approvedAt": "2026-08-13T00:38:33.433Z",
-    "editorialBasis": "sourceCaption: explicit three-model same-task comparison and stated emotional-nuance and acting criteria"
+    "editorialBasis": "sourceCaption: explicit three-model same-task comparison and stated emotional-nuance and acting criteria",
+    "featured": {
+      "at": "2026-09-05T15:50:15.690Z",
+      "basis": "trending"
+    }
   },
   {
     "id": "x-2087365957144502585",
@@ -35105,7 +35165,11 @@
       "snapshotAt": "2026-08-20T12:20:35.382Z"
     },
     "approvedAt": "2026-08-20T12:20:35.382Z",
-    "editorialBasis": "Written from the original caption and manual review of downloaded native-video frames"
+    "editorialBasis": "Written from the original caption and manual review of downloaded native-video frames",
+    "featured": {
+      "at": "2026-09-05T15:50:15.693Z",
+      "basis": "trending"
+    }
   },
   {
     "id": "x-2090230972851835104",
@@ -35991,7 +36055,11 @@
       "snapshotAt": "2026-08-20T18:59:16.815Z"
     },
     "approvedAt": "2026-08-20T18:59:16.815Z",
-    "editorialBasis": "Original X caption and creator reply explicitly describe the CHUNG LEE poster, preserved composition, motion effects, and animated title treatment."
+    "editorialBasis": "Original X caption and creator reply explicitly describe the CHUNG LEE poster, preserved composition, motion effects, and animated title treatment.",
+    "featured": {
+      "at": "2026-09-05T15:50:15.674Z",
+      "basis": "trending"
+    }
   },
   {
     "id": "x-2087131708223046088",
@@ -36091,7 +36159,11 @@
       "snapshotAt": "2026-08-20T18:59:16.815Z"
     },
     "approvedAt": "2026-08-20T18:59:16.815Z",
-    "editorialBasis": "The original X post and full prompt explicitly specify a 1947 American town, period-accurate details, soldiers, war action, and vintage camera treatment."
+    "editorialBasis": "The original X post and full prompt explicitly specify a 1947 American town, period-accurate details, soldiers, war action, and vintage camera treatment.",
+    "featured": {
+      "at": "2026-09-05T15:50:15.681Z",
+      "basis": "trending"
+    }
   },
   {
     "id": "x-2087102541146522089",
@@ -36742,7 +36814,11 @@
       "snapshotAt": "2026-08-20T18:59:16.816Z"
     },
     "approvedAt": "2026-08-20T18:59:16.816Z",
-    "editorialBasis": "The original X post publishes a complete character-reference prompt with timed detail shots, camera movement, identity preservation, silhouette, wind, and final reveal."
+    "editorialBasis": "The original X post publishes a complete character-reference prompt with timed detail shots, camera movement, identity preservation, silhouette, wind, and final reveal.",
+    "featured": {
+      "at": "2026-09-05T15:50:15.694Z",
+      "basis": "trending"
+    }
   },
   {
     "id": "x-2086321605073105162",
@@ -37097,7 +37173,11 @@
       "snapshotAt": "2026-08-21T01:14:08.622Z"
     },
     "approvedAt": "2026-08-21T01:14:08.622Z",
-    "editorialBasis": "The original X caption and creator reply publish the complete player-stats interface prompt with locked UI, Kaze identity, score values, motion, and sound."
+    "editorialBasis": "The original X caption and creator reply publish the complete player-stats interface prompt with locked UI, Kaze identity, score values, motion, and sound.",
+    "featured": {
+      "at": "2026-09-05T15:50:15.688Z",
+      "basis": "trending"
+    }
   },
   {
     "id": "x-2086121943615541389",
@@ -41251,7 +41331,11 @@
       "snapshotAt": "2026-08-21T20:02:13.120Z"
     },
     "approvedAt": "2026-08-21T20:02:13.120Z",
-    "editorialBasis": "The original X status explicitly identifies MiniMax H3, contains a playable native video, and publishes a complete verbatim prompt in the post or a same-author reply."
+    "editorialBasis": "The original X status explicitly identifies MiniMax H3, contains a playable native video, and publishes a complete verbatim prompt in the post or a same-author reply.",
+    "featured": {
+      "at": "2026-09-05T15:50:15.691Z",
+      "basis": "trending"
+    }
   },
   {
     "id": "x-2084586713205317678",
@@ -41701,7 +41785,11 @@
       "snapshotAt": "2026-08-21T20:02:13.120Z"
     },
     "approvedAt": "2026-08-21T20:02:13.120Z",
-    "editorialBasis": "The original X status explicitly identifies MiniMax H3, contains a playable native video, and publishes a complete verbatim prompt in the post or a same-author reply."
+    "editorialBasis": "The original X status explicitly identifies MiniMax H3, contains a playable native video, and publishes a complete verbatim prompt in the post or a same-author reply.",
+    "featured": {
+      "at": "2026-09-05T15:50:15.678Z",
+      "basis": "trending"
+    }
   },
   {
     "id": "x-2084387316286595436",
@@ -41751,7 +41839,11 @@
       "snapshotAt": "2026-08-21T20:02:13.120Z"
     },
     "approvedAt": "2026-08-21T20:02:13.120Z",
-    "editorialBasis": "The original X status explicitly identifies MiniMax H3, contains a playable native video, and publishes a complete verbatim prompt in the post or a same-author reply."
+    "editorialBasis": "The original X status explicitly identifies MiniMax H3, contains a playable native video, and publishes a complete verbatim prompt in the post or a same-author reply.",
+    "featured": {
+      "at": "2026-09-05T15:50:15.677Z",
+      "basis": "trending"
+    }
   },
   {
     "id": "x-2084355335222108362",
@@ -42051,7 +42143,11 @@
       "snapshotAt": "2026-08-21T20:02:13.120Z"
     },
     "approvedAt": "2026-08-21T20:02:13.120Z",
-    "editorialBasis": "The original X status explicitly identifies MiniMax H3, contains a playable native video, and publishes a complete verbatim prompt in the post or a same-author reply."
+    "editorialBasis": "The original X status explicitly identifies MiniMax H3, contains a playable native video, and publishes a complete verbatim prompt in the post or a same-author reply.",
+    "featured": {
+      "at": "2026-09-05T15:50:15.686Z",
+      "basis": "trending"
+    }
   },
   {
     "id": "x-2084201268977844521",
@@ -42201,7 +42297,11 @@
       "snapshotAt": "2026-08-21T20:02:13.120Z"
     },
     "approvedAt": "2026-08-21T20:02:13.120Z",
-    "editorialBasis": "The original X status explicitly identifies MiniMax H3, contains a playable native video, and publishes a complete verbatim prompt in the post or a same-author reply."
+    "editorialBasis": "The original X status explicitly identifies MiniMax H3, contains a playable native video, and publishes a complete verbatim prompt in the post or a same-author reply.",
+    "featured": {
+      "at": "2026-09-05T15:50:15.671Z",
+      "basis": "trending"
+    }
   },
   {
     "id": "x-2083875116900024386",
@@ -62737,7 +62837,11 @@
       "snapshotAt": "2026-09-04T00:26:06.281Z"
     },
     "approvedAt": "2026-09-04T00:26:06.281Z",
-    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video.",
+    "featured": {
+      "at": "2026-09-05T15:50:15.670Z",
+      "basis": "trending"
+    }
   },
   {
     "id": "x-2095473707611553897",
@@ -62787,7 +62891,11 @@
       "snapshotAt": "2026-09-04T00:26:06.281Z"
     },
     "approvedAt": "2026-09-04T00:26:06.281Z",
-    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video.",
+    "featured": {
+      "at": "2026-09-05T15:50:15.680Z",
+      "basis": "trending"
+    }
   },
   {
     "id": "x-2095602031142859199",
@@ -64169,7 +64277,11 @@
       "snapshotAt": "2026-09-05T00:12:52.244Z"
     },
     "approvedAt": "2026-09-05T00:12:52.244Z",
-    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video.",
+    "featured": {
+      "at": "2026-09-05T15:50:15.683Z",
+      "basis": "trending"
+    }
   },
   {
     "id": "x-2095715172883345912",

@@ -4150,6 +4150,12 @@ body.intro-open {
   font-weight: 500;
 }
 
+.added-at-meta .featured-label {
+  color: var(--acid);
+  background: transparent;
+  border: 1px solid color-mix(in srgb, var(--acid) 48%, transparent);
+}
+
 .added-at-meta time {
   white-space: nowrap;
 }

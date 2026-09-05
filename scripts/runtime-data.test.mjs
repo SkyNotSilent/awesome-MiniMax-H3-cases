@@ -16,6 +16,10 @@ test('runtime catalog is complete, unique, light, and contains no detail text', 
   assert.ok(catalog.cases.every((item) => !Number.isNaN(Date.parse(item.addedAt))))
   assert.ok(catalog.cases.every((item) => !Object.hasOwn(item, 'summary') && !Object.hasOwn(item, 'prompt') && !Object.hasOwn(item, 'sourceCaption')))
   assert.ok(gzipSync(await readFile(catalogPath)).byteLength <= 150 * 1024)
+  assert.ok(catalog.featuredCaseIds.length >= 24 && catalog.featuredCaseIds.length <= 28)
+  assert.equal(new Set(catalog.featuredCaseIds).size, catalog.featuredCaseIds.length)
+  assert.deepEqual(new Set(catalog.featuredCaseIds), new Set(sourceCases.filter((item) => item.featured).map((item) => item.id)))
+  assert.equal(catalog.generatedAt, sourceCases.map((item) => item.addedAt).sort().at(-1))
 })
 
 test('case details and catalog entries reconstruct all dialog fields', async () => {

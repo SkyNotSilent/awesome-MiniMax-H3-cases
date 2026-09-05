@@ -52,7 +52,7 @@ The homepage remains case-first. Quick collections are independent entry points:
 
 [![MiniMax H3 latest additions ordered by catalog date](./docs/screenshots/latest-collection-en.jpg)](https://h3-field-notes-production.up.railway.app/en/?collection=latest)
 
-- [Editor picks](https://h3-field-notes-production.up.railway.app/en/?collection=featured) — verified, playable cases with a complete public Prompt.
+- [Editor picks](https://h3-field-notes-production.up.railway.app/en/?collection=featured) — a stable set of 24–28 playable cases, refreshed periodically from public engagement signals and human source checks.
 - [Latest additions](https://h3-field-notes-production.up.railway.app/en/?collection=latest) — the existing compatible link, now ordered by first catalog addition rather than source publication date.
 - [Official examples](https://h3-field-notes-production.up.railway.app/en/?collection=official) — reproducible MiniMax scripts and source evidence.
 - [Long videos](https://h3-field-notes-production.up.railway.app/en/?collection=long) — outputs longer than 15 seconds.
@@ -116,7 +116,7 @@ Example output is structured as a recommended route, environment check, executio
 ## Data, automation, and trust
 
 <!-- project-snapshot:start -->
-**Current generated snapshot:** 1318 cases · 374 complete public Prompts · 24 tutorials · 264 ranked creators from 784 source authors · 8 flagship guides · 14 ecosystem resources · content checked through 2026-09-05.
+**Current generated snapshot:** 1318 cases · 28 Editor picks · 374 complete public Prompts · 24 tutorials · 264 ranked creators from 784 source authors · 8 flagship guides · 14 ecosystem resources · content checked through 2026-09-05.
 <!-- project-snapshot:end -->
 
 - [`data/project-stats.json`](./data/project-stats.json) is the canonical public count snapshot; CI rejects stale website and README numbers.
@@ -144,7 +144,7 @@ The source of truth remains `data/cases.json`, but production builds no longer s
 - Run `npm run videos:playback:audit` for a read-only inventory, `npm run videos:playback:migrate -- --apply` to populate the versioned playback tier, and `npm run videos:playback:verify` before switching or after a release. Migration reports stay in ignored `.review/` files.
 
 <!-- build-metrics:start -->
-**Current production build:** 98.4 kB homepage JavaScript gzip · 9.9 kB / 9.2 kB Chinese / English homepage HTML gzip · 146.9 kB catalog gzip · 699.7 kB / 664 kB Chinese / English search indexes gzip. Run `npm run performance:budget` for static budgets and `npm run performance:browser` against a local production server for browser behavior.
+**Current production build:** 99.3 kB homepage JavaScript gzip · 9.9 kB / 9.2 kB Chinese / English homepage HTML gzip · 147.3 kB catalog gzip · 699.7 kB / 664 kB Chinese / English search indexes gzip. Run `npm run performance:budget` for static budgets and `npm run performance:browser` against a local production server for browser behavior.
 <!-- build-metrics:end -->
 
 ## Contribute or report a problem
