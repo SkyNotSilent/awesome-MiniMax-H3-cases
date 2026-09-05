@@ -58,11 +58,13 @@ The homepage remains case-first. Quick collections are independent entry points:
 - [Long videos](https://h3-field-notes-production.up.railway.app/en/?collection=long) — outputs longer than 15 seconds.
 - **My saved cases** — the saved list stays in this browser; there is no login or cloud account.
 
-Browse visually by **cinematic**, **live action**, **animation**, **dialogue**, **visual effects**, **product**, **character**, and **comparison** tags, then open any card for hosted playback, public metadata, Prompt provenance, and the original X link.
+Advanced filters now use a fixed bilingual taxonomy instead of turning one-off free text into hundreds of controls:
 
-| Cinematic & VFX | Live action & dialogue | Animation & characters | Product & comparison |
-| --- | --- | --- | --- |
-| Film-grade shots, camera moves, transformations | People, performance, speech, emotion | Anime, illustration, creatures, stylized worlds | Ads, product demos, model comparisons |
+| Cinematic & Narrative | Action & VFX | Character & Dialogue | Music Video | Dance |
+| --- | --- | --- | --- | --- |
+| Advertising & Product | Model Comparison | Animation | Local Generation & Workflow | Showcase |
+
+Combine these with 12 visual styles and 14 subject/scene facets. Every option shows its current result count; open any card for hosted playback, public metadata, Prompt provenance, and the original X link.
 
 ## Discover the people behind the strongest H3 work
 

@@ -8,7 +8,11 @@ const cases = JSON.parse(await readFile(resolve(root, 'data/cases.json'), 'utf8'
 const tutorials = JSON.parse(await readFile(resolve(root, 'data/tutorials.json'), 'utf8'))
 const tutorialGuides = JSON.parse(await readFile(resolve(root, 'data/tutorial-guides.json'), 'utf8'))
 const creatorCatalog = JSON.parse(await readFile(resolve(root, 'data/creators.json'), 'utf8'))
+const taxonomy = JSON.parse(await readFile(resolve(root, 'data/taxonomy.json'), 'utf8'))
 const modes = new Set(['T2VA', 'FL2VA', 'Ref2VA', 'Unknown'])
+const categoryKeys = new Set(taxonomy.categories.map((entry) => entry.key))
+const styleKeys = new Set(taxonomy.styles.map((entry) => entry.key))
+const sceneKeys = new Set(taxonomy.scenes.map((entry) => entry.key))
 const provenance = new Set(['official-verbatim', 'creator-verbatim', 'not-published'])
 const promptCompleteness = new Set(['complete'])
 const featuredBases = new Set(['official', 'manual', 'trending'])
@@ -60,6 +64,7 @@ for (const [index, item] of cases.entries()) {
   if (Number.isNaN(Date.parse(item.publishedAt))) errors.push(`${at}.publishedAt must be a valid date`)
   if (!isoDateTimePattern.test(item.addedAt) || Number.isNaN(Date.parse(item.addedAt))) errors.push(`${at}.addedAt must be a valid ISO date-time`)
   if (!modes.has(item.mode)) errors.push(`${at}.mode is invalid: ${item.mode}`)
+  if (!categoryKeys.has(item.category)) errors.push(`${at}.category is outside data/taxonomy.json: ${item.category}`)
   if (!provenance.has(item.promptProvenance)) errors.push(`${at}.promptProvenance is invalid`)
   if (item.promptProvenance === 'not-published') {
     if (item.prompt !== null) errors.push(`${at}.prompt must be null when promptProvenance is not-published`)
@@ -89,7 +94,16 @@ for (const [index, item] of cases.entries()) {
   if (item.mediaUrl !== `/media/${item.id}.mp4`) {
     errors.push(`${at}.mediaUrl must point to its hosted case video`)
   }
-  for (const key of ['styles', 'scenes', 'inputTypes', 'tags']) {
+  for (const key of ['styles', 'scenes']) {
+    if (!Array.isArray(item[key])) errors.push(`${at}.${key} must be an array`)
+    else {
+      if (item[key].length > 2) errors.push(`${at}.${key} must contain at most two values`)
+      if (new Set(item[key]).size !== item[key].length) errors.push(`${at}.${key} must not contain duplicates`)
+    }
+  }
+  for (const style of item.styles ?? []) if (!styleKeys.has(style)) errors.push(`${at}.styles contains a value outside data/taxonomy.json: ${style}`)
+  for (const scene of item.scenes ?? []) if (!sceneKeys.has(scene)) errors.push(`${at}.scenes contains a value outside data/taxonomy.json: ${scene}`)
+  for (const key of ['inputTypes', 'tags']) {
     if (!Array.isArray(item[key]) || item[key].length === 0) errors.push(`${at}.${key} must be a non-empty array`)
   }
   if (item.engagement) {

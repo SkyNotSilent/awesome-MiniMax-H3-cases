@@ -54,9 +54,19 @@
       }
     },
     "author": { "type": "string" },
-    "category": { "type": "string" },
-    "styles": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
-    "scenes": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "category": { "enum": ["cinematic", "action-vfx", "dialogue", "music", "dance", "advertising", "comparison", "animation", "workflow", "showcase"] },
+    "styles": {
+      "type": "array",
+      "items": { "enum": ["cinematic-realistic", "photoreal", "anime", "illustration", "cg-3d", "stylized", "retro", "dark", "commercial", "ugc", "motion-graphics", "vertical"] },
+      "uniqueItems": true,
+      "maxItems": 2
+    },
+    "scenes": {
+      "type": "array",
+      "items": { "enum": ["performance", "dialogue", "dance", "music-performance", "product", "food", "fashion", "nature", "city", "sci-fi", "fantasy", "combat", "creatures", "daily-life"] },
+      "uniqueItems": true,
+      "maxItems": 2
+    },
     "inputTypes": {
       "type": "array",
       "items": { "enum": ["text", "image", "video", "audio", "unknown"] },

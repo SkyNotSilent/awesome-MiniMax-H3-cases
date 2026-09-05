@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import rawCases from '../data/cases.json'
-import { creatorPath, detectVisitorLanguage, metadataValue, modelLabel, resolveRoute, tutorialEcosystemPath, tutorialPath } from './i18n'
+import taxonomy from '../data/taxonomy.json'
+import { creatorPath, detectVisitorLanguage, metadataValue, modelLabel, resolveRoute, taxonomyLabel, tutorialEcosystemPath, tutorialPath } from './i18n'
 import type { VideoCase } from './types'
 
 const cases = rawCases as VideoCase[]
@@ -12,6 +13,21 @@ describe('case metadata localization', () => {
     expect(modelLabel(comparison!, 'en')).toBe('MiniMax H3 vs Seedance 2 (creator-identified)')
     expect(metadataValue(comparison!.resolution, 'en')).toBe('Not specified in the original post')
     expect(metadataValue('原帖', 'en')).toBe('Original post')
+  })
+})
+
+describe('fixed taxonomy localization', () => {
+  it('returns explicit Chinese and English labels for every public taxonomy key', () => {
+    for (const [kind, entries] of [
+      ['category', taxonomy.categories],
+      ['style', taxonomy.styles],
+      ['scene', taxonomy.scenes],
+    ] as const) {
+      for (const entry of entries) {
+        expect(taxonomyLabel(entry.key, 'zh', kind)).toBe(entry.zh)
+        expect(taxonomyLabel(entry.key, 'en', kind)).toBe(entry.en)
+      }
+    }
   })
 })
 

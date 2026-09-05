@@ -1,5 +1,18 @@
 export type CaseMode = 'T2VA' | 'FL2VA' | 'Ref2VA' | 'Unknown'
 
+export interface TaxonomyEntry {
+  key: string
+  zh: string
+  en: string
+}
+
+export interface Taxonomy {
+  version: number
+  categories: TaxonomyEntry[]
+  styles: TaxonomyEntry[]
+  scenes: TaxonomyEntry[]
+}
+
 export interface VideoCase {
   id: string
   title: string
