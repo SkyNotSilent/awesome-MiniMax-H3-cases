@@ -1111,7 +1111,7 @@ function HomePage({
     const trimmed = deferredQuery.trim()
     if (!trimmed) return
     const timer = setTimeout(() => {
-      track('search', { scope: 'cases', query: trimmed.slice(0, 80), resultCount: filteredLengthRef.current })
+      track('search', { scope: 'cases', queryLength: Math.min(trimmed.length, 80), resultCount: filteredLengthRef.current })
     }, 800)
     return () => clearTimeout(timer)
   }, [deferredQuery])
@@ -1746,7 +1746,7 @@ function TutorialsPage({
     const trimmed = query.trim()
     if (!trimmed) return
     const timer = setTimeout(() => {
-      track('search', { scope: 'tutorials', query: trimmed.slice(0, 80) })
+      track('search', { scope: 'tutorials', queryLength: Math.min(trimmed.length, 80) })
     }, 800)
     return () => clearTimeout(timer)
   }, [query])

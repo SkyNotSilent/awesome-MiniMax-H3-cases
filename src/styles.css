@@ -5416,6 +5416,9 @@ footer {
 
   .intro-wordmark strong {
     align-self: flex-start;
+    max-width: 100%;
+    font-size: 0.64em;
+    letter-spacing: -0.05em;
   }
 
   .intro-proof-card {

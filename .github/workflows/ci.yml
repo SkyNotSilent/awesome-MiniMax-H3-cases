@@ -22,4 +22,5 @@ jobs:
       - run: npm run lint
       - run: npm run validate:data
       - run: npm run build
+      - run: npm run readme:check
       - run: npm run privacy:scan

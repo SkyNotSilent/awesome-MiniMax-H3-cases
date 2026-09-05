@@ -14,4 +14,4 @@ All review status, notes, search queries, discovery sources, rejected IDs, autho
 
 The publication path must set ISO `addedAt` when a case first enters `data/cases.json`. Later Prompt recovery, copy edits, engagement refreshes, or review changes must preserve that original value so they do not appear as new catalog entries.
 
-When published counts or first-screen content change, run `npm run screenshots` so README visuals are regenerated from the same snapshot.
+When public cases, complete Prompts, ranked creators, or first-screen content change, finish the production build and then run `npm run screenshots:capture`. This reuses that build, writes measured build sizes into both READMEs, refreshes the bilingual opening screen and current collection/creator views, and skips byte-identical or visually equivalent images. Run it a second time when changing the screenshot pipeline itself; the immediate repeat must report `0 files changed`. Use standalone `npm run screenshots` only when no current production build exists.

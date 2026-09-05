@@ -56,7 +56,7 @@ MiniMax H3 也常被搜索为 **Hailuo H3**、**Hailuo 3.0**、**海螺 H3** 和
 - [最新收录](https://h3-field-notes-production.up.railway.app/?collection=latest)：保留原兼容入口，现按首次进入本站目录的时间排序，而不是来源发布时间；
 - [官方案例](https://h3-field-notes-production.up.railway.app/?collection=official)：MiniMax 可复现脚本与公开证据；
 - [长视频](https://h3-field-notes-production.up.railway.app/?collection=long)：集中查看超过 15 秒的输出；
-- **我的收藏**：仅保存在当前浏览器，不用登录、不跟踪、不上传云端。
+- **我的收藏**：收藏列表仅保存在当前浏览器，不用登录，也不上传云端。
 
 还可继续浏览 **电影感、真人、动画、人物对白、纯特效、产品、角色、模型对比** 等内容标签；打开卡片即可查看站内视频、公开元数据、Prompt 来源说明和原始 X 链接。
 
@@ -126,7 +126,7 @@ npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
 - 每个公开案例和教程都有不可变的 ISO `addedAt`，表示首次进入本站公开目录的时间；来源 `publishedAt`、审核 `approvedAt` 与教程 `verifiedAt` 保持独立含义，改文案、补 Prompt、刷新数据或重新核验都不会触发未读；
 - 每日案例发现与每周教程发现的私有候选只进 `.review/`；凭据和发现来源标签不会进入 Git、前端或 SEO；
 - 构建会生成中英文案例/教程页、canonical、hreflang、`VideoObject`/`HowTo` JSON-LD、sitemap、OG、[`llms.txt`](./public/llms.txt) 与 [`llms-full.txt`](./public/llms-full.txt)。
-- `npm run screenshots` 会重新构建网站、模拟老用户回访快照、验证中英文桌面与手机路由，并从当前统计和教程数据自动刷新 README 全部截图。
+- `npm run screenshots` 会重新构建网站、同步实测构建体积，稳定抓取当前数据对应的中英文开屏与桌面/手机回访界面，并且只写入渲染结果真正变化的截图。
 
 ## 性能架构
 
@@ -135,7 +135,7 @@ npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
 - 首页先渲染 36 条匹配案例，接近底部或按下可聚焦的“加载更多”按钮时增加 24 条；筛选仍针对完整轻量目录执行，结果总数始终是真实总数。
 - 只有前 9 张卡片允许入场动画，最长 720ms；第 10 张起立即可见。系统启用“减少动态效果”时，卡片动画完全关闭。
 - 点击站内视频时，同一次交互立即发起 `/media/` 请求并挂载播放器，同时并行加载 Prompt 与摘要；详情失败不影响视频和原帖入口。
-- 用户第一次聚焦搜索框时才加载完整 Prompt/摘要搜索索引；此前标题、作者、标签和分类等基础搜索仍在本地可用，不建设搜索后端，也不跟踪用户。
+- 用户第一次聚焦搜索框时才加载完整 Prompt/摘要搜索索引；此前标题、作者、标签和分类等基础搜索仍在本地可用，不建设搜索后端，原始搜索文本不会离开浏览器。
 - 本地 JPG 封面在构建时自动生成 360px、720px WebP，原图继续作为兼容与 SEO 兜底；后续发布新案例也走同一管线。
 - 首页 JSON-LD 与 `<noscript>` 只列最新 48 条；其余案例按每页 48 条生成中英文静态归档，全部案例详情页仍可独立索引。
 - 带哈希的 JS/CSS 永久缓存；HTML 与运行时 JSON 使用 1 分钟共享缓存和过期继续服务；`/media/` 跳转共享缓存 5 分钟，而对象签名保持 1 小时有效。
@@ -143,7 +143,9 @@ npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
 - 站内播放版限制长边 1280、约 3Mbps，统一使用带 faststart 的 H.264/AAC。镜像流程优先选择已经符合标准的最高质量 X 原生 MP4，只有必要时才转码；源文件和播放版必须通过大小、时长、编码、faststart 与 Range 校验后才允许发布。
 - `npm run videos:playback:audit` 执行只读清点，`npm run videos:playback:migrate -- --apply` 生成版本化播放层，切换前后运行 `npm run videos:playback:verify`；迁移报告只保存在被忽略的 `.review/`。
 
-当前生产构建实测：**首页 JS 95KB gzip、首页 HTML 10KB gzip、目录 126KB gzip、中文/英文搜索索引 618KB/588KB gzip、首屏 36 张卡片、1687 个 DOM 节点**。静态预算运行 `npm run performance:budget`；启动本地生产服务后运行 `npm run performance:browser` 验证真实浏览器行为。
+<!-- build-metrics:start -->
+**当前生产构建：** 首页 JavaScript gzip 98.4 kB · 中文 / 英文首页 HTML gzip 9.9 kB / 9.2 kB · 目录 gzip 146.9 kB · 中文 / 英文搜索索引 gzip 699.7 kB / 664 kB。静态预算运行 `npm run performance:budget`；启动本地生产服务后运行 `npm run performance:browser` 验证浏览器行为。
+<!-- build-metrics:end -->
 
 ## 投稿、纠错与下架
 

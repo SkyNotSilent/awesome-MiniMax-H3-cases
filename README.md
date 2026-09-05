@@ -56,7 +56,7 @@ The homepage remains case-first. Quick collections are independent entry points:
 - [Latest additions](https://h3-field-notes-production.up.railway.app/en/?collection=latest) — the existing compatible link, now ordered by first catalog addition rather than source publication date.
 - [Official examples](https://h3-field-notes-production.up.railway.app/en/?collection=official) — reproducible MiniMax scripts and source evidence.
 - [Long videos](https://h3-field-notes-production.up.railway.app/en/?collection=long) — outputs longer than 15 seconds.
-- **My saved cases** — anonymous browser-local bookmarks; no login, tracking, or cloud account.
+- **My saved cases** — the saved list stays in this browser; there is no login or cloud account.
 
 Browse visually by **cinematic**, **live action**, **animation**, **dialogue**, **visual effects**, **product**, **character**, and **comparison** tags, then open any card for hosted playback, public metadata, Prompt provenance, and the original X link.
 
@@ -126,7 +126,7 @@ Example output is structured as a recommended route, environment check, executio
 - Every public case and guide has an immutable ISO `addedAt`: the first time it entered the public catalog. Source `publishedAt`, review `approvedAt`, and guide `verifiedAt` keep their separate meanings; copy edits, Prompt additions, metric refreshes, and re-verification do not create unread updates.
 - Daily case discovery and weekly tutorial discovery keep private candidates in `.review/`; credentials and discovery labels never enter Git, the frontend, or SEO.
 - Builds generate localized case/tutorial pages, canonical and hreflang links, `VideoObject`/`HowTo` JSON-LD, sitemap, Open Graph data, [`llms.txt`](./public/llms.txt), and [`llms-full.txt`](./public/llms-full.txt).
-- `npm run screenshots` rebuilds the site, simulates a returning-user update snapshot, checks bilingual desktop/mobile routes, reads current stats and tutorial data, and refreshes every README screenshot.
+- `npm run screenshots` rebuilds the site, synchronizes measured build sizes, captures the current bilingual opening screen and returning-user views on desktop/mobile, and writes only screenshots whose rendered bytes changed.
 
 ## Performance architecture
 
@@ -135,7 +135,7 @@ The source of truth remains `data/cases.json`, but production builds no longer s
 - The homepage renders 36 matching cards, then adds 24 near the list end or through a keyboard-focusable **Load more** button. Filters still evaluate the complete compact catalog and report the true total.
 - The first nine cards may animate for at most 720ms; every later card is immediately visible. Reduced-motion mode disables card motion completely.
 - Clicking a hosted case starts `/media/` during the same interaction, mounts the player independently, and fetches Prompt/summary detail in parallel. A detail failure cannot block video or the original-source link.
-- Full Prompt/summary search loads only after the search field is focused. Until then, title, author, taxonomy, and tag search remain available locally; there is no search server or user tracking.
+- Full Prompt/summary search loads only after the search field is focused. Until then, title, author, taxonomy, and tag search remain available locally; there is no search server, and raw search text stays in the browser.
 - Local JPEG posters receive 360px and 720px WebP derivatives during builds, while the original image remains the fallback. New publishing builds generate the same variants automatically.
 - Homepage JSON-LD and `<noscript>` expose the latest 48 cases. Static bilingual archive pages expose the rest in groups of 48, while every case detail page remains independently indexable.
 - Fingerprinted JS/CSS are immutable; HTML and runtime JSON use one-minute shared-cache freshness with stale revalidation. `/media/` redirects use a five-minute shared-cache window, while signed object URLs remain valid for one hour.
@@ -143,7 +143,9 @@ The source of truth remains `data/cases.json`, but production builds no longer s
 - Site playback is capped at a 1280px long edge and about 3Mbps H.264/AAC with faststart. Mirroring prefers the highest native X MP4 that already meets the profile and transcodes only when necessary; publication is blocked until both source and playback objects pass size, duration, codec, faststart, and Range checks.
 - Run `npm run videos:playback:audit` for a read-only inventory, `npm run videos:playback:migrate -- --apply` to populate the versioned playback tier, and `npm run videos:playback:verify` before switching or after a release. Migration reports stay in ignored `.review/` files.
 
-Current production-build checks: **95KB homepage JS gzip**, **10KB homepage HTML gzip**, **126KB catalog gzip**, **618KB Chinese / 588KB English search index gzip**, **36 initial cards**, and **1687 initial DOM nodes**. Run `npm run performance:budget` for static budgets and, against a local production server, `npm run performance:browser` for browser behavior.
+<!-- build-metrics:start -->
+**Current production build:** 98.4 kB homepage JavaScript gzip · 9.9 kB / 9.2 kB Chinese / English homepage HTML gzip · 146.9 kB catalog gzip · 699.7 kB / 664 kB Chinese / English search indexes gzip. Run `npm run performance:budget` for static budgets and `npm run performance:browser` against a local production server for browser behavior.
+<!-- build-metrics:end -->
 
 ## Contribute or report a problem
 

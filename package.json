@@ -34,13 +34,16 @@
     "posters:webp": "node scripts/build-poster-variants.mjs",
     "performance:budget": "node scripts/check-performance-budgets.mjs",
     "performance:browser": "node scripts/performance-smoke.mjs",
+    "readme:build-metrics": "node scripts/sync-readme-build-metrics.mjs --write",
+    "readme:check": "node scripts/sync-readme-build-metrics.mjs",
     "discovery": "node scripts/build-discovery-files.mjs",
     "sync:external": "node scripts/sync-external-catalog.mjs",
     "tutorials:check": "node scripts/tutorial-collection.mjs",
     "tutorials:publish": "node scripts/tutorial-collection.mjs --publish",
     "skills:verify": "node scripts/verify-skills.mjs",
     "skills:install": "npx skills add . --skill minimax-h3-prompt-library minimax-h3-tutorial-guide --agent codex claude-code",
-    "screenshots": "npm run build && node scripts/capture-readme-screenshots.mjs",
+    "screenshots:capture": "npm run readme:build-metrics && node scripts/capture-readme-screenshots.mjs && npm run readme:check",
+    "screenshots": "npm run build && npm run screenshots:capture",
     "seo": "node scripts/build-seo-pages.mjs"
   },
   "dependencies": {
