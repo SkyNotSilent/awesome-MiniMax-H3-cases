@@ -1,8 +1,11 @@
 import { execFile as execFileCallback, spawn } from 'node:child_process'
-import { mkdir, readFile } from 'node:fs/promises'
+import { createHash } from 'node:crypto'
+import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { promisify } from 'node:util'
 import { chromium } from 'playwright'
+import sharp from 'sharp'
+import { readmeScreenshotFiles } from './readme-screenshot-files.mjs'
 
 const execFile = promisify(execFileCallback)
 const root = resolve(import.meta.dirname, '..')
@@ -21,6 +24,8 @@ const screenshotCurrentBaselines = {
   cases: new Date(latestCaseAddedAt).toISOString(),
   tutorials: new Date(latestGuideAddedAt).toISOString(),
 }
+let changedScreenshotCount = 0
+const changedScreenshotFiles = []
 
 const wait = (milliseconds) => new Promise((resolveWait) => setTimeout(resolveWait, milliseconds))
 
@@ -54,6 +59,104 @@ async function verifyPage(page, path, language, heading) {
   if (dimensions.document > dimensions.viewport + 1) {
     throw new Error(`${path} overflows horizontally: ${JSON.stringify(dimensions)}`)
   }
+}
+
+async function writeScreenshotIfChanged(page, filename, options = {}) {
+  const path = resolve(screenshotDir, filename)
+  const screenshot = await page.screenshot(options)
+  const previous = await readFile(path).catch(() => null)
+  if (previous?.equals(screenshot) || (previous && await screenshotsAreVisuallyEquivalent(previous, screenshot))) return false
+  await writeFile(path, screenshot)
+  changedScreenshotCount += 1
+  changedScreenshotFiles.push(filename)
+  return true
+}
+
+async function screenshotsAreVisuallyEquivalent(previous, next) {
+  try {
+    const [before, after] = await Promise.all([previous, next].map((body) => sharp(body)
+      .resize({ width: 360, fit: 'inside' })
+      .grayscale()
+      .raw()
+      .toBuffer({ resolveWithObject: true })))
+    if (before.info.width !== after.info.width || before.info.height !== after.info.height) return false
+    let totalDifference = 0
+    let maximumDifference = 0
+    for (let index = 0; index < before.data.length; index += 1) {
+      const difference = Math.abs(before.data[index] - after.data[index])
+      totalDifference += difference
+      maximumDifference = Math.max(maximumDifference, difference)
+    }
+    return totalDifference / before.data.length < 0.05 && maximumDifference < 12
+  } catch {
+    return false
+  }
+}
+
+async function writeScreenshotManifest() {
+  const files = Object.fromEntries(await Promise.all(readmeScreenshotFiles.map(async (filename) => {
+    const body = await readFile(resolve(screenshotDir, filename))
+    return [filename, createHash('sha256').update(body).digest('hex')]
+  })))
+  const manifest = `${JSON.stringify({
+    version: 1,
+    generatedAt: stats.generatedAt,
+    cases: stats.cases,
+    completePrompts: stats.completePrompts,
+    tutorials: stats.tutorials,
+    rankedCreators: stats.rankedCreators,
+    files,
+  }, null, 2)}\n`
+  const path = resolve(screenshotDir, 'snapshot.json')
+  const previous = await readFile(path, 'utf8').catch(() => null)
+  if (previous !== manifest) await writeFile(path, manifest)
+}
+
+async function captureIntro(page, path, language, filename, type = 'jpeg') {
+  const response = await page.goto(`${baseUrl}${path}`, { waitUntil: 'domcontentloaded', timeout: 60_000 })
+  if (!response || response.status() !== 200) throw new Error(`${path} returned ${response?.status()}`)
+  if ((await page.locator('html').getAttribute('lang')) !== language) throw new Error(`${path} language mismatch`)
+  const intro = page.locator('.intro-splash')
+  await intro.waitFor({ state: 'visible' })
+  await intro.locator('.intro-proof-cases strong').filter({ hasText: String(stats.cases) }).waitFor()
+  await page.addStyleTag({ content: `
+    .intro-splash,
+    .intro-splash::before,
+    .intro-splash::after,
+    .intro-splash * {
+      animation-delay: -100s !important;
+      animation-duration: 0.001s !important;
+      transition: none !important;
+    }
+    .intro-progress span { transform: scaleX(1) !important; }
+  ` })
+  await page.waitForTimeout(80)
+  const clipped = await page.evaluate(() => {
+    const selectors = [
+      '.intro-proof-cases strong',
+      '.intro-proof-cases p',
+      '.intro-proof-cases em',
+      '.intro-proof-update strong',
+      '.intro-proof-update p',
+      '.intro-wordmark span',
+      '.intro-wordmark strong',
+      '.intro-proof-verdict',
+      '.intro-bottomline p',
+      '.intro-ready',
+    ]
+    return selectors.flatMap((selector) => [...globalThis.document.querySelectorAll(selector)].flatMap((element) => {
+      const bounds = element.getBoundingClientRect()
+      const outside = bounds.left < -1
+        || bounds.right > globalThis.innerWidth + 1
+        || bounds.top < -1
+        || bounds.bottom > globalThis.innerHeight + 1
+      return outside ? [{ selector, left: bounds.left, right: bounds.right, top: bounds.top, bottom: bounds.bottom }] : []
+    }))
+  })
+  if (clipped.length > 0) throw new Error(`${path} intro content is clipped: ${JSON.stringify(clipped)}`)
+  await writeScreenshotIfChanged(page, filename, type === 'jpeg'
+    ? { type: 'jpeg', quality: 88 }
+    : { type: 'png' })
 }
 
 async function dismissIntro(page, label) {
@@ -135,7 +238,7 @@ async function captureSkillOutput(browser) {
         </section>
       </div>
     </main></body></html>`)
-  await page.screenshot({ path: resolve(screenshotDir, 'agent-skills-output.png') })
+  await writeScreenshotIfChanged(page, 'agent-skills-output.png', { type: 'png' })
   await context.close()
 }
 
@@ -169,7 +272,11 @@ try {
   }
 
   browser = await chromium.launch({ headless: true })
-  const desktop = await browser.newContext({ viewport: { width: 1440, height: 1000 }, deviceScaleFactor: 1 })
+  const desktop = await browser.newContext({
+    viewport: { width: 1440, height: 1000 },
+    deviceScaleFactor: 1,
+    reducedMotion: 'reduce',
+  })
   await blockRemoteFonts(desktop)
   await desktop.addInitScript((baselines) => {
     localStorage.setItem('minimax-h3-language', 'zh')
@@ -180,52 +287,59 @@ try {
   page.on('pageerror', (error) => browserProblems.push(`pageerror: ${error.message}`))
   page.on('console', (message) => recordConsoleError('', message))
 
+  await captureIntro(page, '/', 'zh-CN', 'intro-zh.jpg')
+  await captureIntro(page, '/en/', 'en', 'intro-en.jpg')
+
   await verifyPage(page, '/', 'zh-CN', '先看 MiniMax H3 的真实效果。')
   await dismissIntro(page, '跳过开场')
   await focusUpdateSnapshot(page)
-  await page.screenshot({ path: resolve(screenshotDir, 'case-library-zh.jpg'), type: 'jpeg', quality: 88 })
+  await writeScreenshotIfChanged(page, 'case-library-zh.jpg', { type: 'jpeg', quality: 88 })
 
   await verifyPage(page, '/?collection=latest', 'zh-CN', '先看 MiniMax H3 的真实效果。')
   await dismissIntro(page, '跳过开场')
   await page.getByRole('button', { name: '最新收录' }).waitFor()
-  await page.screenshot({ path: resolve(screenshotDir, 'latest-collection-zh.jpg'), type: 'jpeg', quality: 88 })
+  await writeScreenshotIfChanged(page, 'latest-collection-zh.jpg', { type: 'jpeg', quality: 88 })
 
   await verifyPage(page, '/en/', 'en', 'See what MiniMax H3 actually makes.')
   await dismissIntro(page, 'Skip intro')
   await focusUpdateSnapshot(page)
-  await page.screenshot({ path: resolve(screenshotDir, 'case-library-en.jpg'), type: 'jpeg', quality: 88 })
+  await writeScreenshotIfChanged(page, 'case-library-en.jpg', { type: 'jpeg', quality: 88 })
 
   await verifyPage(page, '/en/?collection=latest', 'en', 'See what MiniMax H3 actually makes.')
   await dismissIntro(page, 'Skip intro')
   await page.getByRole('button', { name: 'Latest' }).waitFor()
-  await page.screenshot({ path: resolve(screenshotDir, 'latest-collection-en.jpg'), type: 'jpeg', quality: 88 })
+  await writeScreenshotIfChanged(page, 'latest-collection-en.jpg', { type: 'jpeg', quality: 88 })
 
   await verifyPage(page, '/tutorials/', 'zh-CN', 'MiniMax H3 教程')
   await page.getByRole('button', { name: '8GB 显存' }).click()
   await page.getByRole('heading', { name: '4-bit + DiffSynth：最低 8GB 显存路线' }).waitFor()
   await page.getByRole('button', { name: '全部硬件' }).click()
   await focusTutorialUpdates(page)
-  await page.screenshot({ path: resolve(screenshotDir, 'tutorials-zh.png') })
+  await writeScreenshotIfChanged(page, 'tutorials-zh.png', { type: 'png' })
 
   await verifyPage(page, '/en/tutorials/', 'en', 'MiniMax H3 Tutorials')
   await focusTutorialUpdates(page)
-  await page.screenshot({ path: resolve(screenshotDir, 'tutorials-en.png') })
+  await writeScreenshotIfChanged(page, 'tutorials-en.png', { type: 'png' })
 
   await verifyPage(page, '/tutorials/ecosystem/', 'zh-CN', '教程与工具生态')
   await page.getByText(`Star 快照: ${resourceSnapshotAt}`).first().waitFor()
-  await page.screenshot({ path: resolve(screenshotDir, 'tutorial-ecosystem-zh.png') })
+  await writeScreenshotIfChanged(page, 'tutorial-ecosystem-zh.png', { type: 'png' })
 
   await verifyPage(page, '/en/tutorials/ecosystem/', 'en', 'Tutorial and Tool Ecosystem')
   await page.getByText(`Stars snapshot: ${resourceSnapshotAt}`).first().waitFor()
-  await page.screenshot({ path: resolve(screenshotDir, 'tutorial-ecosystem-en.png') })
+  await writeScreenshotIfChanged(page, 'tutorial-ecosystem-en.png', { type: 'png' })
 
   await verifyPage(page, '/creators/', 'zh-CN', '持续做出好作品的人。')
-  await page.screenshot({ path: resolve(screenshotDir, 'creators-zh.png') })
+  await writeScreenshotIfChanged(page, 'creators-zh.png', { type: 'png' })
 
   await verifyPage(page, '/en/creators/', 'en', 'Follow the people who keep making.')
-  await page.screenshot({ path: resolve(screenshotDir, 'creators-en.png') })
+  await writeScreenshotIfChanged(page, 'creators-en.png', { type: 'png' })
 
-  const mobile = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1 })
+  const mobile = await browser.newContext({
+    viewport: { width: 390, height: 844 },
+    deviceScaleFactor: 1,
+    reducedMotion: 'reduce',
+  })
   await blockRemoteFonts(mobile)
   await mobile.addInitScript((baselines) => {
     localStorage.setItem('minimax-h3-language', 'zh')
@@ -235,30 +349,34 @@ try {
   const mobilePage = await mobile.newPage()
   mobilePage.on('pageerror', (error) => browserProblems.push(`mobile pageerror: ${error.message}`))
   mobilePage.on('console', (message) => recordConsoleError('mobile ', message))
+  await captureIntro(mobilePage, '/', 'zh-CN', 'intro-zh-mobile.jpg')
+  await captureIntro(mobilePage, '/en/', 'en', 'intro-en-mobile.jpg')
   await verifyPage(mobilePage, '/', 'zh-CN', '先看 MiniMax H3 的真实效果。')
   await dismissIntro(mobilePage, '跳过开场')
   await focusUpdateSnapshot(mobilePage)
-  await mobilePage.screenshot({ path: resolve(screenshotDir, 'case-library-zh-mobile.jpg'), type: 'jpeg', quality: 86 })
+  await writeScreenshotIfChanged(mobilePage, 'case-library-zh-mobile.jpg', { type: 'jpeg', quality: 86 })
   await verifyPage(mobilePage, '/tutorials/', 'zh-CN', 'MiniMax H3 教程')
   await focusTutorialUpdates(mobilePage)
-  await mobilePage.screenshot({ path: resolve(screenshotDir, 'tutorials-zh-mobile.png') })
+  await writeScreenshotIfChanged(mobilePage, 'tutorials-zh-mobile.png', { type: 'png' })
   await verifyPage(mobilePage, '/en/', 'en', 'See what MiniMax H3 actually makes.')
   await dismissIntro(mobilePage, 'Skip intro')
   await focusUpdateSnapshot(mobilePage)
-  await mobilePage.screenshot({ path: resolve(screenshotDir, 'case-library-en-mobile.jpg'), type: 'jpeg', quality: 86 })
+  await writeScreenshotIfChanged(mobilePage, 'case-library-en-mobile.jpg', { type: 'jpeg', quality: 86 })
   await verifyPage(mobilePage, '/en/tutorials/', 'en', 'MiniMax H3 Tutorials')
   await focusTutorialUpdates(mobilePage)
-  await mobilePage.screenshot({ path: resolve(screenshotDir, 'tutorials-en-mobile.png') })
+  await writeScreenshotIfChanged(mobilePage, 'tutorials-en-mobile.png', { type: 'png' })
   await verifyPage(mobilePage, '/creators/', 'zh-CN', '持续做出好作品的人。')
-  await mobilePage.screenshot({ path: resolve(screenshotDir, 'creators-zh-mobile.png') })
+  await writeScreenshotIfChanged(mobilePage, 'creators-zh-mobile.png', { type: 'png' })
   await verifyPage(mobilePage, '/en/creators/', 'en', 'Follow the people who keep making.')
-  await mobilePage.screenshot({ path: resolve(screenshotDir, 'creators-en-mobile.png') })
+  await writeScreenshotIfChanged(mobilePage, 'creators-en-mobile.png', { type: 'png' })
   await mobile.close()
   await desktop.close()
 
   await captureSkillOutput(browser)
   if (browserProblems.length) throw new Error(browserProblems.join('\n'))
-  console.log(`Captured bilingual README screenshots from ${stats.cases} cases, ${stats.tutorials} tutorials, and ${stats.rankedCreators} creators.`)
+  await writeScreenshotManifest()
+  const changedSummary = changedScreenshotFiles.length > 0 ? ` (${changedScreenshotFiles.join(', ')})` : ''
+  console.log(`Captured bilingual README screenshots from ${stats.cases} cases, ${stats.tutorials} tutorials, and ${stats.rankedCreators} creators; ${changedScreenshotCount} files changed${changedSummary}.`)
 } finally {
   if (browser) await browser.close()
   if (preview) preview.kill('SIGTERM')
