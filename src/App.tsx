@@ -920,7 +920,7 @@ function AddedDateFilter({
           )
         })}
       </div>
-      <small className="added-date-filter-hint" id={hintId}>{unseenHint}</small>
+      <small className={`added-date-filter-hint${value === 'unseen' ? ' is-visible' : ''}`} id={hintId}>{unseenHint}</small>
     </div>
   )
 }
@@ -946,6 +946,22 @@ function UpdateSummary({
   const todayCaseCount = catalog.cases.filter((item) => matchesAddedDate(item.addedAt, 'today')).length
   const todayTutorialCount = catalog.tutorials.filter((item) => matchesAddedDate(item.addedAt, 'today')).length
   const latestAddedAt = maxAddedAt([...catalog.cases, ...catalog.tutorials])
+  const compact = updateSession.firstVisit || !updateSession.storageAvailable || !hasPersonalUpdates
+  const latestSummary = latestUpdate
+    ? t.updateSummaryTitle(latestUpdate.casesAdded, latestUpdate.promptsAdded, latestUpdate.tutorialsAdded)
+    : t.viewLatestCases
+  const latestDate = latestUpdate?.publishedAt ? formatAddedDate(latestUpdate.publishedAt, language) : ''
+  const latestReleaseIsToday = Boolean(latestUpdate?.publishedAt && matchesAddedDate(latestUpdate.publishedAt, 'today'))
+  const compactStatus = !updateSession.storageAvailable
+    ? t.storageUnavailableStatus
+    : updateSession.firstVisit
+      ? t.firstVisitStatus
+      : t.upToDateStatus
+  const compactMessage = !updateSession.storageAvailable
+    ? t.storageUnavailableCompact(latestSummary)
+    : updateSession.firstVisit
+      ? t.firstVisitCompact(latestSummary)
+      : t.upToDateCompact(latestDate, latestSummary)
   const status = !updateSession.storageAvailable
     ? t.upToDateStatus
     : updateSession.firstVisit
@@ -967,6 +983,17 @@ function UpdateSummary({
       : hasPersonalUpdates
         ? t.personalUpdateDescription
         : t.upToDateDescription
+
+  if (compact) return (
+    <section className="update-strip" aria-live="polite">
+      <strong>{compactStatus}</strong>
+      <p>{compactMessage}</p>
+      <button type="button" onClick={latestReleaseIsToday && todayCaseCount > 0 ? () => onViewDate('today') : onViewLatest}>
+        {latestReleaseIsToday && todayCaseCount > 0 ? t.viewTodayCases(todayCaseCount) : t.viewLatestCases}
+        <ArrowDownRight size={14} />
+      </button>
+    </section>
+  )
 
   return (
     <section className={`update-summary${hasPersonalUpdates ? ' has-updates' : ' is-current'}`} aria-live="polite">

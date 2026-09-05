@@ -240,14 +240,25 @@ describe('case-first routes', () => {
 
     expect(within(screen.getByRole('group', { name: '本站收录时间' })).getByRole('button', { name: /^全部$/ })).toHaveAttribute('aria-pressed', 'true')
     expect(screen.getByRole('button', { name: /本次新增/ })).toBeDisabled()
-    expect(screen.getByRole('heading', { name: '从本次访问开始记录更新。' })).toBeInTheDocument()
-    expect(screen.getByText('创作者榜已更新')).toBeInTheDocument()
+    expect(document.querySelector('.update-strip')).toBeInTheDocument()
+    expect(screen.getByText('案例按最新收录排序 · 最近一次更新：新增 24 个案例 · 5 条完整 Prompt')).toBeInTheDocument()
+    expect(screen.queryByText('创作者榜已更新')).not.toBeInTheDocument()
     expect(screen.getByText('从本次访问开始记录；当前没有可比较的上次访问。')).toBeInTheDocument()
     expect(window.localStorage.getItem(caseUpdatesSeenThroughKey)).toBe('2026-08-20T12:20:35.382Z')
     expect(window.localStorage.getItem(tutorialUpdatesSeenThroughKey)).toBe('2026-08-23T02:34:28+08:00')
     const cards = document.querySelectorAll('.case-card')
     expect(cards[0]).toHaveTextContent('羊皮纸上的绝地光明史诗')
     expect(screen.getByText('舰桥上的跃迁余震')).toBeInTheDocument()
+  })
+
+  it('shows the latest non-zero release in the compact up-to-date state', () => {
+    window.localStorage.setItem(caseUpdatesSeenThroughKey, '2026-08-20T12:20:35.382Z')
+    window.localStorage.setItem(tutorialUpdatesSeenThroughKey, '2026-08-23T02:34:28+08:00')
+    renderAt('/')
+
+    expect(document.querySelector('.update-strip')).toBeInTheDocument()
+    expect(screen.getByText('最近一次更新于 9月5日 · 新增 24 个案例 · 5 条完整 Prompt')).toBeInTheDocument()
+    expect(screen.queryByText(/新增 0/)).not.toBeInTheDocument()
   })
 
   it('keeps a fixed update snapshot until it is visible and preserves it across refreshes in the same tab', async () => {
@@ -317,7 +328,8 @@ describe('case-first routes', () => {
     Object.defineProperty(navigator, 'languages', { configurable: true, value: ['zh-CN'] })
     try {
       renderAt('/')
-      expect(screen.getByRole('heading', { name: '日期浏览仍可使用。' })).toBeInTheDocument()
+      expect(document.querySelector('.update-strip')).toBeInTheDocument()
+      expect(screen.getByText('无法保存访问进度 · 最近一次更新：新增 24 个案例 · 5 条完整 Prompt')).toBeInTheDocument()
       expect(screen.getByRole('button', { name: /本次新增/ })).toBeDisabled()
       expect(screen.getByRole('button', { name: '今天' })).toBeEnabled()
       expect(screen.getByText('浏览器存储不可用，无法计算自上次访问新增。')).toBeInTheDocument()
