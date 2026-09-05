@@ -201,6 +201,40 @@ describe('case-first routes', () => {
     expect(window.location.search).toBe('?collection=official')
   })
 
+  it('treats quick collections as isolated folders that reset the filters above them', () => {
+    renderAt('/')
+    const collections = screen.getByRole('group', { name: '快速集合' })
+    expect(within(collections).queryByRole('button', { name: '全部案例' })).not.toBeInTheDocument()
+    expect(within(collections).getAllByRole('button').map((button) => button.textContent)).toEqual([
+      '编辑精选', '最新收录', '完整 Prompt', '官方案例', '长视频', '我的收藏',
+    ])
+
+    fireEvent.click(screen.getByRole('button', { name: /5 秒及以下/ }))
+    fireEvent.click(screen.getByRole('switch', { name: '只看有 Prompt' }))
+    fireEvent.change(screen.getByPlaceholderText('搜索案例、场景或创作者…'), { target: { value: '羔羊' } })
+    expect(screen.queryByText('舰桥上的跃迁余震')).not.toBeInTheDocument()
+
+    fireEvent.click(within(collections).getByRole('button', { name: '官方案例' }))
+    expect(within(collections).getByRole('button', { name: '官方案例' })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByText('舰桥上的跃迁余震')).toBeInTheDocument()
+    expect(screen.getByText('粉色西装与黑色羔羊')).toBeInTheDocument()
+    expect(screen.queryByText('餐厅时间冻结与逆向复原')).not.toBeInTheDocument()
+    expect(screen.getByRole('switch', { name: '只看有 Prompt' })).toHaveAttribute('aria-checked', 'false')
+    expect(screen.getByPlaceholderText('搜索案例、场景或创作者…')).toHaveValue('')
+    expect(screen.getByRole('button', { name: /全部时长/ })).toHaveClass('active')
+    expect(window.location.search).toBe('?collection=official')
+
+    fireEvent.click(screen.getByRole('button', { name: /5 秒及以下/ }))
+    expect(screen.getByText('粉色西装与黑色羔羊')).toBeInTheDocument()
+    expect(screen.queryByText('舰桥上的跃迁余震')).not.toBeInTheDocument()
+
+    fireEvent.click(within(collections).getByRole('button', { name: '官方案例' }))
+    expect(within(collections).getByRole('button', { name: '官方案例' })).toHaveAttribute('aria-pressed', 'false')
+    expect(window.location.search).toBe('')
+    expect(screen.getByRole('button', { name: /全部时长/ })).toHaveClass('active')
+    expect(screen.getByText('餐厅时间冻结与逆向复原')).toBeInTheDocument()
+  })
+
   it('initializes first-time visitors without treating the archive as unread', () => {
     renderAt('/')
 
