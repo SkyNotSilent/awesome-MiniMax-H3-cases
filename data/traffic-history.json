@@ -1,6 +1,6 @@
 {
   "repo": "SkyNotSilent/awesome-minimax-h3-cases",
-  "generatedAt": "2026-09-04T04:38:29.122Z",
+  "generatedAt": "2026-09-05T04:34:32.555Z",
   "days": [
     {
       "date": "2026-08-05",
@@ -214,11 +214,22 @@
       "stars": 110,
       "forks": 2,
       "watchers": 1,
-      "openIssues": 3
+      "openIssues": 3,
+      "views": 45,
+      "uniqueVisitors": 29,
+      "clones": 14,
+      "uniqueCloners": 10
     },
     {
       "date": "2026-09-04",
       "stars": 109,
+      "forks": 2,
+      "watchers": 1,
+      "openIssues": 3
+    },
+    {
+      "date": "2026-09-05",
+      "stars": 110,
       "forks": 2,
       "watchers": 1,
       "openIssues": 3
@@ -367,6 +378,61 @@
           "referrer": "old.reddit.com",
           "count": 9,
           "uniques": 6
+        },
+        {
+          "referrer": "chatgptshare.org",
+          "count": 2,
+          "uniques": 1
+        },
+        {
+          "referrer": "com.twitter.android",
+          "count": 2,
+          "uniques": 1
+        },
+        {
+          "referrer": "Bing",
+          "count": 1,
+          "uniques": 1
+        },
+        {
+          "referrer": "org.telegram.messenger",
+          "count": 1,
+          "uniques": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-05",
+      "top": [
+        {
+          "referrer": "github.com",
+          "count": 120,
+          "uniques": 49
+        },
+        {
+          "referrer": "reddit.com",
+          "count": 94,
+          "uniques": 40
+        },
+        {
+          "referrer": "chatgpt.com",
+          "count": 61,
+          "uniques": 21
+        },
+        {
+          "referrer": "Google",
+          "count": 52,
+          "uniques": 44
+        },
+        {
+          "referrer": "com.reddit.frontpage",
+          "count": 13,
+          "uniques": 10
+        },
+        {
+          "referrer": "old.reddit.com",
+          "count": 5,
+          "uniques": 3
         },
         {
           "referrer": "chatgptshare.org",
@@ -584,6 +650,71 @@
           "title": "/blob/main/CATALOG.md",
           "count": 9,
           "uniques": 8
+        }
+      ]
+    },
+    {
+      "date": "2026-09-05",
+      "top": [
+        {
+          "path": "/SkyNotSilent/awesome-MiniMax-H3-cases",
+          "title": "Overview",
+          "count": 315,
+          "uniques": 238
+        },
+        {
+          "path": "/SkyNotSilent/awesome-minimax-h3-cases",
+          "title": "Overview",
+          "count": 153,
+          "uniques": 88
+        },
+        {
+          "path": "/SkyNotSilent/awesome-MiniMax-H3-cases/blob/main/README.zh-CN.md",
+          "title": "/blob/main/README.zh-CN.md",
+          "count": 60,
+          "uniques": 43
+        },
+        {
+          "path": "/SkyNotSilent/awesome-minimax-h3-cases/blob/main/CATALOG.md",
+          "title": "/blob/main/CATALOG.md",
+          "count": 12,
+          "uniques": 9
+        },
+        {
+          "path": "/SkyNotSilent/awesome-minimax-h3-cases/blob/main/agents/skills/minimax-h3-prompt-library/SKILL.md",
+          "title": "/blob/main/agents/skills/minimax-h3-prompt-library/SKILL.md",
+          "count": 12,
+          "uniques": 7
+        },
+        {
+          "path": "/SkyNotSilent/awesome-MiniMax-H3-cases/blob/main/agents/skills/minimax-h3-prompt-library/SKILL.md",
+          "title": "/blob/main/agents/skills/minimax-h3-prompt-library/SKILL.md",
+          "count": 11,
+          "uniques": 6
+        },
+        {
+          "path": "/SkyNotSilent/awesome-MiniMax-H3-cases/tree/main/agents/skills/minimax-h3-prompt-library",
+          "title": "/tree/main/agents/skills/minimax-h3-prompt-library",
+          "count": 10,
+          "uniques": 8
+        },
+        {
+          "path": "/SkyNotSilent/awesome-minimax-h3-cases/tree/main/agents/skills/minimax-h3-prompt-library",
+          "title": "/tree/main/agents/skills/minimax-h3-prompt-library",
+          "count": 10,
+          "uniques": 6
+        },
+        {
+          "path": "/SkyNotSilent/awesome-MiniMax-H3-cases/tree/main",
+          "title": "/tree/main",
+          "count": 9,
+          "uniques": 7
+        },
+        {
+          "path": "/SkyNotSilent/awesome-MiniMax-H3-cases/tree/main/agents/skills",
+          "title": "/tree/main/agents/skills",
+          "count": 9,
+          "uniques": 7
         }
       ]
     }
