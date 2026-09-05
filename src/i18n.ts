@@ -112,7 +112,6 @@ export const copy = {
       promptOnly: '只看有 Prompt',
       collectionsLabel: '快速集合',
       collections: {
-        all: '全部案例',
         featured: '编辑精选',
         latest: '最新收录',
         prompt: '完整 Prompt',
@@ -380,7 +379,6 @@ export const copy = {
       promptOnly: 'With Prompt',
       collectionsLabel: 'Quick collections',
       collections: {
-        all: 'All cases',
         featured: 'Editor picks',
         latest: 'Latest',
         prompt: 'Complete Prompt',

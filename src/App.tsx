@@ -104,6 +104,9 @@ const favoriteStorageKey = 'minimax-h3-favorite-cases'
 const favoriteCreatorStorageKey = 'minimax-h3-favorite-creators'
 const collectionKeys = ['all', 'featured', 'latest', 'prompt', 'official', 'long', 'favorites'] as const
 type CaseCollection = (typeof collectionKeys)[number]
+type QuickCollection = Exclude<CaseCollection, 'all'>
+// "all" is the implicit home state, not a folder a visitor can pick.
+const quickCollections = collectionKeys.filter((key): key is QuickCollection => key !== 'all')
 const hardwareProfiles: TutorialHardwareProfile[] = [
   'apple-silicon',
   'vram-8',
@@ -1206,6 +1209,16 @@ function HomePage({
     resetCaseFilters('all')
     startTransition(() => setActiveCollection('latest'))
   }, [resetCaseFilters])
+  // Quick collections behave like folders: entering one clears the search,
+  // date, duration, Prompt, and advanced filters so the click never lands on
+  // an empty list. Filters chosen afterwards narrow within the folder, and
+  // pressing the active folder again returns to the complete library.
+  const selectCollection = useCallback((collection: QuickCollection) => {
+    const next: CaseCollection = activeCollection === collection ? 'all' : collection
+    track('filter-change', { filterType: 'collection', value: next, locale: language })
+    resetCaseFilters('all')
+    startTransition(() => setActiveCollection(next))
+  }, [activeCollection, language, resetCaseFilters])
   const handleIntroComplete = useCallback(() => setIntroReady(true), [])
   const activeCaseWindow = updateSession?.cases
   const caseAlreadyAcknowledged = Boolean(activeCaseWindow && updateSession
@@ -1324,13 +1337,13 @@ function HomePage({
         <div className="case-collections" role="group" aria-label={t.catalog.collectionsLabel}>
           <span><Star size={13} aria-hidden="true" /> {t.catalog.collectionsLabel}</span>
           <div>
-            {collectionKeys.map((collection) => (
+            {quickCollections.map((collection) => (
               <button
                 type="button"
                 key={collection}
                 className={activeCollection === collection ? 'active' : ''}
                 aria-pressed={activeCollection === collection}
-                onClick={() => startTransition(() => { setActiveCollection(collection); setVisibleCount(36) })}
+                onClick={() => selectCollection(collection)}
               >
                 {t.catalog.collections[collection]}
                 {collection === 'favorites' && favorites.size > 0 ? <small>{favorites.size}</small> : null}

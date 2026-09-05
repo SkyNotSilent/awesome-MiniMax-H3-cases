@@ -44,11 +44,11 @@ First-time visitors start with the complete case library ordered by catalog date
 - Every case and guide shows its catalog-added date; current-snapshot items also carry a text **Newly added** label instead of relying on color alone.
 - Cases and guides have independent seen-through marks, so viewing new cases never clears an unseen guide. When no personal update exists, the summary shows **You are up to date** and links to today's additions or the latest 48 cases instead of opening an empty view.
 - Fixed snapshots use shareable `added=unseen&since=<ISO date-time>&through=<ISO date-time>` URLs; older `since`-only links remain compatible. Other date views use `added=today|7d|30d`.
-- Seen state stays only in this browser under separate v2 case/guide keys, while `minimax-h3-update-session-v2` keeps the current tab's frozen batch. There is no account, server-side history, notification subscription, or tracking.
+- Seen state stays only in this browser under separate v2 case/guide keys, while `minimax-h3-update-session-v2` keeps the current tab's frozen batch. There is no account, server-side seen history, or notification subscription. Self-hosted analytics may count aggregate product interactions, but never receive this seen state.
 
 ## Find the useful cases faster
 
-The homepage remains case-first. Quick collections work together with duration, Prompt, content, style, scene, and search filters:
+The homepage remains case-first. Quick collections are independent entry points: choosing one first clears search, catalog-date, duration, Prompt, and advanced filters so the click never lands on an empty list; filters picked afterwards narrow within that collection, and pressing the active collection again returns to the complete library:
 
 [![MiniMax H3 latest additions ordered by catalog date](./docs/screenshots/latest-collection-en.jpg)](https://h3-field-notes-production.up.railway.app/en/?collection=latest)
 
