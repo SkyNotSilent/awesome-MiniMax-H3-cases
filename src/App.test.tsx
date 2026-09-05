@@ -409,6 +409,26 @@ describe('case-first routes', () => {
     expect(screen.queryByText('粉色西装与黑色羔羊')).not.toBeInTheDocument()
   })
 
+  it('explains an empty saved collection without offering a reset action', () => {
+    window.localStorage.setItem('minimax-h3-favorite-cases', JSON.stringify(['missing-case-id']))
+    renderAt('/?collection=favorites')
+
+    const emptyState = document.querySelector<HTMLElement>('.empty-state')
+    expect(emptyState).not.toBeNull()
+    expect(within(emptyState!).getByText('你当前还没有收藏。')).toBeInTheDocument()
+    expect(within(emptyState!).getByText('点开任意案例卡片右上角的星标即可收进这里；收藏只保存在当前浏览器，不需要登录。')).toBeInTheDocument()
+    expect(within(emptyState!).queryByRole('button')).not.toBeInTheDocument()
+  })
+
+  it('keeps the generic no-match copy when saved cases are narrowed by another filter', () => {
+    window.localStorage.setItem('minimax-h3-favorite-cases', JSON.stringify(['official-t2va-starship']))
+    renderAt('/?collection=favorites')
+
+    fireEvent.click(screen.getByRole('button', { name: /超过 15 秒/ }))
+    expect(screen.getByText('换一个关键词或筛选条件试试。')).toBeInTheDocument()
+    expect(screen.queryByText('你当前还没有收藏。')).not.toBeInTheDocument()
+  })
+
   it('searches across localized case metadata', () => {
     renderAt('/')
     fireEvent.change(screen.getByPlaceholderText('搜索案例、场景或创作者…'), {

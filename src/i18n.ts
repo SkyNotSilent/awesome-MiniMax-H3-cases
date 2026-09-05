@@ -129,6 +129,9 @@ export const copy = {
       resultUnit: '条案例',
       noMatchesEyebrow: '没有匹配结果',
       noMatches: '换一个关键词或筛选条件试试。',
+      favoritesEmptyEyebrow: '我的收藏',
+      favoritesEmptyTitle: '你当前还没有收藏。',
+      favoritesEmptyDescription: '点开任意案例卡片右上角的星标即可收进这里；收藏只保存在当前浏览器，不需要登录。',
       addedDateFilterLabel: '本站收录时间',
       addedDatePresets: {
         unseen: '本次新增',
@@ -396,6 +399,9 @@ export const copy = {
       resultUnit: 'cases',
       noMatchesEyebrow: 'NO MATCHES',
       noMatches: 'Try another search or filter.',
+      favoritesEmptyEyebrow: 'SAVED',
+      favoritesEmptyTitle: 'You have not saved any cases yet.',
+      favoritesEmptyDescription: 'Tap the star on any case card to keep it here. Saved cases stay in this browser only, no account needed.',
       addedDateFilterLabel: 'Added to this library',
       addedDatePresets: {
         unseen: 'Since last visit',
