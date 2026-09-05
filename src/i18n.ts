@@ -143,6 +143,7 @@ export const copy = {
       updateSummaryIndex: '00 / 最近更新',
       updateSummaryStatus: '持续收录',
       upToDateStatus: '已同步',
+      storageUnavailableStatus: '本地模式',
       updateSummaryTitle: (cases: number, prompts: number, tutorials: number) => {
         const items = []
         if (cases > 0) items.push(`新增 ${cases} 个案例`)
@@ -156,6 +157,9 @@ export const copy = {
       firstVisitStatus: '开始记录',
       firstVisitTitle: '从本次访问开始记录更新。',
       firstVisitDescription: '完整案例库已按本站收录时间从新到旧排列。',
+      firstVisitCompact: (summary: string) => `案例按最新收录排序 · 最近一次更新：${summary}`,
+      upToDateCompact: (date: string, summary: string) => `最近一次更新于 ${date} · ${summary}`,
+      storageUnavailableCompact: (summary: string) => `无法保存访问进度 · 最近一次更新：${summary}`,
       personalUpdateTitle: (cases: number, tutorials: number) => `自上次访问新增 ${cases} 个案例、${tutorials} 篇教程`,
       personalUpdateDescription: '只有真正看到新增列表后，下一次访问才会清零。',
       storageUnavailableTitle: '日期浏览仍可使用。',
@@ -413,6 +417,7 @@ export const copy = {
       updateSummaryIndex: '00 / LATEST UPDATE',
       updateSummaryStatus: 'GROWING',
       upToDateStatus: 'IN SYNC',
+      storageUnavailableStatus: 'LOCAL MODE',
       updateSummaryTitle: (cases: number, prompts: number, tutorials: number) => {
         const items = []
         if (cases > 0) items.push(`${cases} new case${cases === 1 ? '' : 's'}`)
@@ -426,6 +431,9 @@ export const copy = {
       firstVisitStatus: 'TRACKING STARTED',
       firstVisitTitle: 'Updates will be tracked from this visit.',
       firstVisitDescription: 'The complete library is ordered from newest to oldest by catalog date.',
+      firstVisitCompact: (summary: string) => `Cases are sorted by latest addition · Latest release: ${summary}`,
+      upToDateCompact: (date: string, summary: string) => `Latest release ${date} · ${summary}`,
+      storageUnavailableCompact: (summary: string) => `Visit progress cannot be saved · Latest release: ${summary}`,
       personalUpdateTitle: (cases: number, tutorials: number) => `${cases} new case${cases === 1 ? '' : 's'} and ${tutorials} new guide${tutorials === 1 ? '' : 's'} since your last visit`,
       personalUpdateDescription: 'This batch is marked seen for next time only after the update list is actually shown.',
       storageUnavailableTitle: 'Date browsing is still available.',

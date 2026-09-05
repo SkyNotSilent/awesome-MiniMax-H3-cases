@@ -187,6 +187,34 @@ async function checkMobile(browser) {
   await context.close()
 }
 
+async function checkFirstVisitLayout(browser) {
+  const budgets = [
+    { name: 'desktop', viewport: { width: 1440, height: 900 }, maxCardTop: 800 },
+    { name: 'mobile', viewport: { width: 390, height: 844 }, maxCardTop: 760 },
+  ]
+  const measurements = {}
+
+  for (const budget of budgets) {
+    const context = await browser.newContext({ viewport: budget.viewport })
+    await context.addInitScript(() => localStorage.setItem('minimax-h3-language', 'zh'))
+    const page = await context.newPage()
+    await ready(page)
+    if (!(await page.locator('.update-strip').count())) {
+      throw new Error(`${budget.name} first visit is missing the compact update strip.`)
+    }
+    const cardTop = await page.locator('.case-card:not(.case-card-skeleton)').first().evaluate(
+      (element) => element.getBoundingClientRect().top,
+    )
+    if (cardTop > budget.maxCardTop) {
+      throw new Error(`${budget.name} first case starts at ${cardTop.toFixed(1)}px; budget is ${budget.maxCardTop}px.`)
+    }
+    measurements[budget.name] = { cardTop, maxCardTop: budget.maxCardTop }
+    await context.close()
+  }
+
+  console.log(JSON.stringify({ firstVisitLayout: measurements }))
+}
+
 async function checkUpdateLifecycle(browser) {
   const response = await fetch(`${baseUrl}/data/catalog.json`)
   if (!response.ok) throw new Error(`Could not load the catalog for update lifecycle checks (${response.status})`)
@@ -276,6 +304,7 @@ try {
   await checkAutomaticLoading(browser)
   await checkCombinedLoading(browser)
   await checkMobile(browser)
+  await checkFirstVisitLayout(browser)
   await checkUpdateLifecycle(browser)
 } finally {
   await browser.close()
