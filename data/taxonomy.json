@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "categories": [
+    { "key": "cinematic", "zh": "电影叙事", "en": "Cinematic & Narrative" },
+    { "key": "action-vfx", "zh": "动作特效", "en": "Action & VFX" },
+    { "key": "dialogue", "zh": "角色对白", "en": "Character & Dialogue" },
+    { "key": "music", "zh": "音乐视频", "en": "Music Video" },
+    { "key": "dance", "zh": "舞蹈", "en": "Dance" },
+    { "key": "advertising", "zh": "广告与产品", "en": "Advertising & Product" },
+    { "key": "comparison", "zh": "模型对比", "en": "Model Comparison" },
+    { "key": "animation", "zh": "动画", "en": "Animation" },
+    { "key": "workflow", "zh": "本地生成与工作流", "en": "Local Generation & Workflow" },
+    { "key": "showcase", "zh": "综合展示", "en": "Showcase" }
+  ],
+  "styles": [
+    { "key": "cinematic-realistic", "zh": "写实电影感", "en": "Cinematic realism" },
+    { "key": "photoreal", "zh": "照片级写实", "en": "Photoreal" },
+    { "key": "anime", "zh": "动漫", "en": "Anime" },
+    { "key": "illustration", "zh": "插画与手绘", "en": "Illustration" },
+    { "key": "cg-3d", "zh": "3D / CG", "en": "3D / CG" },
+    { "key": "stylized", "zh": "风格化与实验", "en": "Stylized & experimental" },
+    { "key": "retro", "zh": "复古胶片", "en": "Retro & vintage" },
+    { "key": "dark", "zh": "暗黑恐怖", "en": "Dark & horror" },
+    { "key": "commercial", "zh": "商业广告感", "en": "Commercial" },
+    { "key": "ugc", "zh": "生活实拍感", "en": "UGC & handheld" },
+    { "key": "motion-graphics", "zh": "动态图形", "en": "Motion graphics" },
+    { "key": "vertical", "zh": "竖屏短视频", "en": "Vertical short-form" }
+  ],
+  "scenes": [
+    { "key": "performance", "zh": "人物表演", "en": "Human performance" },
+    { "key": "dialogue", "zh": "对白与口型", "en": "Dialogue & lip sync" },
+    { "key": "dance", "zh": "舞蹈", "en": "Dance" },
+    { "key": "music-performance", "zh": "音乐演出", "en": "Music performance" },
+    { "key": "product", "zh": "产品与广告", "en": "Product & advertising" },
+    { "key": "food", "zh": "美食", "en": "Food" },
+    { "key": "fashion", "zh": "时尚", "en": "Fashion" },
+    { "key": "nature", "zh": "自然风景", "en": "Nature & landscape" },
+    { "key": "city", "zh": "城市街景", "en": "City & street" },
+    { "key": "sci-fi", "zh": "科幻太空", "en": "Sci-fi & space" },
+    { "key": "fantasy", "zh": "奇幻", "en": "Fantasy" },
+    { "key": "combat", "zh": "动作打斗", "en": "Action & combat" },
+    { "key": "creatures", "zh": "动物与生物", "en": "Animals & creatures" },
+    { "key": "daily-life", "zh": "日常生活", "en": "Daily life" }
+  ]
+}

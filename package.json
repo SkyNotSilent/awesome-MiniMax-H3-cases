@@ -27,6 +27,8 @@
     "check:creators": "node scripts/sync-creators.mjs",
     "sync:stats": "node scripts/sync-creators.mjs --write && node scripts/sync-project-stats.mjs --write",
     "sync:github": "node scripts/sync-github-metadata.mjs --write",
+    "taxonomy:report": "node scripts/migrate-taxonomy.mjs --report",
+    "taxonomy:migrate": "node scripts/migrate-taxonomy.mjs --apply",
     "sync:resource-metrics": "node scripts/sync-resource-metrics.mjs --write",
     "catalog": "node scripts/build-catalog.mjs",
     "runtime:data": "node scripts/build-runtime-data.mjs",
