@@ -1,5 +1,6 @@
 import { readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
+import { sanitizeCandidateClassification, taxonomyClassifierPrompt } from './candidate-taxonomy.mjs'
 import { candidatesPath, root } from './review-paths.mjs'
 
 const config = JSON.parse(await readFile(resolve(root, 'config/model-routing.json'), 'utf8'))
@@ -36,8 +37,12 @@ const response = await fetch(`${process.env.MIMO_BASE_URL || 'https://api.xiaomi
     messages: [
       {
         role: 'system',
-        content:
-          'Perform a minimal provenance-first review of an AI video candidate. Return JSON only with isH3Case (true|false|"uncertain"), isNativeVideo (true|false|"uncertain"), basicQualitySignals (short array), visibleText (exact visible strings only), and promptMatchesVideo (true|false|"uncertain"|null). Do not produce a visual summary, temporal beats, camera analysis, audio analysis, likely generation mode, or any prompt text. Never infer, reconstruct, complete, paraphrase, or translate an unpublished prompt. Set promptMatchesVideo:null unless an explicitPrompt is supplied.',
+        content: [
+          'Perform a minimal provenance-first review of an AI video candidate.',
+          'Return JSON only with isH3Case (true|false|"uncertain"), isNativeVideo (true|false|"uncertain"), basicQualitySignals (short array), visibleText (exact visible strings only), promptMatchesVideo (true|false|"uncertain"|null), category, styles, scenes, styleBasis, and sceneBasis.',
+          taxonomyClassifierPrompt(),
+          'Do not produce a visual summary, temporal beats, camera analysis, audio analysis, likely generation mode, or any prompt text. Set promptMatchesVideo:null unless an explicitPrompt is supplied.',
+        ].join(' '),
       },
       {
         role: 'user',
@@ -65,12 +70,21 @@ const response = await fetch(`${process.env.MIMO_BASE_URL || 'https://api.xiaomi
 if (!response.ok) throw new Error(`MiMo ${response.status}: ${await response.text()}`)
 const payload = await response.json()
 const raw = JSON.parse(payload.choices[0].message.content)
+const taxonomy = sanitizeCandidateClassification(raw)
+if (taxonomy.invalidValues.length) {
+  throw new Error(`Video review returned values outside data/taxonomy.json: ${taxonomy.invalidValues.join(', ')}`)
+}
 const analysis = {
   isH3Case: raw.isH3Case ?? 'uncertain',
   isNativeVideo: raw.isNativeVideo ?? 'uncertain',
   basicQualitySignals: Array.isArray(raw.basicQualitySignals) ? raw.basicQualitySignals : [],
   visibleText: Array.isArray(raw.visibleText) ? raw.visibleText : [],
   promptMatchesVideo: candidatePrompt ? (raw.promptMatchesVideo ?? 'uncertain') : null,
+  category: taxonomy.category ?? 'showcase',
+  styles: taxonomy.styles,
+  scenes: taxonomy.scenes,
+  styleBasis: taxonomy.styleBasis,
+  sceneBasis: taxonomy.sceneBasis,
 }
 
 if (candidateId) {
