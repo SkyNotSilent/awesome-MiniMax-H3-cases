@@ -3,7 +3,7 @@ export interface FilterState {
   category: string; style: string; scene: string; q: string
   duration: 'ALL' | 'UP_TO_5' | 'SIX_TO_10' | 'ELEVEN_TO_15' | 'OVER_15'
   collection: 'all' | 'featured' | 'latest' | 'official' | 'favorites'
-  prompt: boolean; added: 'all' | 'unseen' | '7d' | '30d'
+  prompt: boolean; added: 'all' | 'release' | '7d' | '30d'
   since: string | null; through: string | null
 }
 export const filterKeys: string[]

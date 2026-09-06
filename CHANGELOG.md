@@ -6,7 +6,7 @@ All notable public changes are documented here. Release dates use YYYY-MM-DD.
 
 ### Added
 
-- A browser-local returning-user update snapshot across cases and tutorials, with shared `Since last visit`, `Today`, `Last 7 days`, `Last 30 days`, and `All` date filters.
+- Shared `Latest additions`, `Last 7 days`, `Last 30 days`, and `All` date filters for cases and tutorials. `Latest additions` is the newest Asia/Shanghai catalog day of each channel, identical for every visitor and shared as `added=release`; older `added=unseen`/`added=today` links resolve to it.
 - Immutable ISO `addedAt` timestamps for every public case and guide, plus publishing and validation safeguards.
 - A bilingual creator discovery module with dynamic video and tutorial leaderboards, creator profiles, local creator bookmarks, and source-linked case/tutorial collections.
 - A private creator radar that bootstraps from published cases, schedules due-author checks, backfills H3 history, and preserves at least half of daily discovery capacity for new authors.
@@ -16,7 +16,7 @@ All notable public changes are documented here. Release dates use YYYY-MM-DD.
 ### Changed
 
 - Case and tutorial cards now show catalog-added dates and text labels for newly added material; the compatible `collection=latest` view now sorts by `addedAt`.
-- Bilingual README screenshots and documentation now cover the update summary, date filters, URL state, and local-only seen state.
+- Bilingual README screenshots and documentation now cover the latest-release strip, date filters, and URL state.
 - Creator counts, public rankings, SEO pages, sitemap entries, README metrics, and `llms.txt` are generated from the same published-data source of truth.
 - The homepage now renders 36 cases initially and appends 24 at a time; case details load independently from immediate hosted playback.
 - Card entrance motion is capped at the first nine cards, and reduced-motion mode keeps every card immediately visible.

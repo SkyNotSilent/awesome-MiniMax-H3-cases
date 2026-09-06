@@ -1,6 +1,4 @@
 import tutorialGuidesUrl from '../data/tutorial-guides.json?url'
-import { createUpdateSession } from './update-session'
-import { resolveRoute } from './i18n'
 import type {
   CaseDetail,
   CatalogPayload,
@@ -29,15 +27,9 @@ async function loadJson<T>(path: string, force = false): Promise<T> {
   return request
 }
 
-export async function loadCatalog(force = false) {
-  const metadata = await loadJson<CatalogPayload>('/api/catalog/summary', force)
-  const window = createUpdateSession(metadata, resolveRoute(globalThis.window.location.pathname).page)
-  const params = new URLSearchParams({ casesSince: window.cases.since, casesThrough: window.cases.through, tutorialsSince: window.tutorials.since, tutorialsThrough: window.tutorials.through })
-  // Personal windows are never kept in the shared promise cache.
-  const response = await fetch(`/api/catalog/summary?${params}`, { cache: 'no-store' })
-  if (!response.ok) throw new Error('Catalog summary unavailable')
-  return response.json() as Promise<CatalogPayload>
-}
+// The summary already carries the latest-release counts, which are the same
+// for every visitor, so one cached request is enough.
+export const loadCatalog = (force = false) => loadJson<CatalogPayload>('/api/catalog/summary', force)
 
 export async function loadCatalogPage(params: URLSearchParams, favorites: string[], signal: AbortSignal): Promise<CatalogPage> {
   const response = await fetch(`/api/catalog?${params}`, {

@@ -1,15 +1,15 @@
-export const addedDatePresets = ['all', 'unseen', '7d', '30d'] as const
+import { latestReleaseWindow, type ReleaseWindow } from '../shared/release-window.mjs'
+
+export const addedDatePresets = ['all', 'release', '7d', '30d'] as const
 
 export type AddedDatePreset = (typeof addedDatePresets)[number]
 export type UpdateChannel = 'cases' | 'tutorials'
+export type { ReleaseWindow }
+export { latestReleaseWindow }
 
-export const legacyUpdatesSeenThroughKey = 'minimax-h3-updates-seen-through-v1'
-export const caseUpdatesSeenThroughKey = 'minimax-h3-cases-seen-through-v2'
-export const tutorialUpdatesSeenThroughKey = 'minimax-h3-tutorials-seen-through-v2'
-export const updateSessionStorageKey = 'minimax-h3-update-session-v2'
-
-// Kept as an export for one release so older integrations can migrate without breaking.
-export const updatesSeenThroughKey = legacyUpdatesSeenThroughKey
+// Older links used the personal since-last-visit and today views; both now
+// resolve to the latest release.
+const legacyAddedDatePresets: Record<string, AddedDatePreset> = { unseen: 'release', today: 'release' }
 
 export interface AddedAtItem {
   addedAt: string
@@ -21,19 +21,8 @@ export interface AddedDateContext {
   now?: Date
 }
 
-export interface StoredUpdateWindow {
-  since: string
-  through: string
-}
-
-export interface StoredUpdateSession {
-  version: 2
-  firstVisit: boolean
-  cases?: StoredUpdateWindow
-  tutorials?: StoredUpdateWindow
-}
-
 const isoDateTimePattern = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,3})?(?:Z|[+-]\d{2}:\d{2})$/
+const dateOnlyPattern = /^(\d{4})-(\d{2})-(\d{2})$/
 
 export function validAddedAt(value: string | null | undefined): value is string {
   return typeof value === 'string' && isoDateTimePattern.test(value) && !Number.isNaN(Date.parse(value))
@@ -48,44 +37,12 @@ export function maxAddedAt(items: readonly AddedAtItem[]): string {
 }
 
 export function parseAddedDatePreset(value: string | null): AddedDatePreset {
-  if (value === 'today') return 'unseen'
+  if (value !== null && Object.hasOwn(legacyAddedDatePresets, value)) return legacyAddedDatePresets[value]
   return addedDatePresets.includes(value as AddedDatePreset) ? value as AddedDatePreset : 'all'
 }
 
-export function parseSince(value: string | null): string | null {
-  return validAddedAt(value) ? new Date(value).toISOString() : null
-}
-
-export function clampAddedAt(value: string | null, maximum: string): string | null {
-  const parsed = parseSince(value)
-  const parsedMaximum = parseSince(maximum)
-  if (!parsed || !parsedMaximum) return null
-  return Date.parse(parsed) > Date.parse(parsedMaximum) ? parsedMaximum : parsed
-}
-
-export function validUpdateWindow(value: unknown, maximum: string): StoredUpdateWindow | null {
-  if (!value || typeof value !== 'object') return null
-  const candidate = value as Partial<StoredUpdateWindow>
-  const since = parseSince(candidate.since ?? null)
-  const through = clampAddedAt(candidate.through ?? null, maximum)
-  if (!since || !through || Date.parse(through) < Date.parse(since)) return null
-  return { since, through }
-}
-
-export function parseStoredUpdateSession(value: string | null): StoredUpdateSession | null {
-  if (!value) return null
-  try {
-    const parsed = JSON.parse(value) as Partial<StoredUpdateSession>
-    if (parsed.version !== 2 || typeof parsed.firstVisit !== 'boolean') return null
-    return {
-      version: 2,
-      firstVisit: parsed.firstVisit,
-      ...(parsed.cases ? { cases: parsed.cases } : {}),
-      ...(parsed.tutorials ? { tutorials: parsed.tutorials } : {}),
-    }
-  } catch {
-    return null
-  }
+function parseInstant(value: string | null | undefined): number | null {
+  return validAddedAt(value) ? Date.parse(value) : null
 }
 
 function localDayStart(now: Date, daysAgo: number) {
@@ -93,16 +50,6 @@ function localDayStart(now: Date, daysAgo: number) {
   start.setHours(0, 0, 0, 0)
   start.setDate(start.getDate() - daysAgo)
   return start.getTime()
-}
-
-// Visitors without a comparable last visit see today's additions under 'unseen'.
-// The window never reaches past the client clock or the newest item, so clock
-// skew cannot count future items and an empty day never yields a reversed range.
-export function todayUpdateWindow(maximum: string, now: Date = new Date()): StoredUpdateWindow {
-  const latest = Date.parse(maximum)
-  const through = Number.isFinite(latest) ? Math.min(latest, now.getTime()) : now.getTime()
-  const since = Math.min(localDayStart(now, 0) - 1, through)
-  return { since: new Date(since).toISOString(), through: new Date(through).toISOString() }
 }
 
 export function matchesAddedDate(
@@ -115,12 +62,10 @@ export function matchesAddedDate(
   if (preset === 'all') return true
 
   const now = context.now ?? new Date()
-  if (preset === 'unseen') {
-    const since = parseSince(context.since ?? null)
-    const through = parseSince(context.through ?? null)
-    return Boolean(since && through)
-      && timestamp > Date.parse(since!)
-      && timestamp <= Date.parse(through!)
+  if (preset === 'release') {
+    const since = parseInstant(context.since)
+    const through = parseInstant(context.through)
+    return since !== null && through !== null && timestamp > since && timestamp <= through
   }
 
   if (timestamp > now.getTime()) return false
@@ -135,21 +80,20 @@ export function sortByAddedAtDescending<T extends AddedAtItem>(items: readonly T
     .map(({ item }) => item)
 }
 
+// Date-only values (the published release day) are calendar dates, so they are
+// read in the viewer's own zone instead of as UTC midnight.
 export function formatAddedDate(addedAt: string, language: 'zh' | 'en') {
+  const dateOnly = dateOnlyPattern.exec(addedAt)
+  const date = dateOnly
+    ? new Date(Number(dateOnly[1]), Number(dateOnly[2]) - 1, Number(dateOnly[3]))
+    : new Date(addedAt)
   return new Intl.DateTimeFormat(language === 'zh' ? 'zh-CN' : 'en', {
     month: language === 'zh' ? 'long' : 'short',
     day: 'numeric',
-  }).format(new Date(addedAt))
+  }).format(date)
 }
 
-export function addedDateHref(
-  path: string,
-  preset: AddedDatePreset,
-  context: Pick<AddedDateContext, 'since' | 'through'> = {},
-) {
+export function addedDateHref(path: string, preset: AddedDatePreset) {
   if (preset === 'all') return path
-  const params = new URLSearchParams({ added: preset })
-  if (preset === 'unseen' && context.since) params.set('since', context.since)
-  if (preset === 'unseen' && context.through) params.set('through', context.through)
-  return `${path}?${params.toString()}`
+  return `${path}?${new URLSearchParams({ added: preset }).toString()}`
 }

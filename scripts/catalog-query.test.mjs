@@ -1,7 +1,7 @@
 import { resolve } from 'node:path'
 import { readCatalogSnapshot } from './catalog-snapshot.mjs'
 import { describe, expect, it } from 'vitest'
-import { createCatalogIndex, queryCatalog } from '../shared/catalog-query.mjs'
+import { catalogSummary, createCatalogIndex, queryCatalog } from '../shared/catalog-query.mjs'
 import { parseFilters } from '../shared/filter-state.mjs'
 const data = await readCatalogSnapshot(resolve(process.cwd(), 'build/server-data/catalog.ndjson'))
 const index = createCatalogIndex(data)
@@ -61,11 +61,25 @@ describe('full catalog query parity', () => {
   })
   it('uses exclusive since and inclusive through independent of server time zone', () => {
     const date = data.cases[0].addedAt
-    const params = new URLSearchParams({ added: 'unseen', since: date, through: date })
+    const params = new URLSearchParams({ added: 'release', since: date, through: date })
     expect(queryCatalog(index, params).total).toBe(0)
     params.set('since', new Date(Date.parse(date) - 1).toISOString())
     expect(queryCatalog(index, params).total).toBe(data.cases.filter(x => x.addedAt === date).length)
   })
+})
+
+it('summarizes the latest Asia/Shanghai release day of each channel', () => {
+  const summary = catalogSummary(index).summary
+  const releaseDay = value => new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(value))
+  const latestCaseDay = releaseDay(summary.maxima.cases)
+  expect(summary.counts.cases).toBe(data.cases.filter(x => releaseDay(x.addedAt) === latestCaseDay).length)
+  expect(summary.counts.cases).toBeGreaterThan(0)
+  const latestTutorialDay = releaseDay(summary.maxima.tutorials)
+  expect(summary.counts.tutorials).toBe(data.tutorials.filter(x => releaseDay(x.addedAt) === latestTutorialDay).length)
+  expect(summary.totals).toEqual({ cases: data.cases.length, tutorials: data.tutorials.length })
+  expect(queryCatalog(index, new URLSearchParams({ added: 'release' })).total).toBe(summary.counts.cases)
+  expect(() => queryCatalog(index, new URLSearchParams({ added: 'release', since: summary.maxima.cases }))).toThrow('Invalid time boundary')
+  expect(() => createCatalogIndex({ ...data, tutorials: [{ id: 'broken', addedAt: 'nope' }] })).toThrow('Invalid catalog record')
 })
 
 it('paginates a synthetic prolific creator without duplicates or missing membership', () => {

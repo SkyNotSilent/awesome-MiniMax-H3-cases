@@ -26,7 +26,7 @@
 
 <p align="center"><strong>先看真实成片；来源完整公开 Prompt 才按原文展示；再沿着核验过的路线从零跑起来。</strong></p>
 
-[![MiniMax H3 老用户回访更新摘要，支持收录日期、时长、Prompt、快捷集合、内容、风格与场景筛选](./docs/screenshots/case-library-zh.jpg)](https://h3-field-notes-production.up.railway.app/)
+[![MiniMax H3 最近更新条，支持收录日期、时长、Prompt、快速集合、内容、风格与场景筛选](./docs/screenshots/case-library-zh.jpg)](https://h3-field-notes-production.up.railway.app/)
 
 ## 直接开始
 
@@ -36,15 +36,15 @@
 
 MiniMax H3 也常被搜索为 **Hailuo H3**、**Hailuo 3.0**、**海螺 H3** 和 **海螺 3.0**。每条公开案例都可站内播放、保留创作者与原始来源，并明确区分“完整公开 Prompt”和“来源未公开”。本站绝不反推、补写、改写或伪造缺失 Prompt。
 
-## 看清上次访问后更新了什么
+## 看清最近一批收录了什么
 
-新用户默认从按本站收录时间倒序排列的完整案例库开始，优先看到最近内容，但不会把既有档案显示成几百条未读。老用户回访时如果有新案例，首页会自动进入固定的 **本次新增** 快照；只有新增卡片真正进入可视区域后才记为已读，并在当前标签页的刷新、案例与教程跳转中持续保留这批内容。
+**本次新增** 对所有访客都是同一个口径：与该频道最新一条内容同一天（北京时间）收录的全部内容。它每次发布后自动更新，不依赖浏览器记录，也不会因为访客所在时区不同而变化。
 
-- 案例与教程统一支持 **全部、本次新增、近 7 天、近 30 天**；首次访问或浏览器无法保存记录时，**本次新增** 按今天收录的内容显示。日期条件会与搜索、时长、Prompt、快捷集合、内容、风格、场景、目标和硬件筛选取交集。
-- 每张案例卡和教程卡都显示本站收录日期；本次快照里的内容另外显示文字 **新收录**，不只靠颜色表达。
-- 案例和教程分别保存已读水位，只看新增案例不会清除尚未浏览的新增教程。没有个人新增时显示 **已是最新**，并提供最新 48 条入口，不再打开空白列表。
-- 固定快照使用可分享的 `added=unseen&since=<ISO 时间>&through=<ISO 时间>`；旧的仅含 `since` 链接继续兼容。其他日期视图使用 `added=7d|30d`；旧的 `added=today` 链接会落到本次新增。
-- 已读进度仅保存在当前浏览器的案例/教程 v2 本地键中，`minimax-h3-update-session-v2` 用于保留当前标签页快照；不增加账号、服务端已读历史或通知订阅。自托管统计只汇总产品交互，不接收这份已读状态。
+- 案例与教程统一支持 **全部、本次新增、近 7 天、近 30 天**；日期条件会与搜索、时长、Prompt、快速集合、内容、风格、场景、目标和硬件筛选取交集。
+- 每张案例卡和教程卡都显示本站收录日期；最近一批里的内容另外显示文字 **新收录**，不只靠颜色表达。
+- 首页顶部的更新条显示最近一次更新的日期与数量，并提供进入本次新增的入口；没有新增时改为最新 48 条入口。
+- 日期视图使用 `added=release|7d|30d`。旧的 `added=unseen`、`added=today` 以及带 `since`/`through` 的个人快照链接都会落到本次新增。
+- 站点不在浏览器里保存已读进度，也没有账号、服务端已读历史或通知订阅；旧版本写入的本地已读键会被忽略。
 
 ## 更快找到值得看的案例
 
@@ -129,7 +129,7 @@ npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
 - 每个公开案例和教程都有不可变的 ISO `addedAt`，表示首次进入本站公开目录的时间；来源 `publishedAt`、审核 `approvedAt` 与教程 `verifiedAt` 保持独立含义，改文案、补 Prompt、刷新数据或重新核验都不会触发未读；
 - 每日案例发现与每周教程发现的私有候选只进 `.review/`；凭据和发现来源标签不会进入 Git、前端或 SEO；
 - 构建会生成中英文案例/教程页、canonical、hreflang、`VideoObject`/`HowTo` JSON-LD、sitemap、OG、[`llms.txt`](./public/llms.txt) 与 [`llms-full.txt`](./public/llms-full.txt)。
-- `npm run screenshots` 会重新构建网站、同步实测构建体积，稳定抓取当前数据对应的中英文开屏与桌面/手机回访界面，并且只写入渲染结果真正变化的截图。
+- `npm run screenshots` 会重新构建网站、同步实测构建体积，稳定抓取当前数据对应的中英文开屏与桌面/手机案例库界面，并且只写入渲染结果真正变化的截图。
 
 ## 性能架构
 
@@ -147,7 +147,7 @@ npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
 - `npm run videos:playback:audit` 执行只读清点，`npm run videos:playback:migrate -- --apply` 生成版本化播放层，切换前后运行 `npm run videos:playback:verify`；迁移报告只保存在被忽略的 `.review/`。
 
 <!-- build-metrics:start -->
-**参考构建（Node 22.23.1，不含分析服务配置）：** 首页 JavaScript gzip 99.5 kB · 中文 / 英文首页 HTML gzip 9.8 kB / 9.1 kB · 首批 API gzip 5.5 kB · 下一页 API gzip 4.3 kB · 搜索响应 gzip 5.5 kB · 本地非阻塞字体 51.3 kB · 仅服务端索引 gzip 1033.8 kB。静态预算运行 `npm run performance:budget`；启动本地生产服务后运行 `npm run performance:browser` 验证浏览器行为。
+**参考构建（Node 22.23.1，不含分析服务配置）：** 首页 JavaScript gzip 96.4 kB · 中文 / 英文首页 HTML gzip 9.8 kB / 9.1 kB · 首批 API gzip 5.5 kB · 下一页 API gzip 4.3 kB · 搜索响应 gzip 5.5 kB · 本地非阻塞字体 51.3 kB · 仅服务端索引 gzip 1033.8 kB。静态预算运行 `npm run performance:budget`；启动本地生产服务后运行 `npm run performance:browser` 验证浏览器行为。
 <!-- build-metrics:end -->
 
 ## 投稿、纠错与下架

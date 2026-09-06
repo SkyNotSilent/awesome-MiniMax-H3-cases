@@ -12,17 +12,15 @@ const dates = [
   ...guides.map((item) => item.addedAt),
   ...resources.map((item) => item.verifiedAt),
 ].filter(Boolean).sort()
-const publishedDates = [
-  ...cases.map((item) => item.addedAt),
-  ...guides.map((item) => item.addedAt),
-].filter(Boolean).sort()
-const latestPublishedAt = publishedDates.at(-1)?.slice(0, 10) ?? null
-const latestCases = latestPublishedAt
-  ? cases.filter((item) => item.addedAt?.slice(0, 10) === latestPublishedAt)
-  : []
-const latestGuides = latestPublishedAt
-  ? guides.filter((item) => item.addedAt?.slice(0, 10) === latestPublishedAt)
-  : []
+// Releases are grouped by Asia/Shanghai calendar day, the same rule as
+// shared/release-window.mjs, so the README strip and the site agree.
+const releaseDay = (value) => new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(value))
+const isDated = (item) => Number.isFinite(Date.parse(item.addedAt))
+const newestPublishedAt = [...cases, ...guides].filter(isDated)
+  .reduce((latest, item) => !latest || Date.parse(item.addedAt) > Date.parse(latest) ? item.addedAt : latest, null)
+const latestPublishedAt = newestPublishedAt ? releaseDay(newestPublishedAt) : null
+const latestCases = latestPublishedAt ? cases.filter((item) => isDated(item) && releaseDay(item.addedAt) === latestPublishedAt) : []
+const latestGuides = latestPublishedAt ? guides.filter((item) => isDated(item) && releaseDay(item.addedAt) === latestPublishedAt) : []
 
 const stats = {
   generatedAt: new Date().toISOString().slice(0, 10),

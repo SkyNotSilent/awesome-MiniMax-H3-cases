@@ -26,7 +26,7 @@
 
 <p align="center"><strong>Watch real H3 output first. Inspect a Prompt only when its source publishes the complete text. Then follow a verified route to run it yourself.</strong></p>
 
-[![MiniMax H3 returning-user update summary with added-date, duration, Prompt, collection, content, style, and scene filters](./docs/screenshots/case-library-en.jpg)](https://h3-field-notes-production.up.railway.app/en/)
+[![MiniMax H3 latest-release strip with added-date, duration, Prompt, collection, content, style, and scene filters](./docs/screenshots/case-library-en.jpg)](https://h3-field-notes-production.up.railway.app/en/)
 
 ## Start here
 
@@ -36,15 +36,15 @@
 
 MiniMax H3 is also searched as **Hailuo H3**, **Hailuo 3.0**, and **海螺 H3**. Every published case plays inside the gallery, keeps its original source and creator, and clearly distinguishes a complete verbatim Prompt from an unpublished one. The library never reconstructs, rewrites, or reverse-engineers missing Prompts.
 
-## See what changed since your last visit
+## See what the latest release added
 
-First-time visitors start with the complete case library ordered by catalog date, so the newest work appears first without presenting the existing archive as hundreds of unread items. Returning visitors with new cases automatically open a fixed **Since last visit** snapshot. A batch is marked seen only after an update card actually enters the viewport, and the current tab keeps that snapshot across refreshes and case/guide navigation.
+**Latest additions** means the same thing for every visitor: everything added to that channel on the same Beijing-time day as its newest item. It refreshes with every publish, needs no browser history, and does not shift with the visitor's time zone.
 
-- Filter cases and guides by **All**, **Since last visit**, **Last 7 days**, or **Last 30 days**. On a first visit, or when the browser cannot save history, **Since last visit** shows today's additions. Date conditions combine with search, duration, Prompt, collection, content, style, scene, goal, and hardware filters.
-- Every case and guide shows its catalog-added date; current-snapshot items also carry a text **Newly added** label instead of relying on color alone.
-- Cases and guides have independent seen-through marks, so viewing new cases never clears an unseen guide. When no personal update exists, the summary shows **You are up to date** and links to the latest 48 cases instead of opening an empty view.
-- Fixed snapshots use shareable `added=unseen&since=<ISO date-time>&through=<ISO date-time>` URLs; older `since`-only links remain compatible. Other date views use `added=7d|30d`; older `added=today` links resolve to the since-last-visit view.
-- Seen state stays only in this browser under separate v2 case/guide keys, while `minimax-h3-update-session-v2` keeps the current tab's frozen batch. There is no account, server-side seen history, or notification subscription. Self-hosted analytics may count aggregate product interactions, but never receive this seen state.
+- Filter cases and guides by **All**, **Latest additions**, **Last 7 days**, or **Last 30 days**. Date conditions combine with search, duration, Prompt, collection, content, style, scene, goal, and hardware filters.
+- Every case and guide shows its catalog-added date; items in the latest release also carry a text **Newly added** label instead of relying on color alone.
+- The strip above the filters shows the date and size of the latest release and opens it in the list; when nothing is new it links to the latest 48 cases instead.
+- Date views use `added=release|7d|30d`. Older `added=unseen`, `added=today`, and personal `since`/`through` snapshot links all resolve to the latest release.
+- Nothing about seen state is stored in the browser, and there is no account, server-side seen history, or notification subscription; keys written by earlier versions are ignored.
 
 ## Find the useful cases faster
 
@@ -129,7 +129,7 @@ Example output is structured as a recommended route, environment check, executio
 - Every public case and guide has an immutable ISO `addedAt`: the first time it entered the public catalog. Source `publishedAt`, review `approvedAt`, and guide `verifiedAt` keep their separate meanings; copy edits, Prompt additions, metric refreshes, and re-verification do not create unread updates.
 - Daily case discovery and weekly tutorial discovery keep private candidates in `.review/`; credentials and discovery labels never enter Git, the frontend, or SEO.
 - Builds generate localized case/tutorial pages, canonical and hreflang links, `VideoObject`/`HowTo` JSON-LD, sitemap, Open Graph data, [`llms.txt`](./public/llms.txt), and [`llms-full.txt`](./public/llms-full.txt).
-- `npm run screenshots` rebuilds the site, synchronizes measured build sizes, captures the current bilingual opening screen and returning-user views on desktop/mobile, and writes only screenshots whose rendered bytes changed.
+- `npm run screenshots` rebuilds the site, synchronizes measured build sizes, captures the current bilingual opening screen and library views on desktop/mobile, and writes only screenshots whose rendered bytes changed.
 
 ## Performance architecture
 
@@ -147,7 +147,7 @@ The source of truth remains `data/cases.json`, but production builds no longer s
 - Run `npm run videos:playback:audit` for a read-only inventory, `npm run videos:playback:migrate -- --apply` to populate the versioned playback tier, and `npm run videos:playback:verify` before switching or after a release. Migration reports stay in ignored `.review/` files.
 
 <!-- build-metrics:start -->
-**Reference build (Node 22.23.1, analytics configuration omitted):** 99.5 kB homepage JavaScript gzip · 9.8 kB / 9.1 kB Chinese / English homepage HTML gzip · 5.5 kB first-page API gzip · 4.3 kB next-page API gzip · 5.5 kB search response gzip · 51.3 kB local fonts (nonblocking) · 1033.8 kB server-only index gzip. Run `npm run performance:budget` for static budgets and `npm run performance:browser` against a local production server for browser behavior.
+**Reference build (Node 22.23.1, analytics configuration omitted):** 96.4 kB homepage JavaScript gzip · 9.8 kB / 9.1 kB Chinese / English homepage HTML gzip · 5.5 kB first-page API gzip · 4.3 kB next-page API gzip · 5.5 kB search response gzip · 51.3 kB local fonts (nonblocking) · 1033.8 kB server-only index gzip. Run `npm run performance:budget` for static budgets and `npm run performance:browser` against a local production server for browser behavior.
 <!-- build-metrics:end -->
 
 ## Contribute or report a problem
