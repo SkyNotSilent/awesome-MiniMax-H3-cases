@@ -1,3 +1,7 @@
+import { createCatalogIndex, searchText } from '../shared/catalog-query.mjs'
+import { useCatalogQuery } from './use-catalog-query'
+import { createUpdateSession, type UpdateSession } from './update-session'
+import { hasExplicitFilters, parseFilters, writeFilters } from '../shared/filter-state.mjs'
 import { useCallback, useDeferredValue, useEffect, useLayoutEffect, useMemo, useRef, useState, useTransition, type CSSProperties } from 'react'
 import {
   ArrowUpRight,
@@ -30,7 +34,6 @@ import {
   loadCaseDetail,
   loadCatalog,
   loadCreators,
-  loadSearchIndex,
   loadTutorialGuides,
   loadTutorialResources,
 } from './data-client'
@@ -54,27 +57,20 @@ import {
   type AppPage,
   type Language,
 } from './i18n'
-import type { CaseDetail, CatalogCase, CatalogPayload, CreatorCatalog, CreatorProfile, CreatorRankKey, SearchRecord, Taxonomy, TutorialCategory, TutorialGuide, TutorialHardwareProfile, TutorialResource, VideoCase } from './types'
+import type { CaseDetail, CatalogCase, CatalogPayload, CreatorCatalog, CreatorProfile, CreatorRankKey, Taxonomy, TutorialCategory, TutorialGuide, TutorialHardwareProfile, TutorialResource, VideoCase } from './types'
 import { XPostEmbed } from './XPostEmbed'
 import {
   addedDateHref,
   addedDatePresets,
   caseUpdatesSeenThroughKey,
-  clampAddedAt,
   formatAddedDate,
-  legacyUpdatesSeenThroughKey,
   matchesAddedDate,
   maxAddedAt,
-  parseAddedDatePreset,
   parseSince,
-  parseStoredUpdateSession,
   sortByAddedAtDescending,
   tutorialUpdatesSeenThroughKey,
   updateSessionStorageKey,
-  validUpdateWindow,
   type AddedDatePreset,
-  type StoredUpdateSession,
-  type StoredUpdateWindow,
   type UpdateChannel,
 } from './updates'
 
@@ -89,15 +85,12 @@ const taxonomyFilterOptions = {
   style: caseTaxonomy.styles.map((entry) => entry.key),
   scene: caseTaxonomy.scenes.map((entry) => entry.key),
 }
-const taxonomyFilterKeys = {
-  category: new Set(taxonomyFilterOptions.category),
-  style: new Set(taxonomyFilterOptions.style),
-  scene: new Set(taxonomyFilterOptions.scene),
+function initialFilters() {
+  return parseFilters(new URLSearchParams(window.location.search), caseTaxonomy)
 }
 
 function initialTaxonomyFilter(kind: keyof typeof taxonomyFilterOptions) {
-  const requested = new URLSearchParams(window.location.search).get(kind)
-  return requested && taxonomyFilterKeys[kind].has(requested) ? requested : 'ALL'
+  return initialFilters()[kind]
 }
 const completePromptCount = projectStats.completePrompts
 const unpublishedPromptCount = projectStats.cases - completePromptCount
@@ -132,23 +125,6 @@ const hardwareProfiles: TutorialHardwareProfile[] = [
   'vram-24-plus',
   'cloud-gpu',
 ]
-
-interface ChannelUpdateSession extends StoredUpdateWindow {
-  ids: Set<string>
-  explicit: boolean
-}
-
-interface UpdateSession {
-  cases: ChannelUpdateSession
-  tutorials: ChannelUpdateSession
-  initialCasePreset: AddedDatePreset
-  initialTutorialPreset: AddedDatePreset
-  firstVisit: boolean
-  persistentBaselines: Record<UpdateChannel, string>
-  storedSession: StoredUpdateSession
-  storageAvailable: boolean
-  sessionStorageAvailable: boolean
-}
 
 function catalogCase(item: VideoCase): CatalogCase {
   return {
@@ -195,141 +171,15 @@ const testCatalog: CatalogPayload | null = testCases && testTutorialGuides ? {
   cases: testCases.map(catalogCase),
   tutorials: testTutorialGuides.map(({ id, addedAt }) => ({ id, addedAt })),
 } : null
+const testQueryIndex = testCases && testCatalog ? createCatalogIndex({
+  version: 1, catalogVersion: 'fixture', taxonomy: caseTaxonomy,
+  featuredCaseIds: testCatalog.featuredCaseIds,
+  cases: testCatalog.cases.map((item, i) => ({ ...item, search: { zh: searchText(testCases[i], 'zh', caseTaxonomy), en: searchText(testCases[i], 'en', caseTaxonomy) } })),
+  tutorials: testCatalog.tutorials, creators: testCreatorCatalog?.creators ?? [],
+}) : null
 const testDetails = new Map(testCases?.map((item) => [item.id, caseDetail(item)]) ?? [])
 const emptyCatalogCases: CatalogCase[] = []
 
-function createUpdateSession(
-  cases: readonly CatalogCase[],
-  tutorials: ReadonlyArray<{ id: string; addedAt: string }>,
-  routePage: AppPage,
-): UpdateSession {
-  const maxima = {
-    cases: maxAddedAt(cases),
-    tutorials: maxAddedAt(tutorials),
-  }
-  const params = new URLSearchParams(window.location.search)
-  const rawPreset = params.get('added')
-  const requestedPreset = parseAddedDatePreset(rawPreset)
-  const invalidPreset = rawPreset !== null && requestedPreset === 'all' && rawPreset !== 'all'
-  const rawSince = params.get('since')
-  const requestedSince = parseSince(rawSince)
-  const rawThrough = params.get('through')
-  const requestedThrough = parseSince(rawThrough)
-  const invalidSince = requestedPreset === 'unseen' && rawSince !== null && requestedSince === null
-  const invalidThrough = requestedPreset === 'unseen' && rawThrough !== null && requestedThrough === null
-
-  let storageAvailable = true
-  let sessionStorageAvailable = true
-  let legacyBaseline: string | null = null
-  let storedCaseBaseline: string | null = null
-  let storedTutorialBaseline: string | null = null
-  let restoredSession: StoredUpdateSession | null = null
-  try {
-    legacyBaseline = parseSince(window.localStorage.getItem(legacyUpdatesSeenThroughKey))
-    storedCaseBaseline = parseSince(window.localStorage.getItem(caseUpdatesSeenThroughKey))
-    storedTutorialBaseline = parseSince(window.localStorage.getItem(tutorialUpdatesSeenThroughKey))
-  } catch {
-    storageAvailable = false
-  }
-  try {
-    restoredSession = parseStoredUpdateSession(window.sessionStorage.getItem(updateSessionStorageKey))
-  } catch {
-    sessionStorageAvailable = false
-  }
-
-  const hadHistory = Boolean(storedCaseBaseline || storedTutorialBaseline || legacyBaseline)
-  const persistentBaselines = {
-    cases: clampAddedAt(storedCaseBaseline ?? legacyBaseline, maxima.cases) ?? maxima.cases,
-    tutorials: clampAddedAt(storedTutorialBaseline ?? legacyBaseline, maxima.tutorials) ?? maxima.tutorials,
-  }
-
-  const buildWindow = <T extends { id: string; addedAt: string }>(
-    channel: UpdateChannel,
-    items: readonly T[],
-  ): ChannelUpdateSession => {
-    const maximum = maxima[channel]
-    const restored = restoredSession?.[channel]
-      ? validUpdateWindow(restoredSession[channel], maximum)
-      : null
-    const window = restored ?? { since: persistentBaselines[channel], through: maximum }
-    const ids = new Set(items
-      .filter((item) => matchesAddedDate(item.addedAt, 'unseen', window))
-      .map((item) => item.id))
-    return { ...window, ids, explicit: false }
-  }
-
-  let caseWindow = buildWindow('cases', cases)
-  let tutorialWindow = buildWindow('tutorials', tutorials)
-  let firstVisit = restoredSession?.firstVisit ?? !hadHistory
-  if (caseWindow.ids.size + tutorialWindow.ids.size > 0) firstVisit = false
-
-  const currentChannel: UpdateChannel = routePage === 'tutorials' ? 'tutorials' : 'cases'
-  const currentItems = currentChannel === 'cases' ? cases : tutorials
-  const currentMaximum = maxima[currentChannel]
-  const invalidRangeOrder = Boolean(requestedSince && requestedThrough)
-    && Date.parse(requestedThrough!) < Date.parse(requestedSince!)
-  const invalidExplicitWindow = invalidSince || invalidThrough || invalidRangeOrder
-
-  if (requestedPreset === 'unseen' && !invalidExplicitWindow && rawSince !== null && requestedSince) {
-    const since = clampAddedAt(requestedSince, currentMaximum) ?? currentMaximum
-    const through = clampAddedAt(requestedThrough ?? currentMaximum, currentMaximum) ?? currentMaximum
-    const explicitWindow: ChannelUpdateSession = {
-      since,
-      through,
-      ids: new Set(currentItems
-        .filter((item) => matchesAddedDate(item.addedAt, 'unseen', { since, through }))
-        .map((item) => item.id)),
-      explicit: true,
-    }
-    if (currentChannel === 'cases') caseWindow = explicitWindow
-    else tutorialWindow = explicitWindow
-    firstVisit = false
-  }
-
-  const storedSession: StoredUpdateSession = {
-    version: 2,
-    firstVisit,
-    ...(caseWindow.ids.size > 0 && !caseWindow.explicit
-      ? { cases: { since: caseWindow.since, through: caseWindow.through } }
-      : {}),
-    ...(tutorialWindow.ids.size > 0 && !tutorialWindow.explicit
-      ? { tutorials: { since: tutorialWindow.since, through: tutorialWindow.through } }
-      : {}),
-  }
-
-  const hasExplicitHomeFilter = ['collection', 'added', 'since', 'through', 'prompt'].some((key) => params.has(key))
-  const hasExplicitTutorialFilter = ['added', 'since', 'through'].some((key) => params.has(key))
-  const missingPersonalBaseline = requestedPreset === 'unseen'
-    && rawSince === null
-    && (!storageAvailable || firstVisit)
-  const requestedPresetIsValid = !invalidPreset && !invalidExplicitWindow && !missingPersonalBaseline
-  const initialCasePreset = routePage === 'home'
-    ? rawPreset !== null
-      ? requestedPresetIsValid ? requestedPreset : 'all'
-      : storageAvailable && !firstVisit && !hasExplicitHomeFilter && caseWindow.ids.size > 0
-        ? 'unseen'
-        : 'all'
-    : 'all'
-  const initialTutorialPreset = routePage === 'tutorials'
-    ? rawPreset !== null
-      ? requestedPresetIsValid ? requestedPreset : 'all'
-      : storageAvailable && !firstVisit && !hasExplicitTutorialFilter && tutorialWindow.ids.size > 0
-        ? 'unseen'
-        : 'all'
-    : 'all'
-
-  return {
-    cases: caseWindow,
-    tutorials: tutorialWindow,
-    initialCasePreset,
-    initialTutorialPreset,
-    firstVisit,
-    persistentBaselines,
-    storedSession,
-    storageAvailable,
-    sessionStorageAvailable,
-  }
-}
 
 function initialRoute() {
   const route = resolveRoute(window.location.pathname)
@@ -484,6 +334,7 @@ function HostedVideo({ item, language, title, preparedVideo }: { item: CatalogCa
 
 function App() {
   const [route, setRoute] = useState(initialRoute)
+  const [navigation, setNavigation] = useState(0)
   const [catalog, setCatalog] = useState<CatalogPayload | null>(testCatalog)
   const [catalogError, setCatalogError] = useState(false)
   const [tutorialGuides, setTutorialGuides] = useState<TutorialGuide[] | null>(testTutorialGuides)
@@ -499,9 +350,11 @@ function App() {
   }, [])
 
   useEffect(() => {
-    if (catalog) return
-    loadCatalog().then(setCatalog).catch(() => setCatalogError(true))
-  }, [catalog])
+    if (testCatalog) return
+    let live = true
+    loadCatalog().then(value => { if (live) setCatalog(value) }).catch(() => { if (live) setCatalogError(true) })
+    return () => { live = false }
+  }, [navigation, route.page])
 
   const needsTutorials = route.page === 'tutorials'
     || route.page === 'tutorial-detail'
@@ -532,8 +385,12 @@ function App() {
   }, [creatorCatalog, needsCreators, needsTutorials, tutorialGuides])
 
   const updateSession = useMemo(
-    () => catalog ? createUpdateSession(catalog.cases, catalog.tutorials, route.page) : null,
-    [catalog, route.page],
+    () => {
+      // A history navigation can change only the query string.
+      void navigation
+      return catalog ? createUpdateSession(catalog, route.page) : null
+    },
+    [catalog, route.page, navigation],
   )
   const creators = creatorCatalog?.creators ?? []
   const activeTutorial = route.page === 'tutorial-detail' && tutorialGuides
@@ -590,7 +447,10 @@ function App() {
   }, [activeCreator, language, route.creatorSlug, route.page])
 
   useEffect(() => {
-    const handlePopState = () => setRoute(resolveRoute(window.location.pathname))
+    const handlePopState = () => {
+      setRoute(resolveRoute(window.location.pathname))
+      setNavigation(value => value + 1)
+    }
     window.addEventListener('popstate', handlePopState)
     return () => window.removeEventListener('popstate', handlePopState)
   }, [])
@@ -659,13 +519,13 @@ function App() {
     <main id="top">
       <div className="grain" aria-hidden="true" />
       <Header language={language} page={route.page} onLanguageChange={switchLanguage} />
-      {route.page === 'home' && <HomePage language={language} updateSession={updateSession} catalog={catalog} catalogError={catalogError} onRetryCatalog={reloadCatalog} onAcknowledgeUpdates={acknowledgeUpdates} acknowledged={acknowledgedChannels.has('cases')} />}
-      {route.page === 'tutorials' && tutorialGuides && updateSession && <TutorialsPage language={language} updateSession={updateSession} tutorialGuides={tutorialGuides} onAcknowledgeUpdates={acknowledgeUpdates} acknowledged={acknowledgedChannels.has('tutorials')} />}
+      {route.page === 'home' && <HomePage key={navigation} language={language} updateSession={updateSession} catalog={catalog} catalogError={catalogError} onRetryCatalog={reloadCatalog} onAcknowledgeUpdates={acknowledgeUpdates} acknowledged={acknowledgedChannels.has('cases')} />}
+      {route.page === 'tutorials' && tutorialGuides && updateSession && <TutorialsPage key={navigation} language={language} updateSession={updateSession} tutorialGuides={tutorialGuides} onAcknowledgeUpdates={acknowledgeUpdates} acknowledged={acknowledgedChannels.has('tutorials')} />}
       {route.page === 'tutorial-ecosystem' && tutorialGuides && tutorialResources && <TutorialEcosystemPage language={language} tutorialGuides={tutorialGuides} tutorialResources={tutorialResources} />}
       {route.page === 'tutorial-detail' && activeTutorial && tutorialGuides && tutorialResources && <TutorialDetailPage language={language} tutorial={activeTutorial} tutorialGuides={tutorialGuides} tutorialResources={tutorialResources} />}
       {route.page === 'tutorial-detail' && tutorialGuides && !activeTutorial && <TutorialNotFound language={language} />}
       {route.page === 'creators' && creatorCatalog && catalog && tutorialGuides && <CreatorsPage language={language} creatorCatalog={creatorCatalog} cases={catalog.cases} tutorialGuides={tutorialGuides} />}
-      {route.page === 'creator-detail' && activeCreator && catalog && tutorialGuides && <CreatorDetailPage language={language} creator={activeCreator} cases={catalog.cases} featuredCaseIds={catalog.featuredCaseIds} tutorialGuides={tutorialGuides} />}
+      {route.page === 'creator-detail' && activeCreator && catalog && tutorialGuides && <CreatorDetailPage key={navigation} language={language} creator={activeCreator} cases={catalog.cases} featuredCaseIds={catalog.featuredCaseIds} tutorialGuides={tutorialGuides} />}
       {route.page === 'creator-detail' && creatorCatalog && !activeCreator && <CreatorNotFound language={language} />}
       {route.page !== 'home' && route.page !== 'faq' && ((!catalog && catalogError) || routeDataError) && <ResourceState language={language} failed onRetry={() => { reloadCatalog(); reloadRouteData() }} />}
       {route.page !== 'home' && route.page !== 'faq' && !routeDataError && (!catalog || (needsTutorials && !tutorialGuides) || (needsCreators && !creatorCatalog)) && <ResourceState language={language} />}
@@ -958,12 +818,12 @@ function UpdateSummary({
 }) {
   const t = copy[language].catalog
   const latestUpdate = projectStats.latestUpdate
-  const caseCount = updateSession.cases.ids.size
-  const tutorialCount = updateSession.tutorials.ids.size
+  const caseCount = updateSession.cases.count
+  const tutorialCount = updateSession.tutorials.count
   const hasPersonalUpdates = caseCount + tutorialCount > 0
-  const todayCaseCount = catalog.cases.filter((item) => matchesAddedDate(item.addedAt, 'today')).length
-  const todayTutorialCount = catalog.tutorials.filter((item) => matchesAddedDate(item.addedAt, 'today')).length
-  const latestAddedAt = maxAddedAt([...catalog.cases, ...catalog.tutorials])
+  const todayCaseCount = catalog.summary?.today.cases ?? catalog.cases.filter((item) => matchesAddedDate(item.addedAt, 'today')).length
+  const todayTutorialCount = catalog.summary?.today.tutorials ?? catalog.tutorials.filter((item) => matchesAddedDate(item.addedAt, 'today')).length
+  const latestAddedAt = catalog.generatedAt
   const compact = updateSession.firstVisit || !updateSession.storageAvailable || !hasPersonalUpdates
   const latestSummary = latestUpdate
     ? t.updateSummaryTitle(latestUpdate.casesAdded, latestUpdate.promptsAdded, latestUpdate.tutorialsAdded)
@@ -1061,18 +921,17 @@ function HomePage({
   acknowledged: boolean
 }) {
   const t = copy[language]
-  const cases = catalog?.cases ?? emptyCatalogCases
-  const [activeDuration, setActiveDuration] = useState<DurationRange>('ALL')
+  const [activeDuration, setActiveDuration] = useState<DurationRange>(() => initialFilters().duration)
   const [promptOnly, setPromptOnly] = useState(() => new URLSearchParams(window.location.search).get('prompt') === '1')
   const [activeCollection, setActiveCollection] = useState<CaseCollection>(() => {
     const requested = new URLSearchParams(window.location.search).get('collection')
     return collectionKeys.includes(requested as CaseCollection) ? requested as CaseCollection : 'all'
   })
-  const [activeAddedDate, setActiveAddedDate] = useState<AddedDatePreset>(updateSession?.initialCasePreset ?? 'all')
+  const [activeAddedDate, setActiveAddedDate] = useState<AddedDatePreset>(updateSession?.initialCasePreset ?? initialFilters().added)
   const [favorites, setFavorites] = useState<Set<string>>(() => {
     try {
       const saved = JSON.parse(window.localStorage.getItem(favoriteStorageKey) || '[]')
-      return new Set(Array.isArray(saved) ? saved.filter((id): id is string => typeof id === 'string') : [])
+      return new Set(Array.isArray(saved) ? saved.filter((id): id is string => typeof id === 'string' && /^[\w.-]{1,160}$/.test(id)).slice(0, 10000) : [])
     } catch {
       return new Set()
     }
@@ -1080,10 +939,9 @@ function HomePage({
   const [activeCategory, setActiveCategory] = useState(() => initialTaxonomyFilter('category'))
   const [activeStyle, setActiveStyle] = useState(() => initialTaxonomyFilter('style'))
   const [activeScene, setActiveScene] = useState(() => initialTaxonomyFilter('scene'))
-  const [query, setQuery] = useState('')
+  const [query, setQuery] = useState(() => initialFilters().q)
   const deferredQuery = useDeferredValue(query)
   const [selected, setSelected] = useState<OpenedCase | null>(null)
-  const [visibleCount, setVisibleCount] = useState(36)
   const [, startTransition] = useTransition()
   const sentinelRef = useRef<HTMLDivElement | null>(null)
   const [updateVisibilityTarget, setUpdateVisibilityTarget] = useState<HTMLDivElement | null>(null)
@@ -1091,74 +949,32 @@ function HomePage({
   const lastLoadRef = useRef<{ at: number; source: 'automatic' | 'manual' | null }>({ at: Number.NEGATIVE_INFINITY, source: null })
   const lastAutomaticScrollYRef = useRef(Number.NEGATIVE_INFINITY)
   const updateInitializedRef = useRef(Boolean(updateSession))
+  const [filtersReady, setFiltersReady] = useState(Boolean(updateSession))
   const [introReady, setIntroReady] = useState(false)
-  const testSearchMap = useMemo(() => {
-    if (!testCases) return null
-    return new Map(testCases.map((item) => [item.id, (language === 'zh'
-      ? [item.title, item.summary, item.prompt, item.author, item.sourceLabel, ...item.tags, item.category, ...item.styles, ...item.scenes]
-      : [item.titleEn, item.summaryEn, item.prompt, item.author, item.category, ...item.styles, ...item.scenes]
-    ).filter(Boolean).join(' ').replace(/\s+/g, ' ').trim().toLocaleLowerCase()]))
-  }, [language])
-  const [searchResource, setSearchResource] = useState<{
-    language: Language
-    state: 'idle' | 'loading' | 'ready' | 'error'
-    records: Map<string, string> | null
-  }>(() => ({ language, state: testSearchMap ? 'ready' : 'idle', records: testSearchMap }))
-  const searchRecords = testSearchMap ?? (searchResource.language === language ? searchResource.records : null)
-  const searchState = testSearchMap ? 'ready' : searchResource.language === language ? searchResource.state : 'idle'
-
   useEffect(() => {
     if (!updateSession || updateInitializedRef.current) return
     updateInitializedRef.current = true
-    startTransition(() => setActiveAddedDate(updateSession.initialCasePreset))
+    startTransition(() => { setActiveAddedDate(updateSession.initialCasePreset); setFiltersReady(true) })
   }, [updateSession])
-
-  const enableFullSearch = useCallback((force = false) => {
-    if (!force && (searchState === 'loading' || searchState === 'ready')) return
-    setSearchResource({ language, state: 'loading', records: null })
-    loadSearchIndex(language, force).then((records: SearchRecord[]) => {
-      startTransition(() => {
-        setSearchResource({ language, state: 'ready', records: new Map(records.map((record) => [record.id, record.text])) })
-      })
-    }).catch(() => setSearchResource({ language, state: 'error', records: null }))
-  }, [language, searchState])
 
   const allCategories = taxonomyFilterOptions.category
   const allStyles = taxonomyFilterOptions.style
   const allScenes = taxonomyFilterOptions.scene
-  const featuredCaseOrder = useMemo(
-    () => new Map((catalog?.featuredCaseIds ?? []).map((id, index) => [id, index])),
-    [catalog?.featuredCaseIds],
-  )
-  const featuredCaseIds = useMemo(() => new Set(featuredCaseOrder.keys()), [featuredCaseOrder])
-  const latestCaseIds = useMemo(() => new Set([...cases]
-    .sort((a, b) => Date.parse(b.addedAt) - Date.parse(a.addedAt))
-    .slice(0, 48)
-    .map((item) => item.id)), [cases])
-
+  const featuredCaseIds = useMemo(() => new Set(catalog?.featuredCaseIds ?? []), [catalog?.featuredCaseIds])
+  const previousFiltersRef = useRef<string | null>(null)
   useEffect(() => {
+    if (!updateSession || !filtersReady) return
+    const state = { category: activeCategory, style: activeStyle, scene: activeScene, duration: activeDuration, prompt: promptOnly, collection: activeCollection, added: activeAddedDate, q: query, since: updateSession.cases.since, through: updateSession.cases.through }
+    const discrete = JSON.stringify({ ...state, q: '' })
+    const method = previousFiltersRef.current !== null && previousFiltersRef.current !== discrete ? 'pushState' : 'replaceState'
+    previousFiltersRef.current = discrete
     const url = new URL(window.location.href)
-    if (promptOnly) url.searchParams.set('prompt', '1')
-    else url.searchParams.delete('prompt')
-    if (activeCollection !== 'all') url.searchParams.set('collection', activeCollection)
-    else url.searchParams.delete('collection')
-    if (activeCategory !== 'ALL') url.searchParams.set('category', activeCategory)
-    else url.searchParams.delete('category')
-    if (activeStyle !== 'ALL') url.searchParams.set('style', activeStyle)
-    else url.searchParams.delete('style')
-    if (activeScene !== 'ALL') url.searchParams.set('scene', activeScene)
-    else url.searchParams.delete('scene')
-    if (activeAddedDate !== 'all') url.searchParams.set('added', activeAddedDate)
-    else url.searchParams.delete('added')
-    if (activeAddedDate === 'unseen' && updateSession?.cases.since) {
-      url.searchParams.set('since', updateSession.cases.since)
-      url.searchParams.set('through', updateSession.cases.through)
-    } else {
-      url.searchParams.delete('since')
-      url.searchParams.delete('through')
-    }
-    window.history.replaceState(window.history.state, '', `${url.pathname}${url.search}${url.hash}`)
-  }, [activeAddedDate, activeCategory, activeCollection, activeScene, activeStyle, promptOnly, updateSession?.cases.since, updateSession?.cases.through])
+    const wasExplicit = hasExplicitFilters(url.searchParams)
+    writeFilters(url, state)
+    if (wasExplicit && !hasExplicitFilters(url.searchParams)) url.searchParams.set('added', 'all')
+    const path = `${url.pathname}${url.search}${url.hash}`
+    if (path !== `${window.location.pathname}${window.location.search}${window.location.hash}`) window.history[method](window.history.state, '', path)
+  }, [activeAddedDate, activeCategory, activeCollection, activeDuration, activeScene, activeStyle, promptOnly, query, updateSession, filtersReady])
 
   useEffect(() => {
     const trimmed = deferredQuery.trim()
@@ -1184,65 +1000,28 @@ function HomePage({
     })
   }
 
-  const caseMatches = useCallback((item: CatalogCase, omittedFacet?: 'category' | 'style' | 'scene') => {
-    const needle = deferredQuery.trim().toLocaleLowerCase()
-    const matchesDuration = activeDuration === 'ALL'
-      || (activeDuration === 'UP_TO_5' && item.duration <= 5)
-      || (activeDuration === 'SIX_TO_10' && item.duration > 5 && item.duration <= 10)
-      || (activeDuration === 'ELEVEN_TO_15' && item.duration > 10 && item.duration <= 15)
-      || (activeDuration === 'OVER_15' && item.duration > 15)
-    const matchesCategory = omittedFacet === 'category' || activeCategory === 'ALL' || item.category === activeCategory
-    const matchesStyle = omittedFacet === 'style' || activeStyle === 'ALL' || item.styles.includes(activeStyle)
-    const matchesScene = omittedFacet === 'scene' || activeScene === 'ALL' || item.scenes.includes(activeScene)
-    const matchesPrompt = !promptOnly || item.hasPrompt
-    const matchesAdded = matchesAddedDate(item.addedAt, activeAddedDate, updateSession?.cases)
-    const matchesCollection = activeCollection === 'all'
-      || (activeCollection === 'featured' && featuredCaseIds.has(item.id))
-      || (activeCollection === 'latest' && latestCaseIds.has(item.id))
-      || (activeCollection === 'prompt' && item.hasPrompt)
-      || (activeCollection === 'official' && item.sourceType === 'official')
-      || (activeCollection === 'long' && item.duration > 15)
-      || (activeCollection === 'favorites' && favorites.has(item.id))
-    const basicHaystack = language === 'zh'
-      ? [item.title, item.author, ...item.tags, item.category, ...item.styles, ...item.scenes]
-      : [item.titleEn, item.author, item.category, ...item.styles, ...item.scenes]
-    const haystack = searchRecords?.get(item.id) ?? basicHaystack.filter(Boolean).join(' ').toLocaleLowerCase()
-    return matchesDuration && matchesCategory && matchesStyle && matchesScene && matchesPrompt && matchesCollection && matchesAdded
-      && (!needle || haystack.includes(needle))
-  }, [activeAddedDate, activeCategory, activeCollection, activeDuration, activeScene, activeStyle, deferredQuery, favorites, featuredCaseIds, language, latestCaseIds, promptOnly, searchRecords, updateSession?.cases])
-
-  const filtered = useMemo(() => {
-    const matching = cases.filter((item) => caseMatches(item))
-    if (activeCollection === 'featured') {
-      return matching.sort((a, b) => (featuredCaseOrder.get(a.id) ?? Number.MAX_SAFE_INTEGER) - (featuredCaseOrder.get(b.id) ?? Number.MAX_SAFE_INTEGER))
-    }
-    return sortByAddedAtDescending(matching)
-  }, [activeCollection, caseMatches, cases, featuredCaseOrder])
-
-  const facetCounts = useMemo(() => {
-    const countFacet = (kind: 'category' | 'style' | 'scene', options: readonly string[]) => {
-      const eligible = cases.filter((item) => caseMatches(item, kind))
-      return new Map([
-        ['ALL', eligible.length],
-        ...options.map((option) => [option, eligible.filter((item) => kind === 'category'
-          ? item.category === option
-          : item[kind === 'style' ? 'styles' : 'scenes'].includes(option)).length] as const),
-      ])
-    }
-    return {
-      category: countFacet('category', allCategories),
-      style: countFacet('style', allStyles),
-      scene: countFacet('scene', allScenes),
-    }
-  }, [allCategories, allScenes, allStyles, caseMatches, cases])
-
-  const hasMore = visibleCount < filtered.length
-  useEffect(() => {
-    filteredLengthRef.current = filtered.length
-  }, [filtered.length])
-  const loadMore = useCallback(() => {
-    setVisibleCount((current) => Math.min(current + 24, filteredLengthRef.current))
-  }, [])
+  const [queryNow] = useState(() => new Date())
+  const queryParams = new URLSearchParams({ language })
+  const queryState = { category: activeCategory, style: activeStyle, scene: activeScene, duration: activeDuration, prompt: promptOnly, collection: activeCollection, added: activeAddedDate, q: deferredQuery, since: updateSession?.cases.since ?? null, through: updateSession?.cases.through ?? null }
+  const queryUrl = new URL('http://localhost')
+  writeFilters(queryUrl, queryState)
+  queryUrl.searchParams.forEach((value, key) => queryParams.set(key, value))
+  if (['today', '7d', '30d'].includes(activeAddedDate)) {
+    const start = new Date(queryNow); start.setHours(0, 0, 0, 0)
+    start.setDate(start.getDate() - (activeAddedDate === '7d' ? 6 : activeAddedDate === '30d' ? 29 : 0))
+    queryParams.set('from', start.toISOString()); queryParams.set('to', queryNow.toISOString())
+  }
+  const directory = useCatalogQuery(queryParams, activeCollection === 'favorites' ? [...favorites].sort() : [], Boolean(catalog && filtersReady), testQueryIndex)
+  const filtered = directory.page?.cases ?? emptyCatalogCases
+  const total = directory.page?.total ?? 0
+  const facetCounts = {
+    category: new Map(Object.entries(directory.page?.facets.category ?? {})),
+    style: new Map(Object.entries(directory.page?.facets.style ?? {})),
+    scene: new Map(Object.entries(directory.page?.facets.scene ?? {})),
+  }
+  const hasMore = Boolean(directory.page?.nextCursor)
+  useEffect(() => { filteredLengthRef.current = total }, [total])
+  const loadMore = directory.loadMore
   const loadMoreAutomatically = useCallback(() => {
     const now = performance.now()
     if (now - lastLoadRef.current.at < 1_500) return
@@ -1281,11 +1060,8 @@ function HomePage({
     }
   }, [catalogReady, loadMoreAutomatically])
 
-  const visibleCases = filtered.slice(0, visibleCount)
-  const validFavoriteCount = useMemo(
-    () => cases.reduce((count, item) => count + Number(favorites.has(item.id)), 0),
-    [cases, favorites],
-  )
+  const visibleCases = filtered
+  const validFavoriteCount = directory.page?.favoriteCount ?? 0
   const hasEmptyFavoriteCollection = activeCollection === 'favorites' && validFavoriteCount === 0
 
   const advancedCount = [activeCategory, activeStyle, activeScene].filter((value) => value !== 'ALL').length
@@ -1299,7 +1075,6 @@ function HomePage({
       setActiveStyle('ALL')
       setActiveScene('ALL')
       setActiveAddedDate(preset)
-      setVisibleCount(36)
     })
   }, [])
   const viewLatestCases = useCallback(() => {
@@ -1329,8 +1104,10 @@ function HomePage({
       introReady
       && activeAddedDate === 'unseen'
       && activeCaseWindow
-      && activeCaseWindow.ids.size > 0
+      && activeCaseWindow.count > 0
       && filtered.length > 0
+      && !directory.loading
+      && !directory.error
       && !acknowledged
       && !caseAlreadyAcknowledged
       && updateSession?.storageAvailable,
@@ -1338,12 +1115,12 @@ function HomePage({
     acknowledgeVisibleCases,
   )
   const unseenDisabled = !updateSession || (!updateSession.cases.explicit
-    && (!updateSession.storageAvailable || updateSession.cases.ids.size === 0))
+    && (!updateSession.storageAvailable || updateSession.cases.count === 0))
   const unseenHint = !updateSession?.storageAvailable
     ? t.catalog.storageUnavailableHint
     : updateSession.firstVisit
       ? t.catalog.trackingStartsNow
-      : updateSession.cases.ids.size === 0 && !updateSession.cases.explicit
+      : updateSession.cases.count === 0 && !updateSession.cases.explicit
         ? t.catalog.noUnseenUpdates
         : t.catalog.personalUpdateDescription
 
@@ -1363,20 +1140,19 @@ function HomePage({
               <span className="sr-only">{t.catalog.searchLabel}</span>
               <input
                 value={query}
-                onChange={(event) => { setQuery(event.target.value); setVisibleCount(36) }}
-                onFocus={() => enableFullSearch()}
+                onChange={(event) => { setQuery(event.target.value) }}
                 placeholder={t.catalog.searchPlaceholder}
               />
               {query && (
-                <button type="button" onClick={() => { setQuery(''); setVisibleCount(36) }} aria-label={t.catalog.clearSearch}>
+                <button type="button" onClick={() => { setQuery('') }} aria-label={t.catalog.clearSearch}>
                   <X size={17} />
                 </button>
               )}
             </label>
             <div className="search-index-status" aria-live="polite">
-              {searchState === 'loading' ? (language === 'zh' ? '正在启用完整 Prompt 搜索…' : 'Enabling full Prompt search…') : null}
-              {searchState === 'error' ? (
-                <span>{language === 'zh' ? '完整搜索加载失败，当前使用基础搜索。' : 'Full search failed; basic search remains available.'} <button type="button" onClick={() => enableFullSearch(true)}>{language === 'zh' ? '重试' : 'Retry'}</button></span>
+              {directory.loading ? (language === 'zh' ? '正在查询案例…' : 'Loading cases…') : null}
+              {directory.error ? (
+                <span>{language === 'zh' ? '查询失败，已显示的案例仍保留。' : 'Query failed. Previously loaded cases are retained.'} <button type="button" onClick={() => directory.retry()}>{language === 'zh' ? '重试' : 'Retry'}</button></span>
               ) : null}
             </div>
           </div>
@@ -1395,8 +1171,8 @@ function HomePage({
         <AddedDateFilter
           language={language}
           value={activeAddedDate}
-          onChange={(value) => startTransition(() => { setActiveAddedDate(value); setVisibleCount(36) })}
-          unseenCount={updateSession?.cases.ids.size ?? 0}
+          onChange={(value) => startTransition(() => { setActiveAddedDate(value) })}
+          unseenCount={updateSession?.cases.count ?? 0}
           unseenDisabled={unseenDisabled}
           unseenHint={unseenHint}
           idPrefix="case-added-date"
@@ -1411,7 +1187,7 @@ function HomePage({
                   type="button"
                   key={range}
                   className={range === activeDuration ? 'active' : ''}
-                  onClick={() => startTransition(() => { setActiveDuration(range); setVisibleCount(36) })}
+                  onClick={() => startTransition(() => { setActiveDuration(range) })}
                 >
                   <span>{String(index).padStart(2, '0')}</span>{durationLabel(range, language)}
                 </button>
@@ -1422,7 +1198,7 @@ function HomePage({
               className={`prompt-only-toggle${promptOnly ? ' active' : ''}`}
               role="switch"
               aria-checked={promptOnly}
-              onClick={() => startTransition(() => { setPromptOnly((current) => !current); setVisibleCount(36) })}
+              onClick={() => startTransition(() => { setPromptOnly((current) => !current) })}
             >
               <Sparkles size={14} aria-hidden="true" />
               <span>{t.catalog.promptOnly}</span>
@@ -1455,14 +1231,14 @@ function HomePage({
             <span>{advancedCount || '—'} <ChevronDown size={14} /></span>
           </summary>
           <div className="filter-panel">
-            <FilterGroup language={language} kind="category" label={t.catalog.category} options={['ALL', ...allCategories]} counts={facetCounts.category} value={activeCategory} onChange={(value) => startTransition(() => { setActiveCategory(value); setVisibleCount(36) })} />
-            <FilterGroup language={language} kind="style" label={t.catalog.style} options={['ALL', ...allStyles]} counts={facetCounts.style} value={activeStyle} onChange={(value) => startTransition(() => { setActiveStyle(value); setVisibleCount(36) })} />
-            <FilterGroup language={language} kind="scene" label={t.catalog.scene} options={['ALL', ...allScenes]} counts={facetCounts.scene} value={activeScene} onChange={(value) => startTransition(() => { setActiveScene(value); setVisibleCount(36) })} />
+            <FilterGroup language={language} kind="category" label={t.catalog.category} options={['ALL', ...allCategories]} counts={facetCounts.category} value={activeCategory} onChange={(value) => startTransition(() => { setActiveCategory(value) })} />
+            <FilterGroup language={language} kind="style" label={t.catalog.style} options={['ALL', ...allStyles]} counts={facetCounts.style} value={activeStyle} onChange={(value) => startTransition(() => { setActiveStyle(value) })} />
+            <FilterGroup language={language} kind="scene" label={t.catalog.scene} options={['ALL', ...allScenes]} counts={facetCounts.scene} value={activeScene} onChange={(value) => startTransition(() => { setActiveScene(value) })} />
           </div>
         </details>
 
         <div className="catalog-count" aria-live="polite">
-          <span>{String(filtered.length).padStart(2, '0')}</span> {t.catalog.resultUnit}
+          <span>{String(total).padStart(2, '0')}</span> {t.catalog.resultUnit}
         </div>
 
         <div className="case-grid">
@@ -1476,11 +1252,11 @@ function HomePage({
               onOpen={(video) => { track('case-open', { caseId: item.id, category: item.category, mode: item.mode, source: 'grid', locale: language }); setSelected({ item, video }) }}
               isFavorite={favorites.has(item.id)}
               onFavorite={() => toggleFavorite(item.id)}
-              isNew={updateSession?.cases.ids.has(item.id) ?? false}
-              isFeatured={featuredCaseIds.has(item.id)}
+              isNew={matchesAddedDate(item.addedAt, 'unseen', updateSession?.cases)}
+              isFeatured={item.isFeatured ?? featuredCaseIds.has(item.id)}
             />
           ))}
-          {!catalog && !catalogError ? Array.from({ length: 12 }, (_, index) => <div className="case-card case-card-skeleton" key={index} aria-hidden="true"><span /></div>) : null}
+          {(!catalog || (!directory.page && directory.loading)) && !catalogError ? Array.from({ length: 12 }, (_, index) => <div className="case-card case-card-skeleton" key={index} aria-hidden="true"><span /></div>) : null}
         </div>
 
         {catalogError ? (
@@ -1489,11 +1265,11 @@ function HomePage({
 
         {catalog ? (
           <div className={`catalog-pagination${hasMore ? '' : ' is-complete'}`} ref={sentinelRef}>
-            {hasMore ? <button type="button" onClick={loadMoreManually}>{language === 'zh' ? '加载更多案例' : 'Load more cases'} <span>+24</span></button> : null}
+            {hasMore ? <button type="button" disabled={directory.loading} onClick={loadMoreManually}>{language === 'zh' ? '加载更多案例' : 'Load more cases'} <span>+24</span></button> : null}
           </div>
         ) : null}
 
-        {catalog && filtered.length === 0 && (
+        {directory.page && !directory.loading && !directory.error && filtered.length === 0 && (
           <div className="empty-state">
             <span>{hasEmptyFavoriteCollection
               ? t.catalog.favoritesEmptyEyebrow
@@ -1502,7 +1278,7 @@ function HomePage({
                 : t.catalog.noMatchesEyebrow}</span>
             <p>{hasEmptyFavoriteCollection
               ? t.catalog.favoritesEmptyTitle
-              : activeAddedDate === 'unseen' && (updateSession?.cases.ids.size ?? 0) > 0
+              : activeAddedDate === 'unseen' && (updateSession?.cases.count ?? 0) > 0
               ? t.catalog.filteredUpdatesTitle
               : activeAddedDate === 'unseen'
                 ? t.catalog.snapshotEmptyTitle
@@ -1510,9 +1286,9 @@ function HomePage({
             {hasEmptyFavoriteCollection
               ? <small>{t.catalog.favoritesEmptyDescription}</small>
               : activeAddedDate === 'unseen'
-                ? <small>{(updateSession?.cases.ids.size ?? 0) > 0 ? t.catalog.filteredUpdatesDescription : t.catalog.snapshotEmptyDescription}</small>
+                ? <small>{(updateSession?.cases.count ?? 0) > 0 ? t.catalog.filteredUpdatesDescription : t.catalog.snapshotEmptyDescription}</small>
                 : null}
-            {!hasEmptyFavoriteCollection && activeAddedDate === 'unseen' ? <button type="button" onClick={() => resetCaseFilters((updateSession?.cases.ids.size ?? 0) > 0 ? 'unseen' : 'all')}>{(updateSession?.cases.ids.size ?? 0) > 0 ? t.catalog.resetFilters : t.catalog.viewAll}</button> : null}
+            {!hasEmptyFavoriteCollection && activeAddedDate === 'unseen' ? <button type="button" onClick={() => resetCaseFilters((updateSession?.cases.count ?? 0) > 0 ? 'unseen' : 'all')}>{(updateSession?.cases.count ?? 0) > 0 ? t.catalog.resetFilters : t.catalog.viewAll}</button> : null}
           </div>
         )}
         <div className="update-read-status" aria-live="polite">
@@ -1906,19 +1682,19 @@ function TutorialsPage({
     updateVisibilityTarget,
     activeAddedDate === 'unseen'
       && foundations.length + sortedCommunity.length > 0
-      && updateSession.tutorials.ids.size > 0
+      && updateSession.tutorials.count > 0
       && updateSession.storageAvailable
       && !acknowledged
       && !tutorialAlreadyAcknowledged,
     acknowledgeVisibleTutorials,
   )
   const unseenDisabled = !updateSession.tutorials.explicit
-    && (!updateSession.storageAvailable || updateSession.tutorials.ids.size === 0)
+    && (!updateSession.storageAvailable || updateSession.tutorials.count === 0)
   const unseenHint = !updateSession.storageAvailable
     ? copy[language].catalog.storageUnavailableHint
     : updateSession.firstVisit
       ? copy[language].catalog.trackingStartsNow
-      : updateSession.tutorials.ids.size === 0 && !updateSession.tutorials.explicit
+      : updateSession.tutorials.count === 0 && !updateSession.tutorials.explicit
         ? copy[language].catalog.noUnseenUpdates
         : copy[language].catalog.personalUpdateDescription
 
@@ -1963,7 +1739,7 @@ function TutorialsPage({
                   </a>
                   <div className="foundation-route-copy">
                     <div className="added-at-meta">
-                      {updateSession.tutorials.ids.has(tutorial.id) ? <strong>{copy[language].catalog.newlyAdded}</strong> : null}
+                      {matchesAddedDate(tutorial.addedAt, 'unseen', updateSession.tutorials) ? <strong>{copy[language].catalog.newlyAdded}</strong> : null}
                       <time dateTime={tutorial.addedAt}>{copy[language].catalog.addedOn(formatAddedDate(tutorial.addedAt, language))}</time>
                     </div>
                     <small>{t.routeLabel} / {tutorial.tags[0]}</small>
@@ -2017,7 +1793,7 @@ function TutorialsPage({
           language={language}
           value={activeAddedDate}
           onChange={setActiveAddedDate}
-          unseenCount={updateSession.tutorials.ids.size}
+          unseenCount={updateSession.tutorials.count}
           unseenDisabled={unseenDisabled}
           unseenHint={unseenHint}
           idPrefix="tutorial-added-date"
@@ -2045,7 +1821,7 @@ function TutorialsPage({
                 </a>
                 <div className="community-tutorial-copy">
                   <div className="added-at-meta">
-                    {updateSession.tutorials.ids.has(tutorial.id) ? <strong>{copy[language].catalog.newlyAdded}</strong> : null}
+                    {matchesAddedDate(tutorial.addedAt, 'unseen', updateSession.tutorials) ? <strong>{copy[language].catalog.newlyAdded}</strong> : null}
                     <time dateTime={tutorial.addedAt}>{copy[language].catalog.addedOn(formatAddedDate(tutorial.addedAt, language))}</time>
                   </div>
                   <small>{t.categories[tutorial.category]} / {tutorial.source.handle || tutorial.source.author}</small>
@@ -2059,13 +1835,13 @@ function TutorialsPage({
         ) : foundations.length === 0 ? (
           <div className="tutorial-empty">
             <span>00</span>
-            <p>{activeAddedDate === 'unseen' && updateSession.tutorials.ids.size > 0
+            <p>{activeAddedDate === 'unseen' && updateSession.tutorials.count > 0
               ? copy[language].catalog.filteredUpdatesTitle
               : activeAddedDate === 'unseen'
                 ? copy[language].catalog.snapshotEmptyTitle
                 : t.noResults}</p>
-            {activeAddedDate === 'unseen' ? <small>{updateSession.tutorials.ids.size > 0 ? copy[language].catalog.filteredUpdatesDescription : copy[language].catalog.snapshotEmptyDescription}</small> : null}
-            {activeAddedDate === 'unseen' ? <button type="button" onClick={() => resetTutorialFilters(updateSession.tutorials.ids.size > 0 ? 'unseen' : 'all')}>{updateSession.tutorials.ids.size > 0 ? copy[language].catalog.resetFilters : copy[language].catalog.viewAll}</button> : null}
+            {activeAddedDate === 'unseen' ? <small>{updateSession.tutorials.count > 0 ? copy[language].catalog.filteredUpdatesDescription : copy[language].catalog.snapshotEmptyDescription}</small> : null}
+            {activeAddedDate === 'unseen' ? <button type="button" onClick={() => resetTutorialFilters(updateSession.tutorials.count > 0 ? 'unseen' : 'all')}>{updateSession.tutorials.count > 0 ? copy[language].catalog.resetFilters : copy[language].catalog.viewAll}</button> : null}
           </div>
         ) : null}
         <div className="update-read-status" aria-live="polite">
@@ -2449,32 +2225,30 @@ function CreatorDetailPage({ language, creator, cases, featuredCaseIds, tutorial
   const [savedCreators, setSavedCreators] = useState(() => loadStoredSet(favoriteCreatorStorageKey))
   const [favoriteCases, setFavoriteCases] = useState(() => loadStoredSet(favoriteStorageKey))
   const [promptOnly, setPromptOnly] = useState(() => new URLSearchParams(window.location.search).get('prompt') === '1')
-  const [activeDuration, setActiveDuration] = useState<DurationRange>('ALL')
-  const [activeCategory, setActiveCategory] = useState('ALL')
+  const [activeDuration, setActiveDuration] = useState<DurationRange>(() => initialFilters().duration)
+  const [activeCategory, setActiveCategory] = useState(() => initialTaxonomyFilter('category'))
   const [selected, setSelected] = useState<OpenedCase | null>(null)
-  const creatorCases = creator.caseIds.map((id) => cases.find((item) => item.id === id)).filter((item): item is CatalogCase => Boolean(item))
-  const creatorCategorySet = new Set(creatorCases.map((item) => item.category))
-  const creatorCategories = taxonomyFilterOptions.category.filter((category) => creatorCategorySet.has(category))
+  const creatorQueryUrl = new URL('http://localhost')
+  writeFilters(creatorQueryUrl, { category: activeCategory, duration: activeDuration, prompt: promptOnly })
+  creatorQueryUrl.searchParams.set('creator', creator.slug)
+  creatorQueryUrl.searchParams.set('language', language)
+  const directory = useCatalogQuery(creatorQueryUrl.searchParams, [], true, testQueryIndex)
+  const filteredCases = directory.page?.cases ?? emptyCatalogCases
+  const creatorCategories = taxonomyFilterOptions.category.filter(category => (directory.page?.facets.category[category] ?? 0) > 0 || category === activeCategory)
   const creatorTutorials = creator.tutorialIds.map((id) => tutorialGuides.find((item) => item.id === id)).filter((item): item is TutorialGuide => Boolean(item))
   const saved = savedCreators.has(creator.id)
   const featuredIds = useMemo(() => new Set(featuredCaseIds), [featuredCaseIds])
 
+  const previousFiltersRef = useRef<string | null>(null)
   useEffect(() => {
-    const url = new URL(window.location.href)
-    if (promptOnly) url.searchParams.set('prompt', '1')
-    else url.searchParams.delete('prompt')
-    window.history.replaceState(window.history.state, '', `${url.pathname}${url.search}${url.hash}`)
-  }, [promptOnly])
+    const state = { category: activeCategory, duration: activeDuration, prompt: promptOnly }
+    const serialized = JSON.stringify(state)
+    const method = previousFiltersRef.current !== null && previousFiltersRef.current !== serialized ? 'pushState' : 'replaceState'
+    previousFiltersRef.current = serialized
+    const path = writeFilters(new URL(window.location.href), state)
+    if (path !== `${window.location.pathname}${window.location.search}${window.location.hash}`) window.history[method](window.history.state, '', path)
+  }, [activeCategory, activeDuration, promptOnly])
 
-  const filteredCases = creatorCases.filter((item) => {
-    const durationMatches = activeDuration === 'ALL'
-      || (activeDuration === 'UP_TO_5' && item.duration <= 5)
-      || (activeDuration === 'SIX_TO_10' && item.duration > 5 && item.duration <= 10)
-      || (activeDuration === 'ELEVEN_TO_15' && item.duration > 10 && item.duration <= 15)
-      || (activeDuration === 'OVER_15' && item.duration > 15)
-    const categoryMatches = activeCategory === 'ALL' || item.category === activeCategory
-    return durationMatches && categoryMatches && (!promptOnly || item.hasPrompt)
-  })
 
   const toggleCreator = () => {
     setSavedCreators((current) => {
@@ -2519,7 +2293,7 @@ function CreatorDetailPage({ language, creator, cases, featuredCaseIds, tutorial
           </dl>
         </header>
 
-        {creatorCases.length > 0 && (
+        {creator.caseCount > 0 && (
           <section className="creator-work" aria-labelledby="creator-work-title">
             <header>
               <div><span>01</span><h2 id="creator-work-title">{t.work}</h2></div>
@@ -2532,7 +2306,10 @@ function CreatorDetailPage({ language, creator, cases, featuredCaseIds, tutorial
             <div className="case-grid">
               {filteredCases.map((item, index) => <CaseCard key={item.id} item={item} index={index} language={language} onOpen={(video) => { track('case-open', { caseId: item.id, category: item.category, mode: item.mode, source: 'creator', locale: language }); setSelected({ item, video }) }} isFavorite={favoriteCases.has(item.id)} onFavorite={() => toggleCase(item.id)} isNew={false} isFeatured={featuredIds.has(item.id)} />)}
             </div>
-            {filteredCases.length === 0 && <div className="creator-empty"><p>{t.noCases}</p></div>}
+            {directory.loading ? <ResourceState language={language} /> : null}
+            {directory.error ? <ResourceState language={language} failed onRetry={directory.retry} /> : null}
+            {directory.page?.nextCursor ? <div className="catalog-pagination"><button type="button" disabled={directory.loading} onClick={directory.loadMore}>{language === 'zh' ? '加载更多案例' : 'Load more cases'} <span>+24</span></button></div> : null}
+            {directory.page && !directory.loading && filteredCases.length === 0 && <div className="creator-empty"><p>{t.noCases}</p></div>}
           </section>
         )}
 

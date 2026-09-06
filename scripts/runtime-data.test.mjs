@@ -1,3 +1,5 @@
+import { readCatalogSnapshot } from './catalog-snapshot.mjs'
+import { createCatalogIndex, queryCatalog } from '../shared/catalog-query.mjs'
 import { strict as assert } from 'node:assert'
 import { readFile, readdir } from 'node:fs/promises'
 import { resolve } from 'node:path'
@@ -9,13 +11,18 @@ const sourceCases = JSON.parse(await readFile(resolve(root, 'data/cases.json'), 
 const catalogPath = resolve(root, 'public/data/catalog.json')
 const catalog = JSON.parse(await readFile(catalogPath, 'utf8'))
 
-test('runtime catalog is complete, unique, light, and contains no detail text', async () => {
+test('compatibility catalog is complete, unique, and contains no detail text', async () => {
   assert.equal(catalog.cases.length, sourceCases.length)
   assert.equal(new Set(catalog.cases.map((item) => item.id)).size, sourceCases.length)
   assert.ok(catalog.cases.every((item) => item.mediaUrl && item.sourceUrl))
   assert.ok(catalog.cases.every((item) => !Number.isNaN(Date.parse(item.addedAt))))
   assert.ok(catalog.cases.every((item) => !Object.hasOwn(item, 'summary') && !Object.hasOwn(item, 'prompt') && !Object.hasOwn(item, 'sourceCaption')))
-  assert.ok(gzipSync(await readFile(catalogPath)).byteLength <= 150 * 1024)
+  const index = createCatalogIndex(await readCatalogSnapshot(resolve(root, 'build/server-data/catalog.ndjson')))
+  const first = queryCatalog(index)
+  assert.equal(first.cases.length, 36)
+  assert.equal(first.total, sourceCases.length)
+  assert.ok(gzipSync(JSON.stringify(first)).byteLength <= 50 * 1024)
+  assert.ok(Buffer.byteLength(JSON.stringify(first)) <= 250 * 1024)
   assert.ok(catalog.featuredCaseIds.length >= 24 && catalog.featuredCaseIds.length <= 28)
   assert.equal(new Set(catalog.featuredCaseIds).size, catalog.featuredCaseIds.length)
   assert.deepEqual(new Set(catalog.featuredCaseIds), new Set(sourceCases.filter((item) => item.featured).map((item) => item.id)))
@@ -56,7 +63,7 @@ test('case details and catalog entries reconstruct all dialog fields', async () 
   }
 })
 
-test('localized search indexes stay within budget and cover every public case', async () => {
+test('compatibility search indexes cover every public case while API search stays within its response budget', async () => {
   for (const language of ['zh', 'en']) {
     const path = resolve(root, `public/data/search-index.${language}.json`)
     const body = await readFile(path)
@@ -64,6 +71,9 @@ test('localized search indexes stay within budget and cover every public case', 
     assert.equal(records.length, sourceCases.length)
     assert.equal(new Set(records.map((item) => item.id)).size, sourceCases.length)
     assert.ok(records.every((item) => item.text === item.text.toLocaleLowerCase()))
-    assert.ok(gzipSync(body).byteLength <= 700 * 1024)
+    const index = createCatalogIndex(await readCatalogSnapshot(resolve(root, 'build/server-data/catalog.ndjson')))
+    const page = queryCatalog(index, new URLSearchParams({ language, q: 'H3' }))
+    assert.ok(page.cases.length <= 36)
+    assert.ok(gzipSync(JSON.stringify(page)).byteLength <= 50 * 1024)
   }
 })

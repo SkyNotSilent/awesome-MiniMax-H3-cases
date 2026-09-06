@@ -207,7 +207,8 @@ describe('case-first routes', () => {
     fireEvent.click(screen.getByRole('button', { name: /5 秒及以下/ }))
     expect(screen.getByText('粉色西装与黑色羔羊')).toBeInTheDocument()
     expect(screen.queryByText('舰桥上的跃迁余震')).not.toBeInTheDocument()
-    expect(window.location.search).toBe('?collection=official')
+    expect(new URLSearchParams(window.location.search).get('collection')).toBe('official')
+    expect(new URLSearchParams(window.location.search).get('duration')).toBe('UP_TO_5')
   })
 
   it('renders editor picks from the explicit ordered catalog without requiring a Prompt', () => {
@@ -245,7 +246,8 @@ describe('case-first routes', () => {
     expect(screen.getByRole('switch', { name: '只看有 Prompt' })).toHaveAttribute('aria-checked', 'false')
     expect(screen.getByPlaceholderText('搜索案例、场景或创作者…')).toHaveValue('')
     expect(screen.getByRole('button', { name: /全部时长/ })).toHaveClass('active')
-    expect(window.location.search).toBe('?collection=official')
+    expect(new URLSearchParams(window.location.search).get('collection')).toBe('official')
+    expect(new URLSearchParams(window.location.search).get('duration')).toBeNull()
 
     fireEvent.click(screen.getByRole('button', { name: /5 秒及以下/ }))
     expect(screen.getByText('粉色西装与黑色羔羊')).toBeInTheDocument()
@@ -253,7 +255,7 @@ describe('case-first routes', () => {
 
     fireEvent.click(within(collections).getByRole('button', { name: '官方案例' }))
     expect(within(collections).getByRole('button', { name: '官方案例' })).toHaveAttribute('aria-pressed', 'false')
-    expect(window.location.search).toBe('')
+    expect(window.location.search).toBe('?added=all')
     expect(screen.getByRole('button', { name: /全部时长/ })).toHaveClass('active')
     expect(screen.getByText('餐厅时间冻结与逆向复原')).toBeInTheDocument()
   })
@@ -395,7 +397,7 @@ describe('case-first routes', () => {
     expect(screen.getByText('这个时间段没有新增内容。')).toBeInTheDocument()
     fireEvent.click(screen.getByRole('button', { name: '查看全部' }))
     expect(screen.getByText('舰桥上的跃迁余震')).toBeInTheDocument()
-    expect(window.location.search).toBe('')
+    expect(window.location.search).toBe('?added=all')
   })
 
   it('lets explicit URL filters override automatic returning-visitor behavior', () => {
@@ -422,12 +424,12 @@ describe('case-first routes', () => {
     cleanup()
     renderAt('/?added=unseen&since=not-a-date')
     expect(within(screen.getByRole('group', { name: '本站收录时间' })).getByRole('button', { name: /^全部$/ })).toHaveAttribute('aria-pressed', 'true')
-    expect(window.location.search).toBe('')
+    expect(window.location.search).toBe('?added=all')
 
     cleanup()
     renderAt('/?added=unseen&since=2026-08-20T00%3A00%3A00.000Z&through=2026-08-19T00%3A00%3A00.000Z')
     expect(within(screen.getByRole('group', { name: '本站收录时间' })).getByRole('button', { name: /^全部$/ })).toHaveAttribute('aria-pressed', 'true')
-    expect(window.location.search).toBe('')
+    expect(window.location.search).toBe('?added=all')
   })
 
   it('stores anonymous favorites locally and restores the saved collection', () => {
@@ -820,5 +822,24 @@ describe('language isolation', () => {
       'href',
       'https://x.com/YukYukID/status/2085553970702074050',
     )
+  })
+})
+
+describe('shareable filters', () => {
+  it.each(['category=comparison', 'style=photoreal', 'scene=city', 'category=invalid', 'q=H3', 'duration=OVER_15'])('does not attach a personal time window to %s', (filter) => {
+    window.localStorage.setItem(caseUpdatesSeenThroughKey, '2026-08-01T00:00:00.000Z')
+    renderAt(`/?${filter}`)
+    expect(new URLSearchParams(window.location.search).get('added')).not.toBe('unseen')
+  })
+
+  it('restores search and duration from a shared URL and popstate', () => {
+    renderAt('/?q=starship&duration=OVER_15')
+    expect(screen.getByRole('textbox')).toHaveValue('starship')
+    act(() => {
+      window.history.pushState({}, '', '/?q=ramen&duration=UP_TO_5')
+      window.dispatchEvent(new PopStateEvent('popstate'))
+    })
+    expect(screen.getByRole('textbox')).toHaveValue('ramen')
+    expect(new URLSearchParams(window.location.search).get('duration')).toBe('UP_TO_5')
   })
 })
