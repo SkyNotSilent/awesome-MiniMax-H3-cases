@@ -147,7 +147,7 @@ npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
 - `npm run videos:playback:audit` 执行只读清点，`npm run videos:playback:migrate -- --apply` 生成版本化播放层，切换前后运行 `npm run videos:playback:verify`；迁移报告只保存在被忽略的 `.review/`。
 
 <!-- build-metrics:start -->
-**参考构建（Node 22.23.1，不含分析服务配置）：** 首页 JavaScript gzip 99.6 kB · 中文 / 英文首页 HTML gzip 9.8 kB / 9.1 kB · 首批 API gzip 5.5 kB · 下一页 API gzip 4.3 kB · 搜索响应 gzip 5.5 kB · 本地非阻塞字体 51.3 kB · 仅服务端索引 gzip 1033.8 kB。静态预算运行 `npm run performance:budget`；启动本地生产服务后运行 `npm run performance:browser` 验证浏览器行为。
+**参考构建（Node 22.23.1，不含分析服务配置）：** 首页 JavaScript gzip 99.5 kB · 中文 / 英文首页 HTML gzip 9.8 kB / 9.1 kB · 首批 API gzip 5.5 kB · 下一页 API gzip 4.3 kB · 搜索响应 gzip 5.5 kB · 本地非阻塞字体 51.3 kB · 仅服务端索引 gzip 1033.8 kB。静态预算运行 `npm run performance:budget`；启动本地生产服务后运行 `npm run performance:browser` 验证浏览器行为。
 <!-- build-metrics:end -->
 
 ## 投稿、纠错与下架
