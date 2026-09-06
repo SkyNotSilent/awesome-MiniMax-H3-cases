@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom/vitest'
 import { act, cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import projectStats from '../data/project-stats.json'
 import App from './App'
 import { languagePreferenceKey } from './i18n'
 import {
@@ -34,6 +35,14 @@ function renderAt(pathname: string) {
   window.history.replaceState({}, '', pathname)
   return render(<App />)
 }
+
+const latestUpdateSummary = [
+  projectStats.latestUpdate.casesAdded ? `新增 ${projectStats.latestUpdate.casesAdded} 个案例` : '',
+  projectStats.latestUpdate.promptsAdded ? `${projectStats.latestUpdate.promptsAdded} 条完整 Prompt` : '',
+  projectStats.latestUpdate.tutorialsAdded ? `${projectStats.latestUpdate.tutorialsAdded} 篇教程` : '',
+].filter(Boolean).join(' · ')
+const [, latestMonth, latestDay] = projectStats.latestUpdate.publishedAt.split('-').map(Number)
+const latestUpdateDate = `${latestMonth}月${latestDay}日`
 
 beforeEach(() => {
   window.localStorage.clear()
@@ -255,7 +264,7 @@ describe('case-first routes', () => {
     expect(within(screen.getByRole('group', { name: '本站收录时间' })).getByRole('button', { name: /^全部$/ })).toHaveAttribute('aria-pressed', 'true')
     expect(screen.getByRole('button', { name: /本次新增/ })).toBeDisabled()
     expect(document.querySelector('.update-strip')).toBeInTheDocument()
-    expect(screen.getByText('案例按最新收录排序 · 最近一次更新：新增 24 个案例 · 5 条完整 Prompt')).toBeInTheDocument()
+    expect(screen.getByText(`案例按最新收录排序 · 最近一次更新：${latestUpdateSummary}`)).toBeInTheDocument()
     expect(screen.queryByText('创作者榜已更新')).not.toBeInTheDocument()
     expect(screen.getByText('从本次访问开始记录；当前没有可比较的上次访问。')).toBeInTheDocument()
     expect(window.localStorage.getItem(caseUpdatesSeenThroughKey)).toBe('2026-08-20T12:20:35.382Z')
@@ -271,7 +280,7 @@ describe('case-first routes', () => {
     renderAt('/')
 
     expect(document.querySelector('.update-strip')).toBeInTheDocument()
-    expect(screen.getByText('最近一次更新于 9月5日 · 新增 24 个案例 · 5 条完整 Prompt')).toBeInTheDocument()
+    expect(screen.getByText(`最近一次更新于 ${latestUpdateDate} · ${latestUpdateSummary}`)).toBeInTheDocument()
     expect(screen.queryByText(/新增 0/)).not.toBeInTheDocument()
   })
 
@@ -343,7 +352,7 @@ describe('case-first routes', () => {
     try {
       renderAt('/')
       expect(document.querySelector('.update-strip')).toBeInTheDocument()
-      expect(screen.getByText('无法保存访问进度 · 最近一次更新：新增 24 个案例 · 5 条完整 Prompt')).toBeInTheDocument()
+      expect(screen.getByText(`无法保存访问进度 · 最近一次更新：${latestUpdateSummary}`)).toBeInTheDocument()
       expect(screen.getByRole('button', { name: /本次新增/ })).toBeDisabled()
       expect(screen.getByRole('button', { name: '今天' })).toBeEnabled()
       expect(screen.getByText('浏览器存储不可用，无法计算自上次访问新增。')).toBeInTheDocument()

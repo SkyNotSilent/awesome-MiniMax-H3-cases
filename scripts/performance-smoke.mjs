@@ -95,6 +95,7 @@ async function checkDesktop(browser) {
   const searchIndexResponse = page.waitForResponse((response) => response.url().endsWith('/data/search-index.zh.json'))
   await search.focus()
   await searchIndexResponse
+  await page.waitForFunction(() => document.querySelector('.search-index-status')?.textContent.trim() === '')
   await page.evaluate(() => {
     window.__h3SearchStartedAt = null
     window.__h3SearchRenderedAt = null
@@ -121,12 +122,16 @@ async function checkDesktop(browser) {
   const searchDelay = await page.evaluate(() => window.__h3SearchRenderedAt - window.__h3SearchStartedAt)
   if (searchDelay > 100) throw new Error(`Search response took ${searchDelay.toFixed(1)}ms`)
   await search.fill('')
+  await page.waitForFunction(() => document.querySelectorAll('.case-card').length >= 36)
+  await page.waitForTimeout(1_600)
 
   const loadButton = page.getByRole('button', { name: /加载更多案例/ })
-  for (let count = 60; count <= 132; count += 24) {
+  for (let step = 0; step < 4; step += 1) {
+    const before = await page.locator('.case-card').count()
     await loadButton.click()
     const actual = await page.locator('.case-card').count()
-    if (actual !== count) throw new Error(`Expected ${count} cards after button load, received ${actual}`)
+    const expected = before + 24
+    if (actual !== expected) throw new Error(`Expected ${expected} cards after button load, received ${actual}`)
   }
   const card120Opacity = await page.locator('.case-card').nth(119).evaluate((element) => getComputedStyle(element).opacity)
   if (card120Opacity !== '1') throw new Error(`Card 120 is transparent (${card120Opacity})`)

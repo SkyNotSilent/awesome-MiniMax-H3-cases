@@ -64952,5 +64952,814 @@
     },
     "approvedAt": "2026-09-05T00:12:52.244Z",
     "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096262846963396954",
+    "title": "雨巷里的贴身格斗",
+    "titleEn": "A Close-Quarters Fight in a Rainy Alley",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "FL2VA",
+    "summary": "两名女格斗家在雨夜巷道中完成连续踢击、倒地与近距离对峙，最后以一句克制对白收束。 原生视频规格为 15 秒 · 3840×2160。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "Two women trade grounded kicks in a rain-soaked alley before the action narrows into a restrained face-to-face exchange. Native-video output: 15s · 3840×2160. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] Photoreal live-action rainy alley confrontation between adult Chun-Li and Cammy. Preserve the exact opening composition, identities, hairstyles, costumes, proportions, wet East Asian alley, lanterns, puddles, rainfall, and light positions from <Picture 1>. Continue the airborne kick collision already in progress with no freeze, reset, or new wind-up. Contact shakes rain from skin and fabric; puddle splashes happen only on landing. Follow collision, recoil, and landing. Chun-Li (S1) lands stable, bends her knees, restores torso alignment, exhales sharply, and watches Cammy’s shoulder line. Cammy (S2) lands lower, slides briefly, regains support, and stays pitched forward. [Shot 2] At 00:01.400, the camera cuts to a matched advancing three-quarter view after landing. Cammy wipes rain and a trace of blood from her lip once, looks up, and drives in low. Chun-Li reads shoulder and hip initiation, makes a short evasive adjustment, intercepts with one compact kick, retracts, and adds one short pressing kick that shifts Cammy half a step off line. Show planted support, contact, recoil, and recovery. [Shot 3] At 00:03.800, the camera cuts to a lateral close two-shot on Cammy’s recovery. Cammy presses back into close range without resetting. Chun-Li redirects the entry and takes the centerline. Their faces draw near during the brief check. Chun-Li meets Cammy’s eyes. Cammy glances down and aside for one instant, catches breath, tightens her jaw, and attacks again. Chun-Li’s movements grow shorter and more precise while Cammy’s shoulders tighten and breathing fragments. [Shot 4] At 00:06.500, the camera cuts along Cammy’s renewed forward commitment. She gives half a step, lunges again too early, and places weight too far forward. Chun-Li intercepts the entry, sets her support foot, rotates through her hips, and lands one decisive kick to Cammy’s torso. The camera makes one short controlled whip with the turn, then settles before impact. Cammy recoils diagonally, skids through a puddle, loses support, braces with a forearm, and falls onto hip and side in shallow water. No hovering, no exaggerated flight. Chun-Li retracts, plants, and does not pursue. [Shot 5] At 00:09.800, the camera cuts on Cammy’s hand planting on the wet ground. Cammy raises her upper body with a small shoulder load tremor and keeps a defiant lifted chin. Chun-Li approaches with one or two measured steps, then lowers in a controlled squat until both women’s eyes are level. Cammy checks Chun-Li’s hands, then looks into her eyes. Chun-Li does not touch her. Before 00:12.000, settle into a lateral close two-shot with both eyes and Chun-Li’s mouth readable. [Shot 6] At 00:12.000, the camera cuts seamlessly on the completed squat into the settled close two-shot and holds this angle to the end. Chun-Li (S1), in a mature calm female voice, says: <d>[English] You would rather hate me than tell the truth.</d> Deliver the line evenly, with slight extra weight on “hate me” and a firm landing on “truth,” finishing by about 00:14.500. Cammy (S2) keeps eye contact, takes one audible inward breath as if to answer, parts her lips slightly, but says nothing. Chun-Li adds nothing. Rain continues along eyelashes, cheeks, and jaws; both breathing and tiny balance adjustments remain visible until 15.00 seconds. End on unresolved proximity with no freeze, fade, or reconciliation. Treat all six shots as one continuous confrontation, not separate rounds. No action-showcase fighting, no round reset, no routine reverse coverage, no arbitrary cuts, no showy orbiting, no uncontrolled shake, no blank expressions, no glassy eyes, no exaggerated lip sync, no weightless kicks, no unsupported aerial combos, no extra dialogue, no subtitles, no watermarks, no identity drift, no malformed bodies or hands.\n\noverall_soundscape: Two distinct female vocal identities only: Chun-Li mature and steady, Cammy younger and tighter, expressed only through breath and impact exhalations. Heavy rain, splashing steps, wet fabric friction, short solid body impacts, close breathing, and distant alley ambience remain continuous. Lower the environment slightly before the line while keeping rain audible, then retain Cammy’s unanswered inhale and nearby rainfall after it.\n\nnon_diegetic_music: N/A",
+    "promptSourceUrl": "https://x.com/ou_zhen599/status/2096262846963396954",
+    "sourceUrl": "https://x.com/ou_zhen599/status/2096262846963396954",
+    "sourceLabel": "X 原帖 · @ou_zhen599",
+    "author": "Loriel.AI",
+    "publishedAt": "2026-09-05T15:43:04.000Z",
+    "addedAt": "2026-09-06T02:44:35.372Z",
+    "mediaUrl": "/media/x-2096262846963396954.mp4",
+    "posterUrl": "/posters/x/2096262846963396954.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "3840×2160",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "action-vfx",
+    "styles": [
+      "cinematic-realistic",
+      "photoreal"
+    ],
+    "scenes": [
+      "combat",
+      "dialogue"
+    ],
+    "inputTypes": [
+      "text",
+      "image"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Made with MiniMax-H3\n\n⛈️Image-to-Video: “Unspoken in the Rain”\nThe combat in H3 is difficult; you'll need to use Lora to get through it. Character models glitching at high speeds is also a common issue.\n\nMiniMax-H3 prompt👇\nFor the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] Photoreal live-action rainy alley confrontation between adult Chun-Li and Cammy. Preserve the exact opening composition, identities, hairstyles, costumes, proportions, wet East Asian alley, lanterns, puddles, rainfall, and light positions from <Picture 1>. Continue the airborne kick collision already in progress with no freeze, reset, or new wind-up. Contact shakes rain from skin and fabric; puddle splashes happen only on landing. Follow collision, recoil, and landing. Chun-Li (S1) lands stable, bends her knees, restores torso alignment, exhales sharply, and watches Cammy’s shoulder line. Cammy (S2) lands lower, slides briefly, regains support, and stays pitched forward. [Shot 2] At 00:01.400, the camera cuts to a matched advancing three-quarter view after landing. Cammy wipes rain and a trace of blood from her lip once, looks up, and drives in low. Chun-Li reads shoulder and hip initiation, makes a short evasive adjustment, intercepts with one compact kick, retracts, and adds one short pressing kick that shifts Cammy half a step off line. Show planted support, contact, recoil, and recovery. [Shot 3] At 00:03.800, the camera cuts to a lateral close two-shot on Cammy’s recovery. Cammy presses back into close range without resetting. Chun-Li redirects the entry and takes the centerline. Their faces draw near during the brief check. Chun-Li meets Cammy’s eyes. Cammy glances down and aside for one instant, catches breath, tightens her jaw, and attacks again. Chun-Li’s movements grow shorter and more precise while Cammy’s shoulders tighten and breathing fragments. [Shot 4] At 00:06.500, the camera cuts along Cammy’s renewed forward commitment. She gives half a step, lunges again too early, and places weight too far forward. Chun-Li intercepts the entry, sets her support foot, rotates through her hips, and lands one decisive kick to Cammy’s torso. The camera makes one short controlled whip with the turn, then settles before impact. Cammy recoils diagonally, skids through a puddle, loses support, braces with a forearm, and falls onto hip and side in shallow water. No hovering, no exaggerated flight. Chun-Li retracts, plants, and does not pursue. [Shot 5] At 00:09.800, the camera cuts on Cammy’s hand planting on the wet ground. Cammy raises her upper body with a small shoulder load tremor and keeps a defiant lifted chin. Chun-Li approaches with one or two measured steps, then lowers in a controlled squat until both women’s eyes are level. Cammy checks Chun-Li’s hands, then looks into her eyes. Chun-Li does not touch her. Before 00:12.000, settle into a lateral close two-shot with both eyes and Chun-Li’s mouth readable. [Shot 6] At 00:12.000, the camera cuts seamlessly on the completed squat into the settled close two-shot and holds this angle to the end. Chun-Li (S1), in a mature calm female voice, says: <d>[English] You would rather hate me than tell the truth.</d> Deliver the line evenly, with slight extra weight on “hate me” and a firm landing on “truth,” finishing by about 00:14.500. Cammy (S2) keeps eye contact, takes one audible inward breath as if to answer, parts her lips slightly, but says nothing. Chun-Li adds nothing. Rain continues along eyelashes, cheeks, and jaws; both breathing and tiny balance adjustments remain visible until 15.00 seconds. End on unresolved proximity with no freeze, fade, or reconciliation. Treat all six shots as one continuous confrontation, not separate rounds. No action-showcase fighting, no round reset, no routine reverse coverage, no arbitrary cuts, no showy orbiting, no uncontrolled shake, no blank expressions, no glassy eyes, no exaggerated lip sync, no weightless kicks, no unsupported aerial combos, no extra dialogue, no subtitles, no watermarks, no identity drift, no malformed bodies or hands.\n\noverall_soundscape: Two distinct female vocal identities only: Chun-Li mature and steady, Cammy younger and tighter, expressed only through breath and impact exhalations. Heavy rain, splashing steps, wet fabric friction, short solid body impacts, close breathing, and distant alley ambience remain continuous. Lower the environment slightly before the line while keeping rain audible, then retain Cammy’s unanswered inhale and nearby rainfall after it.\n\nnon_diegetic_music: N/A",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 3,
+      "views": 270,
+      "snapshotAt": "2026-09-06T02:44:35.372Z"
+    },
+    "approvedAt": "2026-09-06T02:44:35.372Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096176539792486835",
+    "title": "战士之间的微妙对话",
+    "titleEn": "A Subtle Exchange Between Warriors",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "两名写实奇幻战士在近景中交谈，停顿、表情变化与眼神反应共同推动情绪。 原生视频规格为 15 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Two photoreal fantasy warriors converse in close-up, with pauses, expressions, and eye movements carrying the scene. Native-video output: 15s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/CharaspowerAI/status/2096176539792486835",
+    "sourceLabel": "X 原帖 · @CharaspowerAI",
+    "author": "Pierrick Chevallier | IA",
+    "publishedAt": "2026-09-05T10:00:06.000Z",
+    "addedAt": "2026-09-06T02:44:35.372Z",
+    "mediaUrl": "/media/x-2096176539792486835.mp4",
+    "posterUrl": "/posters/x/2096176539792486835.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "角色对白",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "dialogue",
+    "styles": [
+      "cinematic-realistic",
+      "photoreal"
+    ],
+    "scenes": [
+      "dialogue",
+      "performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Don’t forget how good Minimax H3 is at something people still don’t talk about enough:\nVoices + acting. 🎭🔥\n\nDialogue delivery, pauses, expressions, reactions…\nYou can push this model MUCH further than simple image animation.",
+    "engagement": {
+      "replies": 14,
+      "reposts": 6,
+      "likes": 88,
+      "views": 4634,
+      "snapshotAt": "2026-09-06T02:44:35.372Z"
+    },
+    "approvedAt": "2026-09-06T02:44:35.372Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096420254511751382",
+    "title": "盛夏里的冷荞麦面",
+    "titleEn": "Cold Soba on a Hot Summer Day",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "金发动画角色在餐桌前大口吃完冷荞麦面，端起碗喝尽汤汁，动作连贯自然。 原生视频规格为 10 秒 · 1280×736。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A blonde anime character finishes a bowl of cold soba, then lifts the bowl to drink the remaining broth in one fluid action. Native-video output: 10s · 1280×736. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/kozakana51/status/2096420254511751382",
+    "sourceLabel": "X 原帖 · @kozakana51",
+    "author": "kozakana",
+    "publishedAt": "2026-09-06T02:08:32.000Z",
+    "addedAt": "2026-09-06T02:44:35.372Z",
+    "mediaUrl": "/media/x-2096420254511751382.mp4",
+    "posterUrl": "/posters/x/2096420254511751382.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "1280×736",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime"
+    ],
+    "scenes": [
+      "food",
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "暑さのせいにしてお行儀悪く冷やしぶっかけそばを完食する九堂ミリアムさん\n#AI動画　#大食いガール　#MiniMaxH3練習",
+    "engagement": {
+      "replies": 1,
+      "reposts": 1,
+      "likes": 2,
+      "views": 30,
+      "snapshotAt": "2026-09-06T02:44:35.372Z"
+    },
+    "approvedAt": "2026-09-06T02:44:35.372Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096419150134731258",
+    "title": "驶过郊外小站",
+    "titleEn": "Passing Through a Rural Station",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "T2VA",
+    "summary": "列车驾驶室视角沿轨道前进并穿过一座小型郊外车站，前景操控台与窗外景物保持稳定。 原生视频规格为 15 秒 · 736×992。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A driver-cab view advances along the rails and passes a compact rural station while the console and outside scenery remain coherent. Native-video output: 15s · 736×992. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/mix_buchi_/status/2096419150134731258",
+    "sourceLabel": "X 原帖 · @mix_buchi_",
+    "author": "buchi_",
+    "publishedAt": "2026-09-06T02:04:09.000Z",
+    "addedAt": "2026-09-06T02:44:35.372Z",
+    "mediaUrl": "/media/x-2096419150134731258.mp4",
+    "posterUrl": "/posters/x/2096419150134731258.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "736×992",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "photoreal"
+    ],
+    "scenes": [
+      "city"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "どこかにありそうな田舎駅。。でもない、隣の駅近っ！ｗ\n\n#MinimaxH3 T2V\n#Comfyui",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 21,
+      "snapshotAt": "2026-09-06T02:44:35.372Z"
+    },
+    "approvedAt": "2026-09-06T02:44:35.372Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096412479307845838",
+    "title": "公路热浪的视觉解释",
+    "titleEn": "Explaining Heat Shimmer on the Road",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "复古拼贴动画用公路、汽车和分层气流图解太阳加热路面后产生的热浪折射。 原生视频规格为 30 秒 · 608×1056。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A retro collage animation uses a highway, car, and layered airflow diagrams to explain heat shimmer above a sun-heated road. Native-video output: 30s · 608×1056. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Jerryding123/status/2096412479307845838",
+    "sourceLabel": "X 原帖 · @Jerryding123",
+    "author": "Jerry Ding",
+    "publishedAt": "2026-09-06T01:37:39.000Z",
+    "addedAt": "2026-09-06T02:44:35.372Z",
+    "mediaUrl": "/media/x-2096412479307845838.mp4",
+    "posterUrl": "/posters/x/2096412479307845838.jpg",
+    "duration": 30,
+    "aspectRatio": "portrait",
+    "resolution": "608×1056",
+    "tags": [
+      "MiniMax H3",
+      "本地生成与工作流",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "workflow",
+    "styles": [
+      "motion-graphics",
+      "retro"
+    ],
+    "scenes": [
+      "nature"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Maybe it is now my life mission to bankrupt liberals at Vox.\n\nDone locally with Minimax H3 on 1xRTX Pro 6000, normal Codex harness no Astra or anything fancy. Transitions are absolutely incredible. Narrated with Chatterbox.",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 2,
+      "views": 93,
+      "snapshotAt": "2026-09-06T02:44:35.372Z"
+    },
+    "approvedAt": "2026-09-06T02:44:35.372Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096408498821365816",
+    "title": "水枪迎面喷射",
+    "titleEn": "A Water Blaster Fired at the Camera",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "FL2VA",
+    "summary": "粉发动画角色举起彩色水枪朝镜头喷射，水流与面部表情在近景中持续变化。 原生视频规格为 5 秒 · 832×1248。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A pink-haired anime character raises a colorful water blaster and fires toward the camera as the water stream and expression evolve in close-up. Native-video output: 5s · 832×1248. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/core_tan/status/2096408498821365816",
+    "sourceLabel": "X 原帖 · @core_tan",
+    "author": "CALMDUST aka ちゃんこあ",
+    "publishedAt": "2026-09-06T01:21:50.000Z",
+    "addedAt": "2026-09-06T02:44:35.372Z",
+    "mediaUrl": "/media/x-2096408498821365816.mp4",
+    "posterUrl": "/posters/x/2096408498821365816.jpg",
+    "duration": 5,
+    "aspectRatio": "portrait",
+    "resolution": "832×1248",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime"
+    ],
+    "scenes": [
+      "performance"
+    ],
+    "inputTypes": [
+      "text",
+      "image"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3 I2V\n\nここまでI2Vの出来がいいんだから、なんか出来るっぽい？フレームレート設定も検討したいなぁ。24fpsだとアニメっぽくはどうやってもならないし計算量も削減出来たらプラスでしかない",
+    "engagement": {
+      "replies": 1,
+      "reposts": 1,
+      "likes": 5,
+      "views": 208,
+      "snapshotAt": "2026-09-06T02:44:35.372Z"
+    },
+    "approvedAt": "2026-09-06T02:44:35.372Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096400072451748338",
+    "title": "工地上的石匠寓言",
+    "titleEn": "The Stonecutter Parable on a Construction Site",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "竖屏短片把石匠寓言搬到现代工地，通过工人、高楼与石匠的连续场景讲述职业羡慕与价值。 原生视频规格为 75 秒 · 704×1280。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A vertical short film retells the stonecutter parable on a modern construction site through workers, a rising tower, and the mason supporting it. Native-video output: 75s · 704×1280. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/NsitnovSitnov/status/2096400072451748338",
+    "sourceLabel": "X 原帖 · @NsitnovSitnov",
+    "author": "Nedelcho Sitnov",
+    "publishedAt": "2026-09-06T00:48:21.000Z",
+    "addedAt": "2026-09-06T02:44:35.372Z",
+    "mediaUrl": "/media/x-2096400072451748338.mp4",
+    "posterUrl": "/posters/x/2096400072451748338.jpg",
+    "duration": 75,
+    "aspectRatio": "portrait",
+    "resolution": "704×1280",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "cinematic-realistic",
+      "vertical"
+    ],
+    "scenes": [
+      "performance",
+      "city"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "She envied every job on the site except the one that held the whole tower up. The stonecutter's parable, retold on a Sofia build site.\n\n▶ Watch the full film: https://www.youtube.com/watch?v=JLhYq8Kp1tY\nMade with MiniMax-H3\n#ShortFilm #Parable #AIFilm",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 30,
+      "snapshotAt": "2026-09-06T02:44:35.372Z"
+    },
+    "approvedAt": "2026-09-06T02:44:35.372Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096398628348977187",
+    "title": "居家完成一次引体向上",
+    "titleEn": "Completing a Pull-Up at Home",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "一名女性在居家训练架上从悬垂姿态完成引体向上，身体与手臂动作清晰可见。 原生视频规格为 5 秒 · 768×1088。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A woman moves from a dead hang into a pull-up on a home training bar, with the arm and body motion clearly visible. Native-video output: 5s · 768×1088. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "懸垂して",
+    "promptSourceUrl": "https://x.com/moon_himiko/status/2096398628348977187",
+    "sourceUrl": "https://x.com/moon_himiko/status/2096398628348977187",
+    "sourceLabel": "X 原帖 · @moon_himiko",
+    "author": "Ai_Himiko",
+    "publishedAt": "2026-09-06T00:42:36.000Z",
+    "addedAt": "2026-09-06T02:44:35.372Z",
+    "mediaUrl": "/media/x-2096398628348977187.mp4",
+    "posterUrl": "/posters/x/2096398628348977187.jpg",
+    "duration": 5,
+    "aspectRatio": "portrait",
+    "resolution": "768×1088",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [
+      "photoreal",
+      "vertical"
+    ],
+    "scenes": [
+      "performance",
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "おはよう (⋈◍＞◡＜◍)。✧♡\nみんなMiniMax H3でどんどんクオリティ高い作品作ってってすごい！！！\nそれでも、ひみこは今日も変わらず筋トレ \npromptは『懸垂して』 コストは8円\nこの料金も今日までかな？\n みんなも一緒に健康になりましょう！！！",
+    "engagement": {
+      "replies": 1,
+      "reposts": 1,
+      "likes": 3,
+      "views": 80,
+      "snapshotAt": "2026-09-06T02:44:35.373Z"
+    },
+    "approvedAt": "2026-09-06T02:44:35.372Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096391506651128264",
+    "title": "沉船旁的骷髅潜水员",
+    "titleEn": "A Skeleton Diver Beside a Shipwreck",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "骷髅穿着潜水装备游过布满海洋附着物的沉船残骸，蓝绿色水下环境保持连贯。 原生视频规格为 5 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A skeleton in scuba gear swims past an encrusted shipwreck in a coherent blue-green underwater environment. Native-video output: 5s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/MaxCasu/status/2096391506651128264",
+    "sourceLabel": "X 原帖 · @MaxCasu",
+    "author": "max casu",
+    "publishedAt": "2026-09-06T00:14:18.000Z",
+    "addedAt": "2026-09-06T02:44:35.373Z",
+    "mediaUrl": "/media/x-2096391506651128264.mp4",
+    "posterUrl": "/posters/x/2096391506651128264.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "cg-3d",
+      "dark"
+    ],
+    "scenes": [
+      "creatures"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Underwater skeleton \nMade with @ViggleAI MiniMax H3 model\n#ViggleH3",
+    "engagement": {
+      "replies": 2,
+      "reposts": 0,
+      "likes": 6,
+      "views": 75,
+      "snapshotAt": "2026-09-06T02:44:35.373Z"
+    },
+    "approvedAt": "2026-09-06T02:44:35.373Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096390580763013389",
+    "title": "哥布林一脚击倒冒险者",
+    "titleEn": "A Goblin Kick Drops an Adventurer",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "奇幻森林中，哥布林围住冒险者并发动踢击，随后镜头切到受伤角色与发光武器。 原生视频规格为 12 秒 · 720×1280。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "In a dark fantasy forest, goblins surround and kick an adventurer before the scene cuts to the injured hero and a glowing weapon. Native-video output: 12s · 720×1280. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/6s9Mu3Y3ez4c6Jl/status/2096390580763013389",
+    "sourceLabel": "X 原帖 · @6s9Mu3Y3ez4c6Jl",
+    "author": "木沢　真流",
+    "publishedAt": "2026-09-06T00:10:38.000Z",
+    "addedAt": "2026-09-06T02:44:35.373Z",
+    "mediaUrl": "/media/x-2096390580763013389.mp4",
+    "posterUrl": "/posters/x/2096390580763013389.jpg",
+    "duration": 12,
+    "aspectRatio": "portrait",
+    "resolution": "720×1280",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime",
+      "dark"
+    ],
+    "scenes": [
+      "combat",
+      "fantasy"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "防御力-9999の冒険者にとってみれば、ゴブリンのキックが致命傷に！\n\n#anime #minimaxh3 #アニメ　#異世界漫画",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 29,
+      "snapshotAt": "2026-09-06T02:44:35.373Z"
+    },
+    "approvedAt": "2026-09-06T02:44:35.373Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096388781876322701",
+    "title": "耳勺直播的循环待机动画",
+    "titleEn": "A Looping Ear-Cleaning Stream Intro",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "粉发虚拟角色面向镜头缓慢移动耳勺，形成适合直播等待画面的短循环动画。 原生视频规格为 3 秒 · 1944×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A pink-haired virtual character slowly moves an ear pick toward the camera in a short loop designed like a stream waiting screen. Native-video output: 3s · 1944×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/hirosi1971/status/2096388781876322701",
+    "sourceLabel": "X 原帖 · @hirosi1971",
+    "author": "ばら＠α7iiiとAI修行中",
+    "publishedAt": "2026-09-06T00:03:29.000Z",
+    "addedAt": "2026-09-06T02:44:35.373Z",
+    "mediaUrl": "/media/x-2096388781876322701.mp4",
+    "posterUrl": "/posters/x/2096388781876322701.jpg",
+    "duration": 3,
+    "aspectRatio": "landscape",
+    "resolution": "1944×1080",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime"
+    ],
+    "scenes": [
+      "performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "耳かきASMR配信のりんねおねんねさん\n配信待機のループアニメーション風\n#おねんねあーと\n#MiniMaxH3",
+    "engagement": {
+      "replies": 1,
+      "reposts": 1,
+      "likes": 4,
+      "views": 314,
+      "snapshotAt": "2026-09-06T02:44:35.373Z"
+    },
+    "approvedAt": "2026-09-06T02:44:35.373Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096387910740144518",
+    "title": "雨后独行的动画少女",
+    "titleEn": "An Anime Girl Walking After the Rain",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "多镜头竖屏动画从积水中的鞋步切到云层与撑伞少女，组成一段安静的雨后行走片段。 原生视频规格为 30 秒 · 720×1280。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A vertical multi-shot animation moves from shoes stepping through a puddle to clouds and a girl carrying an umbrella after the rain. Native-video output: 30s · 720×1280. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/zyzel_zyz/status/2096387910740144518",
+    "sourceLabel": "X 原帖 · @zyzel_zyz",
+    "author": "ざいぜる",
+    "publishedAt": "2026-09-06T00:00:01.000Z",
+    "addedAt": "2026-09-06T02:44:35.373Z",
+    "mediaUrl": "/media/x-2096387910740144518.mp4",
+    "posterUrl": "/posters/x/2096387910740144518.jpg",
+    "duration": 30,
+    "aspectRatio": "portrait",
+    "resolution": "720×1280",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime",
+      "vertical"
+    ],
+    "scenes": [
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "GPT-6 Astra＋ローカルAIで、30秒7カットのアニメを制作\n\n① コンセプトを元にラフ案をAstraが作成\n② AstraがComfyUIを操作\n・Animaでキャラと構図\n・ACE-StepでBGM\n・MiniMax H3でシーン別動画\n④ ボクは出力を見て「ここはこうしたい」とチェック＆ディレクション\n⑤ Astraが都度修正\n⑥ AstraがOpenCVやFFmpegでつなぎ・色・音を仕上げ\n\n指示はすべて自然言語\n人にお願いするのと同じようにAstraにお願いした",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 7,
+      "views": 258,
+      "snapshotAt": "2026-09-06T02:44:35.373Z"
+    },
+    "approvedAt": "2026-09-06T02:44:35.373Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096386367144284533",
+    "title": "看台上睡着的小球迷",
+    "titleEn": "The Littlest Fan Falls Asleep",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "拟人猫咪一家穿着球队服装走过球场看台，孩子最终戴着头盔在父亲怀里睡着。 原生视频规格为 15 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "An anthropomorphic cat family walks through a stadium concourse before the helmeted child falls asleep in a parent’s arms. Native-video output: 15s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/altfortomorrow/status/2096386367144284533",
+    "sourceLabel": "X 原帖 · @altfortomorrow",
+    "author": "Blujeanmomma",
+    "publishedAt": "2026-09-05T23:53:53.000Z",
+    "addedAt": "2026-09-06T02:44:35.373Z",
+    "mediaUrl": "/media/x-2096386367144284533.mp4",
+    "posterUrl": "/posters/x/2096386367144284533.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "cg-3d",
+      "commercial"
+    ],
+    "scenes": [
+      "creatures"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "He cheered through every quarter…but bedtime won in overtime. 🥹🏈🐾\n\nGood night from the littlest football fan. 💙\n\nAnimated with MiniMax H3 on @PixVerse   #pixversecpp",
+    "engagement": {
+      "replies": 2,
+      "reposts": 1,
+      "likes": 9,
+      "views": 145,
+      "snapshotAt": "2026-09-06T02:44:35.373Z"
+    },
+    "approvedAt": "2026-09-06T02:44:35.373Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096379851779575911",
+    "title": "赛博战士的扫描对决",
+    "titleEn": "A Scan-Off Between Cyber Warriors",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "两名赛博装甲角色在工业场景中相互扫描、对峙并准备战斗，字幕与特写强化冲突。 原生视频规格为 38 秒 · 720×1280。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Two cyber-armored characters scan and confront one another in an industrial setting as captions and close-ups build toward combat. Native-video output: 38s · 720×1280. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/JasminaAi/status/2096379851779575911",
+    "sourceLabel": "X 原帖 · @JasminaAi",
+    "author": "ジャスミーナ | AI Anime & Illustrations✨",
+    "publishedAt": "2026-09-05T23:28:00.000Z",
+    "addedAt": "2026-09-06T02:44:35.373Z",
+    "mediaUrl": "/media/x-2096379851779575911.mp4",
+    "posterUrl": "/posters/x/2096379851779575911.jpg",
+    "duration": 38,
+    "aspectRatio": "portrait",
+    "resolution": "720×1280",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime",
+      "stylized"
+    ],
+    "scenes": [
+      "combat",
+      "sci-fi"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "互いをスキャン解析するジャスミーナとネフェレイラ\n\n「出力、速度、共に私より上……っ？！」\n\n上位スペックの強敵を相手に\nジャスミーナは危機を打破することができるのか……⁉️\n@Hailuo_AI\n#MiniMaxDesign #MiniMaxH3\nhttps://x.com/JasminaAi/status/2096012431395082445?s=20",
+    "engagement": {
+      "replies": 1,
+      "reposts": 2,
+      "likes": 24,
+      "views": 885,
+      "snapshotAt": "2026-09-06T02:44:35.373Z"
+    },
+    "approvedAt": "2026-09-06T02:44:35.373Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096372813699416474",
+    "title": "猫耳角色的竖屏舞步",
+    "titleEn": "A Cat-Eared Character’s Vertical Dance",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "黑发猫耳角色在明亮舞台上完成连续舞步与手势，镜头在全身和近景之间切换。 原生视频规格为 10 秒 · 2160×3840。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A black-haired cat-eared character performs a continuous dance and hand gestures on a bright stage, alternating between full-body and close-up views. Native-video output: 10s · 2160×3840. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Chupico_nora/status/2096372813699416474",
+    "sourceLabel": "X 原帖 · @Chupico_nora",
+    "author": "Chupico",
+    "publishedAt": "2026-09-05T23:00:02.000Z",
+    "addedAt": "2026-09-06T02:44:35.373Z",
+    "mediaUrl": "/media/x-2096372813699416474.mp4",
+    "posterUrl": "/posters/x/2096372813699416474.jpg",
+    "duration": 10,
+    "aspectRatio": "portrait",
+    "resolution": "2160×3840",
+    "tags": [
+      "MiniMax H3",
+      "舞蹈",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "dance",
+    "styles": [
+      "cg-3d",
+      "vertical"
+    ],
+    "scenes": [
+      "dance",
+      "performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "おはよーございます💜ノラダンスです✨CapCut のAIで作成しました！Astraはiphoneには来たけどcodexにはまだ来てくれてないのでソワソワしてます_(* ॑꒳ ॑*_ )\n@capcutapp_jp\n#capcutcpp\n#MiniMaxH3",
+    "engagement": {
+      "replies": 7,
+      "reposts": 11,
+      "likes": 44,
+      "views": 252,
+      "snapshotAt": "2026-09-06T02:44:35.373Z"
+    },
+    "approvedAt": "2026-09-06T02:44:35.373Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096378308753801232",
+    "title": "静谧京都酒店广告",
+    "titleEn": "A Quiet Kyoto Hotel Commercial",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "FL2VA",
+    "summary": "酒店外观、精致料理与留白排版组成一支克制的京都旅宿广告，镜头和文字衔接清晰。 原生视频规格为 15 秒 · 1920×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A restrained Kyoto hotel commercial moves from the property exterior to refined dining and spacious typography with clean transitions. Native-video output: 15s · 1920×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Naonekozamurai/status/2096378308753801232",
+    "sourceLabel": "X 原帖 · @Naonekozamurai",
+    "author": "なお｜AI動画・AI音楽",
+    "publishedAt": "2026-09-05T23:21:52.000Z",
+    "addedAt": "2026-09-06T02:48:51.413Z",
+    "mediaUrl": "/media/x-2096378308753801232.mp4",
+    "posterUrl": "/posters/x/2096378308753801232.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "广告与产品",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "advertising",
+    "styles": [
+      "commercial",
+      "cinematic-realistic"
+    ],
+    "scenes": [
+      "product"
+    ],
+    "inputTypes": [
+      "text",
+      "image"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Codex (Astra) x MiniMax H3 x Remotion x Irodori\n\n前回は文字が出なくて、ナレーションも微妙だったので、\n文字はRemotion\nナレーションはIrodori\nを使用\n\n画像の動画化は今回もMiniMax H3を使用\n\n全体的にまとまりが良くなりましたね\n\nw2v（WEB to Video）システムが構築されつつある\n\nTopviewのMCPでMiniMax H3の生成をしているので、システムはCodex内で完結\n\nBGMはTuneeAIで生成しました　#TuneeAI",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 14,
+      "views": 819,
+      "snapshotAt": "2026-09-06T02:48:51.413Z"
+    },
+    "approvedAt": "2026-09-06T02:48:51.413Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
   }
 ]
