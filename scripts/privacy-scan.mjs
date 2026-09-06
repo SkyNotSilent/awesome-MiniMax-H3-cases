@@ -33,7 +33,7 @@ const secretPatterns = [
   { label: 'private key', pattern: /-----BEGIN [A-Z ]*PRIVATE KEY-----/ },
   { label: 'storage endpoint', pattern: /https:\/\/[^\s"'<>]+\.storageapi\.dev(?:[/?][^\s"'<>]*)?/i },
 ]
-const textExtensions = new Set(['', '.css', '.html', '.js', '.json', '.jsx', '.md', '.mjs', '.svg', '.ts', '.tsx', '.txt', '.yaml', '.yml'])
+const textExtensions = new Set(['', '.css', '.html', '.js', '.json', '.ndjson', '.jsx', '.md', '.mjs', '.svg', '.ts', '.tsx', '.txt', '.yaml', '.yml'])
 
 function walk(directory) {
   if (!existsSync(directory)) return []
@@ -84,7 +84,7 @@ export function scanRepository(root = repositoryRoot) {
     }
   }
 
-  const publicFiles = ['data', 'public', 'dist']
+  const publicFiles = ['data', 'public', 'dist', 'build/server-data']
     .flatMap((directory) => walk(resolve(root, directory)))
     .filter((path) => textExtensions.has(extname(path)))
   for (const path of publicFiles) {

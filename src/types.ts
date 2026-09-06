@@ -61,6 +61,7 @@ export interface VideoCase {
 }
 
 export interface CatalogCase {
+  isFeatured?: boolean
   id: string
   title: string
   titleEn: string
@@ -100,6 +101,8 @@ export interface SearchRecord {
 }
 
 export interface CatalogPayload {
+  catalogVersion?: string
+  summary?: { maxima: Record<'cases' | 'tutorials', string>; counts: Record<'cases' | 'tutorials', number>; today: Record<'cases' | 'tutorials', number>; totals: Record<'cases' | 'tutorials', number> }
   version: number
   generatedAt: string
   featuredCaseIds: string[]
@@ -220,6 +223,7 @@ export type CreatorReason =
   | 'consistent'
 
 export interface CreatorProfile {
+  posterUrls?: string[]
   id: string
   slug: string
   handle: string
@@ -258,4 +262,13 @@ export interface CreatorCatalog {
     tutorialCreators: number
   }
   creators: CreatorProfile[]
+}
+
+export interface CatalogPage {
+  catalogVersion: string
+  total: number
+  cases: CatalogCase[]
+  facets: Record<'category' | 'style' | 'scene', Record<string, number>>
+  favoriteCount: number
+  nextCursor: string | null
 }
