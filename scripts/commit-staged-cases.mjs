@@ -1,6 +1,6 @@
 import { access, copyFile, mkdir, rename, rm } from 'node:fs/promises'
 import { basename, relative, resolve } from 'node:path'
-import { acquirePublishLock, candidatesPath, publishStagingRoot, readJson, resolvePublishStagingPath, root, writeJsonAtomic } from './review-paths.mjs'
+import { acquirePublishLock, candidatesPath, publishStagingRoot, readJson, resolvePublishStagingPath, root, rowVersion, writeJsonAtomic } from './review-paths.mjs'
 import { prepareStagedCommit, updatePrivateCandidates, verifyVideoRoute } from './staged-publish.mjs'
 
 function argumentValue(name) {
@@ -16,45 +16,49 @@ const publicPosterRoot = resolve(root, 'public/posters/x')
 const runId = basename(stagingPath, '.json')
 const stagedPosterRoot = resolve(publishStagingRoot, runId, 'posters')
 
-const stagedCases = await readJson(stagingPath)
-const publicCases = await readJson(casesPath)
-const candidates = await readJson(candidatesPath, [])
-if (!Array.isArray(stagedCases)) throw new Error('Staging file must contain an array of cases')
+// Hold the writer lock before reading any state used to plan publication.
+const releaseLock = apply ? await acquirePublishLock() : async () => {}
+try {
+  const stagedCases = await readJson(stagingPath)
+  const publicCases = await readJson(casesPath)
+  const candidates = await readJson(candidatesPath, [])
+  if (!Array.isArray(stagedCases)) throw new Error('Staging file must contain an array of cases')
 
-const plan = await prepareStagedCommit({
-  stagedCases,
-  publicCases,
-  verifyVideo: (item) => verifyVideoRoute({ siteBaseUrl, caseId: item.id }),
-  posterExists: async (item) => {
-    const fileName = basename(item.posterUrl || '')
-    if (!fileName) return false
-    try {
-      await access(resolve(stagedPosterRoot, fileName))
-      return true
-    } catch {
+  const plan = await prepareStagedCommit({
+    stagedCases,
+    publicCases,
+    verifyVideo: (item) => verifyVideoRoute({ siteBaseUrl, caseId: item.id }),
+    posterExists: async (item) => {
+      const fileName = basename(item.posterUrl || '')
+      if (!fileName) return false
       try {
-        await access(resolve(publicPosterRoot, fileName))
+        await access(resolve(stagedPosterRoot, fileName))
         return true
       } catch {
-        return false
+        try {
+          await access(resolve(publicPosterRoot, fileName))
+          return true
+        } catch {
+          return false
+        }
       }
-    }
-  },
-})
+    },
+  })
 
-if (!apply) {
-  console.log(JSON.stringify({
-    status: 'dry-run',
-    staging: relative(root, stagingPath),
-    ready: plan.ready.length,
-    alreadyCommitted: plan.alreadyCommitted.length,
-    failed: plan.failed.map(({ item, reason }) => ({ id: item.id, reason })),
-  }, null, 2))
-  process.exit(plan.failed.length && !plan.ready.length && !plan.alreadyCommitted.length ? 2 : 0)
-}
+  if (!apply) {
+    console.log(JSON.stringify({
+      status: 'dry-run',
+      staging: relative(root, stagingPath),
+      ready: plan.ready.length,
+      alreadyCommitted: plan.alreadyCommitted.length,
+      failed: plan.failed.map(({ item, reason }) => ({ id: item.id, reason })),
+    }, null, 2))
+    process.exit(plan.failed.length && !plan.ready.length && !plan.alreadyCommitted.length ? 2 : 0)
+  }
 
-const releaseLock = await acquirePublishLock()
-try {
+  const journalPath = resolve(publishStagingRoot, 'journals', `${runId}.json`)
+  const journal = { version: 1, runId, recordedAt: new Date().toISOString(), inputVersion: rowVersion({ stagedCases, publicCases, candidates }), ready: plan.ready.map(item => item.id), alreadyCommitted: plan.alreadyCommitted.map(item => item.id), failed: plan.failed.map(({ item }) => item.id) }
+  await writeJsonAtomic(journalPath, { ...journal, phase: 'prepared' })
   await mkdir(publicPosterRoot, { recursive: true })
   for (const item of plan.ready) {
     const fileName = basename(item.posterUrl)
@@ -71,6 +75,8 @@ try {
 
   if (plan.ready.length) await writeJsonAtomic(casesPath, [...publicCases, ...plan.ready])
 
+  await writeJsonAtomic(journalPath, { ...journal, phase: 'public-written' })
+
   const nextCandidates = updatePrivateCandidates({ candidates, ...plan })
   await writeJsonAtomic(candidatesPath, nextCandidates)
 
@@ -80,9 +86,12 @@ try {
   if (plan.failed.length) {
     await writeJsonAtomic(stagingPath, plan.failed.map(({ item }) => item))
   } else {
-    await rm(stagingPath, { force: true })
+    // Retain an empty manifest for idempotent reruns after interruption.
+    await writeJsonAtomic(stagingPath, [])
     await rm(resolve(publishStagingRoot, runId), { recursive: true, force: true })
   }
+
+  await writeJsonAtomic(journalPath, { ...journal, phase: 'complete' })
 
   const status = plan.failed.length ? (plan.ready.length || plan.alreadyCommitted.length ? 'partial' : 'blocked') : 'committed'
   console.log(JSON.stringify({

@@ -1,5 +1,6 @@
+import { mergeReviewedRows } from './review-paths.mjs'
 import { createReadStream, createWriteStream } from 'node:fs'
-import { access, mkdtemp, readFile, rename, rm, stat, writeFile } from 'node:fs/promises'
+import { access, mkdtemp, readFile, rm, stat } from 'node:fs/promises'
 import { lookup as dnsLookup } from 'node:dns'
 import https from 'node:https'
 import { tmpdir } from 'node:os'
@@ -273,9 +274,7 @@ try {
       const result = results.get(item.id)
       return !result || result.state === 'failed' ? item : { ...item, mediaUrl: `/media/${item.id}.mp4` }
     })
-    const tempCasesPath = `${casesPath}.tmp`
-    await writeFile(tempCasesPath, `${JSON.stringify(mirrored, null, 2)}\n`)
-    await rename(tempCasesPath, casesPath)
+    await mergeReviewedRows(casesPath, cases, mirrored)
   }
   const uploaded = [...results.values()].filter((result) => result.state.startsWith('uploaded'))
   const existing = [...results.values()].filter((result) => result.state === 'existing')

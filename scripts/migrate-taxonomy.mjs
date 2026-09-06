@@ -1,4 +1,5 @@
-import { mkdir, readFile, rename, writeFile } from 'node:fs/promises'
+import { mergeReviewedRows } from './review-paths.mjs'
+import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { sanitizeTaxonomyClassification, taxonomyKeys } from './taxonomy.mjs'
@@ -243,9 +244,7 @@ async function run() {
     console.log(`Taxonomy report written to ${reportPath}. Re-run with --apply to update data/cases.json.`)
     return
   }
-  const temporaryPath = `${casesPath}.taxonomy-${process.pid}.tmp`
-  await writeFile(temporaryPath, `${JSON.stringify(migrated, null, 2)}\n`)
-  await rename(temporaryPath, casesPath)
+  await mergeReviewedRows(casesPath, cases, migrated)
   console.log(`Migrated ${migrated.length} cases. Report: ${reportPath}`)
 }
 
