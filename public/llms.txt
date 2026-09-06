@@ -8,7 +8,7 @@
 - 3 official reproducible examples
 - 1331 source-attributed X community examples
 - 376 examples with complete verbatim public Prompts
-- 4 foundation tutorial routes and 20 source-attributed community field guides
+- 8 in-depth selections across running and creation tracks, plus source-attributed short guides
 - 267 featured creators ranked from 790 source-attributed X authors
 - Missing prompts are never inferred, reconstructed, translated into an alleged original, or completed
 
@@ -51,27 +51,27 @@
 
 ## Tutorial guides
 
-- https://h3-field-notes-production.up.railway.app/en/tutorials/official-deployment/ — ComfyUI zero to your first H3 video with audio; comfyui; source checked 2026-08-23; original: https://docs.comfy.org/tutorials/video/minimax/minimax-h3
-- https://h3-field-notes-production.up.railway.app/en/tutorials/nvidia-comfyui/ — Turbo + lower VRAM: reduce 20 steps to 4–8; acceleration; source checked 2026-08-23; original: https://github.com/Larryvrh/ComfyUI-MiniMax-H3-Turbo
-- https://h3-field-notes-production.up.railway.app/en/tutorials/mac-native/ — Run H3 on Mac from zero with pure C + Metal; getting-started; source checked 2026-08-23; original: https://github.com/antirez/h3.c
-- https://h3-field-notes-production.up.railway.app/en/tutorials/prompt-agent-skill/ — Motion Context: chain H3 clips into a longer video; long-video; source checked 2026-08-23; original: https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context
-- https://h3-field-notes-production.up.railway.app/en/tutorials/local-deployment-zero-to-output/ — From a clean machine to the first video with audio; getting-started; source checked 2026-08-23; original: https://x.com/servasyy_ai/status/2085251627880255525
+- https://h3-field-notes-production.up.railway.app/en/tutorials/official-deployment/ — ComfyUI zero to your first H3 video with audio; comfyui; source checked 2026-09-06; original: https://docs.comfy.org/tutorials/video/minimax/minimax-h3
+- https://h3-field-notes-production.up.railway.app/en/tutorials/nvidia-comfyui/ — Turbo + lower VRAM: reduce 20 steps to 4–8; acceleration; source checked 2026-09-06; original: https://github.com/Larryvrh/ComfyUI-MiniMax-H3-Turbo
+- https://h3-field-notes-production.up.railway.app/en/tutorials/mac-native/ — Run H3 on Mac from zero with pure C + Metal; getting-started; source checked 2026-09-06; original: https://github.com/antirez/h3.c
+- https://h3-field-notes-production.up.railway.app/en/tutorials/prompt-agent-skill/ — Motion Context: chain H3 clips into a longer video; long-video; source checked 2026-09-06; original: https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context
+- https://h3-field-notes-production.up.railway.app/en/tutorials/local-deployment-zero-to-output/ — From a clean machine to the first video with audio; getting-started; source checked 2026-09-06; original: https://x.com/servasyy_ai/status/2085251627880255525
 - https://h3-field-notes-production.up.railway.app/en/tutorials/four-essential-h3-repositories/ — How four essential H3 repositories fit together; getting-started; source checked 2026-08-23; original: https://x.com/servasyy_ai/status/2086101388132835743
 - https://h3-field-notes-production.up.railway.app/en/tutorials/attention-low-vram-lora/ — Attention backends, character LoRA, and low-VRAM paths; acceleration; source checked 2026-08-23; original: https://x.com/servasyy_ai/status/2087562850781020535
-- https://h3-field-notes-production.up.railway.app/en/tutorials/context-ir-local-pipeline/ — Enhance a prompt with Context-IR, then render locally; prompt; source checked 2026-08-23; original: https://x.com/servasyy_ai/status/2086814254066434076
-- https://h3-field-notes-production.up.railway.app/en/tutorials/video-pov-camera-angles/ — Generate new camera angles from one performance; prompt; source checked 2026-08-23; original: https://x.com/magnific/status/2090423731055448271
+- https://h3-field-notes-production.up.railway.app/en/tutorials/context-ir-local-pipeline/ — H3 prompts: plan shots, dialogue and sound; prompt; source checked 2026-09-06; original: https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md
+- https://h3-field-notes-production.up.railway.app/en/tutorials/video-pov-camera-angles/ — Character references and dialogue: assign image, video and audio roles; prompt; source checked 2026-09-06; original: https://docs.comfy.org/tutorials/video/minimax/minimax-h3#minimax-h3-reference-to-video-r2v
 - https://h3-field-notes-production.up.railway.app/en/tutorials/storyboard-to-trailer/ — Turn storyboard frames into a consistent trailer; prompt; source checked 2026-08-23; original: https://x.com/magnific/status/2090508187875356957
 - https://h3-field-notes-production.up.railway.app/en/tutorials/3060-turbo-trailer/ — Build a one-minute trailer on RTX 3060 with Turbo LoRA; acceleration; source checked 2026-08-23; original: https://x.com/PixelAigc/status/2086958485741441240
 - https://h3-field-notes-production.up.railway.app/en/tutorials/maestro-six-step-turbo/ — Maestro six-step Turbo: trade detail for iteration speed; acceleration; source checked 2026-08-23; original: https://x.com/blizaine/status/2085554573494657328
 - https://h3-field-notes-production.up.railway.app/en/tutorials/maestro-pruned-20b/ — Low-VRAM Maestro: pruned 20B plus Turbo; acceleration; source checked 2026-08-23; original: https://x.com/cocktailpeanut/status/2086119385757041048
 - https://h3-field-notes-production.up.railway.app/en/tutorials/3060-turbo-benchmark/ — Before-and-after Turbo LoRA benchmark on RTX 3060; acceleration; source checked 2026-08-23; original: https://x.com/AIPixLab/status/2088797656118390866
 - https://h3-field-notes-production.up.railway.app/en/tutorials/mac-phosphene-turbo/ — Run H3 Turbo on Mac Studio with Phosphene; acceleration; source checked 2026-08-23; original: https://x.com/cocktailpeanut/status/2085765919079350355
-- https://h3-field-notes-production.up.railway.app/en/tutorials/rent-gpu-comfyui/ — When local hardware is short: rent a GPU with a ComfyUI image; getting-started; source checked 2026-08-23; original: https://x.com/Lonely__MH/status/2085302359971053826
+- https://h3-field-notes-production.up.railway.app/en/tutorials/rent-gpu-comfyui/ — H3 in the cloud: your first video without local setup; getting-started; source checked 2026-09-06; original: https://docs.comfy.org/get_started/cloud
 - https://h3-field-notes-production.up.railway.app/en/tutorials/dual-clock-audio/ — Dual-clock sampling: separate video and audio step counts; audio; source checked 2026-08-23; original: https://x.com/0xmomonifty/status/2085377094461333550
-- https://h3-field-notes-production.up.railway.app/en/tutorials/native-comfyui-modes/ — Native H3 in ComfyUI: choose the right input mode; comfyui; source checked 2026-08-23; original: https://x.com/ComfyUI/status/2084110113078751465
+- https://h3-field-notes-production.up.railway.app/en/tutorials/native-comfyui-modes/ — Image to video: first frames, last frames and modes; comfyui; source checked 2026-09-06; original: https://docs.comfy.org/tutorials/video/minimax/minimax-h3#minimax-h3-image-to-video-i2v
 - https://h3-field-notes-production.up.railway.app/en/tutorials/4080-int8-pruned/ — RTX 4080 16GB: pruned plus INT8 low-VRAM setup; acceleration; source checked 2026-08-23; original: https://x.com/eternityspring/status/2084666970558074971
 - https://h3-field-notes-production.up.railway.app/en/tutorials/four-bit-eight-gb/ — 4-bit plus DiffSynth: an 8GB-VRAM route; acceleration; source checked 2026-08-23; original: https://x.com/ModelScope2022/status/2084625441940279770
-- https://h3-field-notes-production.up.railway.app/en/tutorials/train-ref2va-lora/ — Train a MiniMax H3 Ref2VA LoRA with AI Toolkit; training; source checked 2026-08-23; original: https://x.com/ostrisai/status/2090540475199680543
+- https://h3-field-notes-production.up.railway.app/en/tutorials/train-ref2va-lora/ — H3 Ref2VA LoRA: a guide to community training routes; training; source checked 2026-08-23; original: https://x.com/ostrisai/status/2090540475199680543
 - https://h3-field-notes-production.up.railway.app/en/tutorials/webui-motion-context/ — H3 WebUI: Motion Context plus built-in upscaling; long-video; source checked 2026-08-23; original: https://x.com/core_tan/status/2087415961293144516
 - https://h3-field-notes-production.up.railway.app/en/tutorials/ref2v-motion-context-chunks/ — 4070 12GB: chain three five-second chunks into a character dance; long-video; source checked 2026-08-23; original: https://x.com/cla_kuro37459/status/2087892024410480796
 - https://h3-field-notes-production.up.railway.app/en/tutorials/lightx2v-vs-larryvrh/ — Four-step vs eight-step LoRA: a 30-second chaining A/B; acceleration; source checked 2026-08-23; original: https://x.com/core_tan/status/2088147718732734936

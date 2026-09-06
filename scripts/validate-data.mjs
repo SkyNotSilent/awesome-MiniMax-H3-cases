@@ -1,3 +1,4 @@
+import { tutorialContractErrors, tutorialSourceKey } from './tutorial-contract.mjs'
 import { access, readFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { editorialCopyErrors, genericEditorialCopyPattern } from './editorial-copy.mjs'
@@ -223,20 +224,18 @@ for (const [index, item] of tutorialGuides.entries()) {
   for (const resourceId of item.relatedResourceIds || []) {
     if (!resourceIds.has(resourceId)) errors.push(`${at}.relatedResourceIds contains unknown resource: ${resourceId}`)
   }
-  if (!['docs', 'github', 'x'].includes(item.source?.platform)) errors.push(`${at}.source.platform is invalid`)
+  errors.push(...tutorialContractErrors(item).map(error => `${at}: ${error}`))
   if (!item.source?.author || !item.source?.originalLanguage) errors.push(`${at}.source requires author and originalLanguage`)
   try {
     const sourceUrl = new URL(item.source.url)
     if (sourceUrl.protocol !== 'https:') errors.push(`${at}.source.url must use HTTPS`)
-    if (item.contentType === 'community' && !/^\/[^/]+\/status\/\d+$/.test(sourceUrl.pathname)) {
-      errors.push(`${at}.source.url must point to an original X status`)
-    }
+
   } catch {
     errors.push(`${at}.source.url is invalid`)
   }
-  if (item.contentType === 'community' && guideSources.has(item.source?.url)) errors.push(`${at}.source.url is duplicated: ${item.source?.url}`)
-  if (item.contentType === 'community') guideSources.add(item.source?.url)
-  if (item.contentType === 'community' && !item.source.publishedAt) errors.push(`${at}.source.publishedAt is required for community guides`)
+  if (guideSources.has(tutorialSourceKey(item.source))) errors.push(`${at}.source.url is duplicated: ${item.source?.url}`)
+  guideSources.add(tutorialSourceKey(item.source))
+  if (['x', 'youtube', 'reddit'].includes(item.source.platform) && !item.source.publishedAt) errors.push(`${at}.source.publishedAt is required for community guides`)
   if (item.source?.publishedAt && Number.isNaN(Date.parse(item.source.publishedAt))) errors.push(`${at}.source.publishedAt must be a valid date`)
   if (item.engagement) {
     for (const key of ['replies', 'reposts', 'likes', 'views']) {
@@ -245,13 +244,6 @@ for (const [index, item] of tutorialGuides.entries()) {
       }
     }
     if (Number.isNaN(Date.parse(item.engagement.snapshotAt))) errors.push(`${at}.engagement.snapshotAt must be a valid date`)
-  }
-  if (item.flagship) {
-    for (const key of ['difficulty', 'estimatedMinutes', 'hardwareProfiles', 'testedVersions', 'expectedResult', 'troubleshooting', 'uninstall', 'sourceRefs']) {
-      if (!item[key] || (Array.isArray(item[key]) && item[key].length === 0)) errors.push(`${at}.${key} is required for flagship guides`)
-    }
-    if (item.commands.length === 0) errors.push(`${at}.commands must be non-empty for flagship guides`)
-    if (!item.checks?.zh?.length || !item.checks?.en?.length) errors.push(`${at}.checks is required for flagship guides`)
   }
   if (item.expectedResult && (!item.expectedResult.zh || !item.expectedResult.en)) errors.push(`${at}.expectedResult requires zh and en values`)
   for (const issue of item.troubleshooting || []) {
@@ -269,12 +261,10 @@ for (const [index, item] of tutorialGuides.entries()) {
   }
 }
 
-const foundationCount = tutorialGuides.filter((item) => item.contentType === 'foundation').length
-const communityCount = tutorialGuides.filter((item) => item.contentType === 'community').length
-if (foundationCount !== 4) errors.push(`tutorialGuides must contain exactly 4 foundation routes; found ${foundationCount}`)
-if (communityCount < 20) errors.push(`tutorialGuides must contain at least 20 community guides; found ${communityCount}`)
-const flagshipCount = tutorialGuides.filter((item) => item.flagship).length
-if (flagshipCount !== 8) errors.push(`tutorialGuides must contain exactly 8 flagship guides; found ${flagshipCount}`)
+for (const item of tutorialGuides) {
+  for (const id of item.nextGuideIds ?? []) if (!tutorialGuides.some(guide => guide.id === id) || id === item.id) errors.push(`Invalid next tutorial: ${item.id} -> ${id}`)
+  for (const related of item.relatedCases ?? []) if (!ids.has(related.id)) errors.push(`Unknown tutorial case: ${related.id}`)
+}
 
 const creatorIds = new Set()
 const creatorSlugs = new Set()

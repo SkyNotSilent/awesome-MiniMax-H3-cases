@@ -37,7 +37,7 @@ const llms = `# MiniMax H3 Cases & Guides
 - ${officialCount} official reproducible examples
 - ${xCount} source-attributed X community examples
 - ${promptCases.length} examples with complete verbatim public Prompts
-- ${tutorialGuides.filter((item) => item.contentType === 'foundation').length} foundation tutorial routes and ${tutorialGuides.filter((item) => item.contentType === 'community').length} source-attributed community field guides
+- ${tutorialGuides.filter((item) => item.depth === 'deep' && item.evidence.status === 'active').length} in-depth selections across running and creation tracks, plus source-attributed short guides
 - ${creatorCatalog.stats.rankedCreators} featured creators ranked from ${creatorCatalog.stats.sourceCreators} source-attributed X authors
 - Missing prompts are never inferred, reconstructed, translated into an alleged original, or completed
 
@@ -101,15 +101,20 @@ ${tutorialGuides.map((item) => `### ${item.title.en}
 
 - English page: ${tutorialUrl(item.id, 'en')}
 - Chinese page: ${tutorialUrl(item.id)}
-- Type: ${item.contentType}
+- Track: ${item.learningTrack}
+- Depth: ${item.depth}
+- Status: ${item.evidence.status}
 - Category: ${item.category}
 - Best for: ${item.audience.en}
 - Goal: ${item.outcome.en}
 - Hardware: ${item.hardware.en}
-- Source checked: ${item.verifiedAt}
+- Source checked: ${item.evidence.sourceCheckedAt ?? 'not recorded'}
+- Site generation test: ${item.evidence.siteTestedAt ?? 'not performed'}
 - Difficulty: ${item.difficulty ?? 'not rated'}
 - Estimated time: ${item.estimatedMinutes ? `${item.estimatedMinutes} minutes` : 'not specified'}
-${item.testedVersions?.length ? `- Verified versions: ${item.testedVersions.join(' · ')}` : ''}
+${item.applicableVersions?.length ? `- Applicable versions: ${item.applicableVersions.join(' · ')}` : ''}
+${item.learningResources?.map(resource => `- ${resource.label.en}: ${resource.url}`).join('\n') ?? ''}
+${item.communityFeedback?.map(feedback => `- Community ${feedback.kind}: ${feedback.summary.en} ${feedback.url}`).join('\n') ?? ''}
 - Original source: ${item.source.url}
 - Start here:
 ${item.steps.en.map((step, index) => `  ${index + 1}. ${step}`).join('\n')}

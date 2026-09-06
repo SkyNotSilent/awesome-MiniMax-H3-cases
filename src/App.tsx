@@ -1507,7 +1507,7 @@ function buildTutorialAiTask(tutorial: TutorialGuide, language: Language) {
   const troubleshooting = tutorial.troubleshooting?.length
     ? `${t.troubleshooting}:\n${tutorial.troubleshooting.map((item) => `- ${item.problem[language]} → ${item.solution[language]}`).join('\n')}`
     : ''
-  const versions = tutorial.testedVersions?.length ? `${t.testedVersions}: ${tutorial.testedVersions.join(' · ')}` : ''
+  const versions = tutorial.applicableVersions?.length ? `${language === 'zh' ? '适用版本' : 'Applicable versions'}: ${tutorial.applicableVersions.join(' · ')}` : ''
   const guardrail = language === 'zh'
     ? '执行约束：先核验来源项目的最新 README 与版本；不得猜测缺失步骤、命令、参数或素材；涉及付费云资源时先估算费用；任何不确定项先停下说明。'
     : 'Execution guardrail: verify the latest source README and versions first; never guess missing steps, commands, parameters, or media; estimate cost before using paid cloud resources; stop and explain any uncertainty.'
@@ -1524,6 +1524,8 @@ function buildTutorialAiTask(tutorial: TutorialGuide, language: Language) {
     expectedResult,
     troubleshooting,
     versions,
+    tutorial.materialsNote?.[language],
+    ...(tutorial.learningResources || []).map((resource) => `${resource.label[language]}: ${resource.url}`),
     section(t.caveats, tutorial.caveats[language]),
     `${t.source}: ${tutorial.source.url}`,
     guardrail,
@@ -1590,13 +1592,13 @@ function CopyTutorialButton({ tutorial, language, compact = false }: { tutorial:
 }
 
 function TutorialCardActions({ tutorial, language }: { tutorial: TutorialGuide; language: Language }) {
-  const t = copy[language].tutorials
-  return (
-    <div className="tutorial-card-actions">
-      <a href={tutorialPath(language, tutorial.id)}>{t.openGuide} <ArrowUpRight size={13} /></a>
-      <CopyTutorialButton tutorial={tutorial} language={language} compact />
-    </div>
-  )
+  const deep = tutorial.depth === 'deep' && tutorial.evidence.status === 'active'
+  const workflow = tutorial.learningResources?.find((resource) => resource.kind === 'workflow')
+  return <div className="tutorial-card-actions">
+    {deep ? <a href={tutorialPath(language, tutorial.id)}>{language === 'zh' ? '开始学习' : 'Start learning'} <ArrowUpRight size={13} /></a>
+      : <><a href={tutorial.source.url} target="_blank" rel="noreferrer">{language === 'zh' ? '看原教程' : 'View original'} <ArrowUpRight size={13} /></a><a href={tutorialPath(language, tutorial.id)}>{language === 'zh' ? '阅读导读' : 'Read guide'}</a></>}
+    {deep && workflow && <a href={workflow.url} target="_blank" rel="noreferrer">{language === 'zh' ? '获取工作流' : 'Get workflow'}</a>}
+  </div>
 }
 
 function TutorialsPage({
@@ -1618,12 +1620,12 @@ function TutorialsPage({
   const [activeAddedDate, setActiveAddedDate] = useState<AddedDatePreset>(updateSession.initialTutorialPreset)
   const [query, setQuery] = useState('')
   const [updateVisibilityTarget, setUpdateVisibilityTarget] = useState<HTMLDivElement | null>(null)
-  const foundations = useMemo(() => sortByAddedAtDescending(tutorialGuides
-    .filter((item) => item.contentType === 'foundation' && matchesAddedDate(item.addedAt, activeAddedDate, updateSession.tutorials))),
-  [activeAddedDate, tutorialGuides, updateSession.tutorials])
+  const [activeTrack, setActiveTrack] = useState<'all' | 'run' | 'create'>(() => { const track = new URLSearchParams(window.location.search).get('track'); return track === 'run' || track === 'create' ? track : 'all' })
 
   useEffect(() => {
     const url = new URL(window.location.href)
+    if (activeTrack !== 'all') url.searchParams.set('track', activeTrack)
+    else url.searchParams.delete('track')
     if (activeAddedDate !== 'all') url.searchParams.set('added', activeAddedDate)
     else url.searchParams.delete('added')
     if (activeAddedDate === 'unseen') {
@@ -1634,7 +1636,7 @@ function TutorialsPage({
       url.searchParams.delete('through')
     }
     window.history.replaceState(window.history.state, '', `${url.pathname}${url.search}${url.hash}`)
-  }, [activeAddedDate, updateSession.tutorials.since, updateSession.tutorials.through])
+  }, [activeTrack, activeAddedDate, updateSession.tutorials.since, updateSession.tutorials.through])
 
   useEffect(() => {
     const trimmed = query.trim()
@@ -1645,10 +1647,10 @@ function TutorialsPage({
     return () => clearTimeout(timer)
   }, [query])
 
-  const community = useMemo(() => {
+  const filtered = useMemo(() => {
     const needle = query.trim().toLowerCase()
     return tutorialGuides.filter((item) => {
-      if (item.contentType !== 'community') return false
+      if (activeTrack !== 'all' && item.learningTrack !== activeTrack) return false
       const categoryMatches = activeCategory === 'all' || item.category === activeCategory
       const hardwareMatches = activeHardware === 'all' || item.hardwareProfiles?.includes(activeHardware)
       const addedMatches = matchesAddedDate(item.addedAt, activeAddedDate, updateSession.tutorials)
@@ -1665,10 +1667,12 @@ function TutorialsPage({
       ].join(' ').toLowerCase()
       return categoryMatches && hardwareMatches && addedMatches && (!needle || searchable.includes(needle))
     })
-  }, [activeAddedDate, activeCategory, activeHardware, language, query, tutorialGuides, updateSession.tutorials])
-  const sortedCommunity = useMemo(() => sortByAddedAtDescending(community), [community])
+  }, [activeTrack, activeAddedDate, activeCategory, activeHardware, language, query, tutorialGuides, updateSession.tutorials])
+  const foundations = filtered.filter((item) => item.depth === 'deep' && item.evidence.status === 'active').sort((a, b) => (a.learningTrack === b.learningTrack ? (a.learningOrder ?? 99) - (b.learningOrder ?? 99) : a.learningTrack === 'run' ? -1 : 1))
+  const sortedCommunity = sortByAddedAtDescending(filtered.filter((item) => item.depth !== 'deep' || item.evidence.status !== 'active'))
 
   const resetTutorialFilters = useCallback((preset: AddedDatePreset = 'all') => {
+    setActiveTrack('all')
     setActiveCategory('all')
     setActiveHardware('all')
     setQuery('')
@@ -1723,41 +1727,13 @@ function TutorialsPage({
           <p>{t.index} / {tutorialGuides.length}</p>
           <h1>{t.title}</h1>
         </header>
-        {activeAddedDate === 'unseen' && foundations.length + sortedCommunity.length > 0 ? <div className="update-visibility-sentinel" ref={setUpdateVisibilityTarget} aria-hidden="true" /> : null}
-        {foundations.length > 0 ? (
-          <>
-            <header className="tutorial-list-heading">
-              <h2>{t.foundationTitle}</h2>
-              <span>{String(foundations.length).padStart(2, '0')}</span>
-            </header>
-            <div className="foundation-route-grid">
-              {foundations.map((tutorial, index) => (
-                <article className="foundation-route-card" key={tutorial.id}>
-                  <a className="foundation-route-poster" href={tutorialPath(language, tutorial.id)}>
-                    <img src={tutorial.posterUrl} alt={tutorial.title[language]} />
-                    <span>{String(index + 1).padStart(2, '0')}</span>
-                  </a>
-                  <div className="foundation-route-copy">
-                    <div className="added-at-meta">
-                      {matchesAddedDate(tutorial.addedAt, 'unseen', updateSession.tutorials) ? <strong>{copy[language].catalog.newlyAdded}</strong> : null}
-                      <time dateTime={tutorial.addedAt}>{copy[language].catalog.addedOn(formatAddedDate(tutorial.addedAt, language))}</time>
-                    </div>
-                    <small>{t.routeLabel} / {tutorial.tags[0]}</small>
-                    <h3><a href={tutorialPath(language, tutorial.id)}>{tutorial.title[language]}</a></h3>
-                    <TutorialCardActions tutorial={tutorial} language={language} />
-                  </div>
-                </article>
-              ))}
-            </div>
-          </>
-        ) : null}
-
-        {sortedCommunity.length > 0 ? (
-          <header className="tutorial-list-heading is-community">
-            <h2>{t.communityTitle}</h2>
-            <span>{String(sortedCommunity.length).padStart(2, '0')}</span>
-          </header>
-        ) : null}
+        <nav className="tutorial-track-grid" aria-label={language === 'zh' ? '学习路线' : 'Learning tracks'}>
+          {(['run', 'create'] as const).map((track) => <button key={track} type="button" aria-pressed={activeTrack === track} onClick={() => setActiveTrack(activeTrack === track ? 'all' : track)}>
+            <small>{track === 'run' ? '01 / RUN' : '02 / CREATE'}</small>
+            <strong>{track === 'run' ? (language === 'zh' ? '把 H3 跑起来' : 'Get H3 running') : (language === 'zh' ? '用 H3 做作品' : 'Create with H3')}</strong>
+            <span>{track === 'run' ? (language === 'zh' ? 'NVIDIA · Mac · 云端 · 低显存' : 'NVIDIA · Mac · Cloud · Low VRAM') : (language === 'zh' ? 'Prompt · 图生视频 · 人物对白 · 多镜头' : 'Prompts · Image to video · Dialogue · Multiple shots')}</span>
+          </button>)}
+        </nav>
         <div className="tutorial-pathways">
           <div>
             <small>{t.learnByGoal}</small>
@@ -1807,6 +1783,43 @@ function TutorialsPage({
           </label>
           <p className="tutorial-active-filter" aria-live="polite">{t.categories[activeCategory]} · {hardwareLabels[activeHardware]} · {copy[language].catalog.addedDatePresets[activeAddedDate]}</p>
         </div>
+        {activeAddedDate === 'unseen' && foundations.length + sortedCommunity.length > 0 ? <div className="update-visibility-sentinel" ref={setUpdateVisibilityTarget} aria-hidden="true" /> : null}
+        {foundations.length > 0 ? (
+          <>
+            <header className="tutorial-list-heading">
+              <h2>{language === 'zh' ? '深度精选' : 'In-depth selections'}</h2>
+              <span>{String(foundations.length).padStart(2, '0')}</span>
+            </header>
+            <div className="foundation-route-grid">
+              {foundations.map((tutorial, index) => (
+                <article className="foundation-route-card" key={tutorial.id}>
+                  <a className="foundation-route-poster" href={tutorialPath(language, tutorial.id)}>
+                    <img src={tutorial.posterUrl} alt={tutorial.title[language]} />
+                    <span>{String(index + 1).padStart(2, '0')}</span>
+                  </a>
+                  <div className="foundation-route-copy">
+                    <div className="added-at-meta">
+                      {matchesAddedDate(tutorial.addedAt, 'unseen', updateSession.tutorials) ? <strong>{copy[language].catalog.newlyAdded}</strong> : null}
+                      <time dateTime={tutorial.addedAt}>{copy[language].catalog.addedOn(formatAddedDate(tutorial.addedAt, language))}</time>
+                    </div>
+                    <small>{tutorial.learningTrack === 'run' ? (language === 'zh' ? '运行路线' : 'Run track') : (language === 'zh' ? '创作路线' : 'Create track')} / {language === 'zh' ? '深度精选' : 'In depth'}</small>
+                    <h3><a href={tutorialPath(language, tutorial.id)}>{tutorial.title[language]}</a></h3>
+                    <p>{tutorial.outcome[language]}</p><small>{tutorial.hardware[language]}</small>
+                    <TutorialCardActions tutorial={tutorial} language={language} />
+                  </div>
+                </article>
+              ))}
+            </div>
+          </>
+        ) : null}
+
+        {sortedCommunity.length > 0 ? (
+          <header className="tutorial-list-heading is-community">
+            <h2>{language === 'zh' ? '更多教程导读' : 'More tutorial guides'}</h2>
+            <span>{String(sortedCommunity.length).padStart(2, '0')}</span>
+          </header>
+        ) : null}
+
 
         {sortedCommunity.length > 0 ? (
           <div className="community-tutorial-grid">
@@ -1814,7 +1827,7 @@ function TutorialsPage({
               <article className="community-tutorial-card" key={tutorial.id}>
                 <a className="community-tutorial-poster" href={tutorialPath(language, tutorial.id)}>
                   <img src={tutorial.posterUrl} alt={tutorial.title[language]} loading="lazy" />
-                  <span>{t.communityLabel}</span>
+                  <span>{language === 'zh' ? '导读' : 'Guide'}</span>
                   {tutorial.engagement && (
                     <em>{formatMetric(tutorial.engagement.likes, language)} {t.likes} · {formatMetric(tutorial.engagement.views, language)} {t.views}</em>
                   )}
@@ -1844,6 +1857,14 @@ function TutorialsPage({
             {activeAddedDate === 'unseen' ? <button type="button" onClick={() => resetTutorialFilters(updateSession.tutorials.count > 0 ? 'unseen' : 'all')}>{updateSession.tutorials.count > 0 ? copy[language].catalog.resetFilters : copy[language].catalog.viewAll}</button> : null}
           </div>
         ) : null}
+        <section className="tutorial-faq"><h2>{language === 'zh' ? '遇到问题，从这里找' : 'Troubleshooting shortcuts'}</h2><div>
+          {[
+            ['official-deployment', '缺模型 / 缺节点', 'Missing models / nodes'],
+            ['nvidia-comfyui', '显存不足', 'Out of VRAM'],
+            ['video-pov-camera-angles', '静音 / 人物漂移', 'Silent output / identity drift'],
+            ['prompt-agent-skill', '续接跳变', 'Discontinuous transitions'],
+          ].map(([id, zh, en]) => <a key={id} href={`${tutorialPath(language, id)}#troubleshooting`}>{language === 'zh' ? zh : en} <ChevronRight size={14} /></a>)}
+        </div></section>
         <div className="update-read-status" aria-live="polite">
           {acknowledged && activeAddedDate === 'unseen' ? copy[language].catalog.markedForNextVisit : null}
         </div>
@@ -1853,13 +1874,21 @@ function TutorialsPage({
 }
 
 function TutorialDetailPage({ language, tutorial, tutorialGuides, tutorialResources }: { language: Language; tutorial: TutorialGuide; tutorialGuides: TutorialGuide[]; tutorialResources: TutorialResource[] }) {
+  useEffect(() => {
+    const scrollToSection = () => {
+      const id = window.location.hash.slice(1)
+      if (id !== 'troubleshooting' && !/^step-\d+$/.test(id)) return
+      document.querySelector<HTMLElement>(`.tutorial-detail #${id}`)?.scrollIntoView({ block: 'start' })
+    }
+    const frame = window.requestAnimationFrame(scrollToSection)
+    window.addEventListener('hashchange', scrollToSection)
+    return () => { window.cancelAnimationFrame(frame); window.removeEventListener('hashchange', scrollToSection) }
+  }, [tutorial.id])
   const t = copy[language].tutorials
   const resources = tutorial.relatedResourceIds
     .map((id) => tutorialResources.find((resource) => resource.id === id))
     .filter((resource): resource is TutorialResource => Boolean(resource))
-  const related = tutorialGuides
-    .filter((item) => item.id !== tutorial.id && item.category === tutorial.category)
-    .slice(0, 3)
+  const related = tutorial.nextGuideIds?.length ? tutorial.nextGuideIds.flatMap((id) => tutorialGuides.find((item) => item.id === id) || []) : tutorialGuides.filter((item) => item.id !== tutorial.id && item.category === tutorial.category).slice(0, 3)
   const engagementItems: Array<[string, number]> = tutorial.engagement ? [
     [t.replies, tutorial.engagement.replies] as const,
     [t.reposts, tutorial.engagement.reposts] as const,
@@ -1874,12 +1903,12 @@ function TutorialDetailPage({ language, tutorial, tutorialGuides, tutorialResour
         <header className="tutorial-detail-hero">
           <div className="tutorial-detail-poster"><img src={tutorial.posterUrl} alt={tutorial.title[language]} /></div>
           <div className="tutorial-detail-heading">
-            <p>{tutorial.contentType === 'foundation' ? t.routeLabel : t.communityLabel} / {t.categories[tutorial.category]}</p>
+            <p>{tutorial.depth === 'deep' ? (language === 'zh' ? '深度精选' : 'In depth') : (language === 'zh' ? '导读' : 'Guide')} / {t.categories[tutorial.category]}</p>
             <h1>{tutorial.title[language]}</h1>
             <strong>{tutorial.outcome[language]}</strong>
             <div className="resource-tags">{tutorial.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
             <div className="tutorial-detail-actions">
-              {tutorial.contentType === 'community' && <a href={tutorial.source.url} target="_blank" rel="noreferrer">{t.openSource} <ArrowUpRight size={15} /></a>}
+              <a href={tutorial.source.url} target="_blank" rel="noreferrer">{t.openSource} <ArrowUpRight size={15} /></a>
               <CopyTutorialButton tutorial={tutorial} language={language} />
             </div>
           </div>
@@ -1887,25 +1916,32 @@ function TutorialDetailPage({ language, tutorial, tutorialGuides, tutorialResour
 
         <div className="tutorial-detail-layout">
           <main className="tutorial-detail-content">
-            {(tutorial.difficulty || tutorial.estimatedMinutes || tutorial.testedVersions?.length) && (
+            {tutorial.evidence.status === 'needs-review' && <p role="status" className="tutorial-review-note">{language === 'zh' ? '此导读存在待复查问题，暂不作为核心推荐。请先查看原作者更新。' : 'This guide needs review and is excluded from core selections. Check the author’s updates first.'}</p>}
+            {tutorial.recommendation && <section><h2>{language === 'zh' ? '为什么选这篇' : 'Why this guide'}</h2><p>{tutorial.recommendation[language]}</p></section>}
+            {tutorial.cost && <section><h2>{language === 'zh' ? '费用与条件' : 'Cost and requirements'}</h2><p>{tutorial.cost[language]}</p></section>}
+            {tutorial.learningResources?.length && <section className="tutorial-learning-resources"><h2>{language === 'zh' ? '准备材料与原作者演示' : 'Resources and original demonstrations'}</h2><ul>{tutorial.learningResources.map((resource) => <li key={resource.url}><a href={resource.url} target="_blank" rel="noreferrer">{resource.label[language]} <ArrowUpRight size={14} /></a></li>)}</ul><p>{tutorial.materialsNote?.[language]}</p></section>}
+            {tutorial.chapters?.length && <section><h2>{language === 'zh' ? '视频章节' : 'Video chapters'}</h2><ul>{tutorial.chapters.map((chapter) => <li key={chapter.url}><a href={chapter.url} target="_blank" rel="noreferrer">{Math.floor(chapter.seconds / 60)}:{String(chapter.seconds % 60).padStart(2, '0')} · {chapter.title[language]}</a></li>)}</ul></section>}
+            {(tutorial.difficulty || tutorial.estimatedMinutes || tutorial.applicableVersions?.length) && (
               <section className="tutorial-run-profile">
                 <h2>{language === 'zh' ? '执行概览' : 'Run profile'}</h2>
                 <dl>
                   {tutorial.difficulty && <div><dt>{t.difficulty}</dt><dd>{tutorial.difficulty}</dd></div>}
                   {tutorial.estimatedMinutes && <div><dt>{t.estimatedTime}</dt><dd>{tutorial.estimatedMinutes} {t.minutes}</dd></div>}
-                  {tutorial.testedVersions?.length && <div><dt>{t.testedVersions}</dt><dd>{tutorial.testedVersions.join(' · ')}</dd></div>}
+                  {tutorial.applicableVersions?.length && <div><dt>{language === 'zh' ? '适用版本' : 'Applicable versions'}</dt><dd>{tutorial.applicableVersions.join(' · ')}</dd></div>}
                 </dl>
               </section>
             )}
             <section><h2>{t.audience}</h2><p>{tutorial.audience[language]}</p></section>
             <section><h2>{t.hardware}</h2><p>{tutorial.hardware[language]}</p></section>
             <section><h2>{t.prerequisites}</h2><ul>{tutorial.prerequisites[language].map((item) => <li key={item}>{item}</li>)}</ul></section>
-            <section className="tutorial-detail-steps"><h2>{t.steps}</h2><ol>{tutorial.steps[language].map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, '0')}</span><p>{item}</p></li>)}</ol></section>
+            <section className="tutorial-detail-steps"><h2>{t.steps}</h2><ol>{tutorial.steps[language].map((item, index) => <li id={`step-${index + 1}`} key={item}><span>{String(index + 1).padStart(2, '0')}</span><p>{item}</p></li>)}</ol></section>
             {tutorial.commands.length > 0 && <section><h2>{t.commands}</h2><div className="tutorial-detail-commands">{tutorial.commands.map((command) => <div key={command}><code>{command}</code><CopyCommandButton command={command} language={language} /></div>)}</div></section>}
             {tutorial.checks && <section className="tutorial-detail-checks"><h2>{t.checks}</h2><ul>{tutorial.checks[language].map((item) => <li key={item}><Check size={15} aria-hidden="true" /> <span>{item}</span></li>)}</ul></section>}
             {tutorial.expectedResult && <section className="tutorial-expected-result"><h2>{t.expectedResult}</h2><p>{tutorial.expectedResult[language]}</p></section>}
-            {tutorial.troubleshooting?.length && <section className="tutorial-troubleshooting"><h2>{t.troubleshooting}</h2><dl>{tutorial.troubleshooting.map((item) => <div key={item.problem[language]}><dt>{item.problem[language]}</dt><dd>{item.solution[language]}</dd></div>)}</dl></section>}
+            {tutorial.troubleshooting?.length && <section id="troubleshooting" className="tutorial-troubleshooting"><h2>{t.troubleshooting}</h2><dl>{tutorial.troubleshooting.map((item) => <div key={item.problem[language]}><dt>{item.problem[language]}</dt><dd>{item.solution[language]}</dd></div>)}</dl></section>}
             {tutorial.uninstall && <section><h2>{t.uninstall}</h2><ul>{tutorial.uninstall[language].map((item) => <li key={item}>{item}</li>)}</ul></section>}
+            <section><h2>{language === 'zh' ? '社区怎么说' : 'Community feedback'}</h2>{tutorial.communityFeedback?.length ? <ul>{tutorial.communityFeedback.map((feedback) => <li key={feedback.summary[language]}>{feedback.summary[language]} <a href={feedback.url} target="_blank" rel="noreferrer">{language === 'zh' ? '查看依据' : 'View evidence'}</a></li>)}</ul> : <p>{language === 'zh' ? '暂未收录可独立核对的具体使用反馈；本篇依据原作者资料整理。' : 'No independently checkable usage feedback is included yet; this guide is based on source documentation.'}</p>}</section>
+            {!!tutorial.relatedCases?.length && <section><h2>{language === 'zh' ? '案例与技巧' : 'Examples and techniques'}</h2><ul>{tutorial.relatedCases.map((item) => <li key={item.id}><a href={casePath(language, item.id)}>{item.title[language]}</a> · {item.relationship === 'example' ? (language === 'zh' ? '对应案例' : 'Source example') : (language === 'zh' ? '相关技巧，不保证复现该作品' : 'Related technique; not a reproduction guide')}</li>)}</ul></section>}
             <section><h2>{t.caveats}</h2><ul>{tutorial.caveats[language].map((item) => <li key={item}>{item}</li>)}</ul><small className="tutorial-source-note">{t.sourceNote}</small></section>
           </main>
           <aside className="tutorial-detail-meta">
@@ -1913,7 +1949,9 @@ function TutorialDetailPage({ language, tutorial, tutorialGuides, tutorialResour
             <dl>
               <div><dt>{language === 'zh' ? '作者' : 'Author'}</dt><dd>{tutorial.source.author} {tutorial.source.handle || ''}</dd></div>
               {tutorial.source.publishedAt && <div><dt>{language === 'zh' ? '发布' : 'Published'}</dt><dd>{tutorial.source.publishedAt}</dd></div>}
-              <div><dt>{t.verified}</dt><dd>{tutorial.verifiedAt}</dd></div>
+              {tutorial.evidence.sourceCheckedAt && <div><dt>{language === 'zh' ? '来源核对' : 'Source checked'}</dt><dd>{tutorial.evidence.sourceCheckedAt}</dd></div>}
+              {tutorial.evidence.communityReviewedAt && <div><dt>{language === 'zh' ? '社区反馈核对' : 'Community feedback reviewed'}</dt><dd>{tutorial.evidence.communityReviewedAt}</dd></div>}
+              <div><dt>{language === 'zh' ? '本站实测' : 'Site testing'}</dt><dd>{tutorial.evidence.siteTestedAt ? <a href={tutorial.evidence.siteTestUrl}>{tutorial.evidence.siteTestedAt}</a> : (language === 'zh' ? '未进行生成实测' : 'No generation test performed')}</dd></div>
             </dl>
             {engagementItems.length > 0 && <div className="tutorial-engagement"><small>{t.snapshot} / {tutorial.engagement?.snapshotAt}</small>{engagementItems.map(([label, value]) => <span key={label}><strong>{formatMetric(value, language)}</strong>{label}</span>)}</div>}
             <a className="tutorial-meta-source" href={tutorial.source.url} target="_blank" rel="noreferrer">{tutorial.contentType === 'foundation' ? t.openReference : t.openSource} <ArrowUpRight size={14} /></a>
@@ -2360,6 +2398,17 @@ function FaqPage({ language }: { language: Language }) {
   )
 }
 
+function CaseTutorialLinks({ id, language }: { id: string; language: Language }) {
+  const [guides, setGuides] = useState<TutorialGuide[]>([])
+  useEffect(() => {
+    let active = true
+    loadTutorialGuides().then(items => { if (active) setGuides(items.filter(guide => guide.relatedCases?.some(item => item.id === id))) }).catch(() => {})
+    return () => { active = false }
+  }, [id])
+  if (!guides.length) return null
+  return <section><h3>{language === 'zh' ? '相关教程' : 'Related tutorials'}</h3><ul>{guides.map(guide => <li key={guide.id}><a href={tutorialPath(language, guide.id)}>{guide.title[language]}</a> · {guide.relatedCases?.find(item => item.id === id)?.relationship === 'example' ? (language === 'zh' ? '对应案例' : 'Source example') : (language === 'zh' ? '相关技巧，不保证复现' : 'Related technique; not a reproduction guide')}</li>)}</ul></section>
+}
+
 function CaseDialog({ item, preparedVideo, language, onClose }: { item: CatalogCase; preparedVideo: HTMLVideoElement | null; language: Language; onClose: () => void }) {
   const [copied, setCopied] = useState(false)
   const [detail, setDetail] = useState<CaseDetail | null>(() => testDetails.get(item.id) ?? null)
@@ -2454,6 +2503,7 @@ function CaseDialog({ item, preparedVideo, language, onClose }: { item: CatalogC
           ) : detail ? (
             <p className="prompt-unavailable">{t.promptUnavailable}</p>
           ) : null}
+          <CaseTutorialLinks id={item.id} language={language} />
           <a className="original-link" href={item.sourceUrl} target="_blank" rel="noreferrer">
             {t.source}{detail ? ` · ${sourceLabel({ ...item, sourceLabel: detail.sourceLabel }, language)}` : ''} <ArrowUpRight size={15} />
           </a>

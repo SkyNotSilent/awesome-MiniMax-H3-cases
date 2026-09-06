@@ -83,7 +83,7 @@ MiniMax H3 也常被搜索为 **Hailuo H3**、**Hailuo 3.0**、**海螺 H3** 和
 
 [![MiniMax H3 中文教程工作台](./docs/screenshots/tutorials-zh.png)](https://h3-field-notes-production.up.railway.app/tutorials/)
 
-教程页上来就是 4 条 0→1 核心路线，下面直接展示社区实战，不再绕到 GitHub 链接目录。8 篇旗舰教程补齐了核验版本、准确命令、预期输出、完成判断、常见错误和回退方式。
+教程页提供“把 H3 跑起来”“用 H3 做作品”两条同等重要的学习路线。8 篇深度精选补齐原作资源、适用版本、关键步骤、视频章节和已知问题，其余内容明确标为导读。来源核对、社区使用反馈与本站生成实测分开展示。
 
 | 你的目标 | 建议入口 |
 | --- | --- |
@@ -146,7 +146,7 @@ npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
 - `npm run videos:playback:audit` 执行只读清点，`npm run videos:playback:migrate -- --apply` 生成版本化播放层，切换前后运行 `npm run videos:playback:verify`；迁移报告只保存在被忽略的 `.review/`。
 
 <!-- build-metrics:start -->
-**参考构建（Node 22.23.1，不含分析服务配置）：** 首页 JavaScript gzip 97.5 kB · 中文 / 英文首页 HTML gzip 9.8 kB / 9.1 kB · 首批 API gzip 5.5 kB · 下一页 API gzip 4.3 kB · 搜索响应 gzip 5.5 kB · 本地非阻塞字体 51.3 kB · 仅服务端索引 gzip 1033.8 kB。静态预算运行 `npm run performance:budget`；启动本地生产服务后运行 `npm run performance:browser` 验证浏览器行为。
+**参考构建（Node 22.23.1，不含分析服务配置）：** 首页 JavaScript gzip 99.6 kB · 中文 / 英文首页 HTML gzip 9.8 kB / 9.1 kB · 首批 API gzip 5.5 kB · 下一页 API gzip 4.3 kB · 搜索响应 gzip 5.5 kB · 本地非阻塞字体 51.3 kB · 仅服务端索引 gzip 1033.8 kB。静态预算运行 `npm run performance:budget`；启动本地生产服务后运行 `npm run performance:browser` 验证浏览器行为。
 <!-- build-metrics:end -->
 
 ## 投稿、纠错与下架

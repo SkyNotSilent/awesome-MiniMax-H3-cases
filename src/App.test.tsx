@@ -561,16 +561,41 @@ describe('case-first routes', () => {
     )
   })
 
+  it('shares hardware filters across both learning tracks and retains the chosen track on refresh', () => {
+    const view = renderAt('/tutorials/?track=run')
+    expect(screen.getAllByRole('link', { name: '开始学习' })).toHaveLength(4)
+    expect(screen.queryByRole('heading', { name: 'H3 Prompt：把镜头、对白与声音写清楚' })).not.toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: 'Apple Silicon' }))
+    expect(screen.getAllByRole('link', { name: '开始学习' })).toHaveLength(1)
+    expect(screen.getByRole('heading', { name: 'Mac 从零运行 H3：纯 C + Metal' })).toBeInTheDocument()
+    expect(window.location.search).toContain('track=run')
+    view.unmount()
+    renderAt('/tutorials/?track=create')
+    expect(screen.getAllByRole('link', { name: '开始学习' })).toHaveLength(4)
+  })
+
+  it('shows dated source evidence, chapters and case links without claiming a generation test', () => {
+    const view = renderAt('/tutorials/nvidia-comfyui/')
+    expect(screen.getByRole('heading', { name: '视频章节' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /26:11/ })).toHaveAttribute('href', 'https://www.youtube.com/watch?v=G3YHSvXZP_g&t=1571')
+    expect(screen.getByText('未进行生成实测')).toBeInTheDocument()
+    expect(screen.getByText('适用版本')).toBeInTheDocument()
+    view.unmount()
+    renderAt('/en/tutorials/train-ref2va-lora/')
+    expect(screen.getByRole('status')).toHaveTextContent('needs review')
+    expect(screen.queryByRole('heading', { name: 'Commands' })).not.toBeInTheDocument()
+  })
+
   it('publishes Tutorials and FAQ as standalone pages', () => {
     const tutorials = renderAt('/tutorials/')
     expect(screen.getByRole('heading', { name: 'MiniMax H3 教程' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: '基础路线' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: '社区教程' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '深度精选' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '更多教程导读' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'ComfyUI 从零到第一条 H3 带声视频' })).toHaveAttribute(
       'href', '/tutorials/official-deployment/',
     )
-    expect(screen.getAllByRole('link', { name: /打开教程/ })).toHaveLength(24)
-    expect(screen.getAllByText('社区实战')).toHaveLength(20)
+    expect(screen.getAllByRole('link', { name: /开始学习/ })).toHaveLength(8)
+    expect(screen.getAllByRole('link', { name: /看原教程/ })).toHaveLength(16)
     expect(screen.queryByRole('heading', { name: '先看 MiniMax H3 的真实效果。' })).not.toBeInTheDocument()
     tutorials.unmount()
 
@@ -676,10 +701,10 @@ describe('case-first routes', () => {
     renderAt('/tutorials/?added=unseen&since=2026-08-22T00%3A00%3A00.000Z')
 
     expect(screen.getByRole('button', { name: /本次新增/ })).toHaveAttribute('aria-pressed', 'true')
-    expect(screen.getByRole('heading', { name: '基础路线' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: '社区教程' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '深度精选' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '更多教程导读' })).toBeInTheDocument()
     expect(screen.getAllByText('新收录')).toHaveLength(24)
-    expect(screen.getAllByRole('link', { name: /打开教程/ })).toHaveLength(24)
+    expect(screen.getAllByRole('link', { name: /开始学习/ })).toHaveLength(8)
     expect(window.location.search).toContain('through=2026-08-22T18%3A34%3A28.000Z')
     await waitFor(() => expect(window.localStorage.getItem(tutorialUpdatesSeenThroughKey)).toBe('2026-08-22T18:34:28.000Z'))
     expect(window.localStorage.getItem(caseUpdatesSeenThroughKey)).toBe('2026-08-10T05:52:30.476Z')
@@ -708,7 +733,7 @@ describe('case-first routes', () => {
   it('searches community guides and opens a source-checked detail page', () => {
     renderAt('/tutorials/')
     fireEvent.change(screen.getByPlaceholderText('搜索硬件、能力或工作流…'), { target: { value: 'Ref2VA LoRA' } })
-    expect(screen.getByRole('heading', { name: '用 AI Toolkit 训练 H3 Ref2VA LoRA' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'H3 Ref2VA LoRA：社区训练路线导读' })).toBeInTheDocument()
     expect(screen.queryByRole('heading', { name: '从零装机到第一条带声视频' })).not.toBeInTheDocument()
 
     cleanup()

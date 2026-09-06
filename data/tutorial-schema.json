@@ -4,101 +4,501 @@
   "title": "MiniMax H3 Tutorial Guide",
   "type": "object",
   "additionalProperties": false,
-  "required": ["id", "contentType", "category", "title", "outcome", "audience", "hardware", "prerequisites", "steps", "commands", "caveats", "posterUrl", "tags", "relatedResourceIds", "source", "verifiedAt"],
+  "required": [
+    "id",
+    "contentType",
+    "category",
+    "title",
+    "outcome",
+    "audience",
+    "hardware",
+    "prerequisites",
+    "steps",
+    "commands",
+    "caveats",
+    "posterUrl",
+    "tags",
+    "relatedResourceIds",
+    "source",
+    "verifiedAt",
+    "addedAt",
+    "learningTrack",
+    "depth",
+    "evidence"
+  ],
   "properties": {
-    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
-    "contentType": { "enum": ["foundation", "community"] },
-    "category": { "enum": ["getting-started", "comfyui", "prompt", "acceleration", "long-video", "audio", "training"] },
-    "title": { "$ref": "#/$defs/localizedText" },
-    "outcome": { "$ref": "#/$defs/localizedText" },
-    "audience": { "$ref": "#/$defs/localizedText" },
-    "hardware": { "$ref": "#/$defs/localizedText" },
-    "prerequisites": { "$ref": "#/$defs/localizedList" },
-    "steps": { "$ref": "#/$defs/localizedList" },
-    "commands": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
-    "checks": { "$ref": "#/$defs/localizedList" },
-    "caveats": { "$ref": "#/$defs/localizedList" },
-    "posterUrl": { "type": "string", "pattern": "^/tutorial-posters/" },
-    "tags": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1, "uniqueItems": true },
-    "relatedResourceIds": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "contentType": {
+      "enum": [
+        "foundation",
+        "community"
+      ]
+    },
+    "category": {
+      "enum": [
+        "getting-started",
+        "comfyui",
+        "prompt",
+        "acceleration",
+        "long-video",
+        "audio",
+        "training"
+      ]
+    },
+    "title": {
+      "$ref": "#/$defs/localizedText"
+    },
+    "outcome": {
+      "$ref": "#/$defs/localizedText"
+    },
+    "audience": {
+      "$ref": "#/$defs/localizedText"
+    },
+    "hardware": {
+      "$ref": "#/$defs/localizedText"
+    },
+    "prerequisites": {
+      "$ref": "#/$defs/localizedList"
+    },
+    "steps": {
+      "$ref": "#/$defs/localizedList"
+    },
+    "commands": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "checks": {
+      "$ref": "#/$defs/localizedList"
+    },
+    "caveats": {
+      "$ref": "#/$defs/localizedList"
+    },
+    "posterUrl": {
+      "type": "string",
+      "pattern": "^/tutorial-posters/"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "relatedResourceIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
     "source": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["platform", "url", "author", "originalLanguage"],
+      "required": [
+        "platform",
+        "url",
+        "author",
+        "originalLanguage"
+      ],
       "properties": {
-        "platform": { "enum": ["x", "github", "docs"] },
-        "url": { "type": "string", "format": "uri" },
-        "author": { "type": "string", "minLength": 1 },
-        "handle": { "type": "string" },
-        "publishedAt": { "type": "string", "format": "date" },
-        "originalLanguage": { "enum": ["zh", "en", "ja", "other"] }
+        "platform": {
+          "enum": [
+            "x",
+            "youtube",
+            "reddit",
+            "github",
+            "huggingface",
+            "docs"
+          ]
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "author": {
+          "type": "string",
+          "minLength": 1
+        },
+        "handle": {
+          "type": "string"
+        },
+        "publishedAt": {
+          "type": "string",
+          "format": "date"
+        },
+        "originalLanguage": {
+          "enum": [
+            "zh",
+            "en",
+            "ja",
+            "other"
+          ]
+        }
       }
     },
     "engagement": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["snapshotAt"],
+      "required": [
+        "snapshotAt"
+      ],
       "properties": {
-        "replies": { "type": "integer", "minimum": 0 },
-        "reposts": { "type": "integer", "minimum": 0 },
-        "likes": { "type": "integer", "minimum": 0 },
-        "views": { "type": "integer", "minimum": 0 },
-        "snapshotAt": { "type": "string", "format": "date" }
+        "replies": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "reposts": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "likes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "views": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "snapshotAt": {
+          "type": "string",
+          "format": "date"
+        }
       }
     },
-    "verifiedAt": { "type": "string", "format": "date" },
-    "flagship": { "type": "boolean" },
-    "difficulty": { "enum": ["beginner", "intermediate", "advanced"] },
-    "estimatedMinutes": { "type": "integer", "minimum": 1 },
+    "verifiedAt": {
+      "type": "string",
+      "format": "date"
+    },
+    "flagship": {
+      "type": "boolean"
+    },
+    "difficulty": {
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ]
+    },
+    "estimatedMinutes": {
+      "type": "integer",
+      "minimum": 1
+    },
     "hardwareProfiles": {
       "type": "array",
-      "items": { "enum": ["apple-silicon", "vram-8", "vram-12", "vram-16", "vram-24-plus", "cloud-gpu"] },
+      "items": {
+        "enum": [
+          "apple-silicon",
+          "vram-8",
+          "vram-12",
+          "vram-16",
+          "vram-24-plus",
+          "cloud-gpu"
+        ]
+      },
       "minItems": 1,
       "uniqueItems": true
     },
-    "testedVersions": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 },
-    "expectedResult": { "$ref": "#/$defs/localizedText" },
+    "testedVersions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "expectedResult": {
+      "$ref": "#/$defs/localizedText"
+    },
     "troubleshooting": {
       "type": "array",
       "minItems": 1,
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["problem", "solution"],
+        "required": [
+          "problem",
+          "solution"
+        ],
         "properties": {
-          "problem": { "$ref": "#/$defs/localizedText" },
-          "solution": { "$ref": "#/$defs/localizedText" }
+          "problem": {
+            "$ref": "#/$defs/localizedText"
+          },
+          "solution": {
+            "$ref": "#/$defs/localizedText"
+          }
         }
       }
     },
-    "uninstall": { "$ref": "#/$defs/localizedList" },
+    "uninstall": {
+      "$ref": "#/$defs/localizedList"
+    },
     "sourceRefs": {
       "type": "array",
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["title", "url"],
+        "required": [
+          "title",
+          "url"
+        ],
         "properties": {
-          "title": { "type": "string", "minLength": 1 },
-          "url": { "type": "string", "format": "uri" }
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
         }
       }
+    },
+    "addedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "learningTrack": {
+      "enum": [
+        "run",
+        "create"
+      ]
+    },
+    "depth": {
+      "enum": [
+        "deep",
+        "guide"
+      ]
+    },
+    "recommendation": {
+      "$ref": "#/$defs/localizedText"
+    },
+    "cost": {
+      "$ref": "#/$defs/localizedText"
+    },
+    "applicableVersions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "materialsNote": {
+      "$ref": "#/$defs/localizedText"
+    },
+    "learningResources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "label": {
+            "$ref": "#/$defs/localizedText"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "kind": {
+            "enum": [
+              "workflow",
+              "models",
+              "material",
+              "prompt",
+              "demo",
+              "documentation"
+            ]
+          }
+        },
+        "required": [
+          "label",
+          "url",
+          "kind"
+        ]
+      }
+    },
+    "chapters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "title": {
+            "$ref": "#/$defs/localizedText"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "seconds": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "title",
+          "url",
+          "seconds"
+        ]
+      }
+    },
+    "communityFeedback": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "summary": {
+            "$ref": "#/$defs/localizedText"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "kind": {
+            "enum": [
+              "usage",
+              "issue",
+              "fix",
+              "praise"
+            ]
+          }
+        },
+        "required": [
+          "summary",
+          "url",
+          "kind"
+        ]
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "sourceCheckedAt": {
+          "type": "string",
+          "format": "date"
+        },
+        "communityReviewedAt": {
+          "type": "string",
+          "format": "date"
+        },
+        "siteTestedAt": {
+          "type": "string",
+          "format": "date"
+        },
+        "siteTestUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "basis": {
+          "enum": [
+            "official",
+            "author-docs",
+            "community"
+          ]
+        },
+        "status": {
+          "enum": [
+            "active",
+            "needs-review"
+          ]
+        }
+      },
+      "required": [
+        "status"
+      ]
+    },
+    "relatedCases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "$ref": "#/$defs/localizedText"
+          },
+          "relationship": {
+            "enum": [
+              "example",
+              "technique"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "relationship"
+        ]
+      }
+    },
+    "nextGuideIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "learningOrder": {
+      "type": "integer",
+      "minimum": 1
     }
   },
   "$defs": {
     "localizedText": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["zh", "en"],
-      "properties": { "zh": { "type": "string", "minLength": 1 }, "en": { "type": "string", "minLength": 1 } }
+      "required": [
+        "zh",
+        "en"
+      ],
+      "properties": {
+        "zh": {
+          "type": "string",
+          "minLength": 1
+        },
+        "en": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
     },
     "localizedList": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["zh", "en"],
+      "required": [
+        "zh",
+        "en"
+      ],
       "properties": {
-        "zh": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 },
-        "en": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 }
+        "zh": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "en": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        }
       }
     }
   }
