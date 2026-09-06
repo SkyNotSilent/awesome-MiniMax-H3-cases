@@ -1,4 +1,5 @@
 import { parseFilters } from './filter-state.mjs'
+import { latestReleaseWindow } from './release-window.mjs'
 
 export class CatalogQueryError extends Error {
   constructor(message, status = 400) { super(message); this.status = status }
@@ -20,6 +21,7 @@ export function createCatalogIndex(data) {
     ids.add(item.id)
     return { item, time: Date.parse(item.addedAt) }
   }).sort((a, b) => b.time - a.time || a.item.id.localeCompare(b.item.id))
+  if (data.tutorials.some(item => !Number.isFinite(Date.parse(item?.addedAt)))) throw new Error('Invalid catalog record')
   return { data, records, featured: new Map(data.featuredCaseIds.map((id, i) => [id, i])), latest: new Set(records.slice(0, 48).map(x => x.item.id)), creators: new Map(data.creators.map(x => [x.slug, new Set(x.caseIds)])) }
 }
 function timestamp(value, fallback) {
@@ -28,17 +30,17 @@ function timestamp(value, fallback) {
   if (!Number.isFinite(time)) throw new CatalogQueryError('Invalid time boundary')
   return time
 }
-export function catalogSummary(index, params = new URLSearchParams()) {
+// Counts cover the latest release of each channel: every item added on the
+// same Asia/Shanghai day as the newest one.
+export function catalogSummary(index) {
   const { data, records } = index
-  const maximum = channel => Math.max(0, ...(channel === 'cases' ? records.map(x => x.time) : data.tutorials.map(x => Date.parse(x.addedAt))))
-  const maxima = { cases: new Date(maximum('cases')).toISOString(), tutorials: new Date(maximum('tutorials')).toISOString() }
+  const times = { cases: records.map(x => x.time), tutorials: data.tutorials.map(x => Date.parse(x.addedAt)) }
+  const maxima = Object.fromEntries(Object.entries(times).map(([channel, values]) => [channel, new Date(Math.max(0, ...values)).toISOString()]))
   const counts = {}
   for (const channel of ['cases', 'tutorials']) {
-    const times = channel === 'cases' ? records.map(x => x.time) : data.tutorials.map(x => Date.parse(x.addedAt))
-    const max = Date.parse(maxima[channel])
-    const since = Math.min(timestamp(params.get(`${channel}Since`), max), max)
-    const through = Math.min(timestamp(params.get(`${channel}Through`), max), max)
-    counts[channel] = times.filter(time => time > since && time <= through).length
+    const release = latestReleaseWindow(maxima[channel])
+    const since = Date.parse(release.since), through = Date.parse(release.through)
+    counts[channel] = times[channel].filter(time => time > since && time <= through).length
   }
   return { version: 1, catalogVersion: data.catalogVersion, generatedAt: maxima.cases > maxima.tutorials ? maxima.cases : maxima.tutorials, featuredCaseIds: data.featuredCaseIds, cases: [], tutorials: [], summary: { maxima, counts, totals: { cases: records.length, tutorials: data.tutorials.length } } }
 }
@@ -56,7 +58,13 @@ export function queryCatalog(index, params = new URLSearchParams(), favorites = 
   if (!Number.isInteger(limit) || limit < 1 || limit > 36) throw new CatalogQueryError('Page size must be between 1 and 36')
   const language = params.get('language') === 'en' ? 'en' : 'zh'
   const from = timestamp(params.get('from'), -Infinity), through = timestamp(params.get('to'), Infinity)
-  const since = timestamp(filters.since, NaN), until = timestamp(filters.through, NaN)
+  // A release query without an explicit window uses the catalog's own latest release.
+  if (filters.added === 'release' && Boolean(filters.since) !== Boolean(filters.through)) throw new CatalogQueryError('Invalid time boundary')
+  const fallback = filters.added === 'release' && !filters.since && !filters.through
+    ? latestReleaseWindow(index.records[0] ? new Date(index.records[0].time).toISOString() : '')
+    : null
+  const since = fallback ? Date.parse(fallback.since) : timestamp(filters.since, NaN)
+  const until = fallback ? Date.parse(fallback.through) : timestamp(filters.through, NaN)
   const favoriteIds = new Set(favorites)
   const creator = params.get('creator')
   if (creator && (!/^[\w.-]{1,160}$/.test(creator) || !index.creators.has(creator))) throw new CatalogQueryError('Unknown creator', 404)
@@ -68,7 +76,7 @@ export function queryCatalog(index, params = new URLSearchParams(), favorites = 
     if (creatorIds && !creatorIds.has(item.id)) continue
     if (needle && !item.search[language].includes(needle)) continue
     if (filters.prompt && !item.hasPrompt) continue
-    if (filters.added === 'unseen' ? !(time > since && time <= until) : filters.added !== 'all' && !(time >= from && time <= through)) continue
+    if (filters.added === 'release' ? !(time > since && time <= until) : filters.added !== 'all' && !(time >= from && time <= through)) continue
     const duration = filters.duration
     if (duration === 'UP_TO_5' && item.duration > 5 || duration === 'SIX_TO_10' && !(item.duration > 5 && item.duration <= 10) || duration === 'ELEVEN_TO_15' && !(item.duration > 10 && item.duration <= 15) || duration === 'OVER_15' && item.duration <= 15) continue
     const collection = filters.collection

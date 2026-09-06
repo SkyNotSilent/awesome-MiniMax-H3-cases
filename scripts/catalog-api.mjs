@@ -47,7 +47,7 @@ export async function handleCatalogApi(request, response, index) {
     if (!index) throw new CatalogQueryError('Catalog unavailable', 503)
     if (url.search.length > 4096) throw new CatalogQueryError('Query too long')
     const favorites = request.method === 'POST' ? await readFavorites(request) : []
-    const result = url.pathname.endsWith('/summary') ? catalogSummary(index, url.searchParams) : queryCatalog(index, url.searchParams, favorites)
+    const result = url.pathname.endsWith('/summary') ? catalogSummary(index) : queryCatalog(index, url.searchParams, favorites)
     response.setHeader('Server-Timing', `catalog;dur=${(performance.now() - started).toFixed(3)}`)
     send(request, response, 200, result)
   } catch (error) {

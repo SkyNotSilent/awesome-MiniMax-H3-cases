@@ -3507,17 +3507,6 @@ body.intro-open {
   font-size: 16px;
 }
 
-.update-summary {
-  margin-top: 32px;
-  min-height: 132px;
-  display: grid;
-  grid-template-columns: 150px minmax(0, 1fr) minmax(220px, 280px);
-  align-items: stretch;
-  color: #aeb2a8;
-  background: #0d0f0c;
-  border: 1px solid #30342c;
-}
-
 .update-strip {
   min-height: 50px;
   margin-top: 16px;
@@ -3578,70 +3567,6 @@ body.intro-open {
   border-color: var(--acid);
 }
 
-.update-summary.has-updates {
-  background: linear-gradient(105deg, rgba(216, 255, 62, 0.09), rgba(13, 15, 12, 0.98) 48%);
-  border-color: rgba(216, 255, 62, 0.58);
-}
-
-.update-summary-index,
-.update-summary-copy,
-.update-summary-meta {
-  padding: 22px;
-}
-
-.update-summary-index {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-right: 1px solid #30342c;
-  font-family: var(--mono);
-  text-transform: uppercase;
-}
-
-.update-summary-index span,
-.update-summary-meta span {
-  color: #747970;
-  font-size: 9px;
-  letter-spacing: 0.09em;
-}
-
-.update-summary-index strong {
-  color: var(--acid);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-}
-
-.update-summary-copy {
-  align-self: center;
-}
-
-.update-summary-copy h2 {
-  margin: 0;
-  color: var(--ink);
-  font-family: var(--display);
-  font-size: clamp(28px, 3vw, 44px);
-  line-height: 1;
-  letter-spacing: -0.04em;
-}
-
-.update-summary-copy p {
-  max-width: 690px;
-  margin: 12px 0 0;
-  color: #898e84;
-  font-size: 12px;
-  line-height: 1.65;
-}
-
-.update-summary-actions {
-  margin-top: 16px;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.update-summary-actions a,
-.update-summary-actions button,
 .empty-state button,
 .tutorial-empty button {
   min-height: 34px;
@@ -3659,46 +3584,11 @@ body.intro-open {
   letter-spacing: 0.04em;
 }
 
-.update-summary-actions a:hover,
-.update-summary-actions button:hover,
 .empty-state button:hover,
 .tutorial-empty button:hover {
   color: #090a08;
   background: var(--acid);
   border-color: var(--acid);
-}
-
-.update-summary-meta {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 10px;
-  border-left: 1px solid #30342c;
-  font-family: var(--mono);
-  text-transform: uppercase;
-}
-
-.update-summary-meta time {
-  color: var(--ink);
-  font-family: var(--display);
-  font-size: 30px;
-  letter-spacing: -0.02em;
-}
-
-.update-summary-meta strong {
-  color: var(--acid);
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-}
-
-.update-summary-meta a {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--acid);
-  font-size: 9px;
-  letter-spacing: 0.06em;
 }
 
 .added-date-filter {
@@ -3709,7 +3599,6 @@ body.intro-open {
   border-bottom: 1px solid var(--line);
 }
 
-.update-summary + .added-date-filter,
 .update-strip + .added-date-filter {
   margin-top: 18px;
   border-top: 1px solid var(--line);
@@ -3831,22 +3720,6 @@ body.intro-open {
 
 .added-date-filter + .primary-filter {
   margin-top: 0;
-}
-
-.update-visibility-sentinel {
-  width: 100%;
-  height: 1px;
-  grid-column: 1 / -1;
-  pointer-events: none;
-}
-
-.update-read-status {
-  min-height: 22px;
-  padding-top: 8px;
-  color: #777d72;
-  font-family: var(--mono);
-  font-size: 9px;
-  text-align: right;
 }
 
 .primary-filter {
@@ -5479,23 +5352,6 @@ footer {
     gap: 28px;
   }
 
-  .update-summary {
-    grid-template-columns: 150px minmax(0, 1fr);
-  }
-
-  .update-summary-meta {
-    grid-column: 1 / -1;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    border-top: 1px solid #30342c;
-    border-left: 0;
-  }
-
-  .update-summary-meta time {
-    margin-right: auto;
-  }
-
   .added-date-filter-controls {
     grid-template-columns: 1fr;
   }
@@ -5722,11 +5578,6 @@ footer {
     font-size: 15px;
   }
 
-  .update-summary {
-    min-height: 0;
-    grid-template-columns: 1fr;
-  }
-
   .update-strip {
     min-height: 68px;
     margin-top: 12px;
@@ -5762,30 +5613,6 @@ footer {
     margin-top: 10px;
   }
 
-  .update-summary-index {
-    min-height: 62px;
-    flex-direction: row;
-    align-items: center;
-    border-right: 0;
-    border-bottom: 1px solid #30342c;
-  }
-
-  .update-summary-index,
-  .update-summary-copy,
-  .update-summary-meta {
-    padding: 18px;
-  }
-
-  .update-summary-meta {
-    grid-column: 1;
-    display: grid;
-    grid-template-columns: 1fr auto;
-  }
-
-  .update-summary-meta a {
-    grid-column: 1 / -1;
-  }
-
   .added-date-filter {
     grid-template-columns: 1fr;
   }
@@ -5798,9 +5625,12 @@ footer {
     grid-template-columns: repeat(4, minmax(122px, 1fr));
   }
 
-  .added-date-filter-hint {
+  /* Outranks the visible-state rule so the hint drops under the chips
+     instead of opening an implicit second column beside them. */
+  .added-date-filter .added-date-filter-hint.is-visible,
+  .added-date-filter:has(.added-date-presets button:nth-child(2):focus-visible) .added-date-filter-hint {
     grid-column: 1;
-    padding-inline: 0;
+    padding-inline: 12px;
   }
 
   .added-date-presets button:first-child {

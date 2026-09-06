@@ -2,15 +2,11 @@ import { describe, expect, it } from 'vitest'
 import {
   addedDatePresets,
   addedDateHref,
-  clampAddedAt,
+  formatAddedDate,
   matchesAddedDate,
   maxAddedAt,
   parseAddedDatePreset,
-  parseSince,
-  parseStoredUpdateSession,
   sortByAddedAtDescending,
-  todayUpdateWindow,
-  validUpdateWindow,
 } from './updates'
 
 describe('added-date filtering', () => {
@@ -24,60 +20,39 @@ describe('added-date filtering', () => {
     expect(matchesAddedDate(localIso(2026, 7, 24, 23), '30d', { now })).toBe(false)
   })
 
-  it('builds a today window that starts at the local day boundary and never runs ahead of the clock', () => {
-    const window = todayUpdateWindow(localIso(2026, 8, 23, 9), now)
-    expect(matchesAddedDate(localIso(2026, 8, 23, 0), 'unseen', window)).toBe(true)
-    expect(matchesAddedDate(localIso(2026, 8, 22, 23), 'unseen', window)).toBe(false)
-    expect(window.through).toBe(localIso(2026, 8, 23, 9))
-    expect(todayUpdateWindow(localIso(2026, 8, 25), now).through).toBe(now.toISOString())
-    expect(todayUpdateWindow('', now).through).toBe(now.toISOString())
-    const stale = todayUpdateWindow(localIso(2026, 8, 20), now)
-    expect(stale.since).toBe(stale.through)
-    expect(Date.parse(stale.since)).toBeLessThanOrEqual(Date.parse(stale.through))
-  })
-
-  it('bounds unseen items strictly between since and through', () => {
+  it('bounds release items strictly between since and through', () => {
     const since = localIso(2026, 8, 20)
     const through = localIso(2026, 8, 22)
-    expect(matchesAddedDate(localIso(2026, 8, 21), 'unseen', { since, through })).toBe(true)
-    expect(matchesAddedDate(since, 'unseen', { since, through })).toBe(false)
-    expect(matchesAddedDate(through, 'unseen', { since, through })).toBe(true)
-    expect(matchesAddedDate(localIso(2026, 8, 23), 'unseen', { since, through })).toBe(false)
-    expect(matchesAddedDate(localIso(2026, 8, 21), 'unseen', { since: null, through })).toBe(false)
+    expect(matchesAddedDate(localIso(2026, 8, 21), 'release', { since, through })).toBe(true)
+    expect(matchesAddedDate(since, 'release', { since, through })).toBe(false)
+    expect(matchesAddedDate(through, 'release', { since, through })).toBe(true)
+    expect(matchesAddedDate(localIso(2026, 8, 23), 'release', { since, through })).toBe(false)
+    expect(matchesAddedDate(localIso(2026, 8, 21), 'release', { since: null, through })).toBe(false)
+    expect(matchesAddedDate('broken', 'all')).toBe(false)
   })
 
-  it('normalizes valid URL state and falls back safely for invalid values', () => {
-    expect(addedDatePresets).toEqual(['all', 'unseen', '7d', '30d'])
+  it('normalizes valid URL state and maps retired presets onto the latest release', () => {
+    expect(addedDatePresets).toEqual(['all', 'release', '7d', '30d'])
     expect(parseAddedDatePreset('7d')).toBe('7d')
-    expect(parseAddedDatePreset('today')).toBe('unseen')
+    expect(parseAddedDatePreset('release')).toBe('release')
+    expect(parseAddedDatePreset('unseen')).toBe('release')
+    expect(parseAddedDatePreset('today')).toBe('release')
     expect(parseAddedDatePreset('forever')).toBe('all')
-    expect(parseSince('not-a-date')).toBeNull()
-    expect(parseSince('2026-08-20')).toBeNull()
-    expect(parseSince('2026-08-20T00:00:00Z')).toBe('2026-08-20T00:00:00.000Z')
-    expect(clampAddedAt('2026-08-25T00:00:00Z', '2026-08-23T00:00:00Z')).toBe('2026-08-23T00:00:00.000Z')
+    expect(parseAddedDatePreset('constructor')).toBe('all')
+    expect(parseAddedDatePreset('__proto__')).toBe('all')
+    expect(parseAddedDatePreset(null)).toBe('all')
   })
 
-  it('validates persisted session windows without allowing reversed ranges', () => {
-    const maximum = '2026-08-23T00:00:00Z'
-    expect(validUpdateWindow({ since: '2026-08-20T00:00:00Z', through: '2026-08-22T00:00:00Z' }, maximum)).toEqual({
-      since: '2026-08-20T00:00:00.000Z',
-      through: '2026-08-22T00:00:00.000Z',
-    })
-    expect(validUpdateWindow({ since: '2026-08-22T00:00:00Z', through: '2026-08-20T00:00:00Z' }, maximum)).toBeNull()
-    expect(parseStoredUpdateSession('{"version":2,"firstVisit":true}')).toEqual({ version: 2, firstVisit: true })
-    expect(parseStoredUpdateSession('{"version":3,"firstVisit":true}')).toBeNull()
-    expect(parseStoredUpdateSession('broken')).toBeNull()
-  })
-
-  it('builds fixed shareable update links and keeps older presets compact', () => {
-    expect(addedDateHref('/tutorials/', 'unseen', {
-      since: '2026-08-20T00:00:00.000Z',
-      through: '2026-08-23T00:00:00.000Z',
-    })).toBe(
-      '/tutorials/?added=unseen&since=2026-08-20T00%3A00%3A00.000Z&through=2026-08-23T00%3A00%3A00.000Z',
-    )
+  it('builds compact preset links without personal windows', () => {
+    expect(addedDateHref('/tutorials/', 'release')).toBe('/tutorials/?added=release')
     expect(addedDateHref('/tutorials/', '7d')).toBe('/tutorials/?added=7d')
     expect(addedDateHref('/tutorials/', 'all')).toBe('/tutorials/')
+  })
+
+  it('formats date-only release dates as calendar dates in every time zone', () => {
+    expect(formatAddedDate('2026-09-06', 'zh')).toBe('9月6日')
+    expect(formatAddedDate('2026-09-06', 'en')).toBe('Sep 6')
+    expect(formatAddedDate(localIso(2026, 8, 20), 'zh')).toBe('8月20日')
   })
 
   it('finds the newest timestamp and sorts newest-first with stable ties', () => {

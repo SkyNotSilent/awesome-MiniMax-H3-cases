@@ -2,7 +2,6 @@
 import { chromium, devices } from 'playwright'
 
 const baseUrl = (process.env.PERF_BASE_URL || 'http://127.0.0.1:4173').replace(/\/$/, '')
-const currentBaseline = '9999-12-31T23:59:59.999Z'
 
 async function dismissIntro(page) {
   const skip = page.getByRole('button', { name: /跳过开场|Skip intro/i })
@@ -18,10 +17,8 @@ async function ready(page, path = '/') {
 
 async function checkDesktop(browser) {
   const context = await browser.newContext({ viewport: { width: 1440, height: 1000 } })
-  await context.addInitScript((baseline) => {
+  await context.addInitScript(() => {
     localStorage.setItem('minimax-h3-language', 'zh')
-    localStorage.setItem('minimax-h3-cases-seen-through-v2', baseline)
-    localStorage.setItem('minimax-h3-tutorials-seen-through-v2', baseline)
     window.IntersectionObserver = class {
       observe() {}
       unobserve() {}
@@ -33,7 +30,7 @@ async function checkDesktop(browser) {
     }
     document.addEventListener('pointerdown', recordInteraction, true)
     document.addEventListener('click', recordInteraction, true)
-  }, currentBaseline)
+  })
   const page = await context.newPage()
   const mediaRequests = []
   const forbiddenRequests = []
@@ -148,11 +145,9 @@ async function checkDesktop(browser) {
 
 async function checkAutomaticLoading(browser) {
   const context = await browser.newContext({ viewport: { width: 1440, height: 1000 } })
-  await context.addInitScript((baseline) => {
+  await context.addInitScript(() => {
     localStorage.setItem('minimax-h3-language', 'zh')
-    localStorage.setItem('minimax-h3-cases-seen-through-v2', baseline)
-    localStorage.setItem('minimax-h3-tutorials-seen-through-v2', baseline)
-  }, currentBaseline)
+  })
   const page = await context.newPage()
   await ready(page)
   await page.locator('.catalog-pagination').scrollIntoViewIfNeeded()
@@ -165,11 +160,9 @@ async function checkAutomaticLoading(browser) {
 
 async function checkCombinedLoading(browser) {
   const context = await browser.newContext({ viewport: { width: 1440, height: 1000 } })
-  await context.addInitScript((baseline) => {
+  await context.addInitScript(() => {
     localStorage.setItem('minimax-h3-language', 'zh')
-    localStorage.setItem('minimax-h3-cases-seen-through-v2', baseline)
-    localStorage.setItem('minimax-h3-tutorials-seen-through-v2', baseline)
-  }, currentBaseline)
+  })
   const page = await context.newPage()
   await ready(page)
   await page.getByRole('button', { name: /加载更多案例/ }).click()
@@ -182,11 +175,9 @@ async function checkCombinedLoading(browser) {
 
 async function checkMobile(browser) {
   const context = await browser.newContext({ ...devices['iPhone 13'] })
-  await context.addInitScript((baseline) => {
+  await context.addInitScript(() => {
     localStorage.setItem('minimax-h3-language', 'zh')
-    localStorage.setItem('minimax-h3-cases-seen-through-v2', baseline)
-    localStorage.setItem('minimax-h3-tutorials-seen-through-v2', baseline)
-  }, currentBaseline)
+  })
   const page = await context.newPage()
   await ready(page)
   const dimensions = await page.evaluate(() => ({ viewport: innerWidth, document: document.documentElement.scrollWidth }))
@@ -224,87 +215,42 @@ async function checkFirstVisitLayout(browser) {
   console.log(JSON.stringify({ firstVisitLayout: measurements }))
 }
 
-async function checkUpdateLifecycle(browser) {
-  const response = await fetch(`${baseUrl}/data/catalog.json`)
-  if (!response.ok) throw new Error(`Could not load the catalog for update lifecycle checks (${response.status})`)
-  const catalog = await response.json()
-  const latestCaseAt = catalog.cases.reduce(
-    (latest, item) => Date.parse(item.addedAt) > Date.parse(latest) ? item.addedAt : latest,
-    catalog.cases[0].addedAt,
-  )
-  const latestCaseDay = latestCaseAt.slice(0, 10)
-  const priorCaseAt = catalog.cases
-    .filter((item) => item.addedAt.slice(0, 10) < latestCaseDay)
-    .reduce(
-      (latest, item) => Date.parse(item.addedAt) > Date.parse(latest) ? item.addedAt : latest,
-      '1970-01-01T00:00:00.000Z',
-    )
-  const latestTutorialAt = catalog.tutorials.reduce(
-    (latest, item) => Date.parse(item.addedAt) > Date.parse(latest) ? item.addedAt : latest,
-    catalog.tutorials[0].addedAt,
-  )
-  const expectedCount = catalog.cases.filter((item) => (
-    Date.parse(item.addedAt) > Date.parse(priorCaseAt)
-    && Date.parse(item.addedAt) <= Date.parse(latestCaseAt)
-  )).length
-  if (!expectedCount) throw new Error('Update lifecycle fixture did not produce any unseen cases.')
+// The latest release is identical for every visitor, so a fresh browser must
+// show the count the catalog summary implies and keep it across a reload.
+async function checkLatestRelease(browser) {
+  const response = await fetch(`${baseUrl}/api/catalog/summary`)
+  if (!response.ok) throw new Error(`Could not load the catalog summary for release checks (${response.status})`)
+  const { summary } = await response.json()
+  const expectedCount = summary?.counts?.cases ?? 0
+  if (!expectedCount) throw new Error('The catalog summary reports an empty latest release.')
 
-  // Keep the first case row below the fold so this scenario can prove that
-  // viewing the update summary alone does not acknowledge the batch.
   const context = await browser.newContext({ viewport: { width: 1440, height: 600 } })
-  await context.addInitScript(({ caseBaseline, tutorialBaseline }) => {
-    localStorage.setItem('minimax-h3-language', 'zh')
-    if (!localStorage.getItem('minimax-h3-cases-seen-through-v2')) {
-      localStorage.setItem('minimax-h3-cases-seen-through-v2', caseBaseline)
-    }
-    if (!localStorage.getItem('minimax-h3-tutorials-seen-through-v2')) {
-      localStorage.setItem('minimax-h3-tutorials-seen-through-v2', tutorialBaseline)
-    }
-  }, { caseBaseline: priorCaseAt, tutorialBaseline: latestTutorialAt })
-
+  await context.addInitScript(() => localStorage.setItem('minimax-h3-language', 'zh'))
   const page = await context.newPage()
-  await page.goto(baseUrl, { waitUntil: 'domcontentloaded', timeout: 60_000 })
-  await dismissIntro(page)
-  await page.locator('.case-card:not(.case-card-skeleton)').first().waitFor()
+  await ready(page)
   const activeAddedFilter = page.locator('.added-date-presets button[aria-pressed="true"]')
-  await activeAddedFilter.filter({ hasText: '本次新增' }).waitFor()
-  const initialCount = Number(await page.locator('.catalog-count span').textContent())
-  if (initialCount !== expectedCount) {
-    throw new Error(`Expected ${expectedCount} frozen unseen cases, received ${initialCount}`)
-  }
-  if (await page.evaluate(() => localStorage.getItem('minimax-h3-cases-seen-through-v2')) !== priorCaseAt) {
-    throw new Error('Case baseline advanced before an unseen card entered the viewport.')
-  }
+  await activeAddedFilter.filter({ hasText: '全部' }).waitFor()
+  const releaseButton = page.locator('.added-date-presets button').filter({ hasText: '本次新增' })
+  if (await releaseButton.isDisabled()) throw new Error('The latest-release filter should be clickable once the catalog has loaded.')
+  const badge = Number(await releaseButton.locator('small').textContent())
+  if (badge !== expectedCount) throw new Error(`Expected the release badge to read ${expectedCount}, received ${badge}`)
 
-  await page.locator('.update-visibility-sentinel').scrollIntoViewIfNeeded()
-  await page.waitForFunction((latest) => (
-    localStorage.getItem('minimax-h3-cases-seen-through-v2') === latest
-  ), latestCaseAt)
-  await page.locator('.update-read-status').filter({ hasText: '下次访问' }).waitFor()
+  await page.locator('.update-strip button').click()
+  await activeAddedFilter.filter({ hasText: '本次新增' }).waitFor()
+  await page.waitForFunction((count) => Number(document.querySelector('.catalog-count span')?.textContent) === count, expectedCount)
+  const search = new URL(page.url()).search
+  if (search !== '?added=release') throw new Error(`The release view should share as ?added=release, received "${search}"`)
+  const storedKeys = await page.evaluate(() => Object.keys(localStorage).filter((key) => key.includes('seen-through') || key.includes('update-session')))
+  if (storedKeys.length) throw new Error(`No visit state should be stored, found ${storedKeys.join(', ')}`)
 
   await page.reload({ waitUntil: 'domcontentloaded' })
   await dismissIntro(page)
   await page.locator('.case-card:not(.case-card-skeleton)').first().waitFor()
   await activeAddedFilter.filter({ hasText: '本次新增' }).waitFor()
   const refreshedCount = Number(await page.locator('.catalog-count span').textContent())
-  if (refreshedCount !== expectedCount) {
-    throw new Error(`Same-tab refresh lost the frozen update window (${refreshedCount}/${expectedCount}).`)
-  }
+  if (refreshedCount !== expectedCount) throw new Error(`Reload changed the latest release (${refreshedCount}/${expectedCount}).`)
 
-  await page.close()
-  const nextVisit = await context.newPage()
-  await nextVisit.goto(baseUrl, { waitUntil: 'domcontentloaded', timeout: 60_000 })
-  await dismissIntro(nextVisit)
-  await nextVisit.locator('.case-card:not(.case-card-skeleton)').first().waitFor()
-  await nextVisit.locator('.added-date-presets button[aria-pressed="true"]').filter({ hasText: '全部' }).waitFor()
-  const unseenButton = nextVisit.locator('.added-date-presets button').filter({ hasText: '本次新增' })
-  if (await unseenButton.isDisabled()) throw new Error('The unseen filter should stay clickable on a new visit.')
-  if ((await unseenButton.locator('small').textContent()) !== '0') throw new Error('A new up-to-date visit should report zero unseen cases.')
-  if (await nextVisit.locator('.case-card:not(.case-card-skeleton)').count() !== 36) {
-    throw new Error('A new up-to-date visit should return to the latest 36 cases in the complete library.')
-  }
-
-  console.log(JSON.stringify({ updateLifecycle: { expectedCount, initialCount, refreshedCount, nextVisit: 'all' } }))
+  console.log(JSON.stringify({ latestRelease: { expectedCount, badge, refreshedCount } }))
   await context.close()
 }
 
@@ -315,7 +261,7 @@ try {
   await checkCombinedLoading(browser)
   await checkMobile(browser)
   await checkFirstVisitLayout(browser)
-  await checkUpdateLifecycle(browser)
+  await checkLatestRelease(browser)
 } finally {
   await browser.close()
 }

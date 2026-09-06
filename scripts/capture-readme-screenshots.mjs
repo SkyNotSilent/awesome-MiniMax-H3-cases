@@ -11,19 +11,12 @@ const execFile = promisify(execFileCallback)
 const root = resolve(import.meta.dirname, '..')
 const screenshotDir = resolve(root, 'docs/screenshots')
 const stats = JSON.parse(await readFile(resolve(root, 'data/project-stats.json'), 'utf8'))
-const cases = JSON.parse(await readFile(resolve(root, 'data/cases.json'), 'utf8'))
 const guides = JSON.parse(await readFile(resolve(root, 'data/tutorial-guides.json'), 'utf8'))
 const resources = JSON.parse(await readFile(resolve(root, 'data/tutorials.json'), 'utf8'))
 const resourceSnapshotAt = resources.find((item) => item.snapshotAt)?.snapshotAt
 if (!resourceSnapshotAt) throw new Error('Tutorial resources are missing a Star snapshot date')
 const configuredBase = process.env.SCREENSHOT_BASE_URL
 const baseUrl = configuredBase || 'http://127.0.0.1:4173'
-const latestCaseAddedAt = Math.max(...cases.map((item) => Date.parse(item.addedAt)))
-const latestGuideAddedAt = Math.max(...guides.map((item) => Date.parse(item.addedAt)))
-const screenshotCurrentBaselines = {
-  cases: new Date(latestCaseAddedAt).toISOString(),
-  tutorials: new Date(latestGuideAddedAt).toISOString(),
-}
 let changedScreenshotCount = 0
 const changedScreenshotFiles = []
 
@@ -166,7 +159,7 @@ async function dismissIntro(page, label) {
 }
 
 async function focusUpdateSnapshot(page) {
-  const summary = page.locator('.update-summary, .update-strip').first()
+  const summary = page.locator('.update-strip').first()
   await summary.waitFor()
   await summary.scrollIntoViewIfNeeded()
   await page.waitForTimeout(250)
@@ -279,11 +272,9 @@ try {
     reducedMotion: 'reduce',
   })
   await blockRemoteFonts(desktop)
-  await desktop.addInitScript((baselines) => {
+  await desktop.addInitScript(() => {
     localStorage.setItem('minimax-h3-language', 'zh')
-    localStorage.setItem('minimax-h3-cases-seen-through-v2', baselines.cases)
-    localStorage.setItem('minimax-h3-tutorials-seen-through-v2', baselines.tutorials)
-  }, screenshotCurrentBaselines)
+  })
   const page = await desktop.newPage()
   page.on('pageerror', (error) => browserProblems.push(`pageerror: ${error.message}`))
   page.on('console', (message) => recordConsoleError('', message))
@@ -308,7 +299,8 @@ try {
 
   await verifyPage(page, '/en/?collection=latest', 'en', 'See what MiniMax H3 actually makes.')
   await dismissIntro(page, 'Skip intro')
-  await page.getByRole('button', { name: 'Latest' }).waitFor()
+  // Exact: the date filter's Latest additions chip shares the prefix.
+  await page.getByRole('button', { name: 'Latest', exact: true }).waitFor()
   await writeScreenshotIfChanged(page, 'latest-collection-en.jpg', { type: 'jpeg', quality: 88 })
 
   await verifyPage(page, '/tutorials/', 'zh-CN', 'MiniMax H3 教程')
@@ -342,11 +334,9 @@ try {
     reducedMotion: 'reduce',
   })
   await blockRemoteFonts(mobile)
-  await mobile.addInitScript((baselines) => {
+  await mobile.addInitScript(() => {
     localStorage.setItem('minimax-h3-language', 'zh')
-    localStorage.setItem('minimax-h3-cases-seen-through-v2', baselines.cases)
-    localStorage.setItem('minimax-h3-tutorials-seen-through-v2', baselines.tutorials)
-  }, screenshotCurrentBaselines)
+  })
   const mobilePage = await mobile.newPage()
   mobilePage.on('pageerror', (error) => browserProblems.push(`mobile pageerror: ${error.message}`))
   mobilePage.on('console', (message) => recordConsoleError('mobile ', message))
