@@ -5,17 +5,17 @@
 # MiniMax H3 Cases & Guides
 
 <!-- project-stats:start -->
-**The most complete source-attributed MiniMax H3 case and tutorial library: 1318 playable videos, 374 complete public Prompts, and 24 practical guides.**
+**The most complete source-attributed MiniMax H3 case and tutorial library: 1334 playable videos, 376 complete public Prompts, and 24 practical guides.**
 <!-- project-stats:end -->
 
 **English** · [简体中文](./README.zh-CN.md)
 
 [![Stars](https://img.shields.io/github/stars/SkyNotSilent/awesome-minimax-h3-cases?style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/stargazers)
 [![Forks](https://img.shields.io/github/forks/SkyNotSilent/awesome-minimax-h3-cases?style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/forks)
-[![Cases](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1318-374-24-264&query=%24.cases&label=cases&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/en/)
-[![Prompts](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1318-374-24-264&query=%24.completePrompts&label=public%20prompts&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/en/?collection=prompt)
-[![Tutorials](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1318-374-24-264&query=%24.tutorials&label=tutorials&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/en/tutorials/)
-[![Creators](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1318-374-24-264&query=%24.rankedCreators&label=featured%20creators&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/en/creators/)
+[![Cases](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1334-376-24-267&query=%24.cases&label=cases&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/en/)
+[![Prompts](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1334-376-24-267&query=%24.completePrompts&label=public%20prompts&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/en/?collection=prompt)
+[![Tutorials](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1334-376-24-267&query=%24.tutorials&label=tutorials&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/en/tutorials/)
+[![Creators](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1334-376-24-267&query=%24.rankedCreators&label=featured%20creators&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/en/creators/)
 [![CI](https://img.shields.io/github/actions/workflow/status/SkyNotSilent/awesome-minimax-h3-cases/ci.yml?style=for-the-badge&label=CI&labelColor=0a0b09)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/SkyNotSilent/awesome-minimax-h3-cases?style=for-the-badge&labelColor=0a0b09)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/releases)
 [![License](https://img.shields.io/badge/license-MIT-6ba4ff?style=for-the-badge&labelColor=0a0b09)](./LICENSE)
@@ -71,7 +71,7 @@ Combine these with 12 visual styles and 14 subject/scene facets. Every option sh
 [![MiniMax H3 featured creator leaderboard](./docs/screenshots/creators-en.png)](https://h3-field-notes-production.up.railway.app/en/creators/)
 
 <!-- creator-stats:start -->
-The dynamic creator board turns the archive into a compounding discovery system. It currently ranks **264 featured creators from 784 source-attributed X authors**, with separate views for overall quality, recent activity, case volume, complete Prompt contribution, rising creators, and tutorial authors.
+The dynamic creator board turns the archive into a compounding discovery system. It currently ranks **267 featured creators from 790 source-attributed X authors**, with separate views for overall quality, recent activity, case volume, complete Prompt contribution, rising creators, and tutorial authors.
 <!-- creator-stats:end -->
 
 - Every profile aggregates the creator's playable cases, complete public Prompts, and source-checked tutorials.
@@ -118,7 +118,7 @@ Example output is structured as a recommended route, environment check, executio
 ## Data, automation, and trust
 
 <!-- project-snapshot:start -->
-**Current generated snapshot:** 1318 cases · 28 Editor picks · 374 complete public Prompts · 24 tutorials · 264 ranked creators from 784 source authors · 8 flagship guides · 14 ecosystem resources · content checked through 2026-09-05.
+**Current generated snapshot:** 1334 cases · 28 Editor picks · 376 complete public Prompts · 24 tutorials · 267 ranked creators from 790 source authors · 8 flagship guides · 14 ecosystem resources · content checked through 2026-09-06.
 <!-- project-snapshot:end -->
 
 - [`data/project-stats.json`](./data/project-stats.json) is the canonical public count snapshot; CI rejects stale website and README numbers.
@@ -146,7 +146,7 @@ The source of truth remains `data/cases.json`, but production builds no longer s
 - Run `npm run videos:playback:audit` for a read-only inventory, `npm run videos:playback:migrate -- --apply` to populate the versioned playback tier, and `npm run videos:playback:verify` before switching or after a release. Migration reports stay in ignored `.review/` files.
 
 <!-- build-metrics:start -->
-**Current production build:** 99.3 kB homepage JavaScript gzip · 9.9 kB / 9.2 kB Chinese / English homepage HTML gzip · 147.3 kB catalog gzip · 699.7 kB / 664 kB Chinese / English search indexes gzip. Run `npm run performance:budget` for static budgets and `npm run performance:browser` against a local production server for browser behavior.
+**Current production build:** 95 kB homepage JavaScript gzip · 9.8 kB / 9.1 kB Chinese / English homepage HTML gzip · 152.6 kB catalog gzip · 706.4 kB / 669.2 kB Chinese / English search indexes gzip. Run `npm run performance:budget` for static budgets and `npm run performance:browser` against a local production server for browser behavior.
 <!-- build-metrics:end -->
 
 ## Contribute or report a problem

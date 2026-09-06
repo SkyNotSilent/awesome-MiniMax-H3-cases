@@ -5,17 +5,17 @@
 # MiniMax H3 Cases & Guides｜案例与实战教程
 
 <!-- project-stats:start -->
-**更完整、更可信的 MiniMax H3 案例与教程库：1318 个可播放视频、374 条完整公开 Prompt、24 篇实用教程。**
+**更完整、更可信的 MiniMax H3 案例与教程库：1334 个可播放视频、376 条完整公开 Prompt、24 篇实用教程。**
 <!-- project-stats:end -->
 
 [English](./README.md) · **简体中文**
 
 [![Stars](https://img.shields.io/github/stars/SkyNotSilent/awesome-minimax-h3-cases?style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/stargazers)
 [![Forks](https://img.shields.io/github/forks/SkyNotSilent/awesome-minimax-h3-cases?style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/forks)
-[![Cases](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1318-374-24-264&query=%24.cases&label=cases&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/)
-[![Prompts](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1318-374-24-264&query=%24.completePrompts&label=public%20prompts&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/?collection=prompt)
-[![Tutorials](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1318-374-24-264&query=%24.tutorials&label=tutorials&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/tutorials/)
-[![Creators](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1318-374-24-264&query=%24.rankedCreators&label=featured%20creators&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/creators/)
+[![Cases](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1334-376-24-267&query=%24.cases&label=cases&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/)
+[![Prompts](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1334-376-24-267&query=%24.completePrompts&label=public%20prompts&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/?collection=prompt)
+[![Tutorials](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1334-376-24-267&query=%24.tutorials&label=tutorials&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/tutorials/)
+[![Creators](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1334-376-24-267&query=%24.rankedCreators&label=featured%20creators&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/creators/)
 [![CI](https://img.shields.io/github/actions/workflow/status/SkyNotSilent/awesome-minimax-h3-cases/ci.yml?style=for-the-badge&label=CI&labelColor=0a0b09)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/SkyNotSilent/awesome-minimax-h3-cases?style=for-the-badge&labelColor=0a0b09)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/releases)
 [![License](https://img.shields.io/badge/license-MIT-6ba4ff?style=for-the-badge&labelColor=0a0b09)](./LICENSE)
@@ -71,7 +71,7 @@ MiniMax H3 也常被搜索为 **Hailuo H3**、**Hailuo 3.0**、**海螺 H3** 和
 [![MiniMax H3 优质创作者动态榜单](./docs/screenshots/creators-zh.png)](https://h3-field-notes-production.up.railway.app/creators/)
 
 <!-- creator-stats:start -->
-动态创作者榜把案例库变成持续复利的发现系统。目前从 **784 位来源明确的 X 作者中筛选出 264 位优质创作者**，可查看综合优质、近期活跃、案例最多、Prompt 贡献、新锐作者和教程作者榜。
+动态创作者榜把案例库变成持续复利的发现系统。目前从 **790 位来源明确的 X 作者中筛选出 267 位优质创作者**，可查看综合优质、近期活跃、案例最多、Prompt 贡献、新锐作者和教程作者榜。
 <!-- creator-stats:end -->
 
 - 每位作者都有独立主页，聚合可播放案例、完整公开 Prompt 与来源核验教程；
@@ -118,7 +118,7 @@ npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
 ## 数据、自动化与可信度
 
 <!-- project-snapshot:start -->
-**当前自动统计：** 1318 个案例 · 28 条编辑精选 · 374 条完整公开 Prompt · 24 篇教程 · 784 位来源作者中的 264 位优质创作者 · 8 篇旗舰教程 · 14 个生态资源 · 内容核验至 2026-09-05。
+**当前自动统计：** 1334 个案例 · 28 条编辑精选 · 376 条完整公开 Prompt · 24 篇教程 · 790 位来源作者中的 267 位优质创作者 · 8 篇旗舰教程 · 14 个生态资源 · 内容核验至 2026-09-06。
 <!-- project-snapshot:end -->
 
 - [`data/project-stats.json`](./data/project-stats.json) 是公开数字的唯一快照；网站与 README 数字过期会让 CI 失败；
@@ -146,7 +146,7 @@ npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
 - `npm run videos:playback:audit` 执行只读清点，`npm run videos:playback:migrate -- --apply` 生成版本化播放层，切换前后运行 `npm run videos:playback:verify`；迁移报告只保存在被忽略的 `.review/`。
 
 <!-- build-metrics:start -->
-**当前生产构建：** 首页 JavaScript gzip 99.3 kB · 中文 / 英文首页 HTML gzip 9.9 kB / 9.2 kB · 目录 gzip 147.3 kB · 中文 / 英文搜索索引 gzip 699.7 kB / 664 kB。静态预算运行 `npm run performance:budget`；启动本地生产服务后运行 `npm run performance:browser` 验证浏览器行为。
+**当前生产构建：** 首页 JavaScript gzip 95 kB · 中文 / 英文首页 HTML gzip 9.8 kB / 9.1 kB · 目录 gzip 152.6 kB · 中文 / 英文搜索索引 gzip 706.4 kB / 669.2 kB。静态预算运行 `npm run performance:budget`；启动本地生产服务后运行 `npm run performance:browser` 验证浏览器行为。
 <!-- build-metrics:end -->
 
 ## 投稿、纠错与下架
