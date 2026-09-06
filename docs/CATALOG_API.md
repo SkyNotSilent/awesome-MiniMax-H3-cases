@@ -6,7 +6,7 @@ The existing Node server loads an immutable, public-only snapshot from `build/se
 
 The version hashes all query-relevant public content, including taxonomy and featured membership. Cursors bind version, filter scope and position. A deployment version mismatch returns 409; the client retains filters and restarts pagination. Other query failures retain displayed results and offer retry. Abort signals and a request sequence prevent stale responses replacing newer filters.
 
-`GET /api/catalog/summary` returns channel maxima and bounded aggregate counts. It accepts `casesSince`, `casesThrough`, `tutorialsSince`, `tutorialsThrough`, `todayFrom`, and `todayThrough`. It never returns all case IDs. The browser continues to store time-based update acknowledgements, not per-video viewing histories.
+`GET /api/catalog/summary` returns channel maxima and bounded aggregate counts. It accepts `casesSince`, `casesThrough`, `tutorialsSince`, and `tutorialsThrough`. It never returns all case IDs. The browser continues to store time-based update acknowledgements, not per-video viewing histories.
 
 For the favorites collection, `POST /api/catalog` accepts only `{ "favorites": ["case-id"] }`, capped at 256 KiB and 10,000 syntactically valid IDs. The request is read-only. Favorites remain in browser storage; the service sees IDs supplied for that query, writes none, and never logs the body, search string or ID list. API responses use `private, no-store`; platform access-log retention must be reviewed during deployment activation. Other collections do not send the stored favorites list.
 

@@ -32,17 +32,15 @@ export function catalogSummary(index, params = new URLSearchParams()) {
   const { data, records } = index
   const maximum = channel => Math.max(0, ...(channel === 'cases' ? records.map(x => x.time) : data.tutorials.map(x => Date.parse(x.addedAt))))
   const maxima = { cases: new Date(maximum('cases')).toISOString(), tutorials: new Date(maximum('tutorials')).toISOString() }
-  const counts = {}, today = {}
-  const from = timestamp(params.get('todayFrom'), Infinity), to = timestamp(params.get('todayThrough'), -Infinity)
+  const counts = {}
   for (const channel of ['cases', 'tutorials']) {
     const times = channel === 'cases' ? records.map(x => x.time) : data.tutorials.map(x => Date.parse(x.addedAt))
     const max = Date.parse(maxima[channel])
     const since = Math.min(timestamp(params.get(`${channel}Since`), max), max)
     const through = Math.min(timestamp(params.get(`${channel}Through`), max), max)
     counts[channel] = times.filter(time => time > since && time <= through).length
-    today[channel] = times.filter(time => time >= from && time <= to).length
   }
-  return { version: 1, catalogVersion: data.catalogVersion, generatedAt: maxima.cases > maxima.tutorials ? maxima.cases : maxima.tutorials, featuredCaseIds: data.featuredCaseIds, cases: [], tutorials: [], summary: { maxima, counts, today, totals: { cases: records.length, tutorials: data.tutorials.length } } }
+  return { version: 1, catalogVersion: data.catalogVersion, generatedAt: maxima.cases > maxima.tutorials ? maxima.cases : maxima.tutorials, featuredCaseIds: data.featuredCaseIds, cases: [], tutorials: [], summary: { maxima, counts, totals: { cases: records.length, tutorials: data.tutorials.length } } }
 }
 function fingerprint(value) {
   // Cursor scope only, not an authentication or integrity primitive.
@@ -74,7 +72,7 @@ export function queryCatalog(index, params = new URLSearchParams(), favorites = 
     const duration = filters.duration
     if (duration === 'UP_TO_5' && item.duration > 5 || duration === 'SIX_TO_10' && !(item.duration > 5 && item.duration <= 10) || duration === 'ELEVEN_TO_15' && !(item.duration > 10 && item.duration <= 15) || duration === 'OVER_15' && item.duration <= 15) continue
     const collection = filters.collection
-    if (collection === 'featured' && !index.featured.has(item.id) || collection === 'latest' && !index.latest.has(item.id) || collection === 'prompt' && !item.hasPrompt || collection === 'official' && item.sourceType !== 'official' || collection === 'long' && item.duration <= 15 || collection === 'favorites' && !favoriteIds.has(item.id)) continue
+    if (collection === 'featured' && !index.featured.has(item.id) || collection === 'latest' && !index.latest.has(item.id) || collection === 'official' && item.sourceType !== 'official' || collection === 'favorites' && !favoriteIds.has(item.id)) continue
     const category = filters.category === 'ALL' || filters.category === item.category
     const style = filters.style === 'ALL' || item.styles.includes(filters.style)
     const scene = filters.scene === 'ALL' || item.scenes.includes(filters.scene)

@@ -32,9 +32,7 @@ async function loadJson<T>(path: string, force = false): Promise<T> {
 export async function loadCatalog(force = false) {
   const metadata = await loadJson<CatalogPayload>('/api/catalog/summary', force)
   const window = createUpdateSession(metadata, resolveRoute(globalThis.window.location.pathname).page)
-  const now = new Date(), today = new Date(now)
-  today.setHours(0, 0, 0, 0)
-  const params = new URLSearchParams({ casesSince: window.cases.since, casesThrough: window.cases.through, tutorialsSince: window.tutorials.since, tutorialsThrough: window.tutorials.through, todayFrom: today.toISOString(), todayThrough: now.toISOString() })
+  const params = new URLSearchParams({ casesSince: window.cases.since, casesThrough: window.cases.through, tutorialsSince: window.tutorials.since, tutorialsThrough: window.tutorials.through })
   // Personal windows are never kept in the shared promise cache.
   const response = await fetch(`/api/catalog/summary?${params}`, { cache: 'no-store' })
   if (!response.ok) throw new Error('Catalog summary unavailable')

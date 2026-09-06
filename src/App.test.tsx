@@ -225,13 +225,90 @@ describe('case-first routes', () => {
     expect(screen.queryByText('餐厅时间冻结与逆向复原')).not.toBeInTheDocument()
   })
 
+  it('puts 全部 first in the added-date row and hosts the prompt switch there', () => {
+    renderAt('/')
+    const addedDate = screen.getByRole('group', { name: '本站收录时间' })
+    expect(within(addedDate).getAllByRole('button').map((button) => button.textContent)).toEqual([
+      '全部', '本次新增0', '近 7 天', '近 30 天',
+    ])
+    expect(within(addedDate).queryByRole('button', { name: '今天' })).not.toBeInTheDocument()
+    expect(within(addedDate).getByRole('switch', { name: '只看有 Prompt' })).toBeInTheDocument()
+    expect(within(screen.getByLabelText('案例筛选')).queryByRole('switch')).not.toBeInTheDocument()
+  })
+
+  it('shows today’s additions under 本次新增 for first-time visitors', () => {
+    vi.useFakeTimers()
+    // Anchor the clock one minute after the newest fixture item so the window
+    // contains it in every real timezone.
+    vi.setSystemTime(new Date(Date.parse('2026-08-20T12:20:35.382Z') + 60_000))
+    renderAt('/')
+
+    const unseen = screen.getByRole('button', { name: /本次新增/ })
+    expect(unseen).toBeEnabled()
+    expect(unseen).toHaveTextContent('本次新增1')
+    expect(screen.getByRole('button', { name: /查看今天新增的 1 个案例/ })).toBeInTheDocument()
+
+    fireEvent.click(unseen)
+    expect(unseen).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByText('羊皮纸上的绝地光明史诗')).toBeInTheDocument()
+    expect(screen.queryByText('两种生成模型再次对照')).not.toBeInTheDocument()
+    expect(screen.queryByText('舰桥上的跃迁余震')).not.toBeInTheDocument()
+    // The today fallback is not pinned into the URL, so reloading the
+    // app-written address must not turn the first visit into a returning one.
+    expect(window.location.search).toBe('?added=unseen')
+    expect(window.localStorage.getItem(caseUpdatesSeenThroughKey)).toBe('2026-08-20T12:20:35.382Z')
+
+    cleanup()
+    renderAt(`/${window.location.search}`)
+    expect(document.querySelector('.update-strip')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /查看今天新增的 1 个案例/ })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /本次新增/ })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByText('羊皮纸上的绝地光明史诗')).toBeInTheDocument()
+    expect(screen.queryByText('两种生成模型再次对照')).not.toBeInTheDocument()
+    expect(JSON.parse(window.sessionStorage.getItem(updateSessionStorageKey) || '{}')).toEqual({ version: 2, firstVisit: true })
+  })
+
+  it('maps legacy collection links onto the primary filters', () => {
+    renderAt('/?collection=long')
+    expect(screen.getByRole('button', { name: /超过 15 秒/ })).toHaveClass('active')
+    expect(screen.getByText('羊皮纸上的绝地光明史诗')).toBeInTheDocument()
+    expect(screen.queryByText('舰桥上的跃迁余震')).not.toBeInTheDocument()
+    expect(window.location.search).toBe('?duration=OVER_15')
+
+    cleanup()
+    renderAt('/?collection=prompt')
+    expect(screen.getByRole('switch', { name: '只看有 Prompt' })).toHaveAttribute('aria-checked', 'true')
+    expect(screen.queryByText('同提示词 H3 与 Seedance 对比')).not.toBeInTheDocument()
+    expect(window.location.search).toBe('?prompt=1')
+  })
+
+  it('lights the quick-collection label while a collection is active and clears it on click', () => {
+    renderAt('/')
+    const collections = screen.getByRole('group', { name: '快速集合' })
+    const label = collections.querySelector('.case-collections-label') as HTMLButtonElement
+    expect(label).toBeDisabled()
+    expect(label).not.toHaveClass('is-active')
+
+    fireEvent.click(within(collections).getByRole('button', { name: '编辑精选' }))
+    expect(label).toBeEnabled()
+    expect(label).toHaveClass('is-active')
+    expect(label).toHaveAccessibleName('退出快速集合')
+
+    fireEvent.click(label)
+    expect(label).toBeDisabled()
+    expect(within(collections).getByRole('button', { name: '全部' })).toHaveAttribute('aria-pressed', 'true')
+    expect(within(collections).getByRole('button', { name: '编辑精选' })).toHaveAttribute('aria-pressed', 'false')
+    expect(window.location.search).toBe('?added=all')
+  })
+
   it('treats quick collections as isolated folders that reset the filters above them', () => {
     renderAt('/')
     const collections = screen.getByRole('group', { name: '快速集合' })
-    expect(within(collections).queryByRole('button', { name: '全部案例' })).not.toBeInTheDocument()
-    expect(within(collections).getAllByRole('button').map((button) => button.textContent)).toEqual([
-      '编辑精选', '最新收录', '完整 Prompt', '官方案例', '长视频', '我的收藏',
+    const folders = collections.querySelector(':scope > div') as HTMLElement
+    expect(within(folders).getAllByRole('button').map((button) => button.textContent)).toEqual([
+      '全部', '编辑精选', '最新收录', '官方案例', '我的收藏',
     ])
+    expect(within(collections).getByRole('button', { name: '全部' })).toHaveAttribute('aria-pressed', 'true')
 
     fireEvent.click(screen.getByRole('button', { name: /5 秒及以下/ }))
     fireEvent.click(screen.getByRole('switch', { name: '只看有 Prompt' }))
@@ -264,11 +341,11 @@ describe('case-first routes', () => {
     renderAt('/')
 
     expect(within(screen.getByRole('group', { name: '本站收录时间' })).getByRole('button', { name: /^全部$/ })).toHaveAttribute('aria-pressed', 'true')
-    expect(screen.getByRole('button', { name: /本次新增/ })).toBeDisabled()
+    expect(screen.getByRole('button', { name: /本次新增/ })).toBeEnabled()
     expect(document.querySelector('.update-strip')).toBeInTheDocument()
     expect(screen.getByText(`案例按最新收录排序 · 最近一次更新：${latestUpdateSummary}`)).toBeInTheDocument()
     expect(screen.queryByText('创作者榜已更新')).not.toBeInTheDocument()
-    expect(screen.getByText('从本次访问开始记录；当前没有可比较的上次访问。')).toBeInTheDocument()
+    expect(screen.getByText('从本次访问开始记录；本次新增暂按今天收录的内容显示。')).toBeInTheDocument()
     expect(window.localStorage.getItem(caseUpdatesSeenThroughKey)).toBe('2026-08-20T12:20:35.382Z')
     expect(window.localStorage.getItem(tutorialUpdatesSeenThroughKey)).toBe('2026-08-23T02:34:28+08:00')
     const cards = document.querySelectorAll('.case-card')
@@ -316,7 +393,8 @@ describe('case-first routes', () => {
     renderAt('/')
     expect(within(screen.getByRole('group', { name: '本站收录时间' })).getByRole('button', { name: /^全部$/ })).toHaveAttribute('aria-pressed', 'true')
     expect(screen.getByRole('heading', { name: '自上次访问新增 0 个案例、24 篇教程' })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: /本次新增/ })).toBeDisabled()
+    expect(screen.getByRole('button', { name: /本次新增/ })).toBeEnabled()
+    expect(screen.getByRole('button', { name: /本次新增/ })).toHaveTextContent('本次新增0')
     expect(screen.getByRole('link', { name: /查看 24 篇新增教程/ })).toHaveAttribute(
       'href',
       '/tutorials/?added=unseen&since=2026-08-10T05%3A52%3A30.476Z&through=2026-08-23T02%3A34%3A28%2B08%3A00',
@@ -355,9 +433,10 @@ describe('case-first routes', () => {
       renderAt('/')
       expect(document.querySelector('.update-strip')).toBeInTheDocument()
       expect(screen.getByText(`无法保存访问进度 · 最近一次更新：${latestUpdateSummary}`)).toBeInTheDocument()
-      expect(screen.getByRole('button', { name: /本次新增/ })).toBeDisabled()
-      expect(screen.getByRole('button', { name: '今天' })).toBeEnabled()
-      expect(screen.getByText('浏览器存储不可用，无法计算自上次访问新增。')).toBeInTheDocument()
+      expect(screen.getByRole('button', { name: /本次新增/ })).toBeEnabled()
+      expect(screen.queryByRole('button', { name: '今天' })).not.toBeInTheDocument()
+      expect(screen.getByRole('button', { name: '近 7 天' })).toBeEnabled()
+      expect(screen.getByText('浏览器存储不可用，本次新增暂按今天收录的内容显示。')).toBeInTheDocument()
     } finally {
       cleanup()
       Object.defineProperty(window, 'localStorage', { configurable: true, value: originalStorage })

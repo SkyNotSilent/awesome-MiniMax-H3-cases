@@ -2,7 +2,7 @@ import { createCatalogIndex, searchText } from '../shared/catalog-query.mjs'
 import { useCatalogQuery } from './use-catalog-query'
 import { createUpdateSession, type UpdateSession } from './update-session'
 import { hasExplicitFilters, parseFilters, writeFilters } from '../shared/filter-state.mjs'
-import { useCallback, useDeferredValue, useEffect, useLayoutEffect, useMemo, useRef, useState, useTransition, type CSSProperties } from 'react'
+import { useCallback, useDeferredValue, useEffect, useLayoutEffect, useMemo, useRef, useState, useTransition, type CSSProperties, type ReactNode } from 'react'
 import {
   ArrowUpRight,
   ArrowDownRight,
@@ -112,11 +112,10 @@ const durationRanges = ['ALL', 'UP_TO_5', 'SIX_TO_10', 'ELEVEN_TO_15', 'OVER_15'
 type DurationRange = (typeof durationRanges)[number]
 const favoriteStorageKey = 'minimax-h3-favorite-cases'
 const favoriteCreatorStorageKey = 'minimax-h3-favorite-creators'
-const collectionKeys = ['all', 'featured', 'latest', 'prompt', 'official', 'long', 'favorites'] as const
+// Prompt-only and long-video folders were retired: they duplicated the primary
+// Prompt switch and the 15s+ duration range. Legacy URLs map onto those filters.
+const collectionKeys = ['all', 'featured', 'latest', 'official', 'favorites'] as const
 type CaseCollection = (typeof collectionKeys)[number]
-type QuickCollection = Exclude<CaseCollection, 'all'>
-// "all" is the implicit home state, not a folder a visitor can pick.
-const quickCollections = collectionKeys.filter((key): key is QuickCollection => key !== 'all')
 const hardwareProfiles: TutorialHardwareProfile[] = [
   'apple-silicon',
   'vram-8',
@@ -757,6 +756,14 @@ function IntroSplash({ language, onComplete }: { language: Language; onComplete?
   )
 }
 
+function updateWindowHint(t: (typeof copy)[Language]['catalog'], session: UpdateSession, channel: UpdateChannel) {
+  if (session[channel].explicit) return t.personalUpdateDescription
+  if (!session.storageAvailable) return t.storageUnavailableHint
+  if (session.firstVisit) return t.trackingStartsNow
+  if (session[channel].count === 0) return t.noUnseenUpdates
+  return t.personalUpdateDescription
+}
+
 function AddedDateFilter({
   language,
   value,
@@ -765,6 +772,7 @@ function AddedDateFilter({
   unseenDisabled,
   unseenHint,
   idPrefix,
+  children,
 }: {
   language: Language
   value: AddedDatePreset
@@ -773,30 +781,34 @@ function AddedDateFilter({
   unseenDisabled: boolean
   unseenHint: string
   idPrefix: string
+  children?: ReactNode
 }) {
   const t = copy[language].catalog
   const hintId = `${idPrefix}-unseen-hint`
   return (
     <div className="added-date-filter" role="group" aria-label={t.addedDateFilterLabel}>
       <span><Clock3 size={13} aria-hidden="true" /> {t.addedDateFilterLabel}</span>
-      <div>
-        {addedDatePresets.map((preset) => {
-          const disabled = preset === 'unseen' && unseenDisabled
-          return (
-            <button
-              type="button"
-              key={preset}
-              className={value === preset ? 'active' : ''}
-              aria-pressed={value === preset}
-              aria-describedby={preset === 'unseen' ? hintId : undefined}
-              disabled={disabled}
-              onClick={() => onChange(preset)}
-            >
-              {t.addedDatePresets[preset]}
-              {preset === 'unseen' ? <small>{unseenCount}</small> : null}
-            </button>
-          )
-        })}
+      <div className="added-date-filter-controls">
+        <div className="added-date-presets">
+          {addedDatePresets.map((preset) => {
+            const disabled = preset === 'unseen' && unseenDisabled
+            return (
+              <button
+                type="button"
+                key={preset}
+                className={value === preset ? 'active' : ''}
+                aria-pressed={value === preset}
+                aria-describedby={preset === 'unseen' ? hintId : undefined}
+                disabled={disabled}
+                onClick={() => onChange(preset)}
+              >
+                {t.addedDatePresets[preset]}
+                {preset === 'unseen' ? <small>{unseenCount}</small> : null}
+              </button>
+            )
+          })}
+        </div>
+        {children}
       </div>
       <small className={`added-date-filter-hint${value === 'unseen' ? ' is-visible' : ''}`} id={hintId}>{unseenHint}</small>
     </div>
@@ -821,15 +833,14 @@ function UpdateSummary({
   const caseCount = updateSession.cases.count
   const tutorialCount = updateSession.tutorials.count
   const hasPersonalUpdates = caseCount + tutorialCount > 0
-  const todayCaseCount = catalog.summary?.today.cases ?? catalog.cases.filter((item) => matchesAddedDate(item.addedAt, 'today')).length
-  const todayTutorialCount = catalog.summary?.today.tutorials ?? catalog.tutorials.filter((item) => matchesAddedDate(item.addedAt, 'today')).length
+  // Without a comparable last visit the case window already covers today.
+  const caseWindowLabel = updateSession.cases.basis === 'today' ? t.viewTodayCases(caseCount) : t.viewCaseUpdates(caseCount)
   const latestAddedAt = catalog.generatedAt
   const compact = updateSession.firstVisit || !updateSession.storageAvailable || !hasPersonalUpdates
   const latestSummary = latestUpdate
     ? t.updateSummaryTitle(latestUpdate.casesAdded, latestUpdate.promptsAdded, latestUpdate.tutorialsAdded)
     : t.viewLatestCases
   const latestDate = latestUpdate?.publishedAt ? formatAddedDate(latestUpdate.publishedAt, language) : ''
-  const latestReleaseIsToday = Boolean(latestUpdate?.publishedAt && matchesAddedDate(latestUpdate.publishedAt, 'today'))
   const compactStatus = !updateSession.storageAvailable
     ? t.storageUnavailableStatus
     : updateSession.firstVisit
@@ -866,8 +877,8 @@ function UpdateSummary({
     <section className="update-strip" aria-live="polite">
       <strong>{compactStatus}</strong>
       <p>{compactMessage}</p>
-      <button type="button" onClick={latestReleaseIsToday && todayCaseCount > 0 ? () => onViewDate('today') : onViewLatest}>
-        {latestReleaseIsToday && todayCaseCount > 0 ? t.viewTodayCases(todayCaseCount) : t.viewLatestCases}
+      <button type="button" onClick={caseCount > 0 ? () => onViewDate('unseen') : onViewLatest}>
+        {caseCount > 0 ? caseWindowLabel : t.viewLatestCases}
         <ArrowDownRight size={14} />
       </button>
     </section>
@@ -883,15 +894,12 @@ function UpdateSummary({
         <h2>{title}</h2>
         <p>{description}</p>
         <div className="update-summary-actions">
-          {caseCount > 0 ? <button type="button" onClick={() => onViewDate('unseen')}>{t.viewCaseUpdates(caseCount)} <ArrowDownRight size={14} /></button> : null}
+          {caseCount > 0 ? <button type="button" onClick={() => onViewDate('unseen')}>{caseWindowLabel} <ArrowDownRight size={14} /></button> : null}
           {tutorialCount > 0 ? (
             <a href={addedDateHref(pathFor(language, 'tutorials'), 'unseen', updateSession.tutorials)}>
               {t.viewTutorialUpdates(tutorialCount)} <ArrowUpRight size={14} />
             </a>
           ) : null}
-          {!hasPersonalUpdates && todayCaseCount > 0 ? <button type="button" onClick={() => onViewDate('today')}>{t.viewTodayCases(todayCaseCount)} <ArrowDownRight size={14} /></button> : null}
-          {!hasPersonalUpdates && todayCaseCount === 0 ? <button type="button" onClick={onViewLatest}>{t.viewLatestCases} <ArrowDownRight size={14} /></button> : null}
-          {!hasPersonalUpdates && todayTutorialCount > 0 ? <a href={addedDateHref(pathFor(language, 'tutorials'), 'today')}>{language === 'zh' ? `查看今天新增的 ${todayTutorialCount} 篇教程` : `View ${todayTutorialCount} guide${todayTutorialCount === 1 ? '' : 's'} added today`} <ArrowUpRight size={14} /></a> : null}
         </div>
       </div>
       <div className="update-summary-meta">
@@ -922,11 +930,8 @@ function HomePage({
 }) {
   const t = copy[language]
   const [activeDuration, setActiveDuration] = useState<DurationRange>(() => initialFilters().duration)
-  const [promptOnly, setPromptOnly] = useState(() => new URLSearchParams(window.location.search).get('prompt') === '1')
-  const [activeCollection, setActiveCollection] = useState<CaseCollection>(() => {
-    const requested = new URLSearchParams(window.location.search).get('collection')
-    return collectionKeys.includes(requested as CaseCollection) ? requested as CaseCollection : 'all'
-  })
+  const [promptOnly, setPromptOnly] = useState(() => initialFilters().prompt)
+  const [activeCollection, setActiveCollection] = useState<CaseCollection>(() => initialFilters().collection)
   const [activeAddedDate, setActiveAddedDate] = useState<AddedDatePreset>(updateSession?.initialCasePreset ?? initialFilters().added)
   const [favorites, setFavorites] = useState<Set<string>>(() => {
     try {
@@ -964,7 +969,10 @@ function HomePage({
   const previousFiltersRef = useRef<string | null>(null)
   useEffect(() => {
     if (!updateSession || !filtersReady) return
-    const state = { category: activeCategory, style: activeStyle, scene: activeScene, duration: activeDuration, prompt: promptOnly, collection: activeCollection, added: activeAddedDate, q: query, since: updateSession.cases.since, through: updateSession.cases.through }
+    // The today fallback is rebuilt on every load, so only a last-visit batch
+    // is pinned into the shareable URL.
+    const pinned = updateSession.cases.basis === 'last-visit'
+    const state = { category: activeCategory, style: activeStyle, scene: activeScene, duration: activeDuration, prompt: promptOnly, collection: activeCollection, added: activeAddedDate, q: query, since: pinned ? updateSession.cases.since : null, through: pinned ? updateSession.cases.through : null }
     const discrete = JSON.stringify({ ...state, q: '' })
     const method = previousFiltersRef.current !== null && previousFiltersRef.current !== discrete ? 'pushState' : 'replaceState'
     previousFiltersRef.current = discrete
@@ -1006,9 +1014,9 @@ function HomePage({
   const queryUrl = new URL('http://localhost')
   writeFilters(queryUrl, queryState)
   queryUrl.searchParams.forEach((value, key) => queryParams.set(key, value))
-  if (['today', '7d', '30d'].includes(activeAddedDate)) {
+  if (activeAddedDate === '7d' || activeAddedDate === '30d') {
     const start = new Date(queryNow); start.setHours(0, 0, 0, 0)
-    start.setDate(start.getDate() - (activeAddedDate === '7d' ? 6 : activeAddedDate === '30d' ? 29 : 0))
+    start.setDate(start.getDate() - (activeAddedDate === '7d' ? 6 : 29))
     queryParams.set('from', start.toISOString()); queryParams.set('to', queryNow.toISOString())
   }
   const directory = useCatalogQuery(queryParams, activeCollection === 'favorites' ? [...favorites].sort() : [], Boolean(catalog && filtersReady), testQueryIndex)
@@ -1083,9 +1091,9 @@ function HomePage({
   }, [resetCaseFilters])
   // Quick collections behave like folders: entering one clears the search,
   // date, duration, Prompt, and advanced filters so the click never lands on
-  // an empty list. Filters chosen afterwards narrow within the folder, and
-  // pressing the active folder again returns to the complete library.
-  const selectCollection = useCallback((collection: QuickCollection) => {
+  // an empty list. Filters chosen afterwards narrow within the folder. Picking
+  // "all", the lit row label, or the active folder again returns to the library.
+  const selectCollection = useCallback((collection: CaseCollection) => {
     const next: CaseCollection = activeCollection === collection ? 'all' : collection
     track('filter-change', { filterType: 'collection', value: next, locale: language })
     resetCaseFilters('all')
@@ -1114,15 +1122,7 @@ function HomePage({
     ),
     acknowledgeVisibleCases,
   )
-  const unseenDisabled = !updateSession || (!updateSession.cases.explicit
-    && (!updateSession.storageAvailable || updateSession.cases.count === 0))
-  const unseenHint = !updateSession?.storageAvailable
-    ? t.catalog.storageUnavailableHint
-    : updateSession.firstVisit
-      ? t.catalog.trackingStartsNow
-      : updateSession.cases.count === 0 && !updateSession.cases.explicit
-        ? t.catalog.noUnseenUpdates
-        : t.catalog.personalUpdateDescription
+  const unseenHint = updateSession ? updateWindowHint(t.catalog, updateSession, 'cases') : ''
 
   return (
     <>
@@ -1173,10 +1173,22 @@ function HomePage({
           value={activeAddedDate}
           onChange={(value) => startTransition(() => { setActiveAddedDate(value) })}
           unseenCount={updateSession?.cases.count ?? 0}
-          unseenDisabled={unseenDisabled}
+          unseenDisabled={!updateSession}
           unseenHint={unseenHint}
           idPrefix="case-added-date"
-        />
+        >
+          <button
+            type="button"
+            className={`prompt-only-toggle${promptOnly ? ' active' : ''}`}
+            role="switch"
+            aria-checked={promptOnly}
+            onClick={() => startTransition(() => { setPromptOnly((current) => !current) })}
+          >
+            <Sparkles size={14} aria-hidden="true" />
+            <span>{t.catalog.promptOnly}</span>
+            <i aria-hidden="true"><b /></i>
+          </button>
+        </AddedDateFilter>
 
         <div className="primary-filter" aria-label={t.catalog.filterLabel}>
           <div className="filter-label"><Clock3 size={15} aria-hidden="true" /> {t.catalog.duration}</div>
@@ -1193,24 +1205,22 @@ function HomePage({
                 </button>
               ))}
             </div>
-            <button
-              type="button"
-              className={`prompt-only-toggle${promptOnly ? ' active' : ''}`}
-              role="switch"
-              aria-checked={promptOnly}
-              onClick={() => startTransition(() => { setPromptOnly((current) => !current) })}
-            >
-              <Sparkles size={14} aria-hidden="true" />
-              <span>{t.catalog.promptOnly}</span>
-              <i aria-hidden="true"><b /></i>
-            </button>
           </div>
         </div>
 
         <div className="case-collections" role="group" aria-label={t.catalog.collectionsLabel}>
-          <span><Star size={13} aria-hidden="true" /> {t.catalog.collectionsLabel}</span>
+          <button
+            type="button"
+            className={`case-collections-label${activeCollection !== 'all' ? ' is-active' : ''}`}
+            disabled={activeCollection === 'all'}
+            aria-label={activeCollection !== 'all' ? t.catalog.collectionsExit : undefined}
+            onClick={() => selectCollection('all')}
+          >
+            <Star size={13} aria-hidden="true" /> {t.catalog.collectionsLabel}
+            {activeCollection !== 'all' ? <X size={12} aria-hidden="true" /> : null}
+          </button>
           <div>
-            {quickCollections.map((collection) => (
+            {collectionKeys.map((collection) => (
               <button
                 type="button"
                 key={collection}
@@ -1628,7 +1638,7 @@ function TutorialsPage({
     else url.searchParams.delete('track')
     if (activeAddedDate !== 'all') url.searchParams.set('added', activeAddedDate)
     else url.searchParams.delete('added')
-    if (activeAddedDate === 'unseen') {
+    if (activeAddedDate === 'unseen' && updateSession.tutorials.basis === 'last-visit') {
       url.searchParams.set('since', updateSession.tutorials.since)
       url.searchParams.set('through', updateSession.tutorials.through)
     } else {
@@ -1636,7 +1646,7 @@ function TutorialsPage({
       url.searchParams.delete('through')
     }
     window.history.replaceState(window.history.state, '', `${url.pathname}${url.search}${url.hash}`)
-  }, [activeTrack, activeAddedDate, updateSession.tutorials.since, updateSession.tutorials.through])
+  }, [activeTrack, activeAddedDate, updateSession.tutorials.basis, updateSession.tutorials.since, updateSession.tutorials.through])
 
   useEffect(() => {
     const trimmed = query.trim()
@@ -1692,15 +1702,7 @@ function TutorialsPage({
       && !tutorialAlreadyAcknowledged,
     acknowledgeVisibleTutorials,
   )
-  const unseenDisabled = !updateSession.tutorials.explicit
-    && (!updateSession.storageAvailable || updateSession.tutorials.count === 0)
-  const unseenHint = !updateSession.storageAvailable
-    ? copy[language].catalog.storageUnavailableHint
-    : updateSession.firstVisit
-      ? copy[language].catalog.trackingStartsNow
-      : updateSession.tutorials.count === 0 && !updateSession.tutorials.explicit
-        ? copy[language].catalog.noUnseenUpdates
-        : copy[language].catalog.personalUpdateDescription
+  const unseenHint = updateWindowHint(copy[language].catalog, updateSession, 'tutorials')
 
   const hardwareLabels: Record<'all' | TutorialHardwareProfile, string> = language === 'zh' ? {
     all: '全部硬件',
@@ -1770,7 +1772,7 @@ function TutorialsPage({
           value={activeAddedDate}
           onChange={setActiveAddedDate}
           unseenCount={updateSession.tutorials.count}
-          unseenDisabled={unseenDisabled}
+          unseenDisabled={false}
           unseenHint={unseenHint}
           idPrefix="tutorial-added-date"
         />
@@ -2262,7 +2264,7 @@ function CreatorDetailPage({ language, creator, cases, featuredCaseIds, tutorial
   const t = copy[language].creators
   const [savedCreators, setSavedCreators] = useState(() => loadStoredSet(favoriteCreatorStorageKey))
   const [favoriteCases, setFavoriteCases] = useState(() => loadStoredSet(favoriteStorageKey))
-  const [promptOnly, setPromptOnly] = useState(() => new URLSearchParams(window.location.search).get('prompt') === '1')
+  const [promptOnly, setPromptOnly] = useState(() => initialFilters().prompt)
   const [activeDuration, setActiveDuration] = useState<DurationRange>(() => initialFilters().duration)
   const [activeCategory, setActiveCategory] = useState(() => initialTaxonomyFilter('category'))
   const [selected, setSelected] = useState<OpenedCase | null>(null)

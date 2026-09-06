@@ -266,7 +266,7 @@ async function checkUpdateLifecycle(browser) {
   await page.goto(baseUrl, { waitUntil: 'domcontentloaded', timeout: 60_000 })
   await dismissIntro(page)
   await page.locator('.case-card:not(.case-card-skeleton)').first().waitFor()
-  const activeAddedFilter = page.locator('.added-date-filter button[aria-pressed="true"]')
+  const activeAddedFilter = page.locator('.added-date-presets button[aria-pressed="true"]')
   await activeAddedFilter.filter({ hasText: '本次新增' }).waitFor()
   const initialCount = Number(await page.locator('.catalog-count span').textContent())
   if (initialCount !== expectedCount) {
@@ -296,9 +296,10 @@ async function checkUpdateLifecycle(browser) {
   await nextVisit.goto(baseUrl, { waitUntil: 'domcontentloaded', timeout: 60_000 })
   await dismissIntro(nextVisit)
   await nextVisit.locator('.case-card:not(.case-card-skeleton)').first().waitFor()
-  await nextVisit.locator('.added-date-filter button[aria-pressed="true"]').filter({ hasText: '全部' }).waitFor()
-  const unseenButton = nextVisit.locator('.added-date-filter button').filter({ hasText: '本次新增' })
-  if (!(await unseenButton.isDisabled())) throw new Error('A new visit should disable an empty unseen filter.')
+  await nextVisit.locator('.added-date-presets button[aria-pressed="true"]').filter({ hasText: '全部' }).waitFor()
+  const unseenButton = nextVisit.locator('.added-date-presets button').filter({ hasText: '本次新增' })
+  if (await unseenButton.isDisabled()) throw new Error('The unseen filter should stay clickable on a new visit.')
+  if ((await unseenButton.locator('small').textContent()) !== '0') throw new Error('A new up-to-date visit should report zero unseen cases.')
   if (await nextVisit.locator('.case-card:not(.case-card-skeleton)').count() !== 36) {
     throw new Error('A new up-to-date visit should return to the latest 36 cases in the complete library.')
   }

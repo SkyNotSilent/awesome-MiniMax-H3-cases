@@ -13,7 +13,7 @@
 [![Stars](https://img.shields.io/github/stars/SkyNotSilent/awesome-minimax-h3-cases?style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/stargazers)
 [![Forks](https://img.shields.io/github/forks/SkyNotSilent/awesome-minimax-h3-cases?style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/forks)
 [![Cases](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1334-376-24-267&query=%24.cases&label=cases&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/)
-[![Prompts](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1334-376-24-267&query=%24.completePrompts&label=public%20prompts&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/?collection=prompt)
+[![Prompts](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1334-376-24-267&query=%24.completePrompts&label=public%20prompts&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/?prompt=1)
 [![Tutorials](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1334-376-24-267&query=%24.tutorials&label=tutorials&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/tutorials/)
 [![Creators](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1334-376-24-267&query=%24.rankedCreators&label=featured%20creators&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/creators/)
 [![CI](https://img.shields.io/github/actions/workflow/status/SkyNotSilent/awesome-minimax-h3-cases/ci.yml?style=for-the-badge&label=CI&labelColor=0a0b09)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/actions/workflows/ci.yml)
@@ -32,7 +32,7 @@
 
 | 浏览案例 | 只看完整 Prompt | 发现优质创作者 | 从零学教程 | 安装 Agent Skill |
 | --- | --- | --- | --- | --- |
-| [观看全部案例](https://h3-field-notes-production.up.railway.app/) | [打开 Prompt 集合](https://h3-field-notes-production.up.railway.app/?collection=prompt) | [打开创作者榜单](https://h3-field-notes-production.up.railway.app/creators/) | [进入教程库](https://h3-field-notes-production.up.railway.app/tutorials/) | [跳到安装命令](#agent-skills) |
+| [观看全部案例](https://h3-field-notes-production.up.railway.app/) | [打开 Prompt 集合](https://h3-field-notes-production.up.railway.app/?prompt=1) | [打开创作者榜单](https://h3-field-notes-production.up.railway.app/creators/) | [进入教程库](https://h3-field-notes-production.up.railway.app/tutorials/) | [跳到安装命令](#agent-skills) |
 
 MiniMax H3 也常被搜索为 **Hailuo H3**、**Hailuo 3.0**、**海螺 H3** 和 **海螺 3.0**。每条公开案例都可站内播放、保留创作者与原始来源，并明确区分“完整公开 Prompt”和“来源未公开”。本站绝不反推、补写、改写或伪造缺失 Prompt。
 
@@ -40,23 +40,24 @@ MiniMax H3 也常被搜索为 **Hailuo H3**、**Hailuo 3.0**、**海螺 H3** 和
 
 新用户默认从按本站收录时间倒序排列的完整案例库开始，优先看到最近内容，但不会把既有档案显示成几百条未读。老用户回访时如果有新案例，首页会自动进入固定的 **本次新增** 快照；只有新增卡片真正进入可视区域后才记为已读，并在当前标签页的刷新、案例与教程跳转中持续保留这批内容。
 
-- 案例与教程统一支持 **本次新增、今天、近 7 天、近 30 天、全部**；日期条件会与搜索、时长、Prompt、快捷集合、内容、风格、场景、目标和硬件筛选取交集。
+- 案例与教程统一支持 **全部、本次新增、近 7 天、近 30 天**；首次访问或浏览器无法保存记录时，**本次新增** 按今天收录的内容显示。日期条件会与搜索、时长、Prompt、快捷集合、内容、风格、场景、目标和硬件筛选取交集。
 - 每张案例卡和教程卡都显示本站收录日期；本次快照里的内容另外显示文字 **新收录**，不只靠颜色表达。
-- 案例和教程分别保存已读水位，只看新增案例不会清除尚未浏览的新增教程。没有个人新增时显示 **已是最新**，并提供今天新增或最新 48 条入口，不再打开空白列表。
-- 固定快照使用可分享的 `added=unseen&since=<ISO 时间>&through=<ISO 时间>`；旧的仅含 `since` 链接继续兼容。其他日期视图使用 `added=today|7d|30d`。
+- 案例和教程分别保存已读水位，只看新增案例不会清除尚未浏览的新增教程。没有个人新增时显示 **已是最新**，并提供最新 48 条入口，不再打开空白列表。
+- 固定快照使用可分享的 `added=unseen&since=<ISO 时间>&through=<ISO 时间>`；旧的仅含 `since` 链接继续兼容。其他日期视图使用 `added=7d|30d`；旧的 `added=today` 链接会落到本次新增。
 - 已读进度仅保存在当前浏览器的案例/教程 v2 本地键中，`minimax-h3-update-session-v2` 用于保留当前标签页快照；不增加账号、服务端已读历史或通知订阅。自托管统计只汇总产品交互，不接收这份已读状态。
 
 ## 更快找到值得看的案例
 
-首页继续案例优先。快捷集合是彼此独立的入口：点击任一集合会先清空搜索、收录时间、时长、Prompt 与更多筛选，因此永远不会点进空列表；进入集合后再用这些条件在集合内部缩小范围，再次点击当前集合即可回到完整案例库：
+首页继续案例优先。快捷集合是彼此独立的入口：点击任一集合会先清空搜索、收录时间、时长、Prompt 与更多筛选，因此永远不会点进空列表；进入集合后再用这些条件在集合内部缩小范围，点击「全部」、亮起的快速集合标签或当前集合即可回到完整案例库：
 
 [![按本站收录日期排列的 MiniMax H3 最新案例](./docs/screenshots/latest-collection-zh.jpg)](https://h3-field-notes-production.up.railway.app/?collection=latest)
 
 - [编辑精选](https://h3-field-notes-production.up.railway.app/?collection=featured)：稳定保持 24–28 条可播放案例，基于公开互动表现与人工来源核验定期更新；
 - [最新收录](https://h3-field-notes-production.up.railway.app/?collection=latest)：保留原兼容入口，现按首次进入本站目录的时间排序，而不是来源发布时间；
 - [官方案例](https://h3-field-notes-production.up.railway.app/?collection=official)：MiniMax 可复现脚本与公开证据；
-- [长视频](https://h3-field-notes-production.up.railway.app/?collection=long)：集中查看超过 15 秒的输出；
 - **我的收藏**：收藏列表仅保存在当前浏览器，不用登录，也不上传云端。
+
+长视频和完整 Prompt 不再是集合，改由主筛选承担：[超过 15 秒](https://h3-field-notes-production.up.railway.app/?duration=OVER_15) 走时长筛选，[只看有 Prompt](https://h3-field-notes-production.up.railway.app/?prompt=1) 走 Prompt 开关；旧的 `collection=long` 与 `collection=prompt` 链接会自动落到对应筛选。
 
 高级筛选采用固定、双语的内容体系，不再把零散自由文本堆成按钮墙。内容分类包括：
 
