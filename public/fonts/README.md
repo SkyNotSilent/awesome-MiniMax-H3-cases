@@ -1,0 +1,1 @@
+Local Latin subsets of Oswald (Google Fonts v57) and DM Mono (v16), downloaded from the Google Fonts CSS API on 2026-09-06. Original licenses are included. Chinese text uses system fonts. All faces use font-display: optional; no third-party runtime font requests.
