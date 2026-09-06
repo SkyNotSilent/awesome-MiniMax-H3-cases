@@ -45,7 +45,11 @@
     "skills:install": "npx skills add . --skill minimax-h3-prompt-library minimax-h3-tutorial-guide --agent codex claude-code",
     "screenshots:capture": "npm run readme:build-metrics && node scripts/capture-readme-screenshots.mjs && npm run readme:check",
     "screenshots": "npm run build && npm run screenshots:capture",
-    "seo": "node scripts/build-seo-pages.mjs"
+    "seo": "node scripts/build-seo-pages.mjs",
+    "verify": "node scripts/verify.mjs",
+    "build:reference": "node scripts/reference-build.mjs",
+    "test:server": "node --test scripts/*.node-test.mjs",
+    "performance:capacity": "node scripts/catalog-capacity.mjs"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1109.0",
@@ -74,5 +78,8 @@
     "sharp": "^0.35.4",
     "typescript-eslint": "latest",
     "vitest": "latest"
+  },
+  "engines": {
+    "node": "22.23.1"
   }
 }

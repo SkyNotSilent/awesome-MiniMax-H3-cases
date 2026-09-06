@@ -146,7 +146,7 @@ The source of truth remains `data/cases.json`, but production builds no longer s
 - Run `npm run videos:playback:audit` for a read-only inventory, `npm run videos:playback:migrate -- --apply` to populate the versioned playback tier, and `npm run videos:playback:verify` before switching or after a release. Migration reports stay in ignored `.review/` files.
 
 <!-- build-metrics:start -->
-**Current production build:** 95 kB homepage JavaScript gzip · 9.8 kB / 9.1 kB Chinese / English homepage HTML gzip · 152.6 kB catalog gzip · 706.4 kB / 669.2 kB Chinese / English search indexes gzip. Run `npm run performance:budget` for static budgets and `npm run performance:browser` against a local production server for browser behavior.
+**Reference build (Node 22.23.1, analytics configuration omitted):** 97.5 kB homepage JavaScript gzip · 9.8 kB / 9.1 kB Chinese / English homepage HTML gzip · 5.5 kB first-page API gzip · 4.3 kB next-page API gzip · 5.5 kB search response gzip · 51.3 kB local fonts (nonblocking) · 1033.8 kB server-only index gzip. Run `npm run performance:budget` for static budgets and `npm run performance:browser` against a local production server for browser behavior.
 <!-- build-metrics:end -->
 
 ## Contribute or report a problem
