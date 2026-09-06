@@ -26,3 +26,7 @@ npm run cost -- 200 20
 ```
 
 The estimate is for planning. Actual video tokens depend on duration, FPS, frame resolution, and audio.
+
+Classification defaults to five candidates and 2,400 output tokens per request. It checks normal completion, exact ID coverage and vocabulary before saving each batch. A truncated batch may split once; unsuccessful JSON or taxonomy results remain pending with diagnostics. Candidate input fingerprints prevent reusing classification after source text changes. Atomic compare-and-merge refuses to overwrite a candidate changed during network work.
+
+Text requests time out after 60 seconds and video requests after 180 seconds, within a 15-minute process deadline (or the explicit `REVIEW_DEADLINE_AT`). Network errors, 429 and 5xx receive at most three attempts with jitter and Retry-After handling; authentication errors fail immediately. Every attempt consumes the existing daily candidate/video allowance in `.review/runtime-v1.json`, including retries and split requests. Changing `REVIEW_RUN_ID` cannot reset that allowance. Completed HTTP responses and request attempts are distinct counters; business completion additionally requires classification and run-stage evidence. No live model call is required by the test suite.

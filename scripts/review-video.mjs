@@ -1,7 +1,8 @@
-import { readFile, writeFile } from 'node:fs/promises'
+import { completeQuota, fetchWithReviewRetry, newRunId, reserveQuota } from './review-runtime.mjs'
+import { readFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { sanitizeCandidateClassification, taxonomyClassifierPrompt } from './candidate-taxonomy.mjs'
-import { candidatesPath, root } from './review-paths.mjs'
+import { candidatesPath, root, mergeReviewedRows } from './review-paths.mjs'
 
 const config = JSON.parse(await readFile(resolve(root, 'config/model-routing.json'), 'utf8'))
 
@@ -23,7 +24,8 @@ const mimoAuthHeaders = process.env.MIMO_AUTH_SCHEME === 'api-key'
   ? { 'api-key': process.env.MIMO_API_KEY }
   : { Authorization: `Bearer ${process.env.MIMO_API_KEY}` }
 
-const response = await fetch(`${process.env.MIMO_BASE_URL || 'https://api.xiaomimimo.com/v1'}/chat/completions`, {
+const runId = process.env.REVIEW_RUN_ID || newRunId()
+const response = await fetchWithReviewRetry(`${process.env.MIMO_BASE_URL || 'https://api.xiaomimimo.com/v1'}/chat/completions`, {
   method: 'POST',
   headers: {
     ...mimoAuthHeaders,
@@ -66,9 +68,9 @@ const response = await fetch(`${process.env.MIMO_BASE_URL || 'https://api.xiaomi
       },
     ],
   }),
-})
-if (!response.ok) throw new Error(`MiMo ${response.status}: ${await response.text()}`)
+}, { timeoutMs: 180000, deadline: process.env.REVIEW_DEADLINE_AT ? Date.parse(process.env.REVIEW_DEADLINE_AT) : Date.now() + 15 * 60000, reserve: () => reserveQuota({ kind: 'video', units: 1, limit: config.dailyLimits.maxVideoReviews, runId }), complete: reservation => completeQuota(reservation) })
 const payload = await response.json()
+if (payload.choices?.[0]?.finish_reason !== 'stop') throw new Error('Video review did not finish normally')
 const raw = JSON.parse(payload.choices[0].message.content)
 const taxonomy = sanitizeCandidateClassification(raw)
 if (taxonomy.invalidValues.length) {
@@ -93,7 +95,7 @@ if (candidateId) {
       ? { ...item, videoReview: analysis, videoReviewedBy: config.videoReview.model }
       : item,
   )
-  await writeFile(candidatesPath, `${JSON.stringify(merged, null, 2)}\n`)
+  await mergeReviewedRows(candidatesPath, candidates, merged)
   console.log(`Attached video review to ${candidateId}.`)
 } else {
   console.log(JSON.stringify(analysis, null, 2))

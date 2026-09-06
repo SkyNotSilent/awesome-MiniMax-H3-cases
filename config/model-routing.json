@@ -3,7 +3,8 @@
     "provider": "xiaomi-mimo",
     "model": "mimo-v2.5-pro",
     "thinking": "disabled",
-    "maxOutputTokens": 900,
+    "batchSize": 5,
+    "maxOutputTokens": 2400,
     "priceUsdPerMillion": { "input": 0, "cachedInput": 0, "output": 0 }
   },
   "videoReview": {
