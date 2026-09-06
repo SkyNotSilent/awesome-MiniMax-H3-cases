@@ -11,9 +11,9 @@ Select the safest source-checked path from `data/tutorial-guides.json` and expla
 ## Selection workflow
 
 1. Confirm the operating system, GPU or Apple chip, available VRAM or unified memory, free disk space, and target capability.
-2. Match `hardwareProfiles`, `category`, `difficulty`, and `estimatedMinutes` before recommending a guide.
-3. Prefer a `flagship: true` guide when it satisfies the request.
-4. Read the guide's `testedVersions`, `sourceRefs`, commands, expected result, troubleshooting, and uninstall fields.
+2. Match `learningTrack`, `hardwareProfiles`, `category`, `difficulty`, and `estimatedMinutes` before recommending a guide.
+3. Prefer an active `depth: deep` guide when it satisfies the request; exclude `evidence.status: needs-review` from core recommendations.
+4. Read the guide's `applicableVersions`, `learningResources`, `chapters`, `communityFeedback`, `sourceRefs`, commands, expected result, troubleshooting, and uninstall fields.
 5. Verify the latest source README before executing. If current upstream instructions conflict with the catalog snapshot, disclose the difference and follow the current source.
 6. Never guess missing packages, flags, paths, node versions, model URLs, memory requirements, or compatibility.
 
@@ -31,7 +31,7 @@ ROLLBACK
 SOURCES AND VERIFICATION DATE
 ```
 
-Preserve commands exactly as stored or as currently published by their linked source. Clearly separate catalog-tested facts from upstream claims and user-specific assumptions.
+Preserve commands exactly as stored or as currently published by their linked source. Clearly separate source-checked facts, community reports, actual site tests from upstream claims and user-specific assumptions.
 
 ## Safety and provenance
 
@@ -40,3 +40,5 @@ Preserve commands exactly as stored or as currently published by their linked so
 - Do not turn a tutorial into a claim that every machine will achieve the same speed or memory usage.
 - Do not generate, rewrite, translate, reconstruct, or reverse-engineer a MiniMax H3 Prompt. For verbatim public Prompt retrieval, use `minimax-h3-prompt-library`.
 - When prerequisites are unknown, stop before installation and ask only for the missing environment facts.
+
+Source-check dates are not generation tests. A site-test claim requires `evidence.siteTestedAt` and its supporting URL. Short `depth: guide` entries should direct users to the complete original instead of presenting their summary as a full procedure.

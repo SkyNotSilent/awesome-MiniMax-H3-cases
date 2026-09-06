@@ -155,6 +155,19 @@ export type TutorialHardwareProfile =
   | 'cloud-gpu'
 
 export interface TutorialGuide {
+  learningTrack: 'run' | 'create'
+  learningOrder?: number
+  depth: 'deep' | 'guide'
+  recommendation?: LocalizedText
+  cost?: LocalizedText
+  applicableVersions?: string[]
+  materialsNote?: LocalizedText
+  learningResources?: Array<{ label: LocalizedText; url: string; kind: 'workflow' | 'models' | 'material' | 'prompt' | 'demo' | 'documentation' }>
+  chapters?: Array<{ title: LocalizedText; url: string; seconds: number }>
+  communityFeedback?: Array<{ summary: LocalizedText; url: string; kind: 'usage' | 'issue' | 'fix' | 'praise' }>
+  evidence: { status: 'active' | 'needs-review'; basis?: 'official' | 'author-docs' | 'community'; sourceCheckedAt?: string; communityReviewedAt?: string; siteTestedAt?: string; siteTestUrl?: string }
+  relatedCases?: Array<{ id: string; title: LocalizedText; relationship: 'example' | 'technique' }>
+  nextGuideIds?: string[]
   id: string
   contentType: 'foundation' | 'community'
   category: TutorialCategory
@@ -171,12 +184,12 @@ export interface TutorialGuide {
   tags: string[]
   relatedResourceIds: string[]
   source: {
-    platform: 'docs' | 'github' | 'x'
+    platform: 'docs' | 'github' | 'x' | 'youtube' | 'reddit' | 'huggingface'
     url: string
     author: string
     handle?: string
     publishedAt?: string
-    originalLanguage: 'zh' | 'en' | 'ja'
+    originalLanguage: 'zh' | 'en' | 'ja' | 'other'
   }
   engagement?: {
     replies?: number

@@ -5,6 +5,9 @@ function candidate(overrides = {}) {
   return {
     id: 'verified-h3-tutorial',
     contentType: 'community',
+    learningTrack: 'run',
+    depth: 'guide',
+    evidence: { status: 'active' },
     category: 'comfyui',
     title: { zh: '可执行教程', en: 'Executable tutorial' },
     outcome: { zh: '完成一条工作流。', en: 'Complete one workflow.' },

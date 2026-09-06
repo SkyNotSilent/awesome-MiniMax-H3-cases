@@ -69,12 +69,12 @@ const pageDefinitions = [
     copy: {
       'zh-CN': {
         title: 'MiniMax H3 教程与工具：部署、工作流、加速、训练 — MiniMax H3 Cases & Guides',
-        description: `4 条基础路线与 20 篇来源可追溯的 MiniMax H3 社区教程，覆盖官方部署、Apple Silicon、ComfyUI、Prompt、Turbo、长视频、音频与训练。`,
+        description: `运行与创作两条学习路线，提供深度精选、教程导读、原作资源、适用条件和已知问题。`,
         keywords: 'MiniMax H3 教程,MiniMax H3 Mac,h3.c,MiniMax H3 部署,ComfyUI H3,H3 Director,MiniMax H3 Turbo,H3 Motion Context,H3 Audio,MiniMax H3 微调',
       },
       en: {
         title: 'MiniMax H3 Tutorials and Tools: Setup, Workflows, Speed, Training — MiniMax H3 Cases & Guides',
-        description: 'Four foundation routes and 20 source-attributed MiniMax H3 community tutorials for official setup, Apple Silicon, ComfyUI, prompts, Turbo, long video, audio, and training.',
+        description: 'Two learning tracks for running H3 and creating videos, with in-depth selections, source resources, requirements, and known issues.',
         keywords: 'MiniMax H3 tutorials,MiniMax H3 Mac,h3.c,MiniMax H3 deployment,ComfyUI H3,H3 Director,MiniMax H3 Turbo,H3 Motion Context,H3 Audio,MiniMax H3 fine-tuning',
       },
     },
@@ -508,14 +508,15 @@ function appStructuredData(page, locale) {
       ],
     })
     graph.push({
-      '@type': 'HowTo',
-      '@id': `${canonical}#howto`,
+      '@type': item.depth === 'deep' && item.evidence.status === 'active' ? 'HowTo' : 'Article',
+      '@id': `${canonical}#guide`,
       name: localized.title,
       description: localized.outcome,
       image: [absolute(item.posterUrl)],
       inLanguage: locale,
       isBasedOn: item.source.url,
       author: { '@type': item.source.platform === 'x' ? 'Person' : 'Organization', name: item.source.author },
+      ...(item.depth === 'deep' && item.evidence.status === 'active' ? {
       supply: localized.prerequisites.map((name) => ({ '@type': 'HowToSupply', name })),
       step: localized.steps.map((text, index) => ({
         '@type': 'HowToStep',
@@ -524,6 +525,7 @@ function appStructuredData(page, locale) {
         text,
         url: `${canonical}#step-${index + 1}`,
       })),
+      } : {}),
     })
   }
 
@@ -608,6 +610,20 @@ function fallbackMarkup(page, locale) {
       ? `<h2>${escapeHtml(locale === 'en' ? 'Commands' : '命令')}</h2><pre>${escapeHtml(item.commands.join('\n'))}</pre>`
       : ''
     content = `<p><strong>${escapeHtml(locale === 'en' ? 'Audience' : '适用人群')}:</strong> ${escapeHtml(localized.audience)}</p><p><strong>${escapeHtml(locale === 'en' ? 'Hardware' : '硬件要求')}:</strong> ${escapeHtml(localized.hardware)}</p><h2>${escapeHtml(locale === 'en' ? 'Prerequisites' : '前置条件')}</h2><ul>${localized.prerequisites.map((value) => `<li>${escapeHtml(value)}</li>`).join('')}</ul><h2>${escapeHtml(locale === 'en' ? 'Steps' : '执行步骤')}</h2><ol>${localized.steps.map((value, index) => `<li id="step-${index + 1}">${escapeHtml(value)}</li>`).join('')}</ol>${commands}<h2>${escapeHtml(locale === 'en' ? 'Caveats' : '注意事项')}</h2><ul>${localized.caveats.map((value) => `<li>${escapeHtml(value)}</li>`).join('')}</ul><p><a href="${escapeHtml(item.source.url)}" rel="nofollow noopener">${escapeHtml(locale === 'en' ? 'View original source' : '查看原始来源')}</a> · ${escapeHtml(item.source.author)} · ${escapeHtml(item.verifiedAt)}</p>`
+    const language = locale === 'en' ? 'en' : 'zh'
+    const heading = (zh, en) => escapeHtml(locale === 'en' ? en : zh)
+    const links = (items) => items.map(([url, label]) => `<li><a href="${escapeHtml(url)}">${escapeHtml(label)}</a></li>`).join('')
+    content += `<p>${heading(item.depth === 'deep' ? '深度精选' : '导读', item.depth === 'deep' ? 'In depth' : 'Guide')} · ${heading('来源核对', 'Source checked')}: ${escapeHtml(item.evidence.sourceCheckedAt || '')} · ${heading('本站实测', 'Site testing')}: ${escapeHtml(item.evidence.siteTestedAt || (locale === 'en' ? 'No generation test performed' : '未进行生成实测'))}</p>`
+    if (item.evidence.status === 'needs-review') content += `<p>${heading('此导读待复查，暂不作为核心推荐。', 'This guide needs review and is excluded from core selections.')}</p>`
+    for (const field of ['recommendation', 'cost', 'materialsNote']) if (item[field]) content += `<p>${escapeHtml(item[field][language])}</p>`
+    if (item.applicableVersions?.length) content += `<h2>${heading('适用版本', 'Applicable versions')}</h2><p>${escapeHtml(item.applicableVersions.join(' · '))}</p>`
+    if (item.learningResources?.length) content += `<h2>${heading('材料与演示', 'Resources and demonstrations')}</h2><ul>${links(item.learningResources.map(x => [x.url, x.label[language]]))}</ul>`
+    if (item.chapters?.length) content += `<h2>${heading('视频章节', 'Video chapters')}</h2><ul>${links(item.chapters.map(x => [x.url, `${Math.floor(x.seconds / 60)}:${String(x.seconds % 60).padStart(2, '0')} · ${x.title[language]}`]))}</ul>`
+    if (item.troubleshooting?.length) content += `<section id="troubleshooting"><h2>${heading('故障排查', 'Troubleshooting')}</h2>${item.troubleshooting.map(x => `<h3>${escapeHtml(x.problem[language])}</h3><p>${escapeHtml(x.solution[language])}</p>`).join('')}</section>`
+    if (item.communityFeedback?.length) content += `<h2>${heading('社区反馈', 'Community feedback')}</h2><ul>${links(item.communityFeedback.map(x => [x.url, x.summary[language]]))}</ul>`
+    if (item.relatedCases?.length) content += `<h2>${heading('案例与技巧', 'Examples and techniques')}</h2><ul>${links(item.relatedCases.map(x => [casePath(locale, x.id), `${x.title[language]} · ${x.relationship === 'example' ? heading('对应案例', 'Source example') : heading('相关技巧，不保证复现', 'Related technique; not a reproduction guide')}`]))}</ul>`
+    if (item.nextGuideIds?.length) content += `<h2>${heading('下一步学习', 'Learn next')}</h2><ul>${links(item.nextGuideIds.map(id => [tutorialPath(locale, id), tutorialGuides.find(x => x.id === id).title[language]]))}</ul>`
+
   } else if (page.creator) {
     const item = page.creator
     const localized = localizedCreator(item, locale)
@@ -805,6 +821,7 @@ function renderCasePage(item, locale) {
   <p class="prompt-notice">${escapeHtml(labels.promptNotice)}</p>
   <pre data-verbatim-prompt>${escapeHtml(copy.prompt)}</pre>`
     : `<p class="prompt-notice prompt-unavailable"><strong>${escapeHtml(labels.promptUnavailableTitle)}</strong><br>${escapeHtml(labels.promptUnavailableDetail)}</p>`
+  const relatedTutorials = tutorialGuides.flatMap(guide => (guide.relatedCases || []).filter(link => link.id === item.id).map(link => `<li><a href="${escapeHtml(tutorialPath(locale, guide.id))}">${escapeHtml(localizedTutorial(guide, locale).title)}</a> · ${escapeHtml(link.relationship === 'example' ? (locale === 'en' ? 'Source example' : '对应案例') : (locale === 'en' ? 'Related technique; not a reproduction guide' : '相关技巧，不保证复现该作品'))}</li>`)).join('')
   const localeTitleSuffix = locale === 'en'
     ? 'MiniMax H3 video example'
     : 'MiniMax H3 视频案例'
@@ -859,6 +876,7 @@ ${videoMeta}
   ${mediaMarkup}
   <dl><dt>${escapeHtml(labels.mode)}</dt><dd>${escapeHtml(item.mode)}</dd><dt>${escapeHtml(labels.model)}</dt><dd>${escapeHtml(copy.model)}</dd><dt>${escapeHtml(labels.output)}</dt><dd>${item.duration}s · ${escapeHtml(copy.resolution)} · ${escapeHtml(copy.aspectRatio)}</dd><dt>${escapeHtml(labels.tags)}</dt><dd>${escapeHtml(copy.tags.join(' · '))}</dd><dt>${escapeHtml(labels.provenance)}</dt><dd>${escapeHtml(provenance)}</dd></dl>
   ${promptMarkup}
+  ${relatedTutorials ? `<h2>${escapeHtml(locale === 'en' ? 'Related tutorials' : '相关教程')}</h2><ul>${relatedTutorials}</ul>` : ''}
   <p><a href="${escapeHtml(item.sourceUrl)}" rel="nofollow noopener">${escapeHtml(labels.source)} · ${escapeHtml(copy.sourceLabel)}</a></p>
 </main>${embedded?.script ?? ''}</body></html>`
 }

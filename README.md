@@ -83,7 +83,7 @@ The dynamic creator board turns the archive into a compounding discovery system.
 
 [![MiniMax H3 tutorial workspace](./docs/screenshots/tutorials-en.png)](https://h3-field-notes-production.up.railway.app/en/tutorials/)
 
-The tutorial workspace starts with four zero-to-one routes and then exposes community field guides directly—no link-directory detour. Eight flagship guides include tested versions, exact commands, expected output, success checks, troubleshooting, and rollback steps.
+Two equal learning tracks help you get H3 running and create videos. Eight in-depth selections provide source resources, applicable versions, key steps, chapters and known issues; the remaining entries are clearly marked as short guides. Source checks, community feedback and actual site generation tests are separate evidence categories.
 
 | Goal | Best starting point |
 | --- | --- |
@@ -146,7 +146,7 @@ The source of truth remains `data/cases.json`, but production builds no longer s
 - Run `npm run videos:playback:audit` for a read-only inventory, `npm run videos:playback:migrate -- --apply` to populate the versioned playback tier, and `npm run videos:playback:verify` before switching or after a release. Migration reports stay in ignored `.review/` files.
 
 <!-- build-metrics:start -->
-**Reference build (Node 22.23.1, analytics configuration omitted):** 97.5 kB homepage JavaScript gzip · 9.8 kB / 9.1 kB Chinese / English homepage HTML gzip · 5.5 kB first-page API gzip · 4.3 kB next-page API gzip · 5.5 kB search response gzip · 51.3 kB local fonts (nonblocking) · 1033.8 kB server-only index gzip. Run `npm run performance:budget` for static budgets and `npm run performance:browser` against a local production server for browser behavior.
+**Reference build (Node 22.23.1, analytics configuration omitted):** 99.6 kB homepage JavaScript gzip · 9.8 kB / 9.1 kB Chinese / English homepage HTML gzip · 5.5 kB first-page API gzip · 4.3 kB next-page API gzip · 5.5 kB search response gzip · 51.3 kB local fonts (nonblocking) · 1033.8 kB server-only index gzip. Run `npm run performance:budget` for static budgets and `npm run performance:browser` against a local production server for browser behavior.
 <!-- build-metrics:end -->
 
 ## Contribute or report a problem
