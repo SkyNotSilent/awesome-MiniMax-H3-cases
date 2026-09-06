@@ -1,3 +1,4 @@
+import tutorialGuidesUrl from '../data/tutorial-guides.json?url'
 import { createUpdateSession } from './update-session'
 import { resolveRoute } from './i18n'
 import type {
@@ -50,6 +51,6 @@ export async function loadCatalogPage(params: URLSearchParams, favorites: string
 }
 export const loadCaseDetail = (id: string, force = false) => loadJson<CaseDetail>(`/data/cases/${encodeURIComponent(id)}.json`, force)
 export const loadSearchIndex = (language: Language, force = false) => loadJson<SearchRecord[]>(`/data/search-index.${language}.json`, force)
-export const loadTutorialGuides = (force = false) => loadJson<TutorialGuide[]>('/data/tutorial-guides.json', force)
+export const loadTutorialGuides = (force = false) => loadJson<TutorialGuide[]>(tutorialGuidesUrl, force)
 export const loadTutorialResources = (force = false) => loadJson<TutorialResource[]>('/data/tutorials.json', force)
 export const loadCreators = (force = false) => loadJson<CreatorCatalog>('/data/creators.json', force)
