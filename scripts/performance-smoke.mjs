@@ -36,7 +36,9 @@ async function checkDesktop(browser) {
   }, currentBaseline)
   const page = await context.newPage()
   const mediaRequests = []
+  const forbiddenRequests = []
   page.on('request', (request) => {
+    if (/\/data\/(catalog\.json|search-index\.)|fonts\.(googleapis|gstatic)\.com/.test(request.url())) forbiddenRequests.push(request.url())
     if (request.url().includes('/media/')) mediaRequests.push({ url: request.url(), at: Date.now(), method: request.method(), type: request.resourceType() })
   })
   await page.route('**/data/cases/*.json', async (route) => {
@@ -92,9 +94,7 @@ async function checkDesktop(browser) {
   if (lingeringPlayers) throw new Error(`Player still attached after closing the dialog: ${lingeringPlayers}`)
 
   const search = page.getByPlaceholder('搜索案例、场景或创作者…')
-  const searchIndexResponse = page.waitForResponse((response) => response.url().endsWith('/data/search-index.zh.json'))
   await search.focus()
-  await searchIndexResponse
   await page.waitForFunction(() => document.querySelector('.search-index-status')?.textContent.trim() === '')
   await page.evaluate(() => {
     window.__h3SearchStartedAt = null
@@ -116,7 +116,9 @@ async function checkDesktop(browser) {
       if (checkResult()) observer.disconnect()
     }, { once: true })
   })
+  const searchResponse = page.waitForResponse(response => response.url().includes('/api/catalog?') && new URL(response.url()).searchParams.get('q') === '时间冻结')
   await search.fill('时间冻结')
+  await searchResponse
   await page.getByText('餐厅时间冻结与逆向复原').waitFor()
   await page.waitForFunction(() => window.__h3SearchRenderedAt !== null, null, { polling: 'raf' })
   const searchDelay = await page.evaluate(() => window.__h3SearchRenderedAt - window.__h3SearchStartedAt)
@@ -129,8 +131,9 @@ async function checkDesktop(browser) {
   for (let step = 0; step < 4; step += 1) {
     const before = await page.locator('.case-card').count()
     await loadButton.click()
-    const actual = await page.locator('.case-card').count()
     const expected = before + 24
+    await page.waitForFunction(count => document.querySelectorAll('.case-card').length === count, expected)
+    const actual = await page.locator('.case-card').count()
     if (actual !== expected) throw new Error(`Expected ${expected} cards after button load, received ${actual}`)
   }
   const card120Opacity = await page.locator('.case-card').nth(119).evaluate((element) => getComputedStyle(element).opacity)
@@ -138,6 +141,7 @@ async function checkDesktop(browser) {
   await loadButton.focus()
   if (!(await loadButton.evaluate((element) => element === document.activeElement))) throw new Error('Load-more button cannot receive keyboard focus.')
   if (!(await page.locator('.catalog-count[aria-live="polite"]').count())) throw new Error('Result count is missing aria-live.')
+  if (forbiddenRequests.length) throw new Error('Browser requested a full catalog/index or external font')
   console.log(JSON.stringify({ desktop: { initialCards, domNodes, playerAttachDelay, mediaDelay, videoDelay, searchDelay } }))
   await context.close()
 }

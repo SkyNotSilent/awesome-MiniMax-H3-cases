@@ -1,39 +1,23 @@
+import { buildMetrics } from './build-metrics.mjs'
 import { createHash } from 'node:crypto'
-import { gzipSync } from 'node:zlib'
-import { readFile, readdir, writeFile } from 'node:fs/promises'
+import { readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { readmeScreenshotFiles } from './readme-screenshot-files.mjs'
 
 const root = resolve(import.meta.dirname, '..')
 const write = process.argv.includes('--write')
 
-async function gzipBytes(relativePath) {
-  return gzipSync(await readFile(resolve(root, relativePath))).byteLength
-}
-
-const assetNames = await readdir(resolve(root, 'dist/assets'))
-const javascript = await Promise.all(assetNames
-  .filter((name) => name.endsWith('.js'))
-  .map((name) => readFile(resolve(root, 'dist/assets', name))))
-
-const metrics = {
-  javascript: javascript.reduce((sum, body) => sum + gzipSync(body).byteLength, 0),
-  htmlZh: await gzipBytes('dist/index.html'),
-  htmlEn: await gzipBytes('dist/en/index.html'),
-  catalog: await gzipBytes('dist/data/catalog.json'),
-  searchZh: await gzipBytes('dist/data/search-index.zh.json'),
-  searchEn: await gzipBytes('dist/data/search-index.en.json'),
-}
+const metrics = await buildMetrics()
 
 const formatKilobytes = (bytes) => `${(bytes / 1_000).toFixed(1).replace(/\.0$/, '')} kB`
 const blocks = [
   {
     path: resolve(root, 'README.md'),
-    value: `**Current production build:** ${formatKilobytes(metrics.javascript)} homepage JavaScript gzip · ${formatKilobytes(metrics.htmlZh)} / ${formatKilobytes(metrics.htmlEn)} Chinese / English homepage HTML gzip · ${formatKilobytes(metrics.catalog)} catalog gzip · ${formatKilobytes(metrics.searchZh)} / ${formatKilobytes(metrics.searchEn)} Chinese / English search indexes gzip. Run \`npm run performance:budget\` for static budgets and \`npm run performance:browser\` against a local production server for browser behavior.`,
+    value: `**Reference build (Node 22.23.1, analytics configuration omitted):** ${formatKilobytes(metrics.javascript)} homepage JavaScript gzip · ${formatKilobytes(metrics.htmlZh)} / ${formatKilobytes(metrics.htmlEn)} Chinese / English homepage HTML gzip · ${formatKilobytes(metrics.catalog)} first-page API gzip · ${formatKilobytes(metrics.next)} next-page API gzip · ${formatKilobytes(metrics.search)} search response gzip · ${formatKilobytes(metrics.fonts)} local fonts (nonblocking) · ${formatKilobytes(metrics.serverIndex)} server-only index gzip. Run \`npm run performance:budget\` for static budgets and \`npm run performance:browser\` against a local production server for browser behavior.`,
   },
   {
     path: resolve(root, 'README.zh-CN.md'),
-    value: `**当前生产构建：** 首页 JavaScript gzip ${formatKilobytes(metrics.javascript)} · 中文 / 英文首页 HTML gzip ${formatKilobytes(metrics.htmlZh)} / ${formatKilobytes(metrics.htmlEn)} · 目录 gzip ${formatKilobytes(metrics.catalog)} · 中文 / 英文搜索索引 gzip ${formatKilobytes(metrics.searchZh)} / ${formatKilobytes(metrics.searchEn)}。静态预算运行 \`npm run performance:budget\`；启动本地生产服务后运行 \`npm run performance:browser\` 验证浏览器行为。`,
+    value: `**参考构建（Node 22.23.1，不含分析服务配置）：** 首页 JavaScript gzip ${formatKilobytes(metrics.javascript)} · 中文 / 英文首页 HTML gzip ${formatKilobytes(metrics.htmlZh)} / ${formatKilobytes(metrics.htmlEn)} · 首批 API gzip ${formatKilobytes(metrics.catalog)} · 下一页 API gzip ${formatKilobytes(metrics.next)} · 搜索响应 gzip ${formatKilobytes(metrics.search)} · 本地非阻塞字体 ${formatKilobytes(metrics.fonts)} · 仅服务端索引 gzip ${formatKilobytes(metrics.serverIndex)}。静态预算运行 \`npm run performance:budget\`；启动本地生产服务后运行 \`npm run performance:browser\` 验证浏览器行为。`,
   },
 ]
 
