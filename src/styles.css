@@ -3726,11 +3726,26 @@ body.intro-open {
   text-transform: uppercase;
 }
 
-.added-date-filter > div {
+.added-date-filter-controls {
   min-width: 0;
   display: grid;
-  grid-template-columns: repeat(5, minmax(116px, 1fr));
+  grid-template-columns: minmax(0, 1fr) 190px;
+}
+
+.added-date-filter-controls:not(:has(.prompt-only-toggle)) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.added-date-presets {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(116px, 1fr));
   overflow-x: auto;
+}
+
+.added-date-filter-controls > .prompt-only-toggle {
+  min-height: 58px;
+  font-size: 12px;
 }
 
 .added-date-filter-hint {
@@ -3746,7 +3761,7 @@ body.intro-open {
 }
 
 .added-date-filter-hint.is-visible,
-.added-date-filter:has(button:first-child:focus-visible) .added-date-filter-hint {
+.added-date-filter:has(.added-date-presets button:nth-child(2):focus-visible) .added-date-filter-hint {
   position: static;
   width: auto;
   height: auto;
@@ -3764,7 +3779,7 @@ body.intro-open {
   white-space: normal;
 }
 
-.added-date-filter button {
+.added-date-presets button {
   min-height: 58px;
   padding: 0 16px;
   display: inline-flex;
@@ -3782,28 +3797,28 @@ body.intro-open {
   white-space: nowrap;
 }
 
-.added-date-filter button:hover {
+.added-date-presets button:hover {
   color: var(--ink);
   background: #11130f;
 }
 
-.added-date-filter button.active {
+.added-date-presets button.active {
   color: #090a08;
   background: var(--acid);
 }
 
-.added-date-filter button:disabled {
+.added-date-presets button:disabled {
   color: #565b52;
   background: #0b0d0a;
   cursor: not-allowed;
 }
 
-.added-date-filter button:disabled small {
+.added-date-presets button:disabled small {
   color: #747970;
   background: #252921;
 }
 
-.added-date-filter button small {
+.added-date-presets button small {
   min-width: 19px;
   height: 19px;
   display: grid;
@@ -3857,7 +3872,7 @@ body.intro-open {
 .primary-filter-controls {
   min-width: 0;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 190px;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .duration-filter button {
@@ -3961,15 +3976,39 @@ body.intro-open {
   border-bottom: 1px solid var(--line);
 }
 
-.case-collections > span {
+.case-collections > .case-collections-label {
+  padding: 0;
   display: flex;
   align-items: center;
   gap: 8px;
   color: var(--acid);
+  background: transparent;
+  border: 0;
+  border-right: 1px solid transparent;
+  cursor: default;
   font-family: var(--mono);
   font-size: 10px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  text-align: left;
+  transition: color 160ms ease, background 160ms ease;
+}
+
+.case-collections > .case-collections-label.is-active {
+  padding: 0 14px;
+  color: #090a08;
+  background: var(--acid);
+  border-right-color: #1e211c;
+  cursor: pointer;
+}
+
+.case-collections > .case-collections-label.is-active > svg:last-child {
+  margin-left: auto;
+}
+
+.case-collections > .case-collections-label.is-active:hover {
+  color: #090a08;
+  background: #eaff85;
 }
 
 .case-collections > div {
@@ -3977,7 +4016,7 @@ body.intro-open {
   overflow-x: auto;
 }
 
-.case-collections button {
+.case-collections > div > button {
   min-width: 116px;
   padding: 0 16px;
   display: inline-flex;
@@ -3996,17 +4035,17 @@ body.intro-open {
   transition: color 160ms ease, background 160ms ease;
 }
 
-.case-collections button:hover {
+.case-collections > div > button:hover {
   color: var(--ink);
   background: #11130f;
 }
 
-.case-collections button.active {
+.case-collections > div > button.active {
   color: #090a08;
   background: var(--acid);
 }
 
-.case-collections button small {
+.case-collections > div > button small {
   min-width: 18px;
   height: 18px;
   display: grid;
@@ -5457,7 +5496,7 @@ footer {
     margin-right: auto;
   }
 
-  .primary-filter-controls {
+  .added-date-filter-controls {
     grid-template-columns: 1fr;
   }
 
@@ -5755,8 +5794,8 @@ footer {
     display: none;
   }
 
-  .added-date-filter > div {
-    grid-template-columns: repeat(5, minmax(122px, 1fr));
+  .added-date-presets {
+    grid-template-columns: repeat(4, minmax(122px, 1fr));
   }
 
   .added-date-filter-hint {
@@ -5764,7 +5803,7 @@ footer {
     padding-inline: 0;
   }
 
-  .added-date-filter button:first-child {
+  .added-date-presets button:first-child {
     border-left: 0;
   }
 
@@ -5780,7 +5819,7 @@ footer {
     display: none;
   }
 
-  .primary-filter-controls {
+  .added-date-filter-controls {
     grid-template-columns: minmax(0, 1fr) 128px;
   }
 
@@ -5805,15 +5844,20 @@ footer {
     display: none;
   }
 
+  .added-date-filter-controls > .prompt-only-toggle {
+    min-height: 56px;
+    font-size: 10px;
+  }
+
   .case-collections {
     grid-template-columns: 1fr;
   }
 
-  .case-collections > span {
+  .case-collections > .case-collections-label {
     display: none;
   }
 
-  .case-collections button:first-child {
+  .case-collections > div > button:first-child {
     border-left: 0;
   }
 

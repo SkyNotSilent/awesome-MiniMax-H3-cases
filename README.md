@@ -13,7 +13,7 @@
 [![Stars](https://img.shields.io/github/stars/SkyNotSilent/awesome-minimax-h3-cases?style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/stargazers)
 [![Forks](https://img.shields.io/github/forks/SkyNotSilent/awesome-minimax-h3-cases?style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/forks)
 [![Cases](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1334-376-24-267&query=%24.cases&label=cases&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/en/)
-[![Prompts](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1334-376-24-267&query=%24.completePrompts&label=public%20prompts&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/en/?collection=prompt)
+[![Prompts](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1334-376-24-267&query=%24.completePrompts&label=public%20prompts&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/en/?prompt=1)
 [![Tutorials](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1334-376-24-267&query=%24.tutorials&label=tutorials&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/en/tutorials/)
 [![Creators](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1334-376-24-267&query=%24.rankedCreators&label=featured%20creators&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/en/creators/)
 [![CI](https://img.shields.io/github/actions/workflow/status/SkyNotSilent/awesome-minimax-h3-cases/ci.yml?style=for-the-badge&label=CI&labelColor=0a0b09)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/actions/workflows/ci.yml)
@@ -32,7 +32,7 @@
 
 | Browse cases | With complete Prompt | Discover creators | Learn from zero | Install Agent Skills |
 | --- | --- | --- | --- | --- |
-| [Watch every case](https://h3-field-notes-production.up.railway.app/en/) | [Open Prompt collection](https://h3-field-notes-production.up.railway.app/en/?collection=prompt) | [Open creator leaderboard](https://h3-field-notes-production.up.railway.app/en/creators/) | [Open tutorials](https://h3-field-notes-production.up.railway.app/en/tutorials/) | [Jump to install](#agent-skills) |
+| [Watch every case](https://h3-field-notes-production.up.railway.app/en/) | [Open Prompt collection](https://h3-field-notes-production.up.railway.app/en/?prompt=1) | [Open creator leaderboard](https://h3-field-notes-production.up.railway.app/en/creators/) | [Open tutorials](https://h3-field-notes-production.up.railway.app/en/tutorials/) | [Jump to install](#agent-skills) |
 
 MiniMax H3 is also searched as **Hailuo H3**, **Hailuo 3.0**, and **海螺 H3**. Every published case plays inside the gallery, keeps its original source and creator, and clearly distinguishes a complete verbatim Prompt from an unpublished one. The library never reconstructs, rewrites, or reverse-engineers missing Prompts.
 
@@ -40,23 +40,24 @@ MiniMax H3 is also searched as **Hailuo H3**, **Hailuo 3.0**, and **海螺 H3**.
 
 First-time visitors start with the complete case library ordered by catalog date, so the newest work appears first without presenting the existing archive as hundreds of unread items. Returning visitors with new cases automatically open a fixed **Since last visit** snapshot. A batch is marked seen only after an update card actually enters the viewport, and the current tab keeps that snapshot across refreshes and case/guide navigation.
 
-- Filter cases and guides by **Since last visit**, **Today**, **Last 7 days**, **Last 30 days**, or **All**. Date conditions combine with search, duration, Prompt, collection, content, style, scene, goal, and hardware filters.
+- Filter cases and guides by **All**, **Since last visit**, **Last 7 days**, or **Last 30 days**. On a first visit, or when the browser cannot save history, **Since last visit** shows today's additions. Date conditions combine with search, duration, Prompt, collection, content, style, scene, goal, and hardware filters.
 - Every case and guide shows its catalog-added date; current-snapshot items also carry a text **Newly added** label instead of relying on color alone.
-- Cases and guides have independent seen-through marks, so viewing new cases never clears an unseen guide. When no personal update exists, the summary shows **You are up to date** and links to today's additions or the latest 48 cases instead of opening an empty view.
-- Fixed snapshots use shareable `added=unseen&since=<ISO date-time>&through=<ISO date-time>` URLs; older `since`-only links remain compatible. Other date views use `added=today|7d|30d`.
+- Cases and guides have independent seen-through marks, so viewing new cases never clears an unseen guide. When no personal update exists, the summary shows **You are up to date** and links to the latest 48 cases instead of opening an empty view.
+- Fixed snapshots use shareable `added=unseen&since=<ISO date-time>&through=<ISO date-time>` URLs; older `since`-only links remain compatible. Other date views use `added=7d|30d`; older `added=today` links resolve to the since-last-visit view.
 - Seen state stays only in this browser under separate v2 case/guide keys, while `minimax-h3-update-session-v2` keeps the current tab's frozen batch. There is no account, server-side seen history, or notification subscription. Self-hosted analytics may count aggregate product interactions, but never receive this seen state.
 
 ## Find the useful cases faster
 
-The homepage remains case-first. Quick collections are independent entry points: choosing one first clears search, catalog-date, duration, Prompt, and advanced filters so the click never lands on an empty list; filters picked afterwards narrow within that collection, and pressing the active collection again returns to the complete library:
+The homepage remains case-first. Quick collections are independent entry points: choosing one first clears search, catalog-date, duration, Prompt, and advanced filters so the click never lands on an empty list; filters picked afterwards narrow within that collection, and picking **All**, the lit quick-collections label, or the active collection again returns to the complete library:
 
 [![MiniMax H3 latest additions ordered by catalog date](./docs/screenshots/latest-collection-en.jpg)](https://h3-field-notes-production.up.railway.app/en/?collection=latest)
 
 - [Editor picks](https://h3-field-notes-production.up.railway.app/en/?collection=featured) — a stable set of 24–28 playable cases, refreshed periodically from public engagement signals and human source checks.
 - [Latest additions](https://h3-field-notes-production.up.railway.app/en/?collection=latest) — the existing compatible link, now ordered by first catalog addition rather than source publication date.
 - [Official examples](https://h3-field-notes-production.up.railway.app/en/?collection=official) — reproducible MiniMax scripts and source evidence.
-- [Long videos](https://h3-field-notes-production.up.railway.app/en/?collection=long) — outputs longer than 15 seconds.
 - **My saved cases** — the saved list stays in this browser; there is no login or cloud account.
+
+Long videos and complete Prompts are no longer collections; the primary filters cover them: [longer than 15 seconds](https://h3-field-notes-production.up.railway.app/en/?duration=OVER_15) uses the duration filter and [With Prompt](https://h3-field-notes-production.up.railway.app/en/?prompt=1) uses the Prompt switch. Older `collection=long` and `collection=prompt` links resolve to those filters.
 
 Advanced filters now use a fixed bilingual taxonomy instead of turning one-off free text into hundreds of controls:
 

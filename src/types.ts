@@ -102,7 +102,7 @@ export interface SearchRecord {
 
 export interface CatalogPayload {
   catalogVersion?: string
-  summary?: { maxima: Record<'cases' | 'tutorials', string>; counts: Record<'cases' | 'tutorials', number>; today: Record<'cases' | 'tutorials', number>; totals: Record<'cases' | 'tutorials', number> }
+  summary?: { maxima: Record<'cases' | 'tutorials', string>; counts: Record<'cases' | 'tutorials', number>; totals: Record<'cases' | 'tutorials', number> }
   version: number
   generatedAt: string
   featuredCaseIds: string[]

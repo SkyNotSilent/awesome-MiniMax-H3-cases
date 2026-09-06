@@ -1,4 +1,4 @@
-export const addedDatePresets = ['unseen', 'today', '7d', '30d', 'all'] as const
+export const addedDatePresets = ['all', 'unseen', '7d', '30d'] as const
 
 export type AddedDatePreset = (typeof addedDatePresets)[number]
 export type UpdateChannel = 'cases' | 'tutorials'
@@ -48,6 +48,7 @@ export function maxAddedAt(items: readonly AddedAtItem[]): string {
 }
 
 export function parseAddedDatePreset(value: string | null): AddedDatePreset {
+  if (value === 'today') return 'unseen'
   return addedDatePresets.includes(value as AddedDatePreset) ? value as AddedDatePreset : 'all'
 }
 
@@ -94,6 +95,16 @@ function localDayStart(now: Date, daysAgo: number) {
   return start.getTime()
 }
 
+// Visitors without a comparable last visit see today's additions under 'unseen'.
+// The window never reaches past the client clock or the newest item, so clock
+// skew cannot count future items and an empty day never yields a reversed range.
+export function todayUpdateWindow(maximum: string, now: Date = new Date()): StoredUpdateWindow {
+  const latest = Date.parse(maximum)
+  const through = Number.isFinite(latest) ? Math.min(latest, now.getTime()) : now.getTime()
+  const since = Math.min(localDayStart(now, 0) - 1, through)
+  return { since: new Date(since).toISOString(), through: new Date(through).toISOString() }
+}
+
 export function matchesAddedDate(
   addedAt: string,
   preset: AddedDatePreset,
@@ -113,7 +124,6 @@ export function matchesAddedDate(
   }
 
   if (timestamp > now.getTime()) return false
-  if (preset === 'today') return timestamp >= localDayStart(now, 0)
   if (preset === '7d') return timestamp >= localDayStart(now, 6)
   return timestamp >= localDayStart(now, 29)
 }
