@@ -65761,5 +65761,516 @@
     },
     "approvedAt": "2026-09-06T02:48:51.413Z",
     "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096496980180500694",
+    "title": "绿色时尚海报里的横向追逐",
+    "titleEn": "A Side-Scrolling Chase Through a Green Fashion Poster",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "动画女孩抱着粉色爱心穿过鲜绿色时尚海报，横向滚动、分栏排版与歌词式文字共同形成音乐广告节奏。 原生视频规格为 15 秒 · 1920×2224。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "An illustrated girl carries a pink heart through a vivid green fashion poster as side-scrolling motion, panel layouts, and lyric-like type create a music-commercial rhythm. Native-video output: 15s · 1920×2224. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ponzponz15/status/2096496980180500694",
+    "sourceLabel": "X 原帖 · @ponzponz15",
+    "author": "ぽんず | AI映像",
+    "publishedAt": "2026-09-06T07:13:25.000Z",
+    "addedAt": "2026-09-07T01:01:29.590Z",
+    "mediaUrl": "/media/x-2096496980180500694.mp4",
+    "posterUrl": "/posters/x/2096496980180500694.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "1920×2224",
+    "tags": [
+      "MiniMax H3",
+      "广告与产品",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "advertising",
+    "styles": [
+      "illustration",
+      "motion-graphics"
+    ],
+    "scenes": [
+      "fashion"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "ファッションポスター\n× AIモーショングラフィックス ③\n\n今回は「横スクロール × アニメ風イラスト × 楽曲CM風」\n\n毎度、ミヤマさんのプロンプトをお借りしています😎\n\n① ミヤマさんのプロンプトで画像作成\n② MiniMax H3 768pで動画化(@Hailuo_AI )\n③ GoogleのLyria 3.5で楽曲を生成/編集で追加\n\nちょっとLI⚪︎MO感あるな...🐿️\n\n#MiniMaxdesign",
+    "engagement": {
+      "replies": 3,
+      "reposts": 14,
+      "likes": 166,
+      "views": 21194,
+      "snapshotAt": "2026-09-07T01:01:29.590Z"
+    },
+    "approvedAt": "2026-09-07T01:01:29.590Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096577196915900712",
+    "title": "猫耳厨师完成一盘炒饭",
+    "titleEn": "A Cat-Eared Chef Finishes a Plate of Fried Rice",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "蓝发猫耳厨师在中餐厅快速翻炒米饭，经历火焰、擦汗与装盘，最后把成品递给顾客。 原生视频规格为 15 秒 · 480×800。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A blue-haired cat-eared chef stir-fries rice in a Chinese restaurant, works through flame and exertion, plates the dish, and serves it to a customer. Native-video output: 15s · 480×800. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] High-quality Japanese anime style, 2D illustration with cel-shading. (S1) is a character showen in the <Picture 1>. The camera cuts to a medium shot of the same character (S1), maintaining (S1)'s  exact appearance and outfit from <Picture 1>, now standing in a vibrant Chinese restaurant kitchen. (S1) is positioned before a large wok on a powerful burner, surrounded by rising steam, hanging menu boards with illegible characters, and warm red and gold lighting. S1 begins to cook fried rice with focused, energetic movements. [Shot 2] At 00:04.500, the camera cuts to a series of rapid, cinematic close-ups. First, a tight shot of S1's determined eyes, then a shot of (S1)'s  hands skillfully tossing the wok. The camera pushes in with small amplitude at fast speed as (S1) exerts force to flip the rice, causing a few grains to dance in the air. A sudden burst of orange flame from the burner illuminates (S1)'s  face. Tiny beads of sweat form on (S1)'s  cheeks; (S1) briefly wipes (S1)'s  brow with (S1)'s  forearm without stopping (S1)'s  rhythmic stirring. [Shot 3] From 00:10.500 to 00:13.000, show the complete transfer of fried rice FROM THE WOK INTO AN EMPTY CERAMIC PLATE in one uninterrupted close medium shot. Both the wok and the empty plate must be clearly visible together. S1 holds the wok above the plate, visibly tilts its rim down toward the plate, and uses the spatula to slide and scrape the cooked fried rice out of the wok. Show the rice physically falling from the rim of the wok and accumulating into a mound on the plate. The plate starts empty and becomes filled on camera. Do not cut away, skip this action, or show an already-filled plate in its place. Only AFTER the rice has been transferred completely, from 00:13.000 to 00:15.000, S1 sets the wok down, lifts the filled plate, moves to the counter, and extends it toward a customer. The camera pans right with small amplitude at slow speed to follow the serving action. S1's expression shifts from intense concentration to a sincere, tired but happy smile, (S1)'s  chest heaving slightly from the effort. The customer's hand enters the frame to accept the plate. S1 gives a small, proud nod of satisfaction, (S1)'s  eyes shimmering with relief and accomplishment under the warm glow of the kitchen lights.\n\noverall_soundscape: The environment is filled with the rhythmic, metallic clanking of a spatula against a wok. Constant sizzling of rice and oil blends with the sudden, low-frequency \"whoosh\" of the burner's flames. The soft hiss of rising steam and the final, clean \"clink\" of a ceramic plate being placed on a wooden counter complete the atmosphere.\n\nnon_diegetic_music: An upbeat, heartwarming orchestral track with a fast tempo, featuring playful pizzicato strings and a bright flute melody that swells emotionally toward the end to emphasize a sense of accomplishment.",
+    "promptSourceUrl": "https://x.com/IsekaiBardGuild/status/2096577421277335827",
+    "sourceUrl": "https://x.com/IsekaiBardGuild/status/2096577196915900712",
+    "sourceLabel": "X 原帖 · @IsekaiBardGuild",
+    "author": "AI Bard Guild",
+    "publishedAt": "2026-09-06T12:32:10.000Z",
+    "addedAt": "2026-09-07T01:01:29.590Z",
+    "mediaUrl": "/media/x-2096577196915900712.mp4",
+    "posterUrl": "/posters/x/2096577196915900712.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "480×800",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime"
+    ],
+    "scenes": [
+      "food",
+      "performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3\nチャーハン作り、参照画像を変えたら\n誰でも作れるようにしてみました\n\nできるだけ元の映像の流れを保存してみた\nつもりです（勝手に使ってすみません）\n\nRef2Va 用ですが、I2V でもできます\n（最初の数フレームが参照画像になります）\n\nプロンプトはリプ欄に",
+    "engagement": {
+      "replies": 5,
+      "reposts": 5,
+      "likes": 26,
+      "views": 1593,
+      "snapshotAt": "2026-09-07T01:01:29.590Z"
+    },
+    "approvedAt": "2026-09-07T01:01:29.590Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096390421626880069",
+    "title": "同一张脸演绎多种细微情绪",
+    "titleEn": "One Face Moves Through Subtle Emotions",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "同一位写实女性在固定近景中连续呈现不安、惊讶、克制微笑与放松等表情，集中检验细微情绪控制。 原生视频规格为 65 秒 · 720×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "The same photoreal woman cycles through anxiety, surprise, restrained smiles, and relief in a fixed close-up, testing fine-grained emotional control. Native-video output: 65s · 720×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/AIPixLab/status/2096390421626880069",
+    "sourceLabel": "X 原帖 · @AIPixLab",
+    "author": "AI写真ラボ / AIバーチャルカメラマン",
+    "publishedAt": "2026-09-06T00:10:00.000Z",
+    "addedAt": "2026-09-07T01:01:29.590Z",
+    "mediaUrl": "/media/x-2096390421626880069.mp4",
+    "posterUrl": "/posters/x/2096390421626880069.jpg",
+    "duration": 65,
+    "aspectRatio": "portrait",
+    "resolution": "720×1080",
+    "tags": [
+      "MiniMax H3",
+      "角色对白",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "dialogue",
+    "styles": [
+      "photoreal"
+    ],
+    "scenes": [
+      "performance",
+      "dialogue"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3はどこまで表情指示に追従できるのか？実用的プロンプト[prompt share]\n#MiniMaxH3 \n\n表情をジャンル分けナレッジ化\nDrama 感情表現 の作例",
+    "engagement": {
+      "replies": 2,
+      "reposts": 2,
+      "likes": 64,
+      "views": 4983,
+      "snapshotAt": "2026-09-07T01:01:29.590Z"
+    },
+    "approvedAt": "2026-09-07T01:01:29.590Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096749565412331841",
+    "title": "巧克力蛋里长出一座夏威夷",
+    "titleEn": "Hawaii Grows From a Chocolate Egg",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "T2VA",
+    "summary": "一枚写实巧克力蛋沿裂纹打开，蛋壳与夹心连续变形成迷你夏威夷景观，最后以旅游广告式标题收束。 原生视频规格为 10 秒 · 1344×768。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A photoreal chocolate egg cracks open as its shell and filling continuously become a miniature Hawaii landscape, ending on a tourism-ad title card. Native-video output: 10s · 1344×768. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "[CITY] = ハワイ\n[CITY_NAME_DISPLAY] = ハワイ\n[FINAL_TAGLINE] = ひらいて、旅がはじまる。\n\nintegrated_multimodal_description:\n\n[Shot 1] A single continuous unbroken cinematic macro shot. No cuts, no scene changes, no teleporting, and no sudden replacements.\n\nThe scene begins with one realistic chocolate surprise egg placed upright on a simple elegant surface. The egg is the clear hero of the shot. It has a glossy chocolate shell with subtle handmade imperfections, soft highlights, delicate texture, and a premium confectionery feel. The lighting is warm, inviting, and slightly magical, with a shallow depth of field and a premium commercial look.\n\nThe egg must feel edible and real. The shell should look like real chocolate, not plastic, not ceramic, and not a toy. Fine surface texture, gentle gloss, tiny irregularities, and believable thickness should be visible.\n\nAt first, the chocolate egg is completely intact.\n\nGradually, subtle tension appears in the shell. Fine cracks begin to form naturally along the surface. The cracks spread slowly and elegantly, as if something beautiful is growing from within.\n\nThe transformation into [CITY] begins directly from this physical process.\n\nWithout interrupting the shot, the egg opens and transforms continuously.\n\nThe chocolate shell cracks, separates, curls, lifts, and unfolds in a graceful way. Pieces of the shell do not simply disappear. They remain physically connected to the transformation and become part of the emerging miniature city.\n\nThe inside of the egg reveals a warm, surprising inner world. The inner material may include soft chocolate layers, creamy confection-like texture, and delicate edible structural forms. Everything that appears must feel derived from the original egg.\n\nAs the egg opens, the miniature city of [CITY] begins to grow from inside it.\n\nThe transformation must feel like one continuous physical process:\nsealed chocolate egg → fine cracks → shell opening → interior revealed → miniature city structures rising from within → the completed city unfolding from the egg.\n\nNothing pops into existence.\nNothing instantly swaps shape.\nNothing should feel like a hidden cut.\n\nBefore generation, infer a small number of visually iconic elements strongly associated with [CITY], then reinterpret only the most recognizable ones as part of this miniature edible city.\n\nDo not turn the result into a crowded landmark collage.\nDo not overfill the frame.\nKeep the city readable, elegant, and beautiful.\n\nThe city should include a few recognizable urban and local elements such as streets, rooftops, bridges, towers, rail lines, rivers, trees, and culturally resonant architecture, but all reimagined as if they were born from the chocolate egg itself.\n\nThe shell edges may become ridges, terraces, or framing elements around the city.\nChocolate layers may become terrain and building mass.\nInterior creamy or confection-like details may become roads, rooftops, pathways, and decorative city features.\nThe material continuity must always remain believable.\n\nThe city should look like an edible miniature diorama: intricate, tactile, warm, and slightly surreal, but still physically plausible.\n\nCamera behavior:\nThe camera starts in tight macro close-up on the intact egg.\nAs the shell begins to crack and open, the camera remains intimate and steady, emphasizing material detail and the elegance of the transformation.\nAs the city becomes recognizable, the camera performs one extremely slow and smooth dolly backward with a subtle upward reveal.\nNo fast zoom.\nNo orbit.\nNo handheld movement.\n\nIn the final phase of the shot, reveal the completed miniature city of [CITY] emerging beautifully from the opened chocolate egg.\n\nThe final image should feel like a premium tourism commercial crossed with high-end confectionery advertising:\nwarm,\nwonder-filled,\nappetizing,\nsurprising,\nand emotionally memorable.\n\nSoft steam, glow, or delicate atmospheric motion may be present if appropriate, but keep it subtle and elegant.\n\nNear the end, minimal clean typography appears at the lower portion of the frame:\n\n\"[CITY_NAME_DISPLAY]\"\n\nDirectly beneath it, smaller:\n\n\"[FINAL_TAGLINE]\"\n\nThe text must be simple, elegant, readable, correctly spelled, and visually integrated into the final composition.\nNo other text appears.\n\nHold briefly on the final hero composition:\nthe opened chocolate egg acting like a cradle for the miniature city,\nbeautiful lighting,\nshallow depth of field,\nrich chocolate texture,\nand a visually irresistible tourism-commercial finish that makes the viewer want to visit [CITY].\n\nVisual style:\nphotorealistic macro commercial cinematography, premium confectionery advertisement, edible miniature city diorama, warm luxury food lighting, tactile chocolate texture, elegant surreal transformation, cinematic shallow depth of field, highly detailed but restrained composition.\n\nCritical continuity requirements:\nThe entire video is ONE continuous shot.\nThe entire city grows from ONE chocolate egg.\nThe egg remains the physical source of the entire transformation.\nAll changes are gradual, visible, and materially connected.\nThe shell must crack and open naturally.\nThe city must emerge progressively from within the egg.\nNo jump cuts.\nNo hidden transitions.\nNo sudden completed city.\nNo random fantasy city unrelated to [CITY].\n\nAvoid:\nplastic toy look,\ncartoon toy appearance,\nrubber texture,\nceramic egg appearance,\ngeneric fantasy castle city,\ninstant morphing,\nfast transformation,\njump cuts,\nscene changes,\nobjects appearing from nowhere,\novercrowded landmarks,\nunreadable text,\ngarbled Japanese characters,\nmisspelled city name,\nextra captions,\nextra logos,\ncheap CGI feeling,\nmessy composition,\nand any transformation that breaks physical continuity.\n\noverall_soundscape:\nSoft premium commercial ambience. Quiet room tone with subtle confectionery handling atmosphere. Gentle cracking sounds as the chocolate shell fractures. Delicate crisp chocolate break sounds, soft interior movement, faint textural shifting, and subtle reveal ambience as the city emerges. No dialogue.\n\nnon_diegetic_music:\nA warm, elegant, slightly magical commercial score. Soft piano and delicate orchestral textures, building gently as the egg opens and the city emerges. Emotional but restrained, never overwhelming the tactile chocolate sounds.",
+    "promptSourceUrl": "https://x.com/loglogrog/status/2096749570227409041",
+    "sourceUrl": "https://x.com/loglogrog/status/2096749565412331841",
+    "sourceLabel": "X 原帖 · @loglogrog",
+    "author": "マグマグ",
+    "publishedAt": "2026-09-06T23:57:06.000Z",
+    "addedAt": "2026-09-07T01:06:35.085Z",
+    "mediaUrl": "/media/x-2096749565412331841.mp4",
+    "posterUrl": "/posters/x/2096749565412331841.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "广告与产品",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "advertising",
+    "styles": [
+      "photoreal",
+      "commercial"
+    ],
+    "scenes": [
+      "product"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "チョコエッグを割ったら、\n中からハワイと京都が出てきた。\n\nMiniMax H3 Max Turboで、\n同じプロンプトを使って、都市名だけ変えて2本作ってみました。\n\nハワイ → 京都。\n好きな街を1つ入れて、あなただけの10秒動画を作ってみてください。\n使ったプロンプトはリプ欄へ👇\n\n他の動画生成で試した結果なども共有して欲しいです。",
+    "engagement": {
+      "replies": 1,
+      "reposts": 1,
+      "likes": 2,
+      "views": 354,
+      "snapshotAt": "2026-09-07T01:06:35.085Z"
+    },
+    "approvedAt": "2026-09-07T01:06:35.085Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096761524698169807",
+    "title": "街头海报中破框而出的时尚舞者",
+    "titleEn": "A Streetwear Performer Breaks Through the Poster Grid",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "T2VA",
+    "summary": "黑衣表演者穿过海报墙、复印室与屋顶，以跳跃、转身和定格动作串起高对比排版的街头服饰广告。 原生视频规格为 15 秒 · 2560×1440。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A black-clad performer crosses a poster wall, copy room, and rooftop, linking jumps, turns, and freezes into a high-contrast streetwear commercial. Native-video output: 15s · 2560×1440. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "Create one coherent 15-second 16:9 MV with synchronized picture, original song, vocals, sound design, and cuts. Anime fused with live-action photography: a single original avant-garde street-fashion anime performer breaks through a street poster wall and travels through one connected nocturnal print route: poster corridor, copy room, tiled underpass/stairs, rooftop billboard. Gritty manga energy inspired by Gachiakuta, but no copied character, panel, logo, or artwork. Keep one face, hair silhouette, body proportions, cropped utility jacket, layered shirt, loose cargo trousers, high-tops, chain, and long strap in every shot. English-only on-screen text.\n\nVISUAL: strict black #111111, paper white #F1EBDD, and aquamarine #49D6C5; grayscale photographic spaces and skin. Retro copy-zine, pasted street posters, halftone, torn paper, tape, scanlines, restrained VHS gate weave and fringe. Main type is ultra-black condensed grotesk, ALL CAPS, tight tracking, squared counters. Every text event has Layer A readable hero base, Layer B offset aquamarine/grayscale print plate, Layer C foreground paper/type occlusion; read clearly before transforming and recover within one beat. Use photocopy burst on snare, aquamarine misregistration on hi-hat, torn occlusion on vocal words, irregular split panels on 808, delayed double portrait on hi-hat, and a short black type field at the ending. No random print, fake logos, gibberish, or ordinary subtitles.\n\nMUSIC/PERFORMANCE: original K-pop hip-hop/trap-rap, 128 BPM 4/4, double-time hats with half-time body feel, dry kick, snare on beat three, clipped clap, sparse hats and one roll, moving 3-note 808 with a slide and octave answer, metallic pluck and distorted electric-piano stab. One confident neutral-masculine voice: crisp aggressive rap, then chant-sung hook; final tag adds low-octave double. Structure: 0–1.875 intro tag “CUT IN”; 1.875–5.625 rap; 5.625–7.5 rising pre-hook and breath; 7.5–11.25 call-and-response hook; 11.25–13.125 kick-out beat switch; 13.125–15 final tag, bass hit, tiny tape-stop, clean hard stop, no fade. Lyrics: Rap A1 “Cut through the paper, make the dead wall shake”; Rap A2 “Ink in my jacket, every fake frame breaks”; Pre-hook “Hold that breath, let it rise”; Hook 1 “BREAK THE GRID”; Hook 2 “MAKE IT LIVE”; Response “Again!”; Final tag “BREAK THE GRID”. A1/A2 have connected meaning and rhyme, with straight-sixteenth then triplet cadence. Do not subtitle the lyrics; visual words are CUT IN, BREAK, THE GRID, HOLD, MAKE IT LIVE, AGAIN. Actions include diagonal power walk, cross-step, low drop/rebound, pivot freeze, jacket snap/strap swing, push-wall rebound, paper passage, and controlled stair step-down. Include three large actions, two space contacts, one clothing-inertia action, and two design-led still points. Align mouth, jaw, eyes, shoulders, footfalls, breath, type, snare, and 808.\n\nSHOT 1 — 0.0–1.6s, wide low push-in, poster-wall entrance. Performer steps from deep background through torn seam, shoulder first; front foot transfers weight, jacket catches paper, strap trails, camera settles on face. Action: paper passage. Text “CUT IN”, 110% hero. Layer A behind shoulder; B aquamarine jitter; C taped strip crosses torso then peels. Rhythm/Cut: inhale tears paper, kick hard-cuts.\nSHOT 2 — 1.6–3.4s, eye-level side track, poster corridor. Diagonal power walk left-to-right, foot on kick, body crosses seam, strap and hem trail, camera jolts. Action: power walk. Text “BREAK”, 70% split by poster columns. A clean by face; B slips on hats; C foreground strip passes arm. Rhythm/Cut: snare halftone and hard cut.\nSHOT 3 — 3.4–5.2s, low close-medium backward dolly, copy doorway. Cross-step over floor strip, shoulder-led 90-degree pivot, elbow brushes copier, torso rebounds. Action: cross-step/half-turn. Text “THE GRID”, 90% across copier/body in two irregular panels. A reads; B scans on rhyme; C paper flap slices lower frame and recovers. Rhythm/Cut: triplet jumps, cut on 808.\n\nSHOT 4 — 5.2–7.0s, locked eye-level close-up, copy-room still point. Pivot ends; one collar pull, shoulders freeze, eyes track, jaw releases on breath, strap settles. Action: jacket pull/freeze. Text “HOLD”, 125% behind head with face pocket. A readable; B returns to registration; C tiny monospaced “BREATHE” seam note vanishes. Rhythm/Cut: low end drops, hold, flash-cut on pre-hook end.\nSHOT 5 — 7.0–8.9s, wide low orbit, tiled underpass. Hook hit: performer bursts through threshold, forearm contacts pillar, center drops, leg rebounds, jacket opens, camera orbits then snaps back. Action: push-wall rebound. Text “BREAK THE GRID”, 145% in three unequal panels. A reads; B jumps aquamarine on 808; C torn diagonal crosses pillar but reveals face. Rhythm/Cut: hook consonant and kick cut on rebound.\nSHOT 6 — 8.9–10.8s, overhead-to-front whip tilt, stairs. Two steps up, axis turns down, controlled short step-down, knees absorb, upright hit. Action: high-low step. Text “MAKE”, 80% vertical along stair diagonal. A reads on rise; B duplicates one character per hat; C railing tape flicks away. Rhythm/Cut: response lands on step-down, photocopy flash restores grayscale.\nSHOT 7 — 10.8–13.2s, lateral track into frontal, rooftop billboard. Shoulder parts hanging pasted sheet, torso follows, strap swings once, three-quarter turn, feet lock. Action: paper passage/strap swing/pivot freeze. Text “MAKE IT LIVE”, 115% two-line fold around body. A reads before turn; B aquamarine misregisters on hat roll; C strap briefly occludes lower words, then clear. Rhythm/Cut: beat switch removes kick half-bar, one frame jump at strap apex.\nSHOT 8 — 13.2–15.0s, frontal close-up to black type field, rooftop billboard. Feet finish turn, shoulders square, chin lifts, jacket and strap settle late, camera holds, then hard-cuts to black. Action: final stance/release. Text “BREAK THE GRID”, 150%, same type family, paper-white on black with aquamarine offset. A clear; B low-octave visual duplicate; C compresses like tape stop but remains briefly readable. Rhythm/Cut: final bass hit and tag land together, two-frame tape tail, hard cut.\n\nGLOBAL LOCKS: one protagonist only, stable anime identity and outfit integrated into real photographic spaces; connected route, strict three-color system, accurate English, clear face and mouth. Hard cuts, flash frames, paper occlusion, panel splits, misregistration, restrained VHS only. No soft dissolve, fade, generic dance loop, continuous shake, extra characters, face swap, outfit change, duplicate limbs, broken hands, covered eyes/mouth, watermark, logo, fake brand, gibberish, or unreadable text. End decisively.",
+    "promptSourceUrl": "https://x.com/RickTripstar/status/2096766667233599557",
+    "sourceUrl": "https://x.com/RickTripstar/status/2096761524698169807",
+    "sourceLabel": "X 原帖 · @RickTripstar",
+    "author": "Riccardo",
+    "publishedAt": "2026-09-07T00:44:38.000Z",
+    "addedAt": "2026-09-07T01:11:00.236Z",
+    "mediaUrl": "/media/x-2096761524698169807.mp4",
+    "posterUrl": "/posters/x/2096761524698169807.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "广告与产品",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "advertising",
+    "styles": [
+      "stylized",
+      "commercial"
+    ],
+    "scenes": [
+      "fashion",
+      "performance"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Fashion advertisers are screwed.\n\nI made a streetwear commercial in just 20 minutes with Minimax H3.\n\nFiction Brand Name: “Break the Grid”",
+    "engagement": {
+      "replies": 3,
+      "reposts": 3,
+      "likes": 3,
+      "views": 38,
+      "snapshotAt": "2026-09-07T01:11:00.236Z"
+    },
+    "approvedAt": "2026-09-07T01:11:00.236Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096754759441260736",
+    "title": "小蜘蛛把月光织成一双翅膀",
+    "titleEn": "A Little Spider Weaves Moonlight Into Wings",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "阁楼蛛网上的小蜘蛛把金色光线织成发亮的飞蛾，放飞之后回望窗边的女人，形成温柔的夜间童话。 原生视频规格为 15 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A little attic spider weaves golden light into a glowing moth, releases it, and looks back toward a woman by the window in a gentle nighttime fable. Native-video output: 15s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/altfortomorrow/status/2096754759441260736",
+    "sourceLabel": "X 原帖 · @altfortomorrow",
+    "author": "Blujeanmomma",
+    "publishedAt": "2026-09-07T00:17:45.000Z",
+    "addedAt": "2026-09-07T01:13:38.628Z",
+    "mediaUrl": "/media/x-2096754759441260736.mp4",
+    "posterUrl": "/posters/x/2096754759441260736.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "cg-3d",
+      "stylized"
+    ],
+    "scenes": [
+      "creatures",
+      "fantasy"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Some dreams arrive tangled and need a little time before they can take flight.\n\nKeep weaving. Keep believing. You never know which wish tomorrow may carry into the world. ✨\n\nGood night, everyone. May one of your dreams find its wings. 🩵\n\nMiniMax H3 @PixVerse   #pixversecpp",
+    "engagement": {
+      "replies": 2,
+      "reposts": 0,
+      "likes": 6,
+      "views": 108,
+      "snapshotAt": "2026-09-07T01:13:38.628Z"
+    },
+    "approvedAt": "2026-09-07T01:13:38.628Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096741221293265229",
+    "title": "空教室里的五秒仰卧起坐",
+    "titleEn": "Five Seconds of Sit-Ups in an Empty Classroom",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "一名女子在安静教室的地板上连续完成仰卧起坐，固定竖屏镜头突出短提示词驱动的单一动作测试。 原生视频规格为 5 秒 · 768×1088。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A woman performs sit-ups on the floor of a quiet classroom as a fixed vertical shot focuses on a simple action driven by a short prompt. Native-video output: 5s · 768×1088. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "教室で腹筋して",
+    "promptSourceUrl": "https://x.com/moon_himiko/status/2096741221293265229",
+    "sourceUrl": "https://x.com/moon_himiko/status/2096741221293265229",
+    "sourceLabel": "X 原帖 · @moon_himiko",
+    "author": "Ai_Himiko",
+    "publishedAt": "2026-09-06T23:23:57.000Z",
+    "addedAt": "2026-09-07T01:16:06.671Z",
+    "mediaUrl": "/media/x-2096741221293265229.mp4",
+    "posterUrl": "/posters/x/2096741221293265229.jpg",
+    "duration": 5,
+    "aspectRatio": "portrait",
+    "resolution": "768×1088",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [
+      "photoreal"
+    ],
+    "scenes": [
+      "performance",
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "おはようございまーす\npromptは『教室で腹筋して』MiniMax H3\n元画像は最初に入っちゃうんだね。消すの面倒だね。\n一言でここまでできるのすごいな\n一つ間違いがあるとしたら、ロッカーの位置\nそこは先生の席だよ",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 3,
+      "views": 60,
+      "snapshotAt": "2026-09-07T01:16:06.671Z"
+    },
+    "approvedAt": "2026-09-07T01:16:06.671Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096736067139563909",
+    "title": "树影下的竖屏自拍推进",
+    "titleEn": "A Vertical Selfie Push-In Under Dappled Light",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "镜头从树影中的半身自拍平滑推向面部特写，再轻微侧移并退回，持续检验自然表情、皮肤纹理与人物一致性。 原生视频规格为 7 秒 · 2160×3840。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "The camera moves smoothly from a dappled-light selfie into a facial close-up, shifts gently to the side, and pulls back while testing natural expression, skin texture, and identity consistency. Native-video output: 7s · 2160×3840. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "竖屏9:16自拍角度，支持实时视频拍摄，镜头全程如陀螺仪般稳定平移俯仰，手持拍摄无任何晃动。\n\n禁止裁剪或分割镜像来截取画面。参考图中的黑发女孩拥有自然垂落的刘海、清澈灵动的大眼睛、淡妆、白皙肌肤，身穿白色上衣，需保持与参考图中人物一致的身份、妆容、发型和表情基调。\n\n开场角色眼神活泼可爱，眼动柔和自然，伴随自然眨眼；动作轻盈俏皮，嘴角带着淡淡的自然微笑，以细微的眼神变化为主焦点，避免夸张表情。镜头从开始即有轻微动态，缓慢而均匀地向前推进，同时伴有轻微的自然横向滑动和极小的高度变化，三者融合为一条连贯流畅的曲线，而非机械式的直线运动。\n\n当镜头拉近至脸颊特写并贴近面部时，并未停顿或后退，而是自然地向侧面偏移并轻微环绕，轻柔地控制环绕幅度以保持与面部的距离。镜头缓缓从前侧移动至微侧角度，随后回到正确位置，在此过程中清晰呈现出肌肤的真实质感：毛孔纹理、明显的面部绒毛根部、自然的粉状痕迹以及细微的皮肤瑕疵，这些缺陷真实自然，毫无刻意堆砌之感。周围人物呼吸自然，发丝微微晃动，眼神也随镜头角度的变化而轻轻转动。\n\n随后，镜头缓慢而稳定地拉回至正常的自拍距离，同时伴随轻微的横向移动和构图调整。当镜头后退时，人物微微低头，自然地耸肩微笑，神情轻松优雅，仿佛在躲避微风，又似在与之嬉戏。他们的动作略显克制，不夸张也不生硬，双手自然下垂，全程未抬手或摸头发。风渐渐平息，角色们缓缓抬头，眼神灵动，笑容自然，目光望向镜头末端。\n\n整个过程采用自然光线效果，阳光透过树叶洒在脸上，光影随着人物动作和树影的移动而自然流动变化，增强了真实光影层次感。\n\n画面明亮通透，温暖富有电影质感，搭配自然的光影效果。皮肤呈现真实、自然、高清的纹理，不粗糙、不过于光滑，也无塑料感或过度美化。摄像机流畅无缝的运动增强了画面的稳定性和质感，营造出一种非AI风格的高清晰度真实感。",
+    "promptSourceUrl": "https://x.com/DDJCXX/status/2096736067139563909",
+    "sourceUrl": "https://x.com/DDJCXX/status/2096736067139563909",
+    "sourceLabel": "X 原帖 · @DDJCXX",
+    "author": "硅基废话",
+    "publishedAt": "2026-09-06T23:03:28.000Z",
+    "addedAt": "2026-09-07T01:18:47.983Z",
+    "mediaUrl": "/media/x-2096736067139563909.mp4",
+    "posterUrl": "/posters/x/2096736067139563909.jpg",
+    "duration": 7,
+    "aspectRatio": "portrait",
+    "resolution": "2160×3840",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "photoreal",
+      "vertical"
+    ],
+    "scenes": [
+      "performance",
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Rtx5070 12g+32g内存，2小时用本地部署MiniMaxH3渲染出来的效果。\n\nPrompt:竖屏9:16自拍角度，支持实时视频拍摄，镜头全程如陀螺仪般稳定平移俯仰，手持拍摄无任何晃动。\n\n禁止裁剪或分割镜像来截取画面。参考图中的黑发女孩拥有自然垂落的刘海、清澈灵动的大眼睛、淡妆、白皙肌肤，身穿白色上衣，需保持与参考图中人物一致的身份、妆容、发型和表情基调。\n\n开场角色眼神活泼可爱，眼动柔和自然，伴随自然眨眼；动作轻盈俏皮，嘴角带着淡淡的自然微笑，以细微的眼神变化为主焦点，避免夸张表情。镜头从开始即有轻微动态，缓慢而均匀地向前推进，同时伴有轻微的自然横向滑动和极小的高度变化，三者融合为一条连贯流畅的曲线，而非机械式的直线运动。\n\n当镜头拉近至脸颊特写并贴近面部时，并未停顿或后退，而是自然地向侧面偏移并轻微环绕，轻柔地控制环绕幅度以保持与面部的距离。镜头缓缓从前侧移动至微侧角度，随后回到正确位置，在此过程中清晰呈现出肌肤的真实质感：毛孔纹理、明显的面部绒毛根部、自然的粉状痕迹以及细微的皮肤瑕疵，这些缺陷真实自然，毫无刻意堆砌之感。周围人物呼吸自然，发丝微微晃动，眼神也随镜头角度的变化而轻轻转动。\n\n随后，镜头缓慢而稳定地拉回至正常的自拍距离，同时伴随轻微的横向移动和构图调整。当镜头后退时，人物微微低头，自然地耸肩微笑，神情轻松优雅，仿佛在躲避微风，又似在与之嬉戏。他们的动作略显克制，不夸张也不生硬，双手自然下垂，全程未抬手或摸头发。风渐渐平息，角色们缓缓抬头，眼神灵动，笑容自然，目光望向镜头末端。\n\n整个过程采用自然光线效果，阳光透过树叶洒在脸上，光影随着人物动作和树影的移动而自然流动变化，增强了真实光影层次感。\n\n画面明亮通透，温暖富有电影质感，搭配自然的光影效果。皮肤呈现真实、自然、高清的纹理，不粗糙、不过于光滑，也无塑料感或过度美化。摄像机流畅无缝的运动增强了画面的稳定性和质感，营造出一种非AI风格的高清晰度真实感。",
+    "engagement": {
+      "replies": 4,
+      "reposts": 0,
+      "likes": 6,
+      "views": 786,
+      "snapshotAt": "2026-09-07T01:18:47.983Z"
+    },
+    "approvedAt": "2026-09-07T01:18:47.983Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096715442307883140",
+    "title": "玻璃球里的一场微型暴雨",
+    "titleEn": "A Miniature Storm Inside a Glass Globe",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "窗台上的玻璃球包住一栋微型房屋，内部乌云、闪电与彩虹依次变化，外壁凝结水珠强化了冷热边界。 原生视频规格为 15 秒 · 4096×2340。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A glass globe on a windowsill encloses a miniature house as storm clouds, lightning, and a rainbow pass inside while condensation reinforces the boundary between climates. Native-video output: 15s · 4096×2340. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "a few drops of condensation running down the outside of the glass from the cold inside",
+    "promptSourceUrl": "https://x.com/GlennHasABeard/status/2096715442307883140",
+    "sourceUrl": "https://x.com/GlennHasABeard/status/2096715442307883140",
+    "sourceLabel": "X 原帖 · @GlennHasABeard",
+    "author": "Glenn Williams",
+    "publishedAt": "2026-09-06T21:41:31.000Z",
+    "addedAt": "2026-09-07T01:22:53.471Z",
+    "mediaUrl": "/media/x-2096715442307883140.mp4",
+    "posterUrl": "/posters/x/2096715442307883140.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "4096×2340",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "photoreal",
+      "cinematic-realistic"
+    ],
+    "scenes": [
+      "nature",
+      "fantasy"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Hailuo H3. Sunny out. Terrible in the globe.\n\nPrompt: \"a few drops of condensation running down the outside of the glass from the cold inside\"\n\nDuration: 15s. Camera: locked, sill height.\n\nThe condensation on the outside is the detail that makes the inside real. Physics leaking across the boundary sells the boundary.",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 3,
+      "views": 144,
+      "snapshotAt": "2026-09-07T01:22:53.471Z"
+    },
+    "approvedAt": "2026-09-07T01:22:53.471Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2096728398995320924",
+    "title": "她走开后影子还留在墙上",
+    "titleEn": "Her Shadow Stays After She Walks Away",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "一名女子在旧墙与木门前缓慢移动，她的身体离开原位后，墙上影子仍保持先前姿势，制造出克制的悬疑感。 原生视频规格为 15 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A woman moves slowly beside an old wall and wooden door, but her shadow holds its former pose after she leaves, creating restrained supernatural suspense. Native-video output: 15s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/bmx_ai13/status/2096728398995320924",
+    "sourceLabel": "X 原帖 · @bmx_ai13",
+    "author": "BMX",
+    "publishedAt": "2026-09-06T22:33:00.000Z",
+    "addedAt": "2026-09-07T01:25:37.271Z",
+    "mediaUrl": "/media/x-2096728398995320924.mp4",
+    "posterUrl": "/posters/x/2096728398995320924.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "cinematic-realistic",
+      "dark"
+    ],
+    "scenes": [
+      "performance",
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "She moved. Her shadow didn’t.\n\nMinimax h3 on @creativeflyai",
+    "engagement": {
+      "replies": 3,
+      "reposts": 0,
+      "likes": 6,
+      "views": 178,
+      "snapshotAt": "2026-09-07T01:25:37.271Z"
+    },
+    "approvedAt": "2026-09-07T01:25:37.271Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
   }
 ]
