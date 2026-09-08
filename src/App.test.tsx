@@ -2,6 +2,9 @@ import '@testing-library/jest-dom/vitest'
 import { act, cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import projectStats from '../data/project-stats.json'
+import tutorialGuides from '../data/tutorial-guides.json'
+import { latestReleaseWindow } from '../shared/release-window.mjs'
+import { matchesAddedDate } from './updates'
 import App from './App'
 import { languagePreferenceKey } from './i18n'
 
@@ -39,7 +42,9 @@ const latestUpdateSummary = [
   projectStats.latestUpdate.casesAdded ? `新增 ${projectStats.latestUpdate.casesAdded} 个案例` : '',
   projectStats.latestUpdate.promptsAdded ? `${projectStats.latestUpdate.promptsAdded} 条完整 Prompt` : '',
   projectStats.latestUpdate.tutorialsAdded ? `${projectStats.latestUpdate.tutorialsAdded} 篇教程` : '',
-].filter(Boolean).join(' · ')
+].filter(Boolean).slice(0, 2).join(' · ')
+const latestTutorials = tutorialGuides.filter(item => matchesAddedDate(item.addedAt, 'release', latestReleaseWindow(tutorialGuides.map(guide => guide.addedAt).sort().at(-1)) ?? {}))
+const deepTutorials = tutorialGuides.filter(item => item.depth === 'deep' && item.evidence.status === 'active')
 const [, latestMonth, latestDay] = projectStats.latestUpdate.publishedAt.split('-').map(Number)
 const latestUpdateDate = `${latestMonth}月${latestDay}日`
 
@@ -52,6 +57,7 @@ beforeEach(() => {
 })
 
 afterEach(() => {
+  vi.restoreAllMocks()
   cleanup()
   vi.useRealTimers()
   window.history.replaceState({}, '', '/')
@@ -63,6 +69,22 @@ afterEach(() => {
 })
 
 describe('case-first routes', () => {
+  it('shows author submissions ahead of tutorial lists and links to the submission form', () => {
+    vi.spyOn(Date, 'now').mockReturnValue(Date.parse('2026-09-09T00:00:00Z'))
+    renderAt('/tutorials/')
+    const spotlight = screen.getByRole('region', { name: '新投稿推荐' })
+    expect(within(spotlight).getByRole('link', { name: 'imbutus' })).toHaveAttribute('href', 'https://github.com/imbutus')
+    expect(within(spotlight).getByRole('link', { name: '开始学习' })).toHaveAttribute('href', '/tutorials/minimax-director-timeline/')
+    expect(screen.getByRole('link', { name: '投稿教程' })).toHaveAttribute('href', expect.stringContaining('template=tutorial-submission.yml'))
+    expect(document.querySelector('.tutorial-spotlight')!.compareDocumentPosition(document.querySelector('.foundation-route-grid')!) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+    vi.restoreAllMocks()
+  })
+  it('keeps English author promotion isolated and retains attribution on the detail page', () => {
+    renderAt('/en/tutorials/minimax-director-timeline/')
+    expect(screen.getByRole('link', { name: 'Author and more work' })).toHaveAttribute('href', 'https://github.com/imbutus')
+    expect(screen.getByRole('link', { name: 'Submission' })).toHaveAttribute('href', expect.stringContaining('/issues/16'))
+    expect(screen.queryByText('作者投稿')).not.toBeInTheDocument()
+  })
   it('renders the case browser underneath a two-second intro and then removes the intro', () => {
     vi.useFakeTimers()
     renderAt('/')
@@ -534,7 +556,7 @@ describe('case-first routes', () => {
 
   it('shares hardware filters across both learning tracks and retains the chosen track on refresh', () => {
     const view = renderAt('/tutorials/?track=run')
-    expect(screen.getAllByRole('link', { name: '开始学习' })).toHaveLength(4)
+    expect(document.querySelectorAll('.foundation-route-card')).toHaveLength(deepTutorials.filter(item => item.learningTrack === 'run').length)
     expect(screen.queryByRole('heading', { name: 'H3 Prompt：把镜头、对白与声音写清楚' })).not.toBeInTheDocument()
     fireEvent.click(screen.getByRole('button', { name: 'Apple Silicon' }))
     expect(screen.getAllByRole('link', { name: '开始学习' })).toHaveLength(1)
@@ -542,7 +564,7 @@ describe('case-first routes', () => {
     expect(window.location.search).toContain('track=run')
     view.unmount()
     renderAt('/tutorials/?track=create')
-    expect(screen.getAllByRole('link', { name: '开始学习' })).toHaveLength(4)
+    expect(document.querySelectorAll('.foundation-route-card')).toHaveLength(deepTutorials.filter(item => item.learningTrack === 'create').length)
   })
 
   it('shows dated source evidence, chapters and case links without claiming a generation test', () => {
@@ -565,7 +587,7 @@ describe('case-first routes', () => {
     expect(screen.getByRole('link', { name: 'ComfyUI 从零到第一条 H3 带声视频' })).toHaveAttribute(
       'href', '/tutorials/official-deployment/',
     )
-    expect(screen.getAllByRole('link', { name: /开始学习/ })).toHaveLength(8)
+    expect(document.querySelectorAll('.foundation-route-card')).toHaveLength(deepTutorials.length)
     expect(screen.getAllByRole('link', { name: /看原教程/ })).toHaveLength(16)
     expect(screen.queryByRole('heading', { name: '先看 MiniMax H3 的真实效果。' })).not.toBeInTheDocument()
     tutorials.unmount()
@@ -670,18 +692,17 @@ describe('case-first routes', () => {
     renderAt('/tutorials/?added=unseen&since=2026-08-22T00%3A00%3A00.000Z')
 
     expect(releaseChip()).toHaveAttribute('aria-pressed', 'true')
-    expect(releaseChip()).toHaveTextContent('本次新增24')
+    expect(releaseChip()).toHaveTextContent(`本次新增${latestTutorials.length}`)
     expect(screen.getByRole('heading', { name: '深度精选' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: '更多教程导读' })).toBeInTheDocument()
-    expect(screen.getAllByText('新收录')).toHaveLength(24)
-    expect(screen.getAllByRole('link', { name: /开始学习/ })).toHaveLength(8)
+    expect(screen.getAllByText('新收录')).toHaveLength(latestTutorials.length)
+    expect(document.querySelectorAll('.foundation-route-card')).toHaveLength(latestTutorials.filter(item => item.depth === 'deep' && item.evidence.status === 'active').length)
     expect(window.location.search).toBe('?added=release')
     expect(window.localStorage.getItem('minimax-h3-tutorials-seen-through-v2')).toBeNull()
 
     cleanup()
     renderAt('/tutorials/')
     expect(within(screen.getByRole('group', { name: '本站收录时间' })).getByRole('button', { name: /^全部$/ })).toHaveAttribute('aria-pressed', 'true')
-    expect(screen.getAllByText('新收录')).toHaveLength(24)
+    expect(screen.getAllByText('新收录')).toHaveLength(latestTutorials.length)
   })
 
   it('filters community tutorials by hardware and keeps the source behind the internal guide', () => {

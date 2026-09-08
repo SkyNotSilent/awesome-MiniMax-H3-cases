@@ -4,6 +4,8 @@ Run this workflow once per week, independently from the daily video-case collect
 
 ## Discover
 
+Check open tutorial-submission Issues first, including author corrections on previously published submissions. Original-author submissions use the same evidence standards as discovered tutorials; popularity is not an entry requirement. Verify the submitter against the original project/channel before adding public `contribution.issueUrl` and `contribution.authorUrl`. These fields enable the 14-day New from creators section (three slots, one per author, newest first); never reset `addedAt` to renew a slot. Keep ordinary third-party discoveries unmarked. After publication, verify both localized pages and prepare an author acknowledgement with the live links. Recommendations stop automatically after the window or while an entry needs review; permanent attribution remains.
+
 Use the existing signed-in Mac browser to search X, YouTube, Reddit, GitHub, Hugging Face and official documentation for recent, high-signal MiniMax H3 / Hailuo H3 tutorials. Combine the model name with `ComfyUI`, `setup`, `deploy`, `Prompt`, `Agent Skill`, `Turbo`, `LoRA`, `long video`, `Motion Context`, `audio`, `training`, `Mac`, and their Chinese equivalents. Popularity is relative to the language and topic; never impose a fixed like threshold.
 
 Record candidates only in `.review/tutorials/candidates.json`. The private record may contain discovery queries, review notes, rejection reasons, and the verification checklist. None of those fields may enter public JSON, UI, SEO, build output, or Git.

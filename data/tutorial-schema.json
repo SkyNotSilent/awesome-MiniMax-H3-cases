@@ -27,6 +27,15 @@
     "evidence"
   ],
   "properties": {
+    "contribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["issueUrl", "authorUrl"],
+      "properties": {
+        "issueUrl": { "type": "string", "format": "uri", "pattern": "^https://github\\.com/SkyNotSilent/awesome-[Mm]ini[Mm]ax-[Hh]3-cases/issues/[0-9]+$" },
+        "authorUrl": { "type": "string", "format": "uri" }
+      }
+    },
     "id": {
       "type": "string",
       "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"

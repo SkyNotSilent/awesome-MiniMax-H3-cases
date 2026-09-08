@@ -4,6 +4,15 @@ import { tutorialContractErrors, tutorialSourceKey } from './tutorial-contract.m
 import { toPublicTutorial, partitionCandidates } from './tutorial-collection.mjs'
 
 describe('tutorial publication contract', () => {
+  it('preserves author attribution but refuses unrelated submission links and foundation promotions', () => {
+    const guide = structuredClone(guides.find(item => item.contribution))
+    expect(tutorialContractErrors(guide)).toEqual([])
+    expect(toPublicTutorial(guide).contribution).toEqual(guide.contribution)
+    guide.contribution.issueUrl = 'https://example.com/ad'
+    expect(tutorialContractErrors(guide)).toContain('tutorial.contribution.issueUrl: invalid format')
+    guide.contentType = 'foundation'
+    expect(tutorialContractErrors(guide)).toContain('tutorial.contribution: community tutorial required')
+  })
   it('preserves every published learning field while stripping nested private review data', () => {
     const guide = structuredClone(guides.find(item => item.chapters?.length))
     const dirty = structuredClone(guide)

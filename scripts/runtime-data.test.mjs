@@ -8,6 +8,7 @@ import { test } from 'vitest'
 
 const root = resolve(import.meta.dirname, '..')
 const sourceCases = JSON.parse(await readFile(resolve(root, 'data/cases.json'), 'utf8'))
+const sourceTutorials = JSON.parse(await readFile(resolve(root, 'data/tutorial-guides.json'), 'utf8'))
 const catalogPath = resolve(root, 'public/data/catalog.json')
 const catalog = JSON.parse(await readFile(catalogPath, 'utf8'))
 
@@ -26,7 +27,7 @@ test('compatibility catalog is complete, unique, and contains no detail text', a
   assert.ok(catalog.featuredCaseIds.length >= 24 && catalog.featuredCaseIds.length <= 28)
   assert.equal(new Set(catalog.featuredCaseIds).size, catalog.featuredCaseIds.length)
   assert.deepEqual(new Set(catalog.featuredCaseIds), new Set(sourceCases.filter((item) => item.featured).map((item) => item.id)))
-  assert.equal(catalog.generatedAt, sourceCases.map((item) => item.addedAt).sort().at(-1))
+  assert.equal(catalog.generatedAt, [...sourceCases, ...sourceTutorials].map((item) => item.addedAt).sort().at(-1))
 })
 
 test('case details and catalog entries reconstruct all dialog fields', async () => {

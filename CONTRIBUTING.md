@@ -18,6 +18,14 @@ Do not edit `data/creators.json` by hand. It is generated from published cases a
 
 ## Add or improve a tutorial
 
+### Original-author spotlight
+
+Share your own H3 tutorial through the [tutorial form](https://github.com/SkyNotSilent/awesome-MiniMax-H3-cases/issues/new?template=tutorial-submission.yml). You can submit in Chinese or English; maintainers help assemble the bilingual entry. Include a working original, installation steps, requirements, expected output and known problems. Code changes and follower counts are not prerequisites.
+
+Accepted original-author submissions receive permanent author credit, a link to the author's profile/project and their original tutorial, and eligibility for the **New from creators** section for 14 days after first publication. Up to three matching tutorials appear above the regular tutorial lists, newest first, with one slot per author. More eligible submissions share this limited space as new work arrives; impressions and traffic are not guaranteed. Search and learning filters still apply. After the window, the tutorial stays in the normal library with its attribution. Corrections never reset its first publication date. Entries needing review leave recommendations until resolved.
+
+Maintainers verify authorship from the public submission and source, record `contribution.issueUrl` and `contribution.authorUrl`, and retain private review notes outside Git. A repost or link suggestion does not qualify as an original-author submission. Share the published localized page with the author when replying to the submission; close it only after the page is live. Authors can use that same issue for corrections or removal.
+
 Use the tutorial submission Issue form before editing `data/tutorial-guides.json`. A publishable tutorial must identify its target result, reader, OS and hardware, VRAM or unified memory, tested versions, expected time, exact commands, success criteria, common failures, rollback steps, original author, and source documentation. Do not copy an entire source post; write a structured, bilingual guide and preserve attribution.
 
 All commands must be supported by a linked README or documentation page and rechecked on the recorded `verifiedAt` date. Missing flags, package names, compatibility claims, and performance numbers must stay unknown rather than being guessed. A new public guide receives ISO `addedAt` once; re-verification and later edits must not replace it. Changes to tutorial data also require matching schema, SEO, and language-isolation checks.

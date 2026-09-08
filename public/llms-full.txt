@@ -1,6 +1,6 @@
 # MiniMax H3 Cases & Guides — Complete Case and Tutorial Index
 
-Generated from data/cases.json, data/tutorial-guides.json, and data/creators.json. Total: 1372 cases, 24 tutorials, and 276 featured creators. Complete verbatim public Prompts: 394.
+Generated from data/cases.json, data/tutorial-guides.json, and data/creators.json. Total: 1372 cases, 25 tutorials, and 276 featured creators. Complete verbatim public Prompts: 394.
 
 ## Creator discovery
 
@@ -3534,6 +3534,48 @@ The creator leaderboard is derived only from source-attributed content already p
 
 
 
+
+### MiniMax Director: multi-shot video with sound on a timeline
+
+- English page: https://h3-field-notes-production.up.railway.app/en/tutorials/minimax-director-timeline/
+- Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/minimax-director-timeline/
+- Track: create
+- Depth: deep
+- Status: active
+- Category: comfyui
+- Best for: Creators who have already rendered an H3 clip with the official ComfyUI template and want to work with multiple shots and recurring subjects.
+- Goal: Arrange shots, recurring subjects and dialogue in ComfyUI, inspect the compiled prompt, and render an MP4 with sound.
+- Hardware: Rendering requirements come from H3 and the selected workflow; the plugin primarily compiles prompts. In the submission, the author reports roughly 30 minutes for 8 seconds on Linux with an NVIDIA H200 141GB. This is neither a minimum requirement nor a site benchmark; other GPUs were not timed.
+- Source checked: 2026-09-08
+- Site generation test: not performed
+- Difficulty: intermediate
+- Estimated time: not specified
+- Applicable versions: MiniMax Director 0.17.14 (11fd464) · ComfyUI >= 0.31.0 · Python >= 3.10
+- Complete workflow JSON: https://github.com/imbutus/ComfyUI-MiniMaxDirector/blob/main/example_workflows/minimax-director.json
+- Four H3 weight files: https://huggingface.co/Comfy-Org/MiniMax-H3
+- English walkthrough: https://youtu.be/XIKDfvoFcCY
+- Chinese dubbed walkthrough: https://youtu.be/te8qpVaP0yI
+- Russian dubbed walkthrough: https://youtu.be/zjN37BQsOrI
+- Optional Turbo LoRA: https://huggingface.co/lightx2v/Minimax-h3-Turbo
+
+- Original source: https://github.com/imbutus/ComfyUI-MiniMaxDirector
+- Start here:
+  1. Run the clone command below from ComfyUI/custom_nodes, then restart ComfyUI.
+  2. Place minimax_h3_ref2va_pruned_int8_convrot.safetensors in ComfyUI/models/diffusion_models/.
+  3. Place qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors in ComfyUI/models/text_encoders/. Put minimax_h3_video_vae_fp16.safetensors and minimax_h3_audio_vae_fp32.safetensors in ComfyUI/models/vae/.
+  4. Open Workflow → Browse Templates → minimax-director, or drag in the plugin's example_workflows/minimax-director.json. Check every loader and leave Turbo and Upscale off initially.
+  5. Select the shot block under the playhead and describe its picture, camera movement and sound. Arrange subsequent shots on the timeline; duration snaps to an accepted H3 frame count.
+  6. Create WHO & WHAT cards for recurring people or objects with reference assets and descriptions. Click a card in the shot's SUBJECTS row to insert <Subject n> into the shot text.
+  7. Inspect the actual model input in Prompt and resolve explicit errors in Report before queueing. Check the resulting MP4 for picture, duration and sound.
+  8. For a faster preview, obtain the author's documented 4-step Turbo LoRA, place it in models/loras/ and enable Turbo in Speed. Use its matching four steps, strength 1.0 and simple scheduler. Disable Turbo if sound or fast motion deteriorates.
+- Commands:
+  - cd ComfyUI/custom_nodes
+git clone https://github.com/imbutus/ComfyUI-MiniMaxDirector.git
+- Expected result: A validated multi-shot prompt and a video with sound; inspect the output to judge image quality, audio and character continuity.
+- Troubleshooting:
+  - Cannot find the example workflow: Use example_workflows/minimax-director.json or Browse Templates. The examples/ path in the initial submission is outdated.
+  - Empty weight dropdown: Check original filenames and the directories above, then refresh or restart. Also confirm the download completed.
+  - Turbo picture looks fine but audio is distorted: Confirm ComfyUI >= 0.31.0 with ModelSamplingAV. Disable Turbo if the problem persists; the author also notes four-step audio limitations.
 
 
 ## Related project resources
