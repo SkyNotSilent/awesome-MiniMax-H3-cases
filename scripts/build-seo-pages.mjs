@@ -538,7 +538,7 @@ function appStructuredData(page, locale) {
       '@type': 'Thing',
       '@id': `${canonical}#creator`,
       name: localized.displayName,
-      sameAs: item.xUrl,
+      sameAs: item.profileUrl,
       description: localized.description,
     }
     graph.push({
@@ -636,7 +636,7 @@ function fallbackMarkup(page, locale) {
       const tutorial = tutorialGuides.find((candidate) => candidate.id === id)
       return tutorial ? `<li><a href="${escapeHtml(tutorialPath(locale, id))}">${escapeHtml(localizedTutorial(tutorial, locale).title)}</a></li>` : ''
     }).join('')
-    content = `<p><a href="${escapeHtml(item.xUrl)}" rel="nofollow noopener">@${escapeHtml(item.handle)} ${escapeHtml(locale === 'en' ? 'on X' : '的 X 主页')}</a></p><dl><dt>${escapeHtml(locale === 'en' ? 'Cases' : '案例')}</dt><dd>${item.caseCount}</dd><dt>${escapeHtml(locale === 'en' ? 'Complete Prompts' : '完整 Prompt')}</dt><dd>${item.promptCount}</dd><dt>${escapeHtml(locale === 'en' ? 'Tutorials' : '教程')}</dt><dd>${item.tutorialCount}</dd></dl><h2>${escapeHtml(locale === 'en' ? 'Published work' : '已收录作品')}</h2><ol>${caseLinks}</ol>${tutorialLinks ? `<h2>${escapeHtml(locale === 'en' ? 'Related tutorials' : '相关教程')}</h2><ol>${tutorialLinks}</ol>` : ''}<p>${escapeHtml(localized.description)}</p>`
+    content = `<p><a href="${escapeHtml(item.profileUrl)}" rel="nofollow noopener">${escapeHtml(item.primaryPlatform === 'x' ? `@${item.handle}` : `${item.primaryPlatform === 'github' ? 'GitHub' : 'YouTube'} / ${item.handle}`)}</a></p><dl><dt>${escapeHtml(locale === 'en' ? 'Cases' : '案例')}</dt><dd>${item.caseCount}</dd><dt>${escapeHtml(locale === 'en' ? 'Complete Prompts' : '完整 Prompt')}</dt><dd>${item.promptCount}</dd><dt>${escapeHtml(locale === 'en' ? 'Tutorials' : '教程')}</dt><dd>${item.tutorialCount}</dd></dl><h2>${escapeHtml(locale === 'en' ? 'Published work' : '已收录作品')}</h2><ol>${caseLinks}</ol>${tutorialLinks ? `<h2>${escapeHtml(locale === 'en' ? 'Related tutorials' : '相关教程')}</h2><ol>${tutorialLinks}</ol>` : ''}<p>${escapeHtml(localized.description)}</p>`
   } else {
     content = faqItems[locale].map(([question, answer]) => `<article><h2>${escapeHtml(question)}</h2><p>${escapeHtml(answer)}</p></article>`).join('')
   }
