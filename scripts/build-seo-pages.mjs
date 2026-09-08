@@ -613,6 +613,7 @@ function fallbackMarkup(page, locale) {
     const language = locale === 'en' ? 'en' : 'zh'
     const heading = (zh, en) => escapeHtml(locale === 'en' ? en : zh)
     const links = (items) => items.map(([url, label]) => `<li><a href="${escapeHtml(url)}">${escapeHtml(label)}</a></li>`).join('')
+    if (item.contribution) content += `<p>${heading('作者投稿', 'Author submission')}: <a href="${escapeHtml(item.contribution.authorUrl)}">${escapeHtml(item.source.author)}</a> · <a href="${escapeHtml(item.contribution.issueUrl)}">${heading('投稿记录', 'Submission')}</a></p>`
     content += `<p>${heading(item.depth === 'deep' ? '深度精选' : '导读', item.depth === 'deep' ? 'In depth' : 'Guide')} · ${heading('来源核对', 'Source checked')}: ${escapeHtml(item.evidence.sourceCheckedAt || '')} · ${heading('本站实测', 'Site testing')}: ${escapeHtml(item.evidence.siteTestedAt || (locale === 'en' ? 'No generation test performed' : '未进行生成实测'))}</p>`
     if (item.evidence.status === 'needs-review') content += `<p>${heading('此导读待复查，暂不作为核心推荐。', 'This guide needs review and is excluded from core selections.')}</p>`
     for (const field of ['recommendation', 'cost', 'materialsNote']) if (item[field]) content += `<p>${escapeHtml(item[field][language])}</p>`

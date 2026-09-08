@@ -155,6 +155,7 @@ export type TutorialHardwareProfile =
   | 'cloud-gpu'
 
 export interface TutorialGuide {
+  contribution?: { issueUrl: string; authorUrl: string }
   learningTrack: 'run' | 'create'
   learningOrder?: number
   depth: 'deep' | 'guide'

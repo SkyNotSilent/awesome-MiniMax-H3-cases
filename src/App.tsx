@@ -59,6 +59,7 @@ import {
 } from './i18n'
 import type { CaseDetail, CatalogCase, CatalogPayload, CreatorCatalog, CreatorProfile, CreatorRankKey, Taxonomy, TutorialCategory, TutorialGuide, TutorialHardwareProfile, TutorialResource, VideoCase } from './types'
 import { XPostEmbed } from './XPostEmbed'
+import { selectTutorialSpotlights, tutorialSubmissionUrl } from './tutorial-spotlight'
 import {
   addedDatePresets,
   formatAddedDate,
@@ -1406,6 +1407,11 @@ function TutorialsPage({
   tutorialGuides: TutorialGuide[]
 }) {
   const t = copy[language].tutorials
+  const [spotlightNow, setSpotlightNow] = useState(() => Date.now())
+  useEffect(() => {
+    const timer = window.setInterval(() => setSpotlightNow(Date.now()), 60000)
+    return () => window.clearInterval(timer)
+  }, [])
   const [activeCategory, setActiveCategory] = useState<(typeof tutorialCategories)[number]>('all')
   const [activeHardware, setActiveHardware] = useState<'all' | TutorialHardwareProfile>('all')
   const [activeAddedDate, setActiveAddedDate] = useState<AddedDatePreset>(() => parseAddedDatePreset(new URLSearchParams(window.location.search).get('added')))
@@ -1455,6 +1461,7 @@ function TutorialsPage({
     })
   }, [activeTrack, activeAddedDate, activeCategory, activeHardware, language, query, tutorialGuides, releases.tutorials])
   const foundations = filtered.filter((item) => item.depth === 'deep' && item.evidence.status === 'active').sort((a, b) => (a.learningTrack === b.learningTrack ? (a.learningOrder ?? 99) - (b.learningOrder ?? 99) : a.learningTrack === 'run' ? -1 : 1))
+  const spotlights = selectTutorialSpotlights(filtered, spotlightNow)
   const sortedCommunity = sortByAddedAtDescending(filtered.filter((item) => item.depth !== 'deep' || item.evidence.status !== 'active'))
 
   const resetTutorialFilters = useCallback((preset: AddedDatePreset = 'all') => {
@@ -1489,6 +1496,20 @@ function TutorialsPage({
           <p>{t.index} / {tutorialGuides.length}</p>
           <h1>{t.title}</h1>
         </header>
+        <div className="tutorial-contribute">
+          <p>{language === 'zh' ? '把你的 H3 经验，变成下一位创作者的起点。' : 'Help the next creator start with what you learned.'}<small>{language === 'zh' ? '原创教程通过审核后进入 14 天新投稿推荐；永久署名并链接原作。' : 'Accepted original tutorials enter a 14-day spotlight with lasting credit and source links.'}</small></p>
+          <a href={tutorialSubmissionUrl} target="_blank" rel="noreferrer">{language === 'zh' ? '投稿教程' : 'Submit a tutorial'} <ArrowUpRight size={16} /></a>
+        </div>
+        {spotlights.length > 0 && <section className="tutorial-spotlight" aria-label={language === 'zh' ? '新投稿推荐' : 'New from creators'}>
+          <header className="tutorial-list-heading"><h2>{language === 'zh' ? '新投稿推荐' : 'New from creators'}</h2><span>{language === 'zh' ? '作者亲自投稿' : 'Submitted by the authors'}</span></header>
+          <div className="tutorial-spotlight-grid">{spotlights.map(tutorial => <article key={tutorial.id}>
+            <a href={tutorialPath(language, tutorial.id)} aria-label={tutorial.title[language]}><img src={tutorial.posterUrl} alt="" loading="lazy" /></a>
+            <div><small>{language === 'zh' ? '原创教程 · ' : 'Original tutorial · '}<a href={tutorial.contribution!.authorUrl} target="_blank" rel="noreferrer">{tutorial.source.author}</a></small>
+              <h3><a href={tutorialPath(language, tutorial.id)}>{tutorial.title[language]}</a></h3><p>{tutorial.outcome[language]}</p>
+              <div className="tutorial-card-actions"><a href={tutorialPath(language, tutorial.id)}>{language === 'zh' ? '开始学习' : 'Start learning'} <ArrowUpRight size={14} /></a><CopyTutorialButton tutorial={tutorial} language={language} /></div>
+            </div>
+          </article>)}</div>
+        </section>}
         <nav className="tutorial-track-grid" aria-label={language === 'zh' ? '学习路线' : 'Learning tracks'}>
           {(['run', 'create'] as const).map((track) => <button key={track} type="button" aria-pressed={activeTrack === track} onClick={() => setActiveTrack(activeTrack === track ? 'all' : track)}>
             <small>{track === 'run' ? '01 / RUN' : '02 / CREATE'}</small>
@@ -1705,6 +1726,7 @@ function TutorialDetailPage({ language, tutorial, tutorialGuides, tutorialResour
             <h2>{t.source}</h2>
             <dl>
               <div><dt>{language === 'zh' ? '作者' : 'Author'}</dt><dd>{tutorial.source.author} {tutorial.source.handle || ''}</dd></div>
+              {tutorial.contribution && <div><dt>{language === 'zh' ? '作者投稿' : 'Author submission'}</dt><dd><a href={tutorial.contribution.authorUrl} target="_blank" rel="noreferrer">{language === 'zh' ? '关注作者与更多作品' : 'Author and more work'}</a> · <a href={tutorial.contribution.issueUrl} target="_blank" rel="noreferrer">{language === 'zh' ? '投稿记录' : 'Submission'}</a></dd></div>}
               {tutorial.source.publishedAt && <div><dt>{language === 'zh' ? '发布' : 'Published'}</dt><dd>{tutorial.source.publishedAt}</dd></div>}
               {tutorial.evidence.sourceCheckedAt && <div><dt>{language === 'zh' ? '来源核对' : 'Source checked'}</dt><dd>{tutorial.evidence.sourceCheckedAt}</dd></div>}
               {tutorial.evidence.communityReviewedAt && <div><dt>{language === 'zh' ? '社区反馈核对' : 'Community feedback reviewed'}</dt><dd>{tutorial.evidence.communityReviewedAt}</dd></div>}

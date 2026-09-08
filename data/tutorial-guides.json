@@ -3503,5 +3503,235 @@
       "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
       "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
     }
+  },
+  {
+    "id": "minimax-director-timeline",
+    "contentType": "community",
+    "category": "comfyui",
+    "title": {
+      "zh": "MiniMax Director：用时间轴制作多镜头有声视频",
+      "en": "MiniMax Director: multi-shot video with sound on a timeline"
+    },
+    "outcome": {
+      "zh": "在 ComfyUI 中安排镜头、角色参考和对白，检查编译后的 Prompt，再输出有声 MP4。",
+      "en": "Arrange shots, recurring subjects and dialogue in ComfyUI, inspect the compiled prompt, and render an MP4 with sound."
+    },
+    "audience": {
+      "zh": "已经用 ComfyUI 官方 H3 模板生成过视频，希望学习多镜头与角色参考的创作者。",
+      "en": "Creators who have already rendered an H3 clip with the official ComfyUI template and want to work with multiple shots and recurring subjects."
+    },
+    "hardware": {
+      "zh": "生成需求由 H3 与所选工作流决定，插件本身主要编译提示词。作者在投稿中报告 Linux + NVIDIA H200 141GB 生成 8 秒约需 30 分钟；这不是最低配置，也不是本站实测。其他显卡耗时未知。",
+      "en": "Rendering requirements come from H3 and the selected workflow; the plugin primarily compiles prompts. In the submission, the author reports roughly 30 minutes for 8 seconds on Linux with an NVIDIA H200 141GB. This is neither a minimum requirement nor a site benchmark; other GPUs were not timed."
+    },
+    "prerequisites": {
+      "zh": [
+        "先跑通 ComfyUI 官方 H3 模板；若尚未成功，先阅读本站 ComfyUI 入门路线。",
+        "使用 ComfyUI 0.31.0 或更新版本，Python 3.10 或更新版本。",
+        "准备 Comfy-Org/MiniMax-H3 的四个权重，保留原始文件名。作者 2026-09-02 统计约 39.6 GiB，另留输出与运行空间。"
+      ],
+      "en": [
+        "Render one clip with the official ComfyUI H3 template first; use our ComfyUI setup guide if needed.",
+        "Use ComfyUI 0.31.0 or newer and Python 3.10 or newer.",
+        "Obtain the four Comfy-Org/MiniMax-H3 weights without renaming them. The author's September 2 snapshot totals about 39.6 GiB; allow additional space for outputs and runtime files."
+      ]
+    },
+    "steps": {
+      "zh": [
+        "在 ComfyUI/custom_nodes 下执行下方克隆命令，然后重启 ComfyUI。",
+        "将 minimax_h3_ref2va_pruned_int8_convrot.safetensors 放入 ComfyUI/models/diffusion_models/。",
+        "将 qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors 放入 ComfyUI/models/text_encoders/；将 minimax_h3_video_vae_fp16.safetensors 和 minimax_h3_audio_vae_fp32.safetensors 放入 ComfyUI/models/vae/。",
+        "打开 Workflow → Browse Templates → minimax-director；也可拖入插件的 example_workflows/minimax-director.json。先确认所有加载器都选中了正确文件，保持 Turbo 与 Upscale 关闭。",
+        "选中播放头下的镜头块，填写该镜头的画面、运镜和声音；在时间轴安排后续镜头。时长会自动对齐 H3 允许的帧数。",
+        "在 WHO & WHAT 为重复出现的人物或物体建立卡片，添加参考素材与描述；点击镜头 SUBJECTS 行的卡片，将 <Subject n> 插入镜头文本。",
+        "检查 Prompt 面板的实际模型输入与 Report 面板的问题。修正明确报错后 Queue；查看输出 MP4 的画面、片长与声音。",
+        "需要快速预览时，再准备作者文档中的 4-step Turbo LoRA，放入 models/loras/ 并开启 Speed 组的 Turbo。使用配套 4 步、强度 1.0 和 simple 调度；声音或快速动作变差时关闭 Turbo 回到普通生成。"
+      ],
+      "en": [
+        "Run the clone command below from ComfyUI/custom_nodes, then restart ComfyUI.",
+        "Place minimax_h3_ref2va_pruned_int8_convrot.safetensors in ComfyUI/models/diffusion_models/.",
+        "Place qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors in ComfyUI/models/text_encoders/. Put minimax_h3_video_vae_fp16.safetensors and minimax_h3_audio_vae_fp32.safetensors in ComfyUI/models/vae/.",
+        "Open Workflow → Browse Templates → minimax-director, or drag in the plugin's example_workflows/minimax-director.json. Check every loader and leave Turbo and Upscale off initially.",
+        "Select the shot block under the playhead and describe its picture, camera movement and sound. Arrange subsequent shots on the timeline; duration snaps to an accepted H3 frame count.",
+        "Create WHO & WHAT cards for recurring people or objects with reference assets and descriptions. Click a card in the shot's SUBJECTS row to insert <Subject n> into the shot text.",
+        "Inspect the actual model input in Prompt and resolve explicit errors in Report before queueing. Check the resulting MP4 for picture, duration and sound.",
+        "For a faster preview, obtain the author's documented 4-step Turbo LoRA, place it in models/loras/ and enable Turbo in Speed. Use its matching four steps, strength 1.0 and simple scheduler. Disable Turbo if sound or fast motion deteriorates."
+      ]
+    },
+    "commands": [
+      "cd ComfyUI/custom_nodes\ngit clone https://github.com/imbutus/ComfyUI-MiniMaxDirector.git"
+    ],
+    "checks": {
+      "zh": [
+        "加载器能找到四个权重，Prompt 有内容，Report 没有阻断错误。",
+        "生成的 MP4 能播放，片长符合时间轴，画面和声音均存在；自行核对对白同步与角色一致性。"
+      ],
+      "en": [
+        "All four weights resolve, Prompt contains the compiled input, and Report has no blocking errors.",
+        "The MP4 plays with the expected duration, picture and sound. Inspect dialogue synchronization and subject consistency yourself."
+      ]
+    },
+    "caveats": {
+      "zh": [
+        "24 fps 下 H3 帧数满足 length % 17 == 5；编辑器会对齐时长，不等于可以无限续长。",
+        "角色参考与对白编译不能保证每次生成都保持人物一致或精准口型。",
+        "4-step Turbo 是预览方案，作者提示其音频与快速运动效果有局限。",
+        "Upscale 默认关闭；开启前还需作者文档指定的上采样节点和权重，会增加计算量。"
+      ],
+      "en": [
+        "At 24 fps, accepted H3 lengths satisfy length % 17 == 5. Timeline snapping does not enable unlimited duration.",
+        "Reference cards and dialogue compilation cannot guarantee subject consistency or perfect lip sync in every generation.",
+        "The four-step Turbo path is a preview option with author-reported audio and fast-motion limitations.",
+        "Upscale is off by default. Enabling it requires the extra node pack and weights in the author's instructions and adds computation."
+      ]
+    },
+    "posterUrl": "/tutorial-posters/minimax-director.webp",
+    "tags": [
+      "ComfyUI",
+      "Ref2VA",
+      "Timeline",
+      "Multi-shot",
+      "Dialogue"
+    ],
+    "relatedResourceIds": [],
+    "source": {
+      "platform": "github",
+      "url": "https://github.com/imbutus/ComfyUI-MiniMaxDirector",
+      "author": "imbutus",
+      "originalLanguage": "en"
+    },
+    "verifiedAt": "2026-09-08",
+    "learningTrack": "create",
+    "depth": "deep",
+    "difficulty": "intermediate",
+    "recommendation": {
+      "zh": "作者把安装、完整工作流、镜头编辑和排错整理成一套教程，适合从单镜头跨到多镜头；包含英文演示及中文配音入口。",
+      "en": "The author provides installation, a complete graph, shot editing and troubleshooting in one tutorial, with an English walkthrough and a Chinese dub."
+    },
+    "cost": {
+      "zh": "开源插件无需另购服务；实际视频生成仍消耗本地或云 GPU 算力，本站未购买算力复现实测。",
+      "en": "The open-source plugin requires no separate service purchase. Rendering consumes local or rented GPU resources; we have not paid for a generation test."
+    },
+    "applicableVersions": [
+      "MiniMax Director 0.17.14 (11fd464)",
+      "ComfyUI >= 0.31.0",
+      "Python >= 3.10"
+    ],
+    "learningResources": [
+      {
+        "label": {
+          "zh": "完整工作流 JSON",
+          "en": "Complete workflow JSON"
+        },
+        "url": "https://github.com/imbutus/ComfyUI-MiniMaxDirector/blob/main/example_workflows/minimax-director.json",
+        "kind": "workflow"
+      },
+      {
+        "label": {
+          "zh": "四个 H3 权重文件",
+          "en": "Four H3 weight files"
+        },
+        "url": "https://huggingface.co/Comfy-Org/MiniMax-H3",
+        "kind": "models"
+      },
+      {
+        "label": {
+          "zh": "英文原版演示",
+          "en": "English walkthrough"
+        },
+        "url": "https://youtu.be/XIKDfvoFcCY",
+        "kind": "demo"
+      },
+      {
+        "label": {
+          "zh": "中文配音演示",
+          "en": "Chinese dubbed walkthrough"
+        },
+        "url": "https://youtu.be/te8qpVaP0yI",
+        "kind": "demo"
+      },
+      {
+        "label": {
+          "zh": "俄语配音演示",
+          "en": "Russian dubbed walkthrough"
+        },
+        "url": "https://youtu.be/zjN37BQsOrI",
+        "kind": "demo"
+      },
+      {
+        "label": {
+          "zh": "可选 Turbo LoRA",
+          "en": "Optional Turbo LoRA"
+        },
+        "url": "https://huggingface.co/lightx2v/Minimax-h3-Turbo",
+        "kind": "models"
+      }
+    ],
+    "expectedResult": {
+      "zh": "获得通过检查的多镜头 Prompt 和一段有声视频；实际画质、声音和角色连续性需观看结果判断。",
+      "en": "A validated multi-shot prompt and a video with sound; inspect the output to judge image quality, audio and character continuity."
+    },
+    "troubleshooting": [
+      {
+        "problem": {
+          "zh": "找不到示例工作流",
+          "en": "Cannot find the example workflow"
+        },
+        "solution": {
+          "zh": "当前路径为 example_workflows/minimax-director.json；旧投稿中的 examples/ 已过时，也可从 Browse Templates 打开。",
+          "en": "Use example_workflows/minimax-director.json or Browse Templates. The examples/ path in the initial submission is outdated."
+        }
+      },
+      {
+        "problem": {
+          "zh": "权重下拉框为空",
+          "en": "Empty weight dropdown"
+        },
+        "solution": {
+          "zh": "核对原始文件名和上述目录，刷新模型列表或重启；空下拉也可能是文件尚未下载完成。",
+          "en": "Check original filenames and the directories above, then refresh or restart. Also confirm the download completed."
+        }
+      },
+      {
+        "problem": {
+          "zh": "Turbo 画面正常但音频失真",
+          "en": "Turbo picture looks fine but audio is distorted"
+        },
+        "solution": {
+          "zh": "确认 ComfyUI >= 0.31.0 并提供 ModelSamplingAV；仍有问题先关闭 Turbo，作者也提示 4-step 音频有限制。",
+          "en": "Confirm ComfyUI >= 0.31.0 with ModelSamplingAV. Disable Turbo if the problem persists; the author also notes four-step audio limitations."
+        }
+      }
+    ],
+    "uninstall": {
+      "zh": [
+        "先保存自己的工作流与素材。停止 ComfyUI，将 custom_nodes/ComfyUI-MiniMaxDirector 移出节点目录或移到废纸篓，再重启。",
+        "H3 权重仍在 ComfyUI/models/，移除插件不会自动删除它们。"
+      ],
+      "en": [
+        "Save your workflows and assets first. Stop ComfyUI, move custom_nodes/ComfyUI-MiniMaxDirector out of the node directory or to Trash, then restart.",
+        "H3 weights remain under ComfyUI/models/; removing the plugin does not remove them."
+      ]
+    },
+    "sourceRefs": [
+      {
+        "title": "MiniMax Director 0.17.14 README",
+        "url": "https://github.com/imbutus/ComfyUI-MiniMaxDirector/blob/11fd464804d06730aafa7a419356b37a260fcac9/README.md"
+      },
+      {
+        "title": "Original author submission #16",
+        "url": "https://github.com/SkyNotSilent/awesome-MiniMax-H3-cases/issues/16"
+      }
+    ],
+    "evidence": {
+      "status": "active",
+      "basis": "author-docs",
+      "sourceCheckedAt": "2026-09-08"
+    },
+    "contribution": {
+      "issueUrl": "https://github.com/SkyNotSilent/awesome-MiniMax-H3-cases/issues/16",
+      "authorUrl": "https://github.com/imbutus"
+    },
+    "addedAt": "2026-09-08T12:39:39.434Z"
   }
 ]

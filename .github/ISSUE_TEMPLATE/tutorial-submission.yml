@@ -3,6 +3,17 @@ description: Propose an original MiniMax H3 tutorial or open-source workflow.
 title: "[Tutorial]: "
 labels: ["submission", "tutorial"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Share your original tutorial in English or Chinese — we help prepare the bilingual page.
+        Accepted author submissions enter a 14-day rotating spotlight with permanent credit and source links.
+        欢迎中英文原创教程；我们协助整理双语页面。审核通过后进入 14 天轮换推荐，长期保留作者署名与原作入口。
+  - type: input
+    id: author-profile
+    attributes:
+      label: Author profile and authorship
+      description: Link your original channel or profile and explain your connection to the tutorial. 请注明是否为原作者，并提供希望展示的作者主页。
   - type: input
     id: source
     attributes:

@@ -71,6 +71,7 @@ export function tutorialContractErrors(value) {
     if (rule.enum && !rule.enum.includes(item)) errors.push(`${path}: invalid value`)
   }
   visit(value, tutorialSchema, 'tutorial')
+  if (value?.contribution && value.contentType !== 'community') errors.push('tutorial.contribution: community tutorial required')
   if (!tutorialSourceKey(value?.source ?? {})) errors.push('tutorial.source: platform and URL must match')
   if (['x', 'youtube', 'reddit'].includes(value?.source?.platform) && !value.source.publishedAt) errors.push('tutorial.source.publishedAt: required')
   if (value?.depth === 'deep') {
