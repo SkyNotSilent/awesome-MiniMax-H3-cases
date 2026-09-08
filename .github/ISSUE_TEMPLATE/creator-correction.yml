@@ -24,8 +24,8 @@ body:
   - type: input
     id: source
     attributes:
-      label: Canonical X profile or public evidence
-      description: Link the current creator account or another public source that verifies the requested change.
+      label: Canonical creator profile or public evidence
+      description: Link the current X, GitHub, or YouTube account, or another public source that verifies the requested change.
     validations:
       required: true
   - type: textarea

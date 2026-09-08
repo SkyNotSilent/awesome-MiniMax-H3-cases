@@ -1,7 +1,7 @@
 name: Submit a video case
 description: Propose an original, publicly attributable MiniMax H3 video case.
 title: "[Case]: "
-labels: ["submission", "case"]
+labels: ["submission", "case", "status: needs-triage"]
 body:
   - type: input
     id: source
@@ -41,4 +41,6 @@ body:
         - label: This is the original source, not a repost or compilation.
           required: true
         - label: I understand that the Prompt will not be inferred, completed, or rewritten.
+          required: true
+        - label: I allow this project to summarize the submission, cache a poster, and host a playback copy while retaining the original-source link.
           required: true

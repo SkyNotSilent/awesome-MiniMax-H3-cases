@@ -6,6 +6,11 @@ All notable public changes are documented here. Release dates use YYYY-MM-DD.
 
 ### Added
 
+- Creator-first bilingual repository paths for browsing cases, finding verbatim Prompts, learning from tutorials, and submitting original work.
+- Two tutorial starting routes, typed setup/project/reference guides, official YouTube embeds, and command-versus-path presentation.
+- GitHub and YouTube identities for tutorial creators without cross-platform engagement scoring.
+- Public submission review states, bilingual publication reply drafts, a zero-credential collection demo, and a submission-preparation Skill.
+- Security, conduct, content-rights, development, architecture, and public collection workflow documentation.
 - Shared `Latest additions`, `Last 7 days`, `Last 30 days`, and `All` date filters for cases and tutorials. `Latest additions` is the newest Asia/Shanghai catalog day of each channel, identical for every visitor and shared as `added=release`; older `added=unseen`/`added=today` links resolve to it.
 - Immutable ISO `addedAt` timestamps for every public case and guide, plus publishing and validation safeguards.
 - A bilingual creator discovery module with dynamic video and tutorial leaderboards, creator profiles, local creator bookmarks, and source-linked case/tutorial collections.
@@ -15,6 +20,9 @@ All notable public changes are documented here. Release dates use YYYY-MM-DD.
 
 ### Changed
 
+- The README now demonstrates creator value before implementation details, while the tutorial page leads with outcomes and practical projects instead of a resource directory.
+- Tutorial submissions may use Chinese or English and request only the evidence appropriate to installation, practical, video, or reference content.
+- Installed Skills now resolve their own fixtures or the public catalog and fail explicitly when neither source is available.
 - Case and tutorial cards now show catalog-added dates and text labels for newly added material; the compatible `collection=latest` view now sorts by `addedAt`.
 - Bilingual README screenshots and documentation now cover the latest-release strip, date filters, and URL state.
 - Creator counts, public rankings, SEO pages, sitemap entries, README metrics, and `llms.txt` are generated from the same published-data source of truth.
