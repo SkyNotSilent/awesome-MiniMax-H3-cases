@@ -5223,10 +5223,6 @@
       "durationSeconds": 77.133,
       "resolution": "1280×720",
       "aspectRatio": "landscape"
-    },
-    "featured": {
-      "at": "2026-09-05T15:50:15.673Z",
-      "basis": "trending"
     }
   },
   {
@@ -11763,11 +11759,7 @@
       "snapshotAt": "2026-08-11T12:15:52.989Z"
     },
     "approvedAt": "2026-08-11T12:15:52.989Z",
-    "editorialBasis": "three-frame-media-review",
-    "featured": {
-      "at": "2026-09-05T15:50:15.675Z",
-      "basis": "trending"
-    }
+    "editorialBasis": "three-frame-media-review"
   },
   {
     "id": "x-2086680991981289554",
@@ -27043,11 +27035,7 @@
       "snapshotAt": "2026-08-13T00:38:33.433Z"
     },
     "approvedAt": "2026-08-13T00:38:33.433Z",
-    "editorialBasis": "sourceCaption: complete public prompt with character, apartment setting, timed morning routine, and object interactions",
-    "featured": {
-      "at": "2026-09-05T15:50:15.672Z",
-      "basis": "trending"
-    }
+    "editorialBasis": "sourceCaption: complete public prompt with character, apartment setting, timed morning routine, and object interactions"
   },
   {
     "id": "x-2087403153910338029",
@@ -27231,11 +27219,7 @@
       "snapshotAt": "2026-08-13T00:38:33.433Z"
     },
     "approvedAt": "2026-08-13T00:38:33.433Z",
-    "editorialBasis": "sourceCaption: explicit movie-night setting, named subjects, and stated goals",
-    "featured": {
-      "at": "2026-09-05T15:50:15.682Z",
-      "basis": "trending"
-    }
+    "editorialBasis": "sourceCaption: explicit movie-night setting, named subjects, and stated goals"
   },
   {
     "id": "x-2087396157538312419",
@@ -35392,11 +35376,7 @@
       "snapshotAt": "2026-08-20T18:59:16.815Z"
     },
     "approvedAt": "2026-08-20T18:59:16.815Z",
-    "editorialBasis": "Original X caption and creator reply explicitly describe the CHUNG LEE poster, preserved composition, motion effects, and animated title treatment.",
-    "featured": {
-      "at": "2026-09-05T15:50:15.674Z",
-      "basis": "trending"
-    }
+    "editorialBasis": "Original X caption and creator reply explicitly describe the CHUNG LEE poster, preserved composition, motion effects, and animated title treatment."
   },
   {
     "id": "x-2087131708223046088",
@@ -41206,11 +41186,7 @@
       "snapshotAt": "2026-08-21T20:02:13.120Z"
     },
     "approvedAt": "2026-08-21T20:02:13.120Z",
-    "editorialBasis": "The original X status explicitly identifies MiniMax H3, contains a playable native video, and publishes a complete verbatim prompt in the post or a same-author reply.",
-    "featured": {
-      "at": "2026-09-05T15:50:15.678Z",
-      "basis": "trending"
-    }
+    "editorialBasis": "The original X status explicitly identifies MiniMax H3, contains a playable native video, and publishes a complete verbatim prompt in the post or a same-author reply."
   },
   {
     "id": "x-2084387316286595436",
@@ -41260,11 +41236,7 @@
       "snapshotAt": "2026-08-21T20:02:13.120Z"
     },
     "approvedAt": "2026-08-21T20:02:13.120Z",
-    "editorialBasis": "The original X status explicitly identifies MiniMax H3, contains a playable native video, and publishes a complete verbatim prompt in the post or a same-author reply.",
-    "featured": {
-      "at": "2026-09-05T15:50:15.677Z",
-      "basis": "trending"
-    }
+    "editorialBasis": "The original X status explicitly identifies MiniMax H3, contains a playable native video, and publishes a complete verbatim prompt in the post or a same-author reply."
   },
   {
     "id": "x-2084355335222108362",
@@ -41725,11 +41697,7 @@
       "snapshotAt": "2026-08-21T20:02:13.120Z"
     },
     "approvedAt": "2026-08-21T20:02:13.120Z",
-    "editorialBasis": "The original X status explicitly identifies MiniMax H3, contains a playable native video, and publishes a complete verbatim prompt in the post or a same-author reply.",
-    "featured": {
-      "at": "2026-09-05T15:50:15.671Z",
-      "basis": "trending"
-    }
+    "editorialBasis": "The original X status explicitly identifies MiniMax H3, contains a playable native video, and publishes a complete verbatim prompt in the post or a same-author reply."
   },
   {
     "id": "x-2083875116900024386",
@@ -67288,5 +67256,356 @@
     },
     "approvedAt": "2026-09-08T01:43:38.868Z",
     "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video."
+  },
+  {
+    "id": "x-2094490203335352524",
+    "title": "油彩长成爱丁堡城市",
+    "titleEn": "A City Painted into Existence",
+    "model": "MiniMax H3",
+    "mode": "T2VA",
+    "summary": "油彩纹理逐步变成街道、建筑与城市海报，过程与最终画面都有记忆点；适合城市宣传、旅行和品牌概念片。",
+    "summaryEn": "Oil-paint ridges turn into streets and landmarks before resolving into an Edinburgh poster. The published prompt includes city and quote variables.",
+    "prompt": "[CITY_NAME] = EDINBURGH\n[QUOTE] = A city carved from stone and story.\n\nCreate a fast, dense, cinematic 16:9 macro travel film where the entire identity of [CITY_NAME] is continuously painted into existence by living oil paint.\n\nUse a low grazing macro camera with extremely shallow depth of field. The world is a vast canvas covered in thick wet impasto paint, sculpted brushstroke ridges, carved grooves, glossy reflections and dense gold glitter. The paint must behave like an active force at all times. It flows like rivers, sweeps like brushwork, gathers like tides, curls at the edges, spills into new paths and physically constructs the city in real time.\n\nThe film must feel fast, rich and uninterrupted. Use one continuous flowing camera move with no cuts. The camera races across the canvas, skimming over wet paint valleys, weaving between rising structures, accelerating through the city as new landmarks constantly appear ahead. Avoid slow drifting. Keep the visual progression energetic and tightly packed.\n\nStart with abstract moving pigment and rapidly transition into recognizable city formation. Show thick paint strokes being laid down, dragged, folded and pulled into shape by an invisible artistic force. Let streams of pigment split and merge like waterways, while dimensional brushstroke masses rise into streets, bridges, domes, towers, rooftops, plazas, canals and layered miniature architecture. Make the city feel as if it is being painted and built at the same time.\n\nReveal many landmarks across the journey, not just one. Let the camera travel seamlessly through the whole city, with one landmark flowing directly into the next. As the camera advances, fresh paint forms arches, facades, bell towers, canal edges, stairways, statues, porticoes and skyline silhouettes associated with [CITY_NAME]. The transitions between landmarks should feel fluid and continuous, with brushstrokes extending forward to pull the viewer deeper into the city.\n\nMake the paint motion highly visible and expressive. Show pigment actively spreading across canvas, pouring into channels, stacking into forms, curving into structures and leaving wet textured trails behind. Gold glitter should move with the paint and collect along ridges and valleys, creating sparkling highlights that emphasize speed, direction and shape.\n\nUse warm golden key light from the lower left to ignite glossy paint and glitter. Add cool purple-blue ambient fill from the upper right to maintain a dreamy dusk atmosphere. Keep the distant background soft with haze and circular bokeh, but preserve strong clarity on the active foreground paint and newly formed landmarks.\n\nToward the end, the camera rises and pulls back just enough to reveal a broader final view of the fully formed painted city, making it clear that the viewer has traveled through an entire living city built from moving paint.\n\nEnd on a striking travel-poster composition. Place elegant typography in the top left with generous breathing room. Show [CITY_NAME] in refined serif uppercase, with [QUOTE] beneath it in smaller delicate type.\n\nThe overall feeling should be luxurious, poetic and visually intense, with continuous motion, dense landmark reveals and the clear impression that the whole city is being painted alive in real time.",
+    "sourceUrl": "https://x.com/aimikoda/status/2094490203335352524",
+    "sourceLabel": "X 原帖",
+    "author": "aimikoda",
+    "publishedAt": "2026-08-31",
+    "addedAt": "2026-09-08T11:06:31.003Z",
+    "approvedAt": "2026-09-08T11:06:31.003Z",
+    "mediaUrl": "/media/x-2094490203335352524.mp4",
+    "posterUrl": "/posters/x/2094490203335352524.jpg",
+    "duration": 15.168,
+    "aspectRatio": "16:9",
+    "resolution": "1440p",
+    "tags": [
+      "油彩长成爱丁堡城市"
+    ],
+    "category": "advertising",
+    "styles": [
+      "stylized",
+      "motion-graphics"
+    ],
+    "scenes": [
+      "city"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "promptSourceUrl": "https://x.com/aimikoda/status/2094490203335352524",
+    "promptCompleteness": "complete",
+    "featured": {
+      "at": "2026-09-08T11:10:35.004Z",
+      "basis": "manual"
+    }
+  },
+  {
+    "id": "x-2095141166962311555",
+    "title": "从骨架到成品的角色手办制作",
+    "titleEn": "Building a Character Bust from Scratch",
+    "model": "MiniMax H3",
+    "mode": "Unknown",
+    "summary": "从支架、塑形到上色与配饰，能看懂制作过程，适合手工、角色周边与产品展示。",
+    "summaryEn": "Hands assemble an armature, sculpt a face and add paint, hair and accessories to a finished character bust. The prompt requires a character reference image.",
+    "prompt": "A cinematic creation film follows one maker reconstructing the main subject shown in the referenced image completely from scratch. The referenced image defines the finished subject’s complete visible appearance, proportions, structure, materials, colors, clothing or surface details, and distinctive features; ignore its background, framing, lighting, and unrelated elements.  Begin directly on an empty, clean virtual workbench. Use a stable front three-quarter overhead view that keeps the developing subject readable. There is one maker throughout, represented by the same consistent left and right hands and forearms. Show no more than two hands at once.  From 0 to 14 seconds, the entire creation unfolds as a clearly accelerated timelapse with rapid, purposeful hand movement and restrained motion blur. Short jump cuts compress repetitive manual work only after each action has visibly completed. Every cut inherits the exact form and progress left by the previous action.  0-2 seconds: One hand enters already holding the first foundation material, armature, or base element appropriate to the referenced subject and places it at the center. The second hand steadies it as the maker establishes the initial supporting form.  2-8 seconds: The maker rapidly develops the subject’s major structure and volumes using one coherent creation method appropriate to what the referenced image depicts. A living subject is sculpted as one continuous, non-gory digital form from armature to anatomy; a vehicle or machine is built from chassis to functional structure; an object is formed or assembled from its supporting body outward. Each additional material or component enters from outside the frame while firmly held by one of the maker’s hands, is carried to its destination, and remains under hand control until attached or shaped.  8-12 seconds: The same hands develop the recognizable outer form and reference-specific features. The maker sculpts, fits, wraps, stitches, fastens, carves, or polishes only where appropriate to the subject. Facial features, hair, clothing, body panels, wheels, glass, surfaces, accessories, or equivalent defining elements emerge through visible hand and tool contact, never through spontaneous transformation.  12-14 seconds: The maker refines proportions, edges, joints, surface transitions, textures, colors, and distinctive details until the developing subject closely matches the referenced image. One hand stabilizes the form while the other performs each final adjustment with a hand-held tool.  14-15 seconds: The maker removes the last tool by hand and withdraws both hands. The timelapse returns to normal speed as the camera makes a restrained push toward the completed subject and holds on a clean final view.  Materials and components do not need to be visible before use, but anything newly introduced must enter the frame already held by one of the maker’s hands. Nothing moves, assembles, appears, disappears, or changes material independently. Maintain one maker, one continuous subject, one creation position, and one category-appropriate construction method. No assistants, extra hands, detached anatomy, duplicated elements, magical morphing, drawing phase, software interface, cursor, menus, annotations, or text overlays.",
+    "sourceUrl": "https://x.com/aimikoda/status/2095141166962311555",
+    "sourceLabel": "X 原帖",
+    "author": "aimikoda",
+    "publishedAt": "2026-09-02",
+    "addedAt": "2026-09-08T11:06:31.003Z",
+    "approvedAt": "2026-09-08T11:06:31.003Z",
+    "mediaUrl": "/media/x-2095141166962311555.mp4",
+    "posterUrl": "/posters/x/2095141166962311555.jpg",
+    "duration": 15.168,
+    "aspectRatio": "4:3",
+    "resolution": "1440p",
+    "tags": [
+      "从骨架到成品的角色手办制作"
+    ],
+    "category": "advertising",
+    "styles": [
+      "photoreal"
+    ],
+    "scenes": [
+      "product"
+    ],
+    "inputTypes": [
+      "image"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "promptSourceUrl": "https://x.com/aimikoda/status/2095141166962311555",
+    "promptCompleteness": "complete",
+    "featured": {
+      "at": "2026-09-08T11:10:34.004Z",
+      "basis": "manual"
+    }
+  },
+  {
+    "id": "x-2096554023809695817",
+    "title": "玻璃爆裂并重组成 SHATTER",
+    "titleEn": "Glass Shards Reassemble into SHATTER",
+    "model": "MiniMax H3",
+    "mode": "Unknown",
+    "summary": "破裂、穿越碎片、重组文字形成完整视觉过程，最终标题清楚；适合片头与品牌字效。",
+    "summaryEn": "A glass monolith fractures into flying shards that assemble into a readable title, followed by another burst of fragments.",
+    "prompt": "Premium action-film title sequence beginning with a gigantic transparent glass monolith floating against complete blackness. A tiny projectile impacts the exact center and an intricate network of cracks instantly races across the entire surface. The camera pushes directly into one expanding fracture, traveling through the microscopic crystalline structure as tension builds everywhere. Suddenly the monolith violently detonates into millions of glass fragments. The camera performs a fast 360-degree orbital move through the suspended crystal storm as every shard reflects sharp beams of cinematic light. An invisible force begins pulling selected fragments together, constructing the enormous word \"SHATTER\" from overlapping razor-thin glass shards. The completed transparent typography refracts the entire environment like a giant prism before another pressure wave passes through it, producing thousands of secondary fractures. The letters explode outward directly toward the lens in spectacular ultra slow motion. Extremely detailed glass physics, realistic refraction and caustics, elegant brutality, premium Hollywood VFX.",
+    "sourceUrl": "https://x.com/CharaspowerAI/status/2096554023809695817",
+    "sourceLabel": "X 原帖",
+    "author": "CharaspowerAI",
+    "publishedAt": "2026-09-06",
+    "addedAt": "2026-09-08T11:06:31.003Z",
+    "approvedAt": "2026-09-08T11:06:31.003Z",
+    "mediaUrl": "/media/x-2096554023809695817.mp4",
+    "posterUrl": "/posters/x/2096554023809695817.jpg",
+    "duration": 15.168,
+    "aspectRatio": "16:9",
+    "resolution": "720p",
+    "tags": [
+      "玻璃爆裂并重组成 SHATTER"
+    ],
+    "category": "action-vfx",
+    "styles": [
+      "cg-3d",
+      "motion-graphics"
+    ],
+    "scenes": [
+      "product"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "promptSourceUrl": "https://x.com/CharaspowerAI/status/2096554023809695817",
+    "promptCompleteness": "complete",
+    "featured": {
+      "at": "2026-09-08T11:10:33.004Z",
+      "basis": "manual"
+    }
+  },
+  {
+    "id": "x-2094985989404205107",
+    "title": "漫画人物走出书页，却遇见另一个自己",
+    "titleEn": "Escaping a Manga Book, Meeting Another Self",
+    "model": "MiniMax H3",
+    "mode": "Unknown",
+    "summary": "二维漫画到真人的转换有明确叙事，结尾反转补足趣味，适合学习跨画风互动。",
+    "summaryEn": "A manga character emerges from the pages into live action and discovers another version still inside. The prompt references multiple images; some panel and speech-bubble exclusions are not followed.",
+    "prompt": "【REFERENCE】\nImage1 `01 / SCENE_TRAPPED`：本の中に閉じ込められた第一場面、巨大本、室内、人物の位置とポーズ。\nImage2 `02 / SCENE_BREAKTHROUGH`：ページを押し破る第二場面、動作、紙の亀裂。\nImage3 `03 / SCENE_EMERGENCE`：現実へ出た第三場面、破れ穴、着地位置。\nImage4 `04 / SCENE_ENCOUNTER`：本の中の自分と対面する第四場面の左右、指差し、巨大本。\nImage5 `05 / WOMAN_MASTER`：利用者が差し替える女性全身アンカー。顔、髪、年齢感、肌、体型、全身比率、衣装、素材、配色、靴の唯一の正本。\n`06 / MANGA_SELF`：05を同じ人物・衣装のままモノクロ漫画化した状態。\n`07 / REAL_SELF`：05を正確に維持した実写状態。\n`08 / BOOK_ROOM`：01～04共通の巨大な見開き本、木製床、寝具、カーテン、植物、暖かな昼光の寝室。\n\n各ショットはIDだけで参照する。01～04の女性からは位置、ポーズ、動作だけを使い、外見は使わない。人物同一性は05を最優先し、06と07を同一人物の二状態とする。女性アンカーの差し替えごとに05から読み直す。場面アンカーの吹き出し、印刷文字、コマ枠、白い分割余白は使わない。\n\n【CONDITION DEFINITION】\n15秒、1:1。シネマティック実写と精密なモノクロ漫画の融合。実写は自然な肌、布、髪、暖かな立体光、漫画は紙目、網点、インク線を明瞭に分ける。4パネルは物語アンカーで、カット数は4つに限定しない。前半は真剣な脱出劇、最後は「自分が本の中に残る」不条理を驚きとパロディーへ転換。表情は困惑→恐怖→決意→安堵→違和感→強い驚き。顔を変形させず眉、瞳、口、顎、肩、呼吸を連動する。0.0～4.6秒は全身を本の印刷面内に閉じ込めた平面モノクロ漫画とし、紙の内側から現実側へ押す。肌色、実写衣装、立体化、身体突出、床への接地は4.6秒から。\n\n【SHOT / FLOW】\n0.0～1.0秒【参照：01、06、08】巨大本を低い広角で見せ、本の中へ高速プッシュイン。MANGA_SELFは困惑して見回し、眉が寄り呼吸が浅くなる。\n1.0～3.3秒【参照：01、06】顔、境界を探る手、紙を押す横顔をハードカット。目が泳ぎ口元が震える。紙越しに「ここは……どこ？　出られない……」。継ぎ目を見つけ、恐怖から決意へ。\n3.3～4.6秒【参照：02、06、08】低い斜め前方。踏ん張る靴、紙へ食い込む指、歯を食いしばる顔を三連続で切る。「あいて……！」。集中線と黒インクの圧力リングが手から広がる。\n4.6～6.8秒【参照：02、05、06、07、08】紙が現実側へ膨らみ、手、顔、上半身、脚の順に平面のインクと紙繊維が07の肌、髪、衣装へ連続変換。境界で網点が色粒子へ変わる。カメラは裂け目を半周し、立体化に合わせ被写界深度を浅くする。破裂時、手描きの`バリッ！`が手前へ飛び、黒インク片へ砕け0.35秒以内に消える。女性は一人のまま05を維持する。\n6.8～8.4秒【参照：03、05、07、08】REAL_SELFが紙片と床へ着地し少しよろける。低い追従から顔へ寄る。両手と参照衣装を確認し、驚きが安堵と小さな笑みへ。「出られた……？」。\n8.4～10.3秒【参照：05、07、08】乾いたページ音。BGMに合わせ笑みが止まり、口角が落ち、眉が上がり、瞳だけ本へ動く。つばを飲み恐る恐る振り向く。顔から本へ高速ホイップパンし、肩越しのまま10.3秒の04へ接続。安堵が違和感へ変わる。\n10.3～11.2秒【参照：04、05、06、07、08】左右が読める中広角。左のREAL_SELFと本の中央のMANGA_SELFが同時に指を差し、終端で短くヒットストップ。BGMはレコードスクラッチで急停止。\n11.2～12.8秒【参照：04、05、06】MANGA_SELFへスマッシュズーム。目と口を大きく開き、頬のハッチングが増える。紙越しに「まさか……本当に出てきた！？」。背後に放射状の漫画線。\n12.8～14.0秒【参照：04、05、07】85mm相当でREAL_SELFの顔へスマッシュズーム。05の顔比率を保ち、眉が跳ね、瞳孔が縮み、口が開き、肩が引ける。短い間の後、室内音声で「あなた……誰？」。\n14.0～15.0秒【参照：04、05、07】85mmのまま一段近い驚き顔。顔と衣装はカラー、背景だけ白黒ハーフトーンと集中線へ変わり、巨大な`！？`が頭の後ろから出て一度弾む。本、カメラ、本の順に二度見し、コミカルな一音で終了。\n\n【CAMERA / EDITING】\n広角、顔、手元、低角度、短い回り込み、ホイップパン、交互スマッシュズームを使い、同じ中広角を続けない。動作か表情変化で切り、長い静止、スロー、無目的な360度回転、フェードなし。最終4.7秒は対面、交互リアクション、驚き顔アップの順に加速。\n\n【MOTION GRAPHICS / TYPOGRAPHY】\n集中線、ハーフトーン、インクの圧力リング、短いヒットストップ、紙片の奥行きを使う。`バリッ！`は黒インク、`！？`は白文字に赤いずれ影。わずかにオーバーシュートし、顔を隠さない。表示文字はこの二つだけで字幕や吹き出しにしない。\n\n【SOUND】\noverall_soundscape:\n紙越しと室内の声は同じ基礎声質で距離感だけ変える。紙の張り、破裂、紙片、着地、衣擦れ、ページ音を画面へステレオ同期。台詞を重ねず、追加の声や笑い声なし。\nnon_diegetic_music:\n0.2秒の演出無音を除き全編に約90 BPMのミステリーコメディーBGMを連続使用。ピチカート弦、バスクラリネット、チェレスタ、軽い打楽器。脱出まで上昇し、破裂で低音と打楽器を同期、着地後は一瞬明るくする。10.3秒でレコードスクラッチ後0.2秒だけ無音、以後は低いピチカート、最後は乾いた一音。台詞中はダッキング。\n\n【NEGATIVE】\n場面アンカーの吹き出し、縦書き文字、複数コマ、白い分割余白を出さない。許可した`バリッ！`と`！？`以外の文字、字幕、ロゴ、透かしなし。第三の女性、同一状態の重複、01～04の人物外見流用、別人化、05の人物・衣装・配色の逸脱、広角による顔変形、4.6秒前の肌色・実写化・立体化・身体突出・床接地、解剖学的変形、無表情、10.3秒以降の長い同一構図、指定0.2秒以外のBGM欠落、イベント順の変更を避ける。",
+    "sourceUrl": "https://x.com/ai_lifehack55/status/2094985989404205107",
+    "sourceLabel": "X 原帖",
+    "author": "ai_lifehack55",
+    "publishedAt": "2026-09-02",
+    "addedAt": "2026-09-08T11:06:31.003Z",
+    "approvedAt": "2026-09-08T11:06:31.003Z",
+    "mediaUrl": "/media/x-2094985989404205107.mp4",
+    "posterUrl": "/posters/x/2094985989404205107.jpg",
+    "duration": 15.139,
+    "aspectRatio": "1:1",
+    "resolution": "1440p",
+    "tags": [
+      "漫画人物走出书页，却遇见另一个自己"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime",
+      "photoreal"
+    ],
+    "scenes": [
+      "fantasy",
+      "performance"
+    ],
+    "inputTypes": [
+      "image"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "promptSourceUrl": "https://x.com/ai_lifehack55/status/2094985989404205107",
+    "promptCompleteness": "complete",
+    "featured": {
+      "at": "2026-09-08T11:10:32.004Z",
+      "basis": "manual"
+    }
+  },
+  {
+    "id": "x-2095357375549182080",
+    "title": "真人与二维小精灵同框互动",
+    "titleEn": "A Live-Action Muse Meets a Tiny 2D Fairy",
+    "model": "MiniMax H3",
+    "mode": "Unknown",
+    "summary": "大小比例和二维、真人的视觉差异明确，手掌接触与模仿动作使互动成立。",
+    "summaryEn": "A tiny drawn fairy interacts with a live-action woman through palm contact and mirrored poses. Character reference images are required by the published prompt.",
+    "prompt": "Create a 15-second, 16:9, 24fps ultra-photorealistic live-action Y2K fashion film blended with one pure 2D manga fairy.\nHIGHEST-PRIORITY RULES\nExactly TWO characters: ONE fictional 22-year-old Korean female idol + ONE tiny 2D manga fairy. No extras, duplicates, clones, motion-trail copies, or identifiable reflections.\nZERO readable text or numbers anywhere: no captions, logos, labels, signs, UI, watermarks, license plates, posters, or environmental writing.\nCHARACTER LOCK\nWoman: elegant oval face, cool fair skin with realistic texture, almond eyes, glossy pink lips, extremely long silky straight black hair to the waist with thin bangs. Face, hair, proportions, makeup and wardrobe remain identical.\nWardrobe: black satin cropped camisole with lace detail, cropped glossy motorcycle jacket loosely around her arms, black low-rise pleated micro skirt, silver waist chain/jewelry, black over-the-knee boots. Premium, sensual, sophisticated K-pop editorial.\nFairy: tiny PURE 2D cel-shaded manga character with clean outlines, short black hair, elf ears, large pink eyes, pink-and-white cropped top, silver pleated skirt, translucent pink wings. Always flat 2D—never 3D, photorealistic, or humanized.\nENVIRONMENT\nOne continuous bright pink-and-ice-blue neon fashion studio. Black vintage convertible in the center, silver vanity mirror, transparent acrylic chair, chrome spheres, silver props, glossy floor. Style: K-pop comeback film × glossy Y2K campaign × cute high-energy MV.\nPHYSICAL CONTINUITY\nNo teleportation, clipping, spawning, or passing through objects. Fairy must physically fly above, below, around, or beside the windshield, car, mirror, chair, props, and woman. Glossy surfaces show only abstract light, never recognizable reflections.\n\nSHOT FLOW\n0:00–0:01.5 — Low-angle wide shot. Only fairy is visible behind the wheel. She waves, opens wings on beat, flies vertically until fully above the windshield, exits through the open roof, half-spins, then flies toward the woman. Driver seat becomes empty.\n0:01.5–0:03.5 — Reveal woman leaning outside the car door, looking down while adjusting a ring. Fairy curves toward her shoulder and gives a TA-DA pose. The same woman raises her head, looks at fairy, then camera. Diagonal push-in from headlight.\n0:03.5–0:05.5 — Woman flicks one finger toward fairy on a sharp beat. Fairy reacts with one continuous half-spin to camera-right. Woman shifts into a mischievous smile. Fast side arc; car door briefly wipes foreground.\n0:05.5–0:07.5 — Fairy flies around the OUTER edge of the vanity mirror, never through it. Camera follows and finds the same woman seated on the acrylic chair. She crosses her legs and makes a tiny finger heart. Fairy hovers beside her face and imitates it. Woman smiles.\n0:07.5–0:09.5 — Woman opens her palm. Fairy descends continuously and visibly lands, feet making contact. Fairy poses proudly and copies woman’s head tilt. Woman pauses, then smiles warmly. Add a cute electronic bling; push from hand toward faces.\n0:09.5–0:11.5 — Fairy physically takes off from palm first. Woman stands and walks 2–3 confident steps toward center studio. Camera tracks backward with a lateral arc while fairy flies backward in front of her.\n0:11.5–0:13.0 — Woman strikes a sophisticated K-pop pose with convertible diagonally behind. She touches her long hair; fairy imitates fixing her own short hair. Woman notices and breaks into a smile. Slight low-angle push-in.\n0:13.0–0:14.5 — Medium close-up. Woman makes a finger heart near her face while holding her hair. Fairy hovers beside her, wings open, cheerful double-V pose. Both look into camera. Final beat triggers ONE camera flash without washing out the studio.\n0:14.5–0:15.0 — Freeze the ACTUAL previous frame. No new photo, card, border, or white background. Keep neon studio, car, silver props and depth visible. Add only 4–6 small clean pink hearts/stars/sparkles near the corners, inside frame, never covering either character.\nCAMERA & PERFORMANCE\nUse low angles, diagonal views, subtle ultra-wide shots, foreground occlusion, mirror framing, curved push-ins, short tracking, gentle rises/drops. Avoid repetitive static frontal framing.\nEmotion: cool fashion pose → curiosity → playful interaction → amused smile → joyful final pose. Natural, confident, star-like, never childish.\nMUSIC\nBubblegum Pop × Kawaii Pop × Y2K Dance Pop, 125–135 BPM, punchy drums, bouncing bass, crisp claps, sparkling synths. Sync wing opening, finger flick, fairy spin, finger-heart, palm landing, takeoff, hair imitation, final pose and camera flash to major beats.\nNEGATIVE\nNo second human/fairy, duplicates, face drift, hairstyle/color/costume changes, malformed hands, clipping, teleportation, 3D or photorealistic fairy, white ending, Polaroid/frame/PIP, chaotic doodles, readable text, letters, numbers, logos, subtitles, labels, UI or watermarks.",
+    "sourceUrl": "https://x.com/ImaStudio_ai/status/2095357375549182080",
+    "sourceLabel": "X 原帖",
+    "author": "ImaStudio_ai",
+    "publishedAt": "2026-09-03",
+    "addedAt": "2026-09-08T11:06:31.003Z",
+    "approvedAt": "2026-09-08T11:06:31.003Z",
+    "mediaUrl": "/media/x-2095357375549182080.mp4",
+    "posterUrl": "/posters/x/2095357375549182080.jpg",
+    "duration": 15.402,
+    "aspectRatio": "16:9",
+    "resolution": "720p",
+    "tags": [
+      "真人与二维小精灵同框互动"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime",
+      "photoreal"
+    ],
+    "scenes": [
+      "performance",
+      "fantasy"
+    ],
+    "inputTypes": [
+      "image"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "promptSourceUrl": "https://x.com/ImaStudio_ai/status/2095357375549182080",
+    "promptCompleteness": "complete",
+    "featured": {
+      "at": "2026-09-08T11:10:31.004Z",
+      "basis": "manual"
+    }
+  },
+  {
+    "id": "x-2095096624192352458",
+    "title": "REVEAL：黑橙杂志风动态时装片",
+    "titleEn": "REVEAL: A Graphic Fashion Editorial",
+    "model": "MiniMax H3",
+    "mode": "Unknown",
+    "summary": "人物、配色和版式风格统一，镜头与动态图形安排具体；可作为时装、编辑设计的案例。",
+    "summaryEn": "A restrained fashion portrait is surrounded by oversized typography, rings and distressed layouts in black, orange and cream. The creator publishes a detailed shot plan.",
+    "prompt": "Create a 15-second, 16:9, 24fps Korean high-fashion motion graphics film with EXACTLY 13 CUTS.\nSTYLE:\nPremium AAA motion graphics × Korean fashion editorial × experimental graphic design × distressed print campaign.\nCore concept: CALM CHARACTER + EXPLOSIVE GRAPHIC WORLD.\nThe woman stays elegant, restrained and almost still while giant typography, rings, ink strokes, graphic blocks, film strips, scan lines and speed trails move aggressively around her.\nCHARACTER LOCK:\nONE young Korean woman only, age 20–23. Narrow oval face, dark-brown eyes, long wavy black hair, wispy bangs, realistic skin texture, subtle smoky makeup, nude brown-red lips.\nKeep EXACTLY the same face, hair, makeup, body proportions, outfit and accessories in all cuts.\nOUTFIT:\nBlack asymmetric cropped blazer, charcoal thin-strap top, loose black tailored trousers, black belt, thin choker, minimal silver jewelry. High-fashion, sophisticated, NOT gothic or nightclub.\nPALETTE:\nDeep black, charcoal, burnt orange, rust red, dark olive, aged cream. Warm orange rim light + soft cream key light.\nNO blue, purple, pink or cyberpunk neon.\nCUTS:\n01 Graphic opening: giant “RE”, ink strokes, expanding olive ring.\n02 Extreme eye macro with orange scanning ring.\n03 Woman emerges behind giant vertical “REVEAL”.\n04 Four asymmetric editorial panels showing face, profile, outfit and eye details.\n05 Rotating rings around her, giant “FOCUS” behind, snap zoom.\n06 Aged-cream background, huge “BURN”, black ink slashes.\n07 Giant “MOVE”; subtle transparent motion trails from her head turn.\n08 Fast typography barrage: WILD / SOFT / DEEP / REAL.\n09 Seated portrait with editorial targeting circles and graphic marks.\n10 Extreme face close-up through transparent printed-film layers.\n11 Fast horizontal film-strip montage with four restrained poses.\n12 CLIMAX: graphics disappear briefly, she stands perfectly still. On the beat drop, huge 2D shockwave of cream brush strokes, rust-red ink, olive blocks, orange rings, typography fragments and speed lines explodes behind her. NO real explosion or magic.\n13 Final hero frame: giant “REVEAL” typography, woman seated in right third, olive ring and orange lines behind. She slowly looks into camera. Final light sweep, one impact vibration, hard cut to black.\nCAMERA / EDIT:\nHard cuts, graphic match cuts, snap zooms, foreground wipes, typography stretch, film strips, speed ramps and restrained impact shake.\nHer movement stays minimal and controlled. She does NOT dance. The graphics carry the energy.\nMUSIC:\nHard electronic fashion beat, industrial pop, heavy percussion, sub-bass, metallic hits, typography slams and paper snaps.\nCUT12 is the biggest visual and musical climax.\nNEGATIVE:\nNo character changes, duplicate people, outfit changes, blonde hair, Western facial features, cute idol styling, lingerie, gothic cosplay, pink/purple/blue neon, cyberpunk, weapons, fire, real explosions, fantasy magic, unreadable typography or excessive beauty smoothing.\nFINAL LOOK:\nKorean high-fashion model × black designer fashion × burnt orange / rust red / dark olive / aged cream × giant typography × aggressive editorial motion graphics.",
+    "sourceUrl": "https://x.com/ImaStudio_ai/status/2095096624192352458",
+    "sourceLabel": "X 原帖",
+    "author": "ImaStudio_ai",
+    "publishedAt": "2026-09-02",
+    "addedAt": "2026-09-08T11:06:31.003Z",
+    "approvedAt": "2026-09-08T11:06:31.003Z",
+    "mediaUrl": "/media/x-2095096624192352458.mp4",
+    "posterUrl": "/posters/x/2095096624192352458.jpg",
+    "duration": 14.86,
+    "aspectRatio": "16:9",
+    "resolution": "2160p",
+    "tags": [
+      "REVEAL：黑橙杂志风动态时装片"
+    ],
+    "category": "advertising",
+    "styles": [
+      "motion-graphics",
+      "commercial"
+    ],
+    "scenes": [
+      "fashion"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "promptSourceUrl": "https://x.com/ImaStudio_ai/status/2095096624192352458",
+    "promptCompleteness": "complete",
+    "featured": {
+      "at": "2026-09-08T11:10:30.004Z",
+      "basis": "manual"
+    }
+  },
+  {
+    "id": "x-2094305294117429711",
+    "title": "黄绿撞色的动漫角色登场短片",
+    "titleEn": "Jade Panic: A Yellow-and-Green Character Entrance",
+    "model": "MiniMax H3",
+    "mode": "Unknown",
+    "summary": "角色造型、撞色和图形语言统一，动作画面有张力，适合角色宣传与动画视觉设计。",
+    "summaryEn": "A stylized anime character moves through bold yellow-and-green graphic compositions, action poses and impact typography. The prompt requires a character reference.",
+    "prompt": "15s / 16:9 / high-energy 2D anime pop-punk MV — character-locked\nCreate a 15-second horizontal 16:9 high-energy 2D anime pop-punk music video featuring the exact heroine from the provided character reference. The entire sequence must feel like one continuous, tightly choreographed MV passage; each movement must motivate the next transition.\nCHARACTER LOCK (absolute authority = the reference still)\nTwin high black space-buns with messy volume and warm brown inner strands. Green jade disc clusters pinned into both buns. Straight blunt bangs with a small center split. Huge sharp green eyes, thick black outlines, strong lashes. Small mouth, warm cheek blush, pale skin. Green circular dangling jade earrings. Sleeveless lime-to-jade floral qipao with black piping, black frog-button placket, high collar, and black line-art lotuses on the fabric. Bare shoulders and arms. Stylized proportions: oversized head, compact torso, long simplified limbs, chunky hands. Bold black outlines, flat saturated colors, minimal cel shading, early-2000s TV-anime / handmade cartoon finish. Personality: loud, cheeky, rebellious, playful, hyperactive — the still’s fierce stare becomes motion, not a different face.\n\nDo not change hair color, bun structure, eye color, earrings, qipao cut, floral linework, or outline weight. No pink hair, no red plaid uniform, no extra characters, no 3D, no photorealism, no glossy modern anime redesign.\nGRAPHIC LANGUAGE (from the still)\nPrimary palette: lemon yellow, jade / lime green, ink black, paper white. Motifs: spinning jade discs, qipao lotus line-art, frog-button glyphs, circular earrings as motion graphics, torn yellow paper, black brush X’s, photocopy grain, tape strips, hand-drawn stars and crosses, rough ink splatters. Kinetic type must look stamped, ripped, or screen-printed — never clean corporate sans.\n0.0–2.5s\nStart in motion. She slides in from frame-left, one foot skidding across a clean yellow graphic floor. Body leans forward; both buns, earrings, and qipao hem trail behind. She stomps the second foot down, snaps her chin up, and flashes a mischievous grin over the reference’s fierce eye shape. Impact instantly tiles the yellow field into huge jade-and-black floral blocks. Bold kinetic type “JADE PANIC!” slams in, letters made from ripped yellow paper + green lotus outlines.\n\n2.5–5.0s\nNo pause. Rebound into a small hop and sharp half-turn. Camera swings from front ¾ into a fast side-track as she takes two exaggerated cartoon steps. Feet hit on alternating beats, leaving jade discs, lotus scribbles, tape, crosses, and comic impact marks. Buns and earrings bounce hard; qipao hem flares.\n5.0–7.5s\nSide kick on the beat. Kick momentum spins her. The floral pattern on the qipao stretches into a giant rotating graphic plane and pulls the frame into an abstract 2D punk world: black brush strokes, green lotus line-art, yellow paper shards, jade lightning (mint/cyan accents only as small bolts, never as hair), photocopy texture. She flows straight into a bouncy phrase: head whip → shoulder hit → side step → small kick → fast turn. Poses stay cartoon-exaggerated.\n\n7.5–10.0s\nTurn accelerates; camera orbits close. Environment recomposes to the choreography: checker yellow/green slides, hand-drawn crosses rotate, torn-paper strips snap, oversized comic type hits on drums (BAM, 叩, 炸). She lands hard, feet apart. A huge hand-drawn “BAM!” bursts under her feet and shakes every graphic layer. She rebounds upward immediately with a cocky smile — no held fashion pose.\n10.0–12.3s\nSame continuous body motion, camera racing along it: whip of the head → bright green eye → jade bun ornament → swinging black bun → bouncing earring → frog-button collar → floral qipao panel → stomping foot. Not a beauty-cut montage; one traveling shot. The footfall fires a jade-floral shockwave across the frame.\n\n12.3–15.0s\nRide the shockwave back to full body. Two confident bouncing steps, abrupt pivot, finish facing camera: weight on one leg, shoulders slightly forward, cheeky rebellious grin. Buns and earrings still swinging. Background erupts into layered yellow paper, black brush X’s, white stars, green lotus line-art, spinning jade discs, rough ink. Elements snap into a 2000s punk magazine-cover lockup. Large “JADE PANIC!” type stacks behind her silhouette on the final beat. Hold her recognizable twin-bun / qipao silhouette. No design drift.\nMOTION\nFast, bouncy, limited-animation timing: strong keys, overshoot, smear frames, anticipation, cartoon impacts. Hair buns, earrings, and qipao hem are the secondary rhythm; feet are the downbeat. Transitions grow only from action: skid → pattern flood → kick → rotating floral plane → spin → orbit → stomp → shockwave. No random cuts, no palm-to-lens, no pointing at camera, no outfit/hair morph.\n\nAUDIO\nTight sync to fast Japanese pop-punk vocals, punchy electronic drums, distorted guitar. SFX: boot/foot skids, stomps, paper snaps, cartoon hits, guitar chops, short graphic whooshes. Type slams on snare/crash.\nNEGATIVES\nNo hand reaching toward camera, no palm covering the lens, no pointing into the lens, no outfit transformation, no hairstyle transformation, no extra characters, no realistic rooms, no photorealism, no 3D CGI, no modern glossy anime, no cyberpunk holograms, no slow fashion posing, no facial drift, no random accessories, no excessive jump cuts, no disconnected moves, no uncontrolled morphing, no unreadable type, no pink hair, no red plaid school uniform.",
+    "sourceUrl": "https://x.com/Just_sharon7/status/2094305294117429711",
+    "sourceLabel": "X 原帖",
+    "author": "Just_sharon7",
+    "publishedAt": "2026-08-31",
+    "addedAt": "2026-09-08T11:06:31.003Z",
+    "approvedAt": "2026-09-08T11:06:31.003Z",
+    "mediaUrl": "/media/x-2094305294117429711.mp4",
+    "posterUrl": "/posters/x/2094305294117429711.jpg",
+    "duration": 15.168,
+    "aspectRatio": "16:9",
+    "resolution": "1440p",
+    "tags": [
+      "黄绿撞色的动漫角色登场短片"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime",
+      "motion-graphics"
+    ],
+    "scenes": [
+      "performance"
+    ],
+    "inputTypes": [
+      "image"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "promptSourceUrl": "https://x.com/Just_sharon7/status/2094305294117429711",
+    "promptCompleteness": "complete",
+    "featured": {
+      "at": "2026-09-08T11:10:29.004Z",
+      "basis": "manual"
+    }
+  },
+  {
+    "id": "x-2095573685671469310",
+    "title": "小怪兽看恐怖片：受惊后还要装镇定",
+    "titleEn": "A Movie Scare and a Dignified Recovery",
+    "model": "MiniMax H3",
+    "mode": "Unknown",
+    "summary": "小怪兽看电影时突然受惊、躲进毯子，再逐渐恢复镇定。原作者只公开了 Prompt 片段，未公开完整文本。",
+    "summaryEn": "A furry one-eyed creature jumps during a movie, hides under a blanket and regains composure. The creator shares only a prompt excerpt, not the complete prompt.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/GlennHasABeard/status/2095573685671469310",
+    "sourceLabel": "X 原帖",
+    "author": "GlennHasABeard",
+    "publishedAt": "2026-09-03",
+    "addedAt": "2026-09-08T11:06:31.003Z",
+    "approvedAt": "2026-09-08T11:06:31.003Z",
+    "mediaUrl": "/media/x-2095573685671469310.mp4",
+    "posterUrl": "/posters/x/2095573685671469310.jpg",
+    "duration": 15.175,
+    "aspectRatio": "7:4",
+    "resolution": "720p",
+    "tags": [
+      "小怪兽看恐怖片：受惊后还要装镇定"
+    ],
+    "category": "animation",
+    "styles": [
+      "cg-3d"
+    ],
+    "scenes": [
+      "creatures",
+      "daily-life"
+    ],
+    "inputTypes": [
+      "image"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "featured": {
+      "at": "2026-09-08T11:10:28.004Z",
+      "basis": "manual"
+    }
   }
 ]
