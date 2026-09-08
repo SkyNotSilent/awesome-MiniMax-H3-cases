@@ -32,6 +32,11 @@ const secretPatterns = [
   { label: 'Bearer JWT', pattern: /Bearer\s+eyJ[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+/ },
   { label: 'private key', pattern: /-----BEGIN [A-Z ]*PRIVATE KEY-----/ },
   { label: 'storage endpoint', pattern: /https:\/\/[^\s"'<>]+\.storageapi\.dev(?:[/?][^\s"'<>]*)?/i },
+  { label: 'local user path', pattern: /\/Users\/[A-Za-z0-9._-]+\/(?:\.codex|Documents)\// },
+  { label: 'Codex heartbeat payload', pattern: /<heartbeat>/i },
+  { label: 'Codex request transcript', pattern: /My request for Codex/i },
+  { label: 'Codex clipboard attachment', pattern: /codex-clipboard-[A-Za-z0-9-]+/i },
+  { label: 'pasted attachment path', pattern: /pasted-text\.txt/i },
 ]
 const textExtensions = new Set(['', '.css', '.html', '.js', '.json', '.ndjson', '.jsx', '.md', '.mjs', '.svg', '.ts', '.tsx', '.txt', '.yaml', '.yml'])
 

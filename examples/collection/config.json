@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "dryRun": true,
+  "network": false,
+  "publish": false,
+  "storage": false,
+  "dedupeKey": "x-status-id",
+  "allowedModels": ["MiniMax H3", "Hailuo H3"]
+}

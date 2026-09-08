@@ -11,6 +11,8 @@
   },
   "files": [
     "SKILL.md",
-    "agents/openai.yaml"
+    "agents/openai.yaml",
+    "scripts/query.mjs",
+    "fixtures/**"
   ]
 }

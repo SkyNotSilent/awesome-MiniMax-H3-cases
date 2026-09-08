@@ -1,0 +1,7 @@
+interface:
+  display_name: "MiniMax H3 Submission Helper"
+  short_description: "Prepare a source-attributed H3 case or tutorial submission"
+  default_prompt: "Help me prepare an Issue-ready MiniMax H3 submission without inventing missing evidence or claiming publication approval."
+
+policy:
+  allow_implicit_invocation: true

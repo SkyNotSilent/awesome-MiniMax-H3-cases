@@ -12,13 +12,19 @@
       "name": "minimax-h3-prompt-library",
       "description": "Retrieve real H3 cases and verbatim public Prompts without reconstruction.",
       "source": "./agents/skills/minimax-h3-prompt-library",
-      "version": "0.2.0"
+      "version": "0.2.1"
     },
     {
       "name": "minimax-h3-tutorial-guide",
       "description": "Choose a source-checked H3 tutorial for a target and hardware profile.",
       "source": "./agents/skills/minimax-h3-tutorial-guide",
-      "version": "0.2.0"
+      "version": "0.2.1"
+    },
+    {
+      "name": "minimax-h3-submission-helper",
+      "description": "Prepare source-attributed H3 case and tutorial submissions without claiming approval.",
+      "source": "./agents/skills/minimax-h3-submission-helper",
+      "version": "0.1.0"
     }
   ]
 }

@@ -1,0 +1,16 @@
+{
+  "cases": [
+    {
+      "id": "skill-sample",
+      "title": "城市夜景样例",
+      "titleEn": "City night sample",
+      "author": "Repository fixture",
+      "category": "cinematic",
+      "styles": ["cinematic-realistic"],
+      "scenes": ["city"],
+      "tags": ["fixture"],
+      "sourceUrl": "https://x.com/example_creator/status/1000000000000000001",
+      "hasPrompt": true
+    }
+  ]
+}

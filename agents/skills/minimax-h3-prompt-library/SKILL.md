@@ -11,9 +11,15 @@ Keep this skill lookup-only. Never create a new prompt, adapt an existing prompt
 
 ## Source of truth
 
-Read `data/cases.json` as the catalog source of truth. Treat each original `sourceUrl` as the attribution authority.
+Use the packaged `scripts/query.mjs` client to read the public catalog. It uses `H3_LIBRARY_URL` when configured and otherwise reads the official hosted catalog. Treat each original `sourceUrl` as the attribution authority. If the network or catalog is unavailable, report that lookup failed; never substitute invented cases.
 
-Use case metadata to search by model, mode, category, style, scene, creator, title, or visible result. Valid category, style, and scene keys are defined in `data/taxonomy.json`; present their localized labels to users. Keep editorial summaries separate from source-published prompt text.
+```bash
+node scripts/query.mjs "city cinematic"
+```
+
+When working inside the repository, `data/cases.json` remains the publishing source of truth. Valid category, style, and scene keys are defined in `data/taxonomy.json`.
+
+Use case metadata to search by model, mode, category, style, scene, creator, title, or visible result. Present localized labels to users. Keep editorial summaries separate from source-published prompt text.
 
 ## Retrieval workflow
 
