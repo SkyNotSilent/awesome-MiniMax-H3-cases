@@ -3,6 +3,7 @@ import { access, readFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { editorialCopyErrors, genericEditorialCopyPattern } from './editorial-copy.mjs'
 import { creatorRankKeys, extractXHandle } from './creator-catalog.mjs'
+import { isOriginalCaseDestination } from './case-source-policy.mjs'
 
 const root = resolve(import.meta.dirname, '..')
 const cases = JSON.parse(await readFile(resolve(root, 'data/cases.json'), 'utf8'))
@@ -31,6 +32,9 @@ const isoDateTimePattern = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,3})?(?
 
 for (const [index, item] of cases.entries()) {
   const at = `cases[${index}]`
+  for (const key of ['sourceUrl', 'promptSourceUrl']) {
+    if (item[key] && !isOriginalCaseDestination(item[key])) errors.push(`${at}.${key} must point to an original post or official model resource`)
+  }
   for (const key of Object.keys(item)) {
     if (!publicCaseKeys.has(key)) errors.push(`${at}.${key} is not allowed in public case data`)
   }

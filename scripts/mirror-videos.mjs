@@ -13,6 +13,7 @@ import { resolvePublishStagingPath } from './review-paths.mjs'
 import { isPlaybackProfileCompliant, PLAYBACK_PROFILE, preparePlaybackFile, probeVideo, summarizeProbe } from './video-playback-profile.mjs'
 import { ensureFaststart } from './video-faststart.mjs'
 import { fetchXVideoSources } from './video-x-source.mjs'
+import { prepareMirrorPlayback } from './mirror-playback-source.mjs'
 
 const root = resolve(import.meta.dirname, '..')
 function argumentValue(name) {
@@ -212,15 +213,13 @@ async function mirror(item) {
   }
 
   if (!playbackPresent.exists) {
-    if (!sources && item.sourceType !== 'official') {
-      try {
-        sources = await sourcesFor(item)
-      } catch (error) {
-        console.warn(`Native playback lookup failed for ${item.id}; transcoding stored source: ${error?.message || error}`)
-      }
-    }
-    const playback = await nativePlaybackCandidate(item, sources?.playbackCandidates ?? [])
-      ?? await preparePlaybackFile(preparedSource.path, tempDirectory)
+    const playback = await prepareMirrorPlayback({
+      preferSource: Boolean(sourceDirectory),
+      fetchSources: () => sources ?? (item.sourceType === 'official' ? null : sourcesFor(item)),
+      prepareNative: (urls) => nativePlaybackCandidate(item, urls),
+      prepareSource: () => preparePlaybackFile(preparedSource.path, tempDirectory),
+      onLookupError: (error) => console.warn(`Native playback lookup failed for ${item.id}; transcoding stored source: ${error?.message || error}`),
+    })
     await retry(`Upload playback ${item.id}`, () => client.send(new PutObjectCommand({
       Bucket: storage.bucket,
       Key: playbackKey,
