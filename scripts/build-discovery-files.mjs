@@ -38,7 +38,7 @@ const llms = `# MiniMax H3 Cases & Guides
 - ${xCount} source-attributed X community examples
 - ${promptCases.length} examples with complete verbatim public Prompts
 - ${tutorialGuides.filter((item) => item.depth === 'deep' && item.evidence.status === 'active').length} in-depth selections across running and creation tracks, plus source-attributed short guides
-- ${creatorCatalog.stats.rankedCreators} featured creators ranked from ${creatorCatalog.stats.sourceCreators} source-attributed X authors
+- ${creatorCatalog.stats.rankedCreators} featured creators from ${creatorCatalog.stats.sourceCreators} source-attributed X, GitHub, and YouTube authors
 - Missing prompts are never inferred, reconstructed, translated into an alleged original, or completed
 
 ## Primary routes
@@ -65,7 +65,7 @@ ${tutorialGuides.map((item) => `- ${tutorialUrl(item.id, 'en')} — ${item.title
 
 ## Featured creators
 
-${creatorCatalog.creators.filter((item) => item.ranks.overall).slice(0, 50).map((item) => `- ${creatorUrl(item.slug, 'en')} — #${item.ranks.overall} @${item.handle}; ${item.caseCount} cases; ${item.promptCount} complete public Prompts; X: ${item.xUrl}`).join('\n')}
+${creatorCatalog.creators.filter((item) => item.ranks.overall).slice(0, 50).map((item) => `- ${creatorUrl(item.slug, 'en')} — #${item.ranks.overall} ${item.primaryPlatform === 'x' ? '@' : ''}${item.handle}; ${item.caseCount} cases; ${item.promptCount} complete public Prompts; Profile: ${item.profileUrl}`).join('\n')}
 
 ## Retrieval rules
 
@@ -88,7 +88,7 @@ ${creatorCatalog.creators.map((item) => `### @${item.handle}
 
 - English profile: ${creatorUrl(item.slug, 'en')}
 - Chinese profile: ${creatorUrl(item.slug)}
-- X profile: ${item.xUrl}
+- ${item.primaryPlatform} profile: ${item.profileUrl}
 - Roles: ${item.roles.join(', ')}
 - Published cases: ${item.caseCount}
 - Complete public Prompts: ${item.promptCount}

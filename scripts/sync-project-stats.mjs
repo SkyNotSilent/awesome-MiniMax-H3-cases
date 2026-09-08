@@ -55,15 +55,15 @@ const serialized = `${JSON.stringify(stats, null, 2)}\n`
 const readmeBlocks = [
   {
     path: resolve(root, 'README.md'),
-    stats: `**The most complete source-attributed MiniMax H3 case and tutorial library: ${stats.cases} playable videos, ${stats.completePrompts} complete public Prompts, and ${stats.tutorials} practical guides.**`,
+    stats: `**A source-attributed MiniMax H3 library with ${stats.cases} playable videos, ${stats.completePrompts} complete public Prompts, and ${stats.tutorials} practical guides.**`,
     snapshot: `**Current generated snapshot:** ${stats.cases} cases · ${stats.featuredCases} Editor picks · ${stats.completePrompts} complete public Prompts · ${stats.tutorials} tutorials · ${stats.rankedCreators} ranked creators from ${stats.sourceCreators} source authors · ${stats.flagshipTutorials} flagship guides · ${stats.resources} ecosystem resources · content checked through ${stats.latestContentAt}.`,
-    creatorStats: `The dynamic creator board turns the archive into a compounding discovery system. It currently ranks **${stats.rankedCreators} featured creators from ${stats.sourceCreators} source-attributed X authors**, with separate views for overall quality, recent activity, case volume, complete Prompt contribution, rising creators, and tutorial authors.`,
+    creatorStats: `The dynamic creator board turns the archive into a compounding discovery system. It currently ranks **${stats.rankedCreators} featured creators from ${stats.sourceCreators} source-attributed authors across X, GitHub, and YouTube**, with separate views for video work and tutorial contributions.`,
   },
   {
     path: resolve(root, 'README.zh-CN.md'),
-    stats: `**更完整、更可信的 MiniMax H3 案例与教程库：${stats.cases} 个可播放视频、${stats.completePrompts} 条完整公开 Prompt、${stats.tutorials} 篇实用教程。**`,
+    stats: `**来源可追溯的 MiniMax H3 案例与教程库：${stats.cases} 个可播放视频、${stats.completePrompts} 条完整公开 Prompt、${stats.tutorials} 篇实用教程。**`,
     snapshot: `**当前自动统计：** ${stats.cases} 个案例 · ${stats.featuredCases} 条编辑精选 · ${stats.completePrompts} 条完整公开 Prompt · ${stats.tutorials} 篇教程 · ${stats.sourceCreators} 位来源作者中的 ${stats.rankedCreators} 位优质创作者 · ${stats.flagshipTutorials} 篇旗舰教程 · ${stats.resources} 个生态资源 · 内容核验至 ${stats.latestContentAt}。`,
-    creatorStats: `动态创作者榜把案例库变成持续复利的发现系统。目前从 **${stats.sourceCreators} 位来源明确的 X 作者中筛选出 ${stats.rankedCreators} 位优质创作者**，可查看综合优质、近期活跃、案例最多、Prompt 贡献、新锐作者和教程作者榜。`,
+    creatorStats: `动态创作者榜把案例库变成持续复利的发现系统。目前从 **${stats.sourceCreators} 位来源明确的 X、GitHub 与 YouTube 作者中筛选出 ${stats.rankedCreators} 位优质创作者**，视频作品与教程贡献分别展示，不混合平台互动量。`,
   },
 ]
 const statsBadgeVersion = `${stats.cases}-${stats.completePrompts}-${stats.tutorials}-${stats.rankedCreators}`

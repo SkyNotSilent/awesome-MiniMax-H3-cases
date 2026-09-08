@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { buildCreatorCatalog, extractXHandle, normalizeHandle } from './creator-catalog.mjs'
+import { buildCreatorCatalog, extractXHandle, normalizeHandle, tutorialCreatorIdentity } from './creator-catalog.mjs'
 
 const now = new Date('2026-08-23T12:00:00.000Z')
 
@@ -20,6 +20,12 @@ function videoCase(id, handle, options = {}) {
 }
 
 function tutorial(id, handle, options = {}) {
+  const platform = options.platform ?? 'x'
+  const sourceUrl = platform === 'github'
+    ? `https://github.com/${handle}/h3-guide`
+    : platform === 'youtube'
+      ? `https://www.youtube.com/watch?v=example1234`
+      : `https://x.com/${handle}/status/9001`
   return {
     id,
     contentType: 'community',
@@ -30,11 +36,12 @@ function tutorial(id, handle, options = {}) {
     expectedResult: { zh: '视频', en: 'Video' },
     testedVersions: ['1.0.0'],
     source: {
-      platform: 'x',
-      url: `https://x.com/${handle}/status/9001`,
+      platform,
+      url: sourceUrl,
       author: options.author ?? handle,
       handle: `@${handle}`,
     },
+    ...(options.authorUrl ? { contribution: { authorUrl: options.authorUrl, issueUrl: 'https://github.com/SkyNotSilent/awesome-MiniMax-H3-cases/issues/1' } } : {}),
     engagement: options.engagement,
   }
 }
@@ -56,6 +63,16 @@ describe('creator identity', () => {
     })
     expect(catalog.creators).toHaveLength(1)
     expect(catalog.creators[0]).toMatchObject({ id: 'creator-stable', slug: 'newname', caseCount: 2 })
+  })
+
+  it('creates stable GitHub and YouTube identities without merging same-named accounts', () => {
+    const github = tutorial('github-guide', 'maker', { platform: 'github', authorUrl: 'https://github.com/maker' })
+    const youtube = tutorial('youtube-guide', 'maker', { platform: 'youtube', authorUrl: 'https://www.youtube.com/@maker' })
+    expect(tutorialCreatorIdentity(github)).toMatchObject({ platform: 'github', handle: 'maker', profileUrl: 'https://github.com/maker' })
+    const catalog = buildCreatorCatalog([], [github, youtube], { now })
+    expect(catalog.creators.map((creator) => creator.id).sort()).toEqual(['github-maker', 'youtube-maker'])
+    expect(catalog.creators.map((creator) => creator.slug).sort()).toEqual(['github-maker', 'youtube-maker'])
+    expect(catalog.stats.sourceCreators).toBe(2)
   })
 })
 describe('creator rankings', () => {

@@ -18,6 +18,39 @@ export function extractXHandle(sourceUrl = '') {
   }
 }
 
+function profileHandle(urlValue, platform) {
+  try {
+    const url = new URL(urlValue)
+    if (platform === 'github' && /(^|\.)github\.com$/i.test(url.hostname)) {
+      return normalizeHandle(url.pathname.split('/').filter(Boolean)[0]) || null
+    }
+    if (platform === 'youtube' && /(^|\.)youtube\.com$/i.test(url.hostname)) {
+      const parts = url.pathname.split('/').filter(Boolean)
+      const value = parts[0]?.startsWith('@') ? parts[0].slice(1) : parts[0] === 'channel' ? parts[1] : null
+      return normalizeHandle(value) || null
+    }
+  } catch {
+    // Invalid public profile URLs cannot create a creator identity.
+  }
+  return null
+}
+
+export function tutorialCreatorIdentity(tutorial) {
+  if (tutorial?.contentType !== 'community') return null
+  const platform = tutorial.source?.platform
+  if (platform === 'x') {
+    const handle = normalizeHandle(tutorial.source.handle) || extractXHandle(tutorial.source.url)
+    return handle ? { platform, handle, profileUrl: `https://x.com/${handle}` } : null
+  }
+  if (platform !== 'github' && platform !== 'youtube') return null
+  const preferred = tutorial.contribution?.authorUrl || tutorial.source?.url
+  const handle = profileHandle(preferred, platform)
+    || (tutorial.source?.handle ? normalizeHandle(tutorial.source.handle) : null)
+  if (!handle) return null
+  const profileUrl = platform === 'github' ? `https://github.com/${handle}` : preferred
+  return { platform, handle, profileUrl }
+}
+
 const clamp = (value, min = 0, max = 1) => Math.max(min, Math.min(max, value))
 const finite = (value) => Number.isFinite(value) ? value : 0
 const parsedTime = (value) => Number.isNaN(Date.parse(value)) ? 0 : Date.parse(value)
@@ -91,9 +124,9 @@ function recentWeight(value, now, halfLifeDays = 14) {
   return Number.isFinite(days) ? Math.exp((-Math.LN2 * days) / halfLifeDays) : 0
 }
 
-function cleanDisplayName(value, handle) {
+function cleanDisplayName(value, handle, platform = 'x') {
   const cleaned = String(value ?? '').trim()
-  if (!cleaned || normalizeHandle(cleaned) === handle) return `@${handle}`
+  if (!cleaned || normalizeHandle(cleaned) === handle) return platform === 'x' ? `@${handle}` : handle
   return cleaned
 }
 
@@ -161,16 +194,21 @@ export function buildCreatorCatalog(cases, tutorialGuides, options = {}) {
   const engagementByCase = engagementPercentiles(cases)
   const creators = new Map()
 
-  const ensure = (handle) => {
-    const identity = resolveIdentity(handle)
+  const ensure = (input) => {
+    const identity = input.platform === 'x'
+      ? { ...resolveIdentity(input.handle), platform: 'x', profileUrl: `https://x.com/${resolveIdentity(input.handle).currentHandle}` }
+      : { id: `${input.platform}-${input.handle}`, currentHandle: input.handle, aliases: [], displayName: undefined, ...input }
     if (!creators.has(identity.id)) {
       creators.set(identity.id, {
         id: identity.id,
-        slug: identity.currentHandle,
+        slug: identity.platform === 'x' ? identity.currentHandle : `${identity.platform}-${identity.currentHandle}`,
         handle: identity.currentHandle,
         aliases: identity.aliases,
-        displayName: identity.displayName ?? `@${identity.currentHandle}`,
-        xUrl: `https://x.com/${identity.currentHandle}`,
+        displayName: identity.displayName ?? (identity.platform === 'x' ? `@${identity.currentHandle}` : identity.currentHandle),
+        primaryPlatform: identity.platform,
+        profileUrl: identity.profileUrl,
+        ...(identity.platform === 'x' ? { xUrl: identity.profileUrl } : {}),
+        identities: [{ platform: identity.platform, handle: identity.currentHandle, url: identity.profileUrl }],
         roles: [],
         caseIds: [],
         promptCaseIds: [],
@@ -191,7 +229,6 @@ export function buildCreatorCatalog(cases, tutorialGuides, options = {}) {
         ranks: Object.fromEntries(creatorRankKeys.map((key) => [key, null])),
         _scores: {},
         _caseEngagement: [],
-        _tutorialEngagement: [],
         _caseRecords: [],
         _tutorialRecords: [],
       })
@@ -202,27 +239,19 @@ export function buildCreatorCatalog(cases, tutorialGuides, options = {}) {
   for (const item of cases) {
     const handle = extractXHandle(item.sourceUrl)
     if (!handle || item.sourceType !== 'x') continue
-    const creator = ensure(handle)
+    const creator = ensure({ platform: 'x', handle, profileUrl: `https://x.com/${handle}` })
     creator._caseRecords.push(item)
-    creator.displayName = cleanDisplayName(item.author, creator.handle)
+    creator.displayName = cleanDisplayName(item.author, creator.handle, 'x')
     const engagement = engagementByCase.get(item.id)
     if (Number.isFinite(engagement)) creator._caseEngagement.push(engagement)
   }
 
   for (const tutorial of tutorialGuides) {
-    if (tutorial.contentType !== 'community' || tutorial.source?.platform !== 'x') continue
-    const handle = normalizeHandle(tutorial.source.handle) || extractXHandle(tutorial.source.url)
-    if (!handle) continue
-    const creator = ensure(handle)
+    const identity = tutorialCreatorIdentity(tutorial)
+    if (!identity) continue
+    const creator = ensure(identity)
     creator._tutorialRecords.push(tutorial)
-    if (creator.displayName.startsWith('@')) creator.displayName = cleanDisplayName(tutorial.source.author, creator.handle)
-    if (tutorial.engagement) {
-      const signal = Math.log1p(finite(tutorial.engagement.likes))
-        + 1.3 * Math.log1p(finite(tutorial.engagement.reposts))
-        + 0.8 * Math.log1p(finite(tutorial.engagement.replies))
-        + 0.25 * Math.log1p(finite(tutorial.engagement.views))
-      creator._tutorialEngagement.push(signal)
-    }
+    if (creator.displayName === creator.handle || creator.displayName.startsWith('@')) creator.displayName = cleanDisplayName(tutorial.source.author, creator.handle, identity.platform)
   }
 
   const allCreators = [...creators.values()]
@@ -249,7 +278,6 @@ export function buildCreatorCatalog(cases, tutorialGuides, options = {}) {
     creator._tutorialCompleteness = creator._tutorialRecords.length
       ? creator._tutorialRecords.reduce((sum, item) => sum + completenessScore(item), 0) / creator._tutorialRecords.length
       : 0
-    creator._tutorialEngagementMedian = median(creator._tutorialEngagement)
     creator._hasBreakout = creator._caseEngagement.some((value) => value >= 0.9)
     creator._hasHostedVideo = creator._caseRecords.some((item) => item.mediaUrl === `/media/${item.id}.mp4`)
     creator._videoEligible = creator._hasHostedVideo && (creator.caseCount >= 2 || creator._hasBreakout)
@@ -274,7 +302,6 @@ export function buildCreatorCatalog(cases, tutorialGuides, options = {}) {
   const maxWeeks = Math.max(0, ...videoCreators.map((item) => item.activeWeeks))
   const maxTutorials = Math.max(0, ...tutorialCreators.map((item) => item.tutorialCount))
   const maxTutorialRecent = Math.max(0, ...tutorialCreators.map((item) => item._tutorialRecentWeight))
-  const maxTutorialEngagement = Math.max(0, ...tutorialCreators.map((item) => item._tutorialEngagementMedian))
 
   const overall = (item) => 0.35 * normalizedLog(item.caseCount, maxCases)
     + 0.25 * normalizedLog(item.promptCount, maxPrompts)
@@ -284,10 +311,9 @@ export function buildCreatorCatalog(cases, tutorialGuides, options = {}) {
   const active = (item) => maxRecent ? item._recentWeight / maxRecent : 0
   const prompt = (item) => item.promptCount + item.promptRate / 10
   const rising = (item) => 0.65 * active(item) + 0.35 * item.engagementPercentile
-  const tutorial = (item) => 0.4 * normalizedLog(item.tutorialCount, maxTutorials)
+  const tutorial = (item) => 0.55 * normalizedLog(item.tutorialCount, maxTutorials)
     + 0.25 * item._tutorialCompleteness
-    + 0.2 * (maxTutorialEngagement ? item._tutorialEngagementMedian / maxTutorialEngagement : 0)
-    + 0.15 * (maxTutorialRecent ? item._tutorialRecentWeight / maxTutorialRecent : 0)
+    + 0.2 * (maxTutorialRecent ? item._tutorialRecentWeight / maxTutorialRecent : 0)
 
   assignRanks(videoCreators, 'overall', overall)
   assignRanks(videoCreators, 'active', active)
@@ -326,7 +352,7 @@ export function buildCreatorCatalog(cases, tutorialGuides, options = {}) {
     generatedAt: now.toISOString(),
     methodology: 'site-verified-content',
     stats: {
-      sourceCreators: allCreators.filter((item) => item.caseCount > 0).length,
+      sourceCreators: allCreators.length,
       rankedCreators: published.length,
       videoCreators: videoCreators.length,
       tutorialCreators: tutorialCreators.length,

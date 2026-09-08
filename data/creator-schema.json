@@ -4,14 +4,30 @@
   "title": "MiniMax H3 Creator Profile",
   "type": "object",
   "additionalProperties": false,
-  "required": ["id", "slug", "handle", "aliases", "displayName", "xUrl", "roles", "caseIds", "promptCaseIds", "tutorialIds", "representativeCaseIds", "latestCaseIds", "caseCount", "promptCount", "promptRate", "tutorialCount", "recentCaseCount", "activeWeeks", "firstAddedAt", "lastAddedAt", "engagementPercentile", "badges", "reasons", "ranks", "rankDelta"],
+  "required": ["id", "slug", "handle", "aliases", "displayName", "primaryPlatform", "profileUrl", "identities", "roles", "caseIds", "promptCaseIds", "tutorialIds", "representativeCaseIds", "latestCaseIds", "caseCount", "promptCount", "promptRate", "tutorialCount", "recentCaseCount", "activeWeeks", "firstAddedAt", "lastAddedAt", "engagementPercentile", "badges", "reasons", "ranks", "rankDelta"],
   "properties": {
     "id": { "type": "string", "minLength": 1 },
-    "slug": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "slug": { "type": "string", "pattern": "^[a-z0-9_-]+$" },
     "handle": { "type": "string", "pattern": "^[a-z0-9_]+$" },
     "aliases": { "type": "array", "items": { "type": "string", "pattern": "^[a-z0-9_]+$" }, "uniqueItems": true },
     "displayName": { "type": "string", "minLength": 1 },
+    "primaryPlatform": { "enum": ["x", "github", "youtube"] },
+    "profileUrl": { "type": "string", "format": "uri" },
     "xUrl": { "type": "string", "pattern": "^https://x\\.com/" },
+    "identities": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["platform", "handle", "url"],
+        "properties": {
+          "platform": { "enum": ["x", "github", "youtube"] },
+          "handle": { "type": "string", "minLength": 1 },
+          "url": { "type": "string", "format": "uri" }
+        }
+      }
+    },
     "roles": { "type": "array", "items": { "enum": ["video", "tutorial"] }, "minItems": 1, "uniqueItems": true },
     "caseIds": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
     "promptCaseIds": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
