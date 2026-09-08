@@ -626,7 +626,7 @@ describe('case-first routes', () => {
     fireEvent.click(screen.getByRole('button', { name: /我的关注/ }))
     const savedGrid = document.querySelector('.creator-grid')
     expect(savedGrid).not.toBeNull()
-    expect(within(savedGrid as HTMLElement).getByText('@manuagi01')).toBeInTheDocument()
+    expect(within(savedGrid as HTMLElement).getByRole('link', { name: '查看作者主页: @manuagi01' })).toHaveAttribute('href', '/creators/manuagi01/')
     expect(within(savedGrid as HTMLElement).queryByText('@strength04_x')).not.toBeInTheDocument()
   })
 
