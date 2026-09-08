@@ -1,0 +1,20 @@
+[
+  {
+    "id": "skill-tutorial-sample",
+    "guideType": "setup",
+    "category": "getting-started",
+    "learningTrack": "run",
+    "hardwareProfiles": ["apple-silicon"],
+    "tags": ["fixture", "mac"],
+    "flagship": true,
+    "title": { "zh": "Mac 样例教程", "en": "Mac sample tutorial" },
+    "outcome": { "zh": "完成离线查询验证", "en": "Complete an offline query check" },
+    "hardware": { "zh": "Apple Silicon", "en": "Apple Silicon" },
+    "prerequisites": { "zh": ["Node.js"], "en": ["Node.js"] },
+    "steps": { "zh": ["运行样例"], "en": ["Run the fixture"] },
+    "commandItems": [{ "kind": "command", "value": "npm run skills:install:verify", "platform": "macos" }],
+    "checks": { "zh": ["输出非空"], "en": ["Output is non-empty"] },
+    "evidence": { "status": "active", "sourceCheckedAt": "2026-09-09" },
+    "source": { "platform": "github", "url": "https://github.com/SkyNotSilent/awesome-MiniMax-H3-cases", "author": "Repository fixture" }
+  }
+]

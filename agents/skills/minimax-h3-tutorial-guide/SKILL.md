@@ -1,12 +1,18 @@
 ---
 name: minimax-h3-tutorial-guide
 description: Use this skill when a user wants to install or run MiniMax H3, choose a tutorial for Mac or NVIDIA hardware, work within a VRAM limit, or build an H3 workflow for audio, acceleration, long video, or training. It selects source-checked tutorials and produces executable AI task packages without inventing commands or claiming unverified compatibility.
-version: 0.2.0
+version: 0.2.1
 ---
 
 # MiniMax H3 Tutorial Guide
 
-Select the safest source-checked path from `data/tutorial-guides.json` and explain which ecosystem projects in `data/tutorials.json` support it. Optimize for the user's hardware, operating system, VRAM, experience, and desired outcome.
+Select the safest source-checked path from the public tutorial catalog and explain which ecosystem projects support it. The packaged query client works outside this repository:
+
+```bash
+node scripts/query.mjs --hardware "apple silicon" --goal "first video"
+```
+
+It uses `H3_LIBRARY_URL` when configured and otherwise reads the official hosted catalog. If the network or catalog is unavailable, say so and do not invent a route. Inside the repository, `data/tutorial-guides.json` and `data/tutorials.json` remain the publishing sources of truth.
 
 ## Selection workflow
 

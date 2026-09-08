@@ -25,7 +25,10 @@ jobs:
         with:
           node-version: 22
       - run: node scripts/verify-skills.mjs
+      - run: node scripts/verify-skill-install.mjs
       - run: npm pack --dry-run
         working-directory: agents/skills/minimax-h3-prompt-library
       - run: npm pack --dry-run
         working-directory: agents/skills/minimax-h3-tutorial-guide
+      - run: npm pack --dry-run
+        working-directory: agents/skills/minimax-h3-submission-helper

@@ -1,0 +1,36 @@
+[
+  {
+    "sourceUrl": "https://x.com/example_creator/status/1000000000000000001",
+    "author": "Example Creator",
+    "model": "MiniMax H3",
+    "sourceCaption": "MiniMax H3 demo with an original native video.",
+    "prompt": "A fictional, repository-owned sample prompt used only to test the public dry run.",
+    "promptProvenance": "creator-verbatim",
+    "promptCompleteness": "complete",
+    "category": "cinematic",
+    "styles": ["cinematic-realistic"],
+    "scenes": ["city"]
+  },
+  {
+    "sourceUrl": "https://x.com/another_creator/status/1000000000000000002",
+    "author": "Another Creator",
+    "model": "Hailuo H3",
+    "sourceCaption": "Hailuo H3 sample without a published prompt.",
+    "prompt": null,
+    "promptProvenance": "not-published",
+    "category": "showcase",
+    "styles": [],
+    "scenes": []
+  },
+  {
+    "sourceUrl": "https://twitter.com/copied_handle/status/1000000000000000001?s=20",
+    "author": "Duplicate Example",
+    "model": "MiniMax H3",
+    "sourceCaption": "Duplicate status ID used to demonstrate deduplication.",
+    "prompt": null,
+    "promptProvenance": "not-published",
+    "category": "showcase",
+    "styles": [],
+    "scenes": []
+  }
+]

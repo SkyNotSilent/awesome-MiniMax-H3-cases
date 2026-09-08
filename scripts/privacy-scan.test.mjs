@@ -23,4 +23,10 @@ describe('privacy scan', () => {
     expect(isPrivateTrackedPath('.github/workflows/traffic-snapshot.yml')).toBe(true)
     expect(isPrivateTrackedPath('src/analytics.ts')).toBe(false)
   })
+
+  it('blocks personal workstation paths and copied Codex request payloads', () => {
+    expect(scanText('README.md', `/${'Users'}/example/${'Documents'}/private/file.txt`, { scanSecrets: true })[0]?.reason).toBe('local user path')
+    expect(scanText('notes.md', `<${'heartbeat'}><instructions>private</instructions></heartbeat>`, { scanSecrets: true })[0]?.reason).toBe('Codex heartbeat payload')
+    expect(scanText('notes.md', `${'My request'} for ${'Codex'}: publish this`, { scanSecrets: true })[0]?.reason).toBe('Codex request transcript')
+  })
 })

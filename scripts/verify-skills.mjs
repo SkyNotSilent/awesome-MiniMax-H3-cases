@@ -2,7 +2,7 @@ import { readFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 
 const root = resolve(import.meta.dirname, '..')
-const skills = ['minimax-h3-prompt-library', 'minimax-h3-tutorial-guide']
+const skills = ['minimax-h3-prompt-library', 'minimax-h3-tutorial-guide', 'minimax-h3-submission-helper']
 
 for (const skill of skills) {
   const directory = resolve(root, 'agents/skills', skill)
@@ -21,7 +21,9 @@ for (const skill of skills) {
 
 const promptSkill = await readFile(resolve(root, 'agents/skills/minimax-h3-prompt-library/SKILL.md'), 'utf8')
 const tutorialSkill = await readFile(resolve(root, 'agents/skills/minimax-h3-tutorial-guide/SKILL.md'), 'utf8')
+const submissionSkill = await readFile(resolve(root, 'agents/skills/minimax-h3-submission-helper/SKILL.md'), 'utf8')
 if (!/never (create|generate)/i.test(promptSkill)) throw new Error('Prompt skill must explicitly reject generated prompts')
 if (!/Never guess missing/i.test(tutorialSkill)) throw new Error('Tutorial skill must explicitly reject guessed commands')
+if (!/Never say a submission is verified/i.test(submissionSkill)) throw new Error('Submission skill must not claim maintainer approval')
 
 console.log(`Validated ${skills.length} installable MiniMax H3 Agent Skills.`)
