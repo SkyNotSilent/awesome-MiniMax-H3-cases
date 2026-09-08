@@ -4,6 +4,7 @@ import { candidateErrors, partitionCandidates, toPublicTutorial, xStatusId } fro
 function candidate(overrides = {}) {
   return {
     id: 'verified-h3-tutorial',
+    guideType: 'project',
     contentType: 'community',
     learningTrack: 'run',
     depth: 'guide',
@@ -16,6 +17,7 @@ function candidate(overrides = {}) {
     prerequisites: { zh: ['准备环境'], en: ['Prepare the environment'] },
     steps: { zh: ['核验后执行'], en: ['Verify, then run'] },
     commands: ['git status'],
+    commandItems: [{ kind: 'command', value: 'git status', platform: 'shell' }],
     caveats: { zh: ['先看 README'], en: ['Read the README first'] },
     posterUrl: '/tutorial-posters/test.jpg',
     tags: ['ComfyUI'],

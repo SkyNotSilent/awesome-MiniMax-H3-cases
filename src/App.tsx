@@ -225,6 +225,14 @@ function GitHubMark({ size = 21 }: { size?: number }) {
   )
 }
 
+function YouTubeMark({ size = 18 }: { size?: number }) {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="currentColor">
+      <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z" />
+    </svg>
+  )
+}
+
 interface OpenedCase {
   item: CatalogCase
   video: HTMLVideoElement | null
@@ -1295,8 +1303,9 @@ function buildTutorialAiTask(tutorial: TutorialGuide, language: Language) {
   const section = (label: string, lines: string[]) => lines.length
     ? `${label}:\n${lines.map((line) => `- ${line}`).join('\n')}`
     : ''
-  const commands = tutorial.commands.length
-    ? `${t.commands}:\n${tutorial.commands.map((command) => `- ${command}`).join('\n')}`
+  const commandItems = tutorialCommandItems(tutorial)
+  const commands = commandItems.length
+    ? `${t.commands}:\n${commandItems.map((item) => `- ${item.kind === 'path' ? (language === 'zh' ? '文件路径' : 'File path') : (language === 'zh' ? '终端命令' : 'Terminal command')}: ${item.value}`).join('\n')}`
     : ''
   const checks = tutorial.checks ? section(t.checks, tutorial.checks[language]) : ''
   const expectedResult = tutorial.expectedResult ? `${t.expectedResult}: ${tutorial.expectedResult[language]}` : ''
@@ -1328,9 +1337,17 @@ function buildTutorialAiTask(tutorial: TutorialGuide, language: Language) {
   ].filter(Boolean).join('\n\n')
 }
 
-function CopyCommandButton({ command, language }: { command: string; language: Language }) {
+function tutorialCommandItems(tutorial: TutorialGuide): NonNullable<TutorialGuide['commandItems']> {
+  if (tutorial.commandItems?.length) return tutorial.commandItems
+  const pathPattern = /^(?:\.\.?\/)?(?:[A-Za-z0-9_.-]+\/)+[A-Za-z0-9_.-]+$/
+  return tutorial.commands.map((value) => ({ kind: pathPattern.test(value) ? 'path' as const : 'command' as const, value }))
+}
+
+function CopyCommandButton({ command, language, kind = 'command' }: { command: string; language: Language; kind?: 'command' | 'path' }) {
   const [state, setState] = useState<'idle' | 'copied' | 'failed'>('idle')
-  const label = language === 'zh' ? '复制命令' : 'Copy command'
+  const label = kind === 'path'
+    ? (language === 'zh' ? '复制路径' : 'Copy path')
+    : (language === 'zh' ? '复制命令' : 'Copy command')
   const copyCommand = async () => {
     try {
       if (!navigator.clipboard?.writeText) throw new Error('clipboard unavailable')
@@ -1460,9 +1477,18 @@ function TutorialsPage({
       return categoryMatches && hardwareMatches && addedMatches && (!needle || searchable.includes(needle))
     })
   }, [activeTrack, activeAddedDate, activeCategory, activeHardware, language, query, tutorialGuides, releases.tutorials])
-  const foundations = filtered.filter((item) => item.depth === 'deep' && item.evidence.status === 'active').sort((a, b) => (a.learningTrack === b.learningTrack ? (a.learningOrder ?? 99) - (b.learningOrder ?? 99) : a.learningTrack === 'run' ? -1 : 1))
   const spotlights = selectTutorialSpotlights(filtered, spotlightNow)
-  const sortedCommunity = sortByAddedAtDescending(filtered.filter((item) => item.depth !== 'deep' || item.evidence.status !== 'active'))
+  const spotlightIds = new Set(spotlights.map((item) => item.id))
+  const starters = {
+    cloud: tutorialGuides.find((item) => item.id === 'rent-gpu-comfyui'),
+    nvidia: tutorialGuides.find((item) => item.id === 'official-deployment'),
+    mac: tutorialGuides.find((item) => item.id === 'mac-native'),
+  }
+  const practicalGuides = [...new Map(filtered
+    .filter((item) => (item.guideType === 'project' || spotlightIds.has(item.id)) && item.evidence.status === 'active')
+    .map((item) => [item.id, item])).values()]
+    .sort((a, b) => Number(spotlightIds.has(b.id)) - Number(spotlightIds.has(a.id)) || (a.learningOrder ?? 99) - (b.learningOrder ?? 99))
+  const sortedCommunity = sortByAddedAtDescending(filtered.filter((item) => item.guideType === 'reference' && !spotlightIds.has(item.id)))
 
   const resetTutorialFilters = useCallback((preset: AddedDatePreset = 'all') => {
     setActiveTrack('all')
@@ -1500,13 +1526,21 @@ function TutorialsPage({
           <p>{language === 'zh' ? '把你的 H3 经验，变成下一位创作者的起点。' : 'Help the next creator start with what you learned.'}<small>{language === 'zh' ? '原创教程通过审核后进入 14 天新投稿推荐；永久署名并链接原作。' : 'Accepted original tutorials enter a 14-day spotlight with lasting credit and source links.'}</small></p>
           <a href={tutorialSubmissionUrl} target="_blank" rel="noreferrer">{language === 'zh' ? '投稿教程' : 'Submit a tutorial'} <ArrowUpRight size={16} /></a>
         </div>
-        {spotlights.length > 0 && <section className="tutorial-spotlight" aria-label={language === 'zh' ? '新投稿推荐' : 'New from creators'}>
-          <header className="tutorial-list-heading"><h2>{language === 'zh' ? '新投稿推荐' : 'New from creators'}</h2><span>{language === 'zh' ? '作者亲自投稿' : 'Submitted by the authors'}</span></header>
-          <div className="tutorial-spotlight-grid">{spotlights.map(tutorial => <article key={tutorial.id}>
-            <a href={tutorialPath(language, tutorial.id)} aria-label={tutorial.title[language]}><img src={tutorial.posterUrl} alt="" loading="lazy" /></a>
-            <div><small>{language === 'zh' ? '原创教程 · ' : 'Original tutorial · '}<a href={tutorial.contribution!.authorUrl} target="_blank" rel="noreferrer">{tutorial.source.author}</a></small>
-              <h3><a href={tutorialPath(language, tutorial.id)}>{tutorial.title[language]}</a></h3><p>{tutorial.outcome[language]}</p>
-              <div className="tutorial-card-actions"><a href={tutorialPath(language, tutorial.id)}>{language === 'zh' ? '开始学习' : 'Start learning'} <ArrowUpRight size={14} /></a><CopyTutorialButton tutorial={tutorial} language={language} /></div>
+        <section className="tutorial-start-here" aria-label={language === 'zh' ? '第一次使用 H3' : 'Start with H3'}>
+          <header className="tutorial-list-heading"><h2>{language === 'zh' ? '第一次使用，从这里开始' : 'New to H3? Start here'}</h2><span>02</span></header>
+          <div className="tutorial-start-grid">
+            {starters.cloud && <article><small>01 / CLOUD</small><h2>{language === 'zh' ? '没有本地环境' : 'No local setup'}</h2><p>{language === 'zh' ? '通过云端模板完成第一条带声视频，本机不需要 NVIDIA 显卡。' : 'Create a first video with audio from a cloud template. No local NVIDIA GPU required.'}</p><a href={tutorialPath(language, starters.cloud.id)}>{language === 'zh' ? '走云端路线' : 'Use the cloud route'} <ArrowUpRight size={14} /></a></article>}
+            {starters.nvidia && starters.mac && <article><small>02 / LOCAL</small><h2>{language === 'zh' ? '准备本地运行' : 'Run H3 locally'}</h2><p>{language === 'zh' ? '先按硬件选择路线，再下载模型：NVIDIA 使用 ComfyUI，Apple Silicon 使用原生 Metal。' : 'Choose by hardware before downloading models: ComfyUI for NVIDIA or native Metal for Apple Silicon.'}</p><div><a href={tutorialPath(language, starters.nvidia.id)}>NVIDIA <ArrowUpRight size={13} /></a><a href={tutorialPath(language, starters.mac.id)}>Apple Silicon <ArrowUpRight size={13} /></a></div></article>}
+          </div>
+        </section>
+
+        {practicalGuides.length > 0 && <section className="tutorial-practical" aria-label={language === 'zh' ? '实战教程' : 'Practical tutorials'}>
+          <header className="tutorial-list-heading"><h2>{language === 'zh' ? '直接做一个作品' : 'Build a real project'}</h2><span>{String(practicalGuides.length).padStart(2, '0')}</span></header>
+          <div className="foundation-route-grid">{practicalGuides.map((tutorial, index) => <article className={`foundation-route-card${spotlightIds.has(tutorial.id) ? ' is-spotlight' : ''}`} key={tutorial.id}>
+            <a className="foundation-route-poster" href={tutorialPath(language, tutorial.id)}><img src={tutorial.posterUrl} alt={tutorial.title[language]} loading="lazy" /><span>{String(index + 1).padStart(2, '0')}</span>{spotlightIds.has(tutorial.id) && <strong>{language === 'zh' ? '作者新投稿' : 'New from creator'}</strong>}</a>
+            <div className="foundation-route-copy">
+              <div className="added-at-meta">{matchesAddedDate(tutorial.addedAt, 'release', releases.tutorials) ? <strong>{copy[language].catalog.newlyAdded}</strong> : null}<time dateTime={tutorial.addedAt}>{copy[language].catalog.addedOn(formatAddedDate(tutorial.addedAt, language))}</time></div>
+              <small>{tutorial.source.author} / {t.categories[tutorial.category]}</small><h3><a href={tutorialPath(language, tutorial.id)}>{tutorial.title[language]}</a></h3><p>{tutorial.outcome[language]}</p><small>{tutorial.hardware[language]}</small><TutorialCardActions tutorial={tutorial} language={language} />
             </div>
           </article>)}</div>
         </section>}
@@ -1565,35 +1599,6 @@ function TutorialsPage({
           </label>
           <p className="tutorial-active-filter" aria-live="polite">{t.categories[activeCategory]} · {hardwareLabels[activeHardware]} · {copy[language].catalog.addedDatePresets[activeAddedDate]}</p>
         </div>
-        {foundations.length > 0 ? (
-          <>
-            <header className="tutorial-list-heading">
-              <h2>{language === 'zh' ? '深度精选' : 'In-depth selections'}</h2>
-              <span>{String(foundations.length).padStart(2, '0')}</span>
-            </header>
-            <div className="foundation-route-grid">
-              {foundations.map((tutorial, index) => (
-                <article className="foundation-route-card" key={tutorial.id}>
-                  <a className="foundation-route-poster" href={tutorialPath(language, tutorial.id)}>
-                    <img src={tutorial.posterUrl} alt={tutorial.title[language]} />
-                    <span>{String(index + 1).padStart(2, '0')}</span>
-                  </a>
-                  <div className="foundation-route-copy">
-                    <div className="added-at-meta">
-                      {matchesAddedDate(tutorial.addedAt, 'release', releases.tutorials) ? <strong>{copy[language].catalog.newlyAdded}</strong> : null}
-                      <time dateTime={tutorial.addedAt}>{copy[language].catalog.addedOn(formatAddedDate(tutorial.addedAt, language))}</time>
-                    </div>
-                    <small>{tutorial.learningTrack === 'run' ? (language === 'zh' ? '运行路线' : 'Run track') : (language === 'zh' ? '创作路线' : 'Create track')} / {language === 'zh' ? '深度精选' : 'In depth'}</small>
-                    <h3><a href={tutorialPath(language, tutorial.id)}>{tutorial.title[language]}</a></h3>
-                    <p>{tutorial.outcome[language]}</p><small>{tutorial.hardware[language]}</small>
-                    <TutorialCardActions tutorial={tutorial} language={language} />
-                  </div>
-                </article>
-              ))}
-            </div>
-          </>
-        ) : null}
-
         {sortedCommunity.length > 0 ? (
           <header className="tutorial-list-heading is-community">
             <h2>{language === 'zh' ? '更多教程导读' : 'More tutorial guides'}</h2>
@@ -1626,7 +1631,7 @@ function TutorialsPage({
               </article>
             ))}
           </div>
-        ) : foundations.length === 0 ? (
+        ) : practicalGuides.length === 0 ? (
           <div className="tutorial-empty">
             <span>00</span>
             <p>{activeAddedDate === 'release' && releases.tutorials.count > 0
@@ -1651,6 +1656,21 @@ function TutorialsPage({
   )
 }
 
+function youtubeEmbedUrl(tutorial: TutorialGuide) {
+  const candidates = [
+    tutorial.source.platform === 'youtube' ? tutorial.source.url : null,
+    ...(tutorial.learningResources ?? []).filter((item) => item.kind === 'demo').map((item) => item.url),
+  ].filter((url): url is string => Boolean(url))
+  for (const value of candidates) {
+    try {
+      const url = new URL(value)
+      const id = url.hostname === 'youtu.be' ? url.pathname.slice(1) : url.searchParams.get('v')
+      if (id && /^[A-Za-z0-9_-]{6,20}$/.test(id)) return `https://www.youtube-nocookie.com/embed/${id}`
+    } catch { /* malformed links are rejected by the data contract */ }
+  }
+  return null
+}
+
 function TutorialDetailPage({ language, tutorial, tutorialGuides, tutorialResources }: { language: Language; tutorial: TutorialGuide; tutorialGuides: TutorialGuide[]; tutorialResources: TutorialResource[] }) {
   useEffect(() => {
     const scrollToSection = () => {
@@ -1673,6 +1693,11 @@ function TutorialDetailPage({ language, tutorial, tutorialGuides, tutorialResour
     [t.likes, tutorial.engagement.likes] as const,
     [t.views, tutorial.engagement.views] as const,
   ].flatMap(([label, value]) => value === undefined ? [] : [[label, value]]) : []
+  const videoEmbed = youtubeEmbedUrl(tutorial)
+  const commandItems = tutorialCommandItems(tutorial)
+  const guideTypeLabel = language === 'zh'
+    ? { setup: '安装入门', project: '创作实战', reference: '资源导读' }[tutorial.guideType]
+    : { setup: 'Setup', project: 'Creative project', reference: 'Resource guide' }[tutorial.guideType]
 
   return (
     <div className="standalone-page tutorial-detail-page">
@@ -1681,7 +1706,7 @@ function TutorialDetailPage({ language, tutorial, tutorialGuides, tutorialResour
         <header className="tutorial-detail-hero">
           <div className="tutorial-detail-poster"><img src={tutorial.posterUrl} alt={tutorial.title[language]} /></div>
           <div className="tutorial-detail-heading">
-            <p>{tutorial.depth === 'deep' ? (language === 'zh' ? '深度精选' : 'In depth') : (language === 'zh' ? '导读' : 'Guide')} / {t.categories[tutorial.category]}</p>
+            <p>{guideTypeLabel} / {t.categories[tutorial.category]}</p>
             <h1>{tutorial.title[language]}</h1>
             <strong>{tutorial.outcome[language]}</strong>
             <div className="resource-tags">{tutorial.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
@@ -1695,8 +1720,10 @@ function TutorialDetailPage({ language, tutorial, tutorialGuides, tutorialResour
         <div className="tutorial-detail-layout">
           <main className="tutorial-detail-content">
             {tutorial.evidence.status === 'needs-review' && <p role="status" className="tutorial-review-note">{language === 'zh' ? '此导读存在待复查问题，暂不作为核心推荐。请先查看原作者更新。' : 'This guide needs review and is excluded from core selections. Check the author’s updates first.'}</p>}
+            {tutorial.expectedResult && <section className="tutorial-expected-result"><h2>{t.expectedResult}</h2><p>{tutorial.expectedResult[language]}</p></section>}
             {tutorial.recommendation && <section><h2>{language === 'zh' ? '为什么选这篇' : 'Why this guide'}</h2><p>{tutorial.recommendation[language]}</p></section>}
             {tutorial.cost && <section><h2>{language === 'zh' ? '费用与条件' : 'Cost and requirements'}</h2><p>{tutorial.cost[language]}</p></section>}
+            {videoEmbed && <section className="tutorial-video-lesson"><h2>{language === 'zh' ? '原作者视频演示' : 'Original video walkthrough'}</h2><div><iframe src={videoEmbed} title={`${tutorial.title[language]} — ${language === 'zh' ? '视频演示' : 'video walkthrough'}`} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen /></div><p>{language === 'zh' ? '视频由 YouTube 提供；无法加载时请使用下方原始链接。' : 'Video is provided by YouTube. Use the source link below if embedding is unavailable.'}</p></section>}
             {tutorial.learningResources?.length && <section className="tutorial-learning-resources"><h2>{language === 'zh' ? '准备材料与原作者演示' : 'Resources and original demonstrations'}</h2><ul>{tutorial.learningResources.map((resource) => <li key={resource.url}><a href={resource.url} target="_blank" rel="noreferrer">{resource.label[language]} <ArrowUpRight size={14} /></a></li>)}</ul><p>{tutorial.materialsNote?.[language]}</p></section>}
             {tutorial.chapters?.length && <section><h2>{language === 'zh' ? '视频章节' : 'Video chapters'}</h2><ul>{tutorial.chapters.map((chapter) => <li key={chapter.url}><a href={chapter.url} target="_blank" rel="noreferrer">{Math.floor(chapter.seconds / 60)}:{String(chapter.seconds % 60).padStart(2, '0')} · {chapter.title[language]}</a></li>)}</ul></section>}
             {(tutorial.difficulty || tutorial.estimatedMinutes || tutorial.applicableVersions?.length) && (
@@ -1713,9 +1740,8 @@ function TutorialDetailPage({ language, tutorial, tutorialGuides, tutorialResour
             <section><h2>{t.hardware}</h2><p>{tutorial.hardware[language]}</p></section>
             <section><h2>{t.prerequisites}</h2><ul>{tutorial.prerequisites[language].map((item) => <li key={item}>{item}</li>)}</ul></section>
             <section className="tutorial-detail-steps"><h2>{t.steps}</h2><ol>{tutorial.steps[language].map((item, index) => <li id={`step-${index + 1}`} key={item}><span>{String(index + 1).padStart(2, '0')}</span><p>{item}</p></li>)}</ol></section>
-            {tutorial.commands.length > 0 && <section><h2>{t.commands}</h2><div className="tutorial-detail-commands">{tutorial.commands.map((command) => <div key={command}><code>{command}</code><CopyCommandButton command={command} language={language} /></div>)}</div></section>}
+            {commandItems.length > 0 && <section><h2>{t.commands}</h2><div className="tutorial-detail-commands">{commandItems.map((item) => <div key={`${item.kind}:${item.value}`}><small>{item.kind === 'path' ? (language === 'zh' ? '文件路径' : 'File path') : `${language === 'zh' ? '终端命令' : 'Terminal command'}${item.platform ? ` · ${item.platform}` : ''}`}</small><code>{item.value}</code><CopyCommandButton command={item.value} language={language} kind={item.kind} /></div>)}</div></section>}
             {tutorial.checks && <section className="tutorial-detail-checks"><h2>{t.checks}</h2><ul>{tutorial.checks[language].map((item) => <li key={item}><Check size={15} aria-hidden="true" /> <span>{item}</span></li>)}</ul></section>}
-            {tutorial.expectedResult && <section className="tutorial-expected-result"><h2>{t.expectedResult}</h2><p>{tutorial.expectedResult[language]}</p></section>}
             {tutorial.troubleshooting?.length && <section id="troubleshooting" className="tutorial-troubleshooting"><h2>{t.troubleshooting}</h2><dl>{tutorial.troubleshooting.map((item) => <div key={item.problem[language]}><dt>{item.problem[language]}</dt><dd>{item.solution[language]}</dd></div>)}</dl></section>}
             {tutorial.uninstall && <section><h2>{t.uninstall}</h2><ul>{tutorial.uninstall[language].map((item) => <li key={item}>{item}</li>)}</ul></section>}
             <section><h2>{language === 'zh' ? '社区怎么说' : 'Community feedback'}</h2>{tutorial.communityFeedback?.length ? <ul>{tutorial.communityFeedback.map((feedback) => <li key={feedback.summary[language]}>{feedback.summary[language]} <a href={feedback.url} target="_blank" rel="noreferrer">{language === 'zh' ? '查看依据' : 'View evidence'}</a></li>)}</ul> : <p>{language === 'zh' ? '暂未收录可独立核对的具体使用反馈；本篇依据原作者资料整理。' : 'No independently checkable usage feedback is included yet; this guide is based on source documentation.'}</p>}</section>
@@ -1873,6 +1899,17 @@ function rankTrend(creator: CreatorProfile, rankKey: CreatorRankKey, language: L
   return { label: t.rankSame, direction: 'same' }
 }
 
+function creatorAccountLabel(creator: CreatorProfile) {
+  if (creator.primaryPlatform === 'x') return `@${creator.handle}`
+  return `${creator.primaryPlatform === 'github' ? 'GitHub' : 'YouTube'} / ${creator.handle}`
+}
+
+function creatorProfileAction(creator: CreatorProfile, language: Language, size = 13) {
+  if (creator.primaryPlatform === 'x') return <><XMark size={size} /> {copy[language].creators.followOnX}</>
+  if (creator.primaryPlatform === 'github') return <><GitHubMark size={size} /> {language === 'zh' ? '查看 GitHub' : 'View GitHub'}</>
+  return <><YouTubeMark size={size} /> {language === 'zh' ? '查看 YouTube' : 'View YouTube'}</>
+}
+
 function CreatorMosaic({ creator, cases, tutorialGuides }: { creator: CreatorProfile; cases: CatalogCase[]; tutorialGuides: TutorialGuide[] }) {
   const posters = creatorPosters(creator, cases, tutorialGuides)
   return (
@@ -1917,6 +1954,7 @@ function CreatorCard({
   const t = copy[language].creators
   const rank = creator.ranks[rankKey] ?? creator.ranks.overall ?? creator.ranks.tutorials
   const trend = rankTrend(creator, rankKey, language)
+  const tutorialOnly = creator.roles.includes('tutorial') && !creator.roles.includes('video')
   return (
     <article className={`creator-card${compact ? ' is-podium' : ''}`}>
       <a className="creator-card-visual" href={creatorPath(language, creator.slug)} aria-label={`${t.openProfile}: ${creator.displayName}`}>
@@ -1929,7 +1967,7 @@ function CreatorCard({
       </a>
       <div className="creator-card-copy">
         <div className="creator-card-identity">
-          <small>@{creator.handle}</small>
+          <small>{creatorAccountLabel(creator)}</small>
           <button
             type="button"
             className={saved ? 'active' : ''}
@@ -1944,13 +1982,19 @@ function CreatorCard({
         <h2><a href={creatorPath(language, creator.slug)}>{creator.displayName}</a></h2>
         <p>{t.reasons[creator.reasons[0] ?? 'recently-active']}</p>
         <dl>
-          <div><dt>{t.cases}</dt><dd>{creator.caseCount}</dd></div>
-          <div><dt>{t.prompts}</dt><dd>{creator.promptCount}</dd></div>
-          <div><dt>{t.recent}</dt><dd>{creator.recentCaseCount}</dd></div>
+          {tutorialOnly ? <>
+            <div><dt>{t.tutorials}</dt><dd>{creator.tutorialCount}</dd></div>
+            <div><dt>{t.lastAdded}</dt><dd>{creator.lastAddedAt ? formatAddedDate(creator.lastAddedAt, language) : '—'}</dd></div>
+            <div><dt>{language === 'zh' ? '平台' : 'Platform'}</dt><dd>{creator.primaryPlatform === 'github' ? 'GitHub' : 'YouTube'}</dd></div>
+          </> : <>
+            <div><dt>{t.cases}</dt><dd>{creator.caseCount}</dd></div>
+            <div><dt>{t.prompts}</dt><dd>{creator.promptCount}</dd></div>
+            <div><dt>{t.recent}</dt><dd>{creator.recentCaseCount}</dd></div>
+          </>}
         </dl>
         <div className="creator-card-actions">
           <a href={creatorPath(language, creator.slug)}>{t.openProfile} <ChevronRight size={14} /></a>
-          <a href={creator.xUrl} target="_blank" rel="noreferrer"><XMark size={13} /> {t.followOnX}</a>
+          <a href={creator.profileUrl} target="_blank" rel="noreferrer">{creatorProfileAction(creator, language)}</a>
         </div>
       </div>
     </article>
@@ -2094,12 +2138,12 @@ function CreatorDetailPage({ language, creator, cases, featuredCaseIds, tutorial
         <header className="creator-profile-hero">
           <div className="creator-profile-visual"><CreatorMosaic creator={creator} cases={cases} tutorialGuides={tutorialGuides} /><strong>{primaryRank ? `#${String(primaryRank).padStart(2, '0')}` : '—'}</strong></div>
           <div className="creator-profile-copy">
-            <p>@{creator.handle}</p>
+            <p>{creatorAccountLabel(creator)}</p>
             <h1>{creator.displayName}</h1>
             <div className="creator-badges">{creator.badges.map((badge) => <span key={badge}>{t.badges[badge]}</span>)}</div>
             <div className="creator-profile-actions">
               <button type="button" className={saved ? 'active' : ''} onClick={toggleCreator} aria-pressed={saved}><Bookmark size={15} fill={saved ? 'currentColor' : 'none'} /> {saved ? t.unsave : t.save}</button>
-              <a href={creator.xUrl} target="_blank" rel="noreferrer"><XMark size={14} /> {t.followOnX}</a>
+              <a href={creator.profileUrl} target="_blank" rel="noreferrer">{creatorProfileAction(creator, language, 14)}</a>
             </div>
           </div>
           <dl className="creator-profile-stats">
@@ -2139,7 +2183,7 @@ function CreatorDetailPage({ language, creator, cases, featuredCaseIds, tutorial
 
         <footer className="creator-profile-correction">
           <p>{t.correction}</p>
-          <a href={`https://github.com/SkyNotSilent/awesome-minimax-h3-cases/issues/new?template=creator-correction.yml&title=${encodeURIComponent(`[Creator profile] @${creator.handle}`)}`} target="_blank" rel="noreferrer">{t.correctionCta} <ArrowUpRight size={14} /></a>
+          <a href={`https://github.com/SkyNotSilent/awesome-minimax-h3-cases/issues/new?template=creator-correction.yml&title=${encodeURIComponent(`[Creator profile] ${creatorAccountLabel(creator)}`)}`} target="_blank" rel="noreferrer">{t.correctionCta} <ArrowUpRight size={14} /></a>
         </footer>
       </article>
       {selected && <CaseDialog item={selected.item} preparedVideo={selected.video} language={language} onClose={() => setSelected(null)} />}

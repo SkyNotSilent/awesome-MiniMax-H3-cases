@@ -155,6 +155,7 @@ export type TutorialHardwareProfile =
   | 'cloud-gpu'
 
 export interface TutorialGuide {
+  guideType: 'setup' | 'project' | 'reference'
   contribution?: { issueUrl: string; authorUrl: string }
   learningTrack: 'run' | 'create'
   learningOrder?: number
@@ -179,6 +180,7 @@ export interface TutorialGuide {
   prerequisites: LocalizedList
   steps: LocalizedList
   commands: string[]
+  commandItems?: Array<{ kind: 'command' | 'path'; value: string; platform?: 'shell' | 'windows' | 'macos' | 'linux' }>
   checks?: LocalizedList
   caveats: LocalizedList
   posterUrl: string
@@ -219,6 +221,7 @@ export interface TutorialGuide {
 }
 
 export type CreatorRole = 'video' | 'tutorial'
+export type CreatorPlatform = 'x' | 'github' | 'youtube'
 export type CreatorRankKey = 'overall' | 'active' | 'cases' | 'prompts' | 'rising' | 'tutorials'
 export type CreatorBadge =
   | 'prolific'
@@ -243,7 +246,10 @@ export interface CreatorProfile {
   handle: string
   aliases: string[]
   displayName: string
-  xUrl: string
+  primaryPlatform: CreatorPlatform
+  profileUrl: string
+  xUrl?: string
+  identities: Array<{ platform: CreatorPlatform; handle: string; url: string }>
   roles: CreatorRole[]
   caseIds: string[]
   promptCaseIds: string[]

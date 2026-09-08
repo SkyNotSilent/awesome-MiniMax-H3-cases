@@ -83,6 +83,10 @@ export function tutorialContractErrors(value) {
   }
   if (value?.evidence?.siteTestedAt && !value.evidence.siteTestUrl) errors.push('tutorial.evidence.siteTestUrl: required for site test claim')
   if (value?.evidence?.communityReviewedAt && !value.communityFeedback?.length) errors.push('tutorial.communityFeedback: required for community review claim')
+  if (Array.isArray(value?.commandItems)) {
+    const typedValues = value.commandItems.map((item) => item.value)
+    if (JSON.stringify(typedValues) !== JSON.stringify(value.commands ?? [])) errors.push('tutorial.commandItems: values and order must match commands')
+  }
   for (const chapter of Array.isArray(value?.chapters) ? value.chapters : []) {
     if (!tutorialSourceKey({ platform: 'youtube', url: chapter.url })) errors.push('tutorial.chapters: valid YouTube URL required')
     try { if (Number(new URL(chapter.url).searchParams.get('t')) !== chapter.seconds) errors.push('tutorial.chapters: timestamp mismatch') } catch { /* URL validation above reports malformed links. */ }

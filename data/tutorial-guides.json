@@ -227,7 +227,45 @@
         "relationship": "technique"
       }
     ],
-    "learningOrder": 1
+    "learningOrder": 1,
+    "guideType": "setup",
+    "commandItems": [
+      {
+        "kind": "command",
+        "value": "python --version",
+        "platform": "shell"
+      },
+      {
+        "kind": "command",
+        "value": "python -m pip install -r requirements.txt",
+        "platform": "shell"
+      },
+      {
+        "kind": "command",
+        "value": "python main.py",
+        "platform": "shell"
+      },
+      {
+        "kind": "path",
+        "value": "ComfyUI/models/diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors"
+      },
+      {
+        "kind": "path",
+        "value": "ComfyUI/models/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors"
+      },
+      {
+        "kind": "path",
+        "value": "ComfyUI/models/vae/minimax_h3_video_vae_fp16.safetensors"
+      },
+      {
+        "kind": "path",
+        "value": "ComfyUI/models/vae/minimax_h3_audio_vae_fp32.safetensors"
+      },
+      {
+        "kind": "path",
+        "value": "ComfyUI/models/loras/minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors"
+      }
+    ]
   },
   {
     "id": "nvidia-comfyui",
@@ -564,7 +602,25 @@
         }
       }
     ],
-    "learningOrder": 4
+    "learningOrder": 4,
+    "guideType": "project",
+    "commandItems": [
+      {
+        "kind": "command",
+        "value": "cd ComfyUI/custom_nodes",
+        "platform": "shell"
+      },
+      {
+        "kind": "command",
+        "value": "git clone https://github.com/larryvrh/ComfyUI-MiniMax-H3-Turbo",
+        "platform": "shell"
+      },
+      {
+        "kind": "command",
+        "value": "git -C ComfyUI-MiniMax-H3-Turbo pull",
+        "platform": "shell"
+      }
+    ]
   },
   {
     "id": "mac-native",
@@ -777,7 +833,55 @@
       "context-ir-local-pipeline",
       "native-comfyui-modes"
     ],
-    "learningOrder": 2
+    "learningOrder": 2,
+    "guideType": "setup",
+    "commandItems": [
+      {
+        "kind": "command",
+        "value": "xcode-select --install",
+        "platform": "macos"
+      },
+      {
+        "kind": "command",
+        "value": "brew install ffmpeg",
+        "platform": "macos"
+      },
+      {
+        "kind": "command",
+        "value": "git clone https://github.com/antirez/h3.c && cd h3.c",
+        "platform": "macos"
+      },
+      {
+        "kind": "command",
+        "value": "hf download MiniMaxAI/MiniMax-H3 --local-dir MiniMax-H3",
+        "platform": "macos"
+      },
+      {
+        "kind": "command",
+        "value": "make -j8 && mkdir -p outputs",
+        "platform": "macos"
+      },
+      {
+        "kind": "command",
+        "value": "./h3 --info -d ./MiniMax-H3",
+        "platform": "macos"
+      },
+      {
+        "kind": "command",
+        "value": "./h3 --profile -d ./MiniMax-H3 -p \"A red fox walks through fresh snow in a pine forest. Medium tracking shot, natural winter light, realistic fur, soft footsteps and wind.\" --width 512 --height 512 --frames 22 --steps 20 --layers 45 --reuse 2 -o outputs/fox-fast.mp4",
+        "platform": "macos"
+      },
+      {
+        "kind": "command",
+        "value": "./h3 -d ./MiniMax-H3 --width 512 --height 512 --steps 6",
+        "platform": "macos"
+      },
+      {
+        "kind": "command",
+        "value": "make test",
+        "platform": "macos"
+      }
+    ]
   },
   {
     "id": "prompt-agent-skill",
@@ -978,7 +1082,20 @@
       "video-pov-camera-angles",
       "nvidia-comfyui"
     ],
-    "learningOrder": 4
+    "learningOrder": 4,
+    "guideType": "project",
+    "commandItems": [
+      {
+        "kind": "command",
+        "value": "cd ComfyUI/custom_nodes",
+        "platform": "shell"
+      },
+      {
+        "kind": "command",
+        "value": "git clone https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context",
+        "platform": "shell"
+      }
+    ]
   },
   {
     "id": "local-deployment-zero-to-output",
@@ -1078,7 +1195,8 @@
     "nextGuideIds": [
       "official-deployment",
       "context-ir-local-pipeline"
-    ]
+    ],
+    "guideType": "reference"
   },
   {
     "id": "four-essential-h3-repositories",
@@ -1175,7 +1293,8 @@
     "recommendation": {
       "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
       "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
-    }
+    },
+    "guideType": "reference"
   },
   {
     "id": "attention-low-vram-lora",
@@ -1270,7 +1389,8 @@
     "recommendation": {
       "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
       "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
-    }
+    },
+    "guideType": "reference"
   },
   {
     "id": "context-ir-local-pipeline",
@@ -1471,7 +1591,8 @@
         "relationship": "example"
       }
     ],
-    "learningOrder": 1
+    "learningOrder": 1,
+    "guideType": "project"
   },
   {
     "id": "video-pov-camera-angles",
@@ -1659,7 +1780,8 @@
         "relationship": "example"
       }
     ],
-    "learningOrder": 3
+    "learningOrder": 3,
+    "guideType": "project"
   },
   {
     "id": "storyboard-to-trailer",
@@ -1756,7 +1878,8 @@
     "recommendation": {
       "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
       "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
-    }
+    },
+    "guideType": "project"
   },
   {
     "id": "3060-turbo-trailer",
@@ -1852,7 +1975,8 @@
     "recommendation": {
       "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
       "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
-    }
+    },
+    "guideType": "project"
   },
   {
     "id": "maestro-six-step-turbo",
@@ -1948,7 +2072,8 @@
     "recommendation": {
       "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
       "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
-    }
+    },
+    "guideType": "reference"
   },
   {
     "id": "maestro-pruned-20b",
@@ -2044,7 +2169,8 @@
     "recommendation": {
       "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
       "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
-    }
+    },
+    "guideType": "reference"
   },
   {
     "id": "3060-turbo-benchmark",
@@ -2137,7 +2263,8 @@
     "recommendation": {
       "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
       "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
-    }
+    },
+    "guideType": "reference"
   },
   {
     "id": "mac-phosphene-turbo",
@@ -2233,7 +2360,8 @@
     "recommendation": {
       "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
       "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
-    }
+    },
+    "guideType": "reference"
   },
   {
     "id": "rent-gpu-comfyui",
@@ -2406,7 +2534,8 @@
       "native-comfyui-modes",
       "context-ir-local-pipeline"
     ],
-    "learningOrder": 3
+    "learningOrder": 3,
+    "guideType": "setup"
   },
   {
     "id": "dual-clock-audio",
@@ -2578,7 +2707,20 @@
     "recommendation": {
       "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
       "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
-    }
+    },
+    "guideType": "project",
+    "commandItems": [
+      {
+        "kind": "command",
+        "value": "comfy node install minimax-h3-audio-t8",
+        "platform": "shell"
+      },
+      {
+        "kind": "command",
+        "value": "cd ComfyUI/custom_nodes && git clone https://github.com/T8mars/comfyui-minimax-h3-audio-T8.git minimax-h3-audio-T8",
+        "platform": "shell"
+      }
+    ]
   },
   {
     "id": "native-comfyui-modes",
@@ -2765,7 +2907,8 @@
         "relationship": "example"
       }
     ],
-    "learningOrder": 2
+    "learningOrder": 2,
+    "guideType": "project"
   },
   {
     "id": "4080-int8-pruned",
@@ -2936,7 +3079,30 @@
     "recommendation": {
       "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
       "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
-    }
+    },
+    "guideType": "reference",
+    "commandItems": [
+      {
+        "kind": "command",
+        "value": "git clone https://github.com/modelscope/DiffSynth-Studio.git",
+        "platform": "shell"
+      },
+      {
+        "kind": "command",
+        "value": "cd DiffSynth-Studio && pip install -e .",
+        "platform": "shell"
+      },
+      {
+        "kind": "command",
+        "value": "pip install \"diffsynth[quant]\"",
+        "platform": "shell"
+      },
+      {
+        "kind": "command",
+        "value": "python examples/minimax_h3/model_inference_low_vram/MiniMax-H3-Int8-ConvRot-Pruned-FL2VA.py",
+        "platform": "shell"
+      }
+    ]
   },
   {
     "id": "four-bit-eight-gb",
@@ -3107,7 +3273,30 @@
     "recommendation": {
       "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
       "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
-    }
+    },
+    "guideType": "reference",
+    "commandItems": [
+      {
+        "kind": "command",
+        "value": "git clone https://github.com/modelscope/DiffSynth-Studio.git",
+        "platform": "shell"
+      },
+      {
+        "kind": "command",
+        "value": "cd DiffSynth-Studio && pip install -e .",
+        "platform": "shell"
+      },
+      {
+        "kind": "command",
+        "value": "python examples/minimax_h3/model_inference_low_vram/MiniMax-H3-NF4-FL2VA.py",
+        "platform": "shell"
+      },
+      {
+        "kind": "command",
+        "value": "ffprobe -v error -show_streams t2va.mp4",
+        "platform": "shell"
+      }
+    ]
   },
   {
     "id": "train-ref2va-lora",
@@ -3211,7 +3400,8 @@
     },
     "nextGuideIds": [
       "video-pov-camera-angles"
-    ]
+    ],
+    "guideType": "reference"
   },
   {
     "id": "webui-motion-context",
@@ -3307,7 +3497,8 @@
     "recommendation": {
       "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
       "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
-    }
+    },
+    "guideType": "reference"
   },
   {
     "id": "ref2v-motion-context-chunks",
@@ -3405,7 +3596,8 @@
     "recommendation": {
       "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
       "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
-    }
+    },
+    "guideType": "project"
   },
   {
     "id": "lightx2v-vs-larryvrh",
@@ -3502,7 +3694,8 @@
     "recommendation": {
       "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
       "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
-    }
+    },
+    "guideType": "reference"
   },
   {
     "id": "minimax-director-timeline",
@@ -3732,6 +3925,14 @@
       "issueUrl": "https://github.com/SkyNotSilent/awesome-MiniMax-H3-cases/issues/16",
       "authorUrl": "https://github.com/imbutus"
     },
-    "addedAt": "2026-09-08T12:39:39.434Z"
+    "addedAt": "2026-09-08T12:39:39.434Z",
+    "guideType": "project",
+    "commandItems": [
+      {
+        "kind": "command",
+        "value": "cd ComfyUI/custom_nodes\ngit clone https://github.com/imbutus/ComfyUI-MiniMaxDirector.git",
+        "platform": "shell"
+      }
+    ]
   }
 ]

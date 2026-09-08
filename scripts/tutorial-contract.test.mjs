@@ -4,6 +4,16 @@ import { tutorialContractErrors, tutorialSourceKey } from './tutorial-contract.m
 import { toPublicTutorial, partitionCandidates } from './tutorial-collection.mjs'
 
 describe('tutorial publication contract', () => {
+  it('classifies every guide by reader intent and distinguishes commands from file paths', () => {
+    expect(guides.every(item => ['setup', 'project', 'reference'].includes(item.guideType))).toBe(true)
+    const setup = guides.find(item => item.id === 'official-deployment')
+    expect(setup.commandItems).toContainEqual(expect.objectContaining({ kind: 'command', value: 'python --version' }))
+    expect(setup.commandItems).toContainEqual(expect.objectContaining({ kind: 'path', value: 'ComfyUI/models/vae/minimax_h3_audio_vae_fp32.safetensors' }))
+    expect(tutorialContractErrors(setup)).toEqual([])
+    const mismatched = structuredClone(setup)
+    mismatched.commandItems[0].value = 'not-the-original-command'
+    expect(tutorialContractErrors(mismatched)).toContain('tutorial.commandItems: values and order must match commands')
+  })
   it('preserves author attribution but refuses unrelated submission links and foundation promotions', () => {
     const guide = structuredClone(guides.find(item => item.contribution))
     expect(tutorialContractErrors(guide)).toEqual([])
