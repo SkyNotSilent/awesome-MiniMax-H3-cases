@@ -1,7 +1,7 @@
-name: Submit a tutorial
-description: Propose an original MiniMax H3 tutorial or open-source workflow.
+name: Submit a tutorial or learning resource
+description: Share an original setup guide, practical project, video lesson, or useful method.
 title: "[Tutorial]: "
-labels: ["submission", "tutorial"]
+labels: ["submission", "tutorial", "status: needs-triage"]
 body:
   - type: markdown
     attributes:
@@ -9,6 +9,18 @@ body:
         Share your original tutorial in English or Chinese — we help prepare the bilingual page.
         Accepted author submissions enter a 14-day rotating spotlight with permanent credit and source links.
         欢迎中英文原创教程；我们协助整理双语页面。审核通过后进入 14 天轮换推荐，长期保留作者署名与原作入口。
+        You do not need to edit project data, translate your submission, or provide project-storage access.
+  - type: dropdown
+    id: tutorial-type
+    attributes:
+      label: Tutorial type / 教程类型
+      options:
+        - Setup or installation / 安装与部署
+        - Practical creative project / 创作实战
+        - Video tutorial / 视频教学
+        - Resource or method / 资源与方法
+    validations:
+      required: true
   - type: input
     id: author-profile
     attributes:
@@ -33,17 +45,17 @@ body:
     validations:
       required: true
   - type: textarea
-    id: environment
+    id: materials
     attributes:
-      label: Tested environment
-      description: Include OS, GPU/Apple chip, VRAM or memory, versions, disk needs, and approximate time.
+      label: Steps, materials, or useful video chapters
+      description: Setup guides should include environment and commands. Practical/video guides can instead provide inputs, workflow, parameters, timestamps, expected output, and known limits.
     validations:
       required: true
   - type: textarea
-    id: commands
+    id: verification
     attributes:
-      label: Verified commands and known failures
-      description: Provide executable commands, common errors, and rollback or uninstall steps.
+      label: What you personally verified
+      description: Tell us what you ran or created. Say "not tested" for anything based only on linked documentation.
     validations:
       required: true
   - type: checkboxes
@@ -53,5 +65,7 @@ body:
       options:
         - label: The linked source is original and specifically applies to MiniMax H3.
           required: true
-        - label: I have not guessed missing commands, versions, or compatibility claims.
+        - label: I have not guessed missing commands, versions, compatibility, or results.
+          required: true
+        - label: I allow this project to summarize and present the submitted material with permanent attribution and links to the original source.
           required: true

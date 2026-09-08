@@ -5,46 +5,37 @@
 # MiniMax H3 Cases & Guides
 
 <!-- project-stats:start -->
-**The most complete source-attributed MiniMax H3 case and tutorial library: 1788 playable videos, 628 complete public Prompts, and 25 practical guides.**
+**A source-attributed MiniMax H3 library with 1788 playable videos, 628 complete public Prompts, and 25 practical guides.**
 <!-- project-stats:end -->
 
 **English** · [简体中文](./README.zh-CN.md)
 
 [![Stars](https://img.shields.io/github/stars/SkyNotSilent/awesome-minimax-h3-cases?style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/stargazers)
-[![Forks](https://img.shields.io/github/forks/SkyNotSilent/awesome-minimax-h3-cases?style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/forks)
-[![Cases](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1788-628-25-340&query=%24.cases&label=cases&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/en/)
-[![Prompts](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1788-628-25-340&query=%24.completePrompts&label=public%20prompts&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/en/?prompt=1)
-[![Tutorials](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1788-628-25-340&query=%24.tutorials&label=tutorials&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/en/tutorials/)
-[![Creators](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1788-628-25-340&query=%24.rankedCreators&label=featured%20creators&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/en/creators/)
+[![Cases](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1788-628-25-341&query=%24.cases&label=cases&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/en/)
+[![Prompts](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1788-628-25-341&query=%24.completePrompts&label=public%20prompts&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/en/?prompt=1)
+[![Tutorials](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1788-628-25-341&query=%24.tutorials&label=tutorials&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/en/tutorials/)
 [![CI](https://img.shields.io/github/actions/workflow/status/SkyNotSilent/awesome-minimax-h3-cases/ci.yml?style=for-the-badge&label=CI&labelColor=0a0b09)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/actions/workflows/ci.yml)
-[![Release](https://img.shields.io/github/v/release/SkyNotSilent/awesome-minimax-h3-cases?style=for-the-badge&labelColor=0a0b09)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/releases)
 [![License](https://img.shields.io/badge/license-MIT-6ba4ff?style=for-the-badge&labelColor=0a0b09)](./LICENSE)
 
 </div>
 
-[![MiniMax H3 Cases and Guides animated opening screen](./docs/screenshots/intro-en.jpg)](https://h3-field-notes-production.up.railway.app/en/)
+## Start here
 
-<p align="center"><strong>Watch real H3 output first. Inspect a Prompt only when its source publishes the complete text. Then follow a verified route to run it yourself.</strong></p>
+| Browse cases | Find complete Prompts | Learn H3 | Share your work |
+| --- | --- | --- | --- |
+| [Watch every case](https://h3-field-notes-production.up.railway.app/en/) | [Open Prompt collection](https://h3-field-notes-production.up.railway.app/en/?prompt=1) | [Open practical tutorials](https://h3-field-notes-production.up.railway.app/en/tutorials/) | [Submit a case or tutorial](#contribute-or-report-a-problem) |
+
+<p align="center"><strong>Watch real H3 output first. Inspect a Prompt only when its source publishes the complete text. Then follow a source-checked route to create your own video.</strong></p>
 
 [![MiniMax H3 latest-release strip with added-date, duration, Prompt, collection, content, style, and scene filters](./docs/screenshots/case-library-en.jpg)](https://h3-field-notes-production.up.railway.app/en/)
 
-## Start here
-
-| Browse cases | With complete Prompt | Discover creators | Learn from zero | Install Agent Skills |
-| --- | --- | --- | --- | --- |
-| [Watch every case](https://h3-field-notes-production.up.railway.app/en/) | [Open Prompt collection](https://h3-field-notes-production.up.railway.app/en/?prompt=1) | [Open creator leaderboard](https://h3-field-notes-production.up.railway.app/en/creators/) | [Open tutorials](https://h3-field-notes-production.up.railway.app/en/tutorials/) | [Jump to install](#agent-skills) |
-
 MiniMax H3 is also searched as **Hailuo H3**, **Hailuo 3.0**, and **海螺 H3**. Every published case plays inside the gallery, keeps its original source and creator, and clearly distinguishes a complete verbatim Prompt from an unpublished one. The library never reconstructs, rewrites, or reverse-engineers missing Prompts.
 
-## See what the latest release added
+### Three ways to use the library
 
-**Latest additions** means the same thing for every visitor: everything added to that channel on the same Beijing-time day as its newest item. It refreshes with every publish, needs no browser history, and does not shift with the visitor's time zone.
-
-- Filter cases and guides by **All**, **Latest additions**, **Last 7 days**, or **Last 30 days**. Date conditions combine with search, duration, Prompt, collection, content, style, scene, goal, and hardware filters.
-- Every case and guide shows its catalog-added date; items in the latest release also carry a text **Newly added** label instead of relying on color alone.
-- The strip above the filters shows the date and size of the latest release and opens it in the list; when nothing is new it links to the latest 48 cases instead.
-- Date views use `added=release|7d|30d`. Older `added=unseen`, `added=today`, and personal `since`/`through` snapshot links all resolve to the latest release.
-- Nothing about seen state is stored in the browser, and there is no account, server-side seen history, or notification subscription; keys written by earlier versions are ignored.
+- **Find inspiration:** play source-attributed results without leaving the gallery.
+- **Study disclosed Prompts:** filter to complete, verbatim Prompt text and open the original evidence.
+- **Make something:** choose a beginner route or a creator-submitted practical tutorial with explicit prerequisites and completion checks.
 
 ## Find the useful cases faster
 
@@ -72,19 +63,19 @@ Combine these with 12 visual styles and 14 subject/scene facets. Every option sh
 [![MiniMax H3 featured creator leaderboard](./docs/screenshots/creators-en.png)](https://h3-field-notes-production.up.railway.app/en/creators/)
 
 <!-- creator-stats:start -->
-The dynamic creator board turns the archive into a compounding discovery system. It currently ranks **340 featured creators from 915 source-attributed X authors**, with separate views for overall quality, recent activity, case volume, complete Prompt contribution, rising creators, and tutorial authors.
+The dynamic creator board turns the archive into a compounding discovery system. It currently ranks **341 featured creators from 918 source-attributed authors across X, GitHub, and YouTube**, with separate views for video work and tutorial contributions.
 <!-- creator-stats:end -->
 
 - Every profile aggregates the creator's playable cases, complete public Prompts, and source-checked tutorials.
 - Rankings use only content already verified and published by this library; they are not official X influence rankings.
 - Exact internal monitoring scores, rejected posts, discovery sources, and review cadence remain private.
-- Save creators anonymously in this browser or jump to their original X profile.
+- Save creators anonymously in this browser or jump to their original X, GitHub, or YouTube profile.
 
 ## Learn by goal or hardware
 
 [![MiniMax H3 tutorial workspace](./docs/screenshots/tutorials-en.png)](https://h3-field-notes-production.up.railway.app/en/tutorials/)
 
-Two equal learning tracks help you get H3 running and create videos. Eight in-depth selections provide source resources, applicable versions, key steps, chapters and known issues; the remaining entries are clearly marked as short guides. Source checks, community feedback and actual site generation tests are separate evidence categories.
+Two compact starting routes answer the first decision: use a cloud template, or choose NVIDIA/Apple Silicon for local work. Practical project cards then lead with the intended result, author, difficulty, requirements, steps, checks, and troubleshooting; shorter resource entries stay clearly labeled as guides. Source checks, community reports, and actual site generation tests remain separate evidence categories.
 
 | Goal | Best starting point |
 | --- | --- |
@@ -99,11 +90,11 @@ Each guide has a **Copy for AI** action that creates an execution package from s
 
 ## Agent Skills
 
-Install both repository Skills for Codex and Claude Code:
+Install the three repository Skills for Codex and Claude Code:
 
 ```bash
 npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
-  --skill minimax-h3-prompt-library minimax-h3-tutorial-guide \
+  --skill minimax-h3-prompt-library minimax-h3-tutorial-guide minimax-h3-submission-helper \
   --agent codex claude-code
 ```
 
@@ -113,13 +104,14 @@ npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
 | --- | --- | --- |
 | [`minimax-h3-prompt-library`](./agents/skills/minimax-h3-prompt-library/) | Finds real cases and returns a complete source-published Prompt when available | Never generates, rewrites, translates, or infers a Prompt |
 | [`minimax-h3-tutorial-guide`](./agents/skills/minimax-h3-tutorial-guide/) | Selects a checked route by OS, GPU, VRAM, time, and goal | Never guesses missing commands, versions, or compatibility |
+| [`minimax-h3-submission-helper`](./agents/skills/minimax-h3-submission-helper/) | Prepares an Issue-ready case or tutorial submission | Never claims verification, acceptance, or publication authority |
 
-Example output is structured as a recommended route, environment check, execution plan, success criteria, rollback, and dated sources.
+The two reading Skills include standalone query clients that use the hosted public catalog and fail explicitly when it is unavailable. `npm run skills:install:verify` tests them from an isolated directory with offline repository-owned fixtures.
 
 ## Data, automation, and trust
 
 <!-- project-snapshot:start -->
-**Current generated snapshot:** 1788 cases · 28 Editor picks · 628 complete public Prompts · 25 tutorials · 340 ranked creators from 915 source authors · 8 flagship guides · 14 ecosystem resources · content checked through 2026-09-08.
+**Current generated snapshot:** 1788 cases · 28 Editor picks · 628 complete public Prompts · 25 tutorials · 341 ranked creators from 918 source authors · 8 flagship guides · 14 ecosystem resources · content checked through 2026-09-08.
 <!-- project-snapshot:end -->
 
 - [`data/project-stats.json`](./data/project-stats.json) is the canonical public count snapshot; CI rejects stale website and README numbers.
@@ -131,23 +123,25 @@ Example output is structured as a recommended route, environment check, executio
 - Builds generate localized case/tutorial pages, canonical and hreflang links, `VideoObject`/`HowTo` JSON-LD, sitemap, Open Graph data, [`llms.txt`](./public/llms.txt), and [`llms-full.txt`](./public/llms-full.txt).
 - `npm run screenshots` rebuilds the site, synchronizes measured build sizes, captures the current bilingual opening screen and library views on desktop/mobile, and writes only screenshots whose rendered bytes changed.
 
-## Performance architecture
+## Run locally
 
-The source of truth remains `data/cases.json`, but production builds no longer ship it in the homepage JavaScript. The build derives a compact `/data/catalog.json`, one `/data/cases/{id}.json` detail file per case, and language-specific search indexes. The catalog retains the media URL, original-source URL, poster, filters, and `addedAt`, so playback and filtering never wait for detail text.
+```bash
+git clone https://github.com/SkyNotSilent/awesome-minimax-h3-cases.git
+cd awesome-minimax-h3-cases
+npm ci
+npm run dev
+```
 
-- The homepage renders 36 matching cards, then adds 24 near the list end or through a keyboard-focusable **Load more** button. Filters still evaluate the complete compact catalog and report the true total.
-- The first nine cards may animate for at most 720ms; every later card is immediately visible. Reduced-motion mode disables card motion completely.
-- Clicking a hosted case starts `/media/` during the same interaction, mounts the player independently, and fetches Prompt/summary detail in parallel. A detail failure cannot block video or the original-source link.
-- Full Prompt/summary search loads only after the search field is focused. Until then, title, author, taxonomy, and tag search remain available locally; there is no search server, and raw search text stays in the browser.
-- Local JPEG posters receive 360px and 720px WebP derivatives during builds, while the original image remains the fallback. New publishing builds generate the same variants automatically.
-- Homepage JSON-LD and `<noscript>` expose the latest 48 cases. Static bilingual archive pages expose the rest in groups of 48, while every case detail page remains independently indexable.
-- Fingerprinted JS/CSS are immutable; HTML and runtime JSON use one-minute shared-cache freshness with stale revalidation. `/media/` redirects use a five-minute shared-cache window, while signed object URLs remain valid for one hour.
-- Hosted video uses two immutable storage tiers: `videos/{id}.mp4` preserves the highest-quality source for rollback, while `play/v1/{id}.mp4` is the site playback copy. `/media/{id}.mp4` stays stable and selects its tier through `VIDEO_S3_PLAYBACK_PREFIX`; the existing X link remains the route to the original post and its highest available presentation.
-- Site playback is capped at a 1280px long edge and about 3Mbps H.264/AAC with faststart. Mirroring prefers the highest native X MP4 that already meets the profile and transcodes only when necessary; publication is blocked until both source and playback objects pass size, duration, codec, faststart, and Range checks.
-- Run `npm run videos:playback:audit` for a read-only inventory, `npm run videos:playback:migrate -- --apply` to populate the versioned playback tier, and `npm run videos:playback:verify` before switching or after a release. Migration reports stay in ignored `.review/` files.
+The public catalog, filters, tutorials, and creator pages work without production credentials. Hosted `/media/` playback requires your own compatible object-storage configuration; original-source links remain available without it. See [developer setup](./docs/DEVELOPMENT.md), the [public collection demo](./docs/PUBLIC_COLLECTION_WORKFLOW.md), and [architecture notes](./docs/ARCHITECTURE.md).
+
+To inspect the reusable import → dedupe → classify → stage flow without accounts, storage, network access, publication, or cost:
+
+```bash
+npm run collection:demo
+```
 
 <!-- build-metrics:start -->
-**Reference build (Node 22.23.1, analytics configuration omitted):** 97.6 kB homepage JavaScript gzip · 9.2 kB / 8.8 kB Chinese / English homepage HTML gzip · 5.2 kB first-page API gzip · 4 kB next-page API gzip · 5.5 kB search response gzip · 51.3 kB local fonts (nonblocking) · 1465 kB server-only index gzip. Run `npm run performance:budget` for static budgets and `npm run performance:browser` against a local production server for browser behavior.
+**Reference build (Node 22.23.1, analytics configuration omitted):** 99 kB homepage JavaScript gzip · 9.2 kB / 8.8 kB Chinese / English homepage HTML gzip · 5.2 kB first-page API gzip · 4 kB next-page API gzip · 5.4 kB search response gzip · 51.3 kB local fonts (nonblocking) · 1465 kB server-only index gzip. Run `npm run performance:budget` for static budgets and `npm run performance:browser` against a local production server for browser behavior.
 <!-- build-metrics:end -->
 
 ## Contribute or report a problem
@@ -164,6 +158,8 @@ Read [CONTRIBUTING.md](./CONTRIBUTING.md), then use the focused form:
 - [Correct, merge, or remove a creator profile](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/issues/new?template=creator-correction.yml)
 - [Show work or suggest a guide](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/discussions)
 
+Maintainers use one public [submission review standard and reply set](./docs/SUBMISSION_REVIEW.md); private scores, review notes, and discovery channels never appear in Issue comments.
+
 ## Releases and growth
 
 [Read the changelog](./CHANGELOG.md) · [Follow releases](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/releases) · [Browse the GitHub catalog](./CATALOG.md)
@@ -172,6 +168,6 @@ Read [CONTRIBUTING.md](./CONTRIBUTING.md), then use the focused form:
 
 ## License and acknowledgements
 
-Code is MIT licensed. Videos, Prompts, names, and other collected material remain subject to their original owners and source-platform terms. This community project is not affiliated with MiniMax.
+Code is MIT licensed. Videos, Prompts, names, and other collected material remain subject to their original owners and source-platform terms; read the [content and rights policy](./docs/CONTENT_POLICY.md). This community project is not affiliated with MiniMax. Report security problems privately through [SECURITY.md](./SECURITY.md) and follow the [Code of Conduct](./CODE_OF_CONDUCT.md).
 
 The product packaging studies strong open libraries such as [awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2); tutorial organization also learns from [MiniMax-H3](https://github.com/MiniMax-AI/MiniMax-H3), [h3.c](https://github.com/antirez/h3.c), [ComfyUI-wiki](https://github.com/602387193c/ComfyUI-wiki), and [OpenMontage](https://github.com/calesthio/OpenMontage). All case data, tutorial structure, visual design, and implementation here are specific to MiniMax H3 Cases & Guides.

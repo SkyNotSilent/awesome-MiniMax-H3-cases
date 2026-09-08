@@ -5,46 +5,37 @@
 # MiniMax H3 Cases & Guides｜案例与实战教程
 
 <!-- project-stats:start -->
-**更完整、更可信的 MiniMax H3 案例与教程库：1788 个可播放视频、628 条完整公开 Prompt、25 篇实用教程。**
+**来源可追溯的 MiniMax H3 案例与教程库：1788 个可播放视频、628 条完整公开 Prompt、25 篇实用教程。**
 <!-- project-stats:end -->
 
 [English](./README.md) · **简体中文**
 
 [![Stars](https://img.shields.io/github/stars/SkyNotSilent/awesome-minimax-h3-cases?style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/stargazers)
-[![Forks](https://img.shields.io/github/forks/SkyNotSilent/awesome-minimax-h3-cases?style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/forks)
-[![Cases](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1788-628-25-340&query=%24.cases&label=cases&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/)
-[![Prompts](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1788-628-25-340&query=%24.completePrompts&label=public%20prompts&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/?prompt=1)
-[![Tutorials](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1788-628-25-340&query=%24.tutorials&label=tutorials&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/tutorials/)
-[![Creators](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1788-628-25-340&query=%24.rankedCreators&label=featured%20creators&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/creators/)
+[![Cases](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1788-628-25-341&query=%24.cases&label=cases&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/)
+[![Prompts](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1788-628-25-341&query=%24.completePrompts&label=public%20prompts&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/?prompt=1)
+[![Tutorials](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1788-628-25-341&query=%24.tutorials&label=tutorials&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/tutorials/)
 [![CI](https://img.shields.io/github/actions/workflow/status/SkyNotSilent/awesome-minimax-h3-cases/ci.yml?style=for-the-badge&label=CI&labelColor=0a0b09)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/actions/workflows/ci.yml)
-[![Release](https://img.shields.io/github/v/release/SkyNotSilent/awesome-minimax-h3-cases?style=for-the-badge&labelColor=0a0b09)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/releases)
 [![License](https://img.shields.io/badge/license-MIT-6ba4ff?style=for-the-badge&labelColor=0a0b09)](./LICENSE)
 
 </div>
 
-[![MiniMax H3 Cases and Guides 中文开场](./docs/screenshots/intro-zh.jpg)](https://h3-field-notes-production.up.railway.app/)
+## 直接开始
 
-<p align="center"><strong>先看真实成片；来源完整公开 Prompt 才按原文展示；再沿着核验过的路线从零跑起来。</strong></p>
+| 浏览案例 | 查找完整 Prompt | 学会制作 H3 视频 | 分享你的作品 |
+| --- | --- | --- | --- |
+| [观看全部案例](https://h3-field-notes-production.up.railway.app/) | [打开 Prompt 集合](https://h3-field-notes-production.up.railway.app/?prompt=1) | [进入实战教程](https://h3-field-notes-production.up.railway.app/tutorials/) | [投稿案例或教程](#投稿纠错与下架) |
+
+<p align="center"><strong>先看真实成片；来源完整公开 Prompt 才按原文展示；再沿着核验过的路线制作自己的视频。</strong></p>
 
 [![MiniMax H3 最近更新条，支持收录日期、时长、Prompt、快速集合、内容、风格与场景筛选](./docs/screenshots/case-library-zh.jpg)](https://h3-field-notes-production.up.railway.app/)
 
-## 直接开始
-
-| 浏览案例 | 只看完整 Prompt | 发现优质创作者 | 从零学教程 | 安装 Agent Skill |
-| --- | --- | --- | --- | --- |
-| [观看全部案例](https://h3-field-notes-production.up.railway.app/) | [打开 Prompt 集合](https://h3-field-notes-production.up.railway.app/?prompt=1) | [打开创作者榜单](https://h3-field-notes-production.up.railway.app/creators/) | [进入教程库](https://h3-field-notes-production.up.railway.app/tutorials/) | [跳到安装命令](#agent-skills) |
-
 MiniMax H3 也常被搜索为 **Hailuo H3**、**Hailuo 3.0**、**海螺 H3** 和 **海螺 3.0**。每条公开案例都可站内播放、保留创作者与原始来源，并明确区分“完整公开 Prompt”和“来源未公开”。本站绝不反推、补写、改写或伪造缺失 Prompt。
 
-## 看清最近一批收录了什么
+### 三种使用方式
 
-**本次新增** 对所有访客都是同一个口径：与该频道最新一条内容同一天（北京时间）收录的全部内容。它每次发布后自动更新，不依赖浏览器记录，也不会因为访客所在时区不同而变化。
-
-- 案例与教程统一支持 **全部、本次新增、近 7 天、近 30 天**；日期条件会与搜索、时长、Prompt、快速集合、内容、风格、场景、目标和硬件筛选取交集。
-- 每张案例卡和教程卡都显示本站收录日期；最近一批里的内容另外显示文字 **新收录**，不只靠颜色表达。
-- 首页顶部的更新条显示最近一次更新的日期与数量，并提供进入本次新增的入口；没有新增时改为最新 48 条入口。
-- 日期视图使用 `added=release|7d|30d`。旧的 `added=unseen`、`added=today` 以及带 `since`/`through` 的个人快照链接都会落到本次新增。
-- 站点不在浏览器里保存已读进度，也没有账号、服务端已读历史或通知订阅；旧版本写入的本地已读键会被忽略。
+- **找灵感：**不用离开案例库，直接播放来源清楚的 H3 成品。
+- **学 Prompt：**只筛选原作者完整公开的逐字 Prompt，并随时回到原始证据。
+- **做作品：**选择新手起步路线，或跟着创作者投稿的实战教程完成一个明确结果。
 
 ## 更快找到值得看的案例
 
@@ -72,19 +63,19 @@ MiniMax H3 也常被搜索为 **Hailuo H3**、**Hailuo 3.0**、**海螺 H3** 和
 [![MiniMax H3 优质创作者动态榜单](./docs/screenshots/creators-zh.png)](https://h3-field-notes-production.up.railway.app/creators/)
 
 <!-- creator-stats:start -->
-动态创作者榜把案例库变成持续复利的发现系统。目前从 **915 位来源明确的 X 作者中筛选出 340 位优质创作者**，可查看综合优质、近期活跃、案例最多、Prompt 贡献、新锐作者和教程作者榜。
+动态创作者榜把案例库变成持续复利的发现系统。目前从 **918 位来源明确的 X、GitHub 与 YouTube 作者中筛选出 341 位优质创作者**，视频作品与教程贡献分别展示，不混合平台互动量。
 <!-- creator-stats:end -->
 
 - 每位作者都有独立主页，聚合可播放案例、完整公开 Prompt 与来源核验教程；
 - 排名只使用本站已经核验并发布的公开内容，不代表 X 官方影响力；
 - 内部监控分、被拒帖子、发现来源和检查频率绝不公开；
-- 可以匿名收藏作者，也可以直接跳转原始 X 主页关注。
+- 可以匿名收藏作者，也可以直接跳转原始 X、GitHub 或 YouTube 主页关注。
 
 ## 按目标或硬件学会 H3
 
 [![MiniMax H3 中文教程工作台](./docs/screenshots/tutorials-zh.png)](https://h3-field-notes-production.up.railway.app/tutorials/)
 
-教程页提供“把 H3 跑起来”“用 H3 做作品”两条同等重要的学习路线。8 篇深度精选补齐原作资源、适用版本、关键步骤、视频章节和已知问题，其余内容明确标为导读。来源核对、社区使用反馈与本站生成实测分开展示。
+教程页先用两个紧凑入口解决第一步选择：没有本地环境就走云端；准备本地运行就按 NVIDIA 或 Apple Silicon 选路线。随后直接展示以成品为目标的实战卡片，明确作者、难度、条件、步骤、完成检查与排错；较短内容继续明确标为导读。来源核对、作者报告与本站生成实测分开展示。
 
 | 你的目标 | 建议入口 |
 | --- | --- |
@@ -99,11 +90,11 @@ MiniMax H3 也常被搜索为 **Hailuo H3**、**Hailuo 3.0**、**海螺 H3** 和
 
 ## Agent Skills
 
-一条命令同时安装到 Codex 与 Claude Code：
+一条命令把三个 Skill 同时安装到 Codex 与 Claude Code：
 
 ```bash
 npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
-  --skill minimax-h3-prompt-library minimax-h3-tutorial-guide \
+  --skill minimax-h3-prompt-library minimax-h3-tutorial-guide minimax-h3-submission-helper \
   --agent codex claude-code
 ```
 
@@ -113,13 +104,14 @@ npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
 | --- | --- | --- |
 | [`minimax-h3-prompt-library`](./agents/skills/minimax-h3-prompt-library/) | 查真实案例；来源完整公开时返回逐字 Prompt | 不生成、不改写、不翻译、不反推 Prompt |
 | [`minimax-h3-tutorial-guide`](./agents/skills/minimax-h3-tutorial-guide/) | 根据系统、GPU、显存、时间和目标选择核验路线 | 不猜命令、版本或兼容性 |
+| [`minimax-h3-submission-helper`](./agents/skills/minimax-h3-submission-helper/) | 把案例或教程材料整理成可提交的 Issue 草稿 | 不声称已经核验、接受或拥有发布权限 |
 
-教程 Skill 的实际输出包含：推荐路线、环境检查、执行计划、成功标准、回退方式与带日期的来源。
+两个读取型 Skill 都带可独立运行的查询脚本，默认读取本站公开目录；网络不可用时明确失败，不生成虚构内容。`npm run skills:install:verify` 会在隔离目录使用仓库自有离线样例验证安装结果。
 
 ## 数据、自动化与可信度
 
 <!-- project-snapshot:start -->
-**当前自动统计：** 1788 个案例 · 28 条编辑精选 · 628 条完整公开 Prompt · 25 篇教程 · 915 位来源作者中的 340 位优质创作者 · 8 篇旗舰教程 · 14 个生态资源 · 内容核验至 2026-09-08。
+**当前自动统计：** 1788 个案例 · 28 条编辑精选 · 628 条完整公开 Prompt · 25 篇教程 · 918 位来源作者中的 341 位优质创作者 · 8 篇旗舰教程 · 14 个生态资源 · 内容核验至 2026-09-08。
 <!-- project-snapshot:end -->
 
 - [`data/project-stats.json`](./data/project-stats.json) 是公开数字的唯一快照；网站与 README 数字过期会让 CI 失败；
@@ -131,23 +123,25 @@ npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
 - 构建会生成中英文案例/教程页、canonical、hreflang、`VideoObject`/`HowTo` JSON-LD、sitemap、OG、[`llms.txt`](./public/llms.txt) 与 [`llms-full.txt`](./public/llms-full.txt)。
 - `npm run screenshots` 会重新构建网站、同步实测构建体积，稳定抓取当前数据对应的中英文开屏与桌面/手机案例库界面，并且只写入渲染结果真正变化的截图。
 
-## 性能架构
+## 本地运行
 
-唯一权威数据源仍是 `data/cases.json`，但生产首页 JS 不再打包完整案例数据。构建会生成轻量 `/data/catalog.json`、每条案例一个 `/data/cases/{id}.json` 详情文件，以及中英文独立搜索索引。轻量目录保留播放地址、原帖地址、封面、筛选字段和 `addedAt`，因此播放与筛选都不需要等待文字详情。
+```bash
+git clone https://github.com/SkyNotSilent/awesome-minimax-h3-cases.git
+cd awesome-minimax-h3-cases
+npm ci
+npm run dev
+```
 
-- 首页先渲染 36 条匹配案例，接近底部或按下可聚焦的“加载更多”按钮时增加 24 条；筛选仍针对完整轻量目录执行，结果总数始终是真实总数。
-- 只有前 9 张卡片允许入场动画，最长 720ms；第 10 张起立即可见。系统启用“减少动态效果”时，卡片动画完全关闭。
-- 点击站内视频时，同一次交互立即发起 `/media/` 请求并挂载播放器，同时并行加载 Prompt 与摘要；详情失败不影响视频和原帖入口。
-- 用户第一次聚焦搜索框时才加载完整 Prompt/摘要搜索索引；此前标题、作者、标签和分类等基础搜索仍在本地可用，不建设搜索后端，原始搜索文本不会离开浏览器。
-- 本地 JPG 封面在构建时自动生成 360px、720px WebP，原图继续作为兼容与 SEO 兜底；后续发布新案例也走同一管线。
-- 首页 JSON-LD 与 `<noscript>` 只列最新 48 条；其余案例按每页 48 条生成中英文静态归档，全部案例详情页仍可独立索引。
-- 带哈希的 JS/CSS 永久缓存；HTML 与运行时 JSON 使用 1 分钟共享缓存和过期继续服务；`/media/` 跳转共享缓存 5 分钟，而对象签名保持 1 小时有效。
-- 站内视频使用两层不可变存储：`videos/{id}.mp4` 永久保留最高质量源文件和回滚能力，`play/v1/{id}.mp4` 保存站内播放版；`/media/{id}.mp4` 地址不变，通过 `VIDEO_S3_PLAYBACK_PREFIX` 选择存储层，现有 X 原帖入口继续承担高清观看需求。
-- 站内播放版限制长边 1280、约 3Mbps，统一使用带 faststart 的 H.264/AAC。镜像流程优先选择已经符合标准的最高质量 X 原生 MP4，只有必要时才转码；源文件和播放版必须通过大小、时长、编码、faststart 与 Range 校验后才允许发布。
-- `npm run videos:playback:audit` 执行只读清点，`npm run videos:playback:migrate -- --apply` 生成版本化播放层，切换前后运行 `npm run videos:playback:verify`；迁移报告只保存在被忽略的 `.review/`。
+公开案例数据、筛选、教程和创作者页面无需生产凭据即可运行。站内 `/media/` 播放需要配置自己的兼容对象存储；没有存储时仍可打开原始来源。详细说明见[开发环境](./docs/DEVELOPMENT.md)、[公开采集试运行](./docs/PUBLIC_COLLECTION_WORKFLOW.md)和[架构说明](./docs/ARCHITECTURE.md)。
+
+无需账号、密钥、存储、网络或费用，即可检查“导入 → 去重 → 分类 → 暂存”的公共流程：
+
+```bash
+npm run collection:demo
+```
 
 <!-- build-metrics:start -->
-**参考构建（Node 22.23.1，不含分析服务配置）：** 首页 JavaScript gzip 97.6 kB · 中文 / 英文首页 HTML gzip 9.2 kB / 8.8 kB · 首批 API gzip 5.2 kB · 下一页 API gzip 4 kB · 搜索响应 gzip 5.5 kB · 本地非阻塞字体 51.3 kB · 仅服务端索引 gzip 1465 kB。静态预算运行 `npm run performance:budget`；启动本地生产服务后运行 `npm run performance:browser` 验证浏览器行为。
+**参考构建（Node 22.23.1，不含分析服务配置）：** 首页 JavaScript gzip 99 kB · 中文 / 英文首页 HTML gzip 9.2 kB / 8.8 kB · 首批 API gzip 5.2 kB · 下一页 API gzip 4 kB · 搜索响应 gzip 5.4 kB · 本地非阻塞字体 51.3 kB · 仅服务端索引 gzip 1465 kB。静态预算运行 `npm run performance:budget`；启动本地生产服务后运行 `npm run performance:browser` 验证浏览器行为。
 <!-- build-metrics:end -->
 
 ## 投稿、纠错与下架
@@ -164,6 +158,8 @@ npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
 - [纠正、合并或下架创作者主页](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/issues/new?template=creator-correction.yml)
 - [展示作品或建议教程](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/discussions)
 
+维护者统一使用公开的[投稿审核标准与回复模板](./docs/SUBMISSION_REVIEW.md)；内部评分、私人备注和发现渠道不会出现在 Issue 评论里。
+
 ## Release 与增长
 
 [查看 Changelog](./CHANGELOG.md) · [关注 Releases](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/releases) · [浏览 GitHub 案例目录](./CATALOG.md)
@@ -172,6 +168,6 @@ npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
 
 ## License 与致谢
 
-代码使用 MIT License。视频、Prompt、姓名及其他收录内容仍受原作者和来源平台条款约束。本社区项目与 MiniMax 无隶属关系。
+代码使用 MIT License。视频、Prompt、姓名及其他收录内容仍受原作者和来源平台条款约束，详见[内容与权利边界](./docs/CONTENT_POLICY.md)。本社区项目与 MiniMax 无隶属关系。安全问题请通过 [SECURITY.md](./SECURITY.md) 私下报告，社区参与遵循[行为准则](./CODE_OF_CONDUCT.md)。
 
 产品包装参考了优秀开放案例库 [awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2)；教程组织也参考了 [MiniMax-H3](https://github.com/MiniMax-AI/MiniMax-H3)、[h3.c](https://github.com/antirez/h3.c)、[ComfyUI-wiki](https://github.com/602387193c/ComfyUI-wiki) 与 [OpenMontage](https://github.com/calesthio/OpenMontage)。本站案例数据、教程结构、视觉设计和实现均围绕 MiniMax H3 Cases & Guides 独立完成。
