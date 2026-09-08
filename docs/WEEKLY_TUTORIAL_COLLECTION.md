@@ -4,7 +4,7 @@ Run this workflow once per week, independently from the daily video-case collect
 
 ## Discover
 
-Check open tutorial-submission Issues first, including author corrections on previously published submissions. Original-author submissions use the same evidence standards as discovered tutorials; popularity is not an entry requirement. Verify the submitter against the original project/channel before adding public `contribution.issueUrl` and `contribution.authorUrl`. These fields enable the 14-day New from creators section (three slots, one per author, newest first); never reset `addedAt` to renew a slot. Keep ordinary third-party discoveries unmarked. After publication, verify both localized pages and prepare an author acknowledgement with the live links. Recommendations stop automatically after the window or while an entry needs review; permanent attribution remains.
+Check open tutorial-submission Issues first, including author corrections on previously published submissions. Original-author submissions use the same evidence standards as discovered tutorials; popularity is not an entry requirement. Verify the submitter against the original project/channel before adding public `contribution.issueUrl` and `contribution.authorUrl`. These fields enable the 14-day New from creators section (three slots, one per author, newest first); never reset `addedAt` to renew a slot. Keep ordinary third-party discoveries unmarked. After publication, verify both localized pages, run `npm run submission:reply -- --type tutorial --id <slug>`, review the bilingual links, and only then post the acknowledgement. Recommendations stop automatically after the window or while an entry needs review; permanent attribution remains.
 
 Use the existing signed-in Mac browser to search X, YouTube, Reddit, GitHub, Hugging Face and official documentation for recent, high-signal MiniMax H3 / Hailuo H3 tutorials. Combine the model name with `ComfyUI`, `setup`, `deploy`, `Prompt`, `Agent Skill`, `Turbo`, `LoRA`, `long video`, `Motion Context`, `audio`, `training`, `Mac`, and their Chinese equivalents. Popularity is relative to the language and topic; never impose a fixed like threshold.
 
@@ -23,11 +23,19 @@ A tutorial is publishable only when all checks are true:
 7. The poster is public, appropriate, locally cached under `public/tutorial-posters/`, and usable as a square crop. Use a branded fallback when necessary.
 8. Author, source URL, publication date, original language, verification date, and any visible engagement snapshot are factual. Omit unavailable metrics.
 
+Assign one reader-facing `guideType` before publication:
+
+- `setup`: environment choice, installation, file placement, checkpoints, completion criteria, and relevant failures.
+- `project`: a visible result, required inputs, repeatable operations, important parameters, and result comparison. It does not need unrelated setup commands.
+- `reference`: a sourced explanation of a tool or method, its intended use, limitations, and original material. Never present it as a complete tutorial.
+
+When a guide contains shell input or file locations, preserve `commands[]` for compatibility and add a matching `commandItems[]` entry for each value. Use `kind: command` only for text the reader should execute and `kind: path` for filesystem locations. Add the applicable platform when known. GitHub and YouTube creators are eligible for the same attribution and creator profile treatment as X authors, but engagement from different platforms is never combined into an influence score.
+
 Deduplicate by normalized platform URL (X status ID, YouTube video ID, Reddit thread ID, or canonical documentation/repository URL) and tutorial slug. Retain documentation anchors when they identify different lessons. A source deletion never deletes an already published tutorial automatically; instead record the issue for review.
 
 ## Publish
 
-After browser verification, run `npm run tutorials:check`. When every intended candidate is ready, run `npm run tutorials:publish`; the publish step assigns ISO `addedAt` once when a guide first enters the public catalog, and later re-verification must preserve it. Run `npm run sync:resource-metrics` to refresh dated public GitHub snapshots. Then run `npm run sync:stats`, run `npm run screenshots` when cards or public counts changed, run `npm run validate:data`, tests, lint, `npm run skills:verify`, the production build, and the privacy check. Commit only public data, posters, and code. Push to the existing GitHub repository, wait for Railway, and verify `/tutorials/{slug}/` and `/en/tutorials/{slug}/` return 200.
+After browser verification, run `npm run tutorials:check`. When every intended candidate is ready, run `npm run tutorials:publish`; the publish step assigns ISO `addedAt` once when a guide first enters the public catalog, and later re-verification must preserve it. Run `npm run sync:resource-metrics` to refresh dated public GitHub snapshots. Then run `npm run sync:stats`, run `npm run screenshots` when cards or representative content changed, run `npm run validate:data`, tests, lint, `npm run skills:verify`, the production build, and the privacy check. Commit only public data, posters, and code. Push to the existing GitHub repository, wait for Railway, and verify `/tutorials/{slug}/` and `/en/tutorials/{slug}/` return 200. A source check, author report, or successful build is not permission to label the tutorial "site tested"; that label requires a real generation check and its public evidence URL.
 
 If X is logged out, a source is ambiguous, a command cannot be verified, translation is incomplete, or the poster fails, leave the candidate private with a factual blocker. Never fabricate a tutorial or a successful deployment.
 

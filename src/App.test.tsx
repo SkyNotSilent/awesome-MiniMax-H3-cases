@@ -44,7 +44,7 @@ const latestUpdateSummary = [
   projectStats.latestUpdate.tutorialsAdded ? `${projectStats.latestUpdate.tutorialsAdded} 篇教程` : '',
 ].filter(Boolean).slice(0, 2).join(' · ')
 const latestTutorials = tutorialGuides.filter(item => matchesAddedDate(item.addedAt, 'release', latestReleaseWindow(tutorialGuides.map(guide => guide.addedAt).sort().at(-1)) ?? {}))
-const deepTutorials = tutorialGuides.filter(item => item.depth === 'deep' && item.evidence.status === 'active')
+const projectTutorials = tutorialGuides.filter(item => item.guideType === 'project' && item.evidence.status === 'active')
 const [, latestMonth, latestDay] = projectStats.latestUpdate.publishedAt.split('-').map(Number)
 const latestUpdateDate = `${latestMonth}月${latestDay}日`
 
@@ -69,14 +69,16 @@ afterEach(() => {
 })
 
 describe('case-first routes', () => {
-  it('shows author submissions ahead of tutorial lists and links to the submission form', () => {
+  it('starts with two beginner routes and features an author submission once in practical tutorials', () => {
     vi.spyOn(Date, 'now').mockReturnValue(Date.parse('2026-09-09T00:00:00Z'))
     renderAt('/tutorials/')
-    const spotlight = screen.getByRole('region', { name: '新投稿推荐' })
-    expect(within(spotlight).getByRole('link', { name: 'imbutus' })).toHaveAttribute('href', 'https://github.com/imbutus')
-    expect(within(spotlight).getByRole('link', { name: '开始学习' })).toHaveAttribute('href', '/tutorials/minimax-director-timeline/')
+    const start = screen.getByRole('region', { name: '第一次使用 H3' })
+    expect(within(start).getByRole('link', { name: /走云端路线/ })).toHaveAttribute('href', '/tutorials/rent-gpu-comfyui/')
+    expect(within(start).getByRole('link', { name: /NVIDIA/ })).toHaveAttribute('href', '/tutorials/official-deployment/')
+    expect(within(start).getByRole('link', { name: /Apple Silicon/ })).toHaveAttribute('href', '/tutorials/mac-native/')
+    expect(screen.getAllByRole('heading', { name: 'MiniMax Director：用时间轴制作多镜头有声视频' })).toHaveLength(1)
+    expect(screen.getByText('作者新投稿')).toBeInTheDocument()
     expect(screen.getByRole('link', { name: '投稿教程' })).toHaveAttribute('href', expect.stringContaining('template=tutorial-submission.yml'))
-    expect(document.querySelector('.tutorial-spotlight')!.compareDocumentPosition(document.querySelector('.foundation-route-grid')!) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
     vi.restoreAllMocks()
   })
   it('keeps English author promotion isolated and retains attribution on the detail page', () => {
@@ -556,15 +558,14 @@ describe('case-first routes', () => {
 
   it('shares hardware filters across both learning tracks and retains the chosen track on refresh', () => {
     const view = renderAt('/tutorials/?track=run')
-    expect(document.querySelectorAll('.foundation-route-card')).toHaveLength(deepTutorials.filter(item => item.learningTrack === 'run').length)
+    expect(document.querySelectorAll('.foundation-route-card')).toHaveLength(projectTutorials.filter(item => item.learningTrack === 'run').length)
     expect(screen.queryByRole('heading', { name: 'H3 Prompt：把镜头、对白与声音写清楚' })).not.toBeInTheDocument()
     fireEvent.click(screen.getByRole('button', { name: 'Apple Silicon' }))
-    expect(screen.getAllByRole('link', { name: '开始学习' })).toHaveLength(1)
-    expect(screen.getByRole('heading', { name: 'Mac 从零运行 H3：纯 C + Metal' })).toBeInTheDocument()
+    expect(within(screen.getByRole('region', { name: '第一次使用 H3' })).getByRole('link', { name: /Apple Silicon/ })).toBeInTheDocument()
     expect(window.location.search).toContain('track=run')
     view.unmount()
     renderAt('/tutorials/?track=create')
-    expect(document.querySelectorAll('.foundation-route-card')).toHaveLength(deepTutorials.filter(item => item.learningTrack === 'create').length)
+    expect(document.querySelectorAll('.foundation-route-card')).toHaveLength(projectTutorials.filter(item => item.learningTrack === 'create').length)
   })
 
   it('shows dated source evidence, chapters and case links without claiming a generation test', () => {
@@ -582,13 +583,12 @@ describe('case-first routes', () => {
   it('publishes Tutorials and FAQ as standalone pages', () => {
     const tutorials = renderAt('/tutorials/')
     expect(screen.getByRole('heading', { name: 'MiniMax H3 教程' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: '深度精选' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '第一次使用，从这里开始' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '直接做一个作品' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '更多教程导读' })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'ComfyUI 从零到第一条 H3 带声视频' })).toHaveAttribute(
-      'href', '/tutorials/official-deployment/',
-    )
-    expect(document.querySelectorAll('.foundation-route-card')).toHaveLength(deepTutorials.length)
-    expect(screen.getAllByRole('link', { name: /看原教程/ })).toHaveLength(16)
+    expect(within(screen.getByRole('region', { name: '第一次使用 H3' })).getByRole('link', { name: /NVIDIA/ })).toHaveAttribute('href', '/tutorials/official-deployment/')
+    expect(document.querySelectorAll('.foundation-route-card')).toHaveLength(projectTutorials.length)
+    expect(screen.getAllByRole('link', { name: /看原教程/ }).length).toBeGreaterThan(10)
     expect(screen.queryByRole('heading', { name: '先看 MiniMax H3 的真实效果。' })).not.toBeInTheDocument()
     tutorials.unmount()
 
@@ -693,9 +693,9 @@ describe('case-first routes', () => {
 
     expect(releaseChip()).toHaveAttribute('aria-pressed', 'true')
     expect(releaseChip()).toHaveTextContent(`本次新增${latestTutorials.length}`)
-    expect(screen.getByRole('heading', { name: '深度精选' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '直接做一个作品' })).toBeInTheDocument()
     expect(screen.getAllByText('新收录')).toHaveLength(latestTutorials.length)
-    expect(document.querySelectorAll('.foundation-route-card')).toHaveLength(latestTutorials.filter(item => item.depth === 'deep' && item.evidence.status === 'active').length)
+    expect(document.querySelectorAll('.foundation-route-card')).toHaveLength(latestTutorials.filter(item => item.guideType === 'project' && item.evidence.status === 'active').length)
     expect(window.location.search).toBe('?added=release')
     expect(window.localStorage.getItem('minimax-h3-tutorials-seen-through-v2')).toBeNull()
 
@@ -743,6 +743,18 @@ describe('case-first routes', () => {
     expect(screen.getByRole('heading', { name: '故障排查' })).toBeInTheDocument()
     expect(screen.getAllByRole('button', { name: /复制命令/ }).length).toBeGreaterThan(0)
     expect(screen.getByRole('heading', { name: '相关工具与资源' })).toBeInTheDocument()
+  })
+
+  it('distinguishes terminal commands from file paths and embeds an original walkthrough', () => {
+    renderAt('/tutorials/official-deployment/')
+    expect(screen.getAllByText('文件路径').length).toBeGreaterThan(0)
+    expect(screen.getAllByRole('button', { name: /复制路径/ }).length).toBeGreaterThan(0)
+    expect(screen.getByRole('button', { name: /复制命令: python --version/ })).toBeInTheDocument()
+
+    cleanup()
+    renderAt('/tutorials/minimax-director-timeline/')
+    expect(screen.getByRole('heading', { name: '原作者视频演示' })).toBeInTheDocument()
+    expect(screen.getByTitle(/视频演示/)).toHaveAttribute('src', 'https://www.youtube-nocookie.com/embed/XIKDfvoFcCY')
   })
 
   it('copies an AI task package and falls back to a manual text field', async () => {

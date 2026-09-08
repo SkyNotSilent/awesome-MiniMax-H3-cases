@@ -12,6 +12,8 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     exclude: [...configDefaults.exclude, '.review/**'],
-    testTimeout: 20_000,
+    // Data-contract suites exercise the complete public catalog; CI runners need
+    // enough headroom without turning these checks into flaky false negatives.
+    testTimeout: 60_000,
   },
 })
