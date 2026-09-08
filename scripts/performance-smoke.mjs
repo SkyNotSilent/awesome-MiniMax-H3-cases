@@ -1,5 +1,6 @@
 /* global document, getComputedStyle, innerWidth, MutationObserver, window */
 import { chromium, devices } from 'playwright'
+import { createUntrackedContext } from './browser-context.mjs'
 
 const baseUrl = (process.env.PERF_BASE_URL || 'http://127.0.0.1:4173').replace(/\/$/, '')
 
@@ -16,7 +17,7 @@ async function ready(page, path = '/') {
 }
 
 async function checkDesktop(browser) {
-  const context = await browser.newContext({ viewport: { width: 1440, height: 1000 } })
+  const context = await createUntrackedContext(browser, { viewport: { width: 1440, height: 1000 } })
   await context.addInitScript(() => {
     localStorage.setItem('minimax-h3-language', 'zh')
     window.IntersectionObserver = class {
@@ -144,7 +145,7 @@ async function checkDesktop(browser) {
 }
 
 async function checkAutomaticLoading(browser) {
-  const context = await browser.newContext({ viewport: { width: 1440, height: 1000 } })
+  const context = await createUntrackedContext(browser, { viewport: { width: 1440, height: 1000 } })
   await context.addInitScript(() => {
     localStorage.setItem('minimax-h3-language', 'zh')
   })
@@ -159,7 +160,7 @@ async function checkAutomaticLoading(browser) {
 }
 
 async function checkCombinedLoading(browser) {
-  const context = await browser.newContext({ viewport: { width: 1440, height: 1000 } })
+  const context = await createUntrackedContext(browser, { viewport: { width: 1440, height: 1000 } })
   await context.addInitScript(() => {
     localStorage.setItem('minimax-h3-language', 'zh')
   })
@@ -174,7 +175,7 @@ async function checkCombinedLoading(browser) {
 }
 
 async function checkMobile(browser) {
-  const context = await browser.newContext({ ...devices['iPhone 13'] })
+  const context = await createUntrackedContext(browser, { ...devices['iPhone 13'] })
   await context.addInitScript(() => {
     localStorage.setItem('minimax-h3-language', 'zh')
   })
@@ -195,7 +196,7 @@ async function checkFirstVisitLayout(browser) {
   const measurements = {}
 
   for (const budget of budgets) {
-    const context = await browser.newContext({ viewport: budget.viewport })
+    const context = await createUntrackedContext(browser, { viewport: budget.viewport })
     await context.addInitScript(() => localStorage.setItem('minimax-h3-language', 'zh'))
     const page = await context.newPage()
     await ready(page)
@@ -224,7 +225,7 @@ async function checkLatestRelease(browser) {
   const expectedCount = summary?.counts?.cases ?? 0
   if (!expectedCount) throw new Error('The catalog summary reports an empty latest release.')
 
-  const context = await browser.newContext({ viewport: { width: 1440, height: 600 } })
+  const context = await createUntrackedContext(browser, { viewport: { width: 1440, height: 600 } })
   await context.addInitScript(() => localStorage.setItem('minimax-h3-language', 'zh'))
   const page = await context.newPage()
   await ready(page)

@@ -4,6 +4,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { promisify } from 'node:util'
 import { chromium } from 'playwright'
+import { createUntrackedContext } from './browser-context.mjs'
 import sharp from 'sharp'
 import { readmeScreenshotFiles } from './readme-screenshot-files.mjs'
 
@@ -205,7 +206,7 @@ async function captureSkillOutput(browser) {
   const guide = guides.find((item) => item.id === 'mac-native')
   if (!guide) throw new Error('mac-native guide is missing')
 
-  const context = await browser.newContext({ viewport: { width: 1280, height: 780 }, deviceScaleFactor: 1 })
+  const context = await createUntrackedContext(browser, { viewport: { width: 1280, height: 780 }, deviceScaleFactor: 1 })
   const page = await context.newPage()
   await page.setContent(`<!doctype html>
     <html><head><meta charset="utf-8"><style>
@@ -266,7 +267,7 @@ try {
   }
 
   browser = await chromium.launch({ headless: true })
-  const desktop = await browser.newContext({
+  const desktop = await createUntrackedContext(browser, {
     viewport: { width: 1440, height: 1000 },
     deviceScaleFactor: 1,
     reducedMotion: 'reduce',
@@ -328,7 +329,7 @@ try {
   await verifyPage(page, '/en/creators/', 'en', 'Follow the people who keep making.')
   await writeScreenshotIfChanged(page, 'creators-en.png', { type: 'png' })
 
-  const mobile = await browser.newContext({
+  const mobile = await createUntrackedContext(browser, {
     viewport: { width: 390, height: 844 },
     deviceScaleFactor: 1,
     reducedMotion: 'reduce',
