@@ -19,7 +19,21 @@ const websiteId = import.meta.env.VITE_UMAMI_WEBSITE_ID
 const enabled = import.meta.env.MODE !== 'test' && Boolean(scriptUrl) && Boolean(websiteId)
 const pending: Array<[AnalyticsEvent, AnalyticsProps | undefined]> = []
 
+const isOptedOut = () => {
+  const requested = new URLSearchParams(window.location.search).get('analytics') === 'off'
+  try {
+    if (requested) localStorage.setItem('umami.disabled', '1')
+    return requested || localStorage.getItem('umami.disabled') === '1'
+  } catch {
+    return requested
+  }
+}
+
 const flushPending = () => {
+  if (isOptedOut()) {
+    pending.length = 0
+    return
+  }
   while (pending.length > 0) {
     const [event, props] = pending.shift()!
     window.umami?.track(event, props)
@@ -27,7 +41,7 @@ const flushPending = () => {
 }
 
 export const track = (event: AnalyticsEvent, props?: AnalyticsProps) => {
-  if (!enabled) return
+  if (isOptedOut() || !enabled) return
   try {
     if (window.umami?.track) {
       window.umami.track(event, props)
@@ -49,7 +63,7 @@ export const outboundFromEventTarget = (target: EventTarget | null): AnalyticsPr
 }
 
 export const initAnalytics = () => {
-  if (!enabled || !scriptUrl || !websiteId) return
+  if (isOptedOut() || !enabled || !scriptUrl || !websiteId) return
   if (document.querySelector(`script[data-website-id='${websiteId}']`)) return
   const script = document.createElement('script')
   script.defer = true
