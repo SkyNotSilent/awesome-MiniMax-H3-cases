@@ -16,6 +16,7 @@
     "promote": "node scripts/promote-candidates.mjs",
     "cost": "node scripts/estimate-cost.mjs",
     "validate:data": "node scripts/validate-data.mjs",
+    "check:nanoid-advisory": "node scripts/check-nanoid-advisory.mjs",
     "catalog": "node scripts/build-catalog.mjs",
     "discovery": "node scripts/build-discovery-files.mjs",
     "sync:external": "node scripts/sync-external-catalog.mjs",
@@ -46,8 +47,5 @@
     "jsdom": "latest",
     "typescript-eslint": "latest",
     "vitest": "latest"
-  },
-  "overrides": {
-    "nanoid": "3.3.18"
   }
 }
