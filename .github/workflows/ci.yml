@@ -18,6 +18,7 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - run: npm run check:nanoid-advisory
       - run: npm test
       - run: npm run lint
       - run: npm run validate:data
