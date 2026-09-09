@@ -3505,8 +3505,8 @@
     "contentType": "community",
     "category": "long-video",
     "title": {
-      "zh": "4070 12GB：5 秒分块续接 13 秒角色舞蹈",
-      "en": "4070 12GB: chain three five-second chunks into a character dance"
+      "zh": "4070 12GB：三段约 5 秒续接成 13 秒角色舞蹈",
+      "en": "4070 12GB: chain three roughly 5-second chunks into a 13-second character dance"
     },
     "outcome": {
       "zh": "在单次 13 秒无法生成时，用 Turbo 8 步与 Motion Context 分块完成。",
@@ -3541,7 +3541,7 @@
         "用 Motion Context 续接并检查动作、声音与身份边界。"
       ],
       "en": [
-        "Split the longer motion into roughly five-second sections.",
+        "Split the longer motion into three roughly five-second sections.",
         "Use Ref2VA for character and motion reference with eight-step Turbo.",
         "Chain with Motion Context and inspect motion, audio, and identity at every join."
       ]
