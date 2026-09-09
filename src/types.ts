@@ -165,7 +165,7 @@ export interface TutorialGuide {
   applicableVersions?: string[]
   materialsNote?: LocalizedText
   learningResources?: Array<{ label: LocalizedText; url: string; kind: 'workflow' | 'models' | 'material' | 'prompt' | 'demo' | 'documentation' }>
-  chapters?: Array<{ title: LocalizedText; url: string; seconds: number }>
+  chapters?: Array<{ title: LocalizedText; url: string; urlZh?: string; seconds: number }>
   communityFeedback?: Array<{ summary: LocalizedText; url: string; kind: 'usage' | 'issue' | 'fix' | 'praise' }>
   evidence: { status: 'active' | 'needs-review'; basis?: 'official' | 'author-docs' | 'community'; sourceCheckedAt?: string; communityReviewedAt?: string; siteTestedAt?: string; siteTestUrl?: string }
   relatedCases?: Array<{ id: string; title: LocalizedText; relationship: 'example' | 'technique' }>
@@ -180,7 +180,7 @@ export interface TutorialGuide {
   prerequisites: LocalizedList
   steps: LocalizedList
   commands: string[]
-  commandItems?: Array<{ kind: 'command' | 'path'; value: string; platform?: 'shell' | 'windows' | 'macos' | 'linux' }>
+  commandItems?: Array<{ kind: 'command' | 'path'; value: string; platform?: 'shell' | 'windows' | 'macos' | 'linux'; cwd?: string }>
   checks?: LocalizedList
   caveats: LocalizedList
   posterUrl: string
@@ -190,6 +190,7 @@ export interface TutorialGuide {
     platform: 'docs' | 'github' | 'x' | 'youtube' | 'reddit' | 'huggingface'
     url: string
     author: string
+    authorProfileUrl?: string
     handle?: string
     publishedAt?: string
     originalLanguage: 'zh' | 'en' | 'ja' | 'other'

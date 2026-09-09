@@ -73,6 +73,15 @@ export function tutorialContractErrors(value) {
   visit(value, tutorialSchema, 'tutorial')
   if (value?.contribution && value.contentType !== 'community') errors.push('tutorial.contribution: community tutorial required')
   if (!tutorialSourceKey(value?.source ?? {})) errors.push('tutorial.source: platform and URL must match')
+  if (value?.source?.authorProfileUrl) {
+    try {
+      const profile = new URL(value.source.authorProfileUrl)
+      const host = profile.hostname.replace(/^www\./, '')
+      if (!['x.com', 'github.com', 'youtube.com'].includes(host)
+        || !(host === 'youtube.com' ? /^\/(?:@[\w.-]+|channel\/[\w-]+)\/?$/ : /^\/[\w.-]+\/?$/).test(profile.pathname)
+        || profile.search || profile.hash) errors.push('tutorial.source.authorProfileUrl: supported author profile required')
+    } catch { errors.push('tutorial.source.authorProfileUrl: invalid profile') }
+  }
   if (['x', 'youtube', 'reddit'].includes(value?.source?.platform) && !value.source.publishedAt) errors.push('tutorial.source.publishedAt: required')
   if (value?.depth === 'deep') {
     for (const field of ['recommendation', 'cost', 'applicableVersions', 'learningResources', 'checks', 'expectedResult', 'troubleshooting']) {
@@ -86,8 +95,16 @@ export function tutorialContractErrors(value) {
   if (Array.isArray(value?.commandItems)) {
     const typedValues = value.commandItems.map((item) => item.value)
     if (JSON.stringify(typedValues) !== JSON.stringify(value.commands ?? [])) errors.push('tutorial.commandItems: values and order must match commands')
+    for (const item of value.commandItems) {
+      if (item.kind === 'path' && item.cwd) errors.push('tutorial.commandItems: cwd applies to commands only')
+      if (item.kind === 'command' && /^(?:python(?:3)? (?:-m pip install -r|main\.py)|\.\/h3|make(?: |$))/.test(item.value) && !item.cwd) errors.push('tutorial.commandItems: working directory required for relative command')
+    }
   }
   for (const chapter of Array.isArray(value?.chapters) ? value.chapters : []) {
+    if (chapter.urlZh) {
+      if (!tutorialSourceKey({ platform: 'youtube', url: chapter.urlZh })) errors.push('tutorial.chapters.urlZh: valid YouTube URL required')
+      try { if (Number(new URL(chapter.urlZh).searchParams.get('t')) !== chapter.seconds) errors.push('tutorial.chapters.urlZh: timestamp mismatch') } catch { /* schema reports invalid URL */ }
+    }
     if (!tutorialSourceKey({ platform: 'youtube', url: chapter.url })) errors.push('tutorial.chapters: valid YouTube URL required')
     try { if (Number(new URL(chapter.url).searchParams.get('t')) !== chapter.seconds) errors.push('tutorial.chapters: timestamp mismatch') } catch { /* URL validation above reports malformed links. */ }
   }

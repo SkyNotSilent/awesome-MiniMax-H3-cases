@@ -9,10 +9,10 @@ version: 0.2.1
 Select the safest source-checked path from the public tutorial catalog and explain which ecosystem projects support it. The packaged query client works outside this repository:
 
 ```bash
-node scripts/query.mjs --hardware "apple silicon" --goal "first video"
+node <installed-skill-directory>/scripts/query.mjs --hardware "apple silicon" --goal "first video"
 ```
 
-It uses `H3_LIBRARY_URL` when configured and otherwise reads the official hosted catalog. If the network or catalog is unavailable, say so and do not invent a route. Inside the repository, `data/tutorial-guides.json` and `data/tutorials.json` remain the publishing sources of truth.
+Resolve the script relative to this installed skill directory, not the user's project. It uses `H3_LIBRARY_URL` when configured and otherwise reads the official hosted `/data/tutorial-guides.v2.json` catalog. The schema version and content hash identify the public snapshot. Network failures, invalid payloads, and unsupported versions are lookup errors, not zero matches. Never silently substitute fixtures. Inside the repository, `data/tutorial-guides.json` and `data/tutorials.json` remain the publishing sources of truth.
 
 ## Selection workflow
 

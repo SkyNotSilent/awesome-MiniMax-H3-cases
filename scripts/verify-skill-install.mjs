@@ -11,6 +11,7 @@ try {
   const tutorialSkill = join(target, 'minimax-h3-tutorial-guide')
   await cp(resolve(root, 'agents/skills/minimax-h3-prompt-library'), promptSkill, { recursive: true })
   await cp(resolve(root, 'agents/skills/minimax-h3-tutorial-guide'), tutorialSkill, { recursive: true })
+  await cp(resolve(root, 'agents/skills/minimax-h3-submission-helper'), join(target, 'minimax-h3-submission-helper'), { recursive: true })
 
   const promptResult = JSON.parse(execFileSync(process.execPath, ['scripts/query.mjs', 'city', '--fixture', 'fixtures'], { cwd: promptSkill, encoding: 'utf8' }))
   if (promptResult.matches?.[0]?.publicPrompt !== 'Repository-owned fixture prompt for offline Skill verification.') throw new Error('Installed Prompt Skill failed its offline query.')
@@ -18,7 +19,7 @@ try {
   const tutorialResult = JSON.parse(execFileSync(process.execPath, ['scripts/query.mjs', '--hardware', 'apple silicon', '--goal', 'mac', '--fixture', 'fixtures/tutorial-guides.json'], { cwd: tutorialSkill, encoding: 'utf8' }))
   if (tutorialResult.matches?.[0]?.id !== 'skill-tutorial-sample') throw new Error('Installed tutorial Skill failed its offline query.')
 
-  console.log('Verified both data-reading Skills from an isolated installation directory.')
+  console.log('Copied all three Skills and verified both data-reading clients from an isolated directory (offline fixture check, not a CLI installation test).')
 } finally {
   await rm(target, { recursive: true, force: true })
 }

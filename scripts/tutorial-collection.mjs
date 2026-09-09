@@ -4,6 +4,7 @@ import { pathToFileURL } from 'node:url'
 
 import { projectTutorial, tutorialContractErrors, tutorialSourceKey } from './tutorial-contract.mjs'
 import { acquirePublishLock, writeJsonAtomic } from './review-paths.mjs'
+import { ensureFeedbackDraft } from './submission-feedback.mjs'
 
 export const tutorialCategories = new Set(['getting-started', 'comfyui', 'prompt', 'acceleration', 'long-video', 'audio', 'training'])
 const requiredChecks = ['originalAuthor', 'targetsH3', 'stepsExecutable', 'commandsVerified', 'bilingualComplete', 'posterCached', 'sourceActive']
@@ -89,6 +90,7 @@ async function runCli() {
   try {
     const candidates = JSON.parse(await readFile(ledgerPath, 'utf8'))
     const published = JSON.parse(await readFile(publicPath, 'utf8'))
+    if (publish) for (const item of published) await ensureFeedbackDraft(root, 'tutorial', item)
     const { ready: structurallyReady, blocked } = partitionCandidates(candidates, published)
     const ready = []
     for (const candidate of structurallyReady) {
@@ -100,6 +102,7 @@ async function runCli() {
     if (publish && selected.length) {
       const publicItems = selected.map(candidate => toPublicTutorial(candidate, new Date().toISOString()))
       await writeJsonAtomic(publicPath, [...published, ...publicItems])
+      for (const item of publicItems) await ensureFeedbackDraft(root, 'tutorial', item)
       const selectedIds = new Set(selected.map((item) => item.id))
       const nextLedger = [
         ...candidates.filter((item) => !selectedIds.has(item.id)),

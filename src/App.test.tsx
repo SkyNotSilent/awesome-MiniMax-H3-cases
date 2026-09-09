@@ -558,7 +558,7 @@ describe('case-first routes', () => {
 
   it('shares hardware filters across both learning tracks and retains the chosen track on refresh', () => {
     const view = renderAt('/tutorials/?track=run')
-    expect(document.querySelectorAll('.foundation-route-card')).toHaveLength(projectTutorials.filter(item => item.learningTrack === 'run').length)
+    expect(document.querySelectorAll('.foundation-route-card')).toHaveLength(tutorialGuides.filter(item => ['setup', 'project'].includes(item.guideType) && item.learningTrack === 'run' && item.evidence.status === 'active').length)
     expect(screen.queryByRole('heading', { name: 'H3 Prompt：把镜头、对白与声音写清楚' })).not.toBeInTheDocument()
     fireEvent.click(screen.getByRole('button', { name: 'Apple Silicon' }))
     expect(within(screen.getByRole('region', { name: '第一次使用 H3' })).getByRole('link', { name: /Apple Silicon/ })).toBeInTheDocument()
@@ -686,6 +686,20 @@ describe('case-first routes', () => {
     expect(screen.getByRole('heading', { name: 'H3 WebUI：Motion Context + 内置升频' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '4070 12GB：三段约 5 秒续接成 13 秒角色舞蹈' })).toBeInTheDocument()
     expect(screen.queryByRole('heading', { name: 'Mac Studio 上用 Phosphene 跑 Turbo' })).not.toBeInTheDocument()
+  })
+
+  it('includes setup tutorials in filtered results and allows clearing every empty search', () => {
+    renderAt('/tutorials/')
+    const input = document.querySelector('.tutorial-search input') as HTMLInputElement
+    fireEvent.change(input, { target: { value: '云端免部署' } })
+    expect(document.querySelectorAll('.foundation-route-card, .community-tutorial-card')).toHaveLength(1)
+    expect(document.querySelector('.tutorial-controls')!.compareDocumentPosition(document.querySelector('.foundation-route-card')!) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+    expect(document.querySelector('.tutorial-empty')).not.toBeInTheDocument()
+    fireEvent.change(input, { target: { value: 'no-such-tutorial-xyz' } })
+    const empty = document.querySelector('.tutorial-empty') as HTMLElement
+    fireEvent.click(within(empty).getByRole('button'))
+    expect(input.value).toBe('')
+    expect(document.querySelector('.tutorial-empty')).not.toBeInTheDocument()
   })
 
   it('shows the latest tutorial release and upgrades an old snapshot URL', () => {

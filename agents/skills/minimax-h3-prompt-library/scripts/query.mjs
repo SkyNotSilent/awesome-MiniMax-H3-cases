@@ -2,15 +2,25 @@ import { readFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 
 const args = process.argv.slice(2)
-const fixtureIndex = args.indexOf('--fixture')
-const fixture = fixtureIndex >= 0 ? resolve(process.cwd(), args[fixtureIndex + 1]) : null
-const query = args.filter((value, index) => index !== fixtureIndex && index !== fixtureIndex + 1).join(' ').trim().toLowerCase()
+let fixture = null
+const terms = []
+for (let index = 0; index < args.length; index++) {
+  const value = args[index]
+  if (value === '--fixture') {
+    const path = args[++index]
+    if (!path?.trim() || path.startsWith('--')) throw new Error('Missing value for --fixture')
+    if (fixture) throw new Error('Duplicate option --fixture')
+    fixture = resolve(process.cwd(), path)
+  } else if (value.startsWith('--')) throw new Error(`Unknown option: ${value}`)
+  else terms.push(value)
+}
+const query = terms.join(' ').trim().toLowerCase()
 if (!query) throw new Error('Usage: node scripts/query.mjs <search terms> [--fixture <directory>]')
 
 const baseUrl = (process.env.H3_LIBRARY_URL || 'https://h3-field-notes-production.up.railway.app').replace(/\/$/, '')
 async function load(relative) {
   if (fixture) return JSON.parse(await readFile(resolve(fixture, relative), 'utf8'))
-  const response = await fetch(`${baseUrl}/data/${relative}`)
+  const response = await fetch(`${baseUrl}/data/${relative}`, { signal: AbortSignal.timeout(15000) })
   if (!response.ok) throw new Error(`Catalog request failed (${response.status}). No case or Prompt was generated.`)
   return response.json()
 }

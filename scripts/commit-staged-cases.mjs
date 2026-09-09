@@ -2,6 +2,7 @@ import { access, copyFile, mkdir, rename, rm } from 'node:fs/promises'
 import { basename, relative, resolve } from 'node:path'
 import { acquirePublishLock, candidatesPath, publishStagingRoot, readJson, resolvePublishStagingPath, root, rowVersion, writeJsonAtomic } from './review-paths.mjs'
 import { prepareStagedCommit, updatePrivateCandidates, verifyVideoRoute } from './staged-publish.mjs'
+import { ensureFeedbackDraft } from './submission-feedback.mjs'
 
 function argumentValue(name) {
   const index = process.argv.indexOf(name)
@@ -76,6 +77,10 @@ try {
   if (plan.ready.length) await writeJsonAtomic(casesPath, [...publicCases, ...plan.ready])
 
   await writeJsonAtomic(journalPath, { ...journal, phase: 'public-written' })
+  for (const item of [...plan.ready, ...plan.alreadyCommitted]) {
+    const candidate = candidates.find(candidate => candidate.id === item.id || candidate.sourceUrl === item.sourceUrl)
+    await ensureFeedbackDraft(root, 'case', item, candidate?.contribution?.issueUrl || candidate?.issueUrl)
+  }
 
   const nextCandidates = updatePrivateCandidates({ candidates, ...plan })
   await writeJsonAtomic(candidatesPath, nextCandidates)
