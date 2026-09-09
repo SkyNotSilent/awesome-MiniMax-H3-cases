@@ -14,7 +14,7 @@ Keep this skill lookup-only. Never create a new prompt, adapt an existing prompt
 Use the packaged `scripts/query.mjs` client to read the public catalog. It uses `H3_LIBRARY_URL` when configured and otherwise reads the official hosted catalog. Treat each original `sourceUrl` as the attribution authority. If the network or catalog is unavailable, report that lookup failed; never substitute invented cases.
 
 ```bash
-node scripts/query.mjs "city cinematic"
+node <installed-skill-directory>/scripts/query.mjs "city cinematic"
 ```
 
 When working inside the repository, `data/cases.json` remains the publishing source of truth. Valid category, style, and scene keys are defined in `data/taxonomy.json`.
@@ -24,7 +24,7 @@ Use case metadata to search by model, mode, category, style, scene, creator, tit
 ## Retrieval workflow
 
 1. Identify the requested model, mode, scene, style, creator, or result.
-2. Search `data/cases.json` for the closest factual matches.
+2. Run the packaged query client for the closest factual matches. Resolve its path relative to this installed skill directory, not the user's current project. Do not assume repository data files are installed.
 3. Return the case title, short factual summary, model, mode, author, catalog identifier, and original source URL.
 4. Check `promptProvenance` before returning prompt text.
 5. Return a complete prompt only when `promptCompleteness` is `complete` (or omitted for legacy records) and provenance is `official-verbatim` or `creator-verbatim`.

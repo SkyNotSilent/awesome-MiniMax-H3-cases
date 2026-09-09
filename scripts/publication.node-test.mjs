@@ -12,12 +12,12 @@ async function fixture(t) {
   await mkdir(join(root, 'scripts'))
   await mkdir(join(root, 'data'))
   await mkdir(join(root, '.review/publish-staging'), { recursive: true })
-  for (const name of ['commit-staged-cases.mjs', 'staged-publish.mjs', 'review-paths.mjs']) {
+  for (const name of ['commit-staged-cases.mjs', 'staged-publish.mjs', 'review-paths.mjs', 'submission-feedback.mjs', 'submission-reply.mjs', 'submission-reply-text.mjs']) {
     await copyFile(new URL(name, import.meta.url), join(root, 'scripts', name))
   }
   const cases = ['a', 'b'].map(id => ({ id, sourceUrl: `https://example.com/${id}`, mediaUrl: `/media/${id}.mp4`, posterUrl: `/posters/x/${id}.jpg` }))
   await writeFile(join(root, 'data/cases.json'), '[]')
-  await writeFile(join(root, '.review/candidates.json'), JSON.stringify(cases))
+  await writeFile(join(root, '.review/candidates.json'), JSON.stringify(cases.map(item => item.id === 'a' ? { ...item, issueUrl: 'https://github.com/SkyNotSilent/awesome-MiniMax-H3-cases/issues/16' } : item)))
   for (const item of cases) {
     await mkdir(join(root, '.review/publish-staging', item.id, 'posters'), { recursive: true })
     await writeFile(join(root, '.review/publish-staging', item.id, 'posters', `${item.id}.jpg`), 'fixture')
@@ -75,6 +75,7 @@ test('two publication processes never succeed while losing a case', async t => {
   }
   assert.deepEqual(JSON.parse(await readFile(join(root, 'data/cases.json'))).map(x => x.id).sort(), ['a', 'b'])
   assert.deepEqual(JSON.parse(await readFile(join(root, '.review/candidates.json'))), [])
+  assert.equal(JSON.parse(await readFile(join(root, '.review/submission-feedback/case-a.json'))).status, 'awaiting-deployment')
 })
 
 test('reconciles publication after the public JSON was written but private cleanup was interrupted', async t => {
@@ -102,6 +103,7 @@ test('reconciles publication after the public JSON was written but private clean
   assert.deepEqual(JSON.parse(await readFile(join(root, '.review/candidates.json'))).map(x => x.id), ['b'])
   const journal = JSON.parse(await readFile(join(root, '.review/publish-staging/journals/a.json')))
   assert.equal(journal.phase, 'complete')
+  assert.equal(JSON.parse(await readFile(join(root, '.review/submission-feedback/case-a.json'))).status, 'awaiting-deployment')
   assert.match(journal.inputVersion, /^[a-f0-9]{64}$/)
   assert.ok(Number.isFinite(Date.parse(journal.recordedAt)))
 })

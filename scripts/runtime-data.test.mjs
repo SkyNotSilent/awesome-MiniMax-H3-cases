@@ -12,6 +12,14 @@ const sourceTutorials = JSON.parse(await readFile(resolve(root, 'data/tutorial-g
 const catalogPath = resolve(root, 'public/data/catalog.json')
 const catalog = JSON.parse(await readFile(catalogPath, 'utf8'))
 
+test('versioned tutorial endpoint contains the current public guides and a content hash', async () => {
+  const { createHash } = await import('node:crypto')
+  const payload = JSON.parse(await readFile(resolve(root, 'public/data/tutorial-guides.v2.json'), 'utf8'))
+  assert.equal(payload.schemaVersion, 2)
+  assert.deepEqual(payload.guides, sourceTutorials)
+  assert.equal(payload.contentVersion, createHash('sha256').update(JSON.stringify(sourceTutorials)).digest('hex'))
+})
+
 test('compatibility catalog is complete, unique, and contains no detail text', async () => {
   assert.equal(catalog.cases.length, sourceCases.length)
   assert.equal(new Set(catalog.cases.map((item) => item.id)).size, sourceCases.length)
@@ -36,6 +44,7 @@ test('case details and catalog entries reconstruct all dialog fields', async () 
   for (const source of sourceCases) {
     const compact = catalog.cases.find((item) => item.id === source.id)
     const detail = JSON.parse(await readFile(resolve(root, 'public/data/cases', `${encodeURIComponent(source.id)}.json`), 'utf8'))
+    assert.equal(detail.promptCompleteness, source.promptCompleteness)
     assert.deepEqual({
       id: compact.id,
       mediaUrl: compact.mediaUrl,

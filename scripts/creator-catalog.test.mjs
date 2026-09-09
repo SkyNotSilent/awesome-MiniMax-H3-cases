@@ -47,6 +47,14 @@ function tutorial(id, handle, options = {}) {
 }
 
 describe('creator identity', () => {
+  it('includes foundation authors with evidenced profiles without guessing docs identities', () => {
+    const guide = { ...tutorial('native', 'antirez', { platform: 'github' }), contentType: 'foundation' }
+    expect(tutorialCreatorIdentity(guide)).toMatchObject({ platform: 'github', handle: 'antirez' })
+    const docs = { ...guide, source: { platform: 'docs', url: 'https://example.com/guide', author: 'Maker' } }
+    expect(tutorialCreatorIdentity(docs)).toBeNull()
+    expect(tutorialCreatorIdentity({ ...docs, source: { ...docs.source, authorProfileUrl: 'https://github.com/Maker' } })).toMatchObject({ platform: 'github', handle: 'maker' })
+    expect(tutorialCreatorIdentity({ ...docs, source: { ...docs.source, authorProfileUrl: 'https://example.com/Maker' } })).toBeNull()
+  })
   it('normalizes handles and extracts them from X status URLs', () => {
     expect(normalizeHandle('@Creator_Name')).toBe('creator_name')
     expect(extractXHandle('https://x.com/Creator_Name/status/123')).toBe('creator_name')

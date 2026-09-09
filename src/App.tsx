@@ -363,7 +363,7 @@ function App() {
     || route.page === 'tutorial-ecosystem'
     || route.page === 'creators'
     || route.page === 'creator-detail'
-  const needsCreators = route.page === 'creators' || route.page === 'creator-detail'
+  const needsCreators = route.page === 'creators' || route.page === 'creator-detail' || route.page === 'tutorials' || route.page === 'tutorial-detail'
 
   const reloadRouteData = useCallback(() => {
     setRouteDataError(false)
@@ -475,9 +475,9 @@ function App() {
       <div className="grain" aria-hidden="true" />
       <Header language={language} page={route.page} onLanguageChange={switchLanguage} />
       {route.page === 'home' && <HomePage key={navigation} language={language} releases={releases} catalog={catalog} catalogError={catalogError} onRetryCatalog={reloadCatalog} />}
-      {route.page === 'tutorials' && tutorialGuides && releases && <TutorialsPage key={navigation} language={language} releases={releases} tutorialGuides={tutorialGuides} />}
+      {route.page === 'tutorials' && tutorialGuides && releases && <TutorialsPage key={navigation} language={language} releases={releases} tutorialGuides={tutorialGuides} creators={creatorCatalog?.creators} />}
       {route.page === 'tutorial-ecosystem' && tutorialGuides && tutorialResources && <TutorialEcosystemPage language={language} tutorialGuides={tutorialGuides} tutorialResources={tutorialResources} />}
-      {route.page === 'tutorial-detail' && activeTutorial && tutorialGuides && tutorialResources && <TutorialDetailPage language={language} tutorial={activeTutorial} tutorialGuides={tutorialGuides} tutorialResources={tutorialResources} />}
+      {route.page === 'tutorial-detail' && activeTutorial && tutorialGuides && tutorialResources && <TutorialDetailPage language={language} tutorial={activeTutorial} tutorialGuides={tutorialGuides} tutorialResources={tutorialResources} creators={creatorCatalog?.creators} />}
       {route.page === 'tutorial-detail' && tutorialGuides && !activeTutorial && <TutorialNotFound language={language} />}
       {route.page === 'creators' && creatorCatalog && catalog && tutorialGuides && <CreatorsPage language={language} creatorCatalog={creatorCatalog} cases={catalog.cases} tutorialGuides={tutorialGuides} />}
       {route.page === 'creator-detail' && activeCreator && catalog && tutorialGuides && <CreatorDetailPage key={navigation} language={language} creator={activeCreator} cases={catalog.cases} featuredCaseIds={catalog.featuredCaseIds} tutorialGuides={tutorialGuides} />}
@@ -1305,7 +1305,7 @@ function buildTutorialAiTask(tutorial: TutorialGuide, language: Language) {
     : ''
   const commandItems = tutorialCommandItems(tutorial)
   const commands = commandItems.length
-    ? `${t.commands}:\n${commandItems.map((item) => `- ${item.kind === 'path' ? (language === 'zh' ? '文件路径' : 'File path') : (language === 'zh' ? '终端命令' : 'Terminal command')}: ${item.value}`).join('\n')}`
+    ? `${t.commands}:\n${commandItems.map((item) => `- ${item.kind === 'path' ? (language === 'zh' ? '文件路径' : 'File path') : (language === 'zh' ? '终端命令' : 'Terminal command')}${item.platform ? ` [${item.platform}]` : ''}${item.cwd ? ` (${language === 'zh' ? '工作目录' : 'Working directory'}: ${item.cwd})` : ''}: ${item.value}`).join('\n')}`
     : ''
   const checks = tutorial.checks ? section(t.checks, tutorial.checks[language]) : ''
   const expectedResult = tutorial.expectedResult ? `${t.expectedResult}: ${tutorial.expectedResult[language]}` : ''
@@ -1341,6 +1341,16 @@ function tutorialCommandItems(tutorial: TutorialGuide): NonNullable<TutorialGuid
   if (tutorial.commandItems?.length) return tutorial.commandItems
   const pathPattern = /^(?:\.\.?\/)?(?:[A-Za-z0-9_.-]+\/)+[A-Za-z0-9_.-]+$/
   return tutorial.commands.map((value) => ({ kind: pathPattern.test(value) ? 'path' as const : 'command' as const, value }))
+}
+
+function tutorialDifficulty(tutorial: TutorialGuide, language: Language) {
+  if (!tutorial.difficulty) return ''
+  return (language === 'zh' ? { beginner: '入门', intermediate: '进阶', advanced: '高级' } : { beginner: 'Beginner', intermediate: 'Intermediate', advanced: 'Advanced' })[tutorial.difficulty]
+}
+
+function TutorialAuthor({ tutorial, language, creators = [] }: { tutorial: TutorialGuide; language: Language; creators?: CreatorProfile[] }) {
+  const creator = creators.find(item => item.tutorialIds.includes(tutorial.id))
+  return creator ? <a href={creatorPath(language, creator.slug)}>{tutorial.source.author}</a> : <>{tutorial.source.author}</>
 }
 
 function CopyCommandButton({ command, language, kind = 'command' }: { command: string; language: Language; kind?: 'command' | 'path' }) {
@@ -1418,10 +1428,12 @@ function TutorialsPage({
   language,
   releases,
   tutorialGuides,
+  creators,
 }: {
   language: Language
   releases: ReleaseBatches
   tutorialGuides: TutorialGuide[]
+  creators?: CreatorProfile[]
 }) {
   const t = copy[language].tutorials
   const [spotlightNow, setSpotlightNow] = useState(() => Date.now())
@@ -1484,10 +1496,13 @@ function TutorialsPage({
     nvidia: tutorialGuides.find((item) => item.id === 'official-deployment'),
     mac: tutorialGuides.find((item) => item.id === 'mac-native'),
   }
+  const hasTutorialFilters = activeTrack !== 'all' || activeCategory !== 'all' || activeHardware !== 'all' || activeAddedDate !== 'all' || Boolean(query.trim())
   const practicalGuides = [...new Map(filtered
-    .filter((item) => (item.guideType === 'project' || spotlightIds.has(item.id)) && item.evidence.status === 'active')
+    .filter((item) => (item.guideType === 'project' || spotlightIds.has(item.id) || (hasTutorialFilters && item.guideType === 'setup')) && item.evidence.status === 'active')
     .map((item) => [item.id, item])).values()]
-    .sort((a, b) => Number(spotlightIds.has(b.id)) - Number(spotlightIds.has(a.id)) || (a.learningOrder ?? 99) - (b.learningOrder ?? 99))
+    .sort((a, b) => activeAddedDate !== 'all'
+      ? Date.parse(b.addedAt) - Date.parse(a.addedAt)
+      : Number(spotlightIds.has(b.id)) - Number(spotlightIds.has(a.id)) || (a.learningOrder ?? 99) - (b.learningOrder ?? 99))
   const sortedCommunity = sortByAddedAtDescending(filtered.filter((item) => item.guideType === 'reference' && !spotlightIds.has(item.id)))
 
   const resetTutorialFilters = useCallback((preset: AddedDatePreset = 'all') => {
@@ -1497,6 +1512,18 @@ function TutorialsPage({
     setQuery('')
     setActiveAddedDate(preset)
   }, [])
+  const practicalSection = (
+    practicalGuides.length > 0 && <section className="tutorial-practical" aria-label={language === 'zh' ? '实战教程' : 'Practical tutorials'}>
+          <header className="tutorial-list-heading"><h2>{hasTutorialFilters && practicalGuides.some(item => item.guideType === 'setup') ? (language === 'zh' ? '入门与实战教程' : 'Setup and practical tutorials') : (language === 'zh' ? '直接做一个作品' : 'Build a real project')}</h2><span>{String(practicalGuides.length).padStart(2, '0')}</span></header>
+          <div className="foundation-route-grid">{practicalGuides.map((tutorial, index) => <article className={`foundation-route-card${spotlightIds.has(tutorial.id) ? ' is-spotlight' : ''}`} key={tutorial.id}>
+            <a className="foundation-route-poster" href={tutorialPath(language, tutorial.id)}><img src={tutorial.posterUrl} alt={tutorial.title[language]} loading="lazy" /><span>{String(index + 1).padStart(2, '0')}</span>{spotlightIds.has(tutorial.id) && <strong>{language === 'zh' ? '作者新投稿' : 'New from creator'}</strong>}</a>
+            <div className="foundation-route-copy">
+              <div className="added-at-meta">{matchesAddedDate(tutorial.addedAt, 'release', releases.tutorials) ? <strong>{copy[language].catalog.newlyAdded}</strong> : null}<time dateTime={tutorial.addedAt}>{copy[language].catalog.addedOn(formatAddedDate(tutorial.addedAt, language))}</time></div>
+              <small><TutorialAuthor tutorial={tutorial} language={language} creators={creators} /> / {t.categories[tutorial.category]}</small><h3><a href={tutorialPath(language, tutorial.id)}>{tutorial.title[language]}</a></h3><p>{tutorial.outcome[language]}</p><small>{tutorialDifficulty(tutorial, language)} · {tutorial.hardware[language]}</small><TutorialCardActions tutorial={tutorial} language={language} />
+            </div>
+          </article>)}</div>
+        </section>
+  )
   const hardwareLabels: Record<'all' | TutorialHardwareProfile, string> = language === 'zh' ? {
     all: '全部硬件',
     'apple-silicon': 'Apple Silicon',
@@ -1534,16 +1561,6 @@ function TutorialsPage({
           </div>
         </section>
 
-        {practicalGuides.length > 0 && <section className="tutorial-practical" aria-label={language === 'zh' ? '实战教程' : 'Practical tutorials'}>
-          <header className="tutorial-list-heading"><h2>{language === 'zh' ? '直接做一个作品' : 'Build a real project'}</h2><span>{String(practicalGuides.length).padStart(2, '0')}</span></header>
-          <div className="foundation-route-grid">{practicalGuides.map((tutorial, index) => <article className={`foundation-route-card${spotlightIds.has(tutorial.id) ? ' is-spotlight' : ''}`} key={tutorial.id}>
-            <a className="foundation-route-poster" href={tutorialPath(language, tutorial.id)}><img src={tutorial.posterUrl} alt={tutorial.title[language]} loading="lazy" /><span>{String(index + 1).padStart(2, '0')}</span>{spotlightIds.has(tutorial.id) && <strong>{language === 'zh' ? '作者新投稿' : 'New from creator'}</strong>}</a>
-            <div className="foundation-route-copy">
-              <div className="added-at-meta">{matchesAddedDate(tutorial.addedAt, 'release', releases.tutorials) ? <strong>{copy[language].catalog.newlyAdded}</strong> : null}<time dateTime={tutorial.addedAt}>{copy[language].catalog.addedOn(formatAddedDate(tutorial.addedAt, language))}</time></div>
-              <small>{tutorial.source.author} / {t.categories[tutorial.category]}</small><h3><a href={tutorialPath(language, tutorial.id)}>{tutorial.title[language]}</a></h3><p>{tutorial.outcome[language]}</p><small>{tutorial.hardware[language]}</small><TutorialCardActions tutorial={tutorial} language={language} />
-            </div>
-          </article>)}</div>
-        </section>}
         <nav className="tutorial-track-grid" aria-label={language === 'zh' ? '学习路线' : 'Learning tracks'}>
           {(['run', 'create'] as const).map((track) => <button key={track} type="button" aria-pressed={activeTrack === track} onClick={() => setActiveTrack(activeTrack === track ? 'all' : track)}>
             <small>{track === 'run' ? '01 / RUN' : '02 / CREATE'}</small>
@@ -1597,8 +1614,9 @@ function TutorialsPage({
             <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={t.searchPlaceholder} />
             {query && <button type="button" onClick={() => setQuery('')} aria-label={t.clearSearch}><X size={14} /></button>}
           </label>
-          <p className="tutorial-active-filter" aria-live="polite">{t.categories[activeCategory]} · {hardwareLabels[activeHardware]} · {copy[language].catalog.addedDatePresets[activeAddedDate]}</p>
+          <p className="tutorial-active-filter" aria-live="polite">{practicalGuides.length + sortedCommunity.length} {language === 'zh' ? '篇教程' : 'tutorials'} · {t.categories[activeCategory]} · {hardwareLabels[activeHardware]} · {copy[language].catalog.addedDatePresets[activeAddedDate]}</p>
         </div>
+        {practicalSection}
         {sortedCommunity.length > 0 ? (
           <header className="tutorial-list-heading is-community">
             <h2>{language === 'zh' ? '更多教程导读' : 'More tutorial guides'}</h2>
@@ -1623,7 +1641,7 @@ function TutorialsPage({
                     {matchesAddedDate(tutorial.addedAt, 'release', releases.tutorials) ? <strong>{copy[language].catalog.newlyAdded}</strong> : null}
                     <time dateTime={tutorial.addedAt}>{copy[language].catalog.addedOn(formatAddedDate(tutorial.addedAt, language))}</time>
                   </div>
-                  <small>{t.categories[tutorial.category]} / {tutorial.source.handle || tutorial.source.author}</small>
+                  <small>{t.categories[tutorial.category]} / <TutorialAuthor tutorial={tutorial} language={language} creators={creators} />{tutorial.difficulty ? ` · ${tutorialDifficulty(tutorial, language)}` : ''}</small>
                   <h3><a href={tutorialPath(language, tutorial.id)}>{tutorial.title[language]}</a></h3>
                   <p>{tutorial.outcome[language]}</p>
                   <TutorialCardActions tutorial={tutorial} language={language} />
@@ -1640,7 +1658,7 @@ function TutorialsPage({
                 ? copy[language].catalog.snapshotEmptyTitle
                 : t.noResults}</p>
             {activeAddedDate === 'release' ? <small>{releases.tutorials.count > 0 ? copy[language].catalog.filteredUpdatesDescription : copy[language].catalog.snapshotEmptyDescription}</small> : null}
-            {activeAddedDate === 'release' ? <button type="button" onClick={() => resetTutorialFilters(releases.tutorials.count > 0 ? 'release' : 'all')}>{releases.tutorials.count > 0 ? copy[language].catalog.resetFilters : copy[language].catalog.viewAll}</button> : null}
+            <button type="button" onClick={() => resetTutorialFilters()}>{copy[language].catalog.resetFilters}</button>
           </div>
         ) : null}
         <section className="tutorial-faq"><h2>{language === 'zh' ? '遇到问题，从这里找' : 'Troubleshooting shortcuts'}</h2><div>
@@ -1671,7 +1689,7 @@ function youtubeEmbedUrl(tutorial: TutorialGuide) {
   return null
 }
 
-function TutorialDetailPage({ language, tutorial, tutorialGuides, tutorialResources }: { language: Language; tutorial: TutorialGuide; tutorialGuides: TutorialGuide[]; tutorialResources: TutorialResource[] }) {
+function TutorialDetailPage({ language, tutorial, tutorialGuides, tutorialResources, creators }: { language: Language; tutorial: TutorialGuide; tutorialGuides: TutorialGuide[]; tutorialResources: TutorialResource[]; creators?: CreatorProfile[] }) {
   useEffect(() => {
     const scrollToSection = () => {
       const id = window.location.hash.slice(1)
@@ -1725,12 +1743,12 @@ function TutorialDetailPage({ language, tutorial, tutorialGuides, tutorialResour
             {tutorial.cost && <section><h2>{language === 'zh' ? '费用与条件' : 'Cost and requirements'}</h2><p>{tutorial.cost[language]}</p></section>}
             {videoEmbed && <section className="tutorial-video-lesson"><h2>{language === 'zh' ? '原作者视频演示' : 'Original video walkthrough'}</h2><div><iframe src={videoEmbed} title={`${tutorial.title[language]} — ${language === 'zh' ? '视频演示' : 'video walkthrough'}`} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen /></div><p>{language === 'zh' ? '视频由 YouTube 提供；无法加载时请使用下方原始链接。' : 'Video is provided by YouTube. Use the source link below if embedding is unavailable.'}</p></section>}
             {tutorial.learningResources?.length && <section className="tutorial-learning-resources"><h2>{language === 'zh' ? '准备材料与原作者演示' : 'Resources and original demonstrations'}</h2><ul>{tutorial.learningResources.map((resource) => <li key={resource.url}><a href={resource.url} target="_blank" rel="noreferrer">{resource.label[language]} <ArrowUpRight size={14} /></a></li>)}</ul><p>{tutorial.materialsNote?.[language]}</p></section>}
-            {tutorial.chapters?.length && <section><h2>{language === 'zh' ? '视频章节' : 'Video chapters'}</h2><ul>{tutorial.chapters.map((chapter) => <li key={chapter.url}><a href={chapter.url} target="_blank" rel="noreferrer">{Math.floor(chapter.seconds / 60)}:{String(chapter.seconds % 60).padStart(2, '0')} · {chapter.title[language]}</a></li>)}</ul></section>}
+            {tutorial.chapters?.length && <section><h2>{language === 'zh' ? '视频章节' : 'Video chapters'}</h2><ul>{tutorial.chapters.map((chapter) => <li key={chapter.url}><a href={language === 'zh' && chapter.urlZh ? chapter.urlZh : chapter.url} target="_blank" rel="noreferrer">{Math.floor(chapter.seconds / 60)}:{String(chapter.seconds % 60).padStart(2, '0')} · {chapter.title[language]}</a></li>)}</ul></section>}
             {(tutorial.difficulty || tutorial.estimatedMinutes || tutorial.applicableVersions?.length) && (
               <section className="tutorial-run-profile">
                 <h2>{language === 'zh' ? '执行概览' : 'Run profile'}</h2>
                 <dl>
-                  {tutorial.difficulty && <div><dt>{t.difficulty}</dt><dd>{tutorial.difficulty}</dd></div>}
+                  {tutorial.difficulty && <div><dt>{t.difficulty}</dt><dd>{tutorialDifficulty(tutorial, language)}</dd></div>}
                   {tutorial.estimatedMinutes && <div><dt>{t.estimatedTime}</dt><dd>{tutorial.estimatedMinutes} {t.minutes}</dd></div>}
                   {tutorial.applicableVersions?.length && <div><dt>{language === 'zh' ? '适用版本' : 'Applicable versions'}</dt><dd>{tutorial.applicableVersions.join(' · ')}</dd></div>}
                 </dl>
@@ -1740,7 +1758,7 @@ function TutorialDetailPage({ language, tutorial, tutorialGuides, tutorialResour
             <section><h2>{t.hardware}</h2><p>{tutorial.hardware[language]}</p></section>
             <section><h2>{t.prerequisites}</h2><ul>{tutorial.prerequisites[language].map((item) => <li key={item}>{item}</li>)}</ul></section>
             <section className="tutorial-detail-steps"><h2>{t.steps}</h2><ol>{tutorial.steps[language].map((item, index) => <li id={`step-${index + 1}`} key={item}><span>{String(index + 1).padStart(2, '0')}</span><p>{item}</p></li>)}</ol></section>
-            {commandItems.length > 0 && <section><h2>{t.commands}</h2><div className="tutorial-detail-commands">{commandItems.map((item) => <div key={`${item.kind}:${item.value}`}><small>{item.kind === 'path' ? (language === 'zh' ? '文件路径' : 'File path') : `${language === 'zh' ? '终端命令' : 'Terminal command'}${item.platform ? ` · ${item.platform}` : ''}`}</small><code>{item.value}</code><CopyCommandButton command={item.value} language={language} kind={item.kind} /></div>)}</div></section>}
+            {commandItems.length > 0 && <section><h2>{t.commands}</h2><div className="tutorial-detail-commands">{commandItems.map((item) => <div key={`${item.kind}:${item.value}`}><small>{item.kind === 'path' ? (language === 'zh' ? '文件路径' : 'File path') : `${language === 'zh' ? '终端命令' : 'Terminal command'}${item.platform ? ` · ${item.platform}` : ''}`}</small>{item.cwd && <small>{language === 'zh' ? '工作目录' : 'Working directory'}: {item.cwd}</small>}<code>{item.value}</code><CopyCommandButton command={item.value} language={language} kind={item.kind} /></div>)}</div></section>}
             {tutorial.checks && <section className="tutorial-detail-checks"><h2>{t.checks}</h2><ul>{tutorial.checks[language].map((item) => <li key={item}><Check size={15} aria-hidden="true" /> <span>{item}</span></li>)}</ul></section>}
             {tutorial.troubleshooting?.length && <section id="troubleshooting" className="tutorial-troubleshooting"><h2>{t.troubleshooting}</h2><dl>{tutorial.troubleshooting.map((item) => <div key={item.problem[language]}><dt>{item.problem[language]}</dt><dd>{item.solution[language]}</dd></div>)}</dl></section>}
             {tutorial.uninstall && <section><h2>{t.uninstall}</h2><ul>{tutorial.uninstall[language].map((item) => <li key={item}>{item}</li>)}</ul></section>}
@@ -1751,7 +1769,7 @@ function TutorialDetailPage({ language, tutorial, tutorialGuides, tutorialResour
           <aside className="tutorial-detail-meta">
             <h2>{t.source}</h2>
             <dl>
-              <div><dt>{language === 'zh' ? '作者' : 'Author'}</dt><dd>{tutorial.source.author} {tutorial.source.handle || ''}</dd></div>
+              <div><dt>{language === 'zh' ? '作者' : 'Author'}</dt><dd><TutorialAuthor tutorial={tutorial} language={language} creators={creators} /> {tutorial.source.handle || ''}{tutorial.source.authorProfileUrl && <> · <a href={tutorial.source.authorProfileUrl} target="_blank" rel="noreferrer">{language === 'zh' ? '作者主页' : 'Author profile'}</a></>}</dd></div>
               {tutorial.contribution && <div><dt>{language === 'zh' ? '作者投稿' : 'Author submission'}</dt><dd><a href={tutorial.contribution.authorUrl} target="_blank" rel="noreferrer">{language === 'zh' ? '关注作者与更多作品' : 'Author and more work'}</a> · <a href={tutorial.contribution.issueUrl} target="_blank" rel="noreferrer">{language === 'zh' ? '投稿记录' : 'Submission'}</a></dd></div>}
               {tutorial.source.publishedAt && <div><dt>{language === 'zh' ? '发布' : 'Published'}</dt><dd>{tutorial.source.publishedAt}</dd></div>}
               {tutorial.evidence.sourceCheckedAt && <div><dt>{language === 'zh' ? '来源核对' : 'Source checked'}</dt><dd>{tutorial.evidence.sourceCheckedAt}</dd></div>}
@@ -1985,7 +2003,7 @@ function CreatorCard({
           {tutorialOnly ? <>
             <div><dt>{t.tutorials}</dt><dd>{creator.tutorialCount}</dd></div>
             <div><dt>{t.lastAdded}</dt><dd>{creator.lastAddedAt ? formatAddedDate(creator.lastAddedAt, language) : '—'}</dd></div>
-            <div><dt>{language === 'zh' ? '平台' : 'Platform'}</dt><dd>{creator.primaryPlatform === 'github' ? 'GitHub' : 'YouTube'}</dd></div>
+            <div><dt>{language === 'zh' ? '平台' : 'Platform'}</dt><dd>{{ x: 'X', github: 'GitHub', youtube: 'YouTube' }[creator.primaryPlatform]}</dd></div>
           </> : <>
             <div><dt>{t.cases}</dt><dd>{creator.caseCount}</dd></div>
             <div><dt>{t.prompts}</dt><dd>{creator.promptCount}</dd></div>

@@ -96,7 +96,8 @@
         "properties": {
           "kind": { "enum": ["command", "path"] },
           "value": { "type": "string", "minLength": 1 },
-          "platform": { "enum": ["shell", "windows", "macos", "linux"] }
+          "platform": { "enum": ["shell", "windows", "macos", "linux"] },
+          "cwd": { "type": "string" }
         }
       }
     },
@@ -154,6 +155,7 @@
           "type": "string",
           "minLength": 1
         },
+        "authorProfileUrl": { "type": "string", "format": "uri" },
         "handle": {
           "type": "string"
         },
@@ -360,6 +362,7 @@
           "title": {
             "$ref": "#/$defs/localizedText"
           },
+          "urlZh": { "type": "string", "format": "uri" },
           "url": {
             "type": "string",
             "format": "uri"

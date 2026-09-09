@@ -1,14 +1,74 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-09T00:33:09.135Z",
+  "generatedAt": "2026-09-09T08:21:11.351Z",
   "methodology": "site-verified-content",
   "stats": {
-    "sourceCreators": 918,
-    "rankedCreators": 341,
+    "sourceCreators": 922,
+    "rankedCreators": 345,
     "videoCreators": 334,
-    "tutorialCreators": 13
+    "tutorialCreators": 17
   },
   "creators": [
+    {
+      "id": "github-comfy-org",
+      "slug": "github-comfy-org",
+      "handle": "comfy-org",
+      "aliases": [],
+      "displayName": "ComfyUI",
+      "primaryPlatform": "github",
+      "profileUrl": "https://github.com/comfy-org",
+      "identities": [
+        {
+          "platform": "github",
+          "handle": "comfy-org",
+          "url": "https://github.com/comfy-org"
+        }
+      ],
+      "roles": [
+        "tutorial"
+      ],
+      "caseIds": [],
+      "promptCaseIds": [],
+      "tutorialIds": [
+        "official-deployment",
+        "video-pov-camera-angles",
+        "rent-gpu-comfyui",
+        "native-comfyui-modes"
+      ],
+      "representativeCaseIds": [],
+      "latestCaseIds": [],
+      "caseCount": 0,
+      "promptCount": 0,
+      "promptRate": 0,
+      "tutorialCount": 4,
+      "recentCaseCount": 0,
+      "activeWeeks": 0,
+      "firstAddedAt": "2026-08-23T02:34:28+08:00",
+      "lastAddedAt": "2026-08-23T02:34:28+08:00",
+      "engagementPercentile": 0,
+      "badges": [
+        "guide-author"
+      ],
+      "reasons": [
+        "tutorial-author"
+      ],
+      "ranks": {
+        "overall": null,
+        "active": null,
+        "cases": null,
+        "prompts": null,
+        "rising": null,
+        "tutorials": 1
+      },
+      "rankDelta": {
+        "overall": null,
+        "active": null,
+        "cases": null,
+        "prompts": null,
+        "rising": null,
+        "tutorials": null
+      }
+    },
     {
       "id": "x-servasyy_ai",
       "slug": "servasyy_ai",
@@ -58,7 +118,7 @@
         "cases": null,
         "prompts": null,
         "rising": null,
-        "tutorials": 1
+        "tutorials": 2
       },
       "rankDelta": {
         "overall": null,
@@ -66,7 +126,7 @@
         "cases": null,
         "prompts": null,
         "rising": null,
-        "tutorials": 0
+        "tutorials": -1
       }
     },
     {
@@ -115,7 +175,7 @@
         "cases": null,
         "prompts": null,
         "rising": null,
-        "tutorials": 2
+        "tutorials": 3
       },
       "rankDelta": {
         "overall": null,
@@ -123,7 +183,7 @@
         "cases": null,
         "prompts": null,
         "rising": null,
-        "tutorials": 0
+        "tutorials": -1
       }
     },
     {
@@ -181,6 +241,63 @@
         "cases": null,
         "prompts": null,
         "rising": null,
+        "tutorials": 5
+      },
+      "rankDelta": {
+        "overall": null,
+        "active": null,
+        "cases": null,
+        "prompts": null,
+        "rising": null,
+        "tutorials": 1
+      }
+    },
+    {
+      "id": "github-antirez",
+      "slug": "github-antirez",
+      "handle": "antirez",
+      "aliases": [],
+      "displayName": "antirez",
+      "primaryPlatform": "github",
+      "profileUrl": "https://github.com/antirez",
+      "identities": [
+        {
+          "platform": "github",
+          "handle": "antirez",
+          "url": "https://github.com/antirez"
+        }
+      ],
+      "roles": [
+        "tutorial"
+      ],
+      "caseIds": [],
+      "promptCaseIds": [],
+      "tutorialIds": [
+        "mac-native"
+      ],
+      "representativeCaseIds": [],
+      "latestCaseIds": [],
+      "caseCount": 0,
+      "promptCount": 0,
+      "promptRate": 0,
+      "tutorialCount": 1,
+      "recentCaseCount": 0,
+      "activeWeeks": 0,
+      "firstAddedAt": "2026-08-23T02:34:28+08:00",
+      "lastAddedAt": "2026-08-23T02:34:28+08:00",
+      "engagementPercentile": 0,
+      "badges": [
+        "guide-author"
+      ],
+      "reasons": [
+        "tutorial-author"
+      ],
+      "ranks": {
+        "overall": null,
+        "active": null,
+        "cases": null,
+        "prompts": null,
+        "rising": null,
         "tutorials": 6
       },
       "rankDelta": {
@@ -189,7 +306,64 @@
         "cases": null,
         "prompts": null,
         "rising": null,
-        "tutorials": 0
+        "tutorials": 1
+      }
+    },
+    {
+      "id": "github-larryvrh",
+      "slug": "github-larryvrh",
+      "handle": "larryvrh",
+      "aliases": [],
+      "displayName": "larryvrh",
+      "primaryPlatform": "github",
+      "profileUrl": "https://github.com/larryvrh",
+      "identities": [
+        {
+          "platform": "github",
+          "handle": "larryvrh",
+          "url": "https://github.com/larryvrh"
+        }
+      ],
+      "roles": [
+        "tutorial"
+      ],
+      "caseIds": [],
+      "promptCaseIds": [],
+      "tutorialIds": [
+        "nvidia-comfyui"
+      ],
+      "representativeCaseIds": [],
+      "latestCaseIds": [],
+      "caseCount": 0,
+      "promptCount": 0,
+      "promptRate": 0,
+      "tutorialCount": 1,
+      "recentCaseCount": 0,
+      "activeWeeks": 0,
+      "firstAddedAt": "2026-08-23T02:34:28+08:00",
+      "lastAddedAt": "2026-08-23T02:34:28+08:00",
+      "engagementPercentile": 0,
+      "badges": [
+        "guide-author"
+      ],
+      "reasons": [
+        "tutorial-author"
+      ],
+      "ranks": {
+        "overall": null,
+        "active": null,
+        "cases": null,
+        "prompts": null,
+        "rising": null,
+        "tutorials": 7
+      },
+      "rankDelta": {
+        "overall": null,
+        "active": null,
+        "cases": null,
+        "prompts": null,
+        "rising": null,
+        "tutorials": 1
       }
     },
     {
@@ -239,7 +413,7 @@
         "cases": null,
         "prompts": null,
         "rising": null,
-        "tutorials": 7
+        "tutorials": 8
       },
       "rankDelta": {
         "overall": null,
@@ -247,7 +421,64 @@
         "cases": null,
         "prompts": null,
         "rising": null,
-        "tutorials": 0
+        "tutorials": 1
+      }
+    },
+    {
+      "id": "github-nikodemon80",
+      "slug": "github-nikodemon80",
+      "handle": "nikodemon80",
+      "aliases": [],
+      "displayName": "nikodemon80",
+      "primaryPlatform": "github",
+      "profileUrl": "https://github.com/nikodemon80",
+      "identities": [
+        {
+          "platform": "github",
+          "handle": "nikodemon80",
+          "url": "https://github.com/nikodemon80"
+        }
+      ],
+      "roles": [
+        "tutorial"
+      ],
+      "caseIds": [],
+      "promptCaseIds": [],
+      "tutorialIds": [
+        "prompt-agent-skill"
+      ],
+      "representativeCaseIds": [],
+      "latestCaseIds": [],
+      "caseCount": 0,
+      "promptCount": 0,
+      "promptRate": 0,
+      "tutorialCount": 1,
+      "recentCaseCount": 0,
+      "activeWeeks": 0,
+      "firstAddedAt": "2026-08-23T02:34:28+08:00",
+      "lastAddedAt": "2026-08-23T02:34:28+08:00",
+      "engagementPercentile": 0,
+      "badges": [
+        "guide-author"
+      ],
+      "reasons": [
+        "tutorial-author"
+      ],
+      "ranks": {
+        "overall": null,
+        "active": null,
+        "cases": null,
+        "prompts": null,
+        "rising": null,
+        "tutorials": 9
+      },
+      "rankDelta": {
+        "overall": null,
+        "active": null,
+        "cases": null,
+        "prompts": null,
+        "rising": null,
+        "tutorials": 1
       }
     },
     {
@@ -305,7 +536,7 @@
         "cases": null,
         "prompts": null,
         "rising": null,
-        "tutorials": 10
+        "tutorials": 14
       },
       "rankDelta": {
         "overall": null,
@@ -313,7 +544,7 @@
         "cases": null,
         "prompts": null,
         "rising": null,
-        "tutorials": 0
+        "tutorials": -1
       }
     },
     {
@@ -371,7 +602,7 @@
         "cases": null,
         "prompts": null,
         "rising": null,
-        "tutorials": 11
+        "tutorials": 15
       },
       "rankDelta": {
         "overall": null,
@@ -379,7 +610,7 @@
         "cases": null,
         "prompts": null,
         "rising": null,
-        "tutorials": 0
+        "tutorials": -1
       }
     },
     {
@@ -439,7 +670,7 @@
         "cases": null,
         "prompts": null,
         "rising": null,
-        "tutorials": 12
+        "tutorials": 16
       },
       "rankDelta": {
         "overall": null,
@@ -447,7 +678,7 @@
         "cases": null,
         "prompts": null,
         "rising": null,
-        "tutorials": 0
+        "tutorials": -1
       }
     },
     {
@@ -698,7 +929,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 1,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -789,7 +1020,7 @@
       "promptCount": 16,
       "promptRate": 0.615,
       "tutorialCount": 2,
-      "recentCaseCount": 26,
+      "recentCaseCount": 23,
       "activeWeeks": 5,
       "firstAddedAt": "2026-08-10T05:52:30.476Z",
       "lastAddedAt": "2026-09-08T13:14:06.200Z",
@@ -798,7 +1029,6 @@
         "prolific",
         "prompt-contributor",
         "recently-active",
-        "rising",
         "breakout",
         "guide-author",
         "consistent"
@@ -813,16 +1043,16 @@
         "active": 3,
         "cases": 3,
         "prompts": 3,
-        "rising": 2,
-        "tutorials": 3
+        "rising": null,
+        "tutorials": 10
       },
       "rankDelta": {
         "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 1,
-        "tutorials": 0
+        "rising": null,
+        "tutorials": -7
       }
     },
     {
@@ -916,7 +1146,7 @@
         "active": 5,
         "cases": 5,
         "prompts": 8,
-        "rising": 3,
+        "rising": 2,
         "tutorials": null
       },
       "rankDelta": {
@@ -924,7 +1154,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 1,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -1001,7 +1231,7 @@
       "promptCount": 12,
       "promptRate": 0.6,
       "tutorialCount": 0,
-      "recentCaseCount": 20,
+      "recentCaseCount": 19,
       "activeWeeks": 4,
       "firstAddedAt": "2026-08-10T05:52:30.476Z",
       "lastAddedAt": "2026-09-08T13:14:06.200Z",
@@ -1010,7 +1240,6 @@
         "prolific",
         "prompt-contributor",
         "recently-active",
-        "rising",
         "breakout",
         "consistent"
       ],
@@ -1024,7 +1253,7 @@
         "active": 15,
         "cases": 4,
         "prompts": 7,
-        "rising": 11,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -1032,7 +1261,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 0,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -1123,7 +1352,7 @@
         "active": 6,
         "cases": 7,
         "prompts": 16,
-        "rising": 5,
+        "rising": 4,
         "tutorials": null
       },
       "rankDelta": {
@@ -1131,7 +1360,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 1,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -1226,7 +1455,7 @@
         "active": 4,
         "cases": 9,
         "prompts": 4,
-        "rising": 32,
+        "rising": 24,
         "tutorials": null
       },
       "rankDelta": {
@@ -1234,7 +1463,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -1306,7 +1535,7 @@
       "promptCount": 13,
       "promptRate": 0.929,
       "tutorialCount": 0,
-      "recentCaseCount": 14,
+      "recentCaseCount": 13,
       "activeWeeks": 4,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-09-08T13:14:06.200Z",
@@ -1315,7 +1544,6 @@
         "prolific",
         "prompt-contributor",
         "recently-active",
-        "rising",
         "consistent"
       ],
       "reasons": [
@@ -1328,7 +1556,7 @@
         "active": 7,
         "cases": 11,
         "prompts": 5,
-        "rising": 14,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -1336,7 +1564,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 0,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -1424,7 +1652,7 @@
         "active": 8,
         "cases": 18,
         "prompts": 9,
-        "rising": 4,
+        "rising": 3,
         "tutorials": null
       },
       "rankDelta": {
@@ -1432,7 +1660,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 1,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -1524,7 +1752,7 @@
         "active": 21,
         "cases": 12,
         "prompts": 6,
-        "rising": 36,
+        "rising": 27,
         "tutorials": null
       },
       "rankDelta": {
@@ -1532,7 +1760,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -1625,7 +1853,7 @@
         "active": 9,
         "cases": 8,
         "prompts": 11,
-        "rising": 23,
+        "rising": 17,
         "tutorials": null
       },
       "rankDelta": {
@@ -1633,7 +1861,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -1721,7 +1949,7 @@
         "active": 13,
         "cases": 20,
         "prompts": 10,
-        "rising": 6,
+        "rising": 5,
         "tutorials": null
       },
       "rankDelta": {
@@ -1729,7 +1957,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 1,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -1814,7 +2042,7 @@
         "active": 10,
         "cases": 24,
         "prompts": 12,
-        "rising": 18,
+        "rising": 14,
         "tutorials": null
       },
       "rankDelta": {
@@ -1822,7 +2050,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 1,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -1909,7 +2137,7 @@
         "active": 29,
         "cases": 21,
         "prompts": 14,
-        "rising": 26,
+        "rising": 20,
         "tutorials": null
       },
       "rankDelta": {
@@ -1917,7 +2145,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -1999,15 +2227,15 @@
         "active": 22,
         "cases": 30,
         "prompts": 24,
-        "rising": 10,
+        "rising": 8,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 7,
-        "active": 5,
-        "cases": 9,
-        "prompts": 7,
-        "rising": 11,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -2066,7 +2294,7 @@
       "promptCount": 6,
       "promptRate": 0.75,
       "tutorialCount": 0,
-      "recentCaseCount": 8,
+      "recentCaseCount": 7,
       "activeWeeks": 5,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-09-08T13:14:06.200Z",
@@ -2075,7 +2303,6 @@
         "prolific",
         "prompt-contributor",
         "recently-active",
-        "rising",
         "breakout",
         "consistent"
       ],
@@ -2089,15 +2316,15 @@
         "active": 20,
         "cases": 34,
         "prompts": 25,
-        "rising": 8,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
+        "overall": 0,
         "active": 0,
-        "cases": -1,
-        "prompts": -1,
-        "rising": 1,
+        "cases": 0,
+        "prompts": 0,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -2179,12 +2406,12 @@
         "active": 26,
         "cases": 28,
         "prompts": 23,
-        "rising": 12,
+        "rising": 9,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": 0,
@@ -2248,7 +2475,7 @@
       "promptCount": 3,
       "promptRate": 0.231,
       "tutorialCount": 0,
-      "recentCaseCount": 13,
+      "recentCaseCount": 12,
       "activeWeeks": 6,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-09-08T13:14:06.200Z",
@@ -2256,7 +2483,6 @@
       "badges": [
         "prolific",
         "recently-active",
-        "rising",
         "breakout",
         "consistent"
       ],
@@ -2270,15 +2496,15 @@
         "active": 16,
         "cases": 13,
         "prompts": 58,
-        "rising": 21,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -2360,13 +2586,13 @@
         "active": 17,
         "cases": 31,
         "prompts": 18,
-        "rising": 13,
+        "rising": 10,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
+        "overall": 0,
         "active": 0,
-        "cases": -1,
+        "cases": 0,
         "prompts": 0,
         "rising": 0,
         "tutorials": null
@@ -2453,15 +2679,15 @@
         "active": 23,
         "cases": 16,
         "prompts": 27,
-        "rising": 97,
+        "rising": 81,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
-        "prompts": -1,
-        "rising": 4,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -2543,15 +2769,15 @@
         "active": 12,
         "cases": 14,
         "prompts": 105,
-        "rising": 9,
+        "rising": 7,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 1,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -2637,7 +2863,7 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
@@ -2730,7 +2956,7 @@
         "overall": 0,
         "active": 0,
         "cases": 0,
-        "prompts": -1,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -2795,7 +3021,7 @@
       "promptCount": 9,
       "promptRate": 0.9,
       "tutorialCount": 0,
-      "recentCaseCount": 9,
+      "recentCaseCount": 8,
       "activeWeeks": 4,
       "firstAddedAt": "2026-08-10T07:56:15+08:00",
       "lastAddedAt": "2026-09-08T13:14:06.200Z",
@@ -2903,7 +3129,7 @@
         "active": 36,
         "cases": 46,
         "prompts": 20,
-        "rising": 16,
+        "rising": 12,
         "tutorials": null
       },
       "rankDelta": {
@@ -2911,7 +3137,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 1,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -2990,15 +3216,15 @@
         "active": 37,
         "cases": 37,
         "prompts": 22,
-        "rising": 25,
+        "rising": 19,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
         "active": 0,
-        "cases": -1,
+        "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -3077,15 +3303,15 @@
         "active": 52,
         "cases": 35,
         "prompts": 31,
-        "rising": 28,
+        "rising": 22,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
         "active": 0,
-        "cases": -1,
-        "prompts": -1,
-        "rising": 2,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -3164,7 +3390,7 @@
         "active": 38,
         "cases": 44,
         "prompts": 19,
-        "rising": 24,
+        "rising": 18,
         "tutorials": null
       },
       "rankDelta": {
@@ -3172,7 +3398,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -3251,15 +3477,15 @@
         "active": 25,
         "cases": 36,
         "prompts": 21,
-        "rising": 35,
+        "rising": 26,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
-        "cases": -1,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -3335,7 +3561,7 @@
         "active": 32,
         "cases": 42,
         "prompts": 42,
-        "rising": 15,
+        "rising": 11,
         "tutorials": null
       },
       "rankDelta": {
@@ -3426,7 +3652,7 @@
         "active": 14,
         "cases": 27,
         "prompts": 15,
-        "rising": 169,
+        "rising": 134,
         "tutorials": null
       },
       "rankDelta": {
@@ -3434,7 +3660,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 4,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -3499,7 +3725,7 @@
       "promptCount": 2,
       "promptRate": 0.143,
       "tutorialCount": 2,
-      "recentCaseCount": 13,
+      "recentCaseCount": 12,
       "activeWeeks": 3,
       "firstAddedAt": "2026-08-09T15:11:03+08:00",
       "lastAddedAt": "2026-09-06T02:44:35.372Z",
@@ -3521,15 +3747,15 @@
         "cases": 10,
         "prompts": 106,
         "rising": null,
-        "tutorials": 4
+        "tutorials": 11
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
-        "tutorials": 0
+        "tutorials": -7
       }
     },
     {
@@ -3605,15 +3831,15 @@
         "active": 43,
         "cases": 48,
         "prompts": 30,
-        "rising": 17,
+        "rising": 13,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
         "active": 0,
         "cases": 0,
-        "prompts": -1,
-        "rising": 1,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -3688,7 +3914,7 @@
         "active": 48,
         "cases": 50,
         "prompts": 38,
-        "rising": 19,
+        "rising": 15,
         "tutorials": null
       },
       "rankDelta": {
@@ -3696,7 +3922,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 1,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -3751,7 +3977,7 @@
       "promptCount": 4,
       "promptRate": 0.667,
       "tutorialCount": 0,
-      "recentCaseCount": 5,
+      "recentCaseCount": 4,
       "activeWeeks": 4,
       "firstAddedAt": "2026-08-10T05:52:30.476Z",
       "lastAddedAt": "2026-09-08T13:14:06.200Z",
@@ -3759,7 +3985,6 @@
       "badges": [
         "prompt-contributor",
         "recently-active",
-        "rising",
         "breakout",
         "consistent"
       ],
@@ -3773,7 +3998,7 @@
         "active": 47,
         "cases": 43,
         "prompts": 43,
-        "rising": 30,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -3781,7 +4006,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -3836,7 +4061,7 @@
       "promptCount": 1,
       "promptRate": 0.111,
       "tutorialCount": 0,
-      "recentCaseCount": 9,
+      "recentCaseCount": 8,
       "activeWeeks": 5,
       "firstAddedAt": "2026-08-10T05:52:30.477Z",
       "lastAddedAt": "2026-09-08T13:14:06.200Z",
@@ -3844,7 +4069,6 @@
       "badges": [
         "prolific",
         "recently-active",
-        "rising",
         "breakout",
         "consistent"
       ],
@@ -3858,7 +4082,7 @@
         "active": 19,
         "cases": 25,
         "prompts": 158,
-        "rising": 20,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -3866,7 +4090,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -3940,7 +4164,7 @@
         "active": 42,
         "cases": 57,
         "prompts": 40,
-        "rising": 22,
+        "rising": 16,
         "tutorials": null
       },
       "rankDelta": {
@@ -3948,7 +4172,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -4027,16 +4251,16 @@
         "active": 44,
         "cases": 47,
         "prompts": 57,
-        "rising": 33,
-        "tutorials": 8
+        "rising": 25,
+        "tutorials": 12
       },
       "rankDelta": {
         "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
-        "tutorials": 0
+        "rising": 0,
+        "tutorials": -1
       }
     },
     {
@@ -4097,7 +4321,7 @@
       "promptCount": 1,
       "promptRate": 0.063,
       "tutorialCount": 0,
-      "recentCaseCount": 15,
+      "recentCaseCount": 12,
       "activeWeeks": 4,
       "firstAddedAt": "2026-08-09T15:11:03+08:00",
       "lastAddedAt": "2026-09-06T02:44:35.372Z",
@@ -4205,15 +4429,15 @@
         "active": 27,
         "cases": 38,
         "prompts": 17,
-        "rising": 208,
+        "rising": 159,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
-        "cases": -1,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -4287,7 +4511,7 @@
         "active": 11,
         "cases": 26,
         "prompts": 162,
-        "rising": 7,
+        "rising": 6,
         "tutorials": null
       },
       "rankDelta": {
@@ -4295,7 +4519,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 1,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -4351,7 +4575,7 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 11,
+      "recentCaseCount": 9,
       "activeWeeks": 4,
       "firstAddedAt": "2026-08-10T07:56:15+08:00",
       "lastAddedAt": "2026-09-08T13:14:06.200Z",
@@ -4435,15 +4659,14 @@
       "promptCount": 4,
       "promptRate": 0.667,
       "tutorialCount": 0,
-      "recentCaseCount": 6,
+      "recentCaseCount": 4,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T05:52:30.477Z",
       "lastAddedAt": "2026-08-22T09:15:40.742Z",
       "engagementPercentile": 0.642,
       "badges": [
         "prompt-contributor",
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "prompt-contributor",
@@ -4454,7 +4677,7 @@
         "active": 82,
         "cases": 40,
         "prompts": 41,
-        "rising": 128,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -4462,7 +4685,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -4535,15 +4758,15 @@
         "active": 137,
         "cases": 74,
         "prompts": 35,
-        "rising": 77,
+        "rising": 62,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -4595,14 +4818,13 @@
       "promptCount": 1,
       "promptRate": 0.167,
       "tutorialCount": 0,
-      "recentCaseCount": 6,
+      "recentCaseCount": 5,
       "activeWeeks": 4,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-09-08T13:14:06.200Z",
       "engagementPercentile": 0.767,
       "badges": [
         "recently-active",
-        "rising",
         "consistent"
       ],
       "reasons": [
@@ -4614,7 +4836,7 @@
         "active": 40,
         "cases": 45,
         "prompts": 154,
-        "rising": 31,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -4622,7 +4844,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -4694,7 +4916,7 @@
         "active": 80,
         "cases": 83,
         "prompts": 53,
-        "rising": 46,
+        "rising": 37,
         "tutorials": null
       },
       "rankDelta": {
@@ -4702,7 +4924,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -4755,15 +4977,14 @@
       "promptCount": 4,
       "promptRate": 0.8,
       "tutorialCount": 0,
-      "recentCaseCount": 5,
+      "recentCaseCount": 4,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T05:52:30.476Z",
       "lastAddedAt": "2026-09-08T13:14:06.200Z",
       "engagementPercentile": 0.463,
       "badges": [
         "prompt-contributor",
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "prompt-contributor",
@@ -4774,7 +4995,7 @@
         "active": 49,
         "cases": 53,
         "prompts": 39,
-        "rising": 140,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -4782,7 +5003,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -4852,7 +5073,7 @@
         "active": 53,
         "cases": 51,
         "prompts": 103,
-        "rising": 111,
+        "rising": 89,
         "tutorials": null
       },
       "rankDelta": {
@@ -4860,7 +5081,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 4,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -4932,15 +5153,15 @@
         "active": 115,
         "cases": 75,
         "prompts": 36,
-        "rising": 104,
+        "rising": 84,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -5014,7 +5235,7 @@
         "active": 54,
         "cases": 61,
         "prompts": 55,
-        "rising": 154,
+        "rising": 123,
         "tutorials": null
       },
       "rankDelta": {
@@ -5022,7 +5243,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 4,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -5092,7 +5313,7 @@
         "active": 50,
         "cases": 81,
         "prompts": 37,
-        "rising": 118,
+        "rising": 95,
         "tutorials": null
       },
       "rankDelta": {
@@ -5100,7 +5321,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -5171,7 +5392,7 @@
         "active": 77,
         "cases": 79,
         "prompts": 52,
-        "rising": 113,
+        "rising": 91,
         "tutorials": null
       },
       "rankDelta": {
@@ -5179,7 +5400,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 4,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -5232,14 +5453,13 @@
       "promptCount": 1,
       "promptRate": 0.143,
       "tutorialCount": 0,
-      "recentCaseCount": 7,
+      "recentCaseCount": 5,
       "activeWeeks": 3,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-09-08T13:14:06.200Z",
       "engagementPercentile": 0.469,
       "badges": [
         "recently-active",
-        "rising",
         "consistent"
       ],
       "reasons": [
@@ -5251,15 +5471,15 @@
         "active": 31,
         "cases": 39,
         "prompts": 155,
-        "rising": 102,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
         "active": 0,
-        "cases": -1,
+        "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -5388,7 +5608,7 @@
       "promptCount": 1,
       "promptRate": 0.125,
       "tutorialCount": 0,
-      "recentCaseCount": 8,
+      "recentCaseCount": 6,
       "activeWeeks": 5,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-09-08T13:14:06.200Z",
@@ -5396,7 +5616,6 @@
       "badges": [
         "prolific",
         "recently-active",
-        "rising",
         "consistent"
       ],
       "reasons": [
@@ -5409,15 +5628,15 @@
         "active": 41,
         "cases": 33,
         "prompts": 157,
-        "rising": 206,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
         "active": 0,
-        "cases": -1,
+        "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -5490,15 +5709,15 @@
         "active": 83,
         "cases": 56,
         "prompts": 28,
-        "rising": 238,
+        "rising": 182,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
         "active": 0,
         "cases": 0,
-        "prompts": -1,
-        "rising": 7,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -5548,14 +5767,13 @@
       "promptCount": 1,
       "promptRate": 0.2,
       "tutorialCount": 0,
-      "recentCaseCount": 5,
+      "recentCaseCount": 4,
       "activeWeeks": 4,
       "firstAddedAt": "2026-08-10T05:52:30.477Z",
       "lastAddedAt": "2026-08-28T01:32:58.034Z",
       "engagementPercentile": 0.824,
       "badges": [
         "recently-active",
-        "rising",
         "breakout",
         "consistent"
       ],
@@ -5569,15 +5787,15 @@
         "active": 117,
         "cases": 65,
         "prompts": 151,
-        "rising": 74,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -5652,15 +5870,15 @@
         "active": 34,
         "cases": 32,
         "prompts": 156,
-        "rising": 174,
+        "rising": 138,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
         "active": 0,
-        "cases": -1,
+        "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -5728,15 +5946,15 @@
         "active": 116,
         "cases": 114,
         "prompts": 97,
-        "rising": 39,
+        "rising": 30,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
-        "cases": -1,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -5805,7 +6023,7 @@
         "active": 74,
         "cases": 129,
         "prompts": 50,
-        "rising": 29,
+        "rising": 23,
         "tutorials": null
       },
       "rankDelta": {
@@ -5813,7 +6031,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -5861,15 +6079,14 @@
       "promptCount": 3,
       "promptRate": 1,
       "tutorialCount": 0,
-      "recentCaseCount": 3,
+      "recentCaseCount": 2,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-09-08T13:14:06.200Z",
       "engagementPercentile": 0.832,
       "badges": [
         "prompt-contributor",
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "prompt-contributor",
@@ -5880,15 +6097,15 @@
         "active": 123,
         "cases": 106,
         "prompts": 45,
-        "rising": 71,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
-        "cases": -1,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -5957,7 +6174,7 @@
         "active": 66,
         "cases": 58,
         "prompts": 148,
-        "rising": 98,
+        "rising": 82,
         "tutorials": null
       },
       "rankDelta": {
@@ -5965,7 +6182,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -6033,15 +6250,15 @@
         "active": 124,
         "cases": 70,
         "prompts": 100,
-        "rising": 135,
+        "rising": 108,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -6111,15 +6328,15 @@
         "active": 122,
         "cases": 69,
         "prompts": 33,
-        "rising": 203,
+        "rising": 156,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 6,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -6188,7 +6405,7 @@
         "active": 76,
         "cases": 86,
         "prompts": 54,
-        "rising": 175,
+        "rising": 139,
         "tutorials": null
       },
       "rankDelta": {
@@ -6196,7 +6413,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 4,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -6248,7 +6465,7 @@
       "promptCount": 3,
       "promptRate": 0.6,
       "tutorialCount": 0,
-      "recentCaseCount": 5,
+      "recentCaseCount": 3,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-09-08T13:14:06.200Z",
@@ -6256,7 +6473,6 @@
       "badges": [
         "prompt-contributor",
         "recently-active",
-        "rising",
         "breakout"
       ],
       "reasons": [
@@ -6269,7 +6485,7 @@
         "active": 59,
         "cases": 62,
         "prompts": 56,
-        "rising": 221,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -6277,7 +6493,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -6344,7 +6560,7 @@
         "active": 61,
         "cases": 87,
         "prompts": 146,
-        "rising": 27,
+        "rising": 21,
         "tutorials": null
       },
       "rankDelta": {
@@ -6352,7 +6568,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -6425,15 +6641,15 @@
         "active": 62,
         "cases": 68,
         "prompts": 29,
-        "rising": 250,
+        "rising": 190,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
         "active": 0,
         "cases": 0,
-        "prompts": -1,
-        "rising": 7,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -6487,15 +6703,14 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 10,
+      "recentCaseCount": 9,
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T05:52:30.476Z",
       "lastAddedAt": "2026-08-13T00:38:33.433Z",
       "engagementPercentile": 0.774,
       "badges": [
         "prolific",
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "high-output",
@@ -6506,7 +6721,7 @@
         "active": 63,
         "cases": 23,
         "prompts": 161,
-        "rising": 61,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -6514,7 +6729,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -6583,16 +6798,16 @@
         "active": 138,
         "cases": 91,
         "prompts": 93,
-        "rising": 90,
-        "tutorials": 5
+        "rising": 75,
+        "tutorials": 4
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
-        "cases": -1,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": 4,
-        "tutorials": 0
+        "rising": 0,
+        "tutorials": 1
       }
     },
     {
@@ -6638,14 +6853,13 @@
       "promptCount": 2,
       "promptRate": 0.667,
       "tutorialCount": 0,
-      "recentCaseCount": 3,
+      "recentCaseCount": 2,
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T05:52:30.477Z",
       "lastAddedAt": "2026-09-08T13:14:06.200Z",
       "engagementPercentile": 0.927,
       "badges": [
         "recently-active",
-        "rising",
         "breakout"
       ],
       "reasons": [
@@ -6657,15 +6871,15 @@
         "active": 79,
         "cases": 100,
         "prompts": 95,
-        "rising": 34,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
         "active": 0,
-        "cases": -1,
+        "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -6731,15 +6945,15 @@
         "active": 65,
         "cases": 99,
         "prompts": 94,
-        "rising": 141,
+        "rising": 112,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
         "active": 0,
-        "cases": -1,
+        "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -6883,7 +7097,7 @@
         "active": 60,
         "cases": 71,
         "prompts": 101,
-        "rising": 222,
+        "rising": 169,
         "tutorials": null
       },
       "rankDelta": {
@@ -6891,7 +7105,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -6961,7 +7175,7 @@
         "active": 75,
         "cases": 72,
         "prompts": 34,
-        "rising": 275,
+        "rising": 208,
         "tutorials": null
       },
       "rankDelta": {
@@ -6969,7 +7183,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -7038,7 +7252,7 @@
         "active": 68,
         "cases": 64,
         "prompts": 150,
-        "rising": 197,
+        "rising": 152,
         "tutorials": null
       },
       "rankDelta": {
@@ -7046,7 +7260,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 6,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -7096,14 +7310,13 @@
       "promptCount": 1,
       "promptRate": 0.2,
       "tutorialCount": 0,
-      "recentCaseCount": 5,
+      "recentCaseCount": 3,
       "activeWeeks": 4,
       "firstAddedAt": "2026-08-10T05:52:30.474Z",
       "lastAddedAt": "2026-09-02T17:38:00.650Z",
       "engagementPercentile": 0.253,
       "badges": [
         "recently-active",
-        "rising",
         "consistent"
       ],
       "reasons": [
@@ -7115,7 +7328,7 @@
         "active": 102,
         "cases": 59,
         "prompts": 149,
-        "rising": 235,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -7123,7 +7336,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -7186,15 +7399,15 @@
         "active": 224,
         "cases": 255,
         "prompts": 85,
-        "rising": 54,
+        "rising": 44,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -7261,15 +7474,15 @@
         "active": 167,
         "cases": 128,
         "prompts": 49,
-        "rising": 207,
+        "rising": 158,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -7337,7 +7550,7 @@
         "active": 45,
         "cases": 85,
         "prompts": 102,
-        "rising": 244,
+        "rising": 186,
         "tutorials": null
       },
       "rankDelta": {
@@ -7345,7 +7558,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -7412,15 +7625,15 @@
         "active": 193,
         "cases": 95,
         "prompts": 137,
-        "rising": 112,
+        "rising": 90,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
-        "cases": -1,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": 4,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -7481,15 +7694,15 @@
         "active": 158,
         "cases": 193,
         "prompts": 68,
-        "rising": 81,
+        "rising": 66,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 4,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -7553,15 +7766,15 @@
         "active": 107,
         "cases": 123,
         "prompts": 99,
-        "rising": 116,
+        "rising": 94,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
         "active": 0,
-        "cases": -1,
+        "cases": 0,
         "prompts": 0,
-        "rising": 4,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -7630,15 +7843,15 @@
         "active": 57,
         "cases": 102,
         "prompts": 44,
-        "rising": 258,
+        "rising": 196,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
         "active": 0,
-        "cases": -1,
+        "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -7707,7 +7920,7 @@
         "active": 72,
         "cases": 131,
         "prompts": 51,
-        "rising": 270,
+        "rising": 206,
         "tutorials": null
       },
       "rankDelta": {
@@ -7715,7 +7928,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -7776,15 +7989,15 @@
         "active": 219,
         "cases": 236,
         "prompts": 81,
-        "rising": 123,
+        "rising": 100,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -7830,7 +8043,7 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 3,
+      "recentCaseCount": 2,
       "activeWeeks": 3,
       "firstAddedAt": "2026-08-09T15:11:03+08:00",
       "lastAddedAt": "2026-09-09T00:24:42.106Z",
@@ -7854,10 +8067,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 37,
-        "active": 125,
-        "cases": 39,
-        "prompts": 20,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -7925,15 +8138,15 @@
         "active": 73,
         "cases": 111,
         "prompts": 47,
-        "rising": 217,
+        "rising": 166,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
+        "overall": 0,
         "active": 0,
-        "cases": -1,
+        "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -7983,7 +8196,7 @@
       "promptCount": 1,
       "promptRate": 0.2,
       "tutorialCount": 0,
-      "recentCaseCount": 3,
+      "recentCaseCount": 1,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-09T15:11:03+08:00",
       "lastAddedAt": "2026-08-13T00:38:33.432Z",
@@ -8003,8 +8216,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -8069,15 +8282,15 @@
         "active": 168,
         "cases": 274,
         "prompts": 131,
-        "rising": 37,
+        "rising": 28,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -8140,15 +8353,15 @@
         "active": 222,
         "cases": 152,
         "prompts": 63,
-        "rising": 73,
+        "rising": 59,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -8215,15 +8428,15 @@
         "active": 58,
         "cases": 119,
         "prompts": 48,
-        "rising": 259,
+        "rising": 197,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
+        "overall": 0,
         "active": 0,
-        "cases": -1,
+        "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -8284,15 +8497,15 @@
         "active": 171,
         "cases": 225,
         "prompts": 78,
-        "rising": 144,
+        "rising": 115,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -8354,15 +8567,15 @@
         "active": 173,
         "cases": 199,
         "prompts": 120,
-        "rising": 40,
+        "rising": 31,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -8427,15 +8640,15 @@
         "active": 56,
         "cases": 73,
         "prompts": 169,
-        "rising": 38,
+        "rising": 29,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -8502,15 +8715,15 @@
         "active": 106,
         "cases": 80,
         "prompts": 145,
-        "rising": 230,
+        "rising": 177,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -8575,15 +8788,15 @@
         "active": 46,
         "cases": 77,
         "prompts": 144,
-        "rising": 149,
+        "rising": 119,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -8645,15 +8858,15 @@
         "active": 157,
         "cases": 246,
         "prompts": 127,
-        "rising": 42,
+        "rising": 33,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -8714,15 +8927,15 @@
         "active": 188,
         "cases": 263,
         "prompts": 88,
-        "rising": 148,
+        "rising": 118,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -8784,15 +8997,15 @@
         "active": 160,
         "cases": 260,
         "prompts": 128,
-        "rising": 43,
+        "rising": 34,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -8859,15 +9072,15 @@
         "active": 131,
         "cases": 107,
         "prompts": 46,
-        "rising": 228,
+        "rising": 175,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
-        "cases": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -8936,15 +9149,15 @@
         "active": 69,
         "cases": 63,
         "prompts": 168,
-        "rising": 143,
+        "rising": 114,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -9009,15 +9222,15 @@
         "active": 64,
         "cases": 89,
         "prompts": 175,
-        "rising": 41,
+        "rising": 32,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
         "active": 0,
-        "cases": -1,
-        "prompts": -1,
-        "rising": 2,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -9082,15 +9295,15 @@
         "active": 39,
         "cases": 52,
         "prompts": 165,
-        "rising": 110,
+        "rising": 88,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -9140,7 +9353,7 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 5,
+      "recentCaseCount": 3,
       "activeWeeks": 3,
       "firstAddedAt": "2026-08-09T15:11:03+08:00",
       "lastAddedAt": "2026-08-30T00:39:42.827Z",
@@ -9162,7 +9375,7 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
@@ -9218,7 +9431,7 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 7,
+      "recentCaseCount": 4,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-09T15:11:03+08:00",
       "lastAddedAt": "2026-08-16T04:44:06.093Z",
@@ -9240,7 +9453,7 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
@@ -9305,15 +9518,15 @@
         "active": 215,
         "cases": 241,
         "prompts": 83,
-        "rising": 108,
+        "rising": 86,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -9374,15 +9587,15 @@
         "active": 126,
         "cases": 165,
         "prompts": 66,
-        "rising": 168,
+        "rising": 133,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -9451,15 +9664,15 @@
         "active": 142,
         "cases": 66,
         "prompts": 152,
-        "rising": 205,
+        "rising": 157,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 6,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -9524,15 +9737,15 @@
         "active": 231,
         "cases": 109,
         "prompts": 140,
-        "rising": 105,
+        "rising": 85,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
-        "cases": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -9593,15 +9806,15 @@
         "active": 214,
         "cases": 218,
         "prompts": 75,
-        "rising": 115,
+        "rising": 93,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -9663,15 +9876,15 @@
         "active": 246,
         "cases": 200,
         "prompts": 121,
-        "rising": 79,
+        "rising": 64,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -9732,15 +9945,15 @@
         "active": 120,
         "cases": 237,
         "prompts": 82,
-        "rising": 127,
+        "rising": 104,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -9801,15 +10014,15 @@
         "active": 112,
         "cases": 213,
         "prompts": 72,
-        "rising": 151,
+        "rising": 121,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -9873,8 +10086,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -9937,15 +10150,15 @@
         "active": 169,
         "cases": 197,
         "prompts": 119,
-        "rising": 121,
+        "rising": 98,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -9991,14 +10204,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 4,
+      "recentCaseCount": 3,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T05:52:30.477Z",
       "lastAddedAt": "2026-08-13T00:38:33.430Z",
       "engagementPercentile": 0.799,
       "badges": [
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "recently-active"
@@ -10008,15 +10220,15 @@
         "active": 199,
         "cases": 76,
         "prompts": 170,
-        "rising": 107,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 4,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -10083,9 +10295,9 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
-        "cases": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
         "rising": null,
         "tutorials": null
@@ -10147,15 +10359,15 @@
         "active": 118,
         "cases": 169,
         "prompts": 112,
-        "rising": 129,
+        "rising": 105,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 4,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -10215,15 +10427,15 @@
         "active": 242,
         "cases": 142,
         "prompts": 109,
-        "rising": 130,
+        "rising": 106,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -10286,15 +10498,15 @@
         "active": 67,
         "cases": 96,
         "prompts": 138,
-        "rising": 164,
+        "rising": 130,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
+        "overall": 0,
         "active": 0,
-        "cases": -1,
+        "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -10354,15 +10566,15 @@
         "active": 245,
         "cases": 277,
         "prompts": 132,
-        "rising": 137,
+        "rising": 110,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -10426,15 +10638,15 @@
         "active": 104,
         "cases": 112,
         "prompts": 96,
-        "rising": 296,
+        "rising": 228,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
+        "overall": 0,
         "active": 0,
-        "cases": -1,
+        "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -10497,15 +10709,15 @@
         "active": 105,
         "cases": 90,
         "prompts": 176,
-        "rising": 56,
+        "rising": 46,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
+        "overall": 0,
         "active": 0,
-        "cases": -1,
-        "prompts": -1,
-        "rising": 2,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -10566,15 +10778,15 @@
         "active": 175,
         "cases": 257,
         "prompts": 86,
-        "rising": 184,
+        "rising": 143,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 4,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -10620,14 +10832,13 @@
       "promptCount": 1,
       "promptRate": 0.333,
       "tutorialCount": 0,
-      "recentCaseCount": 3,
+      "recentCaseCount": 1,
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-08-21T20:02:13.120Z",
       "engagementPercentile": 0.567,
       "badges": [
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "recently-active"
@@ -10637,15 +10848,15 @@
         "active": 207,
         "cases": 120,
         "prompts": 142,
-        "rising": 178,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
-        "cases": -1,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": 4,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -10706,15 +10917,15 @@
         "active": 204,
         "cases": 275,
         "prompts": 91,
-        "rising": 236,
+        "rising": 180,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -10757,14 +10968,13 @@
       "promptCount": 1,
       "promptRate": 0.5,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 1,
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-09-08T13:14:06.200Z",
       "engagementPercentile": 0.813,
       "badges": [
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "recently-active"
@@ -10774,15 +10984,15 @@
         "active": 177,
         "cases": 135,
         "prompts": 108,
-        "rising": 101,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 4,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -10830,14 +11040,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 5,
+      "recentCaseCount": 4,
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T05:52:30.476Z",
       "lastAddedAt": "2026-08-13T00:38:33.433Z",
       "engagementPercentile": 0.668,
       "badges": [
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "recently-active"
@@ -10847,15 +11056,15 @@
         "active": 166,
         "cases": 60,
         "prompts": 167,
-        "rising": 138,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 4,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -10918,15 +11127,15 @@
         "active": 135,
         "cases": 104,
         "prompts": 139,
-        "rising": 232,
+        "rising": 179,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
-        "cases": -1,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -10987,15 +11196,15 @@
         "active": 220,
         "cases": 217,
         "prompts": 74,
-        "rising": 188,
+        "rising": 146,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 5,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -11039,14 +11248,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 3,
+      "recentCaseCount": 1,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T05:52:30.474Z",
       "lastAddedAt": "2026-08-13T00:38:33.433Z",
       "engagementPercentile": 0.849,
       "badges": [
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "recently-active"
@@ -11056,15 +11264,15 @@
         "active": 234,
         "cases": 126,
         "prompts": 193,
-        "rising": 103,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
-        "cases": -1,
-        "prompts": -1,
-        "rising": 3,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -11124,15 +11332,15 @@
         "active": 225,
         "cases": 201,
         "prompts": 122,
-        "rising": 173,
+        "rising": 137,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 5,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -11193,15 +11401,15 @@
         "active": 226,
         "cases": 210,
         "prompts": 70,
-        "rising": 247,
+        "rising": 188,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -11264,15 +11472,15 @@
         "active": 128,
         "cases": 98,
         "prompts": 181,
-        "rising": 147,
+        "rising": 117,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
-        "cases": -1,
-        "prompts": -1,
-        "rising": 3,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -11335,7 +11543,7 @@
         "active": 55,
         "cases": 82,
         "prompts": 172,
-        "rising": 120,
+        "rising": 97,
         "tutorials": null
       },
       "rankDelta": {
@@ -11343,7 +11551,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -11387,14 +11595,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 3,
+      "recentCaseCount": 2,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T05:52:30.477Z",
       "lastAddedAt": "2026-08-13T00:38:33.430Z",
       "engagementPercentile": 0.823,
       "badges": [
         "recently-active",
-        "rising",
         "breakout"
       ],
       "reasons": [
@@ -11406,15 +11613,15 @@
         "active": 232,
         "cases": 101,
         "prompts": 182,
-        "rising": 106,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
-        "cases": -1,
-        "prompts": -1,
-        "rising": 3,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -11479,15 +11686,15 @@
         "active": 143,
         "cases": 54,
         "prompts": 166,
-        "rising": 220,
+        "rising": 168,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -11531,14 +11738,13 @@
       "promptCount": 2,
       "promptRate": 1,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 1,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T05:52:30.476Z",
       "lastAddedAt": "2026-08-20T18:59:16.816Z",
       "engagementPercentile": 0.24,
       "badges": [
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "recently-active"
@@ -11548,7 +11754,7 @@
         "active": 249,
         "cases": 133,
         "prompts": 59,
-        "rising": 254,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -11556,7 +11762,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -11616,15 +11822,15 @@
         "active": 154,
         "cases": 206,
         "prompts": 123,
-        "rising": 133,
+        "rising": 107,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -11685,15 +11891,15 @@
         "active": 217,
         "cases": 264,
         "prompts": 89,
-        "rising": 218,
+        "rising": 167,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -11756,15 +11962,15 @@
         "active": 125,
         "cases": 113,
         "prompts": 187,
-        "rising": 167,
+        "rising": 132,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
-        "cases": -1,
-        "prompts": -1,
-        "rising": 3,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -11807,14 +12013,13 @@
       "promptCount": 1,
       "promptRate": 0.5,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 1,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T05:52:30.476Z",
       "lastAddedAt": "2026-08-13T00:38:33.433Z",
       "engagementPercentile": 0.523,
       "badges": [
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "recently-active"
@@ -11824,7 +12029,7 @@
         "active": 272,
         "cases": 167,
         "prompts": 110,
-        "rising": 190,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -11832,7 +12037,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 5,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -11894,7 +12099,7 @@
         "active": 256,
         "cases": 182,
         "prompts": 115,
-        "rising": 152,
+        "rising": 122,
         "tutorials": null
       },
       "rankDelta": {
@@ -11902,7 +12107,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -11962,15 +12167,15 @@
         "active": 191,
         "cases": 282,
         "prompts": 134,
-        "rising": 160,
+        "rising": 127,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -12033,15 +12238,15 @@
         "active": 71,
         "cases": 122,
         "prompts": 143,
-        "rising": 269,
+        "rising": 205,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
         "active": 0,
-        "cases": -1,
+        "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -12085,14 +12290,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 3,
+      "recentCaseCount": 2,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T05:52:30.477Z",
       "lastAddedAt": "2026-08-13T00:38:33.431Z",
       "engagementPercentile": 0.689,
       "badges": [
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "recently-active"
@@ -12102,15 +12306,15 @@
         "active": 230,
         "cases": 92,
         "prompts": 177,
-        "rising": 146,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
-        "cases": -1,
-        "prompts": -1,
-        "rising": 3,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -12173,15 +12377,15 @@
         "active": 218,
         "cases": 97,
         "prompts": 180,
-        "rising": 86,
+        "rising": 71,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
-        "cases": -1,
-        "prompts": -1,
-        "rising": 2,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -12244,7 +12448,7 @@
         "active": 51,
         "cases": 84,
         "prompts": 173,
-        "rising": 163,
+        "rising": 129,
         "tutorials": null
       },
       "rankDelta": {
@@ -12252,7 +12456,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -12293,14 +12497,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 1,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-08-11T12:15:52.990Z",
       "engagementPercentile": 0.983,
       "badges": [
         "recently-active",
-        "rising",
         "breakout"
       ],
       "reasons": [
@@ -12312,7 +12515,7 @@
         "active": 290,
         "cases": 149,
         "prompts": 208,
-        "rising": 48,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -12320,7 +12523,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -12380,15 +12583,15 @@
         "active": 185,
         "cases": 209,
         "prompts": 124,
-        "rising": 214,
+        "rising": 164,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -12449,15 +12652,15 @@
         "active": 145,
         "cases": 144,
         "prompts": 61,
-        "rising": 299,
+        "rising": 231,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -12518,15 +12721,15 @@
         "active": 146,
         "cases": 151,
         "prompts": 62,
-        "rising": 300,
+        "rising": 232,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -12587,15 +12790,15 @@
         "active": 150,
         "cases": 216,
         "prompts": 73,
-        "rising": 304,
+        "rising": 236,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -12656,15 +12859,15 @@
         "active": 152,
         "cases": 267,
         "prompts": 90,
-        "rising": 306,
+        "rising": 238,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -12724,7 +12927,7 @@
         "active": 247,
         "cases": 235,
         "prompts": 126,
-        "rising": 186,
+        "rising": 145,
         "tutorials": null
       },
       "rankDelta": {
@@ -12732,7 +12935,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 5,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -12773,14 +12976,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 1,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T05:52:30.477Z",
       "lastAddedAt": "2026-08-11T12:15:52.991Z",
       "engagementPercentile": 0.895,
       "badges": [
         "recently-active",
-        "rising",
         "breakout"
       ],
       "reasons": [
@@ -12792,7 +12994,7 @@
         "active": 289,
         "cases": 154,
         "prompts": 211,
-        "rising": 91,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -12800,7 +13002,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 6,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -12861,15 +13063,15 @@
         "active": 223,
         "cases": 180,
         "prompts": 67,
-        "rising": 257,
+        "rising": 195,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -12930,15 +13132,15 @@
         "active": 162,
         "cases": 125,
         "prompts": 192,
-        "rising": 181,
+        "rising": 141,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
-        "cases": -1,
-        "prompts": -1,
-        "rising": 4,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -12999,15 +13201,15 @@
         "active": 156,
         "cases": 222,
         "prompts": 77,
-        "rising": 263,
+        "rising": 200,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -13066,7 +13268,7 @@
         "active": 303,
         "cases": 314,
         "prompts": 107,
-        "rising": 75,
+        "rising": 60,
         "tutorials": null
       },
       "rankDelta": {
@@ -13074,7 +13276,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -13118,17 +13320,15 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 0,
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-09T15:11:03+08:00",
       "lastAddedAt": "2026-08-10T10:48:55+08:00",
       "engagementPercentile": 0.751,
       "badges": [
-        "recently-active",
         "breakout"
       ],
       "reasons": [
-        "recently-active",
         "breakout"
       ],
       "ranks": {
@@ -13142,8 +13342,8 @@
       "rankDelta": {
         "overall": 0,
         "active": 0,
-        "cases": -1,
-        "prompts": -1,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -13202,15 +13402,15 @@
         "active": 196,
         "cases": 166,
         "prompts": 220,
-        "rising": 109,
+        "rising": 87,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 4,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -13268,12 +13468,12 @@
         "active": 208,
         "cases": 214,
         "prompts": 247,
-        "rising": 114,
+        "rising": 92,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": 0,
@@ -13319,14 +13519,13 @@
       "promptCount": 1,
       "promptRate": 0.5,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 1,
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-09-08T13:14:06.200Z",
       "engagementPercentile": 0.407,
       "badges": [
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "recently-active"
@@ -13336,15 +13535,15 @@
         "active": 178,
         "cases": 168,
         "prompts": 111,
-        "rising": 204,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 6,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -13407,15 +13606,15 @@
         "active": 70,
         "cases": 117,
         "prompts": 141,
-        "rising": 268,
+        "rising": 204,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
         "active": 0,
-        "cases": -1,
+        "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -13476,7 +13675,7 @@
         "active": 91,
         "cases": 212,
         "prompts": 71,
-        "rising": 286,
+        "rising": 219,
         "tutorials": null
       },
       "rankDelta": {
@@ -13484,7 +13683,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -13545,7 +13744,7 @@
         "active": 92,
         "cases": 220,
         "prompts": 76,
-        "rising": 287,
+        "rising": 220,
         "tutorials": null
       },
       "rankDelta": {
@@ -13553,7 +13752,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -13614,7 +13813,7 @@
         "active": 93,
         "cases": 231,
         "prompts": 79,
-        "rising": 288,
+        "rising": 221,
         "tutorials": null
       },
       "rankDelta": {
@@ -13622,7 +13821,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -13680,15 +13879,15 @@
         "active": 221,
         "cases": 229,
         "prompts": 255,
-        "rising": 124,
+        "rising": 101,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -13746,15 +13945,15 @@
         "active": 195,
         "cases": 134,
         "prompts": 197,
-        "rising": 125,
+        "rising": 102,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -13814,7 +14013,7 @@
         "active": 252,
         "cases": 299,
         "prompts": 300,
-        "rising": 47,
+        "rising": 38,
         "tutorials": null
       },
       "rankDelta": {
@@ -13822,7 +14021,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -13882,7 +14081,7 @@
         "active": 271,
         "cases": 258,
         "prompts": 274,
-        "rising": 52,
+        "rising": 42,
         "tutorials": null
       },
       "rankDelta": {
@@ -13890,7 +14089,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -13934,32 +14133,27 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 3,
+      "recentCaseCount": 0,
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-08-10T10:48:55+08:00",
       "engagementPercentile": 0.657,
-      "badges": [
-        "recently-active",
-        "rising"
-      ],
-      "reasons": [
-        "recently-active"
-      ],
+      "badges": [],
+      "reasons": [],
       "ranks": {
         "overall": 174,
         "active": 240,
         "cases": 127,
         "prompts": 194,
-        "rising": 159,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
         "active": 0,
-        "cases": -1,
-        "prompts": -1,
-        "rising": 3,
+        "cases": 0,
+        "prompts": 0,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -14003,14 +14197,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 3,
+      "recentCaseCount": 2,
       "activeWeeks": 3,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-08-27T05:34:46.855Z",
       "engagementPercentile": 0.288,
       "badges": [
         "recently-active",
-        "rising",
         "consistent"
       ],
       "reasons": [
@@ -14022,15 +14215,15 @@
         "active": 197,
         "cases": 130,
         "prompts": 195,
-        "rising": 240,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -14091,15 +14284,15 @@
         "active": 159,
         "cases": 279,
         "prompts": 92,
-        "rising": 298,
+        "rising": 230,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -14159,7 +14352,7 @@
         "active": 270,
         "cases": 242,
         "prompts": 262,
-        "rising": 64,
+        "rising": 52,
         "tutorials": null
       },
       "rankDelta": {
@@ -14167,7 +14360,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -14208,14 +14401,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 1,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T05:52:30.476Z",
       "lastAddedAt": "2026-08-13T00:38:33.432Z",
       "engagementPercentile": 0.75,
       "badges": [
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "recently-active"
@@ -14225,7 +14417,7 @@
         "active": 275,
         "cases": 297,
         "prompts": 298,
-        "rising": 134,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -14233,7 +14425,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -14294,15 +14486,15 @@
         "active": 216,
         "cases": 261,
         "prompts": 87,
-        "rising": 308,
+        "rising": 240,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -14346,32 +14538,27 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 3,
+      "recentCaseCount": 0,
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T05:52:30.476Z",
       "lastAddedAt": "2026-08-10T10:48:55+08:00",
       "engagementPercentile": 0.632,
-      "badges": [
-        "recently-active",
-        "rising"
-      ],
-      "reasons": [
-        "recently-active"
-      ],
+      "badges": [],
+      "reasons": [],
       "ranks": {
         "overall": 180,
         "active": 239,
         "cases": 105,
         "prompts": 184,
-        "rising": 166,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
         "active": 0,
-        "cases": -1,
-        "prompts": -1,
-        "rising": 3,
+        "cases": 0,
+        "prompts": 0,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -14431,7 +14618,7 @@
         "active": 288,
         "cases": 164,
         "prompts": 219,
-        "rising": 70,
+        "rising": 57,
         "tutorials": null
       },
       "rankDelta": {
@@ -14439,7 +14626,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 4,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -14497,15 +14684,15 @@
         "active": 164,
         "cases": 298,
         "prompts": 299,
-        "rising": 142,
+        "rising": 113,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -14565,15 +14752,15 @@
         "active": 227,
         "cases": 173,
         "prompts": 113,
-        "rising": 229,
+        "rising": 176,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -14631,15 +14818,15 @@
         "active": 236,
         "cases": 138,
         "prompts": 200,
-        "rising": 145,
+        "rising": 116,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -14699,7 +14886,7 @@
         "active": 264,
         "cases": 183,
         "prompts": 230,
-        "rising": 78,
+        "rising": 63,
         "tutorials": null
       },
       "rankDelta": {
@@ -14707,7 +14894,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -14767,15 +14954,15 @@
         "active": 130,
         "cases": 295,
         "prompts": 136,
-        "rising": 267,
+        "rising": 203,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -14835,15 +15022,15 @@
         "active": 269,
         "cases": 198,
         "prompts": 239,
-        "rising": 88,
+        "rising": 73,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -14901,15 +15088,15 @@
         "active": 108,
         "cases": 161,
         "prompts": 217,
-        "rising": 95,
+        "rising": 79,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -14967,15 +15154,15 @@
         "active": 121,
         "cases": 281,
         "prompts": 285,
-        "rising": 150,
+        "rising": 120,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 4,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -15038,15 +15225,15 @@
         "active": 186,
         "cases": 78,
         "prompts": 171,
-        "rising": 227,
+        "rising": 174,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -15089,14 +15276,13 @@
       "promptCount": 1,
       "promptRate": 0.5,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 1,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-08-13T00:38:33.430Z",
       "engagementPercentile": 0.158,
       "badges": [
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "recently-active"
@@ -15106,7 +15292,7 @@
         "active": 284,
         "cases": 270,
         "prompts": 130,
-        "rising": 271,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -15114,7 +15300,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -15155,14 +15341,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 1,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T05:52:30.477Z",
       "lastAddedAt": "2026-09-06T02:44:35.373Z",
       "engagementPercentile": 0.636,
       "badges": [
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "recently-active"
@@ -15172,15 +15357,15 @@
         "active": 187,
         "cases": 188,
         "prompts": 235,
-        "rising": 153,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -15241,15 +15426,15 @@
         "active": 209,
         "cases": 140,
         "prompts": 60,
-        "rising": 310,
+        "rising": 242,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -15310,15 +15495,15 @@
         "active": 210,
         "cases": 157,
         "prompts": 64,
-        "rising": 311,
+        "rising": 243,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -15379,15 +15564,15 @@
         "active": 211,
         "cases": 162,
         "prompts": 65,
-        "rising": 312,
+        "rising": 244,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -15448,15 +15633,15 @@
         "active": 212,
         "cases": 234,
         "prompts": 80,
-        "rising": 313,
+        "rising": 245,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -15517,15 +15702,15 @@
         "active": 213,
         "cases": 251,
         "prompts": 84,
-        "rising": 314,
+        "rising": 246,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -15588,7 +15773,7 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
@@ -15650,15 +15835,15 @@
         "active": 203,
         "cases": 208,
         "prompts": 245,
-        "rising": 156,
+        "rising": 124,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -15699,14 +15884,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 1,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T05:52:30.477Z",
       "lastAddedAt": "2026-08-13T00:38:33.431Z",
       "engagementPercentile": 0.68,
       "badges": [
         "recently-active",
-        "rising",
         "breakout"
       ],
       "reasons": [
@@ -15718,15 +15902,15 @@
         "active": 276,
         "cases": 219,
         "prompts": 249,
-        "rising": 155,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 5,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -15784,15 +15968,15 @@
         "active": 172,
         "cases": 186,
         "prompts": 233,
-        "rising": 158,
+        "rising": 126,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -1,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -15852,15 +16036,15 @@
         "active": 97,
         "cases": 288,
         "prompts": 135,
-        "rising": 292,
+        "rising": 225,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -15920,15 +16104,15 @@
         "active": 99,
         "cases": 268,
         "prompts": 129,
-        "rising": 242,
+        "rising": 185,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -15989,15 +16173,15 @@
         "active": 110,
         "cases": 110,
         "prompts": 186,
-        "rising": 231,
+        "rising": 178,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
         "active": 0,
-        "cases": -1,
-        "prompts": -1,
-        "rising": 6,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -16055,15 +16239,15 @@
         "active": 198,
         "cases": 243,
         "prompts": 263,
-        "rising": 162,
+        "rising": 128,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -16121,15 +16305,15 @@
         "active": 155,
         "cases": 276,
         "prompts": 283,
-        "rising": 165,
+        "rising": 131,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -16173,14 +16357,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 3,
+      "recentCaseCount": 1,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-08-13T00:38:33.430Z",
       "engagementPercentile": 0.356,
       "badges": [
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "recently-active"
@@ -16190,15 +16373,15 @@
         "active": 235,
         "cases": 118,
         "prompts": 190,
-        "rising": 233,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
-        "cases": -1,
-        "prompts": -1,
-        "rising": 7,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -16242,14 +16425,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 3,
+      "recentCaseCount": 1,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-09-06T02:44:35.372Z",
       "engagementPercentile": 0.298,
       "badges": [
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "recently-active"
@@ -16259,15 +16441,15 @@
         "active": 163,
         "cases": 116,
         "prompts": 189,
-        "rising": 234,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
-        "cases": -1,
-        "prompts": -1,
-        "rising": 7,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -16330,16 +16512,16 @@
         "active": 176,
         "cases": 141,
         "prompts": 202,
-        "rising": 170,
-        "tutorials": 9
+        "rising": 135,
+        "tutorials": 13
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
-        "tutorials": 0
+        "rising": 0,
+        "tutorials": -1
       }
     },
     {
@@ -16398,15 +16580,15 @@
         "active": 148,
         "cases": 195,
         "prompts": 117,
-        "rising": 302,
+        "rising": 234,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -16512,14 +16694,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 1,
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-08-13T00:38:33.430Z",
       "engagementPercentile": 0.811,
       "badges": [
         "recently-active",
-        "rising",
         "breakout"
       ],
       "reasons": [
@@ -16531,7 +16712,7 @@
         "active": 285,
         "cases": 290,
         "prompts": 292,
-        "rising": 117,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -16539,7 +16720,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -16597,7 +16778,7 @@
         "active": 259,
         "cases": 137,
         "prompts": 199,
-        "rising": 119,
+        "rising": 96,
         "tutorials": null
       },
       "rankDelta": {
@@ -16605,7 +16786,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -16646,14 +16827,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 1,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-09-02T17:38:00.650Z",
       "engagementPercentile": 0.561,
       "badges": [
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "recently-active"
@@ -16663,15 +16843,15 @@
         "active": 201,
         "cases": 239,
         "prompts": 260,
-        "rising": 176,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 5,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -16712,32 +16892,27 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 0,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T05:52:30.476Z",
       "lastAddedAt": "2026-08-10T05:52:30.477Z",
       "engagementPercentile": 0.604,
-      "badges": [
-        "recently-active",
-        "rising"
-      ],
-      "reasons": [
-        "recently-active"
-      ],
+      "badges": [],
+      "reasons": [],
       "ranks": {
         "overall": 215,
         "active": 291,
         "cases": 227,
         "prompts": 253,
-        "rising": 177,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -16797,15 +16972,15 @@
         "active": 287,
         "cases": 238,
         "prompts": 259,
-        "rising": 122,
+        "rising": 99,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -16846,14 +17021,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 1,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-08-13T00:38:33.433Z",
       "engagementPercentile": 0.597,
       "badges": [
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "recently-active"
@@ -16863,7 +17037,7 @@
         "active": 279,
         "cases": 171,
         "prompts": 222,
-        "rising": 179,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -16871,7 +17045,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 4,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -16929,15 +17103,15 @@
         "active": 192,
         "cases": 289,
         "prompts": 291,
-        "rising": 180,
+        "rising": 140,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 4,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -16997,7 +17171,7 @@
         "active": 260,
         "cases": 294,
         "prompts": 296,
-        "rising": 126,
+        "rising": 103,
         "tutorials": null
       },
       "rankDelta": {
@@ -17005,7 +17179,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -17063,15 +17237,15 @@
         "active": 127,
         "cases": 172,
         "prompts": 223,
-        "rising": 183,
+        "rising": 142,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 6,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -17115,14 +17289,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 3,
+      "recentCaseCount": 1,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T05:52:30.476Z",
       "lastAddedAt": "2026-08-13T00:38:33.433Z",
       "engagementPercentile": 0.271,
       "badges": [
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "recently-active"
@@ -17132,15 +17305,15 @@
         "active": 233,
         "cases": 103,
         "prompts": 183,
-        "rising": 246,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
-        "cases": -1,
-        "prompts": -1,
-        "rising": 7,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -17181,14 +17354,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 1,
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T05:52:30.476Z",
       "lastAddedAt": "2026-08-13T00:38:33.433Z",
       "engagementPercentile": 0.765,
       "badges": [
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "recently-active"
@@ -17198,7 +17370,7 @@
         "active": 273,
         "cases": 177,
         "prompts": 226,
-        "rising": 131,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -17206,7 +17378,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -17247,24 +17419,19 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 0,
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T05:52:30.477Z",
       "lastAddedAt": "2026-08-10T10:48:55+08:00",
       "engagementPercentile": 0.765,
-      "badges": [
-        "recently-active",
-        "rising"
-      ],
-      "reasons": [
-        "recently-active"
-      ],
+      "badges": [],
+      "reasons": [],
       "ranks": {
         "overall": 223,
         "active": 296,
         "cases": 291,
         "prompts": 293,
-        "rising": 132,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -17272,7 +17439,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -17330,7 +17497,7 @@
         "active": 238,
         "cases": 269,
         "prompts": 279,
-        "rising": 185,
+        "rising": 144,
         "tutorials": null
       },
       "rankDelta": {
@@ -17338,7 +17505,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 5,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -17396,7 +17563,7 @@
         "active": 268,
         "cases": 159,
         "prompts": 215,
-        "rising": 136,
+        "rising": 109,
         "tutorials": null
       },
       "rankDelta": {
@@ -17404,7 +17571,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 4,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -17462,15 +17629,15 @@
         "active": 139,
         "cases": 187,
         "prompts": 234,
-        "rising": 139,
+        "rising": 111,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -17511,14 +17678,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 1,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-08-13T00:38:33.433Z",
       "engagementPercentile": 0.507,
       "badges": [
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "recently-active"
@@ -17528,7 +17694,7 @@
         "active": 280,
         "cases": 175,
         "prompts": 224,
-        "rising": 195,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -17536,7 +17702,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 5,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -17597,15 +17763,15 @@
         "active": 103,
         "cases": 108,
         "prompts": 185,
-        "rising": 262,
+        "rising": 199,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
         "active": 0,
-        "cases": -1,
-        "prompts": -1,
-        "rising": 7,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -17663,15 +17829,15 @@
         "active": 129,
         "cases": 185,
         "prompts": 232,
-        "rising": 200,
+        "rising": 154,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 6,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -17729,15 +17895,15 @@
         "active": 132,
         "cases": 192,
         "prompts": 238,
-        "rising": 157,
+        "rising": 125,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 4,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -17778,14 +17944,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 1,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-08-13T00:38:33.432Z",
       "engagementPercentile": 0.487,
       "badges": [
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "recently-active"
@@ -17795,7 +17960,7 @@
         "active": 282,
         "cases": 215,
         "prompts": 248,
-        "rising": 199,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -17803,7 +17968,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 5,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -17844,14 +18009,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 1,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-08-17T02:39:30.456Z",
       "engagementPercentile": 0.467,
       "badges": [
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "recently-active"
@@ -17861,7 +18025,7 @@
         "active": 257,
         "cases": 228,
         "prompts": 254,
-        "rising": 201,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -17869,7 +18033,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 6,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -17910,24 +18074,19 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 0,
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-08-10T10:48:55+08:00",
       "engagementPercentile": 0.67,
-      "badges": [
-        "recently-active",
-        "rising"
-      ],
-      "reasons": [
-        "recently-active"
-      ],
+      "badges": [],
+      "reasons": [],
       "ranks": {
         "overall": 233,
         "active": 297,
         "cases": 132,
         "prompts": 196,
-        "rising": 161,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -17935,7 +18094,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 4,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -17996,15 +18155,15 @@
         "active": 165,
         "cases": 115,
         "prompts": 188,
-        "rising": 266,
+        "rising": 202,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
-        "cases": -1,
-        "prompts": -1,
-        "rising": 8,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -18062,15 +18221,15 @@
         "active": 114,
         "cases": 280,
         "prompts": 284,
-        "rising": 210,
+        "rising": 161,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -18128,15 +18287,15 @@
         "active": 119,
         "cases": 202,
         "prompts": 240,
-        "rising": 211,
+        "rising": 162,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -18177,14 +18336,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 1,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-08-13T00:38:33.433Z",
       "engagementPercentile": 0.439,
       "badges": [
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "recently-active"
@@ -18194,7 +18352,7 @@
         "active": 281,
         "cases": 190,
         "prompts": 237,
-        "rising": 213,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -18202,7 +18360,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -18246,14 +18404,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 3,
+      "recentCaseCount": 2,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T05:52:30.476Z",
       "lastAddedAt": "2026-08-13T00:38:33.430Z",
       "engagementPercentile": 0.132,
       "badges": [
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "recently-active"
@@ -18263,15 +18420,15 @@
         "active": 229,
         "cases": 94,
         "prompts": 179,
-        "rising": 273,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
-        "cases": -1,
-        "prompts": -1,
-        "rising": 9,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -18329,15 +18486,15 @@
         "active": 134,
         "cases": 293,
         "prompts": 295,
-        "rising": 171,
+        "rising": 136,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -18378,14 +18535,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 1,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-08-13T00:38:33.430Z",
       "engagementPercentile": 0.435,
       "badges": [
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "recently-active"
@@ -18395,7 +18551,7 @@
         "active": 283,
         "cases": 148,
         "prompts": 207,
-        "rising": 215,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -18403,7 +18559,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -18444,14 +18600,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 1,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T05:52:30.476Z",
       "lastAddedAt": "2026-08-13T00:38:33.433Z",
       "engagementPercentile": 0.429,
       "badges": [
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "recently-active"
@@ -18461,7 +18616,7 @@
         "active": 274,
         "cases": 285,
         "prompts": 288,
-        "rising": 219,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -18469,7 +18624,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 6,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -18529,15 +18684,15 @@
         "active": 147,
         "cases": 174,
         "prompts": 114,
-        "rising": 301,
+        "rising": 233,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -18597,15 +18752,15 @@
         "active": 149,
         "cases": 196,
         "prompts": 118,
-        "rising": 303,
+        "rising": 235,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -18665,15 +18820,15 @@
         "active": 151,
         "cases": 226,
         "prompts": 125,
-        "rising": 305,
+        "rising": 237,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -18733,15 +18888,15 @@
         "active": 153,
         "cases": 278,
         "prompts": 133,
-        "rising": 307,
+        "rising": 239,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -18782,14 +18937,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 1,
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-09-08T13:14:06.200Z",
       "engagementPercentile": 0.544,
       "badges": [
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "recently-active"
@@ -18799,15 +18953,15 @@
         "active": 180,
         "cases": 259,
         "prompts": 275,
-        "rising": 172,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 4,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -18864,7 +19018,7 @@
         "active": 304,
         "cases": 317,
         "prompts": 317,
-        "rising": 44,
+        "rising": 35,
         "tutorials": null
       },
       "rankDelta": {
@@ -18872,7 +19026,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -18929,15 +19083,15 @@
         "active": 202,
         "cases": 325,
         "prompts": 325,
-        "rising": 45,
+        "rising": 36,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -18994,7 +19148,7 @@
         "active": 313,
         "cases": 333,
         "prompts": 333,
-        "rising": 49,
+        "rising": 39,
         "tutorials": null
       },
       "rankDelta": {
@@ -19002,7 +19156,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -19059,15 +19213,15 @@
         "active": 312,
         "cases": 332,
         "prompts": 332,
-        "rising": 50,
+        "rising": 40,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -19108,32 +19262,27 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 0,
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-08-10T10:48:55+08:00",
       "engagementPercentile": 0.584,
-      "badges": [
-        "recently-active",
-        "rising"
-      ],
-      "reasons": [
-        "recently-active"
-      ],
+      "badges": [],
+      "reasons": [],
       "ranks": {
         "overall": 251,
         "active": 300,
         "cases": 273,
         "prompts": 282,
-        "rising": 182,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 4,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -19190,7 +19339,7 @@
         "active": 315,
         "cases": 307,
         "prompts": 308,
-        "rising": 51,
+        "rising": 41,
         "tutorials": null
       },
       "rankDelta": {
@@ -19198,7 +19347,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -19255,7 +19404,7 @@
         "active": 320,
         "cases": 312,
         "prompts": 313,
-        "rising": 53,
+        "rising": 43,
         "tutorials": null
       },
       "rankDelta": {
@@ -19263,7 +19412,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -19320,7 +19469,7 @@
         "active": 319,
         "cases": 315,
         "prompts": 315,
-        "rising": 55,
+        "rising": 45,
         "tutorials": null
       },
       "rankDelta": {
@@ -19328,7 +19477,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -19390,16 +19539,16 @@
         "active": 308,
         "cases": 326,
         "prompts": 326,
-        "rising": 57,
-        "tutorials": 13
+        "rising": 47,
+        "tutorials": 17
       },
       "rankDelta": {
         "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
-        "tutorials": 0
+        "rising": 0,
+        "tutorials": -1
       }
     },
     {
@@ -19455,7 +19604,7 @@
         "active": 318,
         "cases": 308,
         "prompts": 309,
-        "rising": 58,
+        "rising": 48,
         "tutorials": null
       },
       "rankDelta": {
@@ -19463,7 +19612,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -19520,7 +19669,7 @@
         "active": 305,
         "cases": 322,
         "prompts": 322,
-        "rising": 59,
+        "rising": 49,
         "tutorials": null
       },
       "rankDelta": {
@@ -19528,7 +19677,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -19585,7 +19734,7 @@
         "active": 326,
         "cases": 311,
         "prompts": 312,
-        "rising": 60,
+        "rising": 50,
         "tutorials": null
       },
       "rankDelta": {
@@ -19593,7 +19742,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 4,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -19650,7 +19799,7 @@
         "active": 324,
         "cases": 303,
         "prompts": 304,
-        "rising": 62,
+        "rising": 51,
         "tutorials": null
       },
       "rankDelta": {
@@ -19658,7 +19807,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -19696,18 +19845,15 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 1,
+      "recentCaseCount": 0,
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T05:52:30.476Z",
       "lastAddedAt": "2026-08-10T05:52:30.476Z",
       "engagementPercentile": 0.975,
       "badges": [
-        "recently-active",
-        "rising",
         "breakout"
       ],
       "reasons": [
-        "recently-active",
         "breakout"
       ],
       "ranks": {
@@ -19715,15 +19861,15 @@
         "active": 333,
         "cases": 310,
         "prompts": 311,
-        "rising": 63,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -19764,14 +19910,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 1,
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T05:52:30.474Z",
       "lastAddedAt": "2026-08-13T00:38:33.433Z",
       "engagementPercentile": 0.554,
       "badges": [
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "recently-active"
@@ -19781,15 +19926,15 @@
         "active": 277,
         "cases": 248,
         "prompts": 267,
-        "rising": 187,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 5,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -19847,7 +19992,7 @@
         "active": 237,
         "cases": 189,
         "prompts": 236,
-        "rising": 237,
+        "rising": 181,
         "tutorials": null
       },
       "rankDelta": {
@@ -19855,7 +20000,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -19912,7 +20057,7 @@
         "active": 314,
         "cases": 334,
         "prompts": 334,
-        "rising": 65,
+        "rising": 53,
         "tutorials": null
       },
       "rankDelta": {
@@ -19920,7 +20065,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -19977,7 +20122,7 @@
         "active": 311,
         "cases": 330,
         "prompts": 330,
-        "rising": 66,
+        "rising": 54,
         "tutorials": null
       },
       "rankDelta": {
@@ -19985,7 +20130,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -20023,18 +20168,15 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 1,
+      "recentCaseCount": 0,
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T05:52:30.477Z",
       "lastAddedAt": "2026-08-10T05:52:30.477Z",
       "engagementPercentile": 0.96,
       "badges": [
-        "recently-active",
-        "rising",
         "breakout"
       ],
       "reasons": [
-        "recently-active",
         "breakout"
       ],
       "ranks": {
@@ -20042,7 +20184,7 @@
         "active": 332,
         "cases": 320,
         "prompts": 320,
-        "rising": 67,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -20050,7 +20192,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -20107,7 +20249,7 @@
         "active": 309,
         "cases": 327,
         "prompts": 327,
-        "rising": 68,
+        "rising": 55,
         "tutorials": null
       },
       "rankDelta": {
@@ -20115,7 +20257,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -20172,7 +20314,7 @@
         "active": 244,
         "cases": 321,
         "prompts": 321,
-        "rising": 69,
+        "rising": 56,
         "tutorials": null
       },
       "rankDelta": {
@@ -20180,7 +20322,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -20238,15 +20380,15 @@
         "active": 170,
         "cases": 223,
         "prompts": 251,
-        "rising": 241,
+        "rising": 184,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -20303,7 +20445,7 @@
         "active": 328,
         "cases": 316,
         "prompts": 316,
-        "rising": 72,
+        "rising": 58,
         "tutorials": null
       },
       "rankDelta": {
@@ -20311,7 +20453,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -20369,7 +20511,7 @@
         "active": 255,
         "cases": 145,
         "prompts": 204,
-        "rising": 189,
+        "rising": 147,
         "tutorials": null
       },
       "rankDelta": {
@@ -20377,7 +20519,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 5,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -20418,14 +20560,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 1,
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-09-08T13:14:06.200Z",
       "engagementPercentile": 0.459,
       "badges": [
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "recently-active"
@@ -20435,15 +20576,15 @@
         "active": 179,
         "cases": 240,
         "prompts": 261,
-        "rising": 192,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 5,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -20501,7 +20642,7 @@
         "active": 250,
         "cases": 244,
         "prompts": 264,
-        "rising": 191,
+        "rising": 148,
         "tutorials": null
       },
       "rankDelta": {
@@ -20509,7 +20650,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 5,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -20566,7 +20707,7 @@
         "active": 310,
         "cases": 305,
         "prompts": 306,
-        "rising": 76,
+        "rising": 61,
         "tutorials": null
       },
       "rankDelta": {
@@ -20574,7 +20715,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -20631,7 +20772,7 @@
         "active": 322,
         "cases": 304,
         "prompts": 305,
-        "rising": 80,
+        "rising": 65,
         "tutorials": null
       },
       "rankDelta": {
@@ -20639,7 +20780,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -20697,7 +20838,7 @@
         "active": 248,
         "cases": 254,
         "prompts": 272,
-        "rising": 193,
+        "rising": 149,
         "tutorials": null
       },
       "rankDelta": {
@@ -20705,7 +20846,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 5,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -20762,7 +20903,7 @@
         "active": 329,
         "cases": 323,
         "prompts": 323,
-        "rising": 82,
+        "rising": 67,
         "tutorials": null
       },
       "rankDelta": {
@@ -20770,7 +20911,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -20827,7 +20968,7 @@
         "active": 316,
         "cases": 302,
         "prompts": 303,
-        "rising": 83,
+        "rising": 68,
         "tutorials": null
       },
       "rankDelta": {
@@ -20835,7 +20976,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -20892,7 +21033,7 @@
         "active": 323,
         "cases": 328,
         "prompts": 328,
-        "rising": 84,
+        "rising": 69,
         "tutorials": null
       },
       "rankDelta": {
@@ -20900,7 +21041,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -20957,15 +21098,15 @@
         "active": 331,
         "cases": 319,
         "prompts": 319,
-        "rising": 85,
+        "rising": 70,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 4,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -21023,15 +21164,15 @@
         "active": 251,
         "cases": 250,
         "prompts": 269,
-        "rising": 194,
+        "rising": 150,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 5,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -21088,7 +21229,7 @@
         "active": 317,
         "cases": 306,
         "prompts": 307,
-        "rising": 87,
+        "rising": 72,
         "tutorials": null
       },
       "rankDelta": {
@@ -21096,7 +21237,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -21153,7 +21294,7 @@
         "active": 307,
         "cases": 329,
         "prompts": 329,
-        "rising": 89,
+        "rising": 74,
         "tutorials": null
       },
       "rankDelta": {
@@ -21161,7 +21302,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 4,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -21218,15 +21359,15 @@
         "active": 306,
         "cases": 324,
         "prompts": 324,
-        "rising": 93,
+        "rising": 77,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -21284,15 +21425,15 @@
         "active": 267,
         "cases": 139,
         "prompts": 201,
-        "rising": 196,
+        "rising": 151,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 5,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -21349,7 +21490,7 @@
         "active": 325,
         "cases": 309,
         "prompts": 310,
-        "rising": 92,
+        "rising": 76,
         "tutorials": null
       },
       "rankDelta": {
@@ -21357,7 +21498,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -21414,7 +21555,7 @@
         "active": 330,
         "cases": 318,
         "prompts": 318,
-        "rising": 94,
+        "rising": 78,
         "tutorials": null
       },
       "rankDelta": {
@@ -21422,7 +21563,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 4,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -21479,7 +21620,7 @@
         "active": 327,
         "cases": 313,
         "prompts": 314,
-        "rising": 96,
+        "rising": 80,
         "tutorials": null
       },
       "rankDelta": {
@@ -21487,7 +21628,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -21545,7 +21686,7 @@
         "active": 266,
         "cases": 221,
         "prompts": 250,
-        "rising": 198,
+        "rising": 153,
         "tutorials": null
       },
       "rankDelta": {
@@ -21553,7 +21694,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -21591,18 +21732,15 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 1,
+      "recentCaseCount": 0,
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-08-10T10:48:55+08:00",
       "engagementPercentile": 0.904,
       "badges": [
-        "recently-active",
-        "rising",
         "breakout"
       ],
       "reasons": [
-        "recently-active",
         "breakout"
       ],
       "ranks": {
@@ -21610,7 +21748,7 @@
         "active": 334,
         "cases": 331,
         "prompts": 331,
-        "rising": 99,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -21618,7 +21756,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -21675,7 +21813,7 @@
         "active": 321,
         "cases": 301,
         "prompts": 302,
-        "rising": 100,
+        "rising": 83,
         "tutorials": null
       },
       "rankDelta": {
@@ -21683,7 +21821,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -21727,17 +21865,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 0,
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T08:14:56+08:00",
       "lastAddedAt": "2026-08-10T10:48:55+08:00",
       "engagementPercentile": 0.181,
-      "badges": [
-        "recently-active"
-      ],
-      "reasons": [
-        "recently-active"
-      ],
+      "badges": [],
+      "reasons": [],
       "ranks": {
         "overall": 291,
         "active": 241,
@@ -21749,8 +21883,8 @@
       "rankDelta": {
         "overall": 0,
         "active": 0,
-        "cases": -1,
-        "prompts": -1,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -21809,7 +21943,7 @@
         "active": 262,
         "cases": 146,
         "prompts": 205,
-        "rising": 202,
+        "rising": 155,
         "tutorials": null
       },
       "rankDelta": {
@@ -21817,7 +21951,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 6,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -21875,15 +22009,15 @@
         "active": 206,
         "cases": 158,
         "prompts": 214,
-        "rising": 252,
+        "rising": 192,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -21941,15 +22075,15 @@
         "active": 174,
         "cases": 271,
         "prompts": 280,
-        "rising": 209,
+        "rising": 160,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 5,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -22007,15 +22141,15 @@
         "active": 190,
         "cases": 292,
         "prompts": 294,
-        "rising": 212,
+        "rising": 163,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -22073,7 +22207,7 @@
         "active": 254,
         "cases": 230,
         "prompts": 256,
-        "rising": 216,
+        "rising": 165,
         "tutorials": null
       },
       "rankDelta": {
@@ -22081,7 +22215,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 6,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -22139,15 +22273,15 @@
         "active": 113,
         "cases": 136,
         "prompts": 198,
-        "rising": 223,
+        "rising": 170,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 6,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -22205,7 +22339,7 @@
         "active": 265,
         "cases": 184,
         "prompts": 231,
-        "rising": 224,
+        "rising": 171,
         "tutorials": null
       },
       "rankDelta": {
@@ -22213,7 +22347,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -22271,15 +22405,15 @@
         "active": 182,
         "cases": 286,
         "prompts": 289,
-        "rising": 226,
+        "rising": 173,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -22337,15 +22471,15 @@
         "active": 200,
         "cases": 224,
         "prompts": 252,
-        "rising": 261,
+        "rising": 198,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -22403,7 +22537,7 @@
         "active": 261,
         "cases": 296,
         "prompts": 297,
-        "rising": 225,
+        "rising": 172,
         "tutorials": null
       },
       "rankDelta": {
@@ -22411,7 +22545,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -22452,14 +22586,13 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 1,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T05:52:30.476Z",
       "lastAddedAt": "2026-08-13T00:38:33.427Z",
       "engagementPercentile": 0.199,
       "badges": [
-        "recently-active",
-        "rising"
+        "recently-active"
       ],
       "reasons": [
         "recently-active"
@@ -22469,7 +22602,7 @@
         "active": 278,
         "cases": 232,
         "prompts": 257,
-        "rising": 264,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -22477,7 +22610,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -22518,24 +22651,19 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 0,
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T05:52:30.477Z",
       "lastAddedAt": "2026-08-10T10:48:55+08:00",
       "engagementPercentile": 0.157,
-      "badges": [
-        "recently-active",
-        "rising"
-      ],
-      "reasons": [
-        "recently-active"
-      ],
+      "badges": [],
+      "reasons": [],
       "ranks": {
         "overall": 303,
         "active": 295,
         "cases": 203,
         "prompts": 241,
-        "rising": 274,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -22543,7 +22671,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -22601,15 +22729,15 @@
         "active": 194,
         "cases": 155,
         "prompts": 212,
-        "rising": 276,
+        "rising": 209,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -22667,15 +22795,15 @@
         "active": 133,
         "cases": 211,
         "prompts": 246,
-        "rising": 239,
+        "rising": 183,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -22733,7 +22861,7 @@
         "active": 85,
         "cases": 147,
         "prompts": 206,
-        "rising": 280,
+        "rising": 213,
         "tutorials": null
       },
       "rankDelta": {
@@ -22741,7 +22869,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -22799,7 +22927,7 @@
         "active": 86,
         "cases": 150,
         "prompts": 209,
-        "rising": 281,
+        "rising": 214,
         "tutorials": null
       },
       "rankDelta": {
@@ -22807,7 +22935,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -22865,7 +22993,7 @@
         "active": 87,
         "cases": 178,
         "prompts": 227,
-        "rising": 282,
+        "rising": 215,
         "tutorials": null
       },
       "rankDelta": {
@@ -22873,7 +23001,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -22931,7 +23059,7 @@
         "active": 90,
         "cases": 207,
         "prompts": 244,
-        "rising": 285,
+        "rising": 218,
         "tutorials": null
       },
       "rankDelta": {
@@ -22939,7 +23067,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -22997,7 +23125,7 @@
         "active": 94,
         "cases": 256,
         "prompts": 273,
-        "rising": 289,
+        "rising": 222,
         "tutorials": null
       },
       "rankDelta": {
@@ -23005,7 +23133,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -23063,7 +23191,7 @@
         "active": 96,
         "cases": 283,
         "prompts": 286,
-        "rising": 291,
+        "rising": 224,
         "tutorials": null
       },
       "rankDelta": {
@@ -23071,7 +23199,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -23129,15 +23257,15 @@
         "active": 205,
         "cases": 156,
         "prompts": 213,
-        "rising": 294,
+        "rising": 227,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -23195,15 +23323,15 @@
         "active": 144,
         "cases": 284,
         "prompts": 287,
-        "rising": 297,
+        "rising": 229,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -23244,24 +23372,19 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 0,
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-08-10T10:48:55+08:00",
       "engagementPercentile": 0.305,
-      "badges": [
-        "recently-active",
-        "rising"
-      ],
-      "reasons": [
-        "recently-active"
-      ],
+      "badges": [],
+      "reasons": [],
       "ranks": {
         "overall": 314,
         "active": 298,
         "cases": 253,
         "prompts": 271,
-        "rising": 243,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -23269,7 +23392,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -23327,7 +23450,7 @@
         "active": 253,
         "cases": 176,
         "prompts": 225,
-        "rising": 245,
+        "rising": 187,
         "tutorials": null
       },
       "rankDelta": {
@@ -23335,7 +23458,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -23376,24 +23499,19 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 0,
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T05:52:30.476Z",
       "lastAddedAt": "2026-08-10T05:52:30.476Z",
       "engagementPercentile": 0.286,
-      "badges": [
-        "recently-active",
-        "rising"
-      ],
-      "reasons": [
-        "recently-active"
-      ],
+      "badges": [],
+      "reasons": [],
       "ranks": {
         "overall": 316,
         "active": 293,
         "cases": 247,
         "prompts": 266,
-        "rising": 248,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -23401,7 +23519,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -23459,15 +23577,15 @@
         "active": 228,
         "cases": 160,
         "prompts": 216,
-        "rising": 249,
+        "rising": 189,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -23525,15 +23643,15 @@
         "active": 136,
         "cases": 143,
         "prompts": 203,
-        "rising": 251,
+        "rising": 191,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -23574,24 +23692,19 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 0,
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T05:52:30.476Z",
       "lastAddedAt": "2026-08-10T05:52:30.477Z",
       "engagementPercentile": 0.261,
-      "badges": [
-        "recently-active",
-        "rising"
-      ],
-      "reasons": [
-        "recently-active"
-      ],
+      "badges": [],
+      "reasons": [],
       "ranks": {
         "overall": 319,
         "active": 292,
         "cases": 265,
         "prompts": 277,
-        "rising": 253,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -23599,7 +23712,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -23657,7 +23770,7 @@
         "active": 100,
         "cases": 249,
         "prompts": 268,
-        "rising": 256,
+        "rising": 194,
         "tutorials": null
       },
       "rankDelta": {
@@ -23665,7 +23778,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -23723,7 +23836,7 @@
         "active": 263,
         "cases": 245,
         "prompts": 265,
-        "rising": 255,
+        "rising": 193,
         "tutorials": null
       },
       "rankDelta": {
@@ -23731,7 +23844,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -23772,24 +23885,19 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 0,
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T05:52:30.475Z",
       "lastAddedAt": "2026-08-10T05:52:30.476Z",
       "engagementPercentile": 0.21,
-      "badges": [
-        "recently-active",
-        "rising"
-      ],
-      "reasons": [
-        "recently-active"
-      ],
+      "badges": [],
+      "reasons": [],
       "ranks": {
         "overall": 322,
         "active": 294,
         "cases": 233,
         "prompts": 258,
-        "rising": 260,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -23797,7 +23905,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 7,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -23855,15 +23963,15 @@
         "active": 140,
         "cases": 181,
         "prompts": 229,
-        "rising": 265,
+        "rising": 201,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -23921,7 +24029,7 @@
         "active": 109,
         "cases": 252,
         "prompts": 270,
-        "rising": 272,
+        "rising": 207,
         "tutorials": null
       },
       "rankDelta": {
@@ -23929,7 +24037,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -23987,15 +24095,15 @@
         "active": 161,
         "cases": 179,
         "prompts": 228,
-        "rising": 278,
+        "rising": 211,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -24053,7 +24161,7 @@
         "active": 258,
         "cases": 170,
         "prompts": 221,
-        "rising": 277,
+        "rising": 210,
         "tutorials": null
       },
       "rankDelta": {
@@ -24061,7 +24169,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -24119,15 +24227,15 @@
         "active": 184,
         "cases": 153,
         "prompts": 210,
-        "rising": 279,
+        "rising": 212,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -24185,7 +24293,7 @@
         "active": 88,
         "cases": 204,
         "prompts": 242,
-        "rising": 283,
+        "rising": 216,
         "tutorials": null
       },
       "rankDelta": {
@@ -24193,7 +24301,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -24251,7 +24359,7 @@
         "active": 89,
         "cases": 205,
         "prompts": 243,
-        "rising": 284,
+        "rising": 217,
         "tutorials": null
       },
       "rankDelta": {
@@ -24259,7 +24367,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -24317,7 +24425,7 @@
         "active": 95,
         "cases": 266,
         "prompts": 278,
-        "rising": 290,
+        "rising": 223,
         "tutorials": null
       },
       "rankDelta": {
@@ -24325,7 +24433,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -24383,7 +24491,7 @@
         "active": 98,
         "cases": 300,
         "prompts": 301,
-        "rising": 293,
+        "rising": 226,
         "tutorials": null
       },
       "rankDelta": {
@@ -24391,7 +24499,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -24432,24 +24540,19 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 0,
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-08-10T10:48:55+08:00",
       "engagementPercentile": 0.124,
-      "badges": [
-        "recently-active",
-        "rising"
-      ],
-      "reasons": [
-        "recently-active"
-      ],
+      "badges": [],
+      "reasons": [],
       "ranks": {
         "overall": 332,
         "active": 299,
         "cases": 262,
         "prompts": 276,
-        "rising": 295,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -24457,7 +24560,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": null,
         "tutorials": null
       }
     },
@@ -24515,15 +24618,15 @@
         "active": 189,
         "cases": 272,
         "prompts": 281,
-        "rising": 309,
+        "rising": 241,
         "tutorials": null
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -24564,24 +24667,19 @@
       "promptCount": 0,
       "promptRate": 0,
       "tutorialCount": 0,
-      "recentCaseCount": 2,
+      "recentCaseCount": 0,
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-08-10T10:48:55+08:00",
       "engagementPercentile": 0.005,
-      "badges": [
-        "recently-active",
-        "rising"
-      ],
-      "reasons": [
-        "recently-active"
-      ],
+      "badges": [],
+      "reasons": [],
       "ranks": {
         "overall": 334,
         "active": 301,
         "cases": 287,
         "prompts": 290,
-        "rising": 315,
+        "rising": null,
         "tutorials": null
       },
       "rankDelta": {
@@ -24589,7 +24687,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": 8,
+        "rising": null,
         "tutorials": null
       }
     }

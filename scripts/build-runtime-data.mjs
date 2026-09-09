@@ -56,6 +56,7 @@ const detailFor = (item) => ({
   aspectRatio: item.aspectRatio,
   resolution: item.resolution,
   promptProvenance: item.promptProvenance,
+  ...(item.promptCompleteness ? { promptCompleteness: item.promptCompleteness } : {}),
 })
 
 const searchIndex = (language) => cases.map((item) => ({
@@ -92,6 +93,7 @@ const files = new Map([
   ['search-index.zh.json', searchIndex('zh')],
   ['search-index.en.json', searchIndex('en')],
   ['tutorial-guides.json', tutorials],
+  ['tutorial-guides.v2.json', { schemaVersion: 2, contentVersion: createHash('sha256').update(JSON.stringify(tutorials)).digest('hex'), guides: tutorials }],
   ['tutorials.json', tutorialResources],
   ['creators.json', runtimeCreators],
 ])

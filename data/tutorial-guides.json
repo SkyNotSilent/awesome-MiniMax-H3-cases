@@ -33,7 +33,7 @@
     },
     "steps": {
       "zh": [
-        "安装或更新 ComfyUI。Windows 可用官方 Desktop/Portable；Linux 或手动安装使用独立 Python 环境。启动后先确认页面能打开，控制台没有 CUDA 初始化错误。",
+        "安装或更新 ComfyUI：Windows 新手先打开材料区的官方 Desktop 安装指南，按安装器选择 NVIDIA 并完成依赖安装，再用桌面应用启动。Linux/手动安装请先按官方手动指南克隆仓库、创建并激活独立 Python 环境和安装匹配 CUDA 的 PyTorch；只有这条路线才执行下方 pip 与 main.py 命令，工作目录为包含 requirements.txt 的 ComfyUI 仓库。确认页面能打开且没有 CUDA 初始化错误后再继续。",
         "打开 Template Library → Video → MiniMax H3 T2V。若弹出模型下载窗口，直接按提示下载；若手动下载，必须保持原文件名。",
         "把 minimax_h3_fl2va_pruned_int8_convrot.safetensors 放进 ComfyUI/models/diffusion_models/。T2V 与 I2V 都用 FL2VA；只有 R2V 才换成 Ref2VA 权重。",
         "把 qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors 放进 ComfyUI/models/text_encoders/；把 video VAE 和 audio VAE 一起放进 ComfyUI/models/vae/。缺少音频 VAE 时不能把静音结果当作成功。",
@@ -45,7 +45,7 @@
         "需要首尾帧时，在同一 FL2VA 工作流连接 first_frame/last_frame；需要人物、风格、动作或声音参考时，新建 R2V 模板并换成 Ref2VA 权重，不要在原图里混用两套模型。"
       ],
       "en": [
-        "Install or update ComfyUI. Use the official Desktop or Portable build on Windows, or a separate Python environment for a manual/Linux install. Confirm the UI opens without a CUDA initialization error.",
+        "Install or update ComfyUI. Windows beginners should follow the linked official Desktop installer and launch the app after NVIDIA dependencies finish. For Linux/manual installs, first follow the manual guide to clone ComfyUI, activate its isolated Python environment and install the matching CUDA PyTorch build. Only that route uses the pip and main.py commands below, from the ComfyUI folder containing requirements.txt. Confirm the UI opens without CUDA errors before continuing.",
         "Open Template Library → Video → MiniMax H3 T2V. Use the model-download popup when available; preserve the exact filenames for manual downloads.",
         "Place minimax_h3_fl2va_pruned_int8_convrot.safetensors in ComfyUI/models/diffusion_models/. T2V and I2V use FL2VA; only R2V switches to Ref2VA weights.",
         "Place qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors in ComfyUI/models/text_encoders/. Put both the video and audio VAEs in ComfyUI/models/vae/. A silent render is not a successful audio-video setup.",
@@ -111,6 +111,7 @@
       "platform": "docs",
       "url": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3",
       "author": "ComfyUI",
+      "authorProfileUrl": "https://github.com/Comfy-Org",
       "originalLanguage": "en"
     },
     "verifiedAt": "2026-09-06",
@@ -193,6 +194,22 @@
       },
       {
         "label": {
+          "zh": "Windows 官方 Desktop 安装步骤",
+          "en": "Official Windows Desktop installation"
+        },
+        "url": "https://docs.comfy.org/installation/desktop/windows",
+        "kind": "documentation"
+      },
+      {
+        "label": {
+          "zh": "Linux / 手动安装与 Python 环境",
+          "en": "Linux / manual installation and Python environment"
+        },
+        "url": "https://docs.comfy.org/installation/manual_install",
+        "kind": "documentation"
+      },
+      {
+        "label": {
           "zh": "模型文件与目录",
           "en": "Model files and folders"
         },
@@ -238,12 +255,14 @@
       {
         "kind": "command",
         "value": "python -m pip install -r requirements.txt",
-        "platform": "shell"
+        "platform": "shell",
+        "cwd": "ComfyUI"
       },
       {
         "kind": "command",
         "value": "python main.py",
-        "platform": "shell"
+        "platform": "shell",
+        "cwd": "ComfyUI"
       },
       {
         "kind": "path",
@@ -646,13 +665,13 @@
       "zh": [
         "macOS、Git 与 Xcode Command Line Tools",
         "FFmpeg 和 FFprobe 可从终端直接调用",
-        "完整 MiniMax-H3 Hugging Face snapshot，目录名设为 MiniMax-H3",
+        "先安装 Hugging Face CLI：brew install hf；运行 hf --help 确认可用，再下载完整模型到 h3.c/MiniMax-H3",
         "关闭占用大量统一内存的应用，并为首次载入预留足够时间"
       ],
       "en": [
         "macOS, Git, and Xcode Command Line Tools",
         "FFmpeg and FFprobe callable from Terminal",
-        "A complete MiniMax-H3 Hugging Face snapshot in a MiniMax-H3 directory",
+        "Install the Hugging Face CLI with brew install hf; check hf --help before downloading the full model into h3.c/MiniMax-H3",
         "Memory-heavy applications closed and enough time reserved for the first load"
       ]
     },
@@ -686,6 +705,8 @@
       "xcode-select --install",
       "brew install ffmpeg",
       "git clone https://github.com/antirez/h3.c && cd h3.c",
+      "brew install hf",
+      "hf --help",
       "hf download MiniMaxAI/MiniMax-H3 --local-dir MiniMax-H3",
       "make -j8 && mkdir -p outputs",
       "./h3 --info -d ./MiniMax-H3",
@@ -853,33 +874,49 @@
       },
       {
         "kind": "command",
-        "value": "hf download MiniMaxAI/MiniMax-H3 --local-dir MiniMax-H3",
+        "value": "brew install hf",
         "platform": "macos"
+      },
+      {
+        "kind": "command",
+        "value": "hf --help",
+        "platform": "macos"
+      },
+      {
+        "kind": "command",
+        "value": "hf download MiniMaxAI/MiniMax-H3 --local-dir MiniMax-H3",
+        "platform": "macos",
+        "cwd": "h3.c"
       },
       {
         "kind": "command",
         "value": "make -j8 && mkdir -p outputs",
-        "platform": "macos"
+        "platform": "macos",
+        "cwd": "h3.c"
       },
       {
         "kind": "command",
         "value": "./h3 --info -d ./MiniMax-H3",
-        "platform": "macos"
+        "platform": "macos",
+        "cwd": "h3.c"
       },
       {
         "kind": "command",
         "value": "./h3 --profile -d ./MiniMax-H3 -p \"A red fox walks through fresh snow in a pine forest. Medium tracking shot, natural winter light, realistic fur, soft footsteps and wind.\" --width 512 --height 512 --frames 22 --steps 20 --layers 45 --reuse 2 -o outputs/fox-fast.mp4",
-        "platform": "macos"
+        "platform": "macos",
+        "cwd": "h3.c"
       },
       {
         "kind": "command",
         "value": "./h3 -d ./MiniMax-H3 --width 512 --height 512 --steps 6",
-        "platform": "macos"
+        "platform": "macos",
+        "cwd": "h3.c"
       },
       {
         "kind": "command",
         "value": "make test",
-        "platform": "macos"
+        "platform": "macos",
+        "cwd": "h3.c"
       }
     ]
   },
@@ -1665,6 +1702,7 @@
       "platform": "docs",
       "url": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3#minimax-h3-reference-to-video-r2v",
       "author": "ComfyUI",
+      "authorProfileUrl": "https://github.com/Comfy-Org",
       "originalLanguage": "en"
     },
     "verifiedAt": "2026-09-06",
@@ -2418,11 +2456,11 @@
         "Cloud models and nodes can change with service updates. Local filesystem paths from other guides do not apply here."
       ]
     },
-    "posterUrl": "/tutorial-posters/rent-gpu.jpg",
+    "posterUrl": "/tutorial-posters/comfy-cloud-docs.png",
     "tags": [
       "Cloud GPU",
       "ComfyUI",
-      "Beginner"
+      "Intermediate"
     ],
     "relatedResourceIds": [
       "official-minimax-h3"
@@ -2431,6 +2469,7 @@
       "platform": "docs",
       "url": "https://docs.comfy.org/get_started/cloud",
       "author": "ComfyUI",
+      "authorProfileUrl": "https://github.com/Comfy-Org",
       "originalLanguage": "en"
     },
     "verifiedAt": "2026-09-06",
@@ -2791,6 +2830,7 @@
       "platform": "docs",
       "url": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3#minimax-h3-image-to-video-i2v",
       "author": "ComfyUI",
+      "authorProfileUrl": "https://github.com/Comfy-Org",
       "originalLanguage": "en"
     },
     "verifiedAt": "2026-09-06",
@@ -3699,6 +3739,89 @@
   },
   {
     "id": "minimax-director-timeline",
+    "chapters": [
+      {
+        "title": {
+          "zh": "认识节点与输出检查",
+          "en": "Inspect nodes and outputs"
+        },
+        "seconds": 91,
+        "url": "https://www.youtube.com/watch?v=XIKDfvoFcCY&t=91",
+        "urlZh": "https://www.youtube.com/watch?v=te8qpVaP0yI&t=91"
+      },
+      {
+        "title": {
+          "zh": "安排三条轨道",
+          "en": "Arrange the three tracks"
+        },
+        "seconds": 282,
+        "url": "https://www.youtube.com/watch?v=XIKDfvoFcCY&t=282",
+        "urlZh": "https://www.youtube.com/watch?v=te8qpVaP0yI&t=282"
+      },
+      {
+        "title": {
+          "zh": "为角色配置对白",
+          "en": "Assign character dialogue"
+        },
+        "seconds": 905,
+        "url": "https://www.youtube.com/watch?v=XIKDfvoFcCY&t=905",
+        "urlZh": "https://www.youtube.com/watch?v=te8qpVaP0yI&t=905"
+      },
+      {
+        "title": {
+          "zh": "约束首尾与中间画面",
+          "en": "Constrain boundary and intermediate frames"
+        },
+        "seconds": 1106,
+        "url": "https://www.youtube.com/watch?v=XIKDfvoFcCY&t=1106",
+        "urlZh": "https://www.youtube.com/watch?v=te8qpVaP0yI&t=1106"
+      },
+      {
+        "title": {
+          "zh": "调节镜头运动",
+          "en": "Adjust camera movement"
+        },
+        "seconds": 1312,
+        "url": "https://www.youtube.com/watch?v=XIKDfvoFcCY&t=1312",
+        "urlZh": "https://www.youtube.com/watch?v=te8qpVaP0yI&t=1312"
+      },
+      {
+        "title": {
+          "zh": "跨镜头复用主体",
+          "en": "Reuse subjects across shots"
+        },
+        "seconds": 1428,
+        "url": "https://www.youtube.com/watch?v=XIKDfvoFcCY&t=1428",
+        "urlZh": "https://www.youtube.com/watch?v=te8qpVaP0yI&t=1428"
+      },
+      {
+        "title": {
+          "zh": "检查编译结果",
+          "en": "Review compiled output"
+        },
+        "seconds": 1764,
+        "url": "https://www.youtube.com/watch?v=XIKDfvoFcCY&t=1764",
+        "urlZh": "https://www.youtube.com/watch?v=te8qpVaP0yI&t=1764"
+      },
+      {
+        "title": {
+          "zh": "跟随完整素材示例",
+          "en": "Follow the complete media example"
+        },
+        "seconds": 1843,
+        "url": "https://www.youtube.com/watch?v=XIKDfvoFcCY&t=1843",
+        "urlZh": "https://www.youtube.com/watch?v=te8qpVaP0yI&t=1843"
+      },
+      {
+        "title": {
+          "zh": "查看生成结果",
+          "en": "Inspect the rendered result"
+        },
+        "seconds": 1986,
+        "url": "https://www.youtube.com/watch?v=XIKDfvoFcCY&t=1986",
+        "urlZh": "https://www.youtube.com/watch?v=te8qpVaP0yI&t=1986"
+      }
+    ],
     "contentType": "community",
     "category": "comfyui",
     "title": {
@@ -3931,7 +4054,8 @@
       {
         "kind": "command",
         "value": "cd ComfyUI/custom_nodes\ngit clone https://github.com/imbutus/ComfyUI-MiniMaxDirector.git",
-        "platform": "shell"
+        "platform": "shell",
+        "cwd": "Parent directory containing ComfyUI"
       }
     ]
   }

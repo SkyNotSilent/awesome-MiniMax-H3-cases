@@ -1,24 +1,10 @@
 import { readFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
+import { publishedReply } from './submission-reply-text.mjs'
+export { publishedReply } from './submission-reply-text.mjs'
 
 const root = resolve(import.meta.dirname, '..')
-const baseUrl = 'https://h3-field-notes-production.up.railway.app'
-
-export function publishedReply(type, item) {
-  const segment = type === 'case' ? 'cases' : 'tutorials'
-  const zh = `${baseUrl}/${segment}/${item.id}/`
-  const en = `${baseUrl}/en/${segment}/${item.id}/`
-  return [
-    'Published with permanent attribution. Thank you for contributing to the H3 creator community.',
-    '',
-    `- 中文：${zh}`,
-    `- English: ${en}`,
-    `- Original source: ${item.source?.url ?? item.sourceUrl}`,
-    '',
-    'The original work/profile remains linked on both pages. Please use this Issue for attribution corrections or removal requests.',
-  ].join('\n')
-}
 
 async function run() {
   const type = process.argv[process.argv.indexOf('--type') + 1]
@@ -28,6 +14,14 @@ async function run() {
   const items = JSON.parse(await readFile(resolve(root, file), 'utf8'))
   const item = items.find((entry) => entry.id === id)
   if (!item) throw new Error(`Published ${type} not found: ${id}`)
+  if (process.argv.includes('--draft') || process.argv.includes('--verify-deployment')) {
+    const { ensureFeedbackDraft, verifyFeedbackDeployment } = await import('./submission-feedback.mjs')
+    const path = await ensureFeedbackDraft(root, type, item)
+    if (!path) throw new Error('No associated submission Issue; no draft was created.')
+    const state = process.argv.includes('--verify-deployment') ? await verifyFeedbackDeployment(path) : JSON.parse(await readFile(path, 'utf8'))
+    console.log(JSON.stringify({ id, type, status: state.status, posted: false }))
+    return
+  }
   console.log(publishedReply(type, item))
 }
 

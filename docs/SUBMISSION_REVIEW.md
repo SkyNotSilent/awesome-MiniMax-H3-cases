@@ -43,10 +43,12 @@ Generate the draft from a published item, then review it before posting:
 npm run submission:reply -- --type tutorial --id minimax-director-timeline
 ```
 
-The command prints text only. It never comments on, labels, or closes an Issue.
+The command prints text only. It never comments on, labels, or closes an Issue. Publication additionally creates an ignored `.review/submission-feedback/<type>-<id>.json` draft when an Issue is associated. Exclusive creation preserves manual edits on retries. The state starts at `awaiting-deployment`; verifying both localized canonical pages advances it to `ready-for-review`. A maintainer must still review and send the comment. Neither state permits automatic posting.
+
+Use `npm run submission:reply -- --type tutorial --id <id> --draft` to prepare a missing draft. After deployment, use the same command with `--verify-deployment` to check both localized canonical pages and update its private status. It still never sends a comment.
 
 ### Not planned
 
 > Thank you for the suggestion. We are not publishing this item because **[specific, public reason]**. This does not make a judgment about the creator or the wider resource.
 
-Open queue: [untriaged submissions](https://github.com/SkyNotSilent/awesome-MiniMax-H3-cases/issues?q=is%3Aissue%20is%3Aopen%20label%3Asubmission%20-label%3A%22status%3A%20published%22%20-label%3A%22status%3A%20not-planned%22).
+Open queue: [triage, missing information and active reviews](https://github.com/SkyNotSilent/awesome-MiniMax-H3-cases/issues?q=is%3Aissue%20is%3Aopen%20-label%3A%22status%3A%20published%22%20-label%3A%22status%3A%20not-planned%22). This intentionally includes unlabeled Issues so missing submission labels cannot hide a contribution. Triage distinguishes submissions from bug reports. Maintain the `submission`, `case`, `tutorial` and template-specific labels alongside the five status labels.

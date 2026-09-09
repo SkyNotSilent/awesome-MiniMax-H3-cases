@@ -1,10 +1,20 @@
 # MiniMax H3 Cases & Guides — Complete Case and Tutorial Index
 
-Generated from data/cases.json, data/tutorial-guides.json, and data/creators.json. Total: 1790 cases, 25 tutorials, and 341 featured creators. Complete verbatim public Prompts: 629.
+Generated from data/cases.json, data/tutorial-guides.json, and data/creators.json. Total: 1790 cases, 25 tutorials, and 345 featured creators. Complete verbatim public Prompts: 629.
 
 ## Creator discovery
 
 The creator leaderboard is derived only from source-attributed content already published in this library. It is not an official X influence ranking. Internal monitoring scores, rejected posts, and review cadence are never public.
+
+### @comfy-org
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/github-comfy-org/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/github-comfy-org/
+- github profile: https://github.com/comfy-org
+- Roles: tutorial
+- Published cases: 0
+- Complete public Prompts: 0
+- Source-checked tutorials: 4
 
 ### @servasyy_ai
 
@@ -36,11 +46,41 @@ The creator leaderboard is derived only from source-attributed content already p
 - Complete public Prompts: 0
 - Source-checked tutorials: 1
 
+### @antirez
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/github-antirez/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/github-antirez/
+- github profile: https://github.com/antirez
+- Roles: tutorial
+- Published cases: 0
+- Complete public Prompts: 0
+- Source-checked tutorials: 1
+
+### @larryvrh
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/github-larryvrh/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/github-larryvrh/
+- github profile: https://github.com/larryvrh
+- Roles: tutorial
+- Published cases: 0
+- Complete public Prompts: 0
+- Source-checked tutorials: 1
+
 ### @modelscope2022
 
 - English profile: https://h3-field-notes-production.up.railway.app/en/creators/modelscope2022/
 - Chinese profile: https://h3-field-notes-production.up.railway.app/creators/modelscope2022/
 - x profile: https://x.com/modelscope2022
+- Roles: tutorial
+- Published cases: 0
+- Complete public Prompts: 0
+- Source-checked tutorials: 1
+
+### @nikodemon80
+
+- English profile: https://h3-field-notes-production.up.railway.app/en/creators/github-nikodemon80/
+- Chinese profile: https://h3-field-notes-production.up.railway.app/creators/github-nikodemon80/
+- github profile: https://github.com/nikodemon80
 - Roles: tutorial
 - Published cases: 0
 - Complete public Prompts: 0
@@ -3436,12 +3476,14 @@ The creator leaderboard is derived only from source-attributed content already p
 - Estimated time: not specified
 - Applicable versions: ComfyUI 0.30+ · native H3 T2V template
 - Official T2V workflow JSON: https://github.com/Comfy-Org/workflow_templates/blob/main/templates/video_minimax_h3_t2v.json
+- Official Windows Desktop installation: https://docs.comfy.org/installation/desktop/windows
+- Linux / manual installation and Python environment: https://docs.comfy.org/installation/manual_install
 - Model files and folders: https://huggingface.co/Comfy-Org/MiniMax-H3
 - Official outputs and prompt examples: https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md
 
 - Original source: https://docs.comfy.org/tutorials/video/minimax/minimax-h3
 - Start here:
-  1. Install or update ComfyUI. Use the official Desktop or Portable build on Windows, or a separate Python environment for a manual/Linux install. Confirm the UI opens without a CUDA initialization error.
+  1. Install or update ComfyUI. Windows beginners should follow the linked official Desktop installer and launch the app after NVIDIA dependencies finish. For Linux/manual installs, first follow the manual guide to clone ComfyUI, activate its isolated Python environment and install the matching CUDA PyTorch build. Only that route uses the pip and main.py commands below, from the ComfyUI folder containing requirements.txt. Confirm the UI opens without CUDA errors before continuing.
   2. Open Template Library → Video → MiniMax H3 T2V. Use the model-download popup when available; preserve the exact filenames for manual downloads.
   3. Place minimax_h3_fl2va_pruned_int8_convrot.safetensors in ComfyUI/models/diffusion_models/. T2V and I2V use FL2VA; only R2V switches to Ref2VA weights.
   4. Place qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors in ComfyUI/models/text_encoders/. Put both the video and audio VAEs in ComfyUI/models/vae/. A silent render is not a successful audio-video setup.
@@ -3547,6 +3589,8 @@ The creator leaderboard is derived only from source-attributed content already p
   - xcode-select --install
   - brew install ffmpeg
   - git clone https://github.com/antirez/h3.c && cd h3.c
+  - brew install hf
+  - hf --help
   - hf download MiniMaxAI/MiniMax-H3 --local-dir MiniMax-H3
   - make -j8 && mkdir -p outputs
   - ./h3 --info -d ./MiniMax-H3

@@ -36,14 +36,18 @@ function profileHandle(urlValue, platform) {
 }
 
 export function tutorialCreatorIdentity(tutorial) {
-  if (tutorial?.contentType !== 'community') return null
-  const platform = tutorial.source?.platform
+  if (!tutorial?.source) return null
+  let platform = tutorial.source.platform
+  if (platform === 'docs' && tutorial.source.authorProfileUrl) {
+    const profile = tutorial.source.authorProfileUrl
+    platform = extractXHandle(profile) ? 'x' : profileHandle(profile, 'github') ? 'github' : profileHandle(profile, 'youtube') ? 'youtube' : null
+  }
   if (platform === 'x') {
-    const handle = normalizeHandle(tutorial.source.handle) || extractXHandle(tutorial.source.url)
+    const handle = extractXHandle(tutorial.source.authorProfileUrl || tutorial.source.url)
     return handle ? { platform, handle, profileUrl: `https://x.com/${handle}` } : null
   }
   if (platform !== 'github' && platform !== 'youtube') return null
-  const preferred = tutorial.contribution?.authorUrl || tutorial.source?.url
+  const preferred = tutorial.source.authorProfileUrl || tutorial.contribution?.authorUrl || tutorial.source?.url
   const handle = profileHandle(preferred, platform)
     || (tutorial.source?.handle ? normalizeHandle(tutorial.source.handle) : null)
   if (!handle) return null
