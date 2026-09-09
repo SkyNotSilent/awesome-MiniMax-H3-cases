@@ -684,7 +684,7 @@ describe('case-first routes', () => {
     renderAt('/tutorials/')
     fireEvent.click(screen.getByRole('button', { name: '长视频' }))
     expect(screen.getByRole('heading', { name: 'H3 WebUI：Motion Context + 内置升频' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: '4070 12GB：5 秒分块续接 13 秒角色舞蹈' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '4070 12GB：三段约 5 秒续接成 13 秒角色舞蹈' })).toBeInTheDocument()
     expect(screen.queryByRole('heading', { name: 'Mac Studio 上用 Phosphene 跑 Turbo' })).not.toBeInTheDocument()
   })
 
