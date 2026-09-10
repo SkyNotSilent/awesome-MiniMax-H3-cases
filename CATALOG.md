@@ -144,6 +144,82 @@
 | [写实角色转面设定图](https://x.com/aiehon_aya/status/2082501605803597837) | 7s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `Anime` `X 原帖` |
 | [20项运动的高速图形巡礼](https://x.com/ai_animer/status/2091659975231988159) | 42s · 1672×941 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
 | [彩色几何节拍中的舞者剪影](https://x.com/Naonekozamurai/status/2091644432433234415) | 15s · 2560×1440 · landscape | `MiniMax H3` `舞蹈视频` `来源未公开 Prompt` `X 原帖` |
+| [从洗衣到晾晒的连续家务](https://x.com/aiwithaly/status/2091749172361978149) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [女跑者穿过彩色几何赛道](https://x.com/Ayu_AI_0912/status/2092076062712950995) | 15s · 2560×1440 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [彩色几何节拍中的篮球剪影](https://x.com/Naonekozamurai/status/2092078428707336696) | 15s · 2560×1440 · landscape | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
+| [漫画角色穿过高密度动态图形](https://x.com/goldwing_zoome/status/2092385200420647307) | 17s · 864×480 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [绘本风十五秒讲完竹取物语](https://x.com/tanabe_fragm/status/2092372313551646773) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [山姥辣妹的层层加码变身](https://x.com/su_nagomi/status/2092371886961578401) | 15s · 1344×768 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [炭火烤肉的食欲广告镜头](https://x.com/nakazakifam/status/2092369986606051691) | 15s · 1280×720 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [五窗口并行完成巨型灌汤包](https://x.com/cocktailpeanut/status/2092363865619317172) | 65s · 864×480 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [盾牌穿梭于漫画式工业战场](https://x.com/EndFolding79421/status/2091989570598412736) | 20s · 1280×736 · landscape | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
+| [人声驱动的至上主义文字世界](https://x.com/su_nagomi/status/2092834537474753005) | 15s · 1344×768 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [一颗豆蔻串起咖喱店故事](https://x.com/tanabe_fragm/status/2092827875129086336) | 15s · 1440×2560 · portrait | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [牧羊少年连续穿越四段冒险](https://x.com/BradleyYoungjr/status/2092826910422073517) | 60s · 960×548 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [地狱俱乐部里的爵士乐演出](https://x.com/cocktailpeanut/status/2092650078854852881) | 55s · 1248×704 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [夏日校园疾驰的动画片头](https://x.com/goldwing_zoome/status/2093130098761433420) | 17s · 864×480 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [刀光、雨伞与马蹄组成文字节拍](https://x.com/PixVerse/status/2093126466792034728) | 15s · 1920×1080 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [橙黑文字在玩具节奏中弹跳](https://x.com/minmin_4410/status/2093118957628821666) | 15s · 1344×768 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [街头角色完成荒诞任务](https://x.com/boxingai/status/2093487845314822338) | 8s · 832×480 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [咖啡馆情景喜剧迎来机器人访客](https://x.com/atgorans_k/status/2093477620650312050) | 15s · 1344×768 · landscape | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [长耳黑猫在酒吧端坐](https://x.com/Sadal_Quari/status/2093473703917228148) | 5s · 864×480 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [气泡与鲸鱼最终汇成“梦”](https://x.com/su_nagomi/status/2093459701707284700) | 15s · 1344×768 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [金属碎片高速拼成“VELOCITY”](https://x.com/CharaspowerAI/status/2093715484910731416) | 15s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [五秒勇者旅程从村庄冲到魔王决战](https://x.com/harogetter/status/2093857142285717681) | 5s · 1260×720 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [厄瓜多尔地域符号切成动感海报](https://x.com/aiworld_ec/status/2093853764503441812) | 10s · 2504×1440 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [声波、圆环与立方体收束成发光标志](https://x.com/hAru_mAki_ch/status/2093843289745289370) | 5s · 1344×768 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [超级反派被控制台密码难住](https://x.com/DeCat2025/status/2093828046935486968) | 15s · 1536×672 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [熟食店三明治被小型飞碟劫走](https://x.com/ScottShebby/status/2093826321587847398) | 12s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [粉发主持人用日文动效介绍免费生成](https://x.com/SSSS_CRYPTOMAN/status/2093821064631771446) | 5s · 1344×768 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [舞厅庆典迎来夸张的壮汉舞者](https://x.com/PhiMarHal/status/2093816350196048105) | 5s · 1344×768 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [微缩施工队从零搭起汉堡](https://x.com/aimikoda/status/2094427110764917030) | 15s · 1344×768 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [食材悬浮重组成精品汉堡广告](https://x.com/aimikoda/status/2094279178602283013) | 15s · 1344×768 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [黑色剪影连闯游泳骑行与跑步赛段](https://x.com/Naonekozamurai/status/2094340753195725179) | 15s · 2560×1440 · landscape | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
+| [长笛旋律化作金色音符与晨光](https://x.com/Naonekozamurai/status/2094197910678499732) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [古装女子用手机记录初到上海的一天](https://x.com/nopinduoduo/status/2094431473499783415) | 15s · 1280×720 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [水墨武士与女战士在白色空间决斗](https://x.com/ShamiWeb3/status/2094575793615814722) | 15s · 1344×768 · landscape | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
+| [粉色衬衫模特切换成故障时尚大片](https://x.com/sichy/status/2094557142166409300) | 15s · 832×480 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [昏暗房间里的单支蜡烛生日](https://x.com/bmx_ai13/status/2094556015165636649) | 15s · 1024×768 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [行李箱展开并自动完成旅行收纳](https://x.com/shinojapan/status/2094553594393719023) | 15s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [棋盘与时钟在超现实风暴中崩裂](https://x.com/Bic_Revelation/status/2094938448972915167) | 12s · 1440×2560 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [水龙头流出的液体变成发光花田](https://x.com/AI_VideoLab/status/2094937116514099278) | 15s · 1280×720 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [水晶花苞生长成多彩机械玫瑰](https://x.com/robazem/status/2094931820039077987) | 10s · 1080×1486 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [软陶角色演示日语问候语](https://x.com/FlashBoardsAI/status/2094909467649310998) | 15s · 1920×1080 · landscape | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [孤独行者穿过巨大落日下的海滩](https://x.com/SShahHashmi/status/2094892924752339405) | 10s · 864×480 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [角色剪影在高速图形转场中亮相](https://x.com/Just_sharon7/status/2095200881167986789) | 15s · 2544×1456 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [奔跑人物撞破纸片城市寻找出口](https://x.com/os_orabi/status/2095179948805980236) | 12s · 2650×1440 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [法国斗牛犬直立回家开门](https://x.com/cocktailpeanut/status/2095632778897568213) | 14s · 480×864 · portrait | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [钛金属碎片锻造成冲击标题](https://x.com/CharaspowerAI/status/2095527374444003437) | 15s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [烤年糕膨胀成猫后逃跑](https://x.com/loglogrog/status/2095662472346923386) | 10s · 1344×768 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [男子在紫色能量中完成异变](https://x.com/b0dre/status/2095660932235927734) | 17s · 480×864 · portrait | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [抽象人物在几何图形中被指引前进](https://x.com/su_nagomi/status/2095636175277134281) | 15s · 1920×1080 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [两位超级英雄在屋顶谈论新模型](https://x.com/ivanfioravanti/status/2095770682797760857) | 15s · 1344×768 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [黑色汽水罐穿越冷雾与气泡完成定格](https://x.com/ManuAGI01/status/2095769564961464789) | 15s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [女孩对镜头说出想吃拉面的愿望](https://x.com/core_tan/status/2095717083401371768) | 5s · 768×1376 · portrait | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [粉裙女子在花墙前练习仰卧起坐](https://x.com/moon_himiko/status/2095999374472142894) | 5s · 768×1024 · portrait | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [古装人物演示一则月度通信套餐](https://x.com/Ayu_AI_0912/status/2095987516713402635) | 10s · 1344×768 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [像素格斗角色膨胀后击倒对手](https://x.com/chasinglightX64/status/2095985472988430734) | 10s · 640×480 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [驶过郊外小站](https://x.com/mix_buchi_/status/2096419150134731258) | 15s · 736×992 · portrait | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
+| [巧克力蛋里长出一座夏威夷](https://x.com/loglogrog/status/2096749565412331841) | 10s · 1344×768 · landscape | `MiniMax H3` `广告与产品` `公开 Prompt` `X 原帖` |
+| [街头海报中破框而出的时尚舞者](https://x.com/RickTripstar/status/2096761524698169807) | 15s · 2560×1440 · landscape | `MiniMax H3` `广告与产品` `公开 Prompt` `X 原帖` |
+| [油彩长成爱丁堡城市](https://x.com/aimikoda/status/2094490203335352524) | 15.168s · 1440p · 16:9 | `油彩长成爱丁堡城市` |
+| [鸣人与雏田的樱花树下小插曲](https://x.com/shuxxess/status/2090603098180132963) | 10.208s · 720p · 7:4 | `动画` `动漫` `日常生活` |
+| [任务出发前整理领带](https://x.com/shuxxess/status/2090601706648412626) | 15.168s · 720p · 7:4 | `动画` `动漫` `对白与口型` |
+| [白猫暑假日历翻页动画](https://x.com/renataro9/status/2089573433806098785) | 15.168s · 720p · 7:4 | `动画` `插画与手绘` `动物与生物` `日常生活` |
+| [夏日雨中穿过草地的人群](https://x.com/aimikoda/status/2088927511174422822) | 15.168s · 720p · 16:9 | `电影叙事` `写实电影感` `自然风景` `日常生活` |
+| [浮世绘画卷里的东京旅行](https://x.com/tanabe_fragm/status/2088446104287477944) | 15.168s · 720p · 7:4 | `动画` `插画与手绘` `城市街景` |
+| [邪教走廊中的伪纪录恐怖](https://x.com/cocktailpeanut/status/2087251422312116382) | 28.842667s · 720p · 16:9 | `电影叙事` `暗黑恐怖` `写实电影感` `人物表演` |
+| [梦境档案游戏概念片头](https://x.com/ManuAGI01/status/2086784467981697343) | 15.168s · 720p · 16:9 | `动画` `插画与手绘` `动态图形` `奇幻` |
+| [星图与炼金角色游戏宣传片](https://x.com/ManuAGI01/status/2086778003422671069) | 15.168s · 720p · 16:9 | `动画` `插画与手绘` `动态图形` `奇幻` |
+| [紫色月轮下的游戏角色宣传片](https://x.com/Mayz1169/status/2086427292755247409) | 11.400998s · 720p · 7:4 | `动画` `动漫` `动态图形` `奇幻` |
+| [庭院中的双忍者近身交锋](https://x.com/0xvaibhav24/status/2085831017055850725) | 15.168s · 720p · 16:9 | `动作特效` `写实电影感` `动作打斗` |
+| [道服狐狸的武术短片](https://x.com/alby13/status/2085457550816969132) | 15.168s · 720p · 16:9 | `动作特效` `3D / CG` `动作打斗` `动物与生物` |
+| [自行车穿越森林变成摩托](https://x.com/AIARTGALLARY/status/2085374036855357478) | 15.168s · 720p · 16:9 | `动作特效` `写实电影感` `城市街景` `奇幻` |
+| [实验室里的 ChatGPT 与 Claude 喜剧争论](https://x.com/WolfRiccardo/status/2084671043373867473) | 15.16263s · 720p · 16:9 | `对白与口型` `照片级写实` |
+| [银蓝机甲新赛季概念片](https://x.com/liyue_ai/status/2083128868668666020) | 15.168s · 720p · 16:9 | `广告与产品` `3D / CG` `动态图形` `科幻太空` `产品与广告` |
+| [黄色背景上的剪影舞蹈与动感字](https://x.com/Naonekozamurai/status/2091352223968096561) | 15.168s · 720p · 16:9 | `舞蹈` `动态图形` |
+| [剪影跑酷穿越黑白字形](https://x.com/Naonekozamurai/status/2091072883040600420) | 15.168s · 720p · 16:9 | `动作特效` `动态图形` `人物表演` |
+| [预演方块切换室内运镜](https://x.com/toyxyz3/status/2096703938691215362) | 5s · 2856×2048 · landscape | `MiniMax H3` `本地生成与工作流` `来源未公开 Prompt` `X 原帖` |
 
 ## FL2VA
 
@@ -221,6 +297,55 @@
 | [金铠女剑士岩台动作戏](https://x.com/Cia0_exe/status/2082693906224009447) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `Narrative Film` `X 原帖` |
 | [泳池边的人像镜头转换](https://x.com/AiCreatorS1881/status/2091674280849551824) | 28s · 1920×1080 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
 | [手工皂从静物到产品广告](https://x.com/AllaAisling/status/2091667671771140454) | 15s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [角色用巨型文字打破规则](https://x.com/neru_pipipi/status/2092064985027629562) | 15s · 1890×1080 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [方正坐姿小猫的五秒微动](https://x.com/haruharuy/status/2092376809954517166) | 5s · 720×720 · square | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [仓鼠角色发出声音的自动流程](https://x.com/nicoptere/status/2092365683023561071) | 16s · 768×768 · square | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
+| [荒野中苏醒的有角巨兽](https://x.com/picatrix_picori/status/2092357500007846263) | 15s · 2560×1440 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [冰晶环绕的插画角色苏醒](https://x.com/CharaspowerAI/status/2092190323581555116) | 15s · 1920×2160 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [机械遗迹中的时装英雄镜头](https://x.com/HBCoop_/status/2092839052605362665) | 15s · 1080×1584 · portrait | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [橙发剑士的游戏角色宣传片](https://x.com/Heidifu666/status/2092836934154637398) | 15s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [静态角色照片变成自然对白](https://x.com/lucasyao99261/status/2092822345446781014) | 10s · 736×1280 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [白熊品牌套件变成动态图形](https://x.com/ponzponz15/status/2092818051075133545) | 10s · 1080×960 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [白纸上的少女逐笔成形](https://x.com/PhotogenicWeekE/status/2093133440359317751) | 15s · 1920×1070 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [镜头穿墙追随人物走过多间房](https://x.com/varts_works/status/2093457990661853670) | 15s · 1080×1330 · portrait | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [白色团子吉祥物给串团子淋酱](https://x.com/WorkChiharu/status/2093844620149182464) | 5s · 768×1344 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [粉发少女在红色跑车旁轻快转身](https://x.com/HetareIvory/status/2093842563698757935) | 5s · 960×768 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [狐面守护者让荒谷重新长出花木](https://x.com/ewotanosimo2310/status/2093838781195706876) | 15s · 1440×2560 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [红黑动画角色用日语介绍生成速度](https://x.com/x_nonotan/status/2093837994654654742) | 5s · 1344×768 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [母女拥抱让黑猫迸出蓝色电光](https://x.com/bonyoh1/status/2093837039410225347) | 5s · 768×1344 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [白虎少女从角色设定走进竹林](https://x.com/DordrayO/status/2094429002404646966) | 21s · 1280×590 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [空置水泥房一镜变成温暖客厅](https://x.com/Ferica7/status/2094425579290538004) | 10s · 1344×768 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [后院草坪快速挖掘并搭起地下掩体](https://x.com/UnrealRafael/status/2094568116449874056) | 106s · 608×352 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [复古电脑屏幕扩张成未来苹果商店](https://x.com/cocktailpeanut/status/2094553032679923751) | 14s · 1056×704 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [红发战士中箭后倒在燃烧战场](https://x.com/ou_zhen599/status/2095175917412962628) | 15s · 3840×2160 · landscape | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
+| [女拳手完成单臂平板支撑挑战](https://x.com/ou_zhen599/status/2095171317578502559) | 15s · 3840×2160 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [留声机房间延展成水晶舞厅](https://x.com/core_tan/status/2095190591852408902) | 16s · 1376×768 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [电梯门开合间保持男子面部清晰](https://x.com/core_tan/status/2095181428850102728) | 5s · 1376×768 · landscape | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [魔法报纸带来霍格沃茨停办噩耗](https://x.com/lucasyao99261/status/2095179726805770518) | 12s · 672×928 · portrait | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [人体骨架驱动多角色姿态变化](https://x.com/jun_kongo/status/2095171242374656289) | 8s · 2118×1280 · landscape | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [边缘线稿控制多角色动作轮廓](https://x.com/jun_kongo/status/2095171127454880046) | 8s · 2120×1280 · landscape | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [金发动画少女在室内低声对白](https://x.com/romfuku/status/2095656390383771823) | 7s · 1664×2496 · portrait | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [金发动画少女用表情回应镜头](https://x.com/fumanfuku/status/2095654556457898393) | 7s · 1664×2496 · portrait | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [草莓玩偶从平面海报进入立体世界](https://x.com/musitsune/status/2095648030531707119) | 15s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [绘图软件中的线稿逐步变成彩色肖像](https://x.com/VisioneerArt/status/2095635838063309167) | 15s · 3778×2160 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [小螃蟹乘船抵达花朵岛屿](https://x.com/tea_story_hoshi/status/2095627950079271105) | 32s · 1024×576 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [插画师在凌乱工作室里为进度发愁](https://x.com/ivanfioravanti/status/2095806481312444464) | 10s · 1344×768 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [雨巷里的贴身格斗](https://x.com/ou_zhen599/status/2096262846963396954) | 15s · 3840×2160 · landscape | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
+| [水枪迎面喷射](https://x.com/core_tan/status/2096408498821365816) | 5s · 832×1248 · portrait | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [静谧京都酒店广告](https://x.com/Naonekozamurai/status/2096378308753801232) | 15s · 1920×1080 · landscape | `MiniMax H3` `广告与产品` `来源未公开 Prompt` `X 原帖` |
+| [猫耳少女骑过油菜花田](https://x.com/Natsuexp/status/2096682171712885083) | 7s · 544×960 · portrait | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [暗黑糖果舞台上的偶像](https://x.com/sorastg524/status/2096656851727442350) | 15s · 768×1152 · portrait | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [霓虹动态图形里的动漫舞者](https://x.com/sorastg524/status/2096636966913896469) | 15s · 1080×1888 · portrait | `MiniMax H3` `舞蹈` `公开 Prompt` `X 原帖` |
+| [柠檬黄影棚里的粉蓝残影舞](https://x.com/aimikoda/status/2097001707683119410) | 15s · 2560×1440 · landscape | `MiniMax H3` `舞蹈` `公开 Prompt` `X 原帖` |
+| [暴风雪悬崖上的最后抓点](https://x.com/ou_zhen599/status/2096980289184805308) | 15s · 3840×2160 · landscape | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
+| [舷窗星海旁的暧昧对话](https://x.com/ou_zhen599/status/2096921323624972600) | 15s · 3840×2160 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [列车窗外穿越历史的首尾帧片段](https://x.com/EndFolding79421/status/2088060516027785340) | 8.064s · 360p · 161:90 | `电影叙事` `照片级写实` `奇幻` |
+| [二十镜头的高速排版时装片](https://x.com/studio_oneroom/status/2097255890391077338) | 15s · 1344×768 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [双手从零搭起一座体育场](https://x.com/TechieBySA/status/2096606005068972483) | 15s · 2048×1152 · landscape | `MiniMax H3` `本地生成与工作流` `公开 Prompt` `X 原帖` |
+| [夕阳下轻咬青枣的女孩](https://x.com/Stellakjbk/status/2096608164196254160) | 5s · 2504×1440 · landscape | `MiniMax H3` `综合展示` `公开 Prompt` `X 原帖` |
+| [横向滚动的文字时装空间](https://x.com/taya_mama_AI/status/2096612096003965254) | 10s · 768×1024 · portrait | `MiniMax H3` `广告与产品` `公开 Prompt` `X 原帖` |
+| [活力睡衣的十镜头秋日广告](https://x.com/tanabe_fragm/status/2097561594540773563) | 15s · 2560×1440 · landscape | `MiniMax H3` `广告与产品` `公开 Prompt` `X 原帖` |
+| [虹翼神像轰击雪原城邦](https://x.com/AuntSolarClock/status/2097831435147317348) | 12s · 1216×672 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
 
 ## Ref2VA
 
@@ -377,6 +502,64 @@
 | [斗篷复仇者对决赛博处刑者](https://x.com/LudovicCreator/status/2082519983842595100) | 15s · 1280×720 · landscape | `MiniMax H3` `完整 Prompt` `Narrative Film` `X 原帖` |
 | [自拍女性穿行长廊的连续镜头](https://x.com/DeepForest_Inc/status/2091673049884176816) | 65s · 960×576 · landscape | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
 | [金色英雄的漫画风音乐片段](https://x.com/MarkBenjaminAI/status/2091661911469310184) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [喷漆唤醒墙上巨龙](https://x.com/Cia0_exe/status/2091775336849789065) | 29s · 3840×2160 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [一根金线织出奇幻世界与徽标](https://x.com/aimikoda/status/2091893350748025010) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [女学生穿越高密度动漫动态图形](https://x.com/goldwing_zoome/status/2092053560989270489) | 17s · 864×480 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [角色设定图变成时装宣传片](https://x.com/varts_works/status/2092069676272832714) | 20s · 1080×1440 · portrait | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [白色展台上的时装群像变换](https://x.com/applete77191758/status/2092070808361525604) | 45s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [橙色 ADP 字样的角色图形秀](https://x.com/korosuke_tv/status/2092073771205312938) | 15s · 2544×1456 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [机甲在长镜头中迎击坠落弹体](https://x.com/palealloy/status/2092079093273796878) | 51s · 608×352 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [日式青春短片里的卡带与海风](https://x.com/TanLuAI/status/2092401685876605427) | 45s · 1280×720 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [霓虹城市上空的高速空战](https://x.com/kicknost/status/2092399408763859123) | 23s · 1920×1080 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [潮酷狗狗的排版变身秀](https://x.com/misoosooooup/status/2092397328502341872) | 15s · 1080×720 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [插画角色走进投影歌词舞台](https://x.com/h64g_/status/2092393827407696030) | 30s · 1920×1080 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [魔法学徒与白兔的角色宣传片](https://x.com/haruuraeadss/status/2092387240664326495) | 15s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [权力人物跳起热烈弗拉门戈](https://x.com/minaxlab/status/2092385090600931380) | 15s · 1456×2544 · portrait | `MiniMax H3` `舞蹈视频` `来源未公开 Prompt` `X 原帖` |
+| [办公室日常的连续 B-roll](https://x.com/princedoesai/status/2092367911528898999) | 36s · 1906×1080 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [摇滚巨星在舞台上高歌](https://x.com/minaxlab/status/2092363559804244443) | 15s · 732×1280 · portrait | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [绿光戒指在荒野造出跑车](https://x.com/EndFolding79421/status/2092003946407870917) | 15s · 1280×736 · landscape | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
+| [月蚀舞台上的三味线演奏](https://x.com/SushiNFTart/status/2092825704312480181) | 15s · 832×480 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [粉色巨龙飞越樱花山谷](https://x.com/SORAY_AI/status/2092821327136657535) | 15s · 768×1344 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [书店角色转身穿过姓名排版](https://x.com/MizukiAMANO1/status/2093116428790698074) | 15s · 864×480 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [光头英雄闯入霓虹动画片头](https://x.com/aziz4ai/status/2093110975649956226) | 15s · 1440×2560 · portrait | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [粉金圆环带动收益文字起舞](https://x.com/Naonekozamurai/status/2093474780683149442) | 15s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [九套角色造型撕纸切换成游戏宣传片](https://x.com/sailorv321/status/2093842404159947111) | 15s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [九宫格人物素材展开成动感创作卡](https://x.com/taya_mama_AI/status/2093839723005726730) | 10s · 1344×768 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [红黑撕纸与城市霓虹重组双人海报](https://x.com/sailorv321/status/2093831877006397828) | 15s · 1920×1080 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [小螃蟹沿月夜池塘完成四段旅程](https://x.com/tea_story_hoshi/status/2093825302904586668) | 32s · 1920×1080 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [纹身女子离开黄色跑车走向街道](https://x.com/ou_zhen599/status/2094423490845921745) | 15s · 3840×2160 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [战后女武者从低头沉思到重新站稳](https://x.com/ou_zhen599/status/2094322714739871760) | 15s · 3840×2160 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [空白画布逐步绘成橙发角色设定](https://x.com/aimikoda/status/2094576083198951676) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [同一战斗场景用分镜对比相机运动](https://x.com/theeakiraxx/status/2094564093453795339) | 15s · 864×960 · portrait | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [女子面部逐层变成黑色雕塑面具](https://x.com/tsutsumu263/status/2094551731405545694) | 5s · 1344×768 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [真人舞者穿过高速日文排版演出](https://x.com/minmin_4410/status/2094551473531326626) | 29s · 2520×1440 · landscape | `MiniMax H3` `音乐视频` `公开 Prompt` `X 原帖` |
+| [女子从显示器画面走进现实房间](https://x.com/mazzo/status/2094934993835577510) | 61s · 2160×3840 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [精灵女子被多把手枪近距离包围](https://x.com/Tomw852/status/2094932418901811658) | 3s · 1344×752 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [夜间警察追逐突然变成地铁舞会](https://x.com/ArcaArtificial/status/2094900526903099592) | 31s · 1056×608 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [影星与棋王在老照片里对弈交谈](https://x.com/BernhardSony66/status/2094892572233846952) | 16s · 1308×720 · landscape | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [红蓝双人组展开卡通追逐舞蹈](https://x.com/Mayz1169/status/2095173208962150604) | 9s · 1920×1080 · landscape | `MiniMax H3` `舞蹈视频` `公开 Prompt` `X 原帖` |
+| [数字装配线逐层构建红发角色](https://x.com/aimikoda/status/2095651474797641955) | 15s · 1920×1440 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [女牛仔在荒漠皮卡旁告别](https://x.com/ou_zhen599/status/2095499292534587699) | 15s · 3840×2160 · landscape | `MiniMax H3` `角色对白` `公开 Prompt` `X 原帖` |
+| [纹身女骑手驶向落日公路](https://x.com/ou_zhen599/status/2095457286298984916) | 14s · 3840×2160 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [柠檬少女穿梭明快动效广告](https://x.com/Just_sharon7/status/2095516988743225637) | 15s · 2544×1456 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [双手从白纸勾勒出梳妆女子](https://x.com/Just_sharon7/status/2095473707611553897) | 15s · 2544×1456 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [同一参考角色穿越多组海滩镜头](https://x.com/HBCoop_/status/2095602031142859199) | 20s · 1920×1080 · landscape | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [绘图软件从空白画布塑造红发角色](https://x.com/ManuAGI01/status/2095733073145168360) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `公开 Prompt` `X 原帖` |
+| [蓝发少女在书桌前翻阅魔法书](https://x.com/studio_yebisu/status/2095990911566225431) | 12s · 768×1344 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [猫耳厨师完成一盘炒饭](https://x.com/IsekaiBardGuild/status/2096577196915900712) | 15s · 480×800 · portrait | `MiniMax H3` `动画` `公开 Prompt` `X 原帖` |
+| [竹林里的剑舞练习](https://x.com/one_good_prompt/status/2096674510392918507) | 30s · 1920×1080 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [黑花园里的石像预告片](https://x.com/aimikoda/status/2097112285827268887) | 15s · 2560×1440 · landscape | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
+| [海岸骑行视频添加日文文字](https://x.com/MireilleDartois/status/2090620553640198394) | 5.226667s · 480p · 9:5 | `本地生成与工作流` `动漫` `动态图形` `城市街景` |
+| [车库前的卡通电工自我介绍](https://x.com/EndFolding79421/status/2085471060028227810) | 6.656s · 736p · 40:23 | `对白与口型` `3D / CG` |
+| [拉开窗帘看见黑洞的视频编辑](https://x.com/ivanfioravanti/status/2091559842099929339) | 6.656s · 720p · 16:9 | `综合展示` `照片级写实` `科幻太空` |
+| [冰原骑士的极速奔袭对照](https://x.com/Tomw852/status/2096663157481623785) | 24s · 1920×2160 · portrait | `MiniMax H3` `模型对比` `公开 Prompt` `X 原帖` |
+| [四面角色参考保持造型一致](https://x.com/fnoji/status/2097256724495581565) | 4s · 832×1504 · portrait | `MiniMax H3` `本地生成与工作流` `来源未公开 Prompt` `X 原帖` |
+| [十六格参考驱动的迷你舞步](https://x.com/sankakuten91256/status/2097452080567111973) | 8s · 768×768 · square | `MiniMax H3` `舞蹈` `来源未公开 Prompt` `X 原帖` |
+| [霓虹舞台上的动漫音乐蒙太奇](https://x.com/dream_weebs/status/2097563963856720307) | 10s · 1696×928 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [三维预演与成片实时联动](https://x.com/shiqi_yang_147/status/2097567175464693951) | 7s · 1280×536 · landscape | `MiniMax H3` `本地生成与工作流` `来源未公开 Prompt` `X 原帖` |
+| [三种路径下的舞蹈动作复刻](https://x.com/IsekaiBardGuild/status/2097574969899401612) | 10s · 1920×1080 · landscape | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [动漫少女转身的参考图对照](https://x.com/sep_is_heim/status/2097798489161990458) | 26s · 1024×2292 · portrait | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [格子舞台切换漫画街景](https://x.com/sankakuten91256/status/2097794301921214974) | 8s · 768×768 · square | `MiniMax H3` `舞蹈` `来源未公开 Prompt` `X 原帖` |
 
 ## Unknown
 
@@ -1041,3 +1224,648 @@
 | [夕阳下的古装人物对话](https://x.com/PixelAigc/status/2091654707236499474) | 31s · 2576×1080 · landscape | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
 | [红黑剪影的歌词动画](https://x.com/aiehon_aya/status/2091646670392164706) | 25s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
 | [暗黑王冠徽标揭幕](https://x.com/NigelWatsonTFTC/status/2091645327874932893) | 5s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [后室空间的一镜长途穿行](https://x.com/cocktailpeanut/status/2091936838944715142) | 56s · 1280×704 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [忍者分身包围林间决斗](https://x.com/ai_xiaomu/status/2092055357074121025) | 15s · 1280×720 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [苹果猫吉祥物的明快广告短片](https://x.com/fated_oath/status/2092056698584547695) | 10s · 1890×1080 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [键盘、阶梯与文字构成的霓虹轨道](https://x.com/aidoga_lab/status/2092062197497397485) | 15s · 1280×720 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [雷雨夜里赶作业的漫画家庭](https://x.com/ai_de_create/status/2092066514992242959) | 12s · 1344×768 · landscape | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [白底动漫女孩的姿态切换](https://x.com/Alone1Moon/status/2092069451042795678) | 15s · 640×992 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [海岸上空的陨石冲击](https://x.com/AlmostYeti/status/2092072494232449336) | 55s · 1280×720 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [黑白刀锋中的动漫动作片段](https://x.com/mxvdxn_anime/status/2092075145687080996) | 32s · 3840×2160 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [废墟城市里的银发动漫少女](https://x.com/yukkii114/status/2092077793156935793) | 5s · 608×352 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [粉发角色身边的五秒微动](https://x.com/hypoxia_021/status/2092080680431915223) | 5s · 1280×704 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
+| [四眼猫耳角色的竖屏舞蹈](https://x.com/Chupico_nora/status/2092386547341705687) | 15s · 2160×3840 · portrait | `MiniMax H3` `舞蹈视频` `来源未公开 Prompt` `X 原帖` |
+| [晚霞海岸的安静独处](https://x.com/ROSHENDILAN/status/2092383888425316546) | 15s · 1440×2560 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [漫画屋顶上的急速追逐](https://x.com/yonaguniUDON/status/2092371453672915137) | 9s · 1344×768 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [绕口令化成竖屏动漫排版](https://x.com/Sera_Shiranami/status/2092367506115834335) | 15s · 360×640 · portrait | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [阿努比斯猫耳少女的利落舞步](https://x.com/highsan_works/status/2092364267546919032) | 10s · 672×928 · portrait | `MiniMax H3` `舞蹈视频` `来源未公开 Prompt` `X 原帖` |
+| [霓虹街头的粉发角色回眸](https://x.com/YamataZen/status/2092845610999386500) | 10s · 512×768 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [仓鼠团队的迷你创作工作室](https://x.com/HampterNFT/status/2092843298771628454) | 5s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [录音棚里的长镜头演唱](https://x.com/suizenji98/status/2092839767637676165) | 49s · 960×544 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [城市校园广告的青春蒙太奇](https://x.com/ai_300/status/2092839527442493879) | 15s · 2894×1576 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [甜点角色走进竖屏菜单广告](https://x.com/Mikot27567/status/2092830820306436318) | 15s · 1440×2560 · portrait | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [夏日刨冰引发的意外反应](https://x.com/safa_dayo/status/2092823518702653864) | 15s · 1920×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [南瓜装置铺满当代艺术馆](https://x.com/vkuoo/status/2092818026555199663) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [港口上空的危险走绳](https://x.com/opener_ai/status/2092764009896534293) | 15s · 2944×1248 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [深夜地铁里的半透明晃动](https://x.com/opener_ai/status/2092570843985658163) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [窗边手作时光的细腻循环](https://x.com/imaginaldomain/status/2093137271067427119) | 15s · 1024×576 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [红月下的暗夜角色片头](https://x.com/SushiNFTart/status/2093130319033663506) | 15s · 1920×1080 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [考拉角色举起产品发布标牌](https://x.com/BeatsOnBase/status/2093124872608297470) | 7s · 1888×1080 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [漫画分镜切入动画片头](https://x.com/studio_oneroom/status/2093124514284712336) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [花魁穿行灯笼街巷](https://x.com/suizenji98/status/2093122577170592135) | 23s · 960×544 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [秋日穿搭变成杂志广告](https://x.com/kik0ai1jikake/status/2093119842534801746) | 15s · 1344×768 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [粉发乐队在白色影棚演奏](https://x.com/mari_69_pink/status/2093119206581809545) | 15s · 1260×720 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [巧克力牛奶完成旋转倒杯广告](https://x.com/Creatify_AI/status/2093116596915192075) | 27s · 1280×720 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [雨夜古装对白铺开一分钟故事](https://x.com/TristanLi99/status/2093115527791288580) | 61s · 768×1344 · portrait | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [地下车库里的武士肖像](https://x.com/yasisreal/status/2093114211555770764) | 5s · 1344×768 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [能量饮料罐缠上红蓝光轨](https://x.com/ksa8Turky/status/2093113408002429285) | 10s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [纸板剧场解释原子状态变化](https://x.com/Arkatech/status/2093109176671359184) | 43s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [动漫角色穿过霓虹几何空间](https://x.com/mugi_AI_Art/status/2093104167321825301) | 15s · 2160×3840 · portrait | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [街头骑行对白配上动能字幕](https://x.com/hadiprassetyo_/status/2093103976644493667) | 15s · 1344×768 · landscape | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [绿幕前的猫咪轻快伸展](https://x.com/nyymisfw/status/2093103449223082308) | 7s · 512×704 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [女仆角色在室内轻轻转身](https://x.com/ruku_practice/status/2093101101298119086) | 5s · 960×544 · landscape | `MiniMax H3` `本地生成` `来源未公开 Prompt` `X 原帖` |
+| [星际战场铺开即时战略混战](https://x.com/cocktailpeanut/status/2093407813980602709) | 14s · 704×384 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [蓝发剑士在雪花与书法间循环](https://x.com/Cia0_exe/status/2093281766542807370) | 39s · 3840×2160 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [掌机广告上下同步变形](https://x.com/onofumi_AI/status/2093487787664417088) | 15s · 1920×2196 · portrait | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [霓虹义体角色跃过城市屋顶](https://x.com/harako_ai/status/2093486797250756791) | 15s · 1152×640 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [室内草地蔓延成超现实清晨](https://x.com/breath_in_code/status/2093484810975187396) | 34s · 3840×2160 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [狐耳少女的生日庆典蒙太奇](https://x.com/EarthGigantea/status/2093484761180463541) | 71s · 1920×1080 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [雨幕、聚光灯与标题组成黑白片头](https://x.com/aicreataro/status/2093484413502018000) | 15s · 1344×768 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [猫狗在街头展开说唱对决](https://x.com/ljd0427/status/2093483469137752318) | 177s · 720×1280 · portrait | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [集市、舞台与宇宙串成超长幻游](https://x.com/wikiwayne/status/2093481926514417950) | 401s · 1280×720 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [箭头、时钟与图标环绕校园角色](https://x.com/yudotanaka/status/2093481504139591787) | 15s · 1344×768 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [睡前刷手机变成竖屏应用短剧](https://x.com/ai_talk_log/status/2093476741553820002) | 28s · 1080×1944 · portrait | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [化学实验室里的荒诞对白](https://x.com/atgorans_k/status/2093475617555579119) | 15s · 1344×768 · landscape | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [小鸡切开一颗固执的西洋梨](https://x.com/WorkChiharu/status/2093474752379879812) | 10s · 1440×2560 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [橙黑针织角色穿行城市街头](https://x.com/Banyu_Biroeee/status/2093473871261499887) | 45s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [失控演播室播报开源模型新闻](https://x.com/FeatherlessAI/status/2093466155373748711) | 62s · 1888×1080 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [金发歌手穿梭乐队、车厢与屋顶](https://x.com/mirthtime/status/2093465029261590971) | 28s · 1280×732 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [声音波形收束为个人标题卡](https://x.com/ai_animer/status/2093463961123590502) | 15s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [水面人声与雨巷串成长篇音乐叙事](https://x.com/mazzo/status/2093459333980037397) | 170s · 1280×704 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [雨夜街景并排比较材质细节](https://x.com/DeepForest_Inc/status/2093459105646256624) | 5s · 1080×1224 · portrait | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [客厅科学宅围绕奇怪提议争论](https://x.com/altryne/status/2093458879107747996) | 15s · 1344×768 · landscape | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [银发学生举起发光玩具枪](https://x.com/yonaguniUDON/status/2093458611527950391) | 7s · 1344×768 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [金发厨师用火焰完成料理](https://x.com/uwatenageCH/status/2093856961876119569) | 5s · 1260×720 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [校园日常卷入异世界长篇冒险](https://x.com/DSarukun/status/2093856304867807413) | 257s · 1920×1080 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [三名少年迎战紫色城市裂隙](https://x.com/HexxRL/status/2093853841254953237) | 30s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [疯狂科学家戴着宽檐帽闯进实验室](https://x.com/Arn0Stride7/status/2093853734975471759) | 10s · 1344×768 · landscape | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [月下哥特少女完成音乐钩子片段](https://x.com/Yuki_mec/status/2093848858917015650) | 12s · 832×1472 · portrait | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [黑色剪影走向雾中的金色阶梯](https://x.com/YuuAki101/status/2093848766751375718) | 15s · 1440×1920 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [雪花标志穿过水果与早餐碗](https://x.com/aiartpanjp/status/2093841400836259993) | 15s · 1080×1920 · portrait | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [白发角色与发光猫完成三模型并排比较](https://x.com/soranoblue3/status/2093840726270620108) | 20s · 1920×1080 · landscape | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [黑发少女化作流星撞向荒原](https://x.com/yumesyokunin/status/2093839427592388608) | 5s · 768×768 · square | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [篝火旁的两名圣女完成静默和解](https://x.com/luche_whitewing/status/2093836090914607439) | 15s · 768×1344 · portrait | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [金发小天使旋转着展开双臂](https://x.com/yumesyokunin/status/2093834459393167664) | 5s · 768×1024 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [两名游戏英雄在蘑菇王国并肩登场](https://x.com/American_N3rd/status/2093832651236929882) | 5s · 1344×768 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [仿生手接住水滴并浇灌新芽](https://x.com/xiaoao/status/2093828013427474485) | 5s · 1344×768 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [漏水喷壶牵出花园里的温柔寓言](https://x.com/NsitnovSitnov/status/2093820981190021435) | 38s · 720×1280 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [波点南瓜升空完成艺术家纪念动画](https://x.com/haruharuy/status/2093820848088215623) | 5s · 720×720 · square | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [红色玻璃时间线包围未来舞者](https://x.com/ivanfioravanti/status/2093820333614571731) | 15s · 1344×768 · landscape | `MiniMax H3` `广告视频` `公开 Prompt` `X 原帖` |
+| [黑发学生从商业街走到河岸](https://x.com/ebigawa_pico/status/2093818061275226260) | 26s · 1344×768 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [动漫职员用全息界面启动智能办公室](https://x.com/rem_rev/status/2094436234022285632) | 15s · 1344×768 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [红裙舞者旋转切出彩色动效卡片](https://x.com/apilpirman/status/2094435486664478793) | 15s · 1280×720 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [夏日相遇与现场演唱交织成音乐短片](https://x.com/junyait/status/2094433656278597726) | 127s · 1920×1080 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [金发旅客在站台迎来诡异列车镜头](https://x.com/ZenzaiOshilco/status/2094429774571782201) | 10s · 640×640 · square | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [石神千空在丛林中举起蓝色药剂](https://x.com/27upon2/status/2094429444249194534) | 5s · 1344×768 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [达·芬奇手稿翻页唤醒机械与人体结构](https://x.com/vkuoo/status/2094424981773893895) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [两名少年在海边并肩交谈](https://x.com/yuzukisan_voice/status/2094441764296020070) | 8s · 768×1344 · portrait | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [彩色墨点迸发成初音主题片头](https://x.com/Pastel_Illust_/status/2094438296751685761) | 10s · 1080×1890 · portrait | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [兔耳朋克少女让东京巷道随节拍闪烁](https://x.com/quu1945/status/2094438197896102218) | 64s · 1344×768 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [遥控器密码引爆情侣间的尴尬审问](https://x.com/DoctorAmna11/status/2094432834266206326) | 15s · 1440×2560 · portrait | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [赛博朋克女主穿过故障风格预告片](https://x.com/vadooai/status/2094432525250597104) | 15s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [少女骑着巨蜥飞奔却被小猫追上](https://x.com/miokonboDaysAI/status/2094431901897367562) | 10s · 1440×1920 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [猫耳玩家在格斗游戏中打出终结一击](https://x.com/IsekaiBardGuild/status/2094430361355001956) | 10s · 768×1088 · portrait | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [极简字体与图形拼成虚构宣传片](https://x.com/ponzponz15/status/2094570516665495746) | 14s · 1344×768 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [月份字样在极简版式中折叠翻转](https://x.com/ponzponz15/status/2094453168025530598) | 10s · 1344×768 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [眼镜少女在教室里连贯起舞](https://x.com/Alone1Moon/status/2094560870907142248) | 15s · 704×928 · portrait | `MiniMax H3` `舞蹈视频` `来源未公开 Prompt` `X 原帖` |
+| [水彩校服少女完成轻快舞步](https://x.com/Alone1Moon/status/2094530669141451192) | 15s · 704×928 · portrait | `MiniMax H3` `舞蹈视频` `来源未公开 Prompt` `X 原帖` |
+| [巨剑女战士跃入屋顶亡灵围攻](https://x.com/aistudynowcom/status/2094571185917038660) | 29s · 1376×768 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [护士穿越医院与霓虹街区的伪游戏关卡](https://x.com/Gooboberti/status/2094569437810905369) | 75s · 1080×1920 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [蜗牛宇宙伪游戏关卡在城市中切换](https://x.com/Gooboberti/status/2094569241701912906) | 61s · 1080×1920 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [客厅男子完成一段镜头前讽刺表演](https://x.com/matze2001/status/2094568098745442483) | 8s · 1920×1080 · landscape | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [巨型猫咪在街头追逐动漫少女](https://x.com/yumesyokunin/status/2094564413529591940) | 5s · 480×640 · portrait | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [猫耳女仆双人组同步摆出可爱姿势](https://x.com/yumesyokunin/status/2094561470512353381) | 5s · 704×480 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [草莓与玩偶之间展开微缩城市世界](https://x.com/musitsune/status/2094560873335374254) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [小型载人飞行器从街头升向城市上空](https://x.com/qtum/status/2094558092457627976) | 15s · 1536×672 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [悬浮跑鞋在蓝色光轨中完成产品旋转](https://x.com/sena_designer/status/2094556981516464609) | 5s · 832×480 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [绿色纸张纹理折叠成排版海报](https://x.com/manga_nimation/status/2094554524338061630) | 15s · 768×1024 · portrait | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [迷你动漫少女围着咖啡杯迎接清晨](https://x.com/YuuAki101/status/2094550523156496807) | 15s · 1920×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [街头舞者在夜景广场练习连贯步伐](https://x.com/ikucchi99/status/2094547436547268740) | 15s · 768×960 · portrait | `MiniMax H3` `舞蹈视频` `来源未公开 Prompt` `X 原帖` |
+| [雨中少女撑伞陪小狗沿河散步](https://x.com/opener_ai/status/2094587498559312324) | 15s · 1440×1920 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [水彩校服少女跳起完整音乐舞蹈](https://x.com/Alone1Moon/status/2094938356337529050) | 70s · 640×992 · portrait | `MiniMax H3` `舞蹈视频` `来源未公开 Prompt` `X 原帖` |
+| [办公走廊在飞踢后瞬间清空](https://x.com/vkuoo/status/2094937839423373541) | 15s · 1280×720 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [黄色个人资料页折叠成时尚海报](https://x.com/ninofku/status/2094936313883713662) | 8s · 768×1152 · portrait | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [蜘蛛侠装扮的马里奥完成角色亮相](https://x.com/nonameoasis/status/2094926683614703926) | 7s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [线稿芭蕾少女完成轻盈旋转](https://x.com/Alone1Moon/status/2094923428604379417) | 15s · 704×928 · portrait | `MiniMax H3` `舞蹈视频` `来源未公开 Prompt` `X 原帖` |
+| [餐桌玩偶与月亮完成图形匹配转场](https://x.com/musitsune/status/2094923255505187221) | 15s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [短发少女在卧室靠近镜头交谈](https://x.com/mikumiku_aloha/status/2094922790579454031) | 60s · 768×1344 · portrait | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [街头行人通过遮罩逐步消失](https://x.com/AB_exr/status/2094922081012253069) | 10s · 960×1596 · portrait | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [发光记忆珠串起一段安静科幻短片](https://x.com/NsitnovSitnov/status/2094921819778093122) | 138s · 704×1280 · portrait | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [对望阳台里的生活片段彼此映照](https://x.com/NsitnovSitnov/status/2094920506881323127) | 38s · 1080×1920 · portrait | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [红色日蚀下的剑士迎战巨型敌人](https://x.com/UnrealRafael/status/2094912497203700100) | 31s · 960×544 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [蓝发双人组在泳池边切换度假造型](https://x.com/ikedakoen/status/2094908813895983599) | 10s · 1376×768 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [虚拟主播走入极简黑白展厅](https://x.com/Mikot27567/status/2094908528473563635) | 5s · 544×800 · portrait | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [卡通角色给小汽车做例行检查](https://x.com/haruharuy/status/2094905215392809447) | 5s · 720×720 · square | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [迷你动漫车手冲过林间拉力赛道](https://x.com/tengu_AIillust/status/2094898401448182191) | 15s · 800×544 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [红色日蚀战场展开四十秒动漫决战](https://x.com/UnrealRafael/status/2094892483096592492) | 41s · 608×352 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [金发动画少女被手枪团团围住](https://x.com/SmallKino_/status/2095198265813713087) | 3s · 960×640 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [牛仔外套少女在铁网前随性起舞](https://x.com/miokurose/status/2095193333266268655) | 5s · 1440×1920 · portrait | `MiniMax H3` `舞蹈视频` `来源未公开 Prompt` `X 原帖` |
+| [白色巨龙在森林空地逼近人物](https://x.com/kulufly/status/2095193171311436225) | 8s · 1280×720 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [灰狗体验从上班到瘫倒的一天](https://x.com/HeyZaraKhan/status/2095188231340056976) | 15s · 1920×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [冰晶歌姬在蓝色舞台完成亮相](https://x.com/LiluluLoserLab/status/2095186858108154190) | 15s · 864×480 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [赛亚人风格少女完成能量变身](https://x.com/_GAi92/status/2095186838038216756) | 10s · 1088×1600 · portrait | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [同一提示在两个版本间呈现不同结果](https://x.com/YouArtStudio/status/2095183410738135094) | 15s · 1920×1080 · landscape | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [真人女孩走进像素换装游戏](https://x.com/i4LMU/status/2095178028829507813) | 15s · 640×480 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [动画记者在街头完成镜头播报](https://x.com/ITOKtw/status/2095176867217350732) | 10s · 1024×1024 · square | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [猫形特工在地下通道追逐交锋](https://x.com/bakatau8u7/status/2095172066232447351) | 11s · 1920×1080 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [女剑士在林间击退忍者包围](https://x.com/Amatellous/status/2095171800573608346) | 10s · 1280×714 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [猫耳店主在夜市端出冷蟹拉面](https://x.com/nyannero0828/status/2095170982654988309) | 20s · 480×864 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [篮球少年在动态图形球场扣篮](https://x.com/Naonekozamurai/status/2095625382267408604) | 15s · 2560×1440 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [女孩在雨日窗边端起咖啡](https://x.com/bangel_19/status/2095665444590178354) | 7s · 1280×1664 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [两个版本同屏对比城市与产品镜头](https://x.com/YouArtStudio/status/2095662653364387852) | 15s · 1920×1080 · landscape | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [未来收音机让女人听见一分钟之后](https://x.com/NsitnovSitnov/status/2095657793269252444) | 138s · 704×1280 · portrait | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [三种影视风格快速切换人物对白](https://x.com/byAmirHanna/status/2095657527543521728) | 20s · 768×1344 · portrait | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [银发女孩在红白字形间晨间亮相](https://x.com/ni_naai/status/2095652302174740499) | 15s · 1344×768 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [紫发虚拟偶像在霓虹舞台起舞](https://x.com/Chupico_nora/status/2095649176529027283) | 15s · 2560×1440 · landscape | `MiniMax H3` `舞蹈视频` `来源未公开 Prompt` `X 原帖` |
+| [螃蟹造型师在舱室为少女做发型](https://x.com/grmchn4ai/status/2095641918285983744) | 14s · 2560×1440 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [红裙女子触墙唤出记忆剪影](https://x.com/altfortomorrow/status/2095641128624349347) | 15s · 1344×768 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [花朵伴随动画少女展开晨间片头](https://x.com/neko_suno0908/status/2095640484261527917) | 15s · 1920×1080 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [长篇动画对白检验粤语与字幕表现](https://x.com/hk_nick/status/2095636031114744034) | 193s · 1944×1080 · landscape | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [提灯少女带领镜头穿过夜间街巷](https://x.com/chiha_20220301/status/2095634392945471836) | 15s · 1890×1080 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [银发偶像在星河舞台完成舞蹈表演](https://x.com/LiluluLoserLab/status/2095628606483624009) | 18s · 864×480 · landscape | `MiniMax H3` `舞蹈视频` `来源未公开 Prompt` `X 原帖` |
+| [真人街景与动画频道交替出现](https://x.com/megaaziib/status/2095628441291043103) | 47s · 1934×1080 · landscape | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [卡通夫妻在厨房展开一段对话](https://x.com/heathergreen/status/2095626511671791835) | 15s · 768×1024 · portrait | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [彩色人物模块重组为平台品牌落版](https://x.com/ponzponz15/status/2095753904550191133) | 13s · 2160×1920 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [极简日文字卡连续翻转构成片头](https://x.com/ponzponz15/status/2095715172883345912) | 12s · 1344×768 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [吉他手在舞台演唱并接受音频精修](https://x.com/core_tan/status/2095714009312010700) | 5s · 768×1376 · portrait | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [雨夜剑客连续迎战多名对手](https://x.com/aistudynowcom/status/2096025508953932278) | 8s · 2752×1536 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [背着书包的狸猫在草地上列队前进](https://x.com/ito_jo/status/2096021791991026168) | 10s · 864×480 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [青绿色双马尾角色完成流行转身动作](https://x.com/funifuni365/status/2096021085896741133) | 5s · 672×1216 · portrait | `MiniMax H3` `舞蹈视频` `来源未公开 Prompt` `X 原帖` |
+| [Q版棒球选手在球场挥棒击球](https://x.com/hehehehehe035/status/2096017342006489207) | 15s · 480×832 · portrait | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [巨型锦鲤漂浮穿过城市街道](https://x.com/nan_in_space/status/2096013365143327152) | 22s · 1920×1080 · landscape | `MiniMax H3` `广告视频` `来源未公开 Prompt` `X 原帖` |
+| [失联姐妹被一盏发光台灯重新连接](https://x.com/NsitnovSitnov/status/2096012245742268641) | 138s · 704×1280 · portrait | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [小动物角色组成轻快舞蹈队形](https://x.com/_GAi92/status/2096012074182979692) | 11s · 608×1056 · portrait | `MiniMax H3` `舞蹈视频` `来源未公开 Prompt` `X 原帖` |
+| [草莓玩偶用多种机位演绎咖啡馆镜头](https://x.com/musitsune/status/2096010425997652307) | 15s · 2560×1440 · landscape | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [猫耳女孩在工业场景中完成舞蹈](https://x.com/Chupico_nora/status/2096010423258796488) | 10s · 2160×3840 · portrait | `MiniMax H3` `舞蹈视频` `来源未公开 Prompt` `X 原帖` |
+| [女学生捧书穿行于回忆式动画片段](https://x.com/kiyoshi_shin/status/2096003193448915042) | 38s · 1920×1080 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [湖畔森林中浮现隐秘生物的目光](https://x.com/Ramblingpix/status/2095998677760249969) | 7s · 1440×1080 · landscape | `MiniMax H3` `社区案例` `来源未公开 Prompt` `X 原帖` |
+| [校车旁的乐队完成一场户外演奏](https://x.com/MerchForNobody/status/2095994398714515649) | 182s · 3840×2160 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [战士之间的微妙对话](https://x.com/CharaspowerAI/status/2096176539792486835) | 15s · 2560×1440 · landscape | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [盛夏里的冷荞麦面](https://x.com/kozakana51/status/2096420254511751382) | 10s · 1280×736 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [公路热浪的视觉解释](https://x.com/Jerryding123/status/2096412479307845838) | 30s · 608×1056 · portrait | `MiniMax H3` `本地生成与工作流` `来源未公开 Prompt` `X 原帖` |
+| [工地上的石匠寓言](https://x.com/NsitnovSitnov/status/2096400072451748338) | 75s · 704×1280 · portrait | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
+| [居家完成一次引体向上](https://x.com/moon_himiko/status/2096398628348977187) | 5s · 768×1088 · portrait | `MiniMax H3` `综合展示` `公开 Prompt` `X 原帖` |
+| [沉船旁的骷髅潜水员](https://x.com/MaxCasu/status/2096391506651128264) | 5s · 1344×768 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [哥布林一脚击倒冒险者](https://x.com/6s9Mu3Y3ez4c6Jl/status/2096390580763013389) | 12s · 720×1280 · portrait | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [耳勺直播的循环待机动画](https://x.com/hirosi1971/status/2096388781876322701) | 3s · 1944×1080 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [雨后独行的动画少女](https://x.com/zyzel_zyz/status/2096387910740144518) | 30s · 720×1280 · portrait | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [看台上睡着的小球迷](https://x.com/altfortomorrow/status/2096386367144284533) | 15s · 1344×768 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [赛博战士的扫描对决](https://x.com/JasminaAi/status/2096379851779575911) | 38s · 720×1280 · portrait | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [猫耳角色的竖屏舞步](https://x.com/Chupico_nora/status/2096372813699416474) | 10s · 2160×3840 · portrait | `MiniMax H3` `舞蹈` `来源未公开 Prompt` `X 原帖` |
+| [绿色时尚海报里的横向追逐](https://x.com/ponzponz15/status/2096496980180500694) | 15s · 1920×2224 · portrait | `MiniMax H3` `广告与产品` `来源未公开 Prompt` `X 原帖` |
+| [同一张脸演绎多种细微情绪](https://x.com/AIPixLab/status/2096390421626880069) | 65s · 720×1080 · portrait | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [小蜘蛛把月光织成一双翅膀](https://x.com/altfortomorrow/status/2096754759441260736) | 15s · 1344×768 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [空教室里的五秒仰卧起坐](https://x.com/moon_himiko/status/2096741221293265229) | 5s · 768×1088 · portrait | `MiniMax H3` `综合展示` `公开 Prompt` `X 原帖` |
+| [树影下的竖屏自拍推进](https://x.com/DDJCXX/status/2096736067139563909) | 7s · 2160×3840 · portrait | `MiniMax H3` `电影叙事` `公开 Prompt` `X 原帖` |
+| [玻璃球里的一场微型暴雨](https://x.com/GlennHasABeard/status/2096715442307883140) | 15s · 4096×2340 · landscape | `MiniMax H3` `电影叙事` `公开 Prompt` `X 原帖` |
+| [她走开后影子还留在墙上](https://x.com/bmx_ai13/status/2096728398995320924) | 15s · 1344×768 · landscape | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
+| [城市尽头撑开的能量护盾](https://x.com/maestro_mu/status/2096708322204475514) | 7s · 640×1152 · portrait | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [阳光广场里的挥手问候](https://x.com/KwevoLoFi/status/2096702671667270121) | 10s · 1080×1920 · portrait | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [伤后休养的宝可梦小家](https://x.com/pixelrhythms/status/2096689975786086537) | 10s · 1152×768 · landscape | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
+| [森林洞穴里的败退](https://x.com/pixelrhythms/status/2096689395831378359) | 10s · 1344×768 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [夏日海岸的无尽平移](https://x.com/Ramblingpix/status/2096689087553950181) | 13s · 1080×1080 · square | `MiniMax H3` `综合展示` `来源未公开 Prompt` `X 原帖` |
+| [蜘蛛主厨的八道菜](https://x.com/altfortomorrow/status/2096688877339906480) | 15s · 1344×768 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [红黑时装片的连环转场](https://x.com/getlower12/status/2096672719928730089) | 28s · 1260×720 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [史诗壁画里的火焰神话](https://x.com/Rishavchhajer/status/2096664712704647500) | 30s · 1920×1080 · landscape | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
+| [荒原赛车的贴地追逐](https://x.com/HexxRL/status/2096661667383808474) | 15s · 2560×1440 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [禁书让黑龙膨胀失控](https://x.com/chasinglightX64/status/2096659449226375484) | 10s · 864×480 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [把虚幻校园染成水彩](https://x.com/kiyoshi_shin/status/2096654993390719232) | 30s · 854×480 · landscape | `MiniMax H3` `本地生成与工作流` `来源未公开 Prompt` `X 原帖` |
+| [健身房里的硬拉练习](https://x.com/moon_himiko/status/2097090946555052294) | 5s · 768×1088 · portrait | `MiniMax H3` `综合展示` `公开 Prompt` `X 原帖` |
+| [从骨架到成品的角色手办制作](https://x.com/aimikoda/status/2095141166962311555) | 15.168s · 1440p · 4:3 | `从骨架到成品的角色手办制作` |
+| [玻璃爆裂并重组成 SHATTER](https://x.com/CharaspowerAI/status/2096554023809695817) | 15.168s · 720p · 16:9 | `玻璃爆裂并重组成 SHATTER` |
+| [漫画人物走出书页，却遇见另一个自己](https://x.com/ai_lifehack55/status/2094985989404205107) | 15.139s · 1440p · 1:1 | `漫画人物走出书页，却遇见另一个自己` |
+| [真人与二维小精灵同框互动](https://x.com/ImaStudio_ai/status/2095357375549182080) | 15.402s · 720p · 16:9 | `真人与二维小精灵同框互动` |
+| [REVEAL：黑橙杂志风动态时装片](https://x.com/ImaStudio_ai/status/2095096624192352458) | 14.86s · 2160p · 16:9 | `REVEAL：黑橙杂志风动态时装片` |
+| [黄绿撞色的动漫角色登场短片](https://x.com/Just_sharon7/status/2094305294117429711) | 15.168s · 1440p · 16:9 | `黄绿撞色的动漫角色登场短片` |
+| [小怪兽看恐怖片：受惊后还要装镇定](https://x.com/GlennHasABeard/status/2095573685671469310) | 15.175s · 720p · 7:4 | `小怪兽看恐怖片：受惊后还要装镇定` |
+| [海风里的针织时装漫步](https://x.com/CaliraVal/status/2096833346555023816) | 15.168s · 720p · 4:3 | `广告与产品` `照片级写实` `商业广告感` `时尚` `自然风景` |
+| [从圣索菲亚到博斯普鲁斯的旅行](https://x.com/Zyrellix/status/2096817125864484954) | 15.168s · 720p · 7:4 | `电影叙事` `照片级写实` `生活实拍感` `城市街景` |
+| [粉色首尔时装片的图形切换](https://x.com/ImaStudio_ai/status/2096807169945731290) | 15.168s · 720p · 16:9 | `广告与产品` `动态图形` `商业广告感` `时尚` |
+| [草莓酱浇上芝士冰淇淋](https://x.com/itxabdullaa/status/2096555195618689457) | 10.208s · 720p · 9:16 | `广告与产品` `商业广告感` `照片级写实` `美食` `产品与广告` |
+| [皇帝新衣的金色时装演绎](https://x.com/airina_xyz/status/2096297619391975646) | 15.146667s · 720p · 7:4 | `广告与产品` `商业广告感` `动态图形` `时尚` `人物表演` |
+| [像素游戏风的动漫角色开场](https://x.com/Mayz1169/status/2095875210562142588) | 14.117732s · 720p · 16:9 | `动画` `动漫` `动态图形` `人物表演` |
+| [早餐角色冲向周末终点](https://x.com/altfortomorrow/status/2095872189337870433) | 15.168s · 720p · 7:4 | `动画` `3D / CG` `美食` `动物与生物` |
+| [丝绸背景上的钻石戒指特写](https://x.com/Kiber_Alla/status/2095867010919845981) | 15.11619s · 720p · 16:9 | `广告与产品` `商业广告感` `照片级写实` `产品与广告` |
+| [湖畔蓝裙与花束](https://x.com/TaliaAariz/status/2095857062987120666) | 15.168s · 720p · 4:7 | `广告与产品` `照片级写实` `时尚` `自然风景` |
+| [快递送进动物医院手术室](https://x.com/ManuAGI01/status/2095846567853093063) | 15.168s · 720p · 16:9 | `动画` `3D / CG` `人物表演` |
+| [街头边看手机边演唱](https://x.com/AI_VideoLab/status/2095732264889884918) | 15.168s · 720p · 4:3 | `音乐视频` `照片级写实` `生活实拍感` `人物表演` `城市街景` |
+| [小狐狸仰望湖上的满月](https://x.com/aniyaintel/status/2095362627677438174) | 15.168s · 720p · 16:9 | `动画` `3D / CG` `动物与生物` `自然风景` |
+| [被重力支配的纯白未来城市](https://x.com/ai_lifehack55/status/2095362596962795795) | 15.13941s · 720p · 1:1 | `动画` `动漫` `风格化与实验` `城市街景` `科幻太空` |
+| [动漫女孩穿越真实城市](https://x.com/yudotanaka/status/2095357869595975893) | 15.168s · 720p · 7:4 | `动画` `动漫` `照片级写实` `城市街景` `人物表演` |
+| [阿拉丁逃出巴格达街市](https://x.com/AITalesNBH/status/2095240665588486165) | 22.546576s · 720p · 16:9 | `电影叙事` `写实电影感` `城市街景` `人物表演` |
+| [地下车库里的霓虹斩击](https://x.com/akemiwork/status/2095100013315776751) | 15.13941s · 720p · 16:9 | `动作特效` `写实电影感` `动作打斗` |
+| [霓虹屋顶上的西装舞步](https://x.com/Neko_ai_p/status/2095091133269647852) | 10.336s · 720p · 7:4 | `舞蹈` `写实电影感` `城市街景` |
+| [推门走进高层酒店套房](https://x.com/Lianaalane/status/2095088358129311893) | 15.627029s · 720p · 68:45 | `广告与产品` `照片级写实` `生活实拍感` `产品与广告` |
+| [花影与字体交织的时装片](https://x.com/TaoRInne/status/2095086312319746202) | 34.458413s · 720p · 16:9 | `广告与产品` `商业广告感` `动态图形` `时尚` |
+| [从切洋葱到擦亮餐盘](https://x.com/TaliaAariz/status/2095066419192909875) | 15.168s · 720p · 4:7 | `电影叙事` `照片级写实` `美食` `日常生活` |
+| [暖色现代住宅的室内外导览](https://x.com/ayzalnooor24521/status/2095023536410911056) | 15.859229s · 720p · 56:45 | `广告与产品` `照片级写实` `商业广告感` `产品与广告` |
+| [樱花树下的旅行自拍](https://x.com/iamrealsnow/status/2095014239425716588) | 15.168s · 720p · 16:9 | `电影叙事` `照片级写实` `生活实拍感` `自然风景` `人物表演` |
+| [蓝色球场上的网球广告](https://x.com/DaniaSafvi/status/2095008773245211050) | 15.168s · 720p · 4:3 | `广告与产品` `商业广告感` `照片级写实` `人物表演` |
+| [海岸骑行途中的偶遇](https://x.com/codewithhajra/status/2094983662253261308) | 15.168s · 720p · 7:4 | `电影叙事` `写实电影感` `自然风景` `人物表演` |
+| [齿轮机关中的蒸汽朋克角色](https://x.com/challenger_ND/status/2094951518839652411) | 15.146667s · 720p · 7:4 | `动画` `动漫` `动态图形` `奇幻` `人物表演` |
+| [浴室门口的回眸与走近](https://x.com/nopinduoduo/status/2094788953186689068) | 5.248s · 480p · 15:26 | `电影叙事` `照片级写实` `生活实拍感` `日常生活` `人物表演` |
+| [绿色双马尾角色的游戏式登场](https://x.com/Mayz1169/status/2094782705577996727) | 14.814331s · 1080p · 60:67 | `动画` `动漫` `动态图形` `人物表演` |
+| [平地拍爬楼的超级英雄片场](https://x.com/john_my07/status/2094780772318339508) | 15.186009s · 720p · 16:9 | `电影叙事` `照片级写实` `人物表演` `城市街景` |
+| [粉色图形里的双人角色揭晓](https://x.com/Chaemate_/status/2094777057695936901) | 15.168s · 720p · 7:4 | `动画` `3D / CG` `动态图形` `人物表演` |
+| [酒红长裙的港风日常片段](https://x.com/johnAGI168/status/2094765380249997695) | 15.16263s · 720p · 9:16 | `广告与产品` `照片级写实` `复古胶片` `时尚` `人物表演` |
+| [木屑逐字聚成 RENDER](https://x.com/GlennHasABeard/status/2094755037826130121) | 15.168s · 720p · 7:4 | `广告与产品` `照片级写实` `动态图形` `产品与广告` |
+| [蜘蛛纹连体服的室内表演](https://x.com/VoxcatAI/status/2094744778286207061) | 8.064s · 608p · 19:33 | `舞蹈` `照片级写实` `人物表演` |
+| [蓝发动漫人物的夜间近景](https://x.com/studio_oneroom/status/2094736167681826950) | 15.168s · 720p · 16:9 | `动画` `动漫` `人物表演` `日常生活` |
+| [四叶草里的幸运角色登场](https://x.com/Just_sharon7/status/2094709258562764940) | 15.168s · 720p · 629:360 | `动画` `3D / CG` `动态图形` `人物表演` |
+| [奶油旋转成甜品字效](https://x.com/AIwithAliya/status/2094705572427993463) | 15.13941s · 480p · 26:15 | `广告与产品` `3D / CG` `动态图形` `美食` `产品与广告` |
+| [超市里的橙色零食挑战](https://x.com/sophiaparkerr_/status/2094701248045789443) | 15.16263s · 720p · 629:360 | `广告与产品` `生活实拍感` `照片级写实` `美食` `日常生活` |
+| [点击服装图标切换穿搭](https://x.com/johnAGI168/status/2094686415585972658) | 15.168s · 720p · 9:16 | `广告与产品` `照片级写实` `时尚` |
+| [巧克力液流组成饮品广告](https://x.com/Just_sharon7/status/2094667719497187408) | 15.168s · 720p · 629:360 | `广告与产品` `动态图形` `美食` `产品与广告` |
+| [首尔街头的面包与花店](https://x.com/nawalsehar/status/2094653824224940225) | 15.168s · 720p · 16:9 | `电影叙事` `照片级写实` `生活实拍感` `美食` `城市街景` |
+| [老胶片里的偷偷喂狗](https://x.com/bmx_ai13/status/2094645801808969771) | 15.168s · 768p · 4:3 | `电影叙事` `复古胶片` `生活实拍感` `动物与生物` `日常生活` |
+| [从市集小吃走进雨巷](https://x.com/aiwithaly/status/2094643685338300751) | 15.168s · 720p · 16:9 | `电影叙事` `照片级写实` `生活实拍感` `美食` `城市街景` |
+| [雪山上的单板滑行与腾空](https://x.com/CaliraVal/status/2094640598733234488) | 15.168s · 720p · 4:3 | `广告与产品` `照片级写实` `商业广告感` `自然风景` `人物表演` |
+| [黑红拼贴中的动漫群像](https://x.com/haruuraeadss/status/2094640015833960801) | 15.296s · 720p · 16:9 | `动画` `动漫` `动态图形` `人物表演` `奇幻` |
+| [粉彩洗衣房里的流行表演](https://x.com/ImaStudio_ai/status/2094628597126558123) | 15.37161s · 720p · 16:9 | `音乐视频` `商业广告感` `照片级写实` `人物表演` |
+| [柚子汽水罐的图形广告](https://x.com/AIwithJessica/status/2094580769905934790) | 15.11619s · 720p · 16:9 | `广告与产品` `动态图形` `美食` `产品与广告` |
+| [黄昏加油站旁的家庭录像](https://x.com/bmx_ai13/status/2094541985466216780) | 15.16263s · 720p · 629:360 | `对白与口型` `复古胶片` `生活实拍感` `人物表演` `日常生活` |
+| [小怪兽追逐激光红点](https://x.com/GlennHasABeard/status/2094472529939136738) | 15.168s · 720p · 7:4 | `动画` `3D / CG` `动物与生物` `日常生活` |
+| [URBAN BLACK 黑白红角色片](https://x.com/ai_lifehack55/status/2094385760514589091) | 15.13941s · 720p · 1:1 | `动画` `动漫` `动态图形` `时尚` `人物表演` |
+| [蓝皮肤街头角色的动态图形揭晓](https://x.com/itxabdullaa/status/2094371536623092160) | 15.168s · 720p · 16:9 | `动画` `3D / CG` `动态图形` `时尚` `人物表演` |
+| [海岸列车微缩片场的揭晓](https://x.com/Rosey_watson/status/2094359148590969166) | 15.23229s · 720p · 9:16 | `电影叙事` `照片级写实` `城市街景` `产品与广告` |
+| [格纹西装人物的复古图形片](https://x.com/Just_sharon7/status/2094333791904923946) | 15.168s · 720p · 16:9 | `广告与产品` `复古胶片` `动态图形` `时尚` |
+| [暴龙与棘龙正面交锋](https://x.com/CanAiStudios/status/2094319440745677219) | 15.168s · 480p · 9:5 | `动作特效` `3D / CG` `写实电影感` `动物与生物` `动作打斗` |
+| [教堂讲台上的意外着装](https://x.com/jonnyboy/status/2094319381647966415) | 15.168s · 720p · 7:4 | `广告与产品` `写实电影感` `人物表演` `日常生活` |
+| [落叶与火光聚成凤凰](https://x.com/MrDasOnX/status/2094318362470101207) | 15.168s · 720p · 16:9 | `动作特效` `3D / CG` `风格化与实验` `动物与生物` `奇幻` |
+| [云海之上的狐面创造者](https://x.com/ewotanosimo2310/status/2094299737839305097) | 15.168s · 720p · 9:16 | `动作特效` `写实电影感` `奇幻` `人物表演` |
+| [午夜雨城的时间停顿](https://x.com/iamrealsnow/status/2094299301497479222) | 15.168s · 720p · 16:9 | `电影叙事` `写实电影感` `城市街景` `奇幻` |
+| [未来城市列车顶上的旅人](https://x.com/CaliraVal/status/2094284844792520881) | 15.168s · 360p · 106:45 | `电影叙事` `写实电影感` `城市街景` `科幻太空` |
+| [纸张世界里的黑白红拼贴 MV](https://x.com/ponyodong/status/2094282576542470337) | 15.168s · 720p · 16:9 | `音乐视频` `动漫` `动态图形` `人物表演` |
+| [红黑角色的写真人像切换](https://x.com/GeekCatX/status/2094279910034706924) | 14.464s · 480p · 24:43 | `综合展示` `照片级写实` `时尚` `人物表演` |
+| [纽约、伊斯坦布尔与迪拜自拍](https://x.com/AIwithJames/status/2094270762001514657) | 16.068209s · 720p · 9:16 | `电影叙事` `照片级写实` `生活实拍感` `城市街景` |
+| [露台吉他与即兴合唱](https://x.com/bmx_ai13/status/2094263172261933528) | 15.168s · 768p · 4:3 | `音乐视频` `复古胶片` `生活实拍感` `音乐演出` `日常生活` |
+| [首尔、河内与马拉喀什的旅行切换](https://x.com/codewithhajra/status/2094260209602424868) | 15.168s · 720p · 7:4 | `电影叙事` `照片级写实` `生活实拍感` `城市街景` |
+| [粉色背景上的刺客剪影片头](https://x.com/AIwithAliya/status/2094108309011980339) | 15.13941s · 480p · 26:15 | `动画` `动漫` `动态图形` `人物表演` |
+| [仲夏与柴犬一起午睡](https://x.com/Tomw852/status/2094104586793455656) | 8.057324s · 480p · 5:9 | `电影叙事` `照片级写实` `动物与生物` `日常生活` |
+| [薄荷绿头发与橙色耳机的角色片](https://x.com/Just_sharon7/status/2094085208027103678) | 15.168s · 720p · 629:360 | `动画` `动漫` `动态图形` `时尚` `人物表演` |
+| [蓝色街头人物的平面角色揭晓](https://x.com/AIwithAliya/status/2094068060059799762) | 15.168s · 720p · 629:360 | `动画` `插画与手绘` `动态图形` `时尚` `人物表演` |
+| [红色亮面裙的楼梯时装镜头](https://x.com/KeorUnreal/status/2094059927023104206) | 10.208333s · 720p · 9:16 | `广告与产品` `照片级写实` `时尚` |
+| [黑色巨石坠落后的 APEX 字效](https://x.com/CharaspowerAI/status/2094002244853059848) | 15.168s · 720p · 16:9 | `动作特效` `3D / CG` `动态图形` `奇幻` |
+| [洗衣店变成发光涂鸦夜空](https://x.com/ponyodong/status/2093956013338849386) | 15.168s · 720p · 16:9 | `动作特效` `照片级写实` `插画与手绘` `奇幻` `日常生活` |
+| [蓝发角色的复古动漫预告](https://x.com/onofumi_AI/status/2093951338367599004) | 15.168s · 720p · 7:4 | `动画` `动漫` `动态图形` `人物表演` |
+| [漫画分格与三人角色拼贴](https://x.com/haruuraeadss/status/2093926202172223994) | 15.168s · 720p · 16:9 | `动画` `动漫` `动态图形` `人物表演` |
+| [蓝眼机器人的科技演示片](https://x.com/CaliraVal/status/2093923736483504439) | 15.168s · 720p · 16:9 | `广告与产品` `3D / CG` `动态图形` `科幻太空` `产品与广告` |
+| [漫画页面逐格变成动态图解](https://x.com/seiiiiiiiiiiru/status/2093905392787165663) | 15.146667s · 720p · 499:360 | `本地生成与工作流` `插画与手绘` `动态图形` `产品与广告` |
+| [东京夜间赶车的旅行自拍](https://x.com/codewithhajra/status/2093896492000166116) | 16.555828s · 720p · 45:56 | `电影叙事` `照片级写实` `生活实拍感` `城市街景` |
+| [金色宫殿里的孔雀礼服](https://x.com/TaliaAariz/status/2093755381050929623) | 15.168s · 720p · 9:16 | `广告与产品` `照片级写实` `商业广告感` `时尚` `奇幻` |
+| [创业者穿行于不断变换的世界](https://x.com/cocktailpeanut/status/2093747276942606456) | 55.648s · 704p · 20:11 | `广告与产品` `写实电影感` `人物表演` `科幻太空` |
+| [黑发动漫人物的时装近景](https://x.com/aimikoda/status/2093697204384887023) | 15.168s · 720p · 1:1 | `广告与产品` `动漫` `时尚` |
+| [日落街区里的轻松散步](https://x.com/afrinxai/status/2093685105474568202) | 20.8s · 720p · 7:4 | `电影叙事` `照片级写实` `生活实拍感` `城市街景` `日常生活` |
+| [酒店房间里的浴袍变装](https://x.com/johnAGI168/status/2093680788990476668) | 10.208s · 720p · 9:16 | `广告与产品` `照片级写实` `时尚` |
+| [饼干吉祥物的 Y2K 包装广告](https://x.com/yourPlugAI/status/2093670361879462037) | 15.168s · 720p · 16:9 | `广告与产品` `3D / CG` `动态图形` `美食` `产品与广告` |
+| [复古室内的双人对白近景](https://x.com/PixelAigc/status/2093563293306929579) | 30.784s · 360p · 9:5 | `对白与口型` `写实电影感` `复古胶片` `人物表演` |
+| [摩托穿越烈焰中的恐龙森林](https://x.com/WuxiaRocks/status/2093550413144584656) | 15.168s · 720p · 7:4 | `动作特效` `写实电影感` `3D / CG` `动作打斗` `动物与生物` |
+| [云崖之上凝成金色法相](https://x.com/johnAGI168/status/2093545479338373323) | 15.168s · 720p · 16:9 | `动作特效` `写实电影感` `奇幻` `人物表演` |
+| [核动力货船的荒诞事故片段](https://x.com/floopers966/status/2093544965485859087) | 15.168s · 720p · 7:4 | `电影叙事` `写实电影感` `城市街景` `人物表演` |
+| [纸飞机飞出列车窗口](https://x.com/prompt_soru/status/2093532752541024373) | 26.470748s · 720p · 9:16 | `电影叙事` `照片级写实` `自然风景` `日常生活` |
+| [海滨爱情片的片头字幕](https://x.com/ponyodong/status/2093523920045699263) | 15.16263s · 720p · 16:9 | `电影叙事` `复古胶片` `写实电影感` `城市街景` `人物表演` |
+| [黑白红字体组成的鼓励短片](https://x.com/aimikoda/status/2093516077674246461) | 15.168s · 720p · 16:9 | `广告与产品` `动态图形` `产品与广告` |
+| [狭窄巷道里的僵尸逃生](https://x.com/kan8888kawa/status/2093514079180894701) | 13.024s · 544p · 17:23 | `动作特效` `写实电影感` `暗黑恐怖` `动作打斗` |
+| [驾驶舱内的耳麦通话](https://x.com/HBCoop_/status/2093512228242931917) | 10.20043s · 720p · 16:9 | `对白与口型` `写实电影感` `人物表演` |
+| [书房里的蘸墨与书写](https://x.com/imaginaldomain/status/2093497840358264932) | 15.168s · 576p · 16:9 | `动画` `动漫` `日常生活` `人物表演` |
+| [修好自行车后的重新出发](https://x.com/airina_xyz/status/2093372840598974696) | 15.146667s · 720p · 4:7 | `动画` `3D / CG` `动态图形` `日常生活` `人物表演` |
+| [黑色手套与极简时装章节](https://x.com/sahilvermaai/status/2093371555350716920) | 15.232s · 720p · 7:4 | `广告与产品` `商业广告感` `照片级写实` `时尚` |
+| [灯光下熟睡的银发兽耳角色](https://x.com/Venom_Creations/status/2093371464682799229) | 15.072s · 720p · 9:16 | `动画` `动漫` `日常生活` |
+| [水墨武者的兵器连招](https://x.com/vadooai/status/2093345360710344839) | 14.272s · 720p · 16:9 | `动作特效` `插画与手绘` `风格化与实验` `动作打斗` |
+| [火龙果变成果汁的广告转场](https://x.com/ZoeyBennettAi/status/2093343507872383069) | 15.168s · 720p · 9:16 | `广告与产品` `照片级写实` `商业广告感` `美食` `产品与广告` |
+| [粉色摩托与未来城市时装片](https://x.com/applete77191758/status/2093340157621760470) | 17.386667s · 720p · 16:9 | `广告与产品` `照片级写实` `动态图形` `时尚` `科幻太空` |
+| [风暴海岸上的幸存者](https://x.com/Kiril_AI_art/status/2093322991602176374) | 14.464s · 720p · 7:4 | `电影叙事` `写实电影感` `自然风景` `人物表演` |
+| [舞台灯光下的哥特摇滚乐队](https://x.com/tsukuyomi2021/status/2093309199027757134) | 15.046531s · 720p · 16:9 | `音乐视频` `照片级写实` `暗黑恐怖` `音乐演出` |
+| [蓝色笔绘风的云端战斗](https://x.com/VigoCreativeAI/status/2093291618673578434) | 15.168s · 720p · 16:9 | `动作特效` `插画与手绘` `风格化与实验` `动作打斗` `奇幻` |
+| [从眼镜日常装到精致穿搭](https://x.com/johnAGI168/status/2093286493141823991) | 12.32s · 720p · 9:16 | `广告与产品` `照片级写实` `时尚` |
+| [樱桃粉色的卡通 MV](https://x.com/Mayz1169/status/2093263619677212894) | 14.628571s · 720p · 16:9 | `音乐视频` `动漫` `动态图形` `人物表演` |
+| [黑白烟雾中的 SMOKE 字效](https://x.com/totaku_original/status/2093251869120565667) | 15.168s · 720p · 16:9 | `广告与产品` `动态图形` `复古胶片` `产品与广告` |
+| [从云层俯冲到城市人像](https://x.com/Nora_GMI/status/2093222355665322439) | 15.18585s · 720p · 3:4 | `电影叙事` `照片级写实` `城市街景` `人物表演` |
+| [会场演讲与家中电脑的反差](https://x.com/GamerHashCom/status/2093208454781423755) | 10.24s · 720p · 7:4 | `广告与产品` `写实电影感` `人物表演` `产品与广告` |
+| [概念手机的多配色网页广告](https://x.com/mrdejie/status/2093200521360499158) | 15.168s · 720p · 16:9 | `广告与产品` `动态图形` `商业广告感` `产品与广告` |
+| [煎蛋从打散到上桌](https://x.com/CaliraVal/status/2093196455351902636) | 15.232s · 720p · 4:3 | `电影叙事` `照片级写实` `美食` `日常生活` |
+| [双手拼装紫白色机器人](https://x.com/kiyoshi_shin/status/2093182133548560776) | 15.168s · 640p · 20:31 | `综合展示` `照片级写实` `产品与广告` |
+| [黑色手袋的开箱与细节展示](https://x.com/codewithhajra/status/2093181779872288886) | 14.848s · 720p · 15:17 | `广告与产品` `照片级写实` `商业广告感` `产品与广告` `时尚` |
+| [拉各斯车流中的紧急行程](https://x.com/fathermerry/status/2093179789242667193) | 5.248s · 720p · 7:4 | `动画` `动漫` `对白与口型` `城市街景` |
+| [KUMO 汽水的平面动效广告](https://x.com/onofumi_AI/status/2093175677373845634) | 15.168s · 720p · 629:360 | `广告与产品` `动态图形` `插画与手绘` `美食` `产品与广告` |
+| [母女卡拉 OK 合唱](https://x.com/kan8888kawa/status/2093175490173677993) | 12.32s · 544p · 17:23 | `音乐视频` `照片级写实` `音乐演出` `日常生活` |
+| [植物图鉴的水墨动态图形](https://x.com/gane0wav/status/2093172023942078844) | 15.16263s · 720p · 629:360 | `广告与产品` `插画与手绘` `动态图形` `自然风景` `产品与广告` |
+| [白青运动鞋的黑底产品片](https://x.com/Naonekozamurai/status/2093166617589113232) | 15.232s · 720p · 16:9 | `广告与产品` `3D / CG` `商业广告感` `产品与广告` |
+| [夜空中合体的超级机器人](https://x.com/fantanglitchbox/status/2093165840229355992) | 15.168s · 720p · 16:9 | `动作特效` `3D / CG` `科幻太空` |
+| [从铅笔轮廓到彩色动漫人物](https://x.com/kiyoshi_shin/status/2093149595861930044) | 15.168s · 640p · 20:31 | `动画` `插画与手绘` `人物表演` |
+| [用构图图解引导公园人物镜头](https://x.com/Kashiko_AIart/status/2093098428800934236) | 22.549333s · 1080p · 540:607 | `本地生成与工作流` `动漫` `人物表演` `日常生活` |
+| [上下分屏的写实与插画 MV](https://x.com/nakazakifam/status/2093093073077023109) | 15.11619s · 360p · 9:5 | `音乐视频` `照片级写实` `插画与手绘` `人物表演` |
+| [运动剪影与球鞋的图形广告](https://x.com/Naonekozamurai/status/2093090433085895156) | 15.168s · 720p · 16:9 | `广告与产品` `商业广告感` `动态图形` `产品与广告` `人物表演` |
+| [银发人物与星云之间的变形](https://x.com/junyait/status/2093090305289662901) | 15.168s · 720p · 16:9 | `音乐视频` `风格化与实验` `照片级写实` `奇幻` `人物表演` |
+| [白色背景上的兽耳角色舞步](https://x.com/highsan_works/status/2093088917402874275) | 10.208s · 672p · 21:29 | `舞蹈` `3D / CG` `人物表演` |
+| [红蓝气泡中的汽水罐广告](https://x.com/abxxai/status/2092968802283852088) | 15.168s · 720p · 16:9 | `广告与产品` `动态图形` `商业广告感` `美食` `产品与广告` |
+| [橙发赛博角色的霓虹 MV](https://x.com/applete77191758/status/2092968204390027307) | 15.296s · 720p · 7:4 | `音乐视频` `动漫` `动态图形` `人物表演` `科幻太空` |
+| [秋林剑斗的双模型对照](https://x.com/ridark_eth/status/2092929895768674702) | 30.046621s · 720p · 9:16 | `模型对比` `写实电影感` `动作打斗` `自然风景` |
+| [赛车场镜头图解与生成对照](https://x.com/Kashiko_AIart/status/2092922299653783597) | 30.058667s · 720p · 8:9 | `模型对比` `3D / CG` `产品与广告` |
+| [沿客厅缓慢推进的室内导览](https://x.com/egachan_ceao/status/2092835189215138167) | 5.226667s · 720p · 4:3 | `广告与产品` `照片级写实` `产品与广告` |
+| [朱色刀光中的角色轨迹](https://x.com/ai_lifehack55/status/2092813353928581347) | 15.13941s · 1080p · 1:1 | `动作特效` `动漫` `动态图形` `动作打斗` |
+| [丝带体操与数字字效](https://x.com/Naonekozamurai/status/2092732137145536736) | 15.168s · 720p · 16:9 | `广告与产品` `动态图形` `舞蹈` `人物表演` |
+| [四套时装切换的概念应用界面](https://x.com/onofumi_AI/status/2092528740475785520) | 15.167318s · 720p · 9:16 | `广告与产品` `动态图形` `商业广告感` `时尚` `产品与广告` |
+| [从街市抱回一颗西瓜](https://x.com/DaniaSafvi/status/2092480148004368480) | 15.168s · 720p · 16:9 | `电影叙事` `照片级写实` `生活实拍感` `美食` `日常生活` |
+| [乡间列车与日式庭院旅途](https://x.com/harboriis/status/2092469535844733357) | 15.168s · 720p · 16:9 | `电影叙事` `照片级写实` `自然风景` `城市街景` |
+| [度假村泳池旁的夏日自拍](https://x.com/CaliraVal/status/2092464771874664617) | 15.168s · 720p · 16:9 | `电影叙事` `照片级写实` `生活实拍感` `自然风景` `人物表演` |
+| [霓虹字效中的黑色时装片](https://x.com/ImaStudio_ai/status/2092457346526241208) | 14.326712s · 720p · 16:9 | `广告与产品` `商业广告感` `动态图形` `时尚` |
+| [以大幅歌词为背景的表演](https://x.com/h64g_/status/2092307579221516749) | 75.712s · 720p · 16:9 | `音乐视频` `照片级写实` `动态图形` `人物表演` |
+| [黑帮会客厅里的最后警告](https://x.com/ai_lifehack55/status/2092255957526990890) | 30.232381s · 1080p · 1:1 | `对白与口型` `写实电影感` `人物表演` |
+| [水墨背景中的服装与发色变化](https://x.com/akemiwork/status/2092242385141219589) | 15.13941s · 720p · 7:4 | `广告与产品` `照片级写实` `风格化与实验` `时尚` |
+| [工业厂房里的聚光时装镜头](https://x.com/PrometheanAIX/status/2092231386610487615) | 15.168s · 768p · 3:4 | `广告与产品` `照片级写实` `商业广告感` `时尚` |
+| [黑白文字隧道的动态开场](https://x.com/studio_oneroom/status/2092220604309205341) | 15.168s · 720p · 16:9 | `广告与产品` `动态图形` `产品与广告` |
+| [冰淇淋口味切换的概念网页](https://x.com/ShamsAmin56/status/2092188350476337613) | 15.168s · 720p · 16:9 | `广告与产品` `动态图形` `商业广告感` `美食` `产品与广告` |
+| [平面插画讲述职业转折](https://x.com/tanabe_fragm/status/2092146855920783418) | 15.168s · 720p · 9:16 | `广告与产品` `插画与手绘` `动态图形` `产品与广告` `日常生活` |
+| [粉色双马尾与环绕字体](https://x.com/KiraKiraKaiju/status/2092132055857746375) | 15.146667s · 720p · 9:16 | `广告与产品` `照片级写实` `动态图形` `时尚` |
+| [庭院与屋顶的慢生活片段](https://x.com/CaliraVal/status/2092124735081738349) | 15.168s · 360p · 106:45 | `电影叙事` `照片级写实` `日常生活` |
+| [晨光厨房里的手作披萨](https://x.com/ZoeyBennettAi/status/2092124356709388475) | 15.168s · 720p · 16:9 | `电影叙事` `照片级写实` `美食` `日常生活` |
+| [回家途中突发的街头冲突](https://x.com/ayzalnooor24521/status/2092118838859190377) | 15.789569s · 720p · 68:45 | `动作特效` `照片级写实` `动作打斗` `城市街景` |
+| [粉色居家装的日常手机片段](https://x.com/Lianaalane/status/2092101929837166818) | 15.719909s · 720p · 68:45 | `电影叙事` `照片级写实` `生活实拍感` `日常生活` |
+| [庆祝字体与剧院揭幕](https://x.com/tokyo_Valentine/status/2092093848130617686) | 15.168s · 720p · 16:9 | `音乐视频` `动态图形` `风格化与实验` `人物表演` |
+| [森林蝴蝶彩妆盘概念广告](https://x.com/TaliaAariz/status/2090691604277240092) | 15.168s · 720p · 9:16 | `广告与产品` `商业广告感` `照片级写实` `产品与广告` `奇幻` |
+| [淡紫手袋与同色时装](https://x.com/eshal__ai/status/2090652614073663786) | 15.16263s · 720p · 629:360 | `广告与产品` `商业广告感` `照片级写实` `时尚` `产品与广告` |
+| [古墓黑水池的悬疑片段](https://x.com/peter6759/status/2090635415380537797) | 105.813333s · 720p · 16:9 | `电影叙事` `写实电影感` `奇幻` |
+| [巨型文字困境中的求职广告](https://x.com/tanabe_fragm/status/2090634934193152115) | 15.168s · 720p · 9:16 | `广告与产品` `插画与手绘` `动态图形` `人物表演` |
+| [红发动漫角色时尚登场](https://x.com/ImaStudio_ai/status/2090634362631168129) | 15.836009s · 720p · 16:9 | `动画` `动漫` `动态图形` `时尚` |
+| [巨型早餐桌上的微缩冒险](https://x.com/0nedi4ry/status/2090592575627628702) | 15.168s · 720p · 7:4 | `电影叙事` `3D / CG` `美食` `奇幻` |
+| [走廊里撞上透明墙的动漫角色](https://x.com/sarischerika/status/2090590155795234920) | 15.168s · 720p · 4:3 | `动画` `动漫` `日常生活` |
+| [TOBILLO KID 卡通角色宣传片](https://x.com/wakeupgfx/status/2090565921580425588) | 15.168s · 720p · 16:9 | `动画` `3D / CG` `动态图形` `人物表演` |
+| [分镜参考下的拿铁制作与讲解](https://x.com/aimikoda/status/2090556776156742071) | 15.139002s · 1080p · 540:607 | `本地生成与工作流` `动漫` `美食` `对白与口型` |
+| [键盘与眼睛之间的动态文字](https://x.com/tokyo_Valentine/status/2090556760348323875) | 15.168s · 720p · 16:9 | `音乐视频` `照片级写实` `动态图形` `人物表演` |
+| [美式复古工装拼贴广告](https://x.com/su_nagomi/status/2090556023178510671) | 15.168s · 720p · 7:4 | `广告与产品` `复古胶片` `商业广告感` `时尚` |
+| [雨夜公交站的告别对白](https://x.com/bmx_ai13/status/2090519106432983412) | 15.168s · 720p · 629:360 | `对白与口型` `写实电影感` |
+| [巨刃少女迎战长腿巨鸟](https://x.com/whorange__/status/2090392284516974704) | 27.051247s · 720p · 16:9 | `动作特效` `动漫` `插画与手绘` `动作打斗` `动物与生物` |
+| [朋克企鹅与动感字宣传片](https://x.com/nett0eth/status/2090267753915498925) | 13.722993s · 720p · 16:9 | `动画` `插画与手绘` `动态图形` `动物与生物` |
+| [戴上耳机后随节拍变化的街道](https://x.com/alexgnewmedia/status/2090161526380347863) | 15.168s · 720p · 16:9 | `音乐视频` `照片级写实` `城市街景` `人物表演` |
+| [THE DEAD DROP 复古谍战片头](https://x.com/HBCoop_/status/2090107555712512053) | 25.791667s · 720p · 16:9 | `电影叙事` `复古胶片` `动态图形` `人物表演` |
+| [客厅里的电脑工作对白](https://x.com/GamerHashCom/status/2090104453684748398) | 10.24s · 720p · 7:4 | `对白与口型` `照片级写实` `日常生活` |
+| [卧室人物与枪械的移动镜头](https://x.com/CharaspowerAI/status/2090091561506009588) | 15.168s · 720p · 4:3 | `电影叙事` `写实电影感` `人物表演` |
+| [暖色公寓冰咖啡 UGC 广告](https://x.com/AIwithSynthia/status/2090070695481143430) | 14.144s · 720p · 16:9 | `广告与产品` `生活实拍感` `照片级写实` `美食` `产品与广告` |
+| [飞越巴黎的巨龙视角双模型对比](https://x.com/codewithhajra/status/2090029366205960465) | 15.125333s · 720p · 4:5 | `模型对比` `写实电影感` `城市街景` `奇幻` |
+| [北村韩屋街道旅行短片](https://x.com/nawalsehar/status/2089948821245788584) | 15.168s · 720p · 16:9 | `电影叙事` `照片级写实` `城市街景` `日常生活` |
+| [土豆切片到薯片包装的广告](https://x.com/ZaraIrahh/status/2089925065492267106) | 15.25551s · 720p · 16:9 | `广告与产品` `商业广告感` `3D / CG` `美食` `产品与广告` |
+| [折纸人物与折叠文字音乐片](https://x.com/ai_lifehack55/status/2089918524118716461) | 15.13941s · 720p · 1:1 | `音乐视频` `3D / CG` `动态图形` `人物表演` |
+| [绿光能量盒封住沙地蝎子](https://x.com/EndFolding79421/status/2089840714016497677) | 8.064s · 736p · 40:23 | `动作特效` `写实电影感` `科幻太空` `动物与生物` |
+| [三人物遮挡衔接环绕长镜头](https://x.com/LoveUolanda/status/2089764797361582208) | 14.976s · 480p · 240:433 | `电影叙事` `3D / CG` `奇幻` `人物表演` |
+| [动漫角色讲解 AI 视频学校概念广告](https://x.com/tanabe_fragm/status/2089599996085801459) | 15.16263s · 720p · 16:9 | `广告与产品` `动漫` `动态图形` `人物表演` |
+| [未来工作室中的 AI 创意广告](https://x.com/CaliraVal/status/2089578529252167841) | 15.168s · 720p · 629:360 | `广告与产品` `商业广告感` `照片级写实` `科幻太空` `人物表演` |
+| [红月鬼面场景中的音乐可视化](https://x.com/GlitterPixely/status/2089539110494966112) | 15.168s · 720p · 16:9 | `音乐视频` `插画与手绘` `动态图形` `奇幻` |
+| [米兰街头的时尚日常](https://x.com/PrometheanAIX/status/2089355155829325876) | 15.168s · 720p · 3:4 | `广告与产品` `商业广告感` `照片级写实` `时尚` `城市街景` |
+| [火焰旋涡锻造 IGNITE](https://x.com/CharaspowerAI/status/2089291191447605442) | 15.168s · 720p · 16:9 | `动作特效` `3D / CG` `动态图形` `奇幻` |
+| [卧室墨镜开箱与试戴](https://x.com/CaliraVal/status/2089221706435248245) | 15.168s · 720p · 16:9 | `广告与产品` `生活实拍感` `照片级写实` `时尚` `产品与广告` |
+| [泪水与愤怒的韩语表演测试](https://x.com/IamEmily2050/status/2089219260908527687) | 15.16263s · 512p · 227:128 | `对白与口型` `照片级写实` |
+| [画室里的林肯肖像绘制](https://x.com/ayzalnooor24521/status/2089205270543213031) | 14.976s · 720p · 16:9 | `电影叙事` `照片级写实` `人物表演` `日常生活` |
+| [首尔雨巷中的韩语独白](https://x.com/Alisvolatprop12/status/2088983831282098350) | 14.464s · 480p · 9:5 | `对白与口型` `写实电影感` `城市街景` |
+| [山崖崩解形成 DOMINION](https://x.com/CharaspowerAI/status/2088928805561708915) | 15.168s · 720p · 16:9 | `动作特效` `3D / CG` `动态图形` `自然风景` |
+| [从雪花微距推进冰雪王国](https://x.com/LudovicCreator/status/2088928791741481189) | 15.2s · 720p · 16:9 | `电影叙事` `3D / CG` `奇幻` `自然风景` |
+| [云海古桥上的仙境漫步](https://x.com/PixelAigc/status/2088859138730189040) | 30.46458s · 720p · 16:9 | `电影叙事` `3D / CG` `奇幻` `自然风景` |
+| [雨夜咖啡馆里的争执与离开](https://x.com/IamEmily2050/status/2088624894401511747) | 15.16263s · 720p · 16:9 | `对白与口型` `写实电影感` |
+| [戴眼镜动漫角色的晨间日常](https://x.com/aimikoda/status/2088569547494199485) | 15.168s · 720p · 16:9 | `动画` `动漫` `日常生活` |
+| [动漫人物突破巨型负面文字](https://x.com/LilyLoveSNPY/status/2088537866955816993) | 15.146667s · 720p · 16:9 | `动画` `动漫` `动态图形` `人物表演` |
+| [灯笼通道中的红伞表演](https://x.com/LilyLoveSNPY/status/2088505215792369740) | 15.146667s · 720p · 16:9 | `动画` `动漫` `人物表演` |
+| [损毁机甲旁的飞行员情绪片段](https://x.com/IamEmily2050/status/2088498595980812373) | 15.16263s · 720p · 16:9 | `对白与口型` `写实电影感` `科幻太空` |
+| [夕阳社区遛狗生活片](https://x.com/CaliraVal/status/2088487667629715917) | 15.168s · 720p · 16:9 | `电影叙事` `照片级写实` `动物与生物` `日常生活` |
+| [巴士里的死亡金属乐队](https://x.com/blizaine/status/2088390915152887996) | 120.047166s · 704p · 20:11 | `音乐视频` `照片级写实` `音乐演出` |
+| [蝙蝠侠与绝地武士的梦境战斗](https://x.com/LyalinDotCom/status/2088301240346087802) | 60.064s · 704p · 20:11 | `动作特效` `写实电影感` `动作打斗` `科幻太空` |
+| [蓝色兔耳角色的动画宣传片](https://x.com/Mayz1169/status/2087870514400502028) | 12.933515s · 720p · 16:9 | `动画` `动漫` `动态图形` `时尚` |
+| [旧手机质感的晨间洗漱](https://x.com/itxabdullaa/status/2087825234053464154) | 15.168s · 720p · 16:9 | `电影叙事` `生活实拍感` `照片级写实` `日常生活` |
+| [黄黑几何城市与反派角色](https://x.com/ZaraIrahh/status/2087762931777716345) | 15.168s · 720p · 16:9 | `动画` `3D / CG` `动态图形` `科幻太空` |
+| [黑白披风角色造型动画](https://x.com/macbethAI/status/2087310945009995972) | 15.168s · 1080p · 1:1 | `动画` `风格化与实验` `3D / CG` `奇幻` |
+| [上海上空漂浮的巨型海洋生物](https://x.com/sada_ai/status/2087294907786600770) | 15.168s · 768p · 3:4 | `电影叙事` `写实电影感` `城市街景` `动物与生物` |
+| [极光海岸的人物音乐片段](https://x.com/antonioleivag/status/2087290562781081994) | 15.13941s · 372p · 160:93 | `音乐视频` `照片级写实` `音乐演出` `自然风景` |
+| [楼梯旁的动漫早安片段](https://x.com/Alone1Moon/status/2087282913410764864) | 15.168s · 832p · 2:3 | `动画` `动漫` `日常生活` |
+| [无限城中的多角色动漫战斗](https://x.com/itsphotogptai/status/2087276933222695045) | 15.168s · 720p · 16:9 | `动作特效` `动漫` `动作打斗` |
+| [地铁隧道中的人物行走](https://x.com/UnrealRafael/status/2087275532517884174) | 15.168s · 720p · 121:90 | `电影叙事` `写实电影感` `城市街景` |
+| [街头涂鸦风动态动漫拼贴](https://x.com/steftranquillin/status/2087233814665814190) | 15.168s · 720p · 16:9 | `动画` `动漫` `动态图形` `人物表演` |
+| [海边酒吧的四人对白](https://x.com/donhyeon_choi/status/2087163007491268632) | 15.168s · 720p · 16:9 | `对白与口型` `照片级写实` |
+| [第一人称探索漆黑地铁通道](https://x.com/UnrealRafael/status/2087161642702315868) | 15.168s · 720p · 313:180 | `电影叙事` `暗黑恐怖` `写实电影感` `城市街景` |
+| [复古舞厅摇滚乐队演出](https://x.com/ravfx777/status/2087152046114038024) | 12.32s · 360p · 106:45 | `音乐视频` `复古胶片` `照片级写实` `音乐演出` |
+| [地标建筑上的彩色涂鸦旅行](https://x.com/vkuoo/status/2087148758954053985) | 15.168s · 720p · 3:4 | `电影叙事` `风格化与实验` `城市街景` |
+| [ECLIPSE 科幻海报分层动效](https://x.com/LudovicCreator/status/2087116928473006428) | 10.208s · 720p · 3:4 | `电影叙事` `3D / CG` `动态图形` `科幻太空` |
+| [鲜橙切片与果汁感官广告](https://x.com/yourPlugAI/status/2086830161719111800) | 15.168s · 720p · 9:16 | `广告与产品` `商业广告感` `照片级写实` `美食` `产品与广告` |
+| [乔治在餐馆咨询 AI 的情景喜剧](https://x.com/TechieBySA/status/2086773163870871656) | 15.168s · 720p · 16:9 | `对白与口型` `照片级写实` |
+| [风暴中登陆的维京战士](https://x.com/MichaelGannotti/status/2086765186107801649) | 10.208s · 720p · 16:9 | `动作特效` `写实电影感` `动作打斗` `自然风景` |
+| [小机器人守护最后一朵花](https://x.com/iamrealsnow/status/2086324524153544796) | 15.168s · 720p · 16:9 | `动画` `3D / CG` `动物与生物` `自然风景` |
+| [书页上浮现的彩色光绘](https://x.com/godofprompt/status/2086142925063516348) | 15.232s · 720p · 16:9 | `电影叙事` `照片级写实` `动态图形` `奇幻` |
+| [为抽帧设计的客厅人物镜头集](https://x.com/luxaios/status/2085860538291040735) | 15.32517s · 720p · 4:7 | `本地生成与工作流` `照片级写实` `日常生活` |
+| [墨镜小狗迎战街猫](https://x.com/TheAwakenOne619/status/2085806303562412221) | 5.248s · 480p · 9:5 | `动作特效` `3D / CG` `动作打斗` `动物与生物` |
+| [向日葵旁的开心小猫](https://x.com/softpoo/status/2085781953979244759) | 15.168s · 768p · 3:4 | `动画` `插画与手绘` `动物与生物` |
+| [经典星舰舰桥对白片段](https://x.com/Cardoso/status/2085763884883792369) | 10.208s · 720p · 121:90 | `对白与口型` `复古胶片` `照片级写实` `科幻太空` |
+| [地下杂志风时装音乐拼贴](https://x.com/medfac_opc/status/2085758089354178629) | 15.168s · 720p · 9:16 | `音乐视频` `风格化与实验` `动态图形` `时尚` |
+| [音乐节街景与摩天轮时尚片](https://x.com/PrometheanAIX/status/2085702677187395984) | 15.146667s · 720p · 1:1 | `电影叙事` `照片级写实` `时尚` `城市街景` |
+| [裁缝店里的夸张形象改造](https://x.com/im_shahid7/status/2085685341583991206) | 15.168s · 720p · 16:9 | `动画` `3D / CG` `时尚` `城市街景` |
+| [ONE HIT 时装换装与杂志版式](https://x.com/ImaStudio_ai/status/2085681358077137144) | 15.11619s · 2160p · 16:9 | `广告与产品` `商业广告感` `动态图形` `时尚` |
+| [街头与豪宅间的女声嘻哈片](https://x.com/MonetizationDon/status/2085647629870924078) | 35.271111s · 720p · 16:9 | `音乐视频` `照片级写实` `音乐演出` |
+| [模拟图像编辑界面的生成动画](https://x.com/ponzponz15/status/2085638396656099441) | 10.208s · 720p · 16:9 | `本地生成与工作流` `插画与手绘` `人物表演` |
+| [奶茶互动对白工作流演示](https://x.com/0xmomonifty/status/2085619449131073849) | 5.504s · 720p · 16:9 | `本地生成与工作流` `照片级写实` `美食` `对白与口型` |
+| [漆画螺钿风格的分海故事](https://x.com/xianshi666123/status/2085618840105517104) | 15.168s · 360p · 323:180 | `动画` `插画与手绘` `风格化与实验` `奇幻` `自然风景` |
+| [豪华酒店里的无名英雄说唱](https://x.com/WuxiaRocks/status/2085587415784378498) | 15.168s · 720p · 16:9 | `音乐视频` `照片级写实` `音乐演出` |
+| [三格人像的独立微动作](https://x.com/ou_zhen599/status/2085586844088156403) | 6.656s · 720p · 9:16 | `综合展示` `照片级写实` `人物表演` |
+| [向日葵与紫发角色的花卉拼贴](https://x.com/ivy432hz/status/2085577060760862907) | 15.072s · 720p · 16:9 | `动画` `动漫` `插画与手绘` `自然风景` `人物表演` |
+| [森林魔女的语音与字幕测试](https://x.com/Sauer20/status/2085516067292709323) | 10.208s · 736p · 1:1 | `动画` `动漫` `奇幻` `对白与口型` |
+| [便利店冷柜里的发光图案](https://x.com/sahilvermaai/status/2085434267232841794) | 15.30195s · 720p · 7:4 | `电影叙事` `照片级写实` `日常生活` `奇幻` |
+| [多种渲染角色挤进同一电梯](https://x.com/cocktailpeanut/status/2085413767983046982) | 14.464s · 480p · 26:15 | `动画` `风格化与实验` `对白与口型` `奇幻` |
+| [记忆侦探游戏概念演示](https://x.com/AllaAisling/status/2085403108692176936) | 15.168s · 720p · 16:9 | `综合展示` `3D / CG` `奇幻` |
+| [山谷蝴蝶旁的人物弧线运镜](https://x.com/O_C_T_/status/2085375185197412412) | 10.208s · 360p · 161:90 | `动画` `动漫` `自然风景` |
+| [芒果糯米饭与粉色荔枝饮品](https://x.com/ManuAGI01/status/2085374270918820089) | 15.168s · 720p · 16:9 | `广告与产品` `商业广告感` `照片级写实` `美食` |
+| [动漫角色的双杠力量动作](https://x.com/ramztd/status/2085369164966105266) | 10.208s · 720p · 7:4 | `动画` `动漫` `人物表演` |
+| [NOVA X1 镜头拆解概念广告](https://x.com/AmControo/status/2085366255540637965) | 15.11619s · 720p · 16:9 | `广告与产品` `商业广告感` `3D / CG` `产品与广告` |
+| [提前下班的电池图标](https://x.com/ManuAGI01/status/2085364318670102958) | 15.168s · 720p · 16:9 | `动画` `插画与手绘` `照片级写实` `日常生活` |
+| [西部街道上的宝可梦风格对决](https://x.com/exportAnything/status/2085356210467791172) | 20.128s · 480p · 9:5 | `动画` `动漫` `动作打斗` |
+| [逃离电脑的手绘鼠标光标](https://x.com/ManuAGI01/status/2085351642191573067) | 15.168s · 720p · 16:9 | `动画` `插画与手绘` `照片级写实` `日常生活` |
+| [AI 公司负责人虚构电视访谈](https://x.com/Bhavani_00007/status/2085350333115756584) | 13.76s · 720p · 7:4 | `对白与口型` `照片级写实` |
+| [办公室角色讨论 AI 电影制作](https://x.com/jaynwabueze/status/2085340333500518672) | 15.168s · 720p · 16:9 | `对白与口型` `照片级写实` |
+| [藤蔓退去后苏醒的丛林王国](https://x.com/ManuAGI01/status/2085336760939401283) | 15.168s · 720p · 16:9 | `电影叙事` `3D / CG` `奇幻` `自然风景` |
+| [跨越吊桥进入云端王国](https://x.com/ManuAGI01/status/2085333659478040887) | 15.168s · 720p · 16:9 | `电影叙事` `3D / CG` `奇幻` `自然风景` |
+| [潜水者发现海底王国](https://x.com/ManuAGI01/status/2085329727682928931) | 15.168s · 720p · 16:9 | `电影叙事` `3D / CG` `奇幻` `自然风景` |
+| [暗室怪物进食动作测试](https://x.com/WordTrafficker/status/2085308045035471054) | 10.208s · 720p · 16:9 | `综合展示` `暗黑恐怖` `写实电影感` `动物与生物` |
+| [涩谷路口的 Y2K 时尚人物](https://x.com/FrameTheoryLab/status/2085235212561313899) | 5.248s · 360p · 161:90 | `电影叙事` `照片级写实` `时尚` `城市街景` |
+| [小老鼠与大白猫的友谊对白](https://x.com/ManuAGI01/status/2085219692591902972) | 15.168s · 720p · 16:9 | `对白与口型` `3D / CG` `动物与生物` |
+| [异星陨石场景的海螺版本对比](https://x.com/dimefromthevoid/status/2085188647192756364) | 13.674667s · 1080p · 1:1 | `模型对比` `写实电影感` `科幻太空` |
+| [厨房蔬菜突然长出卡通眼睛](https://x.com/cocktailpeanut/status/2085162073810739210) | 14.464s · 480p · 26:15 | `动画` `照片级写实` `插画与手绘` `美食` |
+| [沃尔特与杰西讨论编程代理](https://x.com/gregschoeninger/status/2085157921651081335) | 15.168s · 720p · 16:9 | `对白与口型` `照片级写实` |
+| [银发动漫角色的日语发话测试](https://x.com/Vtuber7144/status/2085137774970327187) | 5.248s · 576p · 23:18 | `对白与口型` `动漫` |
+| [月门与云海仙宫蒙太奇](https://x.com/Stellakjbk/status/2085040940196958664) | 17.925805s · 720p · 4:3 | `电影叙事` `3D / CG` `奇幻` |
+| [按方向箭头运动的卡通猫](https://x.com/RebeccahAdson/status/2084996870561251473) | 10.05424s · 720p · 16:9 | `动画` `插画与手绘` `动物与生物` |
+| [关于 H3 的虚构科技人物喜剧](https://x.com/Bhavani_00007/status/2084993027333038588) | 19.597642s · 720p · 7:4 | `对白与口型` `照片级写实` |
+| [西部人物口型双模型对比](https://x.com/CaptainHaHaa/status/2084992190317756753) | 24.32s · 720p · 16:9 | `模型对比` `3D / CG` `对白与口型` |
+| [红色舞台上的 DJ 表演](https://x.com/PrometheanAIX/status/2084981138452262943) | 15.168s · 720p · 3:4 | `音乐视频` `照片级写实` `音乐演出` |
+| [赛博骷髅与寿司音乐拼贴](https://x.com/tokyo_Valentine/status/2084978991371624872) | 15.168s · 720p · 16:9 | `音乐视频` `风格化与实验` `动态图形` `科幻太空` `美食` |
+| [夕阳屋顶泳池的动漫对白](https://x.com/studio_oneroom/status/2084975323901317231) | 14.442667s · 720p · 16:9 | `对白与口型` `动漫` `城市街景` |
+| [森林惊遇场景的双模型对比](https://x.com/iX00AI/status/2084973464629510371) | 15.16263s · 720p · 1:1 | `模型对比` `照片级写实` `自然风景` `人物表演` |
+| [粉发吉他手的现场演唱](https://x.com/ai_haruki3/status/2084973079965708721) | 10.208s · 608p · 33:19 | `音乐视频` `照片级写实` `音乐演出` |
+| [泰姬陵建筑细节蒙太奇](https://x.com/MrDasOnX/status/2084972016600559982) | 15.168s · 720p · 16:9 | `电影叙事` `照片级写实` `城市街景` |
+| [办公室早会的虚构喜剧](https://x.com/TechieBySA/status/2084962854344528255) | 13.630113s · 720p · 16:9 | `对白与口型` `照片级写实` |
+| [雨夜骑行时装的双模型对比](https://x.com/wilzap/status/2084957543407792345) | 15.23229s · 720p · 4:5 | `模型对比` `照片级写实` `时尚` `城市街景` |
+| [雨夜街头的连续汽车追逐](https://x.com/DrSadek_/status/2084929911932748028) | 10.208s · 720p · 16:9 | `动作特效` `写实电影感` `城市街景` |
+| [荧光绿监控黑色电影片头](https://x.com/zazzygfx/status/2084929834598191448) | 15.168s · 720p · 16:9 | `电影叙事` `复古胶片` `动态图形` `城市街景` |
+| [字母 B 变成蝴蝶的启蒙动画](https://x.com/umesh_ai/status/2084892304582885414) | 15.168s · 720p · 16:9 | `动画` `3D / CG` `插画与手绘` `动物与生物` `自然风景` |
+| [阿拉伯文字与撕纸人物拼贴](https://x.com/aziz4ai/status/2084775075656466886) | 15.168s · 720p · 16:9 | `广告与产品` `动态图形` `插画与手绘` `人物表演` |
+| [放学教室里的动漫舞蹈](https://x.com/Naonekozamurai/status/2084753745129157107) | 15.168s · 720p · 16:9 | `舞蹈` `动漫` |
+| [超市中越过苔藓木头的彩虹臭鼬](https://x.com/simonw/status/2084719238569435469) | 5.248s · 720p · 7:4 | `电影叙事` `照片级写实` `动物与生物` `奇幻` |
+| [黄色雨伞下的人物发话测试](https://x.com/MireilleDartois/status/2084667166188794225) | 10.176s · 360p · 9:5 | `对白与口型` `照片级写实` `城市街景` |
+| [普京与塞缪尔杰克逊的虚构办公室喜剧](https://x.com/Ankit_patel211/status/2084656244707438959) | 15.168s · 720p · 16:9 | `对白与口型` `照片级写实` |
+| [红色机甲服动漫人物靠近镜头](https://x.com/munou_ac/status/2084655610126028991) | 10.208s · 480p · 24:43 | `综合展示` `动漫` `科幻太空` `人物表演` |
+| [林间红发剑士的参考图动画](https://x.com/higana_yogana/status/2084654327424221484) | 5.166667s · 704p · 19:11 | `动作特效` `动漫` `动作打斗` |
+| [沙漠公路上的动漫滑板人物](https://x.com/Framer_X/status/2084625730407928155) | 15.168s · 720p · 16:9 | `动画` `动漫` `人物表演` `自然风景` |
+| [尖刺头饰与披萨音乐片](https://x.com/tokyo_Valentine/status/2084612873092030642) | 15.168s · 720p · 16:9 | `音乐视频` `风格化与实验` `动态图形` `美食` `人物表演` |
+| [乡间骑车动漫角色的本地生成](https://x.com/eternityspring/status/2084606243516334180) | 10.208s · 576p · 16:9 | `动画` `动漫` `日常生活` |
+| [沃尔特与笨拙实习生的虚构对白](https://x.com/WolfRiccardo/status/2084603328265125929) | 15.16263s · 720p · 16:9 | `对白与口型` `照片级写实` |
+| [办公室预算花在 AI 订阅上的争论](https://x.com/karankendre/status/2084596207637188665) | 15.168s · 720p · 16:9 | `对白与口型` `照片级写实` |
+| [手绘小船进入街景的双模型对比](https://x.com/opener_ai/status/2084595677779444169) | 15.033984s · 720p · 4:5 | `模型对比` `照片级写实` `插画与手绘` `城市街景` `奇幻` |
+| [熊猫忍者与猴王竹林对决](https://x.com/DoctorAmna11/status/2084580595523608784) | 15.168s · 720p · 16:9 | `动作特效` `3D / CG` `动作打斗` `动物与生物` |
+| [赛博游戏角色配置与行动演示](https://x.com/itsshara_ai/status/2084571189117366484) | 15.11619s · 720p · 16:9 | `综合展示` `3D / CG` `科幻太空` `城市街景` |
+| [生发精华 UGC 广告概念](https://x.com/SyntheSarah/status/2084567967652843620) | 15.23229s · 720p · 45:68 | `广告与产品` `生活实拍感` `照片级写实` `产品与广告` |
+| [斯图尔特与白猫的客厅对白](https://x.com/MrDasOnX/status/2084551020760433134) | 15.168s · 720p · 16:9 | `对白与口型` `3D / CG` `动物与生物` |
+| [绿色藤蔓手写文字动画](https://x.com/umesh_ai/status/2084544246737248568) | 14.464s · 720p · 16:9 | `广告与产品` `动态图形` `自然风景` |
+| [哥特术士与机械乌鸦的书房](https://x.com/Parul_Gautam7/status/2084521314904408321) | 15.168s · 720p · 16:9 | `电影叙事` `写实电影感` `奇幻` |
+| [多段音乐参考的场景切换测试](https://x.com/RBLabQ/status/2084516107378159820) | 36.269569s · 720p · 16:9 | `本地生成与工作流` `风格化与实验` `人物表演` |
+| [橘猫与主人的温暖一天](https://x.com/Lianaalane/status/2084509010485756396) | 15.168s · 720p · 16:9 | `电影叙事` `照片级写实` `动物与生物` `日常生活` |
+| [兔子厨师与煎饼大劫案](https://x.com/iamrealsnow/status/2084507376825299177) | 15.168s · 720p · 16:9 | `动画` `3D / CG` `美食` `动物与生物` |
+| [明亮公寓中的晨间生活广告](https://x.com/CaliraVal/status/2084505247385346518) | 14.326009s · 720p · 45:67 | `广告与产品` `商业广告感` `照片级写实` `日常生活` `产品与广告` |
+| [朝颜花旁的猫耳角色与白猫](https://x.com/Akkyman2/status/2084501787827130572) | 15.168s · 720p · 9:16 | `动画` `动漫` `动物与生物` |
+| [办公室角色争论 AI 能否取代电影人](https://x.com/karankendre/status/2084498059711349065) | 15.168s · 720p · 16:9 | `对白与口型` `照片级写实` |
+| [多人重叠发话的生成测试](https://x.com/cocktailpeanut/status/2084496491175973183) | 10.912s · 640p · 1:1 | `对白与口型` `照片级写实` |
+| [室内双人物的情绪发话测试](https://x.com/imagixaijp/status/2084476676222939486) | 8.064s · 416p · 13:23 | `对白与口型` `照片级写实` |
+| [办公室角色介绍 AI 平台的虚构对白](https://x.com/dimoff2000/status/2084462495641780321) | 15.168s · 720p · 16:9 | `对白与口型` `照片级写实` |
+| [插画歌手与歌词参考音乐片](https://x.com/aimikoda/status/2084336165369311502) | 15.168s · 720p · 16:9 | `音乐视频` `插画与手绘` `动态图形` `音乐演出` |
+| [日式厨房抹茶套装 UGC 概念](https://x.com/SimplyAnnisa/status/2084241879097303513) | 15.2s · 720p · 16:9 | `广告与产品` `生活实拍感` `照片级写实` `美食` `产品与广告` |
+| [水晶峡谷里的摩托逃亡](https://x.com/Gelat0x/status/2084220704623399083) | 15.168s · 720p · 16:9 | `动作特效` `写实电影感` `科幻太空` |
+| [九人参考照片生成的幕后群像](https://x.com/lukasersil/status/2084212806434406610) | 15.168s · 720p · 16:9 | `综合展示` `照片级写实` `人物表演` |
+| [裁缝店换装的另一版诠释](https://x.com/MonetizationDon/status/2084199438646477192) | 15.168s · 720p · 16:9 | `电影叙事` `照片级写实` `时尚` `城市街景` |
+| [校园广场上的轻快舞蹈](https://x.com/nowlovepan/status/2084178540065657251) | 15.168s · 720p · 16:9 | `舞蹈` `照片级写实` |
+| [城市电动踏板车概念广告](https://x.com/Lianaalane/status/2084158511261405214) | 14.767891s · 720p · 16:9 | `广告与产品` `商业广告感` `照片级写实` `产品与广告` `城市街景` |
+| [雨夜街道上的太空猫](https://x.com/kiyoshi_shin/status/2084155623139348764) | 15.168s · 480p · 9:5 | `电影叙事` `照片级写实` `动物与生物` `城市街景` |
+| [红色聚光灯下的运动鞋展示](https://x.com/Tech2Wild/status/2084140665395347785) | 5.248s · 480p · 26:15 | `广告与产品` `商业广告感` `3D / CG` `产品与广告` |
+| [古林骑射与部落归来](https://x.com/ayzalnooor24521/status/2084138096766165223) | 15.46449s · 720p · 16:9 | `电影叙事` `写实电影感` `动作打斗` `自然风景` |
+| [为动漫视频追加地裂特效](https://x.com/KEETY2591756/status/2084134888798920779) | 13.098667s · 720p · 16:9 | `本地生成与工作流` `动漫` `动作打斗` |
+| [金毛犬与主人共度日常](https://x.com/nawalsehar/status/2084127897149948250) | 15.168s · 720p · 16:9 | `电影叙事` `照片级写实` `动物与生物` `日常生活` |
+| [发光声波舞台上的人物演唱](https://x.com/MrDavids1/status/2084123402390864013) | 15.16263s · 720p · 16:9 | `音乐视频` `3D / CG` `音乐演出` |
+| [夏日祭立体纸艺翻页书](https://x.com/su_nagomi/status/2084105318070730928) | 15.168s · 720p · 16:9 | `动画` `3D / CG` `插画与手绘` `奇幻` |
+| [仓库中的高速特效战斗](https://x.com/souhiro_meem_ch/status/2084039844909703520) | 15.168s · 720p · 16:9 | `动作特效` `写实电影感` `动作打斗` |
+| [夕阳街道上的歌词与口型音乐片](https://x.com/Naonekozamurai/status/2084034217613434955) | 13.142494s · 720p · 16:9 | `音乐视频` `动漫` `动态图形` `音乐演出` `城市街景` |
+| [跑车轮胎仪表与漂移动作](https://x.com/Malzahran2/status/2083988251824554100) | 15.168s · 720p · 16:9 | `广告与产品` `商业广告感` `照片级写实` `产品与广告` |
+| [木屋前的乡间生活片段](https://x.com/MaAyyoub/status/2083980738970489060) | 15.168s · 720p · 16:9 | `电影叙事` `照片级写实` `日常生活` |
+| [罗马红裙时装旅行广告](https://x.com/KeorUnreal/status/2083978550604914699) | 15.168s · 720p · 9:16 | `广告与产品` `商业广告感` `照片级写实` `时尚` `城市街景` |
+| [奇幻生物图鉴界面动画](https://x.com/aimikoda/status/2083949566009778473) | 15.168s · 720p · 16:9 | `综合展示` `3D / CG` `动物与生物` `奇幻` |
+| [无线耳机与都市运动广告](https://x.com/Malzahran2/status/2083930956998521128) | 15.168s · 360p · 106:45 | `广告与产品` `商业广告感` `照片级写实` `产品与广告` `人物表演` |
+| [失控转笼前的动漫吐槽](https://x.com/eggmaya_AI/status/2083906075724861531) | 5.248s · 720p · 16:9 | `动画` `动漫` `日常生活` |
+| [暗室屏幕扩展成悬浮网络](https://x.com/NEXUS_TO_NOVA/status/2083889173686001829) | 15.168s · 360p · 106:45 | `动作特效` `写实电影感` `科幻太空` |
+| [霓虹动漫乐队歌词视频](https://x.com/impalementd/status/2083852804079390858) | 43.189116s · 720p · 16:9 | `音乐视频` `动漫` `动态图形` `音乐演出` |
+| [雨夜巷战的近身格斗](https://x.com/yourPlugAI/status/2083837233585344537) | 15.13941s · 720p · 16:9 | `动作特效` `写实电影感` `动作打斗` `城市街景` |
+| [水上障碍第一视角三模型对比](https://x.com/genel_ai/status/2083737476620013725) | 14.826667s · 720p · 16:9 | `模型对比` `3D / CG` `人物表演` |
+| [分镜配合 MP3 参考的动作比较](https://x.com/ponzponz15/status/2083716093047410703) | 15.146667s · 720p · 4:3 | `本地生成与工作流` `照片级写实` `人物表演` |
+| [复古奇幻战士与机器人对白](https://x.com/BrentLynch/status/2083637290652623341) | 15.168s · 720p · 16:9 | `对白与口型` `复古胶片` `照片级写实` `奇幻` |
+| [奇幻角色对白的六模型合集](https://x.com/ozansihay/status/2083603655383527793) | 92.2761s · 720p · 16:9 | `模型对比` `写实电影感` `奇幻` `对白与口型` |
+| [蒙娜丽莎进入可玩角色界面](https://x.com/ivanka_humeniuk/status/2083555429758464203) | 15.168s · 720p · 16:9 | `综合展示` `3D / CG` `奇幻` |
+| [咖啡环境文字概念广告](https://x.com/AmControo/status/2083552263449035223) | 13.188934s · 720p · 16:9 | `广告与产品` `商业广告感` `照片级写实` `美食` `产品与广告` |
+| [公寓门前的韩剧式对峙](https://x.com/IamEmily2050/status/2083534561443532807) | 15.168s · 720p · 16:9 | `对白与口型` `写实电影感` |
+| [火光前的铠甲人物特写](https://x.com/nusratsid1/status/2083531062697664672) | 15.168s · 720p · 9:16 | `电影叙事` `写实电影感` `奇幻` `人物表演` |
+| [倒塌机甲接住飞行员](https://x.com/DeCat2025/status/2083516916782510593) | 15.168s · 720p · 16:9 | `动作特效` `3D / CG` `科幻太空` |
+| [洗衣机开箱安装 UGC 概念](https://x.com/yourPlugAI/status/2083432403364720877) | 15.23229s · 720p · 9:16 | `广告与产品` `生活实拍感` `照片级写实` `产品与广告` `日常生活` |
+| [粉色手袋商品页动态图形](https://x.com/madpencil_/status/2083374435227386222) | 25.40263s · 720p · 16:9 | `广告与产品` `商业广告感` `动态图形` `时尚` `产品与广告` |
+| [爵士节奏与唱片动漫片头](https://x.com/fal/status/2083267196625535159) | 19.156463s · 720p · 16:9 | `动画` `动漫` `动态图形` `音乐演出` |
+| [海滨七人群像电影片头](https://x.com/altphotos_pl/status/2083244369079840826) | 46.058667s · 720p · 16:9 | `电影叙事` `写实电影感` `人物表演` |
+| [瀑布云海凝聚 ASCEND](https://x.com/CharaspowerAI/status/2083115551186915723) | 15.168s · 720p · 16:9 | `动作特效` `3D / CG` `动态图形` `自然风景` |
+| [幻想 RPG 装备界面与角色行动](https://x.com/ShamsAmin56/status/2083090308666163365) | 15.168s · 720p · 16:9 | `综合展示` `3D / CG` `奇幻` |
+| [音频设备与网格的快速硬切](https://x.com/NEXUS_TO_NOVA/status/2082855352182137170) | 15.168s · 720p · 16:9 | `广告与产品` `3D / CG` `动态图形` `产品与广告` |
+| [暖粉客厅里的棕色手袋广告](https://x.com/AIwithkhan/status/2082848680793747543) | 15.168s · 720p · 16:9 | `广告与产品` `商业广告感` `照片级写实` `时尚` `产品与广告` |
+| [雨夜战术小队行动预告](https://x.com/navi_Ai2/status/2082819036182917160) | 15.13941s · 720p · 16:9 | `动作特效` `写实电影感` `动作打斗` `城市街景` |
+| [巨浪与高墙围绕的天空王国](https://x.com/MO_IAI/status/2082778573899710642) | 15.11619s · 720p · 16:9 | `电影叙事` `3D / CG` `奇幻` `自然风景` |
+| [冻结雨滴中的双人游戏格斗](https://x.com/VigoCreativeAI/status/2082775364577693905) | 15.168s · 720p · 16:9 | `动作特效` `3D / CG` `动作打斗` |
+| [双刃人物与异形生物的动作片](https://x.com/Cia0_exe/status/2082662622944727510) | 15.25551s · 720p · 16:9 | `动作特效` `风格化与实验` `3D / CG` `动作打斗` `科幻太空` |
+| [战场烟尘中的克制对白](https://x.com/sebatheepan/status/2082564720603623680) | 15.168s · 720p · 16:9 | `对白与口型` `写实电影感` `动作打斗` |
+| [演唱会中与观众互动的歌手](https://x.com/BrentLynch/status/2082561712914567207) | 15.168s · 720p · 16:9 | `音乐视频` `照片级写实` `音乐演出` |
+| [生活与动作特效的五主题测试](https://x.com/techhalla/status/2082559705142936039) | 75.477333s · 720p · 16:9 | `综合展示` `写实电影感` `人物表演` `城市街景` |
+| [一口果汁让荒地变绿洲](https://x.com/navi_Ai2/status/2082533116732674155) | 15.11619s · 720p · 16:9 | `广告与产品` `商业广告感` `照片级写实` `美食` `产品与广告` |
+| [复古控制室里的人物与机器人喜剧](https://x.com/BrentLynch/status/2082529099646722299) | 15.168s · 720p · 16:9 | `对白与口型` `复古胶片` `照片级写实` `科幻太空` |
+| [雪中木屋与壁炉人物片段](https://x.com/Strength04_X/status/2082502202539810991) | 15.168s · 720p · 16:9 | `电影叙事` `照片级写实` `日常生活` `自然风景` |
+| [悬崖城市飞行载具追逐](https://x.com/umesh_ai/status/2082499539735588916) | 15.168s · 720p · 16:9 | `动作特效` `3D / CG` `科幻太空` `城市街景` |
+| [滑板动漫角色的 HIPHOP MV](https://x.com/Toshi_nyaruo_AI/status/2092522857448562895) | 186.781315s · 720p · 16:9 | `音乐视频` `动漫` `动态图形` `人物表演` |
+| [巨大礼物盒里的误会](https://x.com/iamrealsnow/status/2092181780447338522) | 15.168s · 720p · 16:9 | `动画` `3D / CG` `人物表演` `日常生活` |
+| [用平面动画讲桃太郎](https://x.com/tanabe_fragm/status/2092118482129420785) | 15.168s · 720p · 16:9 | `动画` `插画与手绘` `动态图形` `动物与生物` `人物表演` |
+| [路过咖啡店的一次临时停留](https://x.com/codewithhajra/status/2091908219962597395) | 15.168s · 720p · 68:45 | `广告与产品` `照片级写实` `生活实拍感` `美食` `城市街景` |
+| [绿色纤维织成 MESH 标识](https://x.com/HBCoop_/status/2091889307200172438) | 15.168s · 720p · 16:9 | `广告与产品` `3D / CG` `动态图形` `产品与广告` |
+| [沙漠赛道上的赛车角色展示](https://x.com/minstorylab01/status/2091850507283566961) | 15.232s · 720p · 16:9 | `广告与产品` `3D / CG` `写实电影感` `科幻太空` `人物表演` |
+| [钟表齿轮与 CLOCKWORK 字效](https://x.com/tokyo_Valentine/status/2091810150567039347) | 15.168s · 720p · 16:9 | `音乐视频` `动态图形` `3D / CG` `奇幻` `人物表演` |
+| [玫瑰花园中的红色礼服人像](https://x.com/TaliaAariz/status/2091781653152579883) | 15.168s · 720p · 9:16 | `广告与产品` `照片级写实` `时尚` `自然风景` |
+| [雪山缆车的登乘旅程](https://x.com/nawalsehar/status/2091759912917327944) | 15.168s · 720p · 16:9 | `电影叙事` `照片级写实` `生活实拍感` `自然风景` `人物表演` |
+| [居家美妆产品的近景展示](https://x.com/CaliraVal/status/2091736749441736927) | 15.168s · 720p · 9:16 | `广告与产品` `照片级写实` `商业广告感` `产品与广告` `时尚` |
+| [粉色极繁时装广告](https://x.com/ImaStudio_ai/status/2091734655993291051) | 15.16263s · 720p · 16:9 | `广告与产品` `商业广告感` `动态图形` `时尚` |
+| [运球、起跳与灌篮的动画分镜](https://x.com/ai_lifehack55/status/2091730894189154501) | 15.13941s · 720p · 1:1 | `动画` `动漫` `动态图形` `人物表演` |
+| [岩石伪装的巨龙苏醒](https://x.com/codewithhajra/status/2091724679027265705) | 14.72s · 720p · 45:56 | `电影叙事` `写实电影感` `3D / CG` `奇幻` `动物与生物` |
+| [天体图与 COSMOS 字体空间](https://x.com/tokyo_Valentine/status/2091722040978063594) | 15.168s · 720p · 16:9 | `音乐视频` `动态图形` `3D / CG` `奇幻` `人物表演` |
+| [地铁空间里的文字广告](https://x.com/tokyo_Valentine/status/2091697364906254361) | 15.168s · 720p · 16:9 | `广告与产品` `照片级写实` `动态图形` `城市街景` `人物表演` |
+| [赛道不断翻折的未来赛车](https://x.com/AllaAisling/status/2091617234930053234) | 15.168s · 720p · 16:9 | `动作特效` `3D / CG` `科幻太空` `城市街景` |
+| [机械翻片组成 FLIP 标识](https://x.com/HBCoop_/status/2091616500440572217) | 15.168s · 720p · 16:9 | `广告与产品` `3D / CG` `动态图形` `产品与广告` |
+| [巨型糖果色字体围绕人物起舞](https://x.com/T_st_love_love/status/2091535156687655371) | 15.061333s · 720p · 16:9 | `音乐视频` `照片级写实` `动态图形` `人物表演` |
+| [霓虹街巷格斗角色登场](https://x.com/Inshrah_ali_/status/2091529120828334142) | 15.168s · 720p · 16:9 | `动作特效` `3D / CG` `动作打斗` `城市街景` |
+| [动漫少女煮一碗拉面](https://x.com/nnanchi_uma/status/2091508732866032061) | 15.872s · 720p · 127:72 | `动画` `动漫` `美食` `日常生活` |
+| [穿行花园般的梦幻车厢](https://x.com/TaliaAariz/status/2091496513432105182) | 15.168s · 720p · 9:16 | `电影叙事` `照片级写实` `时尚` `奇幻` |
+| [动漫角色操控巨型文字](https://x.com/studio_oneroom/status/2091485010515914784) | 15.168s · 720p · 16:9 | `动画` `动漫` `动态图形` `人物表演` |
+| [条纹发色角色的眼神特写](https://x.com/Mayz1169/status/2091464848848846983) | 13.235374s · 720p · 16:9 | `动画` `动漫` `人物表演` |
+| [水墨汉字与霓虹街头舞步](https://x.com/tokyo_Valentine/status/2091449476242440387) | 15.168s · 720p · 16:9 | `音乐视频` `风格化与实验` `动态图形` `人物表演` `城市街景` |
+| [黑裙与宫殿光影美妆概念片](https://x.com/noorlewisx/status/2091401178425008256) | 15.168s · 720p · 7:4 | `广告与产品` `商业广告感` `照片级写实` `时尚` `产品与广告` |
+| [闪光灯中的礼服秀场](https://x.com/codewithhajra/status/2091362290448925035) | 15.232s · 720p · 68:45 | `广告与产品` `商业广告感` `照片级写实` `时尚` |
+| [角色设定板与登场动画对照](https://x.com/aimikoda/status/2091280502086865400) | 15.166667s · 1080p · 540:607 | `本地生成与工作流` `动漫` `人物表演` |
+| [猿群与荒原黑色巨碑](https://x.com/cocktailpeanut/status/2091233403353936255) | 14.464s · 704p · 17:11 | `电影叙事` `写实电影感` `科幻太空` `动物与生物` |
+| [三人对峙的多镜头画面](https://x.com/jerrod_lew/status/2091161609913921655) | 5.22449s · 720p · 9:16 | `电影叙事` `写实电影感` `对白与口型` |
+| [同一角色穿越多种动画风格](https://x.com/NVTDanh/status/2091114406839251020) | 15.11619s · 720p · 16:9 | `动画` `风格化与实验` `3D / CG` `人物表演` |
+| [液态金属凝聚成 EVOLVE](https://x.com/CharaspowerAI/status/2091103106746442226) | 15.168s · 720p · 16:9 | `广告与产品` `3D / CG` `动态图形` `产品与广告` |
+| [夕阳下穿过人群的轮鞋表演](https://x.com/ayzalnooor24521/status/2091039543046943010) | 15.136s · 720p · 16:9 | `电影叙事` `照片级写实` `人物表演` `城市街景` |
+| [日本城市与抹茶旅行蒙太奇](https://x.com/DaniaSafvi/status/2091034090376139070) | 15.168s · 720p · 16:9 | `电影叙事` `照片级写实` `城市街景` `美食` |
+| [粉色长裙与飘动羽饰](https://x.com/TaliaAariz/status/2091027170827116570) | 15.168s · 720p · 9:16 | `综合展示` `照片级写实` `时尚` |
+| [发光水母漂过深海教堂](https://x.com/TechTalkNAVI/status/2091027098920157357) | 15.168s · 720p · 7:4 | `电影叙事` `3D / CG` `奇幻` `自然风景` |
+| [小狗撑伞陪伴雨中的猫](https://x.com/MrDasOnX/status/2091026087254036508) | 15.168s · 720p · 16:9 | `电影叙事` `照片级写实` `动物与生物` `日常生活` |
+| [墨色荒原中的持刀角色](https://x.com/ManuAGI01/status/2091022062404137221) | 15.168s · 720p · 16:9 | `动画` `动漫` `奇幻` |
+| [汉堡食材组成平面广告](https://x.com/ryo05m/status/2091019054597431652) | 15.168s · 720p · 7:4 | `广告与产品` `动态图形` `插画与手绘` `美食` |
+| [金属字形组成视觉对白](https://x.com/ai_lifehack55/status/2091013502756606059) | 15.13941s · 720p · 1:1 | `广告与产品` `3D / CG` `动态图形` `产品与广告` |
+| [沙漠公路夕阳汽水概念广告](https://x.com/CaliraVal/status/2091012158280917271) | 15.168s · 720p · 16:9 | `广告与产品` `商业广告感` `照片级写实` `产品与广告` `时尚` |
+| [云海仙宫与崖边人物环绕镜头](https://x.com/PixelAigc/status/2090985277653483549) | 7.36s · 720p · 16:9 | `电影叙事` `3D / CG` `奇幻` `自然风景` |
+| [巨型字切换的动漫角色宣传片](https://x.com/haruuraeadss/status/2090975138162581938) | 15.232s · 720p · 16:9 | `动画` `动漫` `动态图形` `人物表演` |
+| [分镜板指导动漫料理过程](https://x.com/aimikoda/status/2090969477588427222) | 15.166667s · 1080p · 540:607 | `本地生成与工作流` `动漫` `美食` |
+| [彩色舞台上的五人偶像音乐片](https://x.com/mi7_crypto/status/2090835533408952656) | 29.884082s · 720p · 16:9 | `音乐视频` `商业广告感` `照片级写实` `音乐演出` `舞蹈` |
+| [无人机展开建筑巨幅横幅](https://x.com/aziz4ai/status/2090833693057184058) | 10.208333s · 720p · 9:16 | `广告与产品` `照片级写实` `城市街景` `产品与广告` |
+| [热带街头舞蹈与狂欢字体](https://x.com/yourPlugAI/status/2090816358040625275) | 15.2s · 720p · 16:9 | `音乐视频` `风格化与实验` `动态图形` `舞蹈` `城市街景` |
+| [霓虹都市动漫音乐片头](https://x.com/yourPlugAI/status/2090773583668621325) | 15.168s · 720p · 16:9 | `动画` `动漫` `动态图形` `科幻太空` `城市街景` |
+| [暖色室内墨镜时尚广告](https://x.com/codewithhajra/status/2090753345434554459) | 15.04s · 720p · 68:45 | `广告与产品` `商业广告感` `照片级写实` `时尚` `产品与广告` |
+| [废弃超市中的少年拾荒者](https://x.com/LudovicCreator/status/2090741007935480124) | 15.168s · 720p · 16:9 | `电影叙事` `写实电影感` `科幻太空` |
+| [冰川裂解成 EXTINCTION 字样](https://x.com/CharaspowerAI/status/2090740724803182619) | 15.168s · 720p · 16:9 | `广告与产品` `3D / CG` `动态图形` `自然风景` |
+| [红黑拼贴风动漫音乐片](https://x.com/studio_oneroom/status/2090730062203224148) | 15.168s · 720p · 16:9 | `音乐视频` `动漫` `动态图形` `人物表演` |
+| [哥特教堂中的金红音乐片头](https://x.com/yourPlugAI/status/2090710705406189919) | 15.2s · 720p · 16:9 | `音乐视频` `动漫` `动态图形` `奇幻` |
+| [荆棘蔷薇的暗红乐章](https://x.com/mttakenoko66/status/2096602266828693963) | 44s · 1080×1920 · portrait | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [告白化作巨型爱心](https://x.com/mugi_AI_Art/status/2096606849999282209) | 15s · 2560×1440 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [游戏角色的轻快舞步](https://x.com/fnoji/status/2096644399333810220) | 5s · 832×1472 · portrait | `MiniMax H3` `舞蹈` `来源未公开 Prompt` `X 原帖` |
+| [霓虹旋涡中的动漫面孔](https://x.com/tiyyyyyyyok/status/2096662031550353862) | 26s · 1280×720 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [雨夜山路上的双车追逐](https://x.com/HBCoop_/status/2097498776034513398) | 15s · 1890×1080 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [黑白几何空间的时装姿态](https://x.com/HBCoop_/status/2097550605099348384) | 10s · 1920×1080 · landscape | `MiniMax H3` `广告与产品` `来源未公开 Prompt` `X 原帖` |
+| [失恋女孩的白底舞步](https://x.com/munou_ac/status/2097558075230265654) | 10s · 1440×2560 · portrait | `MiniMax H3` `舞蹈` `来源未公开 Prompt` `X 原帖` |
+| [草莓世界里的甜酸恋曲](https://x.com/LastM07/status/2097560855630213209) | 32s · 1080×1080 · square | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [排错成功后的猫咪庆功舞](https://x.com/daoinc/status/2097562141238915369) | 11s · 720×1280 · portrait | `MiniMax H3` `舞蹈` `来源未公开 Prompt` `X 原帖` |
+| [舞台吉他手的换脸实验](https://x.com/so_tab/status/2097564918153359501) | 7s · 1920×1080 · landscape | `MiniMax H3` `本地生成与工作流` `来源未公开 Prompt` `X 原帖` |
+| [超市推车里的玩偶零食派对](https://x.com/momoka_AIIllust/status/2097565673501196598) | 15s · 768×1344 · portrait | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [满屏像素小人的表情接力](https://x.com/gosrum/status/2097570755798331862) | 8s · 1024×1024 · square | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [艺术展吉祥物与黑猫的十五秒广告](https://x.com/AI_yukichi2910/status/2097571154622025782) | 15s · 768×1024 · portrait | `MiniMax H3` `广告与产品` `来源未公开 Prompt` `X 原帖` |
+| [拼布猫与少女的温柔日常](https://x.com/aki21ai/status/2097573939904196884) | 15s · 1344×768 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [三名刺客围猎神秘目标](https://x.com/adithatipalli/status/2097582320555626546) | 15s · 1344×768 · landscape | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
+| [海风公路与城市夜色的青春乐章](https://x.com/neco1751662/status/2097586680404562321) | 102s · 1920×1080 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [熔岩高空索道的第一视角穿越](https://x.com/Gooboberti/status/2097597295554609594) | 14s · 1404×780 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [培根煎锅到入口的微距旅程](https://x.com/Gooboberti/status/2097598199569785219) | 10s · 1310×760 · landscape | `MiniMax H3` `广告与产品` `来源未公开 Prompt` `X 原帖` |
+| [液态金属凝成未来跑车](https://x.com/IqrasaifiAI/status/2097837462512951458) | 16s · 1080×1440 · portrait | `MiniMax H3` `模型对比` `公开 Prompt` `X 原帖` |
+| [真人舞步与红发动漫角色对照](https://x.com/toyxyz3/status/2097828723152355528) | 5s · 1440×944 · landscape | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [棋桌旁的喷火巨龙](https://x.com/charis_ai/status/2097828332553244683) | 15s · 1344×768 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [穿过森林里的圆环长廊](https://x.com/aicreataro/status/2097821893382582320) | 19s · 1344×768 · landscape | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
+| [红衣女子从夜街走入晨间集市](https://x.com/jose_medina/status/2097816484575670765) | 123s · 1920×1080 · landscape | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
+| [金色礼球展开粉丝庆祝字幕](https://x.com/YaReYaRu30Life/status/2097816304111808620) | 15s · 2560×1440 · landscape | `MiniMax H3` `动画` `公开 Prompt` `X 原帖` |
+| [雨后灯笼街上的浴衣回眸](https://x.com/MaekagamiAi/status/2097815684558536790) | 17s · 672×896 · portrait | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
+| [抱着西瓜滑进泳池](https://x.com/safa_dayo/status/2097808775554212167) | 15s · 1920×1440 · landscape | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
+| [红日与椅子穿行拼贴城市](https://x.com/su_nagomi/status/2097807335729344809) | 15s · 1344×768 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [星河符文中的银发少女](https://x.com/yonaguniUDON/status/2097807268397842924) | 4s · 1920×1080 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [老妇人摘下树上的心脏果实](https://x.com/MaxCasu/status/2097799037235712189) | 15s · 2496×1408 · landscape | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
+| [机械草图中睁开的眼睛](https://x.com/plasm0/status/2097798749514817916) | 9s · 1664×928 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [老虎机之间的老虎自拍](https://x.com/TheAwakenOne619/status/2097796113936117932) | 15s · 1296×720 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [白衣精灵的环绕影像与三维视图](https://x.com/gabu3d_pl/status/2097791816338669672) | 69s · 1920×1080 · landscape | `MiniMax H3` `本地生成与工作流` `来源未公开 Prompt` `X 原帖` |
+| [猫耳店员绕着送餐机器人转圈](https://x.com/IsekaiBardGuild/status/2097787535653236973) | 10s · 480×480 · square | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [从底部向上冻结的瀑布](https://x.com/GlennHasABeard/status/2097776859727397279) | 15s · 4096×2340 · landscape | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
+| [黄裙女孩遇见长鹿角的紫狐](https://x.com/godblesstoto/status/2097772293741052285) | 15s · 1216×672 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [黑衣女子与悬浮陶罐](https://x.com/recraftai/status/2097769741771276689) | 6s · 1920×1080 · landscape | `MiniMax H3` `广告与产品` `来源未公开 Prompt` `X 原帖` |
+| [双栏魔法师角色动作对照](https://x.com/SmallKino_/status/2097766233374367873) | 5s · 1600×1088 · landscape | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [墨镜男子穿越霓虹城市](https://x.com/criaturalgoritm/status/2097764585553956895) | 18s · 1080×1944 · portrait | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [咖啡馆中爆发的念动力](https://x.com/NexlowX/status/2097763623422558412) | 14s · 1848×1080 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [银发少女与机械伙伴初次接触](https://x.com/LiluluLoserLab/status/2097757059324502087) | 25s · 864×480 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [机甲迎战海港熔岩巨兽](https://x.com/ysf__ai/status/2097756171234935206) | 70s · 2560×1440 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [月夜汉堡与动漫少女](https://x.com/aawuup/status/2097753204708769986) | 15s · 1080×1920 · portrait | `MiniMax H3` `广告与产品` `来源未公开 Prompt` `X 原帖` |
+| [蓝眼少女的变身登场](https://x.com/LiluluLoserLab/status/2097749601092784472) | 18s · 864×480 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [摩托骑手冲入雷电旋涡](https://x.com/LudovicCreator/status/2097746917904052662) | 15s · 2560×1440 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [小鱼穿行水墨苏州](https://x.com/Jesse2046/status/2097746306567725382) | 249s · 1920×1080 · landscape | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
