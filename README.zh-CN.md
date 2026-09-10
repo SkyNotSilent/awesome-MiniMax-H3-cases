@@ -5,15 +5,15 @@
 # MiniMax H3 Cases & Guides｜案例与实战教程
 
 <!-- project-stats:start -->
-**来源可追溯的 MiniMax H3 案例与教程库：1818 个可播放视频、634 条完整公开 Prompt、25 篇实用教程。**
+**来源可追溯的 MiniMax H3 案例与教程库：1820 个可播放视频、635 条完整公开 Prompt、25 篇实用教程。**
 <!-- project-stats:end -->
 
 [English](./README.md) · **简体中文**
 
 [![Stars](https://img.shields.io/github/stars/SkyNotSilent/awesome-minimax-h3-cases?style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/stargazers)
-[![Cases](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1818-634-25-350&query=%24.cases&label=cases&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/)
-[![Prompts](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1818-634-25-350&query=%24.completePrompts&label=public%20prompts&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/?prompt=1)
-[![Tutorials](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1818-634-25-350&query=%24.tutorials&label=tutorials&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/tutorials/)
+[![Cases](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1820-635-25-351&query=%24.cases&label=cases&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/)
+[![Prompts](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1820-635-25-351&query=%24.completePrompts&label=public%20prompts&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/?prompt=1)
+[![Tutorials](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1820-635-25-351&query=%24.tutorials&label=tutorials&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/tutorials/)
 [![CI](https://img.shields.io/github/actions/workflow/status/SkyNotSilent/awesome-minimax-h3-cases/ci.yml?style=for-the-badge&label=CI&labelColor=0a0b09)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-MIT-6ba4ff?style=for-the-badge&labelColor=0a0b09)](./LICENSE)
 
@@ -55,7 +55,7 @@ MiniMax H3 也常被搜索为 **Hailuo H3**、**Hailuo 3.0**、**海螺 H3** 和
 [![MiniMax H3 优质创作者动态榜单](./docs/screenshots/creators-zh.png)](https://h3-field-notes-production.up.railway.app/creators/)
 
 <!-- creator-stats:start -->
-动态创作者榜把案例库变成持续复利的发现系统。目前从 **933 位来源明确的 X、GitHub 与 YouTube 作者中筛选出 350 位优质创作者**，视频作品与教程贡献分别展示，不混合平台互动量。
+动态创作者榜把案例库变成持续复利的发现系统。目前从 **934 位来源明确的 X、GitHub 与 YouTube 作者中筛选出 351 位优质创作者**，视频作品与教程贡献分别展示，不混合平台互动量。
 <!-- creator-stats:end -->
 
 - 每位作者都有独立主页，聚合可播放案例、完整公开 Prompt 与来源核验教程；
@@ -103,7 +103,7 @@ npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
 ## 数据、自动化与可信度
 
 <!-- project-snapshot:start -->
-**当前自动统计：** 1818 个案例 · 28 条编辑精选 · 634 条完整公开 Prompt · 25 篇教程 · 933 位来源作者中的 350 位优质创作者 · 8 篇旗舰教程 · 14 个生态资源 · 内容核验至 2026-09-09。
+**当前自动统计：** 1820 个案例 · 28 条编辑精选 · 635 条完整公开 Prompt · 25 篇教程 · 934 位来源作者中的 351 位优质创作者 · 8 篇旗舰教程 · 14 个生态资源 · 内容核验至 2026-09-10。
 <!-- project-snapshot:end -->
 
 - [`data/project-stats.json`](./data/project-stats.json) 是公开数字的唯一快照；网站与 README 数字过期会让 CI 失败；
@@ -133,7 +133,7 @@ npm run collection:demo
 ```
 
 <!-- build-metrics:start -->
-**参考构建（Node 22.23.1，不含分析服务配置）：** 首页 JavaScript gzip 99.5 kB · 中文 / 英文首页 HTML gzip 9.6 kB / 9 kB · 首批 API gzip 5.7 kB · 下一页 API gzip 3.9 kB · 搜索响应 gzip 5.6 kB · 本地非阻塞字体 51.3 kB · 仅服务端索引 gzip 1491.6 kB。静态预算运行 `npm run performance:budget`；启动本地生产服务后运行 `npm run performance:browser` 验证浏览器行为。
+**参考构建（Node 22.23.1，不含分析服务配置）：** 首页 JavaScript gzip 99.5 kB · 中文 / 英文首页 HTML gzip 9.6 kB / 9 kB · 首批 API gzip 5.7 kB · 下一页 API gzip 4 kB · 搜索响应 gzip 5.6 kB · 本地非阻塞字体 51.3 kB · 仅服务端索引 gzip 1493.5 kB。静态预算运行 `npm run performance:budget`；启动本地生产服务后运行 `npm run performance:browser` 验证浏览器行为。
 <!-- build-metrics:end -->
 
 ## 投稿、纠错与下架
