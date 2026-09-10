@@ -86730,5 +86730,105 @@
     },
     "approvedAt": "2026-09-10T00:20:56.063Z",
     "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2097828723152355528",
+    "title": "真人舞步与红发动漫角色对照",
+    "titleEn": "Live Dance Beside a Red-Haired Anime Character",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "三栏画面对照真人舞蹈与两种角色动画结果，红发动漫角色跟随真人做出抬手、转身和摆臂动作。 原生视频规格为 5 秒 · 1440×944。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Three panels compare a live dance with two character-animation results as a red-haired anime character follows raised hands, turns, and arm gestures. Native-video output: 5s · 1440×944. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/toyxyz3/status/2097828723152355528",
+    "sourceLabel": "X 原帖 · @toyxyz3",
+    "author": "toyxyz",
+    "publishedAt": "2026-09-09T23:25:18.000Z",
+    "addedAt": "2026-09-10T01:23:46.842Z",
+    "mediaUrl": "/media/x-2097828723152355528.mp4",
+    "posterUrl": "/posters/x/2097828723152355528.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "1440×944",
+    "tags": [
+      "MiniMax H3",
+      "模型对比",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "comparison",
+    "styles": [
+      "anime",
+      "ugc"
+    ],
+    "scenes": [
+      "dance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax-H3 Viggle-Animate test #comfyui",
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 12,
+      "views": 882,
+      "snapshotAt": "2026-09-10T00:12:08.000Z"
+    },
+    "approvedAt": "2026-09-10T01:23:46.842Z",
+    "editorialBasis": "Original X post loaded with matching status ID and author; downloaded native video fully decoded and beginning/middle/end frames reviewed."
+  },
+  {
+    "id": "x-2097828332553244683",
+    "title": "棋桌旁的喷火巨龙",
+    "titleEn": "A Fire-Breathing Dragon at the Chess Table",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "酒馆里，红发女孩与绿色巨龙对弈。巨龙朝棋盘喷出火焰，镜头随后切到女孩被熏黑的惊讶表情。 原生视频规格为 15 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A red-haired girl plays chess with a green dragon in a tavern. The dragon breathes fire across the board before the camera cuts to her soot-covered, surprised face. Native-video output: 15s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/charis_ai/status/2097828332553244683",
+    "sourceLabel": "X 原帖 · @charis_ai",
+    "author": "CharisTheAI",
+    "publishedAt": "2026-09-09T23:23:44.000Z",
+    "addedAt": "2026-09-10T01:23:46.842Z",
+    "mediaUrl": "/media/x-2097828332553244683.mp4",
+    "posterUrl": "/posters/x/2097828332553244683.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "cg-3d"
+    ],
+    "scenes": [
+      "fantasy",
+      "creatures"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Check mate!  \n\nThis is MiniMax H3 on Magnific.",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 51,
+      "snapshotAt": "2026-09-10T00:12:08.000Z"
+    },
+    "approvedAt": "2026-09-10T01:23:46.842Z",
+    "editorialBasis": "Original X post loaded with matching status ID and author; downloaded native video fully decoded and beginning/middle/end frames reviewed."
   }
 ]
