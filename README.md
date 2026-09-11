@@ -5,15 +5,15 @@
 # MiniMax H3 Cases & Guides
 
 <!-- project-stats:start -->
-**A source-attributed MiniMax H3 library with 1848 playable videos, 636 complete public Prompts, and 25 practical guides.**
+**A source-attributed MiniMax H3 library with 1876 playable videos, 638 complete public Prompts, and 25 practical guides.**
 <!-- project-stats:end -->
 
 **English** · [简体中文](./README.zh-CN.md)
 
 [![Stars](https://img.shields.io/github/stars/SkyNotSilent/awesome-minimax-h3-cases?style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/stargazers)
-[![Cases](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1848-636-25-356&query=%24.cases&label=cases&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/en/)
-[![Prompts](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1848-636-25-356&query=%24.completePrompts&label=public%20prompts&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/en/?prompt=1)
-[![Tutorials](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1848-636-25-356&query=%24.tutorials&label=tutorials&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/en/tutorials/)
+[![Cases](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1876-638-25-359&query=%24.cases&label=cases&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/en/)
+[![Prompts](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1876-638-25-359&query=%24.completePrompts&label=public%20prompts&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/en/?prompt=1)
+[![Tutorials](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D1876-638-25-359&query=%24.tutorials&label=tutorials&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/en/tutorials/)
 [![CI](https://img.shields.io/github/actions/workflow/status/SkyNotSilent/awesome-minimax-h3-cases/ci.yml?style=for-the-badge&label=CI&labelColor=0a0b09)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-MIT-6ba4ff?style=for-the-badge&labelColor=0a0b09)](./LICENSE)
 
@@ -55,7 +55,7 @@ Start with a quick collection, then narrow it by date, duration, Prompt, categor
 [![MiniMax H3 featured creator leaderboard](./docs/screenshots/creators-en.png)](https://h3-field-notes-production.up.railway.app/en/creators/)
 
 <!-- creator-stats:start -->
-The dynamic creator board turns the archive into a compounding discovery system. It currently ranks **356 featured creators from 946 source-attributed authors across X, GitHub, and YouTube**, with separate views for video work and tutorial contributions.
+The dynamic creator board turns the archive into a compounding discovery system. It currently ranks **359 featured creators from 957 source-attributed authors across X, GitHub, and YouTube**, with separate views for video work and tutorial contributions.
 <!-- creator-stats:end -->
 
 - Every profile aggregates the creator's playable cases, complete public Prompts, and source-checked tutorials.
@@ -103,7 +103,7 @@ The two reading Skills include standalone query clients that use the hosted publ
 ## Data, automation, and trust
 
 <!-- project-snapshot:start -->
-**Current generated snapshot:** 1848 cases · 28 Editor picks · 636 complete public Prompts · 25 tutorials · 356 ranked creators from 946 source authors · 8 flagship guides · 14 ecosystem resources · content checked through 2026-09-10.
+**Current generated snapshot:** 1876 cases · 28 Editor picks · 638 complete public Prompts · 25 tutorials · 359 ranked creators from 957 source authors · 8 flagship guides · 14 ecosystem resources · content checked through 2026-09-11.
 <!-- project-snapshot:end -->
 
 - [`data/project-stats.json`](./data/project-stats.json) is the canonical public count snapshot; CI rejects stale website and README numbers.
@@ -133,7 +133,7 @@ npm run collection:demo
 ```
 
 <!-- build-metrics:start -->
-**Reference build (Node 22.23.1, analytics configuration omitted):** 99.5 kB homepage JavaScript gzip · 9.6 kB / 9.1 kB Chinese / English homepage HTML gzip · 5.5 kB first-page API gzip · 4.1 kB next-page API gzip · 5.5 kB search response gzip · 51.3 kB local fonts (nonblocking) · 1506.1 kB server-only index gzip. Run `npm run performance:budget` for static budgets and `npm run performance:browser` against a local production server for browser behavior.
+**Reference build (Node 22.23.1, analytics configuration omitted):** 99.5 kB homepage JavaScript gzip · 9.5 kB / 9.1 kB Chinese / English homepage HTML gzip · 5.3 kB first-page API gzip · 4.1 kB next-page API gzip · 5.3 kB search response gzip · 51.3 kB local fonts (nonblocking) · 1518.3 kB server-only index gzip. Run `npm run performance:budget` for static budgets and `npm run performance:browser` against a local production server for browser behavior.
 <!-- build-metrics:end -->
 
 ## Contribute or report a problem
