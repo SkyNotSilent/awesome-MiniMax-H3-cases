@@ -89546,5 +89546,452 @@
     },
     "approvedAt": "2026-09-11T00:16:00.982Z",
     "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096716139065954350",
+    "title": "至上主义几何中的日文动态排版",
+    "titleEn": "Japanese Kinetic Type Inside Suprematist Geometry",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "T2VA",
+    "summary": "白底上的黑红几何块与日文词组先整齐排列，随后碎裂旋转成粗野拼贴，最后落到一句\"正常に壊れる\"收束。 原生视频规格为 15 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Black-and-red geometric blocks and Japanese words start neatly aligned on white, shatter into a brutalist collage, and settle on a single closing phrase. Native-video output: 15s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/su_nagomi/status/2096716139065954350",
+    "sourceLabel": "X 原帖 · @su_nagomi",
+    "author": "すーさん",
+    "publishedAt": "2026-09-06T21:44:17.000Z",
+    "addedAt": "2026-09-11T14:46:51.957Z",
+    "mediaUrl": "/media/x-2096716139065954350.mp4",
+    "posterUrl": "/posters/x/2096716139065954350.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "motion-graphics",
+      "stylized"
+    ],
+    "scenes": [],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "シュプレマティスム × グリッチアート × ブルータリズム × 抽象モーショングラフィック × 日本語キネティックタイポグラフィ\n\n#OiiOii にMinimaxH3 Max Turboが実装されていたので検証！T2Vでも日本語文字化けはH3と同じくらいな気がする。生成時間は１０秒くらい。早いとストレスなく作れるので快適ですね！",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 5,
+      "views": 245,
+      "snapshotAt": "2026-09-11T14:46:51.957Z"
+    },
+    "approvedAt": "2026-09-11T14:46:51.957Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096630426127217144",
+    "title": "夜色天台上的金发长裙少女",
+    "titleEn": "A Blonde Woman in Black on a Night Rooftop",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "金色长发、黑色长裙的动画角色站在城市夜景天台边，镜头从正面近景缓慢环绕到俯视高楼的背影，人物与场景保持一致。 原生视频规格为 12 秒 · 832×1248。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "An anime woman with long blonde hair and a black dress stands at a rooftop edge above city lights as the camera circles from a frontal close-up to a high view of her back, keeping character and scene consistent. Native-video output: 12s · 832×1248. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Ascendant_Stoic/status/2096630426127217144",
+    "sourceLabel": "X 原帖 · @Ascendant_Stoic",
+    "author": "Ascendant Stoic",
+    "publishedAt": "2026-09-06T16:03:41.000Z",
+    "addedAt": "2026-09-11T14:46:51.957Z",
+    "mediaUrl": "/media/x-2096630426127217144.mp4",
+    "posterUrl": "/posters/x/2096630426127217144.jpg",
+    "duration": 12,
+    "aspectRatio": "portrait",
+    "resolution": "832×1248",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime"
+    ],
+    "scenes": [
+      "city"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "More attempts at animation using Minimax H3, the consistency of the scene/character is really fantastic. \n\nArt from CivitAI.\nhttps://civitai.red/images/137716462",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "views": 132,
+      "snapshotAt": "2026-09-11T14:46:51.957Z"
+    },
+    "approvedAt": "2026-09-11T14:46:51.957Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096630269306716621",
+    "title": "驾驶舱里眨眼挥手的蓝发少女",
+    "titleEn": "A Blue-Haired Girl Winks and Waves from a Cockpit",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "蓝发动画少女坐在星空舷窗前的驾驶座上，短短两秒内完成抬手、眨眼与挥手，是一段本地显卡上的生成测试。 原生视频规格为 2 秒 · 512×512。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A blue-haired anime girl seated in a starship cockpit raises a hand, winks, and waves within two seconds in a short local-GPU generation test. Native-video output: 2s · 512×512. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/moneykoikoi/status/2096630269306716621",
+    "sourceLabel": "X 原帖 · @moneykoikoi",
+    "author": "マネーコイコイ@FX相互ゲーム小説もふもふ系",
+    "publishedAt": "2026-09-06T16:03:04.000Z",
+    "addedAt": "2026-09-11T14:46:51.957Z",
+    "mediaUrl": "/media/x-2096630269306716621.mp4",
+    "posterUrl": "/posters/x/2096630269306716621.jpg",
+    "duration": 2,
+    "aspectRatio": "square",
+    "resolution": "512×512",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime"
+    ],
+    "scenes": [
+      "sci-fi"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MinimaxH3で動画生成テスト。ＲＴＸ３０６０、Ｖｒａｍ１２ＧＢで最適化にえらい苦労した・・・ｗ",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "views": 149,
+      "snapshotAt": "2026-09-11T14:46:51.957Z"
+    },
+    "approvedAt": "2026-09-11T14:46:51.957Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096578562866463197",
+    "title": "深夜乡村车站等来的末班车",
+    "titleEn": "The Last Bus Arrives at a Rural Stop After Dark",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "T2VA",
+    "summary": "穿宽大外套的年轻女子倚在路灯下的乡村站牌旁看手机、低声自语，远处车灯逐渐靠近，她抬头露出如释重负的笑容。 原生视频规格为 15 秒 · 2560×1440。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A young woman in an oversized coat leans on a rural bus-stop sign under a single streetlamp, checks her phone and mutters to herself, then looks up with relief as headlights approach. Native-video output: 15s · 2560×1440. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "A young Korean woman, early 20s, tired after a long day, oversized coat swallowing her frame, hair escaping a loose braid, stands alone at a rural bus stop long after the sun has set.\nSetting: A single flickering streetlamp, an empty road disappearing into darkness, rice paddies barely visible on either side, insects buzzing somewhere in the black.\nCamera feel: Static tripod shot with occasional handheld nudges, like whoever's filming keeps almost forgetting they're recording — heavy grain, the lamp's orange glow bleeding into the frame, tape hiss audible under everything.\nWhat happens (15 sec total):\nShe leans against the bus stop sign, checking her phone, then pocketing it with a tired sigh.\nShe mutters to camera, almost to herself, \"버스 왜 안 와...\" (\"Why isn't the bus coming...\"), kicking a small pebble.\nHeadlights appear far down the road she straightens up, relief crossing her face.\nAs the bus approaches, she looks back at the camera one last time saying \"드디어\" (\"Finally\"), stepping toward the curb as the tape cuts.\nSound: Crickets, distant engine growing louder, gravel underfoot, wind.\nMood: Quiet exhaustion giving way to small relief nothing dramatic, just real.",
+    "promptSourceUrl": "https://x.com/Strength04_X/status/2096578562866463197",
+    "sourceUrl": "https://x.com/Strength04_X/status/2096578562866463197",
+    "sourceLabel": "X 原帖 · @Strength04_X",
+    "author": "𝐌",
+    "publishedAt": "2026-09-06T12:37:36.000Z",
+    "addedAt": "2026-09-11T14:46:51.957Z",
+    "mediaUrl": "/media/x-2096578562866463197.mp4",
+    "posterUrl": "/posters/x/2096578562866463197.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "photoreal",
+      "cinematic-realistic"
+    ],
+    "scenes": [
+      "dialogue",
+      "daily-life"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3 on @Hailuo_AI \n\nPrompt b- A young Korean woman, early 20s, tired after a long day, oversized coat swallowing her frame, hair escaping a loose braid, stands alone at a rural bus stop long after the sun has set.\nSetting: A single flickering streetlamp, an empty road disappearing into darkness, rice paddies barely visible on either side, insects buzzing somewhere in the black.\nCamera feel: Static tripod shot with occasional handheld nudges, like whoever's filming keeps almost forgetting they're recording — heavy grain, the lamp's orange glow bleeding into the frame, tape hiss audible under everything.\nWhat happens (15 sec total):\nShe leans against the bus stop sign, checking her phone, then pocketing it with a tired sigh.\nShe mutters to camera, almost to herself, \"버스 왜 안 와...\" (\"Why isn't the bus coming...\"), kicking a small pebble.\nHeadlights appear far down the road she straightens up, relief crossing her face.\nAs the bus approaches, she looks back at the camera one last time saying \"드디어\" (\"Finally\"), stepping toward the curb as the tape cuts.\nSound: Crickets, distant engine growing louder, gravel underfoot, wind.\nMood: Quiet exhaustion giving way to small relief nothing dramatic, just real.",
+    "engagement": {
+      "replies": 22,
+      "reposts": 3,
+      "likes": 84,
+      "views": 2244,
+      "snapshotAt": "2026-09-11T14:46:51.957Z"
+    },
+    "approvedAt": "2026-09-11T14:46:51.957Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096572050617856032",
+    "title": "自动驾驶车厢里和猫一起看手机",
+    "titleEn": "Riding an Autonomous Cab with a Cat on Your Lap",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "男子坐在无人驾驶车内低头看手机，怀里的橘猫也凑近屏幕，车外街景持续后退，镜头在车内近景之间切换。 原生视频规格为 20 秒 · 608×352。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A man rides in a driverless car scrolling his phone while the ginger cat on his lap leans into the screen, with street scenery passing outside and in-cabin close-ups cutting between them. Native-video output: 20s · 608×352. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/UnrealRafael/status/2096572050617856032",
+    "sourceLabel": "X 原帖 · @UnrealRafael",
+    "author": "Рафаэль Анриал ∞",
+    "publishedAt": "2026-09-06T12:11:43.000Z",
+    "addedAt": "2026-09-11T14:46:51.957Z",
+    "mediaUrl": "/media/x-2096572050617856032.mp4",
+    "posterUrl": "/posters/x/2096572050617856032.jpg",
+    "duration": 20,
+    "aspectRatio": "landscape",
+    "resolution": "608×352",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "photoreal",
+      "ugc"
+    ],
+    "scenes": [
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Minimax H3 Absolutely insane 🤯 A person is riding with a cat in an autonomous Tesla Cybercab.",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "views": 114,
+      "snapshotAt": "2026-09-11T14:46:51.957Z"
+    },
+    "approvedAt": "2026-09-11T14:46:51.957Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096554739588854157",
+    "title": "屏幕里从草图到上色的绘画过程",
+    "titleEn": "A Sketch-to-Color Painting Process on Screen",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "画面模拟绘图软件界面，人物从铅笔草稿逐步变成线稿再到青色配色完成图，图层面板与色板随进度同步变化。 原生视频规格为 28 秒 · 864×480。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "The clip mimics a painting-app interface where a character grows from pencil sketch to line art to a finished teal-toned illustration while layer panels and palettes update alongside. Native-video output: 28s · 864×480. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/oodate/status/2096554739588854157",
+    "sourceLabel": "X 原帖 · @oodate",
+    "author": "🐡BalloonFish🌊エルタリウム所属",
+    "publishedAt": "2026-09-06T11:02:56.000Z",
+    "addedAt": "2026-09-11T14:46:51.959Z",
+    "mediaUrl": "/media/x-2096554739588854157.mp4",
+    "posterUrl": "/posters/x/2096554739588854157.jpg",
+    "duration": 28,
+    "aspectRatio": "landscape",
+    "resolution": "864×480",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [
+      "illustration"
+    ],
+    "scenes": [],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Astraはなんでもデキる子だなぁ。\n\nMinimaxH3で生成。",
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 12,
+      "views": 1093,
+      "snapshotAt": "2026-09-11T14:46:51.959Z"
+    },
+    "approvedAt": "2026-09-11T14:46:51.959Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096549119234085017",
+    "title": "罗马十五秒杂志式城市短片",
+    "titleEn": "A Fifteen-Second Magazine-Style Reel of Rome",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "T2VA",
+    "summary": "竖屏画面从斗兽场航拍与\"ROMA\"字样开场，雕像定格配以\"2000 YEARS\"排版，最后在金色黄昏中升起并以\"Rome wasn't built in a day\"收束。 原生视频规格为 15 秒 · 1440×2560。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A vertical reel opens on a Colosseum aerial with \"ROMA\" typography, freezes on a statue behind \"2000 YEARS\", and rises over a golden dusk to close on \"Rome wasn't built in a day\". Native-video output: 15s · 1440×2560. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "Create a 15-second, 4K, 16:9 ultra-fast luxury cinematic reel of ROME, ITALY. Blend ancient Roman grandeur, modern Italian street culture, premium fashion-editorial filmmaking and experimental motion graphics.\n\nThe entire reel should feel like pages of an expensive Italian travel magazine suddenly coming alive.\n\n0–2.5s — HISTORY COMES ALIVE\n\nStart extremely close on an old cream-colored paper map of Rome lying on a table.\n\nA thin hand-drawn black route line rapidly travels across the map.\n\nCamera follows the line at high speed.\n\nThe map suddenly transforms into a REAL aerial view of Rome using a seamless paper-to-reality transition.\n\nCamera dives toward the Colosseum.\n\nMassive elegant typography appears INSIDE the architecture using realistic depth masking:\n\n“ROMA”\n\nBehind it, enormous translucent Roman numerals:\n\n“MMXXVI”\n\nTiny editorial text animates around the frame:\n\n“41.9028° N / 12.4964° E”\n“ROMA / ITALIA”\n“LA CITTÀ ETERNA”\n\nVFX: architectural blueprint lines briefly reconstruct the Colosseum's missing sections, showing it complete for half a second before dissolving back into the present-day ruins.\n\n2.5–7s — ITALIAN LIFE\n\nBeat accelerates.\n\nCamera races beside a classic Vespa through a narrow Roman street.\n\nWHIP PAN →\n\nEspresso pouring into a tiny ceramic cup in extreme macro.\n\nMATCH CUT →\n\nTrevi Fountain water splashes directly toward camera and becomes the transition.\n\nFLASH →\n\nItalian fashion model walks confidently past historic architecture.\n\nFAST PUSH-IN →\n\nFresh pasta twists around a fork.\n\nSNAP ZOOM →\n\nPantheon ceiling.\n\nCamera suddenly shoots upward through the opening.\n\nElegant floating typography locks onto objects:\n\n“ESPRESSO”\n“STORIA”\n“MODA”\n“ROMA”\n\nThin arrows, handwritten Italian annotations, postage stamps and tiny coordinates appear like an animated luxury travel journal.\n\n7–12s — ROMAN CHAOS\n\nMusic DROPS.\n\nEditing becomes extremely aggressive.\n\nCOLOSSEUM → VESPA → PASTA → STATUE → ESPRESSO → TREVI → FASHION → STREET → PANTHEON.\n\nEach clip lasts only 0.2–0.35 seconds.\n\nThen FREEZE FRAME.\n\nA Roman statue becomes isolated from the background like a magazine cutout.\n\nHuge typography slides BEHIND the statue:\n\n“2000 YEARS.”\n\nAnother frame violently stacks over it:\n\n“STILL ALIVE.”\n\nThe screen tears horizontally like ripped magazine paper.\n\nThree moving vertical panels appear simultaneously:\n\nANCIENT ROME | STREET LIFE | ITALIAN STYLE\n\nPanels slam together on the beat.\n\nTypography rapidly flashes:\n\n“STORIA.”\n“PASSIONE.”\n“BELLEZZA.”\n“ROMA.”\n\nVFX: analog film burns, photographic flash frames, paper textures, subtle dust, handwritten marks, frame numbers, red editorial circles and fast speed ramps.\n\n12–15s — THE ETERNAL CITY\n\nSuddenly everything becomes quiet.\n\nGolden-hour aerial rises slowly above the Colosseum.\n\nModern Rome stretches endlessly into the background.\n\nFor one second, a subtle transparent reconstruction of ancient Rome overlays the modern city — ancient temples and structures briefly appearing where they once stood.\n\nThen the reconstruction disappears.\n\nHuge elegant serif typography emerges behind the Colosseum:\n\n“ROME WASN’T BUILT\nIN A DAY.”\n\nTiny handwritten text underneath:\n\n“Some cities are visited.\nRome is remembered.”\n\nCamera continues rising.\n\nA flock of birds crosses frame.\n\nSunlight catches the lens.\n\nHard cut to cream paper.\n\nSmall final stamp:\n\n“ROMA / ITALIA”\n\nSTYLE:\nPremium Italian fashion editorial meets historical documentary and modern travel commercial. Cream, terracotta, deep red, warm gold and rich Mediterranean shadows. 35mm film texture, subtle halation, realistic motion blur, natural lens flares, tactile paper graphics and sophisticated typography.\n\nCAMERA:\nDrone dives, FPV sweeps, whip pans, snap zooms, macro photography, orbit shots, low-angle tracking and aggressive speed ramps. No static shots.\n\nVFX:\nDepth-masked typography, Roman architectural reconstruction",
+    "promptSourceUrl": "https://x.com/FutureVibesAi/status/2096549334649381263",
+    "sourceUrl": "https://x.com/FutureVibesAi/status/2096549119234085017",
+    "sourceLabel": "X 原帖 · @FutureVibesAi",
+    "author": "Future Vibes AI - Educator",
+    "publishedAt": "2026-09-06T10:40:36.000Z",
+    "addedAt": "2026-09-11T14:46:51.959Z",
+    "mediaUrl": "/media/x-2096549119234085017.mp4",
+    "posterUrl": "/posters/x/2096549119234085017.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "1440×2560",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "cinematic-realistic",
+      "motion-graphics"
+    ],
+    "scenes": [
+      "city"
+    ],
+    "inputTypes": [
+      "text"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "A Cinematic Reel on Rome \nJust by giving single prompt the Minimax H3 model did everything ....\n@Hailuo_AI \n#MinimaxH3\nPrompt Below 👇",
+    "engagement": {
+      "replies": 17,
+      "reposts": 3,
+      "likes": 38,
+      "views": 1607,
+      "snapshotAt": "2026-09-11T14:46:51.959Z"
+    },
+    "approvedAt": "2026-09-11T14:46:51.959Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096523805900370402",
+    "title": "白发狐耳巫女的一分钟音乐短片",
+    "titleEn": "A One-Minute Song PV for a White-Haired Fox Shrine Maiden",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "狐耳巫女与小鼠、发光小兽相处，穿过翡翠金环的螺旋空间，最终在晚霞山景前持扇微笑，配合原创歌曲完成一分钟PV。 原生视频规格为 60 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A fox-eared shrine maiden meets a mouse and a glowing creature, passes through a spiral of jade and gold rings, and ends smiling with a fan before sunset mountains in a one-minute song PV. Native-video output: 60s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/StelsRay2/status/2096523805900370402",
+    "sourceLabel": "X 原帖 · @StelsRay2",
+    "author": "ステスロス@2号機",
+    "publishedAt": "2026-09-06T09:00:01.000Z",
+    "addedAt": "2026-09-11T14:46:51.959Z",
+    "mediaUrl": "/media/x-2096523805900370402.mp4",
+    "posterUrl": "/posters/x/2096523805900370402.jpg",
+    "duration": 60,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "music",
+    "styles": [
+      "anime"
+    ],
+    "scenes": [
+      "fantasy",
+      "creatures"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "いろいろ試してみた版\nMiniMax H3 x MiniMax music3\n神狐様PV\nhttps://x.com/StelsRay2/status/2096176516422148487",
+    "engagement": {
+      "replies": 0,
+      "reposts": 8,
+      "likes": 32,
+      "views": 2251,
+      "snapshotAt": "2026-09-11T14:46:51.959Z"
+    },
+    "approvedAt": "2026-09-11T14:46:51.959Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096519541597868299",
+    "title": "机械之城上空展翼起飞的少女",
+    "titleEn": "A Girl Unfolds Wings and Takes Off Over a Clockwork City",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "白裙少女站在齿轮与钟塔组成的机械城市高处，背后展开发光翅膀后猛然起飞，镜头追随她掠过塔尖飞向夜空。 原生视频规格为 15 秒 · 768×1024。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A girl in a white dress stands atop a city of gears and clock towers, unfolds glowing wings, and launches skyward as the camera follows her past the spires into the night. Native-video output: 15s · 768×1024. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/soranoblue3/status/2096519541597868299",
+    "sourceLabel": "X 原帖 · @soranoblue3",
+    "author": "けこねこ",
+    "publishedAt": "2026-09-06T08:43:04.000Z",
+    "addedAt": "2026-09-11T14:46:51.959Z",
+    "mediaUrl": "/media/x-2096519541597868299.mp4",
+    "posterUrl": "/posters/x/2096519541597868299.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "768×1024",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "anime",
+      "cg-3d"
+    ],
+    "scenes": [
+      "fantasy",
+      "city"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "《KusArtのMiniMax H3》\n#KusArt \n\n機械仕掛けの街を\n見守っているサイボーグの女の子\n\nポイントは\n背中から翼が出てくる場面と\n勢い良く飛び立つ瞬間\n空を飛んでいる姿を捉えるカメラワーク\n\n画像も複数枚参照できるけど\n今回は静止画1枚のみ\n\n最大15秒で破綻もほぼ無し(*´꒳`*)\n\n今ならKusArt非会員でも、MiniMax H3を5回無料で利用可能だって！\n\nさらに友達を招待すると、MiniMax H3の無料利用回数を追加で獲得！\n\nKusArt会員はMiniMax H3を回数制限なく無料で利用できるみたい♡\n\nキャンペーン期間は9月13日まで\n\n無料でここまでできるのはスゴいね♡\n\n期間限定キャンペーンはリプ欄から⤵",
+    "engagement": {
+      "replies": 1,
+      "reposts": 4,
+      "likes": 24,
+      "views": 737,
+      "snapshotAt": "2026-09-11T14:46:51.959Z"
+    },
+    "approvedAt": "2026-09-11T14:46:51.959Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
   }
 ]
