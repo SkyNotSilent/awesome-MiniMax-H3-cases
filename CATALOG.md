@@ -220,6 +220,8 @@
 | [黄色背景上的剪影舞蹈与动感字](https://x.com/Naonekozamurai/status/2091352223968096561) | 15.168s · 720p · 16:9 | `舞蹈` `动态图形` |
 | [剪影跑酷穿越黑白字形](https://x.com/Naonekozamurai/status/2091072883040600420) | 15.168s · 720p · 16:9 | `动作特效` `动态图形` `人物表演` |
 | [预演方块切换室内运镜](https://x.com/toyxyz3/status/2096703938691215362) | 5s · 2856×2048 · landscape | `MiniMax H3` `本地生成与工作流` `来源未公开 Prompt` `X 原帖` |
+| [霓虹赛道上的极速轮滑](https://x.com/Naonekozamurai/status/2098193046718619971) | 15s · 2560×1440 · landscape | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
+| [向日葵同时转向镜头](https://x.com/GlennHasABeard/status/2098144465697288672) | 15s · 4096×2340 · landscape | `MiniMax H3` `电影叙事` `公开 Prompt` `X 原帖` |
 
 ## FL2VA
 
@@ -346,6 +348,11 @@
 | [横向滚动的文字时装空间](https://x.com/taya_mama_AI/status/2096612096003965254) | 10s · 768×1024 · portrait | `MiniMax H3` `广告与产品` `公开 Prompt` `X 原帖` |
 | [活力睡衣的十镜头秋日广告](https://x.com/tanabe_fragm/status/2097561594540773563) | 15s · 2560×1440 · landscape | `MiniMax H3` `广告与产品` `公开 Prompt` `X 原帖` |
 | [虹翼神像轰击雪原城邦](https://x.com/AuntSolarClock/status/2097831435147317348) | 12s · 1216×672 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [达达拼贴中的动态排版实验](https://x.com/su_nagomi/status/2098174575700017192) | 15s · 1344×768 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [夕阳山野中的白发歌者](https://x.com/junyait/status/2098161974081405017) | 15s · 2560×1440 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [水面涟漪中的狐形角色](https://x.com/shai_kurari/status/2098131405431595161) | 10s · 1280×736 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [月夜下的动画人声片段](https://x.com/LiluluLoserLab/status/2098093176372560351) | 30s · 864×480 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [绿色法阵中的奇幻角色](https://x.com/raiha_tec/status/2098077087852793971) | 10s · 864×480 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
 
 ## Ref2VA
 
@@ -560,6 +567,10 @@
 | [三种路径下的舞蹈动作复刻](https://x.com/IsekaiBardGuild/status/2097574969899401612) | 10s · 1920×1080 · landscape | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
 | [动漫少女转身的参考图对照](https://x.com/sep_is_heim/status/2097798489161990458) | 26s · 1024×2292 · portrait | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
 | [格子舞台切换漫画街景](https://x.com/sankakuten91256/status/2097794301921214974) | 8s · 768×768 · square | `MiniMax H3` `舞蹈` `来源未公开 Prompt` `X 原帖` |
+| [双车穿越隧道的高速追逐](https://x.com/Toshi_nyaruo_AI/status/2098193558201315654) | 50s · 1920×1080 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [专注计时应用的生活化短片](https://x.com/hirococoro/status/2098190815856382107) | 10s · 1344×768 · landscape | `MiniMax H3` `广告与产品` `来源未公开 Prompt` `X 原帖` |
+| [粉发角色的竖屏表情动作](https://x.com/fnoji/status/2098080421217239416) | 15s · 2160×3840 · portrait | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [角色环绕转身与道具替换](https://x.com/SmallKino_/status/2098073630139617340) | 15s · 1344×1280 · square | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
 
 ## Unknown
 
@@ -1869,3 +1880,20 @@
 | [蓝眼少女的变身登场](https://x.com/LiluluLoserLab/status/2097749601092784472) | 18s · 864×480 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
 | [摩托骑手冲入雷电旋涡](https://x.com/LudovicCreator/status/2097746917904052662) | 15s · 2560×1440 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
 | [小鱼穿行水墨苏州](https://x.com/Jesse2046/status/2097746306567725382) | 249s · 1920×1080 · landscape | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
+| [低多边形角色的城市冒险序章](https://x.com/robazem/status/2098163639760867393) | 15s · 1620×1080 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [橱窗街头的夸张购物角色](https://x.com/MaxCasu/status/2098159981132484995) | 15s · 2496×1408 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [道场里的荷兰语独白](https://x.com/JeroenvanH/status/2098159303739760904) | 15s · 864×480 · landscape | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [黑色舞台上的制服角色亮相](https://x.com/izesaki/status/2098158326504919082) | 15s · 1344×768 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [少女与灵狐的森林相遇](https://x.com/godblesstoto/status/2098157327773786336) | 60s · 1920×1080 · landscape | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
+| [沙特国庆主题的竖屏光效广告](https://x.com/Designer_Samco/status/2098143464919588954) | 30s · 720×1280 · portrait | `MiniMax H3` `广告与产品` `来源未公开 Prompt` `X 原帖` |
+| [实验室控制台前的怪诞独白](https://x.com/nonameoasis/status/2098141107875901470) | 15s · 1344×768 · landscape | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [黑红空间里的长篇歌词视觉](https://x.com/atomtanstudio/status/2098131110949745032) | 193s · 1920×1080 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [金色秋日的手绘散步短片](https://x.com/airina_xyz/status/2098127738850976204) | 15s · 2688×1536 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [道场镜前的克制对白](https://x.com/topmass/status/2098121037498216908) | 19s · 1920×1080 · landscape | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [咖啡店里的品牌双胞胎梗](https://x.com/0xstorypreneur/status/2098106397754110227) | 7s · 768×1344 · portrait | `MiniMax H3` `广告与产品` `来源未公开 Prompt` `X 原帖` |
+| [朋友打破透明屏障的动画片段](https://x.com/C12592947592/status/2098098249127399520) | 10s · 864×480 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [黑白双人功夫音乐短片](https://x.com/holycrabAI/status/2098092554093039735) | 61s · 1080×1920 · portrait | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [同一人物的风格转换对比](https://x.com/atomtanstudio/status/2098092247959113814) | 15s · 768×1344 · portrait | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [霓虹冷冻舱走廊的角色登场](https://x.com/flutterwhat/status/2098091688325468482) | 41s · 2560×1440 · landscape | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
+| [雨夜街头的害羞眼镜女孩](https://x.com/YamataZen/status/2098077985849102699) | 10s · 512×768 · portrait | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [手绘外星头像的表情变形](https://x.com/RoyalKongz/status/2098072835902013529) | 8s · 768×1024 · portrait | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
