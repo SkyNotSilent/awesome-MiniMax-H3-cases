@@ -222,6 +222,9 @@
 | [预演方块切换室内运镜](https://x.com/toyxyz3/status/2096703938691215362) | 5s · 2856×2048 · landscape | `MiniMax H3` `本地生成与工作流` `来源未公开 Prompt` `X 原帖` |
 | [霓虹赛道上的极速轮滑](https://x.com/Naonekozamurai/status/2098193046718619971) | 15s · 2560×1440 · landscape | `MiniMax H3` `动作特效` `公开 Prompt` `X 原帖` |
 | [向日葵同时转向镜头](https://x.com/GlennHasABeard/status/2098144465697288672) | 15s · 4096×2340 · landscape | `MiniMax H3` `电影叙事` `公开 Prompt` `X 原帖` |
+| [至上主义几何中的日文动态排版](https://x.com/su_nagomi/status/2096716139065954350) | 15s · 1344×768 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [深夜乡村车站等来的末班车](https://x.com/Strength04_X/status/2096578562866463197) | 15s · 2560×1440 · landscape | `MiniMax H3` `电影叙事` `公开 Prompt` `X 原帖` |
+| [罗马十五秒杂志式城市短片](https://x.com/FutureVibesAi/status/2096549119234085017) | 15s · 1440×2560 · portrait | `MiniMax H3` `电影叙事` `公开 Prompt` `X 原帖` |
 
 ## FL2VA
 
@@ -571,6 +574,7 @@
 | [专注计时应用的生活化短片](https://x.com/hirococoro/status/2098190815856382107) | 10s · 1344×768 · landscape | `MiniMax H3` `广告与产品` `来源未公开 Prompt` `X 原帖` |
 | [粉发角色的竖屏表情动作](https://x.com/fnoji/status/2098080421217239416) | 15s · 2160×3840 · portrait | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
 | [角色环绕转身与道具替换](https://x.com/SmallKino_/status/2098073630139617340) | 15s · 1344×1280 · square | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [机械之城上空展翼起飞的少女](https://x.com/soranoblue3/status/2096519541597868299) | 15s · 768×1024 · portrait | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
 
 ## Unknown
 
@@ -1897,3 +1901,8 @@
 | [霓虹冷冻舱走廊的角色登场](https://x.com/flutterwhat/status/2098091688325468482) | 41s · 2560×1440 · landscape | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
 | [雨夜街头的害羞眼镜女孩](https://x.com/YamataZen/status/2098077985849102699) | 10s · 512×768 · portrait | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
 | [手绘外星头像的表情变形](https://x.com/RoyalKongz/status/2098072835902013529) | 8s · 768×1024 · portrait | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [夜色天台上的金发长裙少女](https://x.com/Ascendant_Stoic/status/2096630426127217144) | 12s · 832×1248 · portrait | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [驾驶舱里眨眼挥手的蓝发少女](https://x.com/moneykoikoi/status/2096630269306716621) | 2s · 512×512 · square | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [自动驾驶车厢里和猫一起看手机](https://x.com/UnrealRafael/status/2096572050617856032) | 20s · 608×352 · landscape | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
+| [屏幕里从草图到上色的绘画过程](https://x.com/oodate/status/2096554739588854157) | 28s · 864×480 · landscape | `MiniMax H3` `综合展示` `来源未公开 Prompt` `X 原帖` |
+| [白发狐耳巫女的一分钟音乐短片](https://x.com/StelsRay2/status/2096523805900370402) | 60s · 1344×768 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
