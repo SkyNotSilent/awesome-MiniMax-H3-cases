@@ -18,5 +18,6 @@ jobs:
           node-version-file: .node-version
           cache: npm
       - run: npm ci
+      - run: npm run check:nanoid-advisory
       - run: npm run verify
       - run: npm run performance:capacity
