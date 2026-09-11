@@ -22,6 +22,7 @@
     "commit:staged": "node scripts/commit-staged-cases.mjs",
     "cost": "node scripts/estimate-cost.mjs",
     "privacy:scan": "node scripts/privacy-scan.mjs",
+    "check:nanoid-advisory": "node scripts/check-nanoid-advisory.mjs",
     "validate:data": "node scripts/privacy-scan.mjs && node scripts/validate-data.mjs && node scripts/sync-creators.mjs && node scripts/sync-project-stats.mjs",
     "sync:creators": "node scripts/sync-creators.mjs --write",
     "check:creators": "node scripts/sync-creators.mjs",
