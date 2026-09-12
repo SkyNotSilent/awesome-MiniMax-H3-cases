@@ -1935,3 +1935,5 @@
 | [穿衣猫鼠的可乐广告](https://x.com/breath_in_code/status/2096454409383534646) | 15s · 1920×1080 · landscape | `MiniMax H3` `广告与产品` `来源未公开 Prompt` `X 原帖` |
 | [黑白双色发的哥特时装造型](https://x.com/mars_eve/status/2096451163990397237) | 15s · 1440×2560 · portrait | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
 | [夜空召唤流星的魔女](https://x.com/YamataZen/status/2096447601839423915) | 10s · 512×768 · portrait | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [蛋形头套女孩的三分四十秒MV](https://x.com/Simplelifecom/status/2096404374516093281) | 220s · 1080×1920 · portrait | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [一人社长AI记账的动态字幕短片](https://x.com/ayumi_t820/status/2096579639464579484) | 15s · 2560×1440 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |

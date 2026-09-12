@@ -91454,5 +91454,104 @@
     },
     "approvedAt": "2026-09-12T05:30:05.094Z",
     "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096404374516093281",
+    "title": "蛋形头套女孩的三分四十秒MV",
+    "titleEn": "A Three-Minute-Forty MV for an Egg-Headed Mascot",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "戴着无脸白色蛋形头套的女孩在夜晚街头站立、骑自行车穿过城市，歌词字幕逐句出现，五十个镜头拼成一支完整的竖屏音乐影像。 原生视频规格为 220 秒 · 1080×1920。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A girl wearing a faceless white egg-shaped mascot head stands on night streets and rides a bicycle through the city while lyric captions appear line by line across fifty cuts of a full vertical music piece. Native-video output: 220s · 1080×1920. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Simplelifecom/status/2096404374516093281",
+    "sourceLabel": "X 原帖 · @Simplelifecom",
+    "author": "Tamachan Label",
+    "publishedAt": "2026-09-06T01:05:26.000Z",
+    "addedAt": "2026-09-12T07:53:30.083Z",
+    "mediaUrl": "/media/x-2096404374516093281.mp4",
+    "posterUrl": "/posters/x/2096404374516093281.jpg",
+    "duration": 220,
+    "aspectRatio": "portrait",
+    "resolution": "1080×1920",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "music",
+    "styles": [
+      "photoreal",
+      "stylized"
+    ],
+    "scenes": [
+      "music-performance",
+      "city"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "のっぺらぼうの着ぐるみが主役のMVを作りました。『Still Too Young』——なのに画像生成が、何度描き直しても勝手に目を描いてくる。白い卵型の巨体はどこかの有名キャラに似すぎているせいか、「顔を描くな」がまるで効かない。50カット、3分40秒。\n\n音楽はsuno4.5＋、静止画はKrea 2、動画はMiniMax-H3、編集はRemotion。50本焼くのに約6時間。いちばん厄介だったのは自転車が途中で逆走したこと。静止画が前向きなのに「後ろ姿で遠ざかる」と指示したので、AIが辻褄合わせに世界ごと180度回していました。",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 3,
+      "views": 370,
+      "snapshotAt": "2026-09-12T07:53:30.083Z"
+    },
+    "approvedAt": "2026-09-12T07:53:30.083Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096579639464579484",
+    "title": "一人社长AI记账的动态字幕短片",
+    "titleEn": "Kinetic Type for a Solo-Founder AI Bookkeeping Story",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "淡紫色底上，简笔画女孩从成堆收据中跃起，\"登録\"等日文大字随节奏放大切换，最后落到\"ひとり社長のAI経理\"的标题画面。 原生视频规格为 15 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "On a pale purple ground a line-drawn girl leaps out of a pile of receipts while large Japanese words such as \"Register\" scale and cut on the beat, ending on a title card for a solo-founder AI bookkeeping story. Native-video output: 15s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ayumi_t820/status/2096579639464579484",
+    "sourceLabel": "X 原帖 · @ayumi_t820",
+    "author": "Ayumi/AIイラスト",
+    "publishedAt": "2026-09-06T12:41:53.000Z",
+    "addedAt": "2026-09-12T07:53:30.083Z",
+    "mediaUrl": "/media/x-2096579639464579484.mp4",
+    "posterUrl": "/posters/x/2096579639464579484.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "motion-graphics",
+      "illustration"
+    ],
+    "scenes": [],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "noteに、税理士さん無しで一人で 、freeeとClaude Codeで法人決算と税務申告をのりきった話を書きました！前回のfreee mcpでできることできないこと記事の続きです。ご興味ありましたらのぞいてください〜。\nこれはMiniMax H3でチャレンジしたテキストモーション動画です！（ちょっと失敗）",
+    "engagement": {
+      "replies": 3,
+      "reposts": 0,
+      "likes": 16,
+      "views": 612,
+      "snapshotAt": "2026-09-12T07:53:30.083Z"
+    },
+    "approvedAt": "2026-09-12T07:53:30.083Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
   }
 ]
