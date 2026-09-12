@@ -89993,5 +89993,1466 @@
     },
     "approvedAt": "2026-09-11T14:46:51.959Z",
     "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096669887980511477",
+    "title": "海边举臂召唤闪电的男子",
+    "titleEn": "A Man Raises His Arms to Summon Lightning at Sea",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "披着粗布斗篷的男子站在夜色海面前高举双臂，表情由紧绷转为呼喊，最后一道闪电劈落在身后的海面上。 原生视频规格为 10 秒 · 3840×2160。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A man in a rough cloak stands before a night sea with both arms raised, his face tightening into a shout as a bolt of lightning finally strikes the water behind him. Native-video output: 10s · 3840×2160. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/theNdroidz/status/2096669887980511477",
+    "sourceLabel": "X 原帖 · @theNdroidz",
+    "author": "ndroidz 🇫🇷",
+    "publishedAt": "2026-09-06T18:40:30.000Z",
+    "addedAt": "2026-09-12T05:30:05.092Z",
+    "mediaUrl": "/media/x-2096669887980511477.mp4",
+    "posterUrl": "/posters/x/2096669887980511477.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "3840×2160",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "cinematic-realistic",
+      "dark"
+    ],
+    "scenes": [
+      "nature",
+      "performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "seedance2.5: desolé ce contenu pourrait enfreindre les règles de...\nminimax h3:",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 90,
+      "snapshotAt": "2026-09-12T05:30:05.093Z"
+    },
+    "approvedAt": "2026-09-12T05:30:05.092Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096630852147179848",
+    "title": "回眸的暗调人像",
+    "titleEn": "A Moody Over-the-Shoulder Portrait",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "黑发女子在深色背景中侧身回头，浅色外套与面部细微的表情变化在五秒内完成一次安静的凝视。 原生视频规格为 5 秒 · 1080×1620。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A dark-haired woman turns to look back over her shoulder against a black backdrop, her pale jacket and subtle facial shifts carrying a quiet five-second gaze. Native-video output: 5s · 1080×1620. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/KusoPhoto/status/2096630852147179848",
+    "sourceLabel": "X 原帖 · @KusoPhoto",
+    "author": "空想写真家",
+    "publishedAt": "2026-09-06T16:05:23.000Z",
+    "addedAt": "2026-09-12T05:30:05.093Z",
+    "mediaUrl": "/media/x-2096630852147179848.mp4",
+    "posterUrl": "/posters/x/2096630852147179848.jpg",
+    "duration": 5,
+    "aspectRatio": "portrait",
+    "resolution": "1080×1620",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "photoreal",
+      "dark"
+    ],
+    "scenes": [
+      "performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "エモいポートレート画像＆動画\n\n画像：Magnific\n動画：Topview（MiniMax H3 Max）",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 6,
+      "views": 1977,
+      "snapshotAt": "2026-09-12T05:30:05.093Z"
+    },
+    "approvedAt": "2026-09-12T05:30:05.093Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096630655019061719",
+    "title": "彩虹天台到楼梯间的少女",
+    "titleEn": "A Girl Walks from a Rainbow Rooftop into the Stairwell",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "穿紫色开衫的黑发少女站在城市天台望向阴云与彩虹，随后转身走进锈迹斑斑的楼梯间，画面从开阔切到封闭。 原生视频规格为 15 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A black-haired girl in a purple cardigan looks out from a city rooftop at clouds and a rainbow, then turns and walks into a rusted stairwell as the frame moves from open to enclosed. Native-video output: 15s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/syuririn_life/status/2096630655019061719",
+    "sourceLabel": "X 原帖 · @syuririn_life",
+    "author": "しゅりりん🇯🇵_転職したい(バイブコーダー)/AI踊らされ屋",
+    "publishedAt": "2026-09-06T16:04:36.000Z",
+    "addedAt": "2026-09-12T05:30:05.093Z",
+    "mediaUrl": "/media/x-2096630655019061719.mp4",
+    "posterUrl": "/posters/x/2096630655019061719.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime"
+    ],
+    "scenes": [
+      "city",
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "falのMiniMax H3で作った。\nhttps://fal.ai/models/minimax/h3-max/reference-to-video",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 117,
+      "snapshotAt": "2026-09-12T05:30:05.093Z"
+    },
+    "approvedAt": "2026-09-12T05:30:05.093Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096627369549197752",
+    "title": "橄榄球与时尚排版的十五秒冲击",
+    "titleEn": "Fifteen Seconds of Football and Fashion Typography",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "橄榄球运动员以时尚大片的姿态出镜，\"FIERCE FOCUSED FEARLESS\"与\"BUILT FOR IMPACT\"等大字随硬碰撞和快切铺满竖屏。 原生视频规格为 15 秒 · 768×1376。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Football players pose like a fashion editorial while bold phrases such as \"FIERCE FOCUSED FEARLESS\" and \"BUILT FOR IMPACT\" fill the vertical frame between hard hits and fast cuts. Native-video output: 15s · 768×1376. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/koss_ai/status/2096627369549197752",
+    "sourceLabel": "X 原帖 · @koss_ai",
+    "author": "koss",
+    "publishedAt": "2026-09-06T15:51:33.000Z",
+    "addedAt": "2026-09-12T05:30:05.093Z",
+    "mediaUrl": "/media/x-2096627369549197752.mp4",
+    "posterUrl": "/posters/x/2096627369549197752.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "768×1376",
+    "tags": [
+      "MiniMax H3",
+      "广告与产品",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "advertising",
+    "styles": [
+      "commercial",
+      "motion-graphics"
+    ],
+    "scenes": [
+      "fashion",
+      "performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Went a little harder with this one. 🏈\n\nFootball, fashion-editorial graphics, hard impacts, fast cuts, and a lot of typography packed into 15 seconds.\n\nMade with @Hailuo_AI MiniMax H3.",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "views": 174,
+      "snapshotAt": "2026-09-12T05:30:05.093Z"
+    },
+    "approvedAt": "2026-09-12T05:30:05.093Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096605175339208830",
+    "title": "机器人法官面前的法庭质问",
+    "titleEn": "A Courtroom Plea Before a Robot Judge",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "白发老人对着麦克风激动陈词，镜头切到端坐法官席的机器人，最后以\"ETHICS: NON-EXISTENT\"的黑底字幕收尾。 原生视频规格为 29 秒 · 2160×3840。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A white-haired man delivers an impassioned statement into a microphone, the camera cuts to a robot seated on the judge’s bench, and the piece closes on a black title card reading \"ETHICS: NON-EXISTENT\". Native-video output: 29s · 2160×3840. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/AITalesNBH/status/2096605175339208830",
+    "sourceLabel": "X 原帖 · @AITalesNBH",
+    "author": "AI Tales - Not by Humans",
+    "publishedAt": "2026-09-06T14:23:21.000Z",
+    "addedAt": "2026-09-12T05:30:05.093Z",
+    "mediaUrl": "/media/x-2096605175339208830.mp4",
+    "posterUrl": "/posters/x/2096605175339208830.jpg",
+    "duration": 29,
+    "aspectRatio": "portrait",
+    "resolution": "2160×3840",
+    "tags": [
+      "MiniMax H3",
+      "角色对白",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "dialogue",
+    "styles": [
+      "cinematic-realistic",
+      "dark"
+    ],
+    "scenes": [
+      "dialogue",
+      "sci-fi"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Is this court case merely a fantasy, or could it become a reality?\n\nAre human ethics relative, and would it be acceptable to leave ethical principles out of future AI systems and AI-powered robots?\n\nCreated with #MiniMaxH3 on @Hailuo_AI + some editing 🎥🎬",
+    "engagement": {
+      "replies": 11,
+      "reposts": 0,
+      "likes": 25,
+      "views": 715,
+      "snapshotAt": "2026-09-12T05:30:05.093Z"
+    },
+    "approvedAt": "2026-09-12T05:30:05.093Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096603405372567887",
+    "title": "三种稀疏注意力参数下的全息舞者",
+    "titleEn": "A Hologram Dancer Under Three Sparse-Attention Settings",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "同一段蓝色全息舞者在人群中旋转的画面被纵向排成三行，分别对应不同的稀疏注意力起始参数，用于并列观察差异。 原生视频规格为 10 秒 · 1344×2304。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "The same blue holographic dancer spinning inside a crowd is stacked in three rows, each rendered with a different sparse-attention start setting for side-by-side comparison. Native-video output: 10s · 1344×2304. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ITOKtw/status/2096603405372567887",
+    "sourceLabel": "X 原帖 · @ITOKtw",
+    "author": "ITOK",
+    "publishedAt": "2026-09-06T14:16:19.000Z",
+    "addedAt": "2026-09-12T05:30:05.093Z",
+    "mediaUrl": "/media/x-2096603405372567887.mp4",
+    "posterUrl": "/posters/x/2096603405372567887.jpg",
+    "duration": 10,
+    "aspectRatio": "portrait",
+    "resolution": "1344×2304",
+    "tags": [
+      "MiniMax H3",
+      "模型对比",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "comparison",
+    "styles": [
+      "cinematic-realistic",
+      "stylized"
+    ],
+    "scenes": [
+      "performance",
+      "fantasy"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "#MiniMaxH3 Block Sparse Attentionでstart_percentを0にした場合に，dense_blockを「33-35,39-42」に設定すると，start_percent 1 に寄ります。\n画像1:start_percent 0\n画像2:+dense_block設定\n画像3:start_percent 1",
+    "engagement": {
+      "replies": 0,
+      "reposts": 2,
+      "likes": 5,
+      "views": 731,
+      "snapshotAt": "2026-09-12T05:30:05.093Z"
+    },
+    "approvedAt": "2026-09-12T05:30:05.093Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096601533131403760",
+    "title": "夜店里专注打碟的女DJ",
+    "titleEn": "A DJ Lost in the Mix at a Dark Club",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "从舞台远景推进到戴白色耳机的女DJ，她在昏暗的红光与闪光灯下低头操作控制器，画面带有胶片颗粒质感。 原生视频规格为 10 秒 · 768×1344。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "The camera pushes from a distant stage view to a DJ in white headphones working her controller under dim red light and flash, with a grainy film look throughout. Native-video output: 10s · 768×1344. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/PrometheanAIX/status/2096601533131403760",
+    "sourceLabel": "X 原帖 · @PrometheanAIX",
+    "author": "Promethean",
+    "publishedAt": "2026-09-06T14:08:53.000Z",
+    "addedAt": "2026-09-12T05:30:05.093Z",
+    "mediaUrl": "/media/x-2096601533131403760.mp4",
+    "posterUrl": "/posters/x/2096601533131403760.jpg",
+    "duration": 10,
+    "aspectRatio": "portrait",
+    "resolution": "768×1344",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "music",
+    "styles": [
+      "photoreal",
+      "retro"
+    ],
+    "scenes": [
+      "music-performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "PROMPTSHARE: Live performances work when the camera captures energy, not perfection.\n\n#Marketing #Branding #Advertising #HailuoCPP #HailuoAI @Hailuo_AI\n\nThis is why:\n\nThat rawness is what gives a performance its pulse.\n\nThe movement, lighting, crowd, and unpredictability are what make the artist feel genuinely present.\n\nI created this video using Hailuo MiniMax H3.\n\nHailuo works especially well when you want believable human movement, cinematic energy, and strong visual storytelling.\n\nPaid partnership with Hailuo.\n\n➜ Image Prompt:\nA hyper-realistic close-up nightlife portrait of a beautiful adult female DJ performing intensely behind a professional DJ controller in a dark club environment. She has long, voluminous dark brown hair caught in motion, flying outward around her face as if from dancing, turning quickly, or moving with the beat. Her expression is focused and absorbed in the music, eyes lowered toward the mixer rather than looking at the camera.\n\nShe wears large white over-ear DJ headphones, a fitted white asymmetrical one-shoulder top with a deep neckline, and a simple silver chain necklace. Her styling is minimal, modern, and slightly Y2K-inspired. One arm reaches forward toward the mixer while the other works the controls, creating the feeling of a real performance captured mid-action.\n\nFrame the image tightly from approximately the mid-torso upward, with the DJ controller filling the lower foreground. Include recognizable mixer details such as knobs, faders, jog wheels, illuminated buttons, and small cyan, orange, and blue LED accents. Allow the foreground hand to fall slightly out of focus from movement and shallow depth of field.\n\nThe background should be very dark and indistinct, suggesting an intimate nightclub or underground electronic music venue, with only a few soft orange and amber lights glowing in the distance.\n\nPhotograph the scene using strong direct on-camera flash mixed with low ambient club lighting, creating intentionally bright skin highlights, slightly blown-out whites, deep shadowy blacks, and dramatic separation from the background. The flash should freeze parts of her face and body while her moving hair retains subtle motion blur.\n\nGive the photograph a raw late-1990s / early-2000s club photography aesthetic with visible fine film grain, slight overexposure, soft bloom, halation around highlights, cool cyan shadows, warm peach skin tones, mild color shifts, and imperfect analog texture.\n\nUnderground DJ culture, candid nightlife photography, Y2K club editorial, caught-in-action performance, 35mm point-and-shoot aesthetic, direct flash, shallow depth of field, slight motion blur, dynamic flying hair, realistic skin texture, visible pores, natural anatomy, authentic hands, detailed hair strands, photorealistic, no plastic skin, no beauty-filter smoothing, no CGI appearance, no overly polished studio look.",
+    "engagement": {
+      "replies": 39,
+      "reposts": 2,
+      "likes": 63,
+      "views": 3379,
+      "snapshotAt": "2026-09-12T05:30:05.093Z"
+    },
+    "approvedAt": "2026-09-12T05:30:05.093Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096600345959145839",
+    "title": "清晨空泳池馆里的独行者",
+    "titleEn": "First One In at an Empty Morning Pool Hall",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "晨光穿过拱窗照进空无一人的室内泳池馆，一名女子沿池边慢慢走过，倒影与蒸汽在对称构图中静静延伸。 原生视频规格为 15 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Morning light pours through arched windows into an empty indoor pool hall as a lone woman walks along the edge, her reflection and the rising mist stretching across a symmetrical frame. Native-video output: 15s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/HBCoop_/status/2096600345959145839",
+    "sourceLabel": "X 原帖 · @HBCoop_",
+    "author": "Heather Cooper",
+    "publishedAt": "2026-09-06T14:04:10.000Z",
+    "addedAt": "2026-09-12T05:30:05.093Z",
+    "mediaUrl": "/media/x-2096600345959145839.mp4",
+    "posterUrl": "/posters/x/2096600345959145839.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "cinematic-realistic",
+      "photoreal"
+    ],
+    "scenes": [
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Good morning. First one in.\n\n→ @Hailuo_AI MiniMax H3 in @krea_ai",
+    "engagement": {
+      "replies": 4,
+      "reposts": 0,
+      "likes": 16,
+      "views": 1977,
+      "snapshotAt": "2026-09-12T05:30:05.093Z"
+    },
+    "approvedAt": "2026-09-12T05:30:05.093Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096584372468232385",
+    "title": "摘不下耳机的循环夜晚",
+    "titleEn": "A Looping Night That Won’t Let Go of the Headphones",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "少年在夜晚的卧室里躺着刷手机，镜头在戴耳机的面部特写与播放器界面之间来回，歌词字幕贯穿一段一分四十秒的音乐影像。 原生视频规格为 103 秒 · 1920×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A teenager lies on his bed at night scrolling his phone while the camera moves between headphone close-ups and the player screen, with lyric captions running through a one-minute-forty-second music piece. Native-video output: 103s · 1920×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/kiyu___K/status/2096584372468232385",
+    "sourceLabel": "X 原帖 · @kiyu___K",
+    "author": "yuuki",
+    "publishedAt": "2026-09-06T13:00:41.000Z",
+    "addedAt": "2026-09-12T05:30:05.093Z",
+    "mediaUrl": "/media/x-2096584372468232385.mp4",
+    "posterUrl": "/posters/x/2096584372468232385.jpg",
+    "duration": 103,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "music",
+    "styles": [
+      "anime",
+      "cinematic-realistic"
+    ],
+    "scenes": [
+      "music-performance",
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "グルグル回って、抜けられない。\n\n13. Repeat mode\nMusic: Suno \nLyrics: yuuki\nVocal: 紺音\n\nVisuals: GPT Image 2 / MiniMax H3\nEdit: DaVinci Resolve",
+    "engagement": {
+      "replies": 2,
+      "reposts": 0,
+      "likes": 14,
+      "views": 577,
+      "snapshotAt": "2026-09-12T05:30:05.093Z"
+    },
+    "approvedAt": "2026-09-12T05:30:05.093Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096573091522527553",
+    "title": "丛林中现身的红翼巨兽",
+    "titleEn": "A Red-Winged Beast Emerges in the Jungle",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "长着蝙蝠翅膀与利爪的黑色巨兽在潮湿丛林中缓步逼近镜头，红色翼膜张开，毛发与光影细节保持稳定。 原生视频规格为 15 秒 · 1080×1944。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A black beast with bat-like wings and claws stalks toward the camera through a humid jungle, spreading its red wing membranes while fur and lighting stay consistent. Native-video output: 15s · 1080×1944. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/CanAiStudios/status/2096573091522527553",
+    "sourceLabel": "X 原帖 · @CanAiStudios",
+    "author": "Can Ece",
+    "publishedAt": "2026-09-06T12:15:52.000Z",
+    "addedAt": "2026-09-12T05:30:05.093Z",
+    "mediaUrl": "/media/x-2096573091522527553.mp4",
+    "posterUrl": "/posters/x/2096573091522527553.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "1080×1944",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "cinematic-realistic",
+      "dark"
+    ],
+    "scenes": [
+      "creatures",
+      "nature"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Jungle Creature... 🦇🌿\nBase render in ComfyUI via Krea 2, animated by MiniMax H3, and enhanced with SeedVR2 HD. #CreatureDesign",
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 20,
+      "views": 441,
+      "snapshotAt": "2026-09-12T05:30:05.093Z"
+    },
+    "approvedAt": "2026-09-12T05:30:05.093Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096554503223058607",
+    "title": "从手绘分镜到奔跑的动画角色",
+    "titleEn": "From Hand-Drawn Storyboard to a Running Anime Character",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "画面先拍手在纸上画分镜、透台上翻动线稿，最后切到穿白色机甲装的兔耳女孩全速奔跑的完成动画。 原生视频规格为 15 秒 · 720×960。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "The clip opens on hands sketching storyboards and flipping line art on a lightbox, then cuts to the finished animation of a bunny-eared girl in white mecha gear sprinting at full speed. Native-video output: 15s · 720×960. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/kurahu_capten/status/2096554503223058607",
+    "sourceLabel": "X 原帖 · @kurahu_capten",
+    "author": "kurahu@AIart",
+    "publishedAt": "2026-09-06T11:02:00.000Z",
+    "addedAt": "2026-09-12T05:30:05.093Z",
+    "mediaUrl": "/media/x-2096554503223058607.mp4",
+    "posterUrl": "/posters/x/2096554503223058607.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "720×960",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime",
+      "photoreal"
+    ],
+    "scenes": [
+      "daily-life",
+      "performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "AI Anime Production Studio 🏃🎞️\nAI video created with MiniMax H3 Max via TopView.",
+    "engagement": {
+      "replies": 3,
+      "reposts": 1,
+      "likes": 37,
+      "views": 1968,
+      "snapshotAt": "2026-09-12T05:30:05.093Z"
+    },
+    "approvedAt": "2026-09-12T05:30:05.093Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096550979579629806",
+    "title": "灰发少女的托腮微笑与比耶",
+    "titleEn": "A Girl’s Chin-Rest Smile and Peace Sign",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "灰发绿丝带的动画少女先双手托腮闭眼微笑，再抬手比出剪刀手，粉色运动装与背景在八秒内保持一致。 原生视频规格为 8 秒 · 720×936。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "An anime girl with grey hair and a green ribbon rests her chin in her hands with a closed-eye smile, then flashes a peace sign, keeping her pink sportswear and backdrop consistent over eight seconds. Native-video output: 8s · 720×936. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/sac25252/status/2096550979579629806",
+    "sourceLabel": "X 原帖 · @sac25252",
+    "author": "sac@AIイラスト",
+    "publishedAt": "2026-09-06T10:48:00.000Z",
+    "addedAt": "2026-09-12T05:30:05.093Z",
+    "mediaUrl": "/media/x-2096550979579629806.mp4",
+    "posterUrl": "/posters/x/2096550979579629806.jpg",
+    "duration": 8,
+    "aspectRatio": "portrait",
+    "resolution": "720×936",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime"
+    ],
+    "scenes": [
+      "performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMaxH3 音声は消してます\nラブライブ 南ことり #lovelive #AI",
+    "engagement": {
+      "replies": 14,
+      "reposts": 181,
+      "likes": 3346,
+      "views": 160363,
+      "snapshotAt": "2026-09-12T05:30:05.093Z"
+    },
+    "approvedAt": "2026-09-12T05:30:05.093Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096548015943328174",
+    "title": "课桌前分享便当的两个女孩",
+    "titleEn": "Two Girls Share a Bento at Their Desk",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "Q版画风的黑发与棕发女孩并肩坐在教室课桌前，一人夹起便当里的菜喂给另一人，两人表情随之变化。 原生视频规格为 10 秒 · 480×864。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Two chibi-style schoolgirls sit side by side at a classroom desk as one lifts food from a bento box to feed the other, their expressions shifting with each bite. Native-video output: 10s · 480×864. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/C12592947592/status/2096548015943328174",
+    "sourceLabel": "X 原帖 · @C12592947592",
+    "author": "supercub3",
+    "publishedAt": "2026-09-06T10:36:13.000Z",
+    "addedAt": "2026-09-12T05:30:05.093Z",
+    "mediaUrl": "/media/x-2096548015943328174.mp4",
+    "posterUrl": "/posters/x/2096548015943328174.jpg",
+    "duration": 10,
+    "aspectRatio": "portrait",
+    "resolution": "480×864",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime",
+      "illustration"
+    ],
+    "scenes": [
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MinimaxH3ローカル\nお弁当を忘れたユリカと分けてくれるもも",
+    "engagement": {
+      "replies": 1,
+      "reposts": 1,
+      "likes": 21,
+      "views": 536,
+      "snapshotAt": "2026-09-12T05:30:05.093Z"
+    },
+    "approvedAt": "2026-09-12T05:30:05.093Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096523774288138264",
+    "title": "和风衣装少女的三段衔接",
+    "titleEn": "A Girl in Japanese-Style Dress Across Three Joined Takes",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "黑发少女身着白底红纹的和风短装，在浅灰背景中依次完成抬手、席地而坐和站立回眸，三段本地生成被拼接成十五秒。 原生视频规格为 15 秒 · 1080×1490。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A black-haired girl in a white-and-red Japanese-style outfit moves through a raised hand, a seated pose, and a standing look-back against pale grey, three locally generated takes joined into fifteen seconds. Native-video output: 15s · 1080×1490. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Shinki_Protocol/status/2096523774288138264",
+    "sourceLabel": "X 原帖 · @Shinki_Protocol",
+    "author": "神代カナ@AIアイドル",
+    "publishedAt": "2026-09-06T08:59:53.000Z",
+    "addedAt": "2026-09-12T05:30:05.093Z",
+    "mediaUrl": "/media/x-2096523774288138264.mp4",
+    "posterUrl": "/posters/x/2096523774288138264.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "1080×1490",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "photoreal"
+    ],
+    "scenes": [
+      "fashion",
+      "performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3\n\n試してみました✨️\nローカルで動かしたので諸事情で３分割したものをくっつけました💦",
+    "engagement": {
+      "replies": 2,
+      "reposts": 3,
+      "likes": 22,
+      "views": 864,
+      "snapshotAt": "2026-09-12T05:30:05.093Z"
+    },
+    "approvedAt": "2026-09-12T05:30:05.093Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096519873358946504",
+    "title": "小剧场里的双人漫才",
+    "titleEn": "A Two-Person Manzai Routine in a Small Venue",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "两名穿乐队T恤的表演者站在小剧场麦克风前轮流接话，观众席笑声与鼓掌配合，口型对应两个不同说话者。 原生视频规格为 12 秒 · 1920×1440。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Two performers in band T-shirts trade lines at a small-venue microphone while the audience laughs and claps, with lip movement following each of the two distinct speakers. Native-video output: 12s · 1920×1440. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/aichof21/status/2096519873358946504",
+    "sourceLabel": "X 原帖 · @aichof21",
+    "author": "aichof",
+    "publishedAt": "2026-09-06T08:44:23.000Z",
+    "addedAt": "2026-09-12T05:30:05.093Z",
+    "mediaUrl": "/media/x-2096519873358946504.mp4",
+    "posterUrl": "/posters/x/2096519873358946504.jpg",
+    "duration": 12,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1440",
+    "tags": [
+      "MiniMax H3",
+      "角色对白",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "dialogue",
+    "styles": [
+      "photoreal",
+      "ugc"
+    ],
+    "scenes": [
+      "dialogue",
+      "performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "1年くらい前に作った音源。\n給湯室のシチュエーションネタですが、漫才っぽくしてみました。\n\n元の音源はもっと長いのですが、今回はリップシンクで「二人の掛け合いをちゃんと認識して動画生成できるのか」を11秒だけテストしてみました。\n\n以前のリップシンクは、二人の話者をうまく使い分けられず、一人ずつ場面を切ってリップシンク→あとで組み合わせる、といった作業が必要だったと思いますが、\n\n今回はトークスクリプトの補助も使わず、音源をリファレンスとして渡し、「どちらから話し始めるか」だけを指定。\n\nそれでも、それなりに二人の掛け合いとして形になりました。\n\nやり方としては、\nChatGPTに素材を与えてトークスクリプトを作成\n↓\nGoogle AI Studioのトーク機能で、異なる声質の二人を設定して会話音源を生成\n↓\nあとは画像と音源をMiniMax H3のリファレンスにする\n\nという感じです。\nまだ試してないですが、トークスクリプトだけ与えたらやってくれそうな気もしますね😆",
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 17,
+      "views": 733,
+      "snapshotAt": "2026-09-12T05:30:05.093Z"
+    },
+    "approvedAt": "2026-09-12T05:30:05.093Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096519385502667234",
+    "title": "月轮、蓝瞳与时钟的剪影拼贴",
+    "titleEn": "Silhouettes, Blue Eyes and a Clock Face in Collage",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "少女与猫的剪影站在巨大月轮前，画面切换为蓝色眼睛的分格拼贴，最后落到齿轮时钟上的剪影，黑白蓝三色贯穿始终。 原生视频规格为 15 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Silhouettes of a girl and a cat stand before a huge moon disc, the frame breaks into a collage of blue eyes, and the piece lands on silhouettes over a clock face, all in black, white and blue. Native-video output: 15s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/zuomuyan2542801/status/2096519385502667234",
+    "sourceLabel": "X 原帖 · @zuomuyan2542801",
+    "author": "あたらくしあ@週末AIクリエイター🎨",
+    "publishedAt": "2026-09-06T08:42:27.000Z",
+    "addedAt": "2026-09-12T05:30:05.093Z",
+    "mediaUrl": "/media/x-2096519385502667234.mp4",
+    "posterUrl": "/posters/x/2096519385502667234.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime",
+      "motion-graphics"
+    ],
+    "scenes": [
+      "fantasy"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "test2\n\n#MiniMaxH3\n#HailuoAI\n#AIvideo",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 4,
+      "views": 427,
+      "snapshotAt": "2026-09-12T05:30:05.093Z"
+    },
+    "approvedAt": "2026-09-12T05:30:05.093Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096518977610826075",
+    "title": "极光下发光的雪松环",
+    "titleEn": "Glowing Rings Among Snow Pines Under the Aurora",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "绿色极光在雪原上空流动，几棵雪松被发光的圆环围绕并逐棵亮起，是一段为现场演出准备的五秒循环画面。 原生视频规格为 5 秒 · 1280×720。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Green aurora drifts over a snowfield while glowing rings encircle a stand of snow-covered pines that light up one by one in a five-second loop made for live visuals. Native-video output: 5s · 1280×720. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/pixelrhythms/status/2096518977610826075",
+    "sourceLabel": "X 原帖 · @pixelrhythms",
+    "author": "Keshav",
+    "publishedAt": "2026-09-06T08:40:50.000Z",
+    "addedAt": "2026-09-12T05:30:05.093Z",
+    "mediaUrl": "/media/x-2096518977610826075.mp4",
+    "posterUrl": "/posters/x/2096518977610826075.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "1280×720",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "cg-3d",
+      "stylized"
+    ],
+    "scenes": [
+      "nature"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "VJ loops with Krea + MiniMax H3, inspired by Fantasia and Eric Prydz.\n\nThinking a lot about visual music — how light, color, shape and motion can find a rhythm together.\n\nExcited to take these into TouchDesigner and bring them to life through live performance.",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "views": 129,
+      "snapshotAt": "2026-09-12T05:30:05.093Z"
+    },
+    "approvedAt": "2026-09-12T05:30:05.093Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096518817723957379",
+    "title": "三秒循环中的女仆眨眼",
+    "titleEn": "A Maid Blinks in a Three-Second Loop",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "FL2VA",
+    "summary": "穿黑白女仆装的插画少女双手贴胸，在三秒内完成一次眨眼与轻微抬头，首尾帧一致以便无缝循环。 原生视频规格为 3 秒 · 640×832。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "An illustrated girl in a black-and-white maid outfit holds her hands to her chest and blinks with a slight lift of the head, first and last frames matched for a seamless three-second loop. Native-video output: 3s · 640×832. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/sep_is_heim/status/2096518817723957379",
+    "sourceLabel": "X 原帖 · @sep_is_heim",
+    "author": "Kamimoto(かみもと)",
+    "publishedAt": "2026-09-06T08:40:12.000Z",
+    "addedAt": "2026-09-12T05:30:05.093Z",
+    "mediaUrl": "/media/x-2096518817723957379.mp4",
+    "posterUrl": "/posters/x/2096518817723957379.jpg",
+    "duration": 3,
+    "aspectRatio": "portrait",
+    "resolution": "640×832",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime",
+      "illustration"
+    ],
+    "scenes": [
+      "performance"
+    ],
+    "inputTypes": [
+      "text",
+      "image"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "minimax-h3-comfyui-anime-loopのお試し。開始・終了フレームを同じにしてループ動画を作成できるっぽい。動きが少ないと成功しやすい感じ。",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 2,
+      "views": 647,
+      "snapshotAt": "2026-09-12T05:30:05.093Z"
+    },
+    "approvedAt": "2026-09-12T05:30:05.093Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096496558271562137",
+    "title": "白狐少女插画的绘制延时",
+    "titleEn": "A Timelapse of Painting a White Fox Girl",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "画面模拟绘图软件界面，白狐耳少女从铅笔骨架逐步长出线稿与配色，工具栏和图层面板随进度同步更新。 原生视频规格为 10 秒 · 832×480。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "The clip mimics a painting-app window where a white fox-eared girl grows from a pencil skeleton into line art and color while toolbars and layer panels update alongside. Native-video output: 10s · 832×480. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/kamome_mint/status/2096496558271562137",
+    "sourceLabel": "X 原帖 · @kamome_mint",
+    "author": "かもめ-みんと ➺✦",
+    "publishedAt": "2026-09-06T07:11:45.000Z",
+    "addedAt": "2026-09-12T05:30:05.094Z",
+    "mediaUrl": "/media/x-2096496558271562137.mp4",
+    "posterUrl": "/posters/x/2096496558271562137.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "832×480",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [
+      "illustration"
+    ],
+    "scenes": [],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "多分燃えるやつなのだ\nminimax h3 タイムラプス",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 5,
+      "views": 463,
+      "snapshotAt": "2026-09-12T05:30:05.094Z"
+    },
+    "approvedAt": "2026-09-12T05:30:05.094Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096493234457567420",
+    "title": "火焰在指尖凝聚的橙发少女",
+    "titleEn": "Flames Gather at an Orange-Haired Girl’s Fingertips",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "橙发少女摊开手掌，橙红火焰沿手臂旋转汇聚成漩涡，最后在荒野上炸开成一片火光与烟尘。 原生视频规格为 15 秒 · 2688×1536。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "An orange-haired girl opens her palm as red-orange flames spiral up her arm into a vortex, finally bursting across the wasteland in fire and smoke. Native-video output: 15s · 2688×1536. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/mito_ai_la/status/2096493234457567420",
+    "sourceLabel": "X 原帖 · @mito_ai_la",
+    "author": "みと Visuals×AI",
+    "publishedAt": "2026-09-06T06:58:32.000Z",
+    "addedAt": "2026-09-12T05:30:05.094Z",
+    "mediaUrl": "/media/x-2096493234457567420.mp4",
+    "posterUrl": "/posters/x/2096493234457567420.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2688×1536",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "action-vfx",
+    "styles": [
+      "anime",
+      "stylized"
+    ],
+    "scenes": [
+      "fantasy",
+      "combat"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Pollo AI（@PolloAIJP）でMiniMax H3 Maxを試してみました。#PolloAI #MiniMaxH3Max\n今回はあえて静かな動きの中で、光や色をどこまで綺麗に表現できるか実験。\n通常のH3より必要なクレジットが少なく、生成速度もかなり速いモデル。この約15秒の動画も体感では30秒もかからないほどで生成されて、思っていた以上の速さに驚きました。\n現在はウルトラプランにアップグレードすると、MiniMax H3とH3 Maxを365日間無制限で利用できます。\n\nPolloAI URL：https://tinyurl.com/8vwtz8c4",
+    "engagement": {
+      "replies": 2,
+      "reposts": 2,
+      "likes": 34,
+      "views": 1711,
+      "snapshotAt": "2026-09-12T05:30:05.094Z"
+    },
+    "approvedAt": "2026-09-12T05:30:05.094Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096488811887054963",
+    "title": "两种稀疏起始参数下的舞台歌姬",
+    "titleEn": "A Stage Singer Under Two Sparse-Start Settings",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "同一位黑发歌姬在霓虹舞台演唱的画面左右并排，分别标注不同的稀疏注意力起始比例，用于对照生成时间与画质差异。 原生视频规格为 10 秒 · 1122×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Two side-by-side renders of the same black-haired singer on a neon stage are labelled with different sparse-attention start ratios to compare generation time and quality. Native-video output: 10s · 1122×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/sep_is_heim/status/2096488811887054963",
+    "sourceLabel": "X 原帖 · @sep_is_heim",
+    "author": "Kamimoto(かみもと)",
+    "publishedAt": "2026-09-06T06:40:58.000Z",
+    "addedAt": "2026-09-12T05:30:05.094Z",
+    "mediaUrl": "/media/x-2096488811887054963.mp4",
+    "posterUrl": "/posters/x/2096488811887054963.jpg",
+    "duration": 10,
+    "aspectRatio": "square",
+    "resolution": "1122×1080",
+    "tags": [
+      "MiniMax H3",
+      "模型对比",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "comparison",
+    "styles": [
+      "anime",
+      "motion-graphics"
+    ],
+    "scenes": [
+      "music-performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3 ref2va：パラメータ調整中。start_percentをデフォルト20%から0%（0step目からスパース）にすると1024x1792, 5s, 24fps, 124f, RTX4070で\n\n 20%: 268s（4m28s）\n   0%: 230s（3m50s）\n\nと4分切る！欠点は画質音質の劣化。変な文字が増えてるのと音がやや割れる。それ以外はOKそう。",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 3,
+      "views": 1374,
+      "snapshotAt": "2026-09-12T05:30:05.094Z"
+    },
+    "approvedAt": "2026-09-12T05:30:05.094Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096488212164432214",
+    "title": "持杖少女对战斗篷怪物",
+    "titleEn": "A Staff-Wielding Girl Fights Hooded Monsters",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "白衣少女持长杖摆出架势，与两只戴尖帽的黑色怪物交手，最后一记旋风将怪物卷入蓝色龙卷之中。 原生视频规格为 15 秒 · 832×480。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A girl in white takes a fighting stance with a long staff, trades blows with two hooded black creatures, and finishes by sweeping them into a blue tornado. Native-video output: 15s · 832×480. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/AIHobbyist65536/status/2096488212164432214",
+    "sourceLabel": "X 原帖 · @AIHobbyist65536",
+    "author": "もりそば@跡地",
+    "publishedAt": "2026-09-06T06:38:35.000Z",
+    "addedAt": "2026-09-12T05:30:05.094Z",
+    "mediaUrl": "/media/x-2096488212164432214.mp4",
+    "posterUrl": "/posters/x/2096488212164432214.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "832×480",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "action-vfx",
+    "styles": [
+      "anime",
+      "cg-3d"
+    ],
+    "scenes": [
+      "combat",
+      "fantasy"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "もう少しだけアニメ調にしようと頑張ってみた(一旦つかれたので検証ここまで)\n#AIイラスト #AI動画 #MinimaxH3",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 3,
+      "views": 1820,
+      "snapshotAt": "2026-09-12T05:30:05.094Z"
+    },
+    "approvedAt": "2026-09-12T05:30:05.094Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096485403402575882",
+    "title": "深夜来电的黑衣男子",
+    "titleEn": "A Man in Black Takes a Late-Night Call",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "插画风格的黑衣男子在昏暗房间里对着镜头说话，中段切到堆满显示器的昏暗办公室，一段一分四十秒的荒诞幽默实验。 原生视频规格为 102 秒 · 1080×1920。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "An illustrated man in black speaks to camera in a dim room, the middle cuts to a gloomy office stacked with monitors, and the whole runs as a one-minute-forty-second absurd-humor experiment. Native-video output: 102s · 1080×1920. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Moonshub1123/status/2096485403402575882",
+    "sourceLabel": "X 原帖 · @Moonshub1123",
+    "author": "Shubh | Notes on the world",
+    "publishedAt": "2026-09-06T06:27:25.000Z",
+    "addedAt": "2026-09-12T05:30:05.094Z",
+    "mediaUrl": "/media/x-2096485403402575882.mp4",
+    "posterUrl": "/posters/x/2096485403402575882.jpg",
+    "duration": 102,
+    "aspectRatio": "portrait",
+    "resolution": "1080×1920",
+    "tags": [
+      "MiniMax H3",
+      "角色对白",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "dialogue",
+    "styles": [
+      "illustration",
+      "dark"
+    ],
+    "scenes": [
+      "dialogue"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "A delightfully unhinged humor experiment: Astra running MiniMax H3 Max on Fal, just to see what kind of chaos it cooks up 😂😅",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 220,
+      "snapshotAt": "2026-09-12T05:30:05.094Z"
+    },
+    "approvedAt": "2026-09-12T05:30:05.094Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096455228006756716",
+    "title": "秋日哥本哈根的彩色街区航拍",
+    "titleEn": "An Autumn Aerial Over Copenhagen’s Colored Streets",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "镜头从金黄树冠掠过彩色排屋与停满车的街道，最后升至塔楼与广场上空，十五秒内保持连续的航拍推进。 原生视频规格为 15 秒 · 1376×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "The camera sweeps from golden treetops over rows of colored houses and parked cars, rising to a tower and square in one continuous fifteen-second aerial push. Native-video output: 15s · 1376×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/rukanatsui/status/2096455228006756716",
+    "sourceLabel": "X 原帖 · @rukanatsui",
+    "author": "夏井瑠夏🍊ruKa_N | AI音楽",
+    "publishedAt": "2026-09-06T04:27:31.000Z",
+    "addedAt": "2026-09-12T05:30:05.094Z",
+    "mediaUrl": "/media/x-2096455228006756716.mp4",
+    "posterUrl": "/posters/x/2096455228006756716.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1376×768",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "photoreal",
+      "cinematic-realistic"
+    ],
+    "scenes": [
+      "city",
+      "nature"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "秋のコペンハーゲン\nFlux1 Dev + MiniMax H3\n15秒に挑戦。",
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 8,
+      "views": 431,
+      "snapshotAt": "2026-09-12T05:30:05.094Z"
+    },
+    "approvedAt": "2026-09-12T05:30:05.094Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096454409383534646",
+    "title": "穿衣猫鼠的可乐广告",
+    "titleEn": "A Dressed Cat and Mouse Star in a Cola Spot",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "从挂着水珠的蓝色易拉罐特写开始，穿衣服的猫和老鼠在餐桌前抢食嬉闹，最后并肩坐在两罐可乐之间。 原生视频规格为 15 秒 · 1920×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Opening on a dew-covered blue can, a cat and a mouse in clothes scramble over food at a dining table before settling side by side between two cola cans. Native-video output: 15s · 1920×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/breath_in_code/status/2096454409383534646",
+    "sourceLabel": "X 原帖 · @breath_in_code",
+    "author": "LinacoWSL",
+    "publishedAt": "2026-09-06T04:24:16.000Z",
+    "addedAt": "2026-09-12T05:30:05.094Z",
+    "mediaUrl": "/media/x-2096454409383534646.mp4",
+    "posterUrl": "/posters/x/2096454409383534646.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "广告与产品",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "advertising",
+    "styles": [
+      "cg-3d",
+      "commercial"
+    ],
+    "scenes": [
+      "product",
+      "creatures"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "#MINIMAX H3\n面白そうなのでART_STYLE＝Pixarを自分のディレクションシステムで試してみました。弱々PCなので設定は以下💦\n\nDuration: 15　480p\nStyle: Action\nART_STYLE: Pixar 3D\nテーマ『洋服を着た猫とネズミの面白いペプシコーラのCM』\n\nDLSS5x2⇢1728ｘ960　フレーム補間x3⇢72FPS",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 3,
+      "views": 196,
+      "snapshotAt": "2026-09-12T05:30:05.094Z"
+    },
+    "approvedAt": "2026-09-12T05:30:05.094Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096451834886131927",
+    "title": "粉发角色的两段无缝衔接",
+    "titleEn": "Two Takes of a Pink-Haired Character Joined Seamlessly",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "FL2VA",
+    "summary": "粉发带角的插画角色在白底上换姿势，两段首尾帧接续的生成被拼成八秒，衔接处几乎看不出跳变。 原生视频规格为 8 秒 · 960×1280。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A pink-haired horned character shifts poses against white as two first-to-last-frame continuations are joined into eight seconds with barely visible seams. Native-video output: 8s · 960×1280. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/FudooManken/status/2096451834886131927",
+    "sourceLabel": "X 原帖 · @FudooManken",
+    "author": "不働漫画研究会",
+    "publishedAt": "2026-09-06T04:14:02.000Z",
+    "addedAt": "2026-09-12T05:30:05.094Z",
+    "mediaUrl": "/media/x-2096451834886131927.mp4",
+    "posterUrl": "/posters/x/2096451834886131927.jpg",
+    "duration": 8,
+    "aspectRatio": "portrait",
+    "resolution": "960×1280",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime",
+      "illustration"
+    ],
+    "scenes": [
+      "performance"
+    ],
+    "inputTypes": [
+      "text",
+      "image"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "今日時点で違和感なくMinimax-H3で生成した動画を結合する手法は、H3 Infinite Continuation Suite v1.4 (FL2VA)かもしれない。\n\nFL2VAモデルを使ったI2V開始＋コンテキスト継続生成で、２本の動画をズレが気にならない程度に結合できた。\n\nクオリティあげられれば、使い物になるかもしれない。他も作ってみよう。\nhttps://www.reddit.com/r/StableDiffusion/s/qK5M3txjsM\n\n※さっきイヴォンヌの耳が新しく作られてることがわかったが、実験なのでご勘弁。\n\n#エンドフィールド‌",
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 5,
+      "views": 1481,
+      "snapshotAt": "2026-09-12T05:30:05.094Z"
+    },
+    "approvedAt": "2026-09-12T05:30:05.094Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096451163990397237",
+    "title": "黑白双色发的哥特时装造型",
+    "titleEn": "A Gothic Fashion Look with Two-Tone Hair",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "黑白双色长发、头戴小角的女子身穿皮带装饰的黑色时装，从面部特写到全身舞台造型，最后张开臂膀展露翼形披风。 原生视频规格为 15 秒 · 1440×2560。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A woman with two-tone black-and-white hair and small horns wears strap-detailed black fashion, moving from a face close-up to a full-body stage look before spreading a winged cape. Native-video output: 15s · 1440×2560. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/mars_eve/status/2096451163990397237",
+    "sourceLabel": "X 原帖 · @mars_eve",
+    "author": "MARS★EVE",
+    "publishedAt": "2026-09-06T04:11:22.000Z",
+    "addedAt": "2026-09-12T05:30:05.094Z",
+    "mediaUrl": "/media/x-2096451163990397237.mp4",
+    "posterUrl": "/posters/x/2096451163990397237.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "1440×2560",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "photoreal",
+      "dark"
+    ],
+    "scenes": [
+      "fashion"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Chip🖤Fashion\n#minimax #h3 @Hailuo_AI",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 2,
+      "views": 175,
+      "snapshotAt": "2026-09-12T05:30:05.094Z"
+    },
+    "approvedAt": "2026-09-12T05:30:05.094Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096447601839423915",
+    "title": "夜空召唤流星的魔女",
+    "titleEn": "A Witch Calls Down Meteors at Night",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "戴尖帽的蓝裙魔女在星空下举起双手，紫色漩涡中落下成串流星，最后森林被火光照亮而她站在火焰中央。 原生视频规格为 10 秒 · 512×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A witch in a blue dress and pointed hat raises her hands under the stars, meteors stream down from a purple vortex, and the forest lights up in flames with her standing at the center. Native-video output: 10s · 512×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/YamataZen/status/2096447601839423915",
+    "sourceLabel": "X 原帖 · @YamataZen",
+    "author": "Yamata",
+    "publishedAt": "2026-09-06T03:57:13.000Z",
+    "addedAt": "2026-09-12T05:30:05.094Z",
+    "mediaUrl": "/media/x-2096447601839423915.mp4",
+    "posterUrl": "/posters/x/2096447601839423915.jpg",
+    "duration": 10,
+    "aspectRatio": "portrait",
+    "resolution": "512×768",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "action-vfx",
+    "styles": [
+      "anime",
+      "illustration"
+    ],
+    "scenes": [
+      "fantasy",
+      "combat"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Vega summoning meteors at night (she loses her powers at day)\n\n#aivideo #MiniMaxH3 #OC",
+    "engagement": {
+      "replies": 1,
+      "reposts": 6,
+      "likes": 14,
+      "views": 727,
+      "snapshotAt": "2026-09-12T05:30:05.094Z"
+    },
+    "approvedAt": "2026-09-12T05:30:05.094Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2096447146614747210",
+    "title": "从校园俯瞰到课桌上的书",
+    "titleEn": "From a School Aerial to a Book on the Desk",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "画面从校舍俯瞰图推进到教室里坐在课桌前的女孩，最后落到摊开的书本特写，参照图像与参照视频被接成十二秒。 原生视频规格为 12 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "The shot moves from a bird’s-eye view of a school into a classroom where a girl sits at her desk, ending on a close-up of an open book, with a reference image and reference video joined into twelve seconds. Native-video output: 12s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/sankakuten91256/status/2096447146614747210",
+    "sourceLabel": "X 原帖 · @sankakuten91256",
+    "author": "さんかくてん",
+    "publishedAt": "2026-09-06T03:55:24.000Z",
+    "addedAt": "2026-09-12T05:30:05.094Z",
+    "mediaUrl": "/media/x-2096447146614747210.mp4",
+    "posterUrl": "/posters/x/2096447146614747210.jpg",
+    "duration": 12,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "本地生成与工作流",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "workflow",
+    "styles": [
+      "anime",
+      "illustration"
+    ],
+    "scenes": [
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3\n参照画像 + 参照動画の実験\n参照動画(10s)の前に参照画像を足して12sの動画\n\n鳥瞰図（参照画像） -> 窓から本（参照動画）\n\n鳥瞰図などの画像は、GPT Image2で作成\n3Dの参照動画は、GPT Astraを使用してBlenderで作成",
+    "engagement": {
+      "replies": 1,
+      "reposts": 1,
+      "likes": 8,
+      "views": 1575,
+      "snapshotAt": "2026-09-12T05:30:05.094Z"
+    },
+    "approvedAt": "2026-09-12T05:30:05.094Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
   }
 ]

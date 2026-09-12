@@ -356,6 +356,8 @@
 | [水面涟漪中的狐形角色](https://x.com/shai_kurari/status/2098131405431595161) | 10s · 1280×736 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
 | [月夜下的动画人声片段](https://x.com/LiluluLoserLab/status/2098093176372560351) | 30s · 864×480 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
 | [绿色法阵中的奇幻角色](https://x.com/raiha_tec/status/2098077087852793971) | 10s · 864×480 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [三秒循环中的女仆眨眼](https://x.com/sep_is_heim/status/2096518817723957379) | 3s · 640×832 · portrait | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [粉发角色的两段无缝衔接](https://x.com/FudooManken/status/2096451834886131927) | 8s · 960×1280 · portrait | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
 
 ## Ref2VA
 
@@ -575,6 +577,10 @@
 | [粉发角色的竖屏表情动作](https://x.com/fnoji/status/2098080421217239416) | 15s · 2160×3840 · portrait | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
 | [角色环绕转身与道具替换](https://x.com/SmallKino_/status/2098073630139617340) | 15s · 1344×1280 · square | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
 | [机械之城上空展翼起飞的少女](https://x.com/soranoblue3/status/2096519541597868299) | 15s · 768×1024 · portrait | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
+| [彩虹天台到楼梯间的少女](https://x.com/syuririn_life/status/2096630655019061719) | 15s · 1344×768 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [小剧场里的双人漫才](https://x.com/aichof21/status/2096519873358946504) | 12s · 1920×1440 · landscape | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [两种稀疏起始参数下的舞台歌姬](https://x.com/sep_is_heim/status/2096488811887054963) | 10s · 1122×1080 · square | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [从校园俯瞰到课桌上的书](https://x.com/sankakuten91256/status/2096447146614747210) | 12s · 1344×768 · landscape | `MiniMax H3` `本地生成与工作流` `来源未公开 Prompt` `X 原帖` |
 
 ## Unknown
 
@@ -1906,3 +1912,26 @@
 | [自动驾驶车厢里和猫一起看手机](https://x.com/UnrealRafael/status/2096572050617856032) | 20s · 608×352 · landscape | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
 | [屏幕里从草图到上色的绘画过程](https://x.com/oodate/status/2096554739588854157) | 28s · 864×480 · landscape | `MiniMax H3` `综合展示` `来源未公开 Prompt` `X 原帖` |
 | [白发狐耳巫女的一分钟音乐短片](https://x.com/StelsRay2/status/2096523805900370402) | 60s · 1344×768 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [海边举臂召唤闪电的男子](https://x.com/theNdroidz/status/2096669887980511477) | 10s · 3840×2160 · landscape | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
+| [回眸的暗调人像](https://x.com/KusoPhoto/status/2096630852147179848) | 5s · 1080×1620 · portrait | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
+| [橄榄球与时尚排版的十五秒冲击](https://x.com/koss_ai/status/2096627369549197752) | 15s · 768×1376 · portrait | `MiniMax H3` `广告与产品` `来源未公开 Prompt` `X 原帖` |
+| [机器人法官面前的法庭质问](https://x.com/AITalesNBH/status/2096605175339208830) | 29s · 2160×3840 · portrait | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [三种稀疏注意力参数下的全息舞者](https://x.com/ITOKtw/status/2096603405372567887) | 10s · 1344×2304 · portrait | `MiniMax H3` `模型对比` `来源未公开 Prompt` `X 原帖` |
+| [夜店里专注打碟的女DJ](https://x.com/PrometheanAIX/status/2096601533131403760) | 10s · 768×1344 · portrait | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [清晨空泳池馆里的独行者](https://x.com/HBCoop_/status/2096600345959145839) | 15s · 2560×1440 · landscape | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
+| [摘不下耳机的循环夜晚](https://x.com/kiyu___K/status/2096584372468232385) | 103s · 1920×1080 · landscape | `MiniMax H3` `音乐视频` `来源未公开 Prompt` `X 原帖` |
+| [丛林中现身的红翼巨兽](https://x.com/CanAiStudios/status/2096573091522527553) | 15s · 1080×1944 · portrait | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
+| [从手绘分镜到奔跑的动画角色](https://x.com/kurahu_capten/status/2096554503223058607) | 15s · 720×960 · portrait | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [灰发少女的托腮微笑与比耶](https://x.com/sac25252/status/2096550979579629806) | 8s · 720×936 · portrait | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [课桌前分享便当的两个女孩](https://x.com/C12592947592/status/2096548015943328174) | 10s · 480×864 · portrait | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [和风衣装少女的三段衔接](https://x.com/Shinki_Protocol/status/2096523774288138264) | 15s · 1080×1490 · portrait | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
+| [月轮、蓝瞳与时钟的剪影拼贴](https://x.com/zuomuyan2542801/status/2096519385502667234) | 15s · 2560×1440 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [极光下发光的雪松环](https://x.com/pixelrhythms/status/2096518977610826075) | 5s · 1280×720 · landscape | `MiniMax H3` `动画` `来源未公开 Prompt` `X 原帖` |
+| [白狐少女插画的绘制延时](https://x.com/kamome_mint/status/2096496558271562137) | 10s · 832×480 · landscape | `MiniMax H3` `综合展示` `来源未公开 Prompt` `X 原帖` |
+| [火焰在指尖凝聚的橙发少女](https://x.com/mito_ai_la/status/2096493234457567420) | 15s · 2688×1536 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [持杖少女对战斗篷怪物](https://x.com/AIHobbyist65536/status/2096488212164432214) | 15s · 832×480 · landscape | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
+| [深夜来电的黑衣男子](https://x.com/Moonshub1123/status/2096485403402575882) | 102s · 1080×1920 · portrait | `MiniMax H3` `角色对白` `来源未公开 Prompt` `X 原帖` |
+| [秋日哥本哈根的彩色街区航拍](https://x.com/rukanatsui/status/2096455228006756716) | 15s · 1376×768 · landscape | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
+| [穿衣猫鼠的可乐广告](https://x.com/breath_in_code/status/2096454409383534646) | 15s · 1920×1080 · landscape | `MiniMax H3` `广告与产品` `来源未公开 Prompt` `X 原帖` |
+| [黑白双色发的哥特时装造型](https://x.com/mars_eve/status/2096451163990397237) | 15s · 1440×2560 · portrait | `MiniMax H3` `电影叙事` `来源未公开 Prompt` `X 原帖` |
+| [夜空召唤流星的魔女](https://x.com/YamataZen/status/2096447601839423915) | 10s · 512×768 · portrait | `MiniMax H3` `动作特效` `来源未公开 Prompt` `X 原帖` |
