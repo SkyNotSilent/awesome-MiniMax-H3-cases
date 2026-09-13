@@ -1,0 +1,2445 @@
+{
+  "tutorialId": "mac-native",
+  "kind": "markdown",
+  "language": "en",
+  "capturedAt": "2026-09-13T09:41:12.984Z",
+  "source": {
+    "url": "https://github.com/antirez/h3.c",
+    "author": "antirez",
+    "revision": "8974cc055ea9c02fcd14cc27dfda3e1027c05153",
+    "license": "MIT"
+  },
+  "sections": [
+    {
+      "url": "https://github.com/antirez/h3.c",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Native MiniMax-H3 inference for Apple Silicon. The project is being built as a\nsequence of working vertical slices: deterministic host/model metadata first,\nthen portable Metal block parity, prompt encoding, prompt-to-video/audio, and\nfirst/last-frame conditioning and then ordered references."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Prompt-to-video/audio, first/last-frame conditioning, and ordered Ref2VA\nimage/video/audio references work end to end. The current work is incremental\nH3-specific Metal performance and memory optimization on M3 Max and M5 Max."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Tutorial"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "1. Build and inspect the model"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The examples assume that the Hugging Face snapshot is in "
+            },
+            {
+              "c": true,
+              "t": "./MiniMax-H3"
+            },
+            {
+              "t": " and\nthat FFmpeg and FFprobe are available on "
+            },
+            {
+              "c": true,
+              "t": "PATH"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "make -j8\nmkdir -p outputs\n./h3 --info -d ./MiniMax-H3",
+          "language": "sh"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "--info"
+            },
+            {
+              "t": " checks the model layout and prints the selected Metal device without\nmapping all weights or generating media. Run "
+            },
+            {
+              "c": true,
+              "t": "./h3 --help"
+            },
+            {
+              "t": " for the complete CLI\nreference."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Without "
+            },
+            {
+              "c": true,
+              "t": "-p"
+            },
+            {
+              "t": ", the same binary starts an Iris-style interactive session:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "./h3 -d ./MiniMax-H3 --width 512 --height 512 --steps 6",
+          "language": "sh"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Type a prompt to generate a numbered video. The session keeps the exact BF16\nprompt conditioning, prepared DiT, and video decoder in memory, so repeating a\nprompt with another seed avoids loading and encoding them again. Useful commands\nare "
+            },
+            {
+              "c": true,
+              "t": "!status"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "!seed random"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "!seconds 2"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "!show"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "!save output.mp4"
+            },
+            {
+              "t": ", and\n"
+            },
+            {
+              "c": true,
+              "t": "!cache"
+            },
+            {
+              "t": ". Use "
+            },
+            {
+              "c": true,
+              "t": "!help"
+            },
+            {
+              "t": " for the full, short list."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "First/last-frame conditioning is persistent in the session:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "h3> !first opening.png\nh3> !last ending.png\nh3> The camera moves slowly around the subject."
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use "
+            },
+            {
+              "c": true,
+              "t": "!first clear"
+            },
+            {
+              "t": " or "
+            },
+            {
+              "c": true,
+              "t": "!last clear"
+            },
+            {
+              "t": " to remove an anchor. Generated videos are\nwritten to the session directory printed at startup."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For a general Ref2VA conditioning image, use "
+            },
+            {
+              "c": true,
+              "t": "!ref-image PATH"
+            },
+            {
+              "t": " instead. Images\nare appended in order and exposed to the model as "
+            },
+            {
+              "c": true,
+              "t": "<Picture 1>"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "<Picture 2>"
+            },
+            {
+              "t": ",\nand so on; filenames have no meaning to the model."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "h3> !ref-image person.png\nh3> Make the person shown in Picture 1 wave to the camera."
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "!refs"
+            },
+            {
+              "t": " lists the current order, "
+            },
+            {
+              "c": true,
+              "t": "!ref-remove N"
+            },
+            {
+              "t": " removes one entry, and\n"
+            },
+            {
+              "c": true,
+              "t": "!refs clear"
+            },
+            {
+              "t": " removes them all. Ref2VA references cannot be mixed with\n"
+            },
+            {
+              "c": true,
+              "t": "!first"
+            },
+            {
+              "t": "/"
+            },
+            {
+              "c": true,
+              "t": "!last"
+            },
+            {
+              "t": " anchors."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "2. Make a first fast video"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Start with the validated balanced preset. It generates 22 frames at 24 fps\n(about 0.92 seconds), displays the evolving middle-video frame after every\ndenoising transition in a supported graphical terminal, and prints phase\ntimings:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "./h3 --profile \\\n  -d ./MiniMax-H3 \\\n  -p \"A red fox walks through fresh snow in a pine forest. Medium tracking shot, natural winter light, realistic fur, soft footsteps and wind.\" \\\n  --width 512 --height 512 \\\n  --frames 22 --steps 20 \\\n  --layers 45 --reuse 2 \\\n  --show \\\n  -o outputs/fox-fast.mp4",
+          "language": "sh"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "This is deliberately not the most aggressive configuration:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "--steps 20"
+                },
+                {
+                  "t": " performs the default 20 denoising passes."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "--reuse 2"
+                },
+                {
+                  "t": " computes 11 fresh denoiser velocities instead of all 20 and\nextrapolates the skipped transitions."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "--layers 45"
+                },
+                {
+                  "t": " runs 45 of the 50 transformer blocks, reducing both time and\nunified-memory use."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "--show"
+                },
+                {
+                  "t": " is optional. It supports Kitty/Ghostty and\niTerm2/WezTerm/Konsole graphical protocols. It loads a resident preview VAE,\ndisplays one representative middle-video frame after every Euler transition,\nand then displays all final frames. Display dimensions default to 2x so the\nimage has its intended logical size on macOS Retina screens; use "
+                },
+                {
+                  "c": true,
+                  "t": "--zoom 1"
+                },
+                {
+                  "t": "\non a non-HiDPI display. This adds preview decode time and roughly 10 GiB of\ntemporary model residency; runs without "
+                },
+                {
+                  "c": true,
+                  "t": "--show"
+                },
+                {
+                  "t": " are unchanged."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "--profile"
+                },
+                {
+                  "t": " is optional and does not select a different generation path."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The first process invocation also pays model loading and filesystem-cache\ncosts. Compare performance using repeated runs, and alternate variants when\nthe machines are warming up because this workload is sensitive to thermal\nthrottling."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For a very short iteration, request four denoising passes directly:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "./h3 --profile \\\n  -d ./MiniMax-H3 \\\n  -p \"A red fox walks through fresh snow in a pine forest. Medium tracking shot, natural winter light, realistic fur.\" \\\n  --width 512 --height 512 --frames 22 \\\n  --steps 4 --layers 50 --reuse 1 \\\n  --show \\\n  -o outputs/fox-four-step.mp4",
+          "language": "sh"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "--steps N"
+            },
+            {
+              "t": " always means exactly N denoising passes. Four through seven passes\nuse the same schedule that won the low-budget comparison; increasing from 4\nto 7 progressively improves detail and motion. Keep "
+            },
+            {
+              "c": true,
+              "t": "--reuse 1"
+            },
+            {
+              "t": " at such small\nbudgets so every requested pass runs the model. "
+            },
+            {
+              "c": true,
+              "t": "--show"
+            },
+            {
+              "t": " displays one preview\nafter each pass."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Several tail-heavy schedules were evaluated because most visible cleanup\nhappens late in a long run. They preserved too few early composition updates\nand produced woven texture, weak motion, or clipped colors. The retained mode\nuses the released linear base grid with one terminal point. On the 512-square,\n22-frame fox test, the selected four-pass result had 0.556 full-video SSIM\nagainst a 29-pass reference; an independent surfer test measured 0.547. The\nfour-pass denoise took about 3.5 seconds on M5 Max, versus 26.4 seconds for the\nreference."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For a low-memory run, add "
+            },
+            {
+              "c": true,
+              "t": "--ssd-streaming"
+            },
+            {
+              "t": ":"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "./h3 --profile \\\n  -d ./MiniMax-H3 \\\n  -p \"A red fox walks through fresh snow in a pine forest.\" \\\n  --width 512 --height 512 --frames 22 --steps 20 \\\n  --layers 50 --reuse 1 --ssd-streaming \\\n  -o outputs/fox-ssd.mp4",
+          "language": "sh"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "This uses the original BF16 checkpoint without conversion or quantization. It\nkeeps two DiT blocks in memory and reads the next block from SSD while the GPU\nruns the current one. On M5 Max, tracked DiT storage fell from about 36.5 GiB to\n2.0 GiB at 512 square and 2.1 GiB at 864x480. A warm 50-block forward measured\n1.35 versus 2.49 seconds at 512 square (84% slower), and 2.14 versus 2.68\nseconds at 864x480 (26% slower). These are comparisons against the same\nfull-residency BF16 path, and the results were byte-identical in both checks."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The 2.0--2.1 GiB figure is the DiT's tracked tensor storage, not total system\nRAM. Prompt encoding and the two VAEs run in separate phases rather than adding\ntheir full peaks to it; the OS, media buffers, and output resolution still need\nheadroom. "
+            },
+            {
+              "c": true,
+              "t": "--show"
+            },
+            {
+              "t": " keeps a preview VAE resident and adds roughly 10 GiB, so omit\nit for the lowest-memory run."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "SSD streaming is an explicit memory/speed tradeoff and is not the default. It\ncannot be combined with "
+            },
+            {
+              "c": true,
+              "t": "--use-int8-row-fc2"
+            },
+            {
+              "t": ". In an interactive session, use\n"
+            },
+            {
+              "c": true,
+              "t": "!ssd-streaming on"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "3. Move toward reference quality"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Change one control at a time when evaluating quality. First restore all layers,\nthen all denoiser evaluations, and finally raise the default 20-pass schedule\nto the slower 50-pass reference:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "./h3 --profile \\\n  -d ./MiniMax-H3 \\\n  -p \"A red fox walks through fresh snow in a pine forest. Medium tracking shot, natural winter light, realistic fur, soft footsteps and wind.\" \\\n  --width 512 --height 512 \\\n  --frames 22 --steps 50 \\\n  --layers 50 --reuse 1 \\\n  -o outputs/fox-close.mp4",
+          "language": "sh"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The defaults are "
+            },
+            {
+              "c": true,
+              "t": "--steps 20 --layers 50 --reuse 1"
+            },
+            {
+              "t": "; keep "
+            },
+            {
+              "c": true,
+              "t": "--steps 50"
+            },
+            {
+              "t": "\nexplicit for this close path. It performs 50 complete 50-block denoiser\nforwards and is much more expensive than the default, but is the right oracle\nwhen a fast mode changes the subject, anatomy, motion, or composition.\nNumerical pixel identity with MLX is not expected because the random-number and\nexecution engines differ; the depicted content and motion should agree."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "4. Choose a speed/quality preset"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "These controls are independent unless noted otherwise:"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "Control"
+              }
+            ],
+            [
+              {
+                "t": "Slow reference"
+              }
+            ],
+            [
+              {
+                "t": "Default"
+              }
+            ],
+            [
+              {
+                "t": "Aggressive"
+              }
+            ],
+            [
+              {
+                "t": "Main impact"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "Denoising passes"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "--steps 50"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "--steps 20"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "--steps 4..7"
+                }
+              ],
+              [
+                {
+                  "t": "The number always names actual denoising passes."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Whole denoiser reuse"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "--reuse 1"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "--reuse 2"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "--reuse 3"
+                }
+              ],
+              [
+                {
+                  "t": "At 20 steps: 20, 11, or 8 fresh DiT evaluations."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Active DiT blocks"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "--layers 50"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "--layers 45"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "--layers 40"
+                }
+              ],
+              [
+                {
+                  "t": "Fewer blocks reduce compute and resident transformer weights."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Core residual reuse"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "--core-reuse 1"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "--core-reuse 4"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "--core-reuse 6"
+                }
+              ],
+              [
+                {
+                  "t": "Refreshes patch/head work every step but runs the expensive core less often."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Token reduction"
+                }
+              ],
+              [
+                {
+                  "t": "off"
+                }
+              ],
+              [
+                {
+                  "t": "optional"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "--token-reduction"
+                }
+              ],
+              [
+                {
+                  "t": "Pairs horizontal video tokens inside middle blocks; faster but may change composition."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Internal canvas"
+                }
+              ],
+              [
+                {
+                  "t": "output size"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "384x384"
+                },
+                {
+                  "t": " for 512 square output"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "320x320"
+                }
+              ],
+              [
+                {
+                  "t": "Runs DiT/VAE smaller, then upscales with vImage."
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "On M5, "
+            },
+            {
+              "c": true,
+              "t": "--use-int8-row-fc2"
+            },
+            {
+              "t": " uses one activation scale per FC2 row and a single\nfull-width TensorOps product. It is optional because it is less numerically\nconservative than grouped int8. It reduced complete denoiser forwards by about\n2.6% in reciprocal tests. Matched four-step fox and surfer videos kept the same\nsubjects, setting, and motion (full-video SSIM 0.919 and 0.828). In the\ninteractive session, use "
+            },
+            {
+              "c": true,
+              "t": "!int8-row-fc2 on"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "--reuse"
+            },
+            {
+              "t": " and "
+            },
+            {
+              "c": true,
+              "t": "--core-reuse"
+            },
+            {
+              "t": " are mutually exclusive. Layer thinning can be\ncombined with either one."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "To make the first command faster while keeping its output resolution, add\ntoken reduction:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "./h3 --profile \\\n  -d ./MiniMax-H3 \\\n  -p \"A surfer riding inside a sharp blue ocean wave, one rider and one white board, realistic spray.\" \\\n  --width 512 --height 512 --frames 22 --steps 20 \\\n  --layers 45 --reuse 2 --token-reduction \\\n  -o outputs/surfer-fast.mp4",
+          "language": "sh"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "At the validated 512 square shape, token reduction cut the "
+            },
+            {
+              "c": true,
+              "t": "45 layers + reuse 2"
+            },
+            {
+              "t": " denoise profile from 16.69 to 12.60 seconds on the IT M5 Max. Independent\nfox and surfer renders stayed coherent, but composition can diverge more from\nthe close path."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For an aggressive preview, render internally at 320 square and upscale to the\nrequested 512 square output:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "./h3 --profile \\\n  -d ./MiniMax-H3 \\\n  -p \"A red fox walking through snow, realistic, tracking shot.\" \\\n  --width 512 --height 512 \\\n  --render-width 320 --render-height 320 \\\n  --frames 22 --steps 20 --layers 40 --reuse 3 \\\n  -o outputs/fox-aggressive.mp4",
+          "language": "sh"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "This combination produced a clean, recognizable 22-frame fox in validation,\nbut loses fine detail and can change framing. Do "
+            },
+            {
+              "b": true,
+              "t": "not"
+            },
+            {
+              "t": " add "
+            },
+            {
+              "c": true,
+              "t": "--token-reduction"
+            },
+            {
+              "t": "\nto both "
+            },
+            {
+              "c": true,
+              "t": "--layers 40"
+            },
+            {
+              "t": " and "
+            },
+            {
+              "c": true,
+              "t": "--reuse 3"
+            },
+            {
+              "t": ": that tested combination produced color\nringing, outlines, and ghosted limbs."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "As an alternative to whole-velocity reuse, this keeps the timestep-dependent\npatch and output heads fresh at every transition:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "./h3 --profile \\\n  -d ./MiniMax-H3 \\\n  -p \"A surfer riding a blue ocean wave.\" \\\n  --width 512 --height 512 --frames 22 --steps 20 \\\n  --layers 45 --core-reuse 4 \\\n  -o outputs/surfer-core-reuse.mp4",
+          "language": "sh"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use "
+            },
+            {
+              "c": true,
+              "t": "--core-reuse 6"
+            },
+            {
+              "t": " only as an aggressive preview. Values above 6 are not\nexposed because validation lost subject fidelity."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "5. Pick resolution and duration"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Width and height must each be multiples of 32, at least 32, and their product\nmust not exceed "
+            },
+            {
+              "c": true,
+              "t": "768 * 1344"
+            },
+            {
+              "t": " pixels. Those are mechanical limits, not a promise\nthat every tiny canvas has good model quality. H3-Base is a 768p model."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "Canvas"
+              }
+            ],
+            [
+              {
+                "t": "Current guidance"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "c": true,
+                  "t": "512x512"
+                }
+              ],
+              [
+                {
+                  "t": "Safest development size; repeatedly validated with multiple prompts."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "768x768"
+                }
+              ],
+              [
+                {
+                  "t": "Validated close-quality square output; substantially more expensive."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "1344x768"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "768x1344"
+                }
+              ],
+              [
+                {
+                  "t": "Released 768p-class landscape/portrait limit."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "1024x768"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "768x1024"
+                }
+              ],
+              [
+                {
+                  "t": "Valid 4:3 and 3:4 768p-class canvases."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "384x384"
+                },
+                {
+                  "t": " internal to "
+                },
+                {
+                  "c": true,
+                  "t": "512x512"
+                }
+              ],
+              [
+                {
+                  "t": "Validated fast-quality scaling point."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "320x320"
+                },
+                {
+                  "t": " internal to "
+                },
+                {
+                  "c": true,
+                  "t": "512x512"
+                }
+              ],
+              [
+                {
+                  "t": "Validated aggressive scaling point."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "256x256"
+                }
+              ],
+              [
+                {
+                  "t": "Native fast-preview canvas with automatic low-resolution RoPE adaptation."
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For a fast native 256-square preview:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "./h3 -d ./MiniMax-H3 \\\n  -p \"A red fox walks through fresh snow in a pine forest.\" \\\n  --width 256 --height 256 \\\n  --frames 22 --steps 20 \\\n  --layers 50 --reuse 1 \\\n  -o outputs/fox-256.mp4",
+          "language": "sh"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "At 256 square, H3 has only an "
+            },
+            {
+              "c": true,
+              "t": "8x8"
+            },
+            {
+              "t": " effective spatial-token grid, so it has less\nroom for fine detail and complex composition. H3 automatically halves spatial\nRoPE coordinates at exactly 256 square. This removed repeating lattice\nartifacts in long fox renders and stayed coherent on an independent portrait,\nwithout adding tokens or runtime. Use "
+            },
+            {
+              "c": true,
+              "t": "--use-reference-rope"
+            },
+            {
+              "t": " to restore the\nreleased/MLX coordinates for parity checks. Keep token reduction off at this\nsize. Native 128 square remains unsupported: its "
+            },
+            {
+              "c": true,
+              "t": "4x4"
+            },
+            {
+              "t": " token grid did not\nrecover a recognizable subject even with adjusted RoPE."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "--render-width"
+            },
+            {
+              "t": " and "
+            },
+            {
+              "c": true,
+              "t": "--render-height"
+            },
+            {
+              "t": " must be set together, must have the same\naspect ratio as the output, and cannot exceed the output dimensions. The model\nand VAE use the internal size; terminal frames and the encoded video retain the\nrequested output size."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "H3 emits 24 fps and aligns frame requests upward to "
+            },
+            {
+              "c": true,
+              "t": "5 + 17*n"
+            },
+            {
+              "t": ":"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use "
+            },
+            {
+              "c": true,
+              "t": "--seconds N"
+            },
+            {
+              "t": " for a duration-oriented request, or "
+            },
+            {
+              "c": true,
+              "t": "--frames N"
+            },
+            {
+              "t": " for direct\nframe control; the two options are mutually exclusive. Fractional seconds are\naccepted. Seconds are converted at 24 fps and then rounded upward to the next\nlegal H3 temporal shape, so "
+            },
+            {
+              "c": true,
+              "t": "--seconds 10"
+            },
+            {
+              "t": " produces 243 frames (10.125 seconds)."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "Frames"
+              }
+            ],
+            [
+              {
+                "t": "Approximate video duration"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "22"
+                }
+              ],
+              [
+                {
+                  "t": "0.917 seconds"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "39"
+                }
+              ],
+              [
+                {
+                  "t": "1.625 seconds"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "56"
+                }
+              ],
+              [
+                {
+                  "t": "2.333 seconds"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "107"
+                }
+              ],
+              [
+                {
+                  "t": "4.458 seconds"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "243"
+                }
+              ],
+              [
+                {
+                  "t": "10.125 seconds"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "362"
+                }
+              ],
+              [
+                {
+                  "t": "15.083 seconds"
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Short clips are useful for development. The released workflow is intended for\nroughly 4–15 second videos. A request such as "
+            },
+            {
+              "c": true,
+              "t": "--frames 23"
+            },
+            {
+              "t": " is rounded up to 39\nframes rather than producing an arbitrary temporal shape."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "6. Improve the prompt"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "A short prompt works, but the released system expects a Context-IR-like\ndescription. State the subject, action, setting, camera, lighting/style, and\ndesired sound. For example:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "Scene: a single red fox in a snow-covered pine forest at dawn.\nAction: the fox walks steadily left to right and looks toward the camera once.\nCamera: medium-height lateral tracking shot, 50 mm lens, stable framing.\nLook: photorealistic fur, cold blue ambient light, warm sunrise rim light.\nAudio: soft footsteps in snow, light wind through pine branches, no music."
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Keep identity and object counts explicit when they matter. "
+            },
+            {
+              "c": true,
+              "t": "--seed N"
+            },
+            {
+              "t": " controls\nthe native random stream; the default is 42. Compare options with the same\nprompt, seed, resolution, frame count, and step count."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "7. Preview frames and diagnose performance"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "--show"
+                },
+                {
+                  "t": " displays a representative frame after every denoising transition,\nfollowed by all frames from the completed video. Like Iris, it advertises 2x\ndisplay dimensions by default for Retina terminals; "
+                },
+                {
+                  "c": true,
+                  "t": "--zoom N"
+                },
+                {
+                  "t": " changes that\nfactor without resizing the generated video or the encoded terminal image."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "--frames-dir DIR"
+                },
+                {
+                  "t": " writes final callback frames as PPM files. Intermediate\n"
+                },
+                {
+                  "c": true,
+                  "t": "--show"
+                },
+                {
+                  "t": " previews are not written there."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "-o ''"
+                },
+                {
+                  "t": " disables MP4 encoding; combine it with "
+                },
+                {
+                  "c": true,
+                  "t": "--frames-dir"
+                },
+                {
+                  "t": " when FFmpeg is\nunavailable."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "--profile"
+                },
+                {
+                  "t": " reports phase wall time, Metal encoding/wait time, peak live\ntensor storage, cumulative allocation, and dispatch counts."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For example:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "./h3 --profile -d ./MiniMax-H3 -p \"A hummingbird hovering over red flowers.\" \\\n  --width 512 --height 512 --frames 22 --steps 20 \\\n  --layers 45 --reuse 2 --frames-dir outputs/hummingbird-frames \\\n  -o ''",
+          "language": "sh"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "8. Add image, video, and audio references"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "First/last-frame anchors select the FL2VA path:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "./h3 -d ./MiniMax-H3 -p \"The fox keeps walking through the snow.\" \\\n  --width 512 --height 512 --frames 22 --steps 20 \\\n  --layers 45 --reuse 2 \\\n  --first-frame fox.png --last-frame fox-later.png \\\n  -o outputs/fox-anchored.mp4",
+          "language": "sh"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Ordered references select the distinct Ref2VA checkpoint. Use the flag matching\nthe media semantics:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "# One image reference.\n./h3 -d ./MiniMax-H3 -p \"Use the animal and setting in the reference.\" \\\n  --width 512 --height 512 --frames 22 --steps 20 \\\n  --ref-image fox.png -o outputs/fox-reference.mp4\n\n# Continue a clip but ignore its soundtrack.\n./h3 -d ./MiniMax-H3 -p \"Continue the motion in this clip.\" \\\n  --width 512 --height 512 --frames 22 --steps 20 \\\n  --ref-silent-video fox.mp4 -o outputs/fox-video-reference.mp4\n\n# Preserve the clip's embedded audio.\n./h3 -d ./MiniMax-H3 -p \"Continue this audiovisual scene.\" \\\n  --width 512 --height 512 --frames 56 --steps 20 \\\n  --ref-video fox-with-audio.mp4 -o outputs/fox-video-audio.mp4\n\n# Replace a video's soundtrack explicitly.\n./h3 -d ./MiniMax-H3 -p \"Continue the scene with the supplied music.\" \\\n  --width 512 --height 512 --frames 56 --steps 20 \\\n  --ref-video-audio silent-fox.mp4 replacement.wav \\\n  -o outputs/fox-replaced-audio.mp4\n\n# An ordered image plus standalone audio reference.\n./h3 -d ./MiniMax-H3 -p \"Use the animal and music from the references.\" \\\n  --width 512 --height 512 --frames 56 --steps 20 \\\n  --ref-image fox.png --ref-audio music.wav \\\n  -o outputs/fox-image-audio.mp4",
+          "language": "sh"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Reference flags may be repeated and their command-line order is preserved.\nStandalone audio must accompany an image or video reference. Audio references\nmust be 2–15 seconds; at most three audio inputs are accepted and their total\ndecoded duration is capped at 15 seconds."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Tests and runtime requirements"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "make test\nmake parity",
+          "language": "sh"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "make test"
+            },
+            {
+              "t": " runs the deterministic host suite and, when the ignored MLX fixture\nis installed under "
+            },
+            {
+              "c": true,
+              "t": "misc/fixtures/"
+            },
+            {
+              "t": ", compiles the Metal source at runtime and\nchecks a complete toy H3 block against named MLX outputs. Runtime compilation is\nintentional: it follows Iris and does not require Xcode's optional offline Metal\ntoolchain. The test covers both an F32 diagnosis path and the production BF16\nstorage path; wide BF16 matrix products and SDPA use cached MPSGraph graphs, with\ndirect Metal correctness fallbacks. "
+            },
+            {
+              "c": true,
+              "t": "make parity"
+            },
+            {
+              "t": " runs only those Metal/MLX\nchecks."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "FFmpeg and FFprobe must be available on "
+            },
+            {
+              "c": true,
+              "t": "PATH"
+            },
+            {
+              "t": " for media inputs and MP4 output\n("
+            },
+            {
+              "c": true,
+              "t": "H3_FFMPEG"
+            },
+            {
+              "t": " and "
+            },
+            {
+              "c": true,
+              "t": "H3_FFPROBE"
+            },
+            {
+              "t": " may select explicit executables). Generated RGB24 and\n32 kHz stereo F32 PCM are fed through concurrent pipes; no intermediate\nuncompressed media file is created."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Implementation and performance notes"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The remainder documents the implementation behind the tutorial presets and the\nenvironment variables retained for exact A/B diagnosis."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Sampler and DiT controls"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The default sampler uses the released shifted video/audio schedule. "
+            },
+            {
+              "c": true,
+              "t": "--steps"
+            },
+            {
+              "t": "\nalways names the number of denoising passes, with terminal zero added after the\nlast pass. Whole-denoiser reuse evaluates the first and last pass plus every\nrequested interval, then extrapolates skipped video and audio velocities on\ntheir independent schedules. With very small step counts, keep "
+            },
+            {
+              "c": true,
+              "t": "--reuse 1"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For the low-budget path, the released linear base grid won against\nactual-video-sigma linear spacing,\nquadratic and cubic warps, exact 30-point tail subsets, mild power warps,\nzero-order held full-grid velocities, linear velocity extrapolation, and RES.\nThe more tail-heavy candidates often sharpened the subject but damaged motion\nor left a repetitive woven background; sparse RES and long extrapolation\nintervals failed much more visibly."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Layer thinning ranks the checkpoint's actual AdaLN gates while protecting\nstructurally important first and final blocks. Unused weights and schedule\ntensors are not retained, so "
+            },
+            {
+              "c": true,
+              "t": "--layers 45"
+            },
+            {
+              "t": " and "
+            },
+            {
+              "c": true,
+              "t": "--layers 40"
+            },
+            {
+              "t": " reduce both\ntransformer time and unified-memory use. Core reuse holds the previous full\ntransformer residual while refreshing the patch projection and timestep-aware\nhead; it remains mutually exclusive with whole-velocity reuse."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Exact DiT fusions"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Every active DiT block fuses its attention residual gate with the following MLP\nAdaLN. The rounded BF16 residual is still written exactly, but the same row is\nkept in threadgroup memory for normalization, eliminating one dispatch and one\nglobal reread. Away from token-reduction boundaries, the MLP residual gate also\nproduces the next block's attention AdaLN and carries that normalized state\nacross the loop. "
+            },
+            {
+              "c": true,
+              "t": "H3_DISABLE_FUSED_GATE_ADALN=1"
+            },
+            {
+              "t": " and\n"
+            },
+            {
+              "c": true,
+              "t": "H3_DISABLE_FUSED_CROSS_BLOCK_ADALN=1"
+            },
+            {
+              "t": " restore the two-kernel oracles.\nThe final audio/video AdaLN kernels bind directly to offsets in the residual\nstream, avoiding two slice blits and 18.8 MiB of scratch at 512x512 (29.4 MiB\nat the 864-class benchmark shape).\n"
+            },
+            {
+              "c": true,
+              "t": "H3_DISABLE_FUSED_FINAL_SLICE=1"
+            },
+            {
+              "t": " restores the copy-plus-AdaLN oracle at load.\nThe BF16 final heads then apply AdaLN while loading their 16x16 projection\ntiles, preserving the standalone rounding and accumulation order while\nremoving another equally sized normalized activation. The two optimizations\ntogether save 37.5/58.9 MiB. "
+            },
+            {
+              "c": true,
+              "t": "H3_DISABLE_FUSED_FINAL_HEAD=1"
+            },
+            {
+              "t": " restores the\noffset-AdaLN-plus-linear oracle at load."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Token-reduction internals"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "--token-reduction"
+            },
+            {
+              "t": " is an independent aggressive DiT mode. After block 3 it\npairs adjacent horizontal target-video tokens while leaving text, audio,\nconditions, and reference tokens exact. The complete full-resolution state is\nkept as a bypass. During the first ten noisy evaluations it restores before\nblock 40; subsequent detail-forming evaluations restore before block 30. Each\ntoken returns as its original value plus the update learned by its pair, so\nwithin-pair detail is not discarded.\nThe pooling kernel writes only true-pair baselines into a dense tail of the\nalready allocated attention scratch buffer; odd-width singleton tokens need no\nbaseline. The full bypass uses the oversized QKV tail when it fits, with a\nguarded dedicated fallback only for reference-heavy layouts. Common text-only\ncanvases therefore add no activation arena at any token-grid width. Pooling\nalso snapshots both source tokens while their BF16 values are already in\nregisters, avoiding a separate full-hidden blit and redundant source read. The\nsame entry kernel keeps each pooled row in threadgroup memory and emits the\nfirst reduced block's attention AdaLN, eliminating another global residual read.\nAt the restore boundary, the first full-resolution attention AdaLN is fused\ninto expansion: a 10.5 KiB threadgroup row avoids a global residual reread while\nstill writing the exact bypass needed by the following residual branch.\nOn a thermal-balanced 512x512x22, 19-forward IT M5 Max A/B this reduced denoise\ntime from 39.13 to 28.06 seconds (28.3%). Final video/audio latent relative L2\nwas 5.56%/15.14%. First/middle/last fox frames retained one clean muzzle,\ncoherent legs, and sharp fur; an independent surfer remained consistent with\none rider and board through the wave spray. It changes composition and is\ntherefore opt-in rather than the close-reference default.\n"
+            },
+            {
+              "c": true,
+              "t": "H3_TOKEN_REDUCTION_BLOCKS"
+            },
+            {
+              "t": " can override the later "
+            },
+            {
+              "c": true,
+              "t": "4:30"
+            },
+            {
+              "t": " interval;\n"
+            },
+            {
+              "c": true,
+              "t": "H3_TOKEN_REDUCTION_EARLY=STEPS:END"
+            },
+            {
+              "t": " overrides the early schedule and "
+            },
+            {
+              "c": true,
+              "t": "0"
+            },
+            {
+              "t": "\ndisables it. "
+            },
+            {
+              "c": true,
+              "t": "H3_DISABLE_TOKEN_REDUCTION=1"
+            },
+            {
+              "t": " provides an in-context exact oracle.\n"
+            },
+            {
+              "c": true,
+              "t": "H3_DISABLE_FUSED_TOKEN_POOL_ADALN=1"
+            },
+            {
+              "t": " and\n"
+            },
+            {
+              "c": true,
+              "t": "H3_DISABLE_FUSED_TOKEN_ADALN=1"
+            },
+            {
+              "t": " independently restore the two-kernel entry and\nexit boundaries for diagnosis.\nToken reduction composes cleanly with the validated "
+            },
+            {
+              "c": true,
+              "t": "--layers 45 --reuse 2"
+            },
+            {
+              "t": "\nsettings: on the same 512 benchmark it reduced that profile from 16.69 to\n12.60 seconds (24.5% marginal), and independent fox and surfer renders stayed\ncoherent. Do not combine it with both "
+            },
+            {
+              "c": true,
+              "t": "--layers 40"
+            },
+            {
+              "t": " and "
+            },
+            {
+              "c": true,
+              "t": "--reuse 3"
+            },
+            {
+              "t": "; that\n6.47-second experiment produced chromatic ringing and ghosted limbs despite\nacceptable latent norms."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Internal canvas and video VAE"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "--render-width"
+            },
+            {
+              "t": " and "
+            },
+            {
+              "c": true,
+              "t": "--render-height"
+            },
+            {
+              "t": " run the model and VAE on a lower\nsame-aspect internal canvas, then high-quality vImage-scale RGB frames to the\nrequested output size before callbacks, terminal display, and encoding. This is an\nexplicit quality/speed tradeoff: a measured 384-to-512 prompt render reduced\nM5 DiT time by 33% and video-VAE time by 18% while retaining a clean,\nrecognizable photorealistic result. Both values must be multiples of 32; the\nexact output canvas remains the default.\nFor square 512 output, 384 is the fast-quality point and 320 is the validated\naggressive point. The latter produced a coherent walking fox and repeated at\n8.02 seconds of DiT versus about 15.82 seconds natively. Native 256 uses the\nsame-cost spatial-RoPE adaptation described above; it remains a fast composition\npreview rather than a substitute for a 512- or 768-class final render.\nThe video VAE automatically chooses a 256-320 pixel spatial tile from the\nrequested canvas geometry, minimizing repeated overlap work while keeping peak\nstorage bounded. "
+            },
+            {
+              "c": true,
+              "t": "H3_VAE_TILE_PIXELS=256"
+            },
+            {
+              "t": " restores the original conservative\ntile plan for close-reference diagnosis."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Weight residency and streamed prompt encoding"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "On M5-class GPUs, persistent transformer weights are mapped directly from their\nsafetensor shards instead of copied into anonymous shared buffers. This keeps\nthe 37 GiB model file-backed/reclaimable and slightly improves total transformer\ntime; M3 uses the faster copied-buffer path. "
+            },
+            {
+              "c": true,
+              "t": "H3_ZERO_COPY_WEIGHTS=0"
+            },
+            {
+              "t": " disables\nthe M5 selection for diagnostics.\nThe streamed Qwen text encoder preallocates a small ring of future layer\nbuffers and fills them on eight I/O workers while Metal executes the current\nlayer. The default ring depth is two layers on M3/older hardware and three on\nM5, where the target machine has 128 GiB. "
+            },
+            {
+              "c": true,
+              "t": "H3_QWEN_PREFETCH=0"
+            },
+            {
+              "t": " restores the\nsingle-layer synchronous reference path; values 1-8 select the worker count,\nand "
+            },
+            {
+              "c": true,
+              "t": "H3_QWEN_PREFETCH_DEPTH=1"
+            },
+            {
+              "t": " through "
+            },
+            {
+              "c": true,
+              "t": "6"
+            },
+            {
+              "t": " overrides the ring depth."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "--ssd-streaming"
+            },
+            {
+              "t": " is a separate, more aggressive residency mode for the DiT.\nOnly its small per-block normalization weights remain resident. Two complete\nBF16 matrix slots alternate while a background reader fills the next slot in\ncheckpoint-offset order; the current Metal command buffer runs concurrently.\nDarwin uncached reads avoid retaining a second copy in the filesystem cache.\nThe first active block is prefetched again during the final block, so a cached\ninteractive DiT is ready for its next denoiser evaluation. Measurements reached\nabout 13--14.6 GiB/s from the internal SSD. "
+            },
+            {
+              "c": true,
+              "t": "H3_PROFILE=1"
+            },
+            {
+              "t": " reports total bytes,\nread throughput, and the part of the read wait that was not hidden by GPU work."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Metal 4 and TensorOps paths"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "M5 GPUs automatically use native BF16 Metal 4/TensorOps for the DiT QKV and\nattention-output projections at sequence lengths up to 2,048. The compact\nMorton schedule routes Q/K/V directly into head-major attention inputs, avoids\nthree MPSGraph input transposes, and is byte-identical to the portable path. It\nimproves a complete 512x512 50-block forward by about 2% across repeated IT/US\nM5 Max runs. For 2,049-3,072 rows, including 864x480, two row-offset Morton\ndispatches preserve the efficient tile geometry and improve the complete\nforward by about 2% in balanced runs. Still larger sequences stay on MPSGraph.\n"
+            },
+            {
+              "c": true,
+              "t": "H3_NAX=0"
+            },
+            {
+              "t": " disables TensorOps for exact A/B diagnosis. The selection is guarded\nat runtime and falls back to the unchanged portable library if compilation is\nunavailable."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "H3_NAX=1"
+            },
+            {
+              "t": " forces the broader native BF16 linear path. It passes the complete\n50-block MLX fixture, but remains opt-in: exact-shape microbenchmarks favor its\n128-row tile while full DiT runs currently favor MPSGraph scheduling. This\nkeeps a working NAX integration available for later quantized/fused kernels\nwithout making a benchmark regression the default.\n"
+            },
+            {
+              "c": true,
+              "t": "H3_NAX=mlp"
+            },
+            {
+              "t": " selects a more specialized Metal 4 path: paired FC1 gate/up\nTensorOps tiles apply SwiGLU in threadgroup memory and write only the\n14,336-wide activated intermediate, then FC2 also stays on TensorOps.\n"
+            },
+            {
+              "c": true,
+              "t": "H3_DISABLE_NAX_MLP=1"
+            },
+            {
+              "t": " keeps the MPSGraph MLP in a context created this way for\nsame-process A/B testing. The path is deliberately opt-in because scheduling\ndepends on the OS GPU stack: the primary macOS 26.5.2 M5 Max gained 1.3-2.0%\nin isolated real-weight MLP runs but lost about 1-3% in a complete 50-block forward,\nwhile an otherwise identical macOS 26.5 M5 Max gained 1.4% in a same-context\nforward A/B. The resulting 50-block velocities were close (1.9% video and 2.4%\naudio relative L2), but not byte-identical."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Specialized projection kernels"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The narrow DiT audio/video output heads convert their small released F32\nweights to BF16 once and use the Iris-derived 16x16 tiled linear directly on\nBF16 activations. At the production 320-render geometry, isolated paired-head\nmeasurements are 2.30x faster on M3 Max and 1.83x faster on M5 Max, with\nrelative L2 "
+            },
+            {
+              "c": true,
+              "t": "8.64e-4"
+            },
+            {
+              "t": "; the absolute M5 saving is about 0.6 ms per evaluated\nstep. Full fox and surfer sequences remained clean and measured 29.9/38.4 dB\nagainst the F32-head renders. "
+            },
+            {
+              "c": true,
+              "t": "H3_DIT_F32_FINAL=1"
+            },
+            {
+              "t": " restores the close-reference\nhead and its extra activation buffers.\nThe F32 "
+            },
+            {
+              "c": true,
+              "t": "96->5376"
+            },
+            {
+              "t": " video and "
+            },
+            {
+              "c": true,
+              "t": "32->5376"
+            },
+            {
+              "t": " audio patch projections use a dedicated\n16x16 cooperative tile, retaining F32 weights, inputs and accumulation while\nrounding the tile result directly to BF16.\nPaired production-shape measurements are 1.77x faster on M3 and 1.62-1.78x\non M5; the complete generated RGB stream is byte-identical to the scalar path.\nFusing the final cast improves the 2835-row tile itself from 2.499 to 1.734 ms\non M3 and 1.555 to 1.186 ms on M5, and removes 38.27/59.66 MiB of F32 scratch\nat 512/864-class geometry. "
+            },
+            {
+              "c": true,
+              "t": "H3_DISABLE_FUSED_PATCH_CAST=1"
+            },
+            {
+              "t": " restores the tiled\nF32 output plus standalone cast; "
+            },
+            {
+              "c": true,
+              "t": "H3_SCALAR_PATCH=1"
+            },
+            {
+              "t": " selects the scalar\ndiagnostic path.\nThe same tile binds its output directly into the packed hidden stream, removing\nthe BF16 media staging buffers and their blits. This saves another 19.13/29.83\nMiB and improves the 2835-row boundary from 1.847 to 1.730 ms on M3 and 1.282\nto 1.184 ms on M5. Contiguous T2VA uses byte offsets; FL2VA/Ref2VA use compact\ndestination-row maps so each modality remains one large dispatch. A complete\nsix-segment Ref2VA M5 ABBA remained byte-identical and improved 5.067 to 5.033\nseconds per measured forward pair. "
+            },
+            {
+              "c": true,
+              "t": "H3_DISABLE_FUSED_PATCH_PACK=1"
+            },
+            {
+              "t": " restores the\nstaging buffers and packing blits."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Scheduling and activation memory"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The DiT core is split into two ordered Metal command buffers so GPU execution\nof the first part overlaps CPU encoding of the second. Thermal-balanced ABBA\nmeasurements select a 60%-depth split on M5 (30/50, 27/45, and 24/40), with\nroughly 0.5-1.8% wins; M3 automatically splits only the validated 30/50 case,\nwhich measured 1.2% faster, because 24/40 regressed there. The operation order\nand generated bytes are unchanged. "
+            },
+            {
+              "c": true,
+              "t": "H3_DIT_COMMAND_BLOCKS=0"
+            },
+            {
+              "t": " restores one\ncommand buffer; values 1-50 override the split for further tuning.\nDiT activation buffers also follow their actual intra-block lifetimes: the QKV\nprojection arena is reused first for attention heads and then for the normalized\nMLP input, while the current attention-output arena becomes the MLP output after\nits branch has been consumed. This removes 61.25 MiB at 512-class geometry and\n99.63 MiB at 864-class geometry without changing dispatches or arithmetic.\n"
+            },
+            {
+              "c": true,
+              "t": "H3_DISABLE_DIT_ACTIVATION_ALIAS=1"
+            },
+            {
+              "t": " restores separate diagnostic buffers.\nMPSGraph tensor-data wrappers for immutable DiT weights and biases are retained\nwith their resident buffers. This avoids rebuilding the same binding metadata\nfor every block and denoiser evaluation without copying tensor storage; measured\nABBA gains were 1.6% on M3 Max and 0.4-1.1% on M5 Max. Activation wrappers stay\ntransient because retaining them regressed the M5. The outputs remain\nbyte-identical, and "
+            },
+            {
+              "c": true,
+              "t": "H3_DISABLE_GRAPH_DATA_CACHE=1"
+            },
+            {
+              "t": " restores transient wrappers\nfor all tensors.\nOn M3/older hardware, the four MPSGraph segments in each DiT block also reuse\none "
+            },
+            {
+              "c": true,
+              "t": "MPSCommandBuffer"
+            },
+            {
+              "t": " wrapper for their shared underlying Metal command buffer.\nRepeated thermal-balanced runs measured 1.0-1.6% faster on M3 Max; M5 measured\nneutral, so it retains fresh wrappers. "
+            },
+            {
+              "c": true,
+              "t": "H3_REUSE_MPS_COMMAND=0"
+            },
+            {
+              "t": " or "
+            },
+            {
+              "c": true,
+              "t": "1"
+            },
+            {
+              "t": " overrides\nthe automatic selection. Results are byte-identical.\nOn M5, the serving Euler sampler keeps its patch-packed F32 latents and cached\nBF16 velocities in Metal buffers. Each selected denoiser refresh is completed\nbefore the next is encoded, avoiding MPSGraph back-pressure while removing all\nintermediate latent/velocity readbacks and repacking. Two warm eight-run A/B\nsequences measured small 0.1% and 0.3% gains with byte-identical final latents;\nthe path also saves roughly 16 bytes of transient host state per video-latent\nelement (about 136 MB at the 768p shape). M3 and older GPUs retain the CPU\nsampler by default. "
+            },
+            {
+              "c": true,
+              "t": "H3_CPU_SAMPLER=1"
+            },
+            {
+              "t": " restores it on M5;\n"
+            },
+            {
+              "c": true,
+              "t": "H3_GPU_SAMPLER=1"
+            },
+            {
+              "t": " selects the GPU-state path explicitly, and\n"
+            },
+            {
+              "c": true,
+              "t": "H3_GPU_SAMPLER_WINDOW=0"
+            },
+            {
+              "t": " enables the slower unbounded encode-ahead diagnostic."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Checkpoint layout and media pipeline"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The released checkpoint stores DiT QKV rows interleaved per attention head.\nNative Metal consumes that layout directly in the fused QK-normalization/RoPE\nkernel, avoiding a checkpoint transpose and extra RAM. The earlier identity\ninterpretation was the cause of the noisy diagnostic outputs."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The public generation path decodes the joint audio latent with a streamed native\nBigVGAN/AudioVAE and writes synchronized H.264 plus 32 kHz stereo AAC. The native\nwaveform agrees with the corrected MLX oracle to relative L2 "
+            },
+            {
+              "c": true,
+              "t": "6.94e-5"
+            },
+            {
+              "t": ".\n"
+            },
+            {
+              "c": true,
+              "t": "--first-frame"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "--last-frame"
+            },
+            {
+              "t": ", and their combination use the released visual\nVAE encoder, Qwen3-VL vision tower and three-deepstack multimodal presentation,\n0.999 condition augmentation, and fixed condition rows in the native DiT. The\nfirst image is stretched to the target canvas; the last image is aspect-cover\nscaled and center cropped, matching the reference implementation. "
+            },
+            {
+              "c": true,
+              "t": "--ref-image"
+            },
+            {
+              "t": "\nselects the distinct Ref2VA transformer, preserves ordered "
+            },
+            {
+              "c": true,
+              "t": "<Picture N>"
+            },
+            {
+              "t": "\npresentation, and uses the released down-only aspect-preserving reference canvas.\n"
+            },
+            {
+              "c": true,
+              "t": "--ref-silent-video"
+            },
+            {
+              "t": " additionally performs bounded 24 fps decoding, the visual\nVAE's causal "
+            },
+            {
+              "c": true,
+              "t": "ceil(T/4)"
+            },
+            {
+              "t": " compression, two-frame Qwen sampling, and timestamped\n"
+            },
+            {
+              "c": true,
+              "t": "<Video N>"
+            },
+            {
+              "t": " presentation. "
+            },
+            {
+              "c": true,
+              "t": "--ref-video"
+            },
+            {
+              "t": " preserves an embedded soundtrack,\n"
+            },
+            {
+              "c": true,
+              "t": "--ref-video-audio VIDEO AUDIO"
+            },
+            {
+              "t": " supplies an explicit replacement, and\n"
+            },
+            {
+              "c": true,
+              "t": "--ref-audio"
+            },
+            {
+              "t": " appends an ordered standalone clip. Reference audio is decoded as\n32 kHz stereo F32, encoded by the native AudioVAE posterior-mean path, mixed as\n0.999 clean latent plus 0.001 seeded noise, pinned to the audio condition\ntimestep 1.0, and packed as width-32 rows on the same rotary timeline as visual\nreferences. Audio inputs are 2-15 seconds, at most three are\naccepted, their total decoded duration is capped at 15 seconds, and a standalone\naudio reference must be combined with an image or video reference."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The native audio encoder matches the corrected MLX oracle at relative L2\n"
+            },
+            {
+              "c": true,
+              "t": "3.59e-6"
+            },
+            {
+              "t": " on a real two-second stereo fixture. The correction is important: the\noriginal MLX reshape interleaved left/right samples, whereas the official\nPyTorch/SGLang path folds intact stereo channels into the batch dimension. On\nthe 128 GB M5 Max, clean end-to-end image+audio and embedded-video+audio renders\ncompleted in 74.58 and 76.99 seconds respectively, each with about a 40.1 GB\npeak physical footprint and zero swaps."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Profiling and diagnostic paths"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "--profile"
+            },
+            {
+              "t": " reports each Metal-backed phase separately: wall time, CPU-side\ncommand encoding, complete commit-to-fence wait, root-command GPU timestamps,\npeak live tensor storage, cumulative allocation, and dispatch counts. The wait\nmeasurement is the complete command turnaround; the root GPU timestamp alone\ncan omit child buffers scheduled internally by MPSGraph and is labeled\naccordingly."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The DiT fast path evaluates each BF16 "
+            },
+            {
+              "c": true,
+              "t": "fc1 -> SwiGLU -> fc2"
+            },
+            {
+              "t": " block as one cached\ngraph, avoiding separate graph boundaries and persistent intermediate tensors.\nSet "
+            },
+            {
+              "c": true,
+              "t": "H3_DISABLE_FUSED_MLP=1"
+            },
+            {
+              "t": " to retain the close-reference operation boundaries\nfor numerical diagnosis."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "On supported M5 Metal 4 TensorOps hardware, the native int8 MLP engine is the\ndefault. It dynamically quantizes activations, uses per-output-channel weight\nscales, and gives the sensitive FC2 input one scale per 1,024 channels.\nThe selected FC2 kernel keeps scaled partial products in private cooperative\nfragments instead of repeatedly spilling a 32 KiB threadgroup tile. A fixed\n50-layer, 19-transition 512x512 render measured 36.30 seconds with BF16 MPS and\n25.80 seconds with int8 on M5 Max. Beginning, middle, and final decoded frames\nretained the same subject, composition, and motion; small edge and fur details\ncan differ. The current diagnostic implementation retains both BF16 and int8\nMLP weights only when an A/B diagnostic requests them. Normal int8 loading\nreleases each block's BF16 FC1/FC2 buffers after their submitted quantization\nfinishes, reducing measured peak tensor storage to 25.9 GiB from the BF16\npath's 36.4 GiB. Runtime weight quantization still adds startup time."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The fastest M5 path also quantizes each DiT QKV projection and writes its\nQ/K/V tiles directly in head-major attention layout before the existing Q/K\nnormalization and RoPE kernel. In a fixed 50-layer, 19-transition 512x512\nrender this reduced denoising again, from 25.80 to 19.32 seconds. Sampled\nbeginning, middle, and final frames remained a coherent detailed fox walking\nthrough snow; quantized attention can change framing and fine detail. Use\n"
+            },
+            {
+              "c": true,
+              "t": "--use-slower-bf16-qkv"
+            },
+            {
+              "t": " for the close-reference BF16 projection. Normal int8\nloading releases the redundant BF16 QKV weights after quantization."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The following attention-output projection is int8 as well on the default M5\npath. Crossed same-model tests improve a complete forward by another 4.5-5.5%\nat 512 and 864. A decoded fox render remained clean and closely matched the\nint8-QKV-only composition; its thermally hot denoise measured 19.18 seconds.\nUse "
+            },
+            {
+              "c": true,
+              "t": "--use-slower-bf16-attention-output"
+            },
+            {
+              "t": " to retain that projection in BF16."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "On that int8 path, SDPA now leaves its result in native\n"
+            },
+            {
+              "c": true,
+              "t": "[head,row,dimension]"
+            },
+            {
+              "t": " order. A specialized 256-thread kernel gathers and\nquantizes each H3 row directly into the projection's row-major int8 buffer,\neliminating the intervening full-width BF16 transpose without changing any\noutput byte. Thermally controlled crossed runs improve complete 512 and 864\nforwards by roughly 0.2-1.2%. Use\n"
+            },
+            {
+              "c": true,
+              "t": "--use-slower-row-major-attention-output"
+            },
+            {
+              "t": " to restore the explicit BF16\nrow-major SDPA output and ordinary quantizer."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The M5 path also folds QKV and MLP activation quantization into the preceding\ngated AdaLN kernel. This removes 99 standalone quantizer dispatches per\n50-layer forward while preserving the previous output bytes, improving crossed\n512/864 measurements by about 0.3-0.6%. Use\n"
+            },
+            {
+              "c": true,
+              "t": "--use-slower-unfused-int8-inputs"
+            },
+            {
+              "t": " to restore the standalone quantizers."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The fused gated-AdaLN path loads its full 5,376-wide H3 rows as BF16x4 vectors\nand writes int8x4. It stages the rounded values locally before computing the\noriginal per-thread RMS sequence, so the reduction tree and every output byte\nremain unchanged. Crossed measurements save roughly another 0.1-0.5%. The\nexisting "
+            },
+            {
+              "c": true,
+              "t": "--use-slower-unfused-int8-inputs"
+            },
+            {
+              "t": " option retains the portable scalar\nand standalone-quantizer fallback."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Q/K RMS normalization and RoPE are performed inside the int8 QKV projection\ntile as well. The fused epilogue is byte-identical and improves complete\nforwards by 2.1-3.2% at 512 and 1.0-1.8% at 864 in crossed M5 measurements.\nUse "
+            },
+            {
+              "c": true,
+              "t": "--use-slower-unfused-qkv-rope"
+            },
+            {
+              "t": " to restore the separate Q/K kernel."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "That epilogue processes four adjacent Q/K dimensions per work item with\nBF16x4 loads and stores. The per-element arithmetic and BF16 rounding order are\nunchanged, while crossed cool-state measurements improve complete forwards by\nabout 0.4-1.0% at both 512 and 864. The same\n"
+            },
+            {
+              "c": true,
+              "t": "--use-slower-unfused-qkv-rope"
+            },
+            {
+              "t": " option restores the scalar standalone path."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "At up to 2,048 rows, the exact RMS loop uses BF16x4 loads followed by four\nexplicit ordered FMAs. This preserves every output bit and improves 512-class\nforwards by another 0.5-0.6%; larger shapes retain scalar loads because the two\nforms tie there. Use "
+            },
+            {
+              "c": true,
+              "t": "--use-slower-scalar-qkv-rms"
+            },
+            {
+              "t": " to force scalar loads."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The int8 attention-output projection caches its 128 row and column scales in\n1 KiB of threadgroup memory instead of rereading them for every cooperative\nfragment element. Above 2,048 rows the fused QKV kernel uses the same idea and\nthen recycles that storage for inverse RMS values; smaller QKV shapes retain\ndirect loads because the two forms tie there. Both are byte-identical and\nimprove complete forwards by about 0.2-0.7% where selected. Use\n"
+            },
+            {
+              "c": true,
+              "t": "--use-slower-uncached-int8-scales"
+            },
+            {
+              "t": " to restore direct device-scale loads."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For sequences of at most 2,048 rows, the H3 attention-output projection also\ncompiles its 7,168-by-5,376 shape into the TensorOps kernel. The result remains\nbyte-identical while saving about 0.2-0.8% in crossed complete 512-forward\nmeasurements. Larger sequences retain the dynamic-shape kernel because the\nspecialization regresses there. "
+            },
+            {
+              "c": true,
+              "t": "--use-slower-uncached-int8-scales"
+            },
+            {
+              "t": " restores\nthe general dynamic, direct-scale-load implementation."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "FC1 also uses an H3-specialized, compile-time 5,376-wide TensorOps loop. It is\nbyte-identical to the generic loop and saves about 0.1-0.4% in crossed complete\nforwards. Use "
+            },
+            {
+              "c": true,
+              "t": "--use-slower-dynamic-fc1-k"
+            },
+            {
+              "t": " to restore the runtime-bound loop."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "./h3 --profile -d ./MiniMax-H3 \\\n  -p \"A red fox walks through fresh snow.\" \\\n  --width 512 --height 512 --frames 22 --steps 20 \\\n  --layers 50 --reuse 1 -o outputs/fox-int8.mp4",
+          "language": "sh"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use "
+            },
+            {
+              "c": true,
+              "t": "--use-slower-bf16-mlp"
+            },
+            {
+              "t": " to force the portable close-reference MPS/BF16 MLP\npath for numerical comparison. Older Metal hardware selects that path\nautomatically when the required native TensorOps kernels are unavailable.\nFor FC2 activation quantization, sequences of at most 2,048 rows use an exact\n128-thread reduction. Each thread retains its eight BF16 input values while\ncomputing the group maximum, avoiding a second device-memory read when it emits\nthe int8 values; crossed M5 measurements improved complete 512 forwards by\nabout 0.2-0.8% without changing any output byte. Larger sequences retain the\nmeasured 256-thread kernel. "
+            },
+            {
+              "c": true,
+              "t": "--use-slower-grouped-quantizer"
+            },
+            {
+              "t": " forces the latter\nat every size for A/B comparison."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The native baseline targets the original "
+            },
+            {
+              "c": true,
+              "t": "FL2VA/"
+            },
+            {
+              "t": " and "
+            },
+            {
+              "c": true,
+              "t": "Ref2VA/"
+            },
+            {
+              "t": " checkpoint\ntrees. Model phases are loaded and released separately so the 33B transformer,\nQwen encoder, and decoders never have to coexist in unified memory."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "title": "h3-metal"
+}

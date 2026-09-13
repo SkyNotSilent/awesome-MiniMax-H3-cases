@@ -19,7 +19,7 @@ A tutorial is publishable only when all checks are true:
 3. The source remains accessible and is not truncated, promotional-only, copied, or dead.
 4. The structured steps are executable and do not invent missing details.
 5. Every command is checked against the current upstream README or documentation.
-6. Chinese and English fields are complete, independent summaries—not full copies of the post.
+6. Chinese and English guide fields are complete, independent summaries. The full original is captured separately by `npm run tutorials:originals` (see below), never pasted into guide fields.
 7. The poster is public, appropriate, locally cached under `public/tutorial-posters/`, and usable as a square crop. Use a branded fallback when necessary.
 8. Author, source URL, publication date, original language, verification date, and any visible engagement snapshot are factual. Omit unavailable metrics.
 
@@ -50,3 +50,16 @@ Publish only concise recommendation, known issues, source links and dates. `evid
 Recheck comments, model/workflow links, software versions and known failures weekly. On a broken source or unresolved material conflict, set `evidence.status: needs-review` to remove it from core recommendations; retain its slug and first `addedAt`, explain the issue and add an accessible replacement through `nextGuideIds` or `learningResources`. Login or rate-limit failures are incomplete checks, not evidence that content is broken. No paid compute is required for editorial review.
 
 Use `relatedCases.relationship: example` only for directly documented examples; use `technique` for similar methods without implying reproduction. Public schemas are the publication allowlist, including resources, chapters, feedback, evidence and next lessons. Run contract tests after modifying the schema or conversion pipeline.
+
+## Captured originals
+
+Every published tutorial also carries its complete public original in `data/tutorial-originals/{id}.json`: X Articles, author threads (including quoted posts), GitHub READMEs, Hugging Face documents, and ComfyUI documentation pages or linked sections. The detail page shows this original first, with author credit, the capture date, and the source link; the guide fields become the site's quick reference beneath it.
+
+Capture after publishing or re-verifying a guide:
+
+```bash
+railway bucket credentials --bucket h3-videos --json \
+  | npm run tutorials:originals -- --apply --credentials-stdin [--only id,id]
+```
+
+Images are mirrored as WebP under `public/tutorial-media/{id}/`. Videos use the case storage tiers (`videos/tutorial-{mediaId}.mp4` and `play/v1/tutorial-{mediaId}.mp4`) and play through `/media/tutorial-{mediaId}.mp4`. A capture whose content is unchanged keeps its previous `capturedAt`. A failed or deleted source never removes an existing capture; handle author removal requests from the takedown Issue by deleting the capture file and the guide's `original` marker. `npm run validate:data` checks every capture against the block contract and the mirrored image files.

@@ -1,0 +1,59 @@
+{
+  "tutorialId": "lightx2v-vs-larryvrh",
+  "kind": "x-thread",
+  "language": "ja",
+  "capturedAt": "2026-09-13T09:47:14.883Z",
+  "source": {
+    "url": "https://x.com/core_tan/status/2088147718732734936",
+    "author": "CALMDUST aka ちゃんこあ",
+    "handle": "@core_tan"
+  },
+  "sections": [
+    {
+      "url": "https://x.com/core_tan/status/2088147718732734936",
+      "publishedAt": "2026-08-14",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "MiniMax H3 Motion Context // Upscaled + EFX\n8STEP 30s lightx2v 4step v1.0 768p:0.75"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "⚡️8STEPの優位性は幾らかあって、安定度↑。このLoRAの場合は強度をやや下げると良いかも。4STEPではここまで出るのかぁ〜と言う驚きがあるし、早くてもちゃんと絵になるのが👍"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "src": "/media/tutorial-2088147309330944001.mp4",
+          "poster": "/tutorial-media/lightx2v-vs-larryvrh/2088147309330944001-poster.webp",
+          "width": 2048,
+          "height": 1142,
+          "duration": 30
+        },
+        {
+          "type": "post-quote",
+          "url": "https://x.com/core_tan/status/2088108484420366514",
+          "author": "CALMDUST aka ちゃんこあ",
+          "handle": "@core_tan",
+          "inlines": [
+            {
+              "t": "MiniMax H3 WebUI Dev版\n\nlightx2vとlarryvrhのLoRA全検証した結果、lightx2v 4step v1.0 768pがベストだと判断し既定のLoRAにしました。larryvrh版は4STEPだと質的に厳しいため自分が運用している8STEPでの検証にしてますが「鮮鋭度・ノイズ・音声」全てにおいて優位との結論でした"
+            }
+          ],
+          "image": {
+            "src": "/tutorial-media/lightx2v-vs-larryvrh/2088107667164368896-quote.webp",
+            "width": 1448,
+            "height": 2048
+          }
+        }
+      ]
+    }
+  ]
+}

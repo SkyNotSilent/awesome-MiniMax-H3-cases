@@ -15,6 +15,8 @@ const sortedCases = [...cases].sort((a, b) => Date.parse(b.addedAt) - Date.parse
 const archivePageCount = Math.ceil(sortedCases.length / archivePageSize)
 const tutorialGuides = JSON.parse(await readFile(resolve(root, 'data/tutorial-guides.json'), 'utf8'))
 const tutorialResources = JSON.parse(await readFile(resolve(root, 'data/tutorials.json'), 'utf8'))
+const tutorialOriginals = new Map(await Promise.all(tutorialGuides.filter((item) => item.original).map(async (item) => [item.id, JSON.parse(await readFile(resolve(root, `data/tutorial-originals/${item.id}.json`), 'utf8'))])))
+const SEO_ORIGINAL_CHARACTERS = 16_000
 const creatorCatalog = JSON.parse(await readFile(resolve(root, 'data/creators.json'), 'utf8'))
 const creators = creatorCatalog.creators
 const completePromptCount = cases.filter((item) => item.promptProvenance !== 'not-published' && item.prompt?.trim()).length
@@ -330,6 +332,25 @@ function localizedCreator(item, locale) {
   }
 }
 
+// Static fallback carries the captured original as plain text, truncated for page weight.
+function originalSeoHtml(original, locale) {
+  const inline = (runs) => runs.map((run) => run.href ? `<a href="${escapeHtml(run.href)}" rel="nofollow noopener">${escapeHtml(run.t)}</a>` : escapeHtml(run.t)).join('')
+  const parts = []
+  let length = 0
+  for (const block of original.sections.flatMap((section) => section.blocks)) {
+    if (length > SEO_ORIGINAL_CHARACTERS) break
+    const text = block.inlines ? block.inlines.map((run) => run.t).join('') : block.text ?? (block.items ?? []).flatMap((entry) => entry.inlines.map((run) => run.t)).join(' ')
+    length += text.length
+    if (block.type === 'heading') parts.push(`<h3>${inline(block.inlines)}</h3>`)
+    else if (block.type === 'paragraph' || block.type === 'quote') parts.push(`<p>${inline(block.inlines)}</p>`)
+    else if (block.type === 'list') parts.push(`<ul>${block.items.map((entry) => `<li>${inline(entry.inlines)}</li>`).join('')}</ul>`)
+    else if (block.type === 'code') parts.push(`<pre>${escapeHtml(block.text)}</pre>`)
+  }
+  const label = locale === 'en' ? 'Original' : '原文'
+  const byline = `${escapeHtml(original.source.author)}${original.source.handle ? ` ${escapeHtml(original.source.handle)}` : ''}`
+  return `<section lang="${original.language === 'zh' ? 'zh-CN' : escapeHtml(original.language)}"><h2>${label}: ${escapeHtml(original.title ?? byline)}</h2><p>${byline} · <a href="${escapeHtml(original.source.url)}" rel="nofollow noopener">${escapeHtml(locale === 'en' ? 'Source' : '出处')}</a></p>${parts.join('')}</section>`
+}
+
 function tutorialPageDefinition(item) {
   const paths = {
     'zh-CN': tutorialPath('zh-CN', item.id),
@@ -612,6 +633,10 @@ function fallbackMarkup(page, locale) {
     content = `<p><strong>${escapeHtml(locale === 'en' ? 'Audience' : '适用人群')}:</strong> ${escapeHtml(localized.audience)}</p><p><strong>${escapeHtml(locale === 'en' ? 'Hardware' : '硬件要求')}:</strong> ${escapeHtml(localized.hardware)}</p><h2>${escapeHtml(locale === 'en' ? 'Prerequisites' : '前置条件')}</h2><ul>${localized.prerequisites.map((value) => `<li>${escapeHtml(value)}</li>`).join('')}</ul><h2>${escapeHtml(locale === 'en' ? 'Steps' : '执行步骤')}</h2><ol>${localized.steps.map((value, index) => `<li id="step-${index + 1}">${escapeHtml(value)}</li>`).join('')}</ol>${commands}<h2>${escapeHtml(locale === 'en' ? 'Caveats' : '注意事项')}</h2><ul>${localized.caveats.map((value) => `<li>${escapeHtml(value)}</li>`).join('')}</ul><p><a href="${escapeHtml(item.source.url)}" rel="nofollow noopener">${escapeHtml(locale === 'en' ? 'View original source' : '查看原始来源')}</a> · ${escapeHtml(item.source.author)} · ${escapeHtml(item.verifiedAt)}</p>`
     const language = locale === 'en' ? 'en' : 'zh'
     const heading = (zh, en) => escapeHtml(locale === 'en' ? en : zh)
+    const original = tutorialOriginals.get(item.id)
+    // English fallbacks must stay CJK-free, so they carry only originals without CJK text.
+    const originalHtml = original ? originalSeoHtml(original, locale) : ''
+    if (originalHtml && (locale !== 'en' || !/[\u3400-\u9fff]/u.test(originalHtml))) content = originalHtml + content
     const links = (items) => items.map(([url, label]) => `<li><a href="${escapeHtml(url)}">${escapeHtml(label)}</a></li>`).join('')
     if (item.contribution) content += `<p>${heading('作者投稿', 'Author submission')}: <a href="${escapeHtml(item.contribution.authorUrl)}">${escapeHtml(item.source.author)}</a> · <a href="${escapeHtml(item.contribution.issueUrl)}">${heading('投稿记录', 'Submission')}</a></p>`
     content += `<p>${heading(item.depth === 'deep' ? '深度精选' : '导读', item.depth === 'deep' ? 'In depth' : 'Guide')} · ${heading('来源核对', 'Source checked')}: ${escapeHtml(item.evidence.sourceCheckedAt || '')} · ${heading('本站实测', 'Site testing')}: ${escapeHtml(item.evidence.siteTestedAt || (locale === 'en' ? 'No generation test performed' : '未进行生成实测'))}</p>`

@@ -1,0 +1,772 @@
+{
+  "tutorialId": "rent-gpu-comfyui",
+  "kind": "markdown",
+  "language": "en",
+  "capturedAt": "2026-09-13T09:44:49.334Z",
+  "source": {
+    "url": "https://docs.comfy.org/get_started/cloud",
+    "author": "ComfyUI"
+  },
+  "sections": [
+    {
+      "url": "https://docs.comfy.org/get_started/cloud",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Run ComfyUI workflows online with Comfy Cloud, the official cloud platform powered by NVIDIA RTX 6000 Pro GPUs. No local installation required."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "href": "https://comfy.org/cloud",
+                  "b": true,
+                  "t": "Access Comfy Cloud"
+                },
+                {
+                  "t": " — Click here to access ComfyUI Cloud directly"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "What is Comfy Cloud?"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "ComfyUI Cloud is the cloud version of ComfyUI with the same features as the local version. Everything is pre-installed and ready to use."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Key features"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Zero setup"
+                },
+                {
+                  "t": " — No installation required. All models and custom nodes are pre-installed and ready to use"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Powerful GPUs"
+                },
+                {
+                  "t": " — Run workflows fast on our powerful server GPUs without needing your own hardware"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Always up-to-date"
+                },
+                {
+                  "t": " — Automatically stays current with the latest ComfyUI releases and features"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Access anywhere"
+                },
+                {
+                  "t": " — Use ComfyUI from any device with an internet connection - no local installation needed"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Cloud vs local"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "ComfyUI offers both an official cloud version, "
+            },
+            {
+              "href": "https://comfy.org/cloud",
+              "t": "Comfy Cloud"
+            },
+            {
+              "t": ", and an open-source self-hosted version. If you have a powerful GPU, running ComfyUI locally is a great option. The cloud version, on the other hand, is an online service that's ready to use instantly—simply open the URL, no installation or setup required."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "Category"
+              }
+            ],
+            [
+              {
+                "t": "Comfy Cloud"
+              }
+            ],
+            [
+              {
+                "t": "Self-hosted (local ComfyUI)"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "b": true,
+                  "t": "Cost"
+                }
+              ],
+              [
+                {
+                  "t": "Monthly Subscription"
+                }
+              ],
+              [
+                {
+                  "t": "Free"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "b": true,
+                  "t": "GPU"
+                }
+              ],
+              [
+                {
+                  "t": "Powerful Blackwell RTX 6000 Pros"
+                }
+              ],
+              [
+                {
+                  "t": "Bring your own GPU"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "b": true,
+                  "t": "Technical Knowledge"
+                }
+              ],
+              [
+                {
+                  "t": "No technical knowledge required."
+                }
+              ],
+              [
+                {
+                  "t": "While desktop and portable give you easy ways to get started, you'll need to troubleshoot custom node installations and local installation issues."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "b": true,
+                  "t": "Custom Nodes"
+                }
+              ],
+              [
+                {
+                  "t": "Use pre-installed custom nodes and never worry about compatibility issues."
+                }
+              ],
+              [
+                {
+                  "t": "Install any custom node you want, but you'll need to manage it yourself."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "b": true,
+                  "t": "Models"
+                }
+              ],
+              [
+                {
+                  "t": "Use pre-installed models. Import LoRA models from Civitai. Import models from Hugging Face (coming soon)."
+                }
+              ],
+              [
+                {
+                  "t": "Use any models you want, but you'll need to download them first."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "b": true,
+                  "t": "Notable Differences"
+                }
+              ],
+              [
+                {
+                  "t": "Easy to onboard your team"
+                }
+              ],
+              [
+                {
+                  "t": "Works offline, infinitely customizable"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "b": true,
+                  "t": "Get started"
+                }
+              ],
+              [
+                {
+                  "href": "https://comfy.org/cloud",
+                  "t": "Run ComfyUI Cloud"
+                }
+              ],
+              [
+                {
+                  "href": "https://docs.comfy.org/installation/system_requirements",
+                  "t": "Install ComfyUI locally"
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Pricing and subscription"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "href": "https://www.comfy.org/cloud/pricing",
+                  "b": true,
+                  "t": "Check pricing"
+                },
+                {
+                  "t": " — View pricing and subscription options for Comfy Cloud"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "How to use ComfyUI Cloud"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Using ComfyUI Cloud is essentially the same as using your local ComfyUI. If this is your first time using ComfyUI, here are some quick tips to get started:"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Select a template"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Click the template icon in the left sidebar to browse available workflows."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/rent-gpu-comfyui/md-c03c30436084.webp",
+          "width": 1600,
+          "height": 881,
+          "alt": "Open workflow template"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Select the workflow you want to run"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Click on the template you want to run."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/rent-gpu-comfyui/md-96db8547ecd5.webp",
+          "width": 1600,
+          "height": 888,
+          "alt": "Select workflow template"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Update template inputs"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "In the loaded workflow, since we have pre-installed all models in the cloud version, all templates are ready to run immediately after loading."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If you need to make updates, you only need to provide image inputs or text prompts. Check the "
+                },
+                {
+                  "c": true,
+                  "t": "Load Image"
+                },
+                {
+                  "t": " node or "
+                },
+                {
+                  "c": true,
+                  "t": "CLIP Text Encode"
+                },
+                {
+                  "t": " node."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/rent-gpu-comfyui/md-2a8515ec8318.webp",
+          "width": 1600,
+          "height": 881,
+          "alt": "Check inputs"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Run your workflow"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "If everything is correct, click the \"Run\" icon or use the shortcut \"Ctrl + Enter\" to run the workflow."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/rent-gpu-comfyui/md-40f7c527b614.webp",
+          "width": 1600,
+          "height": 1126,
+          "alt": "Run workflow"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "View output"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "After clicking run, our service will start allocating a machine for your workflow. You can check the execution status of the corresponding workflow in the queue panel."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/rent-gpu-comfyui/md-28476230faca.webp",
+          "width": 1600,
+          "height": 1100,
+          "alt": "View queue"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Save content locally"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "After the workflow execution is complete, you can save the generated content locally. Depending on the asset type, the save method is as follows:"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "Save images"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "In the queue panel or on the save image node, right-click on the generated image and select \"Save image\" to save the image locally."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/rent-gpu-comfyui/md-1ae475f7c809.webp",
+          "width": 1600,
+          "height": 770,
+          "alt": "Save image assets"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "Save videos"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "In the queue panel or on the save video node:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Click the three dots on the browser player component to open the menu"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Select \"Download\" to save the video locally."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/rent-gpu-comfyui/md-8fbeb57dee82.webp",
+          "width": 1600,
+          "height": 869,
+          "alt": "Save video assets"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "Save audio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "In the queue panel or on the save audio node:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Click the three dots on the browser player component to open the menu"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Select \"Download\" to save the audio file locally."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/rent-gpu-comfyui/md-aec71a8f0fdb.webp",
+          "width": 1600,
+          "height": 866,
+          "alt": "Save audio assets"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "Save 3D assets"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "In the 3D browser node menu, select the \"Export\" option, choose the format you want to save, and the 3D file will be saved locally."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/rent-gpu-comfyui/md-d948579b2002.webp",
+          "width": 1600,
+          "height": 1003,
+          "alt": "Save 3D assets"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Feedback"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "If you have any thoughts, suggestions, or run into any issues, simply click the \"Feedback\" icon. This will directly send your feedback to us."
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/rent-gpu-comfyui/md-514f4d3acf61.webp",
+          "width": 1600,
+          "height": 1163,
+          "alt": "Feedback"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "How to Stop/Exit Comfy Cloud"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Cloud sessions only bill you while the GPU is actively running. When you close the browser tab, the session stops automatically — you can close it anytime, just like a regular browser tab."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Frequently Asked Questions"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "href": "https://comfy.org/cloud",
+                  "b": true,
+                  "t": "View FAQs"
+                },
+                {
+                  "t": " — View frequently asked questions and answers about Comfy Cloud, including pricing, features, limitations, and more"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Next steps"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "href": "https://docs.comfy.org/development/cloud/overview",
+                  "b": true,
+                  "t": "Cloud API"
+                },
+                {
+                  "t": " — Programmatically run workflows via the Cloud API"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "href": "https://docs.comfy.org/tutorials/basic/text-to-image",
+                  "b": true,
+                  "t": "Tutorials"
+                },
+                {
+                  "t": " — Explore tutorials to learn ComfyUI workflows"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "href": "https://discord.com/invite/comfyorg",
+                  "b": true,
+                  "t": "Support"
+                },
+                {
+                  "t": " — Join our Discord community for help"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "title": "Comfy Cloud - Official ComfyUI Cloud Platform Powered by RTX 6000 Pro"
+}

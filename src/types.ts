@@ -154,7 +154,33 @@ export type TutorialHardwareProfile =
   | 'vram-24-plus'
   | 'cloud-gpu'
 
+export type OriginalInline = { t: string; b?: true; i?: true; c?: true; href?: string }
+export type OriginalImage = { src: string; width: number; height: number; alt?: string }
+export type OriginalBlock =
+  | { type: 'heading'; level: 2 | 3 | 4; inlines: OriginalInline[] }
+  | { type: 'paragraph' | 'quote'; inlines: OriginalInline[] }
+  | { type: 'list'; ordered: boolean; items: Array<{ depth: number; inlines: OriginalInline[] }> }
+  | { type: 'code'; text: string; language?: string }
+  | ({ type: 'image' } & OriginalImage)
+  | { type: 'video'; src: string; poster?: string; width?: number; height?: number; duration?: number }
+  | { type: 'youtube'; videoId: string }
+  | { type: 'divider' }
+  | { type: 'table'; header: OriginalInline[][]; rows: OriginalInline[][][] }
+  | { type: 'post-quote'; url: string; author: string; handle?: string; inlines: OriginalInline[]; image?: OriginalImage }
+export type TutorialOriginalKind = 'x-article' | 'x-thread' | 'markdown'
+export interface TutorialOriginal {
+  tutorialId: string
+  kind: TutorialOriginalKind
+  title?: string
+  language: 'zh' | 'en' | 'ja' | 'other'
+  capturedAt: string
+  source: { url: string; author: string; handle?: string; revision?: string; license?: string }
+  cover?: OriginalImage
+  sections: Array<{ url?: string; publishedAt?: string; blocks: OriginalBlock[] }>
+}
+
 export interface TutorialGuide {
+  original?: { kind: TutorialOriginalKind; capturedAt: string }
   guideType: 'setup' | 'project' | 'reference'
   contribution?: { issueUrl: string; authorUrl: string }
   learningTrack: 'run' | 'create'

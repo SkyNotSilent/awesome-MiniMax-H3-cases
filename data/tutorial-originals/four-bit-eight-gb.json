@@ -1,0 +1,71 @@
+{
+  "tutorialId": "four-bit-eight-gb",
+  "kind": "x-thread",
+  "language": "en",
+  "capturedAt": "2026-09-13T09:45:25.984Z",
+  "source": {
+    "url": "https://x.com/ModelScope2022/status/2084625441940279770",
+    "author": "ModelScope",
+    "handle": "@ModelScope2022"
+  },
+  "sections": [
+    {
+      "url": "https://x.com/ModelScope2022/status/2084625441940279770",
+      "publishedAt": "2026-08-04",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Run your MiniMax-H3 locally, even on Mac!"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "With the 4-bit-quantized version coupled with DiffSynth-Studio, you can run MiniMax-H3 with a minimum of 8GB vRAM 🚀🚀🚀"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "🤖 "
+            },
+            {
+              "t": "https://modelscope.ai/models/DiffSynth-Studio/MiniMax-H3-NF4",
+              "href": "https://modelscope.ai/models/DiffSynth-Studio/MiniMax-H3-NF4"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "More to explore:\n• Inference that adapt to your available vRAM: takes as little as 8GB\n• Runs in extreme mode on a 16GB Apple M-series Mac\n• LoRA training with a 24GB consumer GPU"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "All while preserving the powerful capability of MiniMax-H3! Let’s cook 🔥"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "src": "/media/tutorial-2084625427927126016.mp4",
+          "poster": "/tutorial-media/four-bit-eight-gb/2084625427927126016-poster.webp",
+          "width": 1672,
+          "height": 940,
+          "duration": 5.2
+        }
+      ]
+    }
+  ]
+}

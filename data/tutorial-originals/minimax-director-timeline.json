@@ -1,0 +1,1368 @@
+{
+  "tutorialId": "minimax-director-timeline",
+  "kind": "markdown",
+  "language": "en",
+  "capturedAt": "2026-09-13T09:47:47.188Z",
+  "source": {
+    "url": "https://github.com/imbutus/ComfyUI-MiniMaxDirector",
+    "author": "imbutus",
+    "revision": "17926919f0da34790316fa603becfcc74853ac6f",
+    "license": "MIT"
+  },
+  "sections": [
+    {
+      "url": "https://github.com/imbutus/ComfyUI-MiniMaxDirector",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "A timeline director for the "
+            },
+            {
+              "href": "https://huggingface.co/MiniMaxAI/MiniMax-H3",
+              "t": "MiniMax H3"
+            },
+            {
+              "t": "\nvideo model in ComfyUI. Lay out shots, camera moves and audio cues on a track, and it\ncompiles them into the single structured prompt H3 actually reads — then hands the model\nits conditioning and a clip length the sampler will accept."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "Video tutorial"
+            },
+            {
+              "t": " — the whole workflow, every documented H3 feature, in order:"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/minimax-director-timeline/md-5d94aeb21720.webp",
+          "width": 1280,
+          "height": 720,
+          "alt": "MiniMax Director — the full walkthrough"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Dubbed: "
+            },
+            {
+              "href": "https://youtu.be/zjN37BQsOrI",
+              "t": "Русский"
+            },
+            {
+              "t": " · "
+            },
+            {
+              "href": "https://youtu.be/te8qpVaP0yI",
+              "t": "中文"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/minimax-director-timeline/md-56e897ac2c00.webp",
+          "width": 1600,
+          "height": 1100,
+          "alt": "The timeline, with the block under the playhead opened below it"
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/minimax-director-timeline/md-013a733dab01.webp",
+          "width": 1600,
+          "height": 928,
+          "alt": "The WHO & WHAT tab: one card per thing the prompt names"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "H3 makes the picture and the voices in one pass, so the editor has a "
+            },
+            {
+              "b": true,
+              "t": "WHO & WHAT"
+            },
+            {
+              "t": " tab: one\ncard per thing the prompt has to name, holding its face, its voice, how much of it survives\nfrom a reference, and — for a face swap — who the face is carried onto, which folds the\ncard into that person rather than adding a second one. Not only people: a costume, a prop,\na place or a style out of the same photograph is a card too, and several cards may point at\none file. A card can also take a person's motion from a video and their voice timbre from a\nrecording — the guide's one-subject-several-assets case, and the same machinery a face swap\nnow uses. A shot then only says who speaks and what they say."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "A card is also the one place a file is described — there is no second description box on\nthe block, because a file used to define something is cited inside that thing's definition\nrather than given a line of its own. Citing one in a shot is a click: the block's\n"
+            },
+            {
+              "b": true,
+              "t": "SUBJECTS"
+            },
+            {
+              "t": " row is a chip per numbered card, and clicking it writes "
+            },
+            {
+              "c": true,
+              "t": "<Subject n>"
+            },
+            {
+              "t": " into the\nshot's text at the caret, so the number is never typed and never wrong."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The compiler covers MiniMax's published prompt guides rather than a subset of them: the\nfull camera vocabulary as motion type × amplitude × speed, voiceovers in the exact form\nthe model was trained on, dialogue that crosses a cut or is cut off by the end of the\nclip, on-screen text quoted verbatim, storyboard references, the separate marker\nvocabulary audio uses, and a linter that checks the rules the guides state outright."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The editor is content-sized: the node is as tall as the panel you have open, and the card\nlist is the only part with a height of its own — set by its grip or by the node's corner,\nstored on the node, restored with the workflow."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "It ships as a whole workflow, not just a node pack:\n"
+            },
+            {
+              "href": "https://github.com/imbutus/ComfyUI-MiniMaxDirector/blob/main/example_workflows/minimax-director.json",
+              "c": true,
+              "t": "example_workflows/minimax-director.json"
+            },
+            {
+              "t": " is a\ncomplete graph — timeline, live compiled-prompt view, loaders, sampler, both VAE decodes\nand video out. Install it, open it, start writing shots. See "
+            },
+            {
+              "b": true,
+              "t": "Install"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "MIT licensed. The pack has no dependencies beyond ComfyUI itself; the workflow's\noptional "
+            },
+            {
+              "b": true,
+              "t": "Upscale"
+            },
+            {
+              "t": " switch is the one thing that asks for another pack, and it is off\nby default."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Where this came from"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "I loved "
+            },
+            {
+              "href": "https://github.com/WhatDreamsCost/WhatDreamsCost-ComfyUI",
+              "t": "LTXDirector"
+            },
+            {
+              "t": ". Directing\na video by laying shots out on a timeline, instead of cramming everything into one prompt\nbox and hoping, is the right idea — and WhatDreamsCost got there first and built it\nproperly. Thank you for it."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "MiniMaxDirector is that idea carried over to MiniMax H3. It is not a port: none of\nLTXDirector's code is here, and the two models want different things. LTX needs keyframes\ninjected into latent space because it has no notion of a shot list; H3's text encoder is a\n32B vision-language model that reads one itself, so the same idea comes out as a compiler\nrather than a guide injector. The debt is to the concept, and it is a large one."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "If you work with LTX, use LTXDirector — it is more mature than this, and it is the\noriginal."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "People searching for an LTXDirector for MiniMax H3 tend to land here, so to be clear:\nthis is not that. It is a separate project, written from scratch for a different model,\nbuilt on an idea LTXDirector had first."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Why a compiler rather than latent guides"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "H3's text encoder is a 32B vision-language model, and it parses a shot list on its own:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "Neon-lit alley after rain, cyan and magenta signage, 35mm grain.\n\nTimeline:\n[0s-1s] Wide shot of the alley, puddles holding the sign reflections. The camera dollies slowly in.\n[1s-2.5s] Close on <Picture 1>, rain beading on the collar."
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "So the interesting work is not injecting guides into latent space — it is producing that\ntext correctly, addressing wired inputs as "
+            },
+            {
+              "c": true,
+              "t": "<Picture 1>"
+            },
+            {
+              "t": " / "
+            },
+            {
+              "c": true,
+              "t": "<Audio 1>"
+            },
+            {
+              "t": ", and keeping the\nclip on the frame lattice H3 requires. All of that is ordinary logic, which is why the\ncore of this project is pure Python with no tensors in it and runs in a fifth of a second\non a laptop."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "The frame lattice"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "H3 only accepts clip lengths satisfying "
+            },
+            {
+              "c": true,
+              "t": "length % 17 == 5"
+            },
+            {
+              "t": " at 24 fps — 5, 22, 39, 56, 73,\n90, 107, 124, and so on. The model denoises a latent whose time axis is a row of slots, and\nthe video VAE packs 17 frames into 5 of them (after a 5-frame head worth 2); a length off\nthe lattice would need a fraction of a slot."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The editor lands on it while you build rather than at render time: a block that grows the\nclip takes the padding, and a typed duration snaps up on its own. So the timeline you\narrange is the clip that is generated, with no frames on the end that no shot describes."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Nodes"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "Node"
+              }
+            ],
+            [
+              {
+                "t": "Purpose"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "c": true,
+                  "t": "MiniMax Director"
+                }
+              ],
+              [
+                {
+                  "t": "Timeline editor; outputs "
+                },
+                {
+                  "c": true,
+                  "t": "positive"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "latent"
+                },
+                {
+                  "t": ", the compiled "
+                },
+                {
+                  "c": true,
+                  "t": "prompt"
+                },
+                {
+                  "t": ", and a lint "
+                },
+                {
+                  "c": true,
+                  "t": "report"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "MiniMax Director — Prompt"
+                }
+              ],
+              [
+                {
+                  "t": "Shows the compiled prompt as the timeline is edited, without running anything. Wire the director's "
+                },
+                {
+                  "c": true,
+                  "t": "prompt"
+                },
+                {
+                  "t": " output to it."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "MiniMax Director — Report"
+                }
+              ],
+              [
+                {
+                  "t": "Shows the linter's findings as the timeline is edited. Wire the director's "
+                },
+                {
+                  "c": true,
+                  "t": "report"
+                },
+                {
+                  "t": " output to it."
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Three nodes, and the shipped workflow uses all three. There is no separate compile node,\nno seconds-to-frames node, and no "
+            },
+            {
+              "c": true,
+              "t": "length"
+            },
+            {
+              "t": " output on the director: the timeline's own\nclock reads the frame count in frames and seconds, the rounded length rides in the\n"
+            },
+            {
+              "c": true,
+              "t": "latent"
+            },
+            {
+              "t": " the sampler receives, and the editor compiles and lints on every edit pause. Each\nof the three was a second route to something already on screen."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The editor runs on both node renderers — the classic canvas and "
+            },
+            {
+              "b": true,
+              "t": "Nodes 2.0"
+            },
+            {
+              "t": ", ComfyUI's\nVue rendering — from one code path, with no setting to pick. Drag the node's bottom-right\ncorner to give it more room; the height is kept with the workflow, the node still grows\nwhen you add a prompt or a card, and "
+            },
+            {
+              "b": true,
+              "t": "Fit node to content"
+            },
+            {
+              "t": " in its right-click menu puts\nit back."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The director calls the core "
+            },
+            {
+              "c": true,
+              "t": "MiniMaxH3ImageToVideo"
+            },
+            {
+              "t": " / "
+            },
+            {
+              "c": true,
+              "t": "MiniMaxH3ReferenceToVideo"
+            },
+            {
+              "t": " nodes\nrather than reimplementing them, resolving both by introspection so an upstream signature\nchange surfaces as a clear message instead of a stack trace. The path is picked automatically from the\ntimeline: no files and you get text-to-video, a block used as "
+            },
+            {
+              "c": true,
+              "t": "first frame"
+            },
+            {
+              "t": " or "
+            },
+            {
+              "c": true,
+              "t": "last frame"
+            },
+            {
+              "t": "\nand you get image-to-video, any other attached file and you get reference-to-video. The\nnode has no reference or keyframe sockets of its own -- every file comes off the timeline,\nwhich is the one place a file is also described."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Install"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Three steps: the nodes, the weights, the workflow. The nodes on their own leave you with a\ntimeline and nothing to render it — the graph around them is the product, and it ships here\nas "
+            },
+            {
+              "href": "https://github.com/imbutus/ComfyUI-MiniMaxDirector/blob/main/example_workflows/minimax-director.json",
+              "c": true,
+              "t": "example_workflows/minimax-director.json"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Requires ComfyUI 0.31.0 or newer. The nodes themselves work on 0.30.0, where the MiniMax\nH3 nodes landed, but the workflow's "
+            },
+            {
+              "b": true,
+              "t": "Turbo"
+            },
+            {
+              "t": " switch needs "
+            },
+            {
+              "c": true,
+              "t": "ModelSamplingAV"
+            },
+            {
+              "t": " from 0.31.0 —\nwithout it the audio is over-stepped at four steps and comes back distorted while the\npicture looks fine."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "1. The nodes."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "cd ComfyUI/custom_nodes\ngit clone https://github.com/imbutus/ComfyUI-MiniMaxDirector.git"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Restart ComfyUI."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "2. The weights."
+            },
+            {
+              "t": " Four files, all from\n"
+            },
+            {
+              "href": "https://huggingface.co/Comfy-Org/MiniMax-H3",
+              "c": true,
+              "t": "Comfy-Org/MiniMax-H3"
+            },
+            {
+              "t": ". These are the exact\nfilenames the example workflow asks for; ComfyUI matches loaders to files by name, so a\ndifferently named copy shows up as an empty dropdown rather than an error."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "File"
+              }
+            ],
+            [
+              {
+                "t": "Goes in"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "c": true,
+                  "t": "minimax_h3_ref2va_pruned_int8_convrot.safetensors"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "models/diffusion_models/"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "models/text_encoders/"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "minimax_h3_video_vae_fp16.safetensors"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "models/vae/"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "minimax_h3_audio_vae_fp32.safetensors"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "models/vae/"
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Two VAEs is not a mistake. H3 generates picture and sound together, and they decode\nseparately."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "3. The workflow."
+            },
+            {
+              "t": " Restart ComfyUI, then open "
+            },
+            {
+              "b": true,
+              "t": "Workflow → Browse Templates →\nminimax-director"
+            },
+            {
+              "t": ". The pack ships the graph in "
+            },
+            {
+              "c": true,
+              "t": "example_workflows/"
+            },
+            {
+              "t": ", which ComfyUI serves as a\ntemplate, so there is nothing to download and nothing to drag. (If you would rather open the\nfile itself, drag "
+            },
+            {
+              "href": "https://github.com/imbutus/ComfyUI-MiniMaxDirector/blob/main/example_workflows/minimax-director.json",
+              "c": true,
+              "t": "example_workflows/minimax-director.json"
+            },
+            {
+              "t": " onto the\ncanvas — step 1 already put it on your disk. It is not in the Workflows sidebar; that lists\nthe workflows you have saved.) It wires up:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "MiniMax Director"
+                },
+                {
+                  "t": " — the timeline you work in."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "MiniMax Director — Prompt"
+                },
+                {
+                  "t": " — the compiled prompt, beside it, updating as you type."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "MiniMax Director — Report"
+                },
+                {
+                  "t": " — the linter's findings, above it. Almost every\n\"why did it do that\" is answered by those two panels."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "the loaders, sampler, both VAE decodes, "
+                },
+                {
+                  "c": true,
+                  "t": "CreateVideo"
+                },
+                {
+                  "t": " and "
+                },
+                {
+                  "c": true,
+                  "t": "SaveVideo"
+                },
+                {
+                  "t": " — everything\nneeded to get an mp4 with sound out the other end."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "two switches, both off by default: "
+                },
+                {
+                  "b": true,
+                  "t": "Turbo"
+                },
+                {
+                  "t": " in the "
+                },
+                {
+                  "i": true,
+                  "t": "Speed"
+                },
+                {
+                  "t": " group and "
+                },
+                {
+                  "b": true,
+                  "t": "Upscale"
+                },
+                {
+                  "t": " in the\n"
+                },
+                {
+                  "i": true,
+                  "t": "Upscale"
+                },
+                {
+                  "t": " group — described below, with what each one needs."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Select a block, describe what happens in it, queue."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "Faster, when you want it."
+            },
+            {
+              "t": " The "
+            },
+            {
+              "b": true,
+              "t": "Turbo"
+            },
+            {
+              "t": " switch in the workflow's "
+            },
+            {
+              "i": true,
+              "t": "Speed"
+            },
+            {
+              "t": " group swaps\nthe sampler to a distilled four-step one: 4 steps instead of 20, so a draft costs roughly a\nfifth of the GPU time. Off by default — the graph renders exactly as it would without the\nswitch there."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "It needs one extra file in "
+            },
+            {
+              "c": true,
+              "t": "models/loras/"
+            },
+            {
+              "t": ",\n"
+            },
+            {
+              "href": "https://huggingface.co/lightx2v/Minimax-h3-Turbo",
+              "t": "lightx2v's Ref2VA 4-step LoRA"
+            },
+            {
+              "t": "\n("
+            },
+            {
+              "c": true,
+              "t": "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors"
+            },
+            {
+              "t": "), and "
+            },
+            {
+              "b": true,
+              "t": "no extra node pack"
+            },
+            {
+              "t": " —\nit loads through ComfyUI's own "
+            },
+            {
+              "c": true,
+              "t": "LoraLoaderModelOnly"
+            },
+            {
+              "t": ". Distilled at 544p on the shifts H3\nalready defaults to, so leave its strength at 1.0 and the scheduler on "
+            },
+            {
+              "c": true,
+              "t": "simple"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Ref2VA turbo is a v0.1 preview: audio and fast motion are its weak spots. Switch it off for\na final render."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "lightx2v has since published an 8-step Ref2VA\n("
+            },
+            {
+              "c": true,
+              "t": "minimax_h3_ref2v_turbo_8step_v1.0_768p_comfyui_bf16.safetensors"
+            },
+            {
+              "t": "). To try it, put it in\n"
+            },
+            {
+              "c": true,
+              "t": "models/loras/"
+            },
+            {
+              "t": ", pick it in the "
+            },
+            {
+              "b": true,
+              "t": "Turbo LoRA"
+            },
+            {
+              "t": " dropdown and set "
+            },
+            {
+              "b": true,
+              "t": "steps — turbo"
+            },
+            {
+              "t": " to 8 —\nthe two go together, which is what those two node titles say. We have not measured it\nagainst the 4-step one, so the graph still ships v0.1."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "Bigger, when you want it."
+            },
+            {
+              "t": " The "
+            },
+            {
+              "b": true,
+              "t": "Upscale"
+            },
+            {
+              "t": " switch in the workflow's "
+            },
+            {
+              "i": true,
+              "t": "Upscale"
+            },
+            {
+              "t": " group adds\na second stage: the finished latent is enlarged to the node's "
+            },
+            {
+              "c": true,
+              "t": "megapixels"
+            },
+            {
+              "t": " target and refined\nthere.\nOff by default, and off it costs nothing — nothing below the branch runs."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Render first, look at it, and only then pay for the resolution. Flip Upscale on and queue\nthe same graph again: nothing upstream changed, so ComfyUI serves the first pass from its\ncache and only the second one costs anything. That second pass is a real render at the\nlarger size — it costs time and VRAM, not just the download."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "megapixels"
+            },
+            {
+              "t": " is a "
+            },
+            {
+              "b": true,
+              "t": "budget of pixels"
+            },
+            {
+              "t": " — not a multiplier, and not a width. The node reads it\nas "
+            },
+            {
+              "c": true,
+              "t": "megapixels × 1024 × 1024"
+            },
+            {
+              "t": ", spends that many pixels at the aspect ratio the render already\nhas, and rounds both sides to the nearest "
+            },
+            {
+              "c": true,
+              "t": "align"
+            },
+            {
+              "t": ". It is area rather than width, so doubling\nthe number makes the picture about 1.41× wider, not twice as wide. From the default 1344×768\ncanvas — 0.98 MP by that count:"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "megapixels"
+              }
+            ],
+            [
+              {
+                "t": "you get"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "2.0"
+                }
+              ],
+              [
+                {
+                  "t": "1920 × 1088"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "4.0"
+                }
+              ],
+              [
+                {
+                  "t": "2720 × 1536"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "7.0"
+                }
+              ],
+              [
+                {
+                  "t": "3584 × 2048"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "9.0"
+                }
+              ],
+              [
+                {
+                  "t": "4064 × 2336"
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "To aim at a size you already have in mind, divide its pixel count by 1,048,576: 3600×2024 is\n6.95, so 7.0 — which lands on 3584×2048, because the shape stays the canvas's whatever number\nyou type."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "This is the one part of the graph that needs a second node pack:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "cd ComfyUI/custom_nodes\ngit clone https://github.com/LBH-123-AI/Comfyui_Minimax_h3_latent_Upscaler.git"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "and "
+            },
+            {
+              "c": true,
+              "t": "minimax_h3_latent_upscaler_3d_fp16.safetensors"
+            },
+            {
+              "t": " (691MB) from\n"
+            },
+            {
+              "href": "https://huggingface.co/LBH-123-AI/Minimax_h3_latent_Upscaler",
+              "c": true,
+              "t": "LBH-123-AI/Minimax_h3_latent_Upscaler"
+            },
+            {
+              "t": "\nin "
+            },
+            {
+              "c": true,
+              "t": "models/latent_upscale_models/"
+            },
+            {
+              "t": ", the folder that pack registers."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Without the pack, ComfyUI opens the workflow with a Missing Node Types dialog and one red\nnode. That is expected, not a broken download: the switch is off, nothing downstream of it\nis used, and the render works. Install the pack when you want the branch."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "That pack is days old and still moving: on 2026-08-19 it renamed its nodes, and a graph\npointing at the old name stopped opening. This workflow tracks the current one,\n"
+            },
+            {
+              "c": true,
+              "t": "MinimaxH3LatentUpscaler3D"
+            },
+            {
+              "t": ". If yours is older than that rename, "
+            },
+            {
+              "c": true,
+              "t": "git pull"
+            },
+            {
+              "t": " in the pack."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The upscaler works directly on H3's 24-channel latents, so nothing round-trips through the\nVAE. H3's latent carries picture and sound together, though, and the upscaler takes the video\nhalf alone — so the branch splits the audio off with core "
+            },
+            {
+              "c": true,
+              "t": "Separate AV Latent"
+            },
+            {
+              "t": ", upscales, and\nrejoins with "
+            },
+            {
+              "c": true,
+              "t": "Concat AV Latent"
+            },
+            {
+              "t": " before the refine pass. A picture used as a "
+            },
+            {
+              "i": true,
+              "t": "first frame"
+            },
+            {
+              "t": " or\n"
+            },
+            {
+              "i": true,
+              "t": "last frame"
+            },
+            {
+              "t": " is a keyframe, and H3 lays a keyframe out on the grid of the latent it is\nsampling — so the refine pass takes its conditioning from "
+            },
+            {
+              "b": true,
+              "t": "refit the keyframes to the new\nsize"
+            },
+            {
+              "t": " ("
+            },
+            {
+              "c": true,
+              "t": "MiniMaxDirectorRefit"
+            },
+            {
+              "t": "), which encodes the same pictures again at the enlarged size;\nwithout it the refine failed with a shape mismatch (issue #4). It is new and unproven at\nlarge sizes — check a short clip before trusting it with a long one."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "This is why the workflow is one file and not several. Turbo needs no pack at all; Upscale\nneeds that one, and only when you switch it on."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Development"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The parts worth testing need neither a GPU nor a single byte of weights."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "python -m venv .venv && .venv/bin/pip install -e \".[dev]\"\n.venv/bin/pytest"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For the graph itself, point "
+            },
+            {
+              "c": true,
+              "t": "COMFYUI_PATH"
+            },
+            {
+              "t": " at a ComfyUI checkout and the graph tests run a\nreal prompt through ComfyUI's own validator and executor — no server, no GPU, no model\nfiles:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "COMFYUI_PATH=~/dev/ComfyUI $COMFYUI_PATH/.venv/bin/python -m pytest tests/graph"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The weight-bearing nodes are stubbed; "
+            },
+            {
+              "c": true,
+              "t": "CreateVideo"
+            },
+            {
+              "t": " and "
+            },
+            {
+              "c": true,
+              "t": "SaveVideo"
+            },
+            {
+              "t": " are not, so the run\nends with an actual mp4 on disk. The stubs record every prompt handed to H3, which makes\nthe one question that matters — "
+            },
+            {
+              "i": true,
+              "t": "what string reached the text encoder?"
+            },
+            {
+              "t": " — directly\nassertable without renting anything."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The stubs live in "
+            },
+            {
+              "c": true,
+              "t": "tests/"
+            },
+            {
+              "t": ", not in the package, and they have to: ComfyUI snapshots its\nbuilt-in node names before loading custom nodes and refuses to let a pack replace any of\nthem ("
+            },
+            {
+              "c": true,
+              "t": "nodes.py"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "base_node_names"
+            },
+            {
+              "t": " passed as "
+            },
+            {
+              "c": true,
+              "t": "ignore"
+            },
+            {
+              "t": "). A test process has no such\nrestriction, because it owns the registry."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Documentation"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "href": "https://github.com/imbutus/ComfyUI-MiniMaxDirector/blob/main/docs/GUIDE.md",
+                  "t": "docs/GUIDE.md"
+                },
+                {
+                  "t": " — how to use it: the tracks and buttons, the duration\nrules, reference tokens, the camera vocabulary, the frame lattice, and what to check\nwhen the output looks wrong. Start here."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "href": "https://github.com/imbutus/ComfyUI-MiniMaxDirector/blob/main/AGENTS.md",
+                  "t": "AGENTS.md"
+                },
+                {
+                  "t": " — the same ground for a model reading the code cold: data\nflow, document schema, numbering rules, the invariants that break silently, and what\nhas never been verified against real weights."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "href": "https://github.com/imbutus/ComfyUI-MiniMaxDirector/blob/main/docs/ARCHITECTURE.md",
+                  "t": "docs/ARCHITECTURE.md"
+                },
+                {
+                  "t": " — why the design is shaped this way."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Layout"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "__init__.py              ComfyUI entry point\nsrc/minimax_director/\n  lattice.py             frame arithmetic; the 17-frame rule\n  timeline.py            the timeline document and its JSON\n  compile.py             timeline -> prompt\n  cast.py                the WHO & WHAT document, merged in before compiling\n  lint.py                checks that run before sampling\n  references.py          reference ordinals for wired sockets\n  attachments.py         reference ordinals for files on the timeline\n  core.py                adapter over ComfyUI's built-in H3 nodes\n  nodes/                 the classes ComfyUI registers\nweb/                     the timeline widget: plain ES modules, no build step\nexample_workflows/       the ready-to-run workflow\ntests/                   pure-Python tests and golden prompts\ntests/graph/             in-process ComfyUI execution with the weights stubbed\nAGENTS.md                how it all works, for contributors and coding agents"
+        }
+      ]
+    }
+  ],
+  "title": "MiniMaxDirector"
+}

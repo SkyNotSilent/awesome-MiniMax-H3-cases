@@ -53,7 +53,7 @@ Use the tutorial submission Issue form before editing `data/tutorial-guides.json
 - **Video tutorial:** original channel, language, useful timestamps, supporting files, and a concise site summary.
 - **Resource or method:** who it helps, what it covers, limits, original author, and source material.
 
-Do not invent commands for content that does not need them. Do not copy an entire source post or transcript; write a structured bilingual guide and preserve attribution. A single-language submission is sufficient because maintainers prepare the second language.
+Do not invent commands for content that does not need them. The site captures the complete public original (post, thread, article, or README) with its media and a source link; do not paste it into the submission. Add the structured bilingual guide fields and preserve attribution. A single-language submission is sufficient because maintainers prepare the second language.
 
 All commands must be supported by a linked README or documentation page and rechecked on the recorded `verifiedAt` date. Missing flags, package names, compatibility claims, and performance numbers must stay unknown rather than being guessed. A new public guide receives ISO `addedAt` once; re-verification and later edits must not replace it. Changes to tutorial data also require matching schema, SEO, and language-isolation checks.
 

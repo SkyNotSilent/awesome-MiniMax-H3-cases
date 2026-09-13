@@ -1,0 +1,799 @@
+{
+  "tutorialId": "official-deployment",
+  "kind": "markdown",
+  "language": "en",
+  "capturedAt": "2026-09-13T09:41:09.754Z",
+  "source": {
+    "url": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3",
+    "author": "ComfyUI"
+  },
+  "sections": [
+    {
+      "url": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "How to use open-weights MiniMax H3 in ComfyUI: text-to-video, image-to-video, and reference-to-video workflows with native stereo audio, prompt writing tips, and Sage Attention speedups."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "href": "https://www.minimax.io/blog/minimax-h3",
+              "t": "MiniMax H3"
+            },
+            {
+              "t": " is MiniMax's general-purpose, omni-modal generation model, now available as open weights. It jointly understands text, images, video, and audio in a single context, and generates video with "
+            },
+            {
+              "b": true,
+              "t": "native stereo audio"
+            },
+            {
+              "t": ": voice, sound effects, and music are modeled together in a single forward pass instead of being layered on afterward. Output is up to 2K resolution, 24fps, and about 15 seconds."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "ComfyUI natively supports MiniMax H3. The documentation is split across five pages:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Overview"
+                },
+                {
+                  "t": " (this page): model capabilities, workflow index, output resolution, and speedups"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "href": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3-native",
+                  "t": "Native workflows"
+                },
+                {
+                  "t": ": Text-to-Video, Image-to-Video, Reference-to-Video, plus advanced native-node techniques"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "href": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3-multiframe",
+                  "t": "Multiframe Reference"
+                },
+                {
+                  "t": ": anchor reference frames at specific points along the output timeline"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "href": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3-fun-controlnet",
+                  "t": "Fun ControlNet Union"
+                },
+                {
+                  "t": ": drive H3 with a control video, or run video inpainting with a mask"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "href": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3-prompt-guide",
+                  "t": "Prompt guide"
+                },
+                {
+                  "t": ": official MiniMax prompt writing guides, general tips, and prompt embeddings"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "H3's open weights let you run the model locally. Commercial use of locally generated outputs requires a "
+            },
+            {
+              "href": "https://comfy.org/minimax/license",
+              "t": "MiniMax commercial license"
+            },
+            {
+              "t": ", available through Comfy, the only official reseller. Generations on Comfy Cloud already include commercial rights."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Key features"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Native stereo audio"
+                },
+                {
+                  "t": ": Dialogue, sound effects, and music are generated together with the video, synced in one MP4"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Multimodal context"
+                },
+                {
+                  "t": ": Text, images, video, and audio references can be combined in one generation"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Reference-driven generation"
+                },
+                {
+                  "t": ": Lock a character's identity, a style, a motion, a camera move, or a voice from reference materials"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Instruction following"
+                },
+                {
+                  "t": ": Describe the relationship between references and the target shot in natural language"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Accurate text rendering"
+                },
+                {
+                  "t": ": Spelled-out text and brand elements render cleanly"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Open weights"
+                },
+                {
+                  "t": ": Run locally in ComfyUI with full control over every parameter"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Getting started"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "MiniMax H3 is supported in ComfyUI with open weights. To get started:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Update ComfyUI to version 0.30.0 or later"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Go to "
+                },
+                {
+                  "b": true,
+                  "t": "Template Library"
+                },
+                {
+                  "t": " > "
+                },
+                {
+                  "b": true,
+                  "t": "Video"
+                },
+                {
+                  "t": " > choose any MiniMax H3 workflow"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Follow the pop-up to download models and run the workflow"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The model files are hosted on Hugging Face in the "
+            },
+            {
+              "href": "https://huggingface.co/Comfy-Org/MiniMax-H3",
+              "t": "Comfy-Org/MiniMax-H3"
+            },
+            {
+              "t": " repository."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Workflow index"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The template library currently ships with five example workflows. They are example templates, not an exhaustive list: the model supports more generation modes through the native MiniMax H3 nodes, and you can build additional workflows with them."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "href": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3-native#minimax-h3-text-to-video-t2v",
+                  "b": true,
+                  "t": "Text to Video (T2V)"
+                },
+                {
+                  "t": " — Generate videos from text prompts with native stereo audio"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "href": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3-native#minimax-h3-image-to-video-i2v",
+                  "b": true,
+                  "t": "Image to Video (I2V)"
+                },
+                {
+                  "t": " — Generate videos from an input image, with optional first/last-frame control"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "href": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3-native#minimax-h3-reference-to-video-r2v",
+                  "b": true,
+                  "t": "Reference to Video (R2V)"
+                },
+                {
+                  "t": " — Lock in a character, style, motion, camera move, or voice from reference images, videos, and audio"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "href": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3-multiframe",
+                  "b": true,
+                  "t": "Multiframe Reference"
+                },
+                {
+                  "t": " — Anchor reference frames at specific points along the output timeline with chained Add Guide nodes"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "href": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3-fun-controlnet",
+                  "b": true,
+                  "t": "Fun ControlNet Union"
+                },
+                {
+                  "t": " — Drive H3 with a Canny, Depth, HED, MLSD, or Pose control video, or run video inpainting with a mask"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Underlying node modes: first/last-frame image-to-video (fl2va) via the "
+            },
+            {
+              "c": true,
+              "t": "MiniMaxH3ImageToVideo"
+            },
+            {
+              "t": " node, and reference-driven generation with images, videos, and audio (ref2va) via the "
+            },
+            {
+              "c": true,
+              "t": "MiniMaxH3ReferenceToVideo"
+            },
+            {
+              "t": " node."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For prompt writing resources (official MiniMax guides, general tips, and prompt embeddings), see the "
+            },
+            {
+              "href": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3-prompt-guide",
+              "t": "prompt guide"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Setting the output resolution"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Each workflow uses a "
+            },
+            {
+              "b": true,
+              "t": "Resolution Selector"
+            },
+            {
+              "t": " node to control the overall output size. The node computes "
+            },
+            {
+              "c": true,
+              "t": "width"
+            },
+            {
+              "t": " and "
+            },
+            {
+              "c": true,
+              "t": "height"
+            },
+            {
+              "t": " from three settings, and its outputs connect directly to the "
+            },
+            {
+              "c": true,
+              "t": "width"
+            },
+            {
+              "t": " and "
+            },
+            {
+              "c": true,
+              "t": "height"
+            },
+            {
+              "t": " inputs of the MiniMax H3 node:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Aspect ratio"
+                },
+                {
+                  "t": ": Pick a preset such as "
+                },
+                {
+                  "c": true,
+                  "t": "16:9 (Widescreen)"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "9:16 (Portrait Widescreen)"
+                },
+                {
+                  "t": ", or "
+                },
+                {
+                  "c": true,
+                  "t": "1:1 (Square)"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Megapixels"
+                },
+                {
+                  "t": ": Target total pixel count for the output. Higher values give larger frames; lower values run faster"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Multiple"
+                },
+                {
+                  "t": ": The computed resolution is rounded to the nearest multiple of this number. Keep it at "
+                },
+                {
+                  "c": true,
+                  "t": "32"
+                },
+                {
+                  "t": " to match H3's resolution grid"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The template ships with a fast preview size. For full-quality output at 16:9, set the Resolution Selector's Megapixels to "
+            },
+            {
+              "c": true,
+              "t": "0.98"
+            },
+            {
+              "t": " for H3's native canvas (a 768px short edge, 1344x768 at 16:9), or enter "
+            },
+            {
+              "c": true,
+              "t": "1344 x 768"
+            },
+            {
+              "t": " directly in the MiniMax H3 node's "
+            },
+            {
+              "c": true,
+              "t": "width"
+            },
+            {
+              "t": " and "
+            },
+            {
+              "c": true,
+              "t": "height"
+            },
+            {
+              "t": " inputs (its default). Skip the "
+            },
+            {
+              "c": true,
+              "t": "1.0"
+            },
+            {
+              "t": " Megapixel step: it yields 1376x768, above the model's 768x1344 pixel area cap."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Speeding up generation with Sage Attention"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The example workflows use the standard attention implementation. You can roughly double the generation speed with "
+            },
+            {
+              "href": "https://github.com/woct0rdho/SageAttention",
+              "t": "Sage Attention"
+            },
+            {
+              "t": ", with minimal quality loss. Sage Attention is an optional dependency, so you need to install it yourself:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Install the "
+                },
+                {
+                  "c": true,
+                  "t": "sageattention"
+                },
+                {
+                  "t": " Python package. Download the wheel that matches your PyTorch and CUDA versions from the "
+                },
+                {
+                  "href": "https://github.com/woct0rdho/SageAttention/releases",
+                  "t": "SageAttention releases"
+                },
+                {
+                  "t": " page, then install it with "
+                },
+                {
+                  "c": true,
+                  "t": "pip install <wheel-file>"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Install the "
+                },
+                {
+                  "href": "https://github.com/kijai/ComfyUI-KJNodes",
+                  "t": "KJNodes custom nodes"
+                },
+                {
+                  "t": ", which provide the "
+                },
+                {
+                  "c": true,
+                  "t": "Patch Sage Attention KJ"
+                },
+                {
+                  "t": " node. Use the ComfyUI Manager, or clone the repository into "
+                },
+                {
+                  "c": true,
+                  "t": "ComfyUI/custom_nodes/"
+                },
+                {
+                  "t": " and restart ComfyUI."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Add a "
+                },
+                {
+                  "c": true,
+                  "t": "Patch Sage Attention KJ"
+                },
+                {
+                  "t": " node to the workflow and connect it between the "
+                },
+                {
+                  "c": true,
+                  "t": "UNETLoader"
+                },
+                {
+                  "t": " and the "
+                },
+                {
+                  "c": true,
+                  "t": "BasicGuider"
+                },
+                {
+                  "t": " node: its "
+                },
+                {
+                  "c": true,
+                  "t": "model"
+                },
+                {
+                  "t": " input receives the model from the "
+                },
+                {
+                  "c": true,
+                  "t": "UNETLoader"
+                },
+                {
+                  "t": ", and its "
+                },
+                {
+                  "c": true,
+                  "t": "model"
+                },
+                {
+                  "t": " output feeds the "
+                },
+                {
+                  "c": true,
+                  "t": "model"
+                },
+                {
+                  "t": " input of the "
+                },
+                {
+                  "c": true,
+                  "t": "BasicGuider"
+                },
+                {
+                  "t": ". Set "
+                },
+                {
+                  "c": true,
+                  "t": "sage_attention"
+                },
+                {
+                  "t": " to "
+                },
+                {
+                  "c": true,
+                  "t": "auto"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Run the workflow as usual. Only the guider needs the patch; the scheduler only generates the sigmas and can stay as is."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Notes:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Sage Attention requires float16 or bfloat16 tensors. MiniMax H3 runs some layers in other dtypes, so you may see \"Input tensors must be in dtype of torch.float16 or torch.bfloat16, using pytorch attention instead\" messages in the console. These are expected; the affected layers fall back to standard attention and generation still works."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Alternatively, you can enable Sage Attention globally by launching ComfyUI with the "
+                },
+                {
+                  "c": true,
+                  "t": "--use-sage-attention"
+                },
+                {
+                  "t": " flag instead of adding the node."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "title": "ComfyUI MiniMax H3 Video Generation Guide"
+}

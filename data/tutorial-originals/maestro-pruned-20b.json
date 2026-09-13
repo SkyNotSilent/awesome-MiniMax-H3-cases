@@ -1,0 +1,98 @@
+{
+  "tutorialId": "maestro-pruned-20b",
+  "kind": "x-thread",
+  "language": "en",
+  "capturedAt": "2026-09-13T09:44:17.581Z",
+  "source": {
+    "url": "https://x.com/cocktailpeanut/status/2086119385757041048",
+    "author": "cocktail peanut",
+    "handle": "@cocktailpeanut"
+  },
+  "sections": [
+    {
+      "url": "https://x.com/cocktailpeanut/status/2086119385757041048",
+      "publishedAt": "2026-08-08",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Even faster, even lower-VRAM MiniMax H3 on Maestro!"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "1. H3 Turbo now works with the pruned 20B model, fits into low VRAM (Recommended)\n2. Turbo mode now starts at 6 steps\n3. First Block Cache optimization option (Even more optimization)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Still high quality. Example:"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "src": "/media/tutorial-2086118865185144832.mp4",
+          "poster": "/tutorial-media/maestro-pruned-20b/2086118865185144832-poster.webp",
+          "width": 832,
+          "height": 480,
+          "duration": 14.4
+        },
+        {
+          "type": "post-quote",
+          "url": "https://x.com/blizaine/status/2086065510391623989",
+          "author": "Blaine Brown",
+          "handle": "@blizaine",
+          "inlines": [
+            {
+              "t": "Maestro v1.6.5 is live! 🚀\n\nMajor MiniMax H3 Upgrades & Fixes:\n\n- Speed optimizations & VRAM management\n- GPU-aware sliding windows w/ multi-window prompt enhancement\n- Improved 720p & 1080p support\n- Turbo support for Full & Pruned models\n- Smarter H3 workflows in Director Mode"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://x.com/cocktailpeanut/status/2086119391394185364",
+      "publishedAt": "2026-08-08",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Tons of updates, read more here: "
+            },
+            {
+              "t": "https://pinokio.co/posts/01kzgs3va5fzzxa9ped0ycr5rp",
+              "href": "https://pinokio.co/posts/01kzgs3va5fzzxa9ped0ycr5rp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://x.com/cocktailpeanut/status/2086119392715427940",
+      "publishedAt": "2026-08-08",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "1-click launch on pinokio "
+            },
+            {
+              "t": "https://pinokio.co/apps/github-com-blizaine-maestro",
+              "href": "https://pinokio.co/apps/github-com-blizaine-maestro"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

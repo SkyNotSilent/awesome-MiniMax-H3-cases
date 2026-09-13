@@ -1,5 +1,6 @@
 import { tutorialContractErrors, tutorialSourceKey } from './tutorial-contract.mjs'
-import { access, readFile } from 'node:fs/promises'
+import { tutorialOriginalErrors } from './tutorial-original.mjs'
+import { access, readdir, readFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { editorialCopyErrors, genericEditorialCopyPattern } from './editorial-copy.mjs'
 import { creatorRankKeys, extractXHandle, tutorialCreatorIdentity } from './creator-catalog.mjs'
@@ -264,6 +265,22 @@ for (const [index, item] of tutorialGuides.entries()) {
     }
   }
 }
+
+// Captured originals: every guide marker needs a valid file with mirrored local images.
+const originalFiles = new Set((await readdir(resolve(root, 'data/tutorial-originals')).catch(() => [])).filter((name) => name.endsWith('.json')))
+for (const item of tutorialGuides.filter((guide) => guide.original)) {
+  const at = `tutorialOriginals.${item.id}`
+  if (!originalFiles.delete(`${item.id}.json`)) { errors.push(`${at}: file missing`); continue }
+  const original = JSON.parse(await readFile(resolve(root, `data/tutorial-originals/${item.id}.json`), 'utf8'))
+  errors.push(...tutorialOriginalErrors(original).map((error) => `${at}: ${error}`))
+  if (original.tutorialId !== item.id) errors.push(`${at}: tutorialId mismatch`)
+  if (original.kind !== item.original.kind || original.capturedAt !== item.original.capturedAt) errors.push(`${at}: guide marker does not match capture`)
+  const images = [original.cover?.src, ...original.sections.flatMap((section) => section.blocks.flatMap((block) => [block.type === 'image' ? block.src : null, block.poster, block.image?.src]))].filter(Boolean)
+  for (const src of new Set(images)) {
+    try { await access(resolve(root, `public${src}`)) } catch { errors.push(`${at}: missing mirrored image ${src}`) }
+  }
+}
+for (const name of originalFiles) errors.push(`tutorialOriginals.${name}: no guide references this capture`)
 
 for (const item of tutorialGuides) {
   for (const id of item.nextGuideIds ?? []) if (!tutorialGuides.some(guide => guide.id === id) || id === item.id) errors.push(`Invalid next tutorial: ${item.id} -> ${id}`)

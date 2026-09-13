@@ -1,0 +1,1438 @@
+{
+  "tutorialId": "prompt-agent-skill",
+  "kind": "markdown",
+  "language": "en",
+  "capturedAt": "2026-09-13T09:41:14.408Z",
+  "source": {
+    "url": "https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context",
+    "author": "NikoDemon80",
+    "revision": "5335715abe54c1a9bfbe3494da29aae3e8635ce3",
+    "license": "GPL-3.0"
+  },
+  "sections": [
+    {
+      "url": "https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Chain MiniMax H3 clips so motion and sound keep going across the cut."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Generate clip A. Feed its last frames and audio into this node. Generate\nclip B. B picks up where A left off: same motion, same speed, same\ndirection, and the same audio continued rather than a new take that\nsounds similar. Repeat as long as you like."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Nothing on disk is edited and nothing in ComfyUI is modified. The nodes\ncheck their arithmetic against the live ComfyUI code before the first\nrender, and if an update breaks an assumption they refuse to run and say\nwhat moved. A loud failure beats a bad render you don't notice."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Requires ComfyUI 0.34.0 or newer, which is where H3 gained arbitrary\nkeyframe anchors. Version 0.3.1 runs on that and on everything older;\nsee "
+            },
+            {
+              "href": "https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context/blob/main/CHANGELOG.md",
+              "t": "CHANGELOG.md"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Why this exists"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "ComfyUI can anchor a still or a short clip at any frame of an H3\ngeneration, with the Add Guide for MiniMax H3 node. If that is all you\nneed, use it. You do not need this pack for it."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Chaining is a different problem, and two parts of it are still unsolved\nby anything else."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "The picture goes out to pixels and back at every link."
+            },
+            {
+              "t": " Add Guide takes\nimages and encodes them. Chain through it and every join costs a decode, a\nresize and a re-encode. That round trip is where the colour drift and the\nsoftening down a long chain come from. This pack slices the previous\nclip's tail straight out of its latent, so the pinned frames are the same\nnumbers they were, bit for bit."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "The sound restarts instead of continuing."
+            },
+            {
+              "t": " Add Guide anchors audio\nstarting at a frame and running forward. To actually continue a\nsoundtrack, the pinned window has to END at the join and reach backwards\ninto the sound that already played. That is the difference between the\nmodel continuing your track and the model writing something that sounds\nlike it, and on anything with a beat you hear it immediately."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Everything else here follows from those two: the Trim node that removes\nthe pinned head from the delivery, the Save/Load Latent pair that carries\na clip across without touching pixels, and the Seam Probe that measures\nwhether a join is a real continuation or a convincing imitation."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Audio was the harder half, and it's the more useful half, since H3\ngenerates picture and sound together. See \"Why the audio needed work\"\nbelow if you care how."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Install"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Drop the folder in "
+            },
+            {
+              "c": true,
+              "t": "ComfyUI/custom_nodes/"
+            },
+            {
+              "t": " and restart. At startup you'll\njust see:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "h3_motion_context: nodes registered. ComfyUI is not modified; the layout\nchecks run on the first use of a Motion Context node."
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Having the pack installed changes nothing about your other H3 workflows,\nand nothing runs until you actually chain a clip. The first time you do,\nyou'll see:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "h3_motion_context: ComfyUI H3 layout checks passed, anchors and pinned audio will land where intended"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Anything else and the node refuses to run. The reason is logged."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "On ComfyUI 0.33.4 or older the node says so and points you at version\n0.3.1, which runs on both. That is read from the layout code itself\nrather than a version number, so a nightly or a fork gets the right\nanswer."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Wiring"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "MiniMaxH3ImageToVideo / MiniMaxH3ReferenceToVideo (or the t2v path)\n  -> H3 Motion Context      <- previous clip's latent (picture + sound)\n  -> guider / sampler\n  ...\n  decoded IMAGE + AUDIO\n  -> H3 Motion Context Trim         <- wire trim_frames across\n  -> Create Video / save"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Wire "
+            },
+            {
+              "c": true,
+              "t": "trim_frames"
+            },
+            {
+              "t": " into the Trim node. The pinned frames come back at the\nstart of the new clip and have to come off before you concatenate, picture\nand sound together."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Carrying the previous clip across"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The previous clip reaches the node as a latent, but you can't wire the sampler\nstraight into "
+            },
+            {
+              "c": true,
+              "t": "context_latent"
+            },
+            {
+              "t": ". ComfyUI will call it a circular\nconnection, and it's right: the latent you want is from the previous run,\nnot this one. Two helper nodes move it across runs the same way your\nframes and audio already move across, through a file:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "this run:   SamplerCustomAdvanced -> H3 Motion Context Save Latent\nnext run:   H3 Motion Context Load Latent -> context_latent"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Both have a "
+            },
+            {
+              "c": true,
+              "t": "clip_index"
+            },
+            {
+              "t": " and the numbers mean what they say. On Load, the\nclip you're continuing FROM. On Save, the clip this one IS. First clip:\nLoad 0, Save 1. Making clip 2 from clip 1: Load 1, Save 2."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Load 0 does not read a file. Motion Context then passes the incoming\nconditioning through and reports "
+            },
+            {
+              "c": true,
+              "t": "trim_frames"
+            },
+            {
+              "t": " 0, so you can leave the\nnode enabled for the first clip. Do not mute it."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not use queue "
+            },
+            {
+              "b": true,
+              "t": "run on change"
+            },
+            {
+              "t": " to walk the chain. Each index change is\na separate graph edit, so two widgets incrementing will queue two runs and\nskip slots. Use "
+            },
+            {
+              "b": true,
+              "t": "H3 Motion Context Chain"
+            },
+            {
+              "t": " instead of ComfyUI's Run\nbutton."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "The Chain node only sees Load and Save if all three sit in the same\ncanvas group"
+            },
+            {
+              "t": " (one of those coloured boxes you draw around nodes). If\nthey are not grouped together, every button does nothing. Select Load,\nSave, and Chain, then Group Selected (or drop Chain into the existing\nMotion Context group)."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Run/Re-roll"
+                },
+                {
+                  "t": " is the Run button for this graph. It queues at the\ncurrent Load/Save indices and does not advance them. First clip: leave\nLoad 0 / Save 1 and click it. Hate the result? Click it again; the\nretry overwrites that slot."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Approve"
+                },
+                {
+                  "t": " advances both indices, then queues the next clip once."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Chain"
+                },
+                {
+                  "t": " is Approve on a loop. After a finished clip it bumps\nLoad/Save and keeps going, so a 0/1 clip you already made becomes 1/2\nrather than a re-roll. The exception is Load 0 / Save 1 with no clip 1\non disk: it generates that first clip, then auto-approves. "
+                },
+                {
+                  "b": true,
+                  "t": "segments"
+                },
+                {
+                  "t": "\nis how many clips that loop runs: 5 means five clips then stop, 0 means\nkeep going until you click "
+                },
+                {
+                  "b": true,
+                  "t": "Stop"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Reset"
+                },
+                {
+                  "t": " sets Load 0 / Save 1. It does not queue and does not delete\nfiles."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Clear latents"
+                },
+                {
+                  "t": " deletes numbered chain slots\n("
+                },
+                {
+                  "c": true,
+                  "t": "clip_00001.safetensors"
+                },
+                {
+                  "t": " and so on) in the Load folder. Files you\nrenamed are left alone. Indices stay put."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Files are named the obvious way, "
+            },
+            {
+              "c": true,
+              "t": "clip_00002.safetensors"
+            },
+            {
+              "t": " is clip 2."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Auto-saved files (Save at 0) get a trailing underscore\n("
+            },
+            {
+              "c": true,
+              "t": "clip_00002_.safetensors"
+            },
+            {
+              "t": ") because they're numbered by run, not by clip,\nand indexed loading skips them on purpose."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "You can also point the loader at a specific file when "
+            },
+            {
+              "c": true,
+              "t": "clip_index"
+            },
+            {
+              "t": " is\ngreater than 0; the file is loaded and the index is ignored. Index 0\nnever reads a file.\nIts output is only for "
+            },
+            {
+              "c": true,
+              "t": "context_latent"
+            },
+            {
+              "t": ". Don't wire it into a decode node.\nStock Save/Load Latent won't work here, it can't handle H3's paired\nvideo/audio latent."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The latent carries both streams, so with it wired you don't need to load\nthe previous clip's video at all. The pinned frames are sliced straight\nout of it rather than decoded to pixels and encoded again, so they're\nexactly what the model made instead of a reconstruction. Nothing shifts\nthe colour or the contrast, so there's no seam to see, and it's faster."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Nothing to set for any of that. Leave "
+            },
+            {
+              "c": true,
+              "t": "context_frames"
+            },
+            {
+              "t": " unwired. Resolution\nhas to match between clips, since a latent can't be resized; if it doesn't\nthe node refuses and names both resolutions rather than quietly dropping\nto the lossy path."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "There's an older path for graphs with no latent: the previous clip's\nframes into "
+            },
+            {
+              "c": true,
+              "t": "context_frames"
+            },
+            {
+              "t": ", its decoded audio into "
+            },
+            {
+              "c": true,
+              "t": "context_audio"
+            },
+            {
+              "t": ", and\nthe H3 audio VAE into "
+            },
+            {
+              "c": true,
+              "t": "audio_vae"
+            },
+            {
+              "t": ". It works, but it costs a lossy round\ntrip per link on both streams and it's where the visible seams came from.\nUse the latent unless you have a reason not to."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Reference mode"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Put this node after "
+            },
+            {
+              "c": true,
+              "t": "MiniMaxH3ReferenceToVideo"
+            },
+            {
+              "t": " and wire it as above. Your\nreference blocks (image, video, video with audio, audio) are left alone\nentirely: the pinned sound rides as a keyframe, not a reference, so the\ntwo mechanisms no longer share a list."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Nothing to configure. Worth mentioning only because versions before 0.2.0\noverwrote that list, so turning chaining on quietly threw your references\naway, and because up to 0.3.1 the pinned audio was added to it."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "References still push the target timeline along, and the pinned frames\nfollow it. That is ComfyUI's own arithmetic now rather than this pack's."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Alongside Add Guide"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Anchor whatever you like with Add Guide for MiniMax H3 and put this node\nafter it. Both survive: the pinned head decides how the clip starts, the\nguide decides what happens where you put it. Guides that carry audio keep\ntheir own placement, which is forward from the anchor frame, while the\npinned sound keeps its backwards-reaching window."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Guides anchored inside the pinned head are dropped with a warning, for\nthe same reason a "
+            },
+            {
+              "c": true,
+              "t": "first_frame"
+            },
+            {
+              "t": " anchor is."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Keeping a last-frame target"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Wire "
+            },
+            {
+              "c": true,
+              "t": "last_frame"
+            },
+            {
+              "t": " on the stock conditioning node as usual and put this\nnode after it. The anchor is kept and pinned alongside the head: the\npinned run decides how the clip starts, your image decides where it\nends. It keeps the coordinates ComfyUI gave it, including the shift\nreferences apply, so it stays put whatever else is in the graph."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "A "
+            },
+            {
+              "c": true,
+              "t": "first_frame"
+            },
+            {
+              "t": " anchor is dropped, with a warning. The pinned head owns\nthose frames, and a second block pinned at the same instant with\ndifferent content would fight it. Older versions silently replaced both\nanchors, so if a chain graph carried a last-frame target before this\nversion, it never reached the model."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Settings"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Two, because everything else had exactly one right answer."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "context_length"
+            },
+            {
+              "t": " - frames of the previous clip's picture to carry over.\n5, 22, 39 or 56. Those are the lengths that are a whole number of latent\nsteps, which is why the others aren't offered. 5 is just barely fluid, 22\nis nearly seamless. Longer windows pin more motion but they come off the\nfront of the delivered clip, so 56 spends 2.3 seconds of every render on\nframes you throw away. "
+            },
+            {
+              "b": true,
+              "t": "Use 22."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "audio_context_length"
+            },
+            {
+              "t": " - frames of tail audio to pin, independent of the\npicture window. It ends at the same instant as the pinned video, so this\nonly controls how far back the sound reaches. 0 follows context_length.\n"
+            },
+            {
+              "b": true,
+              "t": "Use 24"
+            },
+            {
+              "t": ": that is exactly one second of sound, and any multiple of 3\nlands exactly on the model's 40 Hz audio grid (a frame is 5/3 of an\naudio step), so the window is pinned at precisely the width you asked\nfor. Off-grid values are widened to the nearest whole step. Increments\nof 24 keep whole seconds: 48 pins the last two."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Everything else is fixed: the pinned run is encoded in one VAE call, it\nsits at the head of the clip where the Trim node removes it, and the\npinned audio goes on this clip's own timeline. The alternatives all\nexisted only to reproduce their own failures, so they're constants at the\ntop of "
+            },
+            {
+              "c": true,
+              "t": "nodes.py"
+            },
+            {
+              "t": " now. Change one there if you ever need to see what they\ndid."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "match_tail"
+            },
+            {
+              "t": " on the Trim node stays a setting because that node has no\nidea what the other one did. Leave it on. H3 rounds its audio grid up, so\nevery clip carries about 8ms more sound than picture, and that error\nstacks at every join."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Writing prompts for a chain"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The settings get motion and sound across the join. What happens in the\nnext clip is on you, and there are a few traps."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "The model renders contradictions as unions."
+            },
+            {
+              "t": " Clip N ends on a close-up\nof A, clip N+1's prompt opens with \"a two-shot of B and C,\" and the model\ndoesn't pick. You get all three. The pinned frames aren't a suggestion, so\na prompt describing a different arrangement of people reads as an addition\nto them, not a replacement."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "The airlock."
+            },
+            {
+              "t": " Don't ask for the change and the continuation at the same\nmoment. Open clip N+1 holding clip N's exact closing framing, no dialogue,\nabout two seconds, then cut to the new setup. Joins done this way measure\ntighter than an ordinary frame-to-frame cut. Joins that skip it measure\nlike two different rooms spliced together."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "Give the hold something to do."
+            },
+            {
+              "t": " A held framing with nothing happening\nrenders as a literal freeze, and two seconds of a motionless actor looks\nlike the video stalled. Write in a breath, a weight shift, an eyeline\nchange. The camera holds still, the performer doesn't.\n"
+            },
+            {
+              "c": true,
+              "t": "tests/freeze_detect.py"
+            },
+            {
+              "t": " finds these."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "Budget the pinned head in your timecodes."
+            },
+            {
+              "t": " In "
+            },
+            {
+              "c": true,
+              "t": "head"
+            },
+            {
+              "t": " mode the clip\ncomes out "
+            },
+            {
+              "c": true,
+              "t": "context_length"
+            },
+            {
+              "t": " frames shorter than it was sampled. At 22 that's\n0.92 seconds. Your prompt timings land against the sampled version, which\nstarts 0.92s earlier, so a beat you wrote for 4.0s shows up at 3.08s in the\nfile."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Why the audio needed work"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The first version ran pinned audio through H3's reference mechanism, which\nis where audio conditioning normally goes. Every join had a small tick,\nlike the audio briefly sped up and went offbeat. Looking at the waveform\nshowed nothing wrong. Both sides of every join were smooth on their own."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Cross-correlating each clip's opening against the previous clip's ending\n(that's "
+            },
+            {
+              "c": true,
+              "t": "tests/seam_probe.py"
+            },
+            {
+              "t": ") showed what was actually happening: the new\nclip's audio resembled the old one. Same instruments, same groove, never\nthe same recording. A cover band. The model was reading the reference as\n\"a separate clip that sounds like this,\" which is what references are for\nand exactly wrong for continuation."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The fix is the same one that already worked for video. The rows the model\nsees are identical either way. What differs is their time coordinates, and\nthe coordinates are what say \"separate clip\" versus \"this clip, earlier.\"\nSo the pinned audio still rides the reference machinery, but its\ncoordinates get rewritten onto the new clip's timeline, ending exactly\nwhere the pinned video ends. Correlation at the joins went from about 0.45\nwith incoherent timing to 0.95+ with a flat offset, and the tick was gone.\nMeasured across a chain, the offset doesn't grow from join to join."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Limitations"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "Quality degrades down a chain."
+            },
+            {
+              "t": " The big one, and it's mostly audio.\nEach clip is generated from the previous clip's output, which came from\nthe one before it. Losses compound like photocopying a photocopy, and in\naudio the top end goes first. Timing and tempo stay locked, but after\nseveral clips the sound gets duller and more muffled. Picture holds up\nmuch better."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Two things stack per link: the model's own smoothing, and a round trip\nout to pixels and back. "
+            },
+            {
+              "c": true,
+              "t": "context_latent"
+            },
+            {
+              "t": " removes the second one for both\nstreams. On picture that's the difference between a visible join and no\njoin at all. On sound it helps, but the model's own smoothing is still\nthere. Long chains are worth listening to critically, and restarts land\nbest at a natural musical transition."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "A small audio offset, now believed fixed."
+            },
+            {
+              "t": " Chained clips used to come\nout about 8ms late. The cause was arithmetic: a frame is 5/3 of an audio\nstep, so unless the pinned window's length works out to a whole number of\nsteps it landed between the ones the model was filling. The window is now\nsnapped to that grid. The offset was constant, well under where lip-sync\nerrors get noticeable, and it didn't grow down a chain, so this is a\ntidy-up rather than a rescue. "
+            },
+            {
+              "c": true,
+              "t": "tests/seam_probe.py"
+            },
+            {
+              "t": " reports the lag in\nmilliseconds if you want to check it on your own material."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "H3 emits 32 kHz audio, not 48."
+            },
+            {
+              "t": " Read the rate off the clip in any script\nthat remuxes or concatenates. A stream-copy concat can't change rate\npartway, so a hardcoded 48000 silently turns the tail of a long episode\ninto nothing while every duration check still passes.\n"
+            },
+            {
+              "c": true,
+              "t": "tests/level_step.py"
+            },
+            {
+              "t": " prints every clip's rate and flags a mismatch."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "Turbo LoRAs and Spectrum both cost you audio."
+            },
+            {
+              "t": " A turbo LoRA hits a\nresult in very few steps, and fine detail is what those last steps were\nfor. It thickens the sound and softens the picture. Step-skipping\noptimizers like ComfyUI-Spectrum-MiniMax-H3 do the same thing to the\naudio, less so to the picture, and they also mispredict the pinned rows,\nwhich never change. Run both together and it stacks. If a chain sounds\nduller or closer than you expected, try turning these off before blaming\nthe chaining. "
+            },
+            {
+              "b": true,
+              "t": "Keep Spectrum off for these graphs."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "Resolution can't change mid-chain"
+            },
+            {
+              "t": " while using "
+            },
+            {
+              "c": true,
+              "t": "context_latent"
+            },
+            {
+              "t": ". A\nlatent can't be resized, so the node refuses. Regenerate the previous clip\nat the new resolution, or start a fresh chain there."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "Prompting a chain takes work"
+            },
+            {
+              "t": ", especially with reference mode. Every\nreference conditions the whole clip; there's no way to say \"this one\nstarts two seconds in.\" Timing has to come from the shot structure and\nthe description. See \"Writing prompts for a chain\" above."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "Tested narrowly."
+            },
+            {
+              "t": " Joins have been verified on dense beat-driven\nelectronic music, where timing errors are most audible, and on spoken word\nthrough the latent path, where nothing hides a seam. One Windows machine,\none resolution, one sampler. The math self-tests every startup. The\nperceptual results are one person's renders."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "ComfyUI's H3 support is young."
+            },
+            {
+              "t": " This pack no longer patches any of it,\nbut it still depends on how the layout places things, and one of those\ndependencies has no upstream test behind it: the pinned audio window is\npositioned with a fractional, negative anchor index. That is legal\narithmetic in the layout and no stock node can produce one, so nothing\nupstream exercises it. "
+            },
+            {
+              "c": true,
+              "t": "layout_contract.py"
+            },
+            {
+              "t": " checks it before the first\nrender and refuses if it ever stops holding."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The failure mode after a ComfyUI update is therefore \"the node won't\nrun,\" not bad output. There is a worked example: when the layout\nconstructor changed, 0.3.0 of this pack refused until 0.3.1 caught up.\nAnnoying, but the alternative was joins landing at the wrong instant with\nnothing to tell you."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "License."
+            },
+            {
+              "t": " The H3 community license reportedly doesn't currently cover\nthe EU, UK, Korea or the US. Check for yourself before shipping anything\non it."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Recommended starting point"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "context_length 22"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "audio_context_length 24"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "context_latent"
+            },
+            {
+              "t": " wired\nthrough the Save/Load Latent pair, Trim node wired for picture and sound\nwith "
+            },
+            {
+              "c": true,
+              "t": "match_tail"
+            },
+            {
+              "t": " on, Spectrum off. Every \"it works\" in this README means\nthat config."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Testing"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Six scripts, all runnable without ComfyUI or a GPU."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "python tests/_mock_harness.py        # the layout checks against a fake stock model\npython tests/_node_smoke_test.py     # the node end to end, refs + save/load\npython tests/_probe_node_test.py     # the seam probe node, joins with known answers\npython tests/seam_probe.py A.flac B_untrimmed.flac    # is the join real continuation?\npython tests/level_step.py clip*.flac                 # does the level or room tone jump?\npython tests/freeze_detect.py clip*.mp4               # did a held shot render as a still?"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The first three print their checks and end with a pass line. The other\nthree measure real output; "
+            },
+            {
+              "c": true,
+              "t": "level_step"
+            },
+            {
+              "t": " and "
+            },
+            {
+              "c": true,
+              "t": "freeze_detect"
+            },
+            {
+              "t": " take\n"
+            },
+            {
+              "c": true,
+              "t": "--self-test"
+            },
+            {
+              "t": " to check their own math on made-up data first, and\n"
+            },
+            {
+              "c": true,
+              "t": "seam_probe"
+            },
+            {
+              "t": "'s math is what "
+            },
+            {
+              "c": true,
+              "t": "_probe_node_test.py"
+            },
+            {
+              "t": " exercises."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The three measurement scripts ask different questions and a join can fail\nany one on its own. "
+            },
+            {
+              "c": true,
+              "t": "seam_probe"
+            },
+            {
+              "t": " is timing: is the audio the same waveform\ncontinued, or a sound-alike. "
+            },
+            {
+              "c": true,
+              "t": "level_step"
+            },
+            {
+              "t": " is volume: does the loudness, or\nthe room tone underneath it, jump at the cut. "
+            },
+            {
+              "c": true,
+              "t": "freeze_detect"
+            },
+            {
+              "t": " is picture:\nis anything happening in that shot."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For "
+            },
+            {
+              "c": true,
+              "t": "seam_probe"
+            },
+            {
+              "t": " and "
+            },
+            {
+              "c": true,
+              "t": "level_step"
+            },
+            {
+              "t": ", give them the UNTRIMMED audio of the new\nclip. Branch the audio decode to a second Save Audio node alongside the\nTrim."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Measuring a join in-graph"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The H3 Motion Context Seam Probe node runs the same measurements inside\nthe graph, where the seam position is known exactly rather than inferred\nfrom file ends (that inference is where the CLI probe's phantom ~8 ms lag\ncame from). Wire it inline between the audio VAE decode and the Trim\nnode:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "clip_a_latent     the same latent wired into context_latent\naudio_vae         the same audio VAE\nclip_b_untrimmed  this clip's audio off the VAE decode, before the trim\ntrim_frames       from the Motion Context node, same value the Trim gets"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The audio output is the input unchanged, so it drops into an existing\nchain without changing the render. The report goes to a Preview Text\nnode: lag, correlation, broadband and floor steps, judged against the\nsame thresholds the CLI scripts document."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Upgrading"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "href": "https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context/blob/main/CHANGELOG.md",
+              "t": "CHANGELOG.md"
+            },
+            {
+              "t": " lists what changed in each release and which\nComfyUI H3 layout it works with. Worth a look before opening an issue or\nstarting a fork: several fixes people have rebuilt from scratch were\nalready in an earlier release."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The node's widgets changed. ComfyUI stores widget values by position, so a\nworkflow saved against an older version will load its numbers into the\nwrong slots. Delete the Motion Context node, add it again and rewire it.\nTakes a minute and beats rendering with scrambled settings."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "Only install this once."
+            },
+            {
+              "t": " A fork of this repo, a manual clone next to a\nManager install, or a renamed backup still sitting in "
+            },
+            {
+              "c": true,
+              "t": "custom_nodes"
+            },
+            {
+              "t": " will\nall load. Renaming a folder does not stop ComfyUI loading it."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Older versions of this pack, and other H3 packs, patch ComfyUI's layout\ncode at runtime. This one does not, so it no longer competes for that\ncode and will run alongside them. If it finds the layout wrapped it says\nwho by, then checks whether anchors still land correctly and carries on\nif they do. Keeping one H3 chaining pack installed is still the quiet\nlife."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Credits"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The Ref2VA multi-reference support was worked out by "
+            },
+            {
+              "b": true,
+              "t": "seitanism"
+            },
+            {
+              "t": " in the\nBanodoco MiniMax H3 seamless-extension thread and first implemented in\n"
+            },
+            {
+              "b": true,
+              "t": "ethanfel"
+            },
+            {
+              "t": "'s fork of this repo. The code here is written independently,\nbut the idea is theirs and they got there first."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The prompting section comes out of a 16-clip, 4:34 multicam sitcom episode\nchained with this pack at 736x576 on a 5070 Ti, about two hours of\ngeneration. The airlock, the freeze warning, the 32 kHz trap and the\ntimecode budget are all that build's findings. Same run measured a\nvideo-only chain at a median seam level step of 0.905, dropping to 0.16\nwith the audio carried across."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "javawock7618"
+            },
+            {
+              "t": " and "
+            },
+            {
+              "b": true,
+              "t": "azra1l"
+            },
+            {
+              "t": " reported the layout change that broke\n0.3.0 and narrowed it to specific commits, which turned a hunt into a\ndiff. "
+            },
+            {
+              "b": true,
+              "t": "ChimeraWerks"
+            },
+            {
+              "t": " found and fixed the audio grid overhang."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "If you build something long with this, numbers are more useful than praise.\nOpen an issue."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Files"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "File"
+              }
+            ],
+            [
+              {
+                "t": "Role"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "c": true,
+                  "t": "layout_contract.py"
+                }
+              ],
+              [
+                {
+                  "t": "Proves ComfyUI still places anchors and pinned audio where this pack needs them, once, before the first render. Modifies nothing."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "nodes.py"
+                }
+              ],
+              [
+                {
+                  "t": "The four core nodes: Motion Context, Trim, and the latent Save/Load pair."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "probe_node.py"
+                }
+              ],
+              [
+                {
+                  "t": "The Seam Probe node: measures a join in-graph, with the seam at a known sample instead of inferred from file ends."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "tests/seam_probe.py"
+                }
+              ],
+              [
+                {
+                  "t": "Is a join's audio a real continuation, a sound-alike, or drifting."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "tests/level_step.py"
+                }
+              ],
+              [
+                {
+                  "t": "Level and room-tone continuity at each join. Also catches sample-rate mismatches."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "tests/freeze_detect.py"
+                }
+              ],
+              [
+                {
+                  "t": "Stretches where the picture stops moving."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "tests/_mock_harness.py"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "tests/_node_smoke_test.py"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "tests/_probe_node_test.py"
+                }
+              ],
+              [
+                {
+                  "t": "Layout, node and probe tests, numpy only."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "CHANGELOG.md"
+                }
+              ],
+              [
+                {
+                  "t": "What changed in each release, and which ComfyUI H3 layout it works with."
+                }
+              ]
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "title": "H3 Motion Context"
+}

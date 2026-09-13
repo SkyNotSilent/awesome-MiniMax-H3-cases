@@ -2,7 +2,7 @@ import { createCatalogIndex, searchText } from '../shared/catalog-query.mjs'
 import { useCatalogQuery } from './use-catalog-query'
 import { createReleaseBatches, type ReleaseBatches } from './releases'
 import { hasExplicitFilters, parseFilters, writeFilters } from '../shared/filter-state.mjs'
-import { useCallback, useDeferredValue, useEffect, useLayoutEffect, useMemo, useRef, useState, useTransition, type CSSProperties, type ReactNode } from 'react'
+import { lazy, Suspense, useCallback, useDeferredValue, useEffect, useLayoutEffect, useMemo, useRef, useState, useTransition, type CSSProperties, type ReactNode } from 'react'
 import {
   ArrowUpRight,
   ArrowDownRight,
@@ -59,6 +59,7 @@ import {
 } from './i18n'
 import type { CaseDetail, CatalogCase, CatalogPayload, CreatorCatalog, CreatorProfile, CreatorRankKey, Taxonomy, TutorialCategory, TutorialGuide, TutorialHardwareProfile, TutorialResource, VideoCase } from './types'
 import { XPostEmbed } from './XPostEmbed'
+import { tutorialFormat, tutorialFormatLabels, tutorialFormats, type TutorialFormat } from './tutorial-format'
 import { selectTutorialSpotlights, tutorialSubmissionUrl } from './tutorial-spotlight'
 import {
   addedDatePresets,
@@ -70,6 +71,7 @@ import {
   type AddedDatePreset,
 } from './updates'
 
+const TutorialOriginalView = lazy(() => import('./TutorialOriginal'))
 const testCases = import.meta.env.MODE === 'test' ? rawCases as VideoCase[] : null
 const testCreatorCatalog = import.meta.env.MODE === 'test' ? rawCreators as CreatorCatalog : null
 const testTutorialResources = import.meta.env.MODE === 'test' ? rawTutorials as TutorialResource[] : null
@@ -1419,7 +1421,9 @@ function TutorialCardActions({ tutorial, language }: { tutorial: TutorialGuide; 
   const workflow = tutorial.learningResources?.find((resource) => resource.kind === 'workflow')
   return <div className="tutorial-card-actions">
     {deep ? <a href={tutorialPath(language, tutorial.id)}>{language === 'zh' ? '开始学习' : 'Start learning'} <ArrowUpRight size={13} /></a>
-      : <><a href={tutorial.source.url} target="_blank" rel="noreferrer">{language === 'zh' ? '看原教程' : 'View original'} <ArrowUpRight size={13} /></a><a href={tutorialPath(language, tutorial.id)}>{language === 'zh' ? '阅读导读' : 'Read guide'}</a></>}
+      : tutorial.original
+        ? <><a href={tutorialPath(language, tutorial.id)}>{language === 'zh' ? '阅读全文' : 'Read in full'} <ArrowUpRight size={13} /></a><a href={tutorial.source.url} target="_blank" rel="noreferrer">{language === 'zh' ? '原帖' : 'Source'}</a></>
+        : <><a href={tutorial.source.url} target="_blank" rel="noreferrer">{language === 'zh' ? '看原教程' : 'View original'} <ArrowUpRight size={13} /></a><a href={tutorialPath(language, tutorial.id)}>{language === 'zh' ? '阅读导读' : 'Read guide'}</a></>}
     {deep && workflow && <a href={workflow.url} target="_blank" rel="noreferrer">{language === 'zh' ? '获取工作流' : 'Get workflow'}</a>}
   </div>
 }
@@ -1443,6 +1447,10 @@ function TutorialsPage({
   }, [])
   const [activeCategory, setActiveCategory] = useState<(typeof tutorialCategories)[number]>('all')
   const [activeHardware, setActiveHardware] = useState<'all' | TutorialHardwareProfile>('all')
+  const [activeFormat, setActiveFormat] = useState<'all' | TutorialFormat>(() => {
+    const format = new URLSearchParams(window.location.search).get('format')
+    return tutorialFormats.includes(format as TutorialFormat) ? format as TutorialFormat : 'all'
+  })
   const [activeAddedDate, setActiveAddedDate] = useState<AddedDatePreset>(() => parseAddedDatePreset(new URLSearchParams(window.location.search).get('added')))
   const [query, setQuery] = useState('')
   const [activeTrack, setActiveTrack] = useState<'all' | 'run' | 'create'>(() => { const track = new URLSearchParams(window.location.search).get('track'); return track === 'run' || track === 'create' ? track : 'all' })
@@ -1453,11 +1461,13 @@ function TutorialsPage({
     else url.searchParams.delete('track')
     if (activeAddedDate !== 'all') url.searchParams.set('added', activeAddedDate)
     else url.searchParams.delete('added')
+    if (activeFormat !== 'all') url.searchParams.set('format', activeFormat)
+    else url.searchParams.delete('format')
     // Older shared snapshots carried a personal window; the preset alone is enough now.
     url.searchParams.delete('since')
     url.searchParams.delete('through')
     window.history.replaceState(window.history.state, '', `${url.pathname}${url.search}${url.hash}`)
-  }, [activeTrack, activeAddedDate])
+  }, [activeTrack, activeAddedDate, activeFormat])
 
   useEffect(() => {
     const trimmed = query.trim()
@@ -1474,6 +1484,7 @@ function TutorialsPage({
       if (activeTrack !== 'all' && item.learningTrack !== activeTrack) return false
       const categoryMatches = activeCategory === 'all' || item.category === activeCategory
       const hardwareMatches = activeHardware === 'all' || item.hardwareProfiles?.includes(activeHardware)
+      if (activeFormat !== 'all' && tutorialFormat(item) !== activeFormat) return false
       const addedMatches = matchesAddedDate(item.addedAt, activeAddedDate, releases.tutorials)
       const searchable = [
         item.title[language],
@@ -1488,7 +1499,7 @@ function TutorialsPage({
       ].join(' ').toLowerCase()
       return categoryMatches && hardwareMatches && addedMatches && (!needle || searchable.includes(needle))
     })
-  }, [activeTrack, activeAddedDate, activeCategory, activeHardware, language, query, tutorialGuides, releases.tutorials])
+  }, [activeTrack, activeAddedDate, activeCategory, activeHardware, activeFormat, language, query, tutorialGuides, releases.tutorials])
   const spotlights = selectTutorialSpotlights(filtered, spotlightNow)
   const spotlightIds = new Set(spotlights.map((item) => item.id))
   const starters = {
@@ -1496,7 +1507,8 @@ function TutorialsPage({
     nvidia: tutorialGuides.find((item) => item.id === 'official-deployment'),
     mac: tutorialGuides.find((item) => item.id === 'mac-native'),
   }
-  const hasTutorialFilters = activeTrack !== 'all' || activeCategory !== 'all' || activeHardware !== 'all' || activeAddedDate !== 'all' || Boolean(query.trim())
+  const hasTutorialFilters = activeTrack !== 'all' || activeCategory !== 'all' || activeHardware !== 'all' || activeFormat !== 'all' || activeAddedDate !== 'all' || Boolean(query.trim())
+  const formatCounts = new Map(tutorialFormats.map((format) => [format, tutorialGuides.filter((item) => tutorialFormat(item) === format).length]))
   const practicalGuides = [...new Map(filtered
     .filter((item) => (item.guideType === 'project' || spotlightIds.has(item.id) || (hasTutorialFilters && item.guideType === 'setup')) && item.evidence.status === 'active')
     .map((item) => [item.id, item])).values()]
@@ -1509,6 +1521,7 @@ function TutorialsPage({
     setActiveTrack('all')
     setActiveCategory('all')
     setActiveHardware('all')
+    setActiveFormat('all')
     setQuery('')
     setActiveAddedDate(preset)
   }, [])
@@ -1597,6 +1610,20 @@ function TutorialsPage({
               ))}
             </nav>
           </div>
+          <div>
+            <small>{language === 'zh' ? '按形式浏览' : 'Browse by format'}</small>
+            <nav aria-label={language === 'zh' ? '按形式浏览' : 'Browse by format'}>
+              {(['all', ...tutorialFormats.filter((format) => formatCounts.get(format))] as const).map((format) => (
+                <button
+                  type="button"
+                  key={format}
+                  className={activeFormat === format ? 'active' : ''}
+                  aria-pressed={activeFormat === format}
+                  onClick={() => setActiveFormat(format)}
+                >{format === 'all' ? (language === 'zh' ? '全部形式' : 'All formats') : `${tutorialFormatLabels[language][format]} ${formatCounts.get(format)}`}</button>
+              ))}
+            </nav>
+          </div>
           <a href={tutorialEcosystemPath(language)}><BookOpen size={17} /> <span><strong>{t.ecosystemTitle}</strong><small>{t.ecosystemCta}</small></span><ChevronRight size={18} /></a>
         </div>
         <AddedDateFilter
@@ -1614,12 +1641,12 @@ function TutorialsPage({
             <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={t.searchPlaceholder} />
             {query && <button type="button" onClick={() => setQuery('')} aria-label={t.clearSearch}><X size={14} /></button>}
           </label>
-          <p className="tutorial-active-filter" aria-live="polite">{practicalGuides.length + sortedCommunity.length} {language === 'zh' ? '篇教程' : 'tutorials'} · {t.categories[activeCategory]} · {hardwareLabels[activeHardware]} · {copy[language].catalog.addedDatePresets[activeAddedDate]}</p>
+          <p className="tutorial-active-filter" aria-live="polite">{practicalGuides.length + sortedCommunity.length} {language === 'zh' ? '篇教程' : 'tutorials'} · {t.categories[activeCategory]} · {hardwareLabels[activeHardware]}{activeFormat !== 'all' ? ` · ${tutorialFormatLabels[language][activeFormat]}` : ''} · {copy[language].catalog.addedDatePresets[activeAddedDate]}</p>
         </div>
         {practicalSection}
         {sortedCommunity.length > 0 ? (
           <header className="tutorial-list-heading is-community">
-            <h2>{language === 'zh' ? '更多教程导读' : 'More tutorial guides'}</h2>
+            <h2>{language === 'zh' ? '更多教程' : 'More tutorials'}</h2>
             <span>{String(sortedCommunity.length).padStart(2, '0')}</span>
           </header>
         ) : null}
@@ -1631,7 +1658,7 @@ function TutorialsPage({
               <article className="community-tutorial-card" key={tutorial.id}>
                 <a className="community-tutorial-poster" href={tutorialPath(language, tutorial.id)}>
                   <img src={tutorial.posterUrl} alt={tutorial.title[language]} loading="lazy" />
-                  <span>{language === 'zh' ? '导读' : 'Guide'}</span>
+                  <span>{tutorialFormatLabels[language][tutorialFormat(tutorial)]}{tutorial.original ? (language === 'zh' ? ' · 全文' : ' · Full text') : ''}</span>
                   {tutorial.engagement && (
                     <em>{formatMetric(tutorial.engagement.likes, language)} {t.likes} · {formatMetric(tutorial.engagement.views, language)} {t.views}</em>
                   )}
@@ -1698,7 +1725,9 @@ function TutorialDetailPage({ language, tutorial, tutorialGuides, tutorialResour
     }
     const frame = window.requestAnimationFrame(scrollToSection)
     window.addEventListener('hashchange', scrollToSection)
-    return () => { window.cancelAnimationFrame(frame); window.removeEventListener('hashchange', scrollToSection) }
+    // The captured original loads after first paint and moves the sections below it.
+    window.addEventListener('tutorial-original-ready', scrollToSection)
+    return () => { window.cancelAnimationFrame(frame); window.removeEventListener('hashchange', scrollToSection); window.removeEventListener('tutorial-original-ready', scrollToSection) }
   }, [tutorial.id])
   const t = copy[language].tutorials
   const resources = tutorial.relatedResourceIds
@@ -1713,9 +1742,52 @@ function TutorialDetailPage({ language, tutorial, tutorialGuides, tutorialResour
   ].flatMap(([label, value]) => value === undefined ? [] : [[label, value]]) : []
   const videoEmbed = youtubeEmbedUrl(tutorial)
   const commandItems = tutorialCommandItems(tutorial)
-  const guideTypeLabel = language === 'zh'
-    ? { setup: '安装入门', project: '创作实战', reference: '资源导读' }[tutorial.guideType]
-    : { setup: 'Setup', project: 'Creative project', reference: 'Resource guide' }[tutorial.guideType]
+  const zh = language === 'zh'
+  const hasOriginal = Boolean(tutorial.original)
+  const isDeep = tutorial.depth === 'deep'
+  const format = tutorialFormat(tutorial)
+  const reviewNote = tutorial.evidence.status === 'needs-review' && <p role="status" className="tutorial-review-note">{language === 'zh' ? '此导读存在待复查问题，暂不作为核心推荐。请先查看原作者更新。' : 'This guide needs review and is excluded from core selections. Check the author’s updates first.'}</p>
+  const expectedSection = tutorial.expectedResult && <section className="tutorial-expected-result"><h2>{t.expectedResult}</h2><p>{tutorial.expectedResult[language]}</p></section>
+  const recommendationSection = tutorial.recommendation && <section><h2>{language === 'zh' ? '为什么选这篇' : 'Why this guide'}</h2><p>{tutorial.recommendation[language]}</p></section>
+  const costSection = tutorial.cost && <section><h2>{language === 'zh' ? '费用与条件' : 'Cost and requirements'}</h2><p>{tutorial.cost[language]}</p></section>
+  const videoSection = videoEmbed && <section className="tutorial-video-lesson"><h2>{language === 'zh' ? '原作者视频演示' : 'Original video walkthrough'}</h2><div><iframe src={videoEmbed} title={`${tutorial.title[language]} — ${language === 'zh' ? '视频演示' : 'video walkthrough'}`} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen /></div><p>{language === 'zh' ? '视频由 YouTube 提供；无法加载时请使用下方原始链接。' : 'Video is provided by YouTube. Use the source link below if embedding is unavailable.'}</p></section>
+  const resourcesSection = tutorial.learningResources?.length && <section className="tutorial-learning-resources"><h2>{language === 'zh' ? '准备材料与原作者演示' : 'Resources and original demonstrations'}</h2><ul>{tutorial.learningResources.map((resource) => <li key={resource.url}><a href={resource.url} target="_blank" rel="noreferrer">{resource.label[language]} <ArrowUpRight size={14} /></a></li>)}</ul><p>{tutorial.materialsNote?.[language]}</p></section>
+  const chaptersSection = tutorial.chapters?.length && <section><h2>{language === 'zh' ? '视频章节' : 'Video chapters'}</h2><ul>{tutorial.chapters.map((chapter) => <li key={chapter.url}><a href={language === 'zh' && chapter.urlZh ? chapter.urlZh : chapter.url} target="_blank" rel="noreferrer">{Math.floor(chapter.seconds / 60)}:{String(chapter.seconds % 60).padStart(2, '0')} · {chapter.title[language]}</a></li>)}</ul></section>
+  const runProfileSection = (tutorial.difficulty || tutorial.estimatedMinutes || tutorial.applicableVersions?.length) && (
+              <section className="tutorial-run-profile">
+                <h2>{language === 'zh' ? '执行概览' : 'Run profile'}</h2>
+                <dl>
+                  {tutorial.difficulty && <div><dt>{t.difficulty}</dt><dd>{tutorialDifficulty(tutorial, language)}</dd></div>}
+                  {tutorial.estimatedMinutes && <div><dt>{t.estimatedTime}</dt><dd>{tutorial.estimatedMinutes} {t.minutes}</dd></div>}
+                  {tutorial.applicableVersions?.length && <div><dt>{language === 'zh' ? '适用版本' : 'Applicable versions'}</dt><dd>{tutorial.applicableVersions.join(' · ')}</dd></div>}
+                </dl>
+              </section>
+            )
+  const audienceSection = <section><h2>{t.audience}</h2><p>{tutorial.audience[language]}</p></section>
+  const hardwareSection = <section><h2>{t.hardware}</h2><p>{tutorial.hardware[language]}</p></section>
+  const prerequisitesSection = <section><h2>{t.prerequisites}</h2><ul>{tutorial.prerequisites[language].map((item) => <li key={item}>{item}</li>)}</ul></section>
+  const stepsSection = <section className="tutorial-detail-steps"><h2>{t.steps}</h2><ol>{tutorial.steps[language].map((item, index) => <li id={`step-${index + 1}`} key={item}><span>{String(index + 1).padStart(2, '0')}</span><p>{item}</p></li>)}</ol></section>
+  const commandsSection = commandItems.length > 0 && <section><h2>{t.commands}</h2><div className="tutorial-detail-commands">{commandItems.map((item) => <div key={`${item.kind}:${item.value}`}><small>{item.kind === 'path' ? (language === 'zh' ? '文件路径' : 'File path') : `${language === 'zh' ? '终端命令' : 'Terminal command'}${item.platform ? ` · ${item.platform}` : ''}`}</small>{item.cwd && <small>{language === 'zh' ? '工作目录' : 'Working directory'}: {item.cwd}</small>}<code>{item.value}</code><CopyCommandButton command={item.value} language={language} kind={item.kind} /></div>)}</div></section>
+  const checksSection = tutorial.checks && <section className="tutorial-detail-checks"><h2>{t.checks}</h2><ul>{tutorial.checks[language].map((item) => <li key={item}><Check size={15} aria-hidden="true" /> <span>{item}</span></li>)}</ul></section>
+  const troubleshootingSection = tutorial.troubleshooting?.length && <section id="troubleshooting" className="tutorial-troubleshooting"><h2>{t.troubleshooting}</h2><dl>{tutorial.troubleshooting.map((item) => <div key={item.problem[language]}><dt>{item.problem[language]}</dt><dd>{item.solution[language]}</dd></div>)}</dl></section>
+  const uninstallSection = tutorial.uninstall && <section><h2>{t.uninstall}</h2><ul>{tutorial.uninstall[language].map((item) => <li key={item}>{item}</li>)}</ul></section>
+  const feedbackSection = <section><h2>{language === 'zh' ? '社区怎么说' : 'Community feedback'}</h2>{tutorial.communityFeedback?.length ? <ul>{tutorial.communityFeedback.map((feedback) => <li key={feedback.summary[language]}>{feedback.summary[language]} <a href={feedback.url} target="_blank" rel="noreferrer">{language === 'zh' ? '查看依据' : 'View evidence'}</a></li>)}</ul> : <p>{language === 'zh' ? '暂未收录可独立核对的具体使用反馈；本篇依据原作者资料整理。' : 'No independently checkable usage feedback is included yet; this guide is based on source documentation.'}</p>}</section>
+  const relatedCasesSection = !!tutorial.relatedCases?.length && <section><h2>{language === 'zh' ? '案例与技巧' : 'Examples and techniques'}</h2><ul>{tutorial.relatedCases.map((item) => <li key={item.id}><a href={casePath(language, item.id)}>{item.title[language]}</a> · {item.relationship === 'example' ? (language === 'zh' ? '对应案例' : 'Source example') : (language === 'zh' ? '相关技巧，不保证复现该作品' : 'Related technique; not a reproduction guide')}</li>)}</ul></section>
+  const caveatsSection = <section><h2>{t.caveats}</h2><ul>{tutorial.caveats[language].map((item) => <li key={item}>{item}</li>)}</ul><small className="tutorial-source-note">{t.sourceNote}</small></section>
+  const sourceMeta = <>
+    <h2>{t.source}</h2>
+    <dl>
+      <div><dt>{language === 'zh' ? '作者' : 'Author'}</dt><dd><TutorialAuthor tutorial={tutorial} language={language} creators={creators} /> {tutorial.source.handle || ''}{tutorial.source.authorProfileUrl && <> · <a href={tutorial.source.authorProfileUrl} target="_blank" rel="noreferrer">{language === 'zh' ? '作者主页' : 'Author profile'}</a></>}</dd></div>
+      {tutorial.contribution && <div><dt>{language === 'zh' ? '作者投稿' : 'Author submission'}</dt><dd><a href={tutorial.contribution.authorUrl} target="_blank" rel="noreferrer">{language === 'zh' ? '关注作者与更多作品' : 'Author and more work'}</a> · <a href={tutorial.contribution.issueUrl} target="_blank" rel="noreferrer">{language === 'zh' ? '投稿记录' : 'Submission'}</a></dd></div>}
+      {tutorial.source.publishedAt && <div><dt>{language === 'zh' ? '发布' : 'Published'}</dt><dd>{tutorial.source.publishedAt}</dd></div>}
+      {tutorial.evidence.sourceCheckedAt && <div><dt>{language === 'zh' ? '来源核对' : 'Source checked'}</dt><dd>{tutorial.evidence.sourceCheckedAt}</dd></div>}
+      {tutorial.evidence.communityReviewedAt && <div><dt>{language === 'zh' ? '社区反馈核对' : 'Community feedback reviewed'}</dt><dd>{tutorial.evidence.communityReviewedAt}</dd></div>}
+      <div><dt>{language === 'zh' ? '本站实测' : 'Site testing'}</dt><dd>{tutorial.evidence.siteTestedAt ? <a href={tutorial.evidence.siteTestUrl}>{tutorial.evidence.siteTestedAt}</a> : (language === 'zh' ? '未进行生成实测' : 'No generation test performed')}</dd></div>
+    </dl>
+    {engagementItems.length > 0 && <div className="tutorial-engagement"><small>{t.snapshot} / {tutorial.engagement?.snapshotAt}</small>{engagementItems.map(([label, value]) => <span key={label}><strong>{formatMetric(value, language)}</strong>{label}</span>)}</div>}
+    <a className="tutorial-meta-source" href={tutorial.source.url} target="_blank" rel="noreferrer">{tutorial.contentType === 'foundation' ? t.openReference : t.openSource} <ArrowUpRight size={14} /></a>
+    {tutorial.sourceRefs?.map((reference) => <a className="tutorial-meta-source secondary" key={reference.url} href={reference.url} target="_blank" rel="noreferrer">{reference.title} <ArrowUpRight size={14} /></a>)}
+  </>
 
   return (
     <div className="standalone-page tutorial-detail-page">
@@ -1724,7 +1796,7 @@ function TutorialDetailPage({ language, tutorial, tutorialGuides, tutorialResour
         <header className="tutorial-detail-hero">
           <div className="tutorial-detail-poster"><img src={tutorial.posterUrl} alt={tutorial.title[language]} /></div>
           <div className="tutorial-detail-heading">
-            <p>{guideTypeLabel} / {t.categories[tutorial.category]}</p>
+            <p>{tutorialFormatLabels[language][format]} / {t.categories[tutorial.category]}</p>
             <h1>{tutorial.title[language]}</h1>
             <strong>{tutorial.outcome[language]}</strong>
             <div className="resource-tags">{tutorial.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
@@ -1735,52 +1807,45 @@ function TutorialDetailPage({ language, tutorial, tutorialGuides, tutorialResour
           </div>
         </header>
 
-        <div className="tutorial-detail-layout">
-          <main className="tutorial-detail-content">
-            {tutorial.evidence.status === 'needs-review' && <p role="status" className="tutorial-review-note">{language === 'zh' ? '此导读存在待复查问题，暂不作为核心推荐。请先查看原作者更新。' : 'This guide needs review and is excluded from core selections. Check the author’s updates first.'}</p>}
-            {tutorial.expectedResult && <section className="tutorial-expected-result"><h2>{t.expectedResult}</h2><p>{tutorial.expectedResult[language]}</p></section>}
-            {tutorial.recommendation && <section><h2>{language === 'zh' ? '为什么选这篇' : 'Why this guide'}</h2><p>{tutorial.recommendation[language]}</p></section>}
-            {tutorial.cost && <section><h2>{language === 'zh' ? '费用与条件' : 'Cost and requirements'}</h2><p>{tutorial.cost[language]}</p></section>}
-            {videoEmbed && <section className="tutorial-video-lesson"><h2>{language === 'zh' ? '原作者视频演示' : 'Original video walkthrough'}</h2><div><iframe src={videoEmbed} title={`${tutorial.title[language]} — ${language === 'zh' ? '视频演示' : 'video walkthrough'}`} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen /></div><p>{language === 'zh' ? '视频由 YouTube 提供；无法加载时请使用下方原始链接。' : 'Video is provided by YouTube. Use the source link below if embedding is unavailable.'}</p></section>}
-            {tutorial.learningResources?.length && <section className="tutorial-learning-resources"><h2>{language === 'zh' ? '准备材料与原作者演示' : 'Resources and original demonstrations'}</h2><ul>{tutorial.learningResources.map((resource) => <li key={resource.url}><a href={resource.url} target="_blank" rel="noreferrer">{resource.label[language]} <ArrowUpRight size={14} /></a></li>)}</ul><p>{tutorial.materialsNote?.[language]}</p></section>}
-            {tutorial.chapters?.length && <section><h2>{language === 'zh' ? '视频章节' : 'Video chapters'}</h2><ul>{tutorial.chapters.map((chapter) => <li key={chapter.url}><a href={language === 'zh' && chapter.urlZh ? chapter.urlZh : chapter.url} target="_blank" rel="noreferrer">{Math.floor(chapter.seconds / 60)}:{String(chapter.seconds % 60).padStart(2, '0')} · {chapter.title[language]}</a></li>)}</ul></section>}
-            {(tutorial.difficulty || tutorial.estimatedMinutes || tutorial.applicableVersions?.length) && (
-              <section className="tutorial-run-profile">
-                <h2>{language === 'zh' ? '执行概览' : 'Run profile'}</h2>
+        {hasOriginal ? (
+          <div className="tutorial-detail-layout has-original">
+            <main className="tutorial-detail-content">
+              {reviewNote}
+              <Suspense fallback={<div className="original-loading" aria-busy="true" />}><TutorialOriginalView tutorial={tutorial} language={language} /></Suspense>
+              {isDeep ? <>
+                <header className="tutorial-site-notes-heading"><h2>{zh ? '本站速查' : 'Quick reference'}</h2><p>{zh ? '以下是本站依据原文整理的要点和命令，出现差异时以原文为准。' : 'Key points and commands compiled from the original. The original wins wherever they differ.'}</p></header>
+                {expectedSection}{recommendationSection}{costSection}{videoSection}{resourcesSection}{chaptersSection}{stepsSection}{commandsSection}{checksSection}{troubleshootingSection}{uninstallSection}
+              </> : <>{resourcesSection}{chaptersSection}</>}
+              {tutorial.communityFeedback?.length ? feedbackSection : null}
+              {relatedCasesSection}
+              {caveatsSection}
+            </main>
+            <aside className="tutorial-detail-meta">
+              <section className="tutorial-quick-facts">
+                <h2>{zh ? '快速判断' : 'At a glance'}</h2>
                 <dl>
+                  <div><dt>{t.audience}</dt><dd>{tutorial.audience[language]}</dd></div>
+                  <div><dt>{t.hardware}</dt><dd>{tutorial.hardware[language]}</dd></div>
                   {tutorial.difficulty && <div><dt>{t.difficulty}</dt><dd>{tutorialDifficulty(tutorial, language)}</dd></div>}
                   {tutorial.estimatedMinutes && <div><dt>{t.estimatedTime}</dt><dd>{tutorial.estimatedMinutes} {t.minutes}</dd></div>}
-                  {tutorial.applicableVersions?.length && <div><dt>{language === 'zh' ? '适用版本' : 'Applicable versions'}</dt><dd>{tutorial.applicableVersions.join(' · ')}</dd></div>}
+                  {tutorial.applicableVersions?.length ? <div><dt>{zh ? '适用版本' : 'Applicable versions'}</dt><dd>{tutorial.applicableVersions.join(' · ')}</dd></div> : null}
                 </dl>
+                {isDeep && <><h3>{t.prerequisites}</h3><ul>{tutorial.prerequisites[language].map((item) => <li key={item}>{item}</li>)}</ul></>}
               </section>
-            )}
-            <section><h2>{t.audience}</h2><p>{tutorial.audience[language]}</p></section>
-            <section><h2>{t.hardware}</h2><p>{tutorial.hardware[language]}</p></section>
-            <section><h2>{t.prerequisites}</h2><ul>{tutorial.prerequisites[language].map((item) => <li key={item}>{item}</li>)}</ul></section>
-            <section className="tutorial-detail-steps"><h2>{t.steps}</h2><ol>{tutorial.steps[language].map((item, index) => <li id={`step-${index + 1}`} key={item}><span>{String(index + 1).padStart(2, '0')}</span><p>{item}</p></li>)}</ol></section>
-            {commandItems.length > 0 && <section><h2>{t.commands}</h2><div className="tutorial-detail-commands">{commandItems.map((item) => <div key={`${item.kind}:${item.value}`}><small>{item.kind === 'path' ? (language === 'zh' ? '文件路径' : 'File path') : `${language === 'zh' ? '终端命令' : 'Terminal command'}${item.platform ? ` · ${item.platform}` : ''}`}</small>{item.cwd && <small>{language === 'zh' ? '工作目录' : 'Working directory'}: {item.cwd}</small>}<code>{item.value}</code><CopyCommandButton command={item.value} language={language} kind={item.kind} /></div>)}</div></section>}
-            {tutorial.checks && <section className="tutorial-detail-checks"><h2>{t.checks}</h2><ul>{tutorial.checks[language].map((item) => <li key={item}><Check size={15} aria-hidden="true" /> <span>{item}</span></li>)}</ul></section>}
-            {tutorial.troubleshooting?.length && <section id="troubleshooting" className="tutorial-troubleshooting"><h2>{t.troubleshooting}</h2><dl>{tutorial.troubleshooting.map((item) => <div key={item.problem[language]}><dt>{item.problem[language]}</dt><dd>{item.solution[language]}</dd></div>)}</dl></section>}
-            {tutorial.uninstall && <section><h2>{t.uninstall}</h2><ul>{tutorial.uninstall[language].map((item) => <li key={item}>{item}</li>)}</ul></section>}
-            <section><h2>{language === 'zh' ? '社区怎么说' : 'Community feedback'}</h2>{tutorial.communityFeedback?.length ? <ul>{tutorial.communityFeedback.map((feedback) => <li key={feedback.summary[language]}>{feedback.summary[language]} <a href={feedback.url} target="_blank" rel="noreferrer">{language === 'zh' ? '查看依据' : 'View evidence'}</a></li>)}</ul> : <p>{language === 'zh' ? '暂未收录可独立核对的具体使用反馈；本篇依据原作者资料整理。' : 'No independently checkable usage feedback is included yet; this guide is based on source documentation.'}</p>}</section>
-            {!!tutorial.relatedCases?.length && <section><h2>{language === 'zh' ? '案例与技巧' : 'Examples and techniques'}</h2><ul>{tutorial.relatedCases.map((item) => <li key={item.id}><a href={casePath(language, item.id)}>{item.title[language]}</a> · {item.relationship === 'example' ? (language === 'zh' ? '对应案例' : 'Source example') : (language === 'zh' ? '相关技巧，不保证复现该作品' : 'Related technique; not a reproduction guide')}</li>)}</ul></section>}
-            <section><h2>{t.caveats}</h2><ul>{tutorial.caveats[language].map((item) => <li key={item}>{item}</li>)}</ul><small className="tutorial-source-note">{t.sourceNote}</small></section>
-          </main>
-          <aside className="tutorial-detail-meta">
-            <h2>{t.source}</h2>
-            <dl>
-              <div><dt>{language === 'zh' ? '作者' : 'Author'}</dt><dd><TutorialAuthor tutorial={tutorial} language={language} creators={creators} /> {tutorial.source.handle || ''}{tutorial.source.authorProfileUrl && <> · <a href={tutorial.source.authorProfileUrl} target="_blank" rel="noreferrer">{language === 'zh' ? '作者主页' : 'Author profile'}</a></>}</dd></div>
-              {tutorial.contribution && <div><dt>{language === 'zh' ? '作者投稿' : 'Author submission'}</dt><dd><a href={tutorial.contribution.authorUrl} target="_blank" rel="noreferrer">{language === 'zh' ? '关注作者与更多作品' : 'Author and more work'}</a> · <a href={tutorial.contribution.issueUrl} target="_blank" rel="noreferrer">{language === 'zh' ? '投稿记录' : 'Submission'}</a></dd></div>}
-              {tutorial.source.publishedAt && <div><dt>{language === 'zh' ? '发布' : 'Published'}</dt><dd>{tutorial.source.publishedAt}</dd></div>}
-              {tutorial.evidence.sourceCheckedAt && <div><dt>{language === 'zh' ? '来源核对' : 'Source checked'}</dt><dd>{tutorial.evidence.sourceCheckedAt}</dd></div>}
-              {tutorial.evidence.communityReviewedAt && <div><dt>{language === 'zh' ? '社区反馈核对' : 'Community feedback reviewed'}</dt><dd>{tutorial.evidence.communityReviewedAt}</dd></div>}
-              <div><dt>{language === 'zh' ? '本站实测' : 'Site testing'}</dt><dd>{tutorial.evidence.siteTestedAt ? <a href={tutorial.evidence.siteTestUrl}>{tutorial.evidence.siteTestedAt}</a> : (language === 'zh' ? '未进行生成实测' : 'No generation test performed')}</dd></div>
-            </dl>
-            {engagementItems.length > 0 && <div className="tutorial-engagement"><small>{t.snapshot} / {tutorial.engagement?.snapshotAt}</small>{engagementItems.map(([label, value]) => <span key={label}><strong>{formatMetric(value, language)}</strong>{label}</span>)}</div>}
-            <a className="tutorial-meta-source" href={tutorial.source.url} target="_blank" rel="noreferrer">{tutorial.contentType === 'foundation' ? t.openReference : t.openSource} <ArrowUpRight size={14} /></a>
-            {tutorial.sourceRefs?.map((reference) => <a className="tutorial-meta-source secondary" key={reference.url} href={reference.url} target="_blank" rel="noreferrer">{reference.title} <ArrowUpRight size={14} /></a>)}
-          </aside>
-        </div>
+              {sourceMeta}
+            </aside>
+          </div>
+        ) : (
+          <div className="tutorial-detail-layout">
+            <main className="tutorial-detail-content">
+              {reviewNote}
+              {expectedSection}{recommendationSection}{costSection}{videoSection}{resourcesSection}{chaptersSection}{runProfileSection}
+              {audienceSection}{hardwareSection}{prerequisitesSection}{stepsSection}{commandsSection}{checksSection}{troubleshootingSection}{uninstallSection}
+              {feedbackSection}{relatedCasesSection}{caveatsSection}
+            </main>
+            <aside className="tutorial-detail-meta">{sourceMeta}</aside>
+          </div>
+        )}
 
         {resources.length > 0 && (
           <section className="tutorial-related-resources">

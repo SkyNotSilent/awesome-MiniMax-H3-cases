@@ -1,0 +1,164 @@
+{
+  "tutorialId": "train-ref2va-lora",
+  "kind": "x-thread",
+  "language": "en",
+  "capturedAt": "2026-09-13T09:45:38.788Z",
+  "source": {
+    "url": "https://x.com/ostrisai/status/2090540475199680543",
+    "author": "Ostris",
+    "handle": "@ostrisai"
+  },
+  "sections": [
+    {
+      "url": "https://x.com/ostrisai/status/2090540475199680543",
+      "publishedAt": "2026-08-20",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "How to Train a MiniMax H3 Ref2VA LoRA with AI Toolkit"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "In this tutorial, I train a vid2vid LoRA on "
+            },
+            {
+              "t": "@MiniMax_AI",
+              "href": "https://x.com/MiniMax_AI"
+            },
+            {
+              "t": " MiniMax H3 that makes everyone super jacked 💪"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Links and more in 🧵"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/train-ref2va-lora/2090538021347287040.webp",
+          "width": 1600,
+          "height": 900
+        }
+      ]
+    },
+    {
+      "url": "https://x.com/ostrisai/status/2090540477770805265",
+      "publishedAt": "2026-08-20",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Watch the tutorial  -> "
+            },
+            {
+              "t": "https://www.youtube.com/watch?v=8Ug0dA4jXyY",
+              "href": "https://www.youtube.com/watch?v=8Ug0dA4jXyY"
+            }
+          ]
+        },
+        {
+          "type": "youtube",
+          "videoId": "8Ug0dA4jXyY"
+        }
+      ]
+    },
+    {
+      "url": "https://x.com/ostrisai/status/2090540479452708891",
+      "publishedAt": "2026-08-20",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The outro for the video where I used the LoRA trained in the tutorial to make myself super jacked."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "src": "/media/tutorial-2090538838653591552.mp4",
+          "poster": "/tutorial-media/train-ref2va-lora/2090538838653591552-poster.webp",
+          "width": 2560,
+          "height": 1440,
+          "duration": 37.7
+        }
+      ]
+    },
+    {
+      "url": "https://x.com/ostrisai/status/2090540481222766736",
+      "publishedAt": "2026-08-20",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Some more super jacked samples"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "src": "/media/tutorial-2090539444374036480.mp4",
+          "poster": "/tutorial-media/train-ref2va-lora/2090539444374036480-poster.webp",
+          "width": 928,
+          "height": 544,
+          "duration": 5.9
+        },
+        {
+          "type": "video",
+          "src": "/media/tutorial-2090539547772039168.mp4",
+          "poster": "/tutorial-media/train-ref2va-lora/2090539547772039168-poster.webp",
+          "width": 928,
+          "height": 544,
+          "duration": 8
+        },
+        {
+          "type": "video",
+          "src": "/media/tutorial-2090539622917156864.mp4",
+          "poster": "/tutorial-media/train-ref2va-lora/2090539622917156864-poster.webp",
+          "width": 928,
+          "height": 544,
+          "duration": 10.1
+        },
+        {
+          "type": "video",
+          "src": "/media/tutorial-2090539711752441857.mp4",
+          "poster": "/tutorial-media/train-ref2va-lora/2090539711752441857-poster.webp",
+          "width": 704,
+          "height": 704,
+          "duration": 2.3
+        }
+      ]
+    },
+    {
+      "url": "https://x.com/ostrisai/status/2090540482728497338",
+      "publishedAt": "2026-08-20",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Download the LoRA here -> "
+            },
+            {
+              "t": "https://huggingface.co/ostris/minimax_h3_ref2va_jacked_lora",
+              "href": "https://huggingface.co/ostris/minimax_h3_ref2va_jacked_lora"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

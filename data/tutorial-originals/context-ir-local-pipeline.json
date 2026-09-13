@@ -1,0 +1,1210 @@
+{
+  "tutorialId": "context-ir-local-pipeline",
+  "kind": "markdown",
+  "language": "en",
+  "capturedAt": "2026-09-13T09:41:32.429Z",
+  "source": {
+    "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md",
+    "author": "MiniMax"
+  },
+  "sections": [
+    {
+      "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "1. Task Overview"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "T2VA"
+                },
+                {
+                  "t": ": Builds a complete audiovisual timeline from text."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "I2VA"
+                },
+                {
+                  "t": ": T2VA body + first-frame instruction + a visual path that develops forward from the first frame."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "FL2VA"
+                },
+                {
+                  "t": ": T2VA body + first-and-last-frame instruction + a continuous path from the first frame to the last frame."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "L2VA"
+                },
+                {
+                  "t": ": T2VA body + last-frame instruction + a path that converges from a plausible preceding state to the last frame."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "2. Final Prompt Structure"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "2.1 Part One Is the Instruction"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "T2VA"
+            },
+            {
+              "t": " has no image-alignment instruction and begins directly with the three core fields."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "I2VA"
+            },
+            {
+              "t": " always uses:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced."
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "FL2VA"
+            },
+            {
+              "t": " always uses:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot N) aligns with the S.SS-second mark of the target video."
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "L2VA"
+            },
+            {
+              "t": " always uses:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "How the reference pictures align with the target video — <Picture 1> (from [Shot N]) aligns with the S.SS-second mark of the target video."
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Here, "
+            },
+            {
+              "c": true,
+              "t": "N"
+            },
+            {
+              "t": " is the index of the actual final shot, and "
+            },
+            {
+              "c": true,
+              "t": "S.SS"
+            },
+            {
+              "t": " is the effective video duration formatted to exactly two decimal places. The instruction must be the first line of the final prompt, followed by one blank line before the core fields."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "2.2 Part Two Contains the Three Core Fields"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "integrated_multimodal_description: [Shot 1] ...\n\noverall_soundscape: ...\n\nnon_diegetic_music: ..."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "integrated_multimodal_description"
+                },
+                {
+                  "t": ": Describes visuals, actions, shots, speakers, dialogue, singing, and diegetic audio along the timeline."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "overall_soundscape"
+                },
+                {
+                  "t": ": Summarizes ambient sound, physical action sounds, and non-verbal human sounds across the entire video."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "non_diegetic_music"
+                },
+                {
+                  "t": ": Describes background music that the characters cannot hear and only the audience can hear."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "3. How to Incorporate Keyframes into the Multimodal Description"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "3.1 I2VA: Begin from the Image and Develop Forward"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "<Picture 1>"
+            },
+            {
+              "t": " is the actual first frame of the video at 0.00 seconds and belongs to "
+            },
+            {
+              "c": true,
+              "t": "[Shot 1]"
+            },
+            {
+              "t": ". The description should first establish the style, subjects, composition, and scene anchors in the image, then describe the next action. Character identity, clothing, colors, key objects, and spatial relationships should remain consistent."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Recommended structure: "
+            },
+            {
+              "b": true,
+              "t": "first-frame anchor → action onset → continuous development → result or reaction"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "3.2 FL2VA: Describe the Path Between the First and Last Frames"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Picture 1 is the opening, and Picture 2 is the ending. Focus on how the subject moves, how poses change, how objects are manipulated, how the composition evolves, and how the scene or lighting transitions."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "FL2VA generally favors a single shot so the model can interpolate continuously from the first frame to the last frame. Use multiple shots only when they are explicitly specified. The last frame must be reached by the final "
+            },
+            {
+              "c": true,
+              "t": "[Shot N]"
+            },
+            {
+              "t": " at the end of the video."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Recommended structure: "
+            },
+            {
+              "b": true,
+              "t": "first-frame state → observable intermediate changes → progressively narrowing differences → last-frame state"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "3.3 L2VA: Infer the Opening and Land on the Image at the End"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "<Picture 1>"
+            },
+            {
+              "t": " is the final frame of the video and belongs to the last "
+            },
+            {
+              "c": true,
+              "t": "[Shot N]"
+            },
+            {
+              "t": "; it does not inherently belong to Shot 1. Infer a plausible earlier state from the user's intent and the last frame, then describe how the characters, objects, camera, and scene gradually approach the reference image."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Recommended structure: "
+            },
+            {
+              "b": true,
+              "t": "plausible preceding state → explicit action and transition path → gradual convergence in the final shot → last-frame landing"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "4. How to Write the Three Shared Core Sections"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "4.1 Develop the Multimodal Description Along the Timeline"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "integrated_multimodal_description"
+            },
+            {
+              "t": " is the main body of the rewritten prompt. Every detail should correspond to something visible or audible: visual style, initial composition, subject appearance and position, scene and key props, actions and reactions, shot changes, spoken language, and synchronized diegetic sound."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "At the beginning of "
+            },
+            {
+              "c": true,
+              "t": "[Shot 1]"
+            },
+            {
+              "t": ", state the overall style and initial composition. Common styles include "
+            },
+            {
+              "c": true,
+              "t": "Cinematic"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "live-action"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "2D-animated"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "3D CG"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "claymation"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "watercolor"
+            },
+            {
+              "t": ", and "
+            },
+            {
+              "c": true,
+              "t": "vintage film"
+            },
+            {
+              "t": ". For keyframe tasks, derive the style from the reference image; for T2VA, select it from the user's text."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "[Shot 1] Live-action, cinematic, a medium-wide shot frames..."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "4.2 Shots and Cuts"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not add a timestamp to the first shot. Use sequential shot numbers for later shots, and begin each one with a strictly increasing cut time that falls within the video duration:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "[Shot 2] At 00:03.500, the camera cuts to..."
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For ordinary cuts, use "
+            },
+            {
+              "c": true,
+              "t": "the camera cuts to"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "the shot cuts to"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "the shot transitions to"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "the shot changes to"
+            },
+            {
+              "t": ", or "
+            },
+            {
+              "c": true,
+              "t": "the shot switches to"
+            },
+            {
+              "t": ". When explicitly requested by the user, cross-dissolve, fade, or wipe may also be used. A cut should introduce new information about the subject, space, state, viewpoint, or time. If only the distance or a slight angle needs to change, prefer camera motion."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "4.3 Camera Motion: Motion Type + Amplitude + Speed"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "A complete camera-motion expression has three dimensions: the "
+            },
+            {
+              "b": true,
+              "t": "motion type"
+            },
+            {
+              "t": " defines how the camera moves, "
+            },
+            {
+              "b": true,
+              "t": "amplitude"
+            },
+            {
+              "t": " defines the range of compositional change, and "
+            },
+            {
+              "b": true,
+              "t": "speed"
+            },
+            {
+              "t": " defines the pacing of that change. Add amplitude and speed only when they are meaningful; medium amplitude and normal speed are usually omitted."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "Dimension"
+              }
+            ],
+            [
+              {
+                "t": "Available Expression"
+              }
+            ],
+            [
+              {
+                "t": "Description"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "Motion type"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "Zoom In / Zoom Out"
+                }
+              ],
+              [
+                {
+                  "t": "The focal length changes while the camera body remains stationary"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Motion type"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "Push In / Pull Out"
+                }
+              ],
+              [
+                {
+                  "t": "The camera moves forward / backward"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Motion type"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "Pan Left / Pan Right"
+                }
+              ],
+              [
+                {
+                  "t": "The camera remains in place while the lens pivots horizontally"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Motion type"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "Truck Left / Truck Right"
+                }
+              ],
+              [
+                {
+                  "t": "The camera translates horizontally"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Motion type"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "Tilt Up / Tilt Down"
+                }
+              ],
+              [
+                {
+                  "t": "The camera remains in place while the lens pivots vertically"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Motion type"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "Pedestal Up / Pedestal Down"
+                }
+              ],
+              [
+                {
+                  "t": "The entire camera moves upward / downward"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Motion type"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "Arc Shot"
+                }
+              ],
+              [
+                {
+                  "t": "The camera moves in an arc around the subject"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Motion type"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "Tracking Shot"
+                }
+              ],
+              [
+                {
+                  "t": "The camera follows a moving subject"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Motion type"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "Static Shot"
+                }
+              ],
+              [
+                {
+                  "t": "The camera position and lens remain still"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Motion type"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "Shake Slightly / Shake Strongly"
+                }
+              ],
+              [
+                {
+                  "t": "Slight / strong camera shake"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Motion type"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "POV"
+                }
+              ],
+              [
+                {
+                  "t": "The subject's point of view"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Motion type"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "Roll Clockwise / Roll Counterclockwise"
+                }
+              ],
+              [
+                {
+                  "t": "The camera rolls clockwise / counterclockwise around the lens axis"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Amplitude"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "with small amplitude"
+                }
+              ],
+              [
+                {
+                  "t": "Small-range change"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Amplitude"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "with large amplitude"
+                }
+              ],
+              [
+                {
+                  "t": "Large-range change"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Speed"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "at slow speed"
+                }
+              ],
+              [
+                {
+                  "t": "Slow movement"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Speed"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "at fast speed"
+                }
+              ],
+              [
+                {
+                  "t": "Fast movement"
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Camera motion should be written as a natural English action within the shot, rather than stacked as separate labels at the end of a sentence:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "The camera pushes in with small amplitude at slow speed toward the folded letter in her hands.\nThe camera pans right with large amplitude at fast speed, revealing the open doorway.\nThe camera holds a static shot as the runner exits the frame."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "4.4 Speakers, Dialogue, and Singing"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Subjects who speak, sing, or produce an off-screen human voice use stable IDs such as "
+            },
+            {
+              "c": true,
+              "t": "(S1)"
+            },
+            {
+              "t": " and "
+            },
+            {
+              "c": true,
+              "t": "(S2)"
+            },
+            {
+              "t": ". When multiple already-numbered speakers speak or sing together, use a compound ID such as "
+            },
+            {
+              "c": true,
+              "t": "(S1,S2)"
+            },
+            {
+              "t": ". A speaker keeps the same ID across shots; characters who never vocalize receive no speaker ID."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When a speaker first appears, provide enough information from the visual and audio context to establish a stable identity, such as character type, age, gender, whether the person is on-screen, pitch, timbre, speaking rate, or accent. Place the speaker's identifying phrase, ID, action, and delivery outside "
+            },
+            {
+              "c": true,
+              "t": "<d>"
+            },
+            {
+              "t": ". Inside "
+            },
+            {
+              "c": true,
+              "t": "<d>"
+            },
+            {
+              "t": ", include only the language tag and the actual user-provided spoken content. Preserve every original word and punctuation mark verbatim; do not translate or rewrite them."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "The young woman with a quiet, breathy voice (S1) says: <d>[English] I get off at the next station.</d>\nThe two children (S1,S2) shout together, <d>[English] Wait for us!</d>"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For voiceover, use the exact phrase "
+            },
+            {
+              "c": true,
+              "t": "says in an off-screen voiceover"
+            },
+            {
+              "t": ". Immediately after every voiceover "
+            },
+            {
+              "c": true,
+              "t": "<d>"
+            },
+            {
+              "t": " block, state that the corresponding on-screen character's lips remain closed:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "The man (S1) says in an off-screen voiceover: <d>[English] I still remember that road.</d> while his lips remain completely closed."
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When the same line of dialogue or lyrics crosses a cut, use "
+            },
+            {
+              "c": true,
+              "t": "<scenetrans>"
+            },
+            {
+              "t": " at the connecting points in both parts and explicitly state that the audio continues across the cut. Use "
+            },
+            {
+              "c": true,
+              "t": "<cutoff>"
+            },
+            {
+              "t": " when speech is truncated by the end of the video. Continuity may be expressed with "
+            },
+            {
+              "c": true,
+              "t": "continues seamlessly across the cut"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "continues uninterrupted into the next shot"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "carries over from the previous shot"
+            },
+            {
+              "t": ", or "
+            },
+            {
+              "c": true,
+              "t": "remains audible across the transition"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "4.5 On-Screen Text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Place any banner, sign, label, subtitle, or neon text that is actually visible on screen in English double quotation marks. Preserve the original text and punctuation verbatim, without translation."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "A red neon sign reading \"营业中\" glows above the doorway."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "4.6 overall_soundscape"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use 1–4 English sentences in one continuous paragraph to summarize the ambient sound, physical action sounds, and non-verbal human sounds across the full video, such as wind, rain, traffic, footsteps, fabric movement, impacts, breathing, laughter, or panting. Dialogue, singing, and diegetic music already belong in the multimodal description and should not be repeated here. Use "
+            },
+            {
+              "c": true,
+              "t": "N/A"
+            },
+            {
+              "t": " only when the user explicitly requests complete silence throughout the video."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "overall_soundscape: Steady rain taps against the café windows while low room ambience continues underneath. The entrance bell rings once, followed by wet footsteps and the soft scrape of a chair."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "4.7 non_diegetic_music"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use 1–3 English sentences to describe background music that the characters cannot hear and only the audience can hear. Focus on instrumentation, speed, rhythm, and dynamic changes; do not use abstract mood words or explain the emotional function of the score. Singing, instruments, radio, television, or phone music audible to the characters are diegetic events and should appear in the multimodal description. Use "
+            },
+            {
+              "c": true,
+              "t": "N/A"
+            },
+            {
+              "t": " when there is no non-diegetic music."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "non_diegetic_music: Sparse piano notes at a slow tempo, joined by sustained low strings that gradually increase in volume before fading out."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "5. Cases"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Case 1: T2VA"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "With no reference image, construct the complete timeline directly from the text. You may add scene, character, action, and sound details that remain consistent with the user's intent."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "integrated_multimodal_description: [Shot 1] Live-action, cinematic, a medium-wide shot frames a baker opening the shutters of a small street bakery before sunrise. The camera pushes in with small amplitude at slow speed as the middle-aged baker with a calm, slightly raspy voice (S1) places a fresh loaf on the wooden counter and says: <d>[English] First batch of the morning.</d> [Shot 2] At 00:05.000, the camera cuts to a close-up of steam rising from the sliced bread while the baker's final words carry over from the previous shot.\n\noverall_soundscape: Wooden shutters scrape open over a quiet street as trays clink softly inside the bakery. The doorbell rings once, followed by light footsteps and the crisp sound of bread being sliced.\n\nnon_diegetic_music: A soft acoustic-guitar pattern at a moderate tempo, joined by sparse upright-bass notes and a gentle fade at the end."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Case 2: I2VA"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Write the first-frame instruction first, then use the subject, composition, and scene in Picture 1 as the starting point of Shot 1 before describing how the scene continues to develop."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] Live-action, cinematic, the young woman shown in <Picture 1> remains beside the rain-covered train window, preserving her appearance, clothing, seat position, and the carriage layout. The camera trucks right with small amplitude at slow speed as she lifts her gaze from the folded letter toward the passing city lights. Her reflection moves across the glass while the quiet, breathy young woman (S1) says: <d>[English] I get off at the next station.</d> She folds the letter along its existing crease.\n\noverall_soundscape: The train wheels produce a steady metallic rhythm beneath a low ventilation hum. Rain ticks against the window while paper rustles softly in her hands.\n\nnon_diegetic_music: Sustained cello notes at a slow tempo with widely spaced piano tones, gradually decreasing in volume."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Case 3: FL2VA"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The two images anchor the opening and ending respectively. The body should not repeat two static image descriptions; instead, it should supply the motion path that connects them. The following example is an eight-second single shot."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 1) aligns with the 8.00-second mark of the target video.\n\nintegrated_multimodal_description: [Shot 1] Live-action, cinematic, a rain-soaked cyclist begins in the position and framing established by Picture 1, holding a closed black umbrella beside a silver bicycle. The camera pulls out with small amplitude at slow speed as she releases the bicycle handle, raises the umbrella above her shoulder, and presses the runner upward until the canopy opens. Water rolls from the expanding fabric while she steps beneath it, rotates the handle into the final angle, and settles into the pose, spacing, and composition established by Picture 2 at the end of the shot.\n\noverall_soundscape: Rain falls steadily on the pavement, followed by the metallic click of the umbrella runner and the soft snap of the canopy opening. Water drips from the bicycle frame as distant traffic passes.\n\nnon_diegetic_music: N/A"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Case 4: L2VA"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The image anchors only the final moment. First establish a compatible earlier state, then let the actions, object states, and composition gradually land on Picture 1 in the final shot. The following example is a six-second single shot."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "How the reference pictures align with the target video — <Picture 1> (from [Shot 1]) aligns with the 6.00-second mark of the target video.\n\nintegrated_multimodal_description: [Shot 1] Live-action, cinematic, a close shot begins with an intact drinking glass near the edge of a dark wooden table, while the same hand and sleeve visible in <Picture 1> approach from the right. The camera pushes in with small amplitude at slow speed as the fingertips strike the rim. The glass tips, falls, and hits the floor with a sharp impact; cracks spread through it as fragments slide outward. Toward the end, the moving pieces lose momentum and settle into the exact broken arrangement, hand position, camera angle, lighting, and final composition established by <Picture 1>.\n\noverall_soundscape: Fingertips tap the glass before it scrapes across the tabletop, falls, and breaks with a sharp crash. Small fragments scatter and gradually stop sliding across the floor.\n\nnon_diegetic_music: A low electronic pulse at a slow tempo, ending immediately after the glass breaks."
+        }
+      ]
+    }
+  ],
+  "title": "Video Prompt Writing Guide (T2VA / I2VA / FL2VA / L2VA)"
+}

@@ -6,6 +6,7 @@ import type {
   CreatorCatalog,
   SearchRecord,
   TutorialGuide,
+  TutorialOriginal,
   TutorialResource,
 } from './types'
 import type { Language } from './i18n'
@@ -42,5 +43,6 @@ export async function loadCatalogPage(params: URLSearchParams, favorites: string
 export const loadCaseDetail = (id: string, force = false) => loadJson<CaseDetail>(`/data/cases/${encodeURIComponent(id)}.json`, force)
 export const loadSearchIndex = (language: Language, force = false) => loadJson<SearchRecord[]>(`/data/search-index.${language}.json`, force)
 export const loadTutorialGuides = (force = false) => loadJson<TutorialGuide[]>(tutorialGuidesUrl, force)
+export const loadTutorialOriginal = (id: string) => loadJson<TutorialOriginal>(`/data/tutorial-originals/${encodeURIComponent(id)}.json`)
 export const loadTutorialResources = (force = false) => loadJson<TutorialResource[]>('/data/tutorials.json', force)
 export const loadCreators = (force = false) => loadJson<CreatorCatalog>('/data/creators.json', force)

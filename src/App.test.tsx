@@ -585,10 +585,11 @@ describe('case-first routes', () => {
     expect(screen.getByRole('heading', { name: 'MiniMax H3 教程' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '第一次使用，从这里开始' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '直接做一个作品' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: '更多教程导读' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '更多教程' })).toBeInTheDocument()
     expect(within(screen.getByRole('region', { name: '第一次使用 H3' })).getByRole('link', { name: /NVIDIA/ })).toHaveAttribute('href', '/tutorials/official-deployment/')
     expect(document.querySelectorAll('.foundation-route-card')).toHaveLength(projectTutorials.length)
-    expect(screen.getAllByRole('link', { name: /看原教程/ }).length).toBeGreaterThan(10)
+    expect(screen.getAllByRole('link', { name: /阅读全文/ }).length).toBeGreaterThan(10)
+    expect(screen.getByRole('button', { name: '长文 2' })).toHaveAttribute('aria-pressed', 'false')
     expect(screen.queryByRole('heading', { name: '先看 MiniMax H3 的真实效果。' })).not.toBeInTheDocument()
     tutorials.unmount()
 
@@ -742,7 +743,7 @@ describe('case-first routes', () => {
   it('searches community guides and opens a source-checked detail page', () => {
     renderAt('/tutorials/')
     fireEvent.change(screen.getByPlaceholderText('搜索硬件、能力或工作流…'), { target: { value: 'Ref2VA LoRA' } })
-    expect(screen.getByRole('heading', { name: 'H3 Ref2VA LoRA：社区训练路线导读' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'H3 Ref2VA LoRA：用 AI Toolkit 训练视频 LoRA' })).toBeInTheDocument()
     expect(screen.queryByRole('heading', { name: '从零装机到第一条带声视频' })).not.toBeInTheDocument()
 
     cleanup()
@@ -757,6 +758,33 @@ describe('case-first routes', () => {
     expect(screen.getByRole('heading', { name: '故障排查' })).toBeInTheDocument()
     expect(screen.getAllByRole('button', { name: /复制命令/ }).length).toBeGreaterThan(0)
     expect(screen.getByRole('heading', { name: '相关工具与资源' })).toBeInTheDocument()
+  })
+
+  it('shows the captured original first and hides placeholder steps for short guides', async () => {
+    const original = (await import('../data/tutorial-originals/train-ref2va-lora.json')).default
+    const fetchSpy = vi.spyOn(globalThis, 'fetch').mockImplementation(async (input) => (
+      String(input).endsWith('/data/tutorial-originals/train-ref2va-lora.json')
+        ? new Response(JSON.stringify(original), { status: 200, headers: { 'Content-Type': 'application/json' } })
+        : new Response('{}', { status: 404 })
+    ))
+    renderAt('/tutorials/train-ref2va-lora/')
+    expect(await screen.findByRole('heading', { name: 'Ostris 的原帖' })).toBeInTheDocument()
+    expect(screen.getByText('1 / 5')).toBeInTheDocument()
+    expect(document.querySelectorAll('.original-video video')).toHaveLength(5)
+    expect(document.querySelector('.original-video video')).toHaveAttribute('src', expect.stringMatching(/^\/media\/tutorial-\d+\.mp4$/))
+    expect(document.querySelector('.original-youtube iframe')).toHaveAttribute('src', 'https://www.youtube-nocookie.com/embed/8Ug0dA4jXyY')
+    expect(screen.getByRole('link', { name: /作者申请更正或下架/ })).toHaveAttribute('href', expect.stringContaining('template=takedown.yml'))
+    expect(screen.getByRole('heading', { name: '快速判断' })).toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: '执行步骤' })).not.toBeInTheDocument()
+    fetchSpy.mockRestore()
+  })
+
+  it('filters tutorials by source format and keeps the choice in the URL', () => {
+    renderAt('/tutorials/')
+    fireEvent.click(screen.getByRole('button', { name: '开源仓库 4' }))
+    expect(window.location.search).toContain('format=repository')
+    expect(screen.getByRole('heading', { name: 'Mac 从零运行 H3：纯 C + Metal' })).toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: '从零装机到第一条带声视频' })).not.toBeInTheDocument()
   })
 
   it('distinguishes terminal commands from file paths and embeds an original walkthrough', () => {
