@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest'
 import {
+  captureRegression,
   collectOriginalMedia,
+  originalSignature,
   draftInlines,
   rewriteOriginalMedia,
   textInlines,
@@ -152,4 +154,46 @@ describe('media mirroring and contract', () => {
     unknown.sections[0].blocks[0] = { type: 'html', html: '<script>' }
     expect(tutorialOriginalErrors(unknown)).toContain('original.sections[0].blocks[0].type: unsupported block')
   })
+
+  it('validates nested list and quote blocks and requires table headers', () => {
+    const base = {
+      tutorialId: 'demo', kind: 'markdown', language: 'en', capturedAt: '2026-09-13T00:00:00.000Z',
+      source: { url: 'https://github.com/o/r', author: 'o' },
+      sections: [{ blocks: [
+        { type: 'list', ordered: true, start: 3, items: [{ depth: 0, inlines: [{ t: 'Run' }], blocks: [{ type: 'code', text: 'make' }] }, { depth: 1, ordered: true, inlines: [{ t: 'sub' }] }] },
+        { type: 'quote', inlines: [], blocks: [{ type: 'paragraph', inlines: [{ t: 'Note' }] }] },
+      ] }],
+    }
+    expect(tutorialOriginalErrors(base)).toEqual([])
+    const nestedUnsafe = structuredClone(base)
+    nestedUnsafe.sections[0].blocks[0].items[0].blocks = [{ type: 'html' }]
+    expect(tutorialOriginalErrors(nestedUnsafe)).toContain('original.sections[0].blocks[0].items[0].blocks[0].type: unsupported block')
+    const emptyQuote = structuredClone(base)
+    emptyQuote.sections[0].blocks[1].blocks = []
+    expect(tutorialOriginalErrors(emptyQuote)).toContain('original.sections[0].blocks[1]: quote content required')
+    const headless = structuredClone(base)
+    headless.sections[0].blocks = [{ type: 'table', rows: [[[{ t: 'a' }]]] }]
+    expect(tutorialOriginalErrors(headless)).toContain('original.sections[0].blocks[0].header: table header required')
+  })
 })
+
+describe('recapture safeguards', () => {
+  const original = (blocks, extra = {}) => ({ tutorialId: 'demo', kind: 'x-thread', capturedAt: '2026-09-13T00:00:00.000Z', source: { url: 'https://x.com/a/status/1', author: 'A', revision: 'abc' }, sections: [{ blocks }], ...extra })
+  const paragraph = { type: 'paragraph', inlines: [{ t: 'x' }] }
+
+  it('ignores the capture time and upstream revision when comparing content', () => {
+    const later = { ...original([paragraph]), capturedAt: '2026-09-20T00:00:00.000Z', source: { url: 'https://x.com/a/status/1', author: 'A', revision: 'def' } }
+    expect(originalSignature(later)).toBe(originalSignature(original([paragraph])))
+    expect(originalSignature(original([paragraph, paragraph]))).not.toBe(originalSignature(original([paragraph])))
+  })
+
+  it('refuses a recapture that changes kind or loses sections or most blocks', () => {
+    const existing = original(Array(10).fill(paragraph), { sections: [{ blocks: Array(10).fill(paragraph) }, { blocks: [paragraph] }] })
+    expect(captureRegression(null, original([paragraph]))).toBeNull()
+    expect(captureRegression(existing, { ...existing, kind: 'x-article' })).toMatch(/kind changed/)
+    expect(captureRegression(existing, original(Array(10).fill(paragraph)))).toMatch(/sections dropped/)
+    expect(captureRegression(existing, { ...existing, sections: [{ blocks: [paragraph] }, { blocks: [paragraph] }] })).toMatch(/blocks dropped/)
+    expect(captureRegression(existing, { ...existing, sections: [{ blocks: Array(12).fill(paragraph) }, { blocks: [paragraph] }] })).toBeNull()
+  })
+})
+

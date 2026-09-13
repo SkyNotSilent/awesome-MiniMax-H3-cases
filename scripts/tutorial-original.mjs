@@ -169,11 +169,14 @@ export function draftArticleBlocks(article) {
   for (const block of article.content?.blocks ?? []) {
     const ordered = block.type === 'ordered-list-item'
     if (block.type === 'unordered-list-item' || ordered) {
-      if (!list || list.ordered !== ordered) {
+      const depth = Math.min(Number(block.depth || 0), 3)
+      if (!list || (depth === 0 && list.ordered !== ordered)) {
         list = { type: 'list', ordered, items: [] }
         blocks.push(list)
       }
-      list.items.push({ depth: Math.min(Number(block.depth || 0), 3), inlines: draftInlines(block, entityAt) })
+      const item = { depth, inlines: draftInlines(block, entityAt) }
+      if (depth > 0 && ordered) item.ordered = true
+      list.items.push(item)
       continue
     }
     list = null
@@ -243,15 +246,23 @@ export function xPayloadToOriginal(payload, { tutorialId, capturedAt, language }
   return original
 }
 
+function childBlocks(block) {
+  if (block.type === 'list') return block.items.flatMap((item) => item.blocks ?? [])
+  if (block.type === 'quote') return block.blocks ?? []
+  return []
+}
+
 function mediaTargets(original) {
   const targets = []
-  if (original.cover?.remote) targets.push({ holder: original, field: 'cover', item: original.cover })
-  for (const section of original.sections ?? []) {
-    for (const block of section.blocks ?? []) {
-      if ((block.type === 'image' || block.type === 'video') && block.remote) targets.push({ holder: block, item: block })
-      if (block.type === 'post-quote' && block.image?.remote) targets.push({ holder: block, field: 'image', item: block.image })
+  if (original.cover?.remote) targets.push({ item: original.cover })
+  const visit = (blocks) => {
+    for (const block of blocks ?? []) {
+      if ((block.type === 'image' || block.type === 'video') && block.remote) targets.push({ item: block })
+      if (block.type === 'post-quote' && block.image?.remote) targets.push({ item: block.image })
+      visit(childBlocks(block))
     }
   }
+  for (const section of original.sections ?? []) visit(section.blocks)
   return targets
 }
 
@@ -283,8 +294,20 @@ export function rewriteOriginalMedia(original, mirrored) {
     if (cover) copy.cover = cover
     else delete copy.cover
   }
-  for (const section of copy.sections) {
-    section.blocks = section.blocks.flatMap((block) => {
+  const rewrite = (blocks) => blocks.flatMap((block) => {
+      if (block.type === 'list' && block.items.some((item) => item.blocks)) {
+        return [{ ...block, items: block.items.map((item) => {
+          if (!item.blocks) return item
+          const nested = rewrite(item.blocks)
+          const rest = { ...item }
+          delete rest.blocks
+          return nested.length ? { ...rest, blocks: nested } : rest
+        }) }]
+      }
+      if (block.type === 'quote' && block.blocks) {
+        const nested = rewrite(block.blocks)
+        return nested.length ? [{ ...block, blocks: nested }] : []
+      }
       if (block.type === 'image' && block.remote) {
         const image = mirroredImage(block, mirrored)
         return image ? [{ type: 'image', ...image }] : []
@@ -309,7 +332,7 @@ export function rewriteOriginalMedia(original, mirrored) {
       }
       return [block]
     })
-  }
+  for (const section of copy.sections) section.blocks = rewrite(section.blocks)
   return copy
 }
 
@@ -329,6 +352,11 @@ function imageErrors(image, path, errors) {
   if (image?.remote) errors.push(`${path}.remote: not public`)
 }
 
+function nestedErrors(blocks, path, errors) {
+  if (!Array.isArray(blocks) || !blocks.length) { errors.push(`${path}: nested blocks required`); return }
+  blocks.forEach((child, index) => blockErrors(child, `${path}[${index}]`, errors))
+}
+
 function blockErrors(block, path, errors) {
   if (!BLOCK_TYPES.has(block?.type)) { errors.push(`${path}.type: unsupported block`); return }
   if (block.remote || block.mediaId) errors.push(`${path}: capture fields must be removed`)
@@ -338,12 +366,21 @@ function blockErrors(block, path, errors) {
       inlineErrors(block.inlines, `${path}.inlines`, errors)
       break
     case 'paragraph':
-    case 'quote':
       inlineErrors(block.inlines, `${path}.inlines`, errors)
       break
+    case 'quote':
+      inlineErrors(block.inlines, `${path}.inlines`, errors)
+      if (block.blocks !== undefined) nestedErrors(block.blocks, `${path}.blocks`, errors)
+      if (!block.inlines?.length && !block.blocks?.length) errors.push(`${path}: quote content required`)
+      break
     case 'list':
+      if (block.start !== undefined && (!Number.isSafeInteger(block.start) || block.start < 0)) errors.push(`${path}.start: integer required`)
       if (!Array.isArray(block.items) || !block.items.length) errors.push(`${path}.items: list items required`)
-      else block.items.forEach((item, index) => inlineErrors(item.inlines, `${path}.items[${index}].inlines`, errors))
+      else block.items.forEach((item, index) => {
+        inlineErrors(item.inlines, `${path}.items[${index}].inlines`, errors)
+        if (item.blocks !== undefined) nestedErrors(item.blocks, `${path}.items[${index}].blocks`, errors)
+        if (!item.inlines?.length && !item.blocks?.length) errors.push(`${path}.items[${index}]: item content required`)
+      })
       break
     case 'code':
       if (typeof block.text !== 'string') errors.push(`${path}.text: code text required`)
@@ -359,8 +396,9 @@ function blockErrors(block, path, errors) {
       if (!YOUTUBE_ID.test(block.videoId ?? '')) errors.push(`${path}.videoId: invalid YouTube id`)
       break
     case 'table':
-      if (!Array.isArray(block.rows)) errors.push(`${path}.rows: table rows required`)
-      else [block.header ?? [], ...block.rows].forEach((row, rowIndex) => row.forEach((cell, cellIndex) => inlineErrors(cell, `${path}.rows[${rowIndex}][${cellIndex}]`, errors)))
+      if (!Array.isArray(block.header)) errors.push(`${path}.header: table header required`)
+      if (!Array.isArray(block.rows) || !Array.isArray(block.header)) errors.push(`${path}.rows: table rows required`)
+      else [block.header, ...block.rows].forEach((row, rowIndex) => row.forEach((cell, cellIndex) => inlineErrors(cell, `${path}.rows[${rowIndex}][${cellIndex}]`, errors)))
       break
     case 'post-quote':
       if (!safeHref(block.url)) errors.push(`${path}.url: HTTP(S) URL required`)
@@ -393,3 +431,40 @@ export function tutorialOriginalErrors(original) {
   })
   return errors
 }
+
+// Content identity for recapture: the capture time and upstream commit are not content.
+export function originalSignature(original) {
+  const source = { ...original.source }
+  delete source.revision
+  return JSON.stringify({ ...original, capturedAt: null, source })
+}
+
+function blockCount(original) {
+  return original.sections.reduce((sum, section) => sum + section.blocks.length, 0)
+}
+
+// A degraded upstream response must not silently replace a good capture.
+export function captureRegression(existing, next) {
+  if (!existing) return null
+  if (existing.kind !== next.kind) return `kind changed from ${existing.kind} to ${next.kind}`
+  if (next.sections.length < existing.sections.length) return `sections dropped from ${existing.sections.length} to ${next.sections.length}`
+  if (blockCount(next) < blockCount(existing) * 0.8) return `blocks dropped from ${blockCount(existing)} to ${blockCount(next)}`
+  return null
+}
+
+// Every local image path a capture references (covers, figures, video posters, quote images).
+export function referencedImages(original) {
+  const paths = new Set()
+  if (original.cover?.src) paths.add(original.cover.src)
+  const visit = (blocks) => {
+    for (const block of blocks ?? []) {
+      if (block.type === 'image' && block.src) paths.add(block.src)
+      if (block.type === 'video' && block.poster) paths.add(block.poster)
+      if (block.type === 'post-quote' && block.image?.src) paths.add(block.image.src)
+      visit(childBlocks(block))
+    }
+  }
+  for (const section of original.sections ?? []) visit(section.blocks)
+  return paths
+}
+

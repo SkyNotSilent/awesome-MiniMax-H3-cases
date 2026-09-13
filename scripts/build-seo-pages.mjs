@@ -23,6 +23,7 @@ const skillPath = (locale, id) => `${locale === 'en' ? '/en' : ''}/skills/${enco
 const skillInstallCommand = (item) => {
   const skill = item.skills.length === 1 ? item.skills[0] : undefined
   if (!skill) return `npx skills add ${item.repository}`
+  if (!skill.path.includes('/')) return `npx skills add ${item.repository} --skill ${skill.name}`
   const directory = skill.path.includes('/') ? skill.path.slice(0, skill.path.lastIndexOf('/')) : ''
   return `npx skills add https://github.com/${item.repository}/tree/${item.branch}${directory ? `/${directory}` : ''}`
 }

@@ -814,6 +814,28 @@ describe('case-first routes', () => {
     fetchSpy.mockRestore()
   })
 
+  it('anchors the only skill of a single-skill package', async () => {
+    const skills = (await import('../data/skills.json')).default
+    const original = (await import('../data/skill-originals/h3lite.json')).default
+    const fetchSpy = vi.spyOn(globalThis, 'fetch').mockImplementation(async (input) => {
+      const url = String(input)
+      if (url.endsWith('/data/skills.json')) return new Response(JSON.stringify(skills), { status: 200 })
+      if (url.endsWith('/data/skill-originals/h3lite.json')) return new Response(JSON.stringify(original), { status: 200 })
+      return new Response('{}', { status: 404 })
+    })
+    renderAt('/skills/h3lite/')
+    expect(await screen.findByRole('heading', { name: 'h3lite', level: 2 }, { timeout: 8000 })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'h3lite' })).toHaveAttribute('href', '#skill-h3lite')
+    expect(document.getElementById('skill-h3lite')).not.toBeNull()
+    fetchSpy.mockRestore()
+  })
+
+  it('ignores a format in the URL that has no tutorials', () => {
+    renderAt('/tutorials/?format=video')
+    expect(screen.getByRole('button', { name: '全部形式' })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getAllByRole('link', { name: /阅读全文/ }).length).toBeGreaterThan(10)
+  })
+
   it('filters tutorials by source format and keeps the choice in the URL', () => {
     renderAt('/tutorials/')
     fireEvent.click(screen.getByRole('button', { name: '开源仓库 4' }))

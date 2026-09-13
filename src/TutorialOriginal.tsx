@@ -2,11 +2,10 @@ import { useEffect, useState, type ReactNode } from 'react'
 import { ArrowUpRight, Check, Copy } from 'lucide-react'
 import { loadTutorialOriginal } from './data-client'
 import type { Language } from './i18n'
-import type { OriginalBlock, OriginalImage, OriginalInline, TutorialGuide, TutorialOriginal } from './types'
+import type { OriginalBlock, OriginalImage, OriginalInline, OriginalListItem, TutorialGuide, TutorialOriginal } from './types'
 import './tutorial-original.css'
 
-type ListItem = { depth: number; inlines: OriginalInline[] }
-type ListNode = { inlines: OriginalInline[]; children: ListNode[] }
+type ListNode = { inlines: OriginalInline[]; blocks?: OriginalBlock[]; ordered?: boolean; children: ListNode[] }
 
 const KIND_LABELS: Record<Language, Record<TutorialOriginal['kind'], string>> = {
   zh: { 'x-article': 'X 长文', 'x-thread': 'X 帖子', markdown: '文档原文' },
@@ -28,21 +27,25 @@ function Inlines({ runs, linked = true }: { runs: OriginalInline[]; linked?: boo
   })}</>
 }
 
-function nestList(items: ListItem[]): ListNode[] {
+function nestList(items: OriginalListItem[]): ListNode[] {
   const root: ListNode[] = []
   const stack: Array<{ depth: number; children: ListNode[] }> = [{ depth: -1, children: root }]
   for (const item of items) {
     while (stack.length > 1 && stack[stack.length - 1].depth >= item.depth) stack.pop()
-    const node = { inlines: item.inlines, children: [] }
+    const node: ListNode = { inlines: item.inlines, blocks: item.blocks, ordered: item.ordered, children: [] }
     stack[stack.length - 1].children.push(node)
     stack.push({ depth: item.depth, children: node.children })
   }
   return root
 }
 
-function List({ nodes, ordered }: { nodes: ListNode[]; ordered: boolean }) {
-  const items = nodes.map((node, index) => <li key={index}><Inlines runs={node.inlines} />{node.children.length > 0 && <List nodes={node.children} ordered={false} />}</li>)
-  return ordered ? <ol>{items}</ol> : <ul>{items}</ul>
+function List({ nodes, ordered, start, language }: { nodes: ListNode[]; ordered: boolean; start?: number; language: Language }) {
+  const items = nodes.map((node, index) => <li key={index}>
+    <Inlines runs={node.inlines} />
+    {node.blocks && <Blocks blocks={node.blocks} language={language} />}
+    {node.children.length > 0 && <List nodes={node.children} ordered={Boolean(node.children[0].ordered)} language={language} />}
+  </li>)
+  return ordered ? <ol start={start}>{items}</ol> : <ul>{items}</ul>
 }
 
 function CodeBlock({ text, language, labels }: { text: string; language?: string; labels: { copy: string; copied: string } }) {
@@ -74,9 +77,9 @@ function Block({ block, language }: { block: OriginalBlock; language: Language }
     case 'paragraph':
       return <p><Inlines runs={block.inlines} /></p>
     case 'quote':
-      return <blockquote><Inlines runs={block.inlines} /></blockquote>
+      return <blockquote>{block.blocks ? <Blocks blocks={block.blocks} language={language} /> : <Inlines runs={block.inlines} />}</blockquote>
     case 'list':
-      return <List nodes={nestList(block.items)} ordered={block.ordered} />
+      return <List nodes={nestList(block.items)} ordered={block.ordered} start={block.start} language={language} />
     case 'code':
       return <CodeBlock text={block.text} language={block.language} labels={labels} />
     case 'image':
@@ -91,7 +94,7 @@ function Block({ block, language }: { block: OriginalBlock; language: Language }
       return <hr />
     case 'table':
       return <div className="original-table"><table>
-        {block.header.length > 0 && <thead><tr>{block.header.map((cell, index) => <th key={index}><Inlines runs={cell} /></th>)}</tr></thead>}
+        {block.header?.length > 0 && <thead><tr>{block.header.map((cell, index) => <th key={index}><Inlines runs={cell} /></th>)}</tr></thead>}
         <tbody>{block.rows.map((row, rowIndex) => <tr key={rowIndex}>{row.map((cell, index) => <td key={index}><Inlines runs={cell} /></td>)}</tr>)}</tbody>
       </table></div>
     case 'post-quote':
@@ -165,7 +168,7 @@ export function OriginalDocument({ original, language, sourceLabel, revisionUrl,
           <header><span>{index + 1} / {original.sections.length}</span>{section.title && <strong>{section.title}</strong>}{section.publishedAt && <time dateTime={section.publishedAt}>{section.publishedAt}</time>}{section.url && <a href={section.url} target="_blank" rel="noreferrer">{sectionLink} <ArrowUpRight size={12} /></a>}</header>
           <div className="original-body"><Blocks blocks={section.blocks} language={language} /></div>
         </li>)}</ol>
-      : <div className="original-body"><Blocks blocks={original.sections[0].blocks} language={language} /></div>}
+      : <div className="original-body" id={original.sections[0].anchor}><Blocks blocks={original.sections[0].blocks} language={language} /></div>}
     <footer className="original-foot">
       <p>{zh ? '版权归原作者所有。本页完整收录原文并保留出处链接，内容以原作者的最新版本为准。' : 'Copyright belongs to the original author. This page reproduces the original with attribution; the author’s latest version takes precedence.'}</p>
       <a href="https://github.com/SkyNotSilent/awesome-MiniMax-H3-cases/issues/new?template=takedown.yml" target="_blank" rel="noreferrer">{zh ? '作者申请更正或下架' : 'Authors: request a correction or removal'} <ArrowUpRight size={12} /></a>

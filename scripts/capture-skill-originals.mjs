@@ -1,7 +1,7 @@
 // Captures every curated H3 skill package into data/skill-originals/{id}.json
 // and refreshes its public metadata in data/skills.json.
 //
-//   GITHUB_TOKEN=$(gh auth token) node scripts/capture-skill-originals.mjs [--only id,id]
+//   GITHUB_TOKEN=$(gh auth token) node scripts/capture-skill-originals.mjs [--only id,id] [--allow-shrink]
 //
 // Packages list their SKILL.md paths. A package marked `catalog` is too large to
 // reproduce file by file; its README and a complete skill index are captured instead.
@@ -9,8 +9,8 @@ import { readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { detectLanguage, parseSkillFrontmatter, skillSection } from './skill-original.mjs'
 import { markdownToOriginalContent } from './tutorial-original-markdown.mjs'
-import { collectOriginalMedia, rewriteOriginalMedia, textInlines, tutorialOriginalErrors } from './tutorial-original.mjs'
-import { mirrorImage, retry } from './tutorial-media.mjs'
+import { captureRegression, collectOriginalMedia, originalSignature, referencedImages, rewriteOriginalMedia, textInlines, tutorialOriginalErrors } from './tutorial-original.mjs'
+import { mirrorImage, pruneMirroredImages, retry } from './tutorial-media.mjs'
 
 const root = resolve(import.meta.dirname, '..')
 const skillsPath = resolve(root, 'data/skills.json')
@@ -18,6 +18,7 @@ const USER_AGENT = 'awesome-minimax-h3-cases/1.0 skill-original'
 const onlyIndex = process.argv.indexOf('--only')
 const onlyIds = new Set(onlyIndex === -1 ? [] : process.argv[onlyIndex + 1].split(',').map((value) => value.trim()).filter(Boolean))
 const today = new Date().toISOString().slice(0, 10)
+const allowShrink = process.argv.includes('--allow-shrink')
 
 async function request(url, { json = true, api = false } = {}) {
   return retry(`Fetch ${url}`, async () => {
@@ -91,13 +92,10 @@ async function capture(item) {
   const license = meta.license?.spdx_id && meta.license.spdx_id !== 'NOASSERTION' ? meta.license.spdx_id : undefined
   if (license) draft.source.license = license
   const mirrored = new Map()
+  // A failed image fails the package so a partial capture never replaces a complete one.
   for (const media of collectOriginalMedia(draft)) {
     if (media.kind !== 'image') continue
-    try {
-      mirrored.set(media.key, await mirrorImage({ root, tutorialId: item.id, key: media.key, url: media.url, directory: 'skill-media' }))
-    } catch (error) {
-      console.warn(`  image skipped for ${item.id}: ${error?.message || error}`)
-    }
+    mirrored.set(media.key, await mirrorImage({ root, tutorialId: item.id, key: media.key, url: media.url, directory: 'skill-media' }))
   }
   const original = rewriteOriginalMedia(draft, mirrored)
   const errors = tutorialOriginalErrors(original)
@@ -105,8 +103,13 @@ async function capture(item) {
   const path = resolve(root, `data/skill-originals/${item.id}.json`)
   let existing = null
   try { existing = JSON.parse(await readFile(path, 'utf8')) } catch { /* first capture */ }
-  const same = existing && JSON.stringify({ ...existing, capturedAt: null }) === JSON.stringify({ ...original, capturedAt: null })
-  if (!same) await writeFile(path, `${JSON.stringify(original, null, 2)}\n`)
+  const same = existing && originalSignature(existing) === originalSignature(original)
+  if (!same) {
+    const regression = captureRegression(existing, original)
+    if (regression && !allowShrink) throw new Error(`${regression}; the previous capture was kept (rerun with --allow-shrink after checking the source)`)
+    await writeFile(path, `${JSON.stringify(original, null, 2)}\n`)
+    for (const src of await pruneMirroredImages({ root, directory: 'skill-media', id: item.id, keep: referencedImages(original) })) console.log(`  pruned ${src}`)
+  }
   const next = {
     ...item,
     branch,

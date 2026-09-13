@@ -156,10 +156,12 @@ export type TutorialHardwareProfile =
 
 export type OriginalInline = { t: string; b?: true; i?: true; c?: true; href?: string }
 export type OriginalImage = { src: string; width: number; height: number; alt?: string }
+export type OriginalListItem = { depth: number; inlines: OriginalInline[]; blocks?: OriginalBlock[]; ordered?: boolean }
 export type OriginalBlock =
   | { type: 'heading'; level: 2 | 3 | 4; inlines: OriginalInline[] }
-  | { type: 'paragraph' | 'quote'; inlines: OriginalInline[] }
-  | { type: 'list'; ordered: boolean; items: Array<{ depth: number; inlines: OriginalInline[] }> }
+  | { type: 'paragraph'; inlines: OriginalInline[] }
+  | { type: 'quote'; inlines: OriginalInline[]; blocks?: OriginalBlock[] }
+  | { type: 'list'; ordered: boolean; start?: number; items: OriginalListItem[] }
   | { type: 'code'; text: string; language?: string }
   | ({ type: 'image' } & OriginalImage)
   | { type: 'video'; src: string; poster?: string; width?: number; height?: number; duration?: number }
