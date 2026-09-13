@@ -3,7 +3,7 @@
   "kind": "markdown",
   "title": "minimax-broll-generator",
   "language": "en",
-  "capturedAt": "2026-09-13T11:14:11.940Z",
+  "capturedAt": "2026-09-13T12:43:35.669Z",
   "source": {
     "url": "https://github.com/guangjun5952/minimax-h3-broll-generator",
     "author": "guangjun5952",
@@ -84,7 +84,8 @@
                 {
                   "t": "The current conversation contains explicit approval for named shot IDs or “all shots”."
                 }
-              ]
+              ],
+              "ordered": true
             },
             {
               "depth": 1,
@@ -103,7 +104,8 @@
                 {
                   "t": "."
                 }
-              ]
+              ],
+              "ordered": true
             },
             {
               "depth": 1,
@@ -122,7 +124,8 @@
                 {
                   "t": "."
                 }
-              ]
+              ],
+              "ordered": true
             },
             {
               "depth": 0,

@@ -32,8 +32,8 @@ describe('privacy scan', () => {
 
   it('allows third-party authors’ own paths in captured originals but still blocks the local account', () => {
     const quoted = `cd /${'Users'}/someauthor/${'Documents'}/project`
-    expect(scanText('data/skill-originals/demo.json', quoted, { scanSecrets: true, localUser: 'maintainer' })).toEqual([])
-    expect(scanText('data/tutorial-originals/demo.json', `/${'Users'}/maintainer/${'Documents'}/x`, { scanSecrets: true, localUser: 'maintainer' })[0]?.reason).toBe('local user path')
-    expect(scanText('README.md', quoted, { scanSecrets: true, localUser: 'maintainer' })[0]?.reason).toBe('local user path')
+    expect(scanText('data/skill-originals/demo.json', quoted, { scanSecrets: true, localUsers: new Set(['maintainer']) })).toEqual([])
+    expect(scanText('data/tutorial-originals/demo.json', `/${'Users'}/maintainer/${'Documents'}/x`, { scanSecrets: true, localUsers: new Set(['maintainer']) })[0]?.reason).toBe('local user path')
+    expect(scanText('README.md', quoted, { scanSecrets: true, localUsers: new Set(['maintainer']) })[0]?.reason).toBe('local user path')
   })
 })

@@ -6,6 +6,10 @@ All notable public changes are documented here. Release dates use YYYY-MM-DD.
 
 ### Added
 
+- Complete tutorial originals on every tutorial page: X Articles, author threads with quoted posts, GitHub READMEs, Hugging Face documents, and ComfyUI documentation sections, with mirrored images and in-site video playback. The site's own steps and commands remain as a quick reference below the original for in-depth guides.
+- A tutorial format filter (article, post, repository, documentation) alongside goal and hardware.
+- A Skills section with 31 curated MiniMax H3 Agent Skill packages (309 skills), each reproducing its SKILL.md files at a pinned commit with a copyable install command, license, and dated star snapshot.
+- A takedown option for removing only the reproduced original while keeping the source link.
 - Creator-first bilingual repository paths for browsing cases, finding verbatim Prompts, learning from tutorials, and submitting original work.
 - Two tutorial starting routes, typed setup/project/reference guides, official YouTube embeds, and command-versus-path presentation.
 - GitHub and YouTube identities for tutorial creators without cross-platform engagement scoring.
@@ -20,6 +24,8 @@ All notable public changes are documented here. Release dates use YYYY-MM-DD.
 
 ### Changed
 
+- Short tutorial entries no longer show placeholder steps; they lead with the captured original and list audience and hardware in an at-a-glance sidebar.
+- Two ComfyUI documentation sources now point to the sections' new location on the native workflows page.
 - The README now demonstrates creator value before implementation details, while the tutorial page leads with outcomes and practical projects instead of a resource directory.
 - Tutorial submissions may use Chinese or English and request only the evidence appropriate to installation, practical, video, or reference content.
 - Installed Skills now resolve their own fixtures or the public catalog and fail explicitly when neither source is available.

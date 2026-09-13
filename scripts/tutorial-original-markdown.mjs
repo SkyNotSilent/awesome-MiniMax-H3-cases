@@ -100,8 +100,22 @@ export function normalizeMdx(mdx) {
   return dedent(text).replace(/\n{3,}/g, '\n\n').trim()
 }
 
+// Key media by its location inside the repository, not by the commit it was read at,
+// so a recapture after an unrelated commit reuses the mirrored file.
+export function stableMediaKey(url) {
+  try {
+    const parsed = new URL(url)
+    if (parsed.hostname === 'raw.githubusercontent.com') {
+      const [, owner, repo, , ...path] = parsed.pathname.split('/')
+      return `github:${owner}/${repo}/${path.join('/')}`
+    }
+    if (parsed.hostname === 'huggingface.co') return `hf:${parsed.pathname.replace(/\/(resolve|blob|raw)\/[^/]+\//, '/$1/')}`
+  } catch { /* unsafe URLs never reach this point */ }
+  return url
+}
+
 function mediaId(url) {
-  return `md-${createHash('sha1').update(url).digest('hex').slice(0, 12)}`
+  return `md-${createHash('sha1').update(stableMediaKey(url)).digest('hex').slice(0, 12)}`
 }
 
 function isBadge(url) {
@@ -195,19 +209,31 @@ function trimRuns(runs) {
   return copy
 }
 
-function listItems(list, context, depth, items, media) {
+// Nested lists flatten to depth-tagged items; other nested content (code, tables,
+// quotes, images) stays inside its item as child blocks.
+function listItems(list, context, depth, items) {
   for (const item of list.items) {
     const runs = []
+    const children = []
     for (const child of item.tokens) {
-      if (child.type === 'list') continue
+      if (child.type === 'list' || child.type === 'space') continue
       if (child.type === 'text' || child.type === 'paragraph') {
+        const media = []
         if (runs.length) pushRun(runs, { t: ' ' })
         inlineRuns(child.tokens ?? [{ type: 'text', text: child.text }], context, {}, media, runs)
+        children.push(...media)
+      } else {
+        children.push(...tokenBlocks([child], context))
       }
     }
     const inlines = trimRuns(runs)
-    if (inlines.length) items.push({ depth: Math.min(depth, 3), inlines })
-    for (const child of item.tokens) if (child.type === 'list') listItems(child, context, depth + 1, items, media)
+    if (inlines.length || children.length) {
+      const entry = { depth: Math.min(depth, 3), inlines }
+      if (depth > 0 && list.ordered) entry.ordered = true
+      if (children.length) entry.blocks = children
+      items.push(entry)
+    }
+    for (const child of item.tokens) if (child.type === 'list') listItems(child, context, depth + 1, items)
   }
   return items
 }
@@ -249,13 +275,19 @@ function tokenBlocks(tokens, context) {
         break
       }
       case 'list': {
-        const media = []
-        const items = listItems(token, context, 0, [], media)
-        if (items.length) blocks.push({ type: 'list', ordered: Boolean(token.ordered), items })
-        blocks.push(...media)
+        const items = listItems(token, context, 0, [])
+        if (!items.length) break
+        const block = { type: 'list', ordered: Boolean(token.ordered), items }
+        if (token.ordered && Number.isSafeInteger(token.start) && token.start !== 1) block.start = token.start
+        blocks.push(block)
         break
       }
       case 'blockquote': {
+        if (token.tokens.some((child) => !['paragraph', 'text', 'space'].includes(child.type))) {
+          const inner = tokenBlocks(token.tokens, context)
+          if (inner.length) blocks.push({ type: 'quote', inlines: [], blocks: inner })
+          break
+        }
         const media = []
         const runs = []
         for (const child of token.tokens) {

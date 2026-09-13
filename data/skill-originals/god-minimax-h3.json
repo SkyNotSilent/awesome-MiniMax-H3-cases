@@ -3,7 +3,7 @@
   "kind": "markdown",
   "title": "God-minmax-H3",
   "language": "zh",
-  "capturedAt": "2026-09-13T11:12:27.008Z",
+  "capturedAt": "2026-09-13T12:41:53.985Z",
   "source": {
     "url": "https://github.com/LIUFelix2004/God-minmax-H3",
     "author": "LIUFelix2004",
@@ -349,6 +349,13 @@
                 {
                   "c": true,
                   "t": "role=first_frame"
+                }
+              ],
+              "blocks": [
+                {
+                  "type": "code",
+                  "text": "./scripts/extract_last_frame.sh segA.mp4 segA_last.jpg",
+                  "language": "bash"
                 }
               ]
             },

@@ -1,7 +1,7 @@
 // Mirrors media referenced by captured tutorial originals.
 // Images become local WebP files; videos use the same bucket tiers as cases.
 import { createReadStream, createWriteStream } from 'node:fs'
-import { access, mkdir, stat } from 'node:fs/promises'
+import { access, mkdir, readdir, rm, stat } from 'node:fs/promises'
 import { dirname, join, resolve } from 'node:path'
 import { Readable } from 'node:stream'
 import { pipeline } from 'node:stream/promises'
@@ -154,3 +154,18 @@ export async function mirrorVideo({ store, key, url, variants, sourceUrl, tempDi
   }
   return { ...result, state: 'uploaded' }
 }
+
+// After a capture is written, remove mirrored images it no longer references.
+export async function pruneMirroredImages({ root, directory, id, keep }) {
+  const folder = resolve(root, `public/${directory}/${id}`)
+  const names = await readdir(folder).catch(() => [])
+  const removed = []
+  for (const name of names) {
+    const src = `/${directory}/${id}/${name}`
+    if (keep.has(src)) continue
+    await rm(resolve(folder, name), { force: true })
+    removed.push(src)
+  }
+  return removed
+}
+

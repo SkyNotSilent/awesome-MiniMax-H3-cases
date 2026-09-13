@@ -1,5 +1,5 @@
 import { tutorialContractErrors, tutorialSourceKey } from './tutorial-contract.mjs'
-import { tutorialOriginalErrors } from './tutorial-original.mjs'
+import { referencedImages, tutorialOriginalErrors } from './tutorial-original.mjs'
 import { access, readdir, readFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { editorialCopyErrors, genericEditorialCopyPattern } from './editorial-copy.mjs'
@@ -266,6 +266,16 @@ for (const [index, item] of tutorialGuides.entries()) {
   }
 }
 
+// Each capture must find its mirrored images, and its media folder must hold nothing else.
+async function checkMirroredImages(at, directory, id, original) {
+  const images = referencedImages(original)
+  for (const src of images) {
+    try { await access(resolve(root, `public${src}`)) } catch { errors.push(`${at}: missing mirrored image ${src}`) }
+  }
+  const names = await readdir(resolve(root, `public/${directory}/${id}`)).catch(() => [])
+  for (const name of names) if (!images.has(`/${directory}/${id}/${name}`)) errors.push(`${at}: orphaned mirrored image /${directory}/${id}/${name}`)
+}
+
 // Captured originals: every guide marker needs a valid file with mirrored local images.
 const originalFiles = new Set((await readdir(resolve(root, 'data/tutorial-originals')).catch(() => [])).filter((name) => name.endsWith('.json')))
 for (const item of tutorialGuides.filter((guide) => guide.original)) {
@@ -275,10 +285,7 @@ for (const item of tutorialGuides.filter((guide) => guide.original)) {
   errors.push(...tutorialOriginalErrors(original).map((error) => `${at}: ${error}`))
   if (original.tutorialId !== item.id) errors.push(`${at}: tutorialId mismatch`)
   if (original.kind !== item.original.kind || original.capturedAt !== item.original.capturedAt) errors.push(`${at}: guide marker does not match capture`)
-  const images = [original.cover?.src, ...original.sections.flatMap((section) => section.blocks.flatMap((block) => [block.type === 'image' ? block.src : null, block.poster, block.image?.src]))].filter(Boolean)
-  for (const src of new Set(images)) {
-    try { await access(resolve(root, `public${src}`)) } catch { errors.push(`${at}: missing mirrored image ${src}`) }
-  }
+  await checkMirroredImages(at, 'tutorial-media', item.id, original)
 }
 for (const name of originalFiles) errors.push(`tutorialOriginals.${name}: no guide references this capture`)
 
@@ -306,10 +313,7 @@ for (const [index, item] of skills.entries()) {
   const original = JSON.parse(await readFile(resolve(root, `data/skill-originals/${item.id}.json`), 'utf8'))
   errors.push(...tutorialOriginalErrors(original).map((error) => `${at}: ${error}`))
   if (original.skillId !== item.id || original.capturedAt !== item.original.capturedAt) errors.push(`${at}: skill marker does not match capture`)
-  const images = original.sections.flatMap((section) => section.blocks.flatMap((block) => [block.type === 'image' ? block.src : null, block.image?.src])).filter(Boolean)
-  for (const src of new Set(images)) {
-    try { await access(resolve(root, `public${src}`)) } catch { errors.push(`${at}: missing mirrored image ${src}`) }
-  }
+  await checkMirroredImages(at, 'skill-media', item.id, original)
 }
 for (const name of skillOriginalFiles) errors.push(`skillOriginals.${name}: no package references this capture`)
 

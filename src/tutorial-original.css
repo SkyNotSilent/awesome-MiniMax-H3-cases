@@ -318,3 +318,8 @@
 .original-thread > li > header strong { color: var(--ink); font-family: var(--mono); font-size: 11px; font-weight: 500; }
 .original-thread > li { scroll-margin-top: 96px; }
 .original-table td:first-child { min-width: 18ch; }
+.original-body li > .original-code,
+.original-body li > .original-table,
+.original-body li > .original-figure { margin: .7em 0; }
+.original-body blockquote > :last-child { margin-bottom: 0; }
+.original-body[id] { scroll-margin-top: 96px; }

@@ -60,6 +60,7 @@ import {
 } from './i18n'
 import type { CaseDetail, CatalogCase, CatalogPayload, CreatorCatalog, CreatorProfile, CreatorRankKey, Taxonomy, TutorialCategory, TutorialGuide, TutorialHardwareProfile, TutorialResource, VideoCase } from './types'
 import { XPostEmbed } from './XPostEmbed'
+import LazyBoundary from './LazyBoundary'
 import { tutorialFormat, tutorialFormatLabels, tutorialFormats, type TutorialFormat } from './tutorial-format'
 import { selectTutorialSpotlights, tutorialSubmissionUrl } from './tutorial-spotlight'
 import {
@@ -491,7 +492,7 @@ function App() {
       {route.page === 'tutorial-ecosystem' && tutorialGuides && tutorialResources && <TutorialEcosystemPage language={language} tutorialGuides={tutorialGuides} tutorialResources={tutorialResources} />}
       {route.page === 'tutorial-detail' && activeTutorial && tutorialGuides && tutorialResources && <TutorialDetailPage language={language} tutorial={activeTutorial} tutorialGuides={tutorialGuides} tutorialResources={tutorialResources} creators={creatorCatalog?.creators} />}
       {route.page === 'tutorial-detail' && tutorialGuides && !activeTutorial && <TutorialNotFound language={language} />}
-      {(route.page === 'skills' || route.page === 'skill-detail') && <Suspense fallback={<ResourceState language={language} />}><SkillsRoute language={language} slug={route.skillSlug} /></Suspense>}
+      {(route.page === 'skills' || route.page === 'skill-detail') && <LazyBoundary fallback={<ResourceState language={language} failed onRetry={() => window.location.reload()} />}><Suspense fallback={<ResourceState language={language} />}><SkillsRoute language={language} slug={route.skillSlug} /></Suspense></LazyBoundary>}
       {route.page === 'creators' && creatorCatalog && catalog && tutorialGuides && <CreatorsPage language={language} creatorCatalog={creatorCatalog} cases={catalog.cases} tutorialGuides={tutorialGuides} />}
       {route.page === 'creator-detail' && activeCreator && catalog && tutorialGuides && <CreatorDetailPage key={navigation} language={language} creator={activeCreator} cases={catalog.cases} featuredCaseIds={catalog.featuredCaseIds} tutorialGuides={tutorialGuides} />}
       {route.page === 'creator-detail' && creatorCatalog && !activeCreator && <CreatorNotFound language={language} />}
@@ -1462,8 +1463,8 @@ function TutorialsPage({
   const [activeCategory, setActiveCategory] = useState<(typeof tutorialCategories)[number]>('all')
   const [activeHardware, setActiveHardware] = useState<'all' | TutorialHardwareProfile>('all')
   const [activeFormat, setActiveFormat] = useState<'all' | TutorialFormat>(() => {
-    const format = new URLSearchParams(window.location.search).get('format')
-    return tutorialFormats.includes(format as TutorialFormat) ? format as TutorialFormat : 'all'
+    const format = new URLSearchParams(window.location.search).get('format') as TutorialFormat | null
+    return format && tutorialFormats.includes(format) && tutorialGuides.some((item) => tutorialFormat(item) === format) ? format : 'all'
   })
   const [activeAddedDate, setActiveAddedDate] = useState<AddedDatePreset>(() => parseAddedDatePreset(new URLSearchParams(window.location.search).get('added')))
   const [query, setQuery] = useState('')
@@ -1831,7 +1832,9 @@ function TutorialDetailPage({ language, tutorial, tutorialGuides, tutorialResour
           <div className="tutorial-detail-layout has-original">
             <main className="tutorial-detail-content">
               {reviewNote}
-              <Suspense fallback={<div className="original-loading" aria-busy="true" />}><TutorialOriginalView tutorial={tutorial} language={language} /></Suspense>
+              <LazyBoundary fallback={<p role="alert" className="tutorial-review-note">{zh ? '原文组件加载失败，请刷新页面，或直接' : 'The original failed to load. Refresh the page or '}<a href={tutorial.source.url} target="_blank" rel="noreferrer">{zh ? '查看原帖' : 'open the source'}</a></p>}>
+                <Suspense fallback={<div className="original-loading" aria-busy="true" />}><TutorialOriginalView tutorial={tutorial} language={language} /></Suspense>
+              </LazyBoundary>
               {isDeep ? <>
                 <header className="tutorial-site-notes-heading"><h2>{zh ? '本站速查' : 'Quick reference'}</h2><p>{zh ? '以下是本站依据原文整理的要点和命令，出现差异时以原文为准。' : 'Key points and commands compiled from the original. The original wins wherever they differ.'}</p></header>
                 {expectedSection}{recommendationSection}{costSection}{videoSection}{resourcesSection}{chaptersSection}{stepsSection}{commandsSection}{checksSection}{troubleshootingSection}{uninstallSection}

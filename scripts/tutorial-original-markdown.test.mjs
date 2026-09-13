@@ -95,6 +95,36 @@ describe('Markdown conversion', () => {
     ])
   })
 
+  it('keeps code, tables, and images nested in list items and callouts', () => {
+    const { blocks } = markdownToOriginalContent([
+      '3. Extract the last frame:',
+      '   ```bash',
+      '   ./scripts/extract.sh segA.mp4',
+      '   ```',
+      '4. Continue',
+      '   1. nested ordered',
+      '',
+      '> Note:',
+      '>',
+      '> ```bash',
+      '> make',
+      '> ```',
+    ].join('\n'), github)
+    expect(blocks).toEqual([
+      { type: 'list', ordered: true, start: 3, items: [
+        { depth: 0, inlines: [{ t: 'Extract the last frame:' }], blocks: [{ type: 'code', language: 'bash', text: './scripts/extract.sh segA.mp4' }] },
+        { depth: 0, inlines: [{ t: 'Continue' }] },
+        { depth: 1, ordered: true, inlines: [{ t: 'nested ordered' }] },
+      ] },
+      { type: 'quote', inlines: [], blocks: [{ type: 'paragraph', inlines: [{ t: 'Note:' }] }, { type: 'code', language: 'bash', text: 'make' }] },
+    ])
+  })
+
+  it('names mirrored media by repository path so new commits reuse files', () => {
+    const at = (revision) => markdownToOriginalContent('![x](a/b.png)', { ...github, resolveMedia: (src) => new URL(src, `https://raw.githubusercontent.com/o/r/${revision}/`).href }).blocks[0].mediaId
+    expect(at('1111111111111111111111111111111111111111')).toBe(at('2222222222222222222222222222222222222222'))
+  })
+
   it('extracts media from raw HTML and drops presentational wrappers', () => {
     const { blocks } = markdownToOriginalContent([
       '<p align="center"><img src="docs/hero.gif" alt="Hero"></p>',

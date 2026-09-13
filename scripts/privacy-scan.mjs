@@ -42,6 +42,14 @@ const secretPatterns = [
 // Captured third-party originals may quote their authors' own machine paths.
 // There, only a path naming the local account counts as a leak.
 const capturedOriginalPath = /^data\/(?:skill|tutorial)-originals\//
+// userInfo() throws when the UID has no passwd entry (some containers). Extra
+// account names can be supplied without committing them.
+function localAccounts() {
+  const names = new Set((process.env.PRIVACY_SCAN_LOCAL_USERS ?? '').split(',').map((name) => name.trim()).filter(Boolean))
+  try { names.add(userInfo().username) } catch { /* no passwd entry */ }
+  return names
+}
+const defaultLocalAccounts = localAccounts()
 const textExtensions = new Set(['', '.css', '.html', '.js', '.json', '.ndjson', '.jsx', '.md', '.mjs', '.svg', '.ts', '.tsx', '.txt', '.yaml', '.yml'])
 
 function walk(directory) {
@@ -62,7 +70,7 @@ function lineNumber(text, index) {
   return text.slice(0, index).split('\n').length
 }
 
-export function scanText(path, text, { scanPrivateFields = false, scanSecrets = false, localUser = userInfo().username } = {}) {
+export function scanText(path, text, { scanPrivateFields = false, scanSecrets = false, localUsers = defaultLocalAccounts } = {}) {
   const findings = []
   if (scanPrivateFields) {
     for (const field of forbiddenPublicFields) {
@@ -74,7 +82,7 @@ export function scanText(path, text, { scanPrivateFields = false, scanSecrets = 
     for (const { label, pattern } of secretPatterns) {
       const matches = [...text.matchAll(new RegExp(pattern.source, `${pattern.flags}g`))]
       const relevant = label === 'local user path' && capturedOriginalPath.test(path)
-        ? matches.filter((match) => match[0].split('/')[2] === localUser)
+        ? matches.filter((match) => localUsers.has(match[0].split('/')[2]))
         : matches
       if (relevant.length) findings.push({ path, line: lineNumber(text, relevant[0].index), reason: label })
     }

@@ -1,7 +1,7 @@
 // Captures the complete public original of each tutorial source into
 // data/tutorial-originals/{id}.json and mirrors its media.
 //
-//   node scripts/capture-tutorial-originals.mjs [--only id,id] [--apply]
+//   node scripts/capture-tutorial-originals.mjs [--only id,id] [--apply] [--allow-shrink]
 //   railway bucket credentials --bucket h3-videos --json \
 //     | node scripts/capture-tutorial-originals.mjs --apply --credentials-stdin
 //
@@ -9,9 +9,9 @@
 import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join, resolve } from 'node:path'
-import { collectOriginalMedia, rewriteOriginalMedia, tutorialOriginalErrors, xPayloadToOriginal } from './tutorial-original.mjs'
+import { captureRegression, collectOriginalMedia, originalSignature, referencedImages, rewriteOriginalMedia, tutorialOriginalErrors, xPayloadToOriginal } from './tutorial-original.mjs'
 import { fetchMarkdownOriginal, supportsMarkdownSource } from './tutorial-original-markdown.mjs'
-import { createVideoStore, mirrorImage, mirrorVideo, retry } from './tutorial-media.mjs'
+import { createVideoStore, mirrorImage, mirrorVideo, pruneMirroredImages, retry } from './tutorial-media.mjs'
 
 const root = resolve(import.meta.dirname, '..')
 const guidesPath = resolve(root, 'data/tutorial-guides.json')
@@ -24,6 +24,7 @@ function argumentValue(name) {
 }
 
 const apply = process.argv.includes('--apply')
+const allowShrink = process.argv.includes('--allow-shrink')
 const onlyIds = new Set((argumentValue('--only') || '').split(',').map((value) => value.trim()).filter(Boolean))
 
 async function readCredentials() {
@@ -60,10 +61,6 @@ async function readExisting(id) {
   }
 }
 
-function contentSignature(original) {
-  return JSON.stringify({ ...original, capturedAt: null })
-}
-
 async function mirrorMedia(original, { store, tempDirectory, sourceUrl }) {
   const mirrored = new Map()
   for (const item of collectOriginalMedia(original)) {
@@ -90,8 +87,11 @@ async function capture(guide, { store, tempDirectory }) {
   const errors = tutorialOriginalErrors(original)
   if (errors.length) throw new Error(errors.slice(0, 5).join('; '))
   const existing = await readExisting(guide.id)
-  if (existing && contentSignature(existing) === contentSignature(original)) return { id: guide.id, state: 'unchanged', kind: original.kind, capturedAt: existing.capturedAt }
+  if (existing && originalSignature(existing) === originalSignature(original)) return { id: guide.id, state: 'unchanged', kind: original.kind, capturedAt: existing.capturedAt }
+  const regression = captureRegression(existing, original)
+  if (regression && !allowShrink) throw new Error(`${regression}; the previous capture was kept (rerun with --allow-shrink after checking the source)`)
   await writeFile(resolve(originalsDirectory, `${guide.id}.json`), `${JSON.stringify(original, null, 2)}\n`)
+  for (const src of await pruneMirroredImages({ root, directory: 'tutorial-media', id: guide.id, keep: referencedImages(original) })) console.log(`  pruned ${src}`)
   return { id: guide.id, state: existing ? 'updated' : 'captured', kind: original.kind, capturedAt }
 }
 

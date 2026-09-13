@@ -2,7 +2,7 @@
   "tutorialId": "minimax-director-timeline",
   "kind": "markdown",
   "language": "en",
-  "capturedAt": "2026-09-13T09:47:47.188Z",
+  "capturedAt": "2026-09-13T12:45:30.752Z",
   "source": {
     "url": "https://github.com/imbutus/ComfyUI-MiniMaxDirector",
     "author": "imbutus",
@@ -42,7 +42,7 @@
         },
         {
           "type": "image",
-          "src": "/tutorial-media/minimax-director-timeline/md-5d94aeb21720.webp",
+          "src": "/tutorial-media/minimax-director-timeline/md-cc1ef7659555.webp",
           "width": 1280,
           "height": 720,
           "alt": "MiniMax Director — the full walkthrough"
@@ -68,14 +68,14 @@
         },
         {
           "type": "image",
-          "src": "/tutorial-media/minimax-director-timeline/md-56e897ac2c00.webp",
+          "src": "/tutorial-media/minimax-director-timeline/md-134e8d8eb30e.webp",
           "width": 1600,
           "height": 1100,
           "alt": "The timeline, with the block under the playhead opened below it"
         },
         {
           "type": "image",
-          "src": "/tutorial-media/minimax-director-timeline/md-013a733dab01.webp",
+          "src": "/tutorial-media/minimax-director-timeline/md-afdbe0e39d29.webp",
           "width": 1600,
           "height": 928,
           "alt": "The WHO & WHAT tab: one card per thing the prompt names"

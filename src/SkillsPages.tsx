@@ -9,8 +9,8 @@ import './skills.css'
 
 const CATEGORIES: SkillCategory[] = ['prompt', 'production', 'comfyui', 'api', 'local']
 const CATEGORY_LABELS: Record<Language, Record<SkillCategory, string>> = {
-  zh: { prompt: '写 Prompt', production: '成片流程', comfyui: 'ComfyUI 驱动', api: '云端 API', local: '本地运行' },
-  en: { prompt: 'Prompt writing', production: 'Production', comfyui: 'ComfyUI control', api: 'Cloud API', local: 'Local inference' },
+  zh: { prompt: '写 Prompt', production: '成片流程', comfyui: 'ComfyUI 驱动', api: '云端运行', local: '本地运行' },
+  en: { prompt: 'Prompt writing', production: 'Production', comfyui: 'ComfyUI control', api: 'Cloud runs', local: 'Local inference' },
 }
 type Origin = 'all' | 'official' | 'community'
 
