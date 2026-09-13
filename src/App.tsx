@@ -1832,7 +1832,7 @@ function TutorialDetailPage({ language, tutorial, tutorialGuides, tutorialResour
           <div className="tutorial-detail-layout has-original">
             <main className="tutorial-detail-content">
               {reviewNote}
-              <LazyBoundary fallback={<p role="alert" className="tutorial-review-note">{zh ? '原文组件加载失败，请刷新页面，或直接' : 'The original failed to load. Refresh the page or '}<a href={tutorial.source.url} target="_blank" rel="noreferrer">{zh ? '查看原帖' : 'open the source'}</a></p>}>
+              <LazyBoundary key={tutorial.id} fallback={<p role="alert" className="tutorial-review-note">{zh ? '原文组件加载失败，请刷新页面，或直接' : 'The original failed to load. Refresh the page or '}<a href={tutorial.source.url} target="_blank" rel="noreferrer">{zh ? '查看原帖' : 'open the source'}</a></p>}>
                 <Suspense fallback={<div className="original-loading" aria-busy="true" />}><TutorialOriginalView tutorial={tutorial} language={language} /></Suspense>
               </LazyBoundary>
               {isDeep ? <>

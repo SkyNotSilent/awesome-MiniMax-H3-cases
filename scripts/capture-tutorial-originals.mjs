@@ -83,13 +83,18 @@ async function capture(guide, { store, tempDirectory }) {
     : await fetchMarkdownOriginal(guide, capturedAt)
   const media = collectOriginalMedia(draft)
   if (!apply) return { id: guide.id, state: 'dry-run', kind: draft.kind, sections: draft.sections.length, media: media.length }
+  const existing = await readExisting(guide.id)
+  // Images downloaded for a capture that is then rejected must not linger.
+  const rejectCapture = async (message) => {
+    await pruneMirroredImages({ root, directory: 'tutorial-media', id: guide.id, keep: existing ? referencedImages(existing) : new Set() })
+    throw new Error(message)
+  }
   const original = rewriteOriginalMedia(draft, await mirrorMedia(draft, { store, tempDirectory, sourceUrl: guide.source.url }))
   const errors = tutorialOriginalErrors(original)
-  if (errors.length) throw new Error(errors.slice(0, 5).join('; '))
-  const existing = await readExisting(guide.id)
+  if (errors.length) await rejectCapture(errors.slice(0, 5).join('; '))
   if (existing && originalSignature(existing) === originalSignature(original)) return { id: guide.id, state: 'unchanged', kind: original.kind, capturedAt: existing.capturedAt }
   const regression = captureRegression(existing, original)
-  if (regression && !allowShrink) throw new Error(`${regression}; the previous capture was kept (rerun with --allow-shrink after checking the source)`)
+  if (regression && !allowShrink) await rejectCapture(`${regression}; the previous capture was kept (rerun with --allow-shrink after checking the source)`)
   await writeFile(resolve(originalsDirectory, `${guide.id}.json`), `${JSON.stringify(original, null, 2)}\n`)
   for (const src of await pruneMirroredImages({ root, directory: 'tutorial-media', id: guide.id, keep: referencedImages(original) })) console.log(`  pruned ${src}`)
   return { id: guide.id, state: existing ? 'updated' : 'captured', kind: original.kind, capturedAt }
