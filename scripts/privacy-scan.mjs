@@ -1,5 +1,6 @@
 import { execFileSync } from 'node:child_process'
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs'
+import { userInfo } from 'node:os'
 import { extname, join, relative, resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
 
@@ -38,6 +39,9 @@ const secretPatterns = [
   { label: 'Codex clipboard attachment', pattern: /codex-clipboard-[A-Za-z0-9-]+/i },
   { label: 'pasted attachment path', pattern: /pasted-text\.txt/i },
 ]
+// Captured third-party originals may quote their authors' own machine paths.
+// There, only a path naming the local account counts as a leak.
+const capturedOriginalPath = /^data\/(?:skill|tutorial)-originals\//
 const textExtensions = new Set(['', '.css', '.html', '.js', '.json', '.ndjson', '.jsx', '.md', '.mjs', '.svg', '.ts', '.tsx', '.txt', '.yaml', '.yml'])
 
 function walk(directory) {
@@ -58,7 +62,7 @@ function lineNumber(text, index) {
   return text.slice(0, index).split('\n').length
 }
 
-export function scanText(path, text, { scanPrivateFields = false, scanSecrets = false } = {}) {
+export function scanText(path, text, { scanPrivateFields = false, scanSecrets = false, localUser = userInfo().username } = {}) {
   const findings = []
   if (scanPrivateFields) {
     for (const field of forbiddenPublicFields) {
@@ -68,8 +72,11 @@ export function scanText(path, text, { scanPrivateFields = false, scanSecrets = 
   }
   if (scanSecrets) {
     for (const { label, pattern } of secretPatterns) {
-      const match = text.match(pattern)
-      if (match?.index !== undefined) findings.push({ path, line: lineNumber(text, match.index), reason: label })
+      const matches = [...text.matchAll(new RegExp(pattern.source, `${pattern.flags}g`))]
+      const relevant = label === 'local user path' && capturedOriginalPath.test(path)
+        ? matches.filter((match) => match[0].split('/')[2] === localUser)
+        : matches
+      if (relevant.length) findings.push({ path, line: lineNumber(text, relevant[0].index), reason: label })
     }
   }
   return findings

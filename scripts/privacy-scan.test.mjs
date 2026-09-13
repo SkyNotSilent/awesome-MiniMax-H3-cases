@@ -29,4 +29,11 @@ describe('privacy scan', () => {
     expect(scanText('notes.md', `<${'heartbeat'}><instructions>private</instructions></heartbeat>`, { scanSecrets: true })[0]?.reason).toBe('Codex heartbeat payload')
     expect(scanText('notes.md', `${'My request'} for ${'Codex'}: publish this`, { scanSecrets: true })[0]?.reason).toBe('Codex request transcript')
   })
+
+  it('allows third-party authors’ own paths in captured originals but still blocks the local account', () => {
+    const quoted = `cd /${'Users'}/someauthor/${'Documents'}/project`
+    expect(scanText('data/skill-originals/demo.json', quoted, { scanSecrets: true, localUser: 'maintainer' })).toEqual([])
+    expect(scanText('data/tutorial-originals/demo.json', `/${'Users'}/maintainer/${'Documents'}/x`, { scanSecrets: true, localUser: 'maintainer' })[0]?.reason).toBe('local user path')
+    expect(scanText('README.md', quoted, { scanSecrets: true, localUser: 'maintainer' })[0]?.reason).toBe('local user path')
+  })
 })
