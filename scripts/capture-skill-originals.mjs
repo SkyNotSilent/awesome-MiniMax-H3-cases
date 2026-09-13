@@ -92,21 +92,30 @@ async function capture(item) {
   const license = meta.license?.spdx_id && meta.license.spdx_id !== 'NOASSERTION' ? meta.license.spdx_id : undefined
   if (license) draft.source.license = license
   const mirrored = new Map()
-  // A failed image fails the package so a partial capture never replaces a complete one.
-  for (const media of collectOriginalMedia(draft)) {
-    if (media.kind !== 'image') continue
-    mirrored.set(media.key, await mirrorImage({ root, tutorialId: item.id, key: media.key, url: media.url, directory: 'skill-media' }))
-  }
-  const original = rewriteOriginalMedia(draft, mirrored)
-  const errors = tutorialOriginalErrors(original)
-  if (errors.length) throw new Error(errors.slice(0, 5).join('; '))
   const path = resolve(root, `data/skill-originals/${item.id}.json`)
   let existing = null
   try { existing = JSON.parse(await readFile(path, 'utf8')) } catch { /* first capture */ }
+  // Images downloaded for a capture that is then rejected must not linger.
+  const rejectCapture = async (message) => {
+    await pruneMirroredImages({ root, directory: 'skill-media', id: item.id, keep: existing ? referencedImages(existing) : new Set() })
+    throw new Error(message)
+  }
+  // A failed image fails the package so a partial capture never replaces a complete one.
+  try {
+    for (const media of collectOriginalMedia(draft)) {
+      if (media.kind !== 'image') continue
+      mirrored.set(media.key, await mirrorImage({ root, tutorialId: item.id, key: media.key, url: media.url, directory: 'skill-media' }))
+    }
+  } catch (error) {
+    await rejectCapture(error?.message || String(error))
+  }
+  const original = rewriteOriginalMedia(draft, mirrored)
+  const errors = tutorialOriginalErrors(original)
+  if (errors.length) await rejectCapture(errors.slice(0, 5).join('; '))
   const same = existing && originalSignature(existing) === originalSignature(original)
   if (!same) {
     const regression = captureRegression(existing, original)
-    if (regression && !allowShrink) throw new Error(`${regression}; the previous capture was kept (rerun with --allow-shrink after checking the source)`)
+    if (regression && !allowShrink) await rejectCapture(`${regression}; the previous capture was kept (rerun with --allow-shrink after checking the source)`)
     await writeFile(path, `${JSON.stringify(original, null, 2)}\n`)
     for (const src of await pruneMirroredImages({ root, directory: 'skill-media', id: item.id, keep: referencedImages(original) })) console.log(`  pruned ${src}`)
   }

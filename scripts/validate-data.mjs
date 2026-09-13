@@ -306,6 +306,8 @@ for (const [index, item] of skills.entries()) {
   if (!item.summary?.zh?.trim() || !item.summary?.en?.trim() || /[\u3400-\u9fff]/u.test(item.summary.en)) errors.push(`${at}.summary needs Chinese and CJK-free English text`)
   if (!Array.isArray(item.skills) || (!item.catalog && !item.skills.length)) errors.push(`${at}.skills must list captured SKILL.md files`)
   for (const skill of item.skills ?? []) if (!skill.name || !/(^|\/)SKILL\.md$/.test(skill.path ?? '') || typeof skill.description !== 'string') errors.push(`${at}.skills has an invalid entry: ${skill.path}`)
+  // A root SKILL.md installs with `--skill <name>`, so its name must be shell-safe.
+  for (const skill of item.skills ?? []) if (skill.path === 'SKILL.md' && !/^[A-Za-z0-9._-]+$/.test(skill.name)) errors.push(`${at}.skills root skill name must be a plain slug: ${skill.name}`)
   if (!Number.isSafeInteger(item.skillCount) || item.skillCount < 1 || (!item.catalog && item.skillCount !== item.skills.length)) errors.push(`${at}.skillCount is invalid`)
   if (!Number.isSafeInteger(item.stars) || item.stars < 0 || Number.isNaN(Date.parse(item.starsAt)) || Number.isNaN(Date.parse(item.updatedAt)) || Number.isNaN(Date.parse(item.addedAt))) errors.push(`${at}: stars and dates are required`)
   if (!item.original) { errors.push(`${at}.original is required`); continue }

@@ -23,4 +23,6 @@ The command resolves each repository's default branch and head commit, captures 
 
 Install commands are derived, not stored: a single-skill package installs from its directory with `npx skills add https://github.com/{owner}/{repo}/tree/{branch}/{dir}`, while multi-skill and catalog packages use `npx skills add {owner}/{repo}` so the CLI offers every skill for selection.
 
+Known limits: mirrored images are keyed by their repository path, so an image replaced upstream at the same path keeps its earlier mirror until the file under `public/skill-media/{id}/` is deleted and the package is recaptured. Nested ordered lists always number from 1.
+
 Run `npm run validate:data` after a refresh. It checks package metadata, category, CJK-free English summaries, the capture contract, and mirrored images. Removal requests follow the takedown Issue; delete the capture file and the package entry together.
