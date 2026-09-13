@@ -1,0 +1,998 @@
+{
+  "skillId": "comfyui-agent-kit-minimax-h3",
+  "kind": "markdown",
+  "title": "ComfyUI-Agent-Kit minimax-h3",
+  "language": "en",
+  "capturedAt": "2026-09-13T11:14:07.923Z",
+  "source": {
+    "url": "https://github.com/SlavaSexton/ComfyUI-Agent-Kit",
+    "author": "SlavaSexton",
+    "revision": "74f5b0bbd87b1c4ca0cd95dea169cdcae4b9af9d",
+    "license": "Apache-2.0"
+  },
+  "sections": [
+    {
+      "url": "https://github.com/SlavaSexton/ComfyUI-Agent-Kit/blob/master/claude-code/skills/minimax-h3/SKILL.md",
+      "title": "minimax-h3",
+      "anchor": "skill-minimax-h3",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Use when writing or debugging prompts for MiniMax H3 (Hailuo 3) video-with-audio generation, running the open weights locally in ComfyUI, choosing a quant or an acceleration LoRA for the VRAM you have, wiring reference-to-video with images, video or audio, or when a generated clip produces gibberish speech, drifts off a reference identity, garbles audio after a latent upscale, or refuses to run on a build that looks current."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3 (Hailuo 3)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "H3 generates "
+            },
+            {
+              "b": true,
+              "t": "video and synchronised stereo audio jointly"
+            },
+            {
+              "t": ", from text, images, reference video, reference\naudio, or any mix. It is the same model family whether you hit the hosted API or run the open weights, but the\ntwo paths are wired completely differently and only one of them is free."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "Two paths, do not confuse them."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Hosted API"
+                },
+                {
+                  "t": ", partner nodes "
+                },
+                {
+                  "c": true,
+                  "t": "MinimaxHailuo03TextToVideoNode"
+                },
+                {
+                  "t": " / "
+                },
+                {
+                  "c": true,
+                  "t": "...FirstLastFrameNode"
+                },
+                {
+                  "t": " / "
+                },
+                {
+                  "c": true,
+                  "t": "...ReferenceNode"
+                },
+                {
+                  "t": ",\ncategory "
+                },
+                {
+                  "c": true,
+                  "t": "partner/video/MiniMax"
+                },
+                {
+                  "t": ". 2K output, priced per second, no local weights."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Local open weights"
+                },
+                {
+                  "t": ", core nodes "
+                },
+                {
+                  "c": true,
+                  "t": "MiniMaxH3ImageToVideo"
+                },
+                {
+                  "t": " and "
+                },
+                {
+                  "c": true,
+                  "t": "MiniMaxH3ReferenceToVideo"
+                },
+                {
+                  "t": " from\n"
+                },
+                {
+                  "c": true,
+                  "t": "comfy_extras/nodes_minimax_h3.py"
+                },
+                {
+                  "t": ". 768p, free, and everything below is about this path."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "Who owns what, so you open one file, not three."
+            },
+            {
+              "t": " THIS file owns the prompt format and the operating rules.\n"
+            },
+            {
+              "c": true,
+              "t": "reference.md"
+            },
+            {
+              "t": " next to it owns weights, quant sizes, acceleration packs and their wiring. The MiniMax entry in\nthe kit's "
+            },
+            {
+              "c": true,
+              "t": "MODELS.md"
+            },
+            {
+              "t": " owns the node-level graph (every node and socket) and the licence. When they disagree,\nthe node code wins and the discrepancy is a bug worth reporting."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "The prompt format is not free-form prose"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "H3-Base consumes the output of a hosted prompt refiner ("
+            },
+            {
+              "b": true,
+              "t": "H3-Context-IR"
+            },
+            {
+              "t": ") that is "
+            },
+            {
+              "b": true,
+              "t": "not"
+            },
+            {
+              "t": " in the open release.\nSo locally you write in the refiner's output shape yourself. From MiniMax's own\n"
+            },
+            {
+              "c": true,
+              "t": "VIDEO_PROMPT_WRITING_GUIDE_base_en.md"
+            },
+            {
+              "t": ", that is an optional instruction line, a blank line, then three fields:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "integrated_multimodal_description: [Shot 1] ... [Shot 2] At 00:04.500, ...\n\noverall_soundscape: ...\n\nnon_diegetic_music: ..."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "integrated_multimodal_description"
+                },
+                {
+                  "t": " carries visuals, action, shots, speakers, dialogue and diegetic sound along\nthe timeline. "
+                },
+                {
+                  "c": true,
+                  "t": "overall_soundscape"
+                },
+                {
+                  "t": " sums ambience and physical-action sound. "
+                },
+                {
+                  "c": true,
+                  "t": "non_diegetic_music"
+                },
+                {
+                  "t": " is score the\ncharacters cannot hear."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Image modes need a fixed first line."
+                },
+                {
+                  "t": " I2V: "
+                },
+                {
+                  "c": true,
+                  "t": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced."
+                },
+                {
+                  "t": " First-and-last-frame uses the alignment sentence naming both\npictures and the second each lands on, to two decimals."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "A complete prompt, end to end"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Nothing above is usable until you have seen one whole. This is a 5 s text-to-video brief in the official shape:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "integrated_multimodal_description: [Shot 1] Cinematic medium-wide shot, Push In slowly. A bicycle mechanic in\na navy work coat lowers a metal shutter in a narrow workshop at dusk; warm tungsten light spills across\nscattered tools and rain-dark pavement outside. He pauses, looks toward the street. At 00:03.200 he switches\noff the bench lamp and the frame drops to ambient blue. The mechanic (weathered voice, mid-fifties, speaks\nEnglish only) says quietly: <d>[English] That's enough for today.</d>\n\noverall_soundscape: Steady rain on a metal awning, the rolling clatter of the shutter, one soft click of the\nlamp switch, distant tyres on wet asphalt. No music from within the scene.\n\nnon_diegetic_music: Sparse solo piano, slow, minor key, entering after the shutter closes and fading to\nsilence on the lamp click."
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For "
+            },
+            {
+              "b": true,
+              "t": "image-to-video"
+            },
+            {
+              "t": " the same block is preceded by the fixed line and one blank line:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] ..."
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Note what is doing the work: one physical action the camera and the sound can both follow, a camera move from\nthe fixed vocabulary, the spoken line wrapped in "
+            },
+            {
+              "c": true,
+              "t": "<d>"
+            },
+            {
+              "t": " so the words are exact, and the two audio fields kept\nseparate so diegetic sound and score do not fight."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Dialogue: the single most common cause of \"the speech is gibberish\""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Speakers get stable IDs "
+            },
+            {
+              "c": true,
+              "t": "(S1)"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "(S2)"
+            },
+            {
+              "t": ", joint "
+            },
+            {
+              "c": true,
+              "t": "(S1,S2)"
+            },
+            {
+              "t": ". "
+            },
+            {
+              "b": true,
+              "t": "The words go inside "
+            },
+            {
+              "b": true,
+              "c": true,
+              "t": "<d>"
+            },
+            {
+              "b": true,
+              "t": " with a language tag"
+            },
+            {
+              "t": ", and\neverything about who says it and how stays outside. Copy the line verbatim, do not paraphrase or translate:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "The young woman with a quiet, breathy voice (S1) says: <d>[English] I get off at the next station.</d>"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Without "
+            },
+            {
+              "c": true,
+              "t": "<d>"
+            },
+            {
+              "t": " the model is never told the exact words and improvises phonetics. Voiceover needs the exact phrase\n"
+            },
+            {
+              "c": true,
+              "t": "says in an off-screen voiceover"
+            },
+            {
+              "t": " plus a statement that the lips stay closed. Use "
+            },
+            {
+              "c": true,
+              "t": "<scenetrans>"
+            },
+            {
+              "t": " when a line\ncrosses a cut, "
+            },
+            {
+              "c": true,
+              "t": "<cutoff>"
+            },
+            {
+              "t": " when speech is truncated by the end. On-screen text goes in double quotes, verbatim."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Camera is a controlled vocabulary"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Motion type plus amplitude plus speed, and medium amplitude at normal speed is the default you simply omit:\n"
+            },
+            {
+              "c": true,
+              "t": "Zoom In/Out"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "Push In/Pull Out"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "Pan Left/Right"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "Truck Left/Right"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "Tilt Up/Down"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "Pedestal Up/Down"
+            },
+            {
+              "t": ",\n"
+            },
+            {
+              "c": true,
+              "t": "Arc Shot"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "Tracking Shot"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Reference-to-video: label every file with a job"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "<Subject N>"
+            },
+            {
+              "t": " is the one that does the real work, because it binds sources: \""
+            },
+            {
+              "c": true,
+              "t": "<Subject 1>"
+            },
+            {
+              "t": " is the woman whose\nappearance comes from "
+            },
+            {
+              "c": true,
+              "t": "<Picture 1>"
+            },
+            {
+              "t": " and whose walking motion comes from "
+            },
+            {
+              "c": true,
+              "t": "<Video 1>"
+            },
+            {
+              "t": ".\" Then "
+            },
+            {
+              "c": true,
+              "t": "<Picture N>"
+            },
+            {
+              "t": " is a\nframe or composition anchor, "
+            },
+            {
+              "c": true,
+              "t": "<Video N>"
+            },
+            {
+              "t": " an editing or temporal source, "
+            },
+            {
+              "c": true,
+              "t": "<Audio N>"
+            },
+            {
+              "t": " a copied signal."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "Reference-to-video has its OWN output contract, and it is six sections, not the three above."
+            },
+            {
+              "t": " MiniMax ships\n"
+            },
+            {
+              "b": true,
+              "t": "two"
+            },
+            {
+              "t": " prompt guides, and until 2026-08-09 this skill knew only the first. "
+            },
+            {
+              "c": true,
+              "t": "VIDEO_PROMPT_WRITING_GUIDE_base_en.md"
+            },
+            {
+              "t": "\ngoverns T2VA / I2VA / FL2VA / L2VA and gives the three fields at the top of this file.\n"
+            },
+            {
+              "c": true,
+              "t": "VIDEO_PROMPT_WRITING_GUIDE_ref_en.md"
+            },
+            {
+              "t": " governs full-reference mode and opens: \"A complete rewrite output\nconsists of six sections in the following order\":"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "subject_definitions: <Subject 1> is ... whose appearance comes from <Picture 1> ...\nsummary: ...\nretention_analysis: ...\ndetailed_description: [Shot 1] ...\noverall_soundscape: ...\nnon_diegetic_music: ..."
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "subject_definitions"
+            },
+            {
+              "t": " declares the references and their labels; "
+            },
+            {
+              "c": true,
+              "t": "summary"
+            },
+            {
+              "t": " states the task type, the target\nvideo and the main relationships to the references; "
+            },
+            {
+              "c": true,
+              "t": "retention_analysis"
+            },
+            {
+              "t": " says how each reference is retained,\ntransferred or reused; "
+            },
+            {
+              "c": true,
+              "t": "detailed_description"
+            },
+            {
+              "t": " carries visuals, action, shots, sound and dialogue in playback\norder; the last two match their base-mode meanings. The order is fixed, and the field is "
+            },
+            {
+              "b": true,
+              "c": true,
+              "t": "retention_analysis"
+            },
+            {
+              "t": ",\nnot "
+            },
+            {
+              "c": true,
+              "t": "retention"
+            },
+            {
+              "t": ". Note this is six named sections of prose in one string, not a JSON array, whatever a\nthird-party node's docs call it. Confirmed by reading the guide on "
+            },
+            {
+              "c": true,
+              "t": "MiniMaxAI/MiniMax-H3"
+            },
+            {
+              "t": " (23 553 bytes,\n2026-08-09); the core node itself validates none of this, "
+            },
+            {
+              "c": true,
+              "t": "comfy_extras/nodes_minimax_h3.py"
+            },
+            {
+              "t": " takes a plain\nmultiline string, so nothing will tell you when you get it wrong except the result."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Limits from the official card: "
+            },
+            {
+              "b": true,
+              "t": "9 images, 3 video clips, 3 audio clips, 12 files total"
+            },
+            {
+              "t": ", clips 2 to 15 s each\nand 15 s total, and "
+            },
+            {
+              "b": true,
+              "t": "audio can never be the only reference"
+            },
+            {
+              "t": ". The local "
+            },
+            {
+              "c": true,
+              "t": "MiniMaxH3ReferenceToVideo"
+            },
+            {
+              "t": " node has\n"
+            },
+            {
+              "b": true,
+              "t": "four"
+            },
+            {
+              "t": " Autogrow families reaching those ceilings: "
+            },
+            {
+              "c": true,
+              "t": "ref_images"
+            },
+            {
+              "t": " (max 9), "
+            },
+            {
+              "c": true,
+              "t": "ref_videos"
+            },
+            {
+              "t": " (3),\n"
+            },
+            {
+              "b": true,
+              "c": true,
+              "t": "ref_video_audios"
+            },
+            {
+              "b": true,
+              "t": " (3, the soundtrack of the same-numbered reference video)"
+            },
+            {
+              "t": " and "
+            },
+            {
+              "c": true,
+              "t": "ref_audios"
+            },
+            {
+              "t": " (3, standalone).\nA template showing three image sockets is not the limit."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Ten production jobs to write against"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Krea's 2026-08-05 guide frames H3 prompts as production paperwork, one job per clip: director's single-shot\nbrief · timed three-beat teaser · first-to-last-frame passage · influencer identity-and-voice lock ·\nreference-motion performance · native-audio product reveal · brand-title reveal with required text and negatives ·\nprotected-frame object swap · UI walkthrough · omni-reference director brief. Pick the job first, then decide\nwhich control has to survive: camera, timing, identity, motion source, or the sound event line."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Note their examples use a "
+            },
+            {
+              "c": true,
+              "t": "[0-3s]"
+            },
+            {
+              "t": " beat style, which is a readable shorthand rather than MiniMax's own\n"
+            },
+            {
+              "c": true,
+              "t": "[Shot N]"
+            },
+            {
+              "t": " plus "
+            },
+            {
+              "c": true,
+              "t": "At 00:04.500"
+            },
+            {
+              "t": " convention. Both work; the official form is the safer default locally."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Operating facts that bite"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Frame count sits on a grid."
+                },
+                {
+                  "t": " "
+                },
+                {
+                  "c": true,
+                  "t": "length"
+                },
+                {
+                  "t": " must leave "
+                },
+                {
+                  "b": true,
+                  "t": "remainder 5 modulo 17"
+                },
+                {
+                  "t": " (124 frames = ~5 s, 73 = ~3 s,\n362 = ~15 s). The node calls it the \"17k+5 grid\" and the trained range is ~124 to 362 frames."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Native size is ~1 MP"
+                },
+                {
+                  "t": ", template default "
+                },
+                {
+                  "b": true,
+                  "t": "1344 x 768"
+                },
+                {
+                  "t": " at 24 fps. Higher costs time and VRAM without more\nreal detail; the official 2K route is a hosted regenerate pass that is not open."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Duration:"
+                },
+                {
+                  "t": " trained and tested 5 to 15 s. Longer runs but is untrained territory."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Speed:"
+                },
+                {
+                  "t": " the open release ships "
+                },
+                {
+                  "b": true,
+                  "t": "full attention only"
+                },
+                {
+                  "t": "; sparse attention is promised later. This is why it\nis slow, and why the community acceleration below matters."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Licence:"
+                },
+                {
+                  "t": " open weights, not open source, and the territory clause is unusually strict. See "
+                },
+                {
+                  "c": true,
+                  "t": "MODELS.md"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "When it goes wrong"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "Symptom"
+              }
+            ],
+            [
+              {
+                "t": "Most likely cause"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "Speech is fluent-sounding nonsense"
+                }
+              ],
+              [
+                {
+                  "t": "The line is not inside "
+                },
+                {
+                  "c": true,
+                  "t": "<d>[Language] ... </d>"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Face drifts across the clip"
+                }
+              ],
+              [
+                {
+                  "t": "No "
+                },
+                {
+                  "c": true,
+                  "t": "<Subject N>"
+                },
+                {
+                  "t": " binding the identity source, or refs at the wrong scale after an upscale"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Audio garbles after a latent upscale"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "audio_denoise"
+                },
+                {
+                  "t": " left at its default 1.0 (inferred cause, not measured); audio settles late, so run more of the schedule in pass 1"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Wrong face animated in a crowd"
+                }
+              ],
+              [
+                {
+                  "t": "Reference sizing set to "
+                },
+                {
+                  "c": true,
+                  "t": "match"
+                },
+                {
+                  "t": " when identity needed "
+                },
+                {
+                  "c": true,
+                  "t": "max"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Acceleration node refuses to load"
+                }
+              ],
+              [
+                {
+                  "t": "The build is older than the pack requires; a tagged release is not automatically new enough"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Output length is not what you asked"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "length"
+                },
+                {
+                  "t": " fell off the 17k+5 grid"
+                }
+              ]
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4240 @@
+{
+  "skillId": "h3lite",
+  "kind": "markdown",
+  "title": "h3lite",
+  "language": "en",
+  "capturedAt": "2026-09-13T11:12:19.747Z",
+  "source": {
+    "url": "https://github.com/Rimagination/h3lite",
+    "author": "Rimagination",
+    "revision": "9bafafa6f1741fd6eb49d46b078e2dbb0feec3be",
+    "license": "MIT"
+  },
+  "sections": [
+    {
+      "url": "https://github.com/Rimagination/h3lite/blob/main/SKILL.md",
+      "title": "h3lite",
+      "anchor": "skill-h3lite",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Use when configuring, repairing, planning, or running MiniMax H3 locally on a Windows NVIDIA computer, especially when installation compatibility, component sets, resolution, generation-time budget, path, low-VRAM risk, or H3 prompt mode must be chosen from hardware and user requirements."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3 Local Video"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use this skill to turn a user's local computer into a reproducible MiniMax H3 audio-video workstation and to generate short clips. The validated primary route is Windows + NVIDIA + ComfyUI; macOS Apple Silicon is a community/experimental alternative, not an equivalent tested backend. Treat platform selection, path selection, hardware-aware planning, prompt writing, execution, timing, and verification as one workflow. The default is the validated fast route; other modes must be chosen explicitly or justified by a time budget."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Platform scope and routing"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Detect the operating system and accelerator before giving installation commands or model links. Do not give CUDA, Windows virtual-environment, "
+            },
+            {
+              "c": true,
+              "t": ".bat"
+            },
+            {
+              "t": ", or Windows path instructions to a macOS user."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "Platform"
+              }
+            ],
+            [
+              {
+                "t": "h3lite status"
+              }
+            ],
+            [
+              {
+                "t": "Guidance"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "Windows + NVIDIA CUDA"
+                }
+              ],
+              [
+                {
+                  "t": "Primary, locally validated"
+                }
+              ],
+              [
+                {
+                  "t": "Use the ComfyUI/H3 Lite fast path and the Windows doctor/planner/preflight scripts."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "macOS Apple Silicon"
+                }
+              ],
+              [
+                {
+                  "t": "Community alternative, not h3lite-equivalent"
+                }
+              ],
+              [
+                {
+                  "t": "Explain that the documented ComfyUI route is not validated on Metal. Offer the MLX/"
+                },
+                {
+                  "c": true,
+                  "t": "mmh3turbo"
+                },
+                {
+                  "t": " route as an optional external alternative, with its own weights, commands, and timing."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "macOS Intel"
+                }
+              ],
+              [
+                {
+                  "t": "Not recommended"
+                }
+              ],
+              [
+                {
+                  "t": "Do not promise local H3 generation; suggest a hosted/API or another backend."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Linux + NVIDIA"
+                }
+              ],
+              [
+                {
+                  "t": "Unverified"
+                }
+              ],
+              [
+                {
+                  "t": "The model concepts may transfer, but Windows paths, packaged nodes, and timings do not. Require an explicit experimental choice."
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For a non-Windows user, preserve the useful cross-platform guidance (prompt structure, 32-pixel canvas alignment, low-resolution preview, disk/log/output checks), but label every resource and timing as platform-specific. A community implementation that can run H3 on a Mac is evidence for feasibility, not evidence that this ComfyUI skill supports Metal."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The Mac alternative described in the project notes uses MLX/Metal and a third-party "
+            },
+            {
+              "c": true,
+              "t": "mmh3turbo"
+            },
+            {
+              "t": " package. If a Mac user explicitly chooses that route, point them to the author's "
+            },
+            {
+              "href": "https://huggingface.co/yunfengwang/mmh3turbo-bundles",
+              "t": "community bundle"
+            },
+            {
+              "t": " and package ("
+            },
+            {
+              "c": true,
+              "t": "uvx mmh3turbo"
+            },
+            {
+              "t": "), and state that these are external resources with independent licensing, updates, and validation. It may reduce the download footprint with GGUF/4-bit bundles, but it is outside this skill's tested component sets. Do not silently install it, mix its weights with ComfyUI models, or present its 30–43 minute 5-second 720p timings as Windows benchmarks."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Agent production workflow"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For complex creative requests, use the compact workflow contract in\n"
+            },
+            {
+              "href": "https://github.com/Rimagination/h3lite/blob/main/references/agent-workflow.md",
+              "c": true,
+              "t": "references/agent-workflow.md"
+            },
+            {
+              "t": ":"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "intent route → reference/identity anchors → prompt enhancement → execute → verify"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Route from the user's input and acceptance criteria, not from a style adjective.\nUse "
+            },
+            {
+              "c": true,
+              "t": "I2VA"
+            },
+            {
+              "t": " for a specified opening frame, "
+            },
+            {
+              "c": true,
+              "t": "FL2VA"
+            },
+            {
+              "t": "/"
+            },
+            {
+              "c": true,
+              "t": "L2VA"
+            },
+            {
+              "t": " for endpoint anchors,\nand "
+            },
+            {
+              "c": true,
+              "t": "Ref2VA"
+            },
+            {
+              "t": " only after its model, text encoder, and workflow are confirmed.\nFor recurring characters or multi-shot work, define stable subject/reference\nlabels, what must be retained, what may change, and what drift is forbidden\nbefore writing the timeline. This workflow pattern is local and does not add a\ncloud service, MCP dependency, second model, or second inference pass."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When a creative brief is vague (for example, it only says “more cinematic”\nor “make it a nice 3D animation”), optionally read\n"
+            },
+            {
+              "href": "https://github.com/Rimagination/h3lite/blob/main/references/prompt-assist.md",
+              "c": true,
+              "t": "references/prompt-assist.md"
+            },
+            {
+              "t": ". It adapts the\npublic Higgsfield prompt structure—stable style/identity lock, one clear scene\naction, physical camera motion, audio, and compact anti-drift constraints—to\nH3's native fields. Use it as a writing aid only: do not call Higgsfield, copy\nmodel-specific flags or capabilities, or let a web lookup change the local\nroute, resolution, component set, or verification rules. If a live lookup is\nneeded, follow the host "
+            },
+            {
+              "c": true,
+              "t": "web-access"
+            },
+            {
+              "t": " skill and use public pages only."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Operating rules"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Hot path first:"
+                },
+                {
+                  "t": " for an ordinary text-to-video request on an already validated installation, run "
+                },
+                {
+                  "c": true,
+                  "t": "scripts/h3_fastpath.py"
+                },
+                {
+                  "t": " once. It combines "
+                },
+                {
+                  "c": true,
+                  "t": "/system_stats"
+                },
+                {
+                  "t": ", fresh-cache reuse, in-process planning/preflight, queue submission, and one bounded completion watch. Do not issue repeated one-shot status calls, reread the full reference set, run "
+                },
+                {
+                  "c": true,
+                  "t": "--help"
+                },
+                {
+                  "t": ", or ask nonessential questions during this path. If the command yields a running terminal cell, wait on that cell; do not start another monitor."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Keep cold work out of the hot path:"
+                },
+                {
+                  "t": " model download manifests, hash or size verification, Torch/custom-node repair, repository checks, browser workflow discovery, and full recursive doctor scans belong to installation, migration, repair, or first-run validation. A normal generation on an unchanged machine must not pay those costs."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Cold path can be heavier when it prevents hour-scale waste:"
+                },
+                {
+                  "t": " during installation or repair, verify download source, target folder, expected size/hash when available, runtime imports, and model-role mapping before queueing. Store the result so later prompts reuse it instead of repeating it."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Inspect before changing anything. Run "
+                },
+                {
+                  "c": true,
+                  "t": "scripts/h3_doctor.py --json"
+                },
+                {
+                  "t": " and locate the target ComfyUI directory before installing packages, nodes, or weights."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "On first contact, run a platform/accelerator check before the Windows doctor. If the machine is not Windows + NVIDIA, stop the CUDA installation branch and route the user using the platform matrix above."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Prefer an isolated ComfyUI directory when no installation is supplied. Never overwrite an existing installation or silently replace model files."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Keep the deployment path configurable. Do not copy paths from another computer into scripts or workflows."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Report required disk space before large downloads. Use resumable downloads and verify file size or hash when a source provides one."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Before a long generation or multi-shot batch, check free space and pagefile headroom and keep per-shot logs. A pipeline that filters away the process exit code or traceback is not a successful run; preserve the full log and stop on the first failed shot."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If the user can only download from the public internet, run a cold-path download plan before fetching multi-GB files: test candidate raw URLs with a small ranged download, choose the fastest stable source, estimate wall-clock time, then use resumable "
+                },
+                {
+                  "c": true,
+                  "t": ".part"
+                },
+                {
+                  "t": " downloads. Do not pretend scripts can beat the user's real bandwidth."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Before downloading large assets, run the doctor compatibility probe. Stop on a Torch import error; treat a comfy-kitchen/Torch mismatch as a repair decision, not a post-download surprise. Do not silently substitute model files or start unlimited parallel downloads."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Treat the diffusion checkpoint, text encoder, Turbo LoRA, workflow, and node revisions as one component set. Read "
+                },
+                {
+                  "c": true,
+                  "t": "references/component-sets.md"
+                },
+                {
+                  "t": " during installation, migration, model replacement, or kernel repair. Never construct an unvalidated set from individually plausible filenames."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Use "
+                },
+                {
+                  "c": true,
+                  "t": "--component-set auto"
+                },
+                {
+                  "t": " for one unambiguous installed set, or explicitly select "
+                },
+                {
+                  "c": true,
+                  "t": "A"
+                },
+                {
+                  "t": "/"
+                },
+                {
+                  "c": true,
+                  "t": "validated-low-vram-a"
+                },
+                {
+                  "t": " or "
+                },
+                {
+                  "c": true,
+                  "t": "B"
+                },
+                {
+                  "t": "/"
+                },
+                {
+                  "c": true,
+                  "t": "portable-16gb-b"
+                },
+                {
+                  "t": " when both sets are installed. Record the selected set in the run manifest; never resolve a partial set role by role."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Prefer the maintained Baidu package for the registered A/B component sets. Keep the selected set atomic, and respect the licenses of model weights and third-party nodes when using either the package or upstream sources."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Prefer the ComfyUI HTTP API with an API-format workflow JSON. Use browser/CDP capture only as a recovery path when no reusable workflow JSON exists."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Check "
+                },
+                {
+                  "c": true,
+                  "t": "http://127.0.0.1:8188/system_stats"
+                },
+                {
+                  "t": " before starting anything. If ComfyUI is already healthy, reuse it and do not restart it or rediscover its workflow history."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Preserve MiniMax H3's audio path and flow/sigma-shift handling when the user wants native audio. Do not remove audio VAE, audio conditioning, or the H3 sampling node merely to make a graph look simpler."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Zero-inference optimization constraint:"
+                },
+                {
+                  "t": " hardware compatibility checks, timing calibration, face routing, and media QA may run before or after generation, but must not add sampling steps, extra generation models, or a second video inference pass. Keep the selected graph unchanged unless the user explicitly requests a different quality profile."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Face-quality routing:"
+                },
+                {
+                  "t": " if the user needs a recognizable or speaking human face, do not treat low-VRAM W4A8 T2VA at 640x352 as a final-quality route. Prefer I2VA with a clear first-frame reference; prefer Ref2VA when identity must persist across shots. Read "
+                },
+                {
+                  "c": true,
+                  "t": "references/face-quality.md"
+                },
+                {
+                  "t": ", confirm "
+                },
+                {
+                  "c": true,
+                  "t": "MiniMaxH3ReferenceToVideo"
+                },
+                {
+                  "t": " through "
+                },
+                {
+                  "c": true,
+                  "t": "/object_info"
+                },
+                {
+                  "t": ", and confirm the matching reference-capable text encoder/projection and workflow before selecting that route. A registered node alone is not enough; the bundled Ref2VA templates are an experimental local path until a complete run passes media and manual identity QA."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Anchor before prompt:"
+                },
+                {
+                  "t": " for multi-shot or identity-sensitive requests, first create an internal anchor sheet with stable subject/picture labels, retention rules, allowed changes, and forbidden drift. Use the same labels in the prompt, output prefix, and run manifest; read "
+                },
+                {
+                  "c": true,
+                  "t": "references/agent-workflow.md"
+                },
+                {
+                  "t": " for the compact contract."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Assist vague creative briefs without inventing facts:"
+                },
+                {
+                  "t": " when the request lacks a concrete camera, action, sound, or finish, read "
+                },
+                {
+                  "c": true,
+                  "t": "references/prompt-assist.md"
+                },
+                {
+                  "t": " and use its bounded defaults or ask one targeted question if the omission changes the route or acceptance criteria. A public Higgsfield lookup is optional and pattern-only; fall back to the local references when browsing is unavailable."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "On current ComfyUI builds, the API class "
+                },
+                {
+                  "c": true,
+                  "t": "MiniMaxH3SigmaShift"
+                },
+                {
+                  "t": " is the native "
+                },
+                {
+                  "c": true,
+                  "t": "ModelSamplingMiniMaxH3"
+                },
+                {
+                  "t": " node and uses the merged "
+                },
+                {
+                  "c": true,
+                  "t": "ModelSamplingAV"
+                },
+                {
+                  "t": " video/audio schedule fix. Detect it by "
+                },
+                {
+                  "c": true,
+                  "t": "/object_info"
+                },
+                {
+                  "t": " or the local source before adding a custom dual-clock sampler; do not duplicate the fix merely because the API class keeps its compatibility name."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Run the read-only planner before a non-trivial generation. It must report selected mode, resolution, steps, cache policy, paths, and an estimated time range. Do not present an estimate as a guarantee."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Run the read-only preflight after the doctor and planner. Treat low available RAM/VRAM as a caution, but stop when the pagefile is critically low, required assets are missing, or the doctor recommends an alternative backend."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not perform a full recursive doctor scan for every prompt. Cache the environment report under "
+                },
+                {
+                  "c": true,
+                  "t": "<ComfyUI>/user/h3lite_runs/_environment/"
+                },
+                {
+                  "t": "; reuse it for a normal session (normally no older than 30 minutes), invalidate it after ComfyUI/model/node/driver changes or a failed run, and use "
+                },
+                {
+                  "c": true,
+                  "t": "h3_preflight.py --refresh-runtime"
+                },
+                {
+                  "t": " for volatile resource fields."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not revalidate large model files before every prompt. Trust the cached download/component manifest unless the file is missing, has a different size/mtime than recorded, the user changed components, or the previous run failed with a model/node/loader error."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "For registered Set B files, require the recorded SHA-256 on first use or after a size/mtime change. A same-size corrupted W4A8 checkpoint produced colored mosaic frames, so byte count alone is not proof of integrity; reuse the cached integrity result on unchanged files."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Treat every submission as an auditable run: save the effective prompt, mutated API workflow, configuration fingerprint, queue ID, actual execution time, and verified output in the run manifest."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "For identity-sensitive or multi-shot runs, the runtime also writes "
+                },
+                {
+                  "c": true,
+                  "t": "anchors.json"
+                },
+                {
+                  "t": " beside "
+                },
+                {
+                  "c": true,
+                  "t": "manifest.json"
+                },
+                {
+                  "t": " and records advisory "
+                },
+                {
+                  "c": true,
+                  "t": "anchor_qa"
+                },
+                {
+                  "t": " comparisons; these signals support manual continuity review but are not face recognition."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Keep agent-facing status compact: omit ComfyUI's full history graph by default; use verbose history only when diagnosing a failure."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Never submit an identical configuration while its manifest is "
+                },
+                {
+                  "c": true,
+                  "t": "submitting"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "queued"
+                },
+                {
+                  "t": ", or "
+                },
+                {
+                  "c": true,
+                  "t": "running"
+                },
+                {
+                  "t": ". Return the existing prompt ID instead; use "
+                },
+                {
+                  "c": true,
+                  "t": "--allow-duplicate"
+                },
+                {
+                  "t": " only when the user explicitly asks for a second identical run."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Treat low-VRAM timing as an empirical estimate. The first run can be much slower because kernels compile and weights move between system RAM and VRAM."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "For expensive renders, use a cheap preview pass first: validate the complete prompt/shot list at the smallest supported canvas (for example 256p or the local fast bucket), then promote only approved shots to the requested resolution. This is especially important for multi-shot work; it is a planning optimization, not a second quality-generation pass for a single requested clip."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Prefer "
+                },
+                {
+                  "c": true,
+                  "t": "NORMAL_VRAM"
+                },
+                {
+                  "t": " when a validated 16 GB system can keep Set B resident. In a same-model/workflow/prompt/seed 640x352 comparison, an RTX 4060 Ti 16 GB run took 77.08 seconds versus 591.22 seconds on an RTX 4070 Laptop 8 GB using "
+                },
+                {
+                  "c": true,
+                  "t": "LOW_VRAM"
+                },
+                {
+                  "t": "; treat dynamic loading/offload as the main operational explanation, not as a pure GPU benchmark or a promise."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "When launching ComfyUI as a background process, redirect stdout and stderr to persistent files. A detached pipe can become invalid after the launching session is cleaned up, leaving ComfyUI alive but causing tqdm/logger writes to fail with "
+                },
+                {
+                  "c": true,
+                  "t": "OSError: [Errno 22] Invalid argument"
+                },
+                {
+                  "t": ". On that signature, restart ComfyUI with persistent logs; do not redownload models or rerun a full doctor unless the restart exposes another error."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Keep media verification attached to the selected ComfyUI root. The verifier searches system "
+                },
+                {
+                  "c": true,
+                  "t": "PATH"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "H3LITE_FFPROBE"
+                },
+                {
+                  "t": ", and common locations in or beside "
+                },
+                {
+                  "c": true,
+                  "t": "<ComfyUI>"
+                },
+                {
+                  "t": " for "
+                },
+                {
+                  "c": true,
+                  "t": "ffprobe"
+                },
+                {
+                  "t": "; both "
+                },
+                {
+                  "c": true,
+                  "t": "h3_generate --watch"
+                },
+                {
+                  "t": " and standalone "
+                },
+                {
+                  "c": true,
+                  "t": "h3_status"
+                },
+                {
+                  "t": " must receive or infer that root. Standalone status may infer the parent only when "
+                },
+                {
+                  "c": true,
+                  "t": "--output-dir"
+                },
+                {
+                  "t": " points exactly "
+                },
+                {
+                  "c": true,
+                  "t": "<ComfyUI>\\output"
+                },
+                {
+                  "t": "; otherwise pass "
+                },
+                {
+                  "c": true,
+                  "t": "--comfyui"
+                },
+                {
+                  "t": " explicitly. Treat "
+                },
+                {
+                  "c": true,
+                  "t": "ffprobe_not_found"
+                },
+                {
+                  "t": " as a missing verifier, not evidence that generation failed, and do not requeue the video until the existing output has been inspected."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Treat run-history cleanup as explicit maintenance, never hot-path work. Use "
+                },
+                {
+                  "c": true,
+                  "t": "scripts/h3_cleanup.py"
+                },
+                {
+                  "t": " in dry-run mode first and require "
+                },
+                {
+                  "c": true,
+                  "t": "--apply"
+                },
+                {
+                  "t": " before deleting eligible run snapshots. Preserve "
+                },
+                {
+                  "c": true,
+                  "t": "_environment"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "_hotpath"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "_workflows"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "_experiments"
+                },
+                {
+                  "t": ", prompt folders, timing data, and generated output files."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Preferred component download source"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For installation or repair, use the maintained Baidu package before assembling\nthe set from multiple upstream repositories. Select one complete package after\nthe hardware check; do not ask the user to download both sets or mix their\nexclusive files."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "Default hardware match"
+              }
+            ],
+            [
+              {
+                "t": "Package"
+              }
+            ],
+            [
+              {
+                "t": "Share link"
+              }
+            ],
+            [
+              {
+                "t": "Code"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "About 8 GB VRAM, low-VRAM fast route"
+                }
+              ],
+              [
+                {
+                  "t": "Set A"
+                }
+              ],
+              [
+                {
+                  "href": "https://pan.baidu.com/s/1IBlH0VY7tWGvxqMtniraow",
+                  "t": "Baidu Netdisk"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "4hri"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "16 GB-class VRAM, FP8 compatibility route"
+                }
+              ],
+              [
+                {
+                  "t": "Set B"
+                }
+              ],
+              [
+                {
+                  "href": "https://pan.baidu.com/s/1x5GGuJv0h8chApgVoDgIaQ",
+                  "t": "Baidu Netdisk"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "1hjx"
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Guide the user to open the matching link, enter the code, and download the\nwhole package. If the "
+            },
+            {
+              "c": true,
+              "t": "baidu-drive"
+            },
+            {
+              "t": " skill or a Baidu Drive connector is\navailable, use it for the download; otherwise give the link and code directly\nand continue after the user places the files locally. Merge the package's\n"
+            },
+            {
+              "c": true,
+              "t": "models"
+            },
+            {
+              "t": " and\n"
+            },
+            {
+              "c": true,
+              "t": "custom_nodes"
+            },
+            {
+              "t": " folders into the selected "
+            },
+            {
+              "c": true,
+              "t": "<ComfyUI>"
+            },
+            {
+              "t": " root, then import or copy\nthe packaged workflows and keep "
+            },
+            {
+              "c": true,
+              "t": "component-manifest.json"
+            },
+            {
+              "t": " with the install.\nRun the doctor after the merge."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Set A contains the INT4 text encoder and optional low-VRAM acceleration nodes.\nSet B contains the FP8 text encoder and validated compatibility workflows. Both\npackages include their own shared ClipProj and VAE files, so a user only needs\none link. If the Baidu package is unavailable or the user explicitly requests\nupstream downloads, use the exact sources, filenames, sizes, and hashes in\n"
+            },
+            {
+              "c": true,
+              "t": "references/component-sets.md"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Installation target contract"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Before installing, downloading, or moving any component, establish one explicit\ndeployment target and state it to the user:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "Install mode: reuse-existing | current-project | dedicated-folder\nComfyUI: <absolute path>\nModels: <ComfyUI>\\models\nCustom nodes: <ComfyUI>\\custom_nodes\nOutput: <ComfyUI>\\output"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use these rules:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "reuse-existing"
+                },
+                {
+                  "t": ": use the exact existing ComfyUI path supplied by the user or discovered and confirmed by the user. Do not clone, reinstall, or create a second model directory."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "current-project"
+                },
+                {
+                  "t": ": keep everything under the active workspace in "
+                },
+                {
+                  "c": true,
+                  "t": "<workspace>\\.h3lite\\ComfyUI"
+                },
+                {
+                  "t": " so the project-scoped choice is unambiguous and does not scatter models across the repository."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "dedicated-folder"
+                },
+                {
+                  "t": ": use the user's absolute path, preferably a non-repository path such as "
+                },
+                {
+                  "c": true,
+                  "t": "D:\\AI\\MiniMax-H3\\ComfyUI"
+                },
+                {
+                  "t": " or "
+                },
+                {
+                  "c": true,
+                  "t": "F:\\MiniMax-H3\\ComfyUI"
+                },
+                {
+                  "t": ". Put the venv, custom nodes, models, user data, and output under this ComfyUI root."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If no existing installation and no target path are available, recommend "
+                },
+                {
+                  "c": true,
+                  "t": "dedicated-folder"
+                },
+                {
+                  "t": " and ask the user to confirm the absolute path before downloading large files. Never silently choose a drive or install into the current project root."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If the user says “当前项目” without naming the workspace, resolve and display the active workspace path before proceeding. If the user gives a path ending in "
+                },
+                {
+                  "c": true,
+                  "t": "ComfyUI"
+                },
+                {
+                  "t": ", use it directly; if they give a parent install folder, append "
+                },
+                {
+                  "c": true,
+                  "t": "ComfyUI"
+                },
+                {
+                  "t": " and display the resulting path for confirmation."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "After the target is selected, read "
+            },
+            {
+              "c": true,
+              "t": "references/deployment-matrix.md"
+            },
+            {
+              "t": " and present\nthe component checklist, exact destination folders, estimated disk budget, and\nthe launch command. Install or repair in this order: runtime prerequisites,\nComfyUI, required custom nodes, model files, doctor verification, then launch.\nDo not start a generation while any required node class or model asset is\nmissing."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Adaptive planning contract"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Before generation, separate the user's requirements into four independent\nchoices:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Intent:"
+                },
+                {
+                  "t": " "
+                },
+                {
+                  "c": true,
+                  "t": "fast"
+                },
+                {
+                  "t": " (default), "
+                },
+                {
+                  "c": true,
+                  "t": "balanced"
+                },
+                {
+                  "t": ", or "
+                },
+                {
+                  "c": true,
+                  "t": "quality"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Wall-clock budget:"
+                },
+                {
+                  "t": " maximum expected generation time, such as “within 10\nminutes”; this is different from the requested clip duration."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Canvas:"
+                },
+                {
+                  "t": " "
+                },
+                {
+                  "c": true,
+                  "t": "auto"
+                },
+                {
+                  "t": ", landscape/"
+                },
+                {
+                  "c": true,
+                  "t": "16:9"
+                },
+                {
+                  "t": ", portrait/"
+                },
+                {
+                  "c": true,
+                  "t": "9:16"
+                },
+                {
+                  "t": ", square/"
+                },
+                {
+                  "c": true,
+                  "t": "1:1"
+                },
+                {
+                  "t": ", or an\nexplicit "
+                },
+                {
+                  "c": true,
+                  "t": "WIDTHxHEIGHT"
+                },
+                {
+                  "t": ". Keep pixel size as a ComfyUI parameter, not as\nprompt prose. The prompt should describe framing such as landscape\ncomposition, medium close-up, macro shot, or slow push-in."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Target path:"
+                },
+                {
+                  "t": " "
+                },
+                {
+                  "c": true,
+                  "t": "reuse-existing"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "current-project"
+                },
+                {
+                  "t": ", or "
+                },
+                {
+                  "c": true,
+                  "t": "dedicated-folder"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Run the planner after the doctor scan. It is read-only and does not create\nfolders:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "python scripts/h3_plan.py `\n  --root <hardware-or-disk-root> `\n  --comfyui <ComfyUI-path> `\n  --install-mode reuse-existing `\n  --mode auto `\n  --target-minutes 10 `\n  --aspect landscape `\n  --megapixels 0.4 `\n  --video-seconds 5 `\n  --json",
+          "language": "powershell"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use the planner result as the source of truth for "
+            },
+            {
+              "c": true,
+              "t": "--profile"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "--resolution"
+            },
+            {
+              "t": ",\n"
+            },
+            {
+              "c": true,
+              "t": "--steps"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "--length"
+            },
+            {
+              "t": ", and "
+            },
+            {
+              "c": true,
+              "t": "--fps"
+            },
+            {
+              "t": ". If no quality or time requirement is\ngiven, "
+            },
+            {
+              "c": true,
+              "t": "auto"
+            },
+            {
+              "t": " selects "
+            },
+            {
+              "c": true,
+              "t": "fast"
+            },
+            {
+              "t": " and preserves the validated 640x352, 4-step,\nBlock-Cache route. On an 8 GB laptop, "
+            },
+            {
+              "c": true,
+              "t": "balanced"
+            },
+            {
+              "t": " keeps 640x352 and increases\nsteps while bypassing T8 Block Cache; "
+            },
+            {
+              "c": true,
+              "t": "quality"
+            },
+            {
+              "t": " does the same with 8 steps.\nOnly the mid/high-VRAM plan promotes balanced/quality to an official-style\nComfyUI bucket by default."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "ComfyUI's native H3 templates commonly use "
+            },
+            {
+              "c": true,
+              "t": "ResolutionSelector"
+            },
+            {
+              "t": ": aspect ratio"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "target megapixels + a 32-pixel multiple. For example, "
+                },
+                {
+                  "c": true,
+                  "t": "16:9"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "0.4 MP"
+                },
+                {
+                  "t": ",\n"
+                },
+                {
+                  "c": true,
+                  "t": "multiple=32"
+                },
+                {
+                  "t": " gives "
+                },
+                {
+                  "c": true,
+                  "t": "864x480"
+                },
+                {
+                  "t": ". Treat that as the normal official-style H3\ncanvas, while H3 Lite's "
+                },
+                {
+                  "c": true,
+                  "t": "640x352"
+                },
+                {
+                  "t": " remains the low-VRAM fast baseline. If the\nuser asks for \"official template size\", \"normal quality\", or \"0.4MP\", use\n"
+                },
+                {
+                  "c": true,
+                  "t": "--megapixels 0.4"
+                },
+                {
+                  "t": " unless hardware/time preflight blocks it."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The 32-pixel alignment is a practical model/decoder constraint: the VAE's\n16-pixel spatial reduction and the DiT's 2-pixel patching must both align. Do\nnot advertise consumer labels such as \"720p\" as exact model sizes when the\nnearest legal canvas is different; report the actual canvas (for example\n"
+            },
+            {
+              "c": true,
+              "t": "1280x704"
+            },
+            {
+              "t": ") and keep the requested label as a human-friendly preset name."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For a prompt with several ordered actions, prioritize adherence before pixels.\nUse the fast 640x352 baseline first; 736x416 is an experimental adherence\nbucket between the fast canvas and 0.4 MP. Do not assume 768p follows complex\nshot structure better: community reports describe stronger Ref2VA/keyframe\nadherence around 352p-416p, while extra steps mainly improve coherence and\ndetail. Promote 736x416 only after a same-prompt comparison succeeds locally."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When the user supplies an explicit resolution, treat that canvas choice as\nalready confirmed: issue one concise OOM/time warning, then continue unless\npreflight is "
+            },
+            {
+              "c": true,
+              "t": "blocked"
+            },
+            {
+              "t": ". Do not ask the same resolution question again. If a\nseparate wall-clock budget conflicts with the explicit canvas, state the\nconflict once and keep the user's explicit canvas. Never silently trade away\nthe audio path or change the installation target to make the estimate fit."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Fast path for ordinary text-to-video"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use this path for a short H3 clip on a machine that passes the low-VRAM doctor\ncheck. With no frame arguments it is T2VA; adding "
+            },
+            {
+              "c": true,
+              "t": "--first-frame"
+            },
+            {
+              "t": " or\n"
+            },
+            {
+              "c": true,
+              "t": "--last-frame"
+            },
+            {
+              "t": " selects the native reference route automatically:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "python scripts/h3_fastpath.py `\n  --comfyui <ComfyUI-path> `\n  --prompt-text \"<rewritten H3 prompt>\" `\n  --resolution 640x352 `\n  --video-seconds 5 `\n  --filename-prefix video/H3Lite_my_clip `\n  --json",
+          "language": "powershell"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For image-to-video, pass the reference image directly. The helper stages an\nexternal image into "
+            },
+            {
+              "c": true,
+              "t": "<ComfyUI>/input"
+            },
+            {
+              "t": " using a content-addressed filename, then\nconnects it to the native "
+            },
+            {
+              "c": true,
+              "t": "MiniMaxH3ImageToVideo"
+            },
+            {
+              "t": " node. No extra I2V node or\nmanual JSON editing is required:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "python scripts/h3_fastpath.py `\n  --comfyui <ComfyUI-path> `\n  --mode i2va `\n  --first-frame <path-to-first-frame.png> `\n  --prompt-text \"<rewritten I2VA prompt>\" `\n  --resolution 640x352 `\n  --video-seconds 5 `\n  --filename-prefix video/H3Lite_i2va `\n  --json",
+          "language": "powershell"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use "
+            },
+            {
+              "c": true,
+              "t": "--mode fl2va --first-frame <first> --last-frame <last>"
+            },
+            {
+              "t": " for fixed first\nand last images, or "
+            },
+            {
+              "c": true,
+              "t": "--mode l2va --last-frame <last>"
+            },
+            {
+              "t": " for a last-frame route;\nthe helper removes the I2V template's first-frame placeholder automatically in\nthe latter case.\nWhen "
+            },
+            {
+              "c": true,
+              "t": "--mode auto"
+            },
+            {
+              "t": " is left in place, the mode is inferred from the supplied\nframe arguments. The low-VRAM baseline remains 640x352, 124 frames, 4 steps,\nand native H3 audio. A validated RTX 4070 Laptop 8 GB I2VA run at that\nbaseline took about 12 minutes; treat that as local empirical timing, not a\nguarantee."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "已配置环境的复跑路径就是这一条命令；不要再分别调用 doctor、plan、preflight、generate 和 status。Windows/Git Bash 路径请写 "
+            },
+            {
+              "c": true,
+              "t": "F:/MiniMax-H3/ComfyUI"
+            },
+            {
+              "t": "，不要写 "
+            },
+            {
+              "c": true,
+              "t": "/f/MiniMax-H3/ComfyUI"
+            },
+            {
+              "t": "。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The helper reuses "
+            },
+            {
+              "c": true,
+              "t": "<ComfyUI>/user/h3lite_runs/_environment/doctor.json"
+            },
+            {
+              "t": " for 30\nminutes, invalidating it only for a cold start, explicit "
+            },
+            {
+              "c": true,
+              "t": "--force-doctor"
+            },
+            {
+              "t": ", an\ninstallation change, or failure recovery. It writes the plan and prompt into\nthe run root, keeps the native audio path unless the prompt explicitly asks\nfor complete silence, and waits with one compact "
+            },
+            {
+              "c": true,
+              "t": "--watch"
+            },
+            {
+              "t": " monitor. An\nexplicit resolution is already confirmed; continue after one concise risk\nwarning unless preflight is "
+            },
+            {
+              "c": true,
+              "t": "blocked"
+            },
+            {
+              "t": ". "
+            },
+            {
+              "c": true,
+              "t": "--dynamic-check"
+            },
+            {
+              "t": " is on by default;\nuse "
+            },
+            {
+              "c": true,
+              "t": "--skip-dynamic-check"
+            },
+            {
+              "t": " only for an intentionally static clip."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Hot-path budget rule: spend only the time needed to rewrite the prompt, refresh\nvolatile runtime status, submit, watch, and verify. Do not check Git remotes,\ndownload pages, model hashes, dependency versions, or official docs during a\nnormal generation unless the previous command returns a concrete error pointing\nthere. If cache is valid, proceed directly to generation."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Native Windows progress window"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "On Windows, the fastpath opens the native monitor by default, so every normal\ndesktop generation has a visible progress window without an extra flag. Use\n"
+            },
+            {
+              "c": true,
+              "t": "--no-monitor-gui"
+            },
+            {
+              "t": " for a run that must stay terminal-only; "
+            },
+            {
+              "c": true,
+              "t": "--monitor-gui"
+            },
+            {
+              "t": "\nexplicitly forces it on. The window discovers the fresh H3 run manifest\nautomatically. It uses a native Windows Tkinter window, reuses the manifest's\nComfyUI "
+            },
+            {
+              "c": true,
+              "t": "client_id"
+            },
+            {
+              "t": ", and listens to the native "
+            },
+            {
+              "c": true,
+              "t": "/ws"
+            },
+            {
+              "t": "\nchannel, including the newer "
+            },
+            {
+              "c": true,
+              "t": "progress_state"
+            },
+            {
+              "t": " node events, while HTTP polling\nsupplies queue state, elapsed/estimated time, GPU memory, RAM, pagefile, output\npath, and failure state. It is monitor-only: closing it does not interrupt\ngeneration.\nThe node count is structural workflow progress, not elapsed-time progress: H3\nnodes have very different runtimes. The window therefore shows node completion\nseparately, displays the current node's observed runtime, and keeps ETA on the\nempirical timing estimate instead of treating "
+            },
+            {
+              "c": true,
+              "t": "4/5"
+            },
+            {
+              "t": " as "
+            },
+            {
+              "c": true,
+              "t": "80%"
+            },
+            {
+              "t": " of the time. The\ntrack is segmented by workflow node so completed, active, and pending nodes\nremain visually distinct.\nThe default window is "
+            },
+            {
+              "c": true,
+              "t": "760x620"
+            },
+            {
+              "t": "; its content area has a vertical scrollbar and\nmouse-wheel support for smaller displays or larger system scaling.\nThe monitor JSON marks these semantics as "
+            },
+            {
+              "c": true,
+              "t": "progress_basis"
+            },
+            {
+              "t": " ("
+            },
+            {
+              "c": true,
+              "t": "node_completion"
+            },
+            {
+              "t": "\nor "
+            },
+            {
+              "c": true,
+              "t": "sampling_steps"
+            },
+            {
+              "t": ") and "
+            },
+            {
+              "c": true,
+              "t": "eta_basis"
+            },
+            {
+              "t": " ("
+            },
+            {
+              "c": true,
+              "t": "empirical"
+            },
+            {
+              "t": " or "
+            },
+            {
+              "c": true,
+              "t": "live_progress"
+            },
+            {
+              "t": ") so an\nAgent can report them without inventing a time percentage.\nWhen available, elapsed time comes from the run manifest's measured execution\ntime; the wall-clock timestamp is only the fallback before that field exists.\nOld "
+            },
+            {
+              "c": true,
+              "t": "running"
+            },
+            {
+              "t": " manifests are ignored during automatic discovery; pass\n"
+            },
+            {
+              "c": true,
+              "t": "--prompt-id"
+            },
+            {
+              "t": " to inspect a specific historical run."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "To open the monitor independently:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "python scripts/h3_monitor_gui.py `\n  --comfyui <ComfyUI-path>",
+          "language": "powershell"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use "
+            },
+            {
+              "c": true,
+              "t": "--once --no-websocket"
+            },
+            {
+              "t": " for a one-shot JSON diagnostic. If the optional\nWebSocket client is unavailable, the window remains usable through HTTP\npolling, but the progress track stays static and explicitly reports that live\nquantifiable progress is unavailable. It never substitutes an animated bar\nfor a measured percentage. An MCP wrapper is unnecessary for this local GUI;\nan Agent can query the same monitor JSON separately when it needs status."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use the lower-level "
+            },
+            {
+              "c": true,
+              "t": "h3_doctor.py"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "h3_plan.py"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "h3_preflight.py"
+            },
+            {
+              "t": ",\n"
+            },
+            {
+              "c": true,
+              "t": "h3_generate.py"
+            },
+            {
+              "t": ", and "
+            },
+            {
+              "c": true,
+              "t": "h3_status.py"
+            },
+            {
+              "t": " commands only for installation, recovery,\ncustom workflows, or diagnosis. Never replace the fastpath with repeated\none-shot status commands during a normal generation."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use the history/object-info/browser fallback only when the bundled template is\nincompatible, a Ref2VA/custom graph is needed, or the queue reports a missing\nnode/model. T2VA, I2VA, FL2VA, and L2VA are now first-class bundled routes."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Workflow"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "1. Diagnose the computer"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Run:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "$environment = '<ComfyUI>\\user\\h3lite_runs\\_environment'\npython scripts/h3_doctor.py `\n  --json `\n  --report-file \"$environment\\doctor.json\" `\n  --root <chosen-root> `\n  --comfyui <ComfyUI-path>",
+          "language": "powershell"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Record GPU name and VRAM, system RAM, free disk, Python, CUDA/PyTorch visibility, ComfyUI location, model presence, and custom-node presence. If there is no NVIDIA CUDA device, do not promise this local CUDA route; explain the limitation and offer API/cloud or another backend as an alternative."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The doctor also records available physical RAM, available Windows pagefile, and\nGPU compute processes. Low available RAM or VRAM is a warning because the\nvalidated 8 GB route can still finish with offload. A nearly exhausted\npagefile is different: it previously caused "
+            },
+            {
+              "c": true,
+              "t": "hostbuf_file_reader_read failed"
+            },
+            {
+              "t": "\nand system-level paging failures, so "
+            },
+            {
+              "c": true,
+              "t": "h3_preflight.py"
+            },
+            {
+              "t": " blocks that run."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use "
+            },
+            {
+              "c": true,
+              "t": "references/deployment-matrix.md"
+            },
+            {
+              "t": " to choose a profile. For an 8 GB laptop, start with the tested W4A8 profile, not the larger official INT8/32B profile."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "If the user asked for installation or repair, report the selected installation\ntarget before the doctor result. The doctor is read-only; it does not install\nComfyUI, nodes, Python packages, or model weights."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "2. Select a profile"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Fast (default):"
+                },
+                {
+                  "t": " a registered W4A8/4B/Turbo component set, 4B ClipProj, FP16 video VAE, FP32 audio VAE, 640x352, 124 frames, and 4 steps. The launch profile uses "
+                },
+                {
+                  "c": true,
+                  "t": "--lowvram"
+                },
+                {
+                  "t": " for the very-low/8 GB tiers; 10–16 GB systems use normal VRAM mode unless preflight or a prior OOM justifies offload. Use Block Cache only when its classes are actually loaded; otherwise use the compatibility workflow. This is the success-rate baseline."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Balanced:"
+                },
+                {
+                  "t": " keep the low-VRAM canvas on an 8 GB laptop, use 6 steps, and bypass Block Cache. On a mid/high-VRAM machine, the planner may select 864x480."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Quality:"
+                },
+                {
+                  "t": " use 8 steps and bypass Block Cache. On an 8 GB laptop, keep 640x352 and warn that W4A8/4B remains a quality ceiling; on a mid/high-VRAM machine, the planner may select 864x480."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The accelerated fast graph is paired with the registered LightX2V/Turbo 4-step\nLoRA. "
+            },
+            {
+              "c": true,
+              "t": "minimax_h3_turbo_v4_step600_ema.safetensors"
+            },
+            {
+              "t": " is a compatibility-workflow\nquality variant: H3 Lite rejects it when Sage/Sol/Chunk/T8 acceleration nodes are\npresent, because that combination produced severe ghosting and color artifacts in\nlocal validation. Use a "
+            },
+            {
+              "c": true,
+              "t": "*_compat_api.json"
+            },
+            {
+              "t": " workflow for v4, or use the registered\nLightX2V/Turbo 4-step LoRA for the fast route."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "6 GB experimental:"
+                },
+                {
+                  "t": " when the machine has roughly 6 GB VRAM, 32 GB system RAM, an SSD, and sufficient pagefile headroom, permit a cautious first run at 608x352, 4 steps, and low-VRAM offload. Treat community timings as orientation only: reported I2V runs include about 345 seconds at 608x352/4 seconds and 441 seconds at 864x480/5 seconds, while another 640x480/5-second report took about 13.7 minutes. These used different official/community model and workflow combinations, so do not transfer the numbers to the bundled W4A8 graph as a promise."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Below roughly 6 GB or insufficient RAM/disk:"
+                },
+                {
+                  "t": " stop before downloading or queueing. Explain the missing capacity and propose a hosted/API or alternative model."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not infer that a smaller file or INT8 label is automatically faster. On low-VRAM systems, CPU offload, RAM bandwidth, kernel compatibility, and first-run compilation often dominate."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The planner's "
+            },
+            {
+              "c": true,
+              "t": "--target-minutes"
+            },
+            {
+              "t": " option chooses the highest-quality mode whose\nconservative upper estimate fits the budget. Without that option, "
+            },
+            {
+              "c": true,
+              "t": "auto"
+            },
+            {
+              "t": "\nalways selects fast. The estimate must include a cold-start warning and the\nfinal report must include ComfyUI's actual execution time."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "3. Install or repair the environment"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use the official ComfyUI H3 tutorial and the component list in\n"
+            },
+            {
+              "c": true,
+              "t": "references/deployment-matrix.md"
+            },
+            {
+              "t": ". Create or reuse the selected ComfyUI root\nand place every component below that root. Pin or record the ComfyUI and\ncustom-node commits used for a successful run. Install only nodes referenced by\nthe selected workflow. The baseline requires "
+            },
+            {
+              "c": true,
+              "t": "ComfyUI-ClipProj"
+            },
+            {
+              "t": " or a compatible\nimplementation. KJNodes, H3 Turbo helper nodes, Sol Attention, and T8 Block\nCache are optional unless the selected accelerated graph explicitly uses them."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "h3_fastpath.py --workflow-template auto"
+            },
+            {
+              "t": " is the default. It queries\n"
+            },
+            {
+              "c": true,
+              "t": "/object_info"
+            },
+            {
+              "t": " when available and uses the accelerated T2V or I2V graph only\nwhen the Sage, Sol, Chunk Feed Forward, and T8 classes are actually loaded.\nPass "
+            },
+            {
+              "c": true,
+              "t": "--component-set A"
+            },
+            {
+              "t": " or "
+            },
+            {
+              "c": true,
+              "t": "--component-set B"
+            },
+            {
+              "t": " when both complete sets are\ninstalled. Set B is validated with the compatibility graph on RTX 4060 Ti\n16 GB and RTX 4070 Laptop 8 GB systems, so "
+            },
+            {
+              "c": true,
+              "t": "auto"
+            },
+            {
+              "t": " selects that graph. Its full\nSage/Sol/Chunk/T8 acceleration chain is not yet the validated default; use\n"
+            },
+            {
+              "c": true,
+              "t": "--acceleration fast"
+            },
+            {
+              "t": " only for an intentional trial. Use "
+            },
+            {
+              "c": true,
+              "t": "--acceleration compat"
+            },
+            {
+              "t": " to force the validated compatibility graph.\nBoth graphs preserve the H3 sampler, native audio, ClipProj, LoRA, dual VAEs,\nand native first/last-frame inputs without optional patches."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The bundled multi-image Ref2VA graphs reuse this same registered component set:\nthere is no separate Ref2VA checkpoint to download. They add the native\n"
+            },
+            {
+              "c": true,
+              "t": "MiniMaxH3ReferenceToVideo"
+            },
+            {
+              "t": " route and bind repeated reference images through the\nresident ClipProj path. Before downloading anything, reuse the local W4A8,\n4B encoder, ClipProj, dual VAE, and Turbo LoRA files when their manifest and\nloader checks pass."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Keep optional INT8 loaders and experimental cache nodes disabled until the baseline works. Start ComfyUI with a profile-appropriate command; the very-low/8 GB launch profile commonly uses "
+            },
+            {
+              "c": true,
+              "t": "--lowvram"
+            },
+            {
+              "t": " and "
+            },
+            {
+              "c": true,
+              "t": "--fast-disk"
+            },
+            {
+              "t": ", while 10–16 GB systems normally omit "
+            },
+            {
+              "c": true,
+              "t": "--lowvram"
+            },
+            {
+              "t": " unless preflight or an earlier OOM justifies it. Add Sage Attention only after its PyTorch/CUDA compatibility is confirmed. Treat Easy Cache and generic cache nodes as opt-in experiments: community reports and local experience show that some settings can blur or damage motion/detail. Never enable a cache solely from a speed claim; compare a short output against the uncached baseline first."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "After installation, rerun the doctor and stop if any required model or node is missing. Do not start a long generation while the graph contains unresolved node classes."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Cold-path validation is deliberately allowed to spend extra seconds or minutes:\nrecord component URLs, selected replacement filenames, file sizes or hashes,\nlocal loader choices, Python import probes, and any small compatibility patch\nthat was applied. This is cheaper than discovering a wrong 20 GB model or a\nTorch/custom-node mismatch after queueing. Once the baseline succeeds, write or\nrefresh the cached environment/component report and return to the hot path for\nfuture prompts."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When public internet is the only source for a large model such as the W4A8\ndiffusion checkpoint, do not start a blind long transfer. First probe the\nofficial raw URL, configured mirror raw URL, and any user-provided proxy URL\nwith a small resumable/ranged request. Report the fastest measured speed,\nestimated time, and selected command. Prefer "
+            },
+            {
+              "c": true,
+              "t": "aria2c"
+            },
+            {
+              "t": " with conservative\nconnections when available and the server supports ranges; otherwise use\n"
+            },
+            {
+              "c": true,
+              "t": "curl.exe -L -C -"
+            },
+            {
+              "t": ". Keep partially downloaded files as "
+            },
+            {
+              "c": true,
+              "t": ".part"
+            },
+            {
+              "t": " and resume them;\ndo not delete progress or restart from byte zero unless the size/hash proves\nthe file is unrecoverable."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Before queueing, run:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "python scripts/h3_plan.py `\n  --doctor-json <ComfyUI>\\user\\h3lite_runs\\_environment\\doctor.json `\n  --install-mode reuse-existing `\n  --comfyui <ComfyUI-path> `\n  --mode auto `\n  --aspect landscape `\n  --video-seconds 5 `\n  --report-file <ComfyUI>\\user\\h3lite_runs\\_environment\\plan.json `\n  --json\n\npython scripts/h3_preflight.py `\n  --doctor-json <ComfyUI>\\user\\h3lite_runs\\_environment\\doctor.json `\n  --plan-json <ComfyUI>\\user\\h3lite_runs\\_environment\\plan.json `\n  --refresh-runtime `\n  --require-audio `\n  --json",
+          "language": "powershell"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "ready"
+            },
+            {
+              "t": " means no observed risk, "
+            },
+            {
+              "c": true,
+              "t": "caution"
+            },
+            {
+              "t": " means the run may proceed with an\nexplicit warning, and "
+            },
+            {
+              "c": true,
+              "t": "blocked"
+            },
+            {
+              "t": " means fix the environment or use another\nbackend first. The preflight ignores the Python process used by ComfyUI and\nzero-memory desktop helpers; it warns only for meaningful external GPU\ncompetitors. This is a runtime gate, not a promise of success."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "4. Rewrite the user's request into an H3 prompt"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Identify the generation mode before writing:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "text only → "
+                },
+                {
+                  "c": true,
+                  "t": "T2VA"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "one first-frame image → "
+                },
+                {
+                  "c": true,
+                  "t": "I2VA"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "first and last images → "
+                },
+                {
+                  "c": true,
+                  "t": "FL2VA"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "last-frame image → "
+                },
+                {
+                  "c": true,
+                  "t": "L2VA"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "reusable images/video/audio references → "
+                },
+                {
+                  "c": true,
+                  "t": "Ref2VA"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Read "
+            },
+            {
+              "c": true,
+              "t": "references/prompt-writing.md"
+            },
+            {
+              "t": " when composing or revising a prompt. For\nmulti-shot, identity-sensitive, or reference-heavy requests, also read\n"
+            },
+            {
+              "c": true,
+              "t": "references/agent-workflow.md"
+            },
+            {
+              "t": " and build the route/anchor sheet before writing.\nFor an underspecified creative request, also read\n"
+            },
+            {
+              "c": true,
+              "t": "references/prompt-assist.md"
+            },
+            {
+              "t": ": it supplies the optional\n"
+            },
+            {
+              "c": true,
+              "t": "STYLE/IDENTITY LOCK → SCENE → MOTION → AUDIO → NEGATIVE"
+            },
+            {
+              "t": " scaffold and the\nrules for translating it back to H3. Ask only for information that materially\nchanges the route or acceptance criteria; otherwise state the bounded default\nand continue. Never make a website lookup a runtime dependency.\nUse the exact field names and ordering required by the selected mode. For\nnative base modes, the core order is:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "integrated_multimodal_description: ...\noverall_soundscape: ...\nnon_diegetic_music: ..."
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For user-facing 5-second quick-start examples, teach the same idea as a memorable three-part structure: "
+            },
+            {
+              "b": true,
+              "t": "scene and atmosphere → action and camera → sound"
+            },
+            {
+              "t": ". Present it as one natural-language prompt that can be copied directly; do not require users to write schema labels. Treat this as an explanation aid, then translate it internally into the workflow's required prompt schema."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For full-reference mode, use the six-section structure in the reference. Write the rewritten description in English, but preserve user-provided dialogue, lyrics, and visible scene text in the original language."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Make the prompt operational:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "establish style, framing, subjects, environment, lighting, and initial state in Shot 1;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "make each important person's orientation relative to the camera explicit when identity or facial visibility matters; “watching the sunset” alone often implies a back view. State front-facing, three-quarter, profile, or back-facing, and say whether the face and eyes must remain visible;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "describe observable actions and state changes in playback order;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "use later shot cut times only when a real cut introduces new information;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "write camera motion as a natural sentence with motion type, amplitude, and speed when useful;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "describe dialogue, singing, and diegetic sound in the timeline body;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "describe ambient/physical sound in "
+                },
+                {
+                  "c": true,
+                  "t": "overall_soundscape"
+                },
+                {
+                  "t": " and audience-only music in "
+                },
+                {
+                  "c": true,
+                  "t": "non_diegetic_music"
+                },
+                {
+                  "t": ";"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Resolve the audio policy before submission: "
+                },
+                {
+                  "c": true,
+                  "t": "auto"
+                },
+                {
+                  "t": "/ordinary prompts require the native H3 audio path; “no dialogue” does not disable sound. Only explicit complete-silence wording may remove the "
+                },
+                {
+                  "c": true,
+                  "t": "CreateVideo"
+                },
+                {
+                  "t": " audio input."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Interpret "
+                },
+                {
+                  "c": true,
+                  "t": "不要对白"
+                },
+                {
+                  "t": " / "
+                },
+                {
+                  "c": true,
+                  "t": "无对白"
+                },
+                {
+                  "t": " / "
+                },
+                {
+                  "c": true,
+                  "t": "no dialogue"
+                },
+                {
+                  "t": " as a dialogue-only constraint: keep native ambience, sound effects, animal or action sounds, and the audio stream. Disable all audio only when the user explicitly requests "
+                },
+                {
+                  "c": true,
+                  "t": "完全静音"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "无任何声音"
+                },
+                {
+                  "t": ", or "
+                },
+                {
+                  "c": true,
+                  "t": "no audio"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "use stable speaker IDs and exact text for dialogue;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "use "
+                },
+                {
+                  "c": true,
+                  "t": "N/A"
+                },
+                {
+                  "t": " for music only when no non-diegetic music is desired, and use "
+                },
+                {
+                  "c": true,
+                  "t": "overall_soundscape: N/A"
+                },
+                {
+                  "t": " only for explicitly complete silence."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "If the selected ComfyUI graph uses a ClipProj/krea2 or another custom prompt schema, inspect its example workflow first. Adapt the official semantic structure to the node's accepted field while preserving the graph's required fields; do not blindly paste a T2VA prompt into a Ref2VA input or vice versa."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "For a face-quality attempt, constrain the first shot to one face, a front or three-quarter orientation, visible eyes, stable hair/clothing anchors, and static or small-amplitude motion. Treat dialogue as a second-stage stressor. A valid MP4 with dynamic/color/audio checks can still have unusable faces; visually inspect face consistency at first/middle/last frames."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "For Chinese prompts, avoid an extremely short noun-only description. H3's long multimodal sequence can make a one- or two-token Chinese prompt easy for the seed to dominate. Add concrete subject traits, setting, framing, lighting, and motion; as a practical starting point, use roughly 30–50 Chinese characters or an equivalent amount of structured detail, then validate with a cheap preview."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "For a director-level multi-shot sequence (establishing + over-the-shoulder + reverse + reveal) where H3's single-continuous-shot limit blocks real coverage, see "
+                },
+                {
+                  "c": true,
+                  "t": "references/director-sequences.md"
+                },
+                {
+                  "t": ". It covers splitting the scene into separate I2VA segments, generating consistent first-frame images with ImageGen (watermark crop, reference-image identity inheritance), locking character identity across prompts, W4A8 skin-quality phrasing, and stitching with ffmpeg "
+                },
+                {
+                  "c": true,
+                  "t": "xfade"
+                },
+                {
+                  "t": "/"
+                },
+                {
+                  "c": true,
+                  "t": "acrossfade"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "5. Generate through ComfyUI"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For installation, recovery, or custom-workflow debugging, the lower-level\nhelpers remain available. A normal text-only request should use\n"
+            },
+            {
+              "c": true,
+              "t": "h3_fastpath.py"
+            },
+            {
+              "t": " above:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "python scripts/h3_generate.py `\n  --base-url http://127.0.0.1:8188 `\n  --workflow-template h3_w4a8_t2v `\n  --prompt-file prompts/current.txt `\n  --comfyui <ComfyUI-path> `\n  --filename-prefix video/H3Lite_my_clip `\n  --run-root <ComfyUI>\\user\\h3lite_runs `\n  --component-set auto `\n  --resolve-models `\n  --audio-policy auto `\n  --profile fast `\n  --resolution 640x352 `\n  --seed 20260813 `\n  --watch `\n  --watch-interval 20 `\n  --watch-timeout 3600 `\n  --json",
+          "language": "powershell"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For a lower-level I2VA or FL2VA run, use the matching bundled template and\nframe flags. "
+            },
+            {
+              "c": true,
+              "t": "--workflow <file>"
+            },
+            {
+              "t": " remains supported for custom Ref2VA or other\ngraphs; the same flags will bind any existing "
+            },
+            {
+              "c": true,
+              "t": "LoadImage"
+            },
+            {
+              "t": " reference input, or\nadd one when the H3 node has no connection yet:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "python scripts/h3_generate.py `\n  --workflow-template h3_w4a8_i2v `\n  --prompt-text \"<rewritten I2VA prompt>\" `\n  --first-frame <path-to-first-frame.png> `\n  --comfyui <ComfyUI-path> `\n  --output-dir <ComfyUI>\\output `\n  --resolution 640x352 `\n  --length 124 `\n  --steps 4 `\n  --component-set auto `\n  --resolve-models `\n  --watch `\n  --json",
+          "language": "powershell"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "This lower-level command now submits and monitors in the same foreground\nprocess. Use "
+            },
+            {
+              "c": true,
+              "t": "--queue-only"
+            },
+            {
+              "t": " only when another process must own monitoring."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For the bundled multi-image Ref2VA route, repeat "
+            },
+            {
+              "c": true,
+              "t": "--ref-image"
+            },
+            {
+              "t": " in the order\nthat the prompt names "
+            },
+            {
+              "c": true,
+              "t": "<Picture 1>"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "<Picture 2>"
+            },
+            {
+              "t": ", and so on. The native\n"
+            },
+            {
+              "c": true,
+              "t": "MiniMaxH3ReferenceToVideo"
+            },
+            {
+              "t": " node accepts image references in fixed order; do\nnot combine "
+            },
+            {
+              "c": true,
+              "t": "--ref-image"
+            },
+            {
+              "t": " with "
+            },
+            {
+              "c": true,
+              "t": "--first-frame"
+            },
+            {
+              "t": " or "
+            },
+            {
+              "c": true,
+              "t": "--last-frame"
+            },
+            {
+              "t": ":"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "python scripts/h3_generate.py `\n  --workflow-template h3_w4a8_ref2va_compat `\n  --prompt-file prompts/ref2va.txt `\n  --ref-image <identity.png> `\n  --ref-image <scene.png> `\n  --ref-image <wardrobe-or-prop.png> `\n  --comfyui <ComfyUI-path> `\n  --output-dir <ComfyUI>\\output `\n  --resolution 640x352 `\n  --length 124 `\n  --steps 4 `\n  --component-set A `\n  --resolve-models `\n  --watch `\n  --json",
+          "language": "powershell"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The Ref2VA encoder is kept resident because the installed ClipProj node's\ndynamic image path is not reliable with the low-VRAM int8 encoder. Resident\nmode can consume more VRAM than I2VA; preflight may therefore block an 8 GB\nmachine or recommend a small preview. Treat "
+            },
+            {
+              "c": true,
+              "t": "--ref-image"
+            },
+            {
+              "t": " as a real reference\nconditioning input, not as a style-only attachment."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The native "
+            },
+            {
+              "c": true,
+              "t": "MiniMaxH3ReferenceToVideo"
+            },
+            {
+              "t": " node also exposes reference-video and\nreference-audio inputs. The bundled fastpath deliberately exposes repeated\n"
+            },
+            {
+              "c": true,
+              "t": "--ref-image"
+            },
+            {
+              "t": " first because that path is the most predictable to bind and\nverify; use a native/custom workflow when those other reference types are\nrequired."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "python scripts/h3_status.py `\n  --base-url http://127.0.0.1:8188 `\n  --prompt-id <prompt-id> `\n  --comfyui <ComfyUI-path> `\n  --output-dir <ComfyUI>\\output `\n  --run-root <ComfyUI>\\user\\h3lite_runs `\n  --require-audio `\n  --dynamic-check `\n  --anchor-check `\n  --compact `\n  --json",
+          "language": "powershell"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The JSON result is compact by default; use "
+            },
+            {
+              "c": true,
+              "t": "--verbose"
+            },
+            {
+              "t": " only when a failed run\nneeds the full ComfyUI history graph. For a bounded foreground monitor, add\n"
+            },
+            {
+              "c": true,
+              "t": "--watch --watch-interval 20 --watch-timeout 3600"
+            },
+            {
+              "t": ". A pending response has\n"
+            },
+            {
+              "c": true,
+              "t": "ok: false"
+            },
+            {
+              "t": " and "
+            },
+            {
+              "c": true,
+              "t": "complete: false"
+            },
+            {
+              "t": "; only a completed, verified media response\nhas "
+            },
+            {
+              "c": true,
+              "t": "ok: true"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not describe a faster second run as a reused result. ComfyUI may retain model weights and reuse unchanged upstream node outputs such as encoder or VAE loading, but a changed prompt or seed still causes the sampler to generate a new video. Explain this distinction when a user asks why later runs are faster."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The accelerated bundled template contains the prompt node, W4A8 model path, 4B\nClipProj, dual VAE, Turbo LoRA, H3 sigma shifts, Sage/Sol/T8 patches, native\naudio, 124 frames, 640x352, and 4 steps. The compatibility template removes\nthe optional Sage/Sol/T8 chain. "
+            },
+            {
+              "c": true,
+              "t": "--resolve-models"
+            },
+            {
+              "t": " switches the complete\nregistered A/B component set atomically; use "
+            },
+            {
+              "c": true,
+              "t": "--component-set B"
+            },
+            {
+              "t": " when both\nsets are installed. Override "
+            },
+            {
+              "c": true,
+              "t": "--seed"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "--width"
+            },
+            {
+              "t": ",\n"
+            },
+            {
+              "c": true,
+              "t": "--height"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "--length"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "--steps"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "--fps"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "--profile"
+            },
+            {
+              "t": ", or "
+            },
+            {
+              "c": true,
+              "t": "--resolution"
+            },
+            {
+              "t": " only\nwhen needed. Prefer "
+            },
+            {
+              "c": true,
+              "t": "--megapixels"
+            },
+            {
+              "t": " for ComfyUI ResolutionSelector-style canvas\nchoices such as "
+            },
+            {
+              "c": true,
+              "t": "16:9 0.4MP -> 864x480"
+            },
+            {
+              "t": ". "
+            },
+            {
+              "c": true,
+              "t": "fast"
+            },
+            {
+              "t": " keeps Block Cache; "
+            },
+            {
+              "c": true,
+              "t": "balanced"
+            },
+            {
+              "t": "\nuses 6 steps and bypasses Block Cache; "
+            },
+            {
+              "c": true,
+              "t": "quality"
+            },
+            {
+              "t": " uses 8 steps and bypasses\nBlock Cache. For a custom API\nworkflow, pass "
+            },
+            {
+              "c": true,
+              "t": "--workflow <file>"
+            },
+            {
+              "t": "; the prompt field can still be discovered or\nselected with "
+            },
+            {
+              "c": true,
+              "t": "--prompt-node"
+            },
+            {
+              "t": " and "
+            },
+            {
+              "c": true,
+              "t": "--prompt-field"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not use synchronous wait mode from a terminal command with a short timeout.\n"
+            },
+            {
+              "c": true,
+              "t": "h3_fastpath.py"
+            },
+            {
+              "t": " uses "
+            },
+            {
+              "c": true,
+              "t": "h3_generate.py --watch"
+            },
+            {
+              "t": " so submission and verification\nstay in one bounded foreground process; use "
+            },
+            {
+              "c": true,
+              "t": "--queue-only"
+            },
+            {
+              "t": " only when another\nprocess must own monitoring."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For the low-VRAM baseline, use 124 frames at 24 fps (about 5 seconds), 4 steps, "
+            },
+            {
+              "c": true,
+              "t": "res_multistep"
+            },
+            {
+              "t": ", and "
+            },
+            {
+              "c": true,
+              "t": "simple"
+            },
+            {
+              "t": ". Use 640x352 for the normal fast output; use the ComfyUI official-style 0.4MP bucket ("
+            },
+            {
+              "c": true,
+              "t": "864x480"
+            },
+            {
+              "t": " for 16:9) only when the planner approves the hardware/time trade-off or the user explicitly asks for it."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "6. Verify and report"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not report success from a queue ID alone. Confirm:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "the job completed without an execution error;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "an MP4 or other intended video file exists;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "the file has a video stream and, for native H3 output, an audio stream;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "duration, frame count, and FPS are close to the requested values;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "the first/middle/last samples are not black, flat, or classified as "
+                },
+                {
+                  "c": true,
+                  "t": "suspected_mosaic"
+                },
+                {
+                  "t": "; when the user asked for an action, dynamic QA must classify the clip as "
+                },
+                {
+                  "c": true,
+                  "t": "dynamic"
+                },
+                {
+                  "t": ";"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "when identity, clothing, props, or a reference composition is an acceptance condition, sampled frames preserve the declared anchors and do not silently drift;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "the output path and elapsed time are reported."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "the plan's estimated range is compared with the actual ComfyUI execution time;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "the configuration fingerprint and run manifest are recorded so a retry can be distinguished from an accidental duplicate;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "the selected ComfyUI, models, custom_nodes, and output paths are recorded."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "If verification returns "
+            },
+            {
+              "c": true,
+              "t": "ffprobe_not_found"
+            },
+            {
+              "t": ", keep the generated file and repair\nonly the verifier path. Set "
+            },
+            {
+              "c": true,
+              "t": "H3LITE_FFPROBE"
+            },
+            {
+              "t": " to an absolute "
+            },
+            {
+              "c": true,
+              "t": "ffprobe.exe"
+            },
+            {
+              "t": " when\nthe executable lives outside the bounded ComfyUI locations; do not rerun the\nmodel merely because metadata inspection was unavailable."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When diagnosing failures, use this order:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "critically low pagefile, unavailable RAM, or another GPU process;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "missing model or custom node;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "wrong model folder or filename;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "CUDA/PyTorch/custom-kernel incompatibility;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "out-of-memory or excessive CPU offload;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "invalid H3 flow/audio graph;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "prompt or reference alignment problem."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For black/mosaic output, restore the official H3 flow/sigma-shift node and simplify optional attention/cache patches. For distorted audio at 4 steps, check the H3 audio/video schedules and use the compatible H3 Turbo sampler on older ComfyUI builds."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Video upscale (post-processing)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Super-resolution is post-processing, not another H3 generation pass: it never\nchanges the generation graph, adds sampling steps, or silently follows a run.\nThe registered low-VRAM route has been validated around 0.5 MP (for example,\n960x544), but that is not a model-wide H3 limit. Official/native H3 workflows\nsupport larger canvases; use the doctor, planner, and preflight result as the\nsource of truth for the selected local canvas. Add upscale only when the user\nexplicitly asks for a target beyond that selected canvas, and never promise\npixel-exact consumer labels (\"1080p\") as model output sizes. Read\n"
+            },
+            {
+              "href": "https://github.com/Rimagination/h3lite/blob/main/references/video-upscale.md",
+              "c": true,
+              "t": "references/video-upscale.md"
+            },
+            {
+              "t": " for the routes,\nportable path discovery, measured case studies, and the problem table."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Rules:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Primary route (when actually installed): Topaz Video AI."
+                },
+                {
+                  "t": " The user selects\nthe enhancement model (Starlight/Astra Fast for H3-style clips, Proteus/Rhea\nfor general footage), the output scale, and exports from the GUI. Do not\nassume a Topaz install, model list, or path copied from another machine.\nTopaz has no stable public CLI contract; log command lines are diagnostic\nevidence only, never a scriptable runtime dependency."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Pre-export checks:"
+                },
+                {
+                  "t": " discover the actual Topaz/model roots, inspect free\nVRAM with "
+                },
+                {
+                  "c": true,
+                  "t": "scripts/h3_vram.py --json"
+                },
+                {
+                  "t": ", and confirm any competitor is idle.\nTreat model presence and SHA-512 catalog checks as machine-local facts; do\nnot state that a model is installed or missing without checking this machine."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "During export:"
+                },
+                {
+                  "t": " do not start another heavy CUDA job (no H3 generation on\nthe same card); a 2x Starlight export of a ~210-frame clip takes on the\norder of 20 minutes at 0.3 fps while decoding."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "After export:"
+                },
+                {
+                  "t": " ffprobe must show the expected size, 24 fps, an audio\nstream, and near-original duration; the "
+                },
+                {
+                  "c": true,
+                  "t": "videoai=Enhanced using ..."
+                },
+                {
+                  "t": "\nmetadata tag marks an already-enhanced file — do not upscale it again."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Fallbacks (scriptable, offline):"
+                },
+                {
+                  "t": " use FlashVSR only after discovering\n<FlashVSR_ROOT>, its environment, the exact CLI fork/commit, and the model\npack. Invoke the script by absolute path, for example\n<FlashVSR_ROOT>\\ComfyUI-FlashVSR_Stable\\cli_main.py; a bare\n"
+                },
+                {
+                  "c": true,
+                  "t": "cli_main.py"
+                },
+                {
+                  "t": " depends on the current working directory and is not portable.\nPreserve the validated tiling/chunking settings from the local reference,\nverify frame count and audio after export, and treat truncated output as a\nfailed run. If FlashVSR is absent, use the discovered ComfyUI venv plus a\nverified 4x-UltraSharp weight, or plain ffmpeg for previews. Never invent a\nmissing wrapper, model, venv, or path."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "GPU memory contention with other heavy CUDA apps"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "A machine may host several heavy CUDA workloads at once (ComfyUI plus an\nindependent video tool, game streaming, another generation backend). Windows\nWDDM reporting hides per-process VRAM: "
+            },
+            {
+              "c": true,
+              "t": "nvidia-smi --query-compute-apps"
+            },
+            {
+              "t": "\nreturns N/A or 0 MiB per process, while PyTorch's free-memory figure stays\noptimistically high. Failures then look like CUDA OOM at tiny allocation sizes\n(\"Tried to allocate 28.00 MiB ... 8.91 GiB free\") or like a plain access\nviolation (Windows exit code 0xC0000005) with no OOM text at all."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Rules:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "When preflight flags a meaningful competitor or a fragile job fails at\nallocation, run "
+                },
+                {
+                  "c": true,
+                  "t": "python scripts/h3_vram.py --json"
+                },
+                {
+                  "t": " to see who holds the\nVRAM. Read the reported process scope and WDDM LUIDs; do not treat a\nprocess row from an unmapped adapter as proof that it competes for the\nselected CUDA GPU."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Confirm the competitor is idle before touching it. For ComfyUI, check\n"
+                },
+                {
+                  "c": true,
+                  "t": "http://127.0.0.1:8188/queue"
+                },
+                {
+                  "t": " (running + pending empty), and remember an\nempty queue does not release resident models: the process still shows\nseveral GB until ComfyUI restarts or offloads."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Never stop a ComfyUI that has queued or running items; losing a run wastes\nthe whole generation."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Gate only after the report shows a comparable adapter scope. The\n"
+                },
+                {
+                  "c": true,
+                  "t": "--check-free-gb"
+                },
+                {
+                  "t": " command fails closed with exit code 2 when the\nscope is unknown; choose the threshold from the selected workload and\nhardware rather than assuming 5 GB. Use "
+                },
+                {
+                  "c": true,
+                  "t": "--allow-scope-mismatch"
+                },
+                {
+                  "t": "\nonly when the user explicitly accepts a global "
+                },
+                {
+                  "c": true,
+                  "t": "nvidia-smi"
+                },
+                {
+                  "t": "-only\ncheck."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "A destructive stop requires "
+                },
+                {
+                  "c": true,
+                  "t": "--confirm-stop"
+                },
+                {
+                  "t": " and the exact\n"
+                },
+                {
+                  "c": true,
+                  "t": "--process-name"
+                },
+                {
+                  "t": " from the report. For ComfyUI also pass\n"
+                },
+                {
+                  "c": true,
+                  "t": "--queue-url"
+                },
+                {
+                  "t": "; the helper refuses to stop when the queue cannot be\nread or is non-empty."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Read "
+                },
+                {
+                  "c": true,
+                  "t": "references/gpu-contention.md"
+                },
+                {
+                  "t": " for the measured case (ComfyUI holding\n9,805 MB resident on a 16 GB card while a Topaz Video AI Starlight export\nfailed at a 28 MiB VAE allocation) and the diagnostic commands."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Bundled resources"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "references/deployment-matrix.md"
+                },
+                {
+                  "t": ": tested low-VRAM profile, official fallback profile, model folders, node roles, launch flags, and failure triage."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "references/component-sets.md"
+                },
+                {
+                  "t": ": registered model/workflow sets, exact known byte sizes, runtime ABI record, and download-integrity rules."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "references/prompt-writing.md"
+                },
+                {
+                  "t": ": concise operational digest of MiniMax's official H3 prompt guide and prompt-writing skill."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "references/director-sequences.md"
+                },
+                {
+                  "t": ": end-to-end workflow for multi-segment director sequences (divide a scene into separate I2VA shots, generate consistent first frames with ImageGen including watermark crop and reference-image identity inheritance, lock character identity across prompts, W4A8 skin-quality phrasing, and stitch with ffmpeg "
+                },
+                {
+                  "c": true,
+                  "t": "xfade"
+                },
+                {
+                  "t": "/"
+                },
+                {
+                  "c": true,
+                  "t": "acrossfade"
+                },
+                {
+                  "t": " using the cumulative-offset formula)."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "references/agent-workflow.md"
+                },
+                {
+                  "t": ": intent routing, reference/identity anchors, five-pass prompt enhancement, and local capability boundaries."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "references/prompt-assist.md"
+                },
+                {
+                  "t": ": optional Higgsfield-inspired prompt-pattern lookup for vague creative briefs; maps style/scene/motion/audio/negative cards back to H3 fields without adding a cloud dependency."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "references/face-quality.md"
+                },
+                {
+                  "t": ": face-first routing, official Ref2VA identity controls, low-VRAM trade-offs, and the limits of dynamic/color QA."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "references/gpu-contention.md"
+                },
+                {
+                  "t": ": Windows/WDDM VRAM contention between ComfyUI and other heavy CUDA apps; per-process memory via the GPU Process Memory counter, idle-queue checks, the stop/restart order, and a measured 16 GB case plus a Topaz Video AI repair appendix."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "references/video-upscale.md"
+                },
+                {
+                  "t": ": post-process video upscale routes (Topaz Video AI primary, a discovered/pinned FlashVSR CLI root as the scripted backup — run command, model pack, VRAM tier table, the measured tiled-seam grid case and fix, frame-count truncation check), 4x-UltraSharp via the discovered ComfyUI venv, plain ffmpeg fallback, and the problem/consequence table for contention, corrupt weights, audio, and frame-rate pitfalls."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "assets/h3_w4a8_t2v_api.json"
+                },
+                {
+                  "t": ": reusable low-VRAM T2VA API graph based on the validated W4A8/4B/audio route."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "assets/h3_w4a8_t2v_compat_api.json"
+                },
+                {
+                  "t": ": core T2VA graph without optional Sol Attention, Chunk Feed Forward, or T8 Block Cache nodes."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "assets/h3_w4a8_i2v_api.json"
+                },
+                {
+                  "t": ": reusable low-VRAM I2VA graph with native first-frame input and optional acceleration patches."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "assets/h3_w4a8_i2v_compat_api.json"
+                },
+                {
+                  "t": ": core I2VA graph with native first-frame input and no optional acceleration patches."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "assets/h3_w4a8_ref2va_api.json"
+                },
+                {
+                  "t": ": experimental multi-image Ref2VA graph with the native "
+                },
+                {
+                  "c": true,
+                  "t": "MiniMaxH3ReferenceToVideo"
+                },
+                {
+                  "t": " node."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "assets/h3_w4a8_ref2va_compat_api.json"
+                },
+                {
+                  "t": ": compatibility Ref2VA graph without optional Sage/Sol/Chunk/T8 patches."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "scripts/h3_doctor.py"
+                },
+                {
+                  "t": ": dependency-free hardware, disk, model, and node diagnosis."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "scripts/h3_plan.py"
+                },
+                {
+                  "t": ": read-only hardware, resolution, time-budget, aspect-ratio, profile, and installation-path planner."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "scripts/h3_preflight.py"
+                },
+                {
+                  "t": ": read-only pagefile/RAM/VRAM/process/model/node gate before queueing."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "scripts/h3_generate.py"
+                },
+                {
+                  "t": ": fast template-based or custom-workflow submission with profile, resolution, prompt/settings overrides, native first/last-frame binding, atomic A/B component-set selection, and queue-only mode."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "scripts/h3_anchor.py"
+                },
+                {
+                  "t": ": deterministic prompt/reference anchor-card generation and optional JSON declaration loading; it does not add inference or rewrite the prompt."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "scripts/h3_status.py"
+                },
+                {
+                  "t": ": compact one-shot or bounded watch status, actual execution-time, media metadata verification, optional first/middle/last dynamic QA, advisory anchor continuity QA, and empirical timing-cache updates."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "scripts/h3_fastpath.py"
+                },
+                {
+                  "t": ": single-entry T2V/I2V route that reuses the environment cache, probes loaded node classes, routes component sets, and keeps queueing plus bounded verification in one command."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "scripts/h3_monitor_gui.py"
+                },
+                {
+                  "t": ": native Windows Tkinter progress window for live queue/sampling/resource/output visibility; it does not replace ComfyUI or interrupt a run."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "scripts/h3_paths.py"
+                },
+                {
+                  "t": ": Windows path normalization for "
+                },
+                {
+                  "c": true,
+                  "t": "F:/..."
+                },
+                {
+                  "t": " and Git Bash "
+                },
+                {
+                  "c": true,
+                  "t": "/f/..."
+                },
+                {
+                  "t": " inputs."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "scripts/h3_cleanup.py"
+                },
+                {
+                  "t": ": dry-run-first maintenance for old timestamped run snapshots; preserves environment state and recent runs."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "scripts/h3_vram.py"
+                },
+                {
+                  "t": ": read-only Windows per-process dedicated-VRAM report (preserving WDDM adapter LUIDs, with "
+                },
+                {
+                  "c": true,
+                  "t": "--query-compute-apps"
+                },
+                {
+                  "t": " fallback), scope-aware free-VRAM gate, and guarded destructive stop requiring an exact process name, explicit confirmation, and optional queue check."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Sources"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Official H3 prompt guide: "
+                },
+                {
+                  "href": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md",
+                  "t": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Official H3 prompt-writing skill: "
+                },
+                {
+                  "href": "https://github.com/MiniMax-AI/MiniMax-H3/tree/main/skills/h3-prompt-writing",
+                  "t": "https://github.com/MiniMax-AI/MiniMax-H3/tree/main/skills/h3-prompt-writing"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Official ComfyUI H3 tutorial: "
+                },
+                {
+                  "href": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3",
+                  "t": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "H3 Turbo ComfyUI nodes: "
+                },
+                {
+                  "href": "https://github.com/Larryvrh/ComfyUI-MiniMax-H3-Turbo",
+                  "t": "https://github.com/Larryvrh/ComfyUI-MiniMax-H3-Turbo"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Cinema DNA 21:9 × 3: "
+                },
+                {
+                  "href": "https://github.com/dacnay816y62-hub/cinema-dna-21x9x3",
+                  "t": "https://github.com/dacnay816y62-hub/cinema-dna-21x9x3"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Official H3 repository and prompting guidance: "
+                },
+                {
+                  "href": "https://github.com/MiniMax-AI/MiniMax-H3",
+                  "t": "https://github.com/MiniMax-AI/MiniMax-H3"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Public agent-workflow design reference (not a runtime dependency): "
+                },
+                {
+                  "href": "https://github.com/higgsfield-ai/skills",
+                  "t": "https://github.com/higgsfield-ai/skills"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Public prompt-pattern references (optional writing aid, not a runtime dependency): "
+                },
+                {
+                  "href": "https://github.com/higgsfield-ai/skills/blob/main/higgsfield-video-explainer/references/prompts.md",
+                  "t": "https://github.com/higgsfield-ai/skills/blob/main/higgsfield-video-explainer/references/prompts.md"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "href": "https://higgsfield.ai/ai-prompt-generator",
+                  "t": "https://higgsfield.ai/ai-prompt-generator"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Community Mac/Metal MLX port and operational notes (reference only; not a tested h3lite backend): "
+                },
+                {
+                  "href": "https://zhuanlan.zhihu.com/p/2069479566171812707",
+                  "t": "https://zhuanlan.zhihu.com/p/2069479566171812707"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Community Apple Silicon local-deployment troubleshooting (reference only; not a Windows resource source): "
+                },
+                {
+                  "href": "https://mp.weixin.qq.com/s/hN60KLN7Pkpqb0pbk-r4WQ",
+                  "t": "https://mp.weixin.qq.com/s/hN60KLN7Pkpqb0pbk-r4WQ"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

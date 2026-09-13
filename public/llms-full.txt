@@ -4371,7 +4371,7 @@ The creator leaderboard is derived only from source-attributed content already p
   - An NF4 component fails to download or load: Check each of the four origin_file_pattern values and model IDs; do not mix FL2VA and Ref2VA components.
   - VRAM fits but the system stalls: Low-VRAM quantization relies on CPU offload; inspect system RAM and swap, then reduce canvas or frames.
 
-### H3 Ref2VA LoRA: a guide to community training routes
+### H3 Ref2VA LoRA: train a video LoRA with AI Toolkit
 
 - English page: https://h3-field-notes-production.up.railway.app/en/tutorials/train-ref2va-lora/
 - Chinese page: https://h3-field-notes-production.up.railway.app/tutorials/train-ref2va-lora/

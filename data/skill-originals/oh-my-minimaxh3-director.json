@@ -1,0 +1,1779 @@
+{
+  "skillId": "oh-my-minimaxh3-director",
+  "kind": "markdown",
+  "title": "oh-my-minimaxh3-director",
+  "language": "zh",
+  "capturedAt": "2026-09-13T11:14:03.394Z",
+  "source": {
+    "url": "https://github.com/TFboy1/oh-my-minimaxh3-director",
+    "author": "TFboy1",
+    "revision": "911266137075a0b9fabf6268dc1c91ae05138ad9",
+    "license": "MIT"
+  },
+  "sections": [
+    {
+      "url": "https://github.com/TFboy1/oh-my-minimaxh3-director/blob/master/SKILL.md",
+      "title": "oh-my-minimaxh3-director",
+      "anchor": "skill-oh-my-minimaxh3-director",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "AI 视频导演流水线：剧本自动分镜（含 WenWu 导演级镜头衔接与人物四视图参考图）→ MiniMax H3 工作流分配与参数确认 → 批量生成监控 → 剪映自动拼合成片，可选 Cloudflare 隧道远程访问。提示词支持官方 H3 六段式（official）、WenWu 中文导演模式（wenwu），以及两者兼顾的 hybrid 模式（官方六段式外壳 + WenWu 导演级内容）。用户提到剧本出片、自动分镜、分镜衔接、WenWu、人物四视图、H3 生成、工作流分配、剪映拼合、AI 导演、游戏 PV/宣传片/广告短片/风格与音乐简报，或给出剧本/故事文本要求生成视频时使用。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "ComfyUI 剧本视频流水线"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Overview"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "本 skill 把一条完整链路自动化：探测/打通 ComfyUI（可选 Cloudflare 隧道）→\n剧本自动分镜（每段一个 H3 视频，段内 2-3 个分镜）→ 按段分配 H3 模板并覆盖\n参数 → 参数确认 → 批量提交/监控/下载 → 生成剪映拼合脚本并建草稿。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "v1 只服务 MiniMax H3 的 Ref2VA / T2V / I2V 三种模板，段级生成，默认无字幕无\nBGM。所有文件 UTF-8，Python 使用项目 "
+            },
+            {
+              "c": true,
+              "t": ".venv"
+            },
+            {
+              "t": "（存在时），Windows 下运行。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "首次使用引导（Onboarding）"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "第一次使用（以用户目录下的 "
+            },
+            {
+              "c": true,
+              "t": "~/.oh-my-minimaxh3-director.json"
+            },
+            {
+              "t": " 是否存在判断）\n时，按下面顺序逐项与用户确认，"
+            },
+            {
+              "b": true,
+              "t": "每一项先说明用途再询问"
+            },
+            {
+              "t": "，不替用户做决定；\n完成后把选择写入该配置文件。非首次且用户启用自动更新时，每次使用前先\n"
+            },
+            {
+              "c": true,
+              "t": "npx skills update oh-my-minimaxh3-director -g -y"
+            },
+            {
+              "t": "（失败不阻塞流程）。"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "自动更新"
+                },
+                {
+                  "t": "：说明用途（每次使用前自动拉取本 skill 的最新脚本、模板与\n教程），询问是否启用。推荐启用；选项：启用 / 不启用 / 每次询问。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "ComfyUI 位置确认"
+                },
+                {
+                  "t": "：询问用户“ComfyUI 是本地运行还是云端？”——"
+                }
+              ]
+            },
+            {
+              "depth": 1,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "本地"
+                },
+                {
+                  "t": "：运行 "
+                },
+                {
+                  "c": true,
+                  "t": "scripts/probe_comfy.py --workspace <工作区根> --write"
+                },
+                {
+                  "t": "\n探测本机 8188；未安装时按 "
+                },
+                {
+                  "href": "https://github.com/TFboy1/oh-my-minimaxh3-director/blob/master/references/setup-guide.md",
+                  "t": "setup-guide.md"
+                },
+                {
+                  "t": "\n第 1 节给出官网桌面版下载教程（"
+                },
+                {
+                  "href": "https://www.comfy.org/download%EF%BC%89%E3%80%82",
+                  "t": "https://www.comfy.org/download）。"
+                }
+              ]
+            },
+            {
+              "depth": 1,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "云端"
+                },
+                {
+                  "t": "：请用户提供网址链接（trycloudflare 隧道地址或 AutoDL 的\nseetacloud 地址；还没有 AutoDL 实例时按\n"
+                },
+                {
+                  "href": "https://github.com/TFboy1/oh-my-minimaxh3-director/blob/master/references/autodl-cloud.md",
+                  "t": "autodl-cloud.md"
+                },
+                {
+                  "t": " 帮其开通云端算力），用\n"
+                },
+                {
+                  "c": true,
+                  "t": "scripts/probe_comfy.py --workspace <工作区根> --url <链接> --write"
+                },
+                {
+                  "t": "\n验证并把该地址写入 "
+                },
+                {
+                  "c": true,
+                  "t": ".config/pipeline-config.json"
+                },
+                {
+                  "t": " 的 "
+                },
+                {
+                  "c": true,
+                  "t": "base_url"
+                },
+                {
+                  "t": "；\n链接失效时回退到自动探测。\n把 "
+                },
+                {
+                  "c": true,
+                  "t": "comfyui_location: local | cloud"
+                },
+                {
+                  "t": " 与地址记入\n"
+                },
+                {
+                  "c": true,
+                  "t": "~/.oh-my-minimaxh3-director.json"
+                },
+                {
+                  "t": "，后续运行不再重复询问。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "硬件评估"
+                },
+                {
+                  "t": "：运行 "
+                },
+                {
+                  "c": true,
+                  "t": "scripts/check_hardware.py"
+                },
+                {
+                  "t": " 检测 NVIDIA 显存、内存与\n磁盘；本机无独显但已有远程 ComfyUI（隧道/AutoDL）时改用\n"
+                },
+                {
+                  "c": true,
+                  "t": "--remote-url <地址>"
+                },
+                {
+                  "t": " 直接评估远程 GPU。若判定不适合（显存 < 12GB 或\n没有 NVIDIA GPU），明确告知用户，并询问是改用云 GPU（AutoDL，教程见\n"
+                },
+                {
+                  "href": "https://github.com/TFboy1/oh-my-minimaxh3-director/blob/master/references/autodl-cloud.md",
+                  "t": "autodl-cloud.md"
+                },
+                {
+                  "t": " / Comfy Cloud）还是仍想\n尝试；远程可用时流水线不受影响。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "MiniMax H3 模型"
+                },
+                {
+                  "t": "：本地 ComfyUI 且未确认过模型时，询问“是否已下载\nMiniMax H3 模型”；未下载则按 "
+                },
+                {
+                  "href": "https://github.com/TFboy1/oh-my-minimaxh3-director/blob/master/references/setup-guide.md",
+                  "t": "setup-guide.md"
+                },
+                {
+                  "t": "\n第 2 节给 ModelScope 教程（仓库 "
+                },
+                {
+                  "c": true,
+                  "t": "Comfy-Org/minimax-H3"
+                },
+                {
+                  "t": "，含文件清单、\n放置目录与约 40GB 空间提示）。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "可选依赖"
+                },
+                {
+                  "t": "：逐个说明用途后询问是否安装——"
+                }
+              ]
+            },
+            {
+              "depth": 1,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "h3-prompt-writing"
+                },
+                {
+                  "t": "：专业改写 H3 六段式提示词（仅服务 official 与\nhybrid 的六段式外壳；wenwu 纯中文模式不依赖它）；"
+                }
+              ]
+            },
+            {
+              "depth": 1,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "jianying-editor"
+                },
+                {
+                  "t": "：剪映草稿自动拼合（本 skill 拼合阶段依赖）；"
+                }
+              ]
+            },
+            {
+              "depth": 1,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "comfy-mcp"
+                },
+                {
+                  "t": "：让 Codex 直接管理/运行 ComfyUI，可选增强。\n需要安装时按 "
+                },
+                {
+                  "href": "https://github.com/TFboy1/oh-my-minimaxh3-director/blob/master/references/setup-guide.md",
+                  "t": "setup-guide.md"
+                },
+                {
+                  "t": " 第 4 节执行；\n明确拒绝的记录下来，之后不再反复询问。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "输入与项目结构"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "输入：剧本文件（"
+            },
+            {
+              "c": true,
+              "t": ".md"
+            },
+            {
+              "t": " / "
+            },
+            {
+              "c": true,
+              "t": ".txt"
+            },
+            {
+              "t": "，或对话中的故事文本），可选参考图目录\n（"
+            },
+            {
+              "c": true,
+              "t": "refs/"
+            },
+            {
+              "t": "）与角色设定。输出项目放在 "
+            },
+            {
+              "c": true,
+              "t": "outputs/<项目名>/"
+            },
+            {
+              "t": "（或用户指定目录）："
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "<项目>/\n  storyboard.md          # 人读分镜\n  storyboard.json        # 机器可读分镜（build_workflows 输入）\n  prompts/seg_01.txt …   # H3 提示词（official / wenwu / hybrid）\n  workflows/seg_01_api.json …\n  jobs/params.json       # 参数清单（确认对象）\n  jobs/seg_01_job.json … # 提交/下载状态（断点恢复）\n  clips/raw/<batch>/seg_01_00001-audio.mp4 …\n  assemble_jianying_<标题>.py   # 生成的拼合业务脚本（放项目根）\n  edit/jianying-draft-report.json"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "分镜 JSON 结构与提示词格式见\n"
+            },
+            {
+              "href": "https://github.com/TFboy1/oh-my-minimaxh3-director/blob/master/references/storyboard-schema.md",
+              "t": "storyboard-schema.md"
+            },
+            {
+              "t": "；模板路由与字段映射见\n"
+            },
+            {
+              "href": "https://github.com/TFboy1/oh-my-minimaxh3-director/blob/master/references/workflow-routing.md",
+              "t": "workflow-routing.md"
+            },
+            {
+              "t": "；隧道操作见\n"
+            },
+            {
+              "href": "https://github.com/TFboy1/oh-my-minimaxh3-director/blob/master/references/cloudflared.md",
+              "t": "cloudflared.md"
+            },
+            {
+              "t": "；首次安装与硬件评估见\n"
+            },
+            {
+              "href": "https://github.com/TFboy1/oh-my-minimaxh3-director/blob/master/references/setup-guide.md",
+              "t": "setup-guide.md"
+            },
+            {
+              "t": "；导演级分镜与 WenWu 引擎见\n"
+            },
+            {
+              "href": "https://github.com/TFboy1/oh-my-minimaxh3-director/blob/master/references/wenwu-director.md",
+              "t": "wenwu-director.md"
+            },
+            {
+              "t": "；hybrid 完整示例见\n"
+            },
+            {
+              "href": "https://github.com/TFboy1/oh-my-minimaxh3-director/blob/master/references/hybrid-example.md",
+              "t": "hybrid-example.md"
+            },
+            {
+              "t": "；无人值守与资源监控见\n"
+            },
+            {
+              "href": "https://github.com/TFboy1/oh-my-minimaxh3-director/blob/master/references/resource-monitoring.md",
+              "t": "resource-monitoring.md"
+            },
+            {
+              "t": "。\nComfyUI API 调用与 comfy-mcp 见\n"
+            },
+            {
+              "href": "https://github.com/TFboy1/oh-my-minimaxh3-director/blob/master/references/api-and-mcp.md",
+              "t": "api-and-mcp.md"
+            },
+            {
+              "t": "。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "阶段 0：探测 ComfyUI 与可选隧道"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "运行 "
+                },
+                {
+                  "c": true,
+                  "t": "scripts/probe_comfy.py --workspace <工作区根> --write"
+                },
+                {
+                  "t": " 探测地址。\n探测顺序：本机 8188 → 已记录隧道 URL → AutoDL 配置；全部失败时用\n"
+                },
+                {
+                  "c": true,
+                  "t": "--interactive"
+                },
+                {
+                  "t": " 询问用户。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "询问用户是否需要远程访问"
+                },
+                {
+                  "t": "（这是唯一必须问的选项）。需要时运行\n"
+                },
+                {
+                  "c": true,
+                  "t": "scripts/ensure_cloudflared.py --workspace <工作区根>"
+                },
+                {
+                  "t": "：复用可达的已有\n隧道，否则自动下载 cloudflared 并启动 trycloudflare 临时隧道。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "把可用 "
+                },
+                {
+                  "c": true,
+                  "t": "base_url"
+                },
+                {
+                  "t": " 写入 "
+                },
+                {
+                  "c": true,
+                  "t": ".config/pipeline-config.json"
+                },
+                {
+                  "t": "，后续脚本自动读取。\n隧道失败不阻塞：回退原地址并继续。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "阶段 1：剧本 → 分镜"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "询问故事要求"
+                },
+                {
+                  "t": "：片长、风格、目标平台、角色/参考图、是否指定镜头结构；\n用户意图足够明确时直接创作，不连续追问。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "创建 "
+                },
+                {
+                  "c": true,
+                  "t": "outputs/<项目名>/"
+                },
+                {
+                  "t": "，按 storyboard-schema.md 生成衔接分镜：\n把剧本切段（默认每段 10 秒，5-15 秒可调），每段 2-3 个分镜，上下镜头之间\n写清衔接锚点（动作方向 / 视线 / 光线 / 道具 / 轮廓 / 声桥 / 受力），禁止\n无理由跳切。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "生成人物参考图四视图"
+                },
+                {
+                  "t": "：模型支持生成图片时直接生成；角色是网上已有角色\n时先搜索下载参考图再生成——每角色三张不同视角全身 + 一张脸部特写，存到\n"
+                },
+                {
+                  "c": true,
+                  "t": "refs/"
+                },
+                {
+                  "t": " 并在 "
+                },
+                {
+                  "c": true,
+                  "t": "storyboard.json"
+                },
+                {
+                  "t": " 的 "
+                },
+                {
+                  "c": true,
+                  "t": "characters"
+                },
+                {
+                  "t": " 登记。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "先做提示词模式决策，再写提示词"
+                },
+                {
+                  "t": "：写提示词前必须判断简报复杂度，并把\n"
+                },
+                {
+                  "c": true,
+                  "t": "meta.prompt_mode"
+                },
+                {
+                  "t": " 与 "
+                },
+                {
+                  "c": true,
+                  "t": "meta.prompt_mode_reason"
+                },
+                {
+                  "t": " 写入 storyboard.json，\n禁止静默走默认。三种模式："
+                }
+              ]
+            },
+            {
+              "depth": 1,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "hybrid"
+                },
+                {
+                  "t": "（推荐）：创意简报 / 游戏 PV / 宣传片 / 广告 / 短片默认。保持\n官方 H3 六段式英文外壳（subject_definitions / summary /\nretention_analysis / detailed_description / overall_soundscape /\nnon_diegetic_music），内容按 WenWu 导演标准写（逐秒镜头脉冲、生命核、\n八条生命通道、表演/状态肌理、音轨编排、结尾 "
+                },
+                {
+                  "c": true,
+                  "t": "constraints:"
+                },
+                {
+                  "t": " 风格与\n负向约束块），规范见\n"
+                },
+                {
+                  "href": "https://github.com/TFboy1/oh-my-minimaxh3-director/blob/master/references/wenwu-director.md",
+                  "t": "wenwu-director.md"
+                },
+                {
+                  "t": " 的「hybrid：官方\n六段式 × WenWu 导演深度」，完整示例见\n"
+                },
+                {
+                  "href": "https://github.com/TFboy1/oh-my-minimaxh3-director/blob/master/references/hybrid-example.md",
+                  "t": "hybrid-example.md"
+                },
+                {
+                  "t": "。项目还可附带\n视听签名 "
+                },
+                {
+                  "c": true,
+                  "t": "audiovisual_signature"
+                },
+                {
+                  "t": "、声音事件表 "
+                },
+                {
+                  "c": true,
+                  "t": "sound_events"
+                },
+                {
+                  "t": "、\n7 列镜头卡 "
+                },
+                {
+                  "c": true,
+                  "t": "shots"
+                },
+                {
+                  "t": "（含机位库/运镜库/转场库/高级技法）、节奏统计、\n世界锚点 "
+                },
+                {
+                  "c": true,
+                  "t": "world_anchors"
+                },
+                {
+                  "t": "、参考片样本 "
+                },
+                {
+                  "c": true,
+                  "t": "reference_films"
+                },
+                {
+                  "t": "、\n"
+                },
+                {
+                  "c": true,
+                  "t": "climax_segment"
+                },
+                {
+                  "t": " 与 "
+                },
+                {
+                  "c": true,
+                  "t": "total_duration"
+                },
+                {
+                  "t": "，规范见\n"
+                },
+                {
+                  "href": "https://github.com/TFboy1/oh-my-minimaxh3-director/blob/master/references/storyboard-schema.md",
+                  "t": "storyboard-schema.md"
+                },
+                {
+                  "t": "。"
+                }
+              ]
+            },
+            {
+              "depth": 1,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "wenwu"
+                },
+                {
+                  "t": "：用户明确提到导演 / 分镜衔接 / 镜头设计 / 表演 / WenWu，或\n要求纯中文导演分镜提示词时使用（WenWu 成片书写法）。"
+                }
+              ]
+            },
+            {
+              "depth": 1,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "official"
+                },
+                {
+                  "t": "：仅用于快速批量、无强风格要求的段级生成。\n判断规则：简报含风格系统、色彩系统、音乐编排、逐秒分镜或负向约束，\n或任务属性是 PV / 宣传片 / 广告 / 短片 → 必须 "
+                },
+                {
+                  "c": true,
+                  "t": "hybrid"
+                },
+                {
+                  "t": "。\n"
+                },
+                {
+                  "c": true,
+                  "t": "h3-prompt-writing"
+                },
+                {
+                  "t": " 只用于 "
+                },
+                {
+                  "c": true,
+                  "t": "official"
+                },
+                {
+                  "t": " 与 "
+                },
+                {
+                  "c": true,
+                  "t": "hybrid"
+                },
+                {
+                  "t": " 的六段式外壳；\n"
+                },
+                {
+                  "c": true,
+                  "t": "wenwu"
+                },
+                {
+                  "t": " 纯中文模式不依赖它。\n参考图在提示词中用 "
+                },
+                {
+                  "c": true,
+                  "t": "<Picture N>"
+                },
+                {
+                  "t": " 标签与 "
+                },
+                {
+                  "c": true,
+                  "t": "refs"
+                },
+                {
+                  "t": " 数组对应。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "分镜汇报（必须按秒段）"
+                },
+                {
+                  "t": "：分镜与提示词写完后，向用户汇报剧本时必须\n逐段给出"
+                },
+                {
+                  "b": true,
+                  "t": "精确时间轴"
+                },
+                {
+                  "t": "——「几秒到几秒 → 什么画面 → 什么对白」，禁止用\n“前面是开场、中间打斗、结尾反转”这类宽泛概括。汇报格式见\n"
+                },
+                {
+                  "href": "https://github.com/TFboy1/oh-my-minimaxh3-director/blob/master/references/storyboard-schema.md",
+                  "t": "storyboard-schema.md"
+                },
+                {
+                  "t": " 的「分镜汇报\n格式」；hybrid/wenwu 模式直接采用镜头卡里的 "
+                },
+                {
+                  "c": true,
+                  "t": "time"
+                },
+                {
+                  "t": "/"
+                },
+                {
+                  "c": true,
+                  "t": "duration"
+                },
+                {
+                  "t": "/"
+                },
+                {
+                  "c": true,
+                  "t": "content"
+                },
+                {
+                  "t": "/\n"
+                },
+                {
+                  "c": true,
+                  "t": "sound"
+                },
+                {
+                  "t": " 与台词。用户据此确认或指出要改的镜头后再进入阶段 2。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "阶段 2：工作流扫描、选择与构建"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "铁律：优先复用用户已有的工作流，禁止自行创建新工作流。"
+            },
+            {
+              "t": " 步骤如下："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "扫描用户工作流"
+                },
+                {
+                  "t": "："
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "python scripts/scan_workflows.py --project <项目目录> --workspace <工作区根>",
+          "language": "bash"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "扫描范围："
+            },
+            {
+              "c": true,
+              "t": "<项目>/workflows"
+            },
+            {
+              "t": "、"
+            },
+            {
+              "c": true,
+              "t": "<项目>/templates"
+            },
+            {
+              "t": "、"
+            },
+            {
+              "c": true,
+              "t": "<工作区>/workflows"
+            },
+            {
+              "t": "、\n   "
+            },
+            {
+              "c": true,
+              "t": "<工作区>/pv1min_workflows"
+            },
+            {
+              "t": " 与 "
+            },
+            {
+              "c": true,
+              "t": "pipeline-config.json"
+            },
+            {
+              "t": " 的 "
+            },
+            {
+              "c": true,
+              "t": "templates_dir"
+            },
+            {
+              "t": "。\n   输出每个候选的格式（API/UI）、模式（ref2va / i2v / t2v / batch）、参考图\n   槽位、Turbo 标记与模型文件。\n2. "
+            },
+            {
+              "b": true,
+              "t": "展示候选并询问用户"
+            },
+            {
+              "t": "：把扫描结果整理成表格（编号 / 文件 / 模式 / 适合\n   场景）给用户，询问“用哪个工作流”。用户选定后把映射写入\n   "
+            },
+            {
+              "c": true,
+              "t": "storyboard.json"
+            },
+            {
+              "t": "："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "整批统一："
+                },
+                {
+                  "c": true,
+                  "t": "meta.workflow_map = {\"<mode>\": \"路径或模板名\"}"
+                },
+                {
+                  "t": "；"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "按段指定："
+                },
+                {
+                  "c": true,
+                  "t": "meta.workflow_map = {\"<段号>\": \"路径或模板名\"}"
+                },
+                {
+                  "t": "，或直接在\n该段写 "
+                },
+                {
+                  "c": true,
+                  "t": "segments[].template"
+                },
+                {
+                  "t": "。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "只有以下情况才用内置模板"
+                },
+                {
+                  "t": "（"
+                },
+                {
+                  "c": true,
+                  "t": "assets/templates/"
+                },
+                {
+                  "t": " 的 ref2va / t2v /\ni2v）：扫描结果为空，或用户明确表示没有合适工作流、愿意用内置模板。\n内置模板也必须经用户确认，不允许静默替换。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "构建"
+                },
+                {
+                  "t": "："
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "python scripts/build_workflows.py --project <项目目录> --workspace <工作区根>",
+          "language": "bash"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "模板解析优先级："
+            },
+            {
+              "c": true,
+              "t": "segments[].template"
+            },
+            {
+              "t": " > "
+            },
+            {
+              "c": true,
+              "t": "meta.workflow_map[段号]"
+            },
+            {
+              "t": " >\n   "
+            },
+            {
+              "c": true,
+              "t": "meta.workflow_map[mode]"
+            },
+            {
+              "t": " > 内置模式推断（有参考图 → "
+            },
+            {
+              "c": true,
+              "t": "ref2va"
+            },
+            {
+              "t": "；首尾帧 →\n   "
+            },
+            {
+              "c": true,
+              "t": "i2v"
+            },
+            {
+              "t": "；纯文本 → "
+            },
+            {
+              "c": true,
+              "t": "t2v"
+            },
+            {
+              "t": "）。按 class_type 覆盖提示词、参考图、时长、步数、\n   scheduler、种子、分辨率与输出前缀，做后端校验（时长 5-15s、步数 4-40、\n   种子范围、参考图存在、提示词非空），写出 "
+            },
+            {
+              "c": true,
+              "t": "workflows/seg_XX_api.json"
+            },
+            {
+              "t": " 和\n   "
+            },
+            {
+              "c": true,
+              "t": "jobs/params.json"
+            },
+            {
+              "t": "，并打印参数汇总表。\n   用户工作流是 UI 格式时脚本会明确报错，要求先用 "
+            },
+            {
+              "c": true,
+              "t": "convert_ui_workflow.py"
+            },
+            {
+              "t": "\n   转换——"
+            },
+            {
+              "b": true,
+              "t": "脚本绝不自动改写用户工作流文件"
+            },
+            {
+              "t": "。\n提示词深度也做后端校验：六段齐全、镜头标记与时间码、hybrid 的\n"
+            },
+            {
+              "c": true,
+              "t": "constraints:"
+            },
+            {
+              "t": " 块；"
+            },
+            {
+              "c": true,
+              "t": "meta.strict_prompt_validation: true"
+            },
+            {
+              "t": " 时不达标直接拒绝。\nhybrid meta 另做后端校验：视听签名字段、段时长累加、高潮位置与声音事件表。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "阶段 3：参数确认"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "把 "
+                },
+                {
+                  "c": true,
+                  "t": "params.json"
+                },
+                {
+                  "t": " 汇总成表格展示给用户：段号 / 时长 / 模式 / 模板 / steps /\nscheduler / seed / 比例 / 参考图 / 输出前缀。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "用户可修改 "
+                },
+                {
+                  "c": true,
+                  "t": "storyboard.json"
+                },
+                {
+                  "t": " 中的参数（时长、步数、种子、模板、参考图等）\n后重跑阶段 2；不要做前端表单，脚本后端校验非法值并拒绝。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "用户确认后锁定参数，进入提交（"
+                },
+                {
+                  "c": true,
+                  "t": "params.json"
+                },
+                {
+                  "t": " 保持为提交依据）。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "阶段 3.5：无人值守确认（每次批量开始前必做）"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "每次开始批量提交前，"
+            },
+            {
+              "b": true,
+              "t": "询问用户本次是否无人值守"
+            },
+            {
+              "t": "："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "是"
+                },
+                {
+                  "t": "：与用户约定关机时间（本机 Windows 自动关机，或 AutoDL/云实例的到期\n时间——云端关机按 "
+                },
+                {
+                  "href": "https://github.com/TFboy1/oh-my-minimaxh3-director/blob/master/references/autodl-cloud.md",
+                  "t": "autodl-cloud.md"
+                },
+                {
+                  "t": " 用 API\n"
+                },
+                {
+                  "c": true,
+                  "t": "power_off"
+                },
+                {
+                  "t": " 或在云控制台设置）；把约定写入 "
+                },
+                {
+                  "c": true,
+                  "t": "jobs/run_plan.json"
+                },
+                {
+                  "t": "；按\n"
+                },
+                {
+                  "href": "https://github.com/TFboy1/oh-my-minimaxh3-director/blob/master/references/resource-monitoring.md",
+                  "t": "resource-monitoring.md"
+                },
+                {
+                  "t": " 启动\n"
+                },
+                {
+                  "c": true,
+                  "t": "scripts/monitor_resources.py"
+                },
+                {
+                  "t": " 后台监控 GPU 显存与系统内存（默认 warn 90% /\nstop 95%），到达约定时间且用户已授权时执行本机关机。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "否"
+                },
+                {
+                  "t": "：正常人工值守流程，跳过关机约定；资源监控可选。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "monitor_jobs.py"
+            },
+            {
+              "t": " 每轮会读取 "
+            },
+            {
+              "c": true,
+              "t": "jobs/resource_state.json"
+            },
+            {
+              "t": "，达到 stop 阈值时暂停\n本轮并报告，防止显存/内存爆掉。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "阶段 4：提交、监控与下载"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "python scripts/submit_jobs.py --project <项目目录> --workspace <工作区根>\npython scripts/monitor_jobs.py --project <项目目录> --workspace <工作区根>",
+          "language": "bash"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "submit_jobs.py"
+                },
+                {
+                  "t": " 先上传本地参考图到远程 input 目录（同批次缓存去重），再\nPOST "
+                },
+                {
+                  "c": true,
+                  "t": "/prompt"
+                },
+                {
+                  "t": "；"
+                },
+                {
+                  "c": true,
+                  "t": "node_errors"
+                },
+                {
+                  "t": " 非空时中止并报告缺什么。已提交/已下载的段\n自动跳过（"
+                },
+                {
+                  "c": true,
+                  "t": "--force"
+                },
+                {
+                  "t": " 可重提），支持 "
+                },
+                {
+                  "c": true,
+                  "t": "--segments 1,3"
+                },
+                {
+                  "t": " 部分提交。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "API 报错先查 "
+                },
+                {
+                  "b": true,
+                  "href": "https://github.com/TFboy1/oh-my-minimaxh3-director/blob/master/references/api-and-mcp.md",
+                  "t": "api-and-mcp.md"
+                },
+                {
+                  "b": true,
+                  "t": " 排查表"
+                },
+                {
+                  "t": "：不要\n盲目重试同一条命令，"
+                },
+                {
+                  "c": true,
+                  "t": "node_errors"
+                },
+                {
+                  "t": " / 超时 / SSL EOF / 任务 error 各有对应\n处理；连续 3 次无变化就停下来向用户报告。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "monitor_jobs.py"
+                },
+                {
+                  "t": " 轮询 "
+                },
+                {
+                  "c": true,
+                  "t": "/history/{prompt_id}"
+                },
+                {
+                  "t": "：错误提取报错并按重试上限\n（默认 2 次）重新提交，完成后把 MP4 下载到\n"
+                },
+                {
+                  "c": true,
+                  "t": "clips/raw/<batch>/seg_XX_00001-audio.mp4"
+                },
+                {
+                  "t": "；状态落盘，可断点续跑。\n监控长任务时放后台运行并定期查看 "
+                },
+                {
+                  "c": true,
+                  "t": "jobs/monitor_state.json"
+                },
+                {
+                  "t": "。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "单段重试后仍失败："
+                },
+                {
+                  "b": true,
+                  "t": "不要静默跳过"
+                },
+                {
+                  "t": "，向用户报告失败段与原因，由用户决定\n重跑、改参数或换模板。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "阶段 5：剪映拼合"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "确认片段齐全后生成业务脚本（遵守 jianying-editor“业务脚本放项目目录”规则）："
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "python scripts/generate_assembly.py --project <项目目录> --title <片名> \\\n  --width <宽> --height <高>",
+          "language": "bash"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "运行生成的 "
+                },
+                {
+                  "c": true,
+                  "t": "assemble_jianying_<标题>.py"
+                },
+                {
+                  "t": "（内部 bootstrap jy_wrapper，\n按段序 "
+                },
+                {
+                  "c": true,
+                  "t": "add_media_safe"
+                },
+                {
+                  "t": "，相邻段加“叠化 0.3s”转场，"
+                },
+                {
+                  "c": true,
+                  "t": "save()"
+                },
+                {
+                  "t": " 后写\n"
+                },
+                {
+                  "c": true,
+                  "t": "edit/jianying-draft-report.json"
+                },
+                {
+                  "t": "）。无字幕无 BGM。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "告知用户草稿名称与路径，让用户在剪映中打开微调；"
+                },
+                {
+                  "b": true,
+                  "t": "仅当用户显式要求"
+                },
+                {
+                  "t": "\n自动导出时，调用 jianying-editor 的 "
+                },
+                {
+                  "c": true,
+                  "t": "auto_exporter.py"
+                },
+                {
+                  "t": "（Windows + 剪映\n5.9 及以下）。导出前可先检查报告 JSON 的 "
+                },
+                {
+                  "c": true,
+                  "t": "draft_name"
+                },
+                {
+                  "t": "/"
+                },
+                {
+                  "c": true,
+                  "t": "drafts_root"
+                },
+                {
+                  "t": "。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "失败恢复与边界"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "断点："
+                },
+                {
+                  "c": true,
+                  "t": "jobs/"
+                },
+                {
+                  "t": " 下所有状态为 JSON，重跑任意阶段都幂等跳过已完成段。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "隧道抖动：探测失败自动回退；"
+                },
+                {
+                  "c": true,
+                  "t": "ensure_cloudflared.py --stop"
+                },
+                {
+                  "t": " 可停隧道。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "模板："
+                },
+                {
+                  "b": true,
+                  "t": "用户已有工作流优先"
+                },
+                {
+                  "t": "（scan_workflows.py 扫描 + 用户确认）；内置\n三套 H3 紧凑模板只是兜底；大模板（如 270KB 多图 Ref2VA）先经\n"
+                },
+                {
+                  "c": true,
+                  "t": "convert_ui_workflow.py"
+                },
+                {
+                  "t": " 转 API 格式再引用，不自动改写用户文件。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "本 skill 不做前端验证；所有合法性检查由脚本后端完成。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "不在 skill 目录内创建任何业务脚本/项目文件；业务产物一律放用户项目目录。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "脚本速查"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "脚本"
+              }
+            ],
+            [
+              {
+                "t": "用途"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "c": true,
+                  "t": "probe_comfy.py"
+                }
+              ],
+              [
+                {
+                  "t": "探测可用 ComfyUI 地址并写入配置"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "ensure_cloudflared.py"
+                }
+              ],
+              [
+                {
+                  "t": "复用/启动/停止 trycloudflare 隧道"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "convert_ui_workflow.py"
+                }
+              ],
+              [
+                {
+                  "t": "UI 格式模板转 API 格式"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "build_workflows.py"
+                }
+              ],
+              [
+                {
+                  "t": "分镜 → 每段 API 工作流 + 参数表（含提示词深度校验）"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "scan_workflows.py"
+                }
+              ],
+              [
+                {
+                  "t": "扫描用户已有工作流并给出候选清单（模式/格式/参考图）"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "submit_jobs.py"
+                }
+              ],
+              [
+                {
+                  "t": "上传资产并批量提交"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "monitor_jobs.py"
+                }
+              ],
+              [
+                {
+                  "t": "轮询下载、失败重试、断点续跑"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "generate_assembly.py"
+                }
+              ],
+              [
+                {
+                  "t": "生成剪映拼合业务脚本"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "check_hardware.py"
+                }
+              ],
+              [
+                {
+                  "t": "检测 GPU/内存/磁盘并给出本地运行建议"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "monitor_resources.py"
+                }
+              ],
+              [
+                {
+                  "t": "无人值守时监控 GPU 显存/内存，支持约定时间关机"
+                }
+              ]
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

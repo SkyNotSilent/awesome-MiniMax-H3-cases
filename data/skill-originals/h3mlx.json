@@ -1,0 +1,1860 @@
+{
+  "skillId": "h3mlx",
+  "kind": "markdown",
+  "title": "H3MLX",
+  "language": "en",
+  "capturedAt": "2026-09-13T11:14:20.499Z",
+  "source": {
+    "url": "https://github.com/RobZombAI/H3MLX",
+    "author": "RobZombAI",
+    "revision": "db3cae141c1cced70355f1d49f7268cf60d60db4"
+  },
+  "sections": [
+    {
+      "url": "https://github.com/RobZombAI/H3MLX/blob/master/.agents/skills/h3xml-engine/SKILL.md",
+      "title": "h3xml-engine",
+      "anchor": "skill-h3xml-engine",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "High-performance video and image generation toolkit for H3XML (MiniMax H3 Metal 4 NAX accelerated engine). Features calibrated aspect ratio presets, fast iteration modes, text-to-image and text-to-video pipelines on Apple Silicon (M-series with Unified Memory)."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "H3XML Engine & Presets Guide"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "H3XML is the native Metal 4 NAX inference engine for MiniMax H3 (33B parameters) on Apple Silicon (M-series with Unified Memory). It provides full mathematical compatibility with "
+            },
+            {
+              "c": true,
+              "t": "antirez/h3.c"
+            },
+            {
+              "t": " while delivering accelerated GPU denoise passes and zero-overhead model residency."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Calibrated Resolution & Aspect Ratio Configurations"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "1. 768x512 Balanced Widescreen (3:2)"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Command Flags"
+                },
+                {
+                  "t": ": "
+                },
+                {
+                  "c": true,
+                  "t": "--width 768 --height 512 --frames 90 --steps 20 --layers 45 --reuse 2 --use-int8-row-fc2"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Passes"
+                },
+                {
+                  "t": ": 10 GPU passes calculated"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Performance (4.0s / 90F)"
+                },
+                {
+                  "t": ": Denoise = "
+                },
+                {
+                  "c": true,
+                  "t": "113.69s"
+                },
+                {
+                  "t": ", Total = "
+                },
+                {
+                  "c": true,
+                  "t": "144.91s"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Characteristics"
+                },
+                {
+                  "t": ": Balanced token density for 3:2 landscape compositions."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "2. 864x480 Standard Wide 16:9 (Panavision)"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Command Flags"
+                },
+                {
+                  "t": ": "
+                },
+                {
+                  "c": true,
+                  "t": "--width 864 --height 480 --frames 90 --steps 40 --layers 50 --reuse 6 --use-int8-row-fc2"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Passes"
+                },
+                {
+                  "t": ": 8 GPU passes calculated"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Performance (4.0s / 90F)"
+                },
+                {
+                  "t": ": Denoise = "
+                },
+                {
+                  "c": true,
+                  "t": "104.43s"
+                },
+                {
+                  "t": ", Total = "
+                },
+                {
+                  "c": true,
+                  "t": "137.82s"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Characteristics"
+                },
+                {
+                  "t": ": Standard 16:9 cinematic aspect ratio with full 50 layers."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "3. 864x480 Standard Wide Balanced 16:9"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Command Flags"
+                },
+                {
+                  "t": ": "
+                },
+                {
+                  "c": true,
+                  "t": "--width 864 --height 480 --frames 90 --steps 20 --layers 45 --reuse 2 --use-int8-row-fc2"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Passes"
+                },
+                {
+                  "t": ": 11 GPU passes calculated"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Performance (4.0s / 90F)"
+                },
+                {
+                  "t": ": Denoise = "
+                },
+                {
+                  "c": true,
+                  "t": "126.03s"
+                },
+                {
+                  "t": ", Total = "
+                },
+                {
+                  "c": true,
+                  "t": "158.20s"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Characteristics"
+                },
+                {
+                  "t": ": 45 layers with step reuse 2 for 16:9 widescreen."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "4. 512x512 Master Square (1:1) — Fast Portrait"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Command Flags"
+                },
+                {
+                  "t": ": "
+                },
+                {
+                  "c": true,
+                  "t": "--width 512 --height 512 --frames 90 --steps 40 --layers 50 --reuse 6 --use-int8-row-fc2"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Passes"
+                },
+                {
+                  "t": ": 8 GPU passes calculated"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Performance (4.0s / 90F)"
+                },
+                {
+                  "t": ": Denoise = "
+                },
+                {
+                  "c": true,
+                  "t": "48.82s"
+                },
+                {
+                  "t": ", Total = "
+                },
+                {
+                  "c": true,
+                  "t": "75.73s"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Characteristics"
+                },
+                {
+                  "t": ": Square 1:1 format focusing token budget on close-up facial features."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "5. 512x512 Balanced Square (1:1)"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Command Flags"
+                },
+                {
+                  "t": ": "
+                },
+                {
+                  "c": true,
+                  "t": "--width 512 --height 512 --frames 90 --steps 20 --layers 45 --reuse 2 --use-int8-row-fc2"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Passes"
+                },
+                {
+                  "t": ": 11 GPU passes calculated"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Performance (4.0s / 90F)"
+                },
+                {
+                  "t": ": Denoise = "
+                },
+                {
+                  "c": true,
+                  "t": "59.86s"
+                },
+                {
+                  "t": ", Total = "
+                },
+                {
+                  "c": true,
+                  "t": "86.08s"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Characteristics"
+                },
+                {
+                  "t": ": Fast square generation with 45 layers."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "6. 768x768 High-Res Square (1:1)"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Command Flags"
+                },
+                {
+                  "t": ": "
+                },
+                {
+                  "c": true,
+                  "t": "--width 768 --height 768 --frames 90 --steps 20 --layers 45 --reuse 2 --use-int8-row-fc2"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Passes"
+                },
+                {
+                  "t": ": 11 GPU passes calculated"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Performance (4.0s / 90F)"
+                },
+                {
+                  "t": ": Denoise = "
+                },
+                {
+                  "c": true,
+                  "t": "237.12s"
+                },
+                {
+                  "t": ", Total = "
+                },
+                {
+                  "c": true,
+                  "t": "276.90s"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Characteristics"
+                },
+                {
+                  "t": ": 2304 spatial tokens for high spatial detail in 1:1 framing."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Fast Turnaround Configurations (1.0s / 22 Frames)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For rapid prompt exploration and lighting checks:"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "7. Fast Mode: 512x512 (22 Frames / ~1s)"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Command Flags"
+                },
+                {
+                  "t": ": "
+                },
+                {
+                  "c": true,
+                  "t": "--width 512 --height 512 --frames 22 --steps 20 --layers 45 --reuse 2 --use-int8-row-fc2"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Performance"
+                },
+                {
+                  "t": ": Denoise = "
+                },
+                {
+                  "c": true,
+                  "t": "8.79s"
+                },
+                {
+                  "t": ", Total = "
+                },
+                {
+                  "c": true,
+                  "t": "28.38s"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "8. Fast Mode: 768x512 Widescreen (22 Frames / ~1s)"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Command Flags"
+                },
+                {
+                  "t": ": "
+                },
+                {
+                  "c": true,
+                  "t": "--width 768 --height 512 --frames 22 --steps 40 --layers 50 --reuse 6 --use-int8-row-fc2"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Performance"
+                },
+                {
+                  "t": ": Denoise = "
+                },
+                {
+                  "c": true,
+                  "t": "15.01s"
+                },
+                {
+                  "t": ", Total = "
+                },
+                {
+                  "c": true,
+                  "t": "36.65s"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Text-to-Image (T2I) Snapshot Mode"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For 1-frame image generation:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Command Flags"
+                },
+                {
+                  "t": ": "
+                },
+                {
+                  "c": true,
+                  "t": "--width 768 --height 512 --frames 5 --steps 20 --layers 45 --reuse 1 --use-int8-row-fc2"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Generates an instant high-resolution frame via causal frame slicing ($T=5 \\to t_0$)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Execution & Environment Setup"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Native Metal 4 NAX environment flags:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "export H3_PROFILE=1\nexport H3_NAX=1\nexport H3_CPU_SAMPLER=1\nexport H3_ZERO_COPY_WEIGHTS=1\nexport H3_REUSE_MPS_COMMAND=1\nexport H3_DIT_COMMAND_BLOCKS=0\nexport H3_SOLVER=euler\nexport OMP_NUM_THREADS=18",
+          "language": "bash"
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/RobZombAI/H3MLX/blob/master/.agents/skills/minimax-h3-fast-master/SKILL.md",
+      "title": "minimax-h3-fast-master",
+      "anchor": "skill-minimax-h3-fast-master",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Fast Master execution toolkit for MiniMax H3 / H3-Max video generation on Apple Silicon M-series (Unified Memory). Combines 8-step / 5-step exact DPM++ 2M Trailing Flow, 50 full layers, dynamic int8 FC2 quantization, single-chunk and multi-chunk causal temporal lattice (T = 17n + 5), and zero-loss optical macro definition."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3 Fast Master: Architecture & Execution Guide"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "This skill specifies the engineering configuration for video generation with "
+            },
+            {
+              "b": true,
+              "t": "MiniMax H3 / H3-Max"
+            },
+            {
+              "t": " on "
+            },
+            {
+              "b": true,
+              "t": "Apple Silicon (M-series / Unified Memory)"
+            },
+            {
+              "t": ", calibrated for photorealistic optical fidelity and high GPU throughput (DiT denoise pass in ~10s on 1s clips, ~44s on 4s clips on M5 Max)."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "💎 Architecture & Pipeline"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "graph TD\n    subgraph Fast_Master_Pipeline [\"Fast Master Pipeline\"]\n        P[\"Macro Optical Prompting (35mm f/1.4, micro-textures)\"] --> Q[\"Text Encoder Qwen 3-VL (4.5s)\"]\n        Q --> D[\"H3 DiT (50 Full Layers, 100% Spatial Tokens)\"]\n        D --> S[\"DPM++ 2M Trailing Flow Solver + INT8-Row-FC2\"]\n        S --> C1[\"GPU Evaluation Mode:<br/>1. Exact Mode (--reuse 1): 8 evals (Maximum Quality)<br/>2. Turbo Mode (--reuse 2): 5 evals (Fast Turnaround)\"]\n        C1 --> V[\"3D Causal Video VAE (3x3 Tiling with 32px Overlap)\"]\n        V --> MP4[\"Direct Native MP4 Output\"]\n    end",
+          "language": "mermaid"
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "⚡ Key Configuration Parameters"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "Parameter"
+              }
+            ],
+            [
+              {
+                "t": "Recommended Value"
+              }
+            ],
+            [
+              {
+                "t": "Description / Engineering Rationale"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "b": true,
+                  "t": "Resolution"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "640x640"
+                },
+                {
+                  "t": " (or "
+                },
+                {
+                  "c": true,
+                  "t": "960x544"
+                },
+                {
+                  "t": " 16:9)"
+                }
+              ],
+              [
+                {
+                  "t": "Native resolution optimized for token density and UMA cache efficiency"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "b": true,
+                  "t": "DiT Layers"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "--layers 50"
+                }
+              ],
+              [
+                {
+                  "t": "No layer skipping: full 50 blocks evaluated for maximum photorealism"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "b": true,
+                  "t": "Token Reduction"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "OFF"
+                },
+                {
+                  "t": " (No flag)"
+                }
+              ],
+              [
+                {
+                  "t": "Zero spatial token compression: preserves fine iris, pore, and hair strand detail"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "b": true,
+                  "t": "Quantization"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "--use-int8-row-fc2"
+                }
+              ],
+              [
+                {
+                  "t": "Dynamic INT8 row-wise quantization on FC2 linear projections (bandwidth optimization)"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "b": true,
+                  "t": "Solver & Steps"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "--steps 8"
+                },
+                {
+                  "t": " (or "
+                },
+                {
+                  "c": true,
+                  "t": "5"
+                },
+                {
+                  "t": ")"
+                }
+              ],
+              [
+                {
+                  "t": "Native DPM++ 2M Trailing Flow solver integrated in Metal 4 NAX kernels"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "b": true,
+                  "t": "Step Reuse"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "--reuse 1"
+                },
+                {
+                  "t": " (Exact) / "
+                },
+                {
+                  "c": true,
+                  "t": "--reuse 2"
+                },
+                {
+                  "t": " (Fast)"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "--reuse 1"
+                },
+                {
+                  "t": " executes 8 full evaluations; "
+                },
+                {
+                  "c": true,
+                  "t": "--reuse 2"
+                },
+                {
+                  "t": " executes 5 evaluations"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "b": true,
+                  "t": "Causal Frame Lattice"
+                }
+              ],
+              [
+                {
+                  "t": "$T = 17n + 5$"
+                }
+              ],
+              [
+                {
+                  "t": "$n=1 \\to 22\\text{f}$ (1s), $n=2 \\to 39\\text{f}$ (2s), $n=5 \\to 90\\text{f}$ (4s)"
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "🚀 CLI Execution Example"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "#!/bin/bash\n# Fast Master Runner (Apple Silicon Native)\nexport H3_PROFILE=1\nexport H3_NAX=\"qkv-attn\"\nexport H3_ZERO_COPY_WEIGHTS=1\nexport H3_REUSE_MPS_COMMAND=1\nexport H3_GPU_SAMPLER=1\nexport OMP_NUM_THREADS=18\n\nexport METAL_DEVICE_WRAPPER_TYPE=0\nexport MTL_DEBUG_LAYER=0\nexport MTL_SHADER_VALIDATION=0\nexport METAL_CAPTURE_ENABLED=0\n\nMODEL_DIR=\"./models/MiniMax-H3-PDD-8Step\"\nPROMPT=\"Cinematic close-up portrait of a woman in natural light. Crisp optical definition, detailed radial iris fibers and specular reflections, natural skin texture, soft warm smile, wavy hair catching rim lighting. Soft blurred cafe background, authentic 35mm f/1.4 lens bokeh.\"\n\n# 1 Second High-Quality (22 Frames, Denoise ~10s):\n./h3-lora-lab/h3 --profile \\\n  -d \"$MODEL_DIR\" \\\n  -p \"$PROMPT\" \\\n  --width 640 --height 640 \\\n  --frames 22 \\\n  --steps 8 \\\n  --layers 50 \\\n  --reuse 1 \\\n  --use-int8-row-fc2 \\\n  --seed 333 \\\n  -o outputs/fast_master_1s.mp4\n\n# 4 Seconds Master (90 Frames, Denoise ~44s):\n./h3-lora-lab/h3 --profile \\\n  -d \"$MODEL_DIR\" \\\n  -p \"$PROMPT\" \\\n  --width 640 --height 640 \\\n  --frames 90 \\\n  --steps 8 \\\n  --layers 50 \\\n  --reuse 2 \\\n  --use-int8-row-fc2 \\\n  --seed 333 \\\n  -o outputs/fast_master_4s.mp4",
+          "language": "bash"
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "⏱️ Telemetry Reference Metrics (M5 Max 128GB UMA)"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "1 Second ($640 \\times 640$, 22 frames, 8 exact steps)"
+                },
+                {
+                  "t": ":"
+                }
+              ]
+            },
+            {
+              "depth": 1,
+              "inlines": [
+                {
+                  "t": "DiT GPU Denoise: "
+                },
+                {
+                  "b": true,
+                  "t": "$10.46\\text{ seconds}$"
+                }
+              ]
+            },
+            {
+              "depth": 1,
+              "inlines": [
+                {
+                  "t": "VAE Decoder: "
+                },
+                {
+                  "b": true,
+                  "t": "$8.73\\text{ seconds}$"
+                }
+              ]
+            },
+            {
+              "depth": 1,
+              "inlines": [
+                {
+                  "t": "Total Cold Latency: "
+                },
+                {
+                  "b": true,
+                  "t": "$36.0\\text{ seconds}$"
+                },
+                {
+                  "t": " "
+                },
+                {
+                  "i": true,
+                  "t": "(Warm run: $\\approx 19.5\\text{ s}$)"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "4 Seconds ($640 \\times 640$, 90 frames, 8 steps reuse-2)"
+                },
+                {
+                  "t": ":"
+                }
+              ]
+            },
+            {
+              "depth": 1,
+              "inlines": [
+                {
+                  "t": "DiT GPU Denoise: "
+                },
+                {
+                  "b": true,
+                  "t": "$44.66\\text{ seconds}$"
+                }
+              ]
+            },
+            {
+              "depth": 1,
+              "inlines": [
+                {
+                  "t": "VAE Decoder: "
+                },
+                {
+                  "b": true,
+                  "t": "$43.89\\text{ seconds}$"
+                }
+              ]
+            },
+            {
+              "depth": 1,
+              "inlines": [
+                {
+                  "t": "Total Cold Latency: "
+                },
+                {
+                  "b": true,
+                  "t": "$107.0\\text{ seconds}$"
+                },
+                {
+                  "t": " "
+                },
+                {
+                  "i": true,
+                  "t": "(Warm run: $\\approx 88.0\\text{ s}$)"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/RobZombAI/H3MLX/blob/master/.agents/skills/minimax-h3-max/SKILL.md",
+      "title": "minimax-h3-max",
+      "anchor": "skill-minimax-h3-max",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Baseline high-fidelity guide and execution toolkit for MiniMax H3-Max video generation, SGLang miles RL + LoRA SFT training, PDD 6-step/8-step high-fidelity inference, and Apple Silicon Metal 4 NAX native acceleration. Activate whenever the user mentions MiniMax H3, H3-Max, Hailuo 3, SGLang miles, or asks for high-fidelity 6-step/8-step cinematic video generation with synchronized 48 kHz audio."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3-Max (Golden High-Fidelity Standard Suite)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "This skill provides full technical instructions, training recipes, and native Apple Silicon M5 Max execution commands for "
+            },
+            {
+              "b": true,
+              "t": "MiniMax H3-Max"
+            },
+            {
+              "t": " with 6-step and 8-step high-fidelity DiT denoise."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "1. Golden Standard Execution Baseline (6-8 Steps / 50 Layers / 73 Frames)"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "cd /Users/robzomb/Documents/antigravity/cool-hopper/h3-lora-lab\n\nexport H3_PROFILE=1\nexport H3_NAX=1\nexport H3_ZERO_COPY_WEIGHTS=1\nexport H3_REUSE_MPS_COMMAND=1\nexport H3_GPU_SAMPLER=1\nexport OMP_NUM_THREADS=12\n\ncaffeinate -dimsu nice -n -20 ./h3 --profile \\\n  -d \"/Users/robzomb/h3-models/MiniMax-H3-PDD-8Step\" \\\n  -p \"YOUR_CINEMATIC_PROMPT\" \\\n  --width 960 --height 544 \\\n  --frames 73 \\\n  --steps 8 \\\n  --layers 50 \\\n  --reuse 2 \\\n  --use-int8-row-fc2 \\\n  --seed 333 \\\n  -o \"outputs/raw_video.mp4\"",
+          "language": "bash"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Golden Rules:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Canvas Geometry"
+                },
+                {
+                  "t": ": Always use $960 \\times 544$ (Width $\\ge$ Height) to preserve 3D-RoPE rotary coordinate alignment and prevent body/limb stretching."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Causal Chunking"
+                },
+                {
+                  "t": ": Always use $73$ frames ($17 \\times 4 + 5$) for exactly 32 VAE tiles (cuts VAE decode to ~40s with zero padding)."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Social Vertical Reels (9:16)"
+                },
+                {
+                  "t": ": Generate natively at $960 \\times 544$ and master to $1080 \\times 1920$ via FFmpeg hardware center crop."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Forbidden Flags"
+                },
+                {
+                  "t": ": Never use "
+                },
+                {
+                  "c": true,
+                  "t": "--use-reference-rope"
+                },
+                {
+                  "t": " (causes ghosting) or "
+                },
+                {
+                  "c": true,
+                  "t": "--sol-attn"
+                },
+                {
+                  "t": "/"
+                },
+                {
+                  "c": true,
+                  "t": "--sol-cache"
+                },
+                {
+                  "t": " (causes CPU locks)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "2. 10-Bit Main10 Apple Native Mastering"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "# 16:9 Landscape Master (1920x1080)\nffmpeg -y -i raw.mp4 \\\n  -filter_complex \"[0:v]scale=1920:1080:flags=lanczos+accurate_rnd+full_chroma_int+full_chroma_inp,cas=0.30,format=yuv420p10le[v];[0:a]aresample=48000,loudnorm=I=-14:TP=-1.0:LRA=11[a]\" \\\n  -map \"[v]\" -map \"[a]\" \\\n  -c:v hevc_videotoolbox -profile:v main10 -pix_fmt p010le -b:v 80M -tag:v hvc1 -r 24 \\\n  -c:a aac -b:a 320k -ar 48000 -movflags +faststart master_1080p.mp4\n\n# 9:16 Vertical Reel Master (1080x1920)\nffmpeg -y -i raw.mp4 \\\n  -filter_complex \"[0:v]crop=ih*9/16:ih:(iw-ih*9/16)/2:0,scale=1080:1920:flags=lanczos+accurate_rnd+full_chroma_int+full_chroma_inp,cas=0.30,format=yuv420p10le[v];[0:a]aresample=48000,loudnorm=I=-14:TP=-1.0:LRA=11[a]\" \\\n  -map \"[v]\" -map \"[a]\" \\\n  -c:v hevc_videotoolbox -profile:v main10 -pix_fmt p010le -b:v 80M -tag:v hvc1 -r 24 \\\n  -c:a aac -b:a 320k -ar 48000 -movflags +faststart master_reel_9x16.mp4",
+          "language": "bash"
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/RobZombAI/H3MLX/blob/master/.agents/skills/minimax-h3-turbo/SKILL.md",
+      "title": "minimax-h3-turbo",
+      "anchor": "skill-minimax-h3-turbo",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Ultra-fast ComfyUI co-designed execution toolkit for MiniMax H3 / H3-Max Turbo video generation. Features SLA-Attention (Sparse Local Attention in middle DiT blocks 14-36), Predictive Euler Step Reuse (reuse 2), 4-step PDD distillation, Motion Context temporal video chaining, and sub-90s generation on Apple Silicon M5 Max. Activate whenever the user asks for fast H3 generation, ComfyUI H3 workflows, SLA-attention, motion context, or sub-90s / turbo video generation."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3-Turbo (ComfyUI Co-Design & Fast Suite)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "This skill provides ultra-fast inference recipes and continuous sequence chaining based on the ComfyUI Cloud graph architecture and Sol-Engine optimizations."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "1. Fast Turbo Engine (4 Steps / 45 Layers / Reuse 2 / SLA-Attention)"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "cd /Users/robzomb/Documents/antigravity/cool-hopper/h3-lora-lab\n\n# SLA-Attention Token Sparsity (Blocks 14-36)\nexport H3_TOKEN_REDUCTION=1\nexport H3_TOKEN_REDUCTION_BLOCKS=\"14:36\"\nexport H3_TOKEN_REDUCTION_SCALE=\"1.0\"\nexport H3_PROFILE=1\nexport H3_NAX=1\nexport H3_ZERO_COPY_WEIGHTS=1\nexport H3_REUSE_MPS_COMMAND=1\nexport H3_GPU_SAMPLER=1\n\ncaffeinate -dimsu nice -n -20 ./h3 --profile \\\n  -d \"/Users/robzomb/h3-models/MiniMax-H3-PDD-8Step\" \\\n  -p \"YOUR_PROMPT\" \\\n  --width 960 --height 544 \\\n  --frames 107 \\\n  --steps 4 \\\n  --layers 45 \\\n  --reuse 2 \\\n  --token-reduction 1 \\\n  --use-int8-row-fc2 \\\n  -o \"outputs/turbo_raw.mp4\"",
+          "language": "bash"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "2. Motion Context (Temporal Sequence Chaining)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "To extend a video continuously across multiple shots without visual jumping:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "# Pass the last frame of Clip 1 as the first frame of Clip 2\n./h3 --profile \\\n  -d \"/Users/robzomb/h3-models/MiniMax-H3-PDD-8Step\" \\\n  -p \"Continuation prompt...\" \\\n  --first \"outputs/clip1_last_frame.jpg\" \\\n  --frames 107 --steps 4 --layers 45 --reuse 2 \\\n  -o \"outputs/clip2_raw.mp4\"",
+          "language": "bash"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "3. Automated Unified Runner"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "You can also run directly via:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "./h3_max_suite/inference/h3_max_engine.sh \"YOUR_PROMPT\" \"outputs/my_video.mp4\" [STEPS=4] [WIDTH=960] [HEIGHT=544] [LAYERS=45] [FRAMES=107] [REUSE=2]",
+          "language": "bash"
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/RobZombAI/H3MLX/blob/master/SKILL.md",
+      "title": "h3mlx",
+      "anchor": "skill-h3mlx",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Autonomous AI agent execution skill for high-speed, photorealistic MiniMax-H3 video and 48kHz audio generation on Apple Silicon (Metal 4 / MLX / Pure C). Includes Fast Master (8-step) and FastVideo (4-step) presets, hardware auto-profiling, and broadcast mastering."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "H3MLX: AI Agent Execution Skill for MiniMax-H3 on Apple Silicon"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "This skill enables any autonomous agent (such as Hermes, Antigravity, or LangChain agents) to programmatically invoke, benchmark, and orchestrate photorealistic video and synchronized 48kHz audio generation using the high-performance C/Metal 4 MiniMax-H3 engine on Apple Silicon."
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "⚡ Agent Capability Matrix"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "Action"
+              }
+            ],
+            [
+              {
+                "t": "Preset ID"
+              }
+            ],
+            [
+              {
+                "t": "Command Pattern"
+              }
+            ],
+            [
+              {
+                "t": "Denoise Latency (1.6s)"
+              }
+            ],
+            [
+              {
+                "t": "Primary Use-Case"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "b": true,
+                  "t": "8K Gold Master"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "champion"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "./h3_master_cli.sh champion \"<prompt>\""
+                }
+              ],
+              [
+                {
+                  "b": true,
+                  "t": "$\\approx 12.5\\text{ s}$"
+                }
+              ],
+              [
+                {
+                  "t": "High-definition commercial portraits, natural skin texture, iris reflections."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "b": true,
+                  "t": "Sub-15s Turbo"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "turbo"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "./h3_master_cli.sh turbo \"<prompt>\""
+                }
+              ],
+              [
+                {
+                  "b": true,
+                  "t": "$\\approx 6.5\\text{ s}$"
+                }
+              ],
+              [
+                {
+                  "t": "Fast iterations, storyboard generation, rapid social media clips."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "b": true,
+                  "t": "Anamorphic 16:9"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "cinema"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "./h3_master_cli.sh cinema \"<prompt>\""
+                }
+              ],
+              [
+                {
+                  "b": true,
+                  "t": "$\\approx 16.4\\text{ s}$"
+                }
+              ],
+              [
+                {
+                  "t": "Cinematic landscape shots ($960 \\times 544$)."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "b": true,
+                  "t": "Vertical Reel 9:16"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "reel"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "./h3_master_cli.sh reel \"<prompt>\" 544 960 39 <img_path>"
+                }
+              ],
+              [
+                {
+                  "b": true,
+                  "t": "$\\approx 16.4\\text{ s}$"
+                }
+              ],
+              [
+                {
+                  "t": "Vertical social videos ($544 \\times 960$) with image conditioning."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "b": true,
+                  "t": "Ultra Draft"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "draft"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "./h3_master_cli.sh draft \"<prompt>\""
+                }
+              ],
+              [
+                {
+                  "b": true,
+                  "t": "$\\approx 3.2\\text{ s}$"
+                }
+              ],
+              [
+                {
+                  "t": "Prompt validation and lighting checks in sub-10s total turnaround."
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "🛠️ Autonomous Agent Invocation Protocol"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When an AI agent needs to generate or master video assets:"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Step 1: Tool Execution via Bash"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "# Execute the Master CLI with designated preset, prompt, and optional conditioning\n./h3_master_cli.sh [preset_id] \"[descriptive prompt]\" [width] [height] [frames] [first_frame_path]",
+          "language": "bash"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Step 2: Causal Temporal Alignment Rule"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Agents must align frame counts to the causal temporal lattice formula:\n$$\\text{Frames} = 17n + 5 \\quad (n \\ge 1)$$"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "$n=1 \\to 22 \\text{ frames}$ ($0.9\\text{s}$ @ 24fps)"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "$n=2 \\to 39 \\text{ frames}$ ($1.6\\text{s}$ @ 24fps)"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "$n=3 \\to 56 \\text{ frames}$ ($2.3\\text{s}$ @ 24fps)"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "$n=5 \\to 90 \\text{ frames}$ ($3.8\\text{s}$ @ 24fps)"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "$n=8 \\to 141 \\text{ frames}$ ($6.0\\text{s}$ @ 24fps)"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "$n=11 \\to 192 \\text{ frames}$ ($8.0\\text{s}$ @ 24fps)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Step 3: Structured Output Parsing"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The script outputs structured JSON metadata upon completion:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "{\n  \"status\": \"success\",\n  \"preset\": \"champion\",\n  \"frames\": 39,\n  \"resolution\": \"640x640\",\n  \"raw_output\": \"outputs/raw_champion_39f_TIMESTAMP.mp4\",\n  \"master_output\": \"outputs/master_champion_39f_TIMESTAMP.mp4\",\n  \"audio_spec\": \"48000Hz stereo AAC (-14 LUFS EBU R128)\",\n  \"metrics\": {\n    \"gpu_denoise_sec\": 12.55,\n    \"vae_decode_sec\": 9.88,\n    \"total_latency_sec\": 44.92,\n    \"throughput_fps\": 3.11\n  }\n}",
+          "language": "json"
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "🧠 Environment & Subagent Tool Equipping"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "To equip Hermes or subagents with this skill:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Place the repository in the agent's active workspace or skills folder ("
+                },
+                {
+                  "c": true,
+                  "t": ".agents/skills/h3mlx"
+                },
+                {
+                  "t": " or "
+                },
+                {
+                  "c": true,
+                  "t": "~/.agents/skills/h3mlx"
+                },
+                {
+                  "t": ")."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "The agent reads "
+                },
+                {
+                  "c": true,
+                  "t": "SKILL.md"
+                },
+                {
+                  "t": " and discovers available execution binaries ("
+                },
+                {
+                  "c": true,
+                  "t": "./h3_master_cli.sh"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "./h3"
+                },
+                {
+                  "t": ")."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "The agent can trigger generation, inspect outputs via "
+                },
+                {
+                  "c": true,
+                  "t": "ffmpeg"
+                },
+                {
+                  "t": ", and report status back to user conversations seamlessly."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -282,6 +282,37 @@ for (const item of tutorialGuides.filter((guide) => guide.original)) {
 }
 for (const name of originalFiles) errors.push(`tutorialOriginals.${name}: no guide references this capture`)
 
+// Skill packages: curated metadata plus a captured original for each package.
+const skills = JSON.parse(await readFile(resolve(root, 'data/skills.json'), 'utf8'))
+const skillCategories = new Set(['prompt', 'production', 'comfyui', 'api', 'local'])
+const skillIds = new Set()
+const skillOriginalFiles = new Set((await readdir(resolve(root, 'data/skill-originals')).catch(() => [])).filter((name) => name.endsWith('.json')))
+for (const [index, item] of skills.entries()) {
+  const at = `skills[${index}]`
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(item.id ?? '') || skillIds.has(item.id)) errors.push(`${at}.id must be a unique slug`)
+  skillIds.add(item.id)
+  if (!item.name?.trim() || /[\u3400-\u9fff]/u.test(item.name)) errors.push(`${at}.name must be non-empty and language-neutral`)
+  if (!/^[\w.-]+\/[\w.-]+$/.test(item.repository ?? '')) errors.push(`${at}.repository must be owner/repo`)
+  if (!item.branch || !item.author) errors.push(`${at}: branch and author are required`)
+  if (!skillCategories.has(item.category)) errors.push(`${at}.category is invalid`)
+  if (typeof item.official !== 'boolean' || (item.official && !item.repository.startsWith('MiniMax-AI/'))) errors.push(`${at}.official must be true only for MiniMax-AI repositories`)
+  if (!item.summary?.zh?.trim() || !item.summary?.en?.trim() || /[\u3400-\u9fff]/u.test(item.summary.en)) errors.push(`${at}.summary needs Chinese and CJK-free English text`)
+  if (!Array.isArray(item.skills) || (!item.catalog && !item.skills.length)) errors.push(`${at}.skills must list captured SKILL.md files`)
+  for (const skill of item.skills ?? []) if (!skill.name || !/(^|\/)SKILL\.md$/.test(skill.path ?? '') || typeof skill.description !== 'string') errors.push(`${at}.skills has an invalid entry: ${skill.path}`)
+  if (!Number.isSafeInteger(item.skillCount) || item.skillCount < 1 || (!item.catalog && item.skillCount !== item.skills.length)) errors.push(`${at}.skillCount is invalid`)
+  if (!Number.isSafeInteger(item.stars) || item.stars < 0 || Number.isNaN(Date.parse(item.starsAt)) || Number.isNaN(Date.parse(item.updatedAt)) || Number.isNaN(Date.parse(item.addedAt))) errors.push(`${at}: stars and dates are required`)
+  if (!item.original) { errors.push(`${at}.original is required`); continue }
+  if (!skillOriginalFiles.delete(`${item.id}.json`)) { errors.push(`${at}: captured original missing`); continue }
+  const original = JSON.parse(await readFile(resolve(root, `data/skill-originals/${item.id}.json`), 'utf8'))
+  errors.push(...tutorialOriginalErrors(original).map((error) => `${at}: ${error}`))
+  if (original.skillId !== item.id || original.capturedAt !== item.original.capturedAt) errors.push(`${at}: skill marker does not match capture`)
+  const images = original.sections.flatMap((section) => section.blocks.flatMap((block) => [block.type === 'image' ? block.src : null, block.image?.src])).filter(Boolean)
+  for (const src of new Set(images)) {
+    try { await access(resolve(root, `public${src}`)) } catch { errors.push(`${at}: missing mirrored image ${src}`) }
+  }
+}
+for (const name of skillOriginalFiles) errors.push(`skillOriginals.${name}: no package references this capture`)
+
 for (const item of tutorialGuides) {
   for (const id of item.nextGuideIds ?? []) if (!tutorialGuides.some(guide => guide.id === id) || id === item.id) errors.push(`Invalid next tutorial: ${item.id} -> ${id}`)
   for (const related of item.relatedCases ?? []) if (!ids.has(related.id)) errors.push(`Unknown tutorial case: ${related.id}`)
@@ -363,4 +394,4 @@ if (errors.length) {
   console.error(errors.join('\n'))
   process.exit(1)
 }
-console.log(`Validated ${cases.length} cases, ${tutorials.length} resources, ${tutorialGuides.length} tutorial guides, and ${creatorCatalog.creators.length} ranked creators.`)
+console.log(`Validated ${cases.length} cases, ${tutorials.length} resources, ${tutorialGuides.length} tutorial guides, ${skills.length} skill packages, and ${creatorCatalog.creators.length} ranked creators.`)

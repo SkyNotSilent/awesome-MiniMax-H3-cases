@@ -50,6 +50,7 @@ import {
   pathFor,
   provenanceLabel,
   resolveRoute,
+  skillPath,
   sourceLabel,
   taxonomyLabel,
   tutorialEcosystemPath,
@@ -72,6 +73,7 @@ import {
 } from './updates'
 
 const TutorialOriginalView = lazy(() => import('./TutorialOriginal'))
+const SkillsRoute = lazy(() => import('./SkillsPages'))
 const testCases = import.meta.env.MODE === 'test' ? rawCases as VideoCase[] : null
 const testCreatorCatalog = import.meta.env.MODE === 'test' ? rawCreators as CreatorCatalog : null
 const testTutorialResources = import.meta.env.MODE === 'test' ? rawTutorials as TutorialResource[] : null
@@ -404,6 +406,8 @@ function App() {
         : `MiniMax H3 cases, complete public Prompts, and field guides by ${activeCreator.displayName}.`
     : route.page === 'tutorials' || route.page === 'tutorial-ecosystem'
     ? t.tutorials.description
+    : route.page === 'skills' || route.page === 'skill-detail'
+      ? (language === 'zh' ? '面向 MiniMax H3 的官方与社区 Agent Skill，完整收录 SKILL.md 原文并附安装命令。' : 'Official and community Agent Skills for MiniMax H3, each with its complete SKILL.md and an install command.')
     : route.page === 'creators'
       ? t.creators.description
     : route.page === 'faq'
@@ -423,6 +427,10 @@ function App() {
         ? language === 'zh'
           ? 'MiniMax H3 教程与工具生态 — MiniMax H3 Cases & Guides'
           : 'MiniMax H3 Tutorial and Tool Ecosystem — MiniMax H3 Cases & Guides'
+      : route.page === 'skills' || route.page === 'skill-detail'
+        ? language === 'zh'
+          ? 'MiniMax H3 Skills：官方与社区 Agent Skill — MiniMax H3 Cases & Guides'
+          : 'MiniMax H3 Skills: official and community Agent Skills — MiniMax H3 Cases & Guides'
       : route.page === 'creators'
         ? language === 'zh'
           ? 'MiniMax H3 优质创作者动态榜单 — MiniMax H3 Cases & Guides'
@@ -466,7 +474,9 @@ function App() {
         ? tutorialEcosystemPath(nextLanguage)
         : route.page === 'creator-detail' && activeCreator
           ? creatorPath(nextLanguage, activeCreator.slug)
-        : pathFor(nextLanguage, route.page as Exclude<AppPage, 'tutorial-detail' | 'tutorial-ecosystem' | 'creator-detail'>)
+        : route.page === 'skill-detail' && route.skillSlug
+          ? skillPath(nextLanguage, route.skillSlug)
+        : pathFor(nextLanguage, route.page as Exclude<AppPage, 'tutorial-detail' | 'tutorial-ecosystem' | 'creator-detail' | 'skill-detail'>)
     const nextPath = `${nextBasePath}${window.location.search}${window.location.hash}`
     window.history.pushState(window.history.state, '', nextPath)
     setRoute({ ...route, language: nextLanguage })
@@ -481,11 +491,12 @@ function App() {
       {route.page === 'tutorial-ecosystem' && tutorialGuides && tutorialResources && <TutorialEcosystemPage language={language} tutorialGuides={tutorialGuides} tutorialResources={tutorialResources} />}
       {route.page === 'tutorial-detail' && activeTutorial && tutorialGuides && tutorialResources && <TutorialDetailPage language={language} tutorial={activeTutorial} tutorialGuides={tutorialGuides} tutorialResources={tutorialResources} creators={creatorCatalog?.creators} />}
       {route.page === 'tutorial-detail' && tutorialGuides && !activeTutorial && <TutorialNotFound language={language} />}
+      {(route.page === 'skills' || route.page === 'skill-detail') && <Suspense fallback={<ResourceState language={language} />}><SkillsRoute language={language} slug={route.skillSlug} /></Suspense>}
       {route.page === 'creators' && creatorCatalog && catalog && tutorialGuides && <CreatorsPage language={language} creatorCatalog={creatorCatalog} cases={catalog.cases} tutorialGuides={tutorialGuides} />}
       {route.page === 'creator-detail' && activeCreator && catalog && tutorialGuides && <CreatorDetailPage key={navigation} language={language} creator={activeCreator} cases={catalog.cases} featuredCaseIds={catalog.featuredCaseIds} tutorialGuides={tutorialGuides} />}
       {route.page === 'creator-detail' && creatorCatalog && !activeCreator && <CreatorNotFound language={language} />}
-      {route.page !== 'home' && route.page !== 'faq' && ((!catalog && catalogError) || routeDataError) && <ResourceState language={language} failed onRetry={() => { reloadCatalog(); reloadRouteData() }} />}
-      {route.page !== 'home' && route.page !== 'faq' && !routeDataError && (!catalog || (needsTutorials && !tutorialGuides) || (needsCreators && !creatorCatalog)) && <ResourceState language={language} />}
+      {!['home', 'faq', 'skills', 'skill-detail'].includes(route.page) && ((!catalog && catalogError) || routeDataError) && <ResourceState language={language} failed onRetry={() => { reloadCatalog(); reloadRouteData() }} />}
+      {!['home', 'faq', 'skills', 'skill-detail'].includes(route.page) && !routeDataError && (!catalog || (needsTutorials && !tutorialGuides) || (needsCreators && !creatorCatalog)) && <ResourceState language={language} />}
       {route.page === 'faq' && <FaqPage language={language} />}
       <Footer language={language} />
     </main>
@@ -522,6 +533,8 @@ function Header({
       ? tutorialEcosystemPath(otherLanguage)
     : page === 'creator-detail'
       ? creatorPath(otherLanguage, resolveRoute(window.location.pathname).creatorSlug || '')
+    : page === 'skill-detail'
+      ? skillPath(otherLanguage, resolveRoute(window.location.pathname).skillSlug || '')
       : pathFor(otherLanguage, page)
 
   return (
@@ -534,6 +547,7 @@ function Header({
         <nav aria-label={language === 'zh' ? '主导航' : 'Primary navigation'}>
           <a href={pathFor(language, 'home')} aria-current={page === 'home' ? 'page' : undefined}>{t.nav.cases}</a>
           <a href={pathFor(language, 'tutorials')} aria-current={page === 'tutorials' || page === 'tutorial-detail' || page === 'tutorial-ecosystem' ? 'page' : undefined}>{t.nav.tutorials}</a>
+          <a href={pathFor(language, 'skills')} aria-current={page === 'skills' || page === 'skill-detail' ? 'page' : undefined}>{t.nav.skills}</a>
           <a href={pathFor(language, 'creators')} aria-current={page === 'creators' || page === 'creator-detail' ? 'page' : undefined}>{t.nav.creators}</a>
           <a href={pathFor(language, 'faq')} aria-current={page === 'faq' ? 'page' : undefined}>{t.nav.faq}</a>
         </nav>
@@ -1574,6 +1588,12 @@ function TutorialsPage({
           </div>
         </section>
 
+        <a className="tutorial-skills-band" href={pathFor(language, 'skills')}>
+          <small>{language === 'zh' ? '03 / H3 SKILLS' : '03 / H3 SKILLS'}</small>
+          <strong>{language === 'zh' ? '把 H3 装进你的 Agent' : 'Put H3 inside your agent'}</strong>
+          <span>{language === 'zh' ? '官方与社区 Agent Skill，完整收录 SKILL.md，一行命令安装。' : 'Official and community Agent Skills with the full SKILL.md and a one-line install.'}</span>
+          <ChevronRight size={20} aria-hidden="true" />
+        </a>
         <nav className="tutorial-track-grid" aria-label={language === 'zh' ? '学习路线' : 'Learning tracks'}>
           {(['run', 'create'] as const).map((track) => <button key={track} type="button" aria-pressed={activeTrack === track} onClick={() => setActiveTrack(activeTrack === track ? 'all' : track)}>
             <small>{track === 'run' ? '01 / RUN' : '02 / CREATE'}</small>

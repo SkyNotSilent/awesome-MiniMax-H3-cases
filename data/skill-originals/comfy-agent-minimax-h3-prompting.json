@@ -1,0 +1,180 @@
+{
+  "skillId": "comfy-agent-minimax-h3-prompting",
+  "kind": "markdown",
+  "title": "comfy-agent minimax-h3-prompting",
+  "language": "en",
+  "capturedAt": "2026-09-13T11:14:21.885Z",
+  "source": {
+    "url": "https://github.com/shinshin86/comfy-agent",
+    "author": "shinshin86",
+    "revision": "becb9b191831623d96f9704a69adb1c8c87bf665",
+    "license": "MIT"
+  },
+  "sections": [
+    {
+      "url": "https://github.com/shinshin86/comfy-agent/blob/main/.claude/skills/minimax-h3-prompting/SKILL.md",
+      "title": "minimax-h3-prompting",
+      "anchor": "skill-minimax-h3-prompting",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Write or refine prompts for MiniMax H3 video generation via comfy-agent (minimax_h3_t2v / minimax_h3_i2v / minimax_h3_r2v presets). Use whenever composing the --104_prompt for an H3 run, when a user asks for a video clip on an H3 environment, or when an H3 output missed the intent (wrong audio, ignored camera move, style drift, rushed pacing) and the prompt needs iteration."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "minimax-h3-prompting"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "Read "
+            },
+            {
+              "b": true,
+              "href": "https://github.com/shinshin86/comfy-agent/blob/main/docs/minimax-h3-prompting.md",
+              "t": "docs/minimax-h3-prompting.md"
+            },
+            {
+              "b": true,
+              "t": "\nbefore composing any H3 prompt — it is the single source of truth."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Non-negotiables it enforces:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "H3 renders picture "
+                },
+                {
+                  "b": true,
+                  "t": "and stereo audio"
+                },
+                {
+                  "t": " in one pass: always direct\nambience and music explicitly, or the model invents them."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Render the final block in the official three-field format\n("
+                },
+                {
+                  "c": true,
+                  "t": "integrated_multimodal_description"
+                },
+                {
+                  "t": " / "
+                },
+                {
+                  "c": true,
+                  "t": "overall_soundscape"
+                },
+                {
+                  "t": " /\n"
+                },
+                {
+                  "c": true,
+                  "t": "non_diegetic_music"
+                },
+                {
+                  "t": "), with the "
+                },
+                {
+                  "c": true,
+                  "t": "<Picture 1>"
+                },
+                {
+                  "t": " alignment sentence for I2V or\nexplicit "
+                },
+                {
+                  "c": true,
+                  "t": "<Picture 1>"
+                },
+                {
+                  "t": " / "
+                },
+                {
+                  "c": true,
+                  "t": "<Audio 1>"
+                },
+                {
+                  "t": " role assignment for R2V."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Fit beats to the frame budget ("
+                },
+                {
+                  "c": true,
+                  "t": "--104_length"
+                },
+                {
+                  "t": ": 124 ≈ 5 s → one beat;\n243 ≈ 10 s; 362 ≈ 15 s → timecoded shot list)."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Iterate with a fixed "
+                },
+                {
+                  "c": true,
+                  "t": "--15_noise_seed"
+                },
+                {
+                  "t": "; verify frames ("
+                },
+                {
+                  "c": true,
+                  "t": "ffmpeg"
+                },
+                {
+                  "t": ") AND\naudio ("
+                },
+                {
+                  "c": true,
+                  "t": "ffprobe"
+                },
+                {
+                  "t": ") before reporting results."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

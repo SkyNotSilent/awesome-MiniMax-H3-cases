@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import rawCases from '../data/cases.json'
 import taxonomy from '../data/taxonomy.json'
-import { creatorPath, detectVisitorLanguage, metadataValue, modelLabel, resolveRoute, taxonomyLabel, tutorialEcosystemPath, tutorialPath } from './i18n'
+import { creatorPath, detectVisitorLanguage, metadataValue, modelLabel, resolveRoute, skillPath, taxonomyLabel, tutorialEcosystemPath, tutorialPath } from './i18n'
 import type { VideoCase } from './types'
 
 const cases = rawCases as VideoCase[]
@@ -50,6 +50,9 @@ describe('tutorial routes', () => {
   it('resolves the ecosystem collection without treating it as a tutorial slug', () => {
     expect(resolveRoute('/tutorials/ecosystem/')).toEqual({ language: 'zh', page: 'tutorial-ecosystem', tutorialSlug: 'ecosystem' })
     expect(resolveRoute('/en/tutorials/ecosystem/')).toEqual({ language: 'en', page: 'tutorial-ecosystem', tutorialSlug: 'ecosystem' })
+    expect(resolveRoute('/skills/')).toEqual({ language: 'zh', page: 'skills' })
+    expect(resolveRoute('/en/skills/h3lite/')).toEqual({ language: 'en', page: 'skill-detail', skillSlug: 'h3lite' })
+    expect(skillPath('en', 'h3lite')).toBe('/en/skills/h3lite/')
     expect(tutorialEcosystemPath('zh')).toBe('/tutorials/ecosystem/')
     expect(tutorialEcosystemPath('en')).toBe('/en/tutorials/ecosystem/')
   })

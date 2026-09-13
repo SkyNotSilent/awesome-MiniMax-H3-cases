@@ -1,0 +1,5211 @@
+{
+  "skillId": "minimax-h3-opencode-skills",
+  "kind": "markdown",
+  "title": "minimax-h3-opencode-skills",
+  "language": "en",
+  "capturedAt": "2026-09-13T11:14:06.657Z",
+  "source": {
+    "url": "https://github.com/unknowlei/minimax-h3-opencode-skills",
+    "author": "unknowlei",
+    "revision": "2e2096fe39ef9b5ddd5998cdcf422c6534065115",
+    "license": "MIT"
+  },
+  "sections": [
+    {
+      "url": "https://github.com/unknowlei/minimax-h3-opencode-skills/blob/main/skills/minimax-h3-creative-director/SKILL.md",
+      "title": "minimax-h3-creative-director",
+      "anchor": "skill-minimax-h3-creative-director",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Primary mandatory entrypoint for every MiniMax H3 video-generation request. Use before any other H3 skill for creation, animation, extension, editing, restyling, reference, or prompt review. It reads the official h3-prompt-writing specification, defaults image-based work to full-reference consistency, permits pure keyframe mode only for explicitly declared boundary-only images, and enforces a non-skippable multishot question workflow for explicit multishot requests or accepted 10-second-plus proposals before routing to the final formatting specialist."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3 Creative Director"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Act as the mandatory front door for MiniMax H3 work. Establish official format authority, choose the correct generation path, and invoke the matching specialist without making the user understand internal routing."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Mandatory Official Read Order"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Before analyzing or drafting any H3 prompt:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Read "
+                },
+                {
+                  "c": true,
+                  "t": "../h3-prompt-writing/SKILL.md"
+                },
+                {
+                  "t": " first."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Inventory the request and supplied assets."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Read "
+                },
+                {
+                  "c": true,
+                  "t": "../h3-prompt-writing/references/base-en.txt"
+                },
+                {
+                  "t": " for T2VA, I2VA, FL2VA, or L2VA; read "
+                },
+                {
+                  "c": true,
+                  "t": "../h3-prompt-writing/references/ref-en.txt"
+                },
+                {
+                  "t": " for reference generation, editing, continuation, or audio/reference work. Read both when routing is ambiguous or mixed."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Read "
+                },
+                {
+                  "c": true,
+                  "t": "references/official-capabilities-and-routing.md"
+                },
+                {
+                  "t": " for official limits, asset roles, contradiction checks, and routing policy."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Treat the official "
+            },
+            {
+              "c": true,
+              "t": "h3-prompt-writing"
+            },
+            {
+              "t": " files as canonical for prompt syntax. Treat the official-manual reference as canonical for product capabilities and operating limits. If a downstream skill conflicts with either authority, follow the official source."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Routing Decision"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Choose exactly one final prompt-format specialist:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "No reference assets, or text/script/storyboard only -> "
+                },
+                {
+                  "c": true,
+                  "t": "minimax-h3-text-video-prompt"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Pure keyframe exception -> "
+                },
+                {
+                  "c": true,
+                  "t": "minimax-h3-keyframe-video-prompt"
+                },
+                {
+                  "t": " only when all conditions are true: the user explicitly calls each relevant image a literal first frame, last frame, or first-and-last-frame pair; the images serve only as boundary frames; and no image is expected to preserve or reference a character, identity, person, object, costume, scene, style, voice, action, camera, or other reusable trait."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Default for every other request containing an image -> "
+                },
+                {
+                  "c": true,
+                  "t": "minimax-h3-reference-video-prompt"
+                },
+                {
+                  "t": ", including ambiguous image roles, ordinary image animation, character/person/object consistency, and any request where a boundary image also supplies reusable visual identity or content."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Mixed images/videos/audio, source-video editing, continuation, voice/audio control, or any other reference relationship -> "
+                },
+                {
+                  "c": true,
+                  "t": "minimax-h3-reference-video-prompt"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Existing prompt that must be checked, repaired, converted, or polished -> "
+                },
+                {
+                  "c": true,
+                  "t": "minimax-h3-prompt-reviewer"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "minimax-h3-multishot-planner"
+            },
+            {
+              "t": " is an optional planning subskill, not a competing final specialist. Invoke it before the selected text, keyframe, or reference specialist when the multishot gate below requires it. Pass its confirmed shot plan to the final specialist as binding creative input."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Apply reference-consistency priority. Do not route to pure keyframe mode merely because there are one or two images, because the user says \"animate this image,\" or because a first/last-frame interpretation seems plausible. If any pure-keyframe condition is absent or uncertain, route to full-reference without asking the user to downgrade. Full-reference can express a referenced image as a prompt-level first, key, or last frame while preserving character and object consistency."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "After resolving creative questions and the multishot gate, read the selected final specialist's "
+            },
+            {
+              "c": true,
+              "t": "SKILL.md"
+            },
+            {
+              "t": " and required references, then execute it in the same task flow. Do not stop after announcing the route unless the user requested analysis only."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Direction Check"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use OpenCode's "
+            },
+            {
+              "c": true,
+              "t": "question"
+            },
+            {
+              "t": " tool before drafting whenever any condition below applies:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "The request is short or supplies only a subject plus a basic action."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Two or more important creative axes are missing: exact duration, scene/event progression, visual medium/style, camera/edit rhythm, dialogue/voice, sound/music, or ending state."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "A reference task does not clearly state desired action, scene progression, preservation priorities, audio treatment, or endpoint."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "The user asks the AI to improvise, decide freely, surprise them, fill in the details, or otherwise choose the creative direction."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "The user supplies an image with only a vague instruction such as \"make it move\" or \"generate a video.\""
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Whether source video should be edited, continued, or merely imitated"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Whether audio should be reused exactly, partially reused, used as timbre/style reference, or replaced"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Whether the user wants one continuous take or intentional cuts"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Ask as many related questions as the current decision stage requires; normally use 1-5 in a general direction batch. Three is not a per-call, per-turn, or per-session ceiling. Recommend the strongest option and use the user's answers to complete the brief. Do not replace required questions with hidden assumptions. The only exception is an explicit instruction not to ask questions; then choose the most coherent interpretation and disclose material assumptions."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For every H3 choice question, a strict yes/no decision may use exactly two options. Every other choice question must provide at least five materially different, feasible options, with the strongest context-specific recommendation first and "
+            },
+            {
+              "c": true,
+              "t": "(Recommended)"
+            },
+            {
+              "t": " appended to its label. Explain the consequence of every option, keep each option label within five words, do not add "
+            },
+            {
+              "c": true,
+              "t": "Other"
+            },
+            {
+              "t": ", and never pad a list with near-duplicates. If five meaningful alternatives cannot be produced, ask an open-ended question instead of a short choice list."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Immediately before every "
+            },
+            {
+              "c": true,
+              "t": "question"
+            },
+            {
+              "t": " tool call, audit the proposed payload. If any non-binary question has fewer than five options, do not submit it; expand it to at least five meaningful choices or convert it to an open-ended question. This preflight is mandatory."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not ask whether an ambiguous image should use pure keyframe mode. The routing default already resolves that ambiguity in favor of full-reference consistency."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Multishot Gate"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Resolve this gate after effective duration is known and before invoking the final prompt-format specialist:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If the user explicitly requests multiple shots, scenes, cuts, montage, a sequence, or shot-by-shot design, invoke "
+                },
+                {
+                  "c": true,
+                  "t": "minimax-h3-multishot-planner"
+                },
+                {
+                  "t": " directly without asking whether multishot is desired."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If the user explicitly requests one continuous shot, one take, or no cuts, skip the multishot planner regardless of duration."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If duration is at least 10 seconds and the user has not expressed a single-shot or multishot preference, ask one binary question: whether to use a multishot structure. Recommend yes or no according to action density, continuity risk, and the user's goal rather than always recommending multishot."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If the user accepts, invoke "
+                },
+                {
+                  "c": true,
+                  "t": "minimax-h3-multishot-planner"
+                },
+                {
+                  "t": "; if the user declines, record a single-shot constraint and continue."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If duration is below 10 seconds and no multishot preference is stated, do not ask this gate question and continue without the planner."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If duration is unknown, resolve duration first, then evaluate the gate. Exactly 10 seconds counts as at least 10 seconds."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The planner must first ask shot count, then plan every shot interactively. Once the user confirms its structured shot plan, pass that plan unchanged to the selected text, keyframe, or reference specialist. Do not repeat questions already answered during multishot planning."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Non-skippable multishot state machine"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Loading a Skill with the "
+            },
+            {
+              "c": true,
+              "t": "skill"
+            },
+            {
+              "t": " tool only places its instructions in context; it does not execute that Skill. Never treat "
+            },
+            {
+              "c": true,
+              "t": "skill({ name: \"minimax-h3-multishot-planner\" })"
+            },
+            {
+              "t": " as completion of multishot planning."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When multishot is selected, enforce these states in order:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "multishot_selected"
+                },
+                {
+                  "t": ": load "
+                },
+                {
+                  "c": true,
+                  "t": "minimax-h3-multishot-planner"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "planner_loaded"
+                },
+                {
+                  "t": ": the next interactive action must establish shot count. If count was not explicitly supplied, the next tool call must be "
+                },
+                {
+                  "c": true,
+                  "t": "question"
+                },
+                {
+                  "t": "; do not load a final specialist."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "shot_count_confirmed"
+                },
+                {
+                  "t": ": plan Shot 1 through the final shot sequentially. The planner must issue the required per-shot "
+                },
+                {
+                  "c": true,
+                  "t": "question"
+                },
+                {
+                  "t": " calls and receive answers for each shot."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "shots_confirmed"
+                },
+                {
+                  "t": ": build the complete "
+                },
+                {
+                  "c": true,
+                  "t": "multishot_plan"
+                },
+                {
+                  "t": " and ask the final binary confirmation."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "multishot_plan_confirmed"
+                },
+                {
+                  "t": ": only now may a text, keyframe, reference, or reviewer Skill be loaded."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Hard blocker: while multishot is selected, do not load or invoke "
+            },
+            {
+              "c": true,
+              "t": "minimax-h3-text-video-prompt"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "minimax-h3-keyframe-video-prompt"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "minimax-h3-reference-video-prompt"
+            },
+            {
+              "t": ", or "
+            },
+            {
+              "c": true,
+              "t": "minimax-h3-prompt-reviewer"
+            },
+            {
+              "t": " until a complete confirmed "
+            },
+            {
+              "c": true,
+              "t": "multishot_plan"
+            },
+            {
+              "t": " exists in the conversation. If the planner was loaded but no shot questions were asked, remain in "
+            },
+            {
+              "c": true,
+              "t": "planner_loaded"
+            },
+            {
+              "t": "; do not advance."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Creative Brief"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Before drafting, internally establish:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Asset-role map: upload order, stable label, intended role, and traits that must remain unchanged"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Core creative line: subject, location, event/action, genre/style, and camera/edit strategy"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Timeline: duration, shot boundaries, shot size, composition, action, camera, dialogue, sound effects, and endpoint"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Preservation ledger: identity, clothing, objects, scene, text, voice, audio, and untouched source-video content"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Delivery target: official online product/API or local ComfyUI workflow, because runtime limits may differ"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not expose this internal brief unless it helps the user."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Mandatory Gates"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Keep the official online target within 4-15 seconds, 24 FPS, and 7000 prompt characters. If a known local workflow has a narrower supported range, obey the runtime-specific range instead."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Assign an explicit role to every important uploaded asset. Never write vague references such as \"use all references.\""
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "In pure keyframe mode, state each explicitly declared boundary role. In full-reference mode, a referenced image may be described in the prompt as a first, key, or last frame while still preserving its character/object/reference responsibilities."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Fit spoken words to the available shot time. Name on-screen versus off-screen speakers, preserve exact dialogue/lyrics, and state when speech continues across a cut. Use J-cut or L-cut only when its audio relationship is explicit."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Specify exact visible text, logo wording, captions, interface labels, or slogans; never paraphrase content that must appear verbatim."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Prefer observable action, composition, light, camera mechanics, and audible events over metaphors or adjective stacks."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "For a physical orbit, use a mechanically coherent lateral camera move plus counter-pan when appropriate instead of relying only on the word \"orbit.\""
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Reject contradictions: one-take plus multiple cuts, music requested plus "
+                },
+                {
+                  "c": true,
+                  "t": "non_diegetic_music: N/A"
+                },
+                {
+                  "t": ", face consistency without a usable identity reference, or excessive events for the duration."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "H3 generates native stereo audio. Do not treat sound as an optional afterthought."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Response Policy"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Return the specialist's copy-ready English prompt and complete Chinese translation. Keep routing commentary brief. Do not produce multiple competing prompt schemas unless the user explicitly asks for alternatives."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/unknowlei/minimax-h3-opencode-skills/blob/main/skills/minimax-h3-multishot-planner/SKILL.md",
+      "title": "minimax-h3-multishot-planner",
+      "anchor": "skill-minimax-h3-multishot-planner",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Non-skippable planning-only MiniMax H3 subskill used by minimax-h3-creative-director before final prompt formatting. Invoke when the user explicitly requests multiple shots, scenes, cuts, montage, or shot-by-shot design, or when a video of at least 10 seconds has no declared single-shot/multishot preference and the user accepts the director's multishot offer. After loading, it must ask shot count and then question the user about every shot in playback order before any final H3 formatting skill may run."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3 Multishot Planner"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Plan a confirmed multishot video before the text, keyframe, or full-reference specialist writes the executable H3 prompt. Produce a structured shot plan, not the final H3 prompt."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Execution Is Mandatory After Loading"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The "
+            },
+            {
+              "c": true,
+              "t": "skill"
+            },
+            {
+              "t": " tool only loads these instructions. Loading this Skill is not execution and is never a successful handoff by itself."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "After this Skill is loaded:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not load any final H3 specialist."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not draft an H3 prompt."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Ask or confirm shot count."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Question the user about Shot 1, confirm it, then repeat for Shot 2 and every remaining shot."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Build and confirm the complete "
+                },
+                {
+                  "c": true,
+                  "t": "multishot_plan"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Return control to the director only after final confirmation."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "No final specialist may run while any planned shot remains unasked or unconfirmed."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Invocation Contract"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Enter only through "
+            },
+            {
+              "c": true,
+              "t": "minimax-h3-creative-director"
+            },
+            {
+              "t": ":"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Enter immediately when the user explicitly requests multiple shots, scenes, cuts, a montage, a sequence, or shot-by-shot planning."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "When effective duration is at least 10 seconds and the user has not chosen single-shot or multishot, let the director ask a binary multishot question. Enter only after the user accepts."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not enter when the user explicitly requests one continuous shot, one take, no cuts, or an equivalent single-shot treatment."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not enter merely because a prompt contains several actions. A continuous action arc can remain one shot."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not choose T2VA, I2VA, FL2VA, L2VA, or Ref2VA here."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "If duration is unknown, return control to the director to resolve duration before applying the 10-second gate."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Choice Source"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Consult "
+            },
+            {
+              "c": true,
+              "t": "references/shot-choice-library.md"
+            },
+            {
+              "t": " for shot vocabulary and option design. Do not treat it as an official closed vocabulary or insert every available term."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Question Payload Rules"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "OpenCode does not impose a three-question workflow limit. Use the number of questions required by each state below."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "A strict yes/no question may contain exactly two options."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Every other choice question must contain at least five materially different, feasible options."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Put the strongest context-specific recommendation first and append "
+                },
+                {
+                  "c": true,
+                  "t": "(Recommended)"
+                },
+                {
+                  "t": " to its label."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Explain the creative consequence of every option in one concise sentence."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Keep every option label within five words; place detail in its description."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not add "
+                },
+                {
+                  "c": true,
+                  "t": "Other"
+                },
+                {
+                  "t": "; OpenCode supplies custom input automatically."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not pad a list with near-duplicates. If five meaningful choices cannot be produced, ask an open-ended question instead of a choice question."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Generate content and performance choices from the user's actual subject, assets, genre, duration, and desired outcome. Never present generic placeholders."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Use multiple selection only when choices can genuinely coexist."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Before every "
+            },
+            {
+              "c": true,
+              "t": "question"
+            },
+            {
+              "t": " call, count the options for every question. If a non-binary question has fewer than five options, the payload is invalid: expand it or make that question open-ended before calling the tool."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "If the user explicitly prohibits questions, synthesize the complete plan, disclose material assumptions, and ask one binary final confirmation. Otherwise, all states below are mandatory."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "State Machine"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "State 1: Shot count"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "This is the first action after loading unless the user already supplied an exact count."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Ask exactly one shot-count question."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Provide at least five feasible counts, normally "
+                },
+                {
+                  "c": true,
+                  "t": "2"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "3"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "4"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "5"
+                },
+                {
+                  "t": ", and "
+                },
+                {
+                  "c": true,
+                  "t": "6"
+                },
+                {
+                  "t": " shots."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Recommend according to duration and action density."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If an exact count was already supplied, record it and advance directly to State 2 without asking the same question again."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Starting heuristics, not hard limits:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "4-9 seconds: usually 2-3 shots only when multishot was explicitly requested."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "10-12 seconds: usually 2-4 shots."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "13-15 seconds: usually 3-5 shots."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "If the chosen count is physically infeasible, ask the strict yes/no question: \"是否改用推荐镜头数？\""
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "State 2: Global timing and continuity"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Ask one batch with up to three questions when these decisions remain unknown:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Story or information progression"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Timing distribution and edit rhythm"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Continuity strategy across cuts"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Every choice question in this batch requires at least five options. Allocate provisional start/end times after receiving the answers. Do not force equal durations when action complexity differs."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "State 3: Plan each shot sequentially"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Maintain "
+            },
+            {
+              "c": true,
+              "t": "current_shot"
+            },
+            {
+              "t": ", starting at 1. Never combine different shots in one question payload and never jump ahead."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For the current shot, make one "
+            },
+            {
+              "c": true,
+              "t": "question"
+            },
+            {
+              "t": " call containing the following six questions unless a field was already explicitly fixed by the user:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Shot content and narrative function"
+                },
+                {
+                  "t": ": at least five scene-specific alternatives."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Shot size and composition"
+                },
+                {
+                  "t": ": at least five suitable framing/composition alternatives."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Camera behavior"
+                },
+                {
+                  "t": ": at least five complete treatments combining movement type, target, speed, amplitude, and compositional purpose."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Action, performance, and expression"
+                },
+                {
+                  "t": ": at least five scene-specific visible action arcs."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Opening or entry transition"
+                },
+                {
+                  "t": ": at least five opening treatments for Shot 1; at least five cut/transition treatments for later shots."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Sound focus"
+                },
+                {
+                  "t": ": at least five relevant combinations of ambience, Foley, non-verbal vocal sound, dialogue/voice, diegetic sound, and audience-only music."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "This six-question per-shot batch is intentional. Do not reduce it to three merely because earlier general H3 questions used three-question batches. Omit only a field the user has already explicitly and unambiguously fixed; do not silently infer a missing field to avoid asking."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "After receiving the batch answers:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Show a concise Chinese summary of the current shot, including provisional timing and active reference roles."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Ask the strict yes/no question: \"是否确认 Shot N？\""
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If no, ask an open-ended correction question and revise the same shot."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If yes, increment "
+                },
+                {
+                  "c": true,
+                  "t": "current_shot"
+                },
+                {
+                  "t": " and repeat State 3 for the next shot."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not enter State 4 until every shot from 1 through "
+            },
+            {
+              "c": true,
+              "t": "shot_count"
+            },
+            {
+              "t": " is confirmed."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "State 4: Build continuity"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "After all shots are confirmed:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Allocate exact start and end times; Shot 1 starts at 0.00 seconds and later start times increase strictly."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Record the entering and exiting state of every shot."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Preserve identity, clothing, props, scene geography, lighting direction, object state, visible text, dialogue continuity, and audio continuity unless a change is intentional."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Assign active reference labels and responsibilities per shot when assets exist."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Identify J-cuts, L-cuts, match cuts, or sound bridges only when their cross-shot relationship is explicit."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Reject a multishot plan that also claims to be one continuous take."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "State 5: Final confirmation and handoff"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Present the complete plan in Chinese using the schema below. Ask the strict yes/no question: \"是否接受这份多镜头方案？\""
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If no, ask an open-ended question identifying the shot and desired change, revise it, then reconfirm."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If yes, mark "
+                },
+                {
+                  "c": true,
+                  "t": "multishot_plan_status: confirmed"
+                },
+                {
+                  "t": " and return the plan to "
+                },
+                {
+                  "c": true,
+                  "t": "minimax-h3-creative-director"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Only "
+            },
+            {
+              "c": true,
+              "t": "multishot_plan_status: confirmed"
+            },
+            {
+              "t": " releases the director's hard blocker and permits one final prompt-format specialist to load."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Output Schema"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "multishot_plan_status: confirmed\nmultishot_plan:\n  total_duration: ...\n  shot_count: ...\n  edit_rhythm: ...\n  continuity_strategy: ...\n  shots:\n    - shot: 1\n      start: 0.00\n      end: ...\n      narrative_function: ...\n      content: ...\n      shot_size_and_composition: ...\n      subject_action_and_expression: ...\n      camera_movement_amplitude_speed: ...\n      entry_transition: opening\n      sound_focus: ...\n      active_references: ...\n      entry_state: ...\n      exit_state: ...\n    - shot: 2\n      ...\n  continuity_ledger:\n    identity: ...\n    wardrobe_and_props: ...\n    space_and_lighting: ...\n    object_and_text_state: ...\n    dialogue_and_audio: ..."
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The final formatting specialist converts this confirmed plan to the official H3 base three-field or Ref2VA six-section prompt without dropping or re-asking confirmed decisions."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/unknowlei/minimax-h3-opencode-skills/blob/main/skills/minimax-h3-keyframe-video-prompt/SKILL.md",
+      "title": "minimax-h3-keyframe-video-prompt",
+      "anchor": "skill-minimax-h3-keyframe-video-prompt",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Narrow downstream MiniMax H3 specialist for pure I2VA, FL2VA, and L2VA boundary-frame prompts. Use only after minimax-h3-creative-director verifies that the user explicitly declared the images as literal first/last frames and that they have no character, identity, person, object, costume, scene, style, voice, action, camera, or other reusable reference responsibility. Otherwise use full-reference consistency, even when first/last-frame semantics are desired."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3 Keyframe Video Prompt"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Design a continuous visual path from or toward concrete boundary frames. Treat a boundary image as an actual target frame, not merely a loose style reference."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Routing Contract"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "New MiniMax H3 requests should enter through "
+            },
+            {
+              "c": true,
+              "t": "minimax-h3-creative-director"
+            },
+            {
+              "t": ". Use this skill only for explicitly declared boundary-only images. If the user did not explicitly say first frame, last frame, starting frame, ending frame, or an equivalent literal boundary role, use "
+            },
+            {
+              "c": true,
+              "t": "minimax-h3-reference-video-prompt"
+            },
+            {
+              "t": ". If any image also defines or preserves a character, identity, person, object, costume, scene, style, voice, action, camera, composition, or other reusable trait, use full-reference even if the user also calls it a first or last frame."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Official Format Authority"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Before drafting, read "
+            },
+            {
+              "c": true,
+              "t": "../h3-prompt-writing/SKILL.md"
+            },
+            {
+              "t": " and "
+            },
+            {
+              "c": true,
+              "t": "../h3-prompt-writing/references/base-en.txt"
+            },
+            {
+              "t": ". Treat those official MiniMax files as the canonical prompt-format specification. If this skill or its local references conflict with them, follow the official files."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Read "
+            },
+            {
+              "c": true,
+              "t": "references/keyframe-rules.md"
+            },
+            {
+              "t": " before drafting."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Confirmed Multishot Handoff"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When the director supplies a confirmed "
+            },
+            {
+              "c": true,
+              "t": "multishot_plan"
+            },
+            {
+              "t": ", treat its shot count, timing, content, framing, performance, camera, transitions, sound, and continuity decisions as already answered. Do not ask those questions again. Map every confirmed shot into the official keyframe prompt while preserving exact boundary-frame alignment. Reopen a decision only when the plan is physically impossible, contradicts a boundary image, or exceeds the effective duration."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Mandatory Format"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Always return the exact mode-specific picture-alignment instruction followed by the official three fields. Never return a free-form natural-language paragraph, keyword list, shortened prompt, or alternate schema as the final English prompt."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Interactive Direction Check"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Before drafting, use the host's structured-choice tool whenever the eligible pure-keyframe brief is sparse, the intended transformation is underspecified, two or more of duration, motion path, visual treatment, camera strategy, dialogue/sound, or ending behavior are missing, or the user delegates creative direction to the AI."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "In OpenCode, call the built-in "
+            },
+            {
+              "c": true,
+              "t": "question"
+            },
+            {
+              "t": " tool rather than printing Markdown options. In Codex, use the available structured user-input tool; if unavailable, ask one concise plain-text question."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Ask as many related questions as the current decision stage requires; normally 1-5, but three is not a per-call, per-turn, or per-session ceiling. A strict yes/no question may contain exactly two options; every other choice question must contain at least five materially different, feasible options. Put the context-specific recommendation first with "
+            },
+            {
+              "c": true,
+              "t": "(Recommended)"
+            },
+            {
+              "t": " in its label, explain each consequence in one sentence, omit "
+            },
+            {
+              "c": true,
+              "t": "Other"
+            },
+            {
+              "t": ", and enable multiple selection only for genuinely combinable choices. Before every "
+            },
+            {
+              "c": true,
+              "t": "question"
+            },
+            {
+              "t": " tool call, count the options in the actual payload. If any non-binary choice has fewer than five, do not submit it; expand it with meaningful alternatives or make it open-ended. Do not create near-duplicates merely to reach five."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Prioritize:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Boundary role when one image is ambiguous: first frame or last frame"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Motion strength: subtle natural motion, clear narrative action, dramatic transformation"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Camera strategy: continuous single shot, restrained cuts, dynamic montage"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Landing behavior: exact stable hold, arrive on the final instant, transition through the frame"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For a sparse or delegated brief, ask enough high-impact questions in one batch to establish the current stage, normally 3-5. Do not treat \"improvise\" as permission to skip questions. Skip only when the user explicitly prohibits questions, then disclose the chosen direction."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Select the Mode"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Explicit first-frame-only image with no reusable reference role -> I2VA."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Explicit first-and-last-frame pair with no reusable reference role -> FL2VA."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Explicit last-frame-only image with no reusable reference role -> L2VA."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "If boundary wording is absent, ambiguous, or merely inferred, do not ask the user to confirm this specialist. Route directly to "
+            },
+            {
+              "c": true,
+              "t": "minimax-h3-reference-video-prompt"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "If the same boundary image or any other asset must also control identity, character, object, action, style, scene, sound, editing, or pacing, use "
+            },
+            {
+              "c": true,
+              "t": "minimax-h3-reference-video-prompt"
+            },
+            {
+              "t": " and express the first/last-frame relationship inside the full-reference prompt. Do not mix API "
+            },
+            {
+              "c": true,
+              "t": "first_frame"
+            },
+            {
+              "t": "/"
+            },
+            {
+              "c": true,
+              "t": "last_frame"
+            },
+            {
+              "t": " roles with "
+            },
+            {
+              "c": true,
+              "t": "reference_*"
+            },
+            {
+              "t": " roles."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Workflow"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Confirm the boundary role, exact integer duration, and intended final action or transformation. Keep the official online target within 4-15 seconds, 24 FPS, and 7000 prompt characters; obey narrower local-workflow limits when known."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Inspect supplied images when available. Record identity, clothing, pose, object states, composition, camera angle, lighting, and spatial relationships."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Define the motion path before writing prose."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Keep subject identity and persistent attributes consistent unless the user explicitly requests transformation."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Prefer a single continuous transition for FL2VA and usually for L2VA. Two boundary images do not automatically create a cut. Add cuts only when explicitly requested or essential."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Write the exact alignment instruction, then the three core fields."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Validate that the target boundary frame is reached at the exact endpoint rather than early."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Return the required bilingual output."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Motion Paths"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "I2VA"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use: first-frame anchor -> action onset -> continuous development -> result or reaction."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "FL2VA"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use: first-frame state -> observable intermediate changes -> progressively narrowing differences -> exact last-frame state."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not merely describe two static images. Explain how poses, objects, lighting, camera, and composition transform between them."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "L2VA"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use: plausible preceding state -> explicit causal action -> gradual convergence -> exact final-frame landing."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not begin in the final state. Infer a compatible earlier state and show how it becomes the reference frame."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Required Prompt Structure"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Place the mode-specific alignment instruction first, followed by one blank line and:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "integrated_multimodal_description: [Shot 1] ...\n\noverall_soundscape: ...\n\nnon_diegetic_music: ..."
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use the exact official alignment forms in "
+            },
+            {
+              "c": true,
+              "t": "references/keyframe-rules.md"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Output Contract"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Return "
+            },
+            {
+              "c": true,
+              "t": "### English Prompt"
+            },
+            {
+              "t": ", one "
+            },
+            {
+              "c": true,
+              "t": "text"
+            },
+            {
+              "t": " code block containing only the complete English prompt, then "
+            },
+            {
+              "c": true,
+              "t": "### 中文翻译"
+            },
+            {
+              "t": " with a complete Chinese translation outside code blocks."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Language Policy"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Write all descriptive and instructional prose in the English prompt in English. Preserve non-English source wording only when exactness is required for:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Dialogue, voiceover, speech, singing, or lyrics inside "
+                },
+                {
+                  "c": true,
+                  "t": "<d>[Language] ...</d>"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Visible signs, captions, subtitles, labels, interfaces, titles, logos, or messages"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Exact personal names, place names, brands, organizations, product/work titles, account names, and handles"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Filenames, URLs, model names, picture labels, and control tokens"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not use non-English wording for style, composition, appearance, lighting, actions, transitions, camera movement, sound design, or music unless it is literal content to be spoken or shown."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Translate every completed prompt instruction into Chinese after the English code block, including the meaning of dialogue, lyrics, and visible text. Keep field names, picture labels, "
+            },
+            {
+              "c": true,
+              "t": "[Shot N]"
+            },
+            {
+              "t": ", timestamps, "
+            },
+            {
+              "c": true,
+              "t": "(Sx)"
+            },
+            {
+              "t": ", and control tags visible alongside their Chinese explanations. Preserve exact proper nouns and source literals, adding Chinese meaning where useful. Treat the Chinese section as explanatory rather than executable."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Add "
+            },
+            {
+              "c": true,
+              "t": "### 采用的假设"
+            },
+            {
+              "t": " before the English prompt only when useful. Keep the executable English prompt within the official 7000-character maximum; choose detail according to transition complexity and remove repetition."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Quality Gate"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "The selected mode matches the supplied boundary frames."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "The alignment instruction is exact and uses the effective duration with exactly two decimal places where required."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "The initial state matches the first-frame image when one exists."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Intermediate changes are visible, causal, and feasible within the duration."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Identity, clothing, key objects, spatial relations, and persistent colors remain continuous."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "The final pose, object state, camera angle, lighting, spacing, and composition land on the last frame when one exists."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "The final frame is reached at the end, not held prematurely."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Dialogue fits its shot duration, and any cross-cut speech relationship is explicit."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Required visible text is quoted exactly."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "The prompt does not contradict one-take versus cuts or music versus "
+                },
+                {
+                  "c": true,
+                  "t": "N/A"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "The final English prompt is no more than 7000 characters."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Dialogue, sound, and camera follow the shared MiniMax H3 rules, and the Chinese section translates every prompt component without adding content."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/unknowlei/minimax-h3-opencode-skills/blob/main/skills/minimax-h3-prompt-reviewer/SKILL.md",
+      "title": "minimax-h3-prompt-reviewer",
+      "anchor": "skill-minimax-h3-prompt-reviewer",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Downstream MiniMax H3 specialist that audits, repairs, and rewrites T2VA, I2VA, FL2VA, L2VA, and full-reference prompts into an official structured format. Use after minimax-h3-creative-director routes an existing prompt for diagnosis or repair, or when explicitly invoked for formatting, timeline, camera, dialogue, sound, reference-label, retention, keyframe, contradiction, limit, or bilingual-output problems."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3 Prompt Reviewer"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Review the supplied prompt against MiniMax H3's base or full-reference format, then repair it. Do not stop at critique when a corrected prompt can be produced."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Routing Contract"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "New MiniMax H3 requests should enter through "
+            },
+            {
+              "c": true,
+              "t": "minimax-h3-creative-director"
+            },
+            {
+              "t": ". If invoked directly, apply the official authority below, identify the intended mode, and repair the prompt without requiring a separate routing response."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Official Format Authority"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Before reviewing, read "
+            },
+            {
+              "c": true,
+              "t": "../h3-prompt-writing/SKILL.md"
+            },
+            {
+              "t": ", then read "
+            },
+            {
+              "c": true,
+              "t": "../h3-prompt-writing/references/base-en.txt"
+            },
+            {
+              "t": " for T2VA/I2VA/FL2VA/L2VA or "
+            },
+            {
+              "c": true,
+              "t": "../h3-prompt-writing/references/ref-en.txt"
+            },
+            {
+              "t": " for Ref2VA. Treat those official MiniMax files as the canonical validation standard. If this skill or its local checklist conflicts with them, follow the official files."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Read "
+            },
+            {
+              "c": true,
+              "t": "references/validation-checklist.md"
+            },
+            {
+              "t": " before reviewing."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Mandatory Format"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Accept free-form natural language as source material, but never return it as the final English prompt. Convert every task into exactly one official format:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Base T2VA/I2VA/FL2VA/L2VA -> mode alignment instruction when applicable plus the three core fields"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Full-reference generation/editing/continuation -> the six required sections in order"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Interactive Direction Check"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Before repairing, use the host's structured-choice tool when the prompt is sparse, two or more major creative axes are missing, the intended preservation/result cannot be determined reliably, or the user asks the AI to decide or improvise the direction. This applies even when the existing prompt has no mechanical ambiguity but requires substantial invention to become useful."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "In OpenCode, call the built-in "
+            },
+            {
+              "c": true,
+              "t": "question"
+            },
+            {
+              "t": " tool instead of printing Markdown options. In Codex, use the available structured user-input tool; if unavailable, ask one concise plain-text question."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Ask as many related questions as the current review stage requires; normally 1-5, but three is not a per-call, per-turn, or per-session ceiling. A strict yes/no question may contain exactly two options; every other choice question must contain at least five materially different, feasible options. Put the context-specific recommendation first with "
+            },
+            {
+              "c": true,
+              "t": "(Recommended)"
+            },
+            {
+              "t": ", explain each choice in one sentence, omit "
+            },
+            {
+              "c": true,
+              "t": "Other"
+            },
+            {
+              "t": ", and use multiple selection only for combinable decisions. Before every "
+            },
+            {
+              "c": true,
+              "t": "question"
+            },
+            {
+              "t": " tool call, count the options in the actual payload. If any non-binary choice has fewer than five, do not submit it; expand it with meaningful alternatives or make it open-ended. Do not create near-duplicates merely to reach five."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Prioritize:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Intended mode or role of a supplied image/video/audio asset"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Preservation level: minimal correction, professional expansion, substantial creative reconstruction"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Keyframe semantics and endpoint behavior"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Audio reuse versus reference versus replacement"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For sparse prompts or delegated creativity, ask 2-3 decisive questions in one batch before expanding. Do not interrupt for defects that have one objectively correct repair. Skip questions only when the user explicitly prohibits them; \"freely improve\" or \"you decide\" requires questions."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Workflow"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Identify the intended mode from the prompt, supplied assets, and user goal."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Determine whether the prompt requires the base three-field format or full-reference six-section format."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Preserve the user's creative intent, exact dialogue, lyrics, visible text, and explicit constraints."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Audit structure, labels, timeline, official input/output limits, physical feasibility, continuity, camera mechanics, speech duration, exact visible text, sound layers, contradictions, and translation."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Resolve objective defects directly. If strategic ambiguity remains, run the interactive direction check; otherwise make and disclose reasonable assumptions."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Rewrite the entire prompt into a clean professional final version."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Run the final checklist and return the bilingual result."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Mode Routing"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Text only -> T2VA base format."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Explicit first-frame-only image with no reusable identity/character/object/scene/style/composition role -> I2VA base format."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Explicit first-and-last-frame pair with no reusable reference role -> FL2VA base format."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Explicit last-frame-only image with no reusable reference role -> L2VA base format."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Any image with ambiguous responsibility, any ordinary image-animation request, or any image preserving a character/person/object/scene/style/composition -> full-reference format."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Mixed reference assets, source editing/continuation, audio reuse/reference, or combined reference roles -> full-reference format."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Full-reference prompts may semantically anchor a referenced image as a first/key/last frame through "
+                },
+                {
+                  "c": true,
+                  "t": "<Picture N>"
+                },
+                {
+                  "t": ". Do not recommend mixing API "
+                },
+                {
+                  "c": true,
+                  "t": "first_frame"
+                },
+                {
+                  "t": "/"
+                },
+                {
+                  "c": true,
+                  "t": "last_frame"
+                },
+                {
+                  "t": " roles with "
+                },
+                {
+                  "c": true,
+                  "t": "reference_*"
+                },
+                {
+                  "t": " roles."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Repair Policy"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Replace outdated or incorrect behavior rather than preserving it as a fallback."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Convert any unstructured final prompt, keyword list, shortened schema, or mixed schema into the correct official structure."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not invent dialogue, lyrics, visible text, source details, or unintelligible words."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Keep the executable English prompt within the official 7000-character maximum. Expand when control is missing; compress when prose is repetitive, contradictory, or non-observable."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Prefer concrete composition, actions, state transitions, camera mechanics, and audible events over aesthetic keyword stacks."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Preserve official fixed alignment instructions and control tokens exactly where applicable."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Required Response"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When changes are material, begin with "
+            },
+            {
+              "c": true,
+              "t": "### 关键修正"
+            },
+            {
+              "t": " and list only the decisive fixes."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Then return:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "### English Prompt"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "One "
+                },
+                {
+                  "c": true,
+                  "t": "text"
+                },
+                {
+                  "t": " code block containing only the complete corrected English prompt"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "### 中文翻译"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "A complete Chinese translation outside any code block"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Language Policy"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Require all descriptive and instructional prose in the English prompt to be English. Permit source-language literals only for:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Dialogue, voiceover, speech, singing, and lyrics inside "
+                },
+                {
+                  "c": true,
+                  "t": "<d>[Language] ...</d>"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Visible signs, captions, subtitles, labels, interfaces, titles, logos, and messages"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Exact personal names, place names, brands, organizations, product/work titles, account names, and handles"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Filenames, URLs, asset/model names, reference labels, field names, and control tokens"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Translate every component of the corrected prompt into Chinese after the English code block, including dialogue, lyrics, visible text, task types, retention markers, and all descriptive prose. Keep structural identifiers visible alongside their Chinese explanations so each translated passage maps to the English prompt. Preserve exact proper nouns and source literals, adding Chinese meaning where helpful. Do not introduce new creative content in translation."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "If the submitted prompt is already correct, state that briefly and still return the polished final prompt unless the user asked only for diagnosis."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Final Gate"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Correct mode and structure"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Exact boundary-frame instruction when required"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Defined and stable labels"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Strictly increasing valid timestamps"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Feasible action density and causal transitions"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Correct camera mechanics"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Stable vocal-source IDs and exact verbal content"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Correct diegetic/non-diegetic sound placement"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Dialogue duration fits the assigned shots; cross-cut speech is explicit"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Exact visible text is preserved"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "No one-take/cut or music/"
+                },
+                {
+                  "c": true,
+                  "t": "N/A"
+                },
+                {
+                  "t": " contradiction"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Official 4-15 second online duration and 7000-character prompt limits are respected, unless a narrower local runtime applies"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Full-reference asset counts, durations, and role assignments are valid"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Consistent prompt-level keyframe semantics and API-role advice"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Complete Chinese translation of every prompt component"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/unknowlei/minimax-h3-opencode-skills/blob/main/skills/minimax-h3-text-video-prompt/SKILL.md",
+      "title": "minimax-h3-text-video-prompt",
+      "anchor": "skill-minimax-h3-text-video-prompt",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Downstream MiniMax H3 specialist for professional text-to-video (T2VA) prompts using the official three-field format. Use after minimax-h3-creative-director routes a request with no image, video, or audio reference asset, or when this skill is explicitly invoked for a text-only idea, script, or storyboard requiring an audiovisual timeline and Chinese translation."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3 Text-to-Video Prompt"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Turn a text-only video concept into a precise MiniMax H3 T2VA timeline. Write observable audiovisual instructions rather than a plot summary or a keyword pile."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Routing Contract"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "New MiniMax H3 requests should enter through "
+            },
+            {
+              "c": true,
+              "t": "minimax-h3-creative-director"
+            },
+            {
+              "t": ". If invoked directly, apply the official authority below and proceed without requiring a second routing round. Redirect to the keyframe or full-reference specialist when supplied assets materially control the result."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Official Format Authority"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Before drafting, read "
+            },
+            {
+              "c": true,
+              "t": "../h3-prompt-writing/SKILL.md"
+            },
+            {
+              "t": " and "
+            },
+            {
+              "c": true,
+              "t": "../h3-prompt-writing/references/base-en.txt"
+            },
+            {
+              "t": ". Treat those official MiniMax files as the canonical prompt-format specification. If this skill or its local references conflict with them, follow the official files."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Read "
+            },
+            {
+              "c": true,
+              "t": "references/official-rules.md"
+            },
+            {
+              "t": " before drafting."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Confirmed Multishot Handoff"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When the director supplies a confirmed "
+            },
+            {
+              "c": true,
+              "t": "multishot_plan"
+            },
+            {
+              "t": ", treat its shot count, timing, content, framing, performance, camera, transitions, sound, and continuity decisions as already answered. Do not ask those questions again. Map every confirmed shot into "
+            },
+            {
+              "c": true,
+              "t": "integrated_multimodal_description"
+            },
+            {
+              "t": " without dropping or silently changing choices. Reopen a decision only when the plan is physically impossible, internally contradictory, or exceeds the effective duration."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Mandatory Format"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Always return the official three-field prompt. Never return a free-form natural-language paragraph, keyword list, abbreviated prompt, or alternate schema as the final English prompt, even when the user's input is informal or brief. Expand the request into the required structure."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Interactive Direction Check"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Before drafting, use the host's structured-choice tool when any of these conditions applies. This is mandatory, not optional:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "The brief is short, generic, or contains only a subject and a basic action."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Two or more of duration, scene/event progression, visual style, camera/edit rhythm, dialogue/voice, sound/music, or ending are missing."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "A vague phrase has multiple materially different interpretations."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "The user says to improvise, decide freely, surprise them, or let the AI choose."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Duration, visual treatment, action intensity, camera rhythm, or sound direction would substantially change the result."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "In OpenCode, call the built-in "
+            },
+            {
+              "c": true,
+              "t": "question"
+            },
+            {
+              "t": " tool rather than printing Markdown options. In Codex, use the available structured user-input tool; if none is available, ask one concise plain-text question."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Ask as many related questions as the current decision stage requires; normally 1-5, but three is not a per-call, per-turn, or per-session ceiling. A strict yes/no question may contain exactly two options; every other choice question must contain at least five materially different, feasible options. Put the context-specific recommendation first and suffix its label with "
+            },
+            {
+              "c": true,
+              "t": "(Recommended)"
+            },
+            {
+              "t": ". Give every option a one-sentence consequence. Do not add "
+            },
+            {
+              "c": true,
+              "t": "Other"
+            },
+            {
+              "t": "; OpenCode supplies custom input automatically. Use multiple selection only when choices can genuinely be combined. Before every "
+            },
+            {
+              "c": true,
+              "t": "question"
+            },
+            {
+              "t": " tool call, count the options in the actual payload. If any non-binary choice has fewer than five, do not submit it; expand it with meaningful alternatives or make it open-ended. Do not create near-duplicates merely to reach five."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Prefer questions about:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Visual medium and style: live-action cinematic, animation, stylized commercial, documentary, and similar directions"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Narrative/action intensity: restrained, balanced, dynamic"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Camera rhythm: one continuous shot, limited cinematic cuts, fast montage"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Sound direction: natural ambience only, restrained score, prominent audiovisual design"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For a sparse or delegated brief, ask enough high-impact questions in one batch to establish the current stage, normally 3-5, rather than silently completing the concept. Do not ask about minor details after those answers establish the direction. Skip questions only when the user explicitly says not to ask; a request to \"freely create\" or \"improvise\" requires questions rather than skipping them."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Workflow"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Extract or reasonably infer duration, aspect ratio, visual style, subjects, setting, action arc, dialogue, sound, and desired ending. Keep the official online target within 4-15 seconds, 24 FPS, and 7000 prompt characters; obey narrower local-workflow limits when known."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Run the interactive direction check when required. Never invent dialogue, lyrics, or visible text."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Budget actions and cuts to fit the requested duration. Prefer one coherent action arc over many incomplete events."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Establish style, composition, subject appearance and position, environment, lighting, and initial state at "
+                },
+                {
+                  "c": true,
+                  "t": "[Shot 1]"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Describe visible state changes in playback order: initial state -> action onset -> continuous development -> result or reaction."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Add cuts only when they introduce a meaningful change in subject, space, state, viewpoint, or time. Otherwise use camera movement."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Assign stable "
+                },
+                {
+                  "c": true,
+                  "t": "(S1)"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "(S2)"
+                },
+                {
+                  "t": " IDs only to actual vocal sources. Preserve user-provided words and punctuation inside "
+                },
+                {
+                  "c": true,
+                  "t": "<d>[Language] ...</d>"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Separate synchronized audiovisual events, overall physical soundscape, and audience-only music."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Perform the quality checks below, then return the required bilingual output."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Required Prompt Structure"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Produce exactly these three fields in this order:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "integrated_multimodal_description: [Shot 1] ...\n\noverall_soundscape: ...\n\nnon_diegetic_music: ..."
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not add an image-alignment instruction for T2VA."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Output Contract"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Return:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "### English Prompt"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "One "
+                },
+                {
+                  "c": true,
+                  "t": "text"
+                },
+                {
+                  "t": " code block containing only the final English prompt"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "### 中文翻译"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "A complete Chinese translation outside any code block"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Language Policy"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Write every instruction in the English prompt in English except content that must remain exact:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Dialogue, voiceover, speech, singing, and lyrics inside "
+                },
+                {
+                  "c": true,
+                  "t": "<d>[Language] ...</d>"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Text visibly present in the video, including signs, captions, subtitles, labels, interfaces, titles, logos, and messages"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Proper nouns whose exact spelling matters, including personal names, place names, brands, organizations, product/work titles, account names, and handles"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Literal identifiers such as filenames, URLs, model names, reference labels, and control tokens"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not use Chinese or another non-English language for scene description, style, composition, appearance, lighting, action, camera, editing, sound design, or music unless the user explicitly requires that literal wording to appear or be spoken in the video."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Translate every descriptive part of the completed prompt into Chinese after the English code block, including the meaning of dialogue, lyrics, and visible text. Keep structural identifiers such as field names, "
+            },
+            {
+              "c": true,
+              "t": "[Shot N]"
+            },
+            {
+              "t": ", timestamps, "
+            },
+            {
+              "c": true,
+              "t": "(Sx)"
+            },
+            {
+              "t": ", and control tags visible alongside their Chinese meanings so the translation can be mapped line by line. Preserve exact proper nouns and source literals, adding a Chinese explanation where useful. The Chinese section is explanatory and is not an executable MiniMax prompt."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "If assumptions materially help the user, place a short "
+            },
+            {
+              "c": true,
+              "t": "### 采用的假设"
+            },
+            {
+              "t": " section before the English prompt. Do not put explanations or alternatives inside the English code block."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Keep the executable English prompt within the official 7000-character maximum. Use the detail required for professional control while removing repetition, contradictions, and details that cannot affect visible or audible output."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Quality Gate"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Before answering, verify that:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "[Shot 1]"
+                },
+                {
+                  "t": " has no timestamp; later cut times are strictly increasing and inside the duration."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Every shot establishes the current composition before describing changes."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Actions have a physically understandable start, progression, and result."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Camera terms are mechanically correct and written as natural English actions."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Dialogue is exact, speaker IDs are stable, and voiceover cannot cause unintended lip movement."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Dialogue length is feasible for its shot; cross-cut speech explicitly continues as a J-cut or L-cut when applicable."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Every required title, sign, logo, caption, subtitle, slogan, or interface label is quoted exactly."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "overall_soundscape"
+                },
+                {
+                  "t": " does not repeat dialogue, singing, or diegetic music."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "non_diegetic_music"
+                },
+                {
+                  "t": " specifies instrumentation, tempo/rhythm, and dynamics, or is "
+                },
+                {
+                  "c": true,
+                  "t": "N/A"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "The prompt does not contradict itself about one-take versus cuts or music versus "
+                },
+                {
+                  "c": true,
+                  "t": "N/A"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "The final English prompt is no more than 7000 characters."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "The Chinese translation covers every English instruction and every literal verbal or visible element without introducing new creative content."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/unknowlei/minimax-h3-opencode-skills/blob/main/skills/minimax-h3-reference-video-prompt/SKILL.md",
+      "title": "minimax-h3-reference-video-prompt",
+      "anchor": "skill-minimax-h3-reference-video-prompt",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Default downstream MiniMax H3 specialist for every image-based request unless the user explicitly declares boundary-only first/last frames with no reusable reference role. Use the official six-section full-reference format for character/person/object consistency, scene/style/action/camera/storyboard/voice/audio reference, source-video editing or continuation, ambiguous image roles, ordinary image animation, and prompt-level first/key/last-frame anchoring."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3 Full-Reference Video Prompt"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Convert mixed reference assets and user intent into a traceable six-section full-reference prompt. Make every asset role explicit and write the target video as a detailed audiovisual timeline."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Routing Contract"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "New MiniMax H3 requests should enter through "
+            },
+            {
+              "c": true,
+              "t": "minimax-h3-creative-director"
+            },
+            {
+              "t": ". This is the default specialist for any request containing images. Route away only when the user explicitly declares pure first/last boundary roles and no image also carries identity, character, person, object, costume, scene, style, action, camera, composition, or another reusable reference responsibility. Ambiguity stays here. Full-reference may use prompt-level first/key/last-frame anchoring while maintaining consistency."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Official Format Authority"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Before drafting, read "
+            },
+            {
+              "c": true,
+              "t": "../h3-prompt-writing/SKILL.md"
+            },
+            {
+              "t": " and "
+            },
+            {
+              "c": true,
+              "t": "../h3-prompt-writing/references/ref-en.txt"
+            },
+            {
+              "t": ". Consult "
+            },
+            {
+              "c": true,
+              "t": "../h3-prompt-writing/references/base-en.txt"
+            },
+            {
+              "t": " for the shared shot, camera, dialogue, visible-text, and sound rules when needed. Treat these official MiniMax files as the canonical prompt-format specification. If this skill or its local references conflict with them, follow the official files."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Read "
+            },
+            {
+              "c": true,
+              "t": "references/reference-rules.md"
+            },
+            {
+              "t": " before drafting."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Confirmed Multishot Handoff"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When the director supplies a confirmed "
+            },
+            {
+              "c": true,
+              "t": "multishot_plan"
+            },
+            {
+              "t": ", treat its shot count, timing, content, framing, performance, camera, transitions, sound, active references, and continuity decisions as already answered. Do not ask those questions again. Map every confirmed shot into "
+            },
+            {
+              "c": true,
+              "t": "detailed_description"
+            },
+            {
+              "t": ", keep reference labels and responsibilities stable, and carry the continuity ledger into retention and preservation instructions. Reopen a decision only when the plan is physically impossible, conflicts with a source asset, or exceeds the effective duration."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Official Input Envelope"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For the official online product/API, keep output within 4-15 seconds at 24 FPS and the prompt within 7000 characters. Accept at most 9 images, 3 videos, 3 audio files, and 12 mixed files total. Each video or audio file must be 2-15 seconds; combined video duration and combined audio duration must each be at most 15 seconds. Audio cannot be the only reference type. Respect the documented per-file and API-body limits. Treat local ComfyUI constraints separately when they are narrower."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Mandatory Format"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Always return the official six sections in their required order. Never return a free-form natural-language paragraph, keyword list, abbreviated prompt, base three-field prompt, or alternate schema as the final English prompt for a full-reference task."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Interactive Direction Check"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Before assigning labels or drafting, use the host's structured-choice tool whenever the brief is sparse; gives only an image plus a generic motion request; omits two or more of action progression, scene treatment, preservation priorities, visual style, camera/editing, dialogue/voice, sound/music, or endpoint; leaves a decisive reference responsibility unclear; or asks the AI to improvise."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "In OpenCode, call the built-in "
+            },
+            {
+              "c": true,
+              "t": "question"
+            },
+            {
+              "t": " tool rather than displaying Markdown options. In Codex, use the available structured user-input tool; if unavailable, ask one concise plain-text question."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Ask as many related questions as the current decision stage requires; normally 1-5, but three is not a per-call, per-turn, or per-session ceiling. A strict yes/no question may contain exactly two options; every other choice question must contain at least five materially different, feasible options. Put the context-specific recommendation first and append "
+            },
+            {
+              "c": true,
+              "t": "(Recommended)"
+            },
+            {
+              "t": " to its label. Explain the consequence of each choice, omit "
+            },
+            {
+              "c": true,
+              "t": "Other"
+            },
+            {
+              "t": ", and use multiple selection only when roles can truly be combined. Before every "
+            },
+            {
+              "c": true,
+              "t": "question"
+            },
+            {
+              "t": " tool call, count the options in the actual payload. If any non-binary choice has fewer than five, do not submit it; expand it with meaningful alternatives or make it open-ended. Do not create near-duplicates merely to reach five."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Prioritize:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Task relationship: reference generation, source-video editing, continuation, or a combination"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Asset responsibility: identity/appearance, clothing/scene, action/camera, storyboard/keyframe, audio/voice/music"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Fidelity policy: strict preservation, balanced adaptation, attribute transfer, broad stylistic reference"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Prompt-level picture anchor: no concrete anchor, first frame, intermediate keyframe, last frame"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Audio policy: direct reuse, partial reuse, timbre/style reference, newly designed sound"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For sparse or delegated briefs, ask enough high-impact questions in one batch to establish the current stage, normally 3-5, even when the asset itself is visually clear. Do not ask the user to classify every asset; default images to character/object/scene consistency and ask about the desired creative outcome. Skip questions only when the user explicitly prohibits them. A request to improvise still requires questions."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Workflow"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Inventory every supplied image, video, audio asset, upload order, and text requirement; validate the official input envelope, then run the interactive direction check when required."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Map what each asset contributes: identity, appearance, clothing, object, environment, style, pose, action, camera, storyboard, edit source, continuation point, voice, sound, music, or rhythm."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Distinguish reusable visible content from source files. Assign stable "
+                },
+                {
+                  "c": true,
+                  "t": "<Subject N>"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "<Picture N>"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "<Video N>"
+                },
+                {
+                  "t": ", and "
+                },
+                {
+                  "c": true,
+                  "t": "<Audio N>"
+                },
+                {
+                  "t": " labels only where their defined roles apply."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Determine all applicable task types: "
+                },
+                {
+                  "c": true,
+                  "t": "keyframe completion"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "reference generation"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "video editing"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "video continuation"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "audio reuse"
+                },
+                {
+                  "t": ", and "
+                },
+                {
+                  "c": true,
+                  "t": "audio reference"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Determine the retention relationship for every label."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Build the shot and sound timeline in playback order. Prove where each important reference first appears or takes effect."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Validate label consistency, source provenance, temporal feasibility, speaker identity, audio continuity, and any keyframe landing."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Return the required bilingual output."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Prompt-Level Keyframe Anchoring"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Allow a full-reference task to designate a referenced image as a concrete first frame, keyframe, edited keyframe, last frame, or composition anchor. Define it as a standalone "
+            },
+            {
+              "c": true,
+              "t": "<Picture N>"
+            },
+            {
+              "t": " and state its exact role, for example:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "<Picture 2> is the last frame of [Shot 3], defining the final pose, object placement, camera angle, lighting, and composition."
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Combine "
+            },
+            {
+              "c": true,
+              "t": "keyframe completion"
+            },
+            {
+              "t": " with other task types in "
+            },
+            {
+              "c": true,
+              "t": "summary"
+            },
+            {
+              "t": " when appropriate. In "
+            },
+            {
+              "c": true,
+              "t": "detailed_description"
+            },
+            {
+              "t": ", describe a continuous path into or out of the anchored picture rather than repeating static image descriptions."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When a picture both anchors a boundary frame and preserves a person, character, object, costume, scene, style, or composition, keep the task in full-reference. Define both responsibilities explicitly instead of moving to the pure keyframe specialist."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Observe the current API distinction: prompt-level keyframe semantics are supported by the full-reference format, but an API request must not mix "
+            },
+            {
+              "c": true,
+              "t": "first_frame"
+            },
+            {
+              "t": "/"
+            },
+            {
+              "c": true,
+              "t": "last_frame"
+            },
+            {
+              "t": " roles with any "
+            },
+            {
+              "c": true,
+              "t": "reference_*"
+            },
+            {
+              "t": " role. When mixed reference assets are required, pass images as "
+            },
+            {
+              "c": true,
+              "t": "reference_image"
+            },
+            {
+              "t": " and express the concrete frame relationship in the prompt. Do not claim that the API role itself is a hard keyframe role."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Required Prompt Structure"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Produce exactly these six sections in order:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "subject_definitions:\n\nsummary:\n\nretention_analysis:\n\ndetailed_description:\n\noverall_soundscape:\n\nnon_diegetic_music:"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Write all six sections in English, preserving the original language only for dialogue, lyrics, and text visibly present in the scene."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Drafting Standard"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Define content units, not every source file mechanically."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Assign every important uploaded asset an explicit role, including whether audio is reused fully, reused by track/time segment, or referenced only for timbre/style."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Describe each shot's current composition, subject appearance and position, environment, lighting, actions, state changes, camera movement, sound, and active reference relationship."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Keep reference definitions stable across all six sections."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not reduce "
+                },
+                {
+                  "c": true,
+                  "t": "detailed_description"
+                },
+                {
+                  "t": " to a plot summary or a list of reference links."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Scale detail to the task's complexity while keeping the executable English prompt within the official 7000-character maximum."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Never invent dialogue, lyrics, visible text, or unintelligible source words. Use "
+                },
+                {
+                  "c": true,
+                  "t": "[unclear]"
+                },
+                {
+                  "t": " for unintelligible spans."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Preserve exact transcripts or lyrics when speech, singing, or source audio must remain. Fit dialogue to shot duration and state cross-cut continuation explicitly."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "For source-video editing, maintain a preservation ledger for all content that must remain unchanged."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Output Contract"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Return:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "### English Prompt"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "One "
+                },
+                {
+                  "c": true,
+                  "t": "text"
+                },
+                {
+                  "t": " code block containing only the complete six-section English prompt"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "### 中文翻译"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "A complete Chinese translation outside code blocks"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Language Policy"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Write all six sections in English except exact literal content that must remain in its source form:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Dialogue, voiceover, speech, singing, and lyrics inside "
+                },
+                {
+                  "c": true,
+                  "t": "<d>[Language] ...</d>"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Text visibly present in the scene, including signs, captions, subtitles, labels, interfaces, titles, logos, and messages"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Exact personal names, place names, brands, organizations, product/work titles, account names, and handles"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Filenames, URLs, asset names, model names, reference labels, and control tokens"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Write subject definitions, reference relationships, visual description, actions, camera, editing, sound design, and music in English. Do not retain non-English prose merely because the user's request was written in that language."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "After completing all six English sections, translate every prompt component into Chinese, including the meaning of dialogue, lyrics, visible text, task types, retention relationships, and sound descriptions. Keep field names, task/relationship markers, "
+            },
+            {
+              "c": true,
+              "t": "<Subject N>"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "<Picture N>"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "<Video N>"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "<Audio N>"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "[Shot N]"
+            },
+            {
+              "t": ", timestamps, "
+            },
+            {
+              "c": true,
+              "t": "(Sx)"
+            },
+            {
+              "t": ", and control tags visible alongside Chinese explanations. Preserve exact proper nouns and source literals, adding Chinese meaning where helpful. The Chinese section is explanatory and not an executable prompt."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Add "
+            },
+            {
+              "c": true,
+              "t": "### 采用的假设"
+            },
+            {
+              "t": " before the English prompt only if materially useful."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Quality Gate"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Every important asset has one clear role; no asset is referenced vaguely as part of \"all materials.\""
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "A "
+                },
+                {
+                  "c": true,
+                  "t": "<Subject N>"
+                },
+                {
+                  "t": " denotes reusable visible content; "
+                },
+                {
+                  "c": true,
+                  "t": "<Picture N>"
+                },
+                {
+                  "t": " denotes a concrete frame or planning anchor; "
+                },
+                {
+                  "c": true,
+                  "t": "<Video N>"
+                },
+                {
+                  "t": " denotes a whole-video source or temporal structure; "
+                },
+                {
+                  "c": true,
+                  "t": "<Audio N>"
+                },
+                {
+                  "t": " denotes an audio signal or audio reference."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Task types match actual use rather than mere asset presence."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Each retention marker belongs to the correct visual or audio vocabulary."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Every label used later is defined once and retains the same meaning."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Keyframe anchors name the shot and frame role, and the timeline reaches them coherently."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Actual speakers have stable "
+                },
+                {
+                  "c": true,
+                  "t": "(Sx)"
+                },
+                {
+                  "t": " IDs; audio-only verbal cues do not create fictitious speakers."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Dialogue fits its shot duration; full and partial audio reuse identify exact source scope."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Required visible text, logos, captions, slogans, and interface labels are quoted exactly."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Sound layers are placed in the correct section."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "The prompt does not contradict one-take versus cuts or music versus "
+                },
+                {
+                  "c": true,
+                  "t": "N/A"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "The final English prompt is no more than 7000 characters."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "The Chinese translation covers every section and literal verbal or visible element without introducing new creative content."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

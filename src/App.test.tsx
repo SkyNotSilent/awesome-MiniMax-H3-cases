@@ -768,7 +768,7 @@ describe('case-first routes', () => {
         : new Response('{}', { status: 404 })
     ))
     renderAt('/tutorials/train-ref2va-lora/')
-    expect(await screen.findByRole('heading', { name: 'Ostris 的原帖' })).toBeInTheDocument()
+    expect(await screen.findByRole('heading', { name: 'Ostris 的原帖' }, { timeout: 8000 })).toBeInTheDocument()
     expect(screen.getByText('1 / 5')).toBeInTheDocument()
     expect(document.querySelectorAll('.original-video video')).toHaveLength(5)
     expect(document.querySelector('.original-video video')).toHaveAttribute('src', expect.stringMatching(/^\/media\/tutorial-\d+\.mp4$/))
@@ -776,6 +776,41 @@ describe('case-first routes', () => {
     expect(screen.getByRole('link', { name: /作者申请更正或下架/ })).toHaveAttribute('href', expect.stringContaining('template=takedown.yml'))
     expect(screen.getByRole('heading', { name: '快速判断' })).toBeInTheDocument()
     expect(screen.queryByRole('heading', { name: '执行步骤' })).not.toBeInTheDocument()
+    fetchSpy.mockRestore()
+  })
+
+  it('lists skill packages with install commands and filters official ones', async () => {
+    const skills = (await import('../data/skills.json')).default
+    const fetchSpy = vi.spyOn(globalThis, 'fetch').mockImplementation(async (input) => (
+      String(input).endsWith('/data/skills.json') ? new Response(JSON.stringify(skills), { status: 200 }) : new Response('{}', { status: 404 })
+    ))
+    renderAt('/skills/')
+    expect(await screen.findByRole('heading', { name: 'MiniMax H3 Skills', level: 1 }, { timeout: 8000 })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Skills' })).toHaveAttribute('aria-current', 'page')
+    expect(screen.getAllByRole('article')).toHaveLength(skills.length)
+    expect(screen.getByRole('button', { name: '复制安装命令: npx skills add MiniMax-AI/MiniMax-H3' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: '复制安装命令: npx skills add https://github.com/MiniMax-AI/cli/tree/main/skill/h3-video' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: '复制安装命令: npx skills add T8mars/minimax-h3-prompt-skill-T8' })).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: '官方' }))
+    expect(screen.getAllByRole('article')).toHaveLength(skills.filter((item) => item.official).length)
+    fetchSpy.mockRestore()
+  })
+
+  it('reproduces every SKILL.md of a package with anchors that match the sidebar', async () => {
+    const skills = (await import('../data/skills.json')).default
+    const original = (await import('../data/skill-originals/minimax-h3-official.json')).default
+    const fetchSpy = vi.spyOn(globalThis, 'fetch').mockImplementation(async (input) => {
+      const url = String(input)
+      if (url.endsWith('/data/skills.json')) return new Response(JSON.stringify(skills), { status: 200 })
+      if (url.endsWith('/data/skill-originals/minimax-h3-official.json')) return new Response(JSON.stringify(original), { status: 200 })
+      return new Response('{}', { status: 404 })
+    })
+    renderAt('/skills/minimax-h3-official/')
+    expect(await screen.findByRole('heading', { name: 'MiniMax H3 official skills', level: 2 }, { timeout: 8000 })).toBeInTheDocument()
+    expect(document.querySelectorAll('.original-thread > li')).toHaveLength(9)
+    expect(document.getElementById('skill-h3-prompt-writing')).not.toBeNull()
+    expect(screen.getByRole('link', { name: 'h3-prompt-writing' })).toHaveAttribute('href', '#skill-h3-prompt-writing')
+    expect(screen.getByRole('link', { name: /返回 Skills/ })).toHaveAttribute('href', '/skills/')
     fetchSpy.mockRestore()
   })
 

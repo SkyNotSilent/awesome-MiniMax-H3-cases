@@ -3,7 +3,7 @@ import projectStats from '../data/project-stats.json'
 import taxonomy from '../data/taxonomy.json'
 
 export type Language = 'zh' | 'en'
-export type AppPage = 'home' | 'tutorials' | 'tutorial-detail' | 'tutorial-ecosystem' | 'creators' | 'creator-detail' | 'faq'
+export type AppPage = 'home' | 'tutorials' | 'tutorial-detail' | 'tutorial-ecosystem' | 'skills' | 'skill-detail' | 'creators' | 'creator-detail' | 'faq'
 
 export const languagePreferenceKey = 'minimax-h3-language'
 
@@ -25,6 +25,7 @@ export interface AppRoute {
   page: AppPage
   tutorialSlug?: string
   creatorSlug?: string
+  skillSlug?: string
 }
 
 export function resolveRoute(pathname: string): AppRoute {
@@ -37,12 +38,17 @@ export function resolveRoute(pathname: string): AppRoute {
   const creatorSlug = pageSegment === 'creators'
     ? segments[language === 'en' ? 2 : 1]
     : undefined
+  const skillSlug = pageSegment === 'skills'
+    ? segments[language === 'en' ? 2 : 1]
+    : undefined
   const page: AppPage = pageSegment === 'tutorials' || pageSegment === 'toolkit'
     ? tutorialSlug === 'ecosystem'
       ? 'tutorial-ecosystem'
       : tutorialSlug
         ? 'tutorial-detail'
       : 'tutorials'
+    : pageSegment === 'skills'
+      ? skillSlug ? 'skill-detail' : 'skills'
     : pageSegment === 'creators'
       ? creatorSlug ? 'creator-detail' : 'creators'
     : pageSegment === 'faq'
@@ -53,10 +59,11 @@ export function resolveRoute(pathname: string): AppRoute {
     page,
     ...(tutorialSlug ? { tutorialSlug } : {}),
     ...(creatorSlug ? { creatorSlug } : {}),
+    ...(skillSlug ? { skillSlug } : {}),
   }
 }
 
-export function pathFor(language: Language, page: Exclude<AppPage, 'tutorial-detail' | 'tutorial-ecosystem' | 'creator-detail'>) {
+export function pathFor(language: Language, page: Exclude<AppPage, 'tutorial-detail' | 'tutorial-ecosystem' | 'creator-detail' | 'skill-detail'>) {
   const prefix = language === 'en' ? '/en' : ''
   return page === 'home' ? `${prefix}/` : `${prefix}/${page}/`
 }
@@ -67,6 +74,10 @@ export function tutorialEcosystemPath(language: Language) {
 
 export function tutorialPath(language: Language, slug: string) {
   return `${language === 'en' ? '/en' : ''}/tutorials/${encodeURIComponent(slug)}/`
+}
+
+export function skillPath(language: Language, slug: string) {
+  return `${language === 'en' ? '/en' : ''}/skills/${encodeURIComponent(slug)}/`
 }
 
 export function creatorPath(language: Language, slug: string) {
@@ -82,7 +93,7 @@ export const copy = {
     htmlLang: 'zh-CN',
     siteTitle: 'MiniMax H3 Cases & Guides — 视频案例、公开 Prompt 与教程',
     siteDescription: `${projectStats.cases} 个可筛选、可追溯、可站内观看的 MiniMax H3 / Hailuo 3.0 视频案例，含 ${projectStats.completePrompts} 条完整公开 Prompt 与 ${projectStats.tutorials} 篇来源核验教程。`,
-    nav: { cases: '案例', tutorials: '教程', creators: '创作者', faq: '常见问题', source: '源码', language: 'EN' },
+    nav: { cases: '案例', tutorials: '教程', skills: 'Skills', creators: '创作者', faq: '常见问题', source: '源码', language: 'EN' },
     intro: {
       kicker: 'COMMUNITY VIDEO ARCHIVE / 2026',
       lineOne: 'MINIMAX H3',
@@ -334,7 +345,7 @@ export const copy = {
     htmlLang: 'en',
     siteTitle: 'MiniMax H3 Cases & Guides — Videos, Public Prompts & Tutorials',
     siteDescription: `${projectStats.cases} filterable, source-attributed MiniMax H3 / Hailuo 3.0 video examples with in-site playback, ${projectStats.completePrompts} complete public Prompts, and ${projectStats.tutorials} source-checked tutorials.`,
-    nav: { cases: 'Cases', tutorials: 'Tutorials', creators: 'Creators', faq: 'FAQ', source: 'Source', language: 'ZH' },
+    nav: { cases: 'Cases', tutorials: 'Tutorials', skills: 'Skills', creators: 'Creators', faq: 'FAQ', source: 'Source', language: 'ZH' },
     intro: {
       kicker: 'COMMUNITY VIDEO ARCHIVE / 2026',
       lineOne: 'MINIMAX H3',

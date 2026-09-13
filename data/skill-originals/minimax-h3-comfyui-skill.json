@@ -1,0 +1,2227 @@
+{
+  "skillId": "minimax-h3-comfyui-skill",
+  "kind": "markdown",
+  "title": "minimax-h3-comfyui",
+  "language": "en",
+  "capturedAt": "2026-09-13T11:14:29.547Z",
+  "source": {
+    "url": "https://github.com/hkhdair/minimax-h3-comfyui-skill",
+    "author": "hkhdair",
+    "revision": "d483bd0b8bf4ea5006a69814631a529c992d8d96",
+    "license": "MIT"
+  },
+  "sections": [
+    {
+      "url": "https://github.com/hkhdair/minimax-h3-comfyui-skill/blob/main/SKILL.md",
+      "title": "minimax-h3-comfyui",
+      "anchor": "skill-minimax-h3-comfyui",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Build and debug MiniMax H3 ComfyUI workflows using native nodes first. Use for H3 T2VA, I2VA, L2VA, FL2VA, Ref2VA, multimodal references, prompt authoring, workflow JSON editing, or optional Qwen3-VL enhancer troubleshooting."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3 in ComfyUI"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Overview"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use this skill to build, modify, explain, or troubleshoot native MiniMax H3 workflows in ComfyUI. It applies the prompt-structure, reference-role, timing, routing, and validation knowledge demonstrated by "
+            },
+            {
+              "c": true,
+              "t": "ethanfel/ComfyUI-MiniMax-H3-Guide"
+            },
+            {
+              "t": ", while preferring official ComfyUI nodes for newly created workflows."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Treat the target server's live "
+            },
+            {
+              "c": true,
+              "t": "/object_info"
+            },
+            {
+              "t": " response as authoritative because node schemas and filenames can change."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Core Policy: Native Nodes First"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When asked to "
+            },
+            {
+              "b": true,
+              "t": "create a MiniMax H3 workflow"
+            },
+            {
+              "t": ", do not add nodes from "
+            },
+            {
+              "c": true,
+              "t": "ethanfel/ComfyUI-MiniMax-H3-Guide"
+            },
+            {
+              "t": " by default. Build the workflow with official/native ComfyUI H3 nodes and manually apply the extension's best practices:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "choose the correct T2VA/I2VA/L2VA/FL2VA/Ref2VA family;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "write the proper H3 prompt structure directly;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "keep one-based "
+                },
+                {
+                  "c": true,
+                  "t": "<Picture N>"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "<Video N>"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "<Audio N>"
+                },
+                {
+                  "t": ", and "
+                },
+                {
+                  "c": true,
+                  "t": "<Subject N>"
+                },
+                {
+                  "t": " labels aligned with zero-based native sockets;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "declare reference roles, retention intent, shot scope, timing, dialogue, soundscape, and music explicitly in the prompt;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "use native auto-growing image/video/audio sockets and correct paired-audio routing;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "validate duration, media counts, frame-grid rounding, and native model selection."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Treat the custom-node repository as a "
+            },
+            {
+              "b": true,
+              "t": "knowledge and troubleshooting reference"
+            },
+            {
+              "t": ", not the default runtime dependency. Use its extension nodes only when one of these conditions is true:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "The user explicitly asks for the Prompt Guide, Prompt Enhancer, Reference Sheets, Target Timing, or other extension nodes."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "The user asks to modify or troubleshoot a workflow that already contains them."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "The user explicitly prefers automated Qwen3-VL prompt rewriting or visual-reference analysis inside ComfyUI and accepts the extra model/runtime cost."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "If extension nodes are proposed, state why native nodes alone are insufficient for that request. Never silently introduce the custom-node dependency into a new workflow."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "When to Use"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Building native H3 text-, image-, or reference-to-video workflows."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Translating the extension's H3 prompting practices into native workflow prompts."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Wiring multiple images, videos, paired soundtracks, or standalone audio."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Extending the inputs visible in an H3 template."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Editing a saved H3 workflow without running it."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Troubleshooting existing Prompt Guide or Qwen3-VL Prompt Enhancer workflows."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Diagnosing missing nodes, models, sockets, labels, or enhancer output."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Choose the Correct H3 Family"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "Family"
+              }
+            ],
+            [
+              {
+                "t": "Use"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "T2VA"
+                }
+              ],
+              [
+                {
+                  "t": "Text-only generation."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "I2VA"
+                }
+              ],
+              [
+                {
+                  "t": "One exact starting image."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "L2VA"
+                }
+              ],
+              [
+                {
+                  "t": "One exact ending image."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "FL2VA"
+                }
+              ],
+              [
+                {
+                  "t": "Exact first and last images."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Ref2VA"
+                }
+              ],
+              [
+                {
+                  "t": "Identity, appearance, scene, style, motion, video, or audio references."
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "H3-Base-FL2VA"
+            },
+            {
+              "t": " accepts at most two endpoint images. "
+            },
+            {
+              "c": true,
+              "t": "H3-Base-Ref2VA"
+            },
+            {
+              "t": " accepts up to 9 images, 3 videos, and 3 audio clips, with at most 12 media files in total. Reference video/audio clips must each be 2–15 seconds; total duration per media type is at most 15 seconds. Audio cannot be the only Ref2VA input."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not choose endpoint mode merely because an image is present. Appearance/style guidance belongs to Ref2VA; exact first/last frames belong to I2VA/L2VA/FL2VA."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Native-First Workflow Recipe"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For a new workflow, start from the official ComfyUI MiniMax H3 template or assemble only official nodes:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "Model/CLIP/VAE loaders\n        ↓\nNative MiniMax H3 Image to Video or Reference to Video\n        ↓\nSamplerCustomAdvanced\n        ├─→ VAEDecode video\n        └─→ VAEDecodeAudio\n                 ↓\n             CreateVideo → SaveVideo"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Then apply these extension-derived practices manually:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Resolve the family:"
+                },
+                {
+                  "t": " decide endpoint vs Ref2VA semantics before wiring media."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Route native media:"
+                },
+                {
+                  "t": " connect exact endpoints or auto-growing Ref2VA sockets directly."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Inventory references:"
+                },
+                {
+                  "t": " map every zero-based socket to its one-based H3 label and semantic role."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Author Context-IR-style text:"
+                },
+                {
+                  "t": " write the correct section structure directly in the native "
+                },
+                {
+                  "c": true,
+                  "t": "prompt"
+                },
+                {
+                  "t": " widget or a standard string node."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Validate timing:"
+                },
+                {
+                  "t": " use 4–15 seconds, 24 FPS, and a valid "
+                },
+                {
+                  "c": true,
+                  "t": "17k+5"
+                },
+                {
+                  "t": " frame count."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Validate limits:"
+                },
+                {
+                  "t": " image/video/audio counts, per-clip duration, total duration, and 12-file mixed cap."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Run a small test first:"
+                },
+                {
+                  "t": " low resolution, short duration, and conservative steps before production settings."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For T2VA/I2VA/FL2VA/L2VA, manually produce exactly:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "integrated_multimodal_description:\n...\n\noverall_soundscape:\n...\n\nnon_diegetic_music:\n..."
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For Ref2VA, manually produce these six sections in order:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "subject_definitions:\n...\n\nsummary:\n...\n\nretention_analysis:\n...\n\ndetailed_description:\n...\n\noverall_soundscape:\n...\n\nnon_diegetic_music:\n..."
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Native prompt-writing rules:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Define reusable visible content as "
+                },
+                {
+                  "c": true,
+                  "t": "<Subject N>"
+                },
+                {
+                  "t": " and cite its source "
+                },
+                {
+                  "c": true,
+                  "t": "<Picture N>"
+                },
+                {
+                  "t": " or "
+                },
+                {
+                  "c": true,
+                  "t": "<Video N>"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Keep standalone "
+                },
+                {
+                  "c": true,
+                  "t": "<Picture N>"
+                },
+                {
+                  "t": " only for concrete keyframe/composition/storyboard roles."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Keep standalone "
+                },
+                {
+                  "c": true,
+                  "t": "<Video N>"
+                },
+                {
+                  "t": " for direct editing, continuation, or whole-video temporal structure."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Give each tracked reference exactly one retention row using "
+                },
+                {
+                  "c": true,
+                  "t": "fully_preserved"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "partially_preserved"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "attribute_transfer"
+                },
+                {
+                  "t": ", or "
+                },
+                {
+                  "c": true,
+                  "t": "weak_reference"
+                },
+                {
+                  "t": "; audio uses "
+                },
+                {
+                  "c": true,
+                  "t": "fully_copy"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "partially_copy"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "reference"
+                },
+                {
+                  "t": ", or "
+                },
+                {
+                  "c": true,
+                  "t": "weak_reference"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Start "
+                },
+                {
+                  "c": true,
+                  "t": "[Shot 1]"
+                },
+                {
+                  "t": " without a timestamp. Start later shots as "
+                },
+                {
+                  "c": true,
+                  "t": "[Shot N] At MM:SS.mmm"
+                },
+                {
+                  "t": " with strictly increasing times inside the duration."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Put spoken/sung words only inside "
+                },
+                {
+                  "c": true,
+                  "t": "<d>[Language] ...</d>"
+                },
+                {
+                  "t": " and keep stable speaker IDs "
+                },
+                {
+                  "c": true,
+                  "t": "(S1)"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "(S2)"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Put physical/ambient sounds in "
+                },
+                {
+                  "c": true,
+                  "t": "overall_soundscape"
+                },
+                {
+                  "t": "; put audience-only score in "
+                },
+                {
+                  "c": true,
+                  "t": "non_diegetic_music"
+                },
+                {
+                  "t": "; use "
+                },
+                {
+                  "c": true,
+                  "t": "N/A"
+                },
+                {
+                  "t": " when there is no score."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Preserve exact reference numbering and never invent an unsupplied asset."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Completion criterion: the workflow contains no extension node types unless the user explicitly requested them, while the native prompt and routing still satisfy the same H3 role, label, timing, and audio rules."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Verified Model Set"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For the reference-to-video workflow:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "models/diffusion_models/\n└── minimax_h3_ref2va_pruned_int8_convrot.safetensors\n\nmodels/text_encoders/\n├── qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors\n└── MiniMax-H3/\n    └── qwen3vl_32b_h3_instruct_generation_tail_50_63_nvfp4_awq.safetensors\n\nmodels/vae/\n├── minimax_h3_video_vae_fp16.safetensors\n└── minimax_h3_audio_vae_fp32.safetensors"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The normal H3 Qwen3-VL encoder contains language layers 0–49. It conditions H3 but cannot reliably generate rewritten text alone. The matching generation tail temporarily supplies layers 50–63, final normalization, and the LM head."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Verified NVFP4/AWQ tail:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "filename: qwen3vl_32b_h3_instruct_generation_tail_50_63_nvfp4_awq.safetensors\nbytes:    5396902102\nsha256:   40a9a12feb0822b6eaa39bfb03f7f41415fc1f0fd041315391ea968627e01480\nsource:   https://huggingface.co/ethanfel/Qwen3-VL-32B-Ultra-Heretic-H3-ComfyUI-INT8-ConvRot"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not pair this 0–49 encoder with an arbitrary tail when the matching Instruct NVFP4/AWQ tail exists."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Optional Extension: Install and Discover"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Skip this section when creating a normal native H3 workflow. Use it only when the user explicitly requests the extension or an existing workflow already depends on it."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Guide repository:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "https://github.com/ethanfel/ComfyUI-MiniMax-H3-Guide"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Install under:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "ComfyUI/custom_nodes/ComfyUI-MiniMax-H3-Guide"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "After adding nodes or models:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Check "
+                },
+                {
+                  "c": true,
+                  "t": "/queue"
+                },
+                {
+                  "t": " before restarting."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Refuse restart when running/pending work exists unless interruption is explicitly accepted."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Restart ComfyUI."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Verify "
+                },
+                {
+                  "c": true,
+                  "t": "/system_stats"
+                },
+                {
+                  "t": " and "
+                },
+                {
+                  "c": true,
+                  "t": "/object_info"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Hard-refresh the user's browser."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Prove node availability through "
+            },
+            {
+              "c": true,
+              "t": "/object_info"
+            },
+            {
+              "t": ", not filesystem presence alone:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "import json, urllib.request\nwith urllib.request.urlopen(\"http://127.0.0.1:8188/object_info\") as r:\n    info = json.load(r)\nfor name in (\n    \"MiniMaxH3ReferenceToVideo\",\n    \"MiniMaxH3PromptGuide\",\n    \"MiniMaxH3GenerationTailLoader\",\n    \"MiniMaxH3PromptEnhancer\",\n):\n    print(name, \"PRESENT\" if name in info else \"MISSING\")",
+          "language": "python"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Optional Extension: Prompt Guide"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not add this node to newly created workflows unless explicitly requested. Use the behavior below as a reference for writing equivalent native H3 prompts manually."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Simple Ref2VA wiring:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "Prompt Guide.h3_prompt ─→ Native H3.prompt\nPrompt Guide.h3_length ─→ Native H3.length"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Guide outputs:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "h3_prompt"
+                },
+                {
+                  "t": ": deterministic structured H3 draft."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "rewrite_request"
+                },
+                {
+                  "t": ": instructions for an external LLM."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "mode_report"
+                },
+                {
+                  "t": ": family, references, checkpoint, and warnings."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "h3_length"
+                },
+                {
+                  "t": ": duration rounded to H3's "
+                },
+                {
+                  "c": true,
+                  "t": "17k+5"
+                },
+                {
+                  "t": " frame grid at 24 FPS."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use "
+            },
+            {
+              "c": true,
+              "t": "h3_prompt"
+            },
+            {
+              "t": ", not "
+            },
+            {
+              "c": true,
+              "t": "rewrite_request"
+            },
+            {
+              "t": ", as the included Prompt Enhancer's "
+            },
+            {
+              "c": true,
+              "t": "manual_prompt"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Optional Extension: Qwen3-VL Prompt Enhancer"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not add the enhancer or generation tail to a newly created workflow by default. Prefer a carefully written native H3 prompt that applies the same section ordering, label discipline, reference roles, timing, dialogue, soundscape, and music rules. Add this path only for explicit in-ComfyUI automated rewriting or when maintaining an existing extension-based workflow."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Add:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "MiniMax H3 Generation Tail Loader\nMiniMax H3 Prompt Enhancer (Qwen3-VL)"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Required wiring:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "Prompt Guide.h3_prompt ─────────────→ Prompt Enhancer.manual_prompt\nPrompt Guide.mode_report ───────────→ Prompt Enhancer.mode_report\nCLIP Loader.CLIP ───────────────────→ Prompt Enhancer.clip\nGeneration Tail Loader.clip_tail ───→ Prompt Enhancer.clip_tail\nPrompt Enhancer.enhanced_prompt ────→ Native H3.prompt\nPrompt Guide.h3_length ─────────────→ Native H3.length\nCLIP Loader.CLIP ───────────────────→ Native H3.clip"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The CLIP output fans out to both enhancer and native H3. The tail loader is a descriptor; the enhancer loads and unloads the tail during prompt generation."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Safe first-test settings:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "max_new_tokens:           1000\nsampling:                 deterministic\ntemperature:              0.7\ntop_k:                    64\ntop_p:                    0.95\nmin_p:                    0.05\nrepetition_penalty:       1.05\npresence_penalty:         0.0\nseed:                     0\nthinking:                 false\noffload_after_generation: true"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For richer output after validation, use "
+            },
+            {
+              "c": true,
+              "t": "sampling=sample"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "max_new_tokens=1200–1400"
+            },
+            {
+              "t": ", and temperature "
+            },
+            {
+              "c": true,
+              "t": "0.6–0.7"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "If the 50-layer CLIP lacks a tail, the enhancer safely returns the manual prompt unchanged. Inspect "
+            },
+            {
+              "c": true,
+              "t": "enhancer_report"
+            },
+            {
+              "t": "; do not mistake fallback text for successful enhancement. Connect "
+            },
+            {
+              "c": true,
+              "t": "enhanced_prompt"
+            },
+            {
+              "t": ", never "
+            },
+            {
+              "c": true,
+              "t": "llm_prompt"
+            },
+            {
+              "t": ", to native H3."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Text Enhancement vs Visual Analysis"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Images connected directly to native H3 are not automatically visible to Qwen3-VL. A Guide+CLIP-only enhancer rewrites text."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "To let Qwen inspect pixels, add one "
+            },
+            {
+              "c": true,
+              "t": "MiniMax H3 Enhancer Visual Reference"
+            },
+            {
+              "t": " per image or reference-video frame batch:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "Image 1 ─→ Visual Reference 1.media\nImage 2 ─→ Visual Reference 2.media\n\nVisual Reference 1.reference_context\n    └─→ Visual Reference 2.previous_context\n\nFinal Visual Reference.reference_context\n    ├─→ Prompt Guide.reference_context\n    └─→ Prompt Enhancer.reference_context"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Keep every original media output separately connected to native H3 according to "
+            },
+            {
+              "c": true,
+              "t": "routing_report"
+            },
+            {
+              "t": ". Visual context informs Qwen; it does not replace native media routing."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For video visual references, put "
+            },
+            {
+              "c": true,
+              "t": "MiniMax H3 Target Timing"
+            },
+            {
+              "t": " upstream:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "Target Timing.timing_context ─→ Prompt Guide.timing_context\nTarget Timing.h3_length ──────→ each video Visual Reference.h3_length\nTarget Timing.h3_length ──────→ Native H3.length"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Never feed "
+            },
+            {
+              "c": true,
+              "t": "Prompt Guide.h3_length"
+            },
+            {
+              "t": " backward into a Visual Reference whose final context feeds the same Guide; that creates a cycle."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Auto-Growing Native Inputs"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "MiniMaxH3ReferenceToVideo"
+            },
+            {
+              "t": " uses "
+            },
+            {
+              "c": true,
+              "t": "COMFY_AUTOGROW_V3"
+            },
+            {
+              "t": ". A template can show only three image sockets although the live limit is nine."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Connect the final empty socket to create the next automatically:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "ref_image_0 → <Picture 1>\nref_image_1 → <Picture 2>\nref_image_2 → <Picture 3>\n...\nref_image_8 → <Picture 9>"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When "
+            },
+            {
+              "c": true,
+              "t": "ref_image_2"
+            },
+            {
+              "t": " is connected, "
+            },
+            {
+              "c": true,
+              "t": "ref_image_3"
+            },
+            {
+              "t": " appears. Repeat until "
+            },
+            {
+              "c": true,
+              "t": "ref_image_8"
+            },
+            {
+              "t": ". Do not duplicate the H3 node to add references. Video and audio groups use the same auto-grow behavior up to their limits."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "With many images, start with:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "ref_image_size: match"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "max"
+            },
+            {
+              "t": " retains larger references for identity fidelity but can be substantially slower because reference tokens participate in every sampling step."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Reference Videos and Audio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "ref_video_audios.ref_video_audio_0"
+            },
+            {
+              "t": " is the synchronized soundtrack paired with "
+            },
+            {
+              "c": true,
+              "t": "ref_videos.ref_video_0"
+            },
+            {
+              "t": ". It is not a general audio socket."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Correct chain:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "Load Video.VIDEO ─→ Get Video Components.video\n\nGet Video Components.images ─→ ref_videos.ref_video_0\nGet Video Components.audio  ─→ ref_video_audios.ref_video_audio_0"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Indexes must match:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "ref_video_0 ↔ ref_video_audio_0\nref_video_1 ↔ ref_video_audio_1\nref_video_2 ↔ ref_video_audio_2"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Leave paired audio disconnected when only motion, action, camera, cuts, or visual style is wanted. Use standalone audio sockets for a separate recording:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "Load Audio.AUDIO ─→ ref_audios.ref_audio_0"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Reference Labels and Roles"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Socket indexes are zero-based; prompt labels are one-based. Keep labels stable and describe assets in actual downstream order:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "Picture 1: nighttime fire, smoke, orange lighting, and environment\nPicture 2: main subject identity, face, hair, glasses, and clothing\nVideo 1: walking motion and camera rhythm to transfer\nAudio 1: voice timbre and delivery reference"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use explicit roles:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Identity or appearance."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Object, prop, clothing, interface, or effect."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Scene or environment."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Visual style."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Concrete keyframe or composition anchor."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Storyboard or shot planning."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Motion or action."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Camera, cuts, or rhythm."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Source video to edit or continue."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Safe Workflow-JSON Editing"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When modifying editor-format workflow JSON:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Read the target file and discover actual node IDs."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Confirm live schemas through "
+                },
+                {
+                  "c": true,
+                  "t": "/object_info"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Create a timestamped backup."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Prefer frontend-serialized node shapes."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "For every link, update the top-level link record, source output "
+                },
+                {
+                  "c": true,
+                  "t": "links"
+                },
+                {
+                  "t": ", and target input "
+                },
+                {
+                  "c": true,
+                  "t": "link"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Remove obsolete links from all three locations."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Update "
+                },
+                {
+                  "c": true,
+                  "t": "last_node_id"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "last_link_id"
+                },
+                {
+                  "t": ", and revision."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Write atomically."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Load the file into an isolated ComfyUI frontend graph and assert no missing node types."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Confirm "
+                },
+                {
+                  "c": true,
+                  "t": "/queue"
+                },
+                {
+                  "t": " matches the user's run/no-run instruction."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not POST to "
+            },
+            {
+              "c": true,
+              "t": "/prompt"
+            },
+            {
+              "t": " when the user asked not to run. Frontend graph loading plus structural validation is enough for editor compatibility."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Warn users with an already-open tab to hard-refresh and reopen the saved workflow before saving. A stale browser tab can overwrite server-side changes."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Verification"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "curl -s http://127.0.0.1:8188/queue | python3 -m json.tool\ncurl -s http://127.0.0.1:8188/object_info/MiniMaxH3ReferenceToVideo | python3 -m json.tool\ncurl -s http://127.0.0.1:8188/object_info/MiniMaxH3GenerationTailLoader | python3 -m json.tool",
+          "language": "bash"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "After a requested render, verify the real file with "
+            },
+            {
+              "c": true,
+              "t": "ffprobe"
+            },
+            {
+              "t": ". One verified L40S baseline was approximately 367.48 seconds for a 608×352, 24 FPS, 4.459-second H.264/AAC output. Treat it as a benchmark, not a guarantee."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Common Pitfalls"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Only three image sockets appear:"
+                },
+                {
+                  "t": " connect the final empty socket; the next appears automatically."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Qwen ignores image content:"
+                },
+                {
+                  "t": " native H3 connections do not expose pixels to the enhancer; add Visual Reference nodes."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Enhancement changes nothing:"
+                },
+                {
+                  "t": " inspect "
+                },
+                {
+                  "c": true,
+                  "t": "enhancer_report"
+                },
+                {
+                  "t": "; the 50-layer encoder may lack its matching tail."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Wrong output:"
+                },
+                {
+                  "t": " native H3 receives "
+                },
+                {
+                  "c": true,
+                  "t": "enhanced_prompt"
+                },
+                {
+                  "t": ", not "
+                },
+                {
+                  "c": true,
+                  "t": "llm_prompt"
+                },
+                {
+                  "t": " or "
+                },
+                {
+                  "c": true,
+                  "t": "rewrite_request"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Wrong audio group:"
+                },
+                {
+                  "t": " same-video sound goes to "
+                },
+                {
+                  "c": true,
+                  "t": "ref_video_audio_N"
+                },
+                {
+                  "t": "; unrelated audio goes to "
+                },
+                {
+                  "c": true,
+                  "t": "ref_audio_N"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Labels drift:"
+                },
+                {
+                  "t": " sockets are zero-based while "
+                },
+                {
+                  "c": true,
+                  "t": "<Picture N>"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "<Video N>"
+                },
+                {
+                  "t": ", and "
+                },
+                {
+                  "c": true,
+                  "t": "<Audio N>"
+                },
+                {
+                  "t": " are one-based."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Role contradicts family:"
+                },
+                {
+                  "t": " endpoints use I2VA/L2VA/FL2VA; reference relationships use Ref2VA."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Timing cycle:"
+                },
+                {
+                  "t": " Target Timing must precede video Visual References."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Unexpected slowdown:"
+                },
+                {
+                  "t": " use "
+                },
+                {
+                  "c": true,
+                  "t": "ref_image_size=match"
+                },
+                {
+                  "t": " before "
+                },
+                {
+                  "c": true,
+                  "t": "max"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Server edit disappears:"
+                },
+                {
+                  "t": " a stale browser tab overwrote it; hard-refresh and reopen."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Monitor fails but render succeeds:"
+                },
+                {
+                  "t": " inspect "
+                },
+                {
+                  "c": true,
+                  "t": "/history"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "/queue"
+                },
+                {
+                  "t": ", service logs, and output files independently."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Verification Checklist"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "New workflow uses official/native H3 nodes only unless extension nodes were explicitly requested and justified."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Native prompt manually applies H3 section order, reference-role, retention, timing, dialogue, and audio practices."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Correct H3 family selected."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Native H3 nodes exist in "
+                },
+                {
+                  "c": true,
+                  "t": "/object_info"
+                },
+                {
+                  "t": "; custom nodes are checked only for an explicitly requested extension workflow."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Required native diffusion model, encoder, and VAEs are in the correct folders."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If the optional enhancer was requested, its matching tail appears in the loader after restart and its wiring is valid."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Length routing has no graph cycle."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Original media remains connected to native H3."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Auto-growing sockets and media limits are respected."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Video audio is paired with the same-numbered video."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Prompt labels match socket order and roles."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Saved JSON backlinks are consistent."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Workflow loads with no missing nodes."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Queue state matches the user's instruction."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Sources"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "href": "https://huggingface.co/MiniMaxAI/MiniMax-H3",
+                  "t": "https://huggingface.co/MiniMaxAI/MiniMax-H3"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "href": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_ref_en.md",
+                  "t": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_ref_en.md"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "href": "https://github.com/Comfy-Org/workflow_templates/blob/main/templates/video_minimax_h3_r2v.json",
+                  "t": "https://github.com/Comfy-Org/workflow_templates/blob/main/templates/video_minimax_h3_r2v.json"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "href": "https://github.com/ethanfel/ComfyUI-MiniMax-H3-Guide",
+                  "t": "https://github.com/ethanfel/ComfyUI-MiniMax-H3-Guide"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "href": "https://huggingface.co/ethanfel/Qwen3-VL-32B-Ultra-Heretic-H3-ComfyUI-INT8-ConvRot",
+                  "t": "https://huggingface.co/ethanfel/Qwen3-VL-32B-Ultra-Heretic-H3-ComfyUI-INT8-ConvRot"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

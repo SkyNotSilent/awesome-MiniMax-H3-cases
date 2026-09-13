@@ -1,0 +1,325 @@
+{
+  "skillId": "openmontage-minimax-h3",
+  "kind": "markdown",
+  "title": "OpenMontage minimax-h3",
+  "language": "en",
+  "capturedAt": "2026-09-13T11:12:09.051Z",
+  "source": {
+    "url": "https://github.com/calesthio/OpenMontage",
+    "author": "calesthio",
+    "revision": "08e2151fa02de28a5d6a312b3d575692bf147ad7",
+    "license": "AGPL-3.0"
+  },
+  "sections": [
+    {
+      "url": "https://github.com/calesthio/OpenMontage/blob/main/.agents/skills/minimax-h3/SKILL.md",
+      "title": "minimax-h3",
+      "anchor": "skill-minimax-h3",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Generate MiniMax H3 (Hailuo 3.0) video through the official MiniMax v2 API, fal.ai, Runway, ComfyUI Partner Nodes, or local open weights in ComfyUI. Use for 4-15 second 2K clips, first/last-frame animation, and image/video/audio reference-conditioned video."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "MiniMax H3 is the Hailuo 3.0 family. The first-party API identifier is\n"
+            },
+            {
+              "c": true,
+              "t": "MiniMax-H3"
+            },
+            {
+              "t": "; fal.ai exposes the family as "
+            },
+            {
+              "c": true,
+              "t": "hailuo-03"
+            },
+            {
+              "t": ", and Runway uses\n"
+            },
+            {
+              "c": true,
+              "t": "hailuo3"
+            },
+            {
+              "t": ". Do not substitute one provider's identifier into another API."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Choose a route"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "Route"
+              }
+            ],
+            [
+              {
+                "t": "Tool call"
+              }
+            ],
+            [
+              {
+                "t": "Execution"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "MiniMax direct"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "minimax_video"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "model: \"MiniMax-H3\""
+                }
+              ],
+              [
+                {
+                  "t": "Hosted first-party v2 API; global or mainland-China region"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "fal.ai"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "minimax_fal_video"
+                }
+              ],
+              [
+                {
+                  "t": "Hosted gateway; T2V, I2V, reference-to-video"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Runway"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "runway_video"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "model: \"hailuo3\""
+                }
+              ],
+              [
+                {
+                  "t": "Hosted; 768P or 2K, 5–15 seconds"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "ComfyUI Partner Node"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "comfyui_video"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "model_family: \"minimax_h3_api\""
+                }
+              ],
+              [
+                {
+                  "t": "Hosted and billed in Comfy credits"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "ComfyUI open weights"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "comfyui_video"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "model_family: \"minimax_h3_local\""
+                }
+              ],
+              [
+                {
+                  "t": "Local GPU with official workflow and model stack"
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For local ComfyUI, export the official workflow in API format and pass\n"
+            },
+            {
+              "c": true,
+              "t": "workflow_json"
+            },
+            {
+              "t": " or "
+            },
+            {
+              "c": true,
+              "t": "workflow_path"
+            },
+            {
+              "t": " plus "
+            },
+            {
+              "c": true,
+              "t": "output_node"
+            },
+            {
+              "t": ". OpenMontage reports the\nrequired diffusion model, Qwen3-VL text encoder, video VAE, and audio VAE; it\ndoes not silently download large weights."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Operations and prompting"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Text-to-video: concrete ratio; do not use "
+                },
+                {
+                  "c": true,
+                  "t": "adaptive"
+                },
+                {
+                  "t": " without visual input."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Image-to-video: provide a first frame."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "First/last-frame: provide both images and describe the motion between them."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Reference-to-video: images, videos, and audio can be combined. Audio needs at\nleast one visual reference."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Write prompts as subject + action + camera path + environment + lighting +\naudio intent. MiniMax responds well to explicit camera direction. Keep the\nrequested motion achievable within 4–15 seconds and inspect native audio as\ncarefully as the image track."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Provider differences"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The direct MiniMax v2 route currently outputs 2K and supports 4–15 seconds.\nRunway's Hailuo 3.0 route supports 768P/2K and documents 5–15 seconds. Partner\nNodes require network access and credits. Only the open-weight ComfyUI route is\nlocal/offline after all models are installed."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

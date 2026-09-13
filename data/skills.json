@@ -1,0 +1,1074 @@
+[
+  {
+    "id": "minimax-h3-official",
+    "name": "MiniMax H3 official skills",
+    "repository": "MiniMax-AI/MiniMax-H3",
+    "official": true,
+    "category": "prompt",
+    "summary": {
+      "zh": "官方 h3-prompt-writing 把需求改写成 H3 的五种模式格式，另附 8 个成片模板：3D 动画、品牌宣传、游戏片头、手绘互动、极简产品广告、MV 字幕、纸拼贴与纸艺定格讲解。",
+      "en": "The official h3-prompt-writing skill rewrites requests into the five H3 prompt formats, plus eight production templates: 3D shorts, brand promos, game intros, hand-drawn interaction, minimalist product ads, music-video subtitles, paper collage, and papercraft explainers."
+    },
+    "skills": [
+      {
+        "name": "h3-prompt-writing",
+        "path": "skills/h3-prompt-writing/SKILL.md",
+        "description": "Write MiniMax H3 video generation prompts for T2VA, I2VA, FL2VA, L2VA, and Ref2VA. Use when rewriting multimodal requests into H3 prompt structures, composing integrated_multimodal_description, overall_soundscape, and non_diegetic_music, aligning keyframes, or defining reference labels for images, videos, and audio."
+      },
+      {
+        "name": "3d-animation-short-generator",
+        "path": "skills/3d-animation-short-generator/SKILL.md",
+        "description": "Create complete stylized 3D animated shorts from a story idea through an ordered production workflow covering project brief, story outline, character and environment cards, standardized shot planning, text or optional pencil storyboards, video-model selection, single-shot generation, assembly, BGM matching, and final review. Use when the user wants an end-to-end narrative animation workflow with strong character consistency, scene continuity, timing, camera, performance, and audio control. Not for single images, simple edits, photorealistic live action, or one standalone clip."
+      },
+      {
+        "name": "brand-promo-video-generator",
+        "path": "skills/brand-promo-video-generator/SKILL.md",
+        "description": "For marketers and creators producing promotional content for brands, products, websites, apps, shops, or personal projects. Users provide logos, product images, interface screenshots, official links, or other verifiable assets and confirm duration, aspect ratio, audience, and campaign focus. The Skill organizes brand facts and asset provenance, selects a narrative direction, plans precise beats and shots, generates needed imagery, video, voiceover, or music, and completes assembly and pre-delivery review. It outputs a promotional short that highlights product capabilities, use cases, and a call to action. Best for launches, website showcases, and social promotion; not for imitating real brand marks without authorized assets, inventing product claims, or producing long-form narrative films."
+      },
+      {
+        "name": "co-op-game-intro-generator",
+        "path": "skills/co-op-game-intro-generator/SKILL.md",
+        "description": "For users creating a two-player co-op game menu or opening animation. Users provide two player names, a game title, a target visual style, and optional character reference images. The Skill locks identity cues, generates an approval image from a fixed menu framework with coordinated color, buttons, icons, and typography, then uses the approved result to rebuild the character, UI-copy, and event timing instructions for the final video. It outputs a co-op game intro featuring two characters, player cards, and menu interaction motion. Best for game concepts, character-led menus, and social content; not for playable game development, complex multi-page UI, exact brand-logo replication, or generic character-free title sequences."
+      },
+      {
+        "name": "handdrawn-live-video-generator",
+        "path": "skills/handdrawn-live-video-generator/SKILL.md",
+        "description": "For creators making surreal short videos that blend rough glowing hand-drawn animation with live-action spaces. Users provide a scene idea, contact object or hand, desired mood, and optional language or style constraints. The Skill clarifies the physical contact, designs continuous morphing, escape route, and delayed handheld chase movement, then writes a reusable 15-second 16:9 video prompt in the user's language. After user confirmation it recommends MiniMax H3 generation and checks contact realism, camera delay, rough glowing stroke texture, and non-horror tone. Best for single-scene creative clips, not polished CG, horror jump scares, plush characters, or multi-scene cuts."
+      },
+      {
+        "name": "minimalist-product-ad-generator",
+        "path": "skills/minimalist-product-ad-generator/SKILL.md",
+        "description": "Turn product images and ad requirements into minimalist product ad shorts for e-commerce promotion and product launches. The Skill confirms format and product variants, extracts selling points, writes concise English ad copy, builds product anchors, plans beat-synced typography/storyboards, and generates a clean product film with premium camera language. Not for KOC talking-head ads, general editing, or complex screen demos."
+      },
+      {
+        "name": "music-video-subtitle-generator",
+        "path": "skills/music-video-subtitle-generator/SKILL.md",
+        "description": "For musicians, video creators, and social-media editors producing AI music videos or emotional short films with lyric typography. Users provide music, lyrics, references, characters, typography direction, mood, or target platform. The Skill analyzes beat and vocal timing, separates character, scene, and text references, designs beat-reactive spatial typography, decomposes long works into connected shots, audits prompts, and routes generation for H3 or other video tools. It outputs MV concepts, shot prompts, lyric text plans, and stitching guidance. Best for stylized MVs and subtitle-driven music visuals, not ordinary caption cleanup, licensed IP copying, or fully manual post-production editing."
+      },
+      {
+        "name": "paper-collage-explainer-generator",
+        "path": "skills/paper-collage-explainer-generator/SKILL.md",
+        "description": "For creators, educators, and social-video editors who need a tactile paper-collage language for narration, knowledge points, opinions, or abstract topics. Users provide source copy, story beats, or a core concept and may specify aspect ratio, duration, palette, and audio needs. The Skill extracts meaning, proposes visual metaphors, prepares a production plan and storyboard, generates approved halftone collage stills, then creates stop-motion clips with paper movement and tactile sound effects, with optional final assembly. By default it keeps collage SFX and does not add BGM, voiceover, or subtitles unless requested. Best for explainers, viewpoints, story visuals, and social B-roll; not for presenter ads, editable layers, complex typography, or prompt-only tasks."
+      },
+      {
+        "name": "papercraft-stop-motion-explainer",
+        "path": "skills/papercraft-stop-motion-explainer/SKILL.md",
+        "description": "For creators explaining science, education, or general knowledge through tactile handmade papercraft visuals. Users provide a topic, core knowledge points, or source material and may specify audience, duration, aspect ratio, and deliverable type. The Skill extracts the learning goal and visual metaphor, proposes creative directions, designs paper characters, layered diorama sets, and props, creates preview concepts plus image and video prompts, and plans storyboards, camera movement, transitions, and sound with staged approvals and review checklists. It outputs a production-ready papercraft stop-motion explainer package, or selected assets such as still prompts, image-series prompts, short-video prompts, or storyboards. Best for cut-paper, pop-up-book, layered diorama, and miniature stop-motion explainers; not for standard 2D cartoons, line doodles, live action, or explainers without a paper-art look."
+      }
+    ],
+    "branch": "main",
+    "author": "MiniMax-AI",
+    "skillCount": 9,
+    "stars": 8551,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-08-15",
+    "addedAt": "2026-09-13T11:12:04.211Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:12:04.211Z"
+    }
+  },
+  {
+    "id": "minimax-cli-h3-video",
+    "name": "mmx h3-video",
+    "repository": "MiniMax-AI/cli",
+    "official": true,
+    "category": "api",
+    "summary": {
+      "zh": "官方 mmx 命令行的 H3 Skill：提交文生视频、首尾帧和参考生视频任务，查询进度并下载成片。",
+      "en": "Official mmx CLI skill for H3: submit text-to-video, first/last-frame, and reference jobs, then monitor and download results."
+    },
+    "skills": [
+      {
+        "name": "mmx-h3-video",
+        "path": "skill/h3-video/SKILL.md",
+        "description": "Generate, monitor, and download MiniMax-H3 videos through the mmx CLI. Use for H3 text-to-video, first/last-frame video, multimodal reference image/video/audio generation, H3 prompt improvement, media preflight, Pay-as-you-go API key selection, task waiting, downloads, and H3 failure handling."
+      }
+    ],
+    "branch": "main",
+    "author": "MiniMax-AI",
+    "skillCount": 1,
+    "stars": 2097,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-09-07",
+    "addedAt": "2026-09-13T11:12:07.515Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:12:07.515Z"
+    }
+  },
+  {
+    "id": "openmontage-minimax-h3",
+    "name": "OpenMontage minimax-h3",
+    "repository": "calesthio/OpenMontage",
+    "official": false,
+    "category": "production",
+    "summary": {
+      "zh": "OpenMontage 视频生产系统里的 H3 路由：按需选择官方 API、fal.ai、Runway、ComfyUI 合作节点或本地权重，生成 4 到 15 秒的片段。",
+      "en": "The H3 route inside the OpenMontage production system: choose the official API, fal.ai, Runway, ComfyUI partner nodes, or local weights for 4–15 second clips."
+    },
+    "skills": [
+      {
+        "name": "minimax-h3",
+        "path": ".agents/skills/minimax-h3/SKILL.md",
+        "description": "Generate MiniMax H3 (Hailuo 3.0) video through the official MiniMax v2 API, fal.ai, Runway, ComfyUI Partner Nodes, or local open weights in ComfyUI. Use for 4-15 second 2K clips, first/last-frame animation, and image/video/audio reference-conditioned video."
+      }
+    ],
+    "branch": "main",
+    "author": "calesthio",
+    "skillCount": 1,
+    "stars": 58042,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-09-06",
+    "addedAt": "2026-09-13T11:12:09.051Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:12:09.051Z"
+    },
+    "license": "AGPL-3.0"
+  },
+  {
+    "id": "comfyui-wiki-2d-restyle",
+    "name": "ComfyUI-wiki 2D restyle",
+    "repository": "602387193c/ComfyUI-wiki",
+    "official": false,
+    "category": "production",
+    "summary": {
+      "zh": "先用小样锁定画风，再用 GPT Image 2 故事板加 H3 Ref2VA 把影视片段批量转绘成统一的二维动画，含音轨替换与全量质检。",
+      "en": "Lock a style with test clips, then batch-restyle film footage into consistent 2D animation using GPT Image 2 storyboards and H3 Ref2VA, with soundtrack replacement and full QC."
+    },
+    "skills": [
+      {
+        "name": "fanren-xiuxianzhuan-2d-zhuanhui",
+        "path": "docs/凡人修仙传2d转绘/SKILL.md",
+        "description": "按用户指定的视觉风格，先通过代表性片段小样实验和用户确认锁定风格，再将原始影视片段批量转绘为统一的原创二维动画视频；适用于 GPT Image 2 故事板、MiniMax H3 Ref2VA、ComfyUI 串行生成、原声音轨替换和全量 QC。"
+      }
+    ],
+    "branch": "main",
+    "author": "602387193c",
+    "skillCount": 1,
+    "stars": 1169,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-08-27",
+    "addedAt": "2026-09-13T11:12:10.583Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:12:10.583Z"
+    },
+    "license": "MIT"
+  },
+  {
+    "id": "comfytv-h3-cinematic-director",
+    "name": "h3-cinematic-director",
+    "repository": "jtydhr88/ComfyTV",
+    "official": false,
+    "category": "production",
+    "summary": {
+      "zh": "把已确认的剧本、分镜、关键帧和角色设定转成导演级故事板与可直接生成的 H3 Prompt。",
+      "en": "Turns approved scripts, shot briefs, keyframes, and character sheets into director-level storyboards and production-ready H3 prompts."
+    },
+    "skills": [
+      {
+        "name": "h3-cinematic-director",
+        "path": "skills/h3-cinematic-director/SKILL.md",
+        "description": "Convert approved scripts, shot briefs, storyboards, keyframes, character sheets, scene assets, prop sheets, and sound briefs into director-level storyboards and production-ready MiniMax H3 prompts. Use when the user explicitly invokes $h3-cinematic-director or asks for H3 shot design, T2VA/I2VA/FL2VA/L2VA/Ref2VA prompting, camera and performance direction, first/last-frame interpolation, multi-reference control, character/scene continuity auditing, or single-variable repair. Preserve approved story content and never import or reveal private content from another project."
+      }
+    ],
+    "branch": "main",
+    "author": "jtydhr88",
+    "skillCount": 1,
+    "stars": 1013,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-09-11",
+    "addedAt": "2026-09-13T11:12:12.107Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:12:12.107Z"
+    },
+    "license": "MIT"
+  },
+  {
+    "id": "comfyui-mcp-minimax-h3-video",
+    "name": "comfyui-mcp minimax-h3-video",
+    "repository": "artokun/comfyui-mcp",
+    "official": false,
+    "category": "comfyui",
+    "summary": {
+      "zh": "通过 ComfyUI MCP 搭建 H3 本地工作流：原生 T2V/I2V/R2V 节点、INT8 权重、8GB 显存可用的 Turbo LoRA 与 15 秒立体声片段。",
+      "en": "Builds local H3 workflows through ComfyUI MCP: native T2V/I2V/R2V nodes, INT8 weights, Turbo LoRAs for 8GB VRAM, and 15-second stereo clips."
+    },
+    "skills": [
+      {
+        "name": "minimax-h3-video",
+        "path": "plugin/skills/minimax-h3-video/SKILL.md",
+        "description": "Build MiniMax H3 (Hailuo) local video workflows with native T2V/I2V/R2V nodes, Comfy-Org INT8 weights, turbo LoRAs for 8GB VRAM, 15-second stereo-audio clips, and the official MiniMax prompting guides (cite by link, do not copy)."
+      }
+    ],
+    "branch": "main",
+    "author": "artokun",
+    "skillCount": 1,
+    "stars": 742,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-09-10",
+    "addedAt": "2026-09-13T11:12:14.264Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:12:14.264Z"
+    },
+    "license": "MIT"
+  },
+  {
+    "id": "opc-h3-guide",
+    "name": "opc h3-guide",
+    "repository": "xiaotianfotos/OPC",
+    "official": false,
+    "category": "prompt",
+    "summary": {
+      "zh": "H3 创意规划与 Prompt 指南：参考素材编排、角色与物体替换、运镜迁移、台词音色修改，覆盖广告、短剧、电商和游戏 UI 等场景。",
+      "en": "An H3 planning and prompt guide covering reference arrangement, character and object swaps, camera transfer, and voice edits for ads, dramas, e-commerce, and game UI."
+    },
+    "skills": [
+      {
+        "name": "h3-guide",
+        "path": "opc-cli/references/h3-guide/SKILL.md",
+        "description": "MiniMax H3 视频创意规划、参考素材编排、Prompt 设计与迭代质检指南。用于文生视频、首尾帧视频、多图/视频/音频联合参考、角色与物体替换、动作和运镜迁移、背景与光影编辑、台词音色修改、TVC、片头、MG、短剧、产品、电商、游戏 UI、动画及风格化影像；当用户提到 H3、MiniMax 视频、H3 Prompt、参考图视频或希望用 opc-cli 生成/编辑 H3 视频时使用。"
+      }
+    ],
+    "branch": "main",
+    "author": "xiaotianfotos",
+    "skillCount": 1,
+    "stars": 735,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-08-14",
+    "addedAt": "2026-09-13T11:12:15.695Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:12:15.695Z"
+    },
+    "license": "Apache-2.0"
+  },
+  {
+    "id": "nodetool-minimax-h3-prompting",
+    "name": "nodetool minimax-h3-prompting",
+    "repository": "nodetool-ai/nodetool",
+    "official": false,
+    "category": "prompt",
+    "summary": {
+      "zh": "在文生视频、首尾帧和参考生视频之间选对入口，给每个参考素材分配职责，在 Prompt 里写带时间码的分镜并指导原生立体声。",
+      "en": "Choose between text, first/last-frame, and reference endpoints, give each reference a job, and write timecoded shot lists that direct native stereo audio."
+    },
+    "skills": [
+      {
+        "name": "minimax-h3-prompting",
+        "path": "packages/system-skills/minimax-h3-prompting/SKILL.md",
+        "description": "Prompt MiniMax H3 — choosing between its text-to-video, first-and-last-frame and reference-to-video endpoints, assigning an explicit job to every reference image, clip and audio file, writing a timecoded shot list inside the prompt, art-directing the native stereo audio, and naming a change and its constraint together when editing a clip. Use whenever the model id starts with minimax/h3 (minimax/h3/text-to-video, minimax/h3/image-to-video, minimax/h3/reference-to-video, their /lora variants, minimax/h3-max/* and minimax/h3-max-turbo/*) on generate_video, animate_image or a TextToVideo node. Not for MiniMax Hailuo."
+      }
+    ],
+    "branch": "main",
+    "author": "nodetool-ai",
+    "skillCount": 1,
+    "stars": 522,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-09-13",
+    "addedAt": "2026-09-13T11:12:17.192Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:12:17.192Z"
+    },
+    "license": "AGPL-3.0"
+  },
+  {
+    "id": "h3lite",
+    "name": "h3lite",
+    "repository": "Rimagination/h3lite",
+    "official": false,
+    "category": "local",
+    "summary": {
+      "zh": "在 Windows + NVIDIA 电脑上配置、修复和运行本地 H3：按硬件选择组件、分辨率、耗时预算和低显存方案。",
+      "en": "Configure, repair, and run local H3 on Windows with NVIDIA: pick components, resolution, time budget, and low-VRAM options from your hardware."
+    },
+    "skills": [
+      {
+        "name": "h3lite",
+        "path": "SKILL.md",
+        "description": "Use when configuring, repairing, planning, or running MiniMax H3 locally on a Windows NVIDIA computer, especially when installation compatibility, component sets, resolution, generation-time budget, path, low-VRAM risk, or H3 prompt mode must be chosen from hardware and user requirements."
+      }
+    ],
+    "branch": "main",
+    "author": "Rimagination",
+    "skillCount": 1,
+    "stars": 422,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-08-23",
+    "addedAt": "2026-09-13T11:12:19.747Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:12:19.747Z"
+    },
+    "license": "MIT"
+  },
+  {
+    "id": "apnext-h3-prompt-skills",
+    "name": "APNext H3 Prompt Skills",
+    "repository": "dagthomas/comfyui_dagthomas",
+    "official": false,
+    "category": "comfyui",
+    "summary": {
+      "zh": "APNext ComfyUI 节点背后的 5 份 H3 Prompt 契约：基础三段式、Ref2VA 六段式、跨场景、风格控制与导演技法。",
+      "en": "Five H3 prompt contracts behind the APNext ComfyUI nodes: the three-field base format, six-section Ref2VA, crossover scenes, style craft, and directing."
+    },
+    "skills": [
+      {
+        "name": "h3-ref2va",
+        "path": "data/h3/skills/h3-ref2va/SKILL.md",
+        "description": "The six-section MiniMax H3 full-reference (Ref2VA) contract the APNext H3 Reference Prompt Writer nodes emit - subject_definitions, summary, retention_analysis, detailed_description, overall_soundscape, non_diegetic_music - with <Subject N>/<Picture N>/<Video N>/<Audio N> roles, the retention vocabulary, summary task types, how the node's image_1..image_9 sockets become <Picture 1>..<Picture 9>, what its reference_role dropdown means, and reference-controls-HOW / user-controls-WHAT style transfer. Load with h3-prompt-director whenever reference media drives identity, style, motion, camera, performance or voice."
+      },
+      {
+        "name": "h3-crossover",
+        "path": "data/h3/skills/h3-crossover/SKILL.md",
+        "description": "The four-section MiniMax H3 crossover-scene contract the APNext H3 Crossover Writer node emits - subject_definitions / integrated_multimodal_description / overall_soundscape / non_diegetic_music per scene, the scene envelope the node parses, how the cast list maps to <Subject N>, speaker binding, silence mandates and shared-frame safeguards, and how a run of scenes hangs together as one story. Load with h3-prompt-director for crossover work."
+      },
+      {
+        "name": "h3-base-format",
+        "path": "data/h3/skills/h3-base-format/SKILL.md",
+        "description": "The three-field MiniMax H3 contract the APNext H3 Prompt Writer nodes emit for T2VA, I2VA, FL2VA and L2VA - integrated_multimodal_description / overall_soundscape / non_diegetic_music, the exact first-frame, first-and-last-frame and last-frame alignment lines, how the node's image batch maps to first_frame and last_frame, and how each mode develops from or converges onto its keyframes. Load with h3-prompt-director whenever the task is not Ref2VA."
+      },
+      {
+        "name": "h3-style-craft",
+        "path": "data/h3/skills/h3-style-craft/SKILL.md",
+        "description": "Turning the APNext H3 node's visual_style, camera and wildness settings into observable MiniMax H3 prompt language - one visual-medium pack plus at most one motion, finish and audio pack, translating a named studio, era, genre or artist into traits, describing traditional animation timing (held poses, stepped cadence, smears, line boil, painted texture) without over-claiming frame rates, and scaling authorial risk to the wildness band. Load with h3-prompt-director whenever a style is stated, a reference look is implied, or wildness is above Conservative."
+      },
+      {
+        "name": "h3-prompt-director",
+        "path": "data/h3/skills/h3-prompt-director/SKILL.md",
+        "description": "Core craft for writing MiniMax H3 video prompts as the engine behind the APNext H3 nodes in ComfyUI - how to obey the node's directives (task type, duration, shot plan, camera, dialogue, wildness), keep an exact field contract the node parses, run a continuous timeline with clean cuts, write speech in <d> tags with stable speaker IDs, separate soundscape from music, and validate silently before answering. Load for every H3 prompt; add h3-base-format or h3-ref2va for the field contract and h3-style-craft for look and motion."
+      }
+    ],
+    "branch": "master",
+    "author": "dagthomas",
+    "skillCount": 5,
+    "stars": 290,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-08-30",
+    "addedAt": "2026-09-13T11:12:25.276Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:12:25.276Z"
+    },
+    "license": "MIT"
+  },
+  {
+    "id": "god-minimax-h3",
+    "name": "God-minmax-H3",
+    "repository": "LIUFelix2004/God-minmax-H3",
+    "official": false,
+    "category": "prompt",
+    "summary": {
+      "zh": "H3 成片方法论与提示词库：逆向拆解参考片、把多段 H3 片段拼成 20 到 60 秒成片，并保持角色与风格一致。",
+      "en": "An H3 production method and prompt library: reverse-engineer reference clips, stitch multiple clips into 20–60 second films, and keep characters and style consistent."
+    },
+    "skills": [
+      {
+        "name": "minimax-h3-video",
+        "path": "SKILL.md",
+        "description": "用 MiniMax H3（海螺 3.0）生成成片级视频的完整方法论与提示词库。当用户提到「海螺」「Hailuo」「MiniMax H3」「H3 生成视频」「AI 视频提示词」「文生视频/图生视频/首尾帧/全能参考」，或需要把参考片逆向拆解成提示词、要把多段 H3 片段拼成 20–60 秒成片、要保持跨段的角色与风格一致性、要写带运镜与原生音频指令的分镜提示词时，使用本技能。也适用于用户只是发来一段视频问「这是怎么生成的」或「帮我做个 29 秒的片子」。"
+      }
+    ],
+    "branch": "main",
+    "author": "LIUFelix2004",
+    "skillCount": 1,
+    "stars": 280,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-09-01",
+    "addedAt": "2026-09-13T11:12:27.008Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:12:27.008Z"
+    },
+    "license": "MIT"
+  },
+  {
+    "id": "archival-fragments",
+    "name": "archival-fragments",
+    "repository": "ttfake92-lab/skills",
+    "official": false,
+    "category": "production",
+    "summary": {
+      "zh": "把一段文案做成「档案剪贴」风格解说短片：H3 首尾帧驱动镜头，Fish Audio 配音，ffmpeg 合成。",
+      "en": "Turns a script into an archival-collage explainer: H3 first/last frames drive each shot, Fish Audio narrates, and ffmpeg assembles the film."
+    },
+    "skills": [
+      {
+        "name": "archival-fragments",
+        "path": "skills/archival-fragments/SKILL.md",
+        "description": "从一个想法或一份文案，做出一条完整的「档案剪贴」风格短片——满幅象牙纸、单色印刷黑白、单一暗砖红，镜头用 MiniMax H3 首尾帧驱动，配音用 Fish Audio，成片用 ffmpeg 合成。当用户想用档案剪贴/编辑设计/纸质拼贴风格做视频，或要把一段文案、一个选题、一条新闻做成解说短片时使用。包含环境安装检查、拆故事拆画面拆节奏、逐镜生成、变速拼片的完整流程。"
+      }
+    ],
+    "branch": "main",
+    "author": "ttfake92-lab",
+    "skillCount": 1,
+    "stars": 238,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-08-31",
+    "addedAt": "2026-09-13T11:12:29.164Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:12:29.164Z"
+    }
+  },
+  {
+    "id": "t8-creative-dna",
+    "name": "T8 Creative DNA",
+    "repository": "T8mars/minimax-h3-prompt-skill-T8",
+    "official": false,
+    "category": "prompt",
+    "summary": {
+      "zh": "上百个「创意 DNA」Skill，每个把一种因果、运镜、节奏或收尾结构套到新题材上，用于 H3 或 Seedance 2.0。",
+      "en": "Hundreds of Creative DNA skills, each applying one causal, camera, rhythm, or payoff structure to new subjects for H3 or Seedance 2.0."
+    },
+    "skills": [],
+    "catalog": true,
+    "branch": "main",
+    "author": "T8mars",
+    "skillCount": 248,
+    "stars": 223,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-09-13",
+    "addedAt": "2026-09-13T11:13:57.925Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:28:52.706Z"
+    },
+    "license": "MIT"
+  },
+  {
+    "id": "awesome-minimax-h3-cases-skills",
+    "name": "awesome-MiniMax-H3-cases skills",
+    "repository": "SkyNotSilent/awesome-MiniMax-H3-cases",
+    "official": false,
+    "category": "prompt",
+    "summary": {
+      "zh": "本站的 3 个 Skill：检索真实案例与完整公开 Prompt、按硬件挑选核验过的教程、帮创作者准备投稿材料。",
+      "en": "This site’s three skills: retrieve real cases and complete public prompts, pick source-checked tutorials by hardware, and prepare creator submissions."
+    },
+    "skills": [
+      {
+        "name": "minimax-h3-prompt-library",
+        "path": "agents/skills/minimax-h3-prompt-library/SKILL.md",
+        "description": "This skill should be used when the user asks to \"find a MiniMax H3 case\", \"show the original prompt\", \"look up a Hailuo 3.0 example\", \"verify whether a prompt was published\", or \"retrieve source-attributed H3 examples\". It retrieves real cases and verbatim public prompts only; it refuses prompt generation, rewriting, reconstruction, reverse engineering, translation, or workflow decomposition."
+      },
+      {
+        "name": "minimax-h3-submission-helper",
+        "path": "agents/skills/minimax-h3-submission-helper/SKILL.md",
+        "description": "Use this skill when a creator wants to submit a MiniMax H3 case, practical tutorial, installation guide, video tutorial, or resource suggestion. It prepares Issue-ready material without claiming verification or granting publication authority."
+      },
+      {
+        "name": "minimax-h3-tutorial-guide",
+        "path": "agents/skills/minimax-h3-tutorial-guide/SKILL.md",
+        "description": "Use this skill when a user wants to install or run MiniMax H3, choose a tutorial for Mac or NVIDIA hardware, work within a VRAM limit, or build an H3 workflow for audio, acceleration, long video, or training. It selects source-checked tutorials and produces executable AI task packages without inventing commands or claiming unverified compatibility."
+      }
+    ],
+    "branch": "main",
+    "author": "SkyNotSilent",
+    "skillCount": 3,
+    "stars": 218,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-09-13",
+    "addedAt": "2026-09-13T11:14:00.244Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:14:00.244Z"
+    },
+    "license": "MIT"
+  },
+  {
+    "id": "minimax-h3-cloud",
+    "name": "MiniMax-H3-Cloud",
+    "repository": "Sac-Y/MiniMax-H3-Cloud",
+    "official": false,
+    "category": "api",
+    "summary": {
+      "zh": "用可替换的云 GPU 配置生成 H3 视频：自动开机、提交 ComfyUI 工作流、下载 MP4 后关机。",
+      "en": "Generates H3 videos on swappable cloud GPU profiles: start an instance, submit the ComfyUI workflow, download the MP4, and shut down."
+    },
+    "skills": [
+      {
+        "name": "minimax-h3-video",
+        "path": "plugins/minimax-h3-cloud/skills/minimax-h3-video/SKILL.md",
+        "description": "使用可替换的云端 GPU Runtime Profile 生成 MiniMax H3 视频，自动启动实例、提交 ComfyUI 工作流、下载 MP4 并关机。适用于用户明确要求生成、测试、查询或停止本项目的 H3 云端视频任务；不用于一般视频剪辑或其他视频模型。"
+      }
+    ],
+    "branch": "main",
+    "author": "Sac-Y",
+    "skillCount": 1,
+    "stars": 202,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-08-30",
+    "addedAt": "2026-09-13T11:14:01.972Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:14:01.972Z"
+    },
+    "license": "MIT"
+  },
+  {
+    "id": "oh-my-minimaxh3-director",
+    "name": "oh-my-minimaxh3-director",
+    "repository": "TFboy1/oh-my-minimaxh3-director",
+    "official": false,
+    "category": "production",
+    "summary": {
+      "zh": "剧本到成片的导演流水线：自动分镜、人物四视图、H3 工作流分配、批量生成监控，最后用剪映拼合。",
+      "en": "A script-to-film pipeline: automatic storyboards, four-view character sheets, H3 workflow assignment, batch monitoring, and final assembly in CapCut."
+    },
+    "skills": [
+      {
+        "name": "oh-my-minimaxh3-director",
+        "path": "SKILL.md",
+        "description": "AI 视频导演流水线：剧本自动分镜（含 WenWu 导演级镜头衔接与人物四视图参考图）→ MiniMax H3 工作流分配与参数确认 → 批量生成监控 → 剪映自动拼合成片，可选 Cloudflare 隧道远程访问。提示词支持官方 H3 六段式（official）、WenWu 中文导演模式（wenwu），以及两者兼顾的 hybrid 模式（官方六段式外壳 + WenWu 导演级内容）。用户提到剧本出片、自动分镜、分镜衔接、WenWu、人物四视图、H3 生成、工作流分配、剪映拼合、AI 导演、游戏 PV/宣传片/广告短片/风格与音乐简报，或给出剧本/故事文本要求生成视频时使用。"
+      }
+    ],
+    "branch": "master",
+    "author": "TFboy1",
+    "skillCount": 1,
+    "stars": 119,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-08-16",
+    "addedAt": "2026-09-13T11:14:03.394Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:14:03.394Z"
+    },
+    "license": "MIT"
+  },
+  {
+    "id": "minimax-h3-opencode-skills",
+    "name": "minimax-h3-opencode-skills",
+    "repository": "unknowlei/minimax-h3-opencode-skills",
+    "official": false,
+    "category": "prompt",
+    "summary": {
+      "zh": "6 个分工明确的 H3 Prompt Skill：总控创意导演、多镜头规划、关键帧、文生视频、参考生视频与 Prompt 审查。",
+      "en": "Six coordinated H3 prompt skills: a creative-director entry point, multi-shot planning, keyframes, text-to-video, reference video, and prompt review."
+    },
+    "skills": [
+      {
+        "name": "minimax-h3-creative-director",
+        "path": "skills/minimax-h3-creative-director/SKILL.md",
+        "description": "Primary mandatory entrypoint for every MiniMax H3 video-generation request. Use before any other H3 skill for creation, animation, extension, editing, restyling, reference, or prompt review. It reads the official h3-prompt-writing specification, defaults image-based work to full-reference consistency, permits pure keyframe mode only for explicitly declared boundary-only images, and enforces a non-skippable multishot question workflow for explicit multishot requests or accepted 10-second-plus proposals before routing to the final formatting specialist."
+      },
+      {
+        "name": "minimax-h3-multishot-planner",
+        "path": "skills/minimax-h3-multishot-planner/SKILL.md",
+        "description": "Non-skippable planning-only MiniMax H3 subskill used by minimax-h3-creative-director before final prompt formatting. Invoke when the user explicitly requests multiple shots, scenes, cuts, montage, or shot-by-shot design, or when a video of at least 10 seconds has no declared single-shot/multishot preference and the user accepts the director's multishot offer. After loading, it must ask shot count and then question the user about every shot in playback order before any final H3 formatting skill may run."
+      },
+      {
+        "name": "minimax-h3-keyframe-video-prompt",
+        "path": "skills/minimax-h3-keyframe-video-prompt/SKILL.md",
+        "description": "Narrow downstream MiniMax H3 specialist for pure I2VA, FL2VA, and L2VA boundary-frame prompts. Use only after minimax-h3-creative-director verifies that the user explicitly declared the images as literal first/last frames and that they have no character, identity, person, object, costume, scene, style, voice, action, camera, or other reusable reference responsibility. Otherwise use full-reference consistency, even when first/last-frame semantics are desired."
+      },
+      {
+        "name": "minimax-h3-prompt-reviewer",
+        "path": "skills/minimax-h3-prompt-reviewer/SKILL.md",
+        "description": "Downstream MiniMax H3 specialist that audits, repairs, and rewrites T2VA, I2VA, FL2VA, L2VA, and full-reference prompts into an official structured format. Use after minimax-h3-creative-director routes an existing prompt for diagnosis or repair, or when explicitly invoked for formatting, timeline, camera, dialogue, sound, reference-label, retention, keyframe, contradiction, limit, or bilingual-output problems."
+      },
+      {
+        "name": "minimax-h3-text-video-prompt",
+        "path": "skills/minimax-h3-text-video-prompt/SKILL.md",
+        "description": "Downstream MiniMax H3 specialist for professional text-to-video (T2VA) prompts using the official three-field format. Use after minimax-h3-creative-director routes a request with no image, video, or audio reference asset, or when this skill is explicitly invoked for a text-only idea, script, or storyboard requiring an audiovisual timeline and Chinese translation."
+      },
+      {
+        "name": "minimax-h3-reference-video-prompt",
+        "path": "skills/minimax-h3-reference-video-prompt/SKILL.md",
+        "description": "Default downstream MiniMax H3 specialist for every image-based request unless the user explicitly declares boundary-only first/last frames with no reusable reference role. Use the official six-section full-reference format for character/person/object consistency, scene/style/action/camera/storyboard/voice/audio reference, source-video editing or continuation, ambiguous image roles, ordinary image animation, and prompt-level first/key/last-frame anchoring."
+      }
+    ],
+    "branch": "main",
+    "author": "unknowlei",
+    "skillCount": 6,
+    "stars": 112,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-08-09",
+    "addedAt": "2026-09-13T11:14:06.657Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:14:06.657Z"
+    },
+    "license": "MIT"
+  },
+  {
+    "id": "comfyui-agent-kit-minimax-h3",
+    "name": "ComfyUI-Agent-Kit minimax-h3",
+    "repository": "SlavaSexton/ComfyUI-Agent-Kit",
+    "official": false,
+    "category": "comfyui",
+    "summary": {
+      "zh": "写和调试 H3 Prompt，在 ComfyUI 本地运行开放权重，按显存选量化和加速 LoRA，并排查乱码输出。",
+      "en": "Write and debug H3 prompts, run the open weights in ComfyUI, pick a quant and acceleration LoRA for your VRAM, and troubleshoot garbled output."
+    },
+    "skills": [
+      {
+        "name": "minimax-h3",
+        "path": "claude-code/skills/minimax-h3/SKILL.md",
+        "description": "Use when writing or debugging prompts for MiniMax H3 (Hailuo 3) video-with-audio generation, running the open weights locally in ComfyUI, choosing a quant or an acceleration LoRA for the VRAM you have, wiring reference-to-video with images, video or audio, or when a generated clip produces gibberish speech, drifts off a reference identity, garbles audio after a latent upscale, or refuses to run on a build that looks current."
+      }
+    ],
+    "branch": "master",
+    "author": "SlavaSexton",
+    "skillCount": 1,
+    "stars": 96,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-09-03",
+    "addedAt": "2026-09-13T11:14:07.923Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:14:07.923Z"
+    },
+    "license": "Apache-2.0"
+  },
+  {
+    "id": "minimax-h3-video-prompt",
+    "name": "minimax-h3-video-prompt",
+    "repository": "penposs/minimax-h3-video-prompt",
+    "official": false,
+    "category": "prompt",
+    "summary": {
+      "zh": "先匹配 H3 的模型能力再写 Prompt，并逐项检查素材职责、指令冲突、时间轴和官方输入输出限制。",
+      "en": "Matches the right H3 capability before writing a prompt, then checks reference roles, conflicts, timeline, and official input and output limits."
+    },
+    "skills": [
+      {
+        "name": "minimax-h3-video-prompt",
+        "path": "SKILL.md",
+        "description": "根据用户的创作目标以及图片、视频、音频参考素材，先匹配 MiniMax H3 的正确模型能力，再生成并复核可直接使用的视频提示词。用于文生视频、首帧/尾帧图生视频、多模态参考生成、参考视频动作或运镜迁移、局部视频编辑、人物与产品一致性控制、广告、电商、剧情、动画、游戏、MV、Vlog、视觉包装、UI 动效、硬件工业和具身智能演示等任务；也用于逐项检查需求覆盖、素材职责、指令冲突、时间轴以及 H3 官方输入输出限制。"
+      }
+    ],
+    "branch": "main",
+    "author": "penposs",
+    "skillCount": 1,
+    "stars": 62,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-08-04",
+    "addedAt": "2026-09-13T11:14:09.232Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:14:09.232Z"
+    },
+    "license": "MIT"
+  },
+  {
+    "id": "minimax-h3-prompt-standardizer",
+    "name": "minimax-h3-prompt-standardizer",
+    "repository": "sengseng123/minimax-h3-prompt-standardizer",
+    "official": false,
+    "category": "prompt",
+    "summary": {
+      "zh": "面向新手：把一句想法、粗稿、剧本或分镜整理成规范的 H3 Prompt，含参考图标注与对白音效安排。",
+      "en": "For beginners: turns an idea, rough prompt, script, or shot list into a clean H3 prompt with reference labels, dialogue, and sound."
+    },
+    "skills": [
+      {
+        "name": "minimax-h3-prompt-standardizer",
+        "path": "SKILL.md",
+        "description": "Turn anything from a one-line idea, rough prompt, image request, story, script, dialogue, or shot list into clear production-ready MiniMax H3 video prompts. Use whenever a beginner wants H3 prompt normalization, expansion, simplification, shot planning, reference-image labeling, dialogue and sound alignment, or multi-segment prompts. Supports text-to-video and image/reference-driven video. Do not use for actually generating or editing video files."
+      }
+    ],
+    "branch": "main",
+    "author": "sengseng123",
+    "skillCount": 1,
+    "stars": 59,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-08-24",
+    "addedAt": "2026-09-13T11:14:10.568Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:14:10.568Z"
+    }
+  },
+  {
+    "id": "minimax-h3-broll-generator",
+    "name": "minimax-broll-generator",
+    "repository": "guangjun5952/minimax-h3-broll-generator",
+    "official": false,
+    "category": "production",
+    "summary": {
+      "zh": "给口播视频配 B-roll：转写文稿、找出需要画面的语义节点、匹配包装模板，再用 H3 生成素材。",
+      "en": "Adds B-roll to talking-head videos: transcribe, find beats that need footage, match packaging templates, and generate the shots with H3."
+    },
+    "skills": [
+      {
+        "name": "minimax-broll-generator",
+        "path": "skill/SKILL.md",
+        "description": "Accept a transcript or talking-head video, optionally transcribe the video into a timestamped transcript, choose v1 simple, v2 rich, or v3 balanced prompt rules, identify semantic beats that need B-roll, match Guangjun T01–T21 packaging templates, request truthful source assets, generate MiniMax-H3 shots after explicit approval, and automatically edit them back onto the source video by timestamp. Use when the user asks to解析口播视频、生成带时间戳逐字稿、拆解口播、规划B-roll、匹配包装模板、选择简洁/丰富/平衡提示词、生成无背景音乐且仅含音效的包装、调用MiniMax-H3、自动剪辑口播配画面或输出成片。"
+      }
+    ],
+    "branch": "main",
+    "author": "guangjun5952",
+    "skillCount": 1,
+    "stars": 39,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-08-14",
+    "addedAt": "2026-09-13T11:14:11.940Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:14:11.940Z"
+    },
+    "license": "MIT"
+  },
+  {
+    "id": "minimax-h3-codex-drama",
+    "name": "MiniMax-H3-Codex-Drama",
+    "repository": "chiphoton/MiniMax-H3-Codex-Drama",
+    "official": false,
+    "category": "production",
+    "summary": {
+      "zh": "在 Codex 里做短剧的 9 个 Skill：H3 各模式 Prompt、纯音频生成、视频编辑、ComfyUI 执行和整片制作。",
+      "en": "Nine skills for making short dramas in Codex: prompts for each H3 mode, audio-only generation, video editing, ComfyUI execution, and full production."
+    },
+    "skills": [
+      {
+        "name": "minimax-h3-audio",
+        "path": "skills/minimax-h3-audio/SKILL.md",
+        "description": "Create, enhance, diagnose, and optionally execute MiniMax H3 audio-only prompts through the verified fixed 32x32 ComfyUI proxy. Use for prompt-generated dialogue, narration, announcements, ambience, foley, robot sounds, or animal calls when no reference media is required; use R2V for reference-controlled voices or sounds."
+      },
+      {
+        "name": "minimax-h3-comfyui",
+        "path": "skills/minimax-h3-comfyui/SKILL.md",
+        "description": "Prepare, validate, submit, monitor, and retrieve MiniMax H3 text-to-video, first/last-frame image-to-video, reference-to-video, and verified 32x32 audio-only workflows on a local or self-hosted ComfyUI instance. Use when a user explicitly asks to run, generate, execute, queue, preview, or fetch MiniMax H3 work through ComfyUI. Uses pinned Comfy-Org templates and bundled Turbo variants, and patches known fields deterministically; it does not adapt arbitrary custom workflows."
+      },
+      {
+        "name": "minimax-h3-adviser",
+        "path": "skills/minimax-h3-adviser/SKILL.md",
+        "description": "Advise, enhance, diagnose, and route MiniMax H3 video or audio prompts across official H3 style workflows, text-to-video, first/last-frame, multimodal reference-to-video, precise video-editing, verified 32x32 audio-only generation, and optional ComfyUI execution. Use when a user has a media idea, draft prompt, failed generation, uncertain input strategy, asks which MiniMax H3 workflow to use, or explicitly asks to run it through ComfyUI. Grill one decision at a time unless the user requests fast mode, use an official h3style overlay only on a clear match, and invoke ComfyUI only on explicit execution intent."
+      },
+      {
+        "name": "minimax-h3-text-to-video",
+        "path": "skills/minimax-h3-text-to-video/SKILL.md",
+        "description": "Create, enhance, or diagnose MiniMax H3 text-to-video prompts when the entire video should be invented from language without image, video, or audio references. Use for prompt-only cinematic shots, ads, animation, motion design, social clips, UI demos, or other H3 concepts that need a timed action plan, camera direction, visual treatment, native audio direction, constraints, settings, templates, or copy-ready prompt output."
+      },
+      {
+        "name": "minimax-h3-drama-producer",
+        "path": "skills/minimax-h3-drama-producer/SKILL.md",
+        "description": "Produce or resume complete profile-driven videos in Codex with GPT-Image visual development, MiniMax-H3 shot generation through ComfyUI, optional voice and captions, sound design, deterministic FFmpeg editing, local delivery, and technical plus visual QC. Use when a user asks Codex to turn a story, campaign brief, script, storyboard, or reference bundle into a finished short drama, advertisement, social video, or other multi-shot video project under a standard outputs project directory."
+      },
+      {
+        "name": "minimax-h3-frame-to-video",
+        "path": "skills/minimax-h3-frame-to-video/SKILL.md",
+        "description": "Create, enhance, or diagnose MiniMax H3 first-frame and first/last-frame animation prompts when supplied images are literal opening or closing frames. Use for animating posters, key art, portraits, UI mockups, product stills, or controlled transitions that must begin from one exact image or travel between two exact images while preserving composition, identity, geometry, and continuity."
+      },
+      {
+        "name": "minimax-h3-profile-distiller",
+        "path": "skills/minimax-h3-profile-distiller/SKILL.md",
+        "description": "Distill one or more local reference videos into a safe, declarative MiniMax-H3 Drama production profile with evidence, confidence, storytelling grammar, shot patterns, audio and caption behavior, deliverables, and QC rules. Use when a user asks Codex to analyze, reverse-engineer, extract a reusable style or format from, or create a video profile based on uploaded or workspace video files."
+      },
+      {
+        "name": "minimax-h3-reference-to-video",
+        "path": "skills/minimax-h3-reference-to-video/SKILL.md",
+        "description": "Create, enhance, or diagnose MiniMax H3 multimodal reference-to-video prompts using images, videos, and audio for identity, product design, style, location, storyboard, motion, camera, editing rhythm, performance, music, or voice. Use when multiple assets need explicit jobs, unwanted cross-reference influence must be blocked, or users need an asset ledger, timed shot plan, preservation constraints, settings, template, or copy-ready H3 prompt."
+      },
+      {
+        "name": "minimax-h3-video-editor",
+        "path": "skills/minimax-h3-video-editor/SKILL.md",
+        "description": "Create, enhance, or diagnose precise MiniMax H3 prompts for editing an existing video while preserving everything outside requested changes. Use for subject or object replacement, removal, wardrobe changes, background replacement, relighting, localized VFX, text or signage changes, dialogue or voice replacement, performance adjustment, and multi-element edits that need explicit change-and-preserve pairs and copy-ready prompts."
+      }
+    ],
+    "branch": "main",
+    "author": "chiphoton",
+    "skillCount": 9,
+    "stars": 35,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-09-09",
+    "addedAt": "2026-09-13T11:14:16.432Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:14:16.432Z"
+    },
+    "license": "MIT"
+  },
+  {
+    "id": "tj-node-studio-minimax-h3-prompt",
+    "name": "TJ_NODE minimax-h3-prompt",
+    "repository": "designloves2/ComfyUI-TJ_NODE_STUDIO_ONE",
+    "official": false,
+    "category": "prompt",
+    "summary": {
+      "zh": "写分镜式制作简报，或可直接复制的结构化参考 Prompt，覆盖全能参考、首尾帧、动作迁移和音色迁移。",
+      "en": "Writes storyboard-style briefs or copy-ready structured reference prompts for omni reference, first/last frame, motion transfer, and voice transfer."
+    },
+    "skills": [
+      {
+        "name": "minimax-h3-prompt",
+        "path": ".claude/skills/minimax-h3-prompt/SKILL.md",
+        "description": "Write MiniMax H3 / Hailuo video prompts — either a storyboard-style production brief from a user's request and attached images, or a copy-ready structured reference prompt (Image1/Video1/Audio1 tokens, [REFERENCE USE], [SHOT LIST], etc.) for Omni Reference, First/Last Frame, motion transfer, voice transfer, or targeted video edits. Use when the user asks for a MiniMax H3 / Hailuo video prompt, a video storyboard, to \"enrich\"/\"expand\" a short video idea into a shot-by-shot brief, or to format/audit a reference-based H3 prompt."
+      }
+    ],
+    "branch": "main",
+    "author": "designloves2",
+    "skillCount": 1,
+    "stars": 31,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-09-12",
+    "addedAt": "2026-09-13T11:14:17.800Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:14:17.800Z"
+    },
+    "license": "MIT"
+  },
+  {
+    "id": "h3mlx",
+    "name": "H3MLX",
+    "repository": "RobZombAI/H3MLX",
+    "official": false,
+    "category": "local",
+    "summary": {
+      "zh": "面向 H3 与 H3-Max 的执行工具包，含 Apple Silicon 加速、Turbo 工作流和训练说明；加速数据以作者仓库为准。",
+      "en": "Execution toolkits for H3 and H3-Max, including Apple Silicon acceleration, Turbo workflows, and training notes; performance claims are the author’s."
+    },
+    "skills": [
+      {
+        "name": "h3xml-engine",
+        "path": ".agents/skills/h3xml-engine/SKILL.md",
+        "description": "High-performance video and image generation toolkit for H3XML (MiniMax H3 Metal 4 NAX accelerated engine). Features calibrated aspect ratio presets, fast iteration modes, text-to-image and text-to-video pipelines on Apple Silicon (M-series with Unified Memory)."
+      },
+      {
+        "name": "minimax-h3-fast-master",
+        "path": ".agents/skills/minimax-h3-fast-master/SKILL.md",
+        "description": "Fast Master execution toolkit for MiniMax H3 / H3-Max video generation on Apple Silicon M-series (Unified Memory). Combines 8-step / 5-step exact DPM++ 2M Trailing Flow, 50 full layers, dynamic int8 FC2 quantization, single-chunk and multi-chunk causal temporal lattice (T = 17n + 5), and zero-loss optical macro definition."
+      },
+      {
+        "name": "minimax-h3-max",
+        "path": ".agents/skills/minimax-h3-max/SKILL.md",
+        "description": "Baseline high-fidelity guide and execution toolkit for MiniMax H3-Max video generation, SGLang miles RL + LoRA SFT training, PDD 6-step/8-step high-fidelity inference, and Apple Silicon Metal 4 NAX native acceleration. Activate whenever the user mentions MiniMax H3, H3-Max, Hailuo 3, SGLang miles, or asks for high-fidelity 6-step/8-step cinematic video generation with synchronized 48 kHz audio."
+      },
+      {
+        "name": "minimax-h3-turbo",
+        "path": ".agents/skills/minimax-h3-turbo/SKILL.md",
+        "description": "Ultra-fast ComfyUI co-designed execution toolkit for MiniMax H3 / H3-Max Turbo video generation. Features SLA-Attention (Sparse Local Attention in middle DiT blocks 14-36), Predictive Euler Step Reuse (reuse 2), 4-step PDD distillation, Motion Context temporal video chaining, and sub-90s generation on Apple Silicon M5 Max. Activate whenever the user asks for fast H3 generation, ComfyUI H3 workflows, SLA-attention, motion context, or sub-90s / turbo video generation."
+      },
+      {
+        "name": "h3mlx",
+        "path": "SKILL.md",
+        "description": "Autonomous AI agent execution skill for high-speed, photorealistic MiniMax-H3 video and 48kHz audio generation on Apple Silicon (Metal 4 / MLX / Pure C). Includes Fast Master (8-step) and FastVideo (4-step) presets, hardware auto-profiling, and broadcast mastering."
+      }
+    ],
+    "branch": "master",
+    "author": "RobZombAI",
+    "skillCount": 5,
+    "stars": 22,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-09-06",
+    "addedAt": "2026-09-13T11:14:20.499Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:14:20.499Z"
+    }
+  },
+  {
+    "id": "comfy-agent-minimax-h3-prompting",
+    "name": "comfy-agent minimax-h3-prompting",
+    "repository": "shinshin86/comfy-agent",
+    "official": false,
+    "category": "prompt",
+    "summary": {
+      "zh": "为 comfy-agent 的 H3 预设写和迭代 Prompt，专门处理音频不对、运镜被忽略、风格漂移和节奏过快。",
+      "en": "Writes and iterates prompts for comfy-agent’s H3 presets, targeting wrong audio, ignored camera moves, style drift, and rushed pacing."
+    },
+    "skills": [
+      {
+        "name": "minimax-h3-prompting",
+        "path": ".claude/skills/minimax-h3-prompting/SKILL.md",
+        "description": "Write or refine prompts for MiniMax H3 video generation via comfy-agent (minimax_h3_t2v / minimax_h3_i2v / minimax_h3_r2v presets). Use whenever composing the --104_prompt for an H3 run, when a user asks for a video clip on an H3 environment, or when an H3 output missed the intent (wrong audio, ignored camera move, style drift, rushed pacing) and the prompt needs iteration."
+      }
+    ],
+    "branch": "main",
+    "author": "shinshin86",
+    "skillCount": 1,
+    "stars": 14,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-09-09",
+    "addedAt": "2026-09-13T11:14:21.885Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:14:21.885Z"
+    },
+    "license": "MIT"
+  },
+  {
+    "id": "diffusers-workflow-minimax-h3",
+    "name": "diffusers-workflow minimax-h3",
+    "repository": "dkackman/diffusers-workflow",
+    "official": false,
+    "category": "local",
+    "summary": {
+      "zh": "连接 dw MCP 服务后生成 H3 视频：按需求选模板，支持对白、MV、多镜头短片和参考保持一致。",
+      "en": "Generates H3 video through a connected dw MCP server, choosing templates for dialogue, music videos, multi-shot shorts, and reference consistency."
+    },
+    "skills": [
+      {
+        "name": "minimax-h3",
+        "path": "plugins/dw/skills/minimax-h3/SKILL.md",
+        "description": "Use when a dw MCP server is connected and the user wants MiniMax H3 video - a clip with its own sound, dialogue or a speaking character, a music video, a multi-shot short with cuts, a longer take, or a subject or voice kept consistent from a reference. Picks the template for the shape, states the rules that bite, quotes cost, and points at MiniMax's own prompt guides."
+      }
+    ],
+    "branch": "master",
+    "author": "dkackman",
+    "skillCount": 1,
+    "stars": 11,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-09-13",
+    "addedAt": "2026-09-13T11:14:23.136Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:14:23.136Z"
+    },
+    "license": "Apache-2.0"
+  },
+  {
+    "id": "hivemindos-minimax-h3-video-prompting",
+    "name": "hivemindos minimax-h3-video-prompting",
+    "repository": "LiamVisionary/hivemindos",
+    "official": false,
+    "category": "prompt",
+    "summary": {
+      "zh": "专门为 H3 写、改、审 Prompt，覆盖 T2VA、I2VA、FL2VA、L2VA、Ref2VA 与 Context-IR 等模式。",
+      "en": "Writes, rewrites, and audits prompts for H3 across T2VA, I2VA, FL2VA, L2VA, Ref2VA, and Context-IR."
+    },
+    "skills": [
+      {
+        "name": "minimax-h3-video-prompting",
+        "path": "packaged-skills/optional/media/hivemindos/minimax-h3-video-prompting/SKILL.md",
+        "description": "Write, rewrite, audit, or compile prompts specifically for MiniMax H3 audiovisual video generation. Use whenever the user names MiniMax H3, H3-Base-FL2VA, H3-Base-Ref2VA, Context-IR, T2VA, I2VA, FL2VA, L2VA, Ref2VA, first-frame, last-frame, first-and-last-frame, omni-reference, or full-reference H3 generation—even if they only ask for an ad, UGC clip, storyboard, dialogue scene, or reference-video prompt. Resolve the exact H3 task family before drafting; do not transfer Seedance, LTX, Kling, Veo, or older Hailuo syntax by analogy."
+      }
+    ],
+    "branch": "main",
+    "author": "LiamVisionary",
+    "skillCount": 1,
+    "stars": 10,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-09-09",
+    "addedAt": "2026-09-13T11:14:24.430Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:14:24.430Z"
+    },
+    "license": "MIT"
+  },
+  {
+    "id": "write-minimax-h3-video-prompts",
+    "name": "write-minimax-h3-video-prompts",
+    "repository": "yajnignez/minimax-h3-prompts",
+    "official": false,
+    "category": "prompt",
+    "summary": {
+      "zh": "两阶段写 H3 Prompt：先写带完整对白的中文剧本，再转成 H3 生产格式；也能改写其他模型的 Prompt。",
+      "en": "A two-stage H3 prompt workflow: draft a Chinese screenplay with full dialogue first, then convert it to H3 production format; also adapts prompts from other models."
+    },
+    "skills": [
+      {
+        "name": "write-minimax-h3-video-prompts",
+        "path": "write-minimax-h3-video-prompts/SKILL.md",
+        "description": "Convert natural-language ideas, scripts, shot lists, storyboards, images, video references, audio references, or prompts for other generators into production-ready prompts for the MiniMax H3 video model through a mandatory two-stage workflow: first draft a Chinese screenplay with complete dialogue for user approval, then convert the approved screenplay into H3 prompts. Use whenever the user mentions MiniMax H3, MiniMax-H3, Hailuo H3, 海螺 H3, 海螺H3, H3 视频, H3 视频提示词, asks for a prompt suitable for H3, or asks to optimize/translate/diagnose an existing H3 prompt. Support text-to-video, first/last-frame image-to-video, multimodal reference generation, video editing, native audio/dialogue, and structured Context-IR-style prompt writing with mandatory character emotion/expression direction and detailed cinematic capture/style specifications."
+      }
+    ],
+    "branch": "main",
+    "author": "yajnignez",
+    "skillCount": 1,
+    "stars": 6,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-08-12",
+    "addedAt": "2026-09-13T11:14:25.688Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:14:25.688Z"
+    }
+  },
+  {
+    "id": "minimax-worldbuilder",
+    "name": "minimax-worldbuilder",
+    "repository": "Hearmeman24/minimax-worldbuilder",
+    "official": false,
+    "category": "prompt",
+    "summary": {
+      "zh": "按 H3 强制结构化格式写带原生音频的 Prompt，只做全参考（Ref2VA）和文生视频（T2VA）。",
+      "en": "Composes H3 prompts with native audio in the mandatory structured format, for full-reference (Ref2VA) and text-to-video (T2VA) only."
+    },
+    "skills": [
+      {
+        "name": "minimax-worldbuilder",
+        "path": "SKILL.md",
+        "description": "Compose MiniMax-H3 video-with-native-audio prompts in H3's mandatory structured format — full-reference (Ref2VA) and text-to-video (T2VA) only. Use whenever the target model is MiniMax-H3: the user says MiniMax, MiniMax-H3, H3, ref2va / r2v / t2v, names a minimax_h3 checkpoint, or names the MiniMaxH3ReferenceToVideo / EmptyMiniMaxH3LatentAV / MiniMaxH3SigmaShift ComfyUI nodes. Also use when the request needs H3's own vocabulary — reference tags <Subject N> / <Picture N> / <Video N> / <Audio N>, subject_definitions, retention_analysis, detailed_description, integrated_multimodal_description, overall_soundscape, non_diegetic_music, [Shot N] cut timestamps, (S1) speaker IDs, <d> dialogue blocks. H3 prompts are not free prose: fixed section names in a fixed order, fixed camera-motion and retention enums, and a native-audio pass that goes silent if the sound sections are thin — so use this skill instead of a generic prompt skill any time H3 is the target model. NOT for other generative models (Flux, SDXL, Qwen Image, WAN, Kling, Veo, Sora, Runway, Seedance — use cinematic-prompts), NOT for still images (use cinematic-still-director), and NOT for H3's I2VA / FL2VA / L2VA keyframe paths, which this skill deliberately does not cover."
+      }
+    ],
+    "branch": "main",
+    "author": "Hearmeman24",
+    "skillCount": 1,
+    "stars": 3,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-08-03",
+    "addedAt": "2026-09-13T11:14:27.046Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:14:27.046Z"
+    }
+  },
+  {
+    "id": "run-minimax-h3-colab",
+    "name": "run-minimax-h3-colab",
+    "repository": "soren-labs/minimax-h3-interface",
+    "official": false,
+    "category": "api",
+    "summary": {
+      "zh": "在一台 Google Colab G4 上全自动跑 H3 Turbo 或 Base 重绘批次：一次上传、顺序处理、逐个校验下载后关机。",
+      "en": "Fully automates H3 Turbo or Base repaint batches on one Google Colab G4: upload once, process sequentially, verify each download, then stop."
+    },
+    "skills": [
+      {
+        "name": "run-minimax-h3-colab",
+        "path": "skills/run-minimax-h3-colab/SKILL.md",
+        "description": "Fully automate MiniMax H3 Turbo generation or H3 Base video repaint batches on one Google Colab G4: decide shutdown before launch, upload the complete batch once, install and start ComfyUI once, process all items sequentially in one remote job, verify and download every artifact, and stop only after the complete batch when requested."
+      }
+    ],
+    "branch": "main",
+    "author": "soren-labs",
+    "skillCount": 1,
+    "stars": 2,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-08-11",
+    "addedAt": "2026-09-13T11:14:28.256Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:14:28.256Z"
+    }
+  },
+  {
+    "id": "minimax-h3-comfyui-skill",
+    "name": "minimax-h3-comfyui",
+    "repository": "hkhdair/minimax-h3-comfyui-skill",
+    "official": false,
+    "category": "comfyui",
+    "summary": {
+      "zh": "优先用原生节点搭建和调试 H3 ComfyUI 工作流，覆盖各生成模式、多模态参考和工作流 JSON 编辑。",
+      "en": "Builds and debugs H3 ComfyUI workflows with native nodes first, covering every mode, multimodal references, and workflow JSON edits."
+    },
+    "skills": [
+      {
+        "name": "minimax-h3-comfyui",
+        "path": "SKILL.md",
+        "description": "Build and debug MiniMax H3 ComfyUI workflows using native nodes first. Use for H3 T2VA, I2VA, L2VA, FL2VA, Ref2VA, multimodal references, prompt authoring, workflow JSON editing, or optional Qwen3-VL enhancer troubleshooting."
+      }
+    ],
+    "branch": "main",
+    "author": "hkhdair",
+    "skillCount": 1,
+    "stars": 0,
+    "starsAt": "2026-09-13",
+    "updatedAt": "2026-08-06",
+    "addedAt": "2026-09-13T11:14:29.547Z",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T11:14:29.547Z"
+    },
+    "license": "MIT"
+  }
+]
