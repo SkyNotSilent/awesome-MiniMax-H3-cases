@@ -1,0 +1,705 @@
+{
+  "skillId": "write-minimax-h3-video-prompts",
+  "kind": "markdown",
+  "title": "write-minimax-h3-video-prompts",
+  "language": "en",
+  "capturedAt": "2026-09-13T11:14:25.688Z",
+  "source": {
+    "url": "https://github.com/yajnignez/minimax-h3-prompts",
+    "author": "yajnignez",
+    "revision": "4fc808438da65240ea7cd83c106077578372d11b"
+  },
+  "sections": [
+    {
+      "url": "https://github.com/yajnignez/minimax-h3-prompts/blob/main/write-minimax-h3-video-prompts/SKILL.md",
+      "title": "write-minimax-h3-video-prompts",
+      "anchor": "skill-write-minimax-h3-video-prompts",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Convert natural-language ideas, scripts, shot lists, storyboards, images, video references, audio references, or prompts for other generators into production-ready prompts for the MiniMax H3 video model through a mandatory two-stage workflow: first draft a Chinese screenplay with complete dialogue for user approval, then convert the approved screenplay into H3 prompts. Use whenever the user mentions MiniMax H3, MiniMax-H3, Hailuo H3, 海螺 H3, 海螺H3, H3 视频, H3 视频提示词, asks for a prompt suitable for H3, or asks to optimize/translate/diagnose an existing H3 prompt. Support text-to-video, first/last-frame image-to-video, multimodal reference generation, video editing, native audio/dialogue, and structured Context-IR-style prompt writing with mandatory character emotion/expression direction and detailed cinematic capture/style specifications."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Write MiniMax H3 Video Prompts"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Turn the user's intent and supplied media into an executable H3 prompt through an approval-gated screenplay workflow. Preserve intent; do not invent important plot, identity, product, dialogue, or brand details unless necessary to make the shot coherent."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Load references"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Read "
+                },
+                {
+                  "href": "https://github.com/yajnignez/minimax-h3-prompts/blob/main/write-minimax-h3-video-prompts/references/official-h3-notes.md",
+                  "t": "official-h3-notes.md"
+                },
+                {
+                  "t": " when choosing generation mode, checking current limits, preparing API-shaped input, or making claims about official H3 behavior."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Read "
+                },
+                {
+                  "href": "https://github.com/yajnignez/minimax-h3-prompts/blob/main/write-minimax-h3-video-prompts/references/prompt-framework.md",
+                  "t": "prompt-framework.md"
+                },
+                {
+                  "t": " for complex scenes, multimodal reference mapping, long takes, dialogue/audio, editing tasks, or prompt diagnosis."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Read "
+                },
+                {
+                  "href": "https://github.com/yajnignez/minimax-h3-prompts/blob/main/write-minimax-h3-video-prompts/references/worked-example.md",
+                  "t": "worked-example.md"
+                },
+                {
+                  "t": " when the user requests the detailed structured style demonstrated in the original sample or when a multi-subject continuity problem needs a concrete pattern."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Workflow"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Stage 1: Chinese screenplay approval"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Extract hard requirements: story duration, clip duration, aspect ratio, references, subjects, setting, plot beats, dialogue language, emotional arc, style, sound, ending state, and prohibitions."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Draft only a Chinese screenplay before writing any H3-formatted prompt. Include the title, premise, character list, scene/segment breakdown, visible action, emotional progression, and complete spoken dialogue. Write Japanese or other requested spoken lines alongside a Chinese meaning when appropriate, while keeping the screenplay explanations in Chinese. In every segment, independently label each speaker's language, dialect/accent, speaking pace, vocal timbre, volume, and current emotion; never rely on a global character note for speech delivery."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Enforce dialogue adjacency and causal continuity. Every reply must directly acknowledge the preceding statement, answer its question, accept/refuse its offer, or explicitly bridge to a new topic. Add the missing offer, question, acknowledgement, or transition whenever a reply would otherwise feel disconnected. For example, use "
+                },
+                {
+                  "c": true,
+                  "t": "洛桑（用带藏族口音、温和缓慢的普通话说）：“你在和树打架吗？要不要帮忙？” 扎西（用带藏族口音、略显逞强的普通话说）：“不用，我自己能弄开。”"
+                },
+                {
+                  "t": " rather than a joke followed by an unmotivated refusal."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "End Stage 1 by explicitly asking the user to approve or revise the screenplay. Do not output "
+                },
+                {
+                  "c": true,
+                  "t": "subject_definitions"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "retention_analysis"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "detailed_description"
+                },
+                {
+                  "t": ", H3 API JSON, or any other H3-formatted prompt in the same response."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Wait for explicit user approval. Treat clear statements such as “确认”“通过”“按这个转 H3” as approval. If the user requests revisions, revise the Chinese screenplay and ask for approval again."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If the user supplies a screenplay and explicitly states that it is already final/approved, treat that as Stage 1 approval and proceed. A supplied screenplay without explicit approval still requires a concise Chinese screenplay normalization pass and confirmation."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Stage 2: H3 conversion after approval"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Convert only the approved screenplay. Do not silently alter its plot, dialogue, character relationships, or ending."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Infer only low-risk omissions. If clip duration is absent, choose a feasible duration from 4–15 seconds based on action density and state it outside the prompt. If an action cannot fit, split it into multiple clips without changing the approved story."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Choose exactly one generation mode:"
+                }
+              ]
+            },
+            {
+              "depth": 1,
+              "inlines": [
+                {
+                  "t": "text only for text-to-video;"
+                }
+              ]
+            },
+            {
+              "depth": 1,
+              "inlines": [
+                {
+                  "t": "first frame, last frame, or both for frame-controlled image-to-video;"
+                }
+              ]
+            },
+            {
+              "depth": 1,
+              "inlines": [
+                {
+                  "t": "reference generation for identity, object, style, motion, camera, voice, audio, or editing-rhythm references;"
+                }
+              ]
+            },
+            {
+              "depth": 1,
+              "inlines": [
+                {
+                  "t": "editing language when the user supplies an existing video and asks for a controlled change."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Map every supplied asset by stable ordinal labels such as "
+                },
+                {
+                  "c": true,
+                  "t": "Image 1"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "Video 1"
+                },
+                {
+                  "t": ", and "
+                },
+                {
+                  "c": true,
+                  "t": "Audio 1"
+                },
+                {
+                  "t": ". State what to take from each reference and what must remain unchanged. Never imply that first/last-frame inputs can be mixed with reference inputs in one API request."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Build a feasible temporal chain. Give each beat one clear subject, action, reaction, and resulting state. Preserve causal continuity and persistent objects."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "In every "
+                },
+                {
+                  "c": true,
+                  "t": "detailed_description"
+                },
+                {
+                  "t": ", describe every visible character's emotional atmosphere and complete expression progression. Include initial emotion, trigger, emotional turn, eye direction/focus, brows, eyelids, mouth/jaw, breathing, posture, gesture, and final emotional state. Never omit this step, even for silent characters or action scenes."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "In every "
+                },
+                {
+                  "c": true,
+                  "t": "detailed_description"
+                },
+                {
+                  "t": ", include detailed production style and image formation: capture/exhibition intent (for example IMAX-scale clarity), camera or virtual-camera language (for example ARRI ALEXA 65), lens/focal-length behavior, depth of field, exposure/highlight roll-off, lighting sources, color science/grade, texture or grain, motion cadence, and aspect ratio. Translate equipment names into observable results; do not rely on brand names alone."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Add camera instructions that support the action. Avoid mutually incompatible movements or cuts in a declared continuous take."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Add native audio only when wanted or implied: ambience, synchronized effects, speaker-tagged dialogue, voice qualities, and music. Quote approved dialogue exactly. In every independently generated clip, restate each speaker's language, dialect/accent, pace, timbre, volume, and current emotion immediately before the line; do not refer to a previous clip for voice direction."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Add a short constraints clause for high-risk failures only. Phrase desired visible outcomes positively first; use explicit negatives sparingly for transformations, disappearances, extra limbs/objects, broken continuity, unwanted cuts, or impossible motion."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Run the quality check in "
+                },
+                {
+                  "c": true,
+                  "t": "prompt-framework.md"
+                },
+                {
+                  "t": ", then return the prompt without explaining features the user did not ask about."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Choose output depth"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use the smallest format that can reliably express the request."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Compact native H3 prompt"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use only after Stage 1 approval. Use by default for simple text-to-video, one-action image animation, ads, mood pieces, and straightforward editing. Even compact prompts must include the visible character emotion/expression progression and production style specification. Write one cohesive paragraph in this order:"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "duration + ratio + capture/style specification; reference mapping; scene and subjects; emotion/expression progression; chronological action; camera and lighting; sound/dialogue; essential constraints"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Official H3 examples are often concise. Do not inflate a simple request into a screenplay."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Structured production prompt"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use only after Stage 1 approval. Use for multiple subjects or references, continuity-sensitive action, several beats, long takes, precise final states, or when the user requests the detailed sample format. "
+            },
+            {
+              "c": true,
+              "t": "detailed_description"
+            },
+            {
+              "t": " is mandatory and must contain the complete character emotion/expression direction and production style specification:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "subject_definitions:\nsummary:\nretention_analysis:\ndetailed_description:\n[Shot 1] ...\noverall_soundscape:\nnon_diegetic_music:"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use "
+            },
+            {
+              "c": true,
+              "t": "[Shot N]"
+            },
+            {
+              "t": " for actual cuts or distinct shots. For a continuous long take, keep all beats inside "
+            },
+            {
+              "c": true,
+              "t": "[Shot 1]"
+            },
+            {
+              "t": " and describe camera motion continuously. Do not call successive actions separate shots when no cut occurs."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Output contract"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Enforce the two-response minimum: Stage 1 screenplay and approval request first; Stage 2 H3 prompt only after explicit approval. Never combine them to save time."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "In Stage 1, output a Chinese screenplay with complete dialogue, not H3 prompt syntax."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Match the user's requested language. Otherwise write the prompt in the language of the request."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Keep dialogue in its spoken language and label it unambiguously, for example "
+                },
+                {
+                  "c": true,
+                  "t": "S1 says in Chinese: “别动。”"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Make every dialogue exchange context-complete inside its segment. A refusal must follow a request or offer; an answer must follow a clear question; a topic change must include an acknowledgement or transition."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "In every segment containing dialogue, label every speaker independently, for example: "
+                },
+                {
+                  "c": true,
+                  "t": "洛桑（用带藏族口音、温和缓慢、低沉平稳的普通话说）：“要不要帮忙？”"
+                },
+                {
+                  "t": " Do not write only "
+                },
+                {
+                  "c": true,
+                  "t": "洛桑说"
+                },
+                {
+                  "t": " or rely on a voice description from another segment."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Put assumptions, selected duration/ratio, asset-order notes, or split-clip warnings before the prompt in no more than a few lines."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Return only the finished prompt when the user asks for “just the prompt.”"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "“Just the prompt” does not bypass Stage 1 approval; it only controls the Stage 2 response after approval."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not output API JSON unless requested. When requested, use model "
+                },
+                {
+                  "c": true,
+                  "t": "MiniMax-H3"
+                },
+                {
+                  "t": " and the official "
+                },
+                {
+                  "c": true,
+                  "t": "content[]"
+                },
+                {
+                  "t": " roles from "
+                },
+                {
+                  "c": true,
+                  "t": "official-h3-notes.md"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Treat “H3” as MiniMax H3 only when the video-generation context makes that meaning clear."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Guardrails"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not claim the result was generated by the proprietary H3-Context-IR implementation. Call it “Context-IR-style” when relevant."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not describe MiniMax H3 as fully open source. Official documentation describes the model as open/general-purpose or open-weight, while H3-Context-IR itself is not open sourced."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not fabricate analysis of an unseen image, video, or audio file. Use the user's description or inspect the supplied media when tools allow it."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not overload 4–15 seconds with more beats than viewers can perceive. Prefer fewer, stronger actions."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not omit emotion/expression direction for background or silent characters who are visibly reacting."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not treat IMAX, ARRI ALEXA 65, lens brands, film stocks, or resolution labels as magic quality tokens. State the specific composition, dynamic range, highlight roll-off, depth, texture, color, and motion consequences the requested production style should create."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not write non sequiturs, unmotivated refusals, unanswered direct questions, replies that ignore the preceding information, or witty lines that sacrifice conversational logic."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not invent phonetic spellings, vocabulary, or caricatured speech for an ethnicity or region. When reliable dialogue material is unavailable, describe accent and delivery respectfully while keeping the spoken wording in standard language."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

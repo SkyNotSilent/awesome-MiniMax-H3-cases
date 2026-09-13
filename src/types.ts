@@ -176,7 +176,28 @@ export interface TutorialOriginal {
   capturedAt: string
   source: { url: string; author: string; handle?: string; revision?: string; license?: string }
   cover?: OriginalImage
-  sections: Array<{ url?: string; publishedAt?: string; blocks: OriginalBlock[] }>
+  sections: Array<{ url?: string; title?: string; anchor?: string; publishedAt?: string; blocks: OriginalBlock[] }>
+}
+
+export type SkillCategory = 'prompt' | 'production' | 'comfyui' | 'api' | 'local'
+export interface SkillPackage {
+  id: string
+  name: string
+  repository: string
+  branch: string
+  author: string
+  official: boolean
+  category: SkillCategory
+  summary: LocalizedText
+  skills: Array<{ name: string; path: string; description: string }>
+  catalog?: boolean
+  skillCount: number
+  license?: string
+  stars: number
+  starsAt: string
+  updatedAt: string
+  addedAt: string
+  original?: { kind: 'markdown'; capturedAt: string }
 }
 
 export interface TutorialGuide {

@@ -1,0 +1,1678 @@
+{
+  "skillId": "minimax-h3-broll-generator",
+  "kind": "markdown",
+  "title": "minimax-broll-generator",
+  "language": "en",
+  "capturedAt": "2026-09-13T11:14:11.940Z",
+  "source": {
+    "url": "https://github.com/guangjun5952/minimax-h3-broll-generator",
+    "author": "guangjun5952",
+    "revision": "0fec74d2a31e381e8cf24c250adfbe47f631f0b1",
+    "license": "MIT"
+  },
+  "sections": [
+    {
+      "url": "https://github.com/guangjun5952/minimax-h3-broll-generator/blob/main/skill/SKILL.md",
+      "title": "minimax-broll-generator",
+      "anchor": "skill-minimax-broll-generator",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Accept a transcript or talking-head video, optionally transcribe the video into a timestamped transcript, choose v1 simple, v2 rich, or v3 balanced prompt rules, identify semantic beats that need B-roll, match Guangjun T01–T21 packaging templates, request truthful source assets, generate MiniMax-H3 shots after explicit approval, and automatically edit them back onto the source video by timestamp. Use when the user asks to解析口播视频、生成带时间戳逐字稿、拆解口播、规划B-roll、匹配包装模板、选择简洁/丰富/平衡提示词、生成无背景音乐且仅含音效的包装、调用MiniMax-H3、自动剪辑口播配画面或输出成片。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax-H3 B-roll Generator"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Turn a transcript or talking-head video into an approval-gated B-roll production plan and, when a source video is supplied, a timestamp-driven final edit. Preserve the visual grammar of Guangjun's T01–T21 templates and preserve the original spoken audio throughout the final assembly."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Non-negotiable gate"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Never submit a paid API request before the user has reviewed the shot list and explicitly approved specific shot IDs."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Never interpret “continue”, “looks good”, silence, or approval of the workflow as approval to generate videos."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Require all three conditions for a real API call:"
+                }
+              ]
+            },
+            {
+              "depth": 1,
+              "inlines": [
+                {
+                  "t": "The current conversation contains explicit approval for named shot IDs or “all shots”."
+                }
+              ]
+            },
+            {
+              "depth": 1,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "plan.approval.status"
+                },
+                {
+                  "t": " and each selected shot's approval status are "
+                },
+                {
+                  "c": true,
+                  "t": "approved"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 1,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "scripts/minimax_h3.py"
+                },
+                {
+                  "t": " is invoked with "
+                },
+                {
+                  "c": true,
+                  "t": "--approved"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Never approve or submit a shot while a linked required asset is still marked "
+                },
+                {
+                  "c": true,
+                  "t": "missing"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "API keys must come only from "
+                },
+                {
+                  "c": true,
+                  "t": "MINIMAX_API_KEY"
+                },
+                {
+                  "t": ". Never store a key in a plan file, prompt, review, manifest, or source code."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Never let generated B-roll replace, regenerate, or time-stretch the source speech track."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Every generated shot must forbid music, melody, singing, voice-over, and dialogue. Permit only synchronized foley and restrained environmental sound. If a render contains music, reject it or mute its audio before editing."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Required references"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Read "
+                },
+                {
+                  "href": "https://github.com/guangjun5952/minimax-h3-broll-generator/blob/main/skill/references/prompt-versions.md",
+                  "t": "prompt-versions.md"
+                },
+                {
+                  "t": " at the start of every invocation."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Read "
+                },
+                {
+                  "href": "https://github.com/guangjun5952/minimax-h3-broll-generator/blob/main/skill/references/template-routing.md",
+                  "t": "template-routing.md"
+                },
+                {
+                  "t": " before classifying or styling shots."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Read "
+                },
+                {
+                  "href": "https://github.com/guangjun5952/minimax-h3-broll-generator/blob/main/skill/references/extended-template-library.md",
+                  "t": "extended-template-library.md"
+                },
+                {
+                  "t": " whenever T11–T21 may apply."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "After the user selects a profile, read exactly the matching complexity reference: "
+                },
+                {
+                  "href": "https://github.com/guangjun5952/minimax-h3-broll-generator/blob/main/skill/references/template-complexity-v1-simple.md",
+                  "t": "template-complexity-v1-simple.md"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "href": "https://github.com/guangjun5952/minimax-h3-broll-generator/blob/main/skill/references/template-complexity-v2.md",
+                  "t": "template-complexity-v2.md"
+                },
+                {
+                  "t": ", or "
+                },
+                {
+                  "href": "https://github.com/guangjun5952/minimax-h3-broll-generator/blob/main/skill/references/template-complexity-v3-balanced.md",
+                  "t": "template-complexity-v3-balanced.md"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Read "
+                },
+                {
+                  "href": "https://github.com/guangjun5952/minimax-h3-broll-generator/blob/main/skill/references/asset-intake.md",
+                  "t": "asset-intake.md"
+                },
+                {
+                  "t": " before asking for, recording, or validating external assets."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Read "
+                },
+                {
+                  "href": "https://github.com/guangjun5952/minimax-h3-broll-generator/blob/main/skill/references/prompt-system.md",
+                  "t": "prompt-system.md"
+                },
+                {
+                  "t": " before writing prompts."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Read "
+                },
+                {
+                  "href": "https://github.com/guangjun5952/minimax-h3-broll-generator/blob/main/skill/references/plan-schema.md",
+                  "t": "plan-schema.md"
+                },
+                {
+                  "t": " before creating or editing a plan."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Read "
+                },
+                {
+                  "href": "https://github.com/guangjun5952/minimax-h3-broll-generator/blob/main/skill/references/minimax-api.md",
+                  "t": "minimax-api.md"
+                },
+                {
+                  "t": " before any API operation or troubleshooting."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Read "
+                },
+                {
+                  "href": "https://github.com/guangjun5952/minimax-h3-broll-generator/blob/main/skill/references/video-input-and-editing.md",
+                  "t": "video-input-and-editing.md"
+                },
+                {
+                  "t": " whenever the user supplies a talking-head video or requests automatic editing."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Workflow"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "0. Choose the input mode"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Before asking for the prompt profile, ask whether the user wants to provide "
+                },
+                {
+                  "c": true,
+                  "t": "逐字稿"
+                },
+                {
+                  "t": " or "
+                },
+                {
+                  "c": true,
+                  "t": "口播视频"
+                },
+                {
+                  "t": ", unless one is already supplied."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "For a transcript, preserve the existing workflow and never invent timestamps."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "For a talking-head video, inspect the file, then run "
+                },
+                {
+                  "c": true,
+                  "t": "scripts/transcribe_video.py"
+                },
+                {
+                  "t": " to create a timestamped transcript. Preserve the exact path in "
+                },
+                {
+                  "c": true,
+                  "t": "source.video_path"
+                },
+                {
+                  "t": " and the transcription artifact in "
+                },
+                {
+                  "c": true,
+                  "t": "source.transcript_path"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Review obvious transcription uncertainty, product names, English terms, numbers, and named entities with the user before routing. Correcting the transcript resets downstream prompts and approvals."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Use schema "
+                },
+                {
+                  "c": true,
+                  "t": "1.6"
+                },
+                {
+                  "t": " for new video-input or automatic-edit projects. Read "
+                },
+                {
+                  "href": "https://github.com/guangjun5952/minimax-h3-broll-generator/blob/main/skill/references/video-input-and-editing.md",
+                  "t": "video-input-and-editing.md"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "1. Ask for the prompt version"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Before segmentation, routing, asset requests, prompt writing, or plan creation, ask the user to choose "
+                },
+                {
+                  "c": true,
+                  "t": "v1 简洁清晰"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "v2 丰富动效"
+                },
+                {
+                  "t": ", or "
+                },
+                {
+                  "c": true,
+                  "t": "v3 平衡清晰（推荐）"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Skip the question only when the user already selected one in the same request."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not silently default, infer a choice from an older task, or write all three versions unless explicitly asked for a comparison."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Record the choice as top-level "
+                },
+                {
+                  "c": true,
+                  "t": "prompt_profile"
+                },
+                {
+                  "t": " using "
+                },
+                {
+                  "c": true,
+                  "t": "v1_simple"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "v2_rich"
+                },
+                {
+                  "t": ", or "
+                },
+                {
+                  "c": true,
+                  "t": "v3_balanced"
+                },
+                {
+                  "t": ". Use schema "
+                },
+                {
+                  "c": true,
+                  "t": "1.6"
+                },
+                {
+                  "t": " for new plans; schema "
+                },
+                {
+                  "c": true,
+                  "t": "1.5"
+                },
+                {
+                  "t": " remains valid for legacy transcript-only plans."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If the user changes versions after prompts exist, rewrite prompts and complexity plans, reset all approvals to "
+                },
+                {
+                  "c": true,
+                  "t": "pending"
+                },
+                {
+                  "t": ", regenerate the review, and rerun dry-run."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "2. Segment the transcript"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Split by semantic beat, not punctuation alone."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Prefer 3–10 second beats. Keep a longer sentence intact when splitting would destroy meaning."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Preserve the exact transcript text for every segment."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If timestamps are absent, use ordered segment IDs and leave times "
+                },
+                {
+                  "c": true,
+                  "t": "null"
+                },
+                {
+                  "t": "; do not invent precise timestamps."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If timestamps came from the talking-head video, only merge adjacent transcript segments. Set the merged start to the first start and merged end to the last end; never estimate or rewrite timing by reading speed."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "3. Decide whether a visual is needed"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Assign every segment one route:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "A_ROLL"
+                },
+                {
+                  "t": " — personal judgment, emotional turn, caveat, direct address, or a line whose credibility depends on the speaker."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "REAL_EVIDENCE"
+                },
+                {
+                  "t": " — product UI, article, paper, source, chart, quotation, logo, or factual proof. Never fabricate these with AIGC."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "EXISTING_MEDIA"
+                },
+                {
+                  "t": " — a real product/person/place/process already present in the user's library."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "HYPERFRAMES"
+                },
+                {
+                  "t": " — deterministic typography/evidence/compositing that must be exact, editable, transparent, or tied to real UI."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "MINIMAX_H3_PACKAGING"
+                },
+                {
+                  "t": " — the beat is best communicated by a complete T01–T21-style text-led editorial motion-graphics shot, with exact approved on-screen words and supporting visual material."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "MINIMAX_H3"
+                },
+                {
+                  "t": " — physical action, atmosphere, conceptual metaphor, environment, role scene, transition plate, or a clean moving hero subject where text is not the primary information carrier."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not force B-roll onto every sentence. A segment needs B-roll only when the visual adds information, clarifies a process, provides proof, establishes context, or creates a necessary pacing reset."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "4. Route through T01–T21"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Choose one "
+                },
+                {
+                  "c": true,
+                  "t": "template_id"
+                },
+                {
+                  "t": " or "
+                },
+                {
+                  "c": true,
+                  "t": "NONE"
+                },
+                {
+                  "t": " for each non-A-roll segment."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Respect the fallback rules in "
+                },
+                {
+                  "href": "https://github.com/guangjun5952/minimax-h3-broll-generator/blob/main/skill/references/template-routing.md",
+                  "t": "template-routing.md"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "First decide the primary information carrier: "
+                },
+                {
+                  "c": true,
+                  "t": "TEXT_PACKAGING"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "CINEMATIC_PLATE"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "REAL_EVIDENCE"
+                },
+                {
+                  "t": ", or "
+                },
+                {
+                  "c": true,
+                  "t": "A_ROLL"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Prefer "
+                },
+                {
+                  "c": true,
+                  "t": "MINIMAX_H3_PACKAGING"
+                },
+                {
+                  "t": " for a hook, central concept, short conclusion, verified number, simple relation, chapter overview, or parallax statement whose meaning would be lost without visible words."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Use "
+                },
+                {
+                  "c": true,
+                  "t": "MINIMAX_H3"
+                },
+                {
+                  "t": " only when action, place, object, atmosphere, or spatial behavior carries the meaning without typography."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Keep brand marks, quotations, citations, product UI, long evidence, exact charts, and true-alpha overlays in Hyperframes or real capture."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "5. Audit and request assets"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Inspect all user-supplied files and known library paths before asking for anything."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "For every non-A-roll segment, identify whether it needs a talking-head plate, product video/image, UI recording, logo, evidence document, reference image, portrait, map data, timeline data, diagram topology, technical specifications, font, brand guide, or background plate."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Add every needed item to top-level "
+                },
+                {
+                  "c": true,
+                  "t": "asset_requests"
+                },
+                {
+                  "t": " using "
+                },
+                {
+                  "href": "https://github.com/guangjun5952/minimax-h3-broll-generator/blob/main/skill/references/plan-schema.md",
+                  "t": "plan-schema.md"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Group missing requests into required blockers and optional fidelity improvements. Ask once, concisely, with the affected segment/shot, reason, and acceptable format."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Never use MiniMax-H3 to fabricate a missing proof source, real product result, UI, logo, historical portrait, location claim, chronology, or technical relationship."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If the user explicitly waives a required asset, change the concept to an obvious metaphor and require AIGC disclosure."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "6. Write the generation prompt"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Write one continuous shot per generated clip; do not describe a montage."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Apply the selected profile's phase, element, text, motion, camera, noise, and reading-hold budgets from "
+                },
+                {
+                  "href": "https://github.com/guangjun5952/minimax-h3-broll-generator/blob/main/skill/references/prompt-versions.md",
+                  "t": "prompt-versions.md"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Describe subject, action, environment, composition, depth, camera path, lighting, materials, color, timing, and end state."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Use at most three compatible camera instructions."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "For "
+                },
+                {
+                  "c": true,
+                  "t": "cinematic_plate"
+                },
+                {
+                  "t": ", create clean negative space and explicitly forbid readable text."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "For "
+                },
+                {
+                  "c": true,
+                  "t": "motion_graphics"
+                },
+                {
+                  "t": " or "
+                },
+                {
+                  "c": true,
+                  "t": "hybrid_packaging"
+                },
+                {
+                  "t": ", declare the exact "
+                },
+                {
+                  "c": true,
+                  "t": "on_screen_text"
+                },
+                {
+                  "t": ", hierarchy, position, font appearance, tracking, line height, colors, material layers, text entrance, profile-specific reading hold, camera curve, and end state. Explicitly forbid every other word and every glyph-like background texture."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Keep H3 typography within the selected profile's text budget. Otherwise split the shot, generate a no-text plate, or route to Hyperframes."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Never ask H3 to invent supporting copy. All visible wording must come from the transcript or user-approved structured data."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "When a supplied image is essential to composition or identity, prefer "
+                },
+                {
+                  "c": true,
+                  "t": "image_to_video"
+                },
+                {
+                  "t": " and link its asset request; do not substitute a text-only approximation."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "When public reference video, audio, or image URLs are essential, use "
+                },
+                {
+                  "c": true,
+                  "t": "multimodal_to_video"
+                },
+                {
+                  "t": " with "
+                },
+                {
+                  "c": true,
+                  "t": "reference_media"
+                },
+                {
+                  "t": "; keep identity-critical real assets out of text-only approximation."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Keep the final API prompt under 2000 characters."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "For "
+                },
+                {
+                  "c": true,
+                  "t": "MiniMax-H3"
+                },
+                {
+                  "t": " v2, default to 16:9, 2K, 6 seconds unless the user changes the production settings. V2 accepts only 768P or 2K."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "End every generated-shot prompt with an audio contract that allows only specific synchronized foley and restrained environmental sound. Explicitly forbid background music, melody, beat, singing, speech, dialogue, and voice-over."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Add "
+                },
+                {
+                  "c": true,
+                  "t": "audio_design.music: false"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "audio_design.dialogue: false"
+                },
+                {
+                  "t": ", a non-empty "
+                },
+                {
+                  "c": true,
+                  "t": "audio_design.sfx"
+                },
+                {
+                  "t": " list, and "
+                },
+                {
+                  "c": true,
+                  "t": "audio_design.generated_audio: \"sfx_only\""
+                },
+                {
+                  "t": " to every shot."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "7. Create the approval artifacts"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Create both:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "broll-plan.json"
+                },
+                {
+                  "t": " following "
+                },
+                {
+                  "href": "https://github.com/guangjun5952/minimax-h3-broll-generator/blob/main/skill/references/plan-schema.md",
+                  "t": "plan-schema.md"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "broll-review.md"
+                },
+                {
+                  "t": " generated by the review tool."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Validate and render the review:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "python3 scripts/plan_tool.py validate broll-plan.json\npython3 scripts/plan_tool.py review broll-plan.json --output broll-review.md",
+          "language": "bash"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Show the user the recommended route, reason, prompt, mode, duration, resolution, and estimated number of paid generations. Stop and wait for approval."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "8. Record explicit approval"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Only after the user explicitly approves named shots, run:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "python3 scripts/plan_tool.py approve broll-plan.json \\\n  --shots B001,B003 \\\n  --confirmation CONFIRM_MINIMAX_H3_COST",
+          "language": "bash"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use "
+            },
+            {
+              "c": true,
+              "t": "--shots all"
+            },
+            {
+              "t": " only when the user explicitly approves all generatable shots. Re-run "
+            },
+            {
+              "c": true,
+              "t": "review"
+            },
+            {
+              "t": " and show the approved subset before submission when approval wording is ambiguous."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "9. Dry-run before spending"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Always inspect the exact outgoing payloads first:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "python3 scripts/minimax_h3.py broll-plan.json \\\n  --output-dir generated-broll \\\n  --dry-run",
+          "language": "bash"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Dry-run does not require an API key and never accesses the network."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "10. Generate approved videos"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "After the dry-run is correct and the approval remains valid:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "python3 scripts/minimax_h3.py broll-plan.json \\\n  --output-dir generated-broll \\\n  --approved",
+          "language": "bash"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The script submits sequentially, polls task status, downloads results, and writes "
+            },
+            {
+              "c": true,
+              "t": "generation-manifest.json"
+            },
+            {
+              "t": ". "
+            },
+            {
+              "c": true,
+              "t": "MiniMax-H3"
+            },
+            {
+              "t": " uses v2; non-H3 legacy models retain the v1 path. Report failures without silently retrying a different model or changing prompts."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "11. Inspect and assemble the final edit"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Visually inspect every generated shot for text, continuity, flicker, and unwanted music before assembly. A render containing music fails the "
+                },
+                {
+                  "c": true,
+                  "t": "sfx_only"
+                },
+                {
+                  "t": " contract."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "For a talking-head project, run "
+                },
+                {
+                  "c": true,
+                  "t": "scripts/assemble_edit.py"
+                },
+                {
+                  "t": " only after all selected shots have downloaded and passed review."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Use the segment "
+                },
+                {
+                  "c": true,
+                  "t": "start_sec"
+                },
+                {
+                  "t": " and "
+                },
+                {
+                  "c": true,
+                  "t": "end_sec"
+                },
+                {
+                  "t": " values as the only edit timing source. Default to "
+                },
+                {
+                  "c": true,
+                  "t": "fullscreen_replace"
+                },
+                {
+                  "t": "; keep "
+                },
+                {
+                  "c": true,
+                  "t": "A_ROLL"
+                },
+                {
+                  "t": " segments untouched."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Preserve the original talking-head audio at full level. Mix only approved B-roll foley/environment at the plan's low SFX gain. Never use generated dialogue or music."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If a shot's audio is uncertain, pass "
+                },
+                {
+                  "c": true,
+                  "t": "--generated-audio mute"
+                },
+                {
+                  "t": "; the final edit will keep the original speech without that shot's sound effects."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Export the final MP4 and "
+                },
+                {
+                  "c": true,
+                  "t": "edit-manifest.json"
+                },
+                {
+                  "t": ". Verify duration, audio presence, frame size, and that every inserted shot matches its approved time range."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Quality rules"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Enforce the selected profile mechanically through schema "
+                },
+                {
+                  "c": true,
+                  "t": "1.6"
+                },
+                {
+                  "t": " for new plans; never mix v1 text limits with v2 motion density or label a v2 plan as v3."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "All profiles keep one primary semantic focus, exact text whitelisting, a stable reading end state, and deterministic fallback for brand/evidence-critical text."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "High-density templates should use a deliberately composed image-to-video first frame or supplied real media whenever identity, evidence, or layout matters."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Favor editorial paper, dark archive, real material texture, controlled red annotation, and restrained blue accents."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Keep the reading zone stable. Avoid constant rotation, elastic camera motion, and linear robotic pans."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Use continuous eased camera movement and layered depth for T09-derived shots."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not add decorative English, fake parameters, fake research, fake product screens, or meaningless microcopy."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "A text-led shot must contain at least one exact on-screen phrase and keep it sharp, near-front-facing, high contrast, and still enough to read for at least 1.2 seconds."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "MiniMax-H3 cannot guarantee exact local font files or error-free Chinese glyphs. Mark typography shots for text QA; reject and regenerate misspelled, duplicated, or invented words. Use Hyperframes when exact text is legally, factually, or brand-critical."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not generate identifiable people without appropriate permission."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Flag any shot that could be mistaken for documentary evidence as "
+                },
+                {
+                  "c": true,
+                  "t": "aigc_disclosure_required: true"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Failure handling"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If "
+                },
+                {
+                  "c": true,
+                  "t": "MiniMax-H3"
+                },
+                {
+                  "t": " is rejected by the endpoint, stop and show the exact API response. Do not automatically substitute another model."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If H3 rejects a TokenPlan/Credit key, require a pay-as-you-go interface key with H3 access before retrying."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Override only when the user supplies a valid replacement: "
+                },
+                {
+                  "c": true,
+                  "t": "MINIMAX_VIDEO_MODEL"
+                },
+                {
+                  "t": " or plan-level "
+                },
+                {
+                  "c": true,
+                  "t": "api.model"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If a task fails moderation, preserve the failed task record and ask the user before materially changing the concept."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If the download URL expires, retrieve the file metadata again using the existing "
+                },
+                {
+                  "c": true,
+                  "t": "file_id"
+                },
+                {
+                  "t": "; do not regenerate the video."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

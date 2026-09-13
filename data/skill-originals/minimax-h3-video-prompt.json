@@ -1,0 +1,1119 @@
+{
+  "skillId": "minimax-h3-video-prompt",
+  "kind": "markdown",
+  "title": "minimax-h3-video-prompt",
+  "language": "zh",
+  "capturedAt": "2026-09-13T11:14:09.232Z",
+  "source": {
+    "url": "https://github.com/penposs/minimax-h3-video-prompt",
+    "author": "penposs",
+    "revision": "2e2bb0e745c178c4db26f99b7ba7c4c53040a961",
+    "license": "MIT"
+  },
+  "sections": [
+    {
+      "url": "https://github.com/penposs/minimax-h3-video-prompt/blob/main/SKILL.md",
+      "title": "minimax-h3-video-prompt",
+      "anchor": "skill-minimax-h3-video-prompt",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "根据用户的创作目标以及图片、视频、音频参考素材，先匹配 MiniMax H3 的正确模型能力，再生成并复核可直接使用的视频提示词。用于文生视频、首帧/尾帧图生视频、多模态参考生成、参考视频动作或运镜迁移、局部视频编辑、人物与产品一致性控制、广告、电商、剧情、动画、游戏、MV、Vlog、视觉包装、UI 动效、硬件工业和具身智能演示等任务；也用于逐项检查需求覆盖、素材职责、指令冲突、时间轴以及 H3 官方输入输出限制。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3 视频提示词"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "根据当前任务现场设计提示词。不要检索、匹配、拼接或改写某条历史案例；开发语料只用于形成通用方法，运行时不得提及案例库。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "读取规则"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "开始写作前读取 "
+            },
+            {
+              "href": "https://github.com/penposs/minimax-h3-video-prompt/blob/main/references/official-rules.md",
+              "t": "official-rules.md"
+            },
+            {
+              "t": " 和 "
+            },
+            {
+              "href": "https://github.com/penposs/minimax-h3-video-prompt/blob/main/references/capability-map.md",
+              "t": "capability-map.md"
+            },
+            {
+              "t": "，先确定模型边界和能力路径。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "遇到多素材、复杂分镜、精准编辑、文字包装或声音设计时，再读取 "
+            },
+            {
+              "href": "https://github.com/penposs/minimax-h3-video-prompt/blob/main/references/prompt-framework.md",
+              "t": "prompt-framework.md"
+            },
+            {
+              "t": "。不要读取与当前任务无关的参考内容。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "冲突时按以下优先级处理："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "用户当前明确要求。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "用户提供并已实际检查的素材事实。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "MiniMax H3 官方硬限制。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "本 Skill 的通用写法。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "不得为了套模板改变用户想要的题材、镜头或表现方式。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "确认任务"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "从用户输入中提取以下信息；能从素材和上下文判断时直接继续，不重复提问："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "视频目的：广告、剧情、玩法展示、风格实验、局部编辑等。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "时长、画幅、发布场景和目标观众。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "主体、产品、故事、动作、场景、风格和情绪。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "必须保留、允许变化、必须删除的内容。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "需要出现的准确文字、对白、品牌元素和声音。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "图片、视频、音频分别承担的职责。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "只有缺失信息会显著改变结果时，才询问一个最关键问题。否则使用保守假设直接生成。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "建立需求台账并选择能力"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "在内部把用户明确要求拆成原子需求，每条只表达一件事，并标记为："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "必须出现"
+                },
+                {
+                  "t": "：主体、动作、镜头、文字、声音或结尾结果。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "必须保持"
+                },
+                {
+                  "t": "：人物身份、产品结构、原视频动作、运镜、节奏等。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "允许变化"
+                },
+                {
+                  "t": "：可以由模型自由发挥的部分。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "禁止出现"
+                },
+                {
+                  "t": "：高概率且高损失的错误。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "读取 "
+            },
+            {
+              "href": "https://github.com/penposs/minimax-h3-video-prompt/blob/main/references/capability-map.md",
+              "t": "capability-map.md"
+            },
+            {
+              "t": "，选择一个主能力路径和必要的辅助能力。不要因为题材名称相似就套用固定写法；按用户真正需要控制的对象选择能力。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "若用户要求超出官方限制，先调整素材组合、拆分生成段落或说明限制，不得生成表面完整但实际无法提交的 Prompt。若任务需要精确人物、产品、动作或音色，而用户没有提供对应参考素材，明确指出所缺素材；用户允许自由创作时再使用文字描述代替。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "检查素材"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "逐个查看可读取的图片和视频，不根据文件名猜测内容。音频可分析时确认语言、音色、节奏和有效时长；不可分析时只使用用户明确说明的功能。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "为每份素材分配一个主要职责，需要时增加一个次要职责："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "人物身份、脸、发型、体型或服装。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "产品外形、结构、标签、材质或品牌视觉。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "场景、光线、色彩、画风或最终质感。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "动作、机位、运镜、剪辑节奏或转场。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "首帧、尾帧、音色、对白、音乐节拍或环境声。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "多素材任务必须在提示词中明确写出 "
+            },
+            {
+              "c": true,
+              "t": "图1"
+            },
+            {
+              "t": "、"
+            },
+            {
+              "c": true,
+              "t": "视频1"
+            },
+            {
+              "t": "、"
+            },
+            {
+              "c": true,
+              "t": "音频1"
+            },
+            {
+              "t": " 等编号及职责。不要让两份素材竞争同一个核心身份；确需融合时说明主次关系。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "选择生成方式"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "只有文字描述：使用文生视频。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "需要从指定画面开始或结束：使用首帧、尾帧或首尾帧生成。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "需要人物、产品、动作、运镜、风格、声音或节奏参考：使用多模态参考生成。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "需要修改已有视频：将其作为参考视频，使用精准编辑写法。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "编辑任务先建立内部变更清单："
+            },
+            {
+              "c": true,
+              "t": "保留 / 修改 / 删除 / 新增"
+            },
+            {
+              "t": "。最终提示词直接描述结果，不向用户展示内部推理。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "组织提示词"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "按任务复杂度选取必要模块，不强行填满所有模块："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "成片定义"
+                },
+                {
+                  "t": "：时长、画幅、媒介类型、核心概念和整体气质。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "素材职责"
+                },
+                {
+                  "t": "：每个输入负责什么，哪些特征必须严格保持。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "主体锁定"
+                },
+                {
+                  "t": "：人物、产品、品牌、文字、UI 或关键道具的不变量。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "动作与时间"
+                },
+                {
+                  "t": "：主体做什么、动作顺序、空间关系、速度和停顿。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "镜头语言"
+                },
+                {
+                  "t": "：景别、机位、构图、运镜、对焦、切镜和转场。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "视觉系统"
+                },
+                {
+                  "t": "：场景、光线、色彩、材质、媒介和后期质感。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "声音系统"
+                },
+                {
+                  "t": "：对白、音色、音乐、环境声和逐点音效。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "失败约束"
+                },
+                {
+                  "t": "：只写本任务真正容易出错的项目。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "不要把这些模块写成说明书标题，除非用户要求结构化版本。成品提示词应读起来像一份清楚的导演指令。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "控制时间轴"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "根据内容决定是否分段："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "单一动作、单镜头或局部编辑：使用连续描述，不强行拆秒。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "多镜头广告、剧情、MV、UI 演示或复杂动作：按时间段写清每段唯一主任务。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "每段优先包含一个主要动作、一个镜头意图和一个转场出口，避免同一秒堆叠多个互相竞争的事件。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "分段首尾必须连续覆盖目标时长，不越界、不倒序。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "用户要求一镜到底时，只描述连续运动和自然遮挡，不写硬切或互相冲突的机位跳变。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "处理不同任务"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "全新生成"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "先写清主体与视觉目标，再安排动作和镜头。不要用形容词堆砌替代可拍摄的行为、光线和材质。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "参考视频迁移"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "分别确定动作、时间轴、机位、运镜、剪辑、声音和视觉外观的保留策略。用户要求“拍法不变、只换视觉”时，完整保留时间轴、动作功能、机位、运镜、转场和卡点，只重写人物、服装、产品、环境、道具、色彩与品牌。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "精准编辑"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "修改越少，提示词越短。先声明严格保留原视频未点名的内容，再逐项写明最终变化；不要重新创作无关镜头。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "人物或产品一致性"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "锁定可观察特征和不能变化的结构。人物重点控制身份、年龄、脸、发型、体型和服装；产品重点控制轮廓、比例、部件数量、标签、颜色和材质。不要只写“保持一致”。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "文字、品牌与 UI"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "列出唯一允许出现的文字白名单，要求拼写、大小写、数值和出现次数准确；说明位置、层级、入场与退场方式。文字可读性比装饰效果优先。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "声音与对白"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "写清谁在什么时候说什么、使用哪份音色、情绪和口型要求。区分对白、音乐、环境声和动作音效，避免它们互相掩盖。用户不要旁白时明确禁止新增旁白。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "控制长度"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "按任务难度使用最短但足够的表达："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "单点编辑：通常 1—4 句。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "单镜头生成：通常 100—400 个中文字符。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "15 秒多镜头视频：通常 400—1400 个中文字符。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "多素材、强一致性或复杂包装：可更长，但不得超过官方字符上限。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "不要为了显得专业重复主体描述、风格词或否定词。不得输出“非完整 Prompt”“可自行补充”“参考类似案例”等占位表述。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "交付"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "默认输出："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "建议设置"
+                },
+                {
+                  "t": "：模式、时长、画幅；只有用户需要操作指导时提供。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "素材编号"
+                },
+                {
+                  "t": "：仅在多素材输入时提供，保持简短。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "最终提示词"
+                },
+                {
+                  "t": "：完整、可直接复制。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "用户说“只要提示词”“直接改”或“不要解释”时，只输出最终提示词，不附分析、来源、框架说明或修改过程。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "生成后复核"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "输出前在内部逐条复核，不把检查过程展示给用户："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "能力匹配"
+                },
+                {
+                  "t": "：所选生成方式和 H3 能力能完成用户目标，没有把编辑任务误写成从零生成。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "需求覆盖"
+                },
+                {
+                  "t": "：需求台账中的每条 "
+                },
+                {
+                  "c": true,
+                  "t": "必须出现"
+                },
+                {
+                  "t": "、"
+                },
+                {
+                  "c": true,
+                  "t": "必须保持"
+                },
+                {
+                  "t": " 和 "
+                },
+                {
+                  "c": true,
+                  "t": "禁止出现"
+                },
+                {
+                  "t": " 都在 Prompt 中得到落实。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "素材绑定"
+                },
+                {
+                  "t": "：每份素材有明确职责；身份、动作、镜头、风格、声音之间没有主次冲突。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "时间与动作"
+                },
+                {
+                  "t": "：时间轴完整、不越界；动作数量能在目标时长内完成；空间关系和物理因果成立。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "一致性"
+                },
+                {
+                  "t": "：人物、产品、文字、UI 和关键道具的不变量足够具体，没有只写空泛的“保持一致”。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "镜头兼容"
+                },
+                {
+                  "t": "：固定机位、手持、推进、环绕、一镜到底和切镜要求不互相冲突。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "文字与声音"
+                },
+                {
+                  "t": "：白名单文字、数值、对白、音色、口型、音乐和音效均有准确归属，不新增用户未要求的内容。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "完整可用"
+                },
+                {
+                  "t": "：没有“可自行补充”、过程说明、案例引用或未替换占位符；长度和素材数量符合官方限制。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "发现缺项或冲突时，先修正 Prompt，再重新完整复核一遍。不得把未通过复核的初稿交付给用户。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "校验"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "脚本负责复核字符数、时长和素材数量等机械限制；上面的生成后复核负责语义覆盖，两者不能互相替代。涉及 API、复杂时间轴或多素材时，将最终提示词保存为 UTF-8 文本后运行："
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "python scripts/validate_h3_prompt.py `\n  --input \"<prompt.txt>\" `\n  --mode reference-to-video `\n  --duration 15 `\n  --ratio 16:9 `\n  --images 2 `\n  --videos 1 `\n  --audios 0",
+          "language": "powershell"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "根据实际输入补充 "
+            },
+            {
+              "c": true,
+              "t": "--video-durations"
+            },
+            {
+              "t": "、"
+            },
+            {
+              "c": true,
+              "t": "--audio-durations"
+            },
+            {
+              "t": "、"
+            },
+            {
+              "c": true,
+              "t": "--first-frame"
+            },
+            {
+              "t": " 或 "
+            },
+            {
+              "c": true,
+              "t": "--last-frame"
+            },
+            {
+              "t": "。只修复校验指出的问题，不借机改写已经满足用户要求的内容。"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -123,23 +123,31 @@ export default function TutorialOriginalView({ tutorial, language }: { tutorial:
       .catch(() => { if (active) setFailed(true) })
     return () => { active = false }
   }, [tutorial.id])
+  const zh = language === 'zh'
+  const sourceLabel = tutorial.source.platform === 'x' ? (zh ? '在 X 查看原帖' : 'View on X') : (zh ? '查看原始页面' : 'View source page')
+  if (failed) return <OriginalUnavailable language={language} sourceUrl={tutorial.source.url} sourceLabel={sourceLabel} />
+  if (!original) return <OriginalSkeleton />
+  const revisionUrl = original.source.revision && tutorial.source.platform === 'github' ? `${tutorial.source.url.replace(/\/$/, '')}/tree/${original.source.revision}` : null
+  return <OriginalDocument original={original} language={language} sourceLabel={sourceLabel} revisionUrl={revisionUrl} />
+}
+
+export function OriginalUnavailable({ language, sourceUrl, sourceLabel }: { language: Language; sourceUrl: string; sourceLabel: string }) {
+  return <section className="original original-state" role="status"><p>{language === 'zh' ? '原文暂时无法加载。' : 'The original could not be loaded.'}</p><a href={sourceUrl} target="_blank" rel="noreferrer">{sourceLabel} <ArrowUpRight size={14} /></a></section>
+}
+
+// Renders any captured original: a single document, an X thread, or a multi-file package.
+export function OriginalDocument({ original, language, sourceLabel, revisionUrl, kindLabel }: { original: TutorialOriginal; language: Language; sourceLabel: string; revisionUrl?: string | null; kindLabel?: string }) {
+  const zh = language === 'zh'
   useEffect(() => {
-    if (!original) return
     const frame = window.requestAnimationFrame(() => window.dispatchEvent(new Event('tutorial-original-ready')))
     return () => window.cancelAnimationFrame(frame)
   }, [original])
-  const zh = language === 'zh'
-  const sourceLabel = tutorial.source.platform === 'x' ? (zh ? '在 X 查看原帖' : 'View on X') : (zh ? '查看原始页面' : 'View source page')
-
-  if (failed) return <section className="original original-state" role="status"><p>{zh ? '原文暂时无法加载。' : 'The original could not be loaded.'}</p><a href={tutorial.source.url} target="_blank" rel="noreferrer">{sourceLabel} <ArrowUpRight size={14} /></a></section>
-  if (!original) return <OriginalSkeleton />
-
   const multiple = original.sections.length > 1
-  const revisionUrl = original.source.revision && tutorial.source.platform === 'github' ? `${tutorial.source.url.replace(/\/$/, '')}/tree/${original.source.revision}` : null
+  const sectionLink = original.kind === 'markdown' ? (zh ? '文件' : 'File') : (zh ? '原帖' : 'Post')
   return <section className={`original is-${original.kind}`} aria-labelledby="original-heading" lang={original.language === 'other' ? undefined : original.language === 'zh' ? 'zh-CN' : original.language}>
     <header className="original-head">
       <p className="original-kicker">
-        <span>{KIND_LABELS[language][original.kind]}</span>
+        <span>{kindLabel ?? KIND_LABELS[language][original.kind]}</span>
         <span>{LANGUAGE_LABELS[language][original.language]}</span>
         <span>{zh ? '收录于' : 'Captured'} <time dateTime={original.capturedAt}>{formatDate(original.capturedAt, language)}</time></span>
       </p>
@@ -147,14 +155,14 @@ export default function TutorialOriginalView({ tutorial, language }: { tutorial:
       <p className="original-byline">
         <strong>{original.source.author}</strong>{original.source.handle && <span>{original.source.handle}</span>}
         {original.source.license && <span>{zh ? '许可证' : 'License'} {original.source.license}</span>}
-        {revisionUrl && <a href={revisionUrl} target="_blank" rel="noreferrer">{zh ? '版本' : 'Revision'} {original.source.revision!.slice(0, 7)}</a>}
+        {revisionUrl && <a href={revisionUrl} target="_blank" rel="noreferrer">{zh ? '版本' : 'Revision'} {original.source.revision?.slice(0, 7)}</a>}
         <a href={original.source.url} target="_blank" rel="noreferrer">{sourceLabel} <ArrowUpRight size={13} /></a>
       </p>
     </header>
     {original.cover && <Figure image={original.cover} />}
     {multiple
-      ? <ol className="original-thread">{original.sections.map((section, index) => <li key={section.url ?? index}>
-          <header><span>{index + 1} / {original.sections.length}</span>{section.publishedAt && <time dateTime={section.publishedAt}>{section.publishedAt}</time>}{section.url && <a href={section.url} target="_blank" rel="noreferrer">{zh ? '原帖' : 'Post'} <ArrowUpRight size={12} /></a>}</header>
+      ? <ol className="original-thread">{original.sections.map((section, index) => <li key={section.url ?? index} id={section.anchor}>
+          <header><span>{index + 1} / {original.sections.length}</span>{section.title && <strong>{section.title}</strong>}{section.publishedAt && <time dateTime={section.publishedAt}>{section.publishedAt}</time>}{section.url && <a href={section.url} target="_blank" rel="noreferrer">{sectionLink} <ArrowUpRight size={12} /></a>}</header>
           <div className="original-body"><Blocks blocks={section.blocks} language={language} /></div>
         </li>)}</ol>
       : <div className="original-body"><Blocks blocks={original.sections[0].blocks} language={language} /></div>}

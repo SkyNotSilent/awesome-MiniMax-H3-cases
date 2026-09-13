@@ -1,0 +1,342 @@
+{
+  "skillId": "nodetool-minimax-h3-prompting",
+  "kind": "markdown",
+  "title": "nodetool minimax-h3-prompting",
+  "language": "en",
+  "capturedAt": "2026-09-13T11:12:17.192Z",
+  "source": {
+    "url": "https://github.com/nodetool-ai/nodetool",
+    "author": "nodetool-ai",
+    "revision": "8f7b42bd96d79e6c08cf735bd1afae77b250b299",
+    "license": "AGPL-3.0"
+  },
+  "sections": [
+    {
+      "url": "https://github.com/nodetool-ai/nodetool/blob/main/packages/system-skills/minimax-h3-prompting/SKILL.md",
+      "title": "minimax-h3-prompting",
+      "anchor": "skill-minimax-h3-prompting",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Prompt MiniMax H3 — choosing between its text-to-video, first-and-last-frame and reference-to-video endpoints, assigning an explicit job to every reference image, clip and audio file, writing a timecoded shot list inside the prompt, art-directing the native stereo audio, and naming a change and its constraint together when editing a clip. Use whenever the model id starts with minimax/h3 (minimax/h3/text-to-video, minimax/h3/image-to-video, minimax/h3/reference-to-video, their /lora variants, minimax/h3-max/* and minimax/h3-max-turbo/*) on generate_video, animate_image or a TextToVideo node. Not for MiniMax Hailuo."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3 → one context, many references"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "H3 is a general-purpose multimodal video model rather than a set of task\nmodels. Text, images, video and audio all enter one context, so a single\nrequest can carry a character's identity from a photo, camera language and\ncutting rhythm from a clip, and a voice from a recording, and resolve them into\none shot with native stereo audio. Output runs 5 to 15 seconds at 24 fps in 2K,\nand prompts run up to 7,000 characters — a full shot list with sound design\nfits in one request."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Reach it with "
+            },
+            {
+              "c": true,
+              "t": "find_model"
+            },
+            {
+              "t": " for "
+            },
+            {
+              "c": true,
+              "t": "text_to_video"
+            },
+            {
+              "t": " or "
+            },
+            {
+              "c": true,
+              "t": "image_to_video"
+            },
+            {
+              "t": ", then\n"
+            },
+            {
+              "c": true,
+              "t": "generate_video"
+            },
+            {
+              "t": " / "
+            },
+            {
+              "c": true,
+              "t": "animate_image"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "A timecoded shot list in one request is also what keeps the native audio\ncontinuous across the cuts — "
+            },
+            {
+              "c": true,
+              "t": "video-audio-continuity"
+            },
+            {
+              "t": " for when to fit a whole\nmulti-scene piece into a single generation."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Which endpoint"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The rule is mechanical:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "No media in the request"
+                },
+                {
+                  "t": " → text to video. Best for anything you can fully\ndescribe, and for letting the model invent the look rather than match one.\nDistinct hand-drawn styles carry surprisingly far on prompt alone."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "An image that is literally the first or last frame"
+                },
+                {
+                  "t": " → first and last\nframe. One image for the opening, or two for opening and closing, with H3\ngenerating the motion between. This is the one for animating a static poster,\na UI mockup or key art. Output follows the uploaded image's aspect ratio."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Anything you are treating as a reference"
+                },
+                {
+                  "t": " → reference to video. Up to 9\nimages, 3 video clips of 2 to 15 seconds, and 3 audio clips, 12 files\nmaximum. Identity locking, motion and camera transfer, style matching, voice\ncloning, and editing an existing clip all live here. Default to it whenever\nyou have an asset in hand."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "The eight techniques"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "1. Assign a job to every reference."
+            },
+            {
+              "t": " This is the one habit that changes the\nmost. \"Use Image 1 for the overall mood, location and film texture; Image 2 for the\ntalent; Image 3 for the bag; and Image 4 for the closing brand mark\" beats four\nimages and a description. It works across modalities too: \"Match the camera\nmove in Video 1. Make the subject in Video 2 sing, using Video 3 as the\nreference for both the vocal performance and physical delivery.\""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "2. Write a timed shot list for anything past one beat."
+            },
+            {
+              "t": " Timecoded blocks\nhold the pacing: \"[0 to 2 seconds] High-angle overhead shot… [2 to 4 seconds]\nSmoothly push in to her right arm… [10 to 15 seconds] As she stands, the full\nworld loads around her.\" Without them a 15-second generation drifts into a\nslideshow."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "3. Direct the audio."
+            },
+            {
+              "t": " It is generated natively, so art-direct it like a\nshot: \"a deep sub-bass pulse, distant metallic resonance, and one restrained\nhit as the title locks into focus\", or \"ice tapping crystal, a faint cigar\nburn, subtle room air, clothing movement, controlled breathing\". For music,\ndescribe instrumentation and structure over time, including where the beat\nlands."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "4. State what you do not want."
+            },
+            {
+              "t": " Negative direction is unusually effective\nand rewards being specific. \"No soft dissolves or fluid morphs.\" \"Do not\nintroduce garbled characters or misspellings.\" \"No tearing, black frames,\nobvious VFX, or compositing seams.\" These keep a stylized prompt from sliding\ninto a neighbouring genre."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "5. Lock identity by listing the details."
+            },
+            {
+              "t": " \"Preserve the half-up long black\nhair, openwork silver crown, indigo ribbon, layered pale hanfu, translucent\nblue outer robe, deep-blue sash, silver floral fastener, and long tassels.\"\nNaming features gives the model something to hold. The same works for products,\nsets and typography."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "6. For edits, name the change and the constraint together."
+            },
+            {
+              "t": " Write\nsubstitutions as a list: \"Replace the newspaper with a green hardcover book;\nreplace the chair with a red sofa; remove the subject's sunglasses and reveal a\nclear face.\" Pair each change with what must stay stable and you get a\nlocalized edit instead of a regenerated shot."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "7. Use camera and film language."
+            },
+            {
+              "t": " Lens choice, movement, exposure behaviour\nand stock character all translate: \"subtle handheld shake, then push in quickly\nand rack focus\", \"wide angle with strong perspective distortion\", \"fine grain,\nsoft highlight halation, restrained colour\", \"backlit exposure breathing,\nslightly coarse noise in the shadows\"."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "8. Describe transitions as events, not names."
+            },
+            {
+              "t": " \"Fast binocular-scan\ntransitions with whip movement, motion blur, optical smearing, and brief\nexposure flicker. Cut at peak blur, then settle and snap back into focus.\"\nCircular vinyl-record wipes, vertical car-door cuts and oversized letter masks\nall land better described than labelled."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "What it is unusually good at"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Reading many references at once, rendering legible text and interfaces, and\nmaking precise localized edits to video you already have. That combination\ncovers brand films and trailers, title sequences and motion-graphics collage,\nvertical short drama, product and e-commerce spots, game and web UI motion,\ncharacter and motion transfer, voice cloning, and green-screen replacement — all\nfrom the same model."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Two shapes worth stealing. For a title sequence: name the design language, the\ntransition vocabulary, the credit typography rules (\"each role and each name\nappears once\"), and a timed BGM brief. For a fashion or product film: assign\nmood, talent, product and brand mark to separate images, then keep the story\nsimple and let the references carry the look."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Check the render with "
+            },
+            {
+              "c": true,
+              "t": "analyze_video"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "detect_video_scenes"
+            },
+            {
+              "t": " and\n"
+            },
+            {
+              "c": true,
+              "t": "understand_video"
+            },
+            {
+              "t": "; "
+            },
+            {
+              "c": true,
+              "t": "analyze_audio"
+            },
+            {
+              "t": " for the mix you directed."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Adapted from fal's MiniMax H3 prompting guide:\n"
+            },
+            {
+              "href": "https://fal.ai/learn/devs/minimax-h3-prompting-guide",
+              "t": "https://fal.ai/learn/devs/minimax-h3-prompting-guide"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

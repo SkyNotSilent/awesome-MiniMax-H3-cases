@@ -107,6 +107,17 @@ await Promise.all(cases.map((item) => writeFile(
   `${JSON.stringify(detailFor(item))}\n`,
 )))
 
+// Skill packages and their captured SKILL.md originals.
+const skills = JSON.parse(await readFile(resolve(root, 'data/skills.json'), 'utf8'))
+await writeFile(resolve(outputRoot, 'skills.json'), `${JSON.stringify(skills)}\n`)
+const skillOriginalsRoot = resolve(outputRoot, 'skill-originals')
+await rm(skillOriginalsRoot, { recursive: true, force: true })
+await mkdir(skillOriginalsRoot, { recursive: true })
+await Promise.all(skills.filter((item) => item.original).map(async (item) => {
+  const original = JSON.parse(await readFile(resolve(root, `data/skill-originals/${item.id}.json`), 'utf8'))
+  await writeFile(resolve(skillOriginalsRoot, `${encodeURIComponent(item.id)}.json`), `${JSON.stringify(original)}\n`)
+}))
+
 // Captured tutorial originals are loaded only by tutorial detail pages.
 const originalsRoot = resolve(outputRoot, 'tutorial-originals')
 await rm(originalsRoot, { recursive: true, force: true })

@@ -1,0 +1,2341 @@
+{
+  "skillId": "apnext-h3-prompt-skills",
+  "kind": "markdown",
+  "title": "APNext H3 Prompt Skills",
+  "language": "en",
+  "capturedAt": "2026-09-13T11:12:25.276Z",
+  "source": {
+    "url": "https://github.com/dagthomas/comfyui_dagthomas",
+    "author": "dagthomas",
+    "revision": "469fdd62f4c78bfd37dfc7b900ecf69537dffa3f",
+    "license": "MIT"
+  },
+  "sections": [
+    {
+      "url": "https://github.com/dagthomas/comfyui_dagthomas/blob/master/data/h3/skills/h3-ref2va/SKILL.md",
+      "title": "h3-ref2va",
+      "anchor": "skill-h3-ref2va",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "The six-section MiniMax H3 full-reference (Ref2VA) contract the APNext H3 Reference Prompt Writer nodes emit - subject_definitions, summary, retention_analysis, detailed_description, overall_soundscape, non_diegetic_music - with <Subject N>/<Picture N>/<Video N>/<Audio N> roles, the retention vocabulary, summary task types, how the node's image_1..image_9 sockets become <Picture 1>..<Picture 9>, what its reference_role dropdown means, and reference-controls-HOW / user-controls-WHAT style transfer. Load with h3-prompt-director whenever reference media drives identity, style, motion, camera, performance or voice."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "H3 Ref2VA (full-reference mode)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "This is what the "
+            },
+            {
+              "c": true,
+              "t": "APNext H3 Reference Prompt Writer"
+            },
+            {
+              "t": " and "
+            },
+            {
+              "c": true,
+              "t": "APNext H3 Claude Code Reference Writer"
+            },
+            {
+              "t": " nodes expect back. No alignment line. Six labels, exactly once, in this order,\neach followed by one blank line - the node splits on them:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "subject_definitions:\nsummary:\nretention_analysis:\ndetailed_description:\noverall_soundscape:\nnon_diegetic_music:"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "How the node's images map"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The node has sockets "
+            },
+            {
+              "c": true,
+              "t": "image_1 ... image_9"
+            },
+            {
+              "t": ", mirrors ComfyUI's "
+            },
+            {
+              "i": true,
+              "t": "MiniMax H3 Reference to\nVideo"
+            },
+            {
+              "t": " node, and passes each image back out on the same-numbered output. So:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Attached image k IS "
+                },
+                {
+                  "b": true,
+                  "c": true,
+                  "t": "<Picture k>"
+                },
+                {
+                  "b": true,
+                  "t": "."
+                },
+                {
+                  "t": " Never renumber, skip or merge pictures; the video\nmodel will receive them in that order."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Videos and audio cannot be attached to the writer node. When "
+                },
+                {
+                  "c": true,
+                  "t": "reference_notes"
+                },
+                {
+                  "t": " describe\nthem (\"Video 1 is the dance clip\", \"Audio 1 is her voice\"), define "
+                },
+                {
+                  "c": true,
+                  "t": "<Video N>"
+                },
+                {
+                  "t": " /\n"
+                },
+                {
+                  "c": true,
+                  "t": "<Audio N>"
+                },
+                {
+                  "t": " from the notes in the order given, and treat those notes as fact."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Only the first frame of a batched input counts as that reference."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "The "
+            },
+            {
+              "c": true,
+              "t": "reference_role"
+            },
+            {
+              "t": " directive"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The node states how to treat the images:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Auto"
+                },
+                {
+                  "t": " - decide per image: a "
+                },
+                {
+                  "c": true,
+                  "t": "<Subject N>"
+                },
+                {
+                  "t": " for reusable visible content, a standalone\n"
+                },
+                {
+                  "c": true,
+                  "t": "<Picture N>"
+                },
+                {
+                  "t": " for a concrete frame or composition anchor, or only a source cited inside\nanother item's definition."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Subject"
+                },
+                {
+                  "t": " - one "
+                },
+                {
+                  "c": true,
+                  "t": "<Subject N>"
+                },
+                {
+                  "t": " per image, citing "
+                },
+                {
+                  "c": true,
+                  "t": "<Picture k>"
+                },
+                {
+                  "t": " inside the definition;\nno standalone picture entries."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Picture"
+                },
+                {
+                  "t": " - one standalone "
+                },
+                {
+                  "c": true,
+                  "t": "<Picture N>"
+                },
+                {
+                  "t": " per image, stating which shot and position\n(first frame, keyframe, last frame) it anchors."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Style reference only"
+                },
+                {
+                  "t": " - no standalone "
+                },
+                {
+                  "c": true,
+                  "t": "<Picture N>"
+                },
+                {
+                  "t": " entries; fold the style provenance\ninto the relevant "
+                },
+                {
+                  "c": true,
+                  "t": "<Subject N>"
+                },
+                {
+                  "t": " definitions and the style sentence before "
+                },
+                {
+                  "c": true,
+                  "t": "[Shot 1]"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Storyboard"
+                },
+                {
+                  "t": " - standalone "
+                },
+                {
+                  "c": true,
+                  "t": "<Picture N>"
+                },
+                {
+                  "t": " entries stating which shots they map to and\nwhat planning information they carry."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Roles"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "<Subject N>"
+                },
+                {
+                  "t": " = reusable visible reference content, or reusable visual / performance /\nstyle attributes. One line per subject, sourced from the pictures, videos or audio it\ndraws on."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Standalone "
+                },
+                {
+                  "c": true,
+                  "t": "<Picture N>"
+                },
+                {
+                  "t": " = frame, keyframe or composition anchor only."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "<Video N>"
+                },
+                {
+                  "t": " = editing, continuation, camera, cuts, rhythm or temporal structure."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "<Audio N>"
+                },
+                {
+                  "t": " = copied or referenced audio."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "Reference controls HOW; the user's idea controls WHAT."
+            },
+            {
+              "t": " Protect the user's identity,\nanatomy, clothing, props, setting, composition, action, dialogue, visible text and story\nfrom leaking in from the source. When only a style is wanted, do not import recognizable\nIP characters, costumes, logos, products, vehicles or franchise silhouettes."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For a concept-only still with maximum freedom, define a "
+            },
+            {
+              "c": true,
+              "t": "<Subject N>"
+            },
+            {
+              "t": " sourced from the\npicture, mark it "
+            },
+            {
+              "c": true,
+              "t": "weak_reference"
+            },
+            {
+              "t": ", retain only the stated premise, and explicitly release\ncomposition, palette, design, lighting and animation treatment."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Fields"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "subject_definitions:"
+                },
+                {
+                  "t": " one line per tracked item."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "summary:"
+                },
+                {
+                  "t": " a short paragraph that begins with the applicable task types in square\nbrackets, joined by "
+                },
+                {
+                  "c": true,
+                  "t": "+"
+                },
+                {
+                  "t": ": "
+                },
+                {
+                  "c": true,
+                  "t": "keyframe completion"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "reference generation"
+                },
+                {
+                  "t": ",\n"
+                },
+                {
+                  "c": true,
+                  "t": "video editing"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "video continuation"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "audio reuse"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "audio reference"
+                },
+                {
+                  "t": ". The node's\n"
+                },
+                {
+                  "c": true,
+                  "t": "task_type"
+                },
+                {
+                  "t": " directive fixes this prefix when it is not Auto."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "retention_analysis:"
+                },
+                {
+                  "t": " one line per item, using only\nvisual - "
+                },
+                {
+                  "c": true,
+                  "t": "fully_preserved"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "partially_preserved"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "attribute_transfer"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "weak_reference"
+                },
+                {
+                  "t": "\naudio - "
+                },
+                {
+                  "c": true,
+                  "t": "fully_copy"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "partially_copy"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "reference"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "weak_reference"
+                },
+                {
+                  "t": "\nand saying what is kept and what is released."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "detailed_description:"
+                },
+                {
+                  "t": " one or two style sentences, then "
+                },
+                {
+                  "c": true,
+                  "t": "[Shot 1]"
+                },
+                {
+                  "t": " and one continuous\naudiovisual timeline. Aim for the node's "
+                },
+                {
+                  "c": true,
+                  "t": "word_target"
+                },
+                {
+                  "t": " (350-500 words is the norm for\ngeneration tasks); go longer only when the references demand it."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "overall_soundscape:"
+                },
+                {
+                  "t": " and "
+                },
+                {
+                  "c": true,
+                  "t": "non_diegetic_music:"
+                },
+                {
+                  "t": " as in the core skill."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Reference library"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "Read this"
+              }
+            ],
+            [
+              {
+                "t": "When"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "c": true,
+                  "t": "13_REF2VA_GOLD_EXAMPLES.md"
+                }
+              ],
+              [
+                {
+                  "t": "Always for a first Ref2VA prompt in a session: full six-section examples with retention markers."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "07_REF2VA_FULL_REFERENCE_GUIDE.md"
+                }
+              ],
+              [
+                {
+                  "t": "Roles, retention vocabulary and section contracts in detail."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "16_H3_REF2VA_STYLE_TRANSFER_LAB.md"
+                }
+              ],
+              [
+                {
+                  "t": "A video reference supplies style, motion, editing rhythm or technique - keep WHAT separate from HOW."
+                }
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/dagthomas/comfyui_dagthomas/blob/master/data/h3/skills/h3-crossover/SKILL.md",
+      "title": "h3-crossover",
+      "anchor": "skill-h3-crossover",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "The four-section MiniMax H3 crossover-scene contract the APNext H3 Crossover Writer node emits - subject_definitions / integrated_multimodal_description / overall_soundscape / non_diegetic_music per scene, the scene envelope the node parses, how the cast list maps to <Subject N>, speaker binding, silence mandates and shared-frame safeguards, and how a run of scenes hangs together as one story. Load with h3-prompt-director for crossover work."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "H3 crossover scenes"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "This is what the "
+            },
+            {
+              "c": true,
+              "t": "APNext H3 Crossover Writer"
+            },
+            {
+              "t": " node expects back: a short synopsis, then\none envelope per scene, each envelope holding a complete four-section T2VA prompt. The node\nsplits on the envelope markers, so they must be exact and nothing else may sit outside them."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "=== SYNOPSIS ===\nTitle: <a title for this crossover>\nLogline: <one or two sentences>\nCast: <who is in it and why each is there, one line per character>\n=== END SYNOPSIS ===\n\n=== SCENE 01 | duration: 15.0 ===\nsubject_definitions:\n<Subject 1> Character (played by Actor) from Show\n<Subject 2> Character (played by Actor) from Show\n\nintegrated_multimodal_description:\n[Shot 1] ...\n\n[Shot 2] At 00:05.500, the shot cuts to ...\n\noverall_soundscape:\n...\n\nnon_diegetic_music:\nN/A\n=== END SCENE 01 ==="
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Scene numbers are two digits and count up from 01. "
+                },
+                {
+                  "c": true,
+                  "t": "duration:"
+                },
+                {
+                  "t": " is the length in seconds\nthe node will render that scene at; respect the duration the node asks for, or if it lets\nyou vary, keep every scene between 5 and 20 s and prefer 12-15 s for dialogue."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Inside an envelope: exactly the four section labels, plain text, one blank line between\nsections and between shots. No markdown fences, no bold, no commentary."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "No title cards, credit cards or logo cards unless the node explicitly asks for one. The\nscenes are the story itself."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Cast"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The node hands you a cast list, one "
+            },
+            {
+              "c": true,
+              "t": "Character (played by Actor) from Show"
+            },
+            {
+              "t": " per line, and\nsometimes a free-text steer from the user. Use every listed character at least once\nacross the run unless the steer says otherwise; do not invent extra named characters (an\nunnamed off-camera guard or waiter is fine). Per scene, order "
+            },
+            {
+              "c": true,
+              "t": "subject_definitions:"
+            },
+            {
+              "t": " so\nthe character with the most dialogue is "
+            },
+            {
+              "c": true,
+              "t": "<Subject 1>"
+            },
+            {
+              "t": " - H3 binds the audio to that slot.\nCopy character, actor and show strings verbatim."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "What makes a crossover work"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Each character behaves exactly as they do in their own show - vocabulary, rhythm,\nattitude - and the story is the collision of those worlds. Sheldon Cooper explaining\nthe rules to Jack Sparrow "
+                },
+                {
+                  "i": true,
+                  "t": "is"
+                },
+                {
+                  "t": " the scene."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Everyone has an on-screen reason to be there, revealed by a line, a badge, an action."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Something physical happens in every scene. Props travel. Doors open. Someone leaves."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Consecutive scenes hand off to each other (a look off-screen, a question, an object)\nand the location moves every 2-3 scenes."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Reference library"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "Read this"
+              }
+            ],
+            [
+              {
+                "t": "When"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "c": true,
+                  "t": "17_CROSSOVER_GOLD_EXAMPLES.md"
+                }
+              ],
+              [
+                {
+                  "t": "Every run - verified rendered scenes to match for density, opener, isolation, silence mandates and closers."
+                }
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/dagthomas/comfyui_dagthomas/blob/master/data/h3/skills/h3-base-format/SKILL.md",
+      "title": "h3-base-format",
+      "anchor": "skill-h3-base-format",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "The three-field MiniMax H3 contract the APNext H3 Prompt Writer nodes emit for T2VA, I2VA, FL2VA and L2VA - integrated_multimodal_description / overall_soundscape / non_diegetic_music, the exact first-frame, first-and-last-frame and last-frame alignment lines, how the node's image batch maps to first_frame and last_frame, and how each mode develops from or converges onto its keyframes. Load with h3-prompt-director whenever the task is not Ref2VA."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "H3 base format (T2VA / I2VA / FL2VA / L2VA)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "This is what the "
+            },
+            {
+              "c": true,
+              "t": "APNext H3 Prompt Writer"
+            },
+            {
+              "t": " and "
+            },
+            {
+              "c": true,
+              "t": "APNext H3 Claude Code Writer"
+            },
+            {
+              "t": " nodes\nexpect back. The node splits the text on these three labels, so they must appear exactly\nonce, in this order, each followed by one blank line:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "integrated_multimodal_description: [Shot 1] <style>, <one continuous timeline> ...\n\noverall_soundscape: ...\n\nnon_diegetic_music: ..."
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The stated visual style opens "
+            },
+            {
+              "c": true,
+              "t": "[Shot 1]"
+            },
+            {
+              "t": " (the node names it, or asks you to choose one)."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Alignment lines"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "T2VA begins directly with "
+            },
+            {
+              "c": true,
+              "t": "integrated_multimodal_description:"
+            },
+            {
+              "t": ". The other modes put one\nalignment line first, then exactly one blank line, then the three fields. Copy the wording\ncharacter for character; only "
+            },
+            {
+              "c": true,
+              "t": "N"
+            },
+            {
+              "t": " (the number of the final shot) and "
+            },
+            {
+              "c": true,
+              "t": "S.SS"
+            },
+            {
+              "t": " (the duration,\ntwo decimals) change."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "I2VA:\n"
+            },
+            {
+              "c": true,
+              "t": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "FL2VA:\n"
+            },
+            {
+              "c": true,
+              "t": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot N) aligns with the S.SS-second mark of the target video."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "L2VA:\n"
+            },
+            {
+              "c": true,
+              "t": "How the reference pictures align with the target video — <Picture 1> (from [Shot N]) aligns with the S.SS-second mark of the target video."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The node's own directive repeats the right line for the chosen task type; if it and this\nfile ever differ, follow the node."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "How the node's images map"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The node sends whatever was connected to its "
+            },
+            {
+              "c": true,
+              "t": "image"
+            },
+            {
+              "t": " socket as an ordered batch and hands\nthe same frames back out as "
+            },
+            {
+              "c": true,
+              "t": "first_frame"
+            },
+            {
+              "t": " and "
+            },
+            {
+              "c": true,
+              "t": "last_frame"
+            },
+            {
+              "t": " for the video node:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "I2VA"
+                },
+                {
+                  "t": " - the image is "
+                },
+                {
+                  "c": true,
+                  "t": "<Picture 1>"
+                },
+                {
+                  "t": ", the exact opening frame. Preserve its identity,\nclothing, colours, key objects and geography, then develop forward from it."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "L2VA"
+                },
+                {
+                  "t": " - the image is "
+                },
+                {
+                  "c": true,
+                  "t": "<Picture 1>"
+                },
+                {
+                  "t": ", the exact final frame, and belongs to the last\nshot. Infer a plausible earlier state, then a transition path, then a gradual convergence,\nthen land on the image."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "FL2VA"
+                },
+                {
+                  "t": " - frame 0 of the batch is "
+                },
+                {
+                  "c": true,
+                  "t": "<Picture 1>"
+                },
+                {
+                  "t": " (opening), the last frame is\n"
+                },
+                {
+                  "c": true,
+                  "t": "<Picture 2>"
+                },
+                {
+                  "t": " (ending). Describe the change between them and land exactly on the ending."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "T2VA"
+                },
+                {
+                  "t": " with an image attached - the image is visual context to describe from, not a\nkeyframe. No alignment line, no "
+                },
+                {
+                  "c": true,
+                  "t": "<Picture N>"
+                },
+                {
+                  "t": " labels."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Describe what you actually see in the frames: subject, wardrobe, colour, light direction,\nobjects, spatial layout. Do not paraphrase the user's idea back when the picture already\nanswers the question."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Reference library"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "Read this"
+              }
+            ],
+            [
+              {
+                "t": "When"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "c": true,
+                  "t": "11_T2VA_GOLD_EXAMPLES.md"
+                }
+              ],
+              [
+                {
+                  "t": "Task is T2VA - match its density, shot pacing and audio balance."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "12_KEYFRAME_GOLD_EXAMPLES.md"
+                }
+              ],
+              [
+                {
+                  "t": "Task is I2VA, FL2VA or L2VA - alignment grammar and how to develop from or converge onto frames."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "06_OFFICIAL_GUIDE_CLEAN_COPY.md"
+                }
+              ],
+              [
+                {
+                  "t": "Condensed official guide, if the full guide is not already in your context."
+                }
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/dagthomas/comfyui_dagthomas/blob/master/data/h3/skills/h3-style-craft/SKILL.md",
+      "title": "h3-style-craft",
+      "anchor": "skill-h3-style-craft",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Turning the APNext H3 node's visual_style, camera and wildness settings into observable MiniMax H3 prompt language - one visual-medium pack plus at most one motion, finish and audio pack, translating a named studio, era, genre or artist into traits, describing traditional animation timing (held poses, stepped cadence, smears, line boil, painted texture) without over-claiming frame rates, and scaling authorial risk to the wildness band. Load with h3-prompt-director whenever a style is stated, a reference look is implied, or wildness is above Conservative."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "H3 style and motion craft"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "What the node gives you"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "c": true,
+                  "t": "visual_style"
+                },
+                {
+                  "t": " - either a label to open "
+                },
+                {
+                  "c": true,
+                  "t": "[Shot 1]"
+                },
+                {
+                  "t": " with ("
+                },
+                {
+                  "c": true,
+                  "t": "Cinematic"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "live-action"
+                },
+                {
+                  "t": ",\n"
+                },
+                {
+                  "c": true,
+                  "t": "2D-animated"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "3D CG"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "claymation"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "watercolor"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "vintage film"
+                },
+                {
+                  "t": ") or \"choose one that\nfits\". The label is the opening words, not the whole style: expand it into craft the video\nmodel can see."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Camera"
+                },
+                {
+                  "t": " - motion, amplitude ("
+                },
+                {
+                  "c": true,
+                  "t": "with small amplitude"
+                },
+                {
+                  "t": " / "
+                },
+                {
+                  "c": true,
+                  "t": "with large amplitude"
+                },
+                {
+                  "t": ") and speed\n("
+                },
+                {
+                  "c": true,
+                  "t": "at slow speed"
+                },
+                {
+                  "t": " / "
+                },
+                {
+                  "c": true,
+                  "t": "at fast speed"
+                },
+                {
+                  "t": ") in the guide's vocabulary. Use the exact phrases the\ndirective gives; describe what the move reveals, not just that it happens."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Wildness band"
+                },
+                {
+                  "t": " - Conservative and Grounded keep to ordinary physics and motivated\nchoices; Bold allows one memorable visual idea; Wild and Unhinged invite surreal logic and\nthe node lists concrete surreal elements that must appear. Style intensity follows the\nband: a Conservative watercolour is a quiet, faithful watercolour; an Unhinged one can\nbleed, run and re-form."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Style construction"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Translate any style into observable craft rather than a name. In priority order:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "medium and material construction (what the image is physically made of)"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "shape, edge and shadow grammar"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "palette and value logic"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "motion and deformation grammar"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "animated surface and texture behaviour"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "cadence terminology"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use at most one dominant visual medium, one motion system, one finish system and one audio\ntreatment unless the user explicitly asks for a hybrid; then say which layer each medium\ncontrols. When a unified style is asked for, apply it to everything - subject, crowd,\nvehicles, props, architecture, signage, pavement, reflections, atmosphere, smears and\ntransitions - not only the hero."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "If the user names a studio, era, genre or artist, translate it into traits and do not rely\non the proper name. Never import recognizable IP characters, costumes, logos or franchise\nsilhouettes when only the look was asked for."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Animation and motion vocabulary"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use visible motion terms when they help: anticipation, compression, contact, passing,\nsuspension, extension, impact, rebound, overshoot, follow-through, overlap, secondary\naction, smears, replacement drawings, line boil, animated pigment, moving texture,\nregistration shift."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Smears are brief transition drawings that resolve immediately into readable anatomy; they\nare not generic motion blur."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For ones / twos / fours, limited frame rate or flip-book timing, describe the visible\ncadence you want rather than promising literal repeated frames: "
+            },
+            {
+              "c": true,
+              "t": "visible stepped timing"
+            },
+            {
+              "t": ",\n"
+            },
+            {
+              "c": true,
+              "t": "held key poses"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "selective in-betweens"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "abrupt drawing changes"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "minimal interpolation"
+            },
+            {
+              "t": ". Exact cadence is verified from frames or enforced in the workflow, never\nclaimed in the prompt."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Reference library"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "Read this"
+              }
+            ],
+            [
+              {
+                "t": "When"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "c": true,
+                  "t": "10_H3_STYLE_PICKER_RULESET.md"
+                }
+              ],
+              [
+                {
+                  "t": "Any style, medium or look is requested or implied - how to pick one visual pack and at most one motion / finish / audio pack."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "08_H3_AESTHETIC_MOTION_AUDIO_LIBRARY.md"
+                }
+              ],
+              [
+                {
+                  "t": "The pack catalogue (V/M/F/A ids) the picker refers to, with concrete injection language."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "09_H3_STYLE_REFERENCE_ANCHORS.md"
+                }
+              ],
+              [
+                {
+                  "t": "The user names a studio, era, genre, artist or production - translate it into traits."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "15_H3_TEMPORAL_ANIMATION_TECHNIQUES.md"
+                }
+              ],
+              [
+                {
+                  "t": "Traditional animation timing: ones / twos, held poses, smears, line boil, limited in-betweens."
+                }
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/dagthomas/comfyui_dagthomas/blob/master/data/h3/skills/h3-prompt-director/SKILL.md",
+      "title": "h3-prompt-director",
+      "anchor": "skill-h3-prompt-director",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Core craft for writing MiniMax H3 video prompts as the engine behind the APNext H3 nodes in ComfyUI - how to obey the node's directives (task type, duration, shot plan, camera, dialogue, wildness), keep an exact field contract the node parses, run a continuous timeline with clean cuts, write speech in <d> tags with stable speaker IDs, separate soundscape from music, and validate silently before answering. Load for every H3 prompt; add h3-base-format or h3-ref2va for the field contract and h3-style-craft for look and motion."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "H3 Prompt Director"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "You are the writing engine behind the APNext H3 nodes in ComfyUI. A node hands you a\nshort idea, sometimes reference images, and a numbered list of directives. You return\none finished MiniMax H3 prompt and nothing else."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Who decides what"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The node has already made the production decisions. Its numbered directives are not\nsuggestions:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Task type"
+                },
+                {
+                  "t": " (T2VA / I2VA / FL2VA / L2VA, or a Ref2VA summary type) is stated. Do not\nre-decide the mode from the images; if the directive says I2VA, the image is the first\nframe even if it would also make a fine style reference."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Duration"
+                },
+                {
+                  "t": " is exact. Every timestamp lies inside it. Write it with two decimals\nwherever the format asks for "
+                },
+                {
+                  "c": true,
+                  "t": "S.SS"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Shot plan"
+                },
+                {
+                  "t": " is either a fixed count (\"Use exactly 2 shots\") or yours to choose. When it\nis yours, prefer one shot; cut only when a new shot genuinely adds information about\nsubject, space, state, viewpoint or time."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Visual style"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "b": true,
+                  "t": "camera motion / amplitude / speed"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "b": true,
+                  "t": "dialogue on/off and its\nlanguage"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "b": true,
+                  "t": "on-screen text"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "b": true,
+                  "t": "soundscape"
+                },
+                {
+                  "t": " and "
+                },
+                {
+                  "b": true,
+                  "t": "music"
+                },
+                {
+                  "t": " toggles are stated. A toggle\nthat is off means the field reads "
+                },
+                {
+                  "c": true,
+                  "t": "N/A"
+                },
+                {
+                  "t": " or the element is absent, not \"use sparingly\"."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Wildness band"
+                },
+                {
+                  "t": " (Conservative → Unhinged) sets how far you may leave the literal idea.\nSurreal elements the node lists at high wildness must actually appear on screen. Whatever\nthe band, the result is a shot-by-shot timeline a video model can follow."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Additional direction from the user"
+                },
+                {
+                  "t": " wins over your own taste inside those bounds."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If a directive says "
+                },
+                {
+                  "b": true,
+                  "t": "research first"
+                },
+                {
+                  "t": ", use the tools you were given, then fold what you\nlearned into concrete visual detail. Never cite, never mention researching."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Fill everything the directives leave open with craft: specific nouns, motivated light,\nreadable action, sound that belongs to the picture."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Output boundary"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Return only the prompt. No preamble, no commentary, no markdown fences, no headings of\nyour own. The node splits your text on the exact field labels; a renamed or missing label\nbreaks its outputs."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Everything in English except dialogue, lyrics and visible on-screen text, which keep the\nlanguage the directive names."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Never invent reference labels ("
+                },
+                {
+                  "c": true,
+                  "t": "<Picture N>"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "<Subject N>"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "<Video N>"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "<Audio N>"
+                },
+                {
+                  "t": ") for\na task that does not use them, and never mention images that were not attached."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not create, edit or render media. Attached media is reference input only."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If something you would normally ask about is missing, make the most defensible assumption\nand write the prompt. A headless run cannot ask."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Timeline and continuity"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "[Shot 1]"
+                },
+                {
+                  "t": " carries no timestamp. Every later shot opens "
+                },
+                {
+                  "c": true,
+                  "t": "[Shot N] At MM:SS.mmm,"
+                },
+                {
+                  "t": " with a\nstrictly increasing time inside the duration."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "One continuous audiovisual timeline: what is seen and what is heard are described\ntogether, in order, with the camera as part of the description (\"the camera trucks left\nwith small amplitude at slow speed while ...\")."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Preserve identity, wardrobe, handedness, props, geography, lighting logic, object state,\ncamera direction and movement direction across shots. When something changes, describe\nthe change happening."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "For lateral or tracking motion, distinguish subject motion in world space, camera speed,\nand foreground / midground / background parallax. Do not imply acceleration, teleporting\nor root jumps when constant motion is wanted."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Compounding qualities go in a list, not a sentence per adjective: "
+                },
+                {
+                  "c": true,
+                  "t": "He stomps his foot on the ground. The stomp is: intense, aggressive, angry, forceful."
+                },
+                {
+                  "t": " (inline or one per line\nwith dashes) beats "
+                },
+                {
+                  "c": true,
+                  "t": "He stomps intensely. The stomp is aggressive and angry. The stomp is forceful."
+                },
+                {
+                  "t": " Same effect on the model, far fewer tokens; return to prose for the next beat."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "I2VA preserves the opening frame and develops forward; FL2VA describes the change and\nlands exactly on the ending frame; L2VA infers a plausible earlier state and converges on\nthe last frame. Details are in "
+                },
+                {
+                  "c": true,
+                  "t": "h3-base-format"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Speech and visible text"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Assign stable "
+                },
+                {
+                  "c": true,
+                  "t": "(S1)"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "(S2)"
+                },
+                {
+                  "t": " ... to vocal sources in order of first appearance, attached\nto the identifying phrase: "
+                },
+                {
+                  "c": true,
+                  "t": "the middle-aged florist with a warm, husky voice (S1) says:"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Only the language tag and the exact words go inside "
+                },
+                {
+                  "c": true,
+                  "t": "<d>[Language] ...</d>"
+                },
+                {
+                  "t": ". Delivery,\naction and who is speaking stay outside the tag."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Voiceover uses exactly "
+                },
+                {
+                  "c": true,
+                  "t": "says in an off-screen voiceover"
+                },
+                {
+                  "t": ", and after the "
+                },
+                {
+                  "c": true,
+                  "t": "<d>"
+                },
+                {
+                  "t": " block state\nthat the on-screen character's lips stay completely closed."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Speech that crosses a cut: use "
+                },
+                {
+                  "c": true,
+                  "t": "<scenetrans>"
+                },
+                {
+                  "t": " and say the audio continues across the cut.\n"
+                },
+                {
+                  "c": true,
+                  "t": "<cutoff>"
+                },
+                {
+                  "t": " only when speech is truncated by the end of the video."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Visible text goes in English double quotation marks with exact spelling and punctuation,\nand only when the on-screen-text toggle is on."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "When dialogue is off, no one speaks and no "
+                },
+                {
+                  "c": true,
+                  "t": "<d>"
+                },
+                {
+                  "t": " block appears; non-verbal vocal sounds\n(a sigh, a laugh) belong in the soundscape."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Audio fields"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "overall_soundscape:"
+                },
+                {
+                  "t": " 1-4 English sentences of ambience, physical sounds and non-verbal\nhuman sounds, in the order they occur. Never repeat dialogue, singing or music here.\n"
+                },
+                {
+                  "c": true,
+                  "t": "N/A"
+                },
+                {
+                  "t": " only for total silence."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "non_diegetic_music:"
+                },
+                {
+                  "t": " 1-3 English sentences of audience-only score: instrumentation,\ntempo, rhythm, dynamics, and how it moves across the shots. Music the characters can\nhear belongs in the main description instead. "
+                },
+                {
+                  "c": true,
+                  "t": "N/A"
+                },
+                {
+                  "t": " when the toggle is off or no score\nis wanted."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Revising in a resumed session"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When the node says \"Revise the H3 prompt you just wrote\", return the complete revised\nprompt with identical field labels, shot labels and formatting, change only what the\nrequest implies, and keep every other sentence as it was."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Silent validation before answering"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Repair, without comment: mode or alignment line that disagrees with the task type; field\ncount, order or spelling; timestamps outside the duration or not increasing; final shot\nnumber in an alignment line; duration formatting; reference labels for unattached media;\naltered dialogue or visible text; open lips during voiceover; dialogue or music leaking into\nthe soundscape; cadence or frame-rate claims you cannot know; placeholders; recognizable\nIP, logos or franchise silhouettes when only a style was asked for; unintended speed\nchanges."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Reference library"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Files in "
+            },
+            {
+              "c": true,
+              "t": "references/"
+            },
+            {
+              "t": " next to this skill. Read the ones that apply with the Read tool\nbefore writing; never quote or mention them in the output."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "Read this"
+              }
+            ],
+            [
+              {
+                "t": "When"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "c": true,
+                  "t": "03_H3_PROMPT_GRAMMAR.md"
+                }
+              ],
+              [
+                {
+                  "t": "First prompt in a session: exact structure, tags, timestamps, validation checklist."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "14_EDGE_CASE_GOLD_EXAMPLES.md"
+                }
+              ],
+              [
+                {
+                  "t": "Ambiguous roles, IP leakage risk, voiceover, cross-cut speech, silence, mixed languages."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "04_H3_EXAMPLES.md"
+                }
+              ],
+              [
+                {
+                  "t": "Short structural examples across all modes for a quick shape check."
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "02_H3_MODES_AND_COMFYUI.md"
+                }
+              ],
+              [
+                {
+                  "t": "What H3 can do, durations, fps, how ComfyUI wires "
+                },
+                {
+                  "c": true,
+                  "t": "<Picture N>"
+                },
+                {
+                  "t": " / "
+                },
+                {
+                  "c": true,
+                  "t": "<Video N>"
+                },
+                {
+                  "t": " / "
+                },
+                {
+                  "c": true,
+                  "t": "<Audio N>"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

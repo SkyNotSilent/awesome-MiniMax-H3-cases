@@ -1,0 +1,603 @@
+{
+  "skillId": "archival-fragments",
+  "kind": "markdown",
+  "title": "archival-fragments",
+  "language": "zh",
+  "capturedAt": "2026-09-13T11:12:29.164Z",
+  "source": {
+    "url": "https://github.com/ttfake92-lab/skills",
+    "author": "ttfake92-lab",
+    "revision": "51cefed90c2e34d472464c1c6d7c65c58f10c806"
+  },
+  "sections": [
+    {
+      "url": "https://github.com/ttfake92-lab/skills/blob/main/skills/archival-fragments/SKILL.md",
+      "title": "archival-fragments",
+      "anchor": "skill-archival-fragments",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "从一个想法或一份文案，做出一条完整的「档案剪贴」风格短片——满幅象牙纸、单色印刷黑白、单一暗砖红，镜头用 MiniMax H3 首尾帧驱动，配音用 Fish Audio，成片用 ffmpeg 合成。当用户想用档案剪贴/编辑设计/纸质拼贴风格做视频，或要把一段文案、一个选题、一条新闻做成解说短片时使用。包含环境安装检查、拆故事拆画面拆节奏、逐镜生成、变速拼片的完整流程。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Archival Fragments"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "从零做出一条完整短片。用户可能只给你一个想法，也可能给一份写好的文案——两种都从下面的流程走。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "三条硬约束（违反任何一条，成片必废）"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "1. 每一镜的画面必须不同"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "N 个镜头需要 "
+            },
+            {
+              "b": true,
+              "t": "N+1 张各不相同的关键帧"
+            },
+            {
+              "t": "。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "\"相邻两镜共用同一张图\"的意思是："
+            },
+            {
+              "b": true,
+              "t": "第 1 镜的尾帧 = 第 2 镜的首帧"
+            },
+            {
+              "t": "，这一张图被这两镜共用。\n"
+            },
+            {
+              "b": true,
+              "t": "不是"
+            },
+            {
+              "t": "整片共用一张图。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "绝对禁止"
+            },
+            {
+              "t": "："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "拿同一张图当所有镜头的输入"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "拿一张结构图、示意图、信息图当所有镜头的参考"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "把 "
+                },
+                {
+                  "c": true,
+                  "t": "assets/style-reference.png"
+                },
+                {
+                  "t": " 当成生成输入——它是"
+                },
+                {
+                  "b": true,
+                  "t": "给人看的风格参考板"
+                },
+                {
+                  "t": "，任何一次生成都不要挂它"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "这样做出来的片子几十个镜头长得一模一样，等于没拆镜，观众三秒划走。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "自检（必须做，并把结果报给用户）"
+            },
+            {
+              "t": "："
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "关键帧张数 == 镜头数 + 1      ✓/✗\n任意两张关键帧的画面描述不重复  ✓/✗\n每张关键帧都有自己独立的提示词  ✓/✗"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "2. 故事、画面、节奏必须由你亲自拆，且拆完要给用户过目"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "不要拿到文案就直接开生成。必须先产出一张"
+            },
+            {
+              "b": true,
+              "t": "逐镜表"
+            },
+            {
+              "t": "，包含：每镜的旁白、画面内容、首尾帧、时长。拆完先给用户看，让他有机会否掉——改一张表 5 分钟，跑完再改是 4 小时。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "详见 "
+            },
+            {
+              "href": "https://github.com/ttfake92-lab/skills/blob/main/skills/archival-fragments/references/01-script.md",
+              "t": "01-script.md"
+            },
+            {
+              "t": "。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "3. 具象优先，不要抽象图形"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "纸和红线是画面的地面，不是主体。每句话找一个"
+            },
+            {
+              "b": true,
+              "t": "观众不用想就懂的通用符号"
+            },
+            {
+              "t": "——世界地图+图钉、天平、台阶、一大堆实物。一条片子收敛到 2–3 个符号，各用几次。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "用空白纸加一条线表达\"这个位置是空的\"、用三个方块表达\"三家公司\"——这类抽象图形观众看不懂，实测失败。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "详见 "
+            },
+            {
+              "href": "https://github.com/ttfake92-lab/skills/blob/main/skills/archival-fragments/references/style-guide.md",
+              "t": "style-guide.md"
+            },
+            {
+              "t": " 第零条。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "流程"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "按顺序做，每一阶段有自己的文档："
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "阶段"
+              }
+            ],
+            [
+              {
+                "t": "文档"
+              }
+            ],
+            [
+              {
+                "t": "产出"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "0. 环境准备"
+                }
+              ],
+              [
+                {
+                  "href": "https://github.com/ttfake92-lab/skills/blob/main/skills/archival-fragments/references/00-setup.md",
+                  "t": "00-setup.md"
+                }
+              ],
+              [
+                {
+                  "t": "依赖装好、凭据可用、检查全绿"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "1. 想法 → 文案 → 拆故事/画面/节奏"
+                }
+              ],
+              [
+                {
+                  "href": "https://github.com/ttfake92-lab/skills/blob/main/skills/archival-fragments/references/01-script.md",
+                  "t": "01-script.md"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "narration.json"
+                },
+                {
+                  "t": " + 逐镜表"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "2. 设计关键帧链"
+                }
+              ],
+              [
+                {
+                  "href": "https://github.com/ttfake92-lab/skills/blob/main/skills/archival-fragments/references/02-keyframes.md",
+                  "t": "02-keyframes.md"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "keyframes.json"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "3. 写运动句"
+                }
+              ],
+              [
+                {
+                  "href": "https://github.com/ttfake92-lab/skills/blob/main/skills/archival-fragments/references/03-shots.md",
+                  "t": "03-shots.md"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "shots.json"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "4. 排节奏"
+                }
+              ],
+              [
+                {
+                  "href": "https://github.com/ttfake92-lab/skills/blob/main/skills/archival-fragments/references/04-rhythm.md",
+                  "t": "04-rhythm.md"
+                }
+              ],
+              [
+                {
+                  "t": "镜长分配表"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "5. 生成与合成"
+                }
+              ],
+              [
+                {
+                  "href": "https://github.com/ttfake92-lab/skills/blob/main/skills/archival-fragments/references/05-produce.md",
+                  "t": "05-produce.md"
+                }
+              ],
+              [
+                {
+                  "t": "关键帧 → 镜头 → 配音 → 成片"
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "视觉基线随时查 "
+            },
+            {
+              "href": "https://github.com/ttfake92-lab/skills/blob/main/skills/archival-fragments/references/style-guide.md",
+              "t": "style-guide.md"
+            },
+            {
+              "t": "。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "三个必须停下来问用户的节点"
+            },
+            {
+              "t": "："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "阶段 0 检查完 —— 告诉用户环境就绪，请他给想法或文案"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "阶段 1 拆完 —— 把逐镜表给用户过目"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "阶段 5 跑完 2–4 个样片 —— 确认方向再跑全量"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "默认参数"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "4:3 / 2K（1920×1440）/ 视频 "
+            },
+            {
+              "c": true,
+              "t": "Minimax H3"
+            },
+            {
+              "t": " "
+            },
+            {
+              "c": true,
+              "t": "frames2video"
+            },
+            {
+              "t": " / 图片 "
+            },
+            {
+              "c": true,
+              "t": "Seedream 5.0 Pro"
+            },
+            {
+              "t": " /\n"
+            },
+            {
+              "c": true,
+              "t": "count=1"
+            },
+            {
+              "t": " / 每镜生成 5 秒 / "
+            },
+            {
+              "b": true,
+              "t": "并发上限 1，必须串行"
+            },
+            {
+              "t": "。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "包里有什么"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "references/"
+                },
+                {
+                  "t": " —— 六份规则文档，就是上表那几份"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "examples/"
+                },
+                {
+                  "t": " —— 一条已完成 67.3 秒成片的完整配置：35 张关键帧提示词原文、34 条运动句、镜长分配表、17 句旁白、文案。"
+                },
+                {
+                  "b": true,
+                  "t": "照着改结构，不要照抄内容"
+                },
+                {
+                  "t": "——那些符号是为特定题材设计的"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "assets/style-reference.png"
+                },
+                {
+                  "t": " —— 风格参考板，"
+                },
+                {
+                  "b": true,
+                  "t": "只给人看"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "assets/example-01..08-*.jpg"
+                },
+                {
+                  "t": " —— 八张连续的关键帧，展示同一条片子里画面是怎么一张一张推进的"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

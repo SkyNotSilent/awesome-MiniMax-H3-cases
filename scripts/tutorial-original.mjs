@@ -4,7 +4,7 @@
 export const ORIGINAL_KINDS = new Set(['x-article', 'x-thread', 'markdown'])
 export const ORIGINAL_LANGUAGES = new Set(['zh', 'en', 'ja', 'other'])
 const BLOCK_TYPES = new Set(['heading', 'paragraph', 'list', 'quote', 'code', 'image', 'video', 'youtube', 'divider', 'table', 'post-quote'])
-const LOCAL_IMAGE = /^\/tutorial-media\/[a-z0-9-]+\/[A-Za-z0-9._-]+\.webp$/
+const LOCAL_IMAGE = /^\/(?:tutorial|skill)-media\/[a-z0-9-]+\/[A-Za-z0-9._-]+\.webp$/
 const LOCAL_VIDEO = /^\/media\/tutorial-[A-Za-z0-9._-]+\.mp4$/
 const YOUTUBE_ID = /^[A-Za-z0-9_-]{11}$/
 const URL_PATTERN = /https?:\/\/[^\s<>"'）)\]]+[^\s<>"'）)\].,;:!?，。；：！？]/g
@@ -374,7 +374,8 @@ function blockErrors(block, path, errors) {
 
 export function tutorialOriginalErrors(original) {
   const errors = []
-  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(original?.tutorialId ?? '')) errors.push('original.tutorialId: slug required')
+  const owner = original?.tutorialId ?? original?.skillId
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(owner ?? '') || (original.tutorialId && original.skillId)) errors.push('original.tutorialId: slug required')
   if (!ORIGINAL_KINDS.has(original?.kind)) errors.push('original.kind: unsupported kind')
   if (!ORIGINAL_LANGUAGES.has(original?.language)) errors.push('original.language: unsupported language')
   if (Number.isNaN(Date.parse(original?.capturedAt ?? ''))) errors.push('original.capturedAt: ISO date-time required')
@@ -385,6 +386,8 @@ export function tutorialOriginalErrors(original) {
   else original.sections.forEach((section, sectionIndex) => {
     const path = `original.sections[${sectionIndex}]`
     if (section.url !== undefined && !safeHref(section.url)) errors.push(`${path}.url: HTTP(S) URL required`)
+    if (section.title !== undefined && (typeof section.title !== 'string' || !section.title.trim())) errors.push(`${path}.title: text required`)
+    if (section.anchor !== undefined && !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(section.anchor)) errors.push(`${path}.anchor: slug required`)
     if (!Array.isArray(section.blocks) || !section.blocks.length) errors.push(`${path}.blocks: content required`)
     else section.blocks.forEach((block, blockIndex) => blockErrors(block, `${path}.blocks[${blockIndex}]`, errors))
   })

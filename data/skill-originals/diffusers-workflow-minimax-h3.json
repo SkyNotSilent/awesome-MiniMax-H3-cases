@@ -1,0 +1,1164 @@
+{
+  "skillId": "diffusers-workflow-minimax-h3",
+  "kind": "markdown",
+  "title": "diffusers-workflow minimax-h3",
+  "language": "en",
+  "capturedAt": "2026-09-13T11:14:23.136Z",
+  "source": {
+    "url": "https://github.com/dkackman/diffusers-workflow",
+    "author": "dkackman",
+    "revision": "80caec73acae79481e95b12bd684400bd95a3452",
+    "license": "Apache-2.0"
+  },
+  "sections": [
+    {
+      "url": "https://github.com/dkackman/diffusers-workflow/blob/master/plugins/dw/skills/minimax-h3/SKILL.md",
+      "title": "minimax-h3",
+      "anchor": "skill-minimax-h3",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Use when a dw MCP server is connected and the user wants MiniMax H3 video - a clip with its own sound, dialogue or a speaking character, a music video, a multi-shot short with cuts, a longer take, or a subject or voice kept consistent from a reference. Picks the template for the shape, states the rules that bite, quotes cost, and points at MiniMax's own prompt guides."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3 on a dw server"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "H3 generates video and audio together: speech with lip sync, ambient sound,\nscore. Every template here fits a 24 GB card. This skill chooses the template\nand the arguments; the prompt format is MiniMax's and comes from their text,\nnot from here."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Before anything"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "get_server_info"
+                },
+                {
+                  "t": ": the device (H3 templates are CUDA; the quantized\nconfigurations do not run on mps) and which workspace this session is in."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "list_workflows(shape=\"shot\")"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "list_workflows(shape=\"sequence\")"
+                },
+                {
+                  "t": " and\n"
+                },
+                {
+                  "c": true,
+                  "t": "list_workflows(shape=\"audio\")"
+                },
+                {
+                  "t": ": the family's templates by their current\nnames, with "
+                },
+                {
+                  "c": true,
+                  "t": "summary"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "traits"
+                },
+                {
+                  "t": " and "
+                },
+                {
+                  "c": true,
+                  "t": "cost"
+                },
+                {
+                  "t": ". Trust the listing over the\nnames quoted below."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "get_workflow"
+                },
+                {
+                  "t": " on the one chosen, for its variables and their defaults."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Which shape is the request"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "One clip, up to 14.4 seconds, from text"
+                },
+                {
+                  "t": ": "
+                },
+                {
+                  "c": true,
+                  "t": "templates/minimax/video-with-audio"
+                },
+                {
+                  "t": ".\nFrom a one-line idea: "
+                },
+                {
+                  "c": true,
+                  "t": "templates/minimax/enhance-prompt"
+                },
+                {
+                  "t": " writes the prompt\nwith the built-in Context-IR enhancer first."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Pinned to a picture"
+                },
+                {
+                  "t": ": first frame "
+                },
+                {
+                  "c": true,
+                  "t": "templates/minimax/image-to-video"
+                },
+                {
+                  "t": ";\nfirst and last "
+                },
+                {
+                  "c": true,
+                  "t": "templates/minimax/first-and-last-frame"
+                },
+                {
+                  "t": "; last only\n"
+                },
+                {
+                  "c": true,
+                  "t": "templates/minimax/last-frame-only"
+                },
+                {
+                  "t": "; a one-line idea plus a picture\n"
+                },
+                {
+                  "c": true,
+                  "t": "templates/minimax/enhance-prompt-with-image"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "A subject that must look the same"
+                },
+                {
+                  "t": ": "
+                },
+                {
+                  "c": true,
+                  "t": "templates/minimax/reference-to-video"
+                },
+                {
+                  "t": "\n(an image fixes appearance, an audio clip fixes voice);\n"
+                },
+                {
+                  "c": true,
+                  "t": "templates/minimax/composable-references"
+                },
+                {
+                  "t": " adds a video reference for framing\nand camera; "
+                },
+                {
+                  "c": true,
+                  "t": "templates/minimax/generated-subject-reference"
+                },
+                {
+                  "t": " draws the subject\nwith Z-Image first and references it in the same workflow;\n"
+                },
+                {
+                  "c": true,
+                  "t": "templates/minimax/voice-timbre-reference"
+                },
+                {
+                  "t": " fixes a voice from a Bark-spoken line."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Several boards in one generation, one unbroken score"
+                },
+                {
+                  "t": ":\n"
+                },
+                {
+                  "c": true,
+                  "t": "templates/minimax/storyboard"
+                },
+                {
+                  "t": " - H3 cuts between the boards inside a single\ngeneration, which no concat of separate clips can match for continuous audio.\nIt is one beat with fixed cut points, not a building block: four of them\nconcatenated give twelve equal-length shots and a cast redrawn four times.\nPast one beat with a recurring cast, use the cuts pattern below."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Longer than 14.4 seconds"
+                },
+                {
+                  "t": ": decide first whether the seam is a cut or a\ncontinuation. Chain when the same action or line of speech has to cross the\nseam; cut when the scene changes, and treat each cut as its own generation.\nSix distinct scenes are a cuts piece, not a chain."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Longer than 14.4 seconds as one take"
+                },
+                {
+                  "t": ": a chain. "
+                },
+                {
+                  "c": true,
+                  "t": "templates/minimax/chained-segments"
+                },
+                {
+                  "t": "\n(last-frame continuity), "
+                },
+                {
+                  "c": true,
+                  "t": "templates/minimax/chain-video-continuity"
+                },
+                {
+                  "t": " (the\nprevious segment's tail rides along as a video reference - motion, camera and\nvoice carry across the seam), "
+                },
+                {
+                  "c": true,
+                  "t": "templates/minimax/chain-matched-to-audio"
+                },
+                {
+                  "t": " (a\nsupplied track sets the length and is muxed back seamless),\n"
+                },
+                {
+                  "c": true,
+                  "t": "templates/minimax/chain-matched-and-aligned"
+                },
+                {
+                  "t": " (all of it, per-segment prompts).\nDrift compounds per seam: reference the subject picture in every segment,\nprefer "
+                },
+                {
+                  "c": true,
+                  "t": "last_segment"
+                },
+                {
+                  "t": " continuity, and use the longest segments memory allows."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "A piece with cuts"
+                },
+                {
+                  "t": ": fresh shots from shared portraits, then a concat.\n"
+                },
+                {
+                  "c": true,
+                  "t": "templates/minimax/dialogue-short"
+                },
+                {
+                  "t": " (Z-Image draws the cast, one shot per\nentry of its "
+                },
+                {
+                  "c": true,
+                  "t": "shots"
+                },
+                {
+                  "t": " list on one loaded model, "
+                },
+                {
+                  "c": true,
+                  "t": "concat_videos"
+                },
+                {
+                  "t": " splices) and\n"
+                },
+                {
+                  "c": true,
+                  "t": "templates/minimax/music-video"
+                },
+                {
+                  "t": " (a song, one slice and one lip-synced shot\nper entry). "
+                },
+                {
+                  "c": true,
+                  "t": "shots"
+                },
+                {
+                  "t": " is one list argument: a dialogue entry is "
+                },
+                {
+                  "c": true,
+                  "t": "name"
+                },
+                {
+                  "t": ",\n"
+                },
+                {
+                  "c": true,
+                  "t": "prompt"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "references"
+                },
+                {
+                  "t": " (which portraits and voices this shot uses) and\n"
+                },
+                {
+                  "c": true,
+                  "t": "num_frames"
+                },
+                {
+                  "t": "; a music-video entry is "
+                },
+                {
+                  "c": true,
+                  "t": "name"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "prompt"
+                },
+                {
+                  "t": " and "
+                },
+                {
+                  "c": true,
+                  "t": "start_frame"
+                },
+                {
+                  "t": ".\nA six-shot piece is one more entry, not another file.\nThe listing's "
+                },
+                {
+                  "c": true,
+                  "t": "lists"
+                },
+                {
+                  "t": " block says what an entry carries; its "
+                },
+                {
+                  "c": true,
+                  "t": "cost"
+                },
+                {
+                  "t": "\ncarries "
+                },
+                {
+                  "c": true,
+                  "t": "per_entry"
+                },
+                {
+                  "t": " when one shot was measured: quote\n"
+                },
+                {
+                  "c": true,
+                  "t": "minutes - per_entry.minutes × per_entry.entries + per_entry.minutes × N"
+                },
+                {
+                  "t": "\nfor N entries. Without "
+                },
+                {
+                  "c": true,
+                  "t": "per_entry"
+                },
+                {
+                  "t": ", quote the total and say it is the\ndefault list's.\nA cut erases drift; the last shot is as clean as the first. Write shots,\nnot takes. Each shot generates its own audio, so write\n"
+                },
+                {
+                  "c": true,
+                  "t": "non_diegetic_music: N/A"
+                },
+                {
+                  "t": " in every shot and lay one score under the concat\nafterwards: "
+                },
+                {
+                  "c": true,
+                  "t": "templates/minimax/music"
+                },
+                {
+                  "t": " writes the track and\n"
+                },
+                {
+                  "c": true,
+                  "t": "templates/assemble-and-score"
+                },
+                {
+                  "t": " shows the "
+                },
+                {
+                  "c": true,
+                  "t": "pair_audio"
+                },
+                {
+                  "t": " step that mixes it\nunder the world sound (it takes three shots; for more, author the concat\nand score steps the same way). A character who speaks in several shots\nkeeps one voice by passing the same clip as an audio reference in each\n(the "
+                },
+                {
+                  "c": true,
+                  "t": "voice-timbre-reference"
+                },
+                {
+                  "t": " pattern); a repeated voice description alone\ndrifts. Each entry's "
+                },
+                {
+                  "c": true,
+                  "t": "num_frames"
+                },
+                {
+                  "t": " is its own, so pace the cut. The\nreference carries delivery as well as timbre: a flat read gives a flat\nperformance. Bark's presets are conversational; for a narrator with\ngravitas, "
+                },
+                {
+                  "c": true,
+                  "t": "upload_asset"
+                },
+                {
+                  "t": " a recorded read in that register and reference\nthe same file in every shot."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Music alone"
+                },
+                {
+                  "t": ": "
+                },
+                {
+                  "c": true,
+                  "t": "templates/minimax/music"
+                },
+                {
+                  "t": " (Music3); the "
+                },
+                {
+                  "c": true,
+                  "t": "minimax-music3"
+                },
+                {
+                  "t": " skill."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "If none fits, compose from "
+            },
+            {
+              "c": true,
+              "t": "list_tasks"
+            },
+            {
+              "t": " before authoring a new workflow, and\nread the "
+            },
+            {
+              "c": true,
+              "t": "workflows"
+            },
+            {
+              "t": " guide's authoring section first."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Hard rules"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "num_frames"
+                },
+                {
+                  "t": " is "
+                },
+                {
+                  "c": true,
+                  "t": "17n + 5"
+                },
+                {
+                  "t": ", from 124 to 345, at a fixed 24 fps: 5.17 to 14.4\nseconds in one clip. Most templates default to 124 for fast iteration (storyboard uses 192); "
+                },
+                {
+                  "c": true,
+                  "t": "num_frames=345"
+                },
+                {
+                  "t": "\nis the full length and fits the same 24 GB configuration. The 5-second floor\nis diffusers'; the model card says 4."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Canvas: a 768-pixel short edge, at most 768x1344 pixels, dimensions in multiples of 32,\naspect from 1:4 to 4:1. Output audio is 32 kHz stereo."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "The text- and frame-conditioned templates render at 960x544 with the 544p\nturbo LoRA in nine steps, and those three go together - change one, change\nall three. Six templates that condition on references alone\n("
+                },
+                {
+                  "c": true,
+                  "t": "reference-to-video"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "composable-references"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "voice-timbre-reference"
+                },
+                {
+                  "t": ",\n"
+                },
+                {
+                  "c": true,
+                  "t": "generated-subject-reference"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "chain-matched-to-audio"
+                },
+                {
+                  "t": ",\n"
+                },
+                {
+                  "c": true,
+                  "t": "chain-video-continuity"
+                },
+                {
+                  "t": ") carry no LoRA and run 20 steps, because the turbo\nLoRA is distilled against the base transformer and they load the reference\none; such a run is about twice the time of a turbo one at the same length.\n"
+                },
+                {
+                  "c": true,
+                  "t": "storyboard"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "dialogue-short"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "music-video"
+                },
+                {
+                  "t": " and\n"
+                },
+                {
+                  "c": true,
+                  "t": "chain-matched-and-aligned"
+                },
+                {
+                  "t": " pass references "
+                },
+                {
+                  "i": true,
+                  "t": "and"
+                },
+                {
+                  "t": " keep the turbo LoRA at\nnine steps; say nine for those, not 20."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Nothing carries between generations except what is passed as a reference:\nno latent memory and no extension mode, in the checkpoint, the hosted API or\ndiffusers. Identity rides on a picture, voice on an audio clip, motion and\ncamera on a video tail (what a chain passes forward), and a score across\ncuts is laid under the concat afterwards."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "H3 is guidance-distilled: no "
+                },
+                {
+                  "c": true,
+                  "t": "guidance_scale"
+                },
+                {
+                  "t": ", no negative prompt. Say what is\nthere, never what is not."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "When deriving a variant, keep "
+                },
+                {
+                  "c": true,
+                  "t": "release_pipeline"
+                },
+                {
+                  "t": " on the step the template\nputs it on: it frees the Z-Image boards before H3 loads. A run killed by\nSIGKILL near the end, in a worker warm from a previous job, that succeeds\non a retry in a fresh worker is host memory, not the prompt."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Ref2VA limits: at most 9 images, 3 videos, 3 audio clips, 12 files; audio can\nnever be the only reference. References are labelled in the order passed."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Music3 reads "
+                },
+                {
+                  "c": true,
+                  "t": "audio_duration"
+                },
+                {
+                  "t": " as a ceiling, not a target: ask for more than\nthe song needs and trim with "
+                },
+                {
+                  "c": true,
+                  "t": "templates/audio-trim-fade"
+                },
+                {
+                  "t": ". The "
+                },
+                {
+                  "c": true,
+                  "t": "minimax-music3"
+                },
+                {
+                  "t": "\nskill has the rest of that family."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Write the prompt for the length being generated: shot timestamps should span\nthe duration, or a five-second script conditions a five-second story\nwhatever the frame count."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Prompts"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "H3 wants Context-IR, MiniMax's own format. Do not invent it and do not\nparaphrase it from examples:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If the "
+                },
+                {
+                  "c": true,
+                  "t": "h3-prompt-writing"
+                },
+                {
+                  "t": " skill is installed (MiniMax ships it in\n"
+                },
+                {
+                  "href": "https://github.com/MiniMax-AI/MiniMax-H3",
+                  "t": "https://github.com/MiniMax-AI/MiniMax-H3"
+                },
+                {
+                  "t": " under "
+                },
+                {
+                  "c": true,
+                  "t": "skills/"
+                },
+                {
+                  "t": "), use it. If it\nis not, tell the user once that\n"
+                },
+                {
+                  "c": true,
+                  "t": "npx skills add MiniMax-AI/MiniMax-H3 --skill h3-prompt-writing"
+                },
+                {
+                  "t": " installs\nit - only that skill; the repo's other eight are style packs - and go on\nwithout it."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Else read the guides on the model card:\n"
+                },
+                {
+                  "href": "https://huggingface.co/MiniMaxAI/MiniMax-H3/raw/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md",
+                  "t": "https://huggingface.co/MiniMaxAI/MiniMax-H3/raw/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md"
+                },
+                {
+                  "t": "\nfor text- and frame-conditioned generation, and\n"
+                },
+                {
+                  "href": "https://huggingface.co/MiniMaxAI/MiniMax-H3/raw/main/docs/VIDEO_PROMPT_WRITING_GUIDE_ref_en.md",
+                  "t": "https://huggingface.co/MiniMaxAI/MiniMax-H3/raw/main/docs/VIDEO_PROMPT_WRITING_GUIDE_ref_en.md"
+                },
+                {
+                  "t": "\nfor reference-conditioned generation."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Else run "
+                },
+                {
+                  "c": true,
+                  "t": "templates/minimax/enhance-prompt"
+                },
+                {
+                  "t": " (or "
+                },
+                {
+                  "c": true,
+                  "t": "-with-image"
+                },
+                {
+                  "t": "), whose\nbuilt-in enhancer writes the format from those guides. Its "
+                },
+                {
+                  "c": true,
+                  "t": "idea"
+                },
+                {
+                  "t": " is\nframed as "
+                },
+                {
+                  "c": true,
+                  "t": "Task: T2VA. Duration: 5.17 seconds. Idea: ..."
+                },
+                {
+                  "t": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Whichever route: write the whole script before the first shot - the lines in\norder, read once, should carry the piece on their own - then place them.\nRepeat a speaker's voice description verbatim across shots,\nand when a reference picture should fix identity but not framing, say so in\nthe prompt itself - in a reference-conditioned request, in the lines that\ndefine the subject and state what each reference keeps - or every shot\ninherits the portrait's composition."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Run and judge"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "validate_workflow"
+                },
+                {
+                  "t": " first - free, and it catches arguments the pipeline\ndoes not accept."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Quote the listing's "
+                },
+                {
+                  "c": true,
+                  "t": "cost"
+                },
+                {
+                  "t": " (warm minutes on the card it was measured on;\na first load is longer). When the listing declares none, say so and give the\nshape of the spend instead: a 124-frame turbo clip is a few minutes on a\n24 GB card, the full 345 frames about three times that, a\nreference-conditioned clip about twice a turbo one, and a chain multiplies\nby its segment count. Get the user's go-ahead before "
+                },
+                {
+                  "c": true,
+                  "t": "run_workflow"
+                },
+                {
+                  "t": " with\n"
+                },
+                {
+                  "c": true,
+                  "t": "acknowledged_cost=true"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "wait_for_job"
+                },
+                {
+                  "t": ", then "
+                },
+                {
+                  "c": true,
+                  "t": "get_job"
+                },
+                {
+                  "t": " for the manifest. A cancelled H3 job runs\non to its next step boundary, minutes on this model. Each entry carries\n"
+                },
+                {
+                  "c": true,
+                  "t": "subfolder"
+                },
+                {
+                  "t": ": "
+                },
+                {
+                  "c": true,
+                  "t": "final"
+                },
+                {
+                  "t": " is the deliverable ("
+                },
+                {
+                  "c": true,
+                  "t": "episode"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "music_video"
+                },
+                {
+                  "t": ",\n"
+                },
+                {
+                  "c": true,
+                  "t": "voyage"
+                },
+                {
+                  "t": "), "
+                },
+                {
+                  "c": true,
+                  "t": "intermediate"
+                },
+                {
+                  "t": " the scratch; keep that split in anything you\ncompose."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "You cannot watch a video: no tool returns a frame from one. Hand the user\nthe gallery "
+                },
+                {
+                  "c": true,
+                  "t": "url"
+                },
+                {
+                  "t": " ("
+                },
+                {
+                  "c": true,
+                  "t": "list_gallery"
+                },
+                {
+                  "t": ", or the manifest's file name) and ask them\nto look, and check what you can yourself - "
+                },
+                {
+                  "c": true,
+                  "t": "get_job"
+                },
+                {
+                  "t": " for the manifest and\nits warnings, "
+                },
+                {
+                  "c": true,
+                  "t": "get_gallery_metadata"
+                },
+                {
+                  "t": " for duration, size and whether an audio\nstream is present. "
+                },
+                {
+                  "c": true,
+                  "t": "get_output_image"
+                },
+                {
+                  "t": " works only on image steps, which in\nthis family are the Z-Image portraits and boards of\n"
+                },
+                {
+                  "c": true,
+                  "t": "templates/minimax/dialogue-short"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "templates/minimax/storyboard"
+                },
+                {
+                  "t": ",\n"
+                },
+                {
+                  "c": true,
+                  "t": "templates/minimax/generated-subject-reference"
+                },
+                {
+                  "t": " and\n"
+                },
+                {
+                  "c": true,
+                  "t": "templates/minimax/music-video"
+                },
+                {
+                  "t": ". Ask the user to look for the family's\nfailure modes: a character that changes between shots (reference the same\nportraits in every shot), a reference portrait imposing its framing on every\nshot, a storyboard skipped, drift sharpening into noise late in a chain,\na voice-over without affect (the reference's delivery came through), every\nshot the same length, a look word repeated on every board (shallow depth\nof field) softening every shot."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "After an inline run worth keeping, "
+                },
+                {
+                  "c": true,
+                  "t": "get_job_workflow"
+                },
+                {
+                  "t": " and "
+                },
+                {
+                  "c": true,
+                  "t": "save_workflow"
+                },
+                {
+                  "t": " it,\nso the next run is by name rather than by pasting JSON; "
+                },
+                {
+                  "c": true,
+                  "t": "export_job"
+                },
+                {
+                  "t": " bundles\nthe run — workflow, manifest, job row and media — for git. The bundle is on\nthe server: fetch its zip URL and unpack it into "
+                },
+                {
+                  "c": true,
+                  "t": "exports/"
+                },
+                {
+                  "t": " under the\nsession's working directory, never a temp directory, and do not make a\nfolder named after the job id first, since the archive already unpacks\ninto one."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Sources"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "MiniMax-H3 model card and prompt guides (huggingface.co/MiniMaxAI/MiniMax-H3),\nthe "
+            },
+            {
+              "c": true,
+              "t": "h3-prompt-writing"
+            },
+            {
+              "t": " skill (github.com/MiniMax-AI/MiniMax-H3), the diffusers\nMiniMax-H3 modular pipeline, the "
+            },
+            {
+              "c": true,
+              "t": "lightx2v/Minimax-h3-Turbo"
+            },
+            {
+              "t": " LoRA notes. Read\n2026-09-07; the audit is "
+            },
+            {
+              "c": true,
+              "t": "docs/proposals/audits/2026-09-07-minimax-h3-audit.md"
+            },
+            {
+              "t": "."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

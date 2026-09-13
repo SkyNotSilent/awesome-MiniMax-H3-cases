@@ -1,0 +1,1467 @@
+{
+  "skillId": "comfytv-h3-cinematic-director",
+  "kind": "markdown",
+  "title": "h3-cinematic-director",
+  "language": "en",
+  "capturedAt": "2026-09-13T11:12:12.107Z",
+  "source": {
+    "url": "https://github.com/jtydhr88/ComfyTV",
+    "author": "jtydhr88",
+    "revision": "da19542a6630b60f841de2b54d6f21a9922c7301",
+    "license": "MIT"
+  },
+  "sections": [
+    {
+      "url": "https://github.com/jtydhr88/ComfyTV/blob/main/skills/h3-cinematic-director/SKILL.md",
+      "title": "h3-cinematic-director",
+      "anchor": "skill-h3-cinematic-director",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Convert approved scripts, shot briefs, storyboards, keyframes, character sheets, scene assets, prop sheets, and sound briefs into director-level storyboards and production-ready MiniMax H3 prompts. Use when the user explicitly invokes $h3-cinematic-director or asks for H3 shot design, T2VA/I2VA/FL2VA/L2VA/Ref2VA prompting, camera and performance direction, first/last-frame interpolation, multi-reference control, character/scene continuity auditing, or single-variable repair. Preserve approved story content and never import or reveal private content from another project."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "H3 Cinematic Director"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Purpose"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Operate as one explicit, self-contained application for four jobs:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "shot-design"
+                },
+                {
+                  "t": " — turn an approved dramatic beat into necessary, motivated shots."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "h3-prompt"
+                },
+                {
+                  "t": " — translate an approved shot into the exact MiniMax H3 prompt schema."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "continuity-audit"
+                },
+                {
+                  "t": " — compare neighboring shots, keyframes, and assets for continuity failures."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "single-variable-repair"
+                },
+                {
+                  "t": " — repair one failed variable without redesigning the approved shot."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Treat Higgsfield-style director vocabulary as an internal control layer. Keep MiniMax H3's external field names, order, labels, and timing unchanged."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Invocation"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The user may call the skill directly with:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "$h3-cinematic-director shot-design: ..."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "$h3-cinematic-director h3-prompt: ..."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "$h3-cinematic-director continuity-audit: ..."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "$h3-cinematic-director single-variable-repair: ..."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "If no application is named, infer the smallest applicable job from the request. Do not widen the task into story rewriting unless requested."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Information Boundary"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Use only story, assets, and decisions supplied in the current task or explicitly retrieved with permission."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Reuse method, terminology, and checklists; never reuse project-specific names, dialogue, plot beats, shot content, images, or private prompts."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Treat approved script and approved assets as canonical. Flag contradictions instead of silently inventing replacements."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not add plot, characters, props, effects, dialogue, or cuts merely to make an image more spectacular."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Core Principle"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Translate dramatic intention into visible and audible evidence:"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "dramatic purpose → spatial blocking → performance → camera → edit → sound → H3 control"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Every instruction must be observable or measurable. Replace vague language such as “cinematic,” “emotional,” or “dynamic” with subject position, action, muscle response, camera path, focal behavior, light source, material behavior, timing, and sound."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Workflow"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "1. Lock the approved beat"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Before designing or prompting, state internally:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "what changes in information, power, emotion, relationship, danger, or space;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "where the previous shot ends and this shot begins;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "the character objective and immediate obstacle;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "the required end state that enables the next shot."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "If the shot changes none of these, remove it or mark it as an unjustified insert."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "2. Build the continuity ledger"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Record only relevant hard facts:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "character identity, silhouette, proportions, face, hair, eyes, costume, footwear, carried props;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "prop state, hand occupancy, damage, open/closed state, display content;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "scene geography, entrance/exit, horizon, floor level, landmark positions, screen direction;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "time, weather, key-light direction, color temperature, atmosphere;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "start pose, end pose, gaze, weight center, contact point, pain or fatigue state;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "sound already active before the cut and sound that must bridge out."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Classify facts as "
+            },
+            {
+              "c": true,
+              "t": "hard continuity"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "soft continuity"
+            },
+            {
+              "t": ", or "
+            },
+            {
+              "c": true,
+              "t": "expressive variation"
+            },
+            {
+              "t": ". Never sacrifice hard continuity for decorative detail."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "3. Choose the generation mode"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "T2VA"
+                },
+                {
+                  "t": ": use only for concept exploration or shots without reliable assets."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "I2VA"
+                },
+                {
+                  "t": ": use one approved first frame when the action develops forward with moderate change."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "FL2VA"
+                },
+                {
+                  "t": ": use approved first and last frames for continuous movement or visible state change."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "L2VA"
+                },
+                {
+                  "t": ": use one approved last frame when the shot must converge precisely on it."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "Ref2VA"
+                },
+                {
+                  "t": ": use multiple references when identity, environment, prop, action, camera, style, or voice must be separated and controlled."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For the user's local checkpoints:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Prefer "
+                },
+                {
+                  "c": true,
+                  "t": "minimax_h3_fl2va_int8_convrot.safetensors"
+                },
+                {
+                  "t": " for T2VA/I2VA/FL2VA/L2VA and clean keyframe interpolation."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Prefer "
+                },
+                {
+                  "c": true,
+                  "t": "minimax_h3_hybrid_fl2va_ref2va_b25-49-int8.safetensors"
+                },
+                {
+                  "t": " when several references are necessary. Treat it as a hybrid tradeoff and keep high-priority references few and unambiguous."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "4. Assign each reference one job"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use a small hierarchy:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "canonical identity and costume;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "environment geometry and light;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "prop structure and state;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "action pose or motion timing;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "camera movement;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "style or color treatment;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "voice or audio."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Never ask one ambiguous image to control identity, action, style, and composition unless it is also the exact keyframe. Reference priority is:"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "identity/assets > scene layout > prop state > action pose > camera example > style decoration"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use one canonical facial source whenever possible. Use front, profile, and rear sheets to support rotation, not to create competing identities."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "5. Plan the shot in director controls"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Build these controls before writing H3 fields:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "location map"
+                },
+                {
+                  "t": ": foreground, midground, background, entrances, exits, landmarks, left/right relations;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "first-frame lock"
+                },
+                {
+                  "t": ": the image is already active, spatially clear, and compatible with the incoming cut;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "format"
+                },
+                {
+                  "t": ": aspect ratio, duration, one shot or explicit cut times;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "optics"
+                },
+                {
+                  "t": ": FOV or lens feel, camera height, distance, depth of field, focus targets;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "camera"
+                },
+                {
+                  "t": ": one motivated movement with direction, amplitude, speed, and stopping point;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "action"
+                },
+                {
+                  "t": ": intention, anticipation, exertion, contact/near-miss, reaction, recovery, consequence;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "performance"
+                },
+                {
+                  "t": ": gaze, breath, jaw, shoulders, hands, weight shift, hesitation, protective motion;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "physics"
+                },
+                {
+                  "t": ": gravity, momentum, contact, balance, cloth drag, hair follow-through, material deformation;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "lighting/color"
+                },
+                {
+                  "t": ": source direction, Kelvin value, contrast, exposure behavior, palette, material response;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "sound"
+                },
+                {
+                  "t": ": ambience, synchronous foley, voice, subjective sound, silence, non-diegetic score;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "positive locks"
+                },
+                {
+                  "t": ": elements that remain stable through the shot."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Load "
+            },
+            {
+              "href": "https://github.com/jtydhr88/ComfyTV/blob/main/skills/h3-cinematic-director/references/director-keywords.md",
+              "t": "references/director-keywords.md"
+            },
+            {
+              "t": " when the user asks for camera keywords, director language, or a high-control prompt."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "6. Design the shot or shot group"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For every shot, provide:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "shot number and duration;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "dramatic purpose;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "framing, camera position, FOV/lens feel, and camera height;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "composition, depth layers, screen direction, and gaze;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "start state, action phases, end state;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "performance and physical feedback;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "camera movement and focus behavior;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "cut or keyframe connection;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "lighting, color, diegetic sound, dialogue, and music;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "H3 mode, checkpoint, reference labels, and known risk."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Continuous action may use multiple storyboard frames under one shot number. Label them "
+            },
+            {
+              "c": true,
+              "t": "S17-A"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "S17-B"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "S17-C"
+            },
+            {
+              "t": " or equivalent; do not mislabel every action phase as a new editorial shot."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "7. Translate into the exact H3 schema"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Load "
+            },
+            {
+              "href": "https://github.com/jtydhr88/ComfyTV/blob/main/skills/h3-cinematic-director/references/h3-formats.md",
+              "t": "references/h3-formats.md"
+            },
+            {
+              "t": ". Preserve exact field names, field order, reference labels, shot numbering, dialogue tags, and effective duration."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "H3 base modes output only the applicable alignment instruction plus "
+                },
+                {
+                  "c": true,
+                  "t": "integrated_multimodal_description"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "overall_soundscape"
+                },
+                {
+                  "t": ", and "
+                },
+                {
+                  "c": true,
+                  "t": "non_diegetic_music"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Ref2VA outputs only "
+                },
+                {
+                  "c": true,
+                  "t": "subject_definitions"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "summary"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "retention_analysis"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "detailed_description"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "overall_soundscape"
+                },
+                {
+                  "t": ", and "
+                },
+                {
+                  "c": true,
+                  "t": "non_diegetic_music"
+                },
+                {
+                  "t": " in that order."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Write H3 fields in English. Preserve dialogue, lyrics, and visible text in their original language."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Put Higgsfield-derived control language inside the H3 visual timeline; never create extra external sections that violate the H3 schema."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Match the described timeline to the requested 4–15 second duration."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "8. Audit before delivery"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Load "
+            },
+            {
+              "href": "https://github.com/jtydhr88/ComfyTV/blob/main/skills/h3-cinematic-director/references/continuity-audit.md",
+              "t": "references/continuity-audit.md"
+            },
+            {
+              "t": " and reject or repair the output when:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "the action cannot be understood without explanation;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "the shot lacks a motivated dramatic purpose;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "a character, prop, or scene element appears, disappears, mirrors, duplicates, or changes state without cause;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "the camera crosses the axis or loses the intended geography;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "force, pain, balance, contact, or recovery is physically false;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "the first frame, last frame, or reference role is not respected;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "a cut breaks gaze, motion, light, sound, or screen direction;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "timing exceeds the available duration;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "sound contradicts the image or masks essential dialogue."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Application Outputs"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "shot-design"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Lead with a continuity note, then a compact shot table. Explain why each shot exists and how it connects to neighboring shots. Do not write H3 prompts unless asked."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "h3-prompt"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Output the copy-ready H3 prompt first. Follow with a concise production note listing mode, checkpoint, duration, reference roles, and high-risk variables."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "continuity-audit"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Return:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "passing items"
+                },
+                {
+                  "t": ";"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "hard continuity errors"
+                },
+                {
+                  "t": ";"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "shot logic errors"
+                },
+                {
+                  "t": ";"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "model generation risks"
+                },
+                {
+                  "t": ";"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "minimal repair plan"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not redesign passing elements."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "single-variable-repair"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "State the failed variable, preserve all approved variables, and provide only the replacement prompt clause or replacement keyframe instruction needed. If the source keyframe itself is wrong, say so explicitly."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Repair Discipline"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Change one high-impact variable per test."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Prefer positive locks in the main description: “the same coat remains fastened,” “the doorway stays frame-left,” “the prop remains in the right hand.”"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "End with short, concrete failure exclusions only for known H3 risks: no identity drift, no duplicated people, no extra limbs, no prop morphing, no mirrored layout, no random text, no disappearing companion."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If a remote face is too small to carry emotion, preserve identity through silhouette, hair, costume color, and posture, then cut closer when emotion matters."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If several NPCs appear, specify diversity by age, face shape, hair, clothing, body type, occupation, color, and behavior; never rely on “a varied crowd.”"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Non-Negotiable Quality Bar"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "A shot is an instruction about audience attention, not a decorative image."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "A camera move must reveal, follow, compress, release, isolate, destabilize, or transfer attention."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "A close-up must reveal information, vulnerability, thought, or power."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "A transition effect must inherit the destination world's visual and sonic rules while retaining cross-world identity anchors."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "H3 prompt precision never overrides approved story logic."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Never expose private source material while teaching or packaging this method."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

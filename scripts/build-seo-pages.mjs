@@ -17,6 +17,15 @@ const tutorialGuides = JSON.parse(await readFile(resolve(root, 'data/tutorial-gu
 const tutorialResources = JSON.parse(await readFile(resolve(root, 'data/tutorials.json'), 'utf8'))
 const tutorialOriginals = new Map(await Promise.all(tutorialGuides.filter((item) => item.original).map(async (item) => [item.id, JSON.parse(await readFile(resolve(root, `data/tutorial-originals/${item.id}.json`), 'utf8'))])))
 const SEO_ORIGINAL_CHARACTERS = 16_000
+const skills = JSON.parse(await readFile(resolve(root, 'data/skills.json'), 'utf8'))
+const skillOriginals = new Map(await Promise.all(skills.filter((item) => item.original).map(async (item) => [item.id, JSON.parse(await readFile(resolve(root, `data/skill-originals/${item.id}.json`), 'utf8'))])))
+const skillPath = (locale, id) => `${locale === 'en' ? '/en' : ''}/skills/${encodeURIComponent(id)}/`
+const skillInstallCommand = (item) => {
+  const skill = item.skills.length === 1 ? item.skills[0] : undefined
+  if (!skill) return `npx skills add ${item.repository}`
+  const directory = skill.path.includes('/') ? skill.path.slice(0, skill.path.lastIndexOf('/')) : ''
+  return `npx skills add https://github.com/${item.repository}/tree/${item.branch}${directory ? `/${directory}` : ''}`
+}
 const creatorCatalog = JSON.parse(await readFile(resolve(root, 'data/creators.json'), 'utf8'))
 const creators = creatorCatalog.creators
 const completePromptCount = cases.filter((item) => item.promptProvenance !== 'not-published' && item.prompt?.trim()).length
@@ -95,6 +104,23 @@ const pageDefinitions = [
         title: 'MiniMax H3 Tutorial and Tool Ecosystem — Setup, Speed, Audio, Long Video, Training',
         description: 'Compare the official MiniMax H3 repository, h3.c, ComfyUI, Turbo, Motion Context, Audio T8, low-VRAM, and training projects by use case and hardware.',
         keywords: 'MiniMax H3 open source,MiniMax H3 tools,h3.c,MiniMax H3 ComfyUI,MiniMax H3 Turbo,H3 Motion Context,H3 Audio T8,H3 low VRAM,H3 training',
+      },
+    },
+  },
+  {
+    id: 'skills',
+    paths: { 'zh-CN': '/skills/', en: '/en/skills/' },
+    schemaType: 'CollectionPage',
+    copy: {
+      'zh-CN': {
+        title: 'MiniMax H3 Skills：官方与社区 Agent Skill — MiniMax H3 Cases & Guides',
+        description: `收录 ${skills.length} 个面向 MiniMax H3 的官方与社区 Agent Skill 包，完整收录 SKILL.md 原文并附安装命令。`,
+        keywords: 'MiniMax H3 Skill,MiniMax H3 Agent Skill,h3-prompt-writing,Claude Code Skill,Codex Skill,MiniMax H3 Prompt,ComfyUI H3,海螺 H3 Skill',
+      },
+      en: {
+        title: 'MiniMax H3 Skills: official and community Agent Skills — MiniMax H3 Cases & Guides',
+        description: `${skills.length} official and community Agent Skill packages for MiniMax H3, each with its complete SKILL.md and an install command.`,
+        keywords: 'MiniMax H3 skill,MiniMax H3 agent skill,h3-prompt-writing,Claude Code skill,Codex skill,MiniMax H3 prompts,ComfyUI H3',
       },
     },
   },
@@ -236,7 +262,8 @@ const truncateMeta = (value, maxLength = 155) => {
 }
 
 function assertLanguageIsolation(html, locale, path) {
-  const interfaceOnly = html.replace(/<pre data-verbatim-prompt>[\s\S]*?<\/pre>/g, '')
+  // Verbatim prompts and install commands keep their original characters.
+  const interfaceOnly = html.replace(/<pre data-verbatim-(?:prompt|command)>[\s\S]*?<\/pre>/g, '')
   if (locale === 'en' && /[\u3400-\u9fff]/u.test(interfaceOnly)) {
     throw new Error(`English page ${path} contains CJK text; refusing to generate a mixed-language route.`)
   }
@@ -405,6 +432,17 @@ function creatorPageDefinition(item) {
 }
 
 const creatorPageDefinitions = creators.map(creatorPageDefinition)
+
+const skillPageDefinitions = skills.map((item) => ({
+  id: `skill:${item.id}`,
+  paths: { 'zh-CN': skillPath('zh-CN', item.id), en: skillPath('en', item.id) },
+  schemaType: 'WebPage',
+  skill: item,
+  copy: {
+    'zh-CN': { title: `${item.name} — MiniMax H3 Skill`, description: item.summary.zh, keywords: ['MiniMax H3 Skill', item.name, item.repository, 'Agent Skill'].join(',') },
+    en: { title: `${item.name} — MiniMax H3 skill`, description: item.summary.en, keywords: ['MiniMax H3 skill', item.name, item.repository, 'Agent Skill'].join(',') },
+  },
+}))
 
 function alternateHeadLinks(paths) {
   return `  <link rel="alternate" hreflang="zh-CN" href="${absolute(paths['zh-CN'])}" />
@@ -618,6 +656,14 @@ function fallbackMarkup(page, locale) {
       .sort((a, b) => (b.stars ?? 0) - (a.stars ?? 0))
       .map((item) => `<li><a href="${escapeHtml(item.url)}" rel="nofollow noopener">${escapeHtml(item.title)}</a><p>${escapeHtml(item.description[locale === 'en' ? 'en' : 'zh'])}</p><small>${escapeHtml(locale === 'en' ? 'Star snapshot' : 'Star 快照')}: ${escapeHtml(item.stars ?? '—')} · ${escapeHtml(item.snapshotAt ?? item.verifiedAt)}</small></li>`)
       .join('')}</ol>`
+  } else if (page.id === 'skills') {
+    content = `<ol>${skills.map((item) => `<li><a href="${escapeHtml(skillPath(locale, item.id))}">${escapeHtml(item.name)}</a> · ${escapeHtml(item.repository)}<p>${escapeHtml(item.summary[locale === 'en' ? 'en' : 'zh'])}</p></li>`).join('')}</ol>`
+  } else if (page.skill) {
+    const item = page.skill
+    const original = skillOriginals.get(item.id)
+    const originalHtml = original ? originalSeoHtml(original, locale) : ''
+    content = `<p>${escapeHtml(item.summary[locale === 'en' ? 'en' : 'zh'])}</p><pre data-verbatim-command>${escapeHtml(skillInstallCommand(item))}</pre><p><a href="https://github.com/${escapeHtml(item.repository)}" rel="nofollow noopener">${escapeHtml(item.repository)}</a> · ${escapeHtml(item.license ?? '')} · ★ ${escapeHtml(item.stars)} (${escapeHtml(item.starsAt)})</p>${item.skills.length ? `<ul>${item.skills.map((skill) => `<li>${escapeHtml(skill.name)}</li>`).join('')}</ul>` : ''}`
+    if (originalHtml && (locale !== 'en' || !/[\u3400-\u9fff]/u.test(originalHtml))) content += originalHtml
   } else if (page.id === 'creators') {
     content = `<p><strong>${creatorCatalog.stats.rankedCreators}</strong> ${escapeHtml(locale === 'en' ? 'ranked creators from' : '位优质创作者，来自')} <strong>${creatorCatalog.stats.sourceCreators}</strong> ${escapeHtml(locale === 'en' ? 'source-attributed authors' : '位来源作者')}</p><ol>${creators
       .filter((item) => item.ranks.overall)
@@ -1003,6 +1049,16 @@ for (const page of tutorialPageDefinitions) {
   }
 }
 
+for (const page of skillPageDefinitions) {
+  for (const locale of locales) {
+    const pageDir = resolve(dist, page.paths[locale].replace(/^\//, ''))
+    const html = renderAppShell(page, locale, assetTags)
+    assertLanguageIsolation(html, locale, page.paths[locale])
+    await mkdir(pageDir, { recursive: true })
+    await writeFile(resolve(pageDir, 'index.html'), html)
+  }
+}
+
 for (const page of creatorPageDefinitions) {
   for (const locale of locales) {
     const relativePath = page.paths[locale].replace(/^\//, '')
@@ -1112,6 +1168,7 @@ const sitemapEntries = [
   ...Array.from({ length: Math.max(0, archivePageCount - 1) }, (_, index) => index + 2)
     .flatMap((pageNumber) => locales.map((locale) => sitemapArchiveEntry(pageNumber, locale))),
   ...tutorialPageDefinitions.flatMap((page) => locales.map((locale) => sitemapPageEntry(page, locale))),
+  ...skillPageDefinitions.flatMap((page) => locales.map((locale) => sitemapPageEntry(page, locale))),
   ...creatorPageDefinitions.flatMap((page) => locales.map((locale) => sitemapCreatorEntry(page, locale))),
   ...cases.flatMap((item) => locales.map((locale) => sitemapCaseEntry(item, locale))),
 ].join('\n')
@@ -1129,4 +1186,4 @@ const notFoundCopy = {
 const notFoundHtml = `<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow"><title>404 — MiniMax H3 Cases &amp; Guides</title><style>body{margin:0;background:#0a0b09;color:#f5f5ed;font:16px/1.6 system-ui,sans-serif}main{max-width:760px;margin:15vh auto;padding:24px}h1{font-size:clamp(3rem,12vw,8rem);margin:0;color:#d8ff3e}a{color:#d8ff3e}</style></head><body><main><p>404</p><h1>${notFoundCopy['zh-CN'][0]}</h1><p>${notFoundCopy['zh-CN'][1]}</p><p><a href="/">${notFoundCopy['zh-CN'][2]}</a> · <a href="/en/">${notFoundCopy.en[2]}</a></p></main></body></html>`
 await writeFile(resolve(dist, '404.html'), notFoundHtml)
 
-console.log(`Generated ${pageDefinitions.length * locales.length} app routes, ${(archivePageCount - 1) * locales.length} archive pages, ${tutorialGuides.length * locales.length} localized tutorial pages, ${creators.length * locales.length} localized creator pages, ${cases.length * locales.length} localized case pages, ${cases.length * locales.length} video sitemap entries, and a strict 404 page for ${baseUrl}.`)
+console.log(`Generated ${pageDefinitions.length * locales.length} app routes, ${(archivePageCount - 1) * locales.length} archive pages, ${tutorialGuides.length * locales.length} localized tutorial pages, ${skills.length * locales.length} localized skill pages, ${creators.length * locales.length} localized creator pages, ${cases.length * locales.length} localized case pages, ${cases.length * locales.length} video sitemap entries, and a strict 404 page for ${baseUrl}.`)

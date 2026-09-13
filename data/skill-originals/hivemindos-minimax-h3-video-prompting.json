@@ -1,0 +1,632 @@
+{
+  "skillId": "hivemindos-minimax-h3-video-prompting",
+  "kind": "markdown",
+  "title": "hivemindos minimax-h3-video-prompting",
+  "language": "en",
+  "capturedAt": "2026-09-13T11:14:24.430Z",
+  "source": {
+    "url": "https://github.com/LiamVisionary/hivemindos",
+    "author": "LiamVisionary",
+    "revision": "f270c4ae4f9d09c4e5da9cfa8adab7e89ae1f53e",
+    "license": "MIT"
+  },
+  "sections": [
+    {
+      "url": "https://github.com/LiamVisionary/hivemindos/blob/main/packaged-skills/optional/media/hivemindos/minimax-h3-video-prompting/SKILL.md",
+      "title": "minimax-h3-video-prompting",
+      "anchor": "skill-minimax-h3-video-prompting",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Write, rewrite, audit, or compile prompts specifically for MiniMax H3 audiovisual video generation. Use whenever the user names MiniMax H3, H3-Base-FL2VA, H3-Base-Ref2VA, Context-IR, T2VA, I2VA, FL2VA, L2VA, Ref2VA, first-frame, last-frame, first-and-last-frame, omni-reference, or full-reference H3 generation—even if they only ask for an ad, UGC clip, storyboard, dialogue scene, or reference-video prompt. Resolve the exact H3 task family before drafting; do not transfer Seedance, LTX, Kling, Veo, or older Hailuo syntax by analogy."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3 Video Prompting"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Compile an approved video brief into the exact prompt family expected by MiniMax H3. Preserve the user's creative intent and spoken copy while making references, timing, camera behavior, sound, and terminal frame state explicit."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Primary Sources And License Boundary"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "This is an original HivemindOS operating summary of MiniMaxAI's public materials, not a redistribution of their guides or examples:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "href": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md",
+                  "t": "Base T2VA/I2VA/FL2VA/L2VA guide"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "href": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_ref_en.md",
+                  "t": "Full-reference Ref2VA guide"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "href": "https://huggingface.co/MiniMaxAI/MiniMax-H3",
+                  "t": "MiniMax H3 repository and live capability table"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "href": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/LICENSE",
+                  "t": "MiniMax H3 Community License"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The source repository's current license text defines excluded territories, including the United States, European Union, United Kingdom, and Republic of Korea. Prompt drafting does not itself authorize model use, hosting, redistribution, or output use. Before submitting a job, verify the current license, operator location, provider authorization, endpoint terms, moderation/disclosure requirements, and intended output use. If authorization is unclear, return the prompt and the unresolved gate without calling the model."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Required Reading"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Read "
+                },
+                {
+                  "href": "https://github.com/LiamVisionary/hivemindos/blob/main/packaged-skills/optional/media/hivemindos/minimax-h3-video-prompting/references/base-modes.md",
+                  "c": true,
+                  "t": "references/base-modes.md"
+                },
+                {
+                  "t": " completely for T2VA, I2VA, FL2VA, or L2VA."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Read "
+                },
+                {
+                  "href": "https://github.com/LiamVisionary/hivemindos/blob/main/packaged-skills/optional/media/hivemindos/minimax-h3-video-prompting/references/full-reference.md",
+                  "c": true,
+                  "t": "references/full-reference.md"
+                },
+                {
+                  "t": " completely for Ref2VA, omni-reference, reference generation, source-video editing/continuation, or audio reuse/reference."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "When this skill is reached through "
+                },
+                {
+                  "c": true,
+                  "t": "video-generator-prompting"
+                },
+                {
+                  "t": ", also preserve that router's receipt and artifact-QA contract."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "1. Resolve The Exact Runtime Contract"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Record these before writing the final prompt:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "Provider/runtime: [LOCAL H3 / MINIMAX PLATFORM / OTHER VERIFIED ADAPTER]\nModel/checkpoint: [H3-BASE-FL2VA / H3-BASE-REF2VA / HOSTED H3 VARIANT]\nTask mode: [T2VA / I2VA / FL2VA / L2VA / REF2VA]\nDuration: [4-15S OR VERIFIED LIVE LIMIT]\nAspect ratio/resolution: [VERIFIED VALUES]\nInputs: [TEXT / FIRST FRAME / LAST FRAME / REFERENCES]\nAudio input accepted: [YES/NO/UNKNOWN]\nNative audio generated: [YES/NO/UNKNOWN]\nLicense/territory status: [CONFIRMED / UNRESOLVED]\nPrivate-reference upload approval: [APPROVED / NOT APPROVED / N/A]\nGeneration/spend approval: [APPROVED / NOT APPROVED]"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "MiniMax's repository currently describes 4–15 second audiovisual outputs, native stereo audio, an FL2VA checkpoint for text and optional boundary frames, and a Ref2VA checkpoint for multimodal references. Treat those as source-version facts, not permanent guarantees; validate the selected adapter or API before execution."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "2. Pick One Prompt Family"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "Mode"
+              }
+            ],
+            [
+              {
+                "t": "Inputs"
+              }
+            ],
+            [
+              {
+                "t": "Prompt job"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "T2VA"
+                }
+              ],
+              [
+                {
+                  "t": "Text only"
+                }
+              ],
+              [
+                {
+                  "t": "Build the complete audiovisual timeline from text"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "I2VA"
+                }
+              ],
+              [
+                {
+                  "t": "First image"
+                }
+              ],
+              [
+                {
+                  "t": "Treat the image as frame zero and develop forward"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "FL2VA"
+                }
+              ],
+              [
+                {
+                  "t": "First and last images"
+                }
+              ],
+              [
+                {
+                  "t": "Describe the continuous observable path between anchors"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "L2VA"
+                }
+              ],
+              [
+                {
+                  "t": "Last image"
+                }
+              ],
+              [
+                {
+                  "t": "Infer a plausible earlier state and converge exactly on the final image"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Ref2VA"
+                }
+              ],
+              [
+                {
+                  "t": "Images, videos, and/or audio as verified"
+                }
+              ],
+              [
+                {
+                  "t": "Define reusable subjects and asset roles, then write a six-section reference-aware timeline"
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not mix the base three-field schema with the Ref2VA six-section schema. If a source image is only a reusable identity/style reference rather than a concrete boundary frame, use Ref2VA rather than pretending it is I2VA or FL2VA."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "3. Compile Observable Playback"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Write the target timeline in English; keep dialogue, lyrics, and visible text in their original language."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Preserve user-approved dialogue word-for-word and punctuation-for-punctuation inside "
+                },
+                {
+                  "c": true,
+                  "t": "<d>[Language] ...</d>"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Give each actual vocal source one stable "
+                },
+                {
+                  "c": true,
+                  "t": "(S1)"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "(S2)"
+                },
+                {
+                  "t": ", and so on across shots."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Describe physical actions, reactions, camera movement, and sound in playback order. Replace internal emotion labels with visible or audible behavior."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Give "
+                },
+                {
+                  "c": true,
+                  "t": "[Shot 1]"
+                },
+                {
+                  "t": " no timestamp. Start later shots with strictly increasing "
+                },
+                {
+                  "c": true,
+                  "t": "[Shot N] At MM:SS.mmm, ..."
+                },
+                {
+                  "t": " cut times inside the duration."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Describe camera motion as type plus meaningful amplitude and speed inside the sentence. Do not append a keyword pile."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Keep diegetic dialogue, singing, radio/phone music, and shot-synchronized effects in the main timeline. Reserve "
+                },
+                {
+                  "c": true,
+                  "t": "overall_soundscape"
+                },
+                {
+                  "t": " for ambience/physical sounds and "
+                },
+                {
+                  "c": true,
+                  "t": "non_diegetic_music"
+                },
+                {
+                  "t": " for audience-only score."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "State the observable final composition and ensure every action can finish within the time budget."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "4. Protect Reference Semantics"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "A first-frame image is the actual 0.00-second state; describe what happens after it rather than repainting it."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "First-and-last-frame prompting describes interpolation: subject motion, pose changes, prop state, camera/composition evolution, and final convergence. Prefer one continuous shot unless the brief actually requires cuts."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "A last-frame image belongs to the final shot, not automatically Shot 1. Build a plausible preceding state and land on the anchor at the effective duration."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "In Ref2VA, "
+                },
+                {
+                  "c": true,
+                  "t": "<Subject N>"
+                },
+                {
+                  "t": " denotes reusable visible content; "
+                },
+                {
+                  "c": true,
+                  "t": "<Picture N>"
+                },
+                {
+                  "t": " a concrete frame/planning anchor; "
+                },
+                {
+                  "c": true,
+                  "t": "<Video N>"
+                },
+                {
+                  "t": " an edit, continuation, or temporal-structure source; and "
+                },
+                {
+                  "c": true,
+                  "t": "<Audio N>"
+                },
+                {
+                  "t": " a copied or referenced audio signal."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Keep every label's meaning stable across definitions, summary, retention analysis, timeline, and sound fields."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Build an asset ground-truth manifest before prompting: for each image, video, or audio input, list only what is directly visible or audible, what the user explicitly approved, and what remains unknown. A static product still proves a composition and visible state—not hidden controls, intermediate interactions, navigation, animations, sounds, or causal product behavior. Keep unknown behavior out of the prompt or mark it as an approval blocker; never convert a plausible inference into a verified reference fact."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Approval to use a concept is not approval to upload a private face, voice, room, product master, analytics export, unreleased UI, or source video."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "5. UGC And Product-Creative Rules"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Use phone-native camera behavior only when the approved concept calls for it; H3 syntax does not make every output UGC."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Lock truthful product behavior, approved claims, dialogue, pronunciation, wardrobe, props, room geography, speaker IDs, and final state before compiling."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Exact app UI, packaging text, prices, metrics, subtitles, and legal disclosures should come from verified anchors or controlled post-production. Generated readability must still be checked across decoded frames."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "For a 25–30 second ad, do not ask a 15-second runtime to produce an unsupported duration. Split the approved five-beat spine into two or three independently reviewable H3 clips, carry the same approved references and continuity manifest forward, then assemble only after each clip passes QA."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Use Ref2VA when stable character/product/voice references are needed across a clip. Use boundary-frame modes when the start or end composition itself is the contract."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "6. Return A Reviewable Deliverable"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "H3 Runtime Decision\n- Provider/model/checkpoint:\n- Mode and why:\n- Live capabilities confirmed:\n- License/territory status:\n- Approval status:\n\nInput And Continuity Map\n- Reference assets and roles:\n- Asset ground truth: [DIRECTLY OBSERVED / USER-APPROVED / UNKNOWN]\n- Speaker IDs and exact dialogue:\n- Fixed identity/product/room/prop facts:\n- Boundary-frame contract:\n\nFinal MiniMax H3 Prompt\n[ONLY THE SELECTED MODE'S EXACT SCHEMA]\n\nQA Checklist\n- Schema and section order:\n- Timing and terminal state:\n- Dialogue/visible-text fidelity:\n- Reference-label consistency:\n- Audio-layer separation:\n- Claims, rights, privacy, and disclosure:\n- Unsupported behavior/claim scan:\n\nGeneration Receipt Template\n- Prompt guide: minimax-h3-video-prompting/1.0.1\n- Source URLs:\n- Provider job id:\n- Input/output hashes:\n- Artifact review result:"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not generate, upload, publish, or spend merely because a valid prompt exists. After generation, review normal-speed playback, muted playback, audio-only playback, cut boundaries, lip sync, identity/product continuity, exact text/UI frames, and final composition before accepting the take."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

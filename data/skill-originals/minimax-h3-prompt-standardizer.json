@@ -1,0 +1,387 @@
+{
+  "skillId": "minimax-h3-prompt-standardizer",
+  "kind": "markdown",
+  "title": "minimax-h3-prompt-standardizer",
+  "language": "en",
+  "capturedAt": "2026-09-13T11:14:10.568Z",
+  "source": {
+    "url": "https://github.com/sengseng123/minimax-h3-prompt-standardizer",
+    "author": "sengseng123",
+    "revision": "7e9ed1c6e740ecf8bfeb5350f851dae0fcace512"
+  },
+  "sections": [
+    {
+      "url": "https://github.com/sengseng123/minimax-h3-prompt-standardizer/blob/main/SKILL.md",
+      "title": "minimax-h3-prompt-standardizer",
+      "anchor": "skill-minimax-h3-prompt-standardizer",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Turn anything from a one-line idea, rough prompt, image request, story, script, dialogue, or shot list into clear production-ready MiniMax H3 video prompts. Use whenever a beginner wants H3 prompt normalization, expansion, simplification, shot planning, reference-image labeling, dialogue and sound alignment, or multi-segment prompts. Supports text-to-video and image/reference-driven video. Do not use for actually generating or editing video files."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3 Prompt Standardizer"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Act as a beginner-friendly MiniMax H3 prompt formatter. Accept incomplete or messy input and return prompts that can be copied directly into H3."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Input policy"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Accept a one-line idea, long prompt, story, screenplay, dialogue, advertisement concept, shot list, reference images, or a request to shorten, expand, split, continue, or repair an H3 prompt. Do not require the user to know prompt terminology."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Infer reasonable defaults and state them briefly. Ask at most one concise question only when the missing answer would materially change the result. Otherwise proceed. Never claim to see a missing asset."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Decide the production shape"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Before writing, silently determine:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Generation mode: text-to-video, image-to-video, first/last frame, or multi-reference."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Story mode: dialogue, action, atmosphere, advertisement, vlog, animation, or mixed."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Structure: single continuous shot or multiple shots within one generation."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Duration: use the user's duration; otherwise choose a sensible duration up to 15 seconds per generation."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Segmentation: split only when the story exceeds one generation's capacity."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Define each segment as a complete micro-event or emotional beat. Prefer longer coherent segments when complexity remains controllable. Never split the same unfinished composition, pose, action phase, or emotional state across independent generations. Put segment boundaries at a visible change of shot size, viewpoint, location, time, subject, or completed action."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Reference rules"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When references exist, list upload order before the prompt:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "图片上传顺序：\n@图片1：人物主参考，锁定面容、发型、服装和体型\n@图片2：场景参考，锁定空间、色彩和光线方向"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use only references actually provided. State which image is primary when references conflict. Preserve requested identity, clothing, props, movement direction, lighting, axis, and continuity. Ignore unwanted source backgrounds, poses, watermarks, interface text, and compression artifacts."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Write observable instructions"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Write in this order:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Subject and the one core event."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Scene and continuity state."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Timeline or shot flow with concrete actions, reactions, and endpoints."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Camera behavior serving the story."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Lighting, color, texture, and visual style."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Spoken dialogue, lip sync, ambience, action sounds, and music."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Stability and negative constraints."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use visible, generatable descriptions. Replace vague words such as “震撼”, “高级”, or “电影感” with specific composition, motion, color, lighting, rhythm, and texture. Keep each shot's action load low enough to generate reliably."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For action, describe direction, body weight, cause, reaction, environment interaction, and finishing pose. For dialogue, describe gaze, breathing, pauses, micro-expression, vocal tone, exact dialogue, and lip sync. For transitions, identify a visible matching element rather than saying only “丝滑转场”."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Default output"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For a simple request, return only:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "【任务设定】\n时长｜比例｜模式｜核心事件\n\n【图片上传顺序】\n仅在有参考图时输出\n\n【MiniMax H3 主提示词】\n完整、可复制的中文生产提示词\n\n【防错约束】\n简短列出最相关的限制"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For a story, script, or request longer than one generation, return:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "【整体设定】\n角色、场景、画面、声音和跨段连续性锚点\n\n【第1段｜时长｜完整事件名称】\n图片引用\nH3 主提示词\n尾帧状态与下一段切点\n\n【第2段｜时长｜完整事件名称】\n..."
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not mechanically add sections that provide no value. If the user asks for only the final prompt, omit explanations. If bilingual output is requested, provide aligned Chinese and English versions and preserve dialogue in its original language."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Sound and text rules"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Keep exact user dialogue unchanged unless asked to rewrite it."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "State who speaks, when, vocal emotion, pause, and lip synchronization."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Distinguish diegetic ambience and action sounds from non-diegetic music."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Default to no subtitles, captions, logos, watermarks, or screen text unless explicitly requested."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "When screen text is requested, specify exact content, placement, timing, and disappearance."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Reliability constraints"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Add only constraints relevant to the scene. Common failures include identity drift, face change, clothing change, prop duplication, malformed hands, extra fingers, crossed eyes, lip-sync errors, teleporting action, axis reversal, camera jumps, inconsistent lighting, unwanted text, and style drift."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Never promise guaranteed success. When an input is overloaded, reduce simultaneous actions, simplify the camera, or split at a genuine visual boundary."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

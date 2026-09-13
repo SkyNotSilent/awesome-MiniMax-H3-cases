@@ -1,0 +1,4890 @@
+{
+  "skillId": "minimax-h3-codex-drama",
+  "kind": "markdown",
+  "title": "MiniMax-H3-Codex-Drama",
+  "language": "en",
+  "capturedAt": "2026-09-13T11:14:16.432Z",
+  "source": {
+    "url": "https://github.com/chiphoton/MiniMax-H3-Codex-Drama",
+    "author": "chiphoton",
+    "revision": "e861d4416cff31e9c03ddf4b11a556d54b88902b",
+    "license": "MIT"
+  },
+  "sections": [
+    {
+      "url": "https://github.com/chiphoton/MiniMax-H3-Codex-Drama/blob/main/skills/minimax-h3-audio/SKILL.md",
+      "title": "minimax-h3-audio",
+      "anchor": "skill-minimax-h3-audio",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Create, enhance, diagnose, and optionally execute MiniMax H3 audio-only prompts through the verified fixed 32x32 ComfyUI proxy. Use for prompt-generated dialogue, narration, announcements, ambience, foley, robot sounds, or animal calls when no reference media is required; use R2V for reference-controlled voices or sounds."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3 Audio"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Create native H3 audio without retaining a video. The bundled workflow gives the joint FL2VA sampler a disposable 32x32 visual latent, decodes the audio branch, and saves lossless FLAC through "
+            },
+            {
+              "c": true,
+              "t": "SaveAudio"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Route the request"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Use this skill for audio invented entirely from text: one or more voices, narration, announcements, ambience, foley, robot sounds, or animal vocalizations."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Use "
+                },
+                {
+                  "c": true,
+                  "t": "minimax-h3-reference-to-video"
+                },
+                {
+                  "t": " when an image, video, or audio reference must control identity, performance, voice, or sound. This audio proxy is prompt-only and is not a voice-cloning workflow."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Keep requested duration between 0 and 15 seconds. Split longer material into coherent clips."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Never expose visual size as a creative control. The proxy must remain fixed at 32x32."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Write the prompt"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Return a production-ready prompt when generation was not requested. Preserve user-supplied spoken words exactly inside H3 dialogue tags."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use a compact structure:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "[Integrated audio description: speaker or source, delivery, mood, acoustic setting, event order, and timing]\n\nDialogue: <d>[English] Exact spoken line.</d>\n\nSoundscape: [diegetic ambience and effects, or \"clean studio recording; no music\"]\nNon-diegetic music: [music direction, or \"none\"]"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For people, specify only attributes that affect sound: adult/child/older speaker, vocal register or timbre, pace, intensity, mood, and scenario such as documentary narration, news report, or airline announcement. Do not rely on vague labels like “woman voice” alone."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For speech, fit the script to the duration. As a starting estimate, allow roughly two to three spoken words per second, then leave additional room for pauses, ambience, and sound effects. Exact wording is stochastic and must be checked after generation."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For non-speech audio, state the source, event count and order, distance, room or outdoor acoustics, and whether overlap is allowed. Say "
+            },
+            {
+              "c": true,
+              "t": "no intelligible human speech"
+            },
+            {
+              "t": " when applicable. For animals, describe audible behavior rather than human emotions or dialogue."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Execute through ComfyUI"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When the user asks to generate, test, submit, render, or retrieve the audio, follow "
+            },
+            {
+              "c": true,
+              "t": "../minimax-h3-comfyui/SKILL.md"
+            },
+            {
+              "t": " in "
+            },
+            {
+              "c": true,
+              "t": "audio"
+            },
+            {
+              "t": " mode. Preserve the finished prompt verbatim."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Use Turbo by default. Use standard sampling only when the user asks for quality-first generation or supplies "
+                },
+                {
+                  "c": true,
+                  "t": "[turbo=false]"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Prepare "
+                },
+                {
+                  "c": true,
+                  "t": "audio-turbo.api.json"
+                },
+                {
+                  "t": " or "
+                },
+                {
+                  "c": true,
+                  "t": "audio.api.json"
+                },
+                {
+                  "t": " through the shared preparer; do not hand-edit node IDs."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Save the result as FLAC. The prepared workflow has no video decode, mux, or video-save branch."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If the ComfyUI skill delegated prompt enhancement back to this skill, return the prompt to that workflow and do not recursively start another execution pass."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Verify the result"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Treat the output as generated source audio, not a mastered deliverable."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Confirm the exact ComfyUI prompt ID and history entry before claiming success."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Confirm the expected duration, decodable FLAC, and native 32 kHz stereo stream."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "For speech, transcribe the result and compare it with the locked line. Distinguish punctuation or number formatting from missing or changed words."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "For non-speech audio, listen or inspect a spectrogram for event order, separation, and absence of unwanted dialogue."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Measure integrated loudness, true peak, and clipped samples. H3 can generate hot peaks; flag or normalize downstream rather than describing raw output as broadcast-ready."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Read "
+            },
+            {
+              "href": "https://github.com/chiphoton/MiniMax-H3-Codex-Drama/blob/main/skills/minimax-h3-audio/references/verified-behavior.md",
+              "t": "references/verified-behavior.md"
+            },
+            {
+              "t": " when reporting capability, limitations, or test evidence."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Return"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "State the mode and variant, duration and seed, prompt ID, output filename, transcript or event check, and any peak/clipping warning. Return the playable local audio when available."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/chiphoton/MiniMax-H3-Codex-Drama/blob/main/skills/minimax-h3-comfyui/SKILL.md",
+      "title": "minimax-h3-comfyui",
+      "anchor": "skill-minimax-h3-comfyui",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Prepare, validate, submit, monitor, and retrieve MiniMax H3 text-to-video, first/last-frame image-to-video, reference-to-video, and verified 32x32 audio-only workflows on a local or self-hosted ComfyUI instance. Use when a user explicitly asks to run, generate, execute, queue, preview, or fetch MiniMax H3 work through ComfyUI. Uses pinned Comfy-Org templates and bundled Turbo variants, and patches known fields deterministically; it does not adapt arbitrary custom workflows."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3 ComfyUI"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Run a finished MiniMax H3 prompt through ComfyUI using bundled T2V, I2V, R2V, or audio-only workflows. Turbo is the default variant; preserve the selected pinned graph unless the user explicitly overrides a declared field."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Interpret control flags"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Recognize these case-insensitive controls anywhere in the request:"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For every "
+            },
+            {
+              "c": true,
+              "t": "<boolean>"
+            },
+            {
+              "t": " below, accept "
+            },
+            {
+              "c": true,
+              "t": "true"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "on"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "yes"
+            },
+            {
+              "t": ", or "
+            },
+            {
+              "c": true,
+              "t": "1"
+            },
+            {
+              "t": " as true and "
+            },
+            {
+              "c": true,
+              "t": "false"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "off"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "no"
+            },
+            {
+              "t": ", or "
+            },
+            {
+              "c": true,
+              "t": "0"
+            },
+            {
+              "t": " as false."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "[return=<boolean>]"
+                },
+                {
+                  "t": ": wait for completion and fetch results when true; submit and return the "
+                },
+                {
+                  "c": true,
+                  "t": "prompt_id"
+                },
+                {
+                  "t": " immediately when false. Default true."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "[prompt_enhance=<boolean>]"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "[pe=<boolean>]"
+                },
+                {
+                  "t": ": improve the prompt through the matching MiniMax H3 prompt specialist when true; preserve it when false. Default false."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "[preview=<boolean>]"
+                },
+                {
+                  "t": ": show or hide the ComfyUI browser after loading the prepared workflow. This has no effect when "
+                },
+                {
+                  "c": true,
+                  "t": "load_workflow"
+                },
+                {
+                  "t": " resolves to false. Default true."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "[load_workflow=<boolean>]"
+                },
+                {
+                  "t": ": replace the live canvas with the prepared workflow when true. When false, stay headless: do not initialize or open a browser, and do not announce preview or canvas behavior. Default false."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "[turbo=<boolean>]"
+                },
+                {
+                  "t": ": use the 6-step MiniMax H3 Turbo LoRA workflow when true; use the original 20-step workflow when false. Default true. In particular, "
+                },
+                {
+                  "c": true,
+                  "t": "[turbo=off]"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "[turbo=no]"
+                },
+                {
+                  "t": ", and "
+                },
+                {
+                  "c": true,
+                  "t": "[turbo=false]"
+                },
+                {
+                  "t": " disable Turbo."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Strip control flags before sending text to MiniMax H3. Treat unambiguous natural-language name/value execution settings, such as \"use seed 42\" or \"at 8 sampling steps,\" as controls and remove only those clauses from the prompt payload. Preserve ambiguous operational wording as prompt text; do not invent a setting from phrases such as \"the original sampler.\""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Match every boolean flag name and value case-insensitively. If the same flag appears more than once, use its last occurrence. Treat any other value as invalid control syntax and stop before workflow preparation."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Without an enhancement flag, treat the prompt as finished: do not silently rewrite, expand, translate, or “improve” it. If enhancement is enabled, load and apply exactly one matching specialist:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "T2V: "
+                },
+                {
+                  "c": true,
+                  "t": "../minimax-h3-text-to-video/SKILL.md"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "I2V: "
+                },
+                {
+                  "c": true,
+                  "t": "../minimax-h3-frame-to-video/SKILL.md"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "R2V: "
+                },
+                {
+                  "c": true,
+                  "t": "../minimax-h3-reference-to-video/SKILL.md"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Audio only: "
+                },
+                {
+                  "c": true,
+                  "t": "../minimax-h3-audio/SKILL.md"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Select the bundled workflow"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Explicit audio-only output with no controlling media: "
+                },
+                {
+                  "c": true,
+                  "t": "assets/workflows/audio-turbo.api.json"
+                },
+                {
+                  "t": " by default; "
+                },
+                {
+                  "c": true,
+                  "t": "audio.api.json"
+                },
+                {
+                  "t": " when Turbo is false. Keep its disposable visual latent fixed at 32x32."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "No controlling media and video output: "
+                },
+                {
+                  "c": true,
+                  "t": "assets/workflows/t2v-turbo.api.json"
+                },
+                {
+                  "t": " by default; "
+                },
+                {
+                  "c": true,
+                  "t": "t2v.api.json"
+                },
+                {
+                  "t": " when Turbo is false."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "One literal first frame, or literal first and last frames: "
+                },
+                {
+                  "c": true,
+                  "t": "assets/workflows/i2v-turbo.api.json"
+                },
+                {
+                  "t": " by default; "
+                },
+                {
+                  "c": true,
+                  "t": "i2v.api.json"
+                },
+                {
+                  "t": " when Turbo is false."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Media used for identity, style, motion, camera, performance, voice, music, or rhythm: "
+                },
+                {
+                  "c": true,
+                  "t": "assets/workflows/r2v-turbo.api.json"
+                },
+                {
+                  "t": " by default; "
+                },
+                {
+                  "c": true,
+                  "t": "r2v.api.json"
+                },
+                {
+                  "t": " when Turbo is false."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use the "
+            },
+            {
+              "c": true,
+              "t": ".api.json"
+            },
+            {
+              "t": " files for validation and execution. Use each variant's matching "
+            },
+            {
+              "c": true,
+              "t": ".ui.json"
+            },
+            {
+              "t": " file for provenance and browser preview. The Turbo copies preserve the original mode graph while inserting "
+            },
+            {
+              "c": true,
+              "t": "MiniMaxH3TurboLoRA"
+            },
+            {
+              "t": " after the diffusion loader, replacing the sampler selector with "
+            },
+            {
+              "c": true,
+              "t": "MiniMaxH3TurboSampler"
+            },
+            {
+              "t": ", and setting "
+            },
+            {
+              "c": true,
+              "t": "simple"
+            },
+            {
+              "t": " scheduling with 6 steps. Reject arbitrary attached workflow JSON at runtime; custom-workflow adaptation is intentionally deferred."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Execute the workflow"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Read "
+            },
+            {
+              "href": "https://github.com/chiphoton/MiniMax-H3-Codex-Drama/blob/main/skills/minimax-h3-comfyui/references/runtime.md",
+              "t": "references/runtime.md"
+            },
+            {
+              "t": " before using ComfyUI. Follow it in order:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Parse and strip controls, resolve configuration, select the mode and variant, and validate request-derived settings without connecting or uploading. Turbo rejects sampler or scheduler overrides and steps outside 4 through 8; stop before side effects on an invalid setting."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Test reachability. A successful default connection check is silent."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Resolve installed models and, for Turbo, the custom nodes and Turbo LoRA conservatively; never install or download without explicit permission."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Inspect attached assets and upload them through the matching ComfyUI media tool."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Run "
+                },
+                {
+                  "c": true,
+                  "t": "scripts/prepare_workflow.py"
+                },
+                {
+                  "t": " to patch only the manifest-declared fields, then validate the prepared API graph."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If explicitly requested, load or preview the matching prepared UI graph."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Submit once. Respect the return behavior above. For awaited runs, prefer the live sampler ETA from ComfyUI's log stream to fixed-interval polling, while binding completion and errors to the exact "
+                },
+                {
+                  "c": true,
+                  "t": "prompt_id"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "On completion, fetch the output audio or video to a temporary or user-selected directory and return it with the "
+                },
+                {
+                  "c": true,
+                  "t": "prompt_id"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not submit a workflow while required media, a compatible model choice, or validation errors remain unresolved."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Preserve selected defaults"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Unless explicitly supplied by the user or non-empty configuration, preserve the selected workflow's prompt-independent defaults for resolution, seed, scheduler, steps, denoise, reference sizing, model filenames, Turbo LoRA, and output prefix. Turbo pins its custom sampler, "
+            },
+            {
+              "c": true,
+              "t": "simple"
+            },
+            {
+              "t": " scheduler, LoRA strength "
+            },
+            {
+              "c": true,
+              "t": "1.0"
+            },
+            {
+              "t": ", low-VRAM mode off, and 6 steps. A Turbo step override must remain from 4 through 8; disable Turbo to select another sampler or scheduler."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Audio mode is the exception to resolution configuration: it always patches the disposable visual latent to 32x32 and rejects any other explicit size. It accepts no first/last frame or reference media; route reference-controlled sound or voice work to R2V."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Allowed deterministic patches are:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "prompt"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "uploaded media filenames and reference connections"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "width and height together"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "duration, converted to the H3 "
+                },
+                {
+                  "c": true,
+                  "t": "17k+5"
+                },
+                {
+                  "t": " frame grid at 24 fps"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "seed"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "compatible model filenames"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "compatible Turbo LoRA filename"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "output filename prefix"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "named sampler and scheduler overrides for the standard workflow"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "4–8 steps and denoise overrides for Turbo, or steps and denoise overrides for the standard workflow"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "R2V reference-size overrides"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Never patch fields by searching for example text or relying on UI coordinates. Use "
+            },
+            {
+              "c": true,
+              "t": "assets/workflows/manifest.json"
+            },
+            {
+              "t": " and the preparer script."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Return a concise execution report"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For completed jobs, return the selected mode, relevant settings, "
+            },
+            {
+              "c": true,
+              "t": "prompt_id"
+            },
+            {
+              "t": ", and fetched audio or video. For asynchronous jobs, return the mode and "
+            },
+            {
+              "c": true,
+              "t": "prompt_id"
+            },
+            {
+              "t": " plus how to request status or results later. For failures, return the failed node/error, what was checked, and the smallest next action."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not claim the job completed merely because it left the queue; confirm its exact history entry or fresh output file."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/chiphoton/MiniMax-H3-Codex-Drama/blob/main/skills/minimax-h3-adviser/SKILL.md",
+      "title": "minimax-h3-adviser",
+      "anchor": "skill-minimax-h3-adviser",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Advise, enhance, diagnose, and route MiniMax H3 video or audio prompts across official H3 style workflows, text-to-video, first/last-frame, multimodal reference-to-video, precise video-editing, verified 32x32 audio-only generation, and optional ComfyUI execution. Use when a user has a media idea, draft prompt, failed generation, uncertain input strategy, asks which MiniMax H3 workflow to use, or explicitly asks to run it through ComfyUI. Grill one decision at a time unless the user requests fast mode, use an official h3style overlay only on a clear match, and invoke ComfyUI only on explicit execution intent."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3 Adviser"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Turn an idea, draft, failure report, or asset set into the right MiniMax H3 workflow and a finished prompt. Stay prompt-only unless the user explicitly asks to run, submit, queue, execute, preview in, or fetch results from ComfyUI."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Start by classifying the request"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Choose one entry path:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Build"
+                },
+                {
+                  "t": ": turn an idea into a prompt."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Enhance"
+                },
+                {
+                  "t": ": preserve the user's intent while improving a draft prompt."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Diagnose"
+                },
+                {
+                  "t": ": identify why a previous result likely drifted and revise the prompt."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Recommend"
+                },
+                {
+                  "t": ": choose a workflow, template, vocabulary, or input strategy."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Inspect supplied prompts and assets before asking for facts that are already available."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Detect fast mode"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Enter fast mode when the user uses any case-insensitive phrase below or clearly asks for an immediate answer:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "use your best judgement"
+                },
+                {
+                  "t": " or "
+                },
+                {
+                  "c": true,
+                  "t": "use your best judgment"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "help me handle the rest"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "skip the grilling"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "[mode=fast]"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "answer immediately"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "give prompt immediately"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "In fast mode:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Ask no more questions."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Make conservative creative assumptions."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Label only assumptions that could materially change the result."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Route to a specialist and finish the prompt immediately."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Grill in guided mode"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Ask exactly one question per turn and wait for the answer. Include a recommended answer with each question. Resolve the highest-impact unknown first; do not mechanically ask every possible question."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use this order when relevant:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Clarify the intended viewer experience or edit outcome."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Inventory existing text, images, videos, audio, and first/last frames."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Resolve what each asset controls and what it must not influence."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Resolve duration, aspect ratio, and shot structure."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Resolve the action timeline, camera, look, and audio."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Resolve must-preserve details and likely failure modes."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Stop grilling once the specialist can produce a coherent prompt. Summarize the shared brief and ask for confirmation before producing it. Do not ask preference questions whose answer will not change the prompt."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For diagnosis, first obtain or inspect the original prompt and the observed failure. Ask about only the missing evidence needed to distinguish causes such as overloaded timing, conflicting camera directions, weak reference roles, identity drift, or an underspecified preservation constraint."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Apply an official style workflow when it materially helps"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The separate "
+            },
+            {
+              "c": true,
+              "t": "h3style"
+            },
+            {
+              "t": " plugin contains Codex adapters for the official MiniMax-H3 skills. Treat it as optional: never install it silently and never block an ordinary H3 request when it is absent."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Choose at most one official style workflow, and only when the user explicitly selects it or the request clearly matches its specialty:"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "Request specialty"
+              }
+            ],
+            [
+              {
+                "t": "Official skill"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "Complete stylized 3D animated narrative"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "h3style:3d-animation-short-generator"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Premium minimalist product film with anchor images and beat typography"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "h3style:minimalist-product-ad-generator"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Layered papercraft, pop-up-book, or miniature stop-motion explainer"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "h3style:papercraft-stop-motion-explainer"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Brand, product, app, website, shop, or launch promo built from verified claims"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "h3style:brand-promo-video-generator"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Music video or emotional short driven by lyrics, beat timing, and spatial typography"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "h3style:music-video-subtitle-generator"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Two-player co-op game menu or opening animation"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "h3style:co-op-game-intro-generator"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Halftone editorial paper-collage explainer or tactile B-roll"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "h3style:paper-collage-explainer-generator"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "One live-action scene fused with rough glowing hand-drawn morphing"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "h3style:handdrawn-live-video-generator"
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use the minimalist product skill only when the clean premium product-film grammar is central. Use the broader brand-promo skill for claims, use cases, campaign narrative, website or app proof, or a call to action."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When a matching skill is available, load and apply it in "
+            },
+            {
+              "b": true,
+              "t": "adviser overlay mode"
+            },
+            {
+              "t": ": extract its confirmed facts, style DNA, narrative or beat grammar, asset roles, preservation constraints, negative direction, and QC checks into a compact style brief. Preserve this adviser's one-question guided mode; do not enter the official skill's full multi-stage approval flow unless the user asked for that larger planning workflow. Ignore MiniMax Hub-only canvas or "
+            },
+            {
+              "c": true,
+              "t": "hub_*"
+            },
+            {
+              "t": " operations—the "
+            },
+            {
+              "c": true,
+              "t": "h3style"
+            },
+            {
+              "t": " adapter owns their Codex translation."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "If the adviser was itself loaded by an active "
+            },
+            {
+              "c": true,
+              "t": "h3style"
+            },
+            {
+              "t": " skill, or the request already contains a style brief marked with the same "
+            },
+            {
+              "c": true,
+              "t": "h3style:<skill>"
+            },
+            {
+              "t": ", do not reload that style skill. Continue with the supplied brief so the skills cannot recurse."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The official style skill supplies creative grammar; it does not decide the H3 input mode. Continue routing by the actual job of the supplied media."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use "
+            },
+            {
+              "c": true,
+              "t": "h3style:h3-prompt-writing"
+            },
+            {
+              "t": " separately, as a final formatter, only when the user explicitly requests the official structured H3 schema or the confirmed target accepts fields such as "
+            },
+            {
+              "c": true,
+              "t": "integrated_multimodal_description"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "subject_definitions"
+            },
+            {
+              "t": ", or "
+            },
+            {
+              "c": true,
+              "t": "retention_analysis"
+            },
+            {
+              "t": ". Do not force that schema into a local ComfyUI prompt field unless the installed graph is confirmed to expect it."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Route by production scope and input role"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "If the user requests a finished multi-shot film rather than one prompt or one generated clip, carry the official style brief into "
+            },
+            {
+              "c": true,
+              "t": "../minimax-h3-drama-producer/SKILL.md"
+            },
+            {
+              "t": ". Do not compress a complete ad, MV, explainer, or animated short into one overloaded 15-second shot. The producer owns project planning, per-shot routing, execution, assembly, and QC."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For one prompt or one clip, use "
+            },
+            {
+              "href": "https://github.com/chiphoton/MiniMax-H3-Codex-Drama/blob/main/skills/minimax-h3-adviser/references/workflow-map.md",
+              "t": "references/workflow-map.md"
+            },
+            {
+              "t": " for the complete routing table and provider-neutral starting settings, then choose one prompt specialist:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Audio-only output invented from text, with no reference media: load and apply "
+                },
+                {
+                  "c": true,
+                  "t": "../minimax-h3-audio/SKILL.md"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "No media; invent the complete shot from language: load and apply "
+                },
+                {
+                  "c": true,
+                  "t": "../minimax-h3-text-to-video/SKILL.md"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "A supplied image is literally the opening frame, or two images are exact opening and closing frames: load and apply "
+                },
+                {
+                  "c": true,
+                  "t": "../minimax-h3-frame-to-video/SKILL.md"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Images, videos, or audio provide identity, style, motion, camera, performance, voice, or edit rhythm: load and apply "
+                },
+                {
+                  "c": true,
+                  "t": "../minimax-h3-reference-to-video/SKILL.md"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "An existing video must be changed locally while the rest stays stable: load and apply "
+                },
+                {
+                  "c": true,
+                  "t": "../minimax-h3-video-editor/SKILL.md"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Treat a source video edit as video editing even though execution uses reference-conditioned regeneration. Treat a still used only for identity or style as a reference, not as a first frame."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "After routing, continue through the specialist automatically and incorporate the selected official style brief. If the official structured schema is required, apply "
+            },
+            {
+              "c": true,
+              "t": "h3style:h3-prompt-writing"
+            },
+            {
+              "t": " after the specialist has resolved asset roles, timing, and preservation constraints. Do not stop at “use this skill.”"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Hand explicit execution to ComfyUI"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "After the selected specialist has produced the finished prompt, load and apply "
+            },
+            {
+              "c": true,
+              "t": "../minimax-h3-comfyui/SKILL.md"
+            },
+            {
+              "t": " only when the user explicitly asks to generate audio or video, run, submit, queue, execute, preview a ComfyUI workflow, fetch its output, or supplies a ComfyUI control flag such as "
+            },
+            {
+              "c": true,
+              "t": "[return=true]"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not treat “generate a prompt,” “write a prompt,” or “recommend a workflow” as execution intent. Do not invoke ComfyUI merely because it is installed or reachable."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The adviser owns prompt coordination; the ComfyUI skill owns media upload, deterministic graph preparation, validation, submission, waiting, diagnostics, preview, and retrieval. Preserve the specialist's final prompt when handing it off. For every ComfyUI boolean flag, interpret "
+            },
+            {
+              "c": true,
+              "t": "true"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "on"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "yes"
+            },
+            {
+              "t": ", and "
+            },
+            {
+              "c": true,
+              "t": "1"
+            },
+            {
+              "t": " as true and "
+            },
+            {
+              "c": true,
+              "t": "false"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "off"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "no"
+            },
+            {
+              "t": ", and "
+            },
+            {
+              "c": true,
+              "t": "0"
+            },
+            {
+              "t": " as false, case-insensitively; use the last occurrence and reject any other value. If "
+            },
+            {
+              "c": true,
+              "t": "prompt_enhance"
+            },
+            {
+              "t": " or "
+            },
+            {
+              "c": true,
+              "t": "pe"
+            },
+            {
+              "t": " resolves to true, do not enhance the specialist's prompt a second time during handoff."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Offer language candidates when useful"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Read "
+            },
+            {
+              "href": "https://github.com/chiphoton/MiniMax-H3-Codex-Drama/blob/main/skills/minimax-h3-adviser/references/prompt-language.md",
+              "t": "references/prompt-language.md"
+            },
+            {
+              "t": " when the user is vague, asks what wording to use, or would benefit from concrete creative options."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Offer 3–6 context-relevant candidates, not the whole glossary."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Explain the visible or audible effect in plain language."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Mark one recommended choice and explain the tradeoff briefly."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Reject combinations that conflict, such as "
+                },
+                {
+                  "c": true,
+                  "t": "locked-off camera"
+                },
+                {
+                  "t": " plus "
+                },
+                {
+                  "c": true,
+                  "t": "orbit"
+                },
+                {
+                  "t": ", or "
+                },
+                {
+                  "c": true,
+                  "t": "real time"
+                },
+                {
+                  "t": " plus "
+                },
+                {
+                  "c": true,
+                  "t": "extreme slow motion"
+                },
+                {
+                  "t": " for the same beat."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "When visual previews materially help, show the matching atlas from "
+                },
+                {
+                  "c": true,
+                  "t": "assets/"
+                },
+                {
+                  "t": " beside the list. Resolve the asset to an absolute path before embedding it. Do not show visual atlases for audio, performance, or constraints."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Return a compact handoff"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For prompt-only requests, after applying the specialist return:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Recommendation"
+                },
+                {
+                  "t": ": selected H3 workflow, any selected official "
+                },
+                {
+                  "c": true,
+                  "t": "h3style"
+                },
+                {
+                  "t": " workflow, and a one-sentence reason."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Assumptions"
+                },
+                {
+                  "t": ": only material assumptions, especially in fast mode."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Inputs"
+                },
+                {
+                  "t": ": asset-to-role mapping when media is involved."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Suggested settings"
+                },
+                {
+                  "t": ": workflow route, duration, resolution, and aspect-ratio guidance."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Copy-ready prompt"
+                },
+                {
+                  "t": ": one clean block containing only text intended for MiniMax H3."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Check"
+                },
+                {
+                  "t": ": 2–4 prompt-specific risks or iteration notes."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not include code, API calls, prices, or job-submission instructions unless the user explicitly asks for implementation details in a later request."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For execution requests, return the ComfyUI skill's execution report instead of duplicating the full prompt handoff. Include the selected workflow and any material assumptions that affected execution."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Keep the enhancement honest"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Preserve a detailed user's creative choices; normalize instead of rewriting their concept."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Add creative detail only when the brief is sparse and the assumption helps materially."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Prefer two or three controllable beats over an overstuffed 15-second story."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Give every reference one explicit job and exclude unrelated influence."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Describe audio as deliberately as picture when sound matters."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Use specific negative direction tied to likely failure modes; avoid generic quality-word piles."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Pair every requested edit with what must remain unchanged."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/chiphoton/MiniMax-H3-Codex-Drama/blob/main/skills/minimax-h3-text-to-video/SKILL.md",
+      "title": "minimax-h3-text-to-video",
+      "anchor": "skill-minimax-h3-text-to-video",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Create, enhance, or diagnose MiniMax H3 text-to-video prompts when the entire video should be invented from language without image, video, or audio references. Use for prompt-only cinematic shots, ads, animation, motion design, social clips, UI demos, or other H3 concepts that need a timed action plan, camera direction, visual treatment, native audio direction, constraints, settings, templates, or copy-ready prompt output."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3 Text to Video"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Design a complete MiniMax H3 shot from text alone. Stay prompt-only and never submit a generation job."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Confirm this workflow"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use this skill only when no uploaded media is meant to control the result. If an image is an exact first frame, use "
+            },
+            {
+              "c": true,
+              "t": "../minimax-h3-frame-to-video/SKILL.md"
+            },
+            {
+              "t": ". If any asset supplies identity, style, motion, voice, or editing rhythm, use "
+            },
+            {
+              "c": true,
+              "t": "../minimax-h3-reference-to-video/SKILL.md"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Recommend a 5–15 second clip, "
+            },
+            {
+              "c": true,
+              "t": "768P"
+            },
+            {
+              "t": " for iteration or "
+            },
+            {
+              "c": true,
+              "t": "2K"
+            },
+            {
+              "t": " for a final pass when the active workflow and hardware support it, and a fixed aspect ratio such as "
+            },
+            {
+              "c": true,
+              "t": "21:9"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "16:9"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "4:3"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "1:1"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "3:4"
+            },
+            {
+              "t": ", or "
+            },
+            {
+              "c": true,
+              "t": "9:16"
+            },
+            {
+              "t": ". Treat these as starting settings and let the executor validate the installed workflow."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Build the prompt"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "State duration, aspect ratio, format, and whether the clip is one continuous shot or a short sequence."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Describe the subject and environment with only details that matter on screen."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "For more than one beat, allocate timecoded actions whose durations add up correctly."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Choose one principal camera behavior per beat."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Describe lighting, palette, texture, and production language."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Direct dialogue, ambience, effects, and music with timing when relevant."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Finish with a short list of concrete continuity and exclusion constraints."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Prefer a single continuous shot for one simple transformation or performance. Use multiple shots only when the concept truly depends on editing. Do not cram a full narrative arc into a short clip."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Enhance or diagnose"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When enhancing, preserve the user's nouns, actions, order, exact copy, and style choices. Repair missing timing, ambiguous camera language, unsupported cause-and-effect, and vague constraints."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When diagnosing, test for:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "too many actions for the duration;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "conflicting camera or speed directions;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "unclear subject count or spatial relationships;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "audio events with no timing anchor;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "broad negative lists that hide the actual failure risk;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "a requested final composition that no preceding motion reaches."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Use the template and examples"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Read "
+            },
+            {
+              "href": "https://github.com/chiphoton/MiniMax-H3-Codex-Drama/blob/main/skills/minimax-h3-text-to-video/references/template-and-examples.md",
+              "t": "references/template-and-examples.md"
+            },
+            {
+              "t": " for the canonical fill-in template and two representative examples. Adapt their structure, not their subject matter."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Return"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Provide:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "suggested duration, aspect ratio, resolution, and workflow route;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "material assumptions, if any;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "one copy-ready prompt;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "2–4 prompt-specific checks or a single alternative when it adds value."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not return an API payload or submit a job."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/chiphoton/MiniMax-H3-Codex-Drama/blob/main/skills/minimax-h3-drama-producer/SKILL.md",
+      "title": "minimax-h3-drama-producer",
+      "anchor": "skill-minimax-h3-drama-producer",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Produce or resume complete profile-driven videos in Codex with GPT-Image visual development, MiniMax-H3 shot generation through ComfyUI, optional voice and captions, sound design, deterministic FFmpeg editing, local delivery, and technical plus visual QC. Use when a user asks Codex to turn a story, campaign brief, script, storyboard, or reference bundle into a finished short drama, advertisement, social video, or other multi-shot video project under a standard outputs project directory."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax-H3 Drama Producer"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Own the complete local production project while keeping the sibling MiniMax-H3 skills reusable and prompt-focused. Preserve user-authored story, character, product, and brand decisions. Expand them only when the user asks or when an execution-blocking gap remains after inspecting supplied assets."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Select mode and profile"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use "
+            },
+            {
+              "c": true,
+              "t": "guided"
+            },
+            {
+              "t": " mode unless the user asks to proceed immediately, says to use best judgment, or supplies "
+            },
+            {
+              "c": true,
+              "t": "[mode=fast]"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "In "
+                },
+                {
+                  "c": true,
+                  "t": "guided"
+                },
+                {
+                  "t": ", ask one high-impact question at a time. Require a production-plan approval and then a visual-lock approval before batch H3 generation."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "In "
+                },
+                {
+                  "c": true,
+                  "t": "fast"
+                },
+                {
+                  "t": ", make conservative assumptions, record them in the production brief, and continue without approval gates."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "If the user approves the plan and says later confirmation is unnecessary, skip the visual-lock gate."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Resolve one primary profile on top of "
+            },
+            {
+              "c": true,
+              "t": "base-video"
+            },
+            {
+              "t": ":"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Use an explicitly supplied profile or profile path."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Otherwise choose from the platform and intended viewer outcome."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Ask only when two profiles would materially change the result."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Apply precedence in this order: current user instruction, project override, selected profile, "
+            },
+            {
+              "c": true,
+              "t": "base-video"
+            },
+            {
+              "t": ", built-in default. Never merge two primary profiles. Read "
+            },
+            {
+              "href": "https://github.com/chiphoton/MiniMax-H3-Codex-Drama/blob/main/skills/minimax-h3-drama-producer/references/profile-spec.md",
+              "t": "references/profile-spec.md"
+            },
+            {
+              "t": " before selecting or resolving a profile."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Preflight and initialize"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Run the read-only environment preflight before expensive work:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "python3 scripts/preflight.py --output <project>/logs/environment-report.json [--require-captions]",
+          "language": "bash"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Pass "
+            },
+            {
+              "c": true,
+              "t": "--require-captions"
+            },
+            {
+              "t": " when the resolved profile or user instruction makes captions mandatory. Confirm the GPT-Image tool separately at agent runtime; the local report marks that check explicitly."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not install packages, download models, start services, or restart ComfyUI. If a critical capability is missing, finish every earlier stage that remains useful, mark the blocked stage in project state, and report the exact missing capability. A future doctor skill may consume the same report."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Create or resume the project with "
+            },
+            {
+              "c": true,
+              "t": "scripts/init_project.py"
+            },
+            {
+              "t": ". Read "
+            },
+            {
+              "href": "https://github.com/chiphoton/MiniMax-H3-Codex-Drama/blob/main/skills/minimax-h3-drama-producer/references/project-contract.md",
+              "t": "references/project-contract.md"
+            },
+            {
+              "t": " for the directory contract and state rules. Use "
+            },
+            {
+              "c": true,
+              "t": "scripts/project_state.py"
+            },
+            {
+              "t": " for stage, job, artifact, and selected-take updates instead of rewriting the ledger ad hoc. Copy normal-sized inputs into "
+            },
+            {
+              "c": true,
+              "t": "inputs/references/"
+            },
+            {
+              "t": "; preserve original files and record their hashes and roles. Ask before copying unusually large inputs. Never overwrite an unrelated existing directory."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Plan the production"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Inspect the brief and all supplied text, images, video, and audio before asking for facts. Produce:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "a production brief with audience, platform, format, language, duration, and material assumptions;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "a story or message beat sheet without unrequested rewrites;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "a visual-entity ledger for recurring characters, products, mascots, animals, and environments;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "an asset ledger assigning every reference exactly one or more bounded roles and stating forbidden influence;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "a continuity plan covering identity, wardrobe or product geometry, environment, screen direction, props, lighting, and audio;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "a shot list with duration, framing, action, camera, sound, transition, reference roles, generation route, and QC intent;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "a material and generation budget that marks ordinary and key shots."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Read "
+            },
+            {
+              "href": "https://github.com/chiphoton/MiniMax-H3-Codex-Drama/blob/main/skills/minimax-h3-drama-producer/references/production-workflow.md",
+              "t": "references/production-workflow.md"
+            },
+            {
+              "t": " for the canonical stage sequence. In guided mode, show the compact plan and wait for the production approval before image generation."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Lock visual sources of truth"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Read "
+            },
+            {
+              "href": "https://github.com/chiphoton/MiniMax-H3-Codex-Drama/blob/main/skills/minimax-h3-drama-producer/references/visual-development.md",
+              "t": "references/visual-development.md"
+            },
+            {
+              "t": ". Use supplied canonical sheets unchanged. When a recurring entity lacks a canonical sheet, load and apply the available "
+            },
+            {
+              "c": true,
+              "t": "imagegen"
+            },
+            {
+              "t": " skill, then use GPT-Image to create the appropriate character, product, identity, or scene master. Preserve loose source references and treat the generated sheet as a derivative, not a replacement for the originals."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Generate assets in dependency order:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "recurring visual-entity masters;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "scene masters with stable layout and light direction;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "a complete visual storyboard;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "one exact keyframe per shot that needs frame control."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Keep text labels out of generative images when exact typography matters; add labels deterministically afterward. In guided mode, show the masters, storyboard, and keyframes and wait for the visual-lock approval before H3 execution."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Route and generate every shot"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Choose one sibling specialist for each shot:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "no controlling media: read and apply "
+                },
+                {
+                  "c": true,
+                  "t": "../minimax-h3-text-to-video/SKILL.md"
+                },
+                {
+                  "t": ";"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "an exact opening frame or exact opening and closing frames: read and apply "
+                },
+                {
+                  "c": true,
+                  "t": "../minimax-h3-frame-to-video/SKILL.md"
+                },
+                {
+                  "t": ";"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "identity, design, style, motion, camera, performance, voice, or other multimodal references: read and apply "
+                },
+                {
+                  "c": true,
+                  "t": "../minimax-h3-reference-to-video/SKILL.md"
+                },
+                {
+                  "t": ";"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "a localized change to an existing generated clip: read and apply "
+                },
+                {
+                  "c": true,
+                  "t": "../minimax-h3-video-editor/SKILL.md"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Give every reference a bounded job. Prefer frame-to-video for shots with approved keyframes. Use first/last-frame control only for a continuous bridge whose ending must land exactly. After producing the prompt, read and apply "
+            },
+            {
+              "c": true,
+              "t": "../minimax-h3-comfyui/SKILL.md"
+            },
+            {
+              "t": " to prepare, validate, submit, monitor, and fetch the local ComfyUI result."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Generate one valid take for ordinary shots and up to two for profile-marked key shots. Retry once only for technical failure or an objective hard-gate failure. Do not exceed two valid takes per shot without user approval. Record workflow paths, prompt text, prompt IDs, settings, outputs, failures, and selection decisions in project state."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Default to synchronous completion. For explicit asynchronous requests, save prompt IDs and return; on resume, monitor those exact IDs rather than resubmitting them."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Finish picture and sound"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Treat voice and captions as "
+            },
+            {
+              "c": true,
+              "t": "auto"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "on"
+            },
+            {
+              "t": ", or "
+            },
+            {
+              "c": true,
+              "t": "off"
+            },
+            {
+              "t": "; the user instruction overrides the profile. Prefer user audio and voice references, then an available high-quality local TTS, then a disclosed system TTS fallback. Never call a paid voice service silently."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Prefer user-cleared audio, useful native H3 sound, locally synthesized effects, and configured licensed libraries in that order. Do not download music or reference video from the internet without explicit authorization. Record provenance and license notes."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Read "
+            },
+            {
+              "href": "https://github.com/chiphoton/MiniMax-H3-Codex-Drama/blob/main/skills/minimax-h3-drama-producer/references/post-production.md",
+              "t": "references/post-production.md"
+            },
+            {
+              "t": " before assembling. Store the edit in "
+            },
+            {
+              "c": true,
+              "t": "edit/timeline.yaml"
+            },
+            {
+              "t": "; use the bundled deterministic audio, caption, and timeline helpers when their supported fields fit. Generate a project-local script only when the edit requires a documented feature the helper does not support."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Enforce QC and deliver"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Read "
+            },
+            {
+              "href": "https://github.com/chiphoton/MiniMax-H3-Codex-Drama/blob/main/skills/minimax-h3-drama-producer/references/qc-policy.md",
+              "t": "references/qc-policy.md"
+            },
+            {
+              "t": ", then run "
+            },
+            {
+              "c": true,
+              "t": "scripts/qc_media.py"
+            },
+            {
+              "t": ". Inspect the generated contact sheet visually and use "
+            },
+            {
+              "c": true,
+              "t": "scripts/record_visual_qc.py"
+            },
+            {
+              "t": " to record identity, product, environment, continuity, caption-safe-area, and narrative findings. Technical pass with visual review still pending is not an overall pass."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not mark the project complete while a hard gate remains. Preserve soft warnings in the report. A successful minimum delivery contains:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "final/master.mp4"
+                },
+                {
+                  "t": ";"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "final/media-info.json"
+                },
+                {
+                  "t": ";"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "qc/qc-report.md"
+                },
+                {
+                  "t": " and "
+                },
+                {
+                  "c": true,
+                  "t": "qc/qc-report.json"
+                },
+                {
+                  "t": ";"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "qc/final-contact-sheet.png"
+                },
+                {
+                  "t": ";"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "edit/timeline.yaml"
+                },
+                {
+                  "t": " and a reproducible export command or script."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Let the selected profile add previews, covers, clean masters, captions, stems, or alternate platform encodes. Do not publish or upload the result."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Return the finished video first, then link the project README or production brief, key visual sources, active profile snapshot, and QC report. Mention only material assumptions and remaining soft warnings."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/chiphoton/MiniMax-H3-Codex-Drama/blob/main/skills/minimax-h3-frame-to-video/SKILL.md",
+      "title": "minimax-h3-frame-to-video",
+      "anchor": "skill-minimax-h3-frame-to-video",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Create, enhance, or diagnose MiniMax H3 first-frame and first/last-frame animation prompts when supplied images are literal opening or closing frames. Use for animating posters, key art, portraits, UI mockups, product stills, or controlled transitions that must begin from one exact image or travel between two exact images while preserving composition, identity, geometry, and continuity."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3 Frame to Video"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Direct motion from an exact first frame, optionally landing on an exact last frame. Stay prompt-only and never submit a generation job."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Confirm this workflow"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use this skill when the image is the actual first frame, not merely a style or identity reference. With two images, require the first to be the opening frame and the second to be the closing frame. Otherwise route to "
+            },
+            {
+              "c": true,
+              "t": "../minimax-h3-reference-to-video/SKILL.md"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Recommend a 5–15 second clip, "
+            },
+            {
+              "c": true,
+              "t": "768P"
+            },
+            {
+              "t": " for iteration or "
+            },
+            {
+              "c": true,
+              "t": "2K"
+            },
+            {
+              "t": " for a final pass when the active workflow and hardware support it, and note that output aspect ratio should follow the first-frame image."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Build the motion bridge"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "State whether there is one first frame or a first/last pair."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Inventory visual invariants visible in the supplied frame: identity, object design, layout, lighting direction, text, and geometry."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Describe what begins moving, in what order, and how strongly."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Direct camera movement without contradicting the fixed starting composition."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "With a last frame, describe a continuous causal path that naturally reaches it."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Add sound events and timing when useful."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Prohibit abrupt morphing, unmotivated cuts, duplicated elements, identity redesign, or geometry drift when those are likely risks."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not spend the prompt redescribing every pixel in supplied frames. Spend words on motion, continuity, timing, and controlled change. Do not introduce an intermediate event that makes the final frame physically or spatially impossible."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Enhance or diagnose"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When enhancing, preserve explicit transition ideas and exact on-screen text. Clarify motion order, camera path, how typography or UI appears, and the final settle."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When diagnosing, test for:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "treating the two frames as unrelated scene descriptions;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "a camera path that cannot land on the last composition;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "no preservation instructions for identity, layout, or text;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "too many simultaneous transformations;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "a requested cut in what should be a seamless transition;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "input frames with incompatible geometry that require an acknowledged bridge."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Use the template and examples"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Read "
+            },
+            {
+              "href": "https://github.com/chiphoton/MiniMax-H3-Codex-Drama/blob/main/skills/minimax-h3-frame-to-video/references/template-and-examples.md",
+              "t": "references/template-and-examples.md"
+            },
+            {
+              "t": " for the canonical fill-in template and two representative examples. Adapt their motion logic, not their visual subject matter."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Return"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Provide:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "input-frame roles and suggested duration, resolution, and workflow route;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "material assumptions, if any;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "one copy-ready prompt;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "2–4 continuity checks."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not return an API payload or submit a job."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/chiphoton/MiniMax-H3-Codex-Drama/blob/main/skills/minimax-h3-profile-distiller/SKILL.md",
+      "title": "minimax-h3-profile-distiller",
+      "anchor": "skill-minimax-h3-profile-distiller",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Distill one or more local reference videos into a safe, declarative MiniMax-H3 Drama production profile with evidence, confidence, storytelling grammar, shot patterns, audio and caption behavior, deliverables, and QC rules. Use when a user asks Codex to analyze, reverse-engineer, extract a reusable style or format from, or create a video profile based on uploaded or workspace video files."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax-H3 Profile Distiller"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Extract reusable production grammar from local videos without copying their characters, brands, dialogue, plot, music melody, or other source-specific content. Let explicit user instructions override the default exclusions."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Accept and inspect inputs"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Accept uploaded or workspace-local video files. Do not download a URL, sign into a platform, or bypass access controls. Record a supplied URL only as source provenance."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Inspect every input before asking questions. Ask one high-impact question at a time only when the intended reusable property is ambiguous. Multiple references should contribute shared rules; treat disagreements as optional variants rather than silently averaging incompatible patterns."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Run "
+            },
+            {
+              "c": true,
+              "t": "scripts/analyze_video.py"
+            },
+            {
+              "t": " for deterministic evidence:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "python3 scripts/analyze_video.py \\\n  --input <video-1> --input <video-2> \\\n  --output-dir outputs/<project>/analysis",
+          "language": "bash"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Read "
+            },
+            {
+              "href": "https://github.com/chiphoton/MiniMax-H3-Codex-Drama/blob/main/skills/minimax-h3-profile-distiller/references/distillation-method.md",
+              "t": "references/distillation-method.md"
+            },
+            {
+              "t": " before interpreting the evidence. Separate measured facts from visual inference and user preference."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Build a declarative profile"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Read the shared profile contract at "
+            },
+            {
+              "c": true,
+              "t": "../minimax-h3-drama-producer/references/profile-spec.md"
+            },
+            {
+              "t": " and validate against "
+            },
+            {
+              "c": true,
+              "t": "../minimax-h3-drama-producer/references/profile.schema.json"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Create a bundle containing exactly the useful files:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "profile/<slug>/\n├── profile.yaml\n├── storytelling.md\n├── shot-patterns.md\n├── audio-and-captions.md\n├── qc-rules.md\n└── evidence.json"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use "
+            },
+            {
+              "c": true,
+              "t": "scripts/scaffold_profile.py"
+            },
+            {
+              "t": " to create the bundle, then replace every placeholder with source-backed content. Keep "
+            },
+            {
+              "c": true,
+              "t": "profile.yaml"
+            },
+            {
+              "t": " data-only. Never embed commands, Python, shell, network requests, or installation instructions. Record each inferred rule with supporting source IDs, applicability, and confidence in "
+            },
+            {
+              "c": true,
+              "t": "evidence.json"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Read "
+            },
+            {
+              "href": "https://github.com/chiphoton/MiniMax-H3-Codex-Drama/blob/main/skills/minimax-h3-profile-distiller/references/profile-authoring.md",
+              "t": "references/profile-authoring.md"
+            },
+            {
+              "t": " for the authoring checklist. Resolve the profile on top of "
+            },
+            {
+              "c": true,
+              "t": "base-video"
+            },
+            {
+              "t": ", validate it with the producer's "
+            },
+            {
+              "c": true,
+              "t": "scripts/profile_tool.py"
+            },
+            {
+              "t": ", and perform a paper rehearsal against a fictional brief. Do not generate validation video by default."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Save and optionally install"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Save the first result inside "
+            },
+            {
+              "c": true,
+              "t": "outputs/<project>/profile/<slug>/"
+            },
+            {
+              "t": ". Do not mutate the plugin cache or a long-lived registry automatically."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Only on explicit install or import intent, use "
+            },
+            {
+              "c": true,
+              "t": "scripts/install_profile.py"
+            },
+            {
+              "t": ":"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "project scope: "
+                },
+                {
+                  "c": true,
+                  "t": ".minimax-h3-drama/profiles/<slug>/"
+                },
+                {
+                  "t": ";"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "personal scope: "
+                },
+                {
+                  "c": true,
+                  "t": "~/.config/minimax-h3-drama/profiles/<slug>/"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Never overwrite an installed profile version without explicit approval. Profile lookup precedence is explicit path, project registry, personal registry, then built-ins."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Hand off validation choices"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "After validation, list every generated file and summarize the strongest rules, variants, low-confidence areas, and paper-rehearsal result. Then ask the user to choose exactly one:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "No validation."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Low-cost validation with 2–3 representative shots."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Full-video validation."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Wait for the choice. For option 2 or 3, load and apply "
+            },
+            {
+              "c": true,
+              "t": "../minimax-h3-drama-producer/SKILL.md"
+            },
+            {
+              "t": " with the distilled profile. Compare production grammar, not source-specific content similarity. Save revisions as a new version rather than overwriting the original profile."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/chiphoton/MiniMax-H3-Codex-Drama/blob/main/skills/minimax-h3-reference-to-video/SKILL.md",
+      "title": "minimax-h3-reference-to-video",
+      "anchor": "skill-minimax-h3-reference-to-video",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Create, enhance, or diagnose MiniMax H3 multimodal reference-to-video prompts using images, videos, and audio for identity, product design, style, location, storyboard, motion, camera, editing rhythm, performance, music, or voice. Use when multiple assets need explicit jobs, unwanted cross-reference influence must be blocked, or users need an asset ledger, timed shot plan, preservation constraints, settings, template, or copy-ready H3 prompt."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3 Reference to Video"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Turn multimodal assets into one coherent MiniMax H3 direction by giving every asset an explicit, bounded job. Stay prompt-only and never submit a generation job."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Confirm this workflow"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use this skill when media acts as a reference rather than an exact first or last frame. If the only visual input is the literal opening frame, use "
+            },
+            {
+              "c": true,
+              "t": "../minimax-h3-frame-to-video/SKILL.md"
+            },
+            {
+              "t": ". If an existing video is being changed locally while the rest stays stable, use "
+            },
+            {
+              "c": true,
+              "t": "../minimax-h3-video-editor/SKILL.md"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Recommend a 5–15 second clip, "
+            },
+            {
+              "c": true,
+              "t": "768P"
+            },
+            {
+              "t": " for iteration or "
+            },
+            {
+              "c": true,
+              "t": "2K"
+            },
+            {
+              "t": " for a final pass when the active workflow and hardware support it, and a fixed or "
+            },
+            {
+              "c": true,
+              "t": "adaptive"
+            },
+            {
+              "t": " aspect ratio. As a conservative complexity budget, prefer no more than 9 images, 3 videos, 3 audio clips, or 12 files total; keep reference video and audio clips within 2–15 seconds and avoid audio as the only reference type. Let the executor validate the installed workflow rather than treating these working limits as an API contract."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Create an asset ledger first"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For every supplied asset, record:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "exact label: "
+                },
+                {
+                  "c": true,
+                  "t": "Image 1"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "Video 1"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "Audio 1"
+                },
+                {
+                  "t": ", and so on;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "positive job: identity, wardrobe, product geometry, environment, style, storyboard, motion, camera, edit rhythm, voice, music, or sound design;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "preservation details that define success;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "excluded influence: what must not be copied from that asset."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Never say only “use these references.” Use bounded language such as “Use Video 1 only for the slow clockwise camera orbit; do not copy its subject, location, palette, or wardrobe.”"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Build the prompt"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "State format, duration, aspect ratio, and shot structure."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Assign every reference before describing the new scene."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Describe the subject, action, environment, and timecoded beats."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Direct camera, look, and audio."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Restate identity, product, layout, or source-video invariants at the end."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Resolve conflicts explicitly; do not let two references own the same property unless their relationship is explained."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When identity matters, name the defining facial, hair, wardrobe, or product details to preserve. When audio matters, align mouth movement, breathing, gesture, edits, and camera emphasis to specific audio moments."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Enhance or diagnose"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When enhancing, retain the user's asset ordering. Never silently renumber references."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When diagnosing, test for:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "assets with no declared job;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "two assets competing for identity, style, or camera control;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "missing exclusions that allow unrelated elements to leak across;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "motion transfer with no spatial adaptation instructions;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "voice reference without performance or synchronization direction;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "more beats or files than the workflow can use coherently;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "preservation details that are too generic to lock identity or product design."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Use the template and examples"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Read "
+            },
+            {
+              "href": "https://github.com/chiphoton/MiniMax-H3-Codex-Drama/blob/main/skills/minimax-h3-reference-to-video/references/template-and-examples.md",
+              "t": "references/template-and-examples.md"
+            },
+            {
+              "t": " for the canonical fill-in template and two representative examples. Adapt their asset-assignment syntax, not their subject matter."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Return"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Provide:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "a compact asset ledger;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "suggested duration, aspect ratio, resolution, and workflow route;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "material assumptions, if any;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "one copy-ready prompt;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "2–4 reference-conflict or continuity checks."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not return an API payload or submit a job."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/chiphoton/MiniMax-H3-Codex-Drama/blob/main/skills/minimax-h3-video-editor/SKILL.md",
+      "title": "minimax-h3-video-editor",
+      "anchor": "skill-minimax-h3-video-editor",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Create, enhance, or diagnose precise MiniMax H3 prompts for editing an existing video while preserving everything outside requested changes. Use for subject or object replacement, removal, wardrobe changes, background replacement, relighting, localized VFX, text or signage changes, dialogue or voice replacement, performance adjustment, and multi-element edits that need explicit change-and-preserve pairs and copy-ready prompts."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3 Video Editor"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Describe localized changes to a source video while locking every unaffected property. Stay prompt-only and never submit a generation job."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Confirm this workflow"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use this skill when at least one existing video is the source to modify. Route execution through reference-conditioned video generation; label the source as "
+            },
+            {
+              "c": true,
+              "t": "Video 1"
+            },
+            {
+              "t": " unless the user's existing ordering differs. Additional images, videos, or audio may supply replacement identity, design, environment, motion, or voice."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Recommend 5–15 seconds, "
+            },
+            {
+              "c": true,
+              "t": "768P"
+            },
+            {
+              "t": " for iteration or "
+            },
+            {
+              "c": true,
+              "t": "2K"
+            },
+            {
+              "t": " for a final pass when supported, and a fixed or "
+            },
+            {
+              "c": true,
+              "t": "adaptive"
+            },
+            {
+              "t": " aspect ratio. Preserve the source duration or aspect when that is important to the edit, and let the executor validate the installed workflow."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Write change-and-preserve pairs"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Create a short edit ledger before the prompt. For each operation, pair:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Change"
+                },
+                {
+                  "t": ": exact target, location or time, operation, and replacement source."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Preserve"
+                },
+                {
+                  "t": ": surrounding subjects, action, timing, framing, lighting, shadows, reflections, geometry, audio, text, or effects that must remain stable."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Examples of precise operations include replace, remove, add, relight, recolor, rewrite, retime, and overlay. Avoid broad restyling language unless broad restyling is the requested edit."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Build the prompt"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Identify the source video and all replacement references by modality and order."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "State the requested edits in temporal or spatial order."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Bind each replacement to a source asset where applicable."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Explain integration: matching perspective, motion, occlusion, lighting, shadows, reflections, lip sync, or performance."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "State the global invariant: everything not explicitly listed remains unchanged."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Add targeted failure constraints such as no source-camera drift, no identity change, no extra objects, no altered timing, or no compositing seams."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For dialogue replacement, provide the exact new line and identify the voice reference. Ask for subtle mouth, breath, expression, and gesture adaptation without changing unrelated performance. For relighting or background replacement, require subject light, shadow, reflection, and atmospheric integration."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Enhance or diagnose"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When enhancing, preserve the user's edit list and source ordering. Turn ambiguous nouns such as “that sign” into a spatial or temporal identifier when evidence permits."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When diagnosing, test for:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "edits with no preservation partner;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "unclear target instances when the object appears multiple times;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "a replacement asset with no role assignment;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "lighting, shadow, reflection, or occlusion mismatches;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "dialogue changes without lip-sync and performance adaptation;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "too many unrelated edits in one pass;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "global style directions that regenerate the entire shot."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Recommend splitting into passes only when edits compete or accurate targeting becomes implausible."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Use the template and examples"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Read "
+            },
+            {
+              "href": "https://github.com/chiphoton/MiniMax-H3-Codex-Drama/blob/main/skills/minimax-h3-video-editor/references/template-and-examples.md",
+              "t": "references/template-and-examples.md"
+            },
+            {
+              "t": " for the canonical fill-in template and two representative examples. Adapt their edit precision, not their subject matter."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Return"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Provide:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "an edit ledger and asset mapping;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "suggested duration, aspect ratio, resolution, and workflow route;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "material assumptions, if any;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "one copy-ready prompt;"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "2–4 preservation checks."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not return an API payload or submit a job."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

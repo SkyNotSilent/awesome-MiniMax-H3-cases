@@ -1996,7 +1996,7 @@ footer > span {
 .tutorial-pathways {
   margin-bottom: 18px;
   display: grid;
-  grid-template-columns: 1.15fr 1fr 0.85fr minmax(200px, 0.5fr);
+  grid-template-columns: 1.1fr 1fr 0.85fr minmax(250px, 0.55fr);
   border-top: 1px solid #44483f;
   border-left: 1px solid #44483f;
   background: #0d0f0c;
@@ -6127,4 +6127,33 @@ footer {
 @media (max-width: 1000px) {
   .tutorial-detail-layout.has-original { grid-template-columns: minmax(0, 1fr); }
   .tutorial-detail-layout.has-original .tutorial-detail-meta { position: static; }
+}
+
+.tutorial-skills-band {
+  margin: 0 0 18px;
+  padding: 18px 20px;
+  display: grid;
+  grid-template-columns: auto minmax(0, auto) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px 22px;
+  color: var(--ink);
+  background: #10120e;
+  border: 1px solid #44483f;
+  border-left: 3px solid var(--acid);
+  transition: background 150ms ease, border-color 150ms ease;
+}
+
+.tutorial-skills-band:hover,
+.tutorial-skills-band:focus-visible { background: #151812; border-color: var(--acid); }
+.tutorial-skills-band small { color: var(--acid); font-family: var(--mono); font-size: 9px; letter-spacing: .1em; }
+.tutorial-skills-band strong { font-family: var(--display); font-size: clamp(20px, 2.2vw, 28px); font-weight: 600; line-height: 1; text-transform: uppercase; }
+.tutorial-skills-band span { color: var(--muted); font-size: 13px; line-height: 1.6; }
+.tutorial-skills-band svg { color: var(--acid); }
+
+@media (max-width: 820px) {
+  .tutorial-skills-band { grid-template-columns: minmax(0, 1fr) auto; }
+  .tutorial-skills-band small,
+  .tutorial-skills-band strong,
+  .tutorial-skills-band span { grid-column: 1; }
+  .tutorial-skills-band svg { grid-column: 2; grid-row: 1 / span 3; }
 }

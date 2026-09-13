@@ -52,8 +52,8 @@ async function fileExists(path) {
   }
 }
 
-export async function mirrorImage({ root, tutorialId, key, url, fetchImpl = fetch }) {
-  const src = `/tutorial-media/${tutorialId}/${mediaFileName(key)}.webp`
+export async function mirrorImage({ root, tutorialId, key, url, fetchImpl = fetch, directory = 'tutorial-media' }) {
+  const src = `/${directory}/${tutorialId}/${mediaFileName(key)}.webp`
   const destination = resolve(root, `public${src}`)
   if (!(await fileExists(destination))) {
     const body = await retry(`Download image ${key}`, async () => {

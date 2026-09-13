@@ -1,0 +1,2418 @@
+{
+  "skillId": "comfyui-mcp-minimax-h3-video",
+  "kind": "markdown",
+  "title": "comfyui-mcp minimax-h3-video",
+  "language": "en",
+  "capturedAt": "2026-09-13T11:12:14.264Z",
+  "source": {
+    "url": "https://github.com/artokun/comfyui-mcp",
+    "author": "artokun",
+    "revision": "1d5b12b1b499a7358ac614ffb41b736a0817f855",
+    "license": "MIT"
+  },
+  "sections": [
+    {
+      "url": "https://github.com/artokun/comfyui-mcp/blob/main/plugin/skills/minimax-h3-video/SKILL.md",
+      "title": "minimax-h3-video",
+      "anchor": "skill-minimax-h3-video",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Build MiniMax H3 (Hailuo) local video workflows with native T2V/I2V/R2V nodes, Comfy-Org INT8 weights, turbo LoRAs for 8GB VRAM, 15-second stereo-audio clips, and the official MiniMax prompting guides (cite by link, do not copy)."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3 (Hailuo) — local video"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "This skill teaches the "
+            },
+            {
+              "b": true,
+              "t": "local-weights"
+            },
+            {
+              "t": " MiniMax H3 path in ComfyUI. It is the\npilot for "
+            },
+            {
+              "c": true,
+              "t": "#1155"
+            },
+            {
+              "t": " (Official vs Empirical sources) because MiniMax publishes a\nreal prompting guide. "
+            },
+            {
+              "b": true,
+              "t": "Cite that guide by URL. Do not copy it into this repo."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Two products, two cost models — pick one"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "They share a brand and "
+            },
+            {
+              "b": true,
+              "t": "must not be mixed"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "Path"
+              }
+            ],
+            [
+              {
+                "t": "Nodes"
+              }
+            ],
+            [
+              {
+                "t": "Cost"
+              }
+            ],
+            [
+              {
+                "t": "VRAM"
+              }
+            ],
+            [
+              {
+                "t": "When"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "b": true,
+                  "t": "Local weights"
+                },
+                {
+                  "t": " (this skill)"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "MiniMaxH3ImageToVideo"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "MiniMaxH3ReferenceToVideo"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "EmptyMiniMaxH3LatentAV"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "MiniMaxH3SigmaShift"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "MiniMaxH3MemoryEfficientSageAttentionPatch"
+                }
+              ],
+              [
+                {
+                  "t": "Free after download"
+                }
+              ],
+              [
+                {
+                  "t": "Yes — INT8 + turbo LoRA is the 8 GB story"
+                }
+              ],
+              [
+                {
+                  "t": "User wants 4–15 s stereo clips on their GPU"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "b": true,
+                  "t": "Partner API"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "MinimaxHailuo03TextToVideoNode"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "MinimaxHailuo03FirstLastFrameNode"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "MinimaxHailuo03ReferenceNode"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "MinimaxTextToVideoNode"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "MinimaxImageToVideoNode"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "MinimaxHailuoVideoNode"
+                }
+              ],
+              [
+                {
+                  "t": "Paid per generation"
+                }
+              ],
+              [
+                {
+                  "t": "None"
+                }
+              ],
+              [
+                {
+                  "t": "User has a MiniMax / Hailuo API key and does not want local weights"
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "API nodes do not take "
+            },
+            {
+              "c": true,
+              "t": "MiniMaxH3SigmaShift"
+            },
+            {
+              "t": " or Sage-attention patches. Local\nnodes do not spend API credits. If the user asked for Hailuo "
+            },
+            {
+              "i": true,
+              "t": "cloud"
+            },
+            {
+              "t": ", stop and\nuse the API nodes + their key; do not download 40 GB of weights."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "MiniMaxH3Director"
+            },
+            {
+              "t": " is a "
+            },
+            {
+              "b": true,
+              "t": "third-party"
+            },
+            {
+              "t": " pack ("
+            },
+            {
+              "c": true,
+              "t": "muse-collective-26/MiniMaxH3-Director"
+            },
+            {
+              "t": "),\nnot core. Do not require it for T2V / I2V / R2V."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "License — cite, do not copy"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Local weights and MiniMax's own documentation sit under the\n"
+            },
+            {
+              "href": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/LICENSE",
+              "t": "MiniMax H3 Community License"
+            },
+            {
+              "t": ".\n"
+            },
+            {
+              "c": true,
+              "t": "Materials"
+            },
+            {
+              "t": " includes the Documentation. The agreement's Applicable Territory\n"
+            },
+            {
+              "b": true,
+              "t": "excludes the United States, the EU, the UK, and South Korea"
+            },
+            {
+              "t": ". This skill\ndoes "
+            },
+            {
+              "b": true,
+              "t": "not"
+            },
+            {
+              "t": " reproduce MiniMax's "
+            },
+            {
+              "c": true,
+              "t": "skills/h3-prompt-writing/"
+            },
+            {
+              "t": " SKILL.md or the\nprompting-guide prose. Linking to a public URL is the "
+            },
+            {
+              "c": true,
+              "t": "#1155"
+            },
+            {
+              "t": " requirement."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "This is not legal advice. Tell a US/EU/UK/KR user that the "
+            },
+            {
+              "i": true,
+              "t": "local"
+            },
+            {
+              "t": " path is\nterritory-restricted and that the "
+            },
+            {
+              "b": true,
+              "t": "paid API"
+            },
+            {
+              "t": " is a separate product under\nMiniMax platform terms."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Prefer the Comfy-Org template over hand-wiring"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "ComfyUI ≥ "
+            },
+            {
+              "b": true,
+              "t": "0.30.0"
+            },
+            {
+              "t": " (templates in the 0.33 line). These are "
+            },
+            {
+              "b": true,
+              "t": "core"
+            },
+            {
+              "t": "\n"
+            },
+            {
+              "c": true,
+              "t": "comfyui-workflow-templates"
+            },
+            {
+              "t": " graphs in the frontend "
+            },
+            {
+              "b": true,
+              "t": "Template Library →\nVideo"
+            },
+            {
+              "t": ", not installer packs and not custom-node "
+            },
+            {
+              "c": true,
+              "t": "example_workflows"
+            },
+            {
+              "t": ":"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "Mode"
+              }
+            ],
+            [
+              {
+                "t": "Template Library card"
+              }
+            ],
+            [
+              {
+                "t": "File"
+              }
+            ],
+            [
+              {
+                "t": "Diffusion file"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "T2V / I2V / FL2VA"
+                }
+              ],
+              [
+                {
+                  "t": "MiniMax H3: Text to Video / Image to Video"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "video_minimax_h3_t2v.json"
+                },
+                {
+                  "t": " / "
+                },
+                {
+                  "c": true,
+                  "t": "video_minimax_h3_i2v.json"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "minimax_h3_fl2va_pruned_int8_convrot.safetensors"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "R2V (omni-reference)"
+                }
+              ],
+              [
+                {
+                  "t": "MiniMax H3: Reference to Video"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "video_minimax_h3_r2v.json"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "minimax_h3_ref2va_pruned_int8_convrot.safetensors"
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "list_packs action:\"list_templates\""
+            },
+            {
+              "t": " will "
+            },
+            {
+              "b": true,
+              "t": "not"
+            },
+            {
+              "t": " list them.\n"
+            },
+            {
+              "c": true,
+              "t": "enqueue_workflow action:\"run_template\""
+            },
+            {
+              "t": " will "
+            },
+            {
+              "b": true,
+              "t": "not"
+            },
+            {
+              "t": " resolve\n"
+            },
+            {
+              "c": true,
+              "t": "video_minimax_h3_t2v"
+            },
+            {
+              "t": " / "
+            },
+            {
+              "c": true,
+              "t": "_i2v"
+            },
+            {
+              "t": " / "
+            },
+            {
+              "c": true,
+              "t": "_r2v"
+            },
+            {
+              "t": ". That action only loads bundled\ninstaller packs, and there is no "
+            },
+            {
+              "c": true,
+              "t": "packs/minimax-h3-*"
+            },
+            {
+              "t": " yet. Do not call it\nuntil a pack exists. "
+            },
+            {
+              "c": true,
+              "t": "panel_load_workflow"
+            },
+            {
+              "t": " needs "
+            },
+            {
+              "c": true,
+              "t": "pack:"
+            },
+            {
+              "t": ", a disk "
+            },
+            {
+              "c": true,
+              "t": "path:"
+            },
+            {
+              "t": ", or\nan inline UI "
+            },
+            {
+              "c": true,
+              "t": "graph"
+            },
+            {
+              "t": ". A Template Library basename is none of those."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "Load path that works:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Preferred."
+                },
+                {
+                  "t": " Ask the user to open "
+                },
+                {
+                  "b": true,
+                  "t": "Template Library → Video → MiniMax H3:\nText to Video"
+                },
+                {
+                  "t": " (or Image to Video / Reference to Video). Pick the local\n"
+                },
+                {
+                  "c": true,
+                  "t": "video_minimax_h3_*"
+                },
+                {
+                  "t": " cards, "
+                },
+                {
+                  "b": true,
+                  "t": "not"
+                },
+                {
+                  "t": " the "
+                },
+                {
+                  "c": true,
+                  "t": "api_minimax_h3_*"
+                },
+                {
+                  "t": " paid partner\ntemplates."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Agent, no UI click."
+                },
+                {
+                  "t": " Fetch the UI JSON from\n"
+                },
+                {
+                  "href": "https://github.com/Comfy-Org/workflow_templates/blob/main/templates/video_minimax_h3_t2v.json",
+                  "t": "https://github.com/Comfy-Org/workflow_templates/blob/main/templates/video_minimax_h3_t2v.json"
+                },
+                {
+                  "t": "\n(or "
+                },
+                {
+                  "c": true,
+                  "t": "_i2v"
+                },
+                {
+                  "t": " / "
+                },
+                {
+                  "c": true,
+                  "t": "_r2v"
+                },
+                {
+                  "t": "; raw.githubusercontent.com is the same files), save it\nwith "
+                },
+                {
+                  "c": true,
+                  "t": "save_workflow action:\"save\""
+                },
+                {
+                  "t": " "
+                },
+                {
+                  "c": true,
+                  "t": "filename:\"video_minimax_h3_t2v.json\""
+                },
+                {
+                  "t": ",\nthen "
+                },
+                {
+                  "c": true,
+                  "t": "panel_load_workflow path:\"video_minimax_h3_t2v.json\""
+                },
+                {
+                  "t": ". Same pattern as\n"
+                },
+                {
+                  "c": true,
+                  "t": "video-extend"
+                },
+                {
+                  "t": " (stage on disk, then "
+                },
+                {
+                  "c": true,
+                  "t": "path:"
+                },
+                {
+                  "t": "). Do not pass the GitHub URL as\n"
+                },
+                {
+                  "c": true,
+                  "t": "path:"
+                },
+                {
+                  "t": " or "
+                },
+                {
+                  "c": true,
+                  "t": "pack:"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "After it lands, retarget the "
+            },
+            {
+              "b": true,
+              "t": "subgraph's exposed widgets"
+            },
+            {
+              "t": " (prompt, duration,\n"
+            },
+            {
+              "c": true,
+              "t": "turbo_mode"
+            },
+            {
+              "t": ", megapixels). Official T2V/I2V graphs wrap\n"
+            },
+            {
+              "c": true,
+              "t": "MiniMaxH3ImageToVideo"
+            },
+            {
+              "t": " inside a subgraph ("
+            },
+            {
+              "c": true,
+              "t": "type"
+            },
+            {
+              "t": " is a UUID). Do not flatten\nthat interior unless you are hand-building."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Hand-building the subgraph is slower and easy to get wrong."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Comfy tutorial (wiring, not MiniMax's prompt formula):\n"
+            },
+            {
+              "href": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3",
+              "t": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Models (Comfy-Org INT8 pack)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "All from "
+            },
+            {
+              "c": true,
+              "t": "huggingface.co/Comfy-Org/MiniMax-H3"
+            },
+            {
+              "t": ". Download with\n"
+            },
+            {
+              "c": true,
+              "t": "download_model"
+            },
+            {
+              "t": " "
+            },
+            {
+              "c": true,
+              "t": "action:\"download\""
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "File"
+              }
+            ],
+            [
+              {
+                "t": "Folder"
+              }
+            ],
+            [
+              {
+                "t": "Role"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "c": true,
+                  "t": "minimax_h3_fl2va_pruned_int8_convrot.safetensors"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "diffusion_models/"
+                }
+              ],
+              [
+                {
+                  "t": "T2V / I2V / first-last-frame"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "minimax_h3_ref2va_pruned_int8_convrot.safetensors"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "diffusion_models/"
+                }
+              ],
+              [
+                {
+                  "t": "R2V only — "
+                },
+                {
+                  "b": true,
+                  "t": "different UNet"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "text_encoders/"
+                }
+              ],
+              [
+                {
+                  "t": "Qwen3-VL-32B encoder, "
+                },
+                {
+                  "c": true,
+                  "t": "CLIPLoader"
+                },
+                {
+                  "t": " "
+                },
+                {
+                  "b": true,
+                  "t": "type="
+                },
+                {
+                  "b": true,
+                  "c": true,
+                  "t": "minimax"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "minimax_h3_video_vae_fp16.safetensors"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "vae/"
+                }
+              ],
+              [
+                {
+                  "t": "Visual VAE"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "minimax_h3_audio_vae_fp32.safetensors"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "vae/"
+                }
+              ],
+              [
+                {
+                  "t": "Stereo audio VAE (32 kHz)"
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Turbo LoRAs (4–8 steps instead of ~20)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The Comfy-Org T2V template already switches these on with "
+            },
+            {
+              "c": true,
+              "t": "turbo_mode"
+            },
+            {
+              "t": ":"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "Steps"
+              }
+            ],
+            [
+              {
+                "t": "File"
+              }
+            ],
+            [
+              {
+                "t": "Source"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "8"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "lightx2v/Minimax-h3-Turbo"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "4"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "minimax_h3_fl2v_turbo_4step_v1.0_768p_comfyui_bf16.safetensors"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "Comfy-Org/MiniMax-H3"
+                },
+                {
+                  "t": " "
+                },
+                {
+                  "c": true,
+                  "t": "loras/"
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Kijai conversions live at "
+            },
+            {
+              "c": true,
+              "t": "Kijai/MiniMax-H3_comfy"
+            },
+            {
+              "t": " ("
+            },
+            {
+              "c": true,
+              "t": "loras/"
+            },
+            {
+              "t": ") and experimental\nW4A8 at "
+            },
+            {
+              "c": true,
+              "t": "Kijai/MiniMax-H3-experimental"
+            },
+            {
+              "t": ". Same job (low-step / low-VRAM). Prefer\nthe Comfy-Org / lightx2v filenames the template already names; only switch to a\nKijai file if that is what is on disk."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "4-step is faster and softer; "
+            },
+            {
+              "b": true,
+              "t": "6 to 8 steps"
+            },
+            {
+              "t": " is the usual sharpness compromise."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Output spec"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "Knob"
+              }
+            ],
+            [
+              {
+                "t": "Value"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "Duration"
+                }
+              ],
+              [
+                {
+                  "t": "4–15 seconds"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Frame rate"
+                }
+              ],
+              [
+                {
+                  "b": true,
+                  "t": "24 fps"
+                },
+                {
+                  "t": " ("
+                },
+                {
+                  "c": true,
+                  "t": "CreateVideo.fps"
+                },
+                {
+                  "t": ")"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Audio"
+                }
+              ],
+              [
+                {
+                  "t": "Native stereo, decoded by the audio VAE, muxed in "
+                },
+                {
+                  "c": true,
+                  "t": "CreateVideo"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Short edge"
+                }
+              ],
+              [
+                {
+                  "t": "768 px native; cap "
+                },
+                {
+                  "b": true,
+                  "t": "768×1344"
+                },
+                {
+                  "t": ", multiple of "
+                },
+                {
+                  "b": true,
+                  "t": "32"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Preview size"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "ResolutionSelector"
+                },
+                {
+                  "t": " megapixels "
+                },
+                {
+                  "b": true,
+                  "t": "0.4"
+                },
+                {
+                  "t": " → 864×480 at 16:9"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Full 768p"
+                }
+              ],
+              [
+                {
+                  "t": "megapixels "
+                },
+                {
+                  "b": true,
+                  "t": "~0.98"
+                },
+                {
+                  "t": " → "
+                },
+                {
+                  "b": true,
+                  "t": "1344×768"
+                },
+                {
+                  "t": " at 16:9"
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Duration → frame "
+            },
+            {
+              "c": true,
+              "t": "length"
+            },
+            {
+              "t": " (Comfy-Org template math, 17-frame blocks):"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "max(5, round(seconds * 24)) + (5 - (max(5, round(seconds * 24)) % 17)) % 17"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "That is the "
+            },
+            {
+              "c": true,
+              "t": "17k+5"
+            },
+            {
+              "t": " grid. Do not invent a WAN-style "
+            },
+            {
+              "c": true,
+              "t": "4n+1"
+            },
+            {
+              "t": " length."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Node graph (local T2V / I2V)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "From the Comfy-Org T2V subgraph (core nodes, not the Markdown notes):"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "ResolutionSelector (aspect, megapixels, multiple=32) → width, height\n\nUNETLoader (fl2va int8)\n  ├─ LoraLoaderModelOnly (turbo LoRA) ─┐\n  └────────────────────────────────────┤ ComfySwitchNode (turbo_mode)\n                                       ▼\n                         BasicGuider + BasicScheduler + KSamplerSelect(res_multistep)\n                                       ▼\nCLIPLoader (type=minimax, qwen3vl 32b) → MiniMaxH3ImageToVideo\nVAELoader (video vae) ─────────────────→   prompt, width, height, length\noptional first_frame / last_frame ─────→   → CONDITIONING + LATENT\n                                       ▼\n                         SamplerCustomAdvanced → LATENT\n                                       ├─ VAEDecode (video vae) → IMAGE\n                                       └─ VAEDecodeAudio (audio vae) → AUDIO\n                                       ▼\n                         CreateVideo (fps=24) → SaveVideo"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "MiniMaxH3ImageToVideo"
+            },
+            {
+              "t": " "
+            },
+            {
+              "b": true,
+              "t": "is"
+            },
+            {
+              "t": " T2V when both image sockets are empty, I2V with\n"
+            },
+            {
+              "c": true,
+              "t": "first_frame"
+            },
+            {
+              "t": ", FL2VA with both frames. Do not add a second T2V-only node.\nThe manga-director-codex MiniMax H3 prompt adapter\n("
+            },
+            {
+              "c": true,
+              "t": "prompt_adapters/minimax_h3.json"
+            },
+            {
+              "t": ") declares that as mode "
+            },
+            {
+              "c": true,
+              "t": "text_to_video"
+            },
+            {
+              "t": "\nalongside I2V / FL2VA / L2VA / R2V (#2786)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "R2V replaces the UNet with "
+            },
+            {
+              "b": true,
+              "t": "ref2va"
+            },
+            {
+              "t": " and the conditioner with\n"
+            },
+            {
+              "c": true,
+              "t": "MiniMaxH3ReferenceToVideo"
+            },
+            {
+              "t": ". Do not load fl2va into an R2V graph."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Local-only helpers"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "Node"
+              }
+            ],
+            [
+              {
+                "t": "Role"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "c": true,
+                  "t": "EmptyMiniMaxH3LatentAV"
+                }
+              ],
+              [
+                {
+                  "t": "Empty audio-video latent when you are not using "
+                },
+                {
+                  "c": true,
+                  "t": "MiniMaxH3ImageToVideo"
+                },
+                {
+                  "t": "'s built-in latent"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "MiniMaxH3SigmaShift"
+                }
+              ],
+              [
+                {
+                  "t": "Flow-matching shift on the local UNet"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "MiniMaxH3MemoryEfficientSageAttentionPatch"
+                }
+              ],
+              [
+                {
+                  "t": "Core Sage patch; or KJNodes "
+                },
+                {
+                  "c": true,
+                  "t": "Patch Sage Attention KJ"
+                },
+                {
+                  "t": " ("
+                },
+                {
+                  "c": true,
+                  "t": "sage_attention=auto"
+                },
+                {
+                  "t": ") between "
+                },
+                {
+                  "c": true,
+                  "t": "UNETLoader"
+                },
+                {
+                  "t": " and "
+                },
+                {
+                  "c": true,
+                  "t": "BasicGuider"
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Sage roughly doubles speed. H3 has mixed dtypes, so console lines about falling\nback to pytorch attention on some layers are expected."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Sampler defaults (Comfy-Org template)"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "Mode"
+              }
+            ],
+            [
+              {
+                "t": "Sampler"
+              }
+            ],
+            [
+              {
+                "t": "Scheduler"
+              }
+            ],
+            [
+              {
+                "t": "Steps"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "Base (no turbo)"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "res_multistep"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "simple"
+                }
+              ],
+              [
+                {
+                  "b": true,
+                  "t": "20"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "Turbo on"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "res_multistep"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "simple"
+                }
+              ],
+              [
+                {
+                  "b": true,
+                  "t": "4–8"
+                },
+                {
+                  "t": " (template default turbo steps widget)"
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Guider is "
+            },
+            {
+              "c": true,
+              "t": "BasicGuider"
+            },
+            {
+              "t": " (CFG-distilled checkpoint, so do not crank CFG). Seed via\n"
+            },
+            {
+              "c": true,
+              "t": "RandomNoise"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Prompting — read the vendor guide, do not paste it here"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Write the prompt "
+            },
+            {
+              "b": true,
+              "t": "in the MiniMax H3 node"
+            },
+            {
+              "t": ", not a generic "
+            },
+            {
+              "c": true,
+              "t": "CLIPTextEncode"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "Official MiniMax guides"
+            },
+            {
+              "t": " (read these; do not copy them into graphs as a\nsystem prompt dump):"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "T2VA / I2VA / FL2VA / L2VA:\n"
+                },
+                {
+                  "href": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md",
+                  "t": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Full-reference / R2V:\n"
+                },
+                {
+                  "href": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_ref_en.md",
+                  "t": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_ref_en.md"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Vendor skill (install separately if the user wants it; we do not bundle it):\n"
+                },
+                {
+                  "href": "https://github.com/MiniMax-AI/MiniMax-H3",
+                  "t": "https://github.com/MiniMax-AI/MiniMax-H3"
+                },
+                {
+                  "t": " ("
+                },
+                {
+                  "c": true,
+                  "t": "npx skills add … --skill h3-prompt-writing"
+                },
+                {
+                  "t": ")"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "H3-Context-IR (the hosted prompt rewriter) is "
+            },
+            {
+              "b": true,
+              "t": "not"
+            },
+            {
+              "t": " in the open weights.\nLocal ComfyUI has no IR node. Either write the structured prompt yourself from\nthe guide, or call MiniMax's Context-IR API and paste "
+            },
+            {
+              "c": true,
+              "t": "content.prompt"
+            },
+            {
+              "t": " into the\nlocal node."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Comfy-Org's own template notes (safe to follow, not MiniMax docs):"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "One block covering "
+                },
+                {
+                  "b": true,
+                  "t": "look, scene, timed shots, camera, and audio"
+                },
+                {
+                  "t": " (dialogue,\nSFX, score)."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Time shots ("
+                },
+                {
+                  "c": true,
+                  "t": "[0s-1.5s] Shot 1: …"
+                },
+                {
+                  "t": ")."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "R2V: name each input in connection order ("
+                },
+                {
+                  "c": true,
+                  "t": "<Picture 1>"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "<Video 1>"
+                },
+                {
+                  "t": ",\n"
+                },
+                {
+                  "c": true,
+                  "t": "<Audio 1>"
+                },
+                {
+                  "t": ") and say what job each one does (identity, motion, voice)."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "R2V caps (vendor model card, not a guess): ≤9 images, ≤3 videos, ≤3 audio\nclips, ≤12 files mixed; each AV clip 2 to 15 s."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "15-second clips and chaining"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "One H3 shot is "
+            },
+            {
+              "b": true,
+              "t": "at most ~15 s"
+            },
+            {
+              "t": ". Longer pieces are concatenated clips, not a\nbigger "
+            },
+            {
+              "c": true,
+              "t": "length"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Generate clip N (up to 15 s)."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Confirm the file with "
+                },
+                {
+                  "c": true,
+                  "t": "get_image"
+                },
+                {
+                  "t": " "
+                },
+                {
+                  "c": true,
+                  "t": "action:\"list_outputs\""
+                },
+                {
+                  "t": " ("
+                },
+                {
+                  "c": true,
+                  "t": "kind:\"video\""
+                },
+                {
+                  "t": ").\nVideo nodes often skip "
+                },
+                {
+                  "c": true,
+                  "t": "/history"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Stage the last frame (or the whole clip) with "
+                },
+                {
+                  "c": true,
+                  "t": "upload_image"
+                },
+                {
+                  "t": " "
+                },
+                {
+                  "c": true,
+                  "t": "action:\"stage\""
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Clip N+1: "
+                },
+                {
+                  "c": true,
+                  "t": "MiniMaxH3ImageToVideo.first_frame"
+                },
+                {
+                  "t": " = last frame of N, "
+                },
+                {
+                  "b": true,
+                  "t": "or"
+                },
+                {
+                  "t": " R2V\nwith "
+                },
+                {
+                  "c": true,
+                  "t": "<Video 1>"
+                },
+                {
+                  "t": " as a continuation reference."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Concat with ffmpeg ("
+                },
+                {
+                  "c": true,
+                  "t": "director"
+                },
+                {
+                  "t": " skill) or an editor."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "This is "
+            },
+            {
+              "b": true,
+              "t": "not"
+            },
+            {
+              "t": " WAN Pusa ("
+            },
+            {
+              "c": true,
+              "t": "video-extend"
+            },
+            {
+              "t": "). Pusa LoRAs and "
+            },
+            {
+              "c": true,
+              "t": "flowmatch_pusa"
+            },
+            {
+              "t": " do\nnot apply to H3."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "VRAM"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "Card"
+              }
+            ],
+            [
+              {
+                "t": "Practical setup"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "b": true,
+                  "t": "24 GB+"
+                }
+              ],
+              [
+                {
+                  "t": "INT8 fl2va + Qwen3-VL + both VAEs; 1344×768; 10–15 s; Sage optional"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "b": true,
+                  "t": "12–16 GB"
+                }
+              ],
+              [
+                {
+                  "t": "Same INT8 pack; drop megapixels toward 0.4–0.6; turbo LoRA on; Sage"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "b": true,
+                  "t": "8 GB"
+                }
+              ],
+              [
+                {
+                  "t": "INT8 + turbo LoRA + Sage + short preview (0.2–0.4 MP, 4–6 s). Minutes per clip. Kijai W4A8 if INT8 still OOMs."
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Always "
+            },
+            {
+              "c": true,
+              "t": "clear_vram"
+            },
+            {
+              "t": " before switching to H3 from WAN / LTX / a checkpoint."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Gotchas"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "c": true,
+                  "t": "CLIPLoader"
+                },
+                {
+                  "b": true,
+                  "t": " type must be "
+                },
+                {
+                  "b": true,
+                  "c": true,
+                  "t": "minimax"
+                },
+                {
+                  "b": true,
+                  "t": "."
+                },
+                {
+                  "t": " "
+                },
+                {
+                  "c": true,
+                  "t": "qwen_image"
+                },
+                {
+                  "t": " / "
+                },
+                {
+                  "c": true,
+                  "t": "flux"
+                },
+                {
+                  "t": " will load the\nwrong encoder layout."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "fl2va vs ref2va."
+                },
+                {
+                  "t": " T2V/I2V templates on ref2va (or R2V on fl2va) are garbage\nor a load error."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Turbo off, 4 steps."
+                },
+                {
+                  "t": " The switch defaults off and base steps are 20. Four\nsteps without the LoRA is mush."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "API node in a local graph."
+                },
+                {
+                  "t": " Costs money and ignores the UNet you downloaded."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "WAN frame math."
+                },
+                {
+                  "t": " H3 is 24 fps and "
+                },
+                {
+                  "c": true,
+                  "t": "17k+5"
+                },
+                {
+                  "t": ", not 16 fps "
+                },
+                {
+                  "c": true,
+                  "t": "4n+1"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Verify video on disk"
+                },
+                {
+                  "t": ", then stage. Never guess "
+                },
+                {
+                  "c": true,
+                  "t": "input/"
+                },
+                {
+                  "t": " paths."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "ffmpeg"
+                },
+                {
+                  "t": " is required for "
+                },
+                {
+                  "c": true,
+                  "t": "CreateVideo"
+                },
+                {
+                  "t": " / "
+                },
+                {
+                  "c": true,
+                  "t": "SaveVideo"
+                },
+                {
+                  "t": " / "
+                },
+                {
+                  "c": true,
+                  "t": "VHS_VideoCombine"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Desktop/Cloud ComfyUI lags nightly. Missing "
+                },
+                {
+                  "c": true,
+                  "t": "MiniMaxH3*"
+                },
+                {
+                  "t": " nodes → update to\n≥0.30.0 (0.33 templates) before hunting custom packs."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "See also"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "video-extend"
+                },
+                {
+                  "t": ": WAN Pusa temporal continuation (different family)"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "director"
+                },
+                {
+                  "t": ": multi-clip concat after you have 15 s H3 shots"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "prompt-engineering"
+                },
+                {
+                  "t": ": generic CLIP syntax; "
+                },
+                {
+                  "b": true,
+                  "t": "H3 does not use it"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "triton-sageattention"
+                },
+                {
+                  "t": ": installing Sage on Windows"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "There is no bundled "
+            },
+            {
+              "c": true,
+              "t": "packs/minimax-h3-*"
+            },
+            {
+              "t": " installer yet, which is why\n"
+            },
+            {
+              "c": true,
+              "t": "enqueue_workflow action:\"run_template\""
+            },
+            {
+              "t": " cannot load these graphs. Use the\nTemplate Library (or the GitHub fetch → "
+            },
+            {
+              "c": true,
+              "t": "save_workflow"
+            },
+            {
+              "t": " →\n"
+            },
+            {
+              "c": true,
+              "t": "panel_load_workflow path:"
+            },
+            {
+              "t": " path above) + "
+            },
+            {
+              "c": true,
+              "t": "download_model"
+            },
+            {
+              "t": " against\n"
+            },
+            {
+              "c": true,
+              "t": "Comfy-Org/MiniMax-H3"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Sources"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Official:"
+                },
+                {
+                  "t": " MiniMax prompting guides "
+                },
+                {
+                  "href": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md",
+                  "t": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md"
+                },
+                {
+                  "t": " (T2VA/I2VA/FL2VA/L2VA) and "
+                },
+                {
+                  "href": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_ref_en.md",
+                  "t": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_ref_en.md"
+                },
+                {
+                  "t": " (full-reference / R2V); vendor repo "
+                },
+                {
+                  "href": "https://github.com/MiniMax-AI/MiniMax-H3",
+                  "t": "https://github.com/MiniMax-AI/MiniMax-H3"
+                },
+                {
+                  "t": "; ComfyUI tutorial + templates "
+                },
+                {
+                  "href": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3",
+                  "t": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3"
+                },
+                {
+                  "t": " (wiring, duration grid, INT8 filenames). MiniMax's own "
+                },
+                {
+                  "c": true,
+                  "t": "skills/h3-prompt-writing"
+                },
+                {
+                  "t": " is linked, not copied, because the Community License includes Documentation."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Empirical:"
+                },
+                {
+                  "t": " local vs partner-API node split and 8 GB turbo-LoRA note from issue #1167 / the reporter's rig; Sage mixed-dtype fallback from the Comfy tutorial; chaining last-frame→next-clip from observed ComfyUI I/O (stage + list_outputs), not a vendor extender."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

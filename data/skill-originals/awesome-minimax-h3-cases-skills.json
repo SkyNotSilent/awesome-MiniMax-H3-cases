@@ -1,0 +1,919 @@
+{
+  "skillId": "awesome-minimax-h3-cases-skills",
+  "kind": "markdown",
+  "title": "awesome-MiniMax-H3-cases skills",
+  "language": "en",
+  "capturedAt": "2026-09-13T11:14:00.244Z",
+  "source": {
+    "url": "https://github.com/SkyNotSilent/awesome-MiniMax-H3-cases",
+    "author": "SkyNotSilent",
+    "revision": "af704d3ac4c84527102d604273217fee11014978",
+    "license": "MIT"
+  },
+  "sections": [
+    {
+      "url": "https://github.com/SkyNotSilent/awesome-MiniMax-H3-cases/blob/main/agents/skills/minimax-h3-prompt-library/SKILL.md",
+      "title": "minimax-h3-prompt-library",
+      "anchor": "skill-minimax-h3-prompt-library",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "This skill should be used when the user asks to \"find a MiniMax H3 case\", \"show the original prompt\", \"look up a Hailuo 3.0 example\", \"verify whether a prompt was published\", or \"retrieve source-attributed H3 examples\". It retrieves real cases and verbatim public prompts only; it refuses prompt generation, rewriting, reconstruction, reverse engineering, translation, or workflow decomposition."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3 Case and Public Prompt Lookup"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Retrieve source-attributed MiniMax H3 / Hailuo 3.0 video cases from the catalog. Return prompt text only when its provenance and completeness fields support that the full public text is retained."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Keep this skill lookup-only. Never create a new prompt, adapt an existing prompt, combine prompt fragments, reconstruct a missing prompt, reverse-engineer a video, or decompose a hidden production workflow."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Source of truth"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use the packaged "
+            },
+            {
+              "c": true,
+              "t": "scripts/query.mjs"
+            },
+            {
+              "t": " client to read the public catalog. It uses "
+            },
+            {
+              "c": true,
+              "t": "H3_LIBRARY_URL"
+            },
+            {
+              "t": " when configured and otherwise reads the official hosted catalog. Treat each original "
+            },
+            {
+              "c": true,
+              "t": "sourceUrl"
+            },
+            {
+              "t": " as the attribution authority. If the network or catalog is unavailable, report that lookup failed; never substitute invented cases."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "node <installed-skill-directory>/scripts/query.mjs \"city cinematic\"",
+          "language": "bash"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When working inside the repository, "
+            },
+            {
+              "c": true,
+              "t": "data/cases.json"
+            },
+            {
+              "t": " remains the publishing source of truth. Valid category, style, and scene keys are defined in "
+            },
+            {
+              "c": true,
+              "t": "data/taxonomy.json"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use case metadata to search by model, mode, category, style, scene, creator, title, or visible result. Present localized labels to users. Keep editorial summaries separate from source-published prompt text."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Retrieval workflow"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Identify the requested model, mode, scene, style, creator, or result."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Run the packaged query client for the closest factual matches. Resolve its path relative to this installed skill directory, not the user's current project. Do not assume repository data files are installed."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Return the case title, short factual summary, model, mode, author, catalog identifier, and original source URL."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Check "
+                },
+                {
+                  "c": true,
+                  "t": "promptProvenance"
+                },
+                {
+                  "t": " before returning prompt text."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Return a complete prompt only when "
+                },
+                {
+                  "c": true,
+                  "t": "promptCompleteness"
+                },
+                {
+                  "t": " is "
+                },
+                {
+                  "c": true,
+                  "t": "complete"
+                },
+                {
+                  "t": " (or omitted for legacy records) and provenance is "
+                },
+                {
+                  "c": true,
+                  "t": "official-verbatim"
+                },
+                {
+                  "t": " or "
+                },
+                {
+                  "c": true,
+                  "t": "creator-verbatim"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Never return a Prompt whose text is truncated or ends as an incomplete excerpt; treat it as unavailable."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Treat "
+                },
+                {
+                  "c": true,
+                  "t": "unknown"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "official-adapted"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "reconstructed"
+                },
+                {
+                  "t": ", or any unrecognized provenance as unavailable. Do not present stored text under those labels as an original prompt."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Preserve public prompt wording, order, punctuation, timestamps, formatting, and language exactly. Do not clean, translate, shorten, expand, or normalize it."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Output contract"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Return these sections:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "CASE MATCHES\nPUBLIC PROMPT\nSOURCE AND PROVENANCE\nDISCLOSURE"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For each match, distinguish the visible case result from the availability of a public prompt."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When a complete verbatim public prompt exists, reproduce only that exact prompt and link its source. If only an excerpt exists, state that no complete public Prompt is available."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When no verbatim public prompt exists, write:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "No verbatim public prompt is available for this case in the catalog."
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Do not substitute a scene summary, inferred shot list, workflow explanation, or newly written prompt."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Refusal rules"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When asked to create, improve, adapt, translate, reconstruct, reverse-engineer, or infer a prompt:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "State that this library only retrieves source-attributed cases and verbatim public prompts."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Refuse to produce or modify prompt text."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Offer the closest real cases and their original source links."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Return an exact public prompt only if one of those cases meets the provenance rule."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Never combine multiple public prompts into a new prompt. Never turn a caption, video summary, camera analysis, visible action sequence, or audio description into a proposed prompt. Never infer a private prompt from model output."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Provenance safeguards"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Prefer the original creator post over reposts, compilations, screenshots, or copied captions."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Preserve the exact source URL with every returned prompt."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Never expose internal discovery channels, review notes, or private catalog metadata."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Keep a missing or uncertain prompt explicitly unavailable."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Avoid claiming that an observed result proves which prompt wording or workflow produced it."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Separate public facts from editorial metadata."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Refuse any request that would make generated text appear to be source-published text."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/SkyNotSilent/awesome-MiniMax-H3-cases/blob/main/agents/skills/minimax-h3-submission-helper/SKILL.md",
+      "title": "minimax-h3-submission-helper",
+      "anchor": "skill-minimax-h3-submission-helper",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Use this skill when a creator wants to submit a MiniMax H3 case, practical tutorial, installation guide, video tutorial, or resource suggestion. It prepares Issue-ready material without claiming verification or granting publication authority."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3 Submission Helper"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Help a creator prepare a clear GitHub Issue for the MiniMax H3 Cases & Guides library. Accept Chinese or English; maintainers handle bilingual editing, provenance review, media ingestion, and publication."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Choose one submission type"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Case:"
+                },
+                {
+                  "t": " original post, creator identity, H3 evidence, playable media, and any complete public Prompt."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Setup or installation:"
+                },
+                {
+                  "t": " environment, exact steps, file locations, checkpoints, expected result, common errors, rollback."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Creative project:"
+                },
+                {
+                  "t": " finished result, input materials, workflow or chapters, key parameters, checkpoints, source files."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Video tutorial:"
+                },
+                {
+                  "t": " original video, language, useful timestamps, accompanying files, expected result."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Resource or method:"
+                },
+                {
+                  "t": " intended use, original author, limits, and primary source. Do not present it as a full tutorial."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Output"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Return an Issue-ready Markdown draft with: submission type, title, outcome, intended audience, environment, materials or links, steps or chapters, what the author personally verified, known limitations, original source, author profile, and permission to summarize and display with attribution."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Never say a submission is verified, accepted, or published. Never invent missing commands, metrics, permissions, authorship, or Prompt text. Flag missing evidence as a question for the submitter. Do not request storage credentials, API keys, private cookies, or private account access."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/SkyNotSilent/awesome-MiniMax-H3-cases/blob/main/agents/skills/minimax-h3-tutorial-guide/SKILL.md",
+      "title": "minimax-h3-tutorial-guide",
+      "anchor": "skill-minimax-h3-tutorial-guide",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Use this skill when a user wants to install or run MiniMax H3, choose a tutorial for Mac or NVIDIA hardware, work within a VRAM limit, or build an H3 workflow for audio, acceleration, long video, or training. It selects source-checked tutorials and produces executable AI task packages without inventing commands or claiming unverified compatibility."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3 Tutorial Guide"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Select the safest source-checked path from the public tutorial catalog and explain which ecosystem projects support it. The packaged query client works outside this repository:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "node <installed-skill-directory>/scripts/query.mjs --hardware \"apple silicon\" --goal \"first video\"",
+          "language": "bash"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Resolve the script relative to this installed skill directory, not the user's project. It uses "
+            },
+            {
+              "c": true,
+              "t": "H3_LIBRARY_URL"
+            },
+            {
+              "t": " when configured and otherwise reads the official hosted "
+            },
+            {
+              "c": true,
+              "t": "/data/tutorial-guides.v2.json"
+            },
+            {
+              "t": " catalog. The schema version and content hash identify the public snapshot. Network failures, invalid payloads, and unsupported versions are lookup errors, not zero matches. Never silently substitute fixtures. Inside the repository, "
+            },
+            {
+              "c": true,
+              "t": "data/tutorial-guides.json"
+            },
+            {
+              "t": " and "
+            },
+            {
+              "c": true,
+              "t": "data/tutorials.json"
+            },
+            {
+              "t": " remain the publishing sources of truth."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Selection workflow"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Confirm the operating system, GPU or Apple chip, available VRAM or unified memory, free disk space, and target capability."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Match "
+                },
+                {
+                  "c": true,
+                  "t": "learningTrack"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "hardwareProfiles"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "category"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "difficulty"
+                },
+                {
+                  "t": ", and "
+                },
+                {
+                  "c": true,
+                  "t": "estimatedMinutes"
+                },
+                {
+                  "t": " before recommending a guide."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Prefer an active "
+                },
+                {
+                  "c": true,
+                  "t": "depth: deep"
+                },
+                {
+                  "t": " guide when it satisfies the request; exclude "
+                },
+                {
+                  "c": true,
+                  "t": "evidence.status: needs-review"
+                },
+                {
+                  "t": " from core recommendations."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Read the guide's "
+                },
+                {
+                  "c": true,
+                  "t": "applicableVersions"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "learningResources"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "chapters"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "communityFeedback"
+                },
+                {
+                  "t": ", "
+                },
+                {
+                  "c": true,
+                  "t": "sourceRefs"
+                },
+                {
+                  "t": ", commands, expected result, troubleshooting, and uninstall fields."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Verify the latest source README before executing. If current upstream instructions conflict with the catalog snapshot, disclose the difference and follow the current source."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Never guess missing packages, flags, paths, node versions, model URLs, memory requirements, or compatibility."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Output contract"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Return these sections:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "RECOMMENDED ROUTE\nWHY IT FITS\nENVIRONMENT CHECK\nEXECUTION PLAN\nSUCCESS CRITERIA\nROLLBACK\nSOURCES AND VERIFICATION DATE"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Preserve commands exactly as stored or as currently published by their linked source. Clearly separate source-checked facts, community reports, actual site tests from upstream claims and user-specific assumptions."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Safety and provenance"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not execute destructive cleanup, overwrite an existing ComfyUI installation, or delete model files without explicit confirmation."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not expose API keys, signed URLs, cookies, local paths containing secrets, or private review data."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not turn a tutorial into a claim that every machine will achieve the same speed or memory usage."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not generate, rewrite, translate, reconstruct, or reverse-engineer a MiniMax H3 Prompt. For verbatim public Prompt retrieval, use "
+                },
+                {
+                  "c": true,
+                  "t": "minimax-h3-prompt-library"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "When prerequisites are unknown, stop before installation and ask only for the missing environment facts."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Source-check dates are not generation tests. A site-test claim requires "
+            },
+            {
+              "c": true,
+              "t": "evidence.siteTestedAt"
+            },
+            {
+              "t": " and its supporting URL. Short "
+            },
+            {
+              "c": true,
+              "t": "depth: guide"
+            },
+            {
+              "t": " entries should direct users to the complete original instead of presenting their summary as a full procedure."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

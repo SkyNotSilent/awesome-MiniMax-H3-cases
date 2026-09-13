@@ -1,0 +1,433 @@
+{
+  "skillId": "run-minimax-h3-colab",
+  "kind": "markdown",
+  "title": "run-minimax-h3-colab",
+  "language": "en",
+  "capturedAt": "2026-09-13T11:14:28.256Z",
+  "source": {
+    "url": "https://github.com/soren-labs/minimax-h3-interface",
+    "author": "soren-labs",
+    "revision": "cac6cc5221434f043fa4346b705b7e1c34ac1fe2"
+  },
+  "sections": [
+    {
+      "url": "https://github.com/soren-labs/minimax-h3-interface/blob/main/skills/run-minimax-h3-colab/SKILL.md",
+      "title": "run-minimax-h3-colab",
+      "anchor": "skill-run-minimax-h3-colab",
+      "blocks": [
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "Fully automate MiniMax H3 Turbo generation or H3 Base video repaint batches on one Google Colab G4: decide shutdown before launch, upload the complete batch once, install and start ComfyUI once, process all items sequentially in one remote job, verify and download every artifact, and stop only after the complete batch when requested."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Run MiniMax H3 on Colab"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use the bundled orchestrator as the sole normal-path entry point. Do not reproduce its lifecycle with individual "
+            },
+            {
+              "c": true,
+              "t": "colab"
+            },
+            {
+              "t": " commands."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Decide the batch lifecycle before launch"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Before the first non-dry-run invocation:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Collect the complete known job queue, including every prompt and reference image."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Ask the user one blocking lifecycle question: after all currently queued jobs are downloaded and verified, should the Colab assignment be stopped or kept running for likely follow-up jobs?"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Do not create or mutate a Colab assignment until the user answers "
+                },
+                {
+                  "c": true,
+                  "t": "stop after batch"
+                },
+                {
+                  "t": " or "
+                },
+                {
+                  "c": true,
+                  "t": "keep running"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Upload the complete known queue and execute it as one remote background job. Environment setup, model loading, and ComfyUI startup happen once; all batch items run sequentially inside that job. Never open a fresh assignment between prompts. If the user adds work after a retained batch, reuse the same assignment."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When the user chooses "
+            },
+            {
+              "c": true,
+              "t": "keep running"
+            },
+            {
+              "t": ", report the retained assignment name and that it may continue consuming quota or incurring cost. Stop it only on an explicit later instruction. When the user chooses "
+            },
+            {
+              "c": true,
+              "t": "stop after batch"
+            },
+            {
+              "t": ", stop only after the final queued artifact passes verification."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Run a production job"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Collect these parameters: steps, width, height, duration or exact frames, prompt, reference image, and optional seed. Then execute:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "python3 /mnt/c/Users/zheng/.codex/skills/run-minimax-h3-colab/scripts/h3_colab.py \\\n  --steps 8 --width 1920 --height 1080 --duration 8 \\\n  --prompt-file /absolute/path/prompt.txt \\\n  --reference-image /absolute/path/reference.png \\\n  --output-dir /absolute/path/results",
+          "language": "bash"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "When the user provides only a scene brief instead of a finished H3 prompt, read "
+            },
+            {
+              "href": "https://github.com/soren-labs/minimax-h3-interface/blob/main/skills/run-minimax-h3-colab/references/prompt-format.md",
+              "t": "references/prompt-format.md"
+            },
+            {
+              "t": " before creating the prompt file."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Keep this one command attached and relay its live output. It automatically:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Reuses the named assignment or repairs a single "
+                },
+                {
+                  "c": true,
+                  "t": "[?]"
+                },
+                {
+                  "t": " server assignment."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Creates one G4 only if the server has no assignment."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Uploads inputs and the bundled cu130/sm120 SageAttention wheel."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Runs CUDA 13, cu130 Torch, ComfyUI, pinned MiniMax H3/Turbo/KJ components, I2V, and native H3 audio as a remote background job."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Polls incremental production logs without holding a long foreground Colab execution."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Downloads and verifies the archive and detailed logs."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Keeps or stops the assignment after verified success according to the preflight batch policy."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The script normalizes dimensions to multiples of 32 and duration to H3's "
+            },
+            {
+              "c": true,
+              "t": "5 + 17*n"
+            },
+            {
+              "t": " frame grid, and prints the effective values before starting. Use "
+            },
+            {
+              "c": true,
+              "t": "--frames"
+            },
+            {
+              "t": " when exact grid control is needed. Use "
+            },
+            {
+              "c": true,
+              "t": "--dry-run"
+            },
+            {
+              "t": " to validate parameters without touching Colab."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Run a Base repaint batch"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Use a JSON manifest with "
+            },
+            {
+              "c": true,
+              "t": "jobs"
+            },
+            {
+              "t": ", where each job contains "
+            },
+            {
+              "c": true,
+              "t": "id"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "input_video"
+            },
+            {
+              "t": ", either "
+            },
+            {
+              "c": true,
+              "t": "prompt"
+            },
+            {
+              "t": " or "
+            },
+            {
+              "c": true,
+              "t": "prompt_file"
+            },
+            {
+              "t": ", and optional "
+            },
+            {
+              "c": true,
+              "t": "seed"
+            },
+            {
+              "t": ". Every source must have video plus audio, run at the requested FPS, and use the H3 "
+            },
+            {
+              "c": true,
+              "t": "5 + 17*n"
+            },
+            {
+              "t": " frame grid."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "python3 /mnt/c/Users/zheng/.codex/skills/run-minimax-h3-colab/scripts/h3_colab.py \\\n  --mode repaint \\\n  --batch-manifest /absolute/path/repaint-batch.json \\\n  --ngc-env /absolute/path/.ngc.env \\\n  --resolution 1920x1088 \\\n  --steps 4 \\\n  --denoise 0.20 \\\n  --output-dir /absolute/path/results",
+          "language": "bash"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Repaint mode is a single remote batch. It uses the pinned H3 Ref2VA Base INT8 model, NVIDIA VFX Upscale 2x followed by a Lanczos center-crop resize, video/audio VAE encoding, "
+            },
+            {
+              "c": true,
+              "t": "PT_H3ConcatAVLatent"
+            },
+            {
+              "t": ", KJ SageAttention, SolAttn, "
+            },
+            {
+              "c": true,
+              "t": "res_multistep"
+            },
+            {
+              "t": ", and the "
+            },
+            {
+              "c": true,
+              "t": "beta"
+            },
+            {
+              "t": " scheduler. This explicit Upscale substitution is used on the Colab G4 RTX PRO 6000 Server SKU because RTX VSR cannot initialize there. It never loads the Turbo LoRA or Turbo sampler. After download, finalization stream-copies each source AAC track over the repainted H.264 clip so the delivered video retains the original compressed audio without a second AAC encode. Before stopping an assignment, the orchestrator downloads the batch archive, checks required benchmark and log artifacts, verifies every clip by full decode, concatenates the clips locally, verifies the final video, and records SHA256 values."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Failure rule"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "An error, timeout, connection loss, or interruption exits nonzero with "
+            },
+            {
+              "c": true,
+              "t": "FAILED_INSTANCE_PRESERVED"
+            },
+            {
+              "t": " and an "
+            },
+            {
+              "c": true,
+              "t": "operator-state.json"
+            },
+            {
+              "t": ". Never automatically stop, recreate, or restart that instance. Read "
+            },
+            {
+              "href": "https://github.com/soren-labs/minimax-h3-interface/blob/main/skills/run-minimax-h3-colab/references/failure-recovery.md",
+              "t": "references/failure-recovery.md"
+            },
+            {
+              "t": " and inspect the preserved state before choosing an intervention."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For either mode, the failure rule applies to the entire single-instance batch. Do not resubmit automatically after a failure."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
