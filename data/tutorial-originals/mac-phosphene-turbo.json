@@ -1,0 +1,121 @@
+{
+  "tutorialId": "mac-phosphene-turbo",
+  "kind": "x-thread",
+  "language": "en",
+  "capturedAt": "2026-09-13T09:44:46.946Z",
+  "source": {
+    "url": "https://x.com/cocktailpeanut/status/2085765919079350355",
+    "author": "cocktail peanut",
+    "handle": "@cocktailpeanut"
+  },
+  "sections": [
+    {
+      "url": "https://x.com/cocktailpeanut/status/2085765919079350355",
+      "publishedAt": "2026-08-07",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "MiniMax H3 Turbo generation for Mac users is here!"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "@AIBizarrothe",
+              "href": "https://x.com/AIBizarrothe"
+            },
+            {
+              "t": " has launched support for Turbo mode on Phosphene"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "> 8 minutes on my mac studio M4 64GB"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Uses way fewer steps than the default. Check it out!"
+            }
+          ]
+        },
+        {
+          "type": "post-quote",
+          "url": "https://x.com/AIBizarrothe/status/2085668038884344253",
+          "author": "MR BIZARRO",
+          "handle": "@AIBizarrothe",
+          "inlines": [
+            {
+              "t": "Each of this clips took 8 minutes on my mac studio M4 64GB. Are they perfect? no, but beggars are not choosers and this is the worst it will ever be.  Motion and distortion remain an issue. with turbo mode off it takes around 20 minutes per 5 sec  and its is much better. many improvements pushed on latest version of "
+            },
+            {
+              "t": "@PhospheneAI",
+              "href": "https://x.com/PhospheneAI"
+            },
+            {
+              "t": "  update the app."
+            }
+          ],
+          "image": {
+            "src": "/tutorial-media/mac-phosphene-turbo/2085665575347404801-quote.webp",
+            "width": 1200,
+            "height": 675
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://x.com/cocktailpeanut/status/2085765920769626420",
+      "publishedAt": "2026-08-07",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Read full tutorial from "
+            },
+            {
+              "t": "@AIBizarrothe",
+              "href": "https://x.com/AIBizarrothe"
+            },
+            {
+              "t": " here: "
+            },
+            {
+              "t": "https://pinokio.co/posts/01kzdv853v7t645bnm2a2qmgf4",
+              "href": "https://pinokio.co/posts/01kzdv853v7t645bnm2a2qmgf4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://x.com/cocktailpeanut/status/2085765921994322380",
+      "publishedAt": "2026-08-07",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "1-click launch on pinokio "
+            },
+            {
+              "t": "https://pinokio.co/apps/github-com-mrbizarro-phosphene",
+              "href": "https://pinokio.co/apps/github-com-mrbizarro-phosphene"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

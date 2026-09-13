@@ -107,6 +107,15 @@ await Promise.all(cases.map((item) => writeFile(
   `${JSON.stringify(detailFor(item))}\n`,
 )))
 
+// Captured tutorial originals are loaded only by tutorial detail pages.
+const originalsRoot = resolve(outputRoot, 'tutorial-originals')
+await rm(originalsRoot, { recursive: true, force: true })
+await mkdir(originalsRoot, { recursive: true })
+await Promise.all(tutorials.filter((item) => item.original).map(async (item) => {
+  const original = JSON.parse(await readFile(resolve(root, `data/tutorial-originals/${item.id}.json`), 'utf8'))
+  await writeFile(resolve(originalsRoot, `${encodeURIComponent(item.id)}.json`), `${JSON.stringify(original)}\n`)
+}))
+
 // One-release compatibility files; new clients use bounded catalog API responses.
 for (const name of ['catalog.json', 'search-index.zh.json', 'search-index.en.json']) {
   console.log(`Compatibility ${name}: ${gzipSync(await readFile(resolve(outputRoot, name))).byteLength} bytes gzip`)

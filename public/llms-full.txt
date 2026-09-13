@@ -4023,7 +4023,7 @@ The creator leaderboard is derived only from source-attributed content already p
 - Complete reference prompts and input examples: https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_ref_en.md
 - Ref2VA model files: https://huggingface.co/Comfy-Org/MiniMax-H3
 
-- Original source: https://docs.comfy.org/tutorials/video/minimax/minimax-h3#minimax-h3-reference-to-video-r2v
+- Original source: https://docs.comfy.org/tutorials/video/minimax/minimax-h3-native#minimax-h3-reference-to-video-r2v
 - Start here:
   1. Open the R2V template and select Ref2VA instead of the FL2VA weights used for T2V/I2V.
   2. Connect image, video and audio references as shown in the template and record their input order. Start with only the assets the task requires.
@@ -4286,7 +4286,7 @@ The creator leaderboard is derived only from source-attributed content already p
 - Base prompts and boundary-frame examples: https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md
 - Model files: https://huggingface.co/Comfy-Org/MiniMax-H3
 
-- Original source: https://docs.comfy.org/tutorials/video/minimax/minimax-h3#minimax-h3-image-to-video-i2v
+- Original source: https://docs.comfy.org/tutorials/video/minimax/minimax-h3-native#minimax-h3-image-to-video-i2v
 - Start here:
   1. Open the official I2V JSON or MiniMax H3 I2V template and confirm the FL2VA model.
   2. Upload the opening image and connect first_frame. Leave last_frame empty when animating a single still.

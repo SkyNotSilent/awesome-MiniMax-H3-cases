@@ -1,0 +1,4331 @@
+{
+  "tutorialId": "local-deployment-zero-to-output",
+  "kind": "x-article",
+  "language": "zh",
+  "capturedAt": "2026-09-13T09:41:15.626Z",
+  "source": {
+    "url": "https://x.com/servasyy_ai/status/2085251627880255525",
+    "author": "huangserva",
+    "handle": "@servasyy_ai"
+  },
+  "sections": [
+    {
+      "url": "https://x.com/servasyy_ai/status/2085251627880255525",
+      "publishedAt": "2026-08-06",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "这篇教程的目标：一台只装了系统和显卡驱动的电脑，跟着做完，能跑出带立体声的 AI 视频，并且学会官方提示词语法——H3 出片好坏，大半在这上面。每一步都写清“做什么、怎么做、做完应该看到什么”，不需要任何代码基础。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "开始前必须知道的一件事：本地模型的原生画布是 768p 级。",
+              "b": true
+            },
+            {
+              "t": " 模型只在短边 768 的画布上训练过，官方的 2K 出片属于另一个闭源模块。但 768p 不是本地的天花板：分辨率可以硬开更大（有人在 5090 上原生跑 1920×1088，画质确实更好，代价是 10 秒片等了 58 分钟），社区也已经有现成的本地超分工作流把 768p 拉上 1080p——两条路的取舍文末细算"
+            },
+            {
+              "t": "citation",
+              "href": "https://www.reddit.com/r/StableDiffusion/comments/1ve63vj/minimax_h3_t2v_10s_at_19201088_took_58_minutes_on/"
+            },
+            {
+              "t": "。先把三个模块的分工搞清楚，官方只开源了中间那个："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "H3-Context-IR",
+                  "b": true
+                },
+                {
+                  "t": " — 提示词理解与编排（把你的描述改写成模型爱吃的格式）。❌ 闭源，仅 API"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "H3-Base",
+                  "b": true
+                },
+                {
+                  "t": " — 33B 生成主体，输出 768p 级别音视频。✅ "
+                },
+                {
+                  "t": "开源，本教程主角",
+                  "b": true
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "H3-Regenerate-2K",
+                  "b": true
+                },
+                {
+                  "t": " — 把 768p 重生成为 2K。❌ 闭源，仅 API"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/local-deployment-zero-to-output/2085251324652986368.webp",
+          "width": 800,
+          "height": 450
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "所以“本地跑 H3 完全不花钱”这句话基本成立：草稿、768p 成片免费，1080p 靠社区超分也能本地解决；只有“原汁原味的官方 2K”必须走 API。什么时候用哪边，文末有一笔算清楚的账。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "本文实测数据来自一张 RTX 4090 48GB（魔改），但这不是门槛——ComfyUI 官方确认的地板是 "
+            },
+            {
+              "t": "3060 12GB + 32GB 内存",
+              "b": true
+            },
+            {
+              "t": "。从 3060、5070 到 3090、5090，每档显卡怎么选量化、能跑多快，第 0 步有一张表。显存小只影响你能开多大规格、等多久，不影响“能不能跑”。"
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "目录"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "看懂几个名词（30 秒）"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "第 0 步：网页版验货 + 硬件自查"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "第 1 步：安装 ComfyUI"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "第 2 步：下载模型文件"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "第 3 步：跑通第一条视频（T2V）"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "第 4 步：看懂参数——帧数和分辨率的硬规则"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "第 5 步：图生视频（I2V）"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "第 6 步：参考生视频（R2V）"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "第 7 步：提示词完整指南 ★ 全文最值钱的部分"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "第 8 步：加速——SageAttention 省 24%，叠 Cache 最多再省 58%"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "常见问题排查"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "声音效果，提前对齐预期"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "本地 vs API，一笔账"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "1. 看懂几个名词（30 秒）"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "ComfyUI",
+                  "b": true
+                },
+                {
+                  "t": "：跑 AI 生成模型的免费开源工作台。界面是“节点连线”式的，但你不需要自己连——官方模板都搭好了，你只改参数。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "工作流（Workflow）",
+                  "b": true
+                },
+                {
+                  "t": "：一张连好线的节点图，相当于“配方”。加载模板 = 打开现成配方。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "权重 / 模型文件",
+                  "b": true
+                },
+                {
+                  "t": "：模型本体，后缀 "
+                },
+                {
+                  "t": ".safetensors",
+                  "b": true
+                },
+                {
+                  "t": " 的大文件。H3 需要 4 个：DiT（画画的）、文本编码器（读懂提示词的）、视频 VAE 和音频 VAE（把内部数据翻译成像素和声波的）。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "量化",
+                  "b": true
+                },
+                {
+                  "t": "：把模型压小的技术。"
+                },
+                {
+                  "t": "bf16",
+                  "b": true
+                },
+                {
+                  "t": " 是全精度原版，"
+                },
+                {
+                  "t": "int8",
+                  "b": true
+                },
+                {
+                  "t": "、"
+                },
+                {
+                  "t": "nvfp4",
+                  "b": true
+                },
+                {
+                  "t": " 是压缩版，画质损失很小、显存需求大降。本地部署基本都用量化版。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "T2V / I2V / R2V",
+                  "b": true
+                },
+                {
+                  "t": "：三种生成模式——纯文字生成、给图片让它动起来、给参考素材（图/视频/音频）锁定角色或风格。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "2. 第 0 步：网页版验货 + 硬件自查"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "动手之前：先花 10 分钟在网页上验货"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "40 GB 的权重先放着。H3 在海螺 AI 网页版（国内 hailuoai.com，海外 hailuoai.video）就能直接试：登录 → 进视频生成 → 模型选 MiniMax H3 → 随便传一张图，写一句“让画面里的人物向镜头挥手，配上街道环境音”，生成。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "看三样东西："
+            },
+            {
+              "t": "主体稳不稳、镜头动得自然不自然、声音和画面对不对得上",
+              "b": true
+            },
+            {
+              "t": "。这三样满意了，再往下走；不满意，这篇教程你也不用读了，省下半天时间。网页版的额度和 API 是两套账，网页额度用完不影响后面走 API。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "硬件自查"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "显卡",
+                  "b": true
+                },
+                {
+                  "t": "：最低 NVIDIA 12GB 显存，推荐 24GB+。怎么查：Windows 按 "
+                },
+                {
+                  "t": "Ctrl+Shift+Esc",
+                  "b": true
+                },
+                {
+                  "t": " → 性能 → GPU → “专用 GPU 内存”；或命令行输 "
+                },
+                {
+                  "t": "nvidia-smi",
+                  "b": true
+                },
+                {
+                  "t": "。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "内存",
+                  "b": true
+                },
+                {
+                  "t": "：最低 32GB，推荐 64GB。任务管理器 → 性能 → 内存。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "磁盘空闲",
+                  "b": true
+                },
+                {
+                  "t": "：最低 60 GB，推荐 150 GB+。权重约 40 GB，加上生成产物和 R2V 权重会继续涨。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "系统",
+                  "b": true
+                },
+                {
+                  "t": "：Windows 10/11 或 Linux."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "网络",
+                  "b": true
+                },
+                {
+                  "t": "：能访问 Hugging Face 或其镜像，见第 2 步镜像方案。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "对号入座：你的显卡属于哪一档"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "ComfyUI 核心开发者官方确认的地板线："
+            },
+            {
+              "t": "3060 12GB + 32GB 内存 + 一块不错的 NVMe 固态，就能跑 480p",
+              "b": true
+            },
+            {
+              "t": "。12GB 有 12GB 的跑法，找到自己那一行"
+            },
+            {
+              "t": "citation",
+              "href": "https://www.reddit.com/r/StableDiffusion/comments/1vd9o0r/minimax_h3_1080p_25_seconds_text_to_video_in/"
+            },
+            {
+              "t": "："
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/local-deployment-zero-to-output/2085251335381995520.webp",
+          "width": 1600,
+          "height": 501
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/local-deployment-zero-to-output/2085251346710814720.webp",
+          "width": 800,
+          "height": 1067
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "数据出处：5090 与 12GB 卡来自社区实测帖，4090 移动版来自开启 SageAttention 的 20 步实测"
+            },
+            {
+              "t": "citation",
+              "href": "https://www.reddit.com/r/StableDiffusion/comments/1ves4o0/minimax_h3_is_shockingly_uncensored_wow/"
+            },
+            {
+              "t": " "
+            },
+            {
+              "t": "citation",
+              "href": "https://www.reddit.com/r/StableDiffusion/comments/1ve6lvr/minimax_h3_first_local_test_5_seconds_at_960540/"
+            },
+            {
+              "t": " "
+            },
+            {
+              "t": "citation",
+              "href": "https://www.reddit.com/r/StableDiffusion/comments/1ve0urz/minimaxh3_weights_up/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "两条跨档位的通用提醒："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "系统内存和固态跟显卡一样重要。",
+                  "b": true
+                },
+                {
+                  "t": " H3 靠“显存装不下就借内存”的分层加载才能在消费级卡上跑，32GB 内存是底线，64GB 才从容——16GB 内存 + 大显存反而跑不动。模型从磁盘进内存那一步，机械硬盘会让每次首跑多等几分钟，权重务必放 NVMe 上。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "30/40 系和 50 系的一个隐藏差别：NVFP4 只有 50 系（Blackwell）有硬件原生支持。",
+                  "b": true
+                },
+                {
+                  "t": " 在 3090/4090 上加载 nvfp4 权重时，ComfyUI 会走“模拟模式”——省磁盘和显存占用，但算之前要解压回高精度，不省时间。所以 50 系用户可以大胆选社区 NVFP4 版 DiT（更小更快），30/40 系用户选 INT8/FP8 系更划算"
+                },
+                {
+                  "t": "citation",
+                  "href": "https://ai-muninn.com/en/blog/minimax-h3-nvfp4-rtx5090"
+                },
+                {
+                  "t": "。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "3. 第 1 步：安装 ComfyUI"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "版本必须 ≥ 0.30.0",
+              "b": true
+            },
+            {
+              "t": "，这是硬门槛：H3 的原生支持（4 个专用节点 + 官方模板）于 2026 年 8 月 3 日随 "
+            },
+            {
+              "t": "Comfy-Org/ComfyUI #15224",
+              "href": "https://github.com/Comfy-Org/ComfyUI/pull/15224"
+            },
+            {
+              "t": " 合并，旧版没有这些节点，任何工作流都跑不起来。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "情况 A：全新安装（推荐小白）"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "打开 "
+                },
+                {
+                  "t": "ComfyUI 官网",
+                  "href": "https://www.comfy.org/"
+                },
+                {
+                  "t": "，下载对应系统的"
+                },
+                {
+                  "t": "桌面版",
+                  "b": true
+                },
+                {
+                  "t": "安装包。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "双击安装，一路默认。安装器会自动处理 Python、PyTorch、CUDA 依赖，这正是桌面版对新手友好的原因。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "装完启动。第一次启动会做初始化，等它跑完。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "情况 B：已有 ComfyUI"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "桌面版",
+                  "b": true
+                },
+                {
+                  "t": "：菜单里检查更新到最新稳定版。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "手动 git 部署",
+                  "b": true
+                },
+                {
+                  "t": "：进入 ComfyUI 目录执行 "
+                },
+                {
+                  "t": "git pull",
+                  "b": true
+                },
+                {
+                  "t": "，再 "
+                },
+                {
+                  "t": "pip install -r requirements.txt",
+                  "b": true
+                },
+                {
+                  "t": "。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "整合包（秋叶包等）",
+                  "b": true
+                },
+                {
+                  "t": "：等整合包作者更新，或在启动器里更新内核。注意：桌面版和整合包跟随"
+                },
+                {
+                  "t": "稳定版",
+                  "b": true
+                },
+                {
+                  "t": "发布，个别 nightly 才有的功能可能晚几天到。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "验证安装成功"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "启动后浏览器打开 "
+            },
+            {
+              "t": "http://127.0.0.1:8188",
+              "b": true
+            },
+            {
+              "t": "（桌面版直接弹出窗口），看到节点画布。确认版本：设置（左下角齿轮）→ 关于，版本号 ≥ 0.30.0。低于就回去更新，别硬试——"
+            },
+            {
+              "t": "“缺少 MiniMaxH3ImageToVideo 节点”这个最高频报错，99% 是版本问题",
+              "b": true
+            },
+            {
+              "t": "。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "4. 第 2 步：下载模型文件"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "模型托管在 Hugging Face 的 "
+            },
+            {
+              "t": "Comfy-Org/MiniMax-H3",
+              "href": "https://huggingface.co/Comfy-Org/MiniMax-H3"
+            },
+            {
+              "t": " 仓库。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "警告：别 clone 整个仓库。",
+              "b": true
+            },
+            {
+              "t": " 原始仓库全量约 318 GB，而你只需要 4 个文件。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "国内下载提速"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "把任何 Hugging Face 链接里的 "
+            },
+            {
+              "t": "huggingface.co",
+              "b": true
+            },
+            {
+              "t": " 换成 "
+            },
+            {
+              "t": "hf-mirror.com",
+              "b": true
+            },
+            {
+              "t": "，就是国内镜像，速度差一个量级。20GB 的大文件建议用支持断点续传的下载工具（IDM、aria2、或浏览器自带恢复下载），断了不用重来。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "会用命令行的，一条命令精确下四个文件（国内先执行 "
+            },
+            {
+              "t": "set HF_ENDPOINT=https://hf-mirror.com",
+              "b": true
+            },
+            {
+              "t": ", Linux/macOS 用 "
+            },
+            {
+              "t": "export",
+              "b": true
+            },
+            {
+              "t": "）："
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "pip install -U huggingface_hub\n\nhf download Comfy-Org/MiniMax-H3 \\\n  diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors \\\n  text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors \\\n  vae/minimax_h3_video_vae_fp16.safetensors \\\n  vae/minimax_h3_audio_vae_fp32.safetensors \\\n  --local-dir ComfyUI/models/",
+          "language": "bash"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "T2V / I2V 必需的 4 个文件（约 39.6 GB）"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/local-deployment-zero-to-output/2085251354138943488.webp",
+          "width": 1600,
+          "height": 374
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "两个 VAE "
+            },
+            {
+              "t": "都必须下",
+              "b": true
+            },
+            {
+              "t": "——视频 VAE 出画面，音频 VAE 出声音，少了音频 VAE 你会得到一条无声视频。"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/local-deployment-zero-to-output/2085251362624057344.webp",
+          "width": 800,
+          "height": 450
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "放完后目录应该长这样："
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "ComfyUI/\n├── models/\n│   ├── diffusion_models/\n│   │   └── minimax_h3_fl2va_pruned_int8_convrot.safetensors\n│   ├── text_encoders/\n│   │   └── qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors\n│   └── vae/\n│       ├── minimax_h3_video_vae_fp16.safetensors\n│       └── minimax_h3_audio_vae_fp32.safetensors"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "桌面版用户注意：模型目录可能在安装时自选的路径下，设置里搜 “model paths” 确认。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "更懒的办法",
+              "b": true
+            },
+            {
+              "t": "：跳过手动下载，直接做第 3 步——加载模板时 ComfyUI 会弹窗列出缺失模型并给下载按钮，点击自动下到正确位置。手动下载的价值在于能用镜像和断点续传，网络不稳的人建议手动。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "官方全部变体一览（按需选择，多数人用不到）"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Diffusion 模型（选一个；想玩 R2V 要多下 ref2va 那份）:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "minimax_h3_fl2va_pruned_int8_convrot",
+                  "b": true
+                },
+                {
+                  "t": "（19.5 GB）— ✅ "
+                },
+                {
+                  "t": "推荐",
+                  "b": true
+                },
+                {
+                  "t": "，T2V/I2V 最佳平衡"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "minimax_h3_fl2va_pruned_fp8_scaled",
+                  "b": true
+                },
+                {
+                  "t": "（19.5 GB）— 备选量化格式"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "minimax_h3_fl2va_int8_convrot",
+                  "b": true
+                },
+                {
+                  "t": "（31.7 GB）— 标准 INT8（未剪枝）"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "minimax_h3_fl2va_bf16",
+                  "b": true
+                },
+                {
+                  "t": "（61.7 GB）— 全精度，微调用"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "minimax_h3_ref2va_pruned_int8_convrot",
+                  "b": true
+                },
+                {
+                  "t": "（19.5 GB）— "
+                },
+                {
+                  "t": "R2V 模式专用",
+                  "b": true
+                },
+                {
+                  "t": "，第 6 步会用到"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "minimax_h3_ref2va_bf16",
+                  "b": true
+                },
+                {
+                  "t": "（61.7 GB）— R2V 全精度"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "文本编码器（选一个）:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "qwen3vl_32b_minimax_h3_nvfp4_awq",
+                  "b": true
+                },
+                {
+                  "t": "（14.6 GB）— ✅ "
+                },
+                {
+                  "t": "推荐",
+                  "b": true
+                },
+                {
+                  "t": "，任何 GPU 可跑"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "qwen3vl_32b_minimax_h3_int8_convrot",
+                  "b": true
+                },
+                {
+                  "t": "（25.3 GB）— INT8 版"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "qwen3vl_32b_minimax_h3_bf16",
+                  "b": true
+                },
+                {
+                  "t": "（48.0 GB）— 全精度"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "为什么这么选，两个冷知识",
+              "b": true
+            },
+            {
+              "t": "（跳过不影响操作）:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "H3 吃显存的大头是编码器，不是 33B 的 DiT。",
+                  "b": true
+                },
+                {
+                  "t": " 编码器直接用了 Qwen3-VL-32B 的全量权重（bf16 下 62.13 GiB，比 61.73 GiB 的 DiT 还大），一个 32B 视觉语言模型在这里只是个“读题的”。所以编码器必须选狠量化的 nvfp4 版。网上流传“编码器 51.5GB”是错的，以官方仓库文件大小为准。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "<strong>"
+                },
+                {
+                  "t": "pruned",
+                  "b": true
+                },
+                {
+                  "t": "</strong>"
+                },
+                {
+                  "t": "（剪枝）= 砍掉 13B 的 AdaLN 分支。",
+                  "b": true
+                },
+                {
+                  "t": " 61.73 − 37.46 ≈ 24.3 GiB，正好是那 13B。官方确认这部分的调制输出可以预计算缓存，纯推理根本不用加载。结论：只做推理就用 pruned，要微调才需要完整权重。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "按显卡档位选社区量化（可选加餐）"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "官方那套 "
+            },
+            {
+              "t": "pruned_int8 + nvfp4_awq",
+              "b": true
+            },
+            {
+              "t": " 是通吃组合，任何档位都建议先用它跑通。跑通之后想更快、更省，再来这里按卡换餐。以下均为社区第三方转换（非官方发布，画质和许可自查各仓库 README），原生 ComfyUI 可直接加载："
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/local-deployment-zero-to-output/2085251370224058368.webp",
+          "width": 1600,
+          "height": 752
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "换社区权重时记住一条："
+            },
+            {
+              "t": "DiT、编码器可以换，两个 VAE 永远用官方原版",
+              "b": true
+            },
+            {
+              "t": "——它们本来就不大，量化它们只会伤画质和声音。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "5. 第 3 步：跑通第一条视频（T2V）"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "加载官方模板"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "打开 ComfyUI → 顶部菜单"
+                },
+                {
+                  "t": "工作流",
+                  "b": true
+                },
+                {
+                  "t": " → "
+                },
+                {
+                  "t": "浏览模板",
+                  "b": true
+                },
+                {
+                  "t": " → "
+                },
+                {
+                  "t": "视频",
+                  "b": true
+                },
+                {
+                  "t": "分类，搜 “MiniMax H3”。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "你会看到 "
+                },
+                {
+                  "t": "6 个模板",
+                  "b": true
+                },
+                {
+                  "t": "，认清楚，别点错："
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "MiniMax H3 Text to Video",
+                  "b": true
+                },
+                {
+                  "t": " — 本地，文生视频，"
+                },
+                {
+                  "t": "从这个开始",
+                  "b": true
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "MiniMax H3 Image to Video",
+                  "b": true
+                },
+                {
+                  "t": " — 本地，图生视频（首帧/尾帧）"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "MiniMax H3 Reference to Video",
+                  "b": true
+                },
+                {
+                  "t": " — 本地，参考生视频，需另下 ref2va 权重"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "api_minimax_h3_t2v / r2v / flf2v",
+                  "b": true
+                },
+                {
+                  "t": " — API 版，调 MiniMax 云端，要充值 API key，先无视"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "点开 "
+                },
+                {
+                  "t": "Text to Video",
+                  "b": true
+                },
+                {
+                  "t": "。如果弹窗提示缺模型，按提示下载；第 2 步已手动放好则直接就绪（没识别到就重启一次 ComfyUI——模型列表在启动时扫描）。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "认识工作流里的关键节点"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "模板加载后画布上有一串节点，你只需要认识这几个："
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/local-deployment-zero-to-output/2085251379283849216.webp",
+          "width": 800,
+          "height": 450
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "UNETLoader",
+                  "b": true
+                },
+                {
+                  "t": "：选 DiT 权重，确认下拉框里是 "
+                },
+                {
+                  "t": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+                  "b": true
+                },
+                {
+                  "t": "。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "文本编码器加载节点",
+                  "b": true
+                },
+                {
+                  "t": "：确认选中 "
+                },
+                {
+                  "t": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+                  "b": true
+                },
+                {
+                  "t": "。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "两个 VAE Loader",
+                  "b": true
+                },
+                {
+                  "t": "：分别选视频 VAE 和音频 VAE。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Resolution Selector",
+                  "b": true
+                },
+                {
+                  "t": "：控制输出分辨率（宽高比、Megapixels 两个参数算出宽高）。模板默认是快速预览规格，"
+                },
+                {
+                  "t": "第一次先别动",
+                  "b": true
+                },
+                {
+                  "t": "。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "提示词框（正向）",
+                  "b": true
+                },
+                {
+                  "t": "：写你要的内容。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "时长/帧数输入",
+                  "b": true
+                },
+                {
+                  "t": "：决定视频长度，规则见第 4 步。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "SaveVideo",
+                  "b": true
+                },
+                {
+                  "t": "：输出 MP4 的终点。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "跑"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "提示词框里写一句英文场景（先不管语法，第 7 步才是正课）:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "A cat walks along a rainy street at night, neon lights reflecting in puddles, soft rain sounds."
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "点 "
+            },
+            {
+              "t": "Run（运行）",
+              "b": true
+            },
+            {
+              "t": "。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "你应该看到什么"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "进度条先卡在模型加载（约 34 GB 从磁盘进显存/内存），然后逐步采样。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "第一次特别慢是正常的",
+                  "b": true
+                },
+                {
+                  "t": "：4090 48G 实测首跑 644 秒（含加载），同规格热跑 425 秒；768×432 小规格热跑仅约 99 秒。其他档位对齐预期：5090 出 5 秒片约 108 秒；16GB 卡（如 4090 移动版）960×540 出 5 秒片约 182 秒；12GB 卡靠内存分层加载，864×480 出 90 帧约 6 分钟。首跑都要在这些数字上再加几分钟加载时间，泡杯茶等。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "结束后 SaveVideo 节点出现视频预览："
+                },
+                {
+                  "t": "有画面、有声音",
+                  "b": true
+                },
+                {
+                  "t": "。声音和画面是同一次前向传播里一起生成的，这是 H3 区别于“生成后配音”类模型的根本点。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "控制台如果刷 "
+                },
+                {
+                  "t": "Input tensors must be in dtype of torch.float16 or torch.bfloat16, using pytorch attention instead",
+                  "b": true
+                },
+                {
+                  "t": "——"
+                },
+                {
+                  "t": "这不是报错",
+                  "b": true
+                },
+                {
+                  "t": "。官方文档确认这是部分层回退到标准 attention 的正常提示，生成不受影响。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "跑通了，部署阶段结束。接下来是从“能跑”到“会用”。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "6. 第 4 步：看懂参数——帧数和分辨率的硬规则"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "这两条规则直接读 ComfyUI 的 H3 节点源码坐实，不是经验玄学。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "规则一：帧数必须落在 17k+5 网格，而且会静默吸附"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "源码逻辑就一行："
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "while n % 17 != 5:\n    n += 1",
+          "language": "python"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "你填的帧数如果不合法，会被"
+            },
+            {
+              "t": "向上吸附到最近的合法值，不报错、不提示",
+              "b": true
+            },
+            {
+              "t": "。实测填 61 帧，拿到 73 帧。"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/local-deployment-zero-to-output/2085251386812551168.webp",
+          "width": 800,
+          "height": 450
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "训练区间是 124–362 帧，24fps 下即 "
+            },
+            {
+              "t": "5.17 至 15.08 秒",
+              "b": true
+            },
+            {
+              "t": "；这个区间内的全部合法档位："
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/local-deployment-zero-to-output/2085251394681106432.webp",
+          "width": 1131,
+          "height": 584
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "填 60 秒也只会得到 15.08 秒",
+              "b": true
+            },
+            {
+              "t": "，更长的内容要分镜头生成再剪辑。节点 tooltip 原话是 “trained range is ~124-362, longer is untested”——少于 124 帧也能跑（网格从 5、22、39……就开始），但在训练分布外，质量不保证。日常直接从这张表里挑，别让它吸附——你以为的 6 秒和实际的 6.58 秒，在卡口型的场景里就是灾难。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "规则二：分辨率的“原生画布”是短边 768"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "模型按「"
+            },
+            {
+              "t": "短边 768、面积上限 768×1344、每轴对齐 32 的倍数",
+              "b": true
+            },
+            {
+              "t": "」训练。操作建议："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "试提示词",
+                  "b": true
+                },
+                {
+                  "t": "：模板默认的快速预览规格（如 768×432），约 99 秒/条，快速迭代。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "出正片",
+                  "b": true
+                },
+                {
+                  "t": "： Resolution Selector 的 Megapixels 拉到约 "
+                },
+                {
+                  "t": "1.0",
+                  "b": true
+                },
+                {
+                  "t": ",16:9 下得到约 "
+                },
+                {
+                  "t": "1344×768",
+                  "b": true
+                },
+                {
+                  "t": "——正好是原生画布，质量最好。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "下限 384p",
+                  "b": true
+                },
+                {
+                  "t": ":256p 及更低会"
+                },
+                {
+                  "t": "完全失败",
+                  "b": true
+                },
+                {
+                  "t": "，这是官方确认的，不是你的配置问题。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "超原生画布不是不能，是不划算",
+                  "b": true
+                },
+                {
+                  "t": "：模型没在更大画幅上训练过，但实测硬开是可以出片的——有人在 5090 上原生跑 1920×1088 的 10 秒片，画质确实比 768p 好，代价是 58 分钟一条。社区的共识打法是"
+                },
+                {
+                  "t": "低分辨率生成 + 本地超分",
+                  "b": true
+                },
+                {
+                  "t": "：768p 级出片后用 LTX 2.3 或 Wan 2.2 5B 的超分工作流拉到 1080p，同样的 1920×1080 成品耗时从约 700 秒降到 161 秒，快 6 倍、画质接近"
+                },
+                {
+                  "t": "citation",
+                  "href": "https://www.reddit.com/r/StableDiffusion/comments/1ve63vj/minimax_h3_t2v_10s_at_19201088_took_58_minutes_on/"
+                },
+                {
+                  "t": " "
+                },
+                {
+                  "t": "citation",
+                  "href": "https://www.reddit.com/r/StableDiffusion/comments/1vf4ync/12x_faster_minimax_h3_generations_stop_rendering/"
+                },
+                {
+                  "t": "。想要官方原味的 2K，走 API 的重生成——三条路的取舍见文末。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "显存和耗时的两条实测规律"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "显存吃的是模型，不是画幅。",
+              "b": true
+            },
+            {
+              "t": " 768×432 和 1152×640 的峰值显存几乎一样（实测差 <1%）。进程级细看：采样阶段稳定在 19 GB 上下，编码/解码阶段瞬时冲到 32 GB——这是 48G 卡放开跑的读数，ComfyUI 的动态加载会按空闲显存自适应，小显存卡靠换入换出也能跑，只是更慢。含义：模型装得下，分辨率随便开到原生画布；装不下，降分辨率救不了你，得换更小的量化版。OOM 时别浪费时间调尺寸。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "耗时规律：像素维度划算，时长维度贵。",
+              "b": true
+            },
+            {
+              "t": " 1152×640 相对 768×432 是 2.22 倍像素，只多花 1.86 倍时间，次线性，开大分辨率比直觉上划算；但时长维度相反——attention 对 token 数是超线性的，时长翻倍，耗时比翻倍还多。"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/local-deployment-zero-to-output/2085251403245920256.webp",
+          "width": 800,
+          "height": 450
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "规格标度实测（4090 48G,SageAttention cuda++ 加速下）:"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/local-deployment-zero-to-output/2085251411005308928.webp",
+          "width": 879,
+          "height": 518
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "读表记三个数就够："
+            },
+            {
+              "t": "5 秒的片等 5 分钟，10 秒等 12 分钟，15 秒满长度一条 19 分钟",
+              "b": true
+            },
+            {
+              "t": "。另外注意 1536×864 相对 1152×640 是 1.8 倍像素、耗时接近同比翻倍——大画幅下次线性红利就没了，再次印证别超原生画布。数据可复现性验过：同规格隔天重跑，320.11s 对 322.05s，误差 0.6%。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "7. 第 5 步：图生视频（I2V）"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "用途：让一张现成的图动起来，或用首尾两张图让模型补中间的运动。"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "模板库加载 "
+                },
+                {
+                  "t": "MiniMax H3 Image to Video",
+                  "b": true
+                },
+                {
+                  "t": "。权重和 T2V 完全同一套（fl2va），不用重新下载。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "用 "
+                },
+                {
+                  "t": "LoadImage",
+                  "b": true
+                },
+                {
+                  "t": " 节点上传你的图，连到 "
+                },
+                {
+                  "t": "MiniMaxH3ImageToVideo",
+                  "b": true
+                },
+                {
+                  "t": " 节点的 "
+                },
+                {
+                  "t": "first_frame",
+                  "b": true
+                },
+                {
+                  "t": " 输入。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "<strong>"
+                },
+                {
+                  "t": "last_frame",
+                  "b": true
+                },
+                {
+                  "t": "</strong> "
+                },
+                {
+                  "t": "是可选的",
+                  "b": true
+                },
+                {
+                  "t": "：只给首帧 = 从这张图开始往后演；首尾都给 = 模型在两张图之间插出连贯运动（适合产品旋转、姿态变化这类“从 A 到 B”的镜头）；只给尾帧 = 模型倒推一个合理的开场，最后落在你的图上。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/local-deployment-zero-to-output/2085251419633057792.webp",
+          "width": 800,
+          "height": 450
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "提示词按第 7 步的 I2VA 格式写（需要一行首帧对齐指令）。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "输入图会被适配到生成分辨率，比例差太多会被处理——"
+                },
+                {
+                  "t": "上传前先把图裁成和输出一致的宽高比",
+                  "b": true
+                },
+                {
+                  "t": "，省得构图被意外切割。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "8. 第 6 步：参考生视频（R2V）"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "用途：锁定一个角色的长相、一种画风、一段动作、一个运镜或一个声音，让它们出现在新视频里。这是 H3 最强也最复杂的模式。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "准备"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "R2V 用"
+            },
+            {
+              "t": "另一套权重",
+              "b": true
+            },
+            {
+              "t": " "
+            },
+            {
+              "t": "ref2va",
+              "b": true
+            },
+            {
+              "t": "，和 T2V/I2V 的 "
+            },
+            {
+              "t": "fl2va",
+              "b": true
+            },
+            {
+              "t": " 不通用："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "回 "
+                },
+                {
+                  "t": "Comfy-Org/MiniMax-H3",
+                  "href": "https://huggingface.co/Comfy-Org/MiniMax-H3"
+                },
+                {
+                  "t": " 下载 "
+                },
+                {
+                  "t": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+                  "b": true
+                },
+                {
+                  "t": "(19.5 GB)，同样放 "
+                },
+                {
+                  "t": "ComfyUI/models/diffusion_models/",
+                  "b": true
+                },
+                {
+                  "t": "。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "编码器和两个 VAE 复用，不用重下。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "模板库加载 "
+                },
+                {
+                  "t": "MiniMax H3 Reference to Video",
+                  "b": true
+                },
+                {
+                  "t": "，确认 UNETLoader 里切到了 ref2va 权重。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "使用规则"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "数量上限",
+                  "b": true
+                },
+                {
+                  "t": "：最多 9 张参考图、3 条参考视频（每条可带自己的音轨）、3 条独立参考音频。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "按连接顺序用标签引用",
+                  "b": true
+                },
+                {
+                  "t": "：第一张图是 "
+                },
+                {
+                  "t": "<Picture 1>",
+                  "b": true
+                },
+                {
+                  "t": "，第二条视频是 "
+                },
+                {
+                  "t": "<Video 2>",
+                  "b": true
+                },
+                {
+                  "t": "，以此类推。提示词里必须用这些标签指名道姓。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "给每个参考“派活”",
+                  "b": true
+                },
+                {
+                  "t": "：明确说哪个参考管什么——长相、画风、动作、运镜还是音色。官方明确表示，显式指派的效果远好于把素材一堆了之。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "<strong>"
+                },
+                {
+                  "t": "ref_image_size",
+                  "b": true
+                },
+                {
+                  "t": "</strong> "
+                },
+                {
+                  "t": "参数",
+                  "b": true
+                },
+                {
+                  "t": "："
+                },
+                {
+                  "t": "match",
+                  "b": true
+                },
+                {
+                  "t": "（默认）把参考图缩到生成分辨率，快；"
+                },
+                {
+                  "t": "max",
+                  "b": true
+                },
+                {
+                  "t": " 保留最高 2048px 短边，角色长相更保真，"
+                },
+                {
+                  "t": "但参考 token 每一步采样都要完整过一遍，慢好几倍",
+                  "b": true
+                },
+                {
+                  "t": "。日常用 "
+                },
+                {
+                  "t": "match",
+                  "b": true
+                },
+                {
+                  "t": "，只有脸锁不住时才换 "
+                },
+                {
+                  "t": "max",
+                  "b": true
+                },
+                {
+                  "t": "。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "R2V 提示词的结构差异"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "R2V 的完整提示词是六段式（比 T2V 的三字段多了三段），顺序固定："
+            },
+            {
+              "t": "subject_definitions",
+              "b": true
+            },
+            {
+              "t": "（给每个参考内容定义标签和特征）→ "
+            },
+            {
+              "t": "summary",
+              "b": true
+            },
+            {
+              "t": "（方括号任务类型开头的一段总结）→ "
+            },
+            {
+              "t": "retention_analysis",
+              "b": true
+            },
+            {
+              "t": "（逐标签声明保留程度）→ "
+            },
+            {
+              "t": "detailed_description",
+              "b": true
+            },
+            {
+              "t": "（主体，350–500 英文词，风格开场句放在 [Shot 1] 之前）→ "
+            },
+            {
+              "t": "overall_soundscape",
+              "b": true
+            },
+            {
+              "t": " → "
+            },
+            {
+              "t": "non_diegetic_music",
+              "b": true
+            },
+            {
+              "t": "。"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/local-deployment-zero-to-output/2085251427065368576.webp",
+          "width": 800,
+          "height": 600
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "四种标签各管各的："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "<Subject N>",
+                  "b": true
+                },
+                {
+                  "t": " — 要在成片里复用的内容：人、场景、服装、风格、动作"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "<Picture N>",
+                  "b": true
+                },
+                {
+                  "t": " — 一张图直接当某一帧或构图锚点"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "<Video N>",
+                  "b": true
+                },
+                {
+                  "t": " — 整片级关系：被编辑的源片、续写起点、剪辑节奏来源"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "<Audio N>",
+                  "b": true
+                },
+                {
+                  "t": " — 被复制或被参考的音频"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "最容易搞错的一条："
+            },
+            {
+              "t": "图片只是用来定义角色或风格的话，不建",
+              "b": true
+            },
+            {
+              "t": " <strong>"
+            },
+            {
+              "t": "<Picture N>",
+              "b": true
+            },
+            {
+              "t": "</strong>"
+            },
+            {
+              "t": "，把图的来源写进",
+              "b": true
+            },
+            {
+              "t": " <strong>"
+            },
+            {
+              "t": "<Subject N>",
+              "b": true
+            },
+            {
+              "t": "</strong> "
+            },
+            {
+              "t": "定义里",
+              "b": true
+            },
+            {
+              "t": "。"
+            },
+            {
+              "t": "<Picture N>",
+              "b": true
+            },
+            {
+              "t": " 留给“这张图就是第几帧”的场合。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "另外两段的填法："
+            },
+            {
+              "t": "summary",
+              "b": true
+            },
+            {
+              "t": " 开头用方括号打任务类型，多个用 "
+            },
+            {
+              "t": "+",
+              "b": true
+            },
+            {
+              "t": " 连——"
+            },
+            {
+              "t": "keyframe completion",
+              "b": true
+            },
+            {
+              "t": " / "
+            },
+            {
+              "t": "reference generation",
+              "b": true
+            },
+            {
+              "t": " / "
+            },
+            {
+              "t": "video editing",
+              "b": true
+            },
+            {
+              "t": " / "
+            },
+            {
+              "t": "video continuation",
+              "b": true
+            },
+            {
+              "t": " / "
+            },
+            {
+              "t": "audio reuse",
+              "b": true
+            },
+            {
+              "t": " / "
+            },
+            {
+              "t": "audio reference",
+              "b": true
+            },
+            {
+              "t": "。判断题：参考视频只提供运镜和节奏 = reference generation，真的在改那条片子才是 video editing。"
+            },
+            {
+              "t": "retention_analysis",
+              "b": true
+            },
+            {
+              "t": " 给每个标签一个固定关系词：可见内容用 "
+            },
+            {
+              "t": "fully_preserved",
+              "b": true
+            },
+            {
+              "t": " / "
+            },
+            {
+              "t": "partially_preserved",
+              "b": true
+            },
+            {
+              "t": " / "
+            },
+            {
+              "t": "attribute_transfer",
+              "b": true
+            },
+            {
+              "t": " / "
+            },
+            {
+              "t": "weak_reference",
+              "b": true
+            },
+            {
+              "t": "，音频用 "
+            },
+            {
+              "t": "fully_copy",
+              "b": true
+            },
+            {
+              "t": " / "
+            },
+            {
+              "t": "partially_copy",
+              "b": true
+            },
+            {
+              "t": " / "
+            },
+            {
+              "t": "reference",
+              "b": true
+            },
+            {
+              "t": " / "
+            },
+            {
+              "t": "weak_reference",
+              "b": true
+            },
+            {
+              "t": "。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "这套格式第一眼劝退，但它就是官方付费模块 Context-IR 的输出格式——你手写等于白嫖。新手不必一上来背全六段：先用模板自带的示例提示词替换素材跑通，再对照 "
+            },
+            {
+              "t": "官方 R2V 指南",
+              "href": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_ref_en.md"
+            },
+            {
+              "t": " 里的完整案例逐段仿写，写一次存成模板，后面每次改几个词。记住一句就够："
+            },
+            {
+              "t": "每个参考素材在",
+              "b": true
+            },
+            {
+              "t": " <strong>"
+            },
+            {
+              "t": "subject_definitions",
+              "b": true
+            },
+            {
+              "t": "</strong> "
+            },
+            {
+              "t": "里领一个标签和一份特征描述，后面所有段落都用这个标签称呼它，并说清它被保留了多少。",
+              "b": true
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "9. 第 7 步：提示词完整指南 ★"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "H3 的提示词是一套官方定义的结构化格式（"
+            },
+            {
+              "t": "官方指南原文",
+              "href": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md"
+            },
+            {
+              "t": ")。随手一句话也能出片，但多镜头、角色对白、指定运镜、卡时间点，必须按格式来。"
+            },
+            {
+              "t": "除对白和画面文字保留原语言外，全部用英文写。",
+              "b": true
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "9.1 骨架：三个字段"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "integrated_multimodal_description: [Shot 1] ...\n\noverall_soundscape: ...\n\nnon_diegetic_music: ..."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "integrated_multimodal_description",
+                  "b": true
+                },
+                {
+                  "t": " — 主体。按时间线写画面、动作、镜头、说话人、对白、画内声音。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "overall_soundscape",
+                  "b": true
+                },
+                {
+                  "t": " — 1–4 句，全片的环境音和动作音效（风雨、脚步、衣料摩擦、呼吸、笑声）。别写：对白、唱歌、画内音乐（它们属于上面）。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "non_diegetic_music",
+                  "b": true
+                },
+                {
+                  "t": " — 1–3 句，配乐（角色听不到、只有观众听到）：乐器、速度、节奏、强弱变化。别写：情绪词（“悲伤的”“史诗感的”）、解释音乐的作用。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "后两个字段没有内容就写 "
+            },
+            {
+              "t": "N/A",
+              "b": true
+            },
+            {
+              "t": "(soundscape 只有用户明确要求全片静音时才 N/A)。"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/local-deployment-zero-to-output/2085251435084804096.webp",
+          "width": 800,
+          "height": 450
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "9.2 镜头：[Shot N] 与切换时间"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "[Shot 1]",
+                  "b": true
+                },
+                {
+                  "t": " 开头交代"
+                },
+                {
+                  "t": "整体风格 + 初始构图",
+                  "b": true
+                },
+                {
+                  "t": "，不带时间戳。风格词："
+                },
+                {
+                  "t": "Cinematic",
+                  "b": true
+                },
+                {
+                  "t": "、"
+                },
+                {
+                  "t": "live-action",
+                  "b": true
+                },
+                {
+                  "t": "、"
+                },
+                {
+                  "t": "2D-animated",
+                  "b": true
+                },
+                {
+                  "t": "、"
+                },
+                {
+                  "t": "3D CG",
+                  "b": true
+                },
+                {
+                  "t": "、"
+                },
+                {
+                  "t": "claymation",
+                  "b": true
+                },
+                {
+                  "t": "、"
+                },
+                {
+                  "t": "watercolor",
+                  "b": true
+                },
+                {
+                  "t": "、"
+                },
+                {
+                  "t": "vintage film",
+                  "b": true
+                },
+                {
+                  "t": "。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "后续镜头带严格递增的切换时间："
+                },
+                {
+                  "t": "[Shot 2] At 00:03.500, the camera cuts to...",
+                  "b": true
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "切换动词："
+                },
+                {
+                  "t": "the camera cuts to",
+                  "b": true
+                },
+                {
+                  "t": " / "
+                },
+                {
+                  "t": "the shot transitions to",
+                  "b": true
+                },
+                {
+                  "t": " / "
+                },
+                {
+                  "t": "the shot switches to",
+                  "b": true
+                },
+                {
+                  "t": "；用户明确要求时才用 cross-dissolve、fade、wipe."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "什么时候切镜头",
+                  "b": true
+                },
+                {
+                  "t": "：切换应引入新信息（新主体、新空间、新视角、新时间）。只想拉近拉远或微调角度，用运镜，别切。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "9.3 运镜：类型 + 幅度 + 速度"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "写成镜头内自然的英文句子，不要在句尾堆标签。"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/local-deployment-zero-to-output/2085251441267212288.webp",
+          "width": 713,
+          "height": 1124
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "幅度："
+            },
+            {
+              "t": "with small amplitude",
+              "b": true
+            },
+            {
+              "t": " / "
+            },
+            {
+              "t": "with large amplitude",
+              "b": true
+            },
+            {
+              "t": "；速度："
+            },
+            {
+              "t": "at slow speed",
+              "b": true
+            },
+            {
+              "t": " / "
+            },
+            {
+              "t": "at fast speed",
+              "b": true
+            },
+            {
+              "t": "。中等幅度、正常速度"
+            },
+            {
+              "t": "直接省略不写",
+              "b": true
+            },
+            {
+              "t": "。"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "The camera pushes in with small amplitude at slow speed toward the folded letter in her hands.\nThe camera pans right with large amplitude at fast speed, revealing the open doorway.\nThe camera holds a static shot as the runner exits the frame."
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "9.4 对白：说话人 ID + "
+            },
+            {
+              "t": "<d>",
+              "b": true
+            },
+            {
+              "t": " 标签"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "规则清单："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "会出声的角色分配稳定 ID:"
+                },
+                {
+                  "t": "(S1)",
+                  "b": true
+                },
+                {
+                  "t": "、"
+                },
+                {
+                  "t": "(S2)",
+                  "b": true
+                },
+                {
+                  "t": "；多人齐声用 "
+                },
+                {
+                  "t": "(S1,S2)",
+                  "b": true
+                },
+                {
+                  "t": "；"
+                },
+                {
+                  "t": "跨镜头 ID 不变",
+                  "b": true
+                },
+                {
+                  "t": "；从不出声的角色不编号。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "说话人首次出场，给足身份锚点：角色类型、年龄、性别、是否在画面内、音高、音色、语速、口音。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "身份描述、ID、动作、语气放在 "
+                },
+                {
+                  "t": "<d>",
+                  "b": true
+                },
+                {
+                  "t": " "
+                },
+                {
+                  "t": "外面",
+                  "b": true
+                },
+                {
+                  "t": "；"
+                },
+                {
+                  "t": "<d>",
+                  "b": true
+                },
+                {
+                  "t": " 里只放语言标记和台词本身，"
+                },
+                {
+                  "t": "一字不改、不翻译、保留原标点",
+                  "b": true
+                },
+                {
+                  "t": "。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "The young woman with a quiet, breathy voice (S1) says: <d>[English] I get off at the next station.</d>\nThe two children (S1,S2) shout together, <d>[English] Wait for us!</d>"
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/local-deployment-zero-to-output/2085251449924272128.webp",
+          "width": 800,
+          "height": 450
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "画外音",
+                  "b": true
+                },
+                {
+                  "t": "必须用固定短语 "
+                },
+                {
+                  "t": "says in an off-screen voiceover",
+                  "b": true
+                },
+                {
+                  "t": "，且紧跟一句声明画面上的人嘴唇没动："
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "The man (S1) says in an off-screen voiceover: <d>[English] I still remember that road.</d> while his lips remain completely closed."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "台词"
+                },
+                {
+                  "t": "跨越剪辑点",
+                  "b": true
+                },
+                {
+                  "t": "：在两段的连接处都放 "
+                },
+                {
+                  "t": "<scenetrans>",
+                  "b": true
+                },
+                {
+                  "t": "，并明确写音频连续（如 "
+                },
+                {
+                  "t": "carries over from the previous shot",
+                  "b": true
+                },
+                {
+                  "t": ")；台词被"
+                },
+                {
+                  "t": "片尾截断",
+                  "b": true
+                },
+                {
+                  "t": "用 "
+                },
+                {
+                  "t": "<cutoff>",
+                  "b": true
+                },
+                {
+                  "t": "。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "画面内文字",
+                  "b": true
+                },
+                {
+                  "t": "（招牌、字幕、霓虹灯）：放英文双引号里，原文保留不翻译——"
+                },
+                {
+                  "t": "A red neon sign reading \"营业中\" glows above the doorway.",
+                  "b": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "9.5 一个完整可抄的例子（官方 T2VA 案例）"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "integrated_multimodal_description: [Shot 1] Live-action, cinematic, a medium-wide shot frames a baker opening the shutters of a small street bakery before sunrise. The camera pushes in with small amplitude at slow speed as the middle-aged baker with a calm, slightly raspy voice (S1) places a fresh loaf on the wooden counter and says: <d>[English] First batch of the morning.</d> [Shot 2] At 00:05.000, the camera cuts to a close-up of steam rising from the sliced bread while the baker's final words carry over from the previous shot.\n\noverall_soundscape: Wooden shutters scrape open over a quiet street as trays clink softly inside the bakery. The doorbell rings once, followed by light footsteps and the crisp sound of bread being sliced.\n\nnon_diegetic_music: A soft acoustic-guitar pattern at a moderate tempo, joined by sparse upright-bass notes and a gentle fade at the end."
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "替换成你的场景，就是一条合格的 H3 提示词。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "9.6 带图的三种变体：开头多一行对齐指令"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "I2V 家族（I2VA / FL2VA / L2VA）在三字段"
+            },
+            {
+              "t": "之前",
+              "b": true
+            },
+            {
+              "t": "多一行固定格式的对齐指令，然后空一行："
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "只给首帧（I2VA）",
+              "b": true
+            },
+            {
+              "t": "——固定写法："
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced."
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "描述结构：先锚定图里的风格、主体、构图，再写动作如何展开（首帧锚点 → 动作发端 → 持续发展 → 结果）。角色衣着、颜色、关键物件、空间关系要和图保持一致。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "首尾帧都给（FL2VA）",
+              "b": true
+            },
+            {
+              "t": "——声明两张图各对齐哪个时间点："
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 1) aligns with the 8.00-second mark of the target video."
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "正文别把两张图各描述一遍——"
+            },
+            {
+              "t": "写连接它们的运动路径",
+              "b": true
+            },
+            {
+              "t": "（首帧状态 → 可见的中间变化 → 差距逐步收窄 → 尾帧状态）。FL2VA 尽量单镜头，让模型连续插值。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "只给尾帧（L2VA）",
+              "b": true
+            },
+            {
+              "t": "——图对齐片尾："
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "How the reference pictures align with the target video — <Picture 1> (from [Shot N]) aligns with the 6.00-second mark of the target video."
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "描述结构：推断一个合理的先前状态 → 明确的动作与过渡路径 → 最后一镜逐步收敛 → 落在图上。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "时间 "
+            },
+            {
+              "t": "S.SS",
+              "b": true
+            },
+            {
+              "t": " 必须精确到两位小数，且和你的实际视频时长一致（对照第 6 步帧数表换算）。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "9.7 提示词偷懒法"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "官方就是这么设计的：H3 的 API 版有个闭源的 Context-IR 模块专门干“把人话改写成上述格式”这件事，本地没有它，但你可以让任何一个 LLM 代劳。把官方指南链接和你的想法一起丢给它："
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "Learn how to write T2V prompts from https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md\nthen rewrite my idea into the three-field H3 prompt format:\n[你的中文想法]"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "生成结果检查三处：台词是否被改写（必须原文）、镜头时间戳是否递增且在总时长内、配乐字段有没有混进情绪词。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "不想依赖 LLM 的手感，还有个更正统的偷懒路径："
+            },
+            {
+              "t": "花几分钱调一次官方 Context-IR API",
+              "b": true
+            },
+            {
+              "t": "（¥5.80/百万 token 输入），把你的大白话和素材丢进去，它返回的增强提示词就是标准格式——这本来就是 API 版里帮你重写提示词的那个闭源模块。拿返回结果存成模板，后面每次改几个词，比从零学快得多，本地 ComfyUI 也认这种格式。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "10. 第 8 步：加速——SageAttention 省 24%，叠 Cache 最多再省 58%"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "先跑通再折腾这步。加速分两层，可以叠加："
+            },
+            {
+              "t": "SageAttention 把每一步算得更快，Cache 类节点直接跳过没必要算的步。",
+              "b": true
+            },
+            {
+              "t": " 先上第一层——同 seed 同工作流（1152×640/124 帧）A/B 实测省 24%："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "装 SageAttention",
+                  "b": true
+                },
+                {
+                  "t": "：从 "
+                },
+                {
+                  "t": "SageAttention releases",
+                  "href": "https://github.com/woct0rdho/SageAttention/releases"
+                },
+                {
+                  "t": " 下载和你的 PyTorch / CUDA 版本匹配的 wheel（文件名里写着 torch 和 cu 版本，对准了再下），然后 "
+                },
+                {
+                  "t": "pip install <wheel文件名>",
+                  "b": true
+                },
+                {
+                  "t": "。桌面版用户在其内置终端里执行，保证装进 ComfyUI 用的那个 Python 环境。"
+                },
+                {
+                  "t": "版本认准 2.x",
+                  "b": true
+                },
+                {
+                  "t": "——后面的 fp8 系模式只在 2.x 里有，1.x 根本没有对应内核；这些 wheel 都是 2.x 预编译版，直接装最省事。真要从源码自己编，有个硬门槛：sm_89（40 系）要求 CUDA ≥ 12.4（写在 setup.py 里），我们在 12.0 环境下编不过去，升到 12.8 才搞定。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "装 KJNodes 节点包",
+                  "b": true
+                },
+                {
+                  "t": "： ComfyUI Manager 里搜 "
+                },
+                {
+                  "t": "ComfyUI-KJNodes",
+                  "b": true
+                },
+                {
+                  "t": " 安装；或手动 "
+                },
+                {
+                  "t": "git clone https://github.com/kijai/ComfyUI-KJNodes",
+                  "b": true
+                },
+                {
+                  "t": " 到 "
+                },
+                {
+                  "t": "ComfyUI/custom_nodes/",
+                  "b": true
+                },
+                {
+                  "t": "，重启。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "接线",
+                  "b": true
+                },
+                {
+                  "t": "：工作流里加 "
+                },
+                {
+                  "t": "Patch Sage Attention KJ",
+                  "b": true
+                },
+                {
+                  "t": " 节点，插在 "
+                },
+                {
+                  "t": "UNETLoader",
+                  "b": true
+                },
+                {
+                  "t": " 和 "
+                },
+                {
+                  "t": "BasicGuider",
+                  "b": true
+                },
+                {
+                  "t": " 之间——UNETLoader 的 model 输出 → Patch 节点 model 输入，Patch 节点 model 输出 → BasicGuider 的 model 输入。只有 guider 需要打补丁，scheduler 不用动。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/local-deployment-zero-to-output/2085251457247563776.webp",
+          "width": 800,
+          "height": 450
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "选模式",
+                  "b": true
+                },
+                {
+                  "t": "：直接用 "
+                },
+                {
+                  "t": "auto",
+                  "b": true
+                },
+                {
+                  "t": " 就行。它会按显卡架构自动落到最快路径——4090 上 auto 就等于 "
+                },
+                {
+                  "t": "qk_int8_pv_fp8_cuda++",
+                  "b": true
+                },
+                {
+                  "t": "（查过源码：sm89 分支返回的正是同一个 fp8 内核，手动选没坏处但没必要）；"
+                },
+                {
+                  "t": "30 系卡（3090/3060 等 Ampere）没有 FP8 硬件单元",
+                  "b": true
+                },
+                {
+                  "t": "，auto 会落到 Ampere 可用的 int8 路径，仍有可观提速。真要手动锁定 "
+                },
+                {
+                  "t": "qk_int8_pv_fp8_cuda++",
+                  "b": true
+                },
+                {
+                  "t": "，前提是第 1 步装的确实是 SageAttention 2.x——1.x 没有这个内核，选了也是报错或静默回退。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "正常 Run。"
+                },
+                {
+                  "t": "懒人替代",
+                  "b": true
+                },
+                {
+                  "t": "：不想接节点，启动 ComfyUI 时加 "
+                },
+                {
+                  "t": "--use-sage-attention",
+                  "b": true
+                },
+                {
+                  "t": " 参数全局开启（桌面版在设置的启动参数里加）。两个坑必须说清："
+                },
+                {
+                  "t": "这个参数和 KJ 节点二选一，千万别同时开",
+                  "b": true
+                },
+                {
+                  "t": "——两边会重复打补丁，社区有反馈反而变慢；而且启动参数没法选模式，只能走默认路径。要控制力就接节点，要省事就用参数，别混着来。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "第二层：Cache 类节点，跳步不硬算"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "SageAttention 是把每一步算得更快，Cache 类节点是另一个思路：扩散采样的相邻步输出经常几乎一样，变化小到一定程度就直接复用上一步的结果，"
+            },
+            {
+              "t": "整步跳过不算",
+              "b": true
+            },
+            {
+              "t": "。两层叠加，同一条 362 帧满长度片（1152×640，4090 48G）的实测："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "仅 SageAttention",
+                  "b": true
+                },
+                {
+                  "t": " — 1183.6s（对无加速基线省 21.9%；和第 4 步表里的 1158s 是不同批次实测，2% 的批间波动属正常）"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Sage + EasyCache",
+                  "b": true
+                },
+                {
+                  "t": " — 899.5s（在 Sage 基础上再省 24.0%）"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Sage + TeaCache",
+                  "b": true
+                },
+                {
+                  "t": " — 500.5s（在 Sage 基础上再省 57.7%，"
+                },
+                {
+                  "t": "比只开 Sage 快一倍还多",
+                  "b": true
+                },
+                {
+                  "t": "）"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "EasyCache 是 ComfyUI 原生内置节点",
+              "b": true
+            },
+            {
+              "t": "，不用装任何第三方包：画布上加一个 "
+            },
+            {
+              "t": "EasyCache",
+              "b": true
+            },
+            {
+              "t": " 节点，串进 model 链路（和 Sage 补丁节点前后排开即可），关键参数是 "
+            },
+            {
+              "t": "reuse_threshold",
+              "b": true
+            },
+            {
+              "t": "（另有 "
+            },
+            {
+              "t": "start_percent",
+              "b": true
+            },
+            {
+              "t": " / "
+            },
+            {
+              "t": "end_percent",
+              "b": true
+            },
+            {
+              "t": " / "
+            },
+            {
+              "t": "verbose",
+              "b": true
+            },
+            {
+              "t": " 三个，一般不用动），默认 0.2 可以直接用。注意上面的 899.5s 是在更保守的 0.1 下测得——阈值越大跳得越多越快，124 帧短片实测 0.2 跑 215.7s、0.1 跑 260.0s，用默认值会比文中数字更快、损失也略大"
+            },
+            {
+              "t": "citation",
+              "href": "https://docs.comfy.org/built-in-nodes/EasyCache"
+            },
+            {
+              "t": " "
+            },
+            {
+              "t": "citation",
+              "href": "https://github.com/Comfy-Org/ComfyUI/pull/9496"
+            },
+            {
+              "t": "。TeaCache 认准 "
+            },
+            {
+              "t": "H3 专用",
+              "b": true
+            },
+            {
+              "t": "的节点包——本文 500.5s 用的是 "
+            },
+            {
+              "t": "Icyoung/ComfyUI-MiniMaxH3-TeaCache",
+              "href": "https://github.com/Icyoung/ComfyUI-MiniMaxH3-TeaCache"
+            },
+            {
+              "t": "（节点名 "
+            },
+            {
+              "t": "MiniMaxH3TeaCache",
+              "b": true
+            },
+            {
+              "t": "），另一个可选是 "
+            },
+            {
+              "t": "lihaoyun6/ComfyUI-MiniMaxH3-Cache",
+              "href": "https://github.com/lihaoyun6/ComfyUI-MiniMaxH3-Cache"
+            },
+            {
+              "t": "（节点名 "
+            },
+            {
+              "t": "MiniMaxH3Cache",
+              "b": true
+            },
+            {
+              "t": "）。"
+            },
+            {
+              "t": "别装 Manager 里那个通用的",
+              "b": true
+            },
+            {
+              "t": " <strong>"
+            },
+            {
+              "t": "ComfyUI-TeaCache",
+              "b": true
+            },
+            {
+              "t": "</strong>"
+            },
+            {
+              "t": "（welltop-cn）",
+              "b": true
+            },
+            {
+              "t": "——它的支持列表停在 FLUX / HiDream 那一代，没有 H3，装完你会发现根本没有能接进 H3 链路的节点。关键参数是 "
+            },
+            {
+              "t": "rel_l1_thresh",
+              "b": true
+            },
+            {
+              "t": "，越大跳得越狠越快。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "天下没有免费的午餐——Cache 的加速来自跳过真实计算，但代价要看对地方。我们在 R2V 参考图模式下逐帧核对过："
+            },
+            {
+              "t": "人脸身份并不漂移",
+              "b": true
+            },
+            {
+              "t": "（同一张脸、同一发型、同一裙装结构从头稳到尾），真正掉的是画面的“活性”——近似静止的“发呆”帧占比从 13.8% 翻到 41.5%，细节也更容易糊。所以检查 Cache 成片时别盯着脸看，看画面发不发呆、细节糊不糊。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "另一条要想在前面："
+            },
+            {
+              "t": "Cache 改变的是生成结果本身，不是“同一条片跑快点”。",
+              "b": true
+            },
+            {
+              "t": " 同 seed 实测，TeaCache 输出对无 Cache 基线的 SSIM 只有 0.78（EasyCache 是 0.96）——所以“草稿开 TeaCache 挑片、正片换配置复现”这个直觉打法不成立：换了配置，你挑中的那条画面就变了。正确用法二选一："
+            },
+            {
+              "t": "跑量筛提示词、筛创意，全程开 Sage + TeaCache，别指望草稿画面能原样复现；对画面有要求的正片，从选片到定稿用同一套保守配置",
+              "b": true
+            },
+            {
+              "t": "（Sage + EasyCache 或干脆只开 Sage）。阈值往小调，跳得保守些，损失也小些。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "11. 常见问题排查"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Q：提示缺少 MiniMaxH3ImageToVideo / EmptyMiniMaxH3LatentAV 等节点",
+              "b": true
+            },
+            {
+              "t": " A:ComfyUI 版本 < 0.30.0，升级。最高频问题。桌面版/整合包跟随稳定版发布，更新后重启再试。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Q：爆显存（OOM / CUDA out of memory）",
+              "b": true
+            },
+            {
+              "t": " A：按顺序排查——① 确认用的是 "
+            },
+            {
+              "t": "pruned_int8_convrot",
+              "b": true
+            },
+            {
+              "t": " DiT + "
+            },
+            {
+              "t": "nvfp4_awq",
+              "b": true
+            },
+            {
+              "t": " 编码器这对最小官方组合，不是误下了 bf16;② 关掉其他吃显存的程序（游戏、另一个 ComfyUI、跑着模型的浏览器标签）;③ 系统内存拉到 32GB 以上，12GB 卡靠内存分层加载；④ 还不行，换社区 INT4 量化（第 2 步末尾）。记住实测规律："
+            },
+            {
+              "t": "降分辨率救不了 OOM",
+              "b": true
+            },
+            {
+              "t": "，显存大头是模型本身。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Q：输出视频没有声音",
+              "b": true
+            },
+            {
+              "t": " A：两个 VAE 必须都加载——"
+            },
+            {
+              "t": "video_vae_fp16",
+              "b": true
+            },
+            {
+              "t": " 和 "
+            },
+            {
+              "t": "audio_vae_fp32",
+              "b": true
+            },
+            {
+              "t": "，并确认工作流里有 "
+            },
+            {
+              "t": "VAEDecodeAudio",
+              "b": true
+            },
+            {
+              "t": " 节点连到 "
+            },
+            {
+              "t": "SaveVideo",
+              "b": true
+            },
+            {
+              "t": "。用官方模板一般不会缺，自己改工作流时最容易删错。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Q：生成完全失败，分辨率开得很小",
+              "b": true
+            },
+            {
+              "t": " A:H3 最低 384p,256p 及以下必然失败。用官方模板的分辨率预设。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Q：视频时长和我填的不一样 / 卡不上音乐节拍",
+              "b": true
+            },
+            {
+              "t": " A：帧数被吸附到 17k+5 网格（第 6 步），单次上限 15.08 秒。从合法帧数表里直接挑，别填任意值。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Q:R2V 模板报“找不到模型”",
+              "b": true
+            },
+            {
+              "t": " A: R2V 用 "
+            },
+            {
+              "t": "ref2va",
+              "b": true
+            },
+            {
+              "t": " 权重，和 T2V/I2V 的 "
+            },
+            {
+              "t": "fl2va",
+              "b": true
+            },
+            {
+              "t": " 是两套，单独下载（第 6 步）。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Q:R2V 特别慢",
+              "b": true
+            },
+            {
+              "t": " A：检查 "
+            },
+            {
+              "t": "ref_image_size",
+              "b": true
+            },
+            {
+              "t": " 是否选了 "
+            },
+            {
+              "t": "max",
+              "b": true
+            },
+            {
+              "t": "——参考 token 每步采样都要过一遍，"
+            },
+            {
+              "t": "max",
+              "b": true
+            },
+            {
+              "t": " 慢好几倍。日常用 "
+            },
+            {
+              "t": "match",
+              "b": true
+            },
+            {
+              "t": "。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Q：参考视频/输入图出来变形、裁切",
+              "b": true
+            },
+            {
+              "t": " A：参考视频会被压到「短边 768、面积上限 768×1344、对齐 32」的画布，和输出分辨率是两套规则。素材先自己裁成目标宽高比。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Q：控制台刷 dtype 警告",
+              "b": true
+            },
+            {
+              "t": " A：正常现象（第 5 步），部分层回退标准 attention，不影响生成。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Q：我的 3090 比别人的 4090 慢好几倍，显存还用不满",
+              "b": true
+            },
+            {
+              "t": " A：两个原因叠加——① 3090 是 Ampere 架构，没有 FP8 硬件单元，INT8/FP8 权重要在计算前转回高精度，同代对比天然慢；② 社区多人观察到 H3 的动态显存调度偏保守，24GB 卡可能只用到 18GB 左右，显存利用率不满是已知现象，不是你的配置错了。能做的：开 SageAttention（"
+            },
+            {
+              "t": "auto",
+              "b": true
+            },
+            {
+              "t": " 模式）、用质量取向的 INT8 Lean 权重、把内存加到 64GB 减少分层等待"
+            },
+            {
+              "t": "citation",
+              "href": "https://www.reddit.com/r/StableDiffusion/comments/1ve59y1/is_the_vram_being_underutilized_on_minimax_h3/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Q:16GB 卡（5070 Ti / 4080）启动就崩，报 “Device memory is nearly full”",
+              "b": true
+            },
+            {
+              "t": " A：这是加载阶段显存 + 内存双双吃紧的表现。按顺序试：① 系统内存 32GB 是底线，加到 64GB 最有效；② 加启动参数 "
+            },
+            {
+              "t": "--cache-none --disable-smart-memory",
+              "b": true
+            },
+            {
+              "t": " 强制模型完全卸载；③ 关掉浏览器硬件加速（浏览器本身会占 1–2GB 显存）；④ 换第 2 步末尾的 INT4/NVFP4 小权重。另有 5070 Ti 用户报告速度异常波动的案例，若明显慢于同档卡，先更新到最新稳定版 ComfyUI 和显卡驱动再对比"
+            },
+            {
+              "t": "citation",
+              "href": "https://github.com/Comfy-Org/ComfyUI/issues/15261"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Q：生成的人物说中文口型对不上 / 台词被改",
+              "b": true
+            },
+            {
+              "t": " A：检查 "
+            },
+            {
+              "t": "<d>",
+              "b": true
+            },
+            {
+              "t": " 标签——语言标记写对（"
+            },
+            {
+              "t": "[Chinese]",
+              "b": true
+            },
+            {
+              "t": ")，台词原文放标签内，身份和语气描述放标签外。台词被模型改写通常是因为写在了 "
+            },
+            {
+              "t": "<d>",
+              "b": true
+            },
+            {
+              "t": " 外面。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "12. 声音效果，提前对齐预期"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "官方宣传“原生 32kHz 立体声”，实测拆解：32kHz、双声道属实，左右声道确实不同（L/R 差 0.2–0.9 dB，差信号比主信号低 14–24 dB），不是单声道复制两份糊弄人。但预期放对："
+            },
+            {
+              "t": "这是“有空间感”的窄声场立体声，不是强声像分离",
+              "b": true
+            },
+            {
+              "t": "，别指望左右横穿的音效定位。它最值钱的一点：对白、音效、配乐和画面在一次前向传播里同时生成——唇形同步是天生的，不是后期对上去的。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "13. 本地 vs API，一笔账"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "官方 API 刊例价（人民币）:"
+            },
+            {
+              "t": "2K ¥0.80/秒，768P ¥0.50/秒，768P→2K 再生成 ¥0.30/秒",
+              "b": true
+            },
+            {
+              "t": "；音频输入免费，图片 5 张内免费（超出 ¥0.20/张）。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "注意 0.50 + 0.30 = 0.80——先出 768p 草稿再升 2K，和直接出 2K "
+            },
+            {
+              "t": "一个价",
+              "b": true
+            },
+            {
+              "t": "，官方定价没给“云端草稿”留任何便宜。这正好框定了本地部署的位置："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "迭代试错、跑量出草稿 → 本地。",
+                  "b": true
+                },
+                {
+                  "t": " 一条 5 秒 768p 走 API 要 ¥2.5，本地电费忽略不计，试 50 版提示词就省 100 多块。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "定稿要高清，两条路。",
+                  "b": true
+                },
+                {
+                  "t": " 路线 A："
+                },
+                {
+                  "t": "本地超分到 1080p，免费",
+                  "b": true
+                },
+                {
+                  "t": "。社区已有调好参数的 ComfyUI 工作流，用 LTX 2.3 或 Wan 2.2 5B 把 768p 成片拉上 1080p——注意选调低了 sigmas 的版本，参数过高会换脸、毁口型；早期流传的一些版本就栽在这上面"
+                },
+                {
+                  "t": "citation",
+                  "href": "https://www.reddit.com/r/StableDiffusion/comments/1vf4ync/12x_faster_minimax_h3_generations_stop_rendering/"
+                },
+                {
+                  "t": "。路线 B："
+                },
+                {
+                  "t": "API 升 2K，¥0.30/秒",
+                  "b": true
+                },
+                {
+                  "t": "，15 秒成片 ¥4.5。它和普通超分不是一回事——重生成带着原始上下文重画一遍，小字和细节是还原不是猜，交付级项目值这个钱。ComfyUI 里就有现成的 API 模板（第 3 步表格里那三个 api_ 开头的），不用离开工作台。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "没有 12GB+ 的 N 卡、或一年用不了几次 → 直接 API",
+                  "b": true
+                },
+                {
+                  "t": "，别为几条视频折腾 40 GB 权重。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/local-deployment-zero-to-output/2085251465527054336.webp",
+          "width": 800,
+          "height": 450
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "本地省下的主要是试错阶段那笔最大的浪费；定稿阶段，1080p 够用就连高清的钱也省了，只有非要官方 2K 才掏 ¥0.30/秒。想清楚这个定位，一张消费级的卡不只是草稿机，是台能出片的主力机。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "最后按四类人把路线判断说死："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "只是想玩玩",
+                  "b": true
+                },
+                {
+                  "t": " → 第 0 步的网页版就够了，别往下走。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "做产品接生成能力、要 2K、赶交付",
+                  "b": true
+                },
+                {
+                  "t": " → 直接 API，一条 5 秒 2K 四块钱，别折腾本地。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "有 12GB+ 的 N 卡、出片量大、爱折腾",
+                  "b": true
+                },
+                {
+                  "t": " → 本地部署 + 上面的混合打法，这篇教程就是为你写的。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "想微调、做研究",
+                  "b": true
+                },
+                {
+                  "t": " → 下完整 bf16 权重（AdaLN 那 13B 也在里面），官方推荐 SGLang 多卡起步，超出本文范围。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "附：决定走 API 的话，这段脚本直接抄"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "去 platform.minimaxi.com（海外 platform.minimax.io）注册，用户中心充值，账户管理里创建 API key。然后三步：提交任务 → 轮询状态 → 下载视频："
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "import os, time, requests\n\nAPI_KEY = os.environ[\"MINIMAX_API_KEY\"]   # 你的 key\nBASE = \"https://api.minimaxi.com\"          # 海外用 https://api.minimax.io\nheaders = {\"Authorization\": f\"Bearer {API_KEY}\"}\n\n# 1. 提交任务\npayload = {\n    \"model\": \"MiniMax-H3\",\n    \"content\": [\n        {\"type\": \"text\", \"text\": \"镜头拍摄一只橘猫趴在窗台上，\"\n         \"窗外下着雨，猫的尾巴慢慢摆动，画面是暖色调，\"\n         \"配上雨声和远处隐约的车流声。\"}\n    ],\n    \"duration\": 5,           # 4-15 的整数\n    \"resolution\": \"768P\",    # 草稿用 768P，定稿再 2K\n    \"ratio\": \"16:9\",         # 纯文生视频必填，不能写 adaptive\n}\nr = requests.post(f\"{BASE}/v2/video_generation\", headers=headers, json=payload)\nr.raise_for_status()\ntask_id = r.json()[\"task_id\"]\n\n# 2. 轮询直到完成\nwhile True:\n    time.sleep(10)\n    q = requests.get(f\"{BASE}/v2/query/video_generation/{task_id}\", headers=headers).json()\n    status = q[\"task\"][\"status\"]\n    if status == \"succeeded\":\n        url = q[\"task\"][\"content\"][\"url\"]\n        break\n    if status in (\"failed\", \"canceled\"):\n        raise SystemExit(q)\n\n# 3. 下载（链接有时效，别囤着不下）\nopen(\"out.mp4\", \"wb\").write(requests.get(url).content)",
+          "language": "python"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "图生视频只需在 "
+            },
+            {
+              "t": "content",
+              "b": true
+            },
+            {
+              "t": " 里加一项 "
+            },
+            {
+              "t": "{\"type\": \"image_url\", \"image_url\": {\"url\": \"https://你的图片地址.png\"}, \"role\": \"first_frame\"}",
+              "b": true
+            },
+            {
+              "t": "，加了首帧图之后把 "
+            },
+            {
+              "t": "ratio",
+              "b": true
+            },
+            {
+              "t": " 删掉（会自动按图片比例来）。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "四条新手墙，提前告诉你："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "duration",
+                  "b": true
+                },
+                {
+                  "t": " 只收 "
+                },
+                {
+                  "t": "4 到 15 的整数",
+                  "b": true
+                },
+                {
+                  "t": "（注意和本地的 17k+5 帧数网格是两套规则）。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "素材单个限制：视频 50MB、图 30MB、音频 15MB；"
+                },
+                {
+                  "t": "请求体总共 64MB",
+                  "b": true
+                },
+                {
+                  "t": "，超了就传 URL 别传 base64。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "音频不能单独作为输入",
+                  "b": true
+                },
+                {
+                  "t": "，必须搭一张图或一段视频。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "任务记录只保存 "
+                },
+                {
+                  "t": "7 天",
+                  "b": true
+                },
+                {
+                  "t": "，视频链接有时效，出片就下载。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "实测环境：RTX 4090 48GB（魔改）/ ComfyUI 0.30.0 / torch 2.11 + cu128。文中耗时、显存、可复现性数据均为该环境实测；权重大小以 Hugging Face 官方仓库为准；提示词语法以 MiniMax 官方指南为准。",
+              "i": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "title": "MiniMax H3 本地部署保姆级教程:从零装机到写出专业提示词,附实测数据",
+  "cover": {
+    "src": "/tutorial-media/local-deployment-zero-to-output/2085251558258978816-cover.webp",
+    "width": 1600,
+    "height": 640
+  }
+}

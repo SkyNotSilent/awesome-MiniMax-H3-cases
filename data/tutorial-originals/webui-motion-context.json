@@ -1,0 +1,55 @@
+{
+  "tutorialId": "webui-motion-context",
+  "kind": "x-thread",
+  "language": "ja",
+  "capturedAt": "2026-09-13T09:46:51.496Z",
+  "source": {
+    "url": "https://x.com/core_tan/status/2087415961293144516",
+    "author": "CALMDUST aka ちゃんこあ",
+    "handle": "@core_tan"
+  },
+  "sections": [
+    {
+      "url": "https://x.com/core_tan/status/2087415961293144516",
+      "publishedAt": "2026-08-12",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "MiniMax H3 WebUI 1.4完成"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "⭕️VAE最適化で最大40％（5s 720P）高速化 → 短いほど恩恵大\n⭕️Motion Context実装。最大1分まで生成可\n⭕️SeedVR2による内部アップスケール、時間予測付き"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "現時点でトータル5000行超えて、今まで作ったアプリの中でも過去いちデカい規模のソフトと化した🙄"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/webui-motion-context/2087412883537952768.webp",
+          "width": 1600,
+          "height": 1886
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/webui-motion-context/2087414210875797505.webp",
+          "width": 1600,
+          "height": 1724
+        }
+      ]
+    }
+  ]
+}

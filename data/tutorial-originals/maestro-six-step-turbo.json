@@ -1,0 +1,68 @@
+{
+  "tutorialId": "maestro-six-step-turbo",
+  "kind": "x-thread",
+  "language": "en",
+  "capturedAt": "2026-09-13T09:43:59.398Z",
+  "source": {
+    "url": "https://x.com/blizaine/status/2085554573494657328",
+    "author": "Blaine Brown",
+    "handle": "@blizaine"
+  },
+  "sections": [
+    {
+      "url": "https://x.com/blizaine/status/2085554573494657328",
+      "publishedAt": "2026-08-07",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Maestro v1.6.1 - Update to make MiniMax H3 Turbo Mode easier to use."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "H3 Distilled LoRA (6-step example below)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "~5x speed-up. Results a little rough, but it's still early."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "src": "/media/tutorial-2085553552064172032.mp4",
+          "poster": "/tutorial-media/maestro-six-step-turbo/2085553552064172032-poster.webp",
+          "width": 960,
+          "height": 544,
+          "duration": 8.7
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/maestro-six-step-turbo/2085553648029822976.webp",
+          "width": 784,
+          "height": 910
+        },
+        {
+          "type": "post-quote",
+          "url": "https://x.com/blizaine/status/2085503860194333156",
+          "author": "Blaine Brown",
+          "handle": "@blizaine",
+          "inlines": [
+            {
+              "t": "Maestro v1.6.0 is live! 🎬\n\nMajor MiniMax H3 upgrades:\n • Omni mode w/ image, video, voice, motion, & audio\n • H3 in Director mode!\n • Sliding-window continuation\n • Better dialogue, character & prompt accuracy\n • H3 4-step Turbo LoRA support\n\nAll local & open source🚀"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

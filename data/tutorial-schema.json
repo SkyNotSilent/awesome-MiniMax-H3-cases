@@ -269,6 +269,15 @@
     "uninstall": {
       "$ref": "#/$defs/localizedList"
     },
+    "original": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "capturedAt"],
+      "properties": {
+        "kind": { "enum": ["x-article", "x-thread", "markdown"] },
+        "capturedAt": { "type": "string", "format": "date-time" }
+      }
+    },
     "sourceRefs": {
       "type": "array",
       "items": {

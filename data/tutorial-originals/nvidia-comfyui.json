@@ -1,0 +1,880 @@
+{
+  "tutorialId": "nvidia-comfyui",
+  "kind": "markdown",
+  "language": "en",
+  "capturedAt": "2026-09-13T09:41:10.975Z",
+  "source": {
+    "url": "https://github.com/Larryvrh/ComfyUI-MiniMax-H3-Turbo",
+    "author": "Larryvrh",
+    "revision": "4274783a23afcfdbea3b4876cb79effd6c510785",
+    "license": "Apache-2.0"
+  },
+  "sections": [
+    {
+      "url": "https://github.com/Larryvrh/ComfyUI-MiniMax-H3-Turbo",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Run "
+            },
+            {
+              "href": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3",
+              "t": "MiniMax-H3"
+            },
+            {
+              "t": " —\njoint "
+            },
+            {
+              "b": true,
+              "t": "video + synchronized audio"
+            },
+            {
+              "t": " — in as few as "
+            },
+            {
+              "b": true,
+              "t": "4 sampling steps"
+            },
+            {
+              "t": " instead\nof ~20, with the\n"
+            },
+            {
+              "href": "https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora",
+              "t": "MiniMax-H3 Turbo LoRA"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Two nodes drop straight into the official H3 workflow (text-to-video and\nimage-to-video):"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "node"
+              }
+            ],
+            [
+              {
+                "t": "what it does"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "b": true,
+                  "t": "MiniMax-H3 Turbo LoRA"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "MODEL → MODEL"
+                },
+                {
+                  "t": ", applies the turbo LoRA"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "b": true,
+                  "t": "MiniMax-H3 Turbo Sampler"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "→ SAMPLER"
+                },
+                {
+                  "t": ", feeds "
+                },
+                {
+                  "c": true,
+                  "t": "SamplerCustomAdvanced"
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Which checkpoint — "
+            },
+            {
+              "c": true,
+              "t": "v4"
+            },
+            {
+              "t": " (600) or "
+            },
+            {
+              "c": true,
+              "t": "v1"
+            },
+            {
+              "t": " (850)?"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "For "
+            },
+            {
+              "b": true,
+              "t": "most"
+            },
+            {
+              "t": " work, use "
+            },
+            {
+              "b": true,
+              "c": true,
+              "t": "minimax_h3_turbo_v4_step600_ema.safetensors"
+            },
+            {
+              "t": " (from the\n"
+            },
+            {
+              "href": "https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora",
+              "t": "LoRA repo"
+            },
+            {
+              "t": "). It's the\nstrongest checkpoint so far: much better static / small-motion shots, markedly\nbetter micro-detail (faces, fingers, texture), and the over-sharpening / plastic\nlook of the earlier "
+            },
+            {
+              "c": true,
+              "t": "v1"
+            },
+            {
+              "t": " (~850) line is fully resolved."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "v4 introduced a "
+            },
+            {
+              "b": true,
+              "t": "static-frame enhancement"
+            },
+            {
+              "t": ". The one trade-off shows up "
+            },
+            {
+              "b": true,
+              "t": "only at\n4 steps with large, fast motion"
+            },
+            {
+              "t": ", where v4 can produce "
+            },
+            {
+              "b": true,
+              "t": "motion-smear / trailing\nghosting"
+            },
+            {
+              "t": " (actively being fixed). "
+            },
+            {
+              "b": true,
+              "t": "Using 6–8 steps largely removes it"
+            },
+            {
+              "t": " — and v4\ntolerates higher step counts better than v1 (which over-sharpens at high steps +\nstrength 1.0). For the narrow case of "
+            },
+            {
+              "b": true,
+              "t": "4 steps "
+            },
+            {
+              "b": true,
+              "i": true,
+              "t": "and"
+            },
+            {
+              "b": true,
+              "t": " heavy motion"
+            },
+            {
+              "t": ", the older\n"
+            },
+            {
+              "b": true,
+              "c": true,
+              "t": "v1"
+            },
+            {
+              "b": true,
+              "t": " ~850"
+            },
+            {
+              "t": " checkpoint can still be friendlier."
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "Using 6–8 steps?        ── yes ──►  v4-600  (recommended)\n   │ no (4 steps)\n   ▼\nHeavy / fast motion?    ── no  ──►  v4-600  (recommended)\n   │ yes\n   ▼\n                                    v1-850  (friendlier at 4-step heavy motion)"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Still a preview — the two areas still being improved are "
+            },
+            {
+              "b": true,
+              "t": "audio"
+            },
+            {
+              "t": " and "
+            },
+            {
+              "b": true,
+              "t": "fast,\nintense motion"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Install"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "Via ComfyUI-Manager"
+            },
+            {
+              "t": " — search \"MiniMax-H3 Turbo\" and install. "
+            },
+            {
+              "b": true,
+              "t": "Or manually:"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "cd ComfyUI/custom_nodes\ngit clone https://github.com/larryvrh/ComfyUI-MiniMax-H3-Turbo",
+          "language": "bash"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Then restart ComfyUI. Keep the node updated (Manager, or "
+            },
+            {
+              "c": true,
+              "t": "git pull"
+            },
+            {
+              "t": ") — it evolves\nalongside the weights."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Put the LoRA "
+            },
+            {
+              "c": true,
+              "t": ".safetensors"
+            },
+            {
+              "t": " into "
+            },
+            {
+              "c": true,
+              "t": "ComfyUI/models/loras/"
+            },
+            {
+              "t": ". You also need the base\nMiniMax-H3 model, VAEs and text encoder from the official release — see the\n"
+            },
+            {
+              "href": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3",
+              "t": "MiniMax-H3 tutorial"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Use"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Start from the "
+            },
+            {
+              "b": true,
+              "t": "official MiniMax-H3 workflow"
+            },
+            {
+              "t": " (t2v or i2v) and make two changes:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Insert "
+                },
+                {
+                  "b": true,
+                  "t": "MiniMax-H3 Turbo LoRA"
+                },
+                {
+                  "t": " between the model loader and the sampler\n("
+                },
+                {
+                  "c": true,
+                  "t": "… → Load Diffusion Model → MiniMax-H3 Turbo LoRA → SamplerCustomAdvanced"
+                },
+                {
+                  "t": "),\nand pick the turbo "
+                },
+                {
+                  "c": true,
+                  "t": ".safetensors"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Feed "
+                },
+                {
+                  "c": true,
+                  "t": "SamplerCustomAdvanced"
+                },
+                {
+                  "t": " from "
+                },
+                {
+                  "b": true,
+                  "t": "MiniMax-H3 Turbo Sampler"
+                },
+                {
+                  "t": ", and set the\nscheduler node ("
+                },
+                {
+                  "c": true,
+                  "t": "BasicScheduler"
+                },
+                {
+                  "t": ") to "
+                },
+                {
+                  "c": true,
+                  "t": "simple"
+                },
+                {
+                  "t": " at "
+                },
+                {
+                  "b": true,
+                  "t": "≥ 4 steps"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Everything else — conditioning, VAE decode, audio output — stays as in the\nofficial graph, so "
+            },
+            {
+              "b": true,
+              "t": "both t2v and i2v"
+            },
+            {
+              "t": " work unchanged. A ready-made t2v workflow\nis in "
+            },
+            {
+              "href": "https://github.com/Larryvrh/ComfyUI-MiniMax-H3-Turbo/blob/main/example_workflows/minimax_h3_t2v_turbo.json",
+              "c": true,
+              "t": "example_workflows/"
+            },
+            {
+              "t": " — drag it\ninto ComfyUI to see the wiring."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Steps and strength"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "4 steps is the recommended "
+                },
+                {
+                  "b": true,
+                  "i": true,
+                  "t": "minimum"
+                },
+                {
+                  "b": true,
+                  "t": "; 4–8 is the useful range."
+                },
+                {
+                  "t": " 6–8 steps\nlook noticeably better than 4, so add steps if you can afford them. Past "
+                },
+                {
+                  "b": true,
+                  "t": "8\nsteps"
+                },
+                {
+                  "t": " it stops helping and can start to introduce "
+                },
+                {
+                  "b": true,
+                  "t": "over-sharp artifacts"
+                },
+                {
+                  "t": " —\nno benefit to going higher, so stay in "
+                },
+                {
+                  "b": true,
+                  "t": "4–8"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Keep "
+                },
+                {
+                  "b": true,
+                  "c": true,
+                  "t": "strength"
+                },
+                {
+                  "b": true,
+                  "t": " at "
+                },
+                {
+                  "b": true,
+                  "c": true,
+                  "t": "1.0"
+                },
+                {
+                  "b": true,
+                  "t": "."
+                },
+                {
+                  "t": " It's tuned for 1.0 and holds up across the 4–8 step\nrange. Only reach for the dial if a "
+                },
+                {
+                  "i": true,
+                  "t": "specific"
+                },
+                {
+                  "t": " clip misbehaves: "
+                },
+                {
+                  "b": true,
+                  "t": "blurry ghosting\n/ smear → nudge up"
+                },
+                {
+                  "t": " ("
+                },
+                {
+                  "c": true,
+                  "t": "~1.05–1.2"
+                },
+                {
+                  "t": "), "
+                },
+                {
+                  "b": true,
+                  "t": "over-sharp grain → nudge down"
+                },
+                {
+                  "t": "\n("
+                },
+                {
+                  "c": true,
+                  "t": "~0.8–0.95"
+                },
+                {
+                  "t": ")."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Keep the scheduler on "
+                },
+                {
+                  "c": true,
+                  "t": "simple"
+                },
+                {
+                  "t": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Base model & "
+            },
+            {
+              "c": true,
+              "t": "low_vram"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "Base model"
+            },
+            {
+              "t": " — works with any MiniMax-H3 base: full ("
+            },
+            {
+              "c": true,
+              "t": "bf16"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "int8_convrot"
+            },
+            {
+              "t": ")\n"
+            },
+            {
+              "b": true,
+              "t": "and the pruned/curve variants"
+            },
+            {
+              "t": " ("
+            },
+            {
+              "c": true,
+              "t": "pruned_int8"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "c": true,
+              "t": "pruned_fp8"
+            },
+            {
+              "t": "). The node detects a\npruned base automatically and re-injects the LoRA's time-conditioning at run time\n(a small "
+            },
+            {
+              "c": true,
+              "t": "silu(t_emb)"
+            },
+            {
+              "t": " grid ships with the node for this), so "
+            },
+            {
+              "b": true,
+              "t": "one LoRA file\ncovers every base"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "c": true,
+              "t": "low_vram"
+            },
+            {
+              "t": " (node switch) trades sharpness for peak VRAM:"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "off (default)"
+                },
+                {
+                  "t": " — applies the LoRA at run time (bypass): sharpest, recommended,\na little extra peak VRAM."
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "on"
+                },
+                {
+                  "t": " — merges the LoRA into the weights: lowest peak VRAM, so smaller GPUs run\nand longer / higher-res clips fit, but the result is "
+                },
+                {
+                  "b": true,
+                  "t": "softer on quantized\n("
+                },
+                {
+                  "b": true,
+                  "c": true,
+                  "t": "int8"
+                },
+                {
+                  "b": true,
+                  "t": " / "
+                },
+                {
+                  "b": true,
+                  "c": true,
+                  "t": "fp8"
+                },
+                {
+                  "b": true,
+                  "t": " / pruned) bases"
+                },
+                {
+                  "t": " (the tiny update is partly rounded away when\nfolded into the quantized weights)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The node streams the base model, so it runs on much smaller GPUs than the ~33 B\nsize suggests — an 80 GB GPU is only needed for the largest resolutions in "
+            },
+            {
+              "c": true,
+              "t": "bypass"
+            },
+            {
+              "t": "\nmode. If you hit out-of-memory, turn "
+            },
+            {
+              "c": true,
+              "t": "low_vram"
+            },
+            {
+              "t": " "
+            },
+            {
+              "b": true,
+              "t": "on"
+            },
+            {
+              "t": " and/or lower the resolution\nor frame count."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Why a custom sampler (and how it adapts)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "MiniMax-H3 denoises the video and audio streams on two different flow schedules\n(video shift 12, audio shift 3). "
+            },
+            {
+              "b": true,
+              "t": "Recent ComfyUI handles this natively"
+            },
+            {
+              "t": " — its\n"
+            },
+            {
+              "c": true,
+              "t": "ModelSamplingAV"
+            },
+            {
+              "t": " carries the audio latent on the video schedule — so a stock\nsampler already produces correct audio there. On "
+            },
+            {
+              "b": true,
+              "t": "older ComfyUI without that\nsupport"
+            },
+            {
+              "t": ", a stock sampler steps both streams on one schedule and badly over-steps\nthe audio at 4 steps, so the audio comes out distorted."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "This node's sampler "
+            },
+            {
+              "b": true,
+              "t": "auto-detects which ComfyUI it's on"
+            },
+            {
+              "t": ": on recent builds it\nsteps as a plain single-schedule sampler (bit-for-bit the stock result); on older\nbuilds it steps each stream on its own clock so audio stays clean at 4 steps. Keep\nit in the workflow and it does the right thing across ComfyUI versions — nothing to\nchange when you update. (On recent ComfyUI a stock "
+            },
+            {
+              "c": true,
+              "t": "euler"
+            },
+            {
+              "t": " also works; the Turbo\nSampler just keeps existing graphs running unchanged.)"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "Notes"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Resolution / length"
+                },
+                {
+                  "t": ": width and height are multiples of 32 (short edge\ntypically 768); frame count is at 24 fps and snaps to the model's 17·k+5 grid\n(124 ≈ 5 s). Validated range ~124–362 frames."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "License"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Apache-2.0."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "title": "ComfyUI-MiniMax-H3-Turbo"
+}

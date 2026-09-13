@@ -1,0 +1,99 @@
+{
+  "tutorialId": "dual-clock-audio",
+  "kind": "x-thread",
+  "language": "zh",
+  "capturedAt": "2026-09-13T09:44:58.878Z",
+  "source": {
+    "url": "https://x.com/0xmomonifty/status/2085377094461333550",
+    "author": "0xMomo",
+    "handle": "@0xmomonifty"
+  },
+  "sections": [
+    {
+      "url": "https://x.com/0xmomonifty/status/2085377094461333550",
+      "publishedAt": "2026-08-06",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "天呐， Minimax H3 出来才 3 天，4 步加速 Lora 已经在 Hugging Face 上面出来了，不过这上面的 Lora 还不支持 ComfyUI"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "但是 B 站大佬 T8 已经适配了支持 ComfyUI 的 Lora ，还出了一个双时钟采样器，都已经开源了"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "相当于质量无明显下降的情况下，生成速度减少一倍"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "https://github.com/T8mars/comfyui-minimax-h3-audio-T8",
+              "href": "https://github.com/T8mars/comfyui-minimax-h3-audio-T8"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "src": "/media/tutorial-2085376567535165440.mp4",
+          "poster": "/tutorial-media/dual-clock-audio/2085376567535165440-poster.webp",
+          "width": 1280,
+          "height": 736,
+          "duration": 5.2
+        },
+        {
+          "type": "post-quote",
+          "url": "https://x.com/T8star_Aix/status/2085331362983354815",
+          "author": "T8star",
+          "handle": "@T8star_Aix",
+          "inlines": [
+            {
+              "t": "加速再加速！MiniMax H3双时钟采样器T8开源啦！速度再次提高100%，支持步数分离采样，搭配加速lora，质量速度双拉满！-comfyui教程 "
+            },
+            {
+              "t": "https://youtu.be/8u8U8HWD5vg?si=li_EcvdNFxZM_CrL",
+              "href": "https://youtu.be/8u8U8HWD5vg?si=li_EcvdNFxZM_CrL"
+            },
+            {
+              "t": " 来自 "
+            },
+            {
+              "t": "@YouTube",
+              "href": "https://x.com/YouTube"
+            },
+            {
+              "t": "\n\n#ai #comfyui #人工智能 #minimaxh3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://x.com/0xmomonifty/status/2085395862449250504",
+      "publishedAt": "2026-08-06",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "口误，应该是生成时间减少一倍"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

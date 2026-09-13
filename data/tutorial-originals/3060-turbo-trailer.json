@@ -1,0 +1,69 @@
+{
+  "tutorialId": "3060-turbo-trailer",
+  "kind": "x-thread",
+  "language": "zh",
+  "capturedAt": "2026-09-13T09:42:13.897Z",
+  "source": {
+    "url": "https://x.com/PixelAigc/status/2086958485741441240",
+    "author": "PixelAIGC",
+    "handle": "@PixelAigc"
+  },
+  "sections": [
+    {
+      "url": "https://x.com/PixelAigc/status/2086958485741441240",
+      "publishedAt": "2026-08-10",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "好莱坞完蛋了！\nAI视频的平权时代来了！\nSeedance 2.5能做的，Minimax H3 一样可以做到，我昨天晚上用一台老电脑，24G内存，12G的3060显卡，用一批2024年初MJ生成的图片，生成一分钟左右的电影预告片视频，图生视频，用的是turbo LoRA ，生视频效果还不错。\nSeedance prompt 非常简单，就是把图片上的元素怎么动起来怎么运镜描述一下就行。"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "src": "/media/tutorial-2086958315628814336.mp4",
+          "poster": "/tutorial-media/3060-turbo-trailer/2086958315628814336-poster.webp",
+          "width": 1920,
+          "height": 828,
+          "duration": 58.9
+        }
+      ]
+    },
+    {
+      "url": "https://x.com/PixelAigc/status/2087174226524643710",
+      "publishedAt": "2026-08-11",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "第二部来了 "
+            },
+            {
+              "t": "https://x.com/PixelAigc/status/2087174097960579441?s=20",
+              "href": "https://x.com/PixelAigc/status/2087174097960579441?s=20"
+            }
+          ]
+        },
+        {
+          "type": "post-quote",
+          "url": "https://x.com/PixelAigc/status/2087174097960579441",
+          "author": "PixelAIGC",
+          "handle": "@PixelAigc",
+          "inlines": [
+            {
+              "t": "好莱坞完蛋了！ 💔\nAI视频已进入平权时代！ ✊\nSeedance 2.5能做的，Minimax H3 一样可以做到！\n我今天晚上继续用我的那一台老电脑，i5-6500 CPU  3.20GHz ，24G内存，12G的3060显卡，用一批2024年初MJ生成的图片，花了2个多小时，制作了第二部一分钟左右的科幻电影预告片视频，用了16多段5秒的图生视频素材进行人工剪辑，用的是Minimaxt H3 Turbo LoRA ，生视频效果还不错。🚀\nSeedance prompt 非常简单，就是把图片上的元素怎么动起来怎么运镜描述一下就行。\n\n比如女主角转身走向飞船那个镜头的提示词是：阴暗的街道上，女主角回头看一下镜头，转身向前走去，他的前面是一支机甲部队，背景里是一艘巨大的航天飞船，她走向飞船，机甲部队让出一条路，手持跟随拍摄，一场史诗级的灾难，类似于流浪地球的灾难片，史诗电影风格，保持风格和人物一致性。\n\n第一部在我的主页上，浏览量非常不错。\n如果你喜欢，请告诉我，我还会继续把这个系列的电影预告片做下去。"
+            }
+          ],
+          "image": {
+            "src": "/tutorial-media/3060-turbo-trailer/2087172858112036864-quote.webp",
+            "width": 1200,
+            "height": 518
+          }
+        }
+      ]
+    }
+  ]
+}

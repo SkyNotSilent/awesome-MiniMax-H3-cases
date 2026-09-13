@@ -1,0 +1,114 @@
+{
+  "tutorialId": "ref2v-motion-context-chunks",
+  "kind": "x-thread",
+  "language": "ja",
+  "capturedAt": "2026-09-13T09:46:55.852Z",
+  "source": {
+    "url": "https://x.com/cla_kuro37459/status/2087892024410480796",
+    "author": "くらくろ🌗AI VTuber ラビ開発",
+    "handle": "@cla_kuro37459"
+  },
+  "sections": [
+    {
+      "url": "https://x.com/cla_kuro37459/status/2087892024410480796",
+      "publishedAt": "2026-08-13",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "MiniMax H3 Ref2Vで、ウチの子が踊れるようになった🐇これローカルでできるのすごいな～～"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "4070 12GB+RAM 32GBだと720p 13秒一発生成はムリだったので、ComfyU + Turbo step 8 + Motion Contextで5秒チャンク×3で連結、30分くらいで生成。mmdからのキャラ差し替えはビームマンPさんの記事を参考"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "チャンク間のlatent引き継ぎのため、後半にノイズ・筋肉質・陰影の質感がかさむ…だんだんえっちになってしまう問題がある。あとopenpose追従とかじゃなくてあくまで参照なので後半動きがズレがち"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "一発生成した方が絶対早いのでローカル試行はこれくらいで、土日にrunpod試そ"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "src": "/media/tutorial-2087888518395858944.mp4",
+          "poster": "/tutorial-media/ref2v-motion-context-chunks/2087888518395858944-poster.webp",
+          "width": 1088,
+          "height": 960,
+          "duration": 13.4
+        },
+        {
+          "type": "post-quote",
+          "url": "https://x.com/BeamManP/status/2075280887512797625",
+          "author": "ビームマンＰ ver40",
+          "handle": "@BeamManP",
+          "inlines": [
+            {
+              "t": "【MV・アニメ制作】MMDの動きはそのままに\"キャラだけ差し替える\" MMD×Seedance 2.0モーション流用術\n\n0:12\nAI動画生成で「キャラ再現がいまいちなAI動画をいったんマネキン（無地の人体モデル）に変換して、そこにキャラクターのデザインを乗せて出力し直す」というテクニックを見かけて、ずっと気になっていました。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://x.com/cla_kuro37459/status/2088247602689212817",
+      "publishedAt": "2026-08-14",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "すごくたくさん見てもらえているので。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "AI Vtuberラビを開発中です！まだチャンネル方針検討中ですが、youtubeチャンネルもあるのでぜひ～\n"
+            },
+            {
+              "t": "https://x.com/ravi_19690720/status/2079162569407987882?s=20",
+              "href": "https://x.com/ravi_19690720/status/2079162569407987882?s=20"
+            }
+          ]
+        },
+        {
+          "type": "post-quote",
+          "url": "https://x.com/ravi_19690720/status/2079162569407987882",
+          "author": "宙依ラビ🌓🐇AI VTuber",
+          "handle": "@ravi_19690720",
+          "inlines": [
+            {
+              "t": "月面基地からこんばんは！🌓\nAI VTuber, 宙依ラビです！🐇\n\n本日から各プラットフォームで活動開始します\n自己紹介動画を投稿したので、ぜひ見てね～\n"
+            },
+            {
+              "t": "https://youtube.com/shorts/binxALIRqSI?feature=share",
+              "href": "https://youtube.com/shorts/binxALIRqSI?feature=share"
+            },
+            {
+              "t": " \n#AIVTuber #AITuber #新人Vtuber"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

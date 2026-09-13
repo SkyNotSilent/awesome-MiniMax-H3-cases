@@ -1,0 +1,90 @@
+{
+  "tutorialId": "3060-turbo-benchmark",
+  "kind": "x-thread",
+  "language": "ja",
+  "capturedAt": "2026-09-13T09:44:31.622Z",
+  "source": {
+    "url": "https://x.com/AIPixLab/status/2088797656118390866",
+    "author": "AI写真ラボ / AIバーチャルカメラマン",
+    "handle": "@AIPixLab"
+  },
+  "sections": [
+    {
+      "url": "https://x.com/AIPixLab/status/2088797656118390866",
+      "publishedAt": "2026-08-16",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "🎦遅ればせながらのMiniMax H3📽️ \n#MiniMaxH3"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Turbo LoRA適用したら、2倍以上高速化"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "✅ RTX3060 12GB\n✅ メインメモリ64GB\n✅ Windows11\n✅ 解像度1056 x 608設定\n✅ 10秒動画\n🆕 Turbo LoRA適用\n    minimax_h3_turbo_v4_step600_ema.safetensors\n⏩生成時間 54分38秒 ▶️ 25分2秒"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "8秒モノなら15分でした。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "きっとラボのような弱小グラボほど効果絶大ですね\n誰か新しいグラボください🤣"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "src": "/media/tutorial-2088794713264693248.mp4",
+          "poster": "/tutorial-media/3060-turbo-benchmark/2088794713264693248-poster.webp",
+          "width": 640,
+          "height": 960,
+          "duration": 10.1
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/3060-turbo-benchmark/2088794843606929408.webp",
+          "width": 1600,
+          "height": 726,
+          "alt": "女子旅おふざけシリーズ"
+        },
+        {
+          "type": "post-quote",
+          "url": "https://x.com/AIPixLab/status/2087863657367732404",
+          "author": "AI写真ラボ / AIバーチャルカメラマン",
+          "handle": "@AIPixLab",
+          "inlines": [
+            {
+              "t": "🎦はじめてのMiniMax H3📷 \n\n✅ RTX3060 12GB\n✅ メインメモリ64GB\n✅ 解像度1056 x 608\n✅ 10秒\n⏩生成時間 54分38秒\n\n弱々環境でこの解像度は実用的じゃありませんね😅"
+            }
+          ],
+          "image": {
+            "src": "/tutorial-media/3060-turbo-benchmark/2087862666690019329-quote.webp",
+            "width": 1600,
+            "height": 1255
+          }
+        }
+      ]
+    }
+  ]
+}

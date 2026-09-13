@@ -1,0 +1,149 @@
+{
+  "tutorialId": "four-essential-h3-repositories",
+  "kind": "x-thread",
+  "language": "zh",
+  "capturedAt": "2026-09-13T09:41:28.322Z",
+  "source": {
+    "url": "https://x.com/servasyy_ai/status/2086101388132835743",
+    "author": "huangserva",
+    "handle": "@servasyy_ai"
+  },
+  "sections": [
+    {
+      "url": "https://x.com/servasyy_ai/status/2086101388132835743",
+      "publishedAt": "2026-08-08",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "玩 MiniMax H3 的,这 4 个仓库直接收藏,少走一星期弯路:"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "1⃣ MiniMax-AI/MiniMax-H3\n官方仓库,重点不是权重,是里面带的 9 个 Skill——h3-prompt-writing 能让 Claude/Codex 替你组织镜头、对白、环境声,等于白嫖一个本地版提示词导演。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "2⃣ larryvrh/MiniMax-H3-Turbo-Lora\n目前最成熟的加速 LoRA,20 步压到 4–8 步:4 步出预览,6–8 步出成片。别信\"5×\"的传法——那是采样步数,端到端实测 3.9×(14 秒片从 15:57 到 4:03),VAE 解码和封装不跟着缩。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "3⃣ NikoDemon80/ComfyUI-H3-Motion-Context\n长视频续接。H3 单次上限 15 秒,要更长的分镜连贯生成,试试它。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "4⃣ T8mars/comfyui-minimax-h3-audio-T8\n音视频工作流合集,想把 H3 的声音能力用足的看这个。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "实测最稳的加速组合:Turbo LoRA + SageAttention。EasyCache 是给原生 20 步准备的 , 跟 4 步 Turbo 不叠加,实测还多 5% 的监控开销,别全都开。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "顺带说一个现状:H3 的 LoRA 生态现在热的是加速,人物/画风训练还没成气候,想训角色的再等等。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "我下一步想打通的玩法 : Agent 调 h3-prompt-writing 写提示词 → ComfyUI API 出片 → Remotion 自动剪,全链路无人出片。通了发出来。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "觉得有用,给这几个仓库个⭐️,链接👇"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "链接清单(放法你定:要么开评论贴,要么正文每条后面直接跟):"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "https://github.com/MiniMax-AI/MiniMax-H3",
+              "href": "https://github.com/MiniMax-AI/MiniMax-H3"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora",
+              "href": "https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora"
+            },
+            {
+              "t": " (注意 2⃣ 是 HuggingFace 不是 GitHub)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context",
+              "href": "https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "https://github.com/T8mars/comfyui-minimax-h3-audio-T8",
+              "href": "https://github.com/T8mars/comfyui-minimax-h3-audio-T8"
+            }
+          ]
+        },
+        {
+          "type": "post-quote",
+          "url": "https://x.com/servasyy_ai/status/2085251627880255525",
+          "author": "huangserva",
+          "handle": "@servasyy_ai",
+          "inlines": [
+            {
+              "t": "MiniMax H3 本地部署保姆级教程:从零装机到写出专业提示词,附实测数据\n\n这篇教程的目标：一台只装了系统和显卡驱动的电脑，跟着做完，能跑出带立体声的 AI 视频，并且学会官方提示词语法——H3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

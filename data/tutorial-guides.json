@@ -284,7 +284,11 @@
         "kind": "path",
         "value": "ComfyUI/models/loras/minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors"
       }
-    ]
+    ],
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T09:41:09.754Z"
+    }
   },
   {
     "id": "nvidia-comfyui",
@@ -639,7 +643,11 @@
         "value": "git -C ComfyUI-MiniMax-H3-Turbo pull",
         "platform": "shell"
       }
-    ]
+    ],
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T09:41:10.975Z"
+    }
   },
   {
     "id": "mac-native",
@@ -918,7 +926,11 @@
         "platform": "macos",
         "cwd": "h3.c"
       }
-    ]
+    ],
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T09:41:12.984Z"
+    }
   },
   {
     "id": "prompt-agent-skill",
@@ -1132,7 +1144,11 @@
         "value": "git clone https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context",
         "platform": "shell"
       }
-    ]
+    ],
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T09:41:14.408Z"
+    }
   },
   {
     "id": "local-deployment-zero-to-output",
@@ -1233,7 +1249,11 @@
       "official-deployment",
       "context-ir-local-pipeline"
     ],
-    "guideType": "reference"
+    "guideType": "reference",
+    "original": {
+      "kind": "x-article",
+      "capturedAt": "2026-09-13T09:41:15.626Z"
+    }
   },
   {
     "id": "four-essential-h3-repositories",
@@ -1331,7 +1351,11 @@
       "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
       "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
     },
-    "guideType": "reference"
+    "guideType": "reference",
+    "original": {
+      "kind": "x-thread",
+      "capturedAt": "2026-09-13T09:41:28.322Z"
+    }
   },
   {
     "id": "attention-low-vram-lora",
@@ -1427,7 +1451,11 @@
       "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
       "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
     },
-    "guideType": "reference"
+    "guideType": "reference",
+    "original": {
+      "kind": "x-thread",
+      "capturedAt": "2026-09-13T09:41:30.104Z"
+    }
   },
   {
     "id": "context-ir-local-pipeline",
@@ -1629,7 +1657,11 @@
       }
     ],
     "learningOrder": 1,
-    "guideType": "project"
+    "guideType": "project",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T09:41:32.429Z"
+    }
   },
   {
     "id": "video-pov-camera-angles",
@@ -1700,7 +1732,7 @@
     ],
     "source": {
       "platform": "docs",
-      "url": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3#minimax-h3-reference-to-video-r2v",
+      "url": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3-native#minimax-h3-reference-to-video-r2v",
       "author": "ComfyUI",
       "authorProfileUrl": "https://github.com/Comfy-Org",
       "originalLanguage": "en"
@@ -1819,7 +1851,11 @@
       }
     ],
     "learningOrder": 3,
-    "guideType": "project"
+    "guideType": "project",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T09:41:33.608Z"
+    }
   },
   {
     "id": "storyboard-to-trailer",
@@ -1917,7 +1953,11 @@
       "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
       "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
     },
-    "guideType": "project"
+    "guideType": "project",
+    "original": {
+      "kind": "x-thread",
+      "capturedAt": "2026-09-13T09:41:46.689Z"
+    }
   },
   {
     "id": "3060-turbo-trailer",
@@ -2014,7 +2054,11 @@
       "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
       "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
     },
-    "guideType": "project"
+    "guideType": "project",
+    "original": {
+      "kind": "x-thread",
+      "capturedAt": "2026-09-13T09:42:13.897Z"
+    }
   },
   {
     "id": "maestro-six-step-turbo",
@@ -2111,7 +2155,11 @@
       "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
       "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
     },
-    "guideType": "reference"
+    "guideType": "reference",
+    "original": {
+      "kind": "x-thread",
+      "capturedAt": "2026-09-13T09:43:59.398Z"
+    }
   },
   {
     "id": "maestro-pruned-20b",
@@ -2208,7 +2256,11 @@
       "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
       "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
     },
-    "guideType": "reference"
+    "guideType": "reference",
+    "original": {
+      "kind": "x-thread",
+      "capturedAt": "2026-09-13T09:44:17.581Z"
+    }
   },
   {
     "id": "3060-turbo-benchmark",
@@ -2302,7 +2354,11 @@
       "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
       "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
     },
-    "guideType": "reference"
+    "guideType": "reference",
+    "original": {
+      "kind": "x-thread",
+      "capturedAt": "2026-09-13T09:44:31.622Z"
+    }
   },
   {
     "id": "mac-phosphene-turbo",
@@ -2399,7 +2455,11 @@
       "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
       "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
     },
-    "guideType": "reference"
+    "guideType": "reference",
+    "original": {
+      "kind": "x-thread",
+      "capturedAt": "2026-09-13T09:44:46.946Z"
+    }
   },
   {
     "id": "rent-gpu-comfyui",
@@ -2574,7 +2634,11 @@
       "context-ir-local-pipeline"
     ],
     "learningOrder": 3,
-    "guideType": "setup"
+    "guideType": "setup",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T09:44:49.334Z"
+    }
   },
   {
     "id": "dual-clock-audio",
@@ -2759,7 +2823,11 @@
         "value": "cd ComfyUI/custom_nodes && git clone https://github.com/T8mars/comfyui-minimax-h3-audio-T8.git minimax-h3-audio-T8",
         "platform": "shell"
       }
-    ]
+    ],
+    "original": {
+      "kind": "x-thread",
+      "capturedAt": "2026-09-13T09:44:58.878Z"
+    }
   },
   {
     "id": "native-comfyui-modes",
@@ -2828,7 +2896,7 @@
     ],
     "source": {
       "platform": "docs",
-      "url": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3#minimax-h3-image-to-video-i2v",
+      "url": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3-native#minimax-h3-image-to-video-i2v",
       "author": "ComfyUI",
       "authorProfileUrl": "https://github.com/Comfy-Org",
       "originalLanguage": "en"
@@ -2948,7 +3016,11 @@
       }
     ],
     "learningOrder": 2,
-    "guideType": "project"
+    "guideType": "project",
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T09:45:12.552Z"
+    }
   },
   {
     "id": "4080-int8-pruned",
@@ -3142,7 +3214,11 @@
         "value": "python examples/minimax_h3/model_inference_low_vram/MiniMax-H3-Int8-ConvRot-Pruned-FL2VA.py",
         "platform": "shell"
       }
-    ]
+    ],
+    "original": {
+      "kind": "x-article",
+      "capturedAt": "2026-09-13T09:45:22.549Z"
+    }
   },
   {
     "id": "four-bit-eight-gb",
@@ -3336,15 +3412,19 @@
         "value": "ffprobe -v error -show_streams t2va.mp4",
         "platform": "shell"
       }
-    ]
+    ],
+    "original": {
+      "kind": "x-thread",
+      "capturedAt": "2026-09-13T09:45:25.984Z"
+    }
   },
   {
     "id": "train-ref2va-lora",
     "contentType": "community",
     "category": "training",
     "title": {
-      "zh": "H3 Ref2VA LoRA：社区训练路线导读",
-      "en": "H3 Ref2VA LoRA: a guide to community training routes"
+      "zh": "H3 Ref2VA LoRA：用 AI Toolkit 训练视频 LoRA",
+      "en": "H3 Ref2VA LoRA: train a video LoRA with AI Toolkit"
     },
     "outcome": {
       "zh": "了解原作者的 Ref2VA LoRA 训练路线，先确认工具、数据格式与硬件要求。",
@@ -3441,7 +3521,11 @@
     "nextGuideIds": [
       "video-pov-camera-angles"
     ],
-    "guideType": "reference"
+    "guideType": "reference",
+    "original": {
+      "kind": "x-thread",
+      "capturedAt": "2026-09-13T09:45:38.788Z"
+    }
   },
   {
     "id": "webui-motion-context",
@@ -3538,7 +3622,11 @@
       "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
       "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
     },
-    "guideType": "reference"
+    "guideType": "reference",
+    "original": {
+      "kind": "x-thread",
+      "capturedAt": "2026-09-13T09:46:51.496Z"
+    }
   },
   {
     "id": "ref2v-motion-context-chunks",
@@ -3637,7 +3725,11 @@
       "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
       "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
     },
-    "guideType": "project"
+    "guideType": "project",
+    "original": {
+      "kind": "x-thread",
+      "capturedAt": "2026-09-13T09:46:55.852Z"
+    }
   },
   {
     "id": "lightx2v-vs-larryvrh",
@@ -3735,7 +3827,11 @@
       "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
       "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
     },
-    "guideType": "reference"
+    "guideType": "reference",
+    "original": {
+      "kind": "x-thread",
+      "capturedAt": "2026-09-13T09:47:14.883Z"
+    }
   },
   {
     "id": "minimax-director-timeline",
@@ -4057,6 +4153,10 @@
         "platform": "shell",
         "cwd": "Parent directory containing ComfyUI"
       }
-    ]
+    ],
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-09-13T09:47:47.188Z"
+    }
   }
 ]

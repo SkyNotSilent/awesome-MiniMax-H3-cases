@@ -1,0 +1,1132 @@
+{
+  "tutorialId": "4080-int8-pruned",
+  "kind": "x-article",
+  "language": "zh",
+  "capturedAt": "2026-09-13T09:45:22.549Z",
+  "source": {
+    "url": "https://x.com/eternityspring/status/2084666970558074971",
+    "author": "烁皓",
+    "handle": "@eternityspring"
+  },
+  "sections": [
+    {
+      "url": "https://x.com/eternityspring/status/2084666970558074971",
+      "publishedAt": "2026-08-04",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "先把结论摆在最前面，省得划半天："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "MiniMax H3 现在已经支持 "
+                },
+                {
+                  "t": "ComfyUI 原生工作流",
+                  "b": true
+                },
+                {
+                  "t": "，本地能跑；"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "我这台 "
+                },
+                {
+                  "t": "RTX 4080 16GB",
+                  "b": true
+                },
+                {
+                  "t": "，靠 pruned + int8 低显存版跑通，10 秒视频大约 10 分钟出片；"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "但对"
+                },
+                {
+                  "t": "模型版本、目录结构、ComfyUI 版本",
+                  "b": true
+                },
+                {
+                  "t": "要求很严——文件下错、版本不对，基本直接报错，或者根本起不来；"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "唯一还没搞定的坑："
+                },
+                {
+                  "t": "中文口播不稳",
+                  "b": true
+                },
+                {
+                  "t": "，提示词里反复强调用中文，生成出来偏偏不一定是中文。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "说明学中文这件事，不仅对老外有难度，对大模型也有难度。记得GPT image 早期的时候也是遇到中文就乱码。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "一、硬件"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "我自己的实测配置："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "显卡",
+                  "b": true
+                },
+                {
+                  "t": "：NVIDIA GeForce RTX 4080 16GB"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "内存",
+                  "b": true
+                },
+                {
+                  "t": "：32GB"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "系统",
+                  "b": true
+                },
+                {
+                  "t": "：Windows"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "ComfyUI",
+                  "b": true
+                },
+                {
+                  "t": "：0.30.0"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "运行方式",
+                  "b": true
+                },
+                {
+                  "t": "：ComfyUI 原生 MiniMax H3 工作流"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "二、装好 / 更新 ComfyUI（版本必须 ≥ 0.30.0）"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "这里先钉死一个关键前提："
+            },
+            {
+              "t": "MiniMax H3 要走原生工作流，ComfyUI 版本必须至少是 0.30.0",
+              "b": true
+            },
+            {
+              "t": "（H3 原生支持就是从这版开始的）。低于这个版本，后面的原生节点根本不会出现，怎么折腾都白搭。"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "全新安装",
+                  "b": true
+                },
+                {
+                  "t": "：官方下载 "
+                },
+                {
+                  "t": "comfy.org/download",
+                  "href": "https://comfy.org/download"
+                },
+                {
+                  "t": "，或 GitHub 上的 Comfy-Org/ComfyUI；"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "已经装了",
+                  "b": true
+                },
+                {
+                  "t": "：用 "
+                },
+                {
+                  "t": "ComfyUI Manager",
+                  "b": true
+                },
+                {
+                  "t": " 一键更新到最新，省事。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "三、下对模型文件（最容易翻车的一步）"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "MiniMax H3 这个名字底下挂着好几套文件——旧版、社区插件、官方原生工作流，长得都差不多，但"
+            },
+            {
+              "t": "不能混用",
+              "b": true
+            },
+            {
+              "t": "。要走原生工作流，就只认官方那一组。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "模型托管在 Hugging Face 官方仓库 Comfy-Org/MiniMax-H3。我这次用的是下面这套 "
+            },
+            {
+              "t": "pruned 低显存组合",
+              "b": true
+            },
+            {
+              "t": "："
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "用途 文件名 大约大小 放置目录    扩散模型（T2V / I2V） minimax_h3_fl2va_pruned_int8_convrot.safetensors ~19.5 GB models/diffusion_models/   扩散模型（R2V，可选） minimax_h3_ref2va_pruned_int8_convrot.safetensors ~19.5 GB models/diffusion_models/   文本编码器 qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors ~14.6 GB models/text_encoders/   视频 VAE minimax_h3_video_vae_fp16.safetensors ~4.9 GB models/vae/   音频 VAE minimax_h3_audio_vae_fp32.safetensors ~0.6 GB models/vae/"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "几个要点："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "扩散模型走的是 "
+                },
+                {
+                  "t": "pruned + int8",
+                  "b": true
+                },
+                {
+                  "t": " 的低显存版本，这也是 4080 16GB 能上车的关键——"
+                },
+                {
+                  "t": "满血 bf16 / 非 pruned 版本更大，显存吃不下，别下。",
+                  "b": true
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "我这次做的是图生视频，扩散模型只用到 T2V/I2V 那个（fl2va）；"
+                },
+                {
+                  "t": "只有要做参考生视频（R2V）时，才需要再补上 ref2va 那个",
+                  "b": true
+                },
+                {
+                  "t": "，否则可以省下 19.5G。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "一套下来光模型就 40–60 G，硬盘得留够空间。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "下载方式：",
+              "b": true
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "网页直接下："
+                },
+                {
+                  "t": "huggingface.co/Comfy-Org/MiniMax-H3",
+                  "href": "https://huggingface.co/Comfy-Org/MiniMax-H3"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "命令行（推荐，稳）："
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "# 安装 huggingface_hub\npip install -U huggingface_hub\nhf download Comfy-Org/MiniMax-H3 --local-dir ./models_temp\n# 然后手动把文件挪到对应目录"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "国内用户用镜像加速",
+              "b": true
+            },
+            {
+              "t": "：设置环境变量 HF_ENDPOINT=https://hf-mirror.com 后再跑上面的 hf 命令；或者上 ModelScope 搜 MiniMax-H3 / Comfy-Org 相关内容。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "四、模型放到哪个目录"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "下好之后按用途放进 ComfyUI 对应目录即可，目录不存在就自己建一个："
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "ComfyUI/models/diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors\nComfyUI/models/diffusion_models/minimax_h3_ref2va_pruned_int8_convrot.safetensors   # R2V，可选\nComfyUI/models/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors\nComfyUI/models/vae/minimax_h3_video_vae_fp16.safetensors\nComfyUI/models/vae/minimax_h3_audio_vae_fp32.safetensors"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "两个 VAE（视频 + 音频）都放在 vae/ 目录下，别拆开。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "五、加载模板，先跑通一条 5 秒"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "模型放好后，打开 ComfyUI，按这个流程走："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "左侧 "
+                },
+                {
+                  "t": "Template Library（模板库）→ Video",
+                  "b": true
+                },
+                {
+                  "t": "，选 MiniMax H3 相关模板："
+                },
+                {
+                  "t": "T2V",
+                  "b": true
+                },
+                {
+                  "t": "（文生视频）、"
+                },
+                {
+                  "t": "I2V",
+                  "b": true
+                },
+                {
+                  "t": "（图生视频）、"
+                },
+                {
+                  "t": "R2V",
+                  "b": true
+                },
+                {
+                  "t": "（参考生视频），按需求挑一个；"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "模板可能弹提示引导下载缺失模型——"
+                },
+                {
+                  "t": "如果已经手动放好，直接跳过",
+                  "b": true
+                },
+                {
+                  "t": "；"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "顺手验证一下原生节点在不在，应该能搜到这三个：MiniMaxH3ImageToVideo、MiniMaxH3ReferenceToVideo、MiniMaxH3SigmaShift，加载器下拉里也能看到刚下的那几个文件。"
+                },
+                {
+                  "t": "看不到，就回去查两件事：ComfyUI 是不是 0.30.0+、模型是不是放进了官方要求的目录",
+                  "b": true
+                },
+                {
+                  "t": "（九成的「节点/文件找不到」都出在这两条）；"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "在 "
+                },
+                {
+                  "t": "Resolution Selector",
+                  "b": true
+                },
+                {
+                  "t": " 节点里，先把 "
+                },
+                {
+                  "t": "Megapixels 调低（0.4–0.5）",
+                  "b": true
+                },
+                {
+                  "t": " 测速，"
+                },
+                {
+                  "t": "时长选 5 秒起步",
+                  "b": true
+                },
+                {
+                  "t": "；"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "写提示词 → "
+                },
+                {
+                  "t": "Queue Prompt",
+                  "b": true
+                },
+                {
+                  "t": " 运行。输出是一段"
+                },
+                {
+                  "t": "带原生立体声的 MP4",
+                  "b": true
+                },
+                {
+                  "t": "。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "关键是"
+            },
+            {
+              "t": "从小开始，别一把梭",
+              "b": true
+            },
+            {
+              "t": "。MiniMax H3 本地推理能跑，但它不是「想怎么堆参数就怎么堆」的模型，分辨率、时长、分镜复杂度一上去，耗时会显著增长。本地实测："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "5 秒 832×480 预览",
+                  "b": true
+                },
+                {
+                  "t": "：大约几分钟；"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "10 秒",
+                  "b": true
+                },
+                {
+                  "t": "：约 10 分钟出片，明显更慢；"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "1024×576 + 10 秒 + 多分镜",
+                  "b": true
+                },
+                {
+                  "t": "：本地会非常吃时间。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "建议的爬坡顺序：先 5 秒 → 先 832×480 → 先用首帧图生视频 → 角色场景稳了再拉到 1024×576 或更高 → 最后才上长时长和复杂分镜。一句话定位："
+            },
+            {
+              "t": "把它当成「短片段反复试错」的工具，而不是「一把梭哈成片」的工具。",
+              "b": true
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "六、最稳的用法：先做首帧，再生成"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "想要角色一致性更高的视频，最稳的做法不是纯文生视频，而是先把首帧钉死："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "先生成角色立绘；"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "再做一张"
+                },
+                {
+                  "t": "横版首帧图",
+                  "b": true
+                },
+                {
+                  "t": "；"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "拿这张首帧去做 Image-to-Video。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "这次效果最稳的一次，就是这么走的：先固定一个小学生角色形象，再做一张「小卖部门口骑自行车」的横版首帧，最后送进 MiniMax H3 生成视频。比纯提示词生成稳得多，尤其体现在："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "角色服装一致性；"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "自行车不乱变形；"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "场景风格统一；"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "镜头起始画面可控。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "一句话："
+            },
+            {
+              "t": "首帧图就是给模型的锚点，锚点越稳，视频越不飘。",
+              "b": true
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "七、我踩过的几个坑（这段可能比教程本身更有用）"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "1. 模型文件别混用。",
+              "b": true
+            },
+            {
+              "t": " 最容易翻车的不是参数，而是「看起来都叫 H3，实际上不是一套文件」。旧版 / 社区 / 官方原生混在一起，很容易出现「文本编码器结构不匹配」「模型能识别但跑不通」「VAE 对得上但 CLIP 对不上」，最典型的症状就是文本编码器一加载就报 shape mismatch。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "2. Windows 页面文件要给够。",
+              "b": true
+            },
+            {
+              "t": " 页面文件（虚拟内存）太小，有可能直接报错。这次能稳定跑下去，和把页面文件调大有直接关系。只有 32GB 内存又想跑长一点的视频，"
+            },
+            {
+              "t": "千万别把虚拟内存关掉。",
+              "b": true
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "3. 中文口播不稳（目前最大的遗留问题）。",
+              "b": true
+            },
+            {
+              "t": " 提示词里明确写了中文口播、还指定了那句台词，但本地实测：有时后台提示词直接显示乱码，有时中文口播并不完全按要求来——"
+            },
+            {
+              "t": "画面能出来，不代表中文一定稳。",
+              "b": true
+            },
+            {
+              "t": " 所以如果目标是「角色演戏 + 指定中文台词」，我现在更推荐拆开做：先让 MiniMax H3 负责画面和动作，"
+            },
+            {
+              "t": "中文台词后期再补配音",
+              "b": true
+            },
+            {
+              "t": "，可控性高得多。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "4. 竖图首帧会把视频比例带歪。",
+              "b": true
+            },
+            {
+              "t": " 如果首帧是竖图，就算输出参数写了 16:9，结果也可能被首帧构图强行带偏。后来专门先做一张"
+            },
+            {
+              "t": "真正的 16:9 横版首帧",
+              "b": true
+            },
+            {
+              "t": "才修正过来——这一点非常重要，别偷懒。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "八、跑完之后，我的真实评价"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "说实话，本地能把这套东西跑起来，我已经觉得挺能打了。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "优点：",
+              "b": true
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "原生带音频的视频生成，体验很新鲜；"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "角色和场景氛围做得出来；"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "小短片测试已经有可玩性；"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "用首帧图做控制时，稳定性肉眼可见地提升。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "缺点也很实：",
+              "b": true
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "本地推理速度不算快；"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "中文语音不够稳；"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "长时长、多分镜、高分辨率更吃机器；"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "想做成一套「可复用的动画生产流程」，工作流还得继续打磨。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "所以我现在的判断是："
+            },
+            {
+              "t": "它已经不是「只能看 Demo」的阶段了，可以拿来做简短动画测试；但距离「稳定批量生产完整短片」，还有一段路。",
+              "b": true
+            },
+            {
+              "t": " 能玩，但先别神话。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "九、如果也想本地部署，建议这么开始"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "别一上来就做复杂项目。最推荐的起步顺序："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "装 / 更新 "
+                },
+                {
+                  "t": "ComfyUI 到 0.30.0+",
+                  "b": true
+                },
+                {
+                  "t": "；"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "下官方那套 "
+                },
+                {
+                  "t": "pruned 低显存文件",
+                  "b": true
+                },
+                {
+                  "t": "（别下满血 bf16）；"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "放进官方要求的目录；"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "Template Library 加载 MiniMax H3 模板，"
+                },
+                {
+                  "t": "Megapixels 0.4–0.5、5 秒、832×480 先跑通一条",
+                  "b": true
+                },
+                {
+                  "t": "；"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "先做"
+                },
+                {
+                  "t": "首帧图",
+                  "b": true
+                },
+                {
+                  "t": "，先验证角色一致性和镜头感觉；"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "最后才挑战长时长、复杂分镜和口播。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "这条路，会比「直接 10 秒、15 秒、强口播、强剧情」稳定太多。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "结尾"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "总之这次本地把 MiniMax H3 跑通之后，感受很明确：它已经不是只能看 Demo 的玩具了，是真的可以开始在本地搭工作流、做简短动画片的阶段。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "接下来我准备继续测这几件事：双角色一致性、更稳的分镜控制、本地工作流复用，以及"
+            },
+            {
+              "t": "中文口播的替代方案",
+              "b": true
+            },
+            {
+              "t": "。后面整理得更完整了，我会把提示词和工作流一起分享出来。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "最后留个问题——"
+            },
+            {
+              "t": "中文口播那个坑，如果有人已经在本地稳定实现了「指定中文台词」，欢迎评论区点我一下",
+              "b": true
+            },
+            {
+              "t": "：到底是提示词姿势不对，还是模型对中文本就偏弱？这条要是能解，本地做完整中文短片的最后一块拼图就补上了。"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "title": "无保留分享 RTX 4080 本地跑 MiniMax H3，省下API的钱买冰棍不香吗？",
+  "cover": {
+    "src": "/tutorial-media/4080-int8-pruned/2084666773786525696-cover.webp",
+    "width": 1600,
+    "height": 640
+  }
+}

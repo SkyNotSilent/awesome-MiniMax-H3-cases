@@ -1,0 +1,192 @@
+{
+  "tutorialId": "attention-low-vram-lora",
+  "kind": "x-thread",
+  "language": "zh",
+  "capturedAt": "2026-09-13T09:41:30.104Z",
+  "source": {
+    "url": "https://x.com/servasyy_ai/status/2087562850781020535",
+    "author": "huangserva",
+    "handle": "@servasyy_ai"
+  },
+  "sections": [
+    {
+      "url": "https://x.com/servasyy_ai/status/2087562850781020535",
+      "publishedAt": "2026-08-12",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "这下根本学不完了！\nMiniMax H3 刚把开源视频带火，48 小时内，IndexTTS-2.5 和 LTX-2.5 又接连开源"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "再加上几天前的 Wan-Animate-2，配音、角色驱动、多镜头和专业后期一下全补上了。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "更大的变化是：开源 AI 视频不再只会生成一段 5 秒素材，而是在拼出一条真正能生产内容的流水线。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "IndexTTS-2.5 只有 0.8B，支持音色克隆、情绪、语速和读音控制。（Index TTS2是我之前见过最好的TTS，没有之一）\n"
+            },
+            {
+              "t": "https://github.com/index-tts/index-tts",
+              "href": "https://github.com/index-tts/index-tts"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "LTX-2.5 支持原生多镜头和 9 套 ComfyUI 工作流，16GB 显存只是启动线。（我数字人一直用LTX2.3）\n"
+            },
+            {
+              "t": "https://github.com/Lightricks/LTX-2",
+              "href": "https://github.com/Lightricks/LTX-2"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "阿里 Wan2.2-Animate 用角色图复刻真人动作、表情，也能替换视频人物。（这个要好好测测了，电商之宝）\n"
+            },
+            {
+              "t": "https://github.com/Wan-Video/Wan2.2",
+              "href": "https://github.com/Wan-Video/Wan2.2"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "NAVA 是 6.3B 原生音画模型，FP8 约占 18GB，24GB 显卡可生成 720p 视频。\n"
+            },
+            {
+              "t": "https://github.com/ernie-research/NAVA",
+              "href": "https://github.com/ernie-research/NAVA"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "IndexTTS 配音，Animate 驱动角色，NAVA 做同步音画，LTX 完成多镜头精修。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "开源社区，这下和过年一样热闹了！"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/attention-low-vram-lora/2087562806464000000.webp",
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "type": "post-quote",
+          "url": "https://x.com/servasyy_ai/status/2087343267277160510",
+          "author": "huangserva",
+          "handle": "@servasyy_ai",
+          "inlines": [
+            {
+              "t": "兄弟们，我又给你们找了 H3 的好东西，让你们少走弯路！\n\n上篇文章已经讲过官方 Skills、Turbo LoRA、长视频续接和 T8 音画工作流，这里不再重复。几天过去，我又跑了一轮实测，H3 现在多了三块值得补上的能力：更稳的 8V8A 成片参数、新的 Attention 后端、人物 LoRA 和低显存方案。\n\n第一处更新是成片步数。\n\n我把 Larry Turbo + T8 的 4V8A、6V8A、8V8A 都跑了一遍。同一个 Prompt、Seed 424242、Turbo v4 step600、CK Attention、864×480、124 帧，只修改 Video Steps。\n\n4V8A：92.80 秒\n6V8A：92.48 秒\n8V8A：93.29 秒\n\n最大差距不到 1 秒，这次样本里 8V8A 的动作完整性、人物轮廓和画面稳定性最好。\n\nT8 的硬性规则是 Audio Steps ≥ Video Steps。音频固定 8 步时，4V、6V、8V 都要执行 8 次联合 DiT 调用，所以耗时落在同一档。20V8A 会直接报错；想跑 20V，Audio 也必须至少设成 20A。\n\n4V4A 可以快速试提示词，声音更容易出现底噪、爆音和立体声不稳。我目前把 8V8A 设为正式出片默认值。这个判断来自一个 Prompt、一个 Seed，后面还需要继续扩样本验证。\n\n第二处更新是 Attention。\n\n上篇推荐的 Turbo + SageAttention 继续保留。现在可以分成两条路线：\n\n路线 A：CK Attention 单独使用\n路线 B：SageAttention，按显卡测试叠加 Sol-Attn\n\nCK、Sage、Sol 不应该同时写成一个组合。测试 CK 时，我会关闭 Sage 和 Sol，只替换 Attention 计算后端。\n\n我在 RTX 4090 48GB 上做了单变量 A/B：同一模型、Prompt、Seed、分辨率、帧数和 25 步采样，只把 PyTorch Attention 换成 CK。\n\n原版：272.70 秒，约 9.88 秒/步\nCK：239.70 秒，约 8.52 秒/步\n\n总耗时快 12.1%，采样快约 13.8%。两段画面结构和动作高度一致，没有发现明显画质退化，但并非逐像素相同。\n\nCK 项目：\n"
+            },
+            {
+              "t": "https://github.com/Comfy-Org/comfy-kitchen",
+              "href": "https://github.com/Comfy-Org/comfy-kitchen"
+            },
+            {
+              "t": "\n\nComfyUI 官方 PR：\n"
+            },
+            {
+              "t": "https://github.com/Comfy-Org/ComfyUI/pull/15479",
+              "href": "https://github.com/Comfy-Org/ComfyUI/pull/15479"
+            },
+            {
+              "t": "\n\nSol-Attn：\n"
+            },
+            {
+              "t": "https://github.com/kijai/ComfyUI-SolAttn_triton",
+              "href": "https://github.com/kijai/ComfyUI-SolAttn_triton"
+            },
+            {
+              "t": "\n\n我通过 ModelAttentionBackend 节点只给 H3 启用 CK，没有使用全局 --use-ck-attention。升级时还遇到一个坑：旧版 ComfyUI-MiniMaxH3-Cache 与新版 ComfyUI 存在 time_shift_slope 兼容错误，更新前要先检查 Cache 插件。当前 CUDA 12.8 已经获得 12.1% 提升；完整优化内核需要 CUDA 13，额外收益我还没有实测。\n\n第三处更新是人物 LoRA。\n\n上篇说人物和画风 LoRA 还没成气候，这个状态已经变化。Realism People LoRA 用 176 段真人视频训练，主要改善皮肤、五官和人物质感：\n\n"
+            },
+            {
+              "t": "https://huggingface.co/fal/MiniMax-H3-Realism-People-LoRA",
+              "href": "https://huggingface.co/fal/MiniMax-H3-Realism-People-LoRA"
+            },
+            {
+              "t": "\n\nfal 也开放了 H3 LoRA Trainer。准备至少 10 段视频，就能训练自己的角色或风格，权重可以下载回本地工作流：\n\n"
+            },
+            {
+              "t": "https://fal.ai/models/minimax/h3/ref2va/trainer",
+              "href": "https://fal.ai/models/minimax/h3/ref2va/trainer"
+            },
+            {
+              "t": "\n\n第四处更新是低显存。\n\nClipProj 用 4B/8B 投影模型替换 32B 文本编码器，把这一部分的显存占用从约 15.7GB 降到约 4.5GB：\n\n"
+            },
+            {
+              "t": "https://huggingface.co/NicoLab28/ClipProj-MiniMax-H3",
+              "href": "https://huggingface.co/NicoLab28/ClipProj-MiniMax-H3"
+            },
+            {
+              "t": "\n\n低显存实机演示：\n\n"
+            },
+            {
+              "t": "https://x.com/riddi0908/status/2086398939344015620",
+              "href": "https://x.com/riddi0908/status/2086398939344015620"
+            },
+            {
+              "t": "\n\nH3 GGUF 给 33B 主模型提供 Q2—Q8 量化，再配合 CPU offload，8—16GB 显存可以跑 480p 预览：\n\n"
+            },
+            {
+              "t": "https://huggingface.co/unsloth/MiniMax-H3-GGUF",
+              "href": "https://huggingface.co/unsloth/MiniMax-H3-GGUF"
+            },
+            {
+              "t": "\n\nClipProj 负责缩小文本编码器，GGUF 负责压缩主模型。低显存方案解决“能不能跑”，生成速度和画质仍然取决于量化等级、内存与 offload。\n\n上篇提到的 h3-prompt-writing 也有了具体使用演示：\n\n"
+            },
+            {
+              "t": "https://x.com/aigeboku/status/2085557750373986429",
+              "href": "https://x.com/aigeboku/status/2085557750373986429"
+            },
+            {
+              "t": "\n\n它可以帮 Claude、Codex 写镜头、对白和声音提示词。Agent → ComfyUI API → Remotion 的全自动链路还在继续打通。\n\n我现在的 H3 路线已经固定下来：官方 Skills 写提示词；Larry Turbo + T8 用 8V8A 出片；Attention 选择 CK 单独使用，或者 Sage + Sol；Realism People 或 fal Trainer 处理人物 LoRA；ClipProj + GGUF 负责低显存预览。"
+            }
+          ],
+          "image": {
+            "src": "/tutorial-media/attention-low-vram-lora/2087343222779682816-quote.webp",
+            "width": 1600,
+            "height": 900
+          }
+        }
+      ]
+    }
+  ]
+}

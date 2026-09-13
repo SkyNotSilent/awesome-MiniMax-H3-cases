@@ -1,0 +1,103 @@
+{
+  "tutorialId": "storyboard-to-trailer",
+  "kind": "x-thread",
+  "language": "en",
+  "capturedAt": "2026-09-13T09:41:46.689Z",
+  "source": {
+    "url": "https://x.com/magnific/status/2090508187875356957",
+    "author": "Magnific",
+    "handle": "@magnific"
+  },
+  "sections": [
+    {
+      "url": "https://x.com/magnific/status/2090508187875356957",
+      "publishedAt": "2026-08-20",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Turn your storyboard into a full trailer with MiniMax H3"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "→ Extract frames from your final film\n→ Feed the frames to H3 with your shot description\n→ The model keeps style consistent across every cut"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Prompt breakdown below 👇"
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "src": "/media/tutorial-2090508164508872704.mp4",
+          "poster": "/tutorial-media/storyboard-to-trailer/2090508164508872704-poster.webp",
+          "width": 1920,
+          "height": 1080,
+          "duration": 15.1
+        }
+      ]
+    },
+    {
+      "url": "https://x.com/magnific/status/2090508230099407225",
+      "publishedAt": "2026-08-20",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "This is powered by "
+            },
+            {
+              "t": "@MiniMax_AI",
+              "href": "https://x.com/MiniMax_AI"
+            },
+            {
+              "t": ", available on Magnific"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Prompt:\n"
+            },
+            {
+              "t": "@Image",
+              "href": "https://x.com/Image"
+            },
+            {
+              "t": " 1 is a nine-panel storyboard grid. Read it left to right, top to bottom. It defines shot order and approximate composition only. Do not reproduce the grid itself: no panel borders, no black gutters, no split screen, no collage, no letterboxing. The output is one continuous single-frame film."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Nine shots, hard cut between each, roughly 1.5 seconds per shot, no dissolves and no fades."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "src": "/media/tutorial-2090508200961589248.mp4",
+          "poster": "/tutorial-media/storyboard-to-trailer/2090508200961589248-poster.webp",
+          "width": 1920,
+          "height": 1080,
+          "duration": 15
+        }
+      ]
+    }
+  ]
+}

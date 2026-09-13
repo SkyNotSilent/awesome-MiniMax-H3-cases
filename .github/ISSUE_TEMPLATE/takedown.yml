@@ -9,6 +9,17 @@ body:
       label: Affected case, tutorial, or source URL
     validations:
       required: true
+  - type: dropdown
+    id: action
+    attributes:
+      label: Requested action
+      description: Tutorials reproduce the complete public original with its media and a source link.
+      options:
+        - Correct attribution or details
+        - Remove the reproduced original text and media, keep a link to my source
+        - Remove the entry entirely
+    validations:
+      required: true
   - type: input
     id: relationship
     attributes:

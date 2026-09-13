@@ -1,0 +1,339 @@
+{
+  "tutorialId": "native-comfyui-modes",
+  "kind": "markdown",
+  "language": "en",
+  "capturedAt": "2026-09-13T09:45:12.552Z",
+  "source": {
+    "url": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3-native#minimax-h3-image-to-video-i2v",
+    "author": "ComfyUI"
+  },
+  "sections": [
+    {
+      "url": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3-native#minimax-h3-image-to-video-i2v",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "MiniMax H3 Image to Video (I2V)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Generate videos from an input image, with optional first/last-frame keyframes."
+            }
+          ]
+        },
+        {
+          "type": "video",
+          "src": "/media/tutorial-md-ccc95d2532cf.mp4"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "href": "https://cloud.comfy.org/?template=video_minimax_h3_i2v&utm_source=docs&utm_medium=referral&utm_campaign=minimax-h3",
+                  "b": true,
+                  "t": "Run on Comfy Cloud"
+                },
+                {
+                  "t": " — Open in Comfy Cloud"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "href": "https://github.com/Comfy-Org/workflow_templates/blob/main/templates/video_minimax_h3_i2v.json",
+                  "b": true,
+                  "t": "Download Workflow"
+                },
+                {
+                  "t": " — Download JSON or search \"MiniMax H3 I2V\" in Template Library"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "href": "https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/transparent_rgb_gaming_mouse.png",
+                  "b": true,
+                  "t": "Input Image: transparent_rgb_gaming_mouse.png"
+                },
+                {
+                  "t": " — Download the default input image, or use your own image."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Model downloads"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "href": "https://huggingface.co/Comfy-Org/MiniMax-H3/blob/main/diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+                  "b": true,
+                  "t": "Diffusion Model: minimax_h3_fl2va_pruned_int8_convrot"
+                },
+                {
+                  "t": " — Place in "
+                },
+                {
+                  "c": true,
+                  "t": "ComfyUI/models/diffusion_models/"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "href": "https://huggingface.co/Comfy-Org/MiniMax-H3/blob/main/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+                  "b": true,
+                  "t": "Text Encoder: qwen3vl_32b_minimax_h3_nvfp4_awq"
+                },
+                {
+                  "t": " — Place in "
+                },
+                {
+                  "c": true,
+                  "t": "ComfyUI/models/text_encoders/"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "href": "https://huggingface.co/Comfy-Org/MiniMax-H3/blob/main/vae/minimax_h3_video_vae_fp16.safetensors",
+                  "b": true,
+                  "t": "VAE: minimax_h3_video_vae_fp16"
+                },
+                {
+                  "t": " — Place in "
+                },
+                {
+                  "c": true,
+                  "t": "ComfyUI/models/vae/"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "href": "https://huggingface.co/Comfy-Org/MiniMax-H3/blob/main/vae/minimax_h3_audio_vae_fp32.safetensors",
+                  "b": true,
+                  "t": "VAE: minimax_h3_audio_vae_fp32"
+                },
+                {
+                  "t": " — Place in "
+                },
+                {
+                  "c": true,
+                  "t": "ComfyUI/models/vae/"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "href": "https://huggingface.co/lightx2v/Minimax-h3-Turbo/blob/main/minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors",
+                  "b": true,
+                  "t": "Turbo LoRA: minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16"
+                },
+                {
+                  "t": " — Place in "
+                },
+                {
+                  "c": true,
+                  "t": "ComfyUI/models/loras/"
+                },
+                {
+                  "t": ". Used when "
+                },
+                {
+                  "c": true,
+                  "t": "turbo_mode"
+                },
+                {
+                  "t": " is enabled."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Model storage"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "ComfyUI/\n├── 📂 models/\n│   ├── 📂 diffusion_models/\n│   │   └── minimax_h3_fl2va_pruned_int8_convrot.safetensors\n│   ├── 📂 text_encoders/\n│   │   └── qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors\n│   ├── 📂 loras/\n│   │   └── minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors\n│   ├── 📂 vae/\n│   │   ├── minimax_h3_video_vae_fp16.safetensors\n│   │   └── minimax_h3_audio_vae_fp32.safetensors\n│   └── 📂 embeddings/\n│       └── minimaxh3_art_is_explosion.safetensors"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "Prompting tips"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Keyframes"
+                },
+                {
+                  "t": ": The "
+                },
+                {
+                  "c": true,
+                  "t": "first_frame"
+                },
+                {
+                  "t": " and "
+                },
+                {
+                  "c": true,
+                  "t": "last_frame"
+                },
+                {
+                  "t": " inputs are optional; the model generates the motion between them"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Prompt"
+                },
+                {
+                  "t": ": Describe the shots, motion, and the accompanying audio (dialogue, SFX, music) in one block"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Resolution"
+                },
+                {
+                  "t": ": H3's native canvas is a 768px short edge, which is 1344x768 at 16:9, and resolutions are rounded to a multiple of 32"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Duration"
+                },
+                {
+                  "t": ": The duration input snaps to the model's 17-frame-per-block (17k+5) grid at 24fps"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "Turbo mode"
+                },
+                {
+                  "t": ": Enable "
+                },
+                {
+                  "c": true,
+                  "t": "turbo_mode"
+                },
+                {
+                  "t": " on the MiniMax H3 node to switch to the turbo LoRA and generate in "
+                },
+                {
+                  "c": true,
+                  "t": "turbo_steps"
+                },
+                {
+                  "t": " (default 8) instead of 20 steps. "
+                },
+                {
+                  "c": true,
+                  "t": "turbo_model_strength"
+                },
+                {
+                  "t": " controls the LoRA strength (default 1.0)."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "The official base-mode "
+            },
+            {
+              "href": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md",
+              "t": "prompt writing guide"
+            },
+            {
+              "t": " is summarized in the "
+            },
+            {
+              "href": "https://docs.comfy.org/tutorials/video/minimax/minimax-h3-prompt-guide",
+              "t": "prompt guide"
+            },
+            {
+              "t": "."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "title": "ComfyUI MiniMax H3 Text-to-Video, Image-to-Video, and Reference-to-Video Workflows"
+}

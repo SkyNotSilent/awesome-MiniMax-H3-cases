@@ -1996,7 +1996,7 @@ footer > span {
 .tutorial-pathways {
   margin-bottom: 18px;
   display: grid;
-  grid-template-columns: 1fr 1fr minmax(220px, 0.55fr);
+  grid-template-columns: 1.15fr 1fr 0.85fr minmax(200px, 0.5fr);
   border-top: 1px solid #44483f;
   border-left: 1px solid #44483f;
   background: #0d0f0c;
@@ -6060,4 +6060,71 @@ footer {
   .tutorial-start-grid article { min-height:210px; padding:20px; }
   .tutorial-detail-commands > div { grid-template-columns:minmax(0,1fr) auto; }
   .tutorial-detail-commands > div > small { grid-column:1 / -1; padding:12px 14px 0; }
+}
+
+/* Tutorial detail with a captured original: the original leads, site notes follow. */
+.tutorial-detail-layout.has-original {
+  margin-top: 64px;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 320px);
+  gap: clamp(32px, 5vw, 72px);
+}
+
+.tutorial-detail-layout.has-original .tutorial-detail-meta {
+  position: sticky;
+  top: 96px;
+}
+
+.original-loading {
+  min-height: 420px;
+  background: #121410;
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--acid);
+}
+
+.tutorial-site-notes-heading {
+  margin-top: 64px;
+  padding: 26px 0 8px;
+  border-top: 2px solid var(--acid);
+}
+
+.tutorial-site-notes-heading h2 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 600;
+  letter-spacing: -.02em;
+  text-transform: uppercase;
+}
+
+.tutorial-site-notes-heading p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.tutorial-quick-facts {
+  margin-bottom: 30px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #34382f;
+}
+
+.tutorial-quick-facts h2 {
+  margin: 0 0 16px;
+  color: var(--acid);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.tutorial-detail-meta .tutorial-quick-facts dl > div { display: block; padding: 12px 0; }
+.tutorial-detail-meta .tutorial-quick-facts dt { color: var(--muted); font-family: var(--mono); font-size: 9px; letter-spacing: .06em; }
+.tutorial-detail-meta .tutorial-quick-facts dd { margin: 5px 0 0; color: #d0d3c9; font-family: inherit; font-size: 13px; line-height: 1.65; text-align: left; }
+.tutorial-quick-facts h3 { margin: 20px 0 8px; color: var(--muted); font-family: var(--mono); font-size: 10px; font-weight: 400; letter-spacing: .06em; }
+.tutorial-quick-facts ul { margin: 0; padding-left: 18px; color: #d0d3c9; font-size: 13px; line-height: 1.7; }
+
+@media (max-width: 1000px) {
+  .tutorial-detail-layout.has-original { grid-template-columns: minmax(0, 1fr); }
+  .tutorial-detail-layout.has-original .tutorial-detail-meta { position: static; }
 }
