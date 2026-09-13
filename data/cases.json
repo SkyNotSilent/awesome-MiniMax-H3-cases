@@ -93534,5 +93534,305 @@
     },
     "approvedAt": "2026-09-13T00:34:24.391Z",
     "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2098794141715226927",
+    "title": "带雀斑的面部特写光影",
+    "titleEn": "Light Across a Freckled Face in Close-Up",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "黑发女子的面部在极近景中缓慢转动，雀斑、睫毛与湿润的唇色随光线变化，用于观察剪枝后模型的人脸质感。 原生视频规格为 15 秒 · 928×1664。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A dark-haired woman’s face turns slowly in extreme close-up while freckles, lashes and glossy lips shift under the light, a look at skin texture from the pruned model. Native-video output: 15s · 928×1664. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Nanami_AI0/status/2098794141715226927",
+    "sourceLabel": "X 原帖 · @Nanami_AI0",
+    "author": "东云七海",
+    "publishedAt": "2026-09-12T15:21:31.000Z",
+    "addedAt": "2026-09-13T01:30:30.323Z",
+    "mediaUrl": "/media/x-2098794141715226927.mp4",
+    "posterUrl": "/posters/x/2098794141715226927.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "928×1664",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [
+      "photoreal"
+    ],
+    "scenes": [
+      "performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "感觉Minimax H3模型剪枝之后生成的人脸还是有点油\n#ai #AIart️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️️",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 92,
+      "snapshotAt": "2026-09-13T01:30:30.323Z"
+    },
+    "approvedAt": "2026-09-13T01:30:30.323Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2098792011247845858",
+    "title": "为VR生成的360度夜景少女",
+    "titleEn": "A 360-Degree Night Scene Girl Made for VR",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "黑色双马尾少女趴在圆形灯饰前朝观者微笑，整幅画面以等距柱状全景输出，可直接转成VR场景。 原生视频规格为 8 秒 · 1472×736。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A black-haired twin-tail girl leans over a round lamp smiling at the viewer, the whole frame rendered as an equirectangular panorama ready for VR. Native-video output: 8s · 1472×736. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/jun_kongo/status/2098792011247845858",
+    "sourceLabel": "X 原帖 · @jun_kongo",
+    "author": "kongo jun / 混合 順",
+    "publishedAt": "2026-09-12T15:13:03.000Z",
+    "addedAt": "2026-09-13T01:30:30.323Z",
+    "mediaUrl": "/media/x-2098792011247845858.mp4",
+    "posterUrl": "/posters/x/2098792011247845858.jpg",
+    "duration": 8,
+    "aspectRatio": "landscape",
+    "resolution": "1472×736",
+    "tags": [
+      "MiniMax H3",
+      "本地生成与工作流",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "workflow",
+    "styles": [
+      "anime",
+      "cg-3d"
+    ],
+    "scenes": [
+      "performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3 equi360-lora\n（←生成結果   VR化→）",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 131,
+      "snapshotAt": "2026-09-13T01:30:30.323Z"
+    },
+    "approvedAt": "2026-09-13T01:30:30.323Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2098767701011263679",
+    "title": "海岸边微笑的卷发女子",
+    "titleEn": "A Curly-Haired Woman Smiles by the Shore",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "卷发女子站在岩岸与海浪前对镜头微笑并轻轻转头，五秒内保持面部与发丝细节稳定。 原生视频规格为 5 秒 · 876×504。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A curly-haired woman smiles at the camera and turns her head slightly before rocks and surf, keeping face and hair detail steady across five seconds. Native-video output: 5s · 876×504. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Cobaye47/status/2098767701011263679",
+    "sourceLabel": "X 原帖 · @Cobaye47",
+    "author": "Cobaye 47 💸",
+    "publishedAt": "2026-09-12T13:36:27.000Z",
+    "addedAt": "2026-09-13T01:30:30.323Z",
+    "mediaUrl": "/media/x-2098767701011263679.mp4",
+    "posterUrl": "/posters/x/2098767701011263679.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "876×504",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [
+      "photoreal"
+    ],
+    "scenes": [
+      "nature",
+      "performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "J'ai pas encore le temps de m'y remettre complètement mais j'ai voulu tester minimax h3",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 80,
+      "snapshotAt": "2026-09-13T01:30:30.323Z"
+    },
+    "approvedAt": "2026-09-13T01:30:30.323Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2098767510749454810",
+    "title": "孙悟空与公主逛西贡街头",
+    "titleEn": "The Monkey King and a Princess Stroll Through Saigon",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "穿黄袍的孙悟空与身着红色古装的公主在滨城市场与动物园门前逛街、买小吃，路人与街景保持真实感，五十秒连续短片。 原生视频规格为 50 秒 · 3840×2160。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A yellow-robed Monkey King and a princess in red period dress wander past Ben Thanh Market and the zoo gate buying snacks, with lifelike passers-by across a fifty-second piece. Native-video output: 50s · 3840×2160. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Khiemtran1910/status/2098767510749454810",
+    "sourceLabel": "X 原帖 · @Khiemtran1910",
+    "author": "KhiemtranVN",
+    "publishedAt": "2026-09-12T13:35:42.000Z",
+    "addedAt": "2026-09-13T01:30:30.323Z",
+    "mediaUrl": "/media/x-2098767510749454810.mp4",
+    "posterUrl": "/posters/x/2098767510749454810.jpg",
+    "duration": 50,
+    "aspectRatio": "landscape",
+    "resolution": "3840×2160",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "photoreal",
+      "ugc"
+    ],
+    "scenes": [
+      "city",
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Minimax H3 Rất Ổn",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 37,
+      "snapshotAt": "2026-09-13T01:30:30.323Z"
+    },
+    "approvedAt": "2026-09-13T01:30:30.323Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2098750961074233579",
+    "title": "拉各斯版开放世界游戏任务",
+    "titleEn": "An Open-World Game Mission, Lagos Edition",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "以游戏界面风格呈现拉各斯街头：任务提示、跑车驶向别墅、泳池边打出\"MISSION PASSED\"，模仿经典开放世界游戏的过场。 原生视频规格为 15 秒 · 1260×720。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Lagos streets framed like a game HUD: a mission prompt, a sports car heading to the villa, and a poolside \"MISSION PASSED\" card in the style of a classic open-world game. Native-video output: 15s · 1260×720. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Bokumandi/status/2098750961074233579",
+    "sourceLabel": "X 原帖 · @Bokumandi",
+    "author": "🎨 Bókumandi 🌟",
+    "publishedAt": "2026-09-12T12:29:56.000Z",
+    "addedAt": "2026-09-13T01:30:30.323Z",
+    "mediaUrl": "/media/x-2098750961074233579.mp4",
+    "posterUrl": "/posters/x/2098750961074233579.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1260×720",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [
+      "cg-3d",
+      "stylized"
+    ],
+    "scenes": [
+      "city"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "This minimax H3 max  turbo really deliver for the price 😂 GTA Lagos Edition!",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 75,
+      "snapshotAt": "2026-09-13T01:30:30.323Z"
+    },
+    "approvedAt": "2026-09-13T01:30:30.323Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
+  },
+  {
+    "id": "x-2098712471196561639",
+    "title": "交易中心里的耳机女孩与滚动行情",
+    "titleEn": "A Headset Girl in a Trading Hall with Scrolling Tickers",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "戴耳机的动画女孩在蓝色基调的交易中心里向镜头伸手，环形屏幕上滚动着股票网站的名称与代码，作为一段十五秒的宣传动画。 原生视频规格为 15 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "An anime girl in a headset reaches toward the camera inside a blue-toned trading hall while ring screens scroll a stock site’s name and codes in a fifteen-second promo. Native-video output: 15s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/trader_hashang/status/2098712471196561639",
+    "sourceLabel": "X 原帖 · @trader_hashang",
+    "author": "はっしゃん@株Biz",
+    "publishedAt": "2026-09-12T09:56:59.000Z",
+    "addedAt": "2026-09-13T01:30:30.323Z",
+    "mediaUrl": "/media/x-2098712471196561639.mp4",
+    "posterUrl": "/posters/x/2098712471196561639.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "广告与产品",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "advertising",
+    "styles": [
+      "anime",
+      "motion-graphics"
+    ],
+    "scenes": [
+      "performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "ClaudeCode+MiniMaxH3 ローカル生成15秒アニメのトレードセンター編を「https://kabubiz.com」と「RIRON」のティッカーが回るようにオリジナル背景で作り込み。ブルー基調のクールなデザインになりました🤔\n#MinimaxH3 #ComfyUI",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 10,
+      "views": 9046,
+      "snapshotAt": "2026-09-13T01:30:30.323Z"
+    },
+    "approvedAt": "2026-09-13T01:30:30.323Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode also passed."
   }
 ]
