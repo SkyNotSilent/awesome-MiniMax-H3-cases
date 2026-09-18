@@ -98475,5 +98475,210 @@
     },
     "approvedAt": "2026-09-17T01:13:16.892Z",
     "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode passed."
+  },
+  {
+    "id": "x-2101021004713578691",
+    "title": "Boa Hancock 释放紫色能量",
+    "titleEn": "Boa Hancock Releases Purple Energy",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "动漫角色在宫殿场景中展开紫色能量，镜头从手部特写推进到完整人物亮相。 原生视频规格为 15 秒 · 1920×1440。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "An anime character releases purple energy in a palace setting as the camera moves from a hand close-up to a full reveal. Native-video output: 15s · 1920×1440. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Aliaksei_AI/status/2101021004713578691",
+    "sourceLabel": "X 原帖 · @Aliaksei_AI",
+    "author": "Aliaksei.AI",
+    "publishedAt": "2026-09-18T18:50:17.000Z",
+    "addedAt": "2026-09-18T19:03:16.521Z",
+    "mediaUrl": "/media/x-2101021004713578691.mp4",
+    "posterUrl": "/posters/x/2101021004713578691.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1440",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime",
+      "stylized"
+    ],
+    "scenes": [
+      "fantasy",
+      "performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Boa Hancock Beauty Presentation.\n#AIanimation made with #MiniMaxH3\nInspired by @aimikoda",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 18,
+      "snapshotAt": "2026-09-18T19:03:16.521Z"
+    },
+    "approvedAt": "2026-09-18T19:03:16.521Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode passed."
+  },
+  {
+    "id": "x-2101012480214642865",
+    "title": "可口可乐与曼妥思的爆炸实验",
+    "titleEn": "A Coca-Cola and Mentos Explosion Experiment",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "绿色服装人物穿梭于可口可乐与曼妥思卡车之间，泡沫喷涌形成一支产品喜剧短片。 原生视频规格为 15 秒 · 1632×928。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A character moves between Coca-Cola and Mentos trucks while a foamy eruption turns the product setup into a comic short. Native-video output: 15s · 1632×928. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/AI_EmeraldApple/status/2101012480214642865",
+    "sourceLabel": "X 原帖 · @AI_EmeraldApple",
+    "author": "Emerald Apple",
+    "publishedAt": "2026-09-18T18:16:24.000Z",
+    "addedAt": "2026-09-18T19:03:16.521Z",
+    "mediaUrl": "/media/x-2101012480214642865.mp4",
+    "posterUrl": "/posters/x/2101012480214642865.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1632×928",
+    "tags": [
+      "MiniMax H3",
+      "广告与产品",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "advertising",
+    "styles": [
+      "commercial",
+      "photoreal"
+    ],
+    "scenes": [
+      "product",
+      "combat"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Adapted the prompt for Minimax H3 using multi-reference to video on local AI video generation using an Nvidia 5090.\n\nEmerald Apple gets destroyed by the Coca-Cola Mentos catastrophe!\n\nNot perfect, but pretty cool that locally run offline AI video can even get to this level.",
+    "engagement": {
+      "replies": 4,
+      "reposts": 1,
+      "likes": 28,
+      "views": 641,
+      "snapshotAt": "2026-09-18T19:03:16.521Z"
+    },
+    "approvedAt": "2026-09-18T19:03:16.521Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode passed."
+  },
+  {
+    "id": "x-2101008623555997920",
+    "title": "雨夜温室里只让一朵花开放",
+    "titleEn": "One Flower Opens inside a Rainy Greenhouse",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "锁定机位拍摄雨夜温室，一朵花逐圈开放，其他植物保持静止。 原生视频规格为 15 秒 · 3456×1920。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A locked camera observes a rainy greenhouse as one flower opens ring by ring while the surrounding plants remain still. Native-video output: 15s · 3456×1920. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "the petals open one ring at a time from the outside in",
+    "promptSourceUrl": "https://x.com/GlennHasABeard/status/2101008623555997920",
+    "sourceUrl": "https://x.com/GlennHasABeard/status/2101008623555997920",
+    "sourceLabel": "X 原帖 · @GlennHasABeard",
+    "author": "Glenn Williams",
+    "publishedAt": "2026-09-18T18:01:05.000Z",
+    "addedAt": "2026-09-18T19:03:16.521Z",
+    "mediaUrl": "/media/x-2101008623555997920.mp4",
+    "posterUrl": "/posters/x/2101008623555997920.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "3456×1920",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "photoreal",
+      "cinematic-realistic"
+    ],
+    "scenes": [
+      "nature",
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Minimax H3, open weights, generated locally. One lamp, one flower, rain on the glass.\n\nPrompt: \"the petals open one ring at a time from the outside in\"\n\nDuration: 15s. Camera: locked, pot height. Rendered locally in ComfyUI, then Topaz to 4K.\n\n\"No other plant moves\" is the sentence that kept the greenhouse asleep. One thing opening is a story. Everything opening is a screensaver.",
+    "engagement": {
+      "replies": 3,
+      "reposts": 0,
+      "likes": 11,
+      "views": 153,
+      "snapshotAt": "2026-09-18T19:03:16.521Z"
+    },
+    "approvedAt": "2026-09-18T19:03:16.521Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode passed."
+  },
+  {
+    "id": "x-2101008053206135082",
+    "title": "太空中的炸鸡与猫咪",
+    "titleEn": "Fried Chicken and Cats in Space",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "炸鸡桶、猫咪和蔬菜在行星与星云之间漂浮，构成一支荒诞的品牌视觉短片。 原生视频规格为 15 秒 · 864×480。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A bucket of fried chicken, cats, and vegetables float among planets and nebulae in an absurd branded visual short. Native-video output: 15s · 864×480. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Got_Mittens/status/2101008053206135082",
+    "sourceLabel": "X 原帖 · @Got_Mittens",
+    "author": "Korektor",
+    "publishedAt": "2026-09-18T17:58:49.000Z",
+    "addedAt": "2026-09-18T19:03:16.521Z",
+    "mediaUrl": "/media/x-2101008053206135082.mp4",
+    "posterUrl": "/posters/x/2101008053206135082.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "864×480",
+    "tags": [
+      "MiniMax H3",
+      "广告与产品",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "advertising",
+    "styles": [
+      "cg-3d",
+      "stylized"
+    ],
+    "scenes": [
+      "product",
+      "creatures"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Can't believe my PC could generate this in under half an hour.\nMade with Minimax H3 through Comfy UI.",
+    "engagement": {
+      "replies": 3,
+      "reposts": 0,
+      "likes": 13,
+      "views": 342,
+      "snapshotAt": "2026-09-18T19:03:16.521Z"
+    },
+    "approvedAt": "2026-09-18T19:03:16.521Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode passed."
   }
 ]
