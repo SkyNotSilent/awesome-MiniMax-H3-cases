@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-18T19:31:11.727Z",
+  "generatedAt": "2026-09-19T07:14:05.230Z",
   "methodology": "site-verified-content",
   "stats": {
-    "sourceCreators": 1060,
+    "sourceCreators": 1061,
     "rankedCreators": 387,
     "videoCreators": 377,
     "tutorialCreators": 17
@@ -1071,7 +1071,7 @@
       "activeWeeks": 5,
       "firstAddedAt": "2026-08-10T05:52:30.476Z",
       "lastAddedAt": "2026-09-08T13:14:06.200Z",
-      "engagementPercentile": 0.688,
+      "engagementPercentile": 0.689,
       "badges": [
         "prolific",
         "prompt-contributor",
@@ -1308,7 +1308,7 @@
         "overall": 0,
         "active": 0,
         "cases": 0,
-        "prompts": -1,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -1406,7 +1406,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -1503,8 +1503,8 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
-        "cases": -1,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
         "rising": null,
         "tutorials": null
@@ -1607,7 +1607,7 @@
         "overall": 0,
         "active": 0,
         "cases": 0,
-        "prompts": -1,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -1708,7 +1708,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": 0,
@@ -1802,9 +1802,9 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 2,
-        "active": 4,
-        "cases": 1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
         "rising": null,
         "tutorials": null
@@ -1898,10 +1898,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
-        "prompts": -1,
+        "prompts": 0,
         "rising": 0,
         "tutorials": null
       }
@@ -1997,8 +1997,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -2094,9 +2094,9 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
-        "prompts": -1,
+        "prompts": 0,
         "rising": 0,
         "tutorials": null
       }
@@ -2187,7 +2187,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": 0,
@@ -2375,7 +2375,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -2471,10 +2471,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 4,
-        "active": 10,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
-        "prompts": 4,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -2564,8 +2564,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": 0,
@@ -2656,7 +2656,7 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
@@ -2745,7 +2745,7 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
@@ -2834,8 +2834,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -3013,7 +3013,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -3281,7 +3281,7 @@
       "rankDelta": {
         "overall": 0,
         "active": 0,
-        "cases": -1,
+        "cases": 0,
         "prompts": 0,
         "rising": 0,
         "tutorials": null
@@ -3368,8 +3368,8 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
-        "cases": -1,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
         "rising": 0,
         "tutorials": null
@@ -3455,7 +3455,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -3528,7 +3528,7 @@
       "activeWeeks": 4,
       "firstAddedAt": "2026-08-09T15:11:03+08:00",
       "lastAddedAt": "2026-09-13T00:34:24.391Z",
-      "engagementPercentile": 0.443,
+      "engagementPercentile": 0.444,
       "badges": [
         "prolific",
         "recently-active",
@@ -3551,7 +3551,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -3637,8 +3637,8 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
-        "cases": -1,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
         "rising": null,
         "tutorials": null
@@ -3809,7 +3809,7 @@
       "rankDelta": {
         "overall": 0,
         "active": 0,
-        "cases": -2,
+        "cases": 0,
         "prompts": 0,
         "rising": null,
         "tutorials": null
@@ -3977,8 +3977,8 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
-        "cases": -1,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
         "rising": 0,
         "tutorials": null
@@ -4061,8 +4061,8 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
-        "cases": -1,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
         "rising": null,
         "tutorials": null
@@ -4143,8 +4143,8 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
-        "cases": -1,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
         "rising": null,
         "tutorials": null
@@ -4205,7 +4205,7 @@
       "activeWeeks": 5,
       "firstAddedAt": "2026-08-10T05:52:30.477Z",
       "lastAddedAt": "2026-09-08T13:14:06.200Z",
-      "engagementPercentile": 0.687,
+      "engagementPercentile": 0.688,
       "badges": [
         "prolific",
         "recently-active",
@@ -4227,7 +4227,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -4309,7 +4309,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -4395,8 +4395,8 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
-        "cases": -1,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
         "rising": null,
         "tutorials": 0
@@ -4485,7 +4485,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -4575,9 +4575,9 @@
       "rankDelta": {
         "overall": 0,
         "active": 0,
-        "cases": -1,
+        "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -4818,7 +4818,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -4899,8 +4899,8 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
-        "cases": -2,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
         "rising": null,
         "tutorials": null
@@ -4979,7 +4979,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -5057,9 +5057,9 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
-        "cases": -1,
-        "prompts": 1,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -5135,8 +5135,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -5216,10 +5216,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
-        "prompts": 1,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -5297,8 +5297,8 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
-        "cases": -2,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
         "rising": null,
         "tutorials": null
@@ -5357,7 +5357,7 @@
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T05:52:30.476Z",
       "lastAddedAt": "2026-09-08T13:14:06.200Z",
-      "engagementPercentile": 0.462,
+      "engagementPercentile": 0.463,
       "badges": [
         "prompt-contributor",
         "recently-active"
@@ -5376,8 +5376,8 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
-        "cases": -1,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
         "rising": null,
         "tutorials": null
@@ -5515,7 +5515,7 @@
       "activeWeeks": 4,
       "firstAddedAt": "2026-08-13T00:38:33.428Z",
       "lastAddedAt": "2026-09-08T13:14:06.200Z",
-      "engagementPercentile": 0.616,
+      "engagementPercentile": 0.617,
       "badges": [
         "recently-active",
         "consistent"
@@ -5534,8 +5534,8 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
-        "cases": -1,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
         "rising": null,
         "tutorials": null
@@ -5614,10 +5614,10 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -5695,7 +5695,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -5753,7 +5753,7 @@
       "activeWeeks": 2,
       "firstAddedAt": "2026-09-05T00:12:52.244Z",
       "lastAddedAt": "2026-09-08T01:43:38.868Z",
-      "engagementPercentile": 0.547,
+      "engagementPercentile": 0.548,
       "badges": [
         "prompt-contributor",
         "recently-active",
@@ -5772,11 +5772,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -5855,7 +5855,7 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
@@ -5935,10 +5935,10 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -6017,7 +6017,7 @@
       "rankDelta": {
         "overall": 0,
         "active": 0,
-        "cases": -1,
+        "cases": 0,
         "prompts": 0,
         "rising": null,
         "tutorials": null
@@ -6091,7 +6091,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -6171,10 +6171,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 20,
-        "active": 32,
-        "cases": 10,
-        "prompts": -4,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -6252,8 +6252,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -6330,11 +6330,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -2,
-        "cases": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -4,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -6411,11 +6411,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -6493,8 +6493,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -6551,7 +6551,7 @@
       "activeWeeks": 4,
       "firstAddedAt": "2026-08-10T05:52:30.477Z",
       "lastAddedAt": "2026-08-28T01:32:58.034Z",
-      "engagementPercentile": 0.839,
+      "engagementPercentile": 0.84,
       "badges": [
         "recently-active",
         "breakout",
@@ -6571,8 +6571,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -6649,10 +6649,10 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -6731,7 +6731,7 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
@@ -6807,7 +6807,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -6884,10 +6884,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -2,
-        "cases": -1,
-        "prompts": 1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -6962,7 +6962,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": 0,
@@ -7036,7 +7036,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -7114,11 +7114,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -2,
-        "cases": -1,
-        "prompts": 1,
-        "rising": -3,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -7192,10 +7192,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 15,
-        "active": 32,
-        "cases": 20,
-        "prompts": 4,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -7267,8 +7267,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -7344,11 +7344,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -7403,7 +7403,7 @@
       "activeWeeks": 5,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-09-14T00:34:44.677Z",
-      "engagementPercentile": 0.466,
+      "engagementPercentile": 0.467,
       "badges": [
         "prolific",
         "recently-active",
@@ -7423,9 +7423,9 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
+        "overall": 0,
         "active": 0,
-        "cases": -1,
+        "cases": 0,
         "prompts": 0,
         "rising": null,
         "tutorials": null
@@ -7501,11 +7501,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -7578,11 +7578,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -7658,8 +7658,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -7738,11 +7738,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -1,
-        "cases": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -1,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -7819,11 +7819,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -7897,8 +7897,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -7973,8 +7973,8 @@
         "tutorials": 4
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -8046,8 +8046,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -8120,8 +8120,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -8194,11 +8194,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -8270,11 +8270,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -8348,10 +8348,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -2,
-        "cases": -2,
-        "prompts": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -8426,11 +8426,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -8502,8 +8502,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -8581,9 +8581,9 @@
       "rankDelta": {
         "overall": 0,
         "active": 0,
-        "cases": -1,
-        "prompts": -1,
-        "rising": -2,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -8658,7 +8658,7 @@
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -8726,10 +8726,10 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
-        "cases": -1,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -8801,10 +8801,10 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -8875,7 +8875,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -8944,10 +8944,10 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -9021,10 +9021,10 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -9098,10 +9098,10 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -4,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -9167,10 +9167,10 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
-        "cases": -1,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -4,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -9241,11 +9241,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -9311,9 +9311,9 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -2,
-        "cases": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
         "rising": 0,
         "tutorials": null
@@ -9369,7 +9369,7 @@
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-09T15:11:03+08:00",
       "lastAddedAt": "2026-08-13T00:38:33.432Z",
-      "engagementPercentile": 0.325,
+      "engagementPercentile": 0.324,
       "badges": [],
       "reasons": [],
       "ranks": {
@@ -9382,8 +9382,8 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
-        "cases": -1,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
         "rising": null,
         "tutorials": null
@@ -9452,11 +9452,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 3,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -9521,9 +9521,9 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
-        "cases": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
         "rising": null,
         "tutorials": null
@@ -9573,7 +9573,7 @@
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-28T01:32:58.034Z",
       "lastAddedAt": "2026-09-01T00:16:12.269Z",
-      "engagementPercentile": 0.671,
+      "engagementPercentile": 0.672,
       "badges": [
         "recently-active",
         "rising"
@@ -9590,11 +9590,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
-        "cases": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -9665,11 +9665,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -9738,8 +9738,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -9807,11 +9807,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -3,
-        "cases": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -9880,8 +9880,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": 0,
@@ -9951,10 +9951,10 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
-        "cases": -1,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -10025,11 +10025,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 4,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -10095,11 +10095,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -3,
-        "cases": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -10169,8 +10169,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -10225,7 +10225,7 @@
       "activeWeeks": 3,
       "firstAddedAt": "2026-08-13T00:38:33.429Z",
       "lastAddedAt": "2026-09-08T13:14:06.200Z",
-      "engagementPercentile": 0.571,
+      "engagementPercentile": 0.572,
       "badges": [
         "recently-active",
         "breakout",
@@ -10245,8 +10245,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -10318,11 +10318,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
+        "overall": 0,
         "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -10391,11 +10391,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -1,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -10465,8 +10465,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -10523,7 +10523,7 @@
       "activeWeeks": 3,
       "firstAddedAt": "2026-08-09T15:11:03+08:00",
       "lastAddedAt": "2026-08-30T00:39:42.827Z",
-      "engagementPercentile": 0.434,
+      "engagementPercentile": 0.435,
       "badges": [
         "recently-active",
         "consistent"
@@ -10542,9 +10542,9 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
-        "cases": -2,
-        "prompts": -1,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -10611,10 +10611,10 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
-        "cases": -1,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -10680,8 +10680,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -10732,7 +10732,7 @@
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-30T00:39:42.827Z",
       "lastAddedAt": "2026-09-08T13:14:06.200Z",
-      "engagementPercentile": 0.543,
+      "engagementPercentile": 0.544,
       "badges": [
         "recently-active",
         "rising"
@@ -10749,11 +10749,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -10807,7 +10807,7 @@
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-13T00:38:33.430Z",
       "lastAddedAt": "2026-08-20T18:59:16.815Z",
-      "engagementPercentile": 0.378,
+      "engagementPercentile": 0.377,
       "badges": [
         "recently-active",
         "breakout"
@@ -10826,7 +10826,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -10890,15 +10890,15 @@
         "active": 259,
         "cases": 250,
         "prompts": 77,
-        "rising": 55,
+        "rising": 56,
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -3,
-        "cases": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": -1,
         "tutorials": null
       }
     },
@@ -10964,11 +10964,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -11034,10 +11034,10 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
-        "cases": -1,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -11103,7 +11103,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -11175,7 +11175,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -11245,7 +11245,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -11316,7 +11316,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": 0,
@@ -11388,10 +11388,10 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -11439,7 +11439,7 @@
       "activeWeeks": 1,
       "firstAddedAt": "2026-09-04T00:26:06.282Z",
       "lastAddedAt": "2026-09-07T01:06:35.085Z",
-      "engagementPercentile": 0.599,
+      "engagementPercentile": 0.6,
       "badges": [
         "recently-active",
         "rising"
@@ -11457,10 +11457,10 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
-        "cases": -1,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -11524,7 +11524,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -11592,10 +11592,10 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
-        "cases": -1,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -11643,7 +11643,7 @@
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T08:14:56+08:00",
       "lastAddedAt": "2026-09-08T13:14:06.200Z",
-      "engagementPercentile": 0.434,
+      "engagementPercentile": 0.435,
       "badges": [
         "recently-active"
       ],
@@ -11660,7 +11660,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -11728,10 +11728,10 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
-        "cases": -1,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -11778,7 +11778,7 @@
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-31T15:24:28.121Z",
       "lastAddedAt": "2026-09-08T13:14:06.200Z",
-      "engagementPercentile": 0.695,
+      "engagementPercentile": 0.696,
       "badges": [
         "recently-active",
         "rising"
@@ -11796,10 +11796,10 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -11867,10 +11867,10 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -11917,7 +11917,7 @@
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-13T00:38:33.429Z",
       "lastAddedAt": "2026-08-22T09:15:40.742Z",
-      "engagementPercentile": 0.775,
+      "engagementPercentile": 0.776,
       "badges": [
         "recently-active"
       ],
@@ -11934,7 +11934,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -12004,11 +12004,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -12071,9 +12071,9 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -3,
-        "cases": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
         "rising": null,
         "tutorials": null
@@ -12123,7 +12123,7 @@
       "activeWeeks": 3,
       "firstAddedAt": "2026-08-13T00:38:33.432Z",
       "lastAddedAt": "2026-09-09T08:44:19.839Z",
-      "engagementPercentile": 0.755,
+      "engagementPercentile": 0.756,
       "badges": [
         "recently-active",
         "consistent"
@@ -12141,8 +12141,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -12193,7 +12193,7 @@
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-11T12:15:52.990Z",
       "lastAddedAt": "2026-09-05T00:12:52.244Z",
-      "engagementPercentile": 0.867,
+      "engagementPercentile": 0.868,
       "badges": [
         "recently-active",
         "breakout"
@@ -12212,7 +12212,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -12284,10 +12284,10 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -12352,7 +12352,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -12419,7 +12419,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -12488,10 +12488,10 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
-        "cases": -1,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -12558,7 +12558,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -12627,10 +12627,10 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
-        "cases": -1,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -12695,11 +12695,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -3,
-        "cases": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -4,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -12765,8 +12765,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -12838,7 +12838,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -12909,10 +12909,10 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -12960,7 +12960,7 @@
       "activeWeeks": 2,
       "firstAddedAt": "2026-09-10T06:36:56.244Z",
       "lastAddedAt": "2026-09-17T01:13:16.892Z",
-      "engagementPercentile": 0.595,
+      "engagementPercentile": 0.596,
       "badges": [
         "recently-active",
         "rising"
@@ -12978,10 +12978,10 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -13046,7 +13046,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -13114,10 +13114,10 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -13181,11 +13181,82 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 2,
-        "active": -2,
-        "cases": -2,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
+        "tutorials": null
+      }
+    },
+    {
+      "id": "x-musitsune",
+      "slug": "musitsune",
+      "handle": "musitsune",
+      "aliases": [],
+      "displayName": "ツネ｜IP Creative Director",
+      "primaryPlatform": "x",
+      "profileUrl": "https://x.com/musitsune",
+      "xUrl": "https://x.com/musitsune",
+      "identities": [
+        {
+          "platform": "x",
+          "handle": "musitsune",
+          "url": "https://x.com/musitsune"
+        }
+      ],
+      "roles": [
+        "video"
+      ],
+      "caseIds": [
+        "x-2096010425997652307",
+        "x-2095648030531707119",
+        "x-2094923255505187221",
+        "x-2094560873335374254"
+      ],
+      "promptCaseIds": [],
+      "tutorialIds": [],
+      "representativeCaseIds": [
+        "x-2095648030531707119",
+        "x-2094923255505187221",
+        "x-2096010425997652307"
+      ],
+      "latestCaseIds": [
+        "x-2096010425997652307",
+        "x-2095648030531707119",
+        "x-2094923255505187221",
+        "x-2094560873335374254"
+      ],
+      "caseCount": 4,
+      "promptCount": 0,
+      "promptRate": 0,
+      "tutorialCount": 0,
+      "recentCaseCount": 4,
+      "activeWeeks": 1,
+      "firstAddedAt": "2026-09-01T00:16:12.269Z",
+      "lastAddedAt": "2026-09-05T00:12:52.244Z",
+      "engagementPercentile": 0.599,
+      "badges": [
+        "recently-active",
+        "rising"
+      ],
+      "reasons": [
+        "recently-active"
+      ],
+      "ranks": {
+        "overall": 159,
+        "active": 82,
+        "cases": 97,
+        "prompts": 194,
+        "rising": 55,
+        "tutorials": null
+      },
+      "rankDelta": {
+        "overall": 1,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 1,
         "tutorials": null
       }
     },
@@ -13242,7 +13313,7 @@
         "recently-active"
       ],
       "ranks": {
-        "overall": 159,
+        "overall": 160,
         "active": 270,
         "cases": 242,
         "prompts": 72,
@@ -13251,81 +13322,10 @@
       },
       "rankDelta": {
         "overall": -1,
-        "active": -3,
-        "cases": -1,
-        "prompts": 0,
-        "rising": -3,
-        "tutorials": null
-      }
-    },
-    {
-      "id": "x-musitsune",
-      "slug": "musitsune",
-      "handle": "musitsune",
-      "aliases": [],
-      "displayName": "ツネ｜IP Creative Director",
-      "primaryPlatform": "x",
-      "profileUrl": "https://x.com/musitsune",
-      "xUrl": "https://x.com/musitsune",
-      "identities": [
-        {
-          "platform": "x",
-          "handle": "musitsune",
-          "url": "https://x.com/musitsune"
-        }
-      ],
-      "roles": [
-        "video"
-      ],
-      "caseIds": [
-        "x-2096010425997652307",
-        "x-2095648030531707119",
-        "x-2094923255505187221",
-        "x-2094560873335374254"
-      ],
-      "promptCaseIds": [],
-      "tutorialIds": [],
-      "representativeCaseIds": [
-        "x-2095648030531707119",
-        "x-2094923255505187221",
-        "x-2096010425997652307"
-      ],
-      "latestCaseIds": [
-        "x-2096010425997652307",
-        "x-2095648030531707119",
-        "x-2094923255505187221",
-        "x-2094560873335374254"
-      ],
-      "caseCount": 4,
-      "promptCount": 0,
-      "promptRate": 0,
-      "tutorialCount": 0,
-      "recentCaseCount": 4,
-      "activeWeeks": 1,
-      "firstAddedAt": "2026-09-01T00:16:12.269Z",
-      "lastAddedAt": "2026-09-05T00:12:52.244Z",
-      "engagementPercentile": 0.598,
-      "badges": [
-        "recently-active",
-        "rising"
-      ],
-      "reasons": [
-        "recently-active"
-      ],
-      "ranks": {
-        "overall": 160,
-        "active": 82,
-        "cases": 97,
-        "prompts": 194,
-        "rising": 56,
-        "tutorials": null
-      },
-      "rankDelta": {
-        "overall": 1,
-        "active": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -13391,8 +13391,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -13459,10 +13459,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -2,
-        "cases": -1,
-        "prompts": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": 0,
         "tutorials": null
       }
@@ -13527,12 +13527,87 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 3,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -4,
+        "rising": 0,
         "tutorials": null
+      }
+    },
+    {
+      "id": "x-aipixlab",
+      "slug": "aipixlab",
+      "handle": "aipixlab",
+      "aliases": [],
+      "displayName": "AI写真ラボ / AIバーチャルカメラマン",
+      "primaryPlatform": "x",
+      "profileUrl": "https://x.com/aipixlab",
+      "xUrl": "https://x.com/aipixlab",
+      "identities": [
+        {
+          "platform": "x",
+          "handle": "aipixlab",
+          "url": "https://x.com/aipixlab"
+        }
+      ],
+      "roles": [
+        "video",
+        "tutorial"
+      ],
+      "caseIds": [
+        "x-2099614163647754524",
+        "x-2096390421626880069",
+        "x-2088797656118390866"
+      ],
+      "promptCaseIds": [],
+      "tutorialIds": [
+        "3060-turbo-benchmark"
+      ],
+      "representativeCaseIds": [
+        "x-2088797656118390866",
+        "x-2099614163647754524",
+        "x-2096390421626880069"
+      ],
+      "latestCaseIds": [
+        "x-2099614163647754524",
+        "x-2096390421626880069",
+        "x-2088797656118390866"
+      ],
+      "caseCount": 3,
+      "promptCount": 0,
+      "promptRate": 0,
+      "tutorialCount": 1,
+      "recentCaseCount": 2,
+      "activeWeeks": 3,
+      "firstAddedAt": "2026-08-16T04:44:06.093Z",
+      "lastAddedAt": "2026-09-15T00:25:56.065Z",
+      "engagementPercentile": 0.504,
+      "badges": [
+        "recently-active",
+        "guide-author",
+        "consistent"
+      ],
+      "reasons": [
+        "recently-active",
+        "tutorial-author",
+        "consistent"
+      ],
+      "ranks": {
+        "overall": 164,
+        "active": 99,
+        "cases": 111,
+        "prompts": 201,
+        "rising": null,
+        "tutorials": 13
+      },
+      "rankDelta": {
+        "overall": 1,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": null,
+        "tutorials": 0
       }
     },
     {
@@ -13591,7 +13666,7 @@
         "recently-active"
       ],
       "ranks": {
-        "overall": 164,
+        "overall": 165,
         "active": 194,
         "cases": 66,
         "prompts": 182,
@@ -13599,87 +13674,12 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 0,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
-        "rising": null,
-        "tutorials": null
-      }
-    },
-    {
-      "id": "x-aipixlab",
-      "slug": "aipixlab",
-      "handle": "aipixlab",
-      "aliases": [],
-      "displayName": "AI写真ラボ / AIバーチャルカメラマン",
-      "primaryPlatform": "x",
-      "profileUrl": "https://x.com/aipixlab",
-      "xUrl": "https://x.com/aipixlab",
-      "identities": [
-        {
-          "platform": "x",
-          "handle": "aipixlab",
-          "url": "https://x.com/aipixlab"
-        }
-      ],
-      "roles": [
-        "video",
-        "tutorial"
-      ],
-      "caseIds": [
-        "x-2099614163647754524",
-        "x-2096390421626880069",
-        "x-2088797656118390866"
-      ],
-      "promptCaseIds": [],
-      "tutorialIds": [
-        "3060-turbo-benchmark"
-      ],
-      "representativeCaseIds": [
-        "x-2088797656118390866",
-        "x-2099614163647754524",
-        "x-2096390421626880069"
-      ],
-      "latestCaseIds": [
-        "x-2099614163647754524",
-        "x-2096390421626880069",
-        "x-2088797656118390866"
-      ],
-      "caseCount": 3,
-      "promptCount": 0,
-      "promptRate": 0,
-      "tutorialCount": 1,
-      "recentCaseCount": 2,
-      "activeWeeks": 3,
-      "firstAddedAt": "2026-08-16T04:44:06.093Z",
-      "lastAddedAt": "2026-09-15T00:25:56.065Z",
-      "engagementPercentile": 0.503,
-      "badges": [
-        "recently-active",
-        "guide-author",
-        "consistent"
-      ],
-      "reasons": [
-        "recently-active",
-        "tutorial-author",
-        "consistent"
-      ],
-      "ranks": {
-        "overall": 165,
-        "active": 99,
-        "cases": 111,
-        "prompts": 201,
-        "rising": null,
-        "tutorials": 13
-      },
-      "rankDelta": {
-        "overall": -3,
-        "active": -2,
+        "overall": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
-        "tutorials": 0
+        "tutorials": null
       }
     },
     {
@@ -13743,11 +13743,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 2,
-        "active": -3,
-        "cases": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -13814,11 +13814,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -13886,8 +13886,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -13949,8 +13949,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -14001,7 +14001,7 @@
       "activeWeeks": 3,
       "firstAddedAt": "2026-08-16T04:44:06.093Z",
       "lastAddedAt": "2026-09-02T00:08:44.375Z",
-      "engagementPercentile": 0.55,
+      "engagementPercentile": 0.551,
       "badges": [
         "recently-active",
         "consistent"
@@ -14019,8 +14019,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -14087,7 +14087,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -14152,11 +14152,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": null,
-        "active": null,
-        "cases": null,
-        "prompts": null,
-        "rising": null,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -14220,11 +14220,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
-        "cases": -2,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -14287,8 +14287,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -14356,7 +14356,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -14419,8 +14419,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -14473,7 +14473,7 @@
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-29T00:19:15.550Z",
       "lastAddedAt": "2026-09-08T13:14:06.200Z",
-      "engagementPercentile": 0.405,
+      "engagementPercentile": 0.404,
       "badges": [
         "recently-active",
         "rising"
@@ -14491,10 +14491,10 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -2,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -14561,11 +14561,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -4,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -14626,8 +14626,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -14694,11 +14694,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
-        "cases": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -14762,11 +14762,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -14831,11 +14831,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -14896,8 +14896,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -14963,8 +14963,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -15032,11 +15032,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -15101,11 +15101,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -15170,11 +15170,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
-        "cases": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -15239,11 +15239,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
-        "cases": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -15305,11 +15305,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -2,
-        "cases": -1,
-        "prompts": -1,
-        "rising": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -15372,9 +15372,9 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
-        "cases": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
         "rising": null,
         "tutorials": null
@@ -15437,8 +15437,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -15508,11 +15508,11 @@
         "tutorials": 14
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -2,
+        "rising": 0,
         "tutorials": 0
       }
     },
@@ -15577,11 +15577,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -15629,7 +15629,7 @@
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-09T15:11:03+08:00",
       "lastAddedAt": "2026-08-10T10:48:55+08:00",
-      "engagementPercentile": 0.771,
+      "engagementPercentile": 0.772,
       "badges": [
         "breakout"
       ],
@@ -15645,8 +15645,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -15714,11 +15714,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -3,
-        "cases": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -15781,11 +15781,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -3,
-        "cases": -3,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -15846,8 +15846,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -15898,7 +15898,7 @@
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-11T12:15:52.990Z",
       "lastAddedAt": "2026-08-28T01:32:58.034Z",
-      "engagementPercentile": 0.514,
+      "engagementPercentile": 0.515,
       "badges": [
         "recently-active"
       ],
@@ -15914,8 +15914,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -15979,8 +15979,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -16045,11 +16045,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -2,
-        "cases": -1,
-        "prompts": -1,
-        "rising": -3,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -16094,7 +16094,7 @@
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-24T01:35:51.926Z",
       "lastAddedAt": "2026-08-29T00:19:15.551Z",
-      "engagementPercentile": 0.803,
+      "engagementPercentile": 0.804,
       "badges": [
         "recently-active",
         "rising"
@@ -16111,11 +16111,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -16179,8 +16179,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -16244,10 +16244,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -16315,11 +16315,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -16382,8 +16382,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -16448,11 +16448,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -16519,11 +16519,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -4,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -16588,11 +16588,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -2,
-        "cases": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -16657,11 +16657,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -2,
-        "cases": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -16726,11 +16726,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -2,
-        "cases": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -16791,10 +16791,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
-        "cases": -2,
-        "prompts": -2,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -16856,10 +16856,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -16920,8 +16920,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -16981,10 +16981,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
-        "cases": -2,
-        "prompts": -2,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -17047,9 +17047,9 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -17116,8 +17116,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -17181,10 +17181,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -17250,11 +17250,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
-        "cases": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -17316,7 +17316,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -17380,8 +17380,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -17448,11 +17448,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -17497,7 +17497,7 @@
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-30T00:39:42.827Z",
       "lastAddedAt": "2026-09-01T00:16:12.269Z",
-      "engagementPercentile": 0.663,
+      "engagementPercentile": 0.664,
       "badges": [
         "recently-active",
         "rising"
@@ -17514,11 +17514,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
-        "cases": -2,
-        "prompts": -2,
-        "rising": -3,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -17563,7 +17563,7 @@
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-13T00:38:33.433Z",
       "lastAddedAt": "2026-08-24T01:35:51.926Z",
-      "engagementPercentile": 0.711,
+      "engagementPercentile": 0.712,
       "badges": [
         "recently-active"
       ],
@@ -17579,8 +17579,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -17644,11 +17644,77 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
+        "tutorials": null
+      }
+    },
+    {
+      "id": "x-vadooai",
+      "slug": "vadooai",
+      "handle": "vadooai",
+      "aliases": [],
+      "displayName": "@vadooai",
+      "primaryPlatform": "x",
+      "profileUrl": "https://x.com/vadooai",
+      "xUrl": "https://x.com/vadooai",
+      "identities": [
+        {
+          "platform": "x",
+          "handle": "vadooai",
+          "url": "https://x.com/vadooai"
+        }
+      ],
+      "roles": [
+        "video"
+      ],
+      "caseIds": [
+        "x-2093345360710344839",
+        "x-2094432525250597104"
+      ],
+      "promptCaseIds": [],
+      "tutorialIds": [],
+      "representativeCaseIds": [
+        "x-2094432525250597104",
+        "x-2093345360710344839"
+      ],
+      "latestCaseIds": [
+        "x-2093345360710344839",
+        "x-2094432525250597104"
+      ],
+      "caseCount": 2,
+      "promptCount": 0,
+      "promptRate": 0,
+      "tutorialCount": 0,
+      "recentCaseCount": 2,
+      "activeWeeks": 2,
+      "firstAddedAt": "2026-08-31T15:24:28.121Z",
+      "lastAddedAt": "2026-09-08T13:14:06.200Z",
+      "engagementPercentile": 0.603,
+      "badges": [
+        "recently-active",
+        "rising"
+      ],
+      "reasons": [
+        "recently-active"
+      ],
+      "ranks": {
+        "overall": 225,
+        "active": 166,
+        "cases": 317,
+        "prompts": 322,
+        "rising": 75,
+        "tutorials": null
+      },
+      "rankDelta": {
+        "overall": 3,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -17704,7 +17770,7 @@
         "recently-active"
       ],
       "ranks": {
-        "overall": 225,
+        "overall": 226,
         "active": 179,
         "cases": 332,
         "prompts": 145,
@@ -17712,9 +17778,9 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -3,
-        "cases": -2,
+        "overall": -1,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
         "rising": 0,
         "tutorials": null
@@ -17770,7 +17836,7 @@
       "badges": [],
       "reasons": [],
       "ranks": {
-        "overall": 226,
+        "overall": 227,
         "active": 237,
         "cases": 92,
         "prompts": 192,
@@ -17778,8 +17844,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 3,
-        "active": -3,
+        "overall": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -17835,7 +17901,7 @@
         "recently-active"
       ],
       "ranks": {
-        "overall": 227,
+        "overall": 228,
         "active": 224,
         "cases": 217,
         "prompts": 267,
@@ -17843,77 +17909,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -3,
+        "overall": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
-        "tutorials": null
-      }
-    },
-    {
-      "id": "x-vadooai",
-      "slug": "vadooai",
-      "handle": "vadooai",
-      "aliases": [],
-      "displayName": "@vadooai",
-      "primaryPlatform": "x",
-      "profileUrl": "https://x.com/vadooai",
-      "xUrl": "https://x.com/vadooai",
-      "identities": [
-        {
-          "platform": "x",
-          "handle": "vadooai",
-          "url": "https://x.com/vadooai"
-        }
-      ],
-      "roles": [
-        "video"
-      ],
-      "caseIds": [
-        "x-2093345360710344839",
-        "x-2094432525250597104"
-      ],
-      "promptCaseIds": [],
-      "tutorialIds": [],
-      "representativeCaseIds": [
-        "x-2094432525250597104",
-        "x-2093345360710344839"
-      ],
-      "latestCaseIds": [
-        "x-2093345360710344839",
-        "x-2094432525250597104"
-      ],
-      "caseCount": 2,
-      "promptCount": 0,
-      "promptRate": 0,
-      "tutorialCount": 0,
-      "recentCaseCount": 2,
-      "activeWeeks": 2,
-      "firstAddedAt": "2026-08-31T15:24:28.121Z",
-      "lastAddedAt": "2026-09-08T13:14:06.200Z",
-      "engagementPercentile": 0.602,
-      "badges": [
-        "recently-active",
-        "rising"
-      ],
-      "reasons": [
-        "recently-active"
-      ],
-      "ranks": {
-        "overall": 228,
-        "active": 166,
-        "cases": 317,
-        "prompts": 322,
-        "rising": 75,
-        "tutorials": null
-      },
-      "rankDelta": {
-        "overall": -3,
-        "active": -2,
-        "cases": -2,
-        "prompts": -2,
-        "rising": -3,
         "tutorials": null
       }
     },
@@ -17975,11 +17975,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -18040,8 +18040,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -18106,11 +18106,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": null,
-        "active": null,
-        "cases": null,
-        "prompts": null,
-        "rising": null,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -18175,11 +18175,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -18244,11 +18244,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -18313,11 +18313,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -18382,11 +18382,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
-        "cases": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -18451,11 +18451,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
-        "cases": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -18502,7 +18502,7 @@
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-08-13T00:38:33.430Z",
-      "engagementPercentile": 0.155,
+      "engagementPercentile": 0.154,
       "badges": [],
       "reasons": [],
       "ranks": {
@@ -18514,9 +18514,9 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -7,
-        "active": -3,
-        "cases": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
         "rising": null,
         "tutorials": null
@@ -18582,11 +18582,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 2,
-        "active": -2,
-        "cases": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -18648,11 +18648,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -18713,10 +18713,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -18776,8 +18776,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -18841,8 +18841,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -18909,11 +18909,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -2,
-        "cases": -2,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -18975,11 +18975,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
-        "rising": -3,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -19039,8 +19039,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -19104,10 +19104,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -3,
-        "cases": -2,
-        "prompts": -2,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -19165,8 +19165,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -19226,8 +19226,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -19291,10 +19291,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -19359,11 +19359,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -19425,9 +19425,9 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
-        "cases": -2,
-        "prompts": -2,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -19485,10 +19485,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -19550,10 +19550,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -19599,7 +19599,7 @@
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-08-13T00:38:33.433Z",
-      "engagementPercentile": 0.606,
+      "engagementPercentile": 0.607,
       "badges": [],
       "reasons": [],
       "ranks": {
@@ -19611,8 +19611,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -19677,11 +19677,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -3,
-        "cases": -2,
-        "prompts": -2,
-        "rising": -3,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -19726,7 +19726,7 @@
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T05:52:30.477Z",
       "lastAddedAt": "2026-08-10T10:48:55+08:00",
-      "engagementPercentile": 0.783,
+      "engagementPercentile": 0.784,
       "badges": [],
       "reasons": [],
       "ranks": {
@@ -19738,10 +19738,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -3,
-        "cases": -2,
-        "prompts": -2,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -19799,8 +19799,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -19865,11 +19865,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -19927,7 +19927,7 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -19992,11 +19992,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -20059,10 +20059,10 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -2,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -20122,8 +20122,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -20187,10 +20187,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -20253,11 +20253,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -2,
-        "cases": -2,
-        "prompts": -2,
-        "rising": -2,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -20319,11 +20319,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -2,
-        "cases": -1,
-        "prompts": -1,
-        "rising": -3,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -20380,8 +20380,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -20446,11 +20446,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -20495,7 +20495,7 @@
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-08-10T10:48:55+08:00",
-      "engagementPercentile": 0.685,
+      "engagementPercentile": 0.686,
       "badges": [],
       "reasons": [],
       "ranks": {
@@ -20507,11 +20507,77 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
+        "tutorials": null
+      }
+    },
+    {
+      "id": "x-hexxrl",
+      "slug": "hexxrl",
+      "handle": "hexxrl",
+      "aliases": [],
+      "displayName": "Hexx ./",
+      "primaryPlatform": "x",
+      "profileUrl": "https://x.com/hexxrl",
+      "xUrl": "https://x.com/hexxrl",
+      "identities": [
+        {
+          "platform": "x",
+          "handle": "hexxrl",
+          "url": "https://x.com/hexxrl"
+        }
+      ],
+      "roles": [
+        "video"
+      ],
+      "caseIds": [
+        "x-2096661667383808474",
+        "x-2093853841254953237"
+      ],
+      "promptCaseIds": [],
+      "tutorialIds": [],
+      "representativeCaseIds": [
+        "x-2093853841254953237",
+        "x-2096661667383808474"
+      ],
+      "latestCaseIds": [
+        "x-2096661667383808474",
+        "x-2093853841254953237"
+      ],
+      "caseCount": 2,
+      "promptCount": 0,
+      "promptRate": 0,
+      "tutorialCount": 0,
+      "recentCaseCount": 2,
+      "activeWeeks": 2,
+      "firstAddedAt": "2026-08-30T00:39:42.827Z",
+      "lastAddedAt": "2026-09-08T01:43:38.867Z",
+      "engagementPercentile": 0.392,
+      "badges": [
+        "recently-active",
+        "rising"
+      ],
+      "reasons": [
+        "recently-active"
+      ],
+      "ranks": {
+        "overall": 269,
+        "active": 178,
+        "cases": 216,
+        "prompts": 266,
+        "rising": 98,
+        "tutorials": null
+      },
+      "rankDelta": {
+        "overall": 1,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -20568,7 +20634,7 @@
         "recently-active"
       ],
       "ranks": {
-        "overall": 269,
+        "overall": 270,
         "active": 150,
         "cases": 127,
         "prompts": 209,
@@ -20576,77 +20642,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -2,
+        "overall": -1,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
-        "tutorials": null
-      }
-    },
-    {
-      "id": "x-hexxrl",
-      "slug": "hexxrl",
-      "handle": "hexxrl",
-      "aliases": [],
-      "displayName": "Hexx ./",
-      "primaryPlatform": "x",
-      "profileUrl": "https://x.com/hexxrl",
-      "xUrl": "https://x.com/hexxrl",
-      "identities": [
-        {
-          "platform": "x",
-          "handle": "hexxrl",
-          "url": "https://x.com/hexxrl"
-        }
-      ],
-      "roles": [
-        "video"
-      ],
-      "caseIds": [
-        "x-2096661667383808474",
-        "x-2093853841254953237"
-      ],
-      "promptCaseIds": [],
-      "tutorialIds": [],
-      "representativeCaseIds": [
-        "x-2093853841254953237",
-        "x-2096661667383808474"
-      ],
-      "latestCaseIds": [
-        "x-2096661667383808474",
-        "x-2093853841254953237"
-      ],
-      "caseCount": 2,
-      "promptCount": 0,
-      "promptRate": 0,
-      "tutorialCount": 0,
-      "recentCaseCount": 2,
-      "activeWeeks": 2,
-      "firstAddedAt": "2026-08-30T00:39:42.827Z",
-      "lastAddedAt": "2026-09-08T01:43:38.867Z",
-      "engagementPercentile": 0.391,
-      "badges": [
-        "recently-active",
-        "rising"
-      ],
-      "reasons": [
-        "recently-active"
-      ],
-      "ranks": {
-        "overall": 270,
-        "active": 178,
-        "cases": 216,
-        "prompts": 266,
-        "rising": 98,
-        "tutorials": null
-      },
-      "rankDelta": {
-        "overall": -4,
-        "active": -3,
-        "cases": 0,
-        "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -20703,10 +20703,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -20768,11 +20768,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": null,
-        "active": null,
-        "cases": null,
-        "prompts": null,
-        "rising": null,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -20829,10 +20829,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -20894,11 +20894,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -3,
-        "cases": -4,
-        "prompts": -4,
-        "rising": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -20962,8 +20962,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -21028,11 +21028,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -21097,11 +21097,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -21146,7 +21146,7 @@
       "activeWeeks": 1,
       "firstAddedAt": "2026-09-02T17:38:00.650Z",
       "lastAddedAt": "2026-09-04T00:26:06.282Z",
-      "engagementPercentile": 0.539,
+      "engagementPercentile": 0.54,
       "badges": [
         "recently-active",
         "rising"
@@ -21163,11 +21163,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -3,
-        "cases": -2,
-        "prompts": -2,
-        "rising": -3,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -21231,11 +21231,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -21299,11 +21299,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -21367,11 +21367,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -3,
-        "cases": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -21435,11 +21435,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": 1,
-        "active": -3,
-        "cases": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -21496,8 +21496,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -7,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -21562,10 +21562,10 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
-        "cases": -4,
-        "prompts": -4,
-        "rising": -2,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -21622,8 +21622,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -8,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -21686,8 +21686,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -8,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -21747,10 +21747,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -8,
-        "active": -3,
-        "cases": -2,
-        "prompts": -2,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -21812,10 +21812,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -21878,11 +21878,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -2,
-        "cases": -1,
-        "prompts": -1,
-        "rising": -3,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -21943,11 +21943,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -3,
-        "cases": -4,
-        "prompts": -4,
-        "rising": -2,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -22008,11 +22008,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -3,
-        "cases": -3,
-        "prompts": -3,
-        "rising": -2,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -22057,7 +22057,7 @@
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T10:48:55+08:00",
       "lastAddedAt": "2026-08-10T10:48:55+08:00",
-      "engagementPercentile": 0.594,
+      "engagementPercentile": 0.595,
       "badges": [],
       "reasons": [],
       "ranks": {
@@ -22069,10 +22069,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -22131,10 +22131,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -4,
-        "cases": -4,
-        "prompts": -4,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -22193,10 +22193,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -4,
-        "cases": -4,
-        "prompts": -4,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -22255,10 +22255,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -4,
-        "cases": -2,
-        "prompts": -2,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -22320,10 +22320,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -6,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -22382,10 +22382,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -4,
-        "cases": -3,
-        "prompts": -3,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -22444,10 +22444,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -4,
-        "cases": -3,
-        "prompts": -3,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -22511,10 +22511,10 @@
         "tutorials": 17
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -3,
-        "cases": -4,
-        "prompts": -4,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": 0
       }
@@ -22576,11 +22576,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -3,
-        "cases": -4,
-        "prompts": -4,
-        "rising": -2,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -22638,10 +22638,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -4,
-        "cases": -2,
-        "prompts": -2,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -22704,11 +22704,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -8,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -22766,10 +22766,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -4,
-        "cases": -2,
-        "prompts": -2,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -22827,10 +22827,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -22889,10 +22889,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -4,
-        "cases": -2,
-        "prompts": -2,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -22951,10 +22951,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -4,
-        "cases": -2,
-        "prompts": -2,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -23013,10 +23013,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -4,
-        "cases": -4,
-        "prompts": -4,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -23078,11 +23078,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -3,
-        "cases": -4,
-        "prompts": -4,
-        "rising": -2,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -23140,10 +23140,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -4,
-        "cases": -4,
-        "prompts": -4,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -23202,10 +23202,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -3,
-        "cases": -4,
-        "prompts": -4,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -23264,10 +23264,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -4,
-        "cases": -4,
-        "prompts": -4,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -23329,8 +23329,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -7,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -23390,8 +23390,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -23452,10 +23452,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -4,
-        "cases": -3,
-        "prompts": -3,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -23513,10 +23513,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -23578,11 +23578,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -3,
-        "cases": -4,
-        "prompts": -4,
-        "rising": -2,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -23640,10 +23640,75 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -3,
-        "cases": -2,
-        "prompts": -2,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": null,
+        "tutorials": null
+      }
+    },
+    {
+      "id": "x-o_c_t_",
+      "slug": "o_c_t_",
+      "handle": "o_c_t_",
+      "aliases": [],
+      "displayName": "@o_c_t_",
+      "primaryPlatform": "x",
+      "profileUrl": "https://x.com/o_c_t_",
+      "xUrl": "https://x.com/o_c_t_",
+      "identities": [
+        {
+          "platform": "x",
+          "handle": "o_c_t_",
+          "url": "https://x.com/o_c_t_"
+        }
+      ],
+      "roles": [
+        "video"
+      ],
+      "caseIds": [
+        "x-2085375185197412412",
+        "x-o_c_t_-2086495183496184253"
+      ],
+      "promptCaseIds": [],
+      "tutorialIds": [],
+      "representativeCaseIds": [
+        "x-o_c_t_-2086495183496184253",
+        "x-2085375185197412412"
+      ],
+      "latestCaseIds": [
+        "x-2085375185197412412",
+        "x-o_c_t_-2086495183496184253"
+      ],
+      "caseCount": 2,
+      "promptCount": 0,
+      "promptRate": 0,
+      "tutorialCount": 0,
+      "recentCaseCount": 1,
+      "activeWeeks": 1,
+      "firstAddedAt": "2026-08-10T10:48:55+08:00",
+      "lastAddedAt": "2026-09-08T13:14:06.200Z",
+      "engagementPercentile": 0.459,
+      "badges": [
+        "recently-active"
+      ],
+      "reasons": [
+        "recently-active"
+      ],
+      "ranks": {
+        "overall": 318,
+        "active": 229,
+        "cases": 273,
+        "prompts": 296,
+        "rising": null,
+        "tutorials": null
+      },
+      "rankDelta": {
+        "overall": 1,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -23694,7 +23759,7 @@
         "breakout"
       ],
       "ranks": {
-        "overall": 318,
+        "overall": 319,
         "active": 365,
         "cases": 341,
         "prompts": 342,
@@ -23702,75 +23767,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -4,
-        "cases": -2,
-        "prompts": -2,
-        "rising": null,
-        "tutorials": null
-      }
-    },
-    {
-      "id": "x-o_c_t_",
-      "slug": "o_c_t_",
-      "handle": "o_c_t_",
-      "aliases": [],
-      "displayName": "@o_c_t_",
-      "primaryPlatform": "x",
-      "profileUrl": "https://x.com/o_c_t_",
-      "xUrl": "https://x.com/o_c_t_",
-      "identities": [
-        {
-          "platform": "x",
-          "handle": "o_c_t_",
-          "url": "https://x.com/o_c_t_"
-        }
-      ],
-      "roles": [
-        "video"
-      ],
-      "caseIds": [
-        "x-2085375185197412412",
-        "x-o_c_t_-2086495183496184253"
-      ],
-      "promptCaseIds": [],
-      "tutorialIds": [],
-      "representativeCaseIds": [
-        "x-o_c_t_-2086495183496184253",
-        "x-2085375185197412412"
-      ],
-      "latestCaseIds": [
-        "x-2085375185197412412",
-        "x-o_c_t_-2086495183496184253"
-      ],
-      "caseCount": 2,
-      "promptCount": 0,
-      "promptRate": 0,
-      "tutorialCount": 0,
-      "recentCaseCount": 1,
-      "activeWeeks": 1,
-      "firstAddedAt": "2026-08-10T10:48:55+08:00",
-      "lastAddedAt": "2026-09-08T13:14:06.200Z",
-      "engagementPercentile": 0.458,
-      "badges": [
-        "recently-active"
-      ],
-      "reasons": [
-        "recently-active"
-      ],
-      "ranks": {
-        "overall": 319,
-        "active": 229,
-        "cases": 273,
-        "prompts": 296,
-        "rising": null,
-        "tutorials": null
-      },
-      "rankDelta": {
-        "overall": -2,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
+        "overall": -1,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -23828,10 +23828,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -1,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -23890,10 +23890,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -4,
-        "cases": -4,
-        "prompts": -4,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -23956,11 +23956,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -10,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
-        "rising": -3,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -24018,10 +24018,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -4,
-        "cases": -2,
-        "prompts": -2,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -24080,10 +24080,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -4,
-        "cases": -4,
-        "prompts": -4,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -24141,10 +24141,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -24203,10 +24203,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -4,
-        "cases": -4,
-        "prompts": -4,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -24265,10 +24265,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -4,
-        "cases": -2,
-        "prompts": -2,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -24326,8 +24326,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -24391,11 +24391,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
-        "cases": -4,
-        "prompts": -4,
-        "rising": -2,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -24453,10 +24453,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -4,
-        "cases": -2,
-        "prompts": -2,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -24518,11 +24518,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -3,
-        "cases": -4,
-        "prompts": -4,
-        "rising": -2,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -24580,10 +24580,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -4,
-        "cases": -3,
-        "prompts": -3,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -24642,10 +24642,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -4,
-        "cases": -4,
-        "prompts": -4,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -24704,10 +24704,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -3,
-        "active": -4,
-        "cases": -2,
-        "prompts": -2,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -24766,10 +24766,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -4,
-        "cases": -3,
-        "prompts": -3,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -24828,10 +24828,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -4,
-        "cases": -4,
-        "prompts": -4,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -24889,10 +24889,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -2,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -24951,10 +24951,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": null,
-        "active": null,
-        "cases": null,
-        "prompts": null,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -25000,7 +25000,7 @@
       "activeWeeks": 2,
       "firstAddedAt": "2026-09-08T01:43:38.867Z",
       "lastAddedAt": "2026-09-13T00:34:24.391Z",
-      "engagementPercentile": 0.141,
+      "engagementPercentile": 0.14,
       "badges": [
         "recently-active",
         "rising"
@@ -25017,11 +25017,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -7,
-        "active": -2,
-        "cases": -1,
-        "prompts": -1,
-        "rising": -3,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -25081,8 +25081,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -25130,7 +25130,7 @@
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-13T00:38:33.432Z",
       "lastAddedAt": "2026-08-13T00:38:33.432Z",
-      "engagementPercentile": 0.467,
+      "engagementPercentile": 0.468,
       "badges": [],
       "reasons": [],
       "ranks": {
@@ -25142,8 +25142,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -25207,10 +25207,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -25268,10 +25268,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -25334,11 +25334,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -25395,8 +25395,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -25461,11 +25461,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
-        "cases": -2,
-        "prompts": -2,
-        "rising": -3,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -25522,10 +25522,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
-        "cases": -2,
-        "prompts": -2,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -25571,7 +25571,7 @@
       "activeWeeks": 2,
       "firstAddedAt": "2026-08-10T05:52:30.476Z",
       "lastAddedAt": "2026-08-13T00:38:33.427Z",
-      "engagementPercentile": 0.195,
+      "engagementPercentile": 0.194,
       "badges": [],
       "reasons": [],
       "ranks": {
@@ -25583,10 +25583,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -25644,8 +25644,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -25709,8 +25709,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -25775,11 +25775,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -25841,11 +25841,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -25907,11 +25907,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -25973,11 +25973,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -26039,11 +26039,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -2,
-        "cases": -1,
-        "prompts": -1,
-        "rising": -3,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -26105,11 +26105,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -2,
-        "cases": -2,
-        "prompts": -2,
-        "rising": -3,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -26170,8 +26170,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -26236,11 +26236,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
-        "cases": -2,
-        "prompts": -2,
-        "rising": -3,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -26297,10 +26297,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -26358,8 +26358,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -26424,11 +26424,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -1,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -26490,11 +26490,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -26556,11 +26556,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -26605,7 +26605,7 @@
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T05:52:30.476Z",
       "lastAddedAt": "2026-08-10T05:52:30.477Z",
-      "engagementPercentile": 0.26,
+      "engagementPercentile": 0.261,
       "badges": [],
       "reasons": [],
       "ranks": {
@@ -26617,10 +26617,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -26678,10 +26678,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -26727,7 +26727,7 @@
       "activeWeeks": 1,
       "firstAddedAt": "2026-08-10T05:52:30.475Z",
       "lastAddedAt": "2026-08-10T05:52:30.476Z",
-      "engagementPercentile": 0.207,
+      "engagementPercentile": 0.206,
       "badges": [],
       "reasons": [],
       "ranks": {
@@ -26739,10 +26739,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -26805,11 +26805,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -26871,11 +26871,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -2,
-        "cases": -1,
-        "prompts": -1,
-        "rising": -3,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -26932,8 +26932,8 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
         "rising": null,
@@ -26999,10 +26999,10 @@
       },
       "rankDelta": {
         "overall": 0,
-        "active": -3,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -27064,11 +27064,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -5,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -27130,11 +27130,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -5,
-        "active": -2,
+        "overall": 0,
+        "active": 0,
         "cases": 0,
         "prompts": 0,
-        "rising": -3,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -27196,11 +27196,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -5,
-        "active": -2,
-        "cases": -1,
-        "prompts": -1,
-        "rising": -3,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -27262,11 +27262,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -5,
-        "active": -2,
-        "cases": -2,
-        "prompts": -2,
-        "rising": -3,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -27323,10 +27323,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }
@@ -27389,11 +27389,11 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
-        "cases": -1,
-        "prompts": -1,
-        "rising": -3,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
+        "rising": 0,
         "tutorials": null
       }
     },
@@ -27450,10 +27450,10 @@
         "tutorials": null
       },
       "rankDelta": {
-        "overall": -4,
-        "active": -3,
-        "cases": -2,
-        "prompts": -2,
+        "overall": 0,
+        "active": 0,
+        "cases": 0,
+        "prompts": 0,
         "rising": null,
         "tutorials": null
       }

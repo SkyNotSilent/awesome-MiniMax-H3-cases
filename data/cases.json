@@ -99752,5 +99752,56 @@
     },
     "approvedAt": "2026-09-18T19:25:59.623Z",
     "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode passed."
+  },
+  {
+    "id": "x-2101203361886572557",
+    "title": "银色泳装走过商场窗外",
+    "titleEn": "A Silver Swimsuit Walks Past the Mall",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "人物穿着银色泳装走过户外商场，边走边向镜头传递语音信息，形成一段竖屏生活方式短片。 原生视频规格为 8 秒 · 1440×2560。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A figure in a silver swimsuit walks past an outdoor shopping mall while delivering a spoken message, forming a vertical lifestyle short. Native-video output: 8s · 1440×2560. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/chikazoemakoto/status/2101203361886572557",
+    "sourceLabel": "X 原帖 · @chikazoemakoto",
+    "author": "近添真琴（ライター・AIクリエイター）",
+    "publishedAt": "2026-09-19T06:54:54.000Z",
+    "addedAt": "2026-09-19T07:10:58.342Z",
+    "mediaUrl": "/media/x-2101203361886572557.mp4",
+    "posterUrl": "/posters/x/2101203361886572557.jpg",
+    "duration": 8,
+    "aspectRatio": "portrait",
+    "resolution": "1440×2560",
+    "tags": [
+      "MiniMax H3",
+      "广告与产品",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "advertising",
+    "styles": [
+      "ugc",
+      "photoreal"
+    ],
+    "scenes": [
+      "fashion",
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "#シルバーウィーク なので、シルバーの競泳水着を着てみました！✨\n\n窓の外のショッピングモールを歩いている人たちにも注目されるかな…？\n\n🔊音声オンでメッセージも聴いてもらえるとうれしいです！\n\n※映像・音声はAI生成です。\n\n【提供：Hailuo AI（CPPプログラム参加中）】#MiniMaxH3",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 5,
+      "views": 45,
+      "snapshotAt": "2026-09-19T07:10:58.342Z"
+    },
+    "approvedAt": "2026-09-19T07:10:58.342Z",
+    "editorialBasis": "Original X caption explicitly identifies Hailuo AI and #MiniMaxH3; native video was fully decoded and reviewed."
   }
 ]
