@@ -99803,5 +99803,318 @@
     },
     "approvedAt": "2026-09-19T07:10:58.342Z",
     "editorialBasis": "Original X caption explicitly identifies Hailuo AI and #MiniMaxH3; native video was fully decoded and reviewed."
+  },
+  {
+    "id": "x-2101460438987001994",
+    "title": "录音室里的现场演唱",
+    "titleEn": "A Live Vocal Take in the Recording Booth",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "一位歌手在白色录音室里对着麦克风演唱，镜头保持近距离并呈现稳定的口型同步。 原生视频规格为 15 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A singer performs into a studio microphone in a clean white booth with a steady close-up and visible lip sync. Native-video output: 15s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/rutineru_ch/status/2101460438987001994",
+    "sourceLabel": "X 原帖 · @rutineru_ch",
+    "author": "ルティネル/Rutineru",
+    "publishedAt": "2026-09-19T23:56:26.000Z",
+    "addedAt": "2026-09-20T00:17:59.850Z",
+    "mediaUrl": "/media/x-2101460438987001994.mp4",
+    "posterUrl": "/posters/x/2101460438987001994.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "music",
+    "styles": [
+      "photoreal",
+      "commercial"
+    ],
+    "scenes": [
+      "performance",
+      "music-performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MidjourneyとMiniMax H3でThe First Take風なサムネと動画を生成してみた。ちなみに楽曲はSunoAI。 うーん、MiniMax H3だとわざわざ歌詞を入れなくてもリップシンクは完璧💫でも今はフルMV作る元気が無い😭\n#Midjourney #SunoAI #MiniMax",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 22,
+      "snapshotAt": "2026-09-20T00:17:59.850Z"
+    },
+    "approvedAt": "2026-09-20T00:17:59.850Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode passed."
+  },
+  {
+    "id": "x-2101459574507384886",
+    "title": "从角色杂志画面到竖屏短片",
+    "titleEn": "From Character Magazine Frames to a Vertical Short",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "动漫角色与杂志式画面在竖屏 R2V 片段中连续变形和运动，保留了角色视觉主题。 原生视频规格为 15 秒 · 608×832。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Anime character and magazine-like frames animate through a portrait R2V clip while retaining the same visual theme. Native-video output: 15s · 608×832. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/xiaomimasato/status/2101459574507384886",
+    "sourceLabel": "X 原帖 · @xiaomimasato",
+    "author": "のえみん",
+    "publishedAt": "2026-09-19T23:53:00.000Z",
+    "addedAt": "2026-09-20T00:17:59.850Z",
+    "mediaUrl": "/media/x-2101459574507384886.mp4",
+    "posterUrl": "/posters/x/2101459574507384886.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "608×832",
+    "tags": [
+      "MiniMax H3",
+      "本地生成与工作流",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "workflow",
+    "styles": [
+      "anime",
+      "illustration"
+    ],
+    "scenes": [
+      "performance",
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "現在のワークフローで\nRTX3060 12GB RAM 32GBにて\n\nMiniMax-H3での\nR2V、15秒動画の生成時間がおおよそ\n2400秒（40分）ほどで\n採用率は8割ほど\n\nつまり、\n5時間で15秒動画を6本作れる計算\n\n作りすぎても確認が増えるし\nお題にも予め対応できない\n\nなので\n現状で割と十分な気がする",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 28,
+      "snapshotAt": "2026-09-20T00:17:59.850Z"
+    },
+    "approvedAt": "2026-09-20T00:17:59.850Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode passed."
+  },
+  {
+    "id": "x-2101446612346458326",
+    "title": "复古玩具广告里的动画与实拍玩具",
+    "titleEn": "A Retro Toy Commercial with Animation and Live Action",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Ref2VA",
+    "summary": "角色参考图被扩展成 1980 年代电视玩具广告，动画节目片段与实拍玩具镜头交替出现。 原生视频规格为 15 秒 · 1344×768。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A character reference becomes a 1980s television toy commercial that alternates animated-program footage and live-action toy play. Native-video output: 15s · 1344×768. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "Prompt: Show this [ 📷Image1 ] in the style of a 1980s TV action toy commercial, featuring clips of the animated program it's based on but also the live action action figure toy gameplay.",
+    "promptSourceUrl": "https://x.com/kaigani/status/2101446614808477837",
+    "sourceUrl": "https://x.com/kaigani/status/2101446612346458326",
+    "sourceLabel": "X 原帖 · @kaigani",
+    "author": "𝚔𝚊𝚒 🤖+🧠",
+    "publishedAt": "2026-09-19T23:01:30.000Z",
+    "addedAt": "2026-09-20T00:17:59.850Z",
+    "mediaUrl": "/media/x-2101446612346458326.mp4",
+    "posterUrl": "/posters/x/2101446612346458326.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "广告与产品",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "advertising",
+    "styles": [
+      "retro",
+      "commercial"
+    ],
+    "scenes": [
+      "product",
+      "performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Had a character reference sheet, popped it into @Hailuo_AI MiniMax H3 and got a 1980s style toy commercial, with a live action toy version.",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 2,
+      "views": 126,
+      "snapshotAt": "2026-09-20T00:17:59.850Z"
+    },
+    "approvedAt": "2026-09-20T00:17:59.850Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode passed."
+  },
+  {
+    "id": "x-2101258477813584121",
+    "title": "雨夜楼梯后的偷拍镜头",
+    "titleEn": "A Secret Camera behind Her in a Rainy Neon Alley",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "FL2VA",
+    "summary": "雨夜霓虹楼梯间里，女子捡起正在拍摄自己的手机，并在空无一人的楼梯上回头确认。 原生视频规格为 15 秒 · 3840×2160。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "In a rainy neon stair alley, a woman picks up a phone filming her and turns toward an empty staircase to verify what she saw. Native-video output: 15s · 3840×2160. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "MiniMax-H3 prompt👇\nFor the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] A 15-second, 16:9 cinematic realistic suspense short set entirely inside the same rainy neon stair alley from <Picture 1>. Preserve the exact same female lead throughout: same face, hairstyle, soaked wardrobe, body proportions, skin texture, and the same staircase geography with wet steps, narrow alley, railings, humid air, and neon mood. No scene change, no extra people, no black ending. The story is: a drenched woman slowly walks down the stairs, notices an iPhone still recording on one step, bends to pick it up, realizes the screen shows her own back filmed from behind, instinctively steps back half a step into the railing and whips her shoulder and head around, but the real staircase is empty. End on the suspended moment where she is half-turned, half-looking down, with the screen still lit. She stays in motion throughout: descending, stopping, noticing the phone, bending to pick it up, standing with the screen, stepping back, leaning to the railing, turning shoulder and head, then looking back to the phone. The phone must stay physically consistent in size and readability. [Shot 2] At 00:00-00:02.8, a low dynamic near shot hugs her legs, waist, and the wet railing as the camera slowly pushes in and follows her down about one and a half steps. The emphasis is on lower-body weight transfer, wet skin reflections, and action-based sensual tension. Her right hand keeps a subtle stabilizing relationship with the railing. She is soaked, moving carefully but not weakly. Her first emotional phase is calm, restrained, and oppressive self-protection: eyelids half-lowered, gaze angled beyond camera toward the lower stairs, brows held flat with only the outer ends slightly lowered, lips naturally parted, breath low and steady, nostrils moving lightly, no smile. Pink-violet neon washes the front-upper planes of the chest, collarbone, abdomen, and front thighs, while cyan-blue edge light wraps the waistline, outer arms, and leg contour. This is the first sensual close-up: legs, waist, wet skin, deep wet fabric contours, and real descending balance. [Shot 3] At 00:02.8-00:05.0, cut to a medium-close slightly high angle that lands on the step at her feet while keeping one stopped boot and the railing in the foreground. A lit iPhone lies near the edge of shallow step-water. The red recording dot must be immediately readable. She stops on the stair, not frozen but caught mid-motion. Her gaze narrows sharply toward the phone, pupils snap into focus, the brow center contracts into only the thinnest line, she takes one short nasal breath, her lips close lightly from their previously open state, and the jaw gathers in. This is the first layer of wrongness, not yet fear. She murmurs quietly, <d>[English] Whose phone is this...?</d> The line is tentative and low, with the ending gently falling away. Phone screen light adds a third small light source, lifting the forehead edge, nose bridge, lash line, and cupid’s bow with cool white. [Shot 4] At 00:05.0-00:07.8, a tight near shot from her right-front follows her bend as she picks up the phone. Stay close to the hand, collarbone, side waist, wet hair falling forward, and the exact moment the device leaves the stair. She remains connected to the railing with the right side of her body and hand relationship, even while reaching. Her eyes stay locked on the phone the whole time. Lashes cast a slight shadow downward. The lips tighten more, the throat moves with one very small swallow, breathing becomes noticeably shallower, and the face shifts into focused verification rather than panic. This is the second sensual close-up: hand, collarbone, side waist, wet hair, and the phone entering the center of the narrative. Rain hits the glass and forms tiny round splashes and sliding beads. When she pinches the phone edge and lifts it, droplets drag aside and one or two thin water threads stretch briefly and break. [Shot 5] At 00:07.8-00:10.5, a near shot layers the phone screen and half her face. First make the screen content legible, then carry focus into her face without losing the screen read. The phone display shows only one clear thing: her own back descending the staircase, filmed from a steady hidden angle one step higher behind her. No second face, no ghost, no supernatural clutter. She sees it and recognizes herself. Her fourth emotional phase is clear alert recognition: her eyes flick once across the screen and then hold, the lower lids lift slightly, the pupils widen just a little, the brow center tightens more clearly while still restrained, nostrils open and settle, any remaining softness in the mouth disappears, and the lower lip stalls for a beat as if a sentence is trapped in the throat. She whispers, <d>[English] Wait... that’s me.</d> The first half carries a tiny delay as recognition catches in her breath. The phone’s cold light now fills the lower half of her face and under-eye area, making the micro-expression readable without overpowering the neon mood. [Shot 6] At 00:10.5-00:12.8, an extreme close-up pushes from shoulder-neck, side face, lashes, and lip line into the eye. This is the third sensual close-up, centered on the dangerous moment before she turns. She keeps the phone close to her chest line, glances once more at the screen, and then prepares to look back. Her fifth emotional phase is being pressed by the implication that the filming angle was behind her: lashes tremble once, breathing tightens, the lip line draws in, cheek muscles firm slightly, and she says in a lower, faster, more pressured whisper, <d>[English] Who the hell is filming me?</d> It is not shouted, but forced low confirmation. One side of her face drops deeper into shadow while the other is caught by soft pink-violet neon on lashes, nose tip, lip peak, and jaw edge. [Shot 7] At 00:12.8-00:15.0, a medium-close shot with a slight retreat. Let the turning motion carry the cut. She shifts back by half a step, the wet sole dragging a very small water trace, shoulder and collarbone leading the head turn rather than the head teleporting first. Her back and right side find the railing. She turns sharply toward the upper stairs, but the real staircase is empty. She then drops her gaze back to the still-lit phone at chest level. Her final emotional phase is cold controlled aftershock: the eyes cut first upward, then back down, the forehead tightens lightly, the jaw stays tight, the mouth opens by half a breath and then slowly closes again, fear controlled but not gone. The screen remains lit and still recording. The staircase behind her stays empty, wet, neon-lit, and physically real. End with her half-turned, half-looking down at the glowing iPhone, rain still falling, neon still flickering, and suspense held inside the frame, without cutting to black.\n\noverall_soundscape: Maintain a continuous rainy neon stairwell ambience: mid-strength rain, water ticking on railing and steps, shallow drainage flow, distant electric hum, soft neon buzz, and humid night reverb. Emphasize wet footfalls on the stairs, the subtle grip and slide of her hand on the railing, clothing friction, low controlled breath, and fine splashes from shallow step-water. Then bring forward rain striking the phone glass, tiny circular water impacts, the slight stop in her step, her low tentative line <d>[English] Whose phone is this...?</d>, fingers contacting the wet phone, water dragging across the screen, a faint lift-off suction from the wet stair, her shallow breath, fabric tension as she bends, one small swallow, and the surrounding rain and neon hum dimming slightly as she reads the screen. Finish with the tightening breath before the turn, the low pressured line <d>[English] Who the hell is filming me?</d>, one light metallic touch from the railing, the small backward step drag on wet stair, empty stair ambience, continuing rain, neon buzz, and the phone still recording in her hand. No scream, no extra voices, no subtitles.\n\nnon_diegetic_music: Keep score absent or nearly absent. If any non-diegetic layer is used, make it only a very thin low suspense drone under the rain and neon hum, rising slightly after she sees the screen and never overpowering the physical environment or dialogue.",
+    "promptSourceUrl": "https://x.com/ou_zhen599/status/2101259032745201952",
+    "sourceUrl": "https://x.com/ou_zhen599/status/2101258477813584121",
+    "sourceLabel": "X 原帖 · @ou_zhen599",
+    "author": "Loriel.AI",
+    "publishedAt": "2026-09-19T10:33:55.000Z",
+    "addedAt": "2026-09-20T00:17:59.850Z",
+    "mediaUrl": "/media/x-2101258477813584121.mp4",
+    "posterUrl": "/posters/x/2101258477813584121.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "3840×2160",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "cinematic-realistic",
+      "dark"
+    ],
+    "scenes": [
+      "city",
+      "performance"
+    ],
+    "inputTypes": [
+      "text",
+      "image"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Made with MiniMax-H3 ComfyUI            \n\n🎬Image-to-Video                         \n📷“The Camera Behind Her”\nShe found a cell phone that had been secretly filming her, and the camera was right behind her.\n\nFull prompt in the reply.",
+    "engagement": {
+      "replies": 5,
+      "reposts": 4,
+      "likes": 204,
+      "views": 11268,
+      "snapshotAt": "2026-09-20T00:17:59.850Z"
+    },
+    "approvedAt": "2026-09-20T00:17:59.850Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode passed."
+  },
+  {
+    "id": "x-2101254179067236692",
+    "title": "霓虹街区被节奏唤醒",
+    "titleEn": "When the Neon District Wakes to the Beat",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "FL2VA",
+    "summary": "湿润的霓虹后巷中，蓝发角色接住红桃皇后牌，面对从雾中走出的镜像人物。 原生视频规格为 16 秒 · 3840×2160。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "In a wet neon back alley, a blue-haired character catches a Queen of Hearts card and faces her mirror self emerging from the fog. Native-video output: 16s · 3840×2160. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "MiniMax-H3 prompt👇\nFor the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] A 15-second, 16:9 cinematic cyber-thriller image-to-video sequence set entirely inside the same wet neon back alley from <Picture 1>: the left-front railing zone where A begins, the street centerline, the puddle reflection layer, and the opposite fog-filled exit in the background. Do not add extra people, do not place both women on the same staircase segment, and do not leave this alley. Subject A is the blue-haired woman from <Picture 1>, with the same face, body, black deep-V leather bodysuit, fishnets, over-knee boots, metallic choker, glowing beverage can, goggles, and jacket ring-light. Subject B must be the exact same face, hairstyle, body, and clothing silhouette as A, but with a refined dangerous harlequin-style makeup variation, not a different woman. The story is: A rules her own staircase entrance like a queen, fog grows at the opposite exit, a Queen of Hearts card flies out, A catches it one-handed and recognizes it as a provocation, then rises and looks up to see her identical mirror-woman emerging from the fog and forcing her to leave her throne. Lighting comes only from practical neon, staircase reflections, the fog backlight, and distant storefront light. Rain, wet hair, cloth folds, skin reflections, boot splashes, condensation droplets, and natural body inertia remain physically real. [Shot 2] At 00:00-00:03.5, begin with an extremely low ground-level push from puddles, discarded paper, and lane markings into A’s boots, fishnets, thighs, leather chest, and jaw, ending in a near frame from chest to lips. A sits on the center of the third step from the bottom of the staircase, leaning slightly forward as if guarding the entrance to her territory. This is the first sensual close-up, built from collarbone, throat line, deep-V leather highlights, and the nearly invisible rise and fall of her breathing. Her first emotional state is cool sovereign control: brows relaxed but not soft, eyelids half-lowered, gaze not fully locked on the distance yet, lips lightly closed, breathing almost silent, throat moving once faintly. The puddles reflect blue and magenta neon steadily, and the opposite street exit holds only a thin fog presence. [Shot 3] At 00:03.5-00:07.0, the camera eases slightly backward and rises just enough to include both the staircase foreground and the opposite exit. The fog there becomes denser, first rolling close to the ground and then pressing outward slowly, with neon cutting bright lines along its edges. A is still seated, but the second emotional stage begins. She does not widen her eyes dramatically. Instead her breathing stops for half a beat first, her lips loosen by a fraction, the lower lids lift slightly, and her gaze truly focuses toward the opposite exit for the first time. Her head tips subtly toward the source of the sound and fog. Then a Queen of Hearts card is carried out of the fog by damp wind, turning half a rotation and gliding naturally through the mid-ground mist toward A. Do not chase the card wildly. A’s right hand rises fast and clean and catches it one-handed at chest height slightly to her right, with real deceleration in the wrist and fingers. Her third emotional stage is confirmation of provocation: before the catch, her eyes narrow sharply and the brow center hardens slightly; after the catch, she drops her gaze to the card, the throat moves once, the jawline begins to tighten, and the original calm disappears. This is the second sensual close-up, built from the catching wrist, collarbone, leather highlights across the chest, eyelash shadows, and the lip line and jaw while glancing down at the card. The Queen of Hearts face must be clearly readable; the paper is damp-soft with slightly curled edges and realistic motion. [Shot 4] At 00:07.0-00:10.2, from A’s left-front, the camera makes a slight lateral push and subtle rise, keeping the staircase, street, and opposite exit on one axis. A places her left hand on the railing and rises slowly. Her right foot steps down first, then the left follows into a high-low standing stance. She never leaves the immediate front zone of her staircase. The card remains in her right hand. Her fourth emotional stage is calm transition into combat readiness: eyes narrower and more concentrated, nostrils opening slightly with breath, lips tightening, jaw sharpening, and her gaze lifting off the card and back to the opposite exit as if thinking, “You really dared to do this.” During the rise, the leather outfit stretches and rebounds naturally, hair shifts back and settles, and her chest shows only a very slight real inertia response. This is the third sensual close-up, built from waist and hip effort, fishnet leg tension, neck and jaw line, and the chest moving with controlled breath. [Shot 5] At 00:10.2-00:12.7, hold a longer relation shot. A stays on the left side or left-lower edge of the foreground while the opposite exit sits centered in the back. Focus transfers gradually from A to B. B walks out of the fog by two small steps and stops at the edge of the backlit mist. She is the same face, same hairstyle, same body, same clothing outline as A, but with refined dangerous harlequin-style makeup: darker eye area, sharper mouth corners, and a more poisonous finish. A’s fifth emotional stage is recognition freeze. She locks for one beat: pupils contract quickly, the lip line releases for half a second, the throat catches on one breath, and for the first time her breathing goes off rhythm. Then she does not retreat; she becomes more focused. B’s emotional state is intimate contempt: stable eyes, one mouth corner rising very slowly, as if appreciating that A has finally understood. The fog keeps rolling behind B but never hides her face, and her body parts it with real wraparound flow. [Shot 6] At 00:12.7-00:15.0, use one restrained reverse shot to B in a medium close frame, pushing in extremely slowly. B stands at the street-exit edge, chin lifted slightly, one-sided smile in place, gaze locked on A at a distance. Before the line, give one tiny false-soft look; on the key words, the gaze turns straighter and the mouth shape grows more precise and cutting. The only spoken line is <d>[English] You dropped your crown.</d> It must be low, intimate, cold, and humiliating rather than loud. “You” is pressed low, “dropped” carries a little more weight, and “your crown” falls away like a verdict. After the line, A in the far frame or foreground edge takes one more step down, committing to leave her throne and meet the challenge. Her final emotional state shifts from frozen recognition into hard resolve: eyes harden again, lips tighten again, jaw stabilizes, shoulders do not collapse. When the line lands, a nearby neon briefly flickers once, and both the fog edge behind B and the puddle reflections brighten for an instant. End on the moment just before A moves toward the opposite side. Do not cut to black.\n\noverall_soundscape: Maintain a wet cyber alley ambience throughout: neon electrical hum, distant ventilation fans, moist air resonance, occasional water drips, and low street reverb. Emphasize puddle surface noise, faint leather movement, cloth friction, the subtle sound of A shifting on the step, and her almost inaudible breath. Then bring forward the slow spill of fog, the slight change in airflow at the opposite exit, the card fluttering and rotating, the light slap of paper into A’s fingers, a fine metallic tick from the railing, leather stretch and settle as she rises, fog movement as B parts it, soft heel contacts from B’s two steps, and B’s close cold line <d>[English] You dropped your crown.</d> Afterward restore the alley ambience with neon hiss, damp air, tiny puddle ripples, and fog drift. No extra voices, no subtitle cues, no music-video stingers.\n\nnon_diegetic_music: Keep score minimal or absent. If any non-diegetic layer is used, make it a very thin low-frequency suspense bed beneath the alley ambience, rising only slightly once B is revealed and never overpowering the voice, neon, or the physical space.",
+    "promptSourceUrl": "https://x.com/ou_zhen599/status/2101254891293614422",
+    "sourceUrl": "https://x.com/ou_zhen599/status/2101254179067236692",
+    "sourceLabel": "X 原帖 · @ou_zhen599",
+    "author": "Loriel.AI",
+    "publishedAt": "2026-09-19T10:16:50.000Z",
+    "addedAt": "2026-09-20T00:17:59.850Z",
+    "mediaUrl": "/media/x-2101254179067236692.mp4",
+    "posterUrl": "/posters/x/2101254179067236692.jpg",
+    "duration": 16,
+    "aspectRatio": "landscape",
+    "resolution": "3840×2160",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "cinematic-realistic",
+      "stylized"
+    ],
+    "scenes": [
+      "city",
+      "performance"
+    ],
+    "inputTypes": [
+      "text",
+      "image"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Made with MiniMax-H3 ComfyUI          \n\n🎬Image-to-Video                        \n📷“Wake Up, Neon”\nThe lights and reflections along the entire street, along with the rhythm of her body, are awakened all at once. She transforms from a passerby in the night into the heartbeat and switch of the entire cyber district.\n\nFull prompt in the reply.",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 8,
+      "views": 574,
+      "snapshotAt": "2026-09-20T00:17:59.850Z"
+    },
+    "approvedAt": "2026-09-20T00:17:59.850Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode passed."
+  },
+  {
+    "id": "x-2101243238334205994",
+    "title": "古庙里落下的王冠",
+    "titleEn": "The Fallen Crown in an Ancient Temple",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "FL2VA",
+    "summary": "古老神殿的石柱与壁画之间，女子将金箔嵌入墙缝，最终与壁画女神形成诡异呼应。 原生视频规格为 14 秒 · 3840×2160。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "Inside an ancient temple, a woman presses gold leaf into a wall crack before her pose echoes the painted goddess. Native-video output: 14s · 3840×2160. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "MiniMax-H3 prompt👇\nFor the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] A 15-second, 16:9 cinematic realistic image-to-video sequence set entirely inside the same ancient temple porch and stone-column corridor shown in <Picture 1>. Preserve the exact same adult woman throughout: same face, hairstyle, makeup, garment cut, leather texture, body ratio, gait, and presence. The whole sequence stays in one continuous space only: the porch threshold, the narrow corridor between the right-side pillar and wall, and the same right-side wall mural zone. No exterior, no new hall, no extra people, no extra props, no subtitles, no watermark, and no black ending. The core story is that she is not entering the temple as a new visitor, but behaving like a brief awakened action-memory belonging to the wall mural itself. She is always moving or has just finished moving, never posing. [Shot 2] At 00:00-00:02.2, a low-angle near shot begins at boot heel, forward-driving legs, and knee line, then tilts up to collarbone, jaw, and part of the face. The camera stays close to the floor and glides backward as she crosses the threshold. When the right foot lands, thin floor dust is pressed outward by the boot sole and curls softly around the edge. Her gaze stays beyond the camera rather than into it, eyelids slightly lowered, pupils steady, lips naturally closed, and collarbone and upper chest rise and fall with restrained real breathing. Warm air from above and behind lifts the long hair gently, with slight delayed motion in the strands. Clothing follows the body line and rebounds subtly. This first sensual close-up is built entirely from gait, center-of-gravity transfer, collarbone breathing, jawline, and hair edge-light. [Shot 3] At 00:02.2-00:05.0, cut to a frontal medium close retreating shot, framing from chest to knee while she continues advancing on the central axis. During the advance she drifts half a step toward frame right and her left hand naturally grazes the relief carving on the right-side pillar without stopping to search. As her fingertips move across the stone, a small amount of fine stone powder slides down. One extremely thin, brittle ancient gold-leaf fragment peels away from the carving and sticks lightly between her index and middle fingers. Her eyes do not make a large turn at once. First she checks it with peripheral vision, the brow peak lifts by an almost invisible degree, the lip line softens slightly, and the breath becomes shallower. Lighting remains warm side-back gold on her edges and cool shadow on the pillar, with soft highlights on the leather surfaces. [Shot 4] At 00:05.0-00:07.4, cut to a near close-up from side waist to hand, the camera slightly low and behind her right side, following in a very small arc. She does not stop walking; instead the torso rotates subtly within the stride, hips and waist connected, as she lifts her left hand to inspect the gold leaf. Emphasize the side waist line, the slight pull and rebound of fabric caused by movement, and the tactile precision of her fingers rolling the fragment. Her gaze gathers inward from distance to fingertips, lashes pressing down, breath becoming very shallow at the nose tip, lips slightly parted without sound, and jawline gently tightening. Hair swings at the shoulder with small inertial delay. The gold leaf trembles in the edge light with weak realistic reflection rather than glitter. This is the second sensual close-up, built from waist, hand, cloth tension, breath, touch, and latent danger. [Shot 5] At 00:07.4-00:10.5, cut to a three-quarter side-front medium close shot. The camera moves in a tiny arc to her left-front and then stabilizes, keeping both her and the right-side wall relationship clear. She completes the last half step, moves close to the right wall, and presses the ultra-thin gold leaf into a nearly invisible crack in the wall. After pressing it in, she does not withdraw the hand immediately; the fingertips stay there for half a second. The crack begins to spread slowly along the buried line of the ancient wall image. Only a few tiny stone grains fall, and dust hangs briefly before settling. Her eyeballs hold, then perform one short refocus. Her brow center does not knot dramatically; both brow peaks draw slightly inward. The middle of the upper lip lifts faintly, the mouth opens by a low degree, and the breath catches once in the throat. She whispers, almost as breath itself, <d>[English] I never left.</d> The line should feel like recognition rather than exposition. Inside the crack there is only a weak gold dust-glow and subtle misalignment in the wall pattern, like memory inside stone being disturbed. No explosion, no beam, no collapse. [Shot 6] At 00:10.5-00:12.8, cut to a face close-up and push in slightly, focusing on the eyes, lips, cheekbone edge-light, and the small muscular changes around the mid-face. Her left hand remains on the wall. She does not retreat. Her eyes stay forward first, then flick for a fraction toward the interior of the wall as if hearing a response within it. The lips remain slightly parted, breath briefly suspended, lower lids slightly tight, and warm gold edge light catches the fine hair along the face. The emotion is a single struck instant of surprise held under extreme control, never a scream, never a wide-open panic. This is the third sensual close-up, centered on parted lips, paused gaze, hair rim light, and high-control micro-expression. [Shot 7] At 00:12.8-00:15.0, maintain the same axis and slowly withdraw from face close-up to medium and then medium-wide without rising, without changing angle, and without entering any new space. As the camera withdraws, it becomes gradually clear that her standing pose, raised arm angle, and head orientation precisely match the pose of an ancient painted goddess on the right wall. The mural does not suddenly appear; instead the old pigment layers, cracks, dust traces, and surviving outline in the wall are gradually revealed as something that was always there and is only now being seen. She does not perform an exaggerated reaction. She simply keeps one unfinished breath in the body. In the final beat, the painted goddess’s eyeball shifts by the smallest possible degree, the gold dust slowly settles back to the floor, and the sequence ends in an elegant uncanny suspended state without cutting to black.\n\noverall_soundscape: Maintain a hollow ancient stone ambience throughout, with low temple air, soft boot pressure on dusted floor, faint grains sliding, fingertips rubbing stone, tiny wall-friction sounds, and restrained breathing. Emphasize boot contact, dust pushed outward by the step, hair moving in warm airflow, fingertip contact with the pillar carving, a fine trickle of stone powder, the fragile peel of the gold leaf, fabric pull-and-release at the waist and torso, the dry whisper of fingers rolling the thin gold leaf, the soft press of gold leaf into the crack, a delicate stone-grain release, faint wall-friction spread as the crack extends, dust pausing in the air, and her near-whispered line <d>[English] I never left.</d> Reduce the space further near the end to breath, tiny skin and cloth movement, microscopic wall resonance, settling dust grains, and the near-inaudible response of the mural’s living eye.\n\nnon_diegetic_music: Use little to no score. If any non-diegetic layer is present, keep it to an extremely thin low sustained tonal bed, almost imperceptible, supporting the suspended ancient-memory feeling without turning the sequence into overt fantasy or horror.",
+    "promptSourceUrl": "https://x.com/ou_zhen599/status/2101243903555080246",
+    "sourceUrl": "https://x.com/ou_zhen599/status/2101243238334205994",
+    "sourceLabel": "X 原帖 · @ou_zhen599",
+    "author": "Loriel.AI",
+    "publishedAt": "2026-09-19T09:33:21.000Z",
+    "addedAt": "2026-09-20T00:17:59.850Z",
+    "mediaUrl": "/media/x-2101243238334205994.mp4",
+    "posterUrl": "/posters/x/2101243238334205994.jpg",
+    "duration": 14,
+    "aspectRatio": "landscape",
+    "resolution": "3840×2160",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "cinematic-realistic",
+      "dark"
+    ],
+    "scenes": [
+      "fantasy",
+      "performance"
+    ],
+    "inputTypes": [
+      "text",
+      "image"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Made with MiniMax-H3 ComfyUI        \n\n🎬Image-to-Video                       \n📷“The Fallen Crown”\nIt wasn’t until a `Q` (Queen) card landed in her hand that she realized this wasn’t a provocation, but a declaration of a bid for the throne. When the fog cleared, standing across from her was her most dangerous mirror image.  \n\nFull prompt in the reply.",
+    "engagement": {
+      "replies": 3,
+      "reposts": 0,
+      "likes": 14,
+      "views": 864,
+      "snapshotAt": "2026-09-20T00:17:59.850Z"
+    },
+    "approvedAt": "2026-09-20T00:17:59.850Z",
+    "editorialBasis": "Original X caption plus beginning, middle, and end frames reviewed from the downloaded native video; full media decode passed."
   }
 ]
