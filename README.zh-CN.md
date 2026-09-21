@@ -133,7 +133,7 @@ npm run collection:demo
 ```
 
 <!-- build-metrics:start -->
-**参考构建（Node 22.23.1，不含分析服务配置）：** 首页 JavaScript gzip 109.7 kB · 中文 / 英文首页 HTML gzip 9.3 kB / 9 kB · 首批 API gzip 5.1 kB · 下一页 API gzip 4 kB · 搜索响应 gzip 5.1 kB · 本地非阻塞字体 51.3 kB · 仅服务端索引 gzip 1636.8 kB。静态预算运行 `npm run performance:budget`；启动本地生产服务后运行 `npm run performance:browser` 验证浏览器行为。
+**参考构建（Node 22.23.1，不含分析服务配置）：** 首页 JavaScript gzip 109.7 kB · 中文 / 英文首页 HTML gzip 9.2 kB / 8.8 kB · 首批 API gzip 4.7 kB · 下一页 API gzip 3.7 kB · 搜索响应 gzip 4.7 kB · 本地非阻塞字体 51.3 kB · 仅服务端索引 gzip 1643.4 kB。静态预算运行 `npm run performance:budget`；启动本地生产服务后运行 `npm run performance:browser` 验证浏览器行为。
 <!-- build-metrics:end -->
 
 ## 投稿、纠错与下架
