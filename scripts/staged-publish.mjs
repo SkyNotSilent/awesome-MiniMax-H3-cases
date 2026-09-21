@@ -1,3 +1,5 @@
+import { safeErrorMessage } from './redact-sensitive.mjs'
+
 const sleep = (milliseconds) => new Promise((resolvePromise) => setTimeout(resolvePromise, milliseconds))
 
 async function drainBody(response) {
@@ -39,12 +41,12 @@ export async function verifyVideoRoute({ siteBaseUrl, caseId, fetchImpl = fetch,
       if (!/^bytes 0-1\/\d+$/i.test(contentRange || '')) throw new Error('Bucket response is missing a valid Content-Range')
       return { appStatus: 307, bucketStatus: 206, contentRange }
     } catch (error) {
-      lastError = error
+      lastError = new Error(safeErrorMessage(error, 'Video verification failed'))
       if (attempt < attempts) await sleep(attempt * 400)
     }
   }
 
-  throw new Error(lastError?.message || 'Video verification failed')
+  throw new Error(safeErrorMessage(lastError, 'Video verification failed'))
 }
 
 function normalizedSource(value) {
@@ -107,7 +109,7 @@ export async function prepareStagedCommit({ stagedCases, publicCases, verifyVide
       await verifyVideo(item)
       ready.push(item)
     } catch (error) {
-      failed.push({ item, reason: error?.message || 'video playback verification failed' })
+      failed.push({ item, reason: safeErrorMessage(error, 'video playback verification failed') })
     }
   }
 

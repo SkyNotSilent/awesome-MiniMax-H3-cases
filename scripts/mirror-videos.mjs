@@ -14,6 +14,7 @@ import { isPlaybackProfileCompliant, PLAYBACK_PROFILE, preparePlaybackFile, prob
 import { ensureFaststart } from './video-faststart.mjs'
 import { fetchXVideoSources } from './video-x-source.mjs'
 import { prepareMirrorPlayback } from './mirror-playback-source.mjs'
+import { safeErrorMessage } from './redact-sensitive.mjs'
 
 const root = resolve(import.meta.dirname, '..')
 function argumentValue(name) {
@@ -152,7 +153,7 @@ async function nativePlaybackCandidate(item, urls) {
       if (!isPlaybackProfileCompliant(summary)) continue
       return preparePlaybackFile(candidatePath, tempDirectory)
     } catch (error) {
-      console.warn(`Playback variant rejected for ${item.id}: ${error?.message || error}`)
+      console.warn(`Playback variant rejected for ${item.id}: ${safeErrorMessage(error)}`)
     }
   }
   return null
@@ -218,7 +219,7 @@ async function mirror(item) {
       fetchSources: () => sources ?? (item.sourceType === 'official' ? null : sourcesFor(item)),
       prepareNative: (urls) => nativePlaybackCandidate(item, urls),
       prepareSource: () => preparePlaybackFile(preparedSource.path, tempDirectory),
-      onLookupError: (error) => console.warn(`Native playback lookup failed for ${item.id}; transcoding stored source: ${error?.message || error}`),
+      onLookupError: (error) => console.warn(`Native playback lookup failed for ${item.id}; transcoding stored source: ${safeErrorMessage(error)}`),
     })
     await retry(`Upload playback ${item.id}`, () => client.send(new PutObjectCommand({
       Bucket: storage.bucket,
@@ -259,8 +260,9 @@ async function worker() {
       results.set(item.id, result)
       console.log(`[${results.size}/${targets.length}] ${result.state} ${item.id} ${result.bytes}`)
     } catch (error) {
-      results.set(item.id, { id: item.id, state: 'failed', error: error?.message || String(error) })
-      console.error(`[${results.size}/${targets.length}] failed ${item.id}: ${error?.message || error}`)
+      const safeError = safeErrorMessage(error)
+      results.set(item.id, { id: item.id, state: 'failed', error: safeError })
+      console.error(`[${results.size}/${targets.length}] failed ${item.id}: ${safeError}`)
     }
   }
 }

@@ -12,7 +12,7 @@ async function fixture(t) {
   await mkdir(join(root, 'scripts'))
   await mkdir(join(root, 'data'))
   await mkdir(join(root, '.review/publish-staging'), { recursive: true })
-  for (const name of ['commit-staged-cases.mjs', 'staged-publish.mjs', 'review-paths.mjs', 'submission-feedback.mjs', 'submission-reply.mjs', 'submission-reply-text.mjs']) {
+  for (const name of ['commit-staged-cases.mjs', 'staged-publish.mjs', 'review-paths.mjs', 'redact-sensitive.mjs', 'submission-feedback.mjs', 'submission-reply.mjs', 'submission-reply-text.mjs']) {
     await copyFile(new URL(name, import.meta.url), join(root, 'scripts', name))
   }
   const cases = ['a', 'b'].map(id => ({ id, sourceUrl: `https://example.com/${id}`, mediaUrl: `/media/${id}.mp4`, posterUrl: `/posters/x/${id}.jpg` }))
