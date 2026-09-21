@@ -276,20 +276,69 @@ function disposeHostedVideo(video: HTMLVideoElement) {
 }
 
 const PREPARED_VIDEO_TTL_MS = 4_000
+const HOSTED_VIDEO_RETRY_DELAYS_MS = [400, 1_000, 2_200]
+
+function hostedVideoRetrySource(mediaUrl: string, sequence: number) {
+  const url = new URL(mediaUrl, window.location.href)
+  url.searchParams.set('playbackRetry', String(sequence))
+  return url.origin === window.location.origin
+    ? `${url.pathname}${url.search}${url.hash}`
+    : url.toString()
+}
 
 function HostedVideo({ item, language, title, preparedVideo }: { item: CatalogCase; language: Language; title: string; preparedVideo: HTMLVideoElement | null }) {
   const [state, setState] = useState<'loading' | 'ready' | 'error'>('loading')
-  const [video] = useState(() => preparedVideo ?? prepareHostedVideo(item))
+  const videoRef = useRef<HTMLVideoElement | null>(null)
+  if (videoRef.current === null) videoRef.current = preparedVideo ?? prepareHostedVideo(item)
   const mountRef = useRef<HTMLDivElement | null>(null)
+  const retryTimerRef = useRef<number | null>(null)
+  const automaticRetryRef = useRef(0)
+  const requestSequenceRef = useRef(0)
   const loading = language === 'zh' ? '正在加载站内视频…' : 'Loading hosted video…'
   const failed = language === 'zh' ? '视频暂时无法加载' : 'Video is temporarily unavailable'
+  const retry = language === 'zh' ? '重试播放' : 'Retry video'
   const openX = language === 'zh' ? '在 X 打开原帖' : 'Open original post on X'
 
+  const retryVideo = useCallback(() => {
+    const video = videoRef.current
+    if (!video || !item.mediaUrl) return
+    requestSequenceRef.current += 1
+    setState('loading')
+    video.src = hostedVideoRetrySource(item.mediaUrl, requestSequenceRef.current)
+    if (import.meta.env.MODE !== 'test') {
+      video.load()
+      video.play()?.catch(() => undefined)
+    }
+  }, [item.mediaUrl])
+
+  const retryNow = useCallback(() => {
+    if (retryTimerRef.current !== null) window.clearTimeout(retryTimerRef.current)
+    retryTimerRef.current = null
+    automaticRetryRef.current = 0
+    retryVideo()
+  }, [retryVideo])
+
   useLayoutEffect(() => {
+    const video = videoRef.current
     if (!video || !mountRef.current) return
     const loading = () => setState('loading')
-    const ready = () => setState('ready')
-    const failed = () => setState('error')
+    const ready = () => {
+      if (retryTimerRef.current !== null) window.clearTimeout(retryTimerRef.current)
+      retryTimerRef.current = null
+      automaticRetryRef.current = 0
+      setState('ready')
+    }
+    const failed = () => {
+      if (automaticRetryRef.current >= HOSTED_VIDEO_RETRY_DELAYS_MS.length) {
+        setState('error')
+        return
+      }
+      const delay = HOSTED_VIDEO_RETRY_DELAYS_MS[automaticRetryRef.current]
+      automaticRetryRef.current += 1
+      setState('loading')
+      if (retryTimerRef.current !== null) window.clearTimeout(retryTimerRef.current)
+      retryTimerRef.current = window.setTimeout(retryVideo, delay)
+    }
     const played = () => track('video-play', { caseId: item.id })
     video.addEventListener('loadstart', loading)
     video.addEventListener('canplay', ready)
@@ -305,9 +354,12 @@ function HostedVideo({ item, language, title, preparedVideo }: { item: CatalogCa
       video.removeEventListener('canplay', ready)
       video.removeEventListener('error', failed)
       video.removeEventListener('play', played)
+      if (retryTimerRef.current !== null) window.clearTimeout(retryTimerRef.current)
+      retryTimerRef.current = null
       disposeHostedVideo(video)
+      videoRef.current = null
     }
-  }, [video, item.id])
+  }, [item.id, retryVideo])
 
   return (
     <div className="hosted-video" data-state={state} ref={mountRef}>
@@ -321,7 +373,10 @@ function HostedVideo({ item, language, title, preparedVideo }: { item: CatalogCa
         <div className="hosted-video-status hosted-video-error" role="alert">
           <TriangleAlert size={28} aria-hidden="true" />
           <strong>{failed}</strong>
-          {item.sourceType === 'x' && <a href={item.sourceUrl} target="_blank" rel="noreferrer"><XMark /> {openX}</a>}
+          <div className="hosted-video-actions">
+            <button type="button" onClick={retryNow}>{retry}</button>
+            {item.sourceType === 'x' && <a href={item.sourceUrl} target="_blank" rel="noreferrer"><XMark /> {openX}</a>}
+          </div>
         </div>
       )}
       {item.sourceType === 'x' && (

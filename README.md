@@ -133,7 +133,7 @@ npm run collection:demo
 ```
 
 <!-- build-metrics:start -->
-**Reference build (Node 22.23.1, analytics configuration omitted):** 109.7 kB homepage JavaScript gzip · 9.2 kB / 8.8 kB Chinese / English homepage HTML gzip · 4.7 kB first-page API gzip · 3.7 kB next-page API gzip · 4.7 kB search response gzip · 51.3 kB local fonts (nonblocking) · 1643.4 kB server-only index gzip. Run `npm run performance:budget` for static budgets and `npm run performance:browser` against a local production server for browser behavior.
+**Reference build (Node 22.23.1, analytics configuration omitted):** 109.9 kB homepage JavaScript gzip · 9.2 kB / 8.8 kB Chinese / English homepage HTML gzip · 4.7 kB first-page API gzip · 3.7 kB next-page API gzip · 4.7 kB search response gzip · 51.3 kB local fonts (nonblocking) · 1643.4 kB server-only index gzip. Run `npm run performance:budget` for static budgets and `npm run performance:browser` against a local production server for browser behavior.
 <!-- build-metrics:end -->
 
 ## Contribute or report a problem

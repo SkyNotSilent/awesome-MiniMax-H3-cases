@@ -1267,14 +1267,31 @@ footer > span {
 
 .hosted-video-error { color: #ffd6d6; }
 
-.hosted-video-error a {
+.hosted-video-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.hosted-video-error a,
+.hosted-video-error button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 10px 14px;
+  border: 1px solid var(--acid);
   color: #050605;
   background: var(--acid);
+  font: inherit;
   text-decoration: none;
+  cursor: pointer;
+}
+
+.hosted-video-error button {
+  color: var(--acid);
+  background: transparent;
 }
 
 .x-source-icon {

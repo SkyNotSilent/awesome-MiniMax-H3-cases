@@ -485,6 +485,36 @@ describe('case-first routes', () => {
     expect(screen.getByText('正在加载站内视频…')).toBeInTheDocument()
   })
 
+  it('retries transient hosted-video failures before offering a manual retry', () => {
+    vi.useFakeTimers()
+    renderAt('/en/')
+    fireEvent.change(screen.getByPlaceholderText('Search cases, scenes, or creators…'), {
+      target: { value: 'rewinds' },
+    })
+    fireEvent.click(screen.getByRole('button', { name: 'View details for The Diner That Rewinds' }))
+    const player = document.querySelector('video[src*="/media/"]') as HTMLVideoElement
+
+    fireEvent.error(player)
+    act(() => { vi.advanceTimersByTime(400) })
+    expect(player.getAttribute('src')).toContain('playbackRetry=1')
+    expect(screen.queryByText('Video is temporarily unavailable')).not.toBeInTheDocument()
+
+    fireEvent.error(player)
+    act(() => { vi.advanceTimersByTime(1_000) })
+    expect(player.getAttribute('src')).toContain('playbackRetry=2')
+
+    fireEvent.error(player)
+    act(() => { vi.advanceTimersByTime(2_200) })
+    expect(player.getAttribute('src')).toContain('playbackRetry=3')
+
+    fireEvent.error(player)
+    expect(screen.getByText('Video is temporarily unavailable')).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: 'Retry video' }))
+    expect(player.getAttribute('src')).toContain('playbackRetry=4')
+    fireEvent.canPlay(player)
+    expect(screen.queryByText('Video is temporarily unavailable')).not.toBeInTheDocument()
+  })
+
   it('issues no fetch for the hosted video and removes the player when the dialog closes', () => {
     const fetchSpy = vi.spyOn(globalThis, 'fetch')
     renderAt('/')
