@@ -27,8 +27,6 @@ const skillInstallCommand = (item) => {
   const directory = skill.path.includes('/') ? skill.path.slice(0, skill.path.lastIndexOf('/')) : ''
   return `npx skills add https://github.com/${item.repository}/tree/${item.branch}${directory ? `/${directory}` : ''}`
 }
-const creatorCatalog = JSON.parse(await readFile(resolve(root, 'data/creators.json'), 'utf8'))
-const creators = creatorCatalog.creators
 const completePromptCount = cases.filter((item) => item.promptProvenance !== 'not-published' && item.prompt?.trim()).length
 
 const locales = ['zh-CN', 'en']
@@ -125,23 +123,7 @@ const pageDefinitions = [
       },
     },
   },
-  {
-    id: 'creators',
-    paths: { 'zh-CN': '/creators/', en: '/en/creators/' },
-    schemaType: 'CollectionPage',
-    copy: {
-      'zh-CN': {
-        title: 'MiniMax H3 优质创作者动态榜单 — 案例、Prompt 与教程作者',
-        description: `从本站 ${creatorCatalog.stats.sourceCreators} 位来源作者中，发现 ${creatorCatalog.stats.rankedCreators} 位持续产出 MiniMax H3 案例或实战教程的优质创作者。`,
-        keywords: 'MiniMax H3 创作者,MiniMax H3 博主,MiniMax H3 作者榜单,Hailuo H3 创作者,海螺 H3 博主,MiniMax H3 Prompt 作者,AI 视频创作者',
-      },
-      en: {
-        title: 'MiniMax H3 Featured Creator Leaderboard — Cases, Prompts & Tutorial Authors',
-        description: `Discover ${creatorCatalog.stats.rankedCreators} standout MiniMax H3 creators from ${creatorCatalog.stats.sourceCreators} source-attributed authors in the library.`,
-        keywords: 'MiniMax H3 creators,MiniMax H3 creator leaderboard,Hailuo H3 creators,MiniMax H3 Prompt authors,AI video creators,MiniMax H3 tutorial authors',
-      },
-    },
-  },
+
   {
     id: 'faq',
     paths: { 'zh-CN': '/faq/', en: '/en/faq/' },
@@ -251,7 +233,6 @@ const localeCode = (locale) => locale === 'en' ? 'en_US' : 'zh_CN'
 const otherLocale = (locale) => locale === 'en' ? 'zh-CN' : 'en'
 const casePath = (locale, id) => `${locale === 'en' ? '/en' : ''}/cases/${encodeURIComponent(id)}/`
 const tutorialPath = (locale, id) => `${locale === 'en' ? '/en' : ''}/tutorials/${encodeURIComponent(id)}/`
-const creatorPath = (locale, slug) => `${locale === 'en' ? '/en' : ''}/creators/${encodeURIComponent(slug)}/`
 const archivePath = (locale, page) => page === 1
   ? `${locale === 'en' ? '/en' : ''}/`
   : `${locale === 'en' ? '/en' : ''}/cases/page/${page}/`
@@ -348,19 +329,6 @@ function localizedTutorial(item, locale) {
   }
 }
 
-function localizedCreator(item, locale) {
-  const displayName = locale === 'en' && /[\u3400-\u9fff]/u.test(item.displayName)
-    ? `@${item.handle}`
-    : item.displayName
-  return {
-    displayName,
-    description: locale === 'en'
-      ? `${item.caseCount} source-attributed MiniMax H3 cases, ${item.promptCount} complete public Prompts, and ${item.tutorialCount} source-checked tutorials by ${displayName}.`
-      : `${displayName} 的 ${item.caseCount} 个 MiniMax H3 来源可追溯案例、${item.promptCount} 条完整公开 Prompt 与 ${item.tutorialCount} 篇核验教程。`,
-  }
-}
-
-// Static fallback carries the captured original as plain text, truncated for page weight.
 function originalSeoHtml(original, locale) {
   const inline = (runs) => runs.map((run) => run.href ? `<a href="${escapeHtml(run.href)}" rel="nofollow noopener">${escapeHtml(run.t)}</a>` : escapeHtml(run.t)).join('')
   const parts = []
@@ -405,34 +373,6 @@ function tutorialPageDefinition(item) {
 }
 
 const tutorialPageDefinitions = tutorialGuides.map(tutorialPageDefinition)
-
-function creatorPageDefinition(item) {
-  const localizedZh = localizedCreator(item, 'zh-CN')
-  const localizedEn = localizedCreator(item, 'en')
-  return {
-    id: `creator:${item.id}`,
-    paths: {
-      'zh-CN': creatorPath('zh-CN', item.slug),
-      en: creatorPath('en', item.slug),
-    },
-    schemaType: 'ProfilePage',
-    creator: item,
-    copy: {
-      'zh-CN': {
-        title: `${localizedZh.displayName} — MiniMax H3 创作者案例、Prompt 与教程`,
-        description: localizedZh.description,
-        keywords: [`${item.handle} MiniMax H3`, `${item.handle} Hailuo H3`, 'MiniMax H3 创作者', 'MiniMax H3 案例', 'MiniMax H3 Prompt'].join(','),
-      },
-      en: {
-        title: `${localizedEn.displayName} — MiniMax H3 Creator Cases, Prompts & Guides`,
-        description: localizedEn.description,
-        keywords: [`${item.handle} MiniMax H3`, `${item.handle} Hailuo H3`, 'MiniMax H3 creator', 'MiniMax H3 cases', 'MiniMax H3 prompts'].join(','),
-      },
-    },
-  }
-}
-
-const creatorPageDefinitions = creators.map(creatorPageDefinition)
 
 const skillPageDefinitions = skills.map((item) => ({
   id: `skill:${item.id}`,
@@ -517,23 +457,6 @@ function appStructuredData(page, locale) {
     }
   }
 
-  if (page.id === 'creators') {
-    const ranked = creators
-      .filter((item) => item.ranks.overall)
-      .sort((a, b) => a.ranks.overall - b.ranks.overall)
-    pageNode.numberOfItems = creators.length
-    pageNode.mainEntity = {
-      '@type': 'ItemList',
-      numberOfItems: ranked.length,
-      itemListElement: ranked.map((item) => ({
-        '@type': 'ListItem',
-        position: item.ranks.overall,
-        name: localizedCreator(item, locale).displayName,
-        url: absolute(creatorPath(locale, item.slug)),
-      })),
-    }
-  }
-
   if (page.id === 'faq') {
     pageNode.mainEntity = faqItems[locale].map(([question, answer]) => ({
       '@type': 'Question',
@@ -589,45 +512,6 @@ function appStructuredData(page, locale) {
     })
   }
 
-  if (page.creator) {
-    const item = page.creator
-    const localized = localizedCreator(item, locale)
-    const breadcrumbId = `${canonical}#breadcrumb`
-    pageNode.breadcrumb = { '@id': breadcrumbId }
-    pageNode.mainEntity = {
-      '@type': 'Thing',
-      '@id': `${canonical}#creator`,
-      name: localized.displayName,
-      sameAs: item.profileUrl,
-      description: localized.description,
-    }
-    graph.push({
-      '@type': 'BreadcrumbList',
-      '@id': breadcrumbId,
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: locale === 'en' ? 'MiniMax H3 creators' : 'MiniMax H3 创作者', item: absolute(locale === 'en' ? '/en/creators/' : '/creators/') },
-        { '@type': 'ListItem', position: 2, name: localized.displayName, item: canonical },
-      ],
-    })
-    graph.push({
-      '@type': 'ItemList',
-      '@id': `${canonical}#work`,
-      numberOfItems: item.caseIds.length + item.tutorialIds.length,
-      itemListElement: [
-        ...item.caseIds.map((id, index) => ({
-          '@type': 'ListItem',
-          position: index + 1,
-          url: absolute(casePath(locale, id)),
-        })),
-        ...item.tutorialIds.map((id, index) => ({
-          '@type': 'ListItem',
-          position: item.caseIds.length + index + 1,
-          url: absolute(tutorialPath(locale, id)),
-        })),
-      ],
-    })
-  }
-
   return {
     '@context': 'https://schema.org',
     '@graph': graph,
@@ -665,12 +549,6 @@ function fallbackMarkup(page, locale) {
     const originalHtml = original ? originalSeoHtml(original, locale) : ''
     content = `<p>${escapeHtml(item.summary[locale === 'en' ? 'en' : 'zh'])}</p><pre data-verbatim-command>${escapeHtml(skillInstallCommand(item))}</pre><p><a href="https://github.com/${escapeHtml(item.repository)}" rel="nofollow noopener">${escapeHtml(item.repository)}</a> · ${escapeHtml(item.license ?? '')} · ★ ${escapeHtml(item.stars)} (${escapeHtml(item.starsAt)})</p>${item.skills.length ? `<ul>${item.skills.map((skill) => `<li>${escapeHtml(skill.name)}</li>`).join('')}</ul>` : ''}`
     if (originalHtml && (locale !== 'en' || !/[\u3400-\u9fff]/u.test(originalHtml))) content += originalHtml
-  } else if (page.id === 'creators') {
-    content = `<p><strong>${creatorCatalog.stats.rankedCreators}</strong> ${escapeHtml(locale === 'en' ? 'ranked creators from' : '位优质创作者，来自')} <strong>${creatorCatalog.stats.sourceCreators}</strong> ${escapeHtml(locale === 'en' ? 'source-attributed authors' : '位来源作者')}</p><ol>${creators
-      .filter((item) => item.ranks.overall)
-      .sort((a, b) => a.ranks.overall - b.ranks.overall)
-      .map((item) => `<li><a href="${escapeHtml(creatorPath(locale, item.slug))}">#${item.ranks.overall} ${escapeHtml(localizedCreator(item, locale).displayName)}</a><small>${item.caseCount} ${escapeHtml(locale === 'en' ? 'cases' : '个案例')} · ${item.promptCount} ${escapeHtml(locale === 'en' ? 'complete Prompts' : '条完整 Prompt')}</small></li>`)
-      .join('')}</ol>`
   } else if (page.tutorial) {
     const item = page.tutorial
     const localized = localizedTutorial(item, locale)
@@ -697,18 +575,6 @@ function fallbackMarkup(page, locale) {
     if (item.relatedCases?.length) content += `<h2>${heading('案例与技巧', 'Examples and techniques')}</h2><ul>${links(item.relatedCases.map(x => [casePath(locale, x.id), `${x.title[language]} · ${x.relationship === 'example' ? heading('对应案例', 'Source example') : heading('相关技巧，不保证复现', 'Related technique; not a reproduction guide')}`]))}</ul>`
     if (item.nextGuideIds?.length) content += `<h2>${heading('下一步学习', 'Learn next')}</h2><ul>${links(item.nextGuideIds.map(id => [tutorialPath(locale, id), tutorialGuides.find(x => x.id === id).title[language]]))}</ul>`
 
-  } else if (page.creator) {
-    const item = page.creator
-    const localized = localizedCreator(item, locale)
-    const caseLinks = item.caseIds.map((id) => {
-      const videoCase = cases.find((candidate) => candidate.id === id)
-      return videoCase ? `<li><a href="${escapeHtml(casePath(locale, id))}">${escapeHtml(localizedCase(videoCase, locale).title)}</a></li>` : ''
-    }).join('')
-    const tutorialLinks = item.tutorialIds.map((id) => {
-      const tutorial = tutorialGuides.find((candidate) => candidate.id === id)
-      return tutorial ? `<li><a href="${escapeHtml(tutorialPath(locale, id))}">${escapeHtml(localizedTutorial(tutorial, locale).title)}</a></li>` : ''
-    }).join('')
-    content = `<p><a href="${escapeHtml(item.profileUrl)}" rel="nofollow noopener">${escapeHtml(item.primaryPlatform === 'x' ? `@${item.handle}` : `${item.primaryPlatform === 'github' ? 'GitHub' : 'YouTube'} / ${item.handle}`)}</a></p><dl><dt>${escapeHtml(locale === 'en' ? 'Cases' : '案例')}</dt><dd>${item.caseCount}</dd><dt>${escapeHtml(locale === 'en' ? 'Complete Prompts' : '完整 Prompt')}</dt><dd>${item.promptCount}</dd><dt>${escapeHtml(locale === 'en' ? 'Tutorials' : '教程')}</dt><dd>${item.tutorialCount}</dd></dl><h2>${escapeHtml(locale === 'en' ? 'Published work' : '已收录作品')}</h2><ol>${caseLinks}</ol>${tutorialLinks ? `<h2>${escapeHtml(locale === 'en' ? 'Related tutorials' : '相关教程')}</h2><ol>${tutorialLinks}</ol>` : ''}<p>${escapeHtml(localized.description)}</p>`
   } else {
     content = faqItems[locale].map(([question, answer]) => `<article><h2>${escapeHtml(question)}</h2><p>${escapeHtml(answer)}</p></article>`).join('')
   }
@@ -757,15 +623,9 @@ function renderAppShell(page, locale, assetTags) {
   const description = truncateMeta(copy.description)
   const canonical = absolute(page.paths[locale])
   const alternateOgLocale = localeCode(otherLocale(locale))
-  const creatorPoster = page.creator
-    ? cases.find((item) => item.id === page.creator.representativeCaseIds[0])?.posterUrl
-      ?? tutorialGuides.find((item) => item.id === page.creator.tutorialIds[0])?.posterUrl
-    : null
   const ogImage = page.tutorial
     ? absolute(page.tutorial.posterUrl)
-    : creatorPoster
-      ? absolute(creatorPoster)
-      : `${baseUrl}/og-image.jpg`
+    : `${baseUrl}/og-image.jpg`
   const rootMarkup = page.id === 'catalog' ? prebootMarkup(locale) : ''
   return `<!doctype html>
 <html lang="${locale}">
@@ -1060,29 +920,6 @@ for (const page of skillPageDefinitions) {
   }
 }
 
-for (const page of creatorPageDefinitions) {
-  for (const locale of locales) {
-    const relativePath = page.paths[locale].replace(/^\//, '')
-    const pageDir = resolve(dist, relativePath)
-    const html = renderAppShell(page, locale, assetTags)
-    assertLanguageIsolation(html, locale, page.paths[locale])
-    await mkdir(pageDir, { recursive: true })
-    await writeFile(resolve(pageDir, 'index.html'), html)
-  }
-  for (const alias of page.creator.aliases) {
-    for (const locale of locales) {
-      const from = creatorPath(locale, alias)
-      const target = absolute(page.paths[locale])
-      const pageDir = resolve(dist, from.replace(/^\//, ''))
-      const label = locale === 'en' ? 'Creator profile moved. Redirecting.' : '创作者主页已迁移，正在跳转。'
-      const html = `<!doctype html><html lang="${locale}"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=${escapeHtml(target)}"><meta name="robots" content="noindex,follow"><link rel="canonical" href="${escapeHtml(target)}"><title>${escapeHtml(label)}</title><script>location.replace(${jsonForHtml(target)})</script></head><body><p>${escapeHtml(label)} <a href="${escapeHtml(target)}">${escapeHtml(target)}</a></p></body></html>`
-      assertLanguageIsolation(html, locale, from)
-      await mkdir(pageDir, { recursive: true })
-      await writeFile(resolve(pageDir, 'index.html'), html)
-    }
-  }
-}
-
 const legacyTutorialRoutes = [
   { locale: 'zh-CN', from: '/toolkit/', to: '/tutorials/', label: '教程页面已迁移，正在跳转。' },
   { locale: 'en', from: '/en/toolkit/', to: '/en/tutorials/', label: 'The tutorials page has moved. Redirecting.' },
@@ -1144,14 +981,6 @@ ${alternateSitemapLinks(paths)}${video}
   </url>`
 }
 
-function sitemapCreatorEntry(page, locale) {
-  return `  <url>
-    <loc>${escapeHtml(absolute(page.paths[locale]))}</loc>
-    <lastmod>${escapeHtml(page.creator.lastAddedAt?.slice(0, 10) ?? latestPublishedDate)}</lastmod>
-${alternateSitemapLinks(page.paths)}
-  </url>`
-}
-
 function sitemapArchiveEntry(pageNumber, locale) {
   const paths = {
     'zh-CN': archivePath('zh-CN', pageNumber),
@@ -1170,7 +999,6 @@ const sitemapEntries = [
     .flatMap((pageNumber) => locales.map((locale) => sitemapArchiveEntry(pageNumber, locale))),
   ...tutorialPageDefinitions.flatMap((page) => locales.map((locale) => sitemapPageEntry(page, locale))),
   ...skillPageDefinitions.flatMap((page) => locales.map((locale) => sitemapPageEntry(page, locale))),
-  ...creatorPageDefinitions.flatMap((page) => locales.map((locale) => sitemapCreatorEntry(page, locale))),
   ...cases.flatMap((item) => locales.map((locale) => sitemapCaseEntry(item, locale))),
 ].join('\n')
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -1187,4 +1015,4 @@ const notFoundCopy = {
 const notFoundHtml = `<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow"><title>404 — MiniMax H3 Cases &amp; Guides</title><style>body{margin:0;background:#0a0b09;color:#f5f5ed;font:16px/1.6 system-ui,sans-serif}main{max-width:760px;margin:15vh auto;padding:24px}h1{font-size:clamp(3rem,12vw,8rem);margin:0;color:#d8ff3e}a{color:#d8ff3e}</style></head><body><main><p>404</p><h1>${notFoundCopy['zh-CN'][0]}</h1><p>${notFoundCopy['zh-CN'][1]}</p><p><a href="/">${notFoundCopy['zh-CN'][2]}</a> · <a href="/en/">${notFoundCopy.en[2]}</a></p></main></body></html>`
 await writeFile(resolve(dist, '404.html'), notFoundHtml)
 
-console.log(`Generated ${pageDefinitions.length * locales.length} app routes, ${(archivePageCount - 1) * locales.length} archive pages, ${tutorialGuides.length * locales.length} localized tutorial pages, ${skills.length * locales.length} localized skill pages, ${creators.length * locales.length} localized creator pages, ${cases.length * locales.length} localized case pages, ${cases.length * locales.length} video sitemap entries, and a strict 404 page for ${baseUrl}.`)
+console.log(`Generated ${pageDefinitions.length * locales.length} app routes, ${(archivePageCount - 1) * locales.length} archive pages, ${tutorialGuides.length * locales.length} localized tutorial pages, ${skills.length * locales.length} localized skill pages, ${cases.length * locales.length} localized case pages, ${cases.length * locales.length} video sitemap entries, and a strict 404 page for ${baseUrl}.`)

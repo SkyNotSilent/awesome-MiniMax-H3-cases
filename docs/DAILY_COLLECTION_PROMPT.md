@@ -12,10 +12,10 @@ If mirroring reports a mixed batch, still run `commit:staged` for the same manif
 
 Before open search, process the locally configured private creator queue without exposing its status, scores, outcomes, cadence, discovery labels, or notes. Creator follow-up must never eliminate open keyword discovery and must obey every public eligibility, Prompt, attribution, hosting, and playback rule above.
 
-Before the normal validation sequence, run `npm run sync:stats`. This refreshes the public creator catalog, canonical statistics JSON, public website snapshots, and both README summary blocks; validation must fail if any of those values diverge.
+Before the normal validation sequence, run `npm run sync:stats`. This refreshes canonical statistics JSON, public website snapshots, and both README summary blocks; validation must fail if any of those values diverge.
 
 All review status, notes, search queries, discovery sources, rejected IDs, author-radar state, staging manifests, and media failure details belong only under ignored `.review/`. Run `npm run privacy:scan` before and after the production build. A privacy finding blocks publication.
 
 The publication path must set ISO `addedAt` when a case first enters `data/cases.json`. Later Prompt recovery, copy edits, engagement refreshes, or review changes must preserve that original value so they do not appear as new catalog entries.
 
-When public cases, complete Prompts, ranked creators, or first-screen content change, finish the production build and then run `npm run screenshots:capture`. This reuses that build, writes measured build sizes into both READMEs, refreshes the bilingual opening screen and current collection/creator views, and skips byte-identical or visually equivalent images. Run it a second time when changing the screenshot pipeline itself; the immediate repeat must report `0 files changed`. Use standalone `npm run screenshots` only when no current production build exists.
+When public cases, complete Prompts or first-screen content change, finish the production build and then run `npm run screenshots:capture`. This reuses that build, writes measured build sizes into both READMEs, refreshes the bilingual opening screen and current collection views, and skips byte-identical or visually equivalent images. Run it a second time when changing the screenshot pipeline itself; the immediate repeat must report `0 files changed`. Use standalone `npm run screenshots` only when no current production build exists.

@@ -6,7 +6,6 @@ const write = process.argv.includes('--write')
 const cases = JSON.parse(await readFile(resolve(root, 'data/cases.json'), 'utf8'))
 const guides = JSON.parse(await readFile(resolve(root, 'data/tutorial-guides.json'), 'utf8'))
 const resources = JSON.parse(await readFile(resolve(root, 'data/tutorials.json'), 'utf8'))
-const creatorCatalog = JSON.parse(await readFile(resolve(root, 'data/creators.json'), 'utf8'))
 const dates = [
   ...cases.map((item) => item.addedAt),
   ...guides.map((item) => item.addedAt),
@@ -35,17 +34,12 @@ const stats = {
   communityTutorials: guides.filter((item) => item.contentType === 'community').length,
   flagshipTutorials: guides.filter((item) => item.flagship).length,
   resources: resources.length,
-  sourceCreators: creatorCatalog.stats.sourceCreators,
-  rankedCreators: creatorCatalog.stats.rankedCreators,
-  videoCreators: creatorCatalog.stats.videoCreators,
-  tutorialCreators: creatorCatalog.stats.tutorialCreators,
   latestContentAt: dates.at(-1)?.slice(0, 10) ?? null,
   latestUpdate: latestPublishedAt ? {
     publishedAt: latestPublishedAt,
     casesAdded: latestCases.length,
     promptsAdded: latestCases.filter((item) => item.promptProvenance !== 'not-published' && item.prompt?.trim()).length,
     tutorialsAdded: latestGuides.length,
-    creatorRankingUpdated: latestCases.length + latestGuides.length > 0,
   } : null,
 }
 
@@ -56,17 +50,15 @@ const readmeBlocks = [
   {
     path: resolve(root, 'README.md'),
     stats: `**A source-attributed MiniMax H3 library with ${stats.cases} playable videos, ${stats.completePrompts} complete public Prompts, and ${stats.tutorials} practical guides.**`,
-    snapshot: `**Current generated snapshot:** ${stats.cases} cases · ${stats.featuredCases} Editor picks · ${stats.completePrompts} complete public Prompts · ${stats.tutorials} tutorials · ${stats.rankedCreators} ranked creators from ${stats.sourceCreators} source authors · ${stats.flagshipTutorials} flagship guides · ${stats.resources} ecosystem resources · content checked through ${stats.latestContentAt}.`,
-    creatorStats: `The dynamic creator board turns the archive into a compounding discovery system. It currently ranks **${stats.rankedCreators} featured creators from ${stats.sourceCreators} source-attributed authors across X, GitHub, and YouTube**, with separate views for video work and tutorial contributions.`,
+    snapshot: `**Current generated snapshot:** ${stats.cases} cases · ${stats.featuredCases} Editor picks · ${stats.completePrompts} complete public Prompts · ${stats.tutorials} tutorials · ${stats.flagshipTutorials} flagship guides · ${stats.resources} ecosystem resources · content checked through ${stats.latestContentAt}.`,
   },
   {
     path: resolve(root, 'README.zh-CN.md'),
     stats: `**来源可追溯的 MiniMax H3 案例与教程库：${stats.cases} 个可播放视频、${stats.completePrompts} 条完整公开 Prompt、${stats.tutorials} 篇实用教程。**`,
-    snapshot: `**当前自动统计：** ${stats.cases} 个案例 · ${stats.featuredCases} 条编辑精选 · ${stats.completePrompts} 条完整公开 Prompt · ${stats.tutorials} 篇教程 · ${stats.sourceCreators} 位来源作者中的 ${stats.rankedCreators} 位优质创作者 · ${stats.flagshipTutorials} 篇旗舰教程 · ${stats.resources} 个生态资源 · 内容核验至 ${stats.latestContentAt}。`,
-    creatorStats: `动态创作者榜把案例库变成持续复利的发现系统。目前从 **${stats.sourceCreators} 位来源明确的 X、GitHub 与 YouTube 作者中筛选出 ${stats.rankedCreators} 位优质创作者**，视频作品与教程贡献分别展示，不混合平台互动量。`,
+    snapshot: `**当前自动统计：** ${stats.cases} 个案例 · ${stats.featuredCases} 条编辑精选 · ${stats.completePrompts} 条完整公开 Prompt · ${stats.tutorials} 篇教程 · ${stats.flagshipTutorials} 篇旗舰教程 · ${stats.resources} 个生态资源 · 内容核验至 ${stats.latestContentAt}。`,
   },
 ]
-const statsBadgeVersion = `${stats.cases}-${stats.completePrompts}-${stats.tutorials}-${stats.rankedCreators}`
+const statsBadgeVersion = `${stats.cases}-${stats.completePrompts}-${stats.tutorials}`
 
 function replaceBlock(markdown, name, value) {
   const pattern = new RegExp(`(<!-- ${name}:start -->\\n)[\\s\\S]*?(\\n<!-- ${name}:end -->)`)
@@ -84,7 +76,7 @@ function replaceStatsBadgeVersion(markdown) {
 async function expectedReadme(block) {
   const markdown = await readFile(block.path, 'utf8')
   return replaceStatsBadgeVersion(
-    replaceBlock(replaceBlock(replaceBlock(markdown, 'project-stats', block.stats), 'project-snapshot', block.snapshot), 'creator-stats', block.creatorStats),
+    replaceBlock(replaceBlock(markdown, 'project-stats', block.stats), 'project-snapshot', block.snapshot),
   )
 }
 
@@ -110,7 +102,7 @@ if (write) {
   if (JSON.stringify(normalizeDate(publicStats)) !== JSON.stringify(stats)) throw new Error('public/site-stats.json is stale; run npm run sync:stats')
   for (const [index, block] of readmeBlocks.entries()) {
     const expected = replaceStatsBadgeVersion(
-      replaceBlock(replaceBlock(replaceBlock(readmes[index], 'project-stats', block.stats), 'project-snapshot', block.snapshot), 'creator-stats', block.creatorStats),
+      replaceBlock(replaceBlock(readmes[index], 'project-stats', block.stats), 'project-snapshot', block.snapshot),
     )
     if (expected !== readmes[index]) throw new Error(`${block.path} has stale project statistics; run npm run sync:stats`)
   }

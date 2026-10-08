@@ -12,7 +12,6 @@ const cases = JSON.parse(await readFile(resolve(root, 'data/cases.json'), 'utf8'
 const tutorials = JSON.parse(await readFile(resolve(root, 'data/tutorial-guides.json'), 'utf8'))
 const tutorialResources = JSON.parse(await readFile(resolve(root, 'data/tutorials.json'), 'utf8'))
 const taxonomy = JSON.parse(await readFile(resolve(root, 'data/taxonomy.json'), 'utf8'))
-const creators = JSON.parse(await readFile(resolve(root, 'data/creators.json'), 'utf8'))
 
 const catalogCases = cases.map((item) => ({
   id: item.id,
@@ -79,14 +78,12 @@ const serverData = {
   version: 1, taxonomy, featuredCaseIds,
   cases: catalogCases.map((card, i) => ({ ...card, search: { zh: searchText(cases[i], 'zh', taxonomy), en: searchText(cases[i], 'en', taxonomy) } })),
   tutorials: catalog.tutorials,
-  creators: creators.creators.map(({ slug, caseIds }) => ({ slug, caseIds })),
+  creators: [],
 }
 serverData.catalogVersion = createHash('sha256').update(JSON.stringify(serverData)).digest('hex')
 await mkdir(resolve(root, 'build/server-data'), { recursive: true })
 await writeFile(resolve(root, 'build/server-data/catalog.ndjson'), encodeCatalogSnapshot(serverData))
 await rm(resolve(root, 'build/server-data/catalog.json'), { force: true })
-const posterById = new Map(catalogCases.map(item => [item.id, item.posterUrl]))
-const runtimeCreators = { ...creators, creators: creators.creators.map(creator => ({ ...creator, posterUrls: creator.caseIds.slice(0, 3).map(id => posterById.get(id)).filter(Boolean) })) }
 
 const files = new Map([
   ['catalog.json', catalog],
@@ -95,7 +92,6 @@ const files = new Map([
   ['tutorial-guides.json', tutorials],
   ['tutorial-guides.v2.json', { schemaVersion: 2, contentVersion: createHash('sha256').update(JSON.stringify(tutorials)).digest('hex'), guides: tutorials }],
   ['tutorials.json', tutorialResources],
-  ['creators.json', runtimeCreators],
 ])
 
 for (const [name, value] of files) {

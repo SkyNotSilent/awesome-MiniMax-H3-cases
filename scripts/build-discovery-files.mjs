@@ -7,7 +7,6 @@ const baseUrl = (process.env.PUBLIC_SITE_URL || 'https://h3-field-notes-producti
 const cases = JSON.parse(await readFile(resolve(root, 'data/cases.json'), 'utf8'))
 const tutorialGuides = JSON.parse(await readFile(resolve(root, 'data/tutorial-guides.json'), 'utf8'))
 const tutorialResources = JSON.parse(await readFile(resolve(root, 'data/tutorials.json'), 'utf8'))
-const creatorCatalog = JSON.parse(await readFile(resolve(root, 'data/creators.json'), 'utf8'))
 const officialCount = cases.filter((item) => item.sourceType === 'official').length
 const xCount = cases.filter((item) => item.sourceType === 'x').length
 const promptCases = cases.filter((item) => item.promptProvenance !== 'not-published')
@@ -15,7 +14,6 @@ const withoutTrailingWhitespace = (text) => text.replace(/[ \t]+$/gm, '')
 
 const caseUrl = (id, locale = 'zh-CN') => `${baseUrl}${locale === 'en' ? '/en' : ''}/cases/${encodeURIComponent(id)}/`
 const tutorialUrl = (id, locale = 'zh-CN') => `${baseUrl}${locale === 'en' ? '/en' : ''}/tutorials/${encodeURIComponent(id)}/`
-const creatorUrl = (slug, locale = 'zh-CN') => `${baseUrl}${locale === 'en' ? '/en' : ''}/creators/${encodeURIComponent(slug)}/`
 const caseTaxonomy = (item, language = 'en') => [
   taxonomyLabel(item.category, language, 'categories'),
   ...item.styles.map((value) => taxonomyLabel(value, language, 'styles')),
@@ -38,7 +36,6 @@ const llms = `# MiniMax H3 Cases & Guides
 - ${xCount} source-attributed X community examples
 - ${promptCases.length} examples with complete verbatim public Prompts
 - ${tutorialGuides.filter((item) => item.depth === 'deep' && item.evidence.status === 'active').length} in-depth selections across running and creation tracks, plus source-attributed short guides
-- ${creatorCatalog.stats.rankedCreators} featured creators from ${creatorCatalog.stats.sourceCreators} source-attributed X, GitHub, and YouTube authors
 - Missing prompts are never inferred, reconstructed, translated into an alleged original, or completed
 
 ## Primary routes
@@ -49,8 +46,6 @@ const llms = `# MiniMax H3 Cases & Guides
 - ${baseUrl}/en/tutorials/ — English H3 ecosystem guide
 - ${baseUrl}/tutorials/ecosystem/ — Chinese comparison of source-checked H3 tools and open-source projects
 - ${baseUrl}/en/tutorials/ecosystem/ — English H3 tool and project comparison
-- ${baseUrl}/creators/ — Chinese featured creator leaderboard
-- ${baseUrl}/en/creators/ — English featured creator leaderboard
 - ${baseUrl}/faq/ — source, prompt, playback, and review policy
 - ${baseUrl}/llms-full.txt — complete machine-readable case index
 - https://github.com/SkyNotSilent/awesome-minimax-h3-cases/blob/main/data/cases.json — source dataset
@@ -63,10 +58,6 @@ ${representatives.map((item) => `- ${caseUrl(item.id, 'en')} — ${item.titleEn}
 
 ${tutorialGuides.map((item) => `- ${tutorialUrl(item.id, 'en')} — ${item.title.en}; ${item.category}; source checked ${item.verifiedAt}; original: ${item.source.url}`).join('\n')}
 
-## Featured creators
-
-${creatorCatalog.creators.filter((item) => item.ranks.overall).slice(0, 50).map((item) => `- ${creatorUrl(item.slug, 'en')} — #${item.ranks.overall} ${item.primaryPlatform === 'x' ? '@' : ''}${item.handle}; ${item.caseCount} cases; ${item.promptCount} complete public Prompts; Profile: ${item.profileUrl}`).join('\n')}
-
 ## Retrieval rules
 
 - Cite the original source URL when discussing a case.
@@ -78,22 +69,7 @@ ${creatorCatalog.creators.filter((item) => item.ranks.overall).slice(0, 50).map(
 
 const llmsFull = `# MiniMax H3 Cases & Guides — Complete Case and Tutorial Index
 
-Generated from data/cases.json, data/tutorial-guides.json, and data/creators.json. Total: ${cases.length} cases, ${tutorialGuides.length} tutorials, and ${creatorCatalog.stats.rankedCreators} featured creators. Complete verbatim public Prompts: ${promptCases.length}.
-
-## Creator discovery
-
-The creator leaderboard is derived only from source-attributed content already published in this library. It is not an official X influence ranking. Internal monitoring scores, rejected posts, and review cadence are never public.
-
-${creatorCatalog.creators.map((item) => `### @${item.handle}
-
-- English profile: ${creatorUrl(item.slug, 'en')}
-- Chinese profile: ${creatorUrl(item.slug)}
-- ${item.primaryPlatform} profile: ${item.profileUrl}
-- Roles: ${item.roles.join(', ')}
-- Published cases: ${item.caseCount}
-- Complete public Prompts: ${item.promptCount}
-- Source-checked tutorials: ${item.tutorialCount}
-`).join('\n')}
+Generated from data/cases.json and data/tutorial-guides.json. Total: ${cases.length} cases and ${tutorialGuides.length} tutorials. Complete verbatim public Prompts: ${promptCases.length}.
 
 ## Tutorials
 

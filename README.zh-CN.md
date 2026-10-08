@@ -11,9 +11,9 @@
 [English](./README.md) · **简体中文**
 
 [![Stars](https://img.shields.io/github/stars/SkyNotSilent/awesome-minimax-h3-cases?style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/stargazers)
-[![Cases](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D2140-679-25-405&query=%24.cases&label=cases&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/)
-[![Prompts](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D2140-679-25-405&query=%24.completePrompts&label=public%20prompts&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/?prompt=1)
-[![Tutorials](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D2140-679-25-405&query=%24.tutorials&label=tutorials&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/tutorials/)
+[![Cases](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D2140-679-25&query=%24.cases&label=cases&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/)
+[![Prompts](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D2140-679-25&query=%24.completePrompts&label=public%20prompts&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/?prompt=1)
+[![Tutorials](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D2140-679-25&query=%24.tutorials&label=tutorials&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/tutorials/)
 [![CI](https://img.shields.io/github/actions/workflow/status/SkyNotSilent/awesome-minimax-h3-cases/ci.yml?style=for-the-badge&label=CI&labelColor=0a0b09)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-MIT-6ba4ff?style=for-the-badge&labelColor=0a0b09)](./LICENSE)
 
@@ -49,19 +49,6 @@ MiniMax H3 也常被搜索为 **Hailuo H3**、**Hailuo 3.0**、**海螺 H3** 和
 - **我的收藏**：收藏列表仅保存在当前浏览器，不用登录，也不上传云端。
 
 [长视频](https://h3-field-notes-production.up.railway.app/?duration=OVER_15)和[完整 Prompt](https://h3-field-notes-production.up.railway.app/?prompt=1)都有独立筛选。链接兼容、缓存和数据架构详见[开发说明](./docs/ARCHITECTURE.md)。
-
-## 找到持续做出好作品的人
-
-[![MiniMax H3 优质创作者动态榜单](./docs/screenshots/creators-zh.png)](https://h3-field-notes-production.up.railway.app/creators/)
-
-<!-- creator-stats:start -->
-动态创作者榜把案例库变成持续复利的发现系统。目前从 **1086 位来源明确的 X、GitHub 与 YouTube 作者中筛选出 405 位优质创作者**，视频作品与教程贡献分别展示，不混合平台互动量。
-<!-- creator-stats:end -->
-
-- 每位作者都有独立主页，聚合可播放案例、完整公开 Prompt 与来源核验教程；
-- 排名只使用本站已经核验并发布的公开内容，不代表 X 官方影响力；
-- 内部监控分、被拒帖子、发现来源和检查频率绝不公开；
-- 可以匿名收藏作者，也可以直接跳转原始 X、GitHub 或 YouTube 主页关注。
 
 ## 按目标或硬件学会 H3
 
@@ -103,13 +90,12 @@ npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
 ## 数据、自动化与可信度
 
 <!-- project-snapshot:start -->
-**当前自动统计：** 2140 个案例 · 28 条编辑精选 · 679 条完整公开 Prompt · 25 篇教程 · 1086 位来源作者中的 405 位优质创作者 · 8 篇旗舰教程 · 14 个生态资源 · 内容核验至 2026-10-08。
+**当前自动统计：** 2140 个案例 · 28 条编辑精选 · 679 条完整公开 Prompt · 25 篇教程 · 8 篇旗舰教程 · 14 个生态资源 · 内容核验至 2026-10-08。
 <!-- project-snapshot:end -->
 
 - [`data/project-stats.json`](./data/project-stats.json) 是公开数字的唯一快照；网站与 README 数字过期会让 CI 失败；
 - [`data/cases.json`](./data/cases.json) 保存案例元数据；创作者视频不进入 Git，统一放在项目存储；
 - [`data/tutorial-guides.json`](./data/tutorial-guides.json) 保存双语结构化教程；[`data/tutorials.json`](./data/tutorials.json) 保存带日期的生态快照；
-- [`data/creators.json`](./data/creators.json) 根据已发布案例与教程自动生成；私有作者雷达只保存在被忽略的 `.review/`；
 - 每个公开案例和教程都有不可变的 ISO `addedAt`，表示首次进入本站公开目录的时间；来源 `publishedAt`、审核 `approvedAt` 与教程 `verifiedAt` 保持独立含义，改文案、补 Prompt、刷新数据或重新核验都不会触发未读；
 - 每日案例发现与每周教程发现的私有候选只进 `.review/`；凭据和发现来源标签不会进入 Git、前端或 SEO；
 - 构建会生成中英文案例/教程页、canonical、hreflang、`VideoObject`/`HowTo` JSON-LD、sitemap、OG、[`llms.txt`](./public/llms.txt) 与 [`llms-full.txt`](./public/llms-full.txt)。
@@ -133,7 +119,7 @@ npm run collection:demo
 ```
 
 <!-- build-metrics:start -->
-**参考构建（Node 22.23.1，不含分析服务配置）：** 首页 JavaScript gzip 109.9 kB · 中文 / 英文首页 HTML gzip 9.4 kB / 9.1 kB · 首批 API gzip 5.4 kB · 下一页 API gzip 3.5 kB · 搜索响应 gzip 5.4 kB · 本地非阻塞字体 51.3 kB · 仅服务端索引 gzip 1677.8 kB。静态预算运行 `npm run performance:budget`；启动本地生产服务后运行 `npm run performance:browser` 验证浏览器行为。
+**参考构建（Node 22.23.1，不含分析服务配置）：** 首页 JavaScript gzip 104.5 kB · 中文 / 英文首页 HTML gzip 9.4 kB / 9.1 kB · 首批 API gzip 5.4 kB · 下一页 API gzip 3.5 kB · 搜索响应 gzip 5.4 kB · 本地非阻塞字体 51.3 kB · 仅服务端索引 gzip 1657.7 kB。静态预算运行 `npm run performance:budget`；启动本地生产服务后运行 `npm run performance:browser` 验证浏览器行为。
 <!-- build-metrics:end -->
 
 ## 投稿、纠错与下架
@@ -147,7 +133,6 @@ npm run collection:demo
 - [报告媒体失效](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/issues/new?template=broken-media.yml)
 - [反馈 Prompt 来源争议](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/issues/new?template=prompt-dispute.yml)
 - [请求纠错或下架](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/issues/new?template=takedown.yml)
-- [纠正、合并或下架创作者主页](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/issues/new?template=creator-correction.yml)
 - [展示作品或建议教程](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/discussions)
 
 维护者统一使用公开的[投稿审核标准与回复模板](./docs/SUBMISSION_REVIEW.md)；内部评分、私人备注和发现渠道不会出现在 Issue 评论里。

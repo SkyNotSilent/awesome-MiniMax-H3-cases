@@ -3,7 +3,6 @@ import type {
   CaseDetail,
   CatalogPayload,
   CatalogPage,
-  CreatorCatalog,
   SearchRecord,
   SkillPackage,
   TutorialGuide,
@@ -48,4 +47,3 @@ export const loadSkills = (force = false) => loadJson<SkillPackage[]>('/data/ski
 export const loadSkillOriginal = (id: string) => loadJson<TutorialOriginal>(`/data/skill-originals/${encodeURIComponent(id)}.json`)
 export const loadTutorialOriginal = (id: string) => loadJson<TutorialOriginal>(`/data/tutorial-originals/${encodeURIComponent(id)}.json`)
 export const loadTutorialResources = (force = false) => loadJson<TutorialResource[]>('/data/tutorials.json', force)
-export const loadCreators = (force = false) => loadJson<CreatorCatalog>('/data/creators.json', force)

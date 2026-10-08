@@ -82,6 +82,18 @@ test('serves files and directory index pages with strict routing', async () => {
   assert.equal(await head.text(), '')
 })
 
+test('retired creator pages redirect to localized case search without a ranking dependency', async () => {
+  for (const [from, to] of [['/creators/', '/'], ['/en/creators/', '/en/'], ['/creators/Alice/', '/?q=Alice'], ['/en/creators/alice/?prompt=1', '/en/?prompt=1&q=alice']]) {
+    const response = await fetch(`${baseUrl}${from}`, { redirect: 'manual' })
+    assert.equal(response.status, 308)
+    assert.equal(response.headers.get('location'), to)
+  }
+  for (const path of ['/creators.json', '/data/creators.json']) {
+    const response = await fetch(`${baseUrl}${path}`)
+    assert.equal(response.status, 404)
+  }
+})
+
 test('adds shared-cache headers to non-fingerprinted JSON', async () => {
   const catalog = await fetch(`${baseUrl}/data/catalog.json`)
   assert.equal(catalog.status, 200)

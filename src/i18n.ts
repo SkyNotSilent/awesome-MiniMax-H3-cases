@@ -3,7 +3,7 @@ import projectStats from '../data/project-stats.json'
 import taxonomy from '../data/taxonomy.json'
 
 export type Language = 'zh' | 'en'
-export type AppPage = 'home' | 'tutorials' | 'tutorial-detail' | 'tutorial-ecosystem' | 'skills' | 'skill-detail' | 'creators' | 'creator-detail' | 'faq'
+export type AppPage = 'home' | 'tutorials' | 'tutorial-detail' | 'tutorial-ecosystem' | 'skills' | 'skill-detail' | 'faq'
 
 export const languagePreferenceKey = 'minimax-h3-language'
 
@@ -49,8 +49,6 @@ export function resolveRoute(pathname: string): AppRoute {
       : 'tutorials'
     : pageSegment === 'skills'
       ? skillSlug ? 'skill-detail' : 'skills'
-    : pageSegment === 'creators'
-      ? creatorSlug ? 'creator-detail' : 'creators'
     : pageSegment === 'faq'
       ? 'faq'
       : 'home'
@@ -93,7 +91,7 @@ export const copy = {
     htmlLang: 'zh-CN',
     siteTitle: 'MiniMax H3 Cases & Guides — 视频案例、公开 Prompt 与教程',
     siteDescription: `${projectStats.cases} 个可筛选、可追溯、可站内观看的 MiniMax H3 / Hailuo 3.0 视频案例，含 ${projectStats.completePrompts} 条完整公开 Prompt 与 ${projectStats.tutorials} 篇来源核验教程。`,
-    nav: { cases: '案例', tutorials: '教程', skills: 'Skills', creators: '创作者', faq: '常见问题', source: '源码', language: 'EN' },
+    nav: { cases: '案例', tutorials: '教程', skills: 'Skills', faq: '常见问题', source: '源码', language: 'EN' },
     intro: {
       kicker: 'COMMUNITY VIDEO ARCHIVE / 2026',
       lineOne: 'MINIMAX H3',
@@ -264,67 +262,6 @@ export const copy = {
       limitations: '使用前注意',
       starsSnapshot: 'Star 快照',
     },
-    creators: {
-      index: '03 / 优质创作者',
-      title: '持续做出好作品的人。',
-      description: `从本站 ${projectStats.sourceCreators} 位来源作者中，发现 ${projectStats.rankedCreators} 位持续产出 MiniMax H3 案例或实战教程的优质创作者。`,
-      methodology: '名次只基于本站已核验、可追溯的公开内容；不同平台的互动量不混合比较。',
-      videoCreators: '视频创作者',
-      tutorialCreators: '教程作者',
-      savedCreators: '我的关注',
-      podium: '本期前三',
-      leaderboard: '动态榜单',
-      rankTabs: {
-        overall: '综合优质',
-        active: '近期活跃',
-        cases: '案例最多',
-        prompts: 'Prompt 贡献',
-        rising: '新锐作者',
-        tutorials: '教程作者',
-      },
-      rank: '名次',
-      cases: '案例',
-      prompts: '完整 Prompt',
-      tutorials: '教程',
-      recent: '近 30 天收录',
-      activeWeeks: '活跃周数',
-      lastAdded: '最近收录',
-      followOnX: '去 X 关注',
-      save: '收藏作者',
-      unsave: '取消收藏作者',
-      openProfile: '查看作者主页',
-      noSaved: '还没有收藏作者；在榜单中点一下书签即可建立自己的关注列表。',
-      back: '返回创作者榜',
-      work: '已收录作品',
-      guides: '相关教程',
-      promptOnly: '只看有 Prompt',
-      duration: '时长',
-      allDurations: '全部时长',
-      noCases: '没有符合当前条件的案例。',
-      correction: '署名有误、账号改名或希望下架？提交纠错申请。',
-      correctionCta: '纠错与下架',
-      rankNew: '新上榜',
-      rankSame: '持平',
-      rankUp: (value: number) => `上升 ${value} 位`,
-      rankDown: (value: number) => `下降 ${value} 位`,
-      badges: {
-        prolific: '高产作者',
-        'prompt-contributor': 'Prompt 贡献者',
-        'recently-active': '近期活跃',
-        rising: '新锐作者',
-        breakout: '爆款案例',
-        'guide-author': '教程作者',
-        consistent: '持续产出',
-      },
-      reasons: {
-        'high-output': '多条真实案例持续入库',
-        'prompt-contributor': '完整公开 Prompt 贡献突出',
-        'recently-active': '近 30 天仍有新作品',
-        breakout: '案例互动表现位于同期前列',
-        'tutorial-author': '贡献了来源核验教程',
-        consistent: '跨多个自然周持续产出',
-      },
-    },
     faq: {
       index: '04 / 常见问题',
       title: '先把边界讲清楚。',
@@ -345,7 +282,7 @@ export const copy = {
     htmlLang: 'en',
     siteTitle: 'MiniMax H3 Cases & Guides — Videos, Public Prompts & Tutorials',
     siteDescription: `${projectStats.cases} filterable, source-attributed MiniMax H3 / Hailuo 3.0 video examples with in-site playback, ${projectStats.completePrompts} complete public Prompts, and ${projectStats.tutorials} source-checked tutorials.`,
-    nav: { cases: 'Cases', tutorials: 'Tutorials', skills: 'Skills', creators: 'Creators', faq: 'FAQ', source: 'Source', language: 'ZH' },
+    nav: { cases: 'Cases', tutorials: 'Tutorials', skills: 'Skills', faq: 'FAQ', source: 'Source', language: 'ZH' },
     intro: {
       kicker: 'COMMUNITY VIDEO ARCHIVE / 2026',
       lineOne: 'MINIMAX H3',
@@ -515,67 +452,6 @@ export const copy = {
       strengths: 'Best used for',
       limitations: 'Know before use',
       starsSnapshot: 'Stars snapshot',
-    },
-    creators: {
-      index: '03 / FEATURED CREATORS',
-      title: 'Follow the people who keep making.',
-      description: `Discover ${projectStats.rankedCreators} standout MiniMax H3 creators from ${projectStats.sourceCreators} source-attributed authors in the library.`,
-      methodology: 'Ranks use source-checked content in this library; engagement from different platforms is never compared directly.',
-      videoCreators: 'Video creators',
-      tutorialCreators: 'Tutorial authors',
-      savedCreators: 'Saved creators',
-      podium: 'Current top three',
-      leaderboard: 'Dynamic leaderboard',
-      rankTabs: {
-        overall: 'Overall',
-        active: 'Recently active',
-        cases: 'Most cases',
-        prompts: 'Prompt contributors',
-        rising: 'Rising creators',
-        tutorials: 'Tutorial authors',
-      },
-      rank: 'Rank',
-      cases: 'cases',
-      prompts: 'complete Prompts',
-      tutorials: 'guides',
-      recent: 'added in 30 days',
-      activeWeeks: 'active weeks',
-      lastAdded: 'Last added',
-      followOnX: 'Follow on X',
-      save: 'Save creator',
-      unsave: 'Remove saved creator',
-      openProfile: 'View creator profile',
-      noSaved: 'No saved creators yet. Use the bookmark on any leaderboard card to build your list.',
-      back: 'Back to creators',
-      work: 'Published work',
-      guides: 'Related tutorials',
-      promptOnly: 'With Prompt',
-      duration: 'Duration',
-      allDurations: 'All durations',
-      noCases: 'No case matches these filters.',
-      correction: 'Wrong attribution, renamed account, or removal request? Send a correction.',
-      correctionCta: 'Correct or remove',
-      rankNew: 'New entry',
-      rankSame: 'No change',
-      rankUp: (value: number) => `Up ${value}`,
-      rankDown: (value: number) => `Down ${value}`,
-      badges: {
-        prolific: 'Prolific',
-        'prompt-contributor': 'Prompt contributor',
-        'recently-active': 'Recently active',
-        rising: 'Rising creator',
-        breakout: 'Breakout case',
-        'guide-author': 'Tutorial author',
-        consistent: 'Consistent output',
-      },
-      reasons: {
-        'high-output': 'Multiple source-checked cases in the library',
-        'prompt-contributor': 'Strong complete public Prompt contribution',
-        'recently-active': 'New work added within the last 30 days',
-        breakout: 'Case engagement ranks near the top of its cohort',
-        'tutorial-author': 'Published source-checked tutorials',
-        consistent: 'Published across multiple calendar weeks',
-      },
     },
     faq: {
       index: '04 / FAQ',

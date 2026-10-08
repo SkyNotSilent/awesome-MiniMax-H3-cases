@@ -238,6 +238,24 @@ export async function createStaticServer({ distDir = DEFAULT_DIST_DIR, logger = 
         return
       }
 
+      const legacyCreator = /^\/(en\/)?creators(?:\/([^/]+))?\/?$/.exec(target.decodedPath)
+      if (legacyCreator) {
+        const params = new URLSearchParams(target.search)
+        if (legacyCreator[2]) params.set('q', legacyCreator[2])
+        const query = params.toString()
+        response.writeHead(308, {
+          Location: `${legacyCreator[1] ? '/en/' : '/'}${query ? `?${query}` : ''}`,
+          'Cache-Control': 'no-store',
+          'X-Content-Type-Options': 'nosniff',
+        })
+        response.end()
+        return
+      }
+      if (['/creators.json', '/data/creators.json'].includes(target.decodedPath)) {
+        writeText(response, request.method, 404, '<!doctype html><title>404</title>')
+        return
+      }
+
       if (await redirectVideo(request, response, videoStore, target.decodedPath)) return
 
       const requestedPath = resolve(distRoot, `.${target.decodedPath}`)

@@ -6,7 +6,6 @@ import { lazy, Suspense, useCallback, useDeferredValue, useEffect, useLayoutEffe
 import {
   ArrowUpRight,
   ArrowDownRight,
-  ArrowUpRight as TrendUp,
   Bookmark,
   BookOpen,
   Check,
@@ -20,12 +19,10 @@ import {
   Sparkles,
   Star,
   TriangleAlert,
-  Users,
   X,
 } from 'lucide-react'
 import { track } from './analytics'
 import rawCases from '../data/cases.json'
-import rawCreators from '../data/creators.json'
 import rawProjectStats from '../data/project-stats.json'
 import rawTaxonomy from '../data/taxonomy.json'
 import rawTutorialGuides from '../data/tutorial-guides.json'
@@ -33,7 +30,6 @@ import rawTutorials from '../data/tutorials.json'
 import {
   loadCaseDetail,
   loadCatalog,
-  loadCreators,
   loadTutorialGuides,
   loadTutorialResources,
 } from './data-client'
@@ -41,7 +37,6 @@ import {
   casePath,
   caseTitle,
   copy,
-  creatorPath,
   detectVisitorLanguage,
   durationLabel,
   languagePreferenceKey,
@@ -58,7 +53,7 @@ import {
   type AppPage,
   type Language,
 } from './i18n'
-import type { CaseDetail, CatalogCase, CatalogPayload, CreatorCatalog, CreatorProfile, CreatorRankKey, Taxonomy, TutorialCategory, TutorialGuide, TutorialHardwareProfile, TutorialResource, VideoCase } from './types'
+import type { CaseDetail, CatalogCase, CatalogPayload, Taxonomy, TutorialCategory, TutorialGuide, TutorialHardwareProfile, TutorialResource, VideoCase } from './types'
 import { XPostEmbed } from './XPostEmbed'
 import LazyBoundary from './LazyBoundary'
 import { tutorialFormat, tutorialFormatLabels, tutorialFormats, type TutorialFormat } from './tutorial-format'
@@ -76,7 +71,6 @@ import {
 const TutorialOriginalView = lazy(() => import('./TutorialOriginal'))
 const SkillsRoute = lazy(() => import('./SkillsPages'))
 const testCases = import.meta.env.MODE === 'test' ? rawCases as VideoCase[] : null
-const testCreatorCatalog = import.meta.env.MODE === 'test' ? rawCreators as CreatorCatalog : null
 const testTutorialResources = import.meta.env.MODE === 'test' ? rawTutorials as TutorialResource[] : null
 const testTutorialGuides = import.meta.env.MODE === 'test' ? rawTutorialGuides as TutorialGuide[] : null
 const projectStats = rawProjectStats
@@ -112,7 +106,6 @@ const tutorialCategories: Array<'all' | TutorialCategory> = [
 const durationRanges = ['ALL', 'UP_TO_5', 'SIX_TO_10', 'ELEVEN_TO_15', 'OVER_15'] as const
 type DurationRange = (typeof durationRanges)[number]
 const favoriteStorageKey = 'minimax-h3-favorite-cases'
-const favoriteCreatorStorageKey = 'minimax-h3-favorite-creators'
 // Prompt-only and long-video folders were retired: they duplicated the primary
 // Prompt switch and the 15s+ duration range. Legacy URLs map onto those filters.
 const collectionKeys = ['all', 'featured', 'latest', 'official', 'favorites'] as const
@@ -175,13 +168,21 @@ const testQueryIndex = testCases && testCatalog ? createCatalogIndex({
   version: 1, catalogVersion: 'fixture', taxonomy: caseTaxonomy,
   featuredCaseIds: testCatalog.featuredCaseIds,
   cases: testCatalog.cases.map((item, i) => ({ ...item, search: { zh: searchText(testCases[i], 'zh', caseTaxonomy), en: searchText(testCases[i], 'en', caseTaxonomy) } })),
-  tutorials: testCatalog.tutorials, creators: testCreatorCatalog?.creators ?? [],
+  tutorials: testCatalog.tutorials, creators: [],
 }) : null
 const testDetails = new Map(testCases?.map((item) => [item.id, caseDetail(item)]) ?? [])
 const emptyCatalogCases: CatalogCase[] = []
 
 
 function initialRoute() {
+  const legacy = /^\/(en\/)?creators(?:\/([^/]+))?\/?$/.exec(window.location.pathname)
+  if (legacy) {
+    const params = new URLSearchParams(window.location.search)
+    if (legacy[2]) params.set('q', decodeURIComponent(legacy[2]))
+    const query = params.toString()
+    window.history.replaceState(window.history.state, '', `${legacy[1] ? '/en/' : '/'}${query ? `?${query}` : ''}${window.location.hash}`)
+    return { language: legacy[1] ? 'en' as const : 'zh' as const, page: 'home' as const }
+  }
   const route = resolveRoute(window.location.pathname)
   const isAutoLanguageEntry = window.location.pathname === '/' || window.location.pathname === ''
   if (!isAutoLanguageEntry) return route
@@ -226,14 +227,6 @@ function GitHubMark({ size = 21 }: { size?: number }) {
   return (
     <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="currentColor">
       <path d="M12 .297a12 12 0 0 0-3.79 23.4c.6.112.82-.26.82-.577v-2.234c-3.338.726-4.04-1.61-4.04-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.419-1.305.762-1.604-2.665-.305-5.466-1.334-5.466-5.93 0-1.312.468-2.382 1.235-3.222-.123-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23A11.5 11.5 0 0 1 12 6.32a11.5 11.5 0 0 1 3.004.404c2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.119 3.177.768.84 1.233 1.91 1.233 3.221 0 4.61-2.806 5.624-5.479 5.921.43.37.814 1.102.814 2.222v3.293c0 .32.216.694.825.576A12 12 0 0 0 12 .297Z" />
-    </svg>
-  )
-}
-
-function YouTubeMark({ size = 18 }: { size?: number }) {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="currentColor">
-      <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z" />
     </svg>
   )
 }
@@ -402,7 +395,6 @@ function App() {
   const [catalogError, setCatalogError] = useState(false)
   const [tutorialGuides, setTutorialGuides] = useState<TutorialGuide[] | null>(testTutorialGuides)
   const [tutorialResources, setTutorialResources] = useState<TutorialResource[] | null>(testTutorialResources)
-  const [creatorCatalog, setCreatorCatalog] = useState<CreatorCatalog | null>(testCreatorCatalog)
   const [routeDataError, setRouteDataError] = useState(false)
   const language = route.language
   const t = copy[language]
@@ -421,9 +413,6 @@ function App() {
   const needsTutorials = route.page === 'tutorials'
     || route.page === 'tutorial-detail'
     || route.page === 'tutorial-ecosystem'
-    || route.page === 'creators'
-    || route.page === 'creator-detail'
-  const needsCreators = route.page === 'creators' || route.page === 'creator-detail' || route.page === 'tutorials' || route.page === 'tutorial-detail'
 
   const reloadRouteData = useCallback(() => {
     setRouteDataError(false)
@@ -432,9 +421,8 @@ function App() {
       requests.push(loadTutorialGuides(true).then(setTutorialGuides))
       requests.push(loadTutorialResources(true).then(setTutorialResources))
     }
-    if (needsCreators) requests.push(loadCreators(true).then(setCreatorCatalog))
     Promise.all(requests).catch(() => setRouteDataError(true))
-  }, [needsCreators, needsTutorials])
+  }, [needsTutorials])
 
   useEffect(() => {
     const requests: Promise<unknown>[] = []
@@ -442,30 +430,19 @@ function App() {
       requests.push(loadTutorialGuides().then(setTutorialGuides))
       requests.push(loadTutorialResources().then(setTutorialResources))
     }
-    if (needsCreators && !creatorCatalog) requests.push(loadCreators().then(setCreatorCatalog))
     if (requests.length) Promise.all(requests).catch(() => setRouteDataError(true))
-  }, [creatorCatalog, needsCreators, needsTutorials, tutorialGuides])
+  }, [needsTutorials, tutorialGuides])
 
   const releases = useMemo(() => catalog ? createReleaseBatches(catalog) : null, [catalog])
-  const creators = creatorCatalog?.creators ?? []
   const activeTutorial = route.page === 'tutorial-detail' && tutorialGuides
     ? tutorialGuides.find((item) => item.id === route.tutorialSlug)
     : undefined
-  const activeCreator = route.page === 'creator-detail' && creatorCatalog
-    ? creators.find((item) => item.slug === route.creatorSlug || item.aliases.includes(route.creatorSlug ?? ''))
-    : undefined
   const pageDescription = activeTutorial
     ? activeTutorial.outcome[language]
-    : activeCreator
-      ? language === 'zh'
-        ? `${activeCreator.displayName} 的 MiniMax H3 案例、完整公开 Prompt 与实战教程。`
-        : `MiniMax H3 cases, complete public Prompts, and field guides by ${activeCreator.displayName}.`
     : route.page === 'tutorials' || route.page === 'tutorial-ecosystem'
     ? t.tutorials.description
     : route.page === 'skills' || route.page === 'skill-detail'
       ? (language === 'zh' ? '面向 MiniMax H3 的官方与社区 Agent Skill，完整收录 SKILL.md 原文并附安装命令。' : 'Official and community Agent Skills for MiniMax H3, each with its complete SKILL.md and an install command.')
-    : route.page === 'creators'
-      ? t.creators.description
     : route.page === 'faq'
       ? t.faq.description
       : t.siteDescription
@@ -473,8 +450,6 @@ function App() {
     ? `${activeTutorial.title[language]} — MiniMax H3 Cases & Guides`
     : route.page === 'home'
     ? t.siteTitle
-    : activeCreator
-      ? `${activeCreator.displayName} — MiniMax H3 ${language === 'zh' ? '创作者案例与教程' : 'Creator Cases & Guides'}`
     : route.page === 'tutorials'
       ? language === 'zh'
         ? 'MiniMax H3 教程与工具：部署、工作流、加速、训练 — MiniMax H3 Cases & Guides'
@@ -487,10 +462,6 @@ function App() {
         ? language === 'zh'
           ? 'MiniMax H3 Skills：官方与社区 Agent Skill — MiniMax H3 Cases & Guides'
           : 'MiniMax H3 Skills: official and community Agent Skills — MiniMax H3 Cases & Guides'
-      : route.page === 'creators'
-        ? language === 'zh'
-          ? 'MiniMax H3 优质创作者动态榜单 — MiniMax H3 Cases & Guides'
-          : 'MiniMax H3 Featured Creator Leaderboard — MiniMax H3 Cases & Guides'
       : language === 'zh'
         ? 'MiniMax H3 视频案例库常见问题 — MiniMax H3 Cases & Guides'
         : 'MiniMax H3 Video Library FAQ — MiniMax H3 Cases & Guides'
@@ -500,12 +471,6 @@ function App() {
     document.title = pageTitle
     document.querySelector<HTMLMetaElement>('meta[name="description"]')?.setAttribute('content', pageDescription)
   }, [pageDescription, pageTitle, t.htmlLang])
-
-  useEffect(() => {
-    if (route.page !== 'creator-detail' || !activeCreator || route.creatorSlug === activeCreator.slug) return
-    const canonical = creatorPath(language, activeCreator.slug)
-    window.history.replaceState(window.history.state, '', `${canonical}${window.location.search}${window.location.hash}`)
-  }, [activeCreator, language, route.creatorSlug, route.page])
 
   useEffect(() => {
     const handlePopState = () => {
@@ -528,11 +493,9 @@ function App() {
       ? tutorialPath(nextLanguage, route.tutorialSlug)
       : route.page === 'tutorial-ecosystem'
         ? tutorialEcosystemPath(nextLanguage)
-        : route.page === 'creator-detail' && activeCreator
-          ? creatorPath(nextLanguage, activeCreator.slug)
         : route.page === 'skill-detail' && route.skillSlug
           ? skillPath(nextLanguage, route.skillSlug)
-        : pathFor(nextLanguage, route.page as Exclude<AppPage, 'tutorial-detail' | 'tutorial-ecosystem' | 'creator-detail' | 'skill-detail'>)
+        : pathFor(nextLanguage, route.page as Exclude<AppPage, 'tutorial-detail' | 'tutorial-ecosystem' | 'skill-detail'>)
     const nextPath = `${nextBasePath}${window.location.search}${window.location.hash}`
     window.history.pushState(window.history.state, '', nextPath)
     setRoute({ ...route, language: nextLanguage })
@@ -543,16 +506,13 @@ function App() {
       <div className="grain" aria-hidden="true" />
       <Header language={language} page={route.page} onLanguageChange={switchLanguage} />
       {route.page === 'home' && <HomePage key={navigation} language={language} releases={releases} catalog={catalog} catalogError={catalogError} onRetryCatalog={reloadCatalog} />}
-      {route.page === 'tutorials' && tutorialGuides && releases && <TutorialsPage key={navigation} language={language} releases={releases} tutorialGuides={tutorialGuides} creators={creatorCatalog?.creators} />}
+      {route.page === 'tutorials' && tutorialGuides && releases && <TutorialsPage key={navigation} language={language} releases={releases} tutorialGuides={tutorialGuides} />}
       {route.page === 'tutorial-ecosystem' && tutorialGuides && tutorialResources && <TutorialEcosystemPage language={language} tutorialGuides={tutorialGuides} tutorialResources={tutorialResources} />}
-      {route.page === 'tutorial-detail' && activeTutorial && tutorialGuides && tutorialResources && <TutorialDetailPage language={language} tutorial={activeTutorial} tutorialGuides={tutorialGuides} tutorialResources={tutorialResources} creators={creatorCatalog?.creators} />}
+      {route.page === 'tutorial-detail' && activeTutorial && tutorialGuides && tutorialResources && <TutorialDetailPage language={language} tutorial={activeTutorial} tutorialGuides={tutorialGuides} tutorialResources={tutorialResources} />}
       {route.page === 'tutorial-detail' && tutorialGuides && !activeTutorial && <TutorialNotFound language={language} />}
       {(route.page === 'skills' || route.page === 'skill-detail') && <LazyBoundary fallback={<ResourceState language={language} failed onRetry={() => window.location.reload()} />}><Suspense fallback={<ResourceState language={language} />}><SkillsRoute language={language} slug={route.skillSlug} /></Suspense></LazyBoundary>}
-      {route.page === 'creators' && creatorCatalog && catalog && tutorialGuides && <CreatorsPage language={language} creatorCatalog={creatorCatalog} cases={catalog.cases} tutorialGuides={tutorialGuides} />}
-      {route.page === 'creator-detail' && activeCreator && catalog && tutorialGuides && <CreatorDetailPage key={navigation} language={language} creator={activeCreator} cases={catalog.cases} featuredCaseIds={catalog.featuredCaseIds} tutorialGuides={tutorialGuides} />}
-      {route.page === 'creator-detail' && creatorCatalog && !activeCreator && <CreatorNotFound language={language} />}
       {!['home', 'faq', 'skills', 'skill-detail'].includes(route.page) && ((!catalog && catalogError) || routeDataError) && <ResourceState language={language} failed onRetry={() => { reloadCatalog(); reloadRouteData() }} />}
-      {!['home', 'faq', 'skills', 'skill-detail'].includes(route.page) && !routeDataError && (!catalog || (needsTutorials && !tutorialGuides) || (needsCreators && !creatorCatalog)) && <ResourceState language={language} />}
+      {!['home', 'faq', 'skills', 'skill-detail'].includes(route.page) && !routeDataError && (!catalog || (needsTutorials && !tutorialGuides)) && <ResourceState language={language} />}
       {route.page === 'faq' && <FaqPage language={language} />}
       <Footer language={language} />
     </main>
@@ -587,8 +547,6 @@ function Header({
     ? tutorialPath(otherLanguage, resolveRoute(window.location.pathname).tutorialSlug || '')
     : page === 'tutorial-ecosystem'
       ? tutorialEcosystemPath(otherLanguage)
-    : page === 'creator-detail'
-      ? creatorPath(otherLanguage, resolveRoute(window.location.pathname).creatorSlug || '')
     : page === 'skill-detail'
       ? skillPath(otherLanguage, resolveRoute(window.location.pathname).skillSlug || '')
       : pathFor(otherLanguage, page)
@@ -604,7 +562,6 @@ function Header({
           <a href={pathFor(language, 'home')} aria-current={page === 'home' ? 'page' : undefined}>{t.nav.cases}</a>
           <a href={pathFor(language, 'tutorials')} aria-current={page === 'tutorials' || page === 'tutorial-detail' || page === 'tutorial-ecosystem' ? 'page' : undefined}>{t.nav.tutorials}</a>
           <a href={pathFor(language, 'skills')} aria-current={page === 'skills' || page === 'skill-detail' ? 'page' : undefined}>{t.nav.skills}</a>
-          <a href={pathFor(language, 'creators')} aria-current={page === 'creators' || page === 'creator-detail' ? 'page' : undefined}>{t.nav.creators}</a>
           <a href={pathFor(language, 'faq')} aria-current={page === 'faq' ? 'page' : undefined}>{t.nav.faq}</a>
         </nav>
         <div className="header-actions">
@@ -1420,9 +1377,9 @@ function tutorialDifficulty(tutorial: TutorialGuide, language: Language) {
   return (language === 'zh' ? { beginner: '入门', intermediate: '进阶', advanced: '高级' } : { beginner: 'Beginner', intermediate: 'Intermediate', advanced: 'Advanced' })[tutorial.difficulty]
 }
 
-function TutorialAuthor({ tutorial, language, creators = [] }: { tutorial: TutorialGuide; language: Language; creators?: CreatorProfile[] }) {
-  const creator = creators.find(item => item.tutorialIds.includes(tutorial.id))
-  return creator ? <a href={creatorPath(language, creator.slug)}>{tutorial.source.author}</a> : <>{tutorial.source.author}</>
+function TutorialAuthor({ tutorial }: { tutorial: TutorialGuide }) {
+  const profileUrl = tutorial.source.authorProfileUrl || tutorial.contribution?.authorUrl
+  return profileUrl ? <a href={profileUrl} target="_blank" rel="noreferrer">{tutorial.source.author}</a> : <>{tutorial.source.author}</>
 }
 
 function CopyCommandButton({ command, language, kind = 'command' }: { command: string; language: Language; kind?: 'command' | 'path' }) {
@@ -1502,12 +1459,10 @@ function TutorialsPage({
   language,
   releases,
   tutorialGuides,
-  creators,
 }: {
   language: Language
   releases: ReleaseBatches
   tutorialGuides: TutorialGuide[]
-  creators?: CreatorProfile[]
 }) {
   const t = copy[language].tutorials
   const [spotlightNow, setSpotlightNow] = useState(() => Date.now())
@@ -1602,7 +1557,7 @@ function TutorialsPage({
             <a className="foundation-route-poster" href={tutorialPath(language, tutorial.id)}><img src={tutorial.posterUrl} alt={tutorial.title[language]} loading="lazy" /><span>{String(index + 1).padStart(2, '0')}</span>{spotlightIds.has(tutorial.id) && <strong>{language === 'zh' ? '作者新投稿' : 'New from creator'}</strong>}</a>
             <div className="foundation-route-copy">
               <div className="added-at-meta">{matchesAddedDate(tutorial.addedAt, 'release', releases.tutorials) ? <strong>{copy[language].catalog.newlyAdded}</strong> : null}<time dateTime={tutorial.addedAt}>{copy[language].catalog.addedOn(formatAddedDate(tutorial.addedAt, language))}</time></div>
-              <small><TutorialAuthor tutorial={tutorial} language={language} creators={creators} /> / {t.categories[tutorial.category]}</small><h3><a href={tutorialPath(language, tutorial.id)}>{tutorial.title[language]}</a></h3><p>{tutorial.outcome[language]}</p><small>{tutorialDifficulty(tutorial, language)} · {tutorial.hardware[language]}</small><TutorialCardActions tutorial={tutorial} language={language} />
+              <small><TutorialAuthor tutorial={tutorial} /> / {t.categories[tutorial.category]}</small><h3><a href={tutorialPath(language, tutorial.id)}>{tutorial.title[language]}</a></h3><p>{tutorial.outcome[language]}</p><small>{tutorialDifficulty(tutorial, language)} · {tutorial.hardware[language]}</small><TutorialCardActions tutorial={tutorial} language={language} />
             </div>
           </article>)}</div>
         </section>
@@ -1744,7 +1699,7 @@ function TutorialsPage({
                     {matchesAddedDate(tutorial.addedAt, 'release', releases.tutorials) ? <strong>{copy[language].catalog.newlyAdded}</strong> : null}
                     <time dateTime={tutorial.addedAt}>{copy[language].catalog.addedOn(formatAddedDate(tutorial.addedAt, language))}</time>
                   </div>
-                  <small>{t.categories[tutorial.category]} / <TutorialAuthor tutorial={tutorial} language={language} creators={creators} />{tutorial.difficulty ? ` · ${tutorialDifficulty(tutorial, language)}` : ''}</small>
+                  <small>{t.categories[tutorial.category]} / <TutorialAuthor tutorial={tutorial} />{tutorial.difficulty ? ` · ${tutorialDifficulty(tutorial, language)}` : ''}</small>
                   <h3><a href={tutorialPath(language, tutorial.id)}>{tutorial.title[language]}</a></h3>
                   <p>{tutorial.outcome[language]}</p>
                   <TutorialCardActions tutorial={tutorial} language={language} />
@@ -1792,7 +1747,7 @@ function youtubeEmbedUrl(tutorial: TutorialGuide) {
   return null
 }
 
-function TutorialDetailPage({ language, tutorial, tutorialGuides, tutorialResources, creators }: { language: Language; tutorial: TutorialGuide; tutorialGuides: TutorialGuide[]; tutorialResources: TutorialResource[]; creators?: CreatorProfile[] }) {
+function TutorialDetailPage({ language, tutorial, tutorialGuides, tutorialResources }: { language: Language; tutorial: TutorialGuide; tutorialGuides: TutorialGuide[]; tutorialResources: TutorialResource[] }) {
   useEffect(() => {
     const scrollToSection = () => {
       const id = window.location.hash.slice(1)
@@ -1853,7 +1808,7 @@ function TutorialDetailPage({ language, tutorial, tutorialGuides, tutorialResour
   const sourceMeta = <>
     <h2>{t.source}</h2>
     <dl>
-      <div><dt>{language === 'zh' ? '作者' : 'Author'}</dt><dd><TutorialAuthor tutorial={tutorial} language={language} creators={creators} /> {tutorial.source.handle || ''}{tutorial.source.authorProfileUrl && <> · <a href={tutorial.source.authorProfileUrl} target="_blank" rel="noreferrer">{language === 'zh' ? '作者主页' : 'Author profile'}</a></>}</dd></div>
+      <div><dt>{language === 'zh' ? '作者' : 'Author'}</dt><dd><TutorialAuthor tutorial={tutorial} /> {tutorial.source.handle || ''}{tutorial.source.authorProfileUrl && <> · <a href={tutorial.source.authorProfileUrl} target="_blank" rel="noreferrer">{language === 'zh' ? '作者主页' : 'Author profile'}</a></>}</dd></div>
       {tutorial.contribution && <div><dt>{language === 'zh' ? '作者投稿' : 'Author submission'}</dt><dd><a href={tutorial.contribution.authorUrl} target="_blank" rel="noreferrer">{language === 'zh' ? '关注作者与更多作品' : 'Author and more work'}</a> · <a href={tutorial.contribution.issueUrl} target="_blank" rel="noreferrer">{language === 'zh' ? '投稿记录' : 'Submission'}</a></dd></div>}
       {tutorial.source.publishedAt && <div><dt>{language === 'zh' ? '发布' : 'Published'}</dt><dd>{tutorial.source.publishedAt}</dd></div>}
       {tutorial.evidence.sourceCheckedAt && <div><dt>{language === 'zh' ? '来源核对' : 'Source checked'}</dt><dd>{tutorial.evidence.sourceCheckedAt}</dd></div>}
@@ -2019,345 +1974,6 @@ function TutorialNotFound({ language }: { language: Language }) {
       <span>404</span>
       <h1>{language === 'zh' ? '这篇教程不存在。' : 'This tutorial does not exist.'}</h1>
       <a href={pathFor(language, 'tutorials')}>{copy[language].tutorials.back}</a>
-    </div>
-  )
-}
-
-function loadStoredSet(key: string) {
-  try {
-    const saved = JSON.parse(window.localStorage.getItem(key) || '[]')
-    return new Set<string>(Array.isArray(saved) ? saved.filter((id): id is string => typeof id === 'string') : [])
-  } catch {
-    return new Set<string>()
-  }
-}
-
-function saveStoredSet(key: string, value: Set<string>) {
-  try {
-    window.localStorage.setItem(key, JSON.stringify([...value]))
-  } catch {
-    // Keep the current-session state when browser storage is unavailable.
-  }
-}
-
-function creatorPosters(creator: CreatorProfile, cases: CatalogCase[], tutorialGuides: TutorialGuide[]) {
-  const casePosters = creator.representativeCaseIds
-    .map((id) => cases.find((item) => item.id === id)?.posterUrl)
-    .filter((poster): poster is string => Boolean(poster))
-  const tutorialPosters = creator.tutorialIds
-    .map((id) => tutorialGuides.find((item) => item.id === id)?.posterUrl)
-    .filter((poster): poster is string => Boolean(poster))
-  const posters = [...casePosters, ...tutorialPosters]
-  return posters.length ? posters.slice(0, 3) : ['/posters/x-community.svg']
-}
-
-function rankTrend(creator: CreatorProfile, rankKey: CreatorRankKey, language: Language) {
-  const delta = creator.rankDelta[rankKey]
-  const t = copy[language].creators
-  if (delta === null) return { label: t.rankNew, direction: 'new' }
-  if (delta > 0) return { label: t.rankUp(delta), direction: 'up' }
-  if (delta < 0) return { label: t.rankDown(Math.abs(delta)), direction: 'down' }
-  return { label: t.rankSame, direction: 'same' }
-}
-
-function creatorAccountLabel(creator: CreatorProfile) {
-  if (creator.primaryPlatform === 'x') return `@${creator.handle}`
-  return `${creator.primaryPlatform === 'github' ? 'GitHub' : 'YouTube'} / ${creator.handle}`
-}
-
-function creatorProfileAction(creator: CreatorProfile, language: Language, size = 13) {
-  if (creator.primaryPlatform === 'x') return <><XMark size={size} /> {copy[language].creators.followOnX}</>
-  if (creator.primaryPlatform === 'github') return <><GitHubMark size={size} /> {language === 'zh' ? '查看 GitHub' : 'View GitHub'}</>
-  return <><YouTubeMark size={size} /> {language === 'zh' ? '查看 YouTube' : 'View YouTube'}</>
-}
-
-function CreatorMosaic({ creator, cases, tutorialGuides }: { creator: CreatorProfile; cases: CatalogCase[]; tutorialGuides: TutorialGuide[] }) {
-  const posters = creatorPosters(creator, cases, tutorialGuides)
-  return (
-    <div className={`creator-mosaic count-${posters.length}`} aria-hidden="true">
-      {posters.map((poster, index) => (
-        <img
-          key={`${poster}:${index}`}
-          src={poster}
-          alt=""
-          loading="lazy"
-          decoding="async"
-          onError={(event) => {
-            event.currentTarget.onerror = null
-            event.currentTarget.src = '/posters/x-community.svg'
-          }}
-        />
-      ))}
-      <span className="creator-mosaic-scan" />
-    </div>
-  )
-}
-
-function CreatorCard({
-  creator,
-  rankKey,
-  language,
-  saved,
-  onToggleSave,
-  cases,
-  tutorialGuides,
-  compact = false,
-}: {
-  creator: CreatorProfile
-  rankKey: CreatorRankKey
-  language: Language
-  saved: boolean
-  onToggleSave: () => void
-  cases: CatalogCase[]
-  tutorialGuides: TutorialGuide[]
-  compact?: boolean
-}) {
-  const t = copy[language].creators
-  const rank = creator.ranks[rankKey] ?? creator.ranks.overall ?? creator.ranks.tutorials
-  const trend = rankTrend(creator, rankKey, language)
-  const tutorialOnly = creator.roles.includes('tutorial') && !creator.roles.includes('video')
-  return (
-    <article className={`creator-card${compact ? ' is-podium' : ''}`}>
-      <a className="creator-card-visual" href={creatorPath(language, creator.slug)} aria-label={`${t.openProfile}: ${creator.displayName}`}>
-        <CreatorMosaic creator={creator} cases={cases} tutorialGuides={tutorialGuides} />
-        <strong>{rank ? `#${String(rank).padStart(2, '0')}` : '—'}</strong>
-        <span className={`creator-rank-trend is-${trend.direction}`}>
-          {trend.direction === 'up' ? <TrendUp size={13} /> : trend.direction === 'down' ? <ArrowDownRight size={13} /> : null}
-          {trend.label}
-        </span>
-      </a>
-      <div className="creator-card-copy">
-        <div className="creator-card-identity">
-          <small>{creatorAccountLabel(creator)}</small>
-          <button
-            type="button"
-            className={saved ? 'active' : ''}
-            aria-label={saved ? t.unsave : t.save}
-            aria-pressed={saved}
-            title={saved ? t.unsave : t.save}
-            onClick={onToggleSave}
-          >
-            <Bookmark size={15} fill={saved ? 'currentColor' : 'none'} />
-          </button>
-        </div>
-        <h2><a href={creatorPath(language, creator.slug)}>{creator.displayName}</a></h2>
-        <p>{t.reasons[creator.reasons[0] ?? 'recently-active']}</p>
-        <dl>
-          {tutorialOnly ? <>
-            <div><dt>{t.tutorials}</dt><dd>{creator.tutorialCount}</dd></div>
-            <div><dt>{t.lastAdded}</dt><dd>{creator.lastAddedAt ? formatAddedDate(creator.lastAddedAt, language) : '—'}</dd></div>
-            <div><dt>{language === 'zh' ? '平台' : 'Platform'}</dt><dd>{{ x: 'X', github: 'GitHub', youtube: 'YouTube' }[creator.primaryPlatform]}</dd></div>
-          </> : <>
-            <div><dt>{t.cases}</dt><dd>{creator.caseCount}</dd></div>
-            <div><dt>{t.prompts}</dt><dd>{creator.promptCount}</dd></div>
-            <div><dt>{t.recent}</dt><dd>{creator.recentCaseCount}</dd></div>
-          </>}
-        </dl>
-        <div className="creator-card-actions">
-          <a href={creatorPath(language, creator.slug)}>{t.openProfile} <ChevronRight size={14} /></a>
-          <a href={creator.profileUrl} target="_blank" rel="noreferrer">{creatorProfileAction(creator, language)}</a>
-        </div>
-      </div>
-    </article>
-  )
-}
-
-function CreatorsPage({ language, creatorCatalog, cases, tutorialGuides }: { language: Language; creatorCatalog: CreatorCatalog; cases: CatalogCase[]; tutorialGuides: TutorialGuide[] }) {
-  const t = copy[language].creators
-  const creators = creatorCatalog.creators
-  const [view, setView] = useState<'video' | 'tutorial' | 'saved'>('video')
-  const [rankKey, setRankKey] = useState<CreatorRankKey>('overall')
-  const [savedCreators, setSavedCreators] = useState(() => loadStoredSet(favoriteCreatorStorageKey))
-  const videoRankKeys: CreatorRankKey[] = ['overall', 'active', 'cases', 'prompts', 'rising']
-
-  const toggleSaved = (id: string) => {
-    setSavedCreators((current) => {
-      const next = new Set(current)
-      if (next.has(id)) next.delete(id)
-      else next.add(id)
-      saveStoredSet(favoriteCreatorStorageKey, next)
-      return next
-    })
-  }
-
-  const podium = creators
-    .filter((creator) => creator.ranks.overall)
-    .sort((a, b) => (a.ranks.overall ?? 999) - (b.ranks.overall ?? 999))
-    .slice(0, 3)
-  const ranked = useMemo(() => {
-    if (view === 'saved') {
-      return creators
-        .filter((creator) => savedCreators.has(creator.id))
-        .sort((a, b) => (a.ranks.overall ?? a.ranks.tutorials ?? 999) - (b.ranks.overall ?? b.ranks.tutorials ?? 999))
-    }
-    const key: CreatorRankKey = view === 'tutorial' ? 'tutorials' : rankKey
-    return creators
-      .filter((creator) => creator.ranks[key])
-      .sort((a, b) => (a.ranks[key] ?? 999) - (b.ranks[key] ?? 999))
-  }, [creators, rankKey, savedCreators, view])
-  const activeRankKey: CreatorRankKey = view === 'tutorial' ? 'tutorials' : rankKey
-
-  return (
-    <div className="standalone-page creators-page">
-      <section className="creators shell">
-        <header className="creators-hero">
-          <div>
-            <p>{t.index}</p>
-            <h1>{t.title}</h1>
-            <span>{t.description}</span>
-          </div>
-          <dl>
-            <div><dt>{t.videoCreators}</dt><dd>{creatorCatalog.stats.videoCreators}</dd></div>
-            <div><dt>{t.tutorialCreators}</dt><dd>{creatorCatalog.stats.tutorialCreators}</dd></div>
-            <div><dt>{language === 'zh' ? '来源作者' : 'Source authors'}</dt><dd>{creatorCatalog.stats.sourceCreators}</dd></div>
-          </dl>
-        </header>
-
-        <section className="creator-podium" aria-labelledby="creator-podium-title">
-          <header><span>01</span><h2 id="creator-podium-title">{t.podium}</h2><small>{t.methodology}</small></header>
-          <div>{podium.map((creator) => <CreatorCard key={creator.id} creator={creator} rankKey="overall" language={language} saved={savedCreators.has(creator.id)} onToggleSave={() => toggleSaved(creator.id)} cases={cases} tutorialGuides={tutorialGuides} compact />)}</div>
-        </section>
-
-        <section className="creator-leaderboard" aria-labelledby="creator-leaderboard-title">
-          <header className="creator-leaderboard-heading">
-            <div><span>02</span><h2 id="creator-leaderboard-title">{t.leaderboard}</h2></div>
-            <div className="creator-view-tabs" role="group" aria-label={t.leaderboard}>
-              <button type="button" className={view === 'video' ? 'active' : ''} aria-pressed={view === 'video'} onClick={() => setView('video')}><Users size={14} /> {t.videoCreators}</button>
-              <button type="button" className={view === 'tutorial' ? 'active' : ''} aria-pressed={view === 'tutorial'} onClick={() => setView('tutorial')}><BookOpen size={14} /> {t.tutorialCreators}</button>
-              <button type="button" className={view === 'saved' ? 'active' : ''} aria-pressed={view === 'saved'} onClick={() => setView('saved')}><Bookmark size={14} /> {t.savedCreators}{savedCreators.size ? <small>{savedCreators.size}</small> : null}</button>
-            </div>
-          </header>
-          {view === 'video' && (
-            <div className="creator-rank-tabs" role="tablist" aria-label={t.leaderboard}>
-              {videoRankKeys.map((key) => <button key={key} type="button" role="tab" aria-selected={rankKey === key} className={rankKey === key ? 'active' : ''} onClick={() => setRankKey(key)}>{t.rankTabs[key]}</button>)}
-            </div>
-          )}
-          <div className="creator-grid">
-            {ranked.map((creator) => <CreatorCard key={creator.id} creator={creator} rankKey={activeRankKey} language={language} saved={savedCreators.has(creator.id)} onToggleSave={() => toggleSaved(creator.id)} cases={cases} tutorialGuides={tutorialGuides} />)}
-          </div>
-          {ranked.length === 0 && <div className="creator-empty"><Bookmark size={22} /><p>{t.noSaved}</p></div>}
-        </section>
-      </section>
-    </div>
-  )
-}
-
-function CreatorDetailPage({ language, creator, cases, featuredCaseIds, tutorialGuides }: { language: Language; creator: CreatorProfile; cases: CatalogCase[]; featuredCaseIds: string[]; tutorialGuides: TutorialGuide[] }) {
-  const t = copy[language].creators
-  const [savedCreators, setSavedCreators] = useState(() => loadStoredSet(favoriteCreatorStorageKey))
-  const [favoriteCases, setFavoriteCases] = useState(() => loadStoredSet(favoriteStorageKey))
-  const [promptOnly, setPromptOnly] = useState(() => initialFilters().prompt)
-  const [activeDuration, setActiveDuration] = useState<DurationRange>(() => initialFilters().duration)
-  const [activeCategory, setActiveCategory] = useState(() => initialTaxonomyFilter('category'))
-  const [selected, setSelected] = useState<OpenedCase | null>(null)
-  const creatorQueryUrl = new URL('http://localhost')
-  writeFilters(creatorQueryUrl, { category: activeCategory, duration: activeDuration, prompt: promptOnly })
-  creatorQueryUrl.searchParams.set('creator', creator.slug)
-  creatorQueryUrl.searchParams.set('language', language)
-  const directory = useCatalogQuery(creatorQueryUrl.searchParams, [], true, testQueryIndex)
-  const filteredCases = directory.page?.cases ?? emptyCatalogCases
-  const creatorCategories = taxonomyFilterOptions.category.filter(category => (directory.page?.facets.category[category] ?? 0) > 0 || category === activeCategory)
-  const creatorTutorials = creator.tutorialIds.map((id) => tutorialGuides.find((item) => item.id === id)).filter((item): item is TutorialGuide => Boolean(item))
-  const saved = savedCreators.has(creator.id)
-  const featuredIds = useMemo(() => new Set(featuredCaseIds), [featuredCaseIds])
-
-  const previousFiltersRef = useRef<string | null>(null)
-  useEffect(() => {
-    const state = { category: activeCategory, duration: activeDuration, prompt: promptOnly }
-    const serialized = JSON.stringify(state)
-    const method = previousFiltersRef.current !== null && previousFiltersRef.current !== serialized ? 'pushState' : 'replaceState'
-    previousFiltersRef.current = serialized
-    const path = writeFilters(new URL(window.location.href), state)
-    if (path !== `${window.location.pathname}${window.location.search}${window.location.hash}`) window.history[method](window.history.state, '', path)
-  }, [activeCategory, activeDuration, promptOnly])
-
-
-  const toggleCreator = () => {
-    setSavedCreators((current) => {
-      const next = new Set(current)
-      if (next.has(creator.id)) next.delete(creator.id)
-      else next.add(creator.id)
-      saveStoredSet(favoriteCreatorStorageKey, next)
-      return next
-    })
-  }
-  const toggleCase = (id: string) => {
-    setFavoriteCases((current) => {
-      const next = new Set(current)
-      if (next.has(id)) next.delete(id)
-      else next.add(id)
-      saveStoredSet(favoriteStorageKey, next)
-      return next
-    })
-  }
-  const primaryRank = creator.ranks.overall ?? creator.ranks.tutorials
-
-  return (
-    <div className="standalone-page creator-detail-page">
-      <article className="creator-profile shell">
-        <a className="tutorial-back" href={pathFor(language, 'creators')}><ChevronRight size={14} /> {t.back}</a>
-        <header className="creator-profile-hero">
-          <div className="creator-profile-visual"><CreatorMosaic creator={creator} cases={cases} tutorialGuides={tutorialGuides} /><strong>{primaryRank ? `#${String(primaryRank).padStart(2, '0')}` : '—'}</strong></div>
-          <div className="creator-profile-copy">
-            <p>{creatorAccountLabel(creator)}</p>
-            <h1>{creator.displayName}</h1>
-            <div className="creator-badges">{creator.badges.map((badge) => <span key={badge}>{t.badges[badge]}</span>)}</div>
-            <div className="creator-profile-actions">
-              <button type="button" className={saved ? 'active' : ''} onClick={toggleCreator} aria-pressed={saved}><Bookmark size={15} fill={saved ? 'currentColor' : 'none'} /> {saved ? t.unsave : t.save}</button>
-              <a href={creator.profileUrl} target="_blank" rel="noreferrer">{creatorProfileAction(creator, language, 14)}</a>
-            </div>
-          </div>
-          <dl className="creator-profile-stats">
-            <div><dt>{t.cases}</dt><dd>{creator.caseCount}</dd></div>
-            <div><dt>{t.prompts}</dt><dd>{creator.promptCount}</dd></div>
-            <div><dt>{t.tutorials}</dt><dd>{creator.tutorialCount}</dd></div>
-            <div><dt>{t.activeWeeks}</dt><dd>{creator.activeWeeks}</dd></div>
-          </dl>
-        </header>
-
-        {creator.caseCount > 0 && (
-          <section className="creator-work" aria-labelledby="creator-work-title">
-            <header>
-              <div><span>01</span><h2 id="creator-work-title">{t.work}</h2></div>
-              <div className="creator-work-filters">
-                <label>{t.duration}<select value={activeDuration} onChange={(event) => setActiveDuration(event.target.value as DurationRange)}>{durationRanges.map((range) => <option value={range} key={range}>{durationLabel(range, language)}</option>)}</select></label>
-                <label>{copy[language].catalog.category}<select value={activeCategory} onChange={(event) => setActiveCategory(event.target.value)}>{['ALL', ...creatorCategories].map((category) => <option value={category} key={category}>{taxonomyLabel(category, language, 'category')}</option>)}</select></label>
-                <button type="button" role="switch" aria-checked={promptOnly} className={promptOnly ? 'active' : ''} onClick={() => setPromptOnly((value) => !value)}><Sparkles size={14} /> {t.promptOnly}<i><b /></i></button>
-              </div>
-            </header>
-            <div className="case-grid">
-              {filteredCases.map((item, index) => <CaseCard key={item.id} item={item} index={index} language={language} onOpen={(video) => { track('case-open', { caseId: item.id, category: item.category, mode: item.mode, source: 'creator', locale: language }); setSelected({ item, video }) }} isFavorite={favoriteCases.has(item.id)} onFavorite={() => toggleCase(item.id)} isNew={false} isFeatured={featuredIds.has(item.id)} />)}
-            </div>
-            {directory.loading ? <ResourceState language={language} /> : null}
-            {directory.error ? <ResourceState language={language} failed onRetry={directory.retry} /> : null}
-            {directory.page?.nextCursor ? <div className="catalog-pagination"><button type="button" disabled={directory.loading} onClick={directory.loadMore}>{language === 'zh' ? '加载更多案例' : 'Load more cases'} <span>+24</span></button></div> : null}
-            {directory.page && !directory.loading && filteredCases.length === 0 && <div className="creator-empty"><p>{t.noCases}</p></div>}
-          </section>
-        )}
-
-        {creatorTutorials.length > 0 && (
-          <section className="creator-guides" aria-labelledby="creator-guides-title">
-            <header><span>02</span><h2 id="creator-guides-title">{t.guides}</h2></header>
-            <div>{creatorTutorials.map((tutorial) => <a key={tutorial.id} href={tutorialPath(language, tutorial.id)}><img src={tutorial.posterUrl} alt="" /><span><small>{copy[language].tutorials.categories[tutorial.category]}</small><strong>{tutorial.title[language]}</strong></span><ChevronRight size={17} /></a>)}</div>
-          </section>
-        )}
-
-        <footer className="creator-profile-correction">
-          <p>{t.correction}</p>
-          <a href={`https://github.com/SkyNotSilent/awesome-minimax-h3-cases/issues/new?template=creator-correction.yml&title=${encodeURIComponent(`[Creator profile] ${creatorAccountLabel(creator)}`)}`} target="_blank" rel="noreferrer">{t.correctionCta} <ArrowUpRight size={14} /></a>
-        </footer>
-      </article>
-      {selected && <CaseDialog item={selected.item} preparedVideo={selected.video} language={language} onClose={() => setSelected(null)} />}
-    </div>
-  )
-}
-
-function CreatorNotFound({ language }: { language: Language }) {
-  return (
-    <div className="standalone-page tutorial-not-found shell">
-      <span>404</span>
-      <h1>{language === 'zh' ? '这位创作者暂未进入榜单。' : 'This creator is not currently ranked.'}</h1>
-      <a href={pathFor(language, 'creators')}>{copy[language].creators.back}</a>
     </div>
   )
 }

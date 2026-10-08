@@ -153,7 +153,7 @@ describe('case-first routes', () => {
     renderAt('/')
     expect(screen.getByRole('link', { name: '案例' })).toHaveAttribute('href', '/')
     expect(screen.getByRole('link', { name: '教程' })).toHaveAttribute('href', '/tutorials/')
-    expect(screen.getByRole('link', { name: '创作者' })).toHaveAttribute('href', '/creators/')
+    expect(screen.queryByRole('link', { name: '创作者' })).not.toBeInTheDocument()
     expect(screen.getByRole('link', { name: '常见问题' })).toHaveAttribute('href', '/faq/')
     expect(screen.getByRole('link', { name: '在 GitHub 查看源码' })).toHaveAttribute(
       'href',
@@ -630,52 +630,13 @@ describe('case-first routes', () => {
     expect(screen.queryByText('打开官方仓库')).not.toBeInTheDocument()
   }, 15_000)
 
-  it('publishes a bilingual creator leaderboard with separate video and tutorial ranks', () => {
-    renderAt('/creators/')
-
-    expect(screen.getByRole('heading', { name: '持续做出好作品的人。' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: '本期前三' })).toBeInTheDocument()
-    expect(screen.getAllByRole('link', { name: /查看作者主页/ }).length).toBeGreaterThan(3)
-    expect(screen.getByRole('tab', { name: '综合优质' })).toHaveAttribute('aria-selected', 'true')
-
-    fireEvent.click(screen.getByRole('button', { name: '教程作者' }))
-    expect(screen.queryByRole('tab', { name: '综合优质' })).not.toBeInTheDocument()
-    expect(screen.getByText('@servasyy_ai')).toBeInTheDocument()
-
-    fireEvent.click(screen.getByRole('link', { name: '切换到英文' }))
-    expect(window.location.pathname).toBe('/en/creators/')
-    expect(screen.getByRole('heading', { name: 'Follow the people who keep making.' })).toBeInTheDocument()
-  })
-
-  it('stores creator bookmarks locally and restores the saved creator view', () => {
-    renderAt('/creators/')
-    const creatorCard = screen.getAllByText('@manuagi01')[0].closest('article')
-    expect(creatorCard).not.toBeNull()
-    fireEvent.click(within(creatorCard!).getByRole('button', { name: '收藏作者' }))
-    expect(JSON.parse(window.localStorage.getItem('minimax-h3-favorite-creators') || '[]')).toContain('x-manuagi01')
-
-    fireEvent.click(screen.getByRole('button', { name: /我的关注/ }))
-    const savedGrid = document.querySelector('.creator-grid')
-    expect(savedGrid).not.toBeNull()
-    expect(within(savedGrid as HTMLElement).getByRole('link', { name: '查看作者主页: @manuagi01' })).toHaveAttribute('href', '/creators/manuagi01/')
-    expect(within(savedGrid as HTMLElement).queryByText('@strength04_x')).not.toBeInTheDocument()
-  })
-
-  it('shows an author profile with X attribution and composable case filters', () => {
-    renderAt('/creators/icreat_ai/')
-
-    expect(screen.getByRole('heading', { name: 'ICREAT AI' })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: '去 X 关注' })).toHaveAttribute('href', 'https://x.com/icreat_ai')
-    expect(screen.getByText('餐厅时间冻结与逆向复原')).toBeInTheDocument()
-
-    fireEvent.change(screen.getByRole('combobox', { name: /内容分类/ }), { target: { value: 'comparison' } })
-    expect(screen.queryByText('餐厅时间冻结与逆向复原')).not.toBeInTheDocument()
-    expect(screen.getByText('两种生成模型再次对照')).toBeInTheDocument()
-    fireEvent.change(screen.getByRole('combobox', { name: /内容分类/ }), { target: { value: 'ALL' } })
-
-    fireEvent.click(screen.getByRole('switch', { name: /只看有 Prompt/ }))
-    expect(window.location.search).toBe('?prompt=1')
-    expect(screen.getByText('餐厅时间冻结与逆向复原')).toBeInTheDocument()
+  it('redirects retired creator profiles to localized case search while preserving filters', () => {
+    renderAt('/en/creators/icreat_ai/?prompt=1')
+    expect(window.location.pathname).toBe('/en/')
+    expect(new URLSearchParams(window.location.search).get('q')).toBe('icreat_ai')
+    expect(new URLSearchParams(window.location.search).get('prompt')).toBe('1')
+    expect(screen.queryByRole('link', { name: 'Creators' })).not.toBeInTheDocument()
+    expect(document.querySelector('.creator-grid')).not.toBeInTheDocument()
   })
 
   it('uses the complete fixed taxonomy with facet counts, disabled zero values, and URL restoration', () => {
@@ -704,11 +665,6 @@ describe('case-first routes', () => {
     fireEvent.click(screen.getByRole('link', { name: '切换到英文' }))
     expect(window.location.pathname).toBe('/en/')
     expect(window.location.search).toBe('?style=anime')
-  })
-
-  it('renders an explicit 404 for an unknown creator', () => {
-    renderAt('/creators/not-a-real-creator/')
-    expect(screen.getByRole('heading', { name: '这位创作者暂未进入榜单。' })).toBeInTheDocument()
   })
 
   it('filters tutorial routes without mixing them into the case catalog', () => {

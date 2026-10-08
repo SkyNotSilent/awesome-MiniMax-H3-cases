@@ -15,9 +15,5 @@ export const readmeScreenshotFiles = [
   'tutorials-en-mobile.png',
   'tutorial-ecosystem-zh.png',
   'tutorial-ecosystem-en.png',
-  'creators-zh.png',
-  'creators-en.png',
-  'creators-zh-mobile.png',
-  'creators-en-mobile.png',
   'agent-skills-output.png',
 ]

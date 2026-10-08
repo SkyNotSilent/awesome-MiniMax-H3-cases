@@ -2,9 +2,9 @@
 
 The repository has four public layers:
 
-1. `data/` contains published, source-attributed cases, tutorials, creators, taxonomy, and generated statistics.
+1. `data/` contains published, source-attributed cases, tutorials, taxonomy, and generated statistics.
 2. `scripts/` validates data and derives the compact runtime catalog, search indexes, SEO pages, screenshots, and Skill packages.
-3. `src/` renders the case-first React site, tutorials, creator profiles, filters, playback, and bilingual copy.
+3. `src/` renders the case-first React site, tutorials, filters, playback, and bilingual copy.
 4. `public/` contains static assets and generated discovery files. Creator videos stay outside Git in object storage and are served through stable `/media/` routes.
 
 Publication is transactional: a case is public only after its metadata, local poster, stored video, application redirect, and Range response pass validation. Private candidates, discovery sources, author-monitoring state, and failure notes belong under ignored `.review/` or a private operations workspace.
@@ -30,3 +30,5 @@ Tutorial authors with a public X, GitHub or YouTube identity can appear regardle
 Quick collections clear conflicting filters on entry; subsequent filters narrow the collection. `collection=latest` retains the latest-48 entry; `collection=long|prompt` maps to duration/Prompt controls. Public `added=release` means the latest Shanghai calendar-day publication, not personal tracking. Old snapshot parameters are normalized by the existing release module. Favorites stay browser-local.
 
 Run `npm run verify` for data, unit, server, type/build, privacy and size gates; `npm run skills:install:verify` for isolated offline clients; and the README screenshot/performance scripts for production-browser checks. See [DEVELOPMENT.md](./DEVELOPMENT.md).
+
+Legacy `/creators/` and `/en/creators/` URLs redirect to the corresponding case gallery; old profile paths preserve the author slug as a search query. Author attribution and original-source links stay on cases and tutorials. No public ranking is generated or loaded.

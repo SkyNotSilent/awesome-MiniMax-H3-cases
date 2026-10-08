@@ -27,7 +27,7 @@ The browser task does not need an X developer token. It requires the user's exis
 
 ## Creator discovery
 
-The daily collector may revisit previously verified authors in addition to open keyword search. Both paths use the same source, Prompt, media, title, hosting, and playback requirements. Public creator rankings in `data/creators.json` are generated only from already published cases and tutorials. Internal monitoring state, rejection history, discovery sources, review cadence, and scoring remain outside Git and must never enter public data, frontend bundles, README, SEO, or reports.
+The daily collector may revisit previously verified authors in addition to open keyword search. Both paths use the same source, Prompt, media, title, hosting, and playback requirements. Author follow-up is a private discovery aid, not a public ranking or publication prerequisite. Internal monitoring state, rejection history, discovery sources, review cadence, and scoring remain outside Git and must never enter public data, frontend bundles, README, SEO, or reports.
 
 ## Review outcomes
 

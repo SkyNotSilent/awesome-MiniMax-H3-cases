@@ -60,10 +60,10 @@ describe('tutorial routes', () => {
 
 describe('creator routes', () => {
   it('resolves bilingual creator indexes and detail pages', () => {
-    expect(resolveRoute('/creators/')).toEqual({ language: 'zh', page: 'creators' })
-    expect(resolveRoute('/en/creators/')).toEqual({ language: 'en', page: 'creators' })
-    expect(resolveRoute('/creators/manuagi01/')).toEqual({ language: 'zh', page: 'creator-detail', creatorSlug: 'manuagi01' })
-    expect(resolveRoute('/en/creators/manuagi01/')).toEqual({ language: 'en', page: 'creator-detail', creatorSlug: 'manuagi01' })
+    expect(resolveRoute('/creators/')).toEqual({ language: 'zh', page: 'home' })
+    expect(resolveRoute('/en/creators/')).toEqual({ language: 'en', page: 'home' })
+    expect(resolveRoute('/creators/manuagi01/')).toEqual({ language: 'zh', page: 'home', creatorSlug: 'manuagi01' })
+    expect(resolveRoute('/en/creators/manuagi01/')).toEqual({ language: 'en', page: 'home', creatorSlug: 'manuagi01' })
     expect(creatorPath('zh', 'manuagi01')).toBe('/creators/manuagi01/')
     expect(creatorPath('en', 'manuagi01')).toBe('/en/creators/manuagi01/')
   })

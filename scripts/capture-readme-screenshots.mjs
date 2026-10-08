@@ -99,7 +99,6 @@ async function writeScreenshotManifest() {
     featuredCases: stats.featuredCases,
     completePrompts: stats.completePrompts,
     tutorials: stats.tutorials,
-    rankedCreators: stats.rankedCreators,
     files,
   }, null, 2)}\n`
   const path = resolve(screenshotDir, 'snapshot.json')
@@ -323,11 +322,7 @@ try {
   await page.getByText(`Stars snapshot: ${resourceSnapshotAt}`).first().waitFor()
   await writeScreenshotIfChanged(page, 'tutorial-ecosystem-en.png', { type: 'png' })
 
-  await verifyPage(page, '/creators/', 'zh-CN', '持续做出好作品的人。')
-  await writeScreenshotIfChanged(page, 'creators-zh.png', { type: 'png' })
 
-  await verifyPage(page, '/en/creators/', 'en', 'Follow the people who keep making.')
-  await writeScreenshotIfChanged(page, 'creators-en.png', { type: 'png' })
 
   const mobile = await createUntrackedContext(browser, {
     viewport: { width: 390, height: 844 },
@@ -357,10 +352,6 @@ try {
   await verifyPage(mobilePage, '/en/tutorials/', 'en', 'MiniMax H3 Tutorials')
   await focusTutorialUpdates(mobilePage)
   await writeScreenshotIfChanged(mobilePage, 'tutorials-en-mobile.png', { type: 'png' })
-  await verifyPage(mobilePage, '/creators/', 'zh-CN', '持续做出好作品的人。')
-  await writeScreenshotIfChanged(mobilePage, 'creators-zh-mobile.png', { type: 'png' })
-  await verifyPage(mobilePage, '/en/creators/', 'en', 'Follow the people who keep making.')
-  await writeScreenshotIfChanged(mobilePage, 'creators-en-mobile.png', { type: 'png' })
   await mobile.close()
   await desktop.close()
 
@@ -368,7 +359,7 @@ try {
   if (browserProblems.length) throw new Error(browserProblems.join('\n'))
   await writeScreenshotManifest()
   const changedSummary = changedScreenshotFiles.length > 0 ? ` (${changedScreenshotFiles.join(', ')})` : ''
-  console.log(`Captured bilingual README screenshots from ${stats.cases} cases, ${stats.tutorials} tutorials, and ${stats.rankedCreators} creators; ${changedScreenshotCount} files changed${changedSummary}.`)
+  console.log(`Captured bilingual README screenshots from ${stats.cases} cases, ${stats.tutorials} tutorials; ${changedScreenshotCount} files changed${changedSummary}.`)
 } finally {
   if (browser) await browser.close()
   if (preview) preview.kill('SIGTERM')

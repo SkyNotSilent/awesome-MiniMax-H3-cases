@@ -11,9 +11,9 @@
 **English** · [简体中文](./README.zh-CN.md)
 
 [![Stars](https://img.shields.io/github/stars/SkyNotSilent/awesome-minimax-h3-cases?style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/stargazers)
-[![Cases](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D2140-679-25-405&query=%24.cases&label=cases&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/en/)
-[![Prompts](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D2140-679-25-405&query=%24.completePrompts&label=public%20prompts&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/en/?prompt=1)
-[![Tutorials](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D2140-679-25-405&query=%24.tutorials&label=tutorials&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/en/tutorials/)
+[![Cases](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D2140-679-25&query=%24.cases&label=cases&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/en/)
+[![Prompts](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D2140-679-25&query=%24.completePrompts&label=public%20prompts&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/en/?prompt=1)
+[![Tutorials](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D2140-679-25&query=%24.tutorials&label=tutorials&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/en/tutorials/)
 [![CI](https://img.shields.io/github/actions/workflow/status/SkyNotSilent/awesome-minimax-h3-cases/ci.yml?style=for-the-badge&label=CI&labelColor=0a0b09)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-MIT-6ba4ff?style=for-the-badge&labelColor=0a0b09)](./LICENSE)
 
@@ -49,19 +49,6 @@ Start with a quick collection, then narrow it by date, duration, Prompt, categor
 - **My saved cases** — the saved list stays in this browser; there is no login or cloud account.
 
 [Long videos](https://h3-field-notes-production.up.railway.app/en/?duration=OVER_15) and [complete Prompts](https://h3-field-notes-production.up.railway.app/en/?prompt=1) have dedicated filters. See [filter links, compatibility and runtime architecture](./docs/ARCHITECTURE.md) for implementation details.
-
-## Discover the people behind the strongest H3 work
-
-[![MiniMax H3 featured creator leaderboard](./docs/screenshots/creators-en.png)](https://h3-field-notes-production.up.railway.app/en/creators/)
-
-<!-- creator-stats:start -->
-The dynamic creator board turns the archive into a compounding discovery system. It currently ranks **405 featured creators from 1086 source-attributed authors across X, GitHub, and YouTube**, with separate views for video work and tutorial contributions.
-<!-- creator-stats:end -->
-
-- Every profile aggregates the creator's playable cases, complete public Prompts, and source-checked tutorials.
-- Rankings use only content already verified and published by this library; they are not official X influence rankings.
-- Exact internal monitoring scores, rejected posts, discovery sources, and review cadence remain private.
-- Save creators anonymously in this browser or jump to their original X, GitHub, or YouTube profile.
 
 ## Learn by goal or hardware
 
@@ -103,13 +90,12 @@ The two reading Skills include standalone query clients that use the hosted publ
 ## Data, automation, and trust
 
 <!-- project-snapshot:start -->
-**Current generated snapshot:** 2140 cases · 28 Editor picks · 679 complete public Prompts · 25 tutorials · 405 ranked creators from 1086 source authors · 8 flagship guides · 14 ecosystem resources · content checked through 2026-10-08.
+**Current generated snapshot:** 2140 cases · 28 Editor picks · 679 complete public Prompts · 25 tutorials · 8 flagship guides · 14 ecosystem resources · content checked through 2026-10-08.
 <!-- project-snapshot:end -->
 
 - [`data/project-stats.json`](./data/project-stats.json) is the canonical public count snapshot; CI rejects stale website and README numbers.
 - [`data/cases.json`](./data/cases.json) stores source-attributed case metadata; creator videos live outside Git in project storage.
 - [`data/tutorial-guides.json`](./data/tutorial-guides.json) stores bilingual structured guides; [`data/tutorials.json`](./data/tutorials.json) stores dated ecosystem snapshots.
-- [`data/creators.json`](./data/creators.json) is generated from published cases and tutorials; private creator monitoring stays under ignored `.review/` files.
 - Every public case and guide has an immutable ISO `addedAt`: the first time it entered the public catalog. Source `publishedAt`, review `approvedAt`, and guide `verifiedAt` keep their separate meanings; copy edits, Prompt additions, metric refreshes, and re-verification do not create unread updates.
 - Daily case discovery and weekly tutorial discovery keep private candidates in `.review/`; credentials and discovery labels never enter Git, the frontend, or SEO.
 - Builds generate localized case/tutorial pages, canonical and hreflang links, `VideoObject`/`HowTo` JSON-LD, sitemap, Open Graph data, [`llms.txt`](./public/llms.txt), and [`llms-full.txt`](./public/llms-full.txt).
@@ -124,7 +110,7 @@ npm ci
 npm run dev
 ```
 
-The public catalog, filters, tutorials, and creator pages work without production credentials. Hosted `/media/` playback requires your own compatible object-storage configuration; original-source links remain available without it. See [developer setup](./docs/DEVELOPMENT.md), the [public collection demo](./docs/PUBLIC_COLLECTION_WORKFLOW.md), and [architecture notes](./docs/ARCHITECTURE.md).
+The public catalog, filters, and tutorials work without production credentials. Hosted `/media/` playback requires your own compatible object-storage configuration; original-source links remain available without it. See [developer setup](./docs/DEVELOPMENT.md), the [public collection demo](./docs/PUBLIC_COLLECTION_WORKFLOW.md), and [architecture notes](./docs/ARCHITECTURE.md).
 
 To inspect the reusable import → dedupe → classify → stage flow without accounts, storage, network access, publication, or cost:
 
@@ -133,7 +119,7 @@ npm run collection:demo
 ```
 
 <!-- build-metrics:start -->
-**Reference build (Node 22.23.1, analytics configuration omitted):** 109.9 kB homepage JavaScript gzip · 9.4 kB / 9.1 kB Chinese / English homepage HTML gzip · 5.4 kB first-page API gzip · 3.5 kB next-page API gzip · 5.4 kB search response gzip · 51.3 kB local fonts (nonblocking) · 1677.8 kB server-only index gzip. Run `npm run performance:budget` for static budgets and `npm run performance:browser` against a local production server for browser behavior.
+**Reference build (Node 22.23.1, analytics configuration omitted):** 104.5 kB homepage JavaScript gzip · 9.4 kB / 9.1 kB Chinese / English homepage HTML gzip · 5.4 kB first-page API gzip · 3.5 kB next-page API gzip · 5.4 kB search response gzip · 51.3 kB local fonts (nonblocking) · 1657.7 kB server-only index gzip. Run `npm run performance:budget` for static budgets and `npm run performance:browser` against a local production server for browser behavior.
 <!-- build-metrics:end -->
 
 ## Contribute or report a problem
@@ -147,7 +133,6 @@ Read [CONTRIBUTING.md](./CONTRIBUTING.md), then use the focused form:
 - [Report broken media](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/issues/new?template=broken-media.yml)
 - [Challenge Prompt provenance](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/issues/new?template=prompt-dispute.yml)
 - [Request correction or removal](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/issues/new?template=takedown.yml)
-- [Correct, merge, or remove a creator profile](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/issues/new?template=creator-correction.yml)
 - [Show work or suggest a guide](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/discussions)
 
 Maintainers use one public [submission review standard and reply set](./docs/SUBMISSION_REVIEW.md); private scores, review notes, and discovery channels never appear in Issue comments.
