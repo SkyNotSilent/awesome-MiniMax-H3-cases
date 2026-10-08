@@ -11,7 +11,8 @@ export function searchText(item, language, taxonomy) {
     ...item.styles.map(key => taxonomy.styles.find(x => x.key === key)),
     ...item.scenes.map(key => taxonomy.scenes.find(x => x.key === key)),
   ].filter(Boolean).map(x => x[language])
-  return normalize([...(language === 'zh' ? [item.title, item.summary, item.sourceLabel, ...item.tags] : [item.titleEn, item.summaryEn]), item.prompt, item.author, item.category, ...item.styles, ...item.scenes, ...labels])
+  // Original public source URLs retain account handles even when display names differ.
+  return normalize([...(language === 'zh' ? [item.title, item.summary, item.sourceLabel, ...item.tags] : [item.titleEn, item.summaryEn]), item.prompt, item.author, item.sourceUrl, item.category, ...item.styles, ...item.scenes, ...labels])
 }
 export function createCatalogIndex(data) {
   if (data.version !== 1 || !data.catalogVersion || !Array.isArray(data.cases) || !Array.isArray(data.tutorials)) throw new Error('Invalid catalog snapshot')

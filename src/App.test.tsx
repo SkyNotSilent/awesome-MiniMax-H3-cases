@@ -635,6 +635,7 @@ describe('case-first routes', () => {
     expect(window.location.pathname).toBe('/en/')
     expect(new URLSearchParams(window.location.search).get('q')).toBe('icreat_ai')
     expect(new URLSearchParams(window.location.search).get('prompt')).toBe('1')
+    expect(document.querySelectorAll('.case-card:not(.case-card-skeleton)').length).toBeGreaterThan(0)
     expect(screen.queryByRole('link', { name: 'Creators' })).not.toBeInTheDocument()
     expect(document.querySelector('.creator-grid')).not.toBeInTheDocument()
   })
