@@ -5,15 +5,15 @@
 # MiniMax H3 Cases & Guides｜案例与实战教程
 
 <!-- project-stats:start -->
-**来源可追溯的 MiniMax H3 案例与教程库：2140 个可播放视频、679 条完整公开 Prompt、25 篇实用教程。**
+**来源可追溯的 MiniMax H3 案例与教程库：2165 个可播放视频、681 条完整公开 Prompt、25 篇实用教程。**
 <!-- project-stats:end -->
 
 [English](./README.md) · **简体中文**
 
 [![Stars](https://img.shields.io/github/stars/SkyNotSilent/awesome-minimax-h3-cases?style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/stargazers)
-[![Cases](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D2140-679-25&query=%24.cases&label=cases&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/)
-[![Prompts](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D2140-679-25&query=%24.completePrompts&label=public%20prompts&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/?prompt=1)
-[![Tutorials](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D2140-679-25&query=%24.tutorials&label=tutorials&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/tutorials/)
+[![Cases](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D2165-681-25&query=%24.cases&label=cases&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/)
+[![Prompts](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D2165-681-25&query=%24.completePrompts&label=public%20prompts&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/?prompt=1)
+[![Tutorials](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D2165-681-25&query=%24.tutorials&label=tutorials&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/tutorials/)
 [![CI](https://img.shields.io/github/actions/workflow/status/SkyNotSilent/awesome-minimax-h3-cases/ci.yml?style=for-the-badge&label=CI&labelColor=0a0b09)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-MIT-6ba4ff?style=for-the-badge&labelColor=0a0b09)](./LICENSE)
 
@@ -90,7 +90,7 @@ npx skills add https://github.com/SkyNotSilent/awesome-minimax-h3-cases \
 ## 数据、自动化与可信度
 
 <!-- project-snapshot:start -->
-**当前自动统计：** 2140 个案例 · 28 条编辑精选 · 679 条完整公开 Prompt · 25 篇教程 · 8 篇旗舰教程 · 14 个生态资源 · 内容核验至 2026-10-08。
+**当前自动统计：** 2165 个案例 · 28 条编辑精选 · 681 条完整公开 Prompt · 25 篇教程 · 8 篇旗舰教程 · 14 个生态资源 · 内容核验至 2026-10-08。
 <!-- project-snapshot:end -->
 
 - [`data/project-stats.json`](./data/project-stats.json) 是公开数字的唯一快照；网站与 README 数字过期会让 CI 失败；
@@ -119,7 +119,7 @@ npm run collection:demo
 ```
 
 <!-- build-metrics:start -->
-**参考构建（Node 22.23.1，不含分析服务配置）：** 首页 JavaScript gzip 104.5 kB · 中文 / 英文首页 HTML gzip 9.4 kB / 9.1 kB · 首批 API gzip 5.4 kB · 下一页 API gzip 3.5 kB · 搜索响应 gzip 5.4 kB · 本地非阻塞字体 51.3 kB · 仅服务端索引 gzip 1675.5 kB。静态预算运行 `npm run performance:budget`；启动本地生产服务后运行 `npm run performance:browser` 验证浏览器行为。
+**参考构建（Node 22.23.1，不含分析服务配置）：** 首页 JavaScript gzip 104.5 kB · 中文 / 英文首页 HTML gzip 9.4 kB / 9.1 kB · 首批 API gzip 5.2 kB · 下一页 API gzip 4 kB · 搜索响应 gzip 5.2 kB · 本地非阻塞字体 51.3 kB · 仅服务端索引 gzip 1683.8 kB。静态预算运行 `npm run performance:budget`；启动本地生产服务后运行 `npm run performance:browser` 验证浏览器行为。
 <!-- build-metrics:end -->
 
 ## 投稿、纠错与下架
