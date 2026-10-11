@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="https://h3-field-notes-production.up.railway.app/en/"><img src="./public/icon.svg" alt="MiniMax H3 Cases & Guides" width="104" height="104"></a>
+<a href="https://awesome-minimax-h3-cases.zzskysilent.com/en/"><img src="./public/icon.svg" alt="MiniMax H3 Cases & Guides" width="104" height="104"></a>
 
 # MiniMax H3 Cases & Guides
 
@@ -11,9 +11,9 @@
 **English** · [简体中文](./README.zh-CN.md)
 
 [![Stars](https://img.shields.io/github/stars/SkyNotSilent/awesome-minimax-h3-cases?style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/stargazers)
-[![Cases](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D2323-698-25&query=%24.cases&label=cases&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/en/)
-[![Prompts](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D2323-698-25&query=%24.completePrompts&label=public%20prompts&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/en/?prompt=1)
-[![Tutorials](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D2323-698-25&query=%24.tutorials&label=tutorials&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/en/tutorials/)
+[![Cases](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fawesome-minimax-h3-cases.zzskysilent.com%2Fsite-stats.json%3Fv%3D2323-698-25&query=%24.cases&label=cases&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://awesome-minimax-h3-cases.zzskysilent.com/en/)
+[![Prompts](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fawesome-minimax-h3-cases.zzskysilent.com%2Fsite-stats.json%3Fv%3D2323-698-25&query=%24.completePrompts&label=public%20prompts&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://awesome-minimax-h3-cases.zzskysilent.com/en/?prompt=1)
+[![Tutorials](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fawesome-minimax-h3-cases.zzskysilent.com%2Fsite-stats.json%3Fv%3D2323-698-25&query=%24.tutorials&label=tutorials&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://awesome-minimax-h3-cases.zzskysilent.com/en/tutorials/)
 [![CI](https://img.shields.io/github/actions/workflow/status/SkyNotSilent/awesome-minimax-h3-cases/ci.yml?style=for-the-badge&label=CI&labelColor=0a0b09)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-MIT-6ba4ff?style=for-the-badge&labelColor=0a0b09)](./LICENSE)
 
@@ -23,11 +23,11 @@
 
 | Browse cases | Find complete Prompts | Learn H3 | Share your work |
 | --- | --- | --- | --- |
-| [Watch every case](https://h3-field-notes-production.up.railway.app/en/) | [Open Prompt collection](https://h3-field-notes-production.up.railway.app/en/?prompt=1) | [Open practical tutorials](https://h3-field-notes-production.up.railway.app/en/tutorials/) | [Submit a case or tutorial](#contribute-or-report-a-problem) |
+| [Watch every case](https://awesome-minimax-h3-cases.zzskysilent.com/en/) | [Open Prompt collection](https://awesome-minimax-h3-cases.zzskysilent.com/en/?prompt=1) | [Open practical tutorials](https://awesome-minimax-h3-cases.zzskysilent.com/en/tutorials/) | [Submit a case or tutorial](#contribute-or-report-a-problem) |
 
 <p align="center"><strong>Watch real H3 output first. Inspect a Prompt only when its source publishes the complete text. Then follow a source-checked route to create your own video.</strong></p>
 
-[![MiniMax H3 latest-release strip with added-date, duration, Prompt, collection, content, style, and scene filters](./docs/screenshots/case-library-en.jpg)](https://h3-field-notes-production.up.railway.app/en/)
+[![MiniMax H3 latest-release strip with added-date, duration, Prompt, collection, content, style, and scene filters](./docs/screenshots/case-library-en.jpg)](https://awesome-minimax-h3-cases.zzskysilent.com/en/)
 
 MiniMax H3 is also searched as **Hailuo H3**, **Hailuo 3.0**, and **海螺 H3**. Every published case plays inside the gallery, keeps its original source and creator, and clearly distinguishes a complete verbatim Prompt from an unpublished one. The library never reconstructs, rewrites, or reverse-engineers missing Prompts.
 
@@ -41,29 +41,29 @@ MiniMax H3 is also searched as **Hailuo H3**, **Hailuo 3.0**, and **海螺 H3**.
 
 Start with a quick collection, then narrow it by date, duration, Prompt, category, style or scene. The gallery stays case-first; playback and original-source links are one click away.
 
-[![MiniMax H3 latest additions ordered by catalog date](./docs/screenshots/latest-collection-en.jpg)](https://h3-field-notes-production.up.railway.app/en/?collection=latest)
+[![MiniMax H3 latest additions ordered by catalog date](./docs/screenshots/latest-collection-en.jpg)](https://awesome-minimax-h3-cases.zzskysilent.com/en/?collection=latest)
 
-- [Editor picks](https://h3-field-notes-production.up.railway.app/en/?collection=featured) — a stable set of 24–28 playable cases, refreshed periodically from public engagement signals and human source checks.
-- [Latest additions](https://h3-field-notes-production.up.railway.app/en/?collection=latest) — the existing compatible link, now ordered by first catalog addition rather than source publication date.
-- [Official examples](https://h3-field-notes-production.up.railway.app/en/?collection=official) — reproducible MiniMax scripts and source evidence.
+- [Editor picks](https://awesome-minimax-h3-cases.zzskysilent.com/en/?collection=featured) — a stable set of 24–28 playable cases, refreshed periodically from public engagement signals and human source checks.
+- [Latest additions](https://awesome-minimax-h3-cases.zzskysilent.com/en/?collection=latest) — the existing compatible link, now ordered by first catalog addition rather than source publication date.
+- [Official examples](https://awesome-minimax-h3-cases.zzskysilent.com/en/?collection=official) — reproducible MiniMax scripts and source evidence.
 - **My saved cases** — the saved list stays in this browser; there is no login or cloud account.
 
-[Long videos](https://h3-field-notes-production.up.railway.app/en/?duration=OVER_15) and [complete Prompts](https://h3-field-notes-production.up.railway.app/en/?prompt=1) have dedicated filters. See [filter links, compatibility and runtime architecture](./docs/ARCHITECTURE.md) for implementation details.
+[Long videos](https://awesome-minimax-h3-cases.zzskysilent.com/en/?duration=OVER_15) and [complete Prompts](https://awesome-minimax-h3-cases.zzskysilent.com/en/?prompt=1) have dedicated filters. See [filter links, compatibility and runtime architecture](./docs/ARCHITECTURE.md) for implementation details.
 
 ## Learn by goal or hardware
 
-[![MiniMax H3 tutorial workspace](./docs/screenshots/tutorials-en.png)](https://h3-field-notes-production.up.railway.app/en/tutorials/)
+[![MiniMax H3 tutorial workspace](./docs/screenshots/tutorials-en.png)](https://awesome-minimax-h3-cases.zzskysilent.com/en/tutorials/)
 
 Two compact starting routes answer the first decision: use a cloud template, or choose NVIDIA/Apple Silicon for local work. Practical project cards then lead with the intended result, author, difficulty, requirements, steps, checks, and troubleshooting; shorter resource entries stay clearly labeled as guides. Source checks, community reports, and actual site generation tests remain separate evidence categories.
 
 | Goal | Best starting point |
 | --- | --- |
-| First generated video | [Official / NVIDIA + ComfyUI route](https://h3-field-notes-production.up.railway.app/en/tutorials/official-deployment/) |
-| Apple Silicon | [Native C + Metal route](https://h3-field-notes-production.up.railway.app/en/tutorials/mac-native/) |
-| 8–12 GB VRAM | [Low-VRAM and quantized routes](https://h3-field-notes-production.up.railway.app/en/tutorials/four-bit-eight-gb/) |
-| Faster previews and final output | [Turbo route](https://h3-field-notes-production.up.railway.app/en/tutorials/nvidia-comfyui/) |
-| Long video, audio, or training | [Browse by goal and hardware](https://h3-field-notes-production.up.railway.app/en/tutorials/) |
-| Compare open-source tools | [Tutorial and tool ecosystem](https://h3-field-notes-production.up.railway.app/en/tutorials/ecosystem/) |
+| First generated video | [Official / NVIDIA + ComfyUI route](https://awesome-minimax-h3-cases.zzskysilent.com/en/tutorials/official-deployment/) |
+| Apple Silicon | [Native C + Metal route](https://awesome-minimax-h3-cases.zzskysilent.com/en/tutorials/mac-native/) |
+| 8–12 GB VRAM | [Low-VRAM and quantized routes](https://awesome-minimax-h3-cases.zzskysilent.com/en/tutorials/four-bit-eight-gb/) |
+| Faster previews and final output | [Turbo route](https://awesome-minimax-h3-cases.zzskysilent.com/en/tutorials/nvidia-comfyui/) |
+| Long video, audio, or training | [Browse by goal and hardware](https://awesome-minimax-h3-cases.zzskysilent.com/en/tutorials/) |
+| Compare open-source tools | [Tutorial and tool ecosystem](https://awesome-minimax-h3-cases.zzskysilent.com/en/tutorials/ecosystem/) |
 
 Each guide has a **Copy for AI** action that creates an execution package from structured fields. It requires the agent to verify the latest upstream README and forbids guessed commands or compatibility claims.
 

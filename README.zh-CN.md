@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="https://h3-field-notes-production.up.railway.app/"><img src="./public/icon.svg" alt="MiniMax H3 Cases & Guides" width="104" height="104"></a>
+<a href="https://awesome-minimax-h3-cases.zzskysilent.com/"><img src="./public/icon.svg" alt="MiniMax H3 Cases & Guides" width="104" height="104"></a>
 
 # MiniMax H3 Cases & Guides｜案例与实战教程
 
@@ -11,9 +11,9 @@
 [English](./README.md) · **简体中文**
 
 [![Stars](https://img.shields.io/github/stars/SkyNotSilent/awesome-minimax-h3-cases?style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/stargazers)
-[![Cases](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D2323-698-25&query=%24.cases&label=cases&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://h3-field-notes-production.up.railway.app/)
-[![Prompts](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D2323-698-25&query=%24.completePrompts&label=public%20prompts&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/?prompt=1)
-[![Tutorials](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh3-field-notes-production.up.railway.app%2Fsite-stats.json%3Fv%3D2323-698-25&query=%24.tutorials&label=tutorials&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://h3-field-notes-production.up.railway.app/tutorials/)
+[![Cases](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fawesome-minimax-h3-cases.zzskysilent.com%2Fsite-stats.json%3Fv%3D2323-698-25&query=%24.cases&label=cases&style=for-the-badge&labelColor=0a0b09&color=d8ff3e)](https://awesome-minimax-h3-cases.zzskysilent.com/)
+[![Prompts](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fawesome-minimax-h3-cases.zzskysilent.com%2Fsite-stats.json%3Fv%3D2323-698-25&query=%24.completePrompts&label=public%20prompts&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://awesome-minimax-h3-cases.zzskysilent.com/?prompt=1)
+[![Tutorials](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fawesome-minimax-h3-cases.zzskysilent.com%2Fsite-stats.json%3Fv%3D2323-698-25&query=%24.tutorials&label=tutorials&style=for-the-badge&labelColor=0a0b09&color=f5f5ed)](https://awesome-minimax-h3-cases.zzskysilent.com/tutorials/)
 [![CI](https://img.shields.io/github/actions/workflow/status/SkyNotSilent/awesome-minimax-h3-cases/ci.yml?style=for-the-badge&label=CI&labelColor=0a0b09)](https://github.com/SkyNotSilent/awesome-minimax-h3-cases/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-MIT-6ba4ff?style=for-the-badge&labelColor=0a0b09)](./LICENSE)
 
@@ -23,11 +23,11 @@
 
 | 浏览案例 | 查找完整 Prompt | 学会制作 H3 视频 | 分享你的作品 |
 | --- | --- | --- | --- |
-| [观看全部案例](https://h3-field-notes-production.up.railway.app/) | [打开 Prompt 集合](https://h3-field-notes-production.up.railway.app/?prompt=1) | [进入实战教程](https://h3-field-notes-production.up.railway.app/tutorials/) | [投稿案例或教程](#投稿纠错与下架) |
+| [观看全部案例](https://awesome-minimax-h3-cases.zzskysilent.com/) | [打开 Prompt 集合](https://awesome-minimax-h3-cases.zzskysilent.com/?prompt=1) | [进入实战教程](https://awesome-minimax-h3-cases.zzskysilent.com/tutorials/) | [投稿案例或教程](#投稿纠错与下架) |
 
 <p align="center"><strong>先看真实成片；来源完整公开 Prompt 才按原文展示；再沿着核验过的路线制作自己的视频。</strong></p>
 
-[![MiniMax H3 最近更新条，支持收录日期、时长、Prompt、快速集合、内容、风格与场景筛选](./docs/screenshots/case-library-zh.jpg)](https://h3-field-notes-production.up.railway.app/)
+[![MiniMax H3 最近更新条，支持收录日期、时长、Prompt、快速集合、内容、风格与场景筛选](./docs/screenshots/case-library-zh.jpg)](https://awesome-minimax-h3-cases.zzskysilent.com/)
 
 MiniMax H3 也常被搜索为 **Hailuo H3**、**Hailuo 3.0**、**海螺 H3** 和 **海螺 3.0**。每条公开案例都可站内播放、保留创作者与原始来源，并明确区分“完整公开 Prompt”和“来源未公开”。本站绝不反推、补写、改写或伪造缺失 Prompt。
 
@@ -41,29 +41,29 @@ MiniMax H3 也常被搜索为 **Hailuo H3**、**Hailuo 3.0**、**海螺 H3** 和
 
 先选快捷集合，再按日期、时长、Prompt、分类、风格或场景缩小范围。首页继续案例优先，点击即可播放并查看原始来源。
 
-[![按本站收录日期排列的 MiniMax H3 最新案例](./docs/screenshots/latest-collection-zh.jpg)](https://h3-field-notes-production.up.railway.app/?collection=latest)
+[![按本站收录日期排列的 MiniMax H3 最新案例](./docs/screenshots/latest-collection-zh.jpg)](https://awesome-minimax-h3-cases.zzskysilent.com/?collection=latest)
 
-- [编辑精选](https://h3-field-notes-production.up.railway.app/?collection=featured)：稳定保持 24–28 条可播放案例，基于公开互动表现与人工来源核验定期更新；
-- [最新收录](https://h3-field-notes-production.up.railway.app/?collection=latest)：保留原兼容入口，现按首次进入本站目录的时间排序，而不是来源发布时间；
-- [官方案例](https://h3-field-notes-production.up.railway.app/?collection=official)：MiniMax 可复现脚本与公开证据；
+- [编辑精选](https://awesome-minimax-h3-cases.zzskysilent.com/?collection=featured)：稳定保持 24–28 条可播放案例，基于公开互动表现与人工来源核验定期更新；
+- [最新收录](https://awesome-minimax-h3-cases.zzskysilent.com/?collection=latest)：保留原兼容入口，现按首次进入本站目录的时间排序，而不是来源发布时间；
+- [官方案例](https://awesome-minimax-h3-cases.zzskysilent.com/?collection=official)：MiniMax 可复现脚本与公开证据；
 - **我的收藏**：收藏列表仅保存在当前浏览器，不用登录，也不上传云端。
 
-[长视频](https://h3-field-notes-production.up.railway.app/?duration=OVER_15)和[完整 Prompt](https://h3-field-notes-production.up.railway.app/?prompt=1)都有独立筛选。链接兼容、缓存和数据架构详见[开发说明](./docs/ARCHITECTURE.md)。
+[长视频](https://awesome-minimax-h3-cases.zzskysilent.com/?duration=OVER_15)和[完整 Prompt](https://awesome-minimax-h3-cases.zzskysilent.com/?prompt=1)都有独立筛选。链接兼容、缓存和数据架构详见[开发说明](./docs/ARCHITECTURE.md)。
 
 ## 按目标或硬件学会 H3
 
-[![MiniMax H3 中文教程工作台](./docs/screenshots/tutorials-zh.png)](https://h3-field-notes-production.up.railway.app/tutorials/)
+[![MiniMax H3 中文教程工作台](./docs/screenshots/tutorials-zh.png)](https://awesome-minimax-h3-cases.zzskysilent.com/tutorials/)
 
 教程页先用两个紧凑入口解决第一步选择：没有本地环境就走云端；准备本地运行就按 NVIDIA 或 Apple Silicon 选路线。随后直接展示以成品为目标的实战卡片，明确作者、难度、条件、步骤、完成检查与排错；较短内容继续明确标为导读。来源核对、作者报告与本站生成实测分开展示。
 
 | 你的目标 | 建议入口 |
 | --- | --- |
-| 第一次生成视频 | [官方 / NVIDIA + ComfyUI 路线](https://h3-field-notes-production.up.railway.app/tutorials/official-deployment/) |
-| Apple Silicon | [纯 C + Metal 原生路线](https://h3-field-notes-production.up.railway.app/tutorials/mac-native/) |
-| 8–12GB 显存 | [量化与低显存路线](https://h3-field-notes-production.up.railway.app/tutorials/four-bit-eight-gb/) |
-| 更快预览与成片 | [Turbo 路线](https://h3-field-notes-production.up.railway.app/tutorials/nvidia-comfyui/) |
-| 长视频、音频或训练 | [按目标和硬件筛选](https://h3-field-notes-production.up.railway.app/tutorials/) |
-| 比较开源工具 | [教程与工具生态](https://h3-field-notes-production.up.railway.app/tutorials/ecosystem/) |
+| 第一次生成视频 | [官方 / NVIDIA + ComfyUI 路线](https://awesome-minimax-h3-cases.zzskysilent.com/tutorials/official-deployment/) |
+| Apple Silicon | [纯 C + Metal 原生路线](https://awesome-minimax-h3-cases.zzskysilent.com/tutorials/mac-native/) |
+| 8–12GB 显存 | [量化与低显存路线](https://awesome-minimax-h3-cases.zzskysilent.com/tutorials/four-bit-eight-gb/) |
+| 更快预览与成片 | [Turbo 路线](https://awesome-minimax-h3-cases.zzskysilent.com/tutorials/nvidia-comfyui/) |
+| 长视频、音频或训练 | [按目标和硬件筛选](https://awesome-minimax-h3-cases.zzskysilent.com/tutorials/) |
+| 比较开源工具 | [教程与工具生态](https://awesome-minimax-h3-cases.zzskysilent.com/tutorials/ecosystem/) |
 
 每篇教程都有“一键复制给 AI”：根据结构化字段生成执行任务，并强制要求 Agent 先检查上游最新 README，禁止猜测缺失命令或兼容性。
 
