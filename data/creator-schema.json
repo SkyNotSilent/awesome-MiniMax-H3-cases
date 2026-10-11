@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://h3-field-notes-production.up.railway.app/schemas/creator-profile.json",
+  "$id": "https://awesome-minimax-h3-cases.zzskysilent.com/schemas/creator-profile.json",
   "title": "MiniMax H3 Creator Profile",
   "type": "object",
   "additionalProperties": false,

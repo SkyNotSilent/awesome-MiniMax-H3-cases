@@ -1,5 +1,6 @@
 import { readFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
+import site from './site.json' with { type: 'json' }
 
 const args = process.argv.slice(2)
 const options = new Map()
@@ -20,7 +21,7 @@ if (!hardware && !goal) throw new Error('Usage: node scripts/query.mjs --hardwar
 let payload
 if (fixture) payload = JSON.parse(await readFile(fixture, 'utf8'))
 else {
-  const baseUrl = (process.env.H3_LIBRARY_URL || 'https://h3-field-notes-production.up.railway.app').replace(/\/$/, '')
+  const baseUrl = (process.env.H3_LIBRARY_URL || site.primaryOrigin).replace(/\/$/, '')
   const response = await fetch(`${baseUrl}/data/tutorial-guides.v2.json`, { signal: AbortSignal.timeout(15000) })
   if (!response.ok) throw new Error(`Tutorial request failed (${response.status}). No steps or commands were invented.`)
   payload = await response.json()

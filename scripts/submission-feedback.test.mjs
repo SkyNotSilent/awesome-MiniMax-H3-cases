@@ -3,7 +3,7 @@ import { mkdtemp, readFile, writeFile, rm, mkdir, copyFile, realpath } from 'nod
 import { execFile } from 'node:child_process'
 import { promisify } from 'node:util'
 import { tmpdir } from 'node:os'
-import { join } from 'node:path'
+import { join, resolve } from 'node:path'
 import { ensureFeedbackDraft, verifyFeedbackDeployment } from './submission-feedback.mjs'
 
 test('direct CLI draft invocation terminates and preserves its private draft on retry', async () => {
@@ -11,6 +11,10 @@ test('direct CLI draft invocation terminates and preserves its private draft on 
   try {
     await mkdir(join(root, 'scripts'))
     await mkdir(join(root, 'data'))
+    await mkdir(join(root, 'shared'))
+    await mkdir(join(root, 'config'))
+    await copyFile(resolve('shared/site-config.mjs'), join(root, 'shared/site-config.mjs'))
+    await copyFile(resolve('config/site.json'), join(root, 'config/site.json'))
     for (const name of ['submission-reply.mjs', 'submission-reply-text.mjs', 'submission-feedback.mjs']) {
       await copyFile(new URL(name, import.meta.url), join(root, 'scripts', name))
     }
@@ -43,6 +47,7 @@ test('feedback is private, idempotent, preserves manual edits and waits for both
     const urls = []
     const result = await verifyFeedbackDeployment(path, async url => { urls.push(url); return new Response(`<link rel="canonical" href="${url}">`) })
     expect(urls).toHaveLength(2)
+    expect(urls.every(url => url.startsWith('https://awesome-minimax-h3-cases.zzskysilent.com/'))).toBe(true)
     expect(result).toMatchObject({ status: 'ready-for-review', body: 'Maintainer edit' })
   } finally { await rm(root, { recursive: true, force: true }) }
 })

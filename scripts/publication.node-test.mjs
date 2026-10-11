@@ -11,6 +11,10 @@ async function fixture(t) {
   t.after(() => rm(root, { recursive: true, force: true }))
   await mkdir(join(root, 'scripts'))
   await mkdir(join(root, 'data'))
+  await mkdir(join(root, 'shared'))
+  await mkdir(join(root, 'config'))
+  await copyFile(new URL('../shared/site-config.mjs', import.meta.url), join(root, 'shared/site-config.mjs'))
+  await copyFile(new URL('../config/site.json', import.meta.url), join(root, 'config/site.json'))
   await mkdir(join(root, '.review/publish-staging'), { recursive: true })
   for (const name of ['commit-staged-cases.mjs', 'staged-publish.mjs', 'review-paths.mjs', 'redact-sensitive.mjs', 'submission-feedback.mjs', 'submission-reply.mjs', 'submission-reply-text.mjs']) {
     await copyFile(new URL(name, import.meta.url), join(root, 'scripts', name))

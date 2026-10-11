@@ -1,12 +1,13 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { taxonomyLabel } from './taxonomy.mjs'
+import { resolveSiteOrigin } from '../shared/site-config.mjs'
 
 const root = resolve(import.meta.dirname, '..')
 const dist = resolve(root, 'dist')
-const baseUrl = (process.env.PUBLIC_SITE_URL || 'https://h3-field-notes-production.up.railway.app').replace(/\/$/, '')
+const baseUrl = resolveSiteOrigin()
 // Static case/archive pages ship no SPA bundle, so the Umami tracker must be inlined here.
-const umamiTag = process.env.VITE_UMAMI_SCRIPT_URL && process.env.VITE_UMAMI_WEBSITE_ID
+const umamiTag = process.env.H3_REFERENCE_BUILD !== '1' && process.env.VITE_UMAMI_SCRIPT_URL && process.env.VITE_UMAMI_WEBSITE_ID
   ? `<script defer src="${process.env.VITE_UMAMI_SCRIPT_URL}" data-website-id="${process.env.VITE_UMAMI_WEBSITE_ID}"></script>`
   : ''
 const cases = JSON.parse(await readFile(resolve(root, 'data/cases.json'), 'utf8'))
@@ -1006,6 +1007,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 ${sitemapEntries}
 </urlset>\n`
 await writeFile(resolve(dist, 'sitemap.xml'), sitemap)
+await writeFile(resolve(dist, 'build-mode.json'), `${JSON.stringify({ reference: process.env.H3_REFERENCE_BUILD === '1' })}\n`)
 await writeFile(resolve(dist, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${baseUrl}/sitemap.xml\n`)
 
 const notFoundCopy = {

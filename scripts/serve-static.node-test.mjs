@@ -12,10 +12,10 @@ let outsideDir
 let rootDir
 let server
 
-function rawRequest(path, method = 'GET') {
-  const address = server.address()
+function rawRequest(path, method = 'GET', hostHeader, targetServer = server) {
+  const address = targetServer.address()
   return new Promise((resolveRequest, rejectRequest) => {
-    const request = httpRequest({ host: '127.0.0.1', method, path, port: address.port }, (response) => {
+    const request = httpRequest({ host: '127.0.0.1', method, path, port: address.port, headers: hostHeader ? { Host: hostHeader } : {} }, (response) => {
       const chunks = []
       response.on('data', (chunk) => chunks.push(chunk))
       response.on('end', () => resolveRequest({
@@ -169,6 +169,31 @@ test('normalizes a versioned video playback prefix and rejects unsafe values', (
       assert.throws(() => normalizeVideoPlaybackPrefix(value), /invalid object prefix/)
     }
   }
+})
+
+test('rejects analytics-free reference artifacts in production', async () => {
+  await writeFile(join(rootDir, 'build-mode.json'), JSON.stringify({ reference: true }))
+  await assert.rejects(createStaticServer({ distDir: rootDir, catalogPath: null, production: true }), /REFERENCE_BUILD_CANNOT_SERVE_PRODUCTION/)
+  await writeFile(join(rootDir, 'build-mode.json'), JSON.stringify({ reference: false }))
+  const productionServer = await createStaticServer({ distDir: rootDir, catalogPath: null, production: true })
+  productionServer.close()
+})
+
+test('redirects only legacy HTML requests while keeping legacy data clients working', async () => {
+  const migrationServer = await createStaticServer({ distDir: rootDir, catalogPath: null, redirectMode: 'temporary' })
+  await new Promise(resolveListen => migrationServer.listen(0, '127.0.0.1', resolveListen))
+  try {
+    const oldHost = 'h3-field-notes-production.up.railway.app'
+    const old = await rawRequest('/faq/?q=a%20b&added=release', 'GET', oldHost, migrationServer)
+    assert.equal(old.status, 302)
+    assert.equal(old.headers.location, 'https://awesome-minimax-h3-cases.zzskysilent.com/faq/?q=a%20b&added=release')
+    assert.equal(old.headers['cache-control'], 'no-store')
+    assert.equal((await rawRequest('/data/catalog.json', 'GET', oldHost, migrationServer)).status, 200)
+    assert.equal((await rawRequest('/faq/', 'GET', 'awesome-minimax-h3-cases.zzskysilent.com', migrationServer)).status, 200)
+    const head = await rawRequest('/faq/', 'HEAD', oldHost, migrationServer)
+    assert.equal(head.status, 302)
+    assert.equal(head.body, '')
+  } finally { await new Promise(resolveClose => migrationServer.close(resolveClose)) }
 })
 
 test('blocks traversal syntax and symlinks that escape the static root', async () => {

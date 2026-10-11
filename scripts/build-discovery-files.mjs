@@ -1,9 +1,10 @@
 import { readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { taxonomyLabel } from './taxonomy.mjs'
+import { resolveSiteOrigin } from '../shared/site-config.mjs'
 
 const root = resolve(import.meta.dirname, '..')
-const baseUrl = (process.env.PUBLIC_SITE_URL || 'https://h3-field-notes-production.up.railway.app').replace(/\/$/, '')
+const baseUrl = resolveSiteOrigin()
 const cases = JSON.parse(await readFile(resolve(root, 'data/cases.json'), 'utf8'))
 const tutorialGuides = JSON.parse(await readFile(resolve(root, 'data/tutorial-guides.json'), 'utf8'))
 const tutorialResources = JSON.parse(await readFile(resolve(root, 'data/tutorials.json'), 'utf8'))

@@ -1,6 +1,7 @@
-const baseUrl = 'https://h3-field-notes-production.up.railway.app'
+import { resolveSiteOrigin } from '../shared/site-config.mjs'
 
 export function publishedReply(type, item) {
+  const baseUrl = resolveSiteOrigin()
   const segment = type === 'case' ? 'cases' : 'tutorials'
   const zh = `${baseUrl}/${segment}/${item.id}/`
   const en = `${baseUrl}/en/${segment}/${item.id}/`

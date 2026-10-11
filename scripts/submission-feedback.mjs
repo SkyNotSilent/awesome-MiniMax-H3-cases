@@ -1,6 +1,7 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { publishedReply } from './submission-reply-text.mjs'
+import { resolveSiteOrigin } from '../shared/site-config.mjs'
 
 export async function ensureFeedbackDraft(root, type, item, issueUrl = item.contribution?.issueUrl) {
   if (!issueUrl) return null
@@ -21,7 +22,7 @@ export async function verifyFeedbackDeployment(path, fetchPage = fetch) {
   if (draft.status !== 'awaiting-deployment') return draft
   const segment = draft.type === 'case' ? 'cases' : 'tutorials'
   for (const prefix of ['', '/en']) {
-    const url = `https://h3-field-notes-production.up.railway.app${prefix}/${segment}/${draft.id}/`
+    const url = `${resolveSiteOrigin()}${prefix}/${segment}/${draft.id}/`
     const response = await fetchPage(url, { signal: AbortSignal.timeout(15000), redirect: 'error' })
     const body = await response.text()
     const canonical = [...body.matchAll(/<link\b[^>]*>/gi)].find(([tag]) => /\brel=["']canonical["']/i.test(tag))?.[0]
