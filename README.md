@@ -46,7 +46,7 @@ Start with a quick collection, then narrow it by date, duration, Prompt, categor
 - [Editor picks](https://awesome-minimax-h3-cases.zzskysilent.com/en/?collection=featured) — a stable set of 24–28 playable cases, refreshed periodically from public engagement signals and human source checks.
 - [Latest additions](https://awesome-minimax-h3-cases.zzskysilent.com/en/?collection=latest) — the existing compatible link, now ordered by first catalog addition rather than source publication date.
 - [Official examples](https://awesome-minimax-h3-cases.zzskysilent.com/en/?collection=official) — reproducible MiniMax scripts and source evidence.
-- **My saved cases** — the saved list stays in this browser; there is no login or cloud account.
+- **My saved cases** — Google sign-in binds saved cases to your account and syncs them across devices. First sign-in merges old browser favorites. See [account setup](docs/ACCOUNT_LOGIN.md).
 
 [Long videos](https://awesome-minimax-h3-cases.zzskysilent.com/en/?duration=OVER_15) and [complete Prompts](https://awesome-minimax-h3-cases.zzskysilent.com/en/?prompt=1) have dedicated filters. See [filter links, compatibility and runtime architecture](./docs/ARCHITECTURE.md) for implementation details.
 
@@ -119,7 +119,7 @@ npm run collection:demo
 ```
 
 <!-- build-metrics:start -->
-**Reference build (Node 22.23.1, analytics configuration omitted):** 104.5 kB homepage JavaScript gzip · 9.3 kB / 9 kB Chinese / English homepage HTML gzip · 5.2 kB first-page API gzip · 3.7 kB next-page API gzip · 5.2 kB search response gzip · 51.3 kB local fonts (nonblocking) · 1744.4 kB server-only index gzip. Run `npm run performance:budget` for static budgets and `npm run performance:browser` against a local production server for browser behavior.
+**Reference build (Node 22.23.1, analytics configuration omitted):** 107.9 kB homepage JavaScript gzip · 9.3 kB / 9 kB Chinese / English homepage HTML gzip · 5.2 kB first-page API gzip · 3.7 kB next-page API gzip · 5.2 kB search response gzip · 51.3 kB local fonts (nonblocking) · 1744.4 kB server-only index gzip. Run `npm run performance:budget` for static budgets and `npm run performance:browser` against a local production server for browser behavior.
 <!-- build-metrics:end -->
 
 ## Contribute or report a problem

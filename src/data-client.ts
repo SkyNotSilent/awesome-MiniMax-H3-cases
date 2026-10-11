@@ -32,10 +32,9 @@ async function loadJson<T>(path: string, force = false): Promise<T> {
 // for every visitor, so one cached request is enough.
 export const loadCatalog = (force = false) => loadJson<CatalogPayload>('/api/catalog/summary', force)
 
-export async function loadCatalogPage(params: URLSearchParams, favorites: string[], signal: AbortSignal): Promise<CatalogPage> {
+export async function loadCatalogPage(params: URLSearchParams, signal: AbortSignal): Promise<CatalogPage> {
   const response = await fetch(`/api/catalog?${params}`, {
     signal, cache: 'no-store', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-    ...(favorites.length ? { method: 'POST', body: JSON.stringify({ favorites }) } : {}),
   })
   if (!response.ok) throw Object.assign(new Error('Catalog query unavailable'), { status: response.status })
   return response.json() as Promise<CatalogPage>

@@ -55,14 +55,17 @@
     "verify": "node scripts/verify.mjs",
     "build:reference": "node scripts/reference-build.mjs",
     "test:server": "node --test scripts/*.node-test.mjs",
-    "performance:capacity": "node scripts/catalog-capacity.mjs"
+    "performance:capacity": "node scripts/catalog-capacity.mjs",
+    "auth:migrate": "node scripts/auth/migrate.mjs"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1109.0",
     "@aws-sdk/s3-request-presigner": "^3.1109.0",
     "@smithy/node-http-handler": "4.10.0",
     "@vitejs/plugin-react": "latest",
+    "google-auth-library": "^11.2.0",
     "lucide-react": "latest",
+    "pg": "^8.23.1",
     "react": "latest",
     "react-dom": "latest",
     "typescript": "latest",
@@ -73,6 +76,7 @@
     "@testing-library/jest-dom": "latest",
     "@testing-library/react": "latest",
     "@types/node": "latest",
+    "@types/pg": "^8.23.1",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "eslint": "latest",

@@ -46,7 +46,7 @@ MiniMax H3 也常被搜索为 **Hailuo H3**、**Hailuo 3.0**、**海螺 H3** 和
 - [编辑精选](https://awesome-minimax-h3-cases.zzskysilent.com/?collection=featured)：稳定保持 24–28 条可播放案例，基于公开互动表现与人工来源核验定期更新；
 - [最新收录](https://awesome-minimax-h3-cases.zzskysilent.com/?collection=latest)：保留原兼容入口，现按首次进入本站目录的时间排序，而不是来源发布时间；
 - [官方案例](https://awesome-minimax-h3-cases.zzskysilent.com/?collection=official)：MiniMax 可复现脚本与公开证据；
-- **我的收藏**：收藏列表仅保存在当前浏览器，不用登录，也不上传云端。
+- **我的收藏**：Google 登录后收藏与账号绑定，可跨设备同步；首次登录自动合并本机旧收藏。部署参见[账号配置](docs/ACCOUNT_LOGIN.md)。
 
 [长视频](https://awesome-minimax-h3-cases.zzskysilent.com/?duration=OVER_15)和[完整 Prompt](https://awesome-minimax-h3-cases.zzskysilent.com/?prompt=1)都有独立筛选。链接兼容、缓存和数据架构详见[开发说明](./docs/ARCHITECTURE.md)。
 
@@ -119,7 +119,7 @@ npm run collection:demo
 ```
 
 <!-- build-metrics:start -->
-**参考构建（Node 22.23.1，不含分析服务配置）：** 首页 JavaScript gzip 104.5 kB · 中文 / 英文首页 HTML gzip 9.3 kB / 9 kB · 首批 API gzip 5.2 kB · 下一页 API gzip 3.7 kB · 搜索响应 gzip 5.2 kB · 本地非阻塞字体 51.3 kB · 仅服务端索引 gzip 1744.4 kB。静态预算运行 `npm run performance:budget`；启动本地生产服务后运行 `npm run performance:browser` 验证浏览器行为。
+**参考构建（Node 22.23.1，不含分析服务配置）：** 首页 JavaScript gzip 107.9 kB · 中文 / 英文首页 HTML gzip 9.3 kB / 9 kB · 首批 API gzip 5.2 kB · 下一页 API gzip 3.7 kB · 搜索响应 gzip 5.2 kB · 本地非阻塞字体 51.3 kB · 仅服务端索引 gzip 1744.4 kB。静态预算运行 `npm run performance:budget`；启动本地生产服务后运行 `npm run performance:browser` 验证浏览器行为。
 <!-- build-metrics:end -->
 
 ## 投稿、纠错与下架
