@@ -2,6 +2,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { taxonomyLabel } from './taxonomy.mjs'
 import { resolveSiteOrigin } from '../shared/site-config.mjs'
+import { advertisingHead, advertisingSlot, siteLinks } from '../shared/advertising-markup.mjs'
 
 const root = resolve(import.meta.dirname, '..')
 const dist = resolve(root, 'dist')
@@ -632,6 +633,7 @@ function renderAppShell(page, locale, assetTags) {
 <html lang="${locale}">
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/advertising.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0a0b09" />
     <meta name="application-name" content="MiniMax H3 Cases &amp; Guides" />
@@ -800,7 +802,7 @@ ${videoMeta}
   <script type="application/ld+json">${jsonForHtml(structuredData)}</script>
   <style>${casePageStyle}${hostedCaseVideoStyle}</style>
   ${hasHostedVideo ? '' : '<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'}
-  ${umamiTag}
+  ${umamiTag}${advertisingHead}
 </head>
 <body><main>
   <nav class="case-nav" aria-label="${escapeHtml(locale === 'en' ? 'Case navigation' : '案例导航')}"><a href="${absolute(locale === 'en' ? '/en/' : '/')}">← ${escapeHtml(labels.back)}</a><a href="${alternate}" hreflang="${otherLocale(locale)}">${escapeHtml(labels.language)}</a></nav>
@@ -812,6 +814,7 @@ ${videoMeta}
   ${promptMarkup}
   ${relatedTutorials ? `<h2>${escapeHtml(locale === 'en' ? 'Related tutorials' : '相关教程')}</h2><ul>${relatedTutorials}</ul>` : ''}
   <p><a href="${escapeHtml(item.sourceUrl)}" rel="nofollow noopener">${escapeHtml(labels.source)} · ${escapeHtml(copy.sourceLabel)}</a></p>
+  ${siteLinks(locale)}
 </main>${embedded?.script ?? ''}</body></html>`
 }
 
@@ -842,7 +845,7 @@ function renderArchivePage(locale, pageNumber) {
     : `浏览第 ${start + 1}–${start + items.length} 个来源可追溯、可站内播放的 MiniMax H3 视频案例，共 ${cases.length} 个。`
   const list = items.map((item, index) => {
     const localized = localizedCase(item, locale)
-    return `<li><a href="${escapeHtml(casePath(locale, item.id))}"><img src="${escapeHtml(item.posterUrl)}" alt="" width="360" height="225" loading="lazy"><span><small>${start + index + 1} · ${escapeHtml(item.mode)} · ${escapeHtml(item.addedAt.slice(0, 10))}</small><strong>${escapeHtml(localized.title)}</strong><em>${escapeHtml(localized.author)}</em></span></a></li>`
+    return `<li><a href="${escapeHtml(casePath(locale, item.id))}"><img src="${escapeHtml(item.posterUrl)}" alt="" width="360" height="225" loading="lazy"><span><small>${start + index + 1} · ${escapeHtml(item.mode)} · ${escapeHtml(item.addedAt.slice(0, 10))}</small><strong>${escapeHtml(localized.title)}</strong><em>${escapeHtml(localized.author)}</em></span></a></li>${index === 11 ? advertisingSlot(locale).replace('<div ', '<li ').replace('</div>', '</li>') : ''}`
   }).join('')
   const structuredData = {
     '@context': 'https://schema.org',
@@ -863,7 +866,7 @@ function renderArchivePage(locale, pageNumber) {
       })),
     },
   }
-  return `<!doctype html><html lang="${locale}"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="${escapeHtml(description)}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="${canonical}">${alternateHeadLinks(paths)}<link rel="prev" href="${escapeHtml(absolute(previous))}">${next ? `<link rel="next" href="${escapeHtml(absolute(next))}">` : ''}<link rel="icon" href="/icon.svg" type="image/svg+xml"><title>${escapeHtml(title)}</title><script type="application/ld+json">${jsonForHtml(structuredData)}</script>${umamiTag}<style>body{margin:0;background:#090a08;color:#f0f0e8;font:15px/1.5 system-ui,sans-serif}main{width:min(1180px,calc(100% - 36px));margin:auto;padding:42px 0 80px}nav{display:flex;justify-content:space-between;gap:16px}a{color:inherit;text-decoration:none}nav a,.pager a{color:#d9ff43}h1{font-size:clamp(2.4rem,7vw,5.6rem);line-height:.94;letter-spacing:-.055em}main>p{color:#a7aba1}ol{margin:42px 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 22px;list-style:none}li a{display:block}img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;background:#151712}li span{display:grid;gap:7px;padding-top:12px}small,em{color:#858a80;font:normal 9px ui-monospace,monospace;text-transform:uppercase}strong{font-size:19px;line-height:1.18}.pager{display:flex;justify-content:space-between;gap:18px;padding-top:24px;border-top:1px solid #33372f}@media(max-width:800px){ol{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:520px){ol{grid-template-columns:1fr}}</style></head><body><main><nav><a href="${escapeHtml(archivePath(locale, 1))}">MiniMax H3 Cases &amp; Guides</a><a href="${escapeHtml(paths[otherLocale(locale)])}" hreflang="${otherLocale(locale)}">${locale === 'en' ? 'ZH' : 'EN'}</a></nav><h1>${escapeHtml(title)}</h1><p>${escapeHtml(description)}</p><ol>${list}</ol><div class="pager"><a href="${escapeHtml(previous)}">← ${escapeHtml(locale === 'en' ? 'Previous' : '上一页')}</a>${next ? `<a href="${escapeHtml(next)}">${escapeHtml(locale === 'en' ? 'Next' : '下一页')} →</a>` : '<span></span>'}</div></main></body></html>`
+  return `<!doctype html><html lang="${locale}"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="${escapeHtml(description)}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="${canonical}">${alternateHeadLinks(paths)}<link rel="prev" href="${escapeHtml(absolute(previous))}">${next ? `<link rel="next" href="${escapeHtml(absolute(next))}">` : ''}<link rel="icon" href="/icon.svg" type="image/svg+xml"><title>${escapeHtml(title)}</title><script type="application/ld+json">${jsonForHtml(structuredData)}</script>${umamiTag}${advertisingHead}<style>body{margin:0;background:#090a08;color:#f0f0e8;font:15px/1.5 system-ui,sans-serif}main{width:min(1180px,calc(100% - 36px));margin:auto;padding:42px 0 80px}nav{display:flex;justify-content:space-between;gap:16px}a{color:inherit;text-decoration:none}nav a,.pager a{color:#d9ff43}h1{font-size:clamp(2.4rem,7vw,5.6rem);line-height:.94;letter-spacing:-.055em}main>p{color:#a7aba1}ol{margin:42px 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 22px;list-style:none}li a{display:block}img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;background:#151712}li span{display:grid;gap:7px;padding-top:12px}small,em{color:#858a80;font:normal 9px ui-monospace,monospace;text-transform:uppercase}strong{font-size:19px;line-height:1.18}.pager{display:flex;justify-content:space-between;gap:18px;padding-top:24px;border-top:1px solid #33372f}@media(max-width:800px){ol{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:520px){ol{grid-template-columns:1fr}}</style></head><body><main><nav><a href="${escapeHtml(archivePath(locale, 1))}">MiniMax H3 Cases &amp; Guides</a><a href="${escapeHtml(paths[otherLocale(locale)])}" hreflang="${otherLocale(locale)}">${locale === 'en' ? 'ZH' : 'EN'}</a></nav><h1>${escapeHtml(title)}</h1><p>${escapeHtml(description)}</p><ol>${list}</ol><div class="pager"><a href="${escapeHtml(previous)}">← ${escapeHtml(locale === 'en' ? 'Previous' : '上一页')}</a>${next ? `<a href="${escapeHtml(next)}">${escapeHtml(locale === 'en' ? 'Next' : '下一页')} →</a>` : '<span></span>'}</div>${siteLinks(locale)}</main></body></html>`
 }
 
 function redirectPage(locale, to) {
@@ -995,6 +998,7 @@ ${alternateSitemapLinks(paths)}
 }
 
 const sitemapEntries = [
+  ...['about', 'contact'].flatMap(slug => locales.map(locale => sitemapPageEntry({ paths: { 'zh-CN': `/${slug}/`, en: `/en/${slug}/` } }, locale))),
   ...pageDefinitions.flatMap((page) => locales.map((locale) => sitemapPageEntry(page, locale))),
   ...Array.from({ length: Math.max(0, archivePageCount - 1) }, (_, index) => index + 2)
     .flatMap((pageNumber) => locales.map((locale) => sitemapArchiveEntry(pageNumber, locale))),
