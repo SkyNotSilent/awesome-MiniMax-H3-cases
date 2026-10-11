@@ -13,3 +13,9 @@ test('leaves APIs, media, health assets, local requests and new host untouched',
   for (const path of ['//evil.org/', '/\\evil.org/']) expect(legacyPageRedirect({ host, path, mode: 'permanent' })).toBeNull()
   expect(legacyPageRedirect({ host, path: '/', mode: 'permanent', method: 'POST' })).toBeNull()
 })
+
+test('keeps the explicit old-origin favorites import entry accessible', () => {
+  for (const path of ['/?collection=favorites&importFavorites=1', '/en/?collection=favorites&importFavorites=1']) expect(legacyPageRedirect({ host, path, mode: 'permanent' })).toBeNull()
+  expect(legacyPageRedirect({ host, path: '/?collection=favorites', mode: 'permanent' })?.status).toBe(308)
+  expect(legacyPageRedirect({ host, path: '/cases/example/?importFavorites=1', mode: 'permanent' })?.status).toBe(308)
+})

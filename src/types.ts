@@ -335,6 +335,7 @@ export interface CreatorCatalog {
 }
 
 export interface CatalogPage {
+  accountId?: string
   catalogVersion: string
   total: number
   cases: CatalogCase[]

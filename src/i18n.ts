@@ -142,7 +142,7 @@ export const copy = {
       noMatches: '换一个关键词或筛选条件试试。',
       favoritesEmptyEyebrow: '我的收藏',
       favoritesEmptyTitle: '你当前还没有收藏。',
-      favoritesEmptyDescription: '点开任意案例卡片右上角的星标即可收进这里；收藏只保存在当前浏览器，不需要登录。',
+      favoritesEmptyDescription: '点击案例卡片右上角的星标即可收藏；收藏与你的账号绑定，并在不同设备上同步。',
       addedDateFilterLabel: '本站收录时间',
       addedDatePresets: {
         release: '本次新增',
@@ -333,7 +333,7 @@ export const copy = {
       noMatches: 'Try another search or filter.',
       favoritesEmptyEyebrow: 'SAVED',
       favoritesEmptyTitle: 'You have not saved any cases yet.',
-      favoritesEmptyDescription: 'Tap the star on any case card to keep it here. Saved cases stay in this browser only, no account needed.',
+      favoritesEmptyDescription: 'Tap the star on any case card to save it to your account and sync across devices.',
       addedDateFilterLabel: 'Added to this library',
       addedDatePresets: {
         release: 'Latest additions',

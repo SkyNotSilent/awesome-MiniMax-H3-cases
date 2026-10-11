@@ -1,5 +1,6 @@
 import { readCatalogSnapshot } from './catalog-snapshot.mjs'
 import { createCatalogIndex } from '../shared/catalog-query.mjs'
+import { createAccountApi } from './auth/api.mjs'
 import { handleCatalogApi } from './catalog-api.mjs'
 import { createReadStream } from 'node:fs'
 import { readFile, realpath, stat } from 'node:fs/promises'
@@ -218,7 +219,7 @@ async function redirectVideo(request, response, videoStore, decodedPath) {
   return true
 }
 
-export async function createStaticServer({ distDir = DEFAULT_DIST_DIR, logger = console, videoStore = createVideoStoreFromEnv(), catalogPath = fileURLToPath(new URL('../build/server-data/catalog.ndjson', import.meta.url)), redirectMode = process.env.H3_LEGACY_REDIRECT || 'off', production = Boolean(process.env.RAILWAY_ENVIRONMENT_ID) || process.env.NODE_ENV === 'production' } = {}) {
+export async function createStaticServer({ distDir = DEFAULT_DIST_DIR, logger = console, videoStore = createVideoStoreFromEnv(), accountApi = createAccountApi(), catalogPath = fileURLToPath(new URL('../build/server-data/catalog.ndjson', import.meta.url)), redirectMode = process.env.H3_LEGACY_REDIRECT || 'off', production = Boolean(process.env.RAILWAY_ENVIRONMENT_ID) || process.env.NODE_ENV === 'production' } = {}) {
   const distRoot = await realpath(resolve(distDir))
   const rootStats = await stat(distRoot)
   if (!rootStats.isDirectory()) throw new Error(`Static root is not a directory: ${distRoot}`)
@@ -233,7 +234,8 @@ export async function createStaticServer({ distDir = DEFAULT_DIST_DIR, logger = 
   const catalogIndex = catalogPath ? createCatalogIndex(await readCatalogSnapshot(catalogPath)) : null
   const server = createServer({ requestTimeout: 10000, headersTimeout: 10000 }, async (request, response) => {
     try {
-      if (await handleCatalogApi(request, response, catalogIndex)) return
+      if (await accountApi.handle(request, response, catalogIndex)) return
+      if (await handleCatalogApi(request, response, catalogIndex, accountApi)) return
       if (request.method !== 'GET' && request.method !== 'HEAD') {
         writeText(response, request.method, 405, '<!doctype html><title>405 Method Not Allowed</title><h1>405 Method Not Allowed</h1>', {
           Allow: 'GET, HEAD',
@@ -320,6 +322,7 @@ export async function createStaticServer({ distDir = DEFAULT_DIST_DIR, logger = 
     }
   })
 
+  server.on('close', () => { void accountApi.close() })
   return server
 }
 

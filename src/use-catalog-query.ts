@@ -3,8 +3,8 @@ import { queryCatalog } from '../shared/catalog-query.mjs'
 import { loadCatalogPage } from './data-client'
 import type { CatalogPage } from './types'
 
-export function useCatalogQuery(params: URLSearchParams, favorites: string[], enabled: boolean, fixtureIndex: unknown = null) {
-  const key = JSON.stringify([params.toString(), favorites])
+export function useCatalogQuery(params: URLSearchParams, favorites: string[], enabled: boolean, fixtureIndex: unknown = null, accountKey = '') {
+  const key = JSON.stringify([params.toString(), favorites, accountKey])
   const [result, setResult] = useState<{ key: string; page: CatalogPage } | null>(null)
   const [failure, setFailure] = useState<string | null>(null)
   const [busy, setBusy] = useState(false)
@@ -35,29 +35,31 @@ export function useCatalogQuery(params: URLSearchParams, favorites: string[], en
     controller.current?.abort()
     const abort = new AbortController(); controller.current = abort
     setBusy(true); setFailure(null)
-    const [query, ids] = JSON.parse(key) as [string, string[]]
+    const [query] = JSON.parse(key) as [string]
     const nextParams = new URLSearchParams(query)
     if (cursor) { nextParams.set('cursor', cursor); nextParams.set('limit', '24') }
     try {
       let page: CatalogPage
-      try { page = await loadCatalogPage(nextParams, ids, abort.signal) } catch (error) {
+      try { page = await loadCatalogPage(nextParams, abort.signal) } catch (error) {
         if (!cursor || (error as { status?: number }).status !== 409) throw error
         nextParams.delete('cursor'); nextParams.set('limit', '36'); cursor = null
-        page = await loadCatalogPage(nextParams, ids, abort.signal)
+        page = await loadCatalogPage(nextParams, abort.signal)
       }
+      if (nextParams.get('collection') === 'favorites' && page.accountId !== accountKey) throw new Error('Account changed')
       if (id !== sequence.current || abort.signal.aborted || activeKey.current !== key) return
       setResult(previous => ({ key, page: cursor && previous?.key === key && previous.page.catalogVersion === page.catalogVersion ? { ...page, cases: [...previous.page.cases, ...page.cases] } : page }))
     } catch {
       if (!abort.signal.aborted && id === sequence.current && activeKey.current === key) setFailure(key)
     } finally { if (id === sequence.current && !abort.signal.aborted) setBusy(false) }
-  }, [enabled, fixtureIndex, key])
+  }, [accountKey, enabled, fixtureIndex, key])
   useEffect(() => {
     // Queue so effect cleanup can abort an obsolete navigation before it starts.
     let live = true
     void Promise.resolve().then(() => { if (live) void request() })
     return () => { live = false; controller.current?.abort() }
   }, [request, retry])
-  const page = fixturePage ?? result?.page ?? null
+  const personal = params.get('collection') === 'favorites'
+  const page = enabled ? fixturePage ?? (personal && result?.key !== key ? null : result?.page ?? null) : null
   return {
     page, error: failure === key,
     loading: !fixtureIndex && enabled && (busy || result?.key !== key) && failure !== key,

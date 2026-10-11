@@ -1,3 +1,5 @@
+import { useAccount, type Account } from './use-account'
+import { AccountControls, AccountNotice, AccountPrivacy, FavoriteGate, LegacyFavoritesLink } from './AccountControls'
 import { createCatalogIndex, searchText } from '../shared/catalog-query.mjs'
 import { useCatalogQuery } from './use-catalog-query'
 import { createReleaseBatches, type ReleaseBatches } from './releases'
@@ -105,7 +107,6 @@ const tutorialCategories: Array<'all' | TutorialCategory> = [
 ]
 const durationRanges = ['ALL', 'UP_TO_5', 'SIX_TO_10', 'ELEVEN_TO_15', 'OVER_15'] as const
 type DurationRange = (typeof durationRanges)[number]
-const favoriteStorageKey = 'minimax-h3-favorite-cases'
 // Prompt-only and long-video folders were retired: they duplicated the primary
 // Prompt switch and the 15s+ duration range. Legacy URLs map onto those filters.
 const collectionKeys = ['all', 'featured', 'latest', 'official', 'favorites'] as const
@@ -389,6 +390,7 @@ function HostedVideo({ item, language, title, preparedVideo }: { item: CatalogCa
 }
 
 function App() {
+  const account = useAccount()
   const [route, setRoute] = useState(initialRoute)
   const [navigation, setNavigation] = useState(0)
   const [catalog, setCatalog] = useState<CatalogPayload | null>(testCatalog)
@@ -504,8 +506,9 @@ function App() {
   return (
     <main id="top">
       <div className="grain" aria-hidden="true" />
-      <Header language={language} page={route.page} onLanguageChange={switchLanguage} />
-      {route.page === 'home' && <HomePage key={navigation} language={language} releases={releases} catalog={catalog} catalogError={catalogError} onRetryCatalog={reloadCatalog} />}
+      <Header account={account} language={language} page={route.page} onLanguageChange={switchLanguage} />
+      <AccountNotice account={account} language={language} />
+      {route.page === 'home' && <HomePage account={account} key={navigation} language={language} releases={releases} catalog={catalog} catalogError={catalogError} onRetryCatalog={reloadCatalog} />}
       {route.page === 'tutorials' && tutorialGuides && releases && <TutorialsPage key={navigation} language={language} releases={releases} tutorialGuides={tutorialGuides} />}
       {route.page === 'tutorial-ecosystem' && tutorialGuides && tutorialResources && <TutorialEcosystemPage language={language} tutorialGuides={tutorialGuides} tutorialResources={tutorialResources} />}
       {route.page === 'tutorial-detail' && activeTutorial && tutorialGuides && tutorialResources && <TutorialDetailPage language={language} tutorial={activeTutorial} tutorialGuides={tutorialGuides} tutorialResources={tutorialResources} />}
@@ -514,6 +517,7 @@ function App() {
       {!['home', 'faq', 'skills', 'skill-detail'].includes(route.page) && ((!catalog && catalogError) || routeDataError) && <ResourceState language={language} failed onRetry={() => { reloadCatalog(); reloadRouteData() }} />}
       {!['home', 'faq', 'skills', 'skill-detail'].includes(route.page) && !routeDataError && (!catalog || (needsTutorials && !tutorialGuides)) && <ResourceState language={language} />}
       {route.page === 'faq' && <FaqPage language={language} />}
+      <AccountPrivacy language={language} />
       <Footer language={language} />
     </main>
   )
@@ -532,12 +536,14 @@ function ResourceState({ language, failed = false, onRetry }: { language: Langua
 }
 
 function Header({
+  account,
   language,
   page,
   onLanguageChange,
 }: {
   language: Language
   page: AppPage
+  account: Account
   onLanguageChange: (language: Language) => void
 }) {
   const t = copy[language]
@@ -565,6 +571,7 @@ function Header({
           <a href={pathFor(language, 'faq')} aria-current={page === 'faq' ? 'page' : undefined}>{t.nav.faq}</a>
         </nav>
         <div className="header-actions">
+          <AccountControls account={account} language={language} />
           <a
             className="language-button"
             href={`${languageHref}${window.location.search}${window.location.hash}`}
@@ -781,12 +788,14 @@ function UpdateSummary({
 }
 
 function HomePage({
+  account,
   language,
   releases,
   catalog,
   catalogError,
   onRetryCatalog,
 }: {
+  account: Account
   language: Language
   releases: ReleaseBatches | null
   catalog: CatalogPayload | null
@@ -798,14 +807,7 @@ function HomePage({
   const [promptOnly, setPromptOnly] = useState(() => initialFilters().prompt)
   const [activeCollection, setActiveCollection] = useState<CaseCollection>(() => initialFilters().collection)
   const [activeAddedDate, setActiveAddedDate] = useState<AddedDatePreset>(() => initialFilters().added)
-  const [favorites, setFavorites] = useState<Set<string>>(() => {
-    try {
-      const saved = JSON.parse(window.localStorage.getItem(favoriteStorageKey) || '[]')
-      return new Set(Array.isArray(saved) ? saved.filter((id): id is string => typeof id === 'string' && /^[\w.-]{1,160}$/.test(id)).slice(0, 10000) : [])
-    } catch {
-      return new Set()
-    }
-  })
+  const favorites = account.favorites
   const [activeCategory, setActiveCategory] = useState(() => initialTaxonomyFilter('category'))
   const [activeStyle, setActiveStyle] = useState(() => initialTaxonomyFilter('style'))
   const [activeScene, setActiveScene] = useState(() => initialTaxonomyFilter('scene'))
@@ -847,20 +849,7 @@ function HomePage({
     return () => clearTimeout(timer)
   }, [deferredQuery])
 
-  const toggleFavorite = (id: string) => {
-    track('favorite-toggle', { caseId: id, action: favorites.has(id) ? 'remove' : 'add' })
-    setFavorites((current) => {
-      const next = new Set(current)
-      if (next.has(id)) next.delete(id)
-      else next.add(id)
-      try {
-        window.localStorage.setItem(favoriteStorageKey, JSON.stringify([...next]))
-      } catch {
-        // Favorites remain available for the current session when storage is blocked.
-      }
-      return next
-    })
-  }
+  const toggleFavorite = account.toggleFavorite
 
   const [queryNow] = useState(() => new Date())
   const queryParams = new URLSearchParams({ language })
@@ -873,7 +862,7 @@ function HomePage({
     start.setDate(start.getDate() - (activeAddedDate === '7d' ? 6 : 29))
     queryParams.set('from', start.toISOString()); queryParams.set('to', queryNow.toISOString())
   }
-  const directory = useCatalogQuery(queryParams, activeCollection === 'favorites' ? [...favorites].sort() : [], Boolean(catalog), testQueryIndex)
+  const directory = useCatalogQuery(queryParams, activeCollection === 'favorites' ? [...favorites].sort() : [], Boolean(catalog) && (activeCollection !== 'favorites' || Boolean(account.user) && !account.loading), testQueryIndex, activeCollection === 'favorites' ? account.user?.id ?? '' : '')
   const filtered = directory.page?.cases ?? emptyCatalogCases
   const total = directory.page?.total ?? 0
   const facetCounts = {
@@ -923,7 +912,7 @@ function HomePage({
   }, [catalogReady, loadMoreAutomatically])
 
   const visibleCases = filtered
-  const validFavoriteCount = directory.page?.favoriteCount ?? 0
+  const validFavoriteCount = favorites.size
   const hasEmptyFavoriteCollection = activeCollection === 'favorites' && validFavoriteCount === 0
 
   const advancedCount = [activeCategory, activeStyle, activeScene].filter((value) => value !== 'ALL').length
@@ -1078,6 +1067,8 @@ function HomePage({
           <span>{String(total).padStart(2, '0')}</span> {t.catalog.resultUnit}
         </div>
 
+        {activeCollection === 'favorites' && (!account.user || account.loading) ? <FavoriteGate account={account} language={language} /> : null}
+        {activeCollection === 'favorites' ? <LegacyFavoritesLink language={language} /> : null}
         <div className="case-grid">
           {visibleCases.map((item, index) => (
             <CaseCard

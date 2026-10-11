@@ -5502,3 +5502,38 @@ footer {
   .tutorial-skills-band span { grid-column: 1; }
   .tutorial-skills-band svg { grid-column: 2; grid-row: 1 / span 3; }
 }
+
+.account-login { border: 1px solid var(--line, #d9d8d3); border-radius: 6px; background: transparent; color: inherit; padding: 8px 12px; font: inherit; font-size: 12px; cursor: pointer; white-space: nowrap; }
+.account-login:disabled { opacity: .5; cursor: wait; }
+.account-menu { position: relative; font-size: 12px; }
+.account-menu summary { display: flex; gap: 7px; align-items: center; cursor: pointer; list-style: none; }
+.account-menu summary img { border-radius: 50%; }
+.account-menu summary > span:last-child { max-width: 100px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.account-menu-panel { position: absolute; right: 0; top: calc(100% + 14px); z-index: 80; width: 240px; padding: 16px; background: #151812; color: var(--ink); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 8px 30px #0001; display: grid; gap: 12px; }
+.account-menu-panel small { overflow-wrap: anywhere; color: var(--muted); }
+.account-menu-panel button, .account-notice button { font: inherit; cursor: pointer; background: transparent; border: 0; padding: 0; text-align: left; text-decoration: underline; }
+.account-notice { padding-top: 14px; padding-bottom: 14px; display: flex; gap: 16px; font-size: 13px; color: #f3b08d; }
+.account-privacy { padding-top: 24px; padding-bottom: 24px; font-size: 12px; color: var(--muted); }
+.account-privacy summary { cursor: pointer; }
+.account-privacy p { max-width: 780px; line-height: 1.8; }
+.favorite-gate { text-align: center; padding: 50px 18px; }
+.favorite-gate h2 { font-size: 22px; }
+.favorite-gate p { font-size: 14px; color: var(--muted); }
+.legacy-favorites-link { display: inline-block; margin: 14px 0; font-size: 12px; }
+@media (max-width: 700px) { .account-login { font-size: 11px; padding: 6px 8px; } .account-menu summary > span:last-child { display: none; } .header-actions { gap: 8px; } .account-notice { flex-wrap: wrap; } }
+
+@media (max-width: 700px) {
+  .site-header .brand { font-size: 16px; gap: 8px; }
+  .header-actions .account-login { max-width: 76px; white-space: normal; letter-spacing: 0; line-height: 1.3; }
+  .header-actions .language-button { padding: 0 8px; gap: 4px; min-height: 36px; }
+  .header-actions .source-button { width: 30px; min-height: 36px; }
+}
+
+.account-login-nav { display: inline-flex; align-items: center; gap: 7px; min-height: 38px; }
+.account-login-nav svg { flex: 0 0 16px; }
+.account-login-compact { display: none; }
+@media (max-width: 700px) {
+  .header-actions .account-login-nav { max-width: none; white-space: nowrap; gap: 5px; }
+  .account-login-nav .account-login-label { display: none; }
+  .account-login-compact { display: inline; }
+}

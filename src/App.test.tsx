@@ -6,6 +6,8 @@ import tutorialGuides from '../data/tutorial-guides.json'
 import { latestReleaseWindow } from '../shared/release-window.mjs'
 import { matchesAddedDate } from './updates'
 import App from './App'
+import { startGoogleLogin } from './account-navigation'
+vi.mock('./account-navigation', () => ({ startGoogleLogin: vi.fn() }))
 import { languagePreferenceKey } from './i18n'
 
 vi.mock('../data/cases.json', async (importOriginal) => {
@@ -49,6 +51,8 @@ const [, latestMonth, latestDay] = projectStats.latestUpdate.publishedAt.split('
 const latestUpdateDate = `${latestMonth}月${latestDay}日`
 
 beforeEach(() => {
+  vi.mocked(startGoogleLogin).mockClear()
+  vi.spyOn(globalThis, 'fetch').mockResolvedValue(new Response(JSON.stringify({ enabled: true, user: null, csrfToken: null })))
   window.localStorage.clear()
   window.sessionStorage.clear()
   window.localStorage.setItem(languagePreferenceKey, 'zh')
@@ -427,35 +431,36 @@ describe('case-first routes', () => {
     expect(window.location.search).toBe('?added=release')
   })
 
-  it('stores anonymous favorites locally and restores the saved collection', () => {
+  it('requires Google sign-in for favorites and leaves old browser data untouched', async () => {
+    window.localStorage.setItem('minimax-h3-favorite-cases', JSON.stringify(['official-t2va-starship']))
     renderAt('/')
-    const starship = screen.getByText('舰桥上的跃迁余震').closest('article')
-    expect(starship).not.toBeNull()
-    fireEvent.click(within(starship!).getByRole('button', { name: '收藏案例' }))
-    expect(JSON.parse(window.localStorage.getItem('minimax-h3-favorite-cases') || '[]')).toContain('official-t2va-starship')
-
+    await waitFor(() => expect(screen.getByRole('button', { name: 'Google 登录' })).not.toBeDisabled())
+    const starship = screen.getByText('舰桥上的跃迁余震').closest('article')!
+    fireEvent.click(within(starship).getByRole('button', { name: '收藏案例' }))
+    expect(startGoogleLogin).toHaveBeenCalledWith(expect.stringContaining('/'))
+    expect(JSON.parse(window.sessionStorage.getItem('minimax-h3-pending-favorite')!)).toMatchObject({ id: 'official-t2va-starship' })
+    expect(JSON.parse(window.localStorage.getItem('minimax-h3-favorite-cases')!)).toEqual(['official-t2va-starship'])
     cleanup()
     renderAt('/?collection=favorites')
-    expect(screen.getByRole('button', { name: /我的收藏/ })).toHaveAttribute('aria-pressed', 'true')
-    expect(screen.getByText('舰桥上的跃迁余震')).toBeInTheDocument()
-    expect(screen.queryByText('粉色西装与黑色羔羊')).not.toBeInTheDocument()
+    expect(await screen.findByText('登录后查看你的收藏')).toBeInTheDocument()
+    expect(screen.queryByText('舰桥上的跃迁余震')).not.toBeInTheDocument()
   })
 
-  it('explains an empty saved collection without offering a reset action', () => {
-    window.localStorage.setItem('minimax-h3-favorite-cases', JSON.stringify(['missing-case-id']))
+  it('explains an empty account collection and sync across devices', async () => {
+    vi.mocked(fetch).mockImplementation(async input => new Response(JSON.stringify(String(input)==='/api/auth/session'
+      ? { enabled:true,user:{id:'account-a',name:'A',email:'a@example.com',picture:null},csrfToken:'csrf' }
+      : { userId:'account-a',favorites:[] })))
     renderAt('/?collection=favorites')
-
-    const emptyState = document.querySelector<HTMLElement>('.empty-state')
-    expect(emptyState).not.toBeNull()
-    expect(within(emptyState!).getByText('你当前还没有收藏。')).toBeInTheDocument()
-    expect(within(emptyState!).getByText('点开任意案例卡片右上角的星标即可收进这里；收藏只保存在当前浏览器，不需要登录。')).toBeInTheDocument()
-    expect(within(emptyState!).queryByRole('button')).not.toBeInTheDocument()
+    expect(await screen.findByText('你当前还没有收藏。')).toBeInTheDocument()
+    expect(screen.getByText('点击案例卡片右上角的星标即可收藏；收藏与你的账号绑定，并在不同设备上同步。')).toBeInTheDocument()
   })
 
-  it('keeps the generic no-match copy when saved cases are narrowed by another filter', () => {
-    window.localStorage.setItem('minimax-h3-favorite-cases', JSON.stringify(['official-t2va-starship']))
+  it('keeps generic no-match copy when account favorites are narrowed', async () => {
+    vi.mocked(fetch).mockImplementation(async input => new Response(JSON.stringify(String(input)==='/api/auth/session'
+      ? { enabled:true,user:{id:'account-a',name:'A',email:'a@example.com',picture:null},csrfToken:'csrf' }
+      : { userId:'account-a',favorites:['official-t2va-starship'] })))
     renderAt('/?collection=favorites')
-
+    await screen.findByText('舰桥上的跃迁余震')
     fireEvent.click(screen.getByRole('button', { name: /超过 15 秒/ }))
     expect(screen.getByText('换一个关键词或筛选条件试试。')).toBeInTheDocument()
     expect(screen.queryByText('你当前还没有收藏。')).not.toBeInTheDocument()

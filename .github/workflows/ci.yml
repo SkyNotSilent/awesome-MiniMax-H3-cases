@@ -11,6 +11,21 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    services:
+      accounts-db:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: test-password
+          POSTGRES_DB: h3_auth_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      TEST_AUTH_DATABASE_URL: postgresql://postgres:test-password@127.0.0.1:5432/h3_auth_test
     steps:
       - uses: actions/checkout@v7
         with:
