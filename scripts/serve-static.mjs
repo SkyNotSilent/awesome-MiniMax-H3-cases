@@ -11,6 +11,8 @@ import { GetObjectCommand, HeadObjectCommand, S3Client } from '@aws-sdk/client-s
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner'
 import { legacyPageRedirect } from '../shared/site-redirect.mjs'
 import { resolveSiteOrigin } from '../shared/site-config.mjs'
+import { advertisingRootHost, advertisingVerification } from '../shared/advertising-config.mjs'
+import { handleAdvertisingRequest } from './advertising-http.mjs'
 
 const DEFAULT_DIST_DIR = fileURLToPath(new URL('../dist/', import.meta.url))
 
@@ -105,8 +107,16 @@ async function existingPath(root, candidate) {
   return { canonicalPath, fileStats, forbidden: false }
 }
 
-async function sendFile(request, response, file, statusCode = 200) {
+async function sendFile(request, response, file, statusCode = 200, advertisingEnv = process.env) {
   const { canonicalPath, fileStats } = file
+  if (statusCode === 200 && extname(canonicalPath) === '.html') {
+    const html = await readFile(canonicalPath, 'utf8')
+    const verified = advertisingVerification(html, advertisingEnv, request.headers.host)
+    if (verified !== html) {
+      writeText(response, request.method, statusCode, verified)
+      return
+    }
+  }
   const etag = entityTag(fileStats)
   response.setHeader('Cache-Control', cacheControl(canonicalPath, statusCode))
   response.setHeader('Content-Type', mimeType(canonicalPath))
@@ -219,7 +229,7 @@ async function redirectVideo(request, response, videoStore, decodedPath) {
   return true
 }
 
-export async function createStaticServer({ distDir = DEFAULT_DIST_DIR, logger = console, videoStore = createVideoStoreFromEnv(), accountApi = createAccountApi(), catalogPath = fileURLToPath(new URL('../build/server-data/catalog.ndjson', import.meta.url)), redirectMode = process.env.H3_LEGACY_REDIRECT || 'off', production = Boolean(process.env.RAILWAY_ENVIRONMENT_ID) || process.env.NODE_ENV === 'production' } = {}) {
+export async function createStaticServer({ distDir = DEFAULT_DIST_DIR, logger = console, videoStore = createVideoStoreFromEnv(), accountApi = createAccountApi(), catalogPath = fileURLToPath(new URL('../build/server-data/catalog.ndjson', import.meta.url)), redirectMode = process.env.H3_LEGACY_REDIRECT || 'off', production = Boolean(process.env.RAILWAY_ENVIRONMENT_ID) || process.env.NODE_ENV === 'production', advertisingEnv = process.env } = {}) {
   const distRoot = await realpath(resolve(distDir))
   const rootStats = await stat(distRoot)
   if (!rootStats.isDirectory()) throw new Error(`Static root is not a directory: ${distRoot}`)
@@ -234,6 +244,7 @@ export async function createStaticServer({ distDir = DEFAULT_DIST_DIR, logger = 
   const catalogIndex = catalogPath ? createCatalogIndex(await readCatalogSnapshot(catalogPath)) : null
   const server = createServer({ requestTimeout: 10000, headersTimeout: 10000 }, async (request, response) => {
     try {
+      if (await handleAdvertisingRequest(request, response, advertisingEnv)) return
       if (await accountApi.handle(request, response, catalogIndex)) return
       if (await handleCatalogApi(request, response, catalogIndex, accountApi)) return
       if (request.method !== 'GET' && request.method !== 'HEAD') {
@@ -275,7 +286,7 @@ export async function createStaticServer({ distDir = DEFAULT_DIST_DIR, logger = 
 
       if (await redirectVideo(request, response, videoStore, target.decodedPath)) return
 
-      const requestedPath = resolve(distRoot, `.${target.decodedPath}`)
+      const requestedPath = resolve(distRoot, request.headers.host === advertisingRootHost && target.decodedPath === '/' ? 'domain.html' : `.${target.decodedPath}`)
       if (!isPathInside(distRoot, requestedPath)) {
         writeText(response, request.method, 403, '<!doctype html><title>403 Forbidden</title><h1>403 Forbidden</h1>')
         return
@@ -301,7 +312,7 @@ export async function createStaticServer({ distDir = DEFAULT_DIST_DIR, logger = 
       }
 
       if (requestedFile && !requestedFile.forbidden && requestedFile.fileStats.isFile()) {
-        await sendFile(request, response, requestedFile)
+        await sendFile(request, response, requestedFile, 200, advertisingEnv)
         return
       }
 

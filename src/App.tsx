@@ -1,10 +1,11 @@
 import { useAccount, type Account } from './use-account'
+import { AdSlot, SiteLinks } from './Advertising'
 import { AccountControls, AccountNotice, AccountPrivacy, FavoriteGate, LegacyFavoritesLink } from './AccountControls'
 import { createCatalogIndex, searchText } from '../shared/catalog-query.mjs'
 import { useCatalogQuery } from './use-catalog-query'
 import { createReleaseBatches, type ReleaseBatches } from './releases'
 import { hasExplicitFilters, parseFilters, writeFilters } from '../shared/filter-state.mjs'
-import { lazy, Suspense, useCallback, useDeferredValue, useEffect, useLayoutEffect, useMemo, useRef, useState, useTransition, type CSSProperties, type ReactNode } from 'react'
+import { Fragment, lazy, Suspense, useCallback, useDeferredValue, useEffect, useLayoutEffect, useMemo, useRef, useState, useTransition, type CSSProperties, type ReactNode } from 'react'
 import {
   ArrowUpRight,
   ArrowDownRight,
@@ -1071,17 +1072,19 @@ function HomePage({
         {activeCollection === 'favorites' ? <LegacyFavoritesLink language={language} /> : null}
         <div className="case-grid">
           {visibleCases.map((item, index) => (
-            <CaseCard
-              key={item.id}
-              item={item}
-              index={index}
-              language={language}
-              onOpen={(video) => { track('case-open', { caseId: item.id, category: item.category, mode: item.mode, source: 'grid', locale: language }); setSelected({ item, video }) }}
-              isFavorite={favorites.has(item.id)}
-              onFavorite={() => toggleFavorite(item.id)}
-              isNew={matchesAddedDate(item.addedAt, 'release', releases?.cases)}
-              isFeatured={item.isFeatured ?? featuredCaseIds.has(item.id)}
-            />
+            <Fragment key={item.id}>
+              <CaseCard
+                item={item}
+                index={index}
+                language={language}
+                onOpen={(video) => { track('case-open', { caseId: item.id, category: item.category, mode: item.mode, source: 'grid', locale: language }); setSelected({ item, video }) }}
+                isFavorite={favorites.has(item.id)}
+                onFavorite={() => toggleFavorite(item.id)}
+                isNew={matchesAddedDate(item.addedAt, 'release', releases?.cases)}
+                isFeatured={item.isFeatured ?? featuredCaseIds.has(item.id)}
+              />
+              {index === 11 && activeCollection !== 'favorites' && !directory.error && !catalogError && new URLSearchParams(window.location.search).get('importFavorites') !== '1' ? <AdSlot placement="catalog" language={language} /> : null}
+            </Fragment>
           ))}
           {(!catalog || (!directory.page && directory.loading)) && !catalogError ? Array.from({ length: 12 }, (_, index) => <div className="case-card case-card-skeleton" key={index} aria-hidden="true"><span /></div>) : null}
         </div>
@@ -1871,6 +1874,7 @@ function TutorialDetailPage({ language, tutorial, tutorialGuides, tutorialResour
           </div>
         )}
 
+        <AdSlot key={tutorial.id} placement="tutorial" language={language} />
         {resources.length > 0 && (
           <section className="tutorial-related-resources">
             <h2>{t.related}</h2>
@@ -2110,6 +2114,7 @@ function Footer({ language }: { language: Language }) {
     <footer className="shell">
       <div className="footer-mark"><Sparkles size={16} /> {t.mark}</div>
       <p>{t.note}</p>
+      <SiteLinks language={language} />
       <span>MINIMAX H3 CASES &amp; GUIDES — 2026</span>
     </footer>
   )

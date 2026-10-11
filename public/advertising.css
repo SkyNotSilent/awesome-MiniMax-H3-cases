@@ -1,0 +1,9 @@
+.h3-ad-slot[hidden]{display:none!important}
+.h3-ad-slot{grid-column:1/-1;min-width:0;margin:32px 0;padding:24px 0;border-top:1px solid #34362e;border-bottom:1px solid #34362e;overflow:hidden}
+.h3-ad-slot>small{display:block;margin:0 0 16px;color:#929689;font:11px/1.5 system-ui,sans-serif}
+.h3-ad-slot ins{display:block;min-height:280px}
+.h3-site-links{display:flex;flex-wrap:wrap;gap:14px;margin:24px 0;font:13px/1.6 system-ui,sans-serif}
+.h3-site-links a,.h3-site-links button{color:inherit}
+.h3-site-links button{font:inherit;background:none;border:0;padding:0;text-decoration:underline;cursor:pointer}
+.h3-site-links [data-ad-privacy-status]{flex-basis:100%;font-size:12px}
+@media(max-width:600px){.h3-ad-slot{margin:24px 0}.h3-ad-slot ins{min-height:250px}}
