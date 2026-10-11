@@ -175,7 +175,7 @@ async function checkCombinedLoading(browser) {
 }
 
 async function checkMobile(browser) {
-  const context = await createUntrackedContext(browser, { ...devices['iPhone 13'] })
+  const context = await createUntrackedContext(browser, { ...devices['iPhone 13'], permissions: ['clipboard-read', 'clipboard-write'] })
   await context.addInitScript(() => {
     localStorage.setItem('minimax-h3-language', 'zh')
   })
@@ -184,6 +184,18 @@ async function checkMobile(browser) {
   const dimensions = await page.evaluate(() => ({ viewport: innerWidth, document: document.documentElement.scrollWidth }))
   if (dimensions.document > dimensions.viewport + 1) throw new Error(`Mobile horizontal overflow: ${JSON.stringify(dimensions)}`)
   if (await page.locator('.case-card').count() !== 36) throw new Error('Mobile initial card count is not 36.')
+  await ready(page, '/en/?prompt=1')
+  await page.locator('.case-card .media').first().click()
+  await page.locator('.published-prompt pre').waitFor()
+  const rowsOverlap = await page.evaluate(() => {
+    const video = document.querySelector('.dialog-video').getBoundingClientRect()
+    const copy = document.querySelector('.dialog-copy').getBoundingClientRect()
+    return copy.top < video.bottom - 1
+  })
+  if (rowsOverlap) throw new Error('MOBILE_DIALOG_ROWS_OVERLAP')
+  await page.locator('.prompt-heading button').click()
+  const copied = await page.evaluate(async () => (await navigator.clipboard.readText()) === document.querySelector('.published-prompt pre').textContent)
+  if (!copied) throw new Error('MOBILE_PROMPT_COPY_FAILED')
   console.log(JSON.stringify({ mobile: dimensions }))
   await context.close()
 }
@@ -257,12 +269,16 @@ async function checkLatestRelease(browser) {
 
 const browser = await chromium.launch({ headless: true })
 try {
-  await checkDesktop(browser)
-  await checkAutomaticLoading(browser)
-  await checkCombinedLoading(browser)
-  await checkMobile(browser)
-  await checkFirstVisitLayout(browser)
-  await checkLatestRelease(browser)
+  if (process.argv.includes('--mobile-copy-only')) {
+    await checkMobile(browser)
+  } else {
+    await checkDesktop(browser)
+    await checkAutomaticLoading(browser)
+    await checkCombinedLoading(browser)
+    await checkMobile(browser)
+    await checkFirstVisitLayout(browser)
+    await checkLatestRelease(browser)
+  }
 } finally {
   await browser.close()
 }

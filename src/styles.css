@@ -1731,7 +1731,7 @@ footer > span {
   .toolkit-heading { grid-template-columns: 1fr; gap: 36px; }
   .toolkit-notes { grid-template-columns: 1fr; }
   .method-heading { position: static; }
-  .case-dialog { grid-template-columns: 1fr; }
+  .case-dialog { display: block; }
   .dialog-video { position: static; min-height: 0; }
   .x-embed-shell { min-height: 560px; padding-inline: 12px; }
   .x-embed-stage, .x-embed-target { min-height: 440px; }

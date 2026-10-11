@@ -38,6 +38,7 @@
     "posters:webp": "node scripts/build-poster-variants.mjs",
     "performance:budget": "node scripts/check-performance-budgets.mjs",
     "performance:browser": "node scripts/performance-smoke.mjs",
+    "test:mobile-copy": "node scripts/performance-smoke.mjs --mobile-copy-only",
     "readme:build-metrics": "node scripts/sync-readme-build-metrics.mjs --write",
     "readme:check": "node scripts/sync-readme-build-metrics.mjs",
     "discovery": "node scripts/build-discovery-files.mjs",
