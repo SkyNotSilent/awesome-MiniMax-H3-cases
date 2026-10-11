@@ -214,6 +214,9 @@ export function useAccount() {
     } catch {
       /* Login remains usable with blocked browser storage. */
     }
+    invalidate()
+    retryAction.current = null
+    update({ ...initialState, enabled: true })
     startGoogleLogin(`${window.location.pathname}${window.location.search}${window.location.hash}`)
   }
   const save = (id: string, add: boolean) => {

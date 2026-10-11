@@ -167,4 +167,28 @@ describe('account favorites', () => {
     expect(sessionStorage.getItem('minimax-h3-pending-favorite')).toBeNull()
     expect(result.current.favorites.size).toBe(0)
   })
+  it('clears personal state immediately when starting an account switch', async () => {
+    let resolveOld: ((value: Response) => void) | undefined
+    let delayed = false
+    vi.spyOn(globalThis, 'fetch').mockImplementation(async (input) => {
+      if (String(input) === '/api/auth/session') {
+        if (delayed) return new Promise((resolve) => { resolveOld = resolve })
+        return response({ enabled: true, user: accountA, csrfToken: 'csrf' })
+      }
+      return response({ userId: accountA.id, favorites: ['a-private'] })
+    })
+    const { result } = renderHook(() => useAccount())
+    await waitFor(() => expect(result.current.loading).toBe(false))
+    delayed = true
+    act(() => { void result.current.refresh() })
+    await waitFor(() => expect(resolveOld).toBeDefined())
+    act(() => result.current.login())
+    expect(startGoogleLogin).toHaveBeenCalledWith('/')
+    expect(result.current.user).toBeNull()
+    expect(result.current.favorites.size).toBe(0)
+    await act(async () => { resolveOld!(response({ enabled: true, user: accountA, csrfToken: 'csrf' })) })
+    expect(result.current.user).toBeNull()
+    expect(result.current.favorites.size).toBe(0)
+  })
+
 })
