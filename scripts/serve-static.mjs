@@ -3,12 +3,14 @@ import { createCatalogIndex } from '../shared/catalog-query.mjs'
 import { createAccountApi } from './auth/api.mjs'
 import { handleCatalogApi } from './catalog-api.mjs'
 import { createReadStream } from 'node:fs'
-import { realpath, stat } from 'node:fs/promises'
+import { readFile, realpath, stat } from 'node:fs/promises'
 import { createServer } from 'node:http'
 import { extname, isAbsolute, relative, resolve, sep } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { GetObjectCommand, HeadObjectCommand, S3Client } from '@aws-sdk/client-s3'
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner'
+import { legacyPageRedirect } from '../shared/site-redirect.mjs'
+import { resolveSiteOrigin } from '../shared/site-config.mjs'
 
 const DEFAULT_DIST_DIR = fileURLToPath(new URL('../dist/', import.meta.url))
 
@@ -217,10 +219,17 @@ async function redirectVideo(request, response, videoStore, decodedPath) {
   return true
 }
 
-export async function createStaticServer({ distDir = DEFAULT_DIST_DIR, logger = console, videoStore = createVideoStoreFromEnv(), accountApi = createAccountApi(), catalogPath = fileURLToPath(new URL('../build/server-data/catalog.ndjson', import.meta.url)) } = {}) {
+export async function createStaticServer({ distDir = DEFAULT_DIST_DIR, logger = console, videoStore = createVideoStoreFromEnv(), accountApi = createAccountApi(), catalogPath = fileURLToPath(new URL('../build/server-data/catalog.ndjson', import.meta.url)), redirectMode = process.env.H3_LEGACY_REDIRECT || 'off', production = Boolean(process.env.RAILWAY_ENVIRONMENT_ID) || process.env.NODE_ENV === 'production' } = {}) {
   const distRoot = await realpath(resolve(distDir))
   const rootStats = await stat(distRoot)
   if (!rootStats.isDirectory()) throw new Error(`Static root is not a directory: ${distRoot}`)
+  resolveSiteOrigin({ production })
+  if (!['off', 'temporary', 'permanent'].includes(redirectMode)) throw new Error('SITE_REDIRECT_MODE_INVALID')
+  if (production) {
+    let buildMode
+    try { buildMode = JSON.parse(await readFile(resolve(distRoot, 'build-mode.json'), 'utf8')) } catch { throw new Error('PRODUCTION_BUILD_MARKER_REQUIRED') }
+    if (buildMode.reference !== false) throw new Error('REFERENCE_BUILD_CANNOT_SERVE_PRODUCTION')
+  }
 
   const catalogIndex = catalogPath ? createCatalogIndex(await readCatalogSnapshot(catalogPath)) : null
   const server = createServer({ requestTimeout: 10000, headersTimeout: 10000 }, async (request, response) => {
@@ -237,6 +246,12 @@ export async function createStaticServer({ distDir = DEFAULT_DIST_DIR, logger = 
       const target = parseRequestTarget(request.url)
       if (!target) {
         writeText(response, request.method, 400, '<!doctype html><title>400 Bad Request</title><h1>400 Bad Request</h1>')
+        return
+      }
+      const migrated = legacyPageRedirect({ host: request.headers.host, path: `${target.rawPath}${target.search}`, method: request.method, mode: redirectMode })
+      if (migrated) {
+        response.writeHead(migrated.status, { Location: migrated.location, 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' })
+        response.end()
         return
       }
 

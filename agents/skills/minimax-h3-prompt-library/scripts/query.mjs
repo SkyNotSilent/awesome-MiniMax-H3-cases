@@ -1,5 +1,6 @@
 import { readFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
+import site from './site.json' with { type: 'json' }
 
 const args = process.argv.slice(2)
 let fixture = null
@@ -17,7 +18,7 @@ for (let index = 0; index < args.length; index++) {
 const query = terms.join(' ').trim().toLowerCase()
 if (!query) throw new Error('Usage: node scripts/query.mjs <search terms> [--fixture <directory>]')
 
-const baseUrl = (process.env.H3_LIBRARY_URL || 'https://h3-field-notes-production.up.railway.app').replace(/\/$/, '')
+const baseUrl = (process.env.H3_LIBRARY_URL || site.primaryOrigin).replace(/\/$/, '')
 async function load(relative) {
   if (fixture) return JSON.parse(await readFile(resolve(fixture, relative), 'utf8'))
   const response = await fetch(`${baseUrl}/data/${relative}`, { signal: AbortSignal.timeout(15000) })

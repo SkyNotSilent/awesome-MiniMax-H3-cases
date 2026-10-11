@@ -28,6 +28,8 @@
     "validate:data": "node scripts/privacy-scan.mjs && node scripts/validate-data.mjs && node scripts/sync-project-stats.mjs",
     "sync:stats": "node scripts/sync-project-stats.mjs --write",
     "sync:github": "node scripts/sync-github-metadata.mjs --write",
+    "site:check": "node scripts/verify-site-origin.mjs",
+    "site:sync": "node scripts/sync-site-config.mjs --write",
     "taxonomy:report": "node scripts/migrate-taxonomy.mjs --report",
     "taxonomy:migrate": "node scripts/migrate-taxonomy.mjs --apply",
     "sync:resource-metrics": "node scripts/sync-resource-metrics.mjs --write",

@@ -3,6 +3,7 @@ import { basename, relative, resolve } from 'node:path'
 import { acquirePublishLock, candidatesPath, publishStagingRoot, readJson, resolvePublishStagingPath, root, rowVersion, writeJsonAtomic } from './review-paths.mjs'
 import { prepareStagedCommit, updatePrivateCandidates, verifyVideoRoute } from './staged-publish.mjs'
 import { ensureFeedbackDraft } from './submission-feedback.mjs'
+import { resolveSiteOrigin } from '../shared/site-config.mjs'
 
 function argumentValue(name) {
   const index = process.argv.indexOf(name)
@@ -11,7 +12,7 @@ function argumentValue(name) {
 
 const apply = process.argv.includes('--apply')
 const stagingPath = resolvePublishStagingPath(argumentValue('--staging'))
-const siteBaseUrl = (process.env.SITE_BASE_URL || 'https://h3-field-notes-production.up.railway.app').replace(/\/$/, '')
+const siteBaseUrl = resolveSiteOrigin()
 const casesPath = resolve(root, 'data/cases.json')
 const publicPosterRoot = resolve(root, 'public/posters/x')
 const runId = basename(stagingPath, '.json')

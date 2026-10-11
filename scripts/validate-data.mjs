@@ -4,6 +4,7 @@ import { access, readdir, readFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { editorialCopyErrors, genericEditorialCopyPattern } from './editorial-copy.mjs'
 import { isOriginalCaseDestination } from './case-source-policy.mjs'
+import { primaryOrigin } from '../shared/site-config.mjs'
 
 const root = resolve(import.meta.dirname, '..')
 const cases = JSON.parse(await readFile(resolve(root, 'data/cases.json'), 'utf8'))
@@ -129,7 +130,7 @@ for (const [index, item] of cases.entries()) {
   }
   try {
     new URL(item.sourceUrl)
-    new URL(item.mediaUrl, 'https://h3-field-notes-production.up.railway.app')
+    new URL(item.mediaUrl, primaryOrigin)
   } catch {
     errors.push(`${at} contains an invalid URL`)
   }

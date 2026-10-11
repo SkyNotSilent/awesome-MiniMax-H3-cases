@@ -76,7 +76,7 @@ export function AccountControls({ account, language }: { account: Account; langu
       </summary>
       <div className="account-menu-panel">
         <small>{account.user.email}</small>
-        <a href={`${language === 'en' ? '/en/' : '/'}?collection=favorites&added=all`}>{t.saved}</a>
+        <a href={`${language === 'en' ? '/en/' : '/'}?collection=favorites&added=all&importFavorites=1`}>{t.saved}</a>
         <button type="button" onClick={() => account.login()}>
           {t.switch}
         </button>
@@ -148,7 +148,7 @@ export function LegacyFavoritesLink({ language }: { language: Language }) {
   return (
     <a
       className="legacy-favorites-link"
-      href={`https://h3-field-notes-production.up.railway.app/${language === 'en' ? 'en/' : ''}?collection=favorites&added=all`}
+      href={`https://h3-field-notes-production.up.railway.app/${language === 'en' ? 'en/' : ''}?collection=favorites&added=all&importFavorites=1`}
       target="_blank"
       rel="noreferrer"
     >
