@@ -38,9 +38,9 @@ Do not infer commercial permission from a source link, public availability, an a
 
 Use Google's Privacy & Messaging CMP; publish the applicable European and US state messages and link to the site privacy policy. Offer refusal and choice management. The Google tag bootstraps those published messages. This site does not submit an ad unit before `CONSENT_DATA_READY`; when TCF applies, refusal of storage or Google vendor consent suppresses the slot. Google handles remaining TCF/GPP purpose and regional restrictions. A missing CMP callback fails closed.
 
-The footer's privacy choice control uses Google's `CONSENT_API_READY` callback and `showRevocationMessage()`. It hides active units before opening the choice flow. After changing consent, a fresh page visit can render eligible units under the new choice. Disabled or blocked CMP services show an explanation with the privacy policy's Google Ads Settings link as an alternative.
+The footer waits for Google's `CONSENT_API_READY` callback. EU choices use `showRevocationMessage()`. In applicable US states, the explicit Do Not Sell or Share control replaces Google's default link and uses `INITIAL_US_STATES_OPT_OUT_DATA_READY`, `getInitialUsStatesOptOutStatus()` and `openConfirmationDialog()`; it remains hidden elsewhere. It hides active units before opening the choice flow. After changing consent, a fresh page visit can render eligible units under the new choice. Disabled or blocked CMP services show an explanation with the privacy policy's Google Ads Settings link as an alternative.
 
-Slots reserve space, load near the viewport, initialize once per element and hide on script failure, rejected consent or unfilled status. Browsing and account features continue without advertising. No emails, account IDs or favorites are sent to the advertising configuration.
+Slots reserve space, load near the viewport, initialize at most once per placement and path during a page visit (filters do not refresh ads), and hide on script failure, rejected consent or unfilled status. Browsing and account features continue without advertising. No emails, account IDs or favorites are sent to the advertising configuration.
 
 ## Release and rollback
 
