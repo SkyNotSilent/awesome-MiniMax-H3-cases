@@ -44,6 +44,8 @@ const faqItems = {
   'zh-CN': [
     ['这个项目收录什么？', '收录带原始来源、可在站内观看的 MiniMax H3 视频案例。'],
     ['为什么有些案例没有 Prompt？', '只有原帖逐字公开完整 Prompt 时才展示；未公开时不会反推、补写或改写。'],
+    ['哪些内容是本站整理的？', '案例摘要、分类、比较建议和教程导读由本站整理；视频、图片、署名原文和逐字展示的 Prompt 保留原作者归属。'],
+    ['收录代表本站做过生成实测吗？', '案例用于观察公开输出；教程分别标注来源核对日期和本站实测记录。作者公布的耗时或显存结果只代表其环境，复现前需核对版本和自己的硬件条件。'],
     ['视频如何播放？', '案例视频通过项目存储在站内播放，并始终保留 X 原帖入口。'],
     ['候选案例会自动发布吗？', '来源、模型、媒体、存储和站内播放校验全部通过的明确案例可以直接发布；模糊项继续留在审核队列。'],
     ['如何请求纠错或移除？', '请查看联系与版权页面。一般纠错可提交公开 Issue；版权凭证和账号资料请使用该页的私密入口。'],
@@ -51,6 +53,8 @@ const faqItems = {
   en: [
     ['What does this project collect?', 'Source-attributed MiniMax H3 video examples that can be watched inside the library.'],
     ['Why do some examples have no prompt?', 'A prompt appears only when the original post publishes the complete text. Missing prompts are never inferred, completed, or rewritten.'],
+    ['Which parts are compiled by this site?', 'Case summaries, classifications, comparison notes and tutorial guidance are compiled here. Videos, images, attributed source texts and verbatim prompts retain their creator attribution.'],
+    ['Does inclusion mean the site tested generation?', 'Cases let you examine public outputs. Guides label source-check dates and site testing separately. Author timings and memory results apply to their setup; check versions and your own hardware before reproducing them.'],
     ['How are videos played?', 'Case videos play in-site through project storage and always retain a link to the original X post.'],
     ['Are discovered examples published automatically?', 'Clear examples can be published after source, model, media, storage, and in-site playback checks pass; ambiguous items stay in the review queue.'],
     ['How can a creator request a correction or removal?', 'Use the Contact and copyright page. General corrections may use a public Issue; send ownership evidence and account information through the private channel listed there.'],

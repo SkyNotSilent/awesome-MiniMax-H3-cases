@@ -28,3 +28,10 @@ test('rights links retain a private path for ownership evidence', async () => {
     assert.ok(html.includes('/security/advisories/new'))
   }
 })
+
+test('FAQ fallbacks also distinguish editorial guidance from generation tests', async () => {
+  for (const [prefix, heading] of [['', '收录代表本站做过生成实测吗？'], ['en/', 'Does inclusion mean the site tested generation?']]) {
+    const html = await readFile(resolve(root, `dist/${prefix}faq/index.html`), 'utf8')
+    assert.ok(html.includes(heading))
+  }
+})
