@@ -23,10 +23,12 @@ The root host `zzskysilent.com` serves a small entry page that links to both H3 
 
 ## Eligible inventory
 
-`config/advertising.json` is the explicit allowlist. It starts empty because source attribution does not establish permission for commercial reproduction. Add only pages with documented rights and meaningful editorial value after their content check:
+`config/advertising.json` is the explicit allowlist. Source attribution does not establish permission for commercial reproduction. Add only pages with recorded rights and meaningful editorial value after their content check:
 
 - `approvedCatalogPaths`: exact `/`, `/en/` or numbered `/cases/page/N/` and `/en/cases/page/N/` archive paths with N >= 2.
 - `approvedTutorialIds`: guide IDs, enabling both language paths for that guide.
+
+The initial inventory covers both homepages, both page-two archives, and the `official-deployment` and `minimax-director-timeline` guides in both languages. This list does not enable serving by itself. Recheck rights before adding new authors or content to an eligible directory.
 
 Case detail pages and unrelated routes cannot be enabled through this configuration. A catalog unit appears after case 12 and only when at least 12 actual results are rendered. A guide unit appears after the article body. Static archive pages use the same runtime as React. Filters do not refresh an already submitted unit.
 
