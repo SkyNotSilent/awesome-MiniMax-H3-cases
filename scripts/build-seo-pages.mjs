@@ -3,6 +3,7 @@ import { resolve } from 'node:path'
 import { taxonomyLabel } from './taxonomy.mjs'
 import { resolveSiteOrigin } from '../shared/site-config.mjs'
 import { advertisingHead, advertisingSlot, siteLinks } from '../shared/advertising-markup.mjs'
+import { caseReadingMarkup } from '../shared/case-reading-guide.mjs'
 
 const root = resolve(import.meta.dirname, '..')
 const dist = resolve(root, 'dist')
@@ -45,14 +46,14 @@ const faqItems = {
     ['为什么有些案例没有 Prompt？', '只有原帖逐字公开完整 Prompt 时才展示；未公开时不会反推、补写或改写。'],
     ['视频如何播放？', '案例视频通过项目存储在站内播放，并始终保留 X 原帖入口。'],
     ['候选案例会自动发布吗？', '来源、模型、媒体、存储和站内播放校验全部通过的明确案例可以直接发布；模糊项继续留在审核队列。'],
-    ['如何请求纠错或移除？', '请在 GitHub 提交 Issue，并附上原帖或权利证明。'],
+    ['如何请求纠错或移除？', '请查看联系与版权页面。一般纠错可提交公开 Issue；版权凭证和账号资料请使用该页的私密入口。'],
   ],
   en: [
     ['What does this project collect?', 'Source-attributed MiniMax H3 video examples that can be watched inside the library.'],
     ['Why do some examples have no prompt?', 'A prompt appears only when the original post publishes the complete text. Missing prompts are never inferred, completed, or rewritten.'],
     ['How are videos played?', 'Case videos play in-site through project storage and always retain a link to the original X post.'],
     ['Are discovered examples published automatically?', 'Clear examples can be published after source, model, media, storage, and in-site playback checks pass; ambiguous items stay in the review queue.'],
-    ['How can a creator request a correction or removal?', 'Open a GitHub Issue and include the original post or proof of ownership.'],
+    ['How can a creator request a correction or removal?', 'Use the Contact and copyright page. General corrections may use a public Issue; send ownership evidence and account information through the private channel listed there.'],
   ],
 }
 
@@ -557,13 +558,15 @@ function fallbackMarkup(page, locale) {
     const commands = item.commands.length
       ? `<h2>${escapeHtml(locale === 'en' ? 'Commands' : '命令')}</h2><pre>${escapeHtml(item.commands.join('\n'))}</pre>`
       : ''
-    content = `<p><strong>${escapeHtml(locale === 'en' ? 'Audience' : '适用人群')}:</strong> ${escapeHtml(localized.audience)}</p><p><strong>${escapeHtml(locale === 'en' ? 'Hardware' : '硬件要求')}:</strong> ${escapeHtml(localized.hardware)}</p><h2>${escapeHtml(locale === 'en' ? 'Prerequisites' : '前置条件')}</h2><ul>${localized.prerequisites.map((value) => `<li>${escapeHtml(value)}</li>`).join('')}</ul><h2>${escapeHtml(locale === 'en' ? 'Steps' : '执行步骤')}</h2><ol>${localized.steps.map((value, index) => `<li id="step-${index + 1}">${escapeHtml(value)}</li>`).join('')}</ol>${commands}<h2>${escapeHtml(locale === 'en' ? 'Caveats' : '注意事项')}</h2><ul>${localized.caveats.map((value) => `<li>${escapeHtml(value)}</li>`).join('')}</ul><p><a href="${escapeHtml(item.source.url)}" rel="nofollow noopener">${escapeHtml(locale === 'en' ? 'View original source' : '查看原始来源')}</a> · ${escapeHtml(item.source.author)} · ${escapeHtml(item.verifiedAt)}</p>`
+    content = `<p><strong>${escapeHtml(locale === 'en' ? 'Audience' : '适用人群')}:</strong> ${escapeHtml(localized.audience)}</p><p><strong>${escapeHtml(locale === 'en' ? 'Hardware' : '硬件要求')}:</strong> ${escapeHtml(localized.hardware)}</p><h2>${escapeHtml(locale === 'en' ? 'Prerequisites' : '前置条件')}</h2><ul>${localized.prerequisites.map((value) => `<li>${escapeHtml(value)}</li>`).join('')}</ul><h2>${escapeHtml(item.original && item.depth !== 'deep' ? (locale === 'en' ? 'Reading checkpoints' : '阅读检查点') : (locale === 'en' ? 'Steps' : '执行步骤'))}</h2><ol>${localized.steps.map((value, index) => `<li id="step-${index + 1}">${escapeHtml(value)}</li>`).join('')}</ol>${commands}<h2>${escapeHtml(locale === 'en' ? 'Caveats' : '注意事项')}</h2><ul>${localized.caveats.map((value) => `<li>${escapeHtml(value)}</li>`).join('')}</ul><p><a href="${escapeHtml(item.source.url)}" rel="nofollow noopener">${escapeHtml(locale === 'en' ? 'View original source' : '查看原始来源')}</a> · ${escapeHtml(item.source.author)} · ${escapeHtml(item.verifiedAt)}</p>`
     const language = locale === 'en' ? 'en' : 'zh'
     const heading = (zh, en) => escapeHtml(locale === 'en' ? en : zh)
     const original = tutorialOriginals.get(item.id)
     // English fallbacks must stay CJK-free, so they carry only originals without CJK text.
     const originalHtml = original ? originalSeoHtml(original, locale) : ''
-    if (originalHtml && (locale !== 'en' || !/[\u3400-\u9fff]/u.test(originalHtml))) content = originalHtml + content
+    const showOriginal = originalHtml && (locale !== 'en' || !/[\u3400-\u9fff]/u.test(originalHtml))
+    content = `<h2>${heading('本站导读', 'Site guide')}</h2>` + content
+    if (item.checks?.[language]?.length) content += `<h2>${heading('完成标准', 'Done when')}</h2><ul>${item.checks[language].map(value => `<li>${escapeHtml(value)}</li>`).join('')}</ul>`
     const links = (items) => items.map(([url, label]) => `<li><a href="${escapeHtml(url)}">${escapeHtml(label)}</a></li>`).join('')
     if (item.contribution) content += `<p>${heading('作者投稿', 'Author submission')}: <a href="${escapeHtml(item.contribution.authorUrl)}">${escapeHtml(item.source.author)}</a> · <a href="${escapeHtml(item.contribution.issueUrl)}">${heading('投稿记录', 'Submission')}</a></p>`
     content += `<p>${heading(item.depth === 'deep' ? '深度精选' : '导读', item.depth === 'deep' ? 'In depth' : 'Guide')} · ${heading('来源核对', 'Source checked')}: ${escapeHtml(item.evidence.sourceCheckedAt || '')} · ${heading('本站实测', 'Site testing')}: ${escapeHtml(item.evidence.siteTestedAt || (locale === 'en' ? 'No generation test performed' : '未进行生成实测'))}</p>`
@@ -576,6 +579,7 @@ function fallbackMarkup(page, locale) {
     if (item.communityFeedback?.length) content += `<h2>${heading('社区反馈', 'Community feedback')}</h2><ul>${links(item.communityFeedback.map(x => [x.url, x.summary[language]]))}</ul>`
     if (item.relatedCases?.length) content += `<h2>${heading('案例与技巧', 'Examples and techniques')}</h2><ul>${links(item.relatedCases.map(x => [casePath(locale, x.id), `${x.title[language]} · ${x.relationship === 'example' ? heading('对应案例', 'Source example') : heading('相关技巧，不保证复现', 'Related technique; not a reproduction guide')}`]))}</ul>`
     if (item.nextGuideIds?.length) content += `<h2>${heading('下一步学习', 'Learn next')}</h2><ul>${links(item.nextGuideIds.map(id => [tutorialPath(locale, id), tutorialGuides.find(x => x.id === id).title[language]]))}</ul>`
+    if (showOriginal) content += originalHtml
 
   } else {
     content = faqItems[locale].map(([question, answer]) => `<article><h2>${escapeHtml(question)}</h2><p>${escapeHtml(answer)}</p></article>`).join('')
@@ -845,7 +849,7 @@ function renderArchivePage(locale, pageNumber) {
     : `浏览第 ${start + 1}–${start + items.length} 个来源可追溯、可站内播放的 MiniMax H3 视频案例，共 ${cases.length} 个。`
   const list = items.map((item, index) => {
     const localized = localizedCase(item, locale)
-    return `<li><a href="${escapeHtml(casePath(locale, item.id))}"><img src="${escapeHtml(item.posterUrl)}" alt="" width="360" height="225" loading="lazy"><span><small>${start + index + 1} · ${escapeHtml(item.mode)} · ${escapeHtml(item.addedAt.slice(0, 10))}</small><strong>${escapeHtml(localized.title)}</strong><em>${escapeHtml(localized.author)}</em></span></a></li>${index === 11 ? advertisingSlot(locale).replace('<div ', '<li ').replace('</div>', '</li>') : ''}`
+    return `<li><a href="${escapeHtml(casePath(locale, item.id))}"><img src="${escapeHtml(item.posterUrl)}" alt="" width="360" height="225" loading="lazy"><span><small>${start + index + 1} · ${escapeHtml(item.mode)} · ${escapeHtml(item.addedAt.slice(0, 10))}</small><strong>${escapeHtml(localized.title)}</strong><span class="case-viewing-note">${escapeHtml(localized.summary)}</span><em>${escapeHtml(localized.author)}</em></span></a></li>${index === 11 ? advertisingSlot(locale).replace('<div ', '<li ').replace('</div>', '</li>') : ''}`
   }).join('')
   const structuredData = {
     '@context': 'https://schema.org',
@@ -866,7 +870,7 @@ function renderArchivePage(locale, pageNumber) {
       })),
     },
   }
-  return `<!doctype html><html lang="${locale}"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="${escapeHtml(description)}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="${canonical}">${alternateHeadLinks(paths)}<link rel="prev" href="${escapeHtml(absolute(previous))}">${next ? `<link rel="next" href="${escapeHtml(absolute(next))}">` : ''}<link rel="icon" href="/icon.svg" type="image/svg+xml"><title>${escapeHtml(title)}</title><script type="application/ld+json">${jsonForHtml(structuredData)}</script>${umamiTag}${advertisingHead}<style>body{margin:0;background:#090a08;color:#f0f0e8;font:15px/1.5 system-ui,sans-serif}main{width:min(1180px,calc(100% - 36px));margin:auto;padding:42px 0 80px}nav{display:flex;justify-content:space-between;gap:16px}a{color:inherit;text-decoration:none}nav a,.pager a{color:#d9ff43}h1{font-size:clamp(2.4rem,7vw,5.6rem);line-height:.94;letter-spacing:-.055em}main>p{color:#a7aba1}ol{margin:42px 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 22px;list-style:none}li a{display:block}img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;background:#151712}li span{display:grid;gap:7px;padding-top:12px}small,em{color:#858a80;font:normal 9px ui-monospace,monospace;text-transform:uppercase}strong{font-size:19px;line-height:1.18}.pager{display:flex;justify-content:space-between;gap:18px;padding-top:24px;border-top:1px solid #33372f}@media(max-width:800px){ol{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:520px){ol{grid-template-columns:1fr}}</style></head><body><main><nav><a href="${escapeHtml(archivePath(locale, 1))}">MiniMax H3 Cases &amp; Guides</a><a href="${escapeHtml(paths[otherLocale(locale)])}" hreflang="${otherLocale(locale)}">${locale === 'en' ? 'ZH' : 'EN'}</a></nav><h1>${escapeHtml(title)}</h1><p>${escapeHtml(description)}</p><ol>${list}</ol><div class="pager"><a href="${escapeHtml(previous)}">← ${escapeHtml(locale === 'en' ? 'Previous' : '上一页')}</a>${next ? `<a href="${escapeHtml(next)}">${escapeHtml(locale === 'en' ? 'Next' : '下一页')} →</a>` : '<span></span>'}</div>${siteLinks(locale)}</main></body></html>`
+  return `<!doctype html><html lang="${locale}"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="${escapeHtml(description)}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="${canonical}">${alternateHeadLinks(paths)}<link rel="prev" href="${escapeHtml(absolute(previous))}">${next ? `<link rel="next" href="${escapeHtml(absolute(next))}">` : ''}<link rel="icon" href="/icon.svg" type="image/svg+xml"><title>${escapeHtml(title)}</title><script type="application/ld+json">${jsonForHtml(structuredData)}</script>${umamiTag}${advertisingHead}<style>body{margin:0;background:#090a08;color:#f0f0e8;font:15px/1.5 system-ui,sans-serif}main{width:min(1180px,calc(100% - 36px));margin:auto;padding:42px 0 80px}nav{display:flex;justify-content:space-between;gap:16px}a{color:inherit;text-decoration:none}nav a,.pager a{color:#d9ff43}h1{font-size:clamp(2.4rem,7vw,5.6rem);line-height:.94;letter-spacing:-.055em}main>p{color:#a7aba1}ol{margin:42px 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 22px;list-style:none}li a{display:block}img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;background:#151712}li span{display:grid;gap:7px;padding-top:12px}small,em{color:#858a80;font:normal 9px ui-monospace,monospace;text-transform:uppercase}strong{font-size:19px;line-height:1.18}.pager{display:flex;justify-content:space-between;gap:18px;padding-top:24px;border-top:1px solid #33372f}@media(max-width:800px){ol{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:520px){ol{grid-template-columns:1fr}}</style></head><body><main><nav><a href="${escapeHtml(archivePath(locale, 1))}">MiniMax H3 Cases &amp; Guides</a><a href="${escapeHtml(paths[otherLocale(locale)])}" hreflang="${otherLocale(locale)}">${locale === 'en' ? 'ZH' : 'EN'}</a></nav><h1>${escapeHtml(title)}</h1><p>${escapeHtml(description)}</p>${caseReadingMarkup(locale)}<ol>${list}</ol><div class="pager"><a href="${escapeHtml(previous)}">← ${escapeHtml(locale === 'en' ? 'Previous' : '上一页')}</a>${next ? `<a href="${escapeHtml(next)}">${escapeHtml(locale === 'en' ? 'Next' : '下一页')} →</a>` : '<span></span>'}</div>${siteLinks(locale)}</main></body></html>`
 }
 
 function redirectPage(locale, to) {

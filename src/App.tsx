@@ -1,5 +1,6 @@
 import { useAccount, type Account } from './use-account'
 import { AdSlot, SiteLinks } from './Advertising'
+import { caseReadingGuide } from '../shared/case-reading-guide.mjs'
 import { AccountControls, AccountNotice, AccountPrivacy, FavoriteGate, LegacyFavoritesLink } from './AccountControls'
 import { createCatalogIndex, searchText } from '../shared/catalog-query.mjs'
 import { useCatalogQuery } from './use-catalog-query'
@@ -1064,6 +1065,7 @@ function HomePage({
           </div>
         </details>
 
+        {activeCollection !== 'favorites' ? <details className="case-reading-guide"><summary>{caseReadingGuide[language].title}</summary>{caseReadingGuide[language].notes.map(note => <p key={note}>{note}</p>)}</details> : null}
         <div className="catalog-count" aria-live="polite">
           <span>{String(total).padStart(2, '0')}</span> {t.catalog.resultUnit}
         </div>
@@ -1835,16 +1837,15 @@ function TutorialDetailPage({ language, tutorial, tutorialGuides, tutorialResour
           <div className="tutorial-detail-layout has-original">
             <main className="tutorial-detail-content">
               {reviewNote}
-              <LazyBoundary key={tutorial.id} fallback={<p role="alert" className="tutorial-review-note">{zh ? '原文组件加载失败，请刷新页面，或直接' : 'The original failed to load. Refresh the page or '}<a href={tutorial.source.url} target="_blank" rel="noreferrer">{zh ? '查看原帖' : 'open the source'}</a></p>}>
-                <Suspense fallback={<div className="original-loading" aria-busy="true" />}><TutorialOriginalView tutorial={tutorial} language={language} /></Suspense>
-              </LazyBoundary>
-              {isDeep ? <>
-                <header className="tutorial-site-notes-heading"><h2>{zh ? '本站速查' : 'Quick reference'}</h2><p>{zh ? '以下是本站依据原文整理的要点和命令，出现差异时以原文为准。' : 'Key points and commands compiled from the original. The original wins wherever they differ.'}</p></header>
-                {expectedSection}{recommendationSection}{costSection}{videoSection}{resourcesSection}{chaptersSection}{stepsSection}{commandsSection}{checksSection}{troubleshootingSection}{uninstallSection}
-              </> : <>{resourcesSection}{chaptersSection}</>}
+              <header className="tutorial-site-notes-heading"><h2>{zh ? '本站导读' : 'Site guide'}</h2><p>{zh ? '先用本站整理的适用条件、步骤和检查要点规划执行，再查阅下方署名原文。来源核对日期与本站实测记录分别列在参考资料中，具体版本和参数以原作者最新说明为准。' : 'Plan your work with our requirements, steps and checks, then consult the attributed original below. Source-check dates and site testing are listed separately in References; verify current versions and parameters with the author.'}</p></header>
+              {expectedSection}{recommendationSection}{costSection}{videoSection}{resourcesSection}{chaptersSection}
+              {isDeep ? <>{stepsSection}{commandsSection}{checksSection}{troubleshootingSection}{uninstallSection}</> : null}
               {tutorial.communityFeedback?.length ? feedbackSection : null}
               {relatedCasesSection}
               {caveatsSection}
+              <LazyBoundary key={tutorial.id} fallback={<p role="alert" className="tutorial-review-note">{zh ? '原文组件加载失败，请刷新页面，或直接' : 'The original failed to load. Refresh the page or '}<a href={tutorial.source.url} target="_blank" rel="noreferrer">{zh ? '查看原帖' : 'open the source'}</a></p>}>
+                <Suspense fallback={<div className="original-loading" aria-busy="true" />}><TutorialOriginalView tutorial={tutorial} language={language} /></Suspense>
+              </LazyBoundary>
             </main>
             <aside className="tutorial-detail-meta">
               <section className="tutorial-quick-facts">
@@ -1856,7 +1857,7 @@ function TutorialDetailPage({ language, tutorial, tutorialGuides, tutorialResour
                   {tutorial.estimatedMinutes && <div><dt>{t.estimatedTime}</dt><dd>{tutorial.estimatedMinutes} {t.minutes}</dd></div>}
                   {tutorial.applicableVersions?.length ? <div><dt>{zh ? '适用版本' : 'Applicable versions'}</dt><dd>{tutorial.applicableVersions.join(' · ')}</dd></div> : null}
                 </dl>
-                {isDeep && <><h3>{t.prerequisites}</h3><ul>{tutorial.prerequisites[language].map((item) => <li key={item}>{item}</li>)}</ul></>}
+                <h3>{t.prerequisites}</h3><ul>{tutorial.prerequisites[language].map((item) => <li key={item}>{item}</li>)}</ul>
               </section>
               {sourceMeta}
             </aside>
@@ -1873,7 +1874,7 @@ function TutorialDetailPage({ language, tutorial, tutorialGuides, tutorialResour
           </div>
         )}
 
-        <AdSlot key={tutorial.id} placement="tutorial" language={language} />
+        {tutorial.evidence.status === 'active' ? <AdSlot key={tutorial.id} placement="tutorial" language={language} /> : null}
         {resources.length > 0 && (
           <section className="tutorial-related-resources">
             <h2>{t.related}</h2>

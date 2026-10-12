@@ -752,7 +752,7 @@ describe('case-first routes', () => {
     expect(screen.getByRole('heading', { name: '相关工具与资源' })).toBeInTheDocument()
   })
 
-  it('shows the captured original first and hides placeholder steps for short guides', async () => {
+  it('retains the captured original and hides placeholder steps for short guides', async () => {
     const original = (await import('../data/tutorial-originals/train-ref2va-lora.json')).default
     const fetchSpy = vi.spyOn(globalThis, 'fetch').mockImplementation(async (input) => (
       String(input).endsWith('/data/tutorial-originals/train-ref2va-lora.json')
@@ -765,7 +765,7 @@ describe('case-first routes', () => {
     expect(document.querySelectorAll('.original-video video')).toHaveLength(5)
     expect(document.querySelector('.original-video video')).toHaveAttribute('src', expect.stringMatching(/^\/media\/tutorial-\d+\.mp4$/))
     expect(document.querySelector('.original-youtube iframe')).toHaveAttribute('src', 'https://www.youtube-nocookie.com/embed/8Ug0dA4jXyY')
-    expect(screen.getByRole('link', { name: /作者申请更正或下架/ })).toHaveAttribute('href', expect.stringContaining('template=takedown.yml'))
+    expect(screen.getByRole('link', { name: /作者申请更正或下架/ })).toHaveAttribute('href', '/contact/#copyright')
     expect(screen.getByRole('heading', { name: '快速判断' })).toBeInTheDocument()
     expect(screen.queryByRole('heading', { name: '执行步骤' })).not.toBeInTheDocument()
     fetchSpy.mockRestore()

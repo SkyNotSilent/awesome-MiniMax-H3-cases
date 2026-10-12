@@ -1,4 +1,7 @@
 .h3-site-links [hidden],.h3-ad-slot[hidden]{display:none!important}
+.case-reading-guide{margin:20px 0;color:#a7aba1;font:14px/1.7 system-ui,sans-serif;max-width:880px}
+.case-reading-guide summary{cursor:pointer;color:#d9ff43}
+.case-reading-guide p{margin:12px 0;max-width:72ch}
 .h3-ad-slot{grid-column:1/-1;min-width:0;margin:32px 0;padding:24px 0;border-top:1px solid #34362e;border-bottom:1px solid #34362e;overflow:hidden}
 .h3-ad-slot>small{display:block;margin:0 0 16px;color:#929689;font:11px/1.5 system-ui,sans-serif}
 .h3-ad-slot ins{display:block;min-height:280px}
