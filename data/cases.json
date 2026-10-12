@@ -112371,5 +112371,631 @@
     },
     "approvedAt": "2026-10-12T00:25:24.752Z",
     "editorialBasis": "Original attribution and native video beginning, middle and ending inspected."
+  },
+  {
+    "id": "x-2102145645813658068",
+    "title": "光沿枯树纹理向上流动",
+    "titleEn": "Light travels upward through a bare tree",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "夕阳下的枯树被旋涡云层笼罩，金色与白色光束沿根部和树干扭转上升。 原生视频规格为 7 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A bare tree stands against a sunset under swirling cloud forms. Gold and then white light travels upward around its roots and trunk. No different-model watermark is visible. Native-video output: 7s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/pixelrhythms/status/2102145645813658068",
+    "sourceLabel": "X 原帖 · @pixelrhythms",
+    "author": "Keshav",
+    "publishedAt": "2026-09-21T21:19:12.000Z",
+    "addedAt": "2026-10-12T01:05:55.193Z",
+    "mediaUrl": "/media/x-2102145645813658068.mp4",
+    "posterUrl": "/posters/x/2102145645813658068.jpg",
+    "duration": 7,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "music",
+    "styles": [],
+    "scenes": [
+      "nature"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Visual Music R&D Loops\nTree as conductor\n What if the light follows the wood instead of decorating it?\nExperimenting with a bristlecone as a conductor — letting illumination travel through grain, scars, roots, and branches. 🌲✨\n\nKrea + MiniMax H3",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 2,
+      "views": 150,
+      "snapshotAt": "2026-10-12T01:05:55.193Z"
+    },
+    "approvedAt": "2026-10-12T01:05:55.193Z",
+    "editorialBasis": "Original attribution and native video beginning, middle and ending inspected."
+  },
+  {
+    "id": "x-2102145056194896220",
+    "title": "西装男子与惊愕机械人群",
+    "titleEn": "A suited man among startled mechanical figures",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "戴眼镜的西装男子立于成排机械人像之间，镜头逐渐拉远，最后切到大型宅邸前的人群。 原生视频规格为 37 秒 · 1912×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A bespectacled suited man stands among rows of mechanical figures with wide eyes and open mouths. The sequence pulls back and ends at a large brick mansion with a gathering crowd. No different-model watermark is visible. Native-video output: 37s · 1912×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/MaxCasu/status/2102145056194896220",
+    "sourceLabel": "X 原帖 · @MaxCasu",
+    "author": "max casu",
+    "publishedAt": "2026-09-21T21:16:52.000Z",
+    "addedAt": "2026-10-12T01:05:55.193Z",
+    "mediaUrl": "/media/x-2102145056194896220.mp4",
+    "posterUrl": "/posters/x/2102145056194896220.jpg",
+    "duration": 37,
+    "aspectRatio": "landscape",
+    "resolution": "1912×1080",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [],
+    "scenes": [],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "STORM TREND (Night of the Living Dead Crossover)\nMade with @ViggleAI MiniMax H3 model.",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 3,
+      "views": 172,
+      "snapshotAt": "2026-10-12T01:05:55.193Z"
+    },
+    "approvedAt": "2026-10-12T01:05:55.193Z",
+    "editorialBasis": "Original attribution and native video beginning, middle and ending inspected."
+  },
+  {
+    "id": "x-2102140381001617683",
+    "title": "真人走廊动作变成卡通巡警",
+    "titleEn": "A hallway walk becomes a cartoon patrol",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "左右并排显示真人在走廊走动与卡通警察在鬼屋巡行，手电筒和步行动作保持对应。 原生视频规格为 6 秒 · 2160×1920。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A side-by-side reference and generated result shows a real man walking in a hallway while a cartoon police officer mirrors the movement in a haunted-house corridor with webs, skulls and a flashlight. The caption identifies H3 as the video model. Its quoted image prompt is for a separate image step, not a complete H3 video Prompt. No conflicting video-model mark is visible. Native-video output: 6s · 2160×1920. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/thefinnmckenty/status/2102140381001617683",
+    "sourceLabel": "X 原帖 · @thefinnmckenty",
+    "author": "Finn McKenty",
+    "publishedAt": "2026-09-21T20:58:17.000Z",
+    "addedAt": "2026-10-12T01:05:55.193Z",
+    "mediaUrl": "/media/x-2102140381001617683.mp4",
+    "posterUrl": "/posters/x/2102140381001617683.jpg",
+    "duration": 6,
+    "aspectRatio": "landscape",
+    "resolution": "2160×1920",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "illustration"
+    ],
+    "scenes": [
+      "fantasy"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "I figured all these examples of people using IRL footage as video reference were fake/scams, but it actually works!\n\nIn @floraai :\n\n- Extract first frame of the video as an image\n\n- Re-style it with GPT Image\n\n- Use video + re-styled frame as references for a video model (I got the best results with Minimax H3)\n\nImage prompt:\n\nUse this image as reference for overall composition, and create a new image in the style of a vintage 1970s animated cartoon like Scooby Doo. In the new image, a police officer is walking down the hallway of a dusty haunted house with skulls, bones, spiderwebs, and other appropriate objects replacing the ones in the reference image.",
+    "engagement": {
+      "replies": 34,
+      "reposts": 47,
+      "likes": 679,
+      "views": 43993,
+      "snapshotAt": "2026-10-12T01:05:55.193Z"
+    },
+    "approvedAt": "2026-10-12T01:05:55.193Z",
+    "editorialBasis": "Original attribution and native video beginning, middle and ending inspected."
+  },
+  {
+    "id": "x-2102125600517259746",
+    "title": "鞋形小艇迎上海怪触手",
+    "titleEn": "A shoe-shaped boat meets rising tentacles",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "机械手臂人物划着皮鞋形小艇穿过灰色海面，巨大的触手随后从背后的海水中升起。 原生视频规格为 15 秒 · 1536×2048。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A figure with mechanical hands rows a leather-shoe-shaped boat across a grey sea. Giant sucker-lined tentacles rise from the water behind the boat. No conflicting model mark is visible; the original caption explicitly attributes the video to MiniMax H3. Native-video output: 15s · 1536×2048. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/MaxCasu/status/2102125600517259746",
+    "sourceLabel": "X 原帖 · @MaxCasu",
+    "author": "max casu",
+    "publishedAt": "2026-09-21T19:59:33.000Z",
+    "addedAt": "2026-10-12T01:05:55.193Z",
+    "mediaUrl": "/media/x-2102125600517259746.mp4",
+    "posterUrl": "/posters/x/2102125600517259746.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "1536×2048",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [],
+    "scenes": [
+      "creatures"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Created with @ViggleAI MiniMax H3 model.",
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 4,
+      "views": 175,
+      "snapshotAt": "2026-10-12T01:05:55.193Z"
+    },
+    "approvedAt": "2026-10-12T01:05:55.193Z",
+    "editorialBasis": "Original attribution and native video beginning, middle and ending inspected."
+  },
+  {
+    "id": "x-2102124188886523927",
+    "title": "实验室机器人迎来绿色注射",
+    "titleEn": "A laboratory robot receives a green injection",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "两名白衣实验人员围着躺在台上的金属机器人，一人用绿色液体注射，随后张开双臂。 原生视频规格为 15 秒 · 960×544。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Two white-coated laboratory figures stand over a silver humanoid robot on a table. One injects green liquid and later throws his arms up. Vintage horror-style lighting and equipment are visible. The author attributes it to a MiniMax H3 horror LoRA; no conflicting model mark is visible. Native-video output: 15s · 960×544. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Tech2Wild/status/2102124188886523927",
+    "sourceLabel": "X 原帖 · @Tech2Wild",
+    "author": "Tech2Wild",
+    "publishedAt": "2026-09-21T19:53:56.000Z",
+    "addedAt": "2026-10-12T01:05:55.193Z",
+    "mediaUrl": "/media/x-2102124188886523927.mp4",
+    "posterUrl": "/posters/x/2102124188886523927.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "960×544",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "retro",
+      "dark"
+    ],
+    "scenes": [
+      "sci-fi"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Minimax H3 1980s Horror Lora \nASI Takeover",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 7,
+      "views": 1246,
+      "snapshotAt": "2026-10-12T01:05:55.193Z"
+    },
+    "approvedAt": "2026-10-12T01:05:55.193Z",
+    "editorialBasis": "Original attribution and native video beginning, middle and ending inspected."
+  },
+  {
+    "id": "x-2102119095609020483",
+    "title": "太空舱列车与沙漠镜头换视角",
+    "titleEn": "New viewpoints for spacecraft, train and desert scenes",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "左右对照展示太空舱、站台列车和沙漠骑队，同一段动作在新的观察角度下重新呈现。 原生视频规格为 57 秒 · 2560×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A paired reference/result reel shows an astronaut inside a spacecraft, a train arriving at a platform, and a camel caravan in a desert. The right side is clearly labeled CROSSVIEW new camera angle, while the left is the reference. The original author explicitly names this as the MiniMax H3 version of their finetune and presents its actual generated results; this is a visible output demonstration, not only a model announcement. Native-video output: 57s · 2560×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ChetiArt/status/2102119095609020483",
+    "sourceLabel": "X 原帖 · @ChetiArt",
+    "author": "Tamas Cseh (Cseti)",
+    "publishedAt": "2026-09-21T19:33:42.000Z",
+    "addedAt": "2026-10-12T01:05:55.194Z",
+    "mediaUrl": "/media/x-2102119095609020483.mp4",
+    "posterUrl": "/posters/x/2102119095609020483.jpg",
+    "duration": 57,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1080",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [],
+    "scenes": [
+      "sci-fi",
+      "city"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "I'm glad to announce that I've finally finished the Minimax H3 version of my crossview-warp model finetune. For those who don't know what it is, it's a model that lets you regenerate your existing video clip from a new camera angle or with a new camera movement. Link to model👇",
+    "engagement": {
+      "replies": 13,
+      "reposts": 23,
+      "likes": 269,
+      "views": 44755,
+      "snapshotAt": "2026-10-12T01:05:55.194Z"
+    },
+    "approvedAt": "2026-10-12T01:05:55.194Z",
+    "editorialBasis": "Original attribution and native video beginning, middle and ending inspected."
+  },
+  {
+    "id": "x-2102112894527627480",
+    "title": "紫光装甲合拢的变身",
+    "titleEn": "A transformation into purple-lit armor",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "长发角色的黑色装甲逐渐合拢，面罩亮起紫色线条，最后举起手臂武器。 原生视频规格为 15 秒 · 2956×1692。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "The primary clip shows a purple-haired figure in black armor, followed by a helmet closing and glowing purple seams, then an armored pose with a large arm weapon. A second clip shows a red-haired armored character firing purple energy in a neon city. Caption attributes the transformation to MiniMax H3; no conflicting model mark is visible. Native-video output: 15s · 2956×1692. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/robazem/status/2102112894527627480",
+    "sourceLabel": "X 原帖 · @robazem",
+    "author": "Rob ✌︎",
+    "publishedAt": "2026-09-21T19:09:04.000Z",
+    "addedAt": "2026-10-12T01:05:55.194Z",
+    "mediaUrl": "/media/x-2102112894527627480.mp4",
+    "posterUrl": "/posters/x/2102112894527627480.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2956×1692",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "action-vfx",
+    "styles": [],
+    "scenes": [
+      "sci-fi",
+      "combat"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Zero-Red’s “Dark ver” \n\nThe duo of her and Zero-Blue as androids came later as I made her before making blue. She was inspired by “Metroid/Samus Aran” \n\nAlthough I don’t really plan to use the suited look,\n\nI did make a quick transformation sequence on MiniMax H3 🦾💥",
+    "engagement": {
+      "replies": 5,
+      "reposts": 4,
+      "likes": 13,
+      "views": 568,
+      "snapshotAt": "2026-10-12T01:05:55.194Z"
+    },
+    "approvedAt": "2026-10-12T01:05:55.194Z",
+    "editorialBasis": "Original attribution and native video beginning, middle and ending inspected."
+  },
+  {
+    "id": "x-2102112456898486702",
+    "title": "猫耳角色在床上转身",
+    "titleEn": "A cat-eared character turns on a bed",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "绿发猫耳角色穿着紫色衣裙坐在床上，身体转向枕头又回头，尾巴随动作摆动。 原生视频规格为 5 秒 · 480×640。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A green-haired anime cat-eared character in a purple dress sits on a bed, turns toward a pillow, then looks back while the tail moves. The original post explicitly says Qwen Image 2.1 plus MiniMax H3 I2V; the image model is not being claimed as the video model. No conflicting video-model mark is visible. Native-video output: 5s · 480×640. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/IsekaiBardGuild/status/2102112456898486702",
+    "sourceLabel": "X 原帖 · @IsekaiBardGuild",
+    "author": "AI Bard Guild",
+    "publishedAt": "2026-09-21T19:07:19.000Z",
+    "addedAt": "2026-10-12T01:05:55.194Z",
+    "mediaUrl": "/media/x-2102112456898486702.mp4",
+    "posterUrl": "/posters/x/2102112456898486702.jpg",
+    "duration": 5,
+    "aspectRatio": "portrait",
+    "resolution": "480×640",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime"
+    ],
+    "scenes": [
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Qwen Image 2.1 + MiniMax H3 I2V のテスト中",
+    "engagement": {
+      "replies": 2,
+      "reposts": 8,
+      "likes": 56,
+      "views": 7274,
+      "snapshotAt": "2026-10-12T01:05:55.194Z"
+    },
+    "approvedAt": "2026-10-12T01:05:55.194Z",
+    "editorialBasis": "Original attribution and native video beginning, middle and ending inspected."
+  },
+  {
+    "id": "x-2102110552398925965",
+    "title": "老电视前的回头一瞥",
+    "titleEn": "A glance back beside an old television",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "女子坐在旧式电视机前，屏幕先显示雪花又出现房间画面，她回过头，最后画面切至屏幕亮点。 原生视频规格为 5 秒 · 1024×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "The author's primary clip shows a woman seated in a retro room facing a CRT television. Static changes to an image of the room, she turns back, and the final frame is a dot on the screen. VHS texture is visible. Caption explicitly identifies MiniMax H3 Max VHS generation. A separate promotional attachment about styles is not the admitted work; the primary original clip is the basis. Native-video output: 5s · 1024×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/nakazakifam/status/2102110552398925965",
+    "sourceLabel": "X 原帖 · @nakazakifam",
+    "author": "中崎工房 | AIで1時間の仕事を5分で終わらせる人",
+    "publishedAt": "2026-09-21T18:59:45.000Z",
+    "addedAt": "2026-10-12T01:05:55.194Z",
+    "mediaUrl": "/media/x-2102110552398925965.mp4",
+    "posterUrl": "/posters/x/2102110552398925965.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "1024×768",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [
+      "retro"
+    ],
+    "scenes": [
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "H3 Max StylesのVHSモードで作る昭和っぽい映像。\n\nhttp://fal.aiでMiniMax H3 Maxに5種類の6-bit pixel art / hand-drawn / low-poly / 70s retro toon / VHSのスタイルを設定して生成できるモードが登場してたので早速VHSで試してみました。\nちょっとホラー寄りになってしまった気もしますが、結構いい味出してる。\n色々使い道がありそう。他のスタイルも試してみたいところです。",
+    "engagement": {
+      "replies": 1,
+      "reposts": 1,
+      "likes": 8,
+      "views": 4227,
+      "snapshotAt": "2026-10-12T01:05:55.194Z"
+    },
+    "approvedAt": "2026-10-12T01:05:55.194Z",
+    "editorialBasis": "Original attribution and native video beginning, middle and ending inspected."
+  },
+  {
+    "id": "x-2102106915635601452",
+    "title": "公园长颈惊叫与落头小鹰",
+    "titleEn": "A park-bench surprise with a stretching neck",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "参考人像变成手绘公园人物，一只旗纹小鹰落到头顶，男子脖子拉长惊叫，随后跑开。 原生视频规格为 5 秒 · 768×1024。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "The primary result transforms a man's reference portrait into a hand-drawn park scene. A tiny eagle with flag-pattern feathers lands on his head; his neck stretches, his mouth opens and he runs away. Caption explicitly attributes this result to MiniMax H3 and supplies its complete Prompt. A separate styles announcement attachment is not the admitted work. Native-video output: 5s · 768×1024. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "A man #Image1  sits on a park bench. His neck stretches upward in surprise as a tiny eagle with USA Flag on its body lands on his head. Medium locked shot, expressive hand-drawn motion. He starts screaming and running!",
+    "promptSourceUrl": "https://x.com/1littlecoder/status/2102106915635601452",
+    "sourceUrl": "https://x.com/1littlecoder/status/2102106915635601452",
+    "sourceLabel": "X 原帖 · @1littlecoder",
+    "author": "1LittleCoder💻",
+    "publishedAt": "2026-09-21T18:45:18.000Z",
+    "addedAt": "2026-10-12T01:05:55.194Z",
+    "mediaUrl": "/media/x-2102106915635601452.mp4",
+    "posterUrl": "/posters/x/2102106915635601452.jpg",
+    "duration": 5,
+    "aspectRatio": "portrait",
+    "resolution": "768×1024",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "illustration"
+    ],
+    "scenes": [
+      "creatures",
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "This is insane - This Minimax H3 Style works extremely well with reference images as well! \n\nThe first frame is the reference image added and the prompt 👇\n\nA man #Image1  sits on a park bench. His neck stretches upward in surprise as a tiny eagle with USA Flag on its body lands on his head. Medium locked shot, expressive hand-drawn motion. He starts screaming and running!",
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 21,
+      "views": 1845,
+      "snapshotAt": "2026-10-12T01:05:55.194Z"
+    },
+    "approvedAt": "2026-10-12T01:05:55.194Z",
+    "editorialBasis": "Original attribution and native video beginning, middle and ending inspected."
+  },
+  {
+    "id": "x-2102104750334308682",
+    "title": "菜板上的云朵切片",
+    "titleEn": "Slicing a cloud on a kitchen board",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "一团白云放在木质菜板上，刀刃切下松软云片，切片依次倒下铺在板面。 原生视频规格为 15 秒 · 3456×1920。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A fluffy white cloud sits on a kitchen chopping board. A knife slices it into cloud-textured pieces that tip over onto the board. The original caption explicitly says MiniMax H3 generated locally. Its short quoted slice instruction and separately mentioned consistency line do not establish a complete full Prompt, so Prompt remains null. No conflicting model mark is visible. Native-video output: 15s · 3456×1920. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/GlennHasABeard/status/2102104750334308682",
+    "sourceLabel": "X 原帖 · @GlennHasABeard",
+    "author": "Glenn Williams",
+    "publishedAt": "2026-09-21T18:36:42.000Z",
+    "addedAt": "2026-10-12T01:05:55.194Z",
+    "mediaUrl": "/media/x-2102104750334308682.mp4",
+    "posterUrl": "/posters/x/2102104750334308682.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "3456×1920",
+    "tags": [
+      "MiniMax H3",
+      "本地生成与工作流",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "workflow",
+    "styles": [],
+    "scenes": [
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Minimax H3, open weights, generated locally. Sliced fresh. Rains a little.\n\nPrompt: \"each cut slice standing upright for a beat then tipping over flat onto the board, and a brief fine drizzle falling from each fallen slice\"\n\nDuration: 15s. Camera: locked, board height. Rendered locally in ComfyUI, then Topaz to 4K.\n\n\"The slices stay cloud and never become bread\" is the consistency line. Say what a thing won't turn into.",
+    "engagement": {
+      "replies": 6,
+      "reposts": 3,
+      "likes": 45,
+      "views": 984,
+      "snapshotAt": "2026-10-12T01:05:55.194Z"
+    },
+    "approvedAt": "2026-10-12T01:05:55.194Z",
+    "editorialBasis": "Original attribution and native video beginning, middle and ending inspected."
+  },
+  {
+    "id": "x-2102100547046121866",
+    "title": "交易屏幕前的人物走上雨夜街道",
+    "titleEn": "A trader's screens give way to a rainy street",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "动画人物坐在红色行情屏幕前，后续画面转到豪华夜店外的雨夜，他拿着扫帚清理街道。 原生视频规格为 179 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "The native animated clip begins with a grey-faced character seated before red financial charts. The inspected midpoint is black. The ending shows the character in an orange work vest sweeping a rainy street outside a nightclub with a luxury-life billboard. Original caption explicitly attributes generation to MiniMax H3 on two 3090 cards. No conflicting model mark is visible in the inspected beginning or ending. Native-video output: 179s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/dorszafranski/status/2102100547046121866",
+    "sourceLabel": "X 原帖 · @dorszafranski",
+    "author": "dodo",
+    "publishedAt": "2026-09-21T18:20:00.000Z",
+    "addedAt": "2026-10-12T01:05:55.194Z",
+    "mediaUrl": "/media/x-2102100547046121866.mp4",
+    "posterUrl": "/posters/x/2102100547046121866.jpg",
+    "duration": 179,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [],
+    "scenes": [
+      "city"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3 na 2x 3090 na języku angielskim radzi sobie znacznie lepiej :D mniej halucyny ale wciąż wiadomo, że jest jej trochę \n\nale pierwszy raz śmiechłem przy tym filmiku \n\n4 godziny to było generowane i na końcu renderowane :)",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 4,
+      "views": 1769,
+      "snapshotAt": "2026-10-12T01:05:55.194Z"
+    },
+    "approvedAt": "2026-10-12T01:05:55.194Z",
+    "editorialBasis": "Original attribution and native video beginning, middle and ending inspected."
+  },
+  {
+    "id": "x-2102088577941451239",
+    "title": "白色房间里的角色坐姿与站姿",
+    "titleEn": "A character moves from seated pose to standing",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "绿发动画角色在白色房间里坐着面向镜头，脚部进入近景，最后起身站立；另一段呈现黑发角色的对应动作。 原生视频规格为 15 秒 · 736×736。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "The primary green-haired anime character is seated in a bright white room, brings a foot toward the camera, then stands. The secondary black-haired character performs a matching pose change. The author explicitly attributes generation to MiniMax H3 and credits another author only for prompt inspiration, not for the work itself. No conflicting model mark is visible. No complete original Prompt is supplied. Native-video output: 15s · 736×736. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Hemi3AI/status/2102088577941451239",
+    "sourceLabel": "X 原帖 · @Hemi3AI",
+    "author": "ヘミ",
+    "publishedAt": "2026-09-21T17:32:26.000Z",
+    "addedAt": "2026-10-12T01:05:55.194Z",
+    "mediaUrl": "/media/x-2102088577941451239.mp4",
+    "posterUrl": "/posters/x/2102088577941451239.jpg",
+    "duration": 15,
+    "aspectRatio": "square",
+    "resolution": "736×736",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime"
+    ],
+    "scenes": [
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "八雲べにさん\n\n@aimikoda 様のプロンプトを使わせて貰っています\n720x720で作っている関係で\nやや動きを制限しているので完全に同じではありません\nこれはシリーズにはしないで単発披露の予定です\n\nRTX 5060Ti > R9700 で生成してます\n\nMiniMax H3\nCamera & pose prompt structure inspired by @aimikoda\n#AIイラスト #AIArt #八雲べに",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 52,
+      "views": 7435,
+      "snapshotAt": "2026-10-12T01:05:55.194Z"
+    },
+    "approvedAt": "2026-10-12T01:05:55.194Z",
+    "editorialBasis": "Original attribution and native video beginning, middle and ending inspected."
   }
 ]
