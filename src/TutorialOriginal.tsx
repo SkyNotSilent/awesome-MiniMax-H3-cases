@@ -171,7 +171,7 @@ export function OriginalDocument({ original, language, sourceLabel, revisionUrl,
       : <div className="original-body" id={original.sections[0].anchor}><Blocks blocks={original.sections[0].blocks} language={language} /></div>}
     <footer className="original-foot">
       <p>{zh ? '版权归原作者所有。本页完整收录原文并保留出处链接，内容以原作者的最新版本为准。' : 'Copyright belongs to the original author. This page reproduces the original with attribution; the author’s latest version takes precedence.'}</p>
-      <a href="https://github.com/SkyNotSilent/awesome-MiniMax-H3-cases/issues/new?template=takedown.yml" target="_blank" rel="noreferrer">{zh ? '作者申请更正或下架' : 'Authors: request a correction or removal'} <ArrowUpRight size={12} /></a>
+      <a href={`${zh ? '' : '/en'}/contact/#copyright`}>{zh ? '作者申请更正或下架' : 'Authors: request a correction or removal'} <ArrowUpRight size={12} /></a>
     </footer>
   </section>
 }

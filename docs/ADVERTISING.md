@@ -30,6 +30,8 @@ The root host `zzskysilent.com` serves a small entry page that links to both H3 
 
 The initial inventory covers both homepages, both page-two archives, and the `official-deployment` and `minimax-director-timeline` guides in both languages. This list does not enable serving by itself. Recheck rights before adding new authors or content to an eligible directory.
 
+Content review also checks the public experience: specific editorial advice precedes attributed tutorial originals; abbreviated reading guides retain their source and do not present placeholder steps as complete instructions. Case archives include the site's viewing summaries and comparison guidance. Source-check dates and actual generation tests are distinct. Guides marked `needs-review` render no advertising unit. Rights requests use the localized contact page so that private evidence is directed to the private channel.
+
 Case detail pages and unrelated routes cannot be enabled through this configuration. A catalog unit appears after case 12 and only when at least 12 actual results are rendered. A guide unit appears after the article body. Static archive pages use the same runtime as React. Filters do not refresh an already submitted unit.
 
 Do not infer commercial permission from a source link, public availability, an author submission or a model license alone. Inspect reproduced text, video, audio, posters and embedded images as well as the site's own notes. Keep detailed rights evidence and account status in private operations records. Site approval covers more than the enabled ad pages.

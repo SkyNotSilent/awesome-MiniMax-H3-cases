@@ -1242,8 +1242,8 @@
       "en": "Follow the original source for its materials. Missing assets or settings are not reconstructed here."
     },
     "recommendation": {
-      "zh": "原作者长文覆盖安装、模型目录、三种生成模式和 Prompt；本站提供阅读导航，具体操作请进入原文。",
-      "en": "The original article covers installation, model folders, three generation modes and prompting. This page is a reading guide; follow the article for the procedure."
+      "zh": "这篇长文适合作为安装、模型目录、生成模式与 Prompt 写法的阅读地图。先把文中的环境准备和首条带声输出核对清楚，再进入镜头与声音描述；已有可运行环境的读者可以从原文的模式与 Prompt 部分开始。",
+      "en": "Use this long article as a map of installation, model folders, generation modes and prompt writing. Check environment preparation and the first output with audio before studying shot and sound descriptions; readers with a working setup can begin with its mode and prompt sections."
     },
     "nextGuideIds": [
       "official-deployment",
@@ -1348,8 +1348,8 @@
       "en": "Follow the original source for its materials. Missing assets or settings are not reconstructed here."
     },
     "recommendation": {
-      "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
-      "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
+      "zh": "这篇适合在已有基线后选择下一项工具：Prompt、Turbo、Motion Context 和音频控制分别解决不同问题。先写下自己的瓶颈，再只选一个项目做固定素材对照，便于把收益或失败定位到具体改动。",
+      "en": "Use this guide to choose a tool after establishing a baseline: prompts, Turbo, Motion Context and audio controls address different problems. Identify your bottleneck, then compare one project at a time with fixed assets so that benefits or failures can be traced to a specific change."
     },
     "guideType": "reference",
     "original": {
@@ -1448,8 +1448,8 @@
       "en": "Follow the original source for its materials. Missing assets or settings are not reconstructed here."
     },
     "recommendation": {
-      "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
-      "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
+      "zh": "把这篇当作 Attention、人物 LoRA 和低显存方案的选型清单。比较时同时记录权重、后端、素材与输出规格；低显存可运行、角色一致性和生成速度需要分别判断，最后回到所选项目的文档核对兼容条件。",
+      "en": "Treat this as a selection checklist for attention backends, character LoRAs and low-VRAM options. Record weights, backend, assets and output settings together; judge memory feasibility, character consistency and speed separately, then check compatibility in the chosen project documentation."
     },
     "guideType": "reference",
     "original": {
@@ -1950,8 +1950,8 @@
       "en": "Follow the original source for its materials. Missing assets or settings are not reconstructed here."
     },
     "recommendation": {
-      "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
-      "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
+      "zh": "这篇更适合学习从分镜参考帧到剪辑成片的过程。先检查参考帧之间的角色、服装、光线和构图是否一致，再挑选短镜头；把单镜头生成效果与后期剪辑、配色和声音的贡献分开观察。",
+      "en": "Use this to study the path from storyboard reference frames to an edited trailer. Check character, clothing, lighting and framing consistency between references before selecting short shots; distinguish the generated shot from the contributions of editing, color and sound."
     },
     "guideType": "project",
     "original": {
@@ -2051,8 +2051,8 @@
       "en": "Follow the original source for its materials. Missing assets or settings are not reconstructed here."
     },
     "recommendation": {
-      "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
-      "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
+      "zh": "这篇展示的是在 RTX 3060 环境下逐镜生成、再剪辑成一分钟预告片的制作路线。评估自己的项目时，先用一个代表性镜头检查运动和声音，再估算多次生成与剪辑成本；一分钟成片时长不等于单次模型输出时长。",
+      "en": "This shows a shot-by-shot RTX 3060 workflow followed by editing into a one-minute trailer. Check movement and audio on one representative shot before estimating repeated generation and editing costs; the finished trailer duration differs from a single model output."
     },
     "guideType": "project",
     "original": {
@@ -2152,8 +2152,8 @@
       "en": "Follow the original source for its materials. Missing assets or settings are not reconstructed here."
     },
     "recommendation": {
-      "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
-      "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
+      "zh": "这篇适合判断六步 Turbo 能否用于构图和选镜预览。用相同素材与输出规格对照原生基线，分别看耗时、运动和细节；最终成片的选择应以可接受的画面与声音质量为依据。",
+      "en": "Use this to decide whether six-step Turbo suits framing and shot previews. Compare it with a native baseline using the same assets and output settings, checking time, motion and detail separately; choose final renders by acceptable picture and sound quality."
     },
     "guideType": "reference",
     "original": {
@@ -2253,8 +2253,8 @@
       "en": "Follow the original source for its materials. Missing assets or settings are not reconstructed here."
     },
     "recommendation": {
-      "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
-      "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
+      "zh": "这篇把 Pruned 权重、Turbo 与缓存作为低显存路线中的不同变量。先看所需模型能否在当前环境加载，再逐项记录显存、耗时和输出变化；这样可以区分量化或剪枝、少步采样与缓存各自的影响。",
+      "en": "This covers pruned weights, Turbo and caching as separate variables in a low-VRAM route. Check that the required model loads in your environment, then record memory, time and output changes one at a time to distinguish pruning or quantization, reduced-step sampling and caching."
     },
     "guideType": "reference",
     "original": {
@@ -2351,8 +2351,8 @@
       "en": "Follow the original source for its materials. Missing assets or settings are not reconstructed here."
     },
     "recommendation": {
-      "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
-      "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
+      "zh": "这篇适合学习怎样阅读 Turbo 前后对照，原作者的机器与设置是结果的适用范围。对照自己的环境时，固定素材、输出尺寸、时长与模型，分别记录加载、采样和导出时间，同时检查声音与运动；来源中的耗时不能直接作为本机预期。",
+      "en": "Use this to learn how to read a before-and-after Turbo comparison within the author’s hardware and settings. Fix assets, dimensions, duration and model on your own machine, record loading, sampling and export times separately, and check audio and motion; source timings are not a forecast for your setup."
     },
     "guideType": "reference",
     "original": {
@@ -2452,8 +2452,8 @@
       "en": "Follow the original source for its materials. Missing assets or settings are not reconstructed here."
     },
     "recommendation": {
-      "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
-      "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
+      "zh": "这篇适合 Apple Silicon 用户比较 Phosphene 的快速预览与成片质量。先核对来源里的 Mac 配置，再用同一镜头观察打开和关闭 Turbo 时的运动、形变与声音变化；设备差异和软件版本需要在自己的结果中记录。",
+      "en": "Use this to compare Phosphene’s fast previews and final quality on Apple Silicon. Check the source Mac configuration, then examine motion, deformation and audio with Turbo on and off for the same shot; record device differences and software versions in your own results."
     },
     "guideType": "reference",
     "original": {
@@ -2808,8 +2808,8 @@
       "en": "Follow the original source for its materials. Missing assets or settings are not reconstructed here."
     },
     "recommendation": {
-      "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
-      "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
+      "zh": "这篇适合已经能输出带声 H3 视频、希望独立调节视频与音频采样的读者。比较时一次固定一个时钟，除声音清晰度外还要检查对白、环境声与画面事件的时间关系，避免仅以总耗时评价采样设置。",
+      "en": "Use this after obtaining a working H3 video with audio when you want separate video and audio sampling controls. Hold one clock fixed at a time and check dialogue and environmental sound timing against picture events as well as clarity; total duration alone does not evaluate the sampling setup."
     },
     "guideType": "project",
     "commandItems": [
@@ -3189,8 +3189,8 @@
       "en": "Follow the original source for its materials. Missing assets or settings are not reconstructed here."
     },
     "recommendation": {
-      "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
-      "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
+      "zh": "这篇适合比较 16GB 显存环境下剪枝与 INT8 路线的可运行性。阅读时把模型加载、采样和解码的资源需求分开，并记录系统内存；生成成功后还应与相同素材的基线比较细节、运动和声音，原作者的耗时仅代表其设置。",
+      "en": "Use this to assess pruned INT8 feasibility in a 16GB VRAM setup. Separate model loading, sampling and decoding resource needs and record system RAM; after a successful render, compare detail, motion and audio with a baseline using the same assets. The author’s timing applies to their settings."
     },
     "guideType": "reference",
     "commandItems": [
@@ -3387,8 +3387,8 @@
       "en": "Follow the original source for its materials. Missing assets or settings are not reconstructed here."
     },
     "recommendation": {
-      "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
-      "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
+      "zh": "这篇适合研究显存受限时 NF4 与 CPU/GPU 调度带来的取舍。先核对当前示例支持的模式，再同时观察显存、系统内存与总等待时间；检查 MP4 的视频和音频轨，才能判断这条路线是否满足自己的输出目标。",
+      "en": "Use this to study NF4 and CPU/GPU scheduling trade-offs under limited VRAM. Check the modes supported by the current example, observe VRAM, system RAM and total wait time together, and inspect the MP4 video and audio tracks before deciding whether the route meets your output goal."
     },
     "guideType": "reference",
     "commandItems": [
@@ -3619,8 +3619,8 @@
       "en": "Follow the original source for its materials. Missing assets or settings are not reconstructed here."
     },
     "recommendation": {
-      "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
-      "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
+      "zh": "这篇适合区分基础生成、Motion Context 续接和升频三个阶段。先看短片基线，再逐个接缝检查动作、身份和声音连续性，最后观察升频结果；分开保存各阶段输出，便于定位问题发生在哪一步。",
+      "en": "Use this to distinguish basic generation, Motion Context continuation and frame interpolation. Examine a short baseline, inspect motion, identity and audio at each join, then inspect interpolation; saving the output at every stage helps locate where a problem appears."
     },
     "guideType": "reference",
     "original": {
@@ -3722,8 +3722,8 @@
       "en": "Follow the original source for its materials. Missing assets or settings are not reconstructed here."
     },
     "recommendation": {
-      "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
-      "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
+      "zh": "这篇的学习重点是多段续接如何维持角色和动作，而不是只看最终成片时长。逐段比较边界前后的身份、动作方向与声音，记录重叠方式和返工次数；原作者的 RTX 4070 结果是其配置快照。",
+      "en": "Focus on how multiple continuations preserve character and motion rather than only the finished duration. Compare identity, movement direction and sound on both sides of each boundary and record overlap choices and retries; the author’s RTX 4070 result is a snapshot of their setup."
     },
     "guideType": "project",
     "original": {
@@ -3824,8 +3824,8 @@
       "en": "Follow the original source for its materials. Missing assets or settings are not reconstructed here."
     },
     "recommendation": {
-      "zh": "先阅读适用条件，再到原作者内容中查看完整演示与更新。",
-      "en": "Check the prerequisites, then follow the author for the full demonstration and updates."
+      "zh": "这篇适合建立 4 步与 8 步 LoRA 的 A/B 检查清单。固定参考素材、输出规格和续接设置，记录 LoRA 强度，然后逐项比较清晰度、噪声、语音和接缝；原作者在一个 WebUI 版本中的结论需要在自己的组合上重新检验。",
+      "en": "Use this to build an A/B checklist for four-step and eight-step LoRAs. Fix reference assets, output specifications and continuation settings, record LoRA strength, then compare clarity, noise, speech and joins separately; test conclusions from one WebUI version again in your own combination."
     },
     "guideType": "reference",
     "original": {

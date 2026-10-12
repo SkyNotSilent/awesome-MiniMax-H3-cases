@@ -269,13 +269,15 @@ export const copy = {
       items: [
         ['这里收录什么？', '公开发布的 MiniMax H3 视频案例。每个案例优先展示真实视频，并链接原始来源。'],
         ['为什么有些案例没有 Prompt？', '只有来源明确公开 Prompt 时才会展示；没有公开的案例只展示视频和公开信息。'],
+        ['哪些内容是本站整理的？', '案例摘要、分类、比较建议和教程导读由本站整理；视频、图片、署名原文和逐字展示的 Prompt 保留原作者归属。'],
+        ['收录代表本站做过生成实测吗？', '案例用于观察公开输出；教程分别标注来源核对日期和本站实测记录。作者公布的耗时或显存结果只代表其环境，复现前需核对版本和自己的硬件条件。'],
         ['这里展示的 Prompt 会被修改吗？', '不会。Prompt 保留来源中的语言、内容和格式；本站不补写、不改写，也不根据视频反推。'],
         ['X 上发现的案例会自动发布吗？', '来源、模型、媒体、存储和站内播放校验全部通过的明确案例可以直接发布；模糊项继续留在审核队列。'],
       ],
     },
     footer: {
       mark: '开放社区档案',
-      note: '仅收录公开来源；版权归原作者所有。发现错误或希望移除内容，请提交 Issue。',
+      note: '本站提供案例导读与学习导航；视频、图片与原文版权归原作者所有。纠错或移除请求请使用下方联系与版权入口。',
     },
   },
   en: {
@@ -460,13 +462,15 @@ export const copy = {
       items: [
         ['What does this library include?', 'Publicly shared MiniMax H3 video examples. Every case prioritizes the actual video and links to its original source.'],
         ['Why do some cases have no prompt?', 'A prompt appears only when the source explicitly publishes it. Otherwise, the page shows the video and public details only.'],
+        ['Which parts are compiled by this site?', 'Case summaries, classifications, comparison notes and tutorial guidance are compiled here. Videos, images, attributed source texts and verbatim prompts retain their creator attribution.'],
+        ['Does inclusion mean the site tested generation?', 'Cases let you examine public outputs. Guides label source-check dates and site testing separately. Author timings and memory results apply to their setup; check versions and your own hardware before reproducing them.'],
         ['Are published prompts modified?', 'No. Prompts preserve the language, content, and formatting used by the source. We never complete, rewrite, or infer them from a video.'],
         ['Are cases found on X published automatically?', 'Clear cases can publish after source, model, media, storage, and in-site playback checks pass; ambiguous items stay in the review queue.'],
       ],
     },
     footer: {
       mark: 'OPEN COMMUNITY ARCHIVE',
-      note: 'Public sources only; rights remain with their creators. Open an Issue to correct or remove a record.',
+      note: 'This site provides viewing notes and learning guidance. Rights to videos, images and source texts remain with their creators. Use Contact and copyright below for corrections or removal requests.',
     },
   },
 } as const
