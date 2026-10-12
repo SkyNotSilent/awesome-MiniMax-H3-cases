@@ -1,4 +1,12 @@
 {
-  "approvedCatalogPaths": [],
-  "approvedTutorialIds": []
+  "approvedCatalogPaths": [
+    "/",
+    "/en/",
+    "/cases/page/2/",
+    "/en/cases/page/2/"
+  ],
+  "approvedTutorialIds": [
+    "official-deployment",
+    "minimax-director-timeline"
+  ]
 }
