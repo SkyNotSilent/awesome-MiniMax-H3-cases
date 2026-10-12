@@ -3,6 +3,7 @@ export function createAdvertisingRuntime(view) {
   const document = view.document
   const mounts = new WeakMap()
   const active = new Set()
+  const requestedPlacements = new Set()
   let scriptPromise
   let consentPromise
   let revoking = false
@@ -18,10 +19,32 @@ export function createAdvertisingRuntime(view) {
       && params.get('importFavorites') !== '1' && !revoking)
   }
 
+  function usStatus() {
+    const api = view.googlefc?.usstatesoptout
+    if (typeof api?.getInitialUsStatesOptOutStatus !== 'function' || !api.InitialUsStatesOptOutStatusEnum) return null
+    const status = api.getInitialUsStatesOptOutStatus()
+    const values = api.InitialUsStatesOptOutStatusEnum
+    return status === values.DOES_NOT_APPLY ? false : [values.NOT_OPTED_OUT, values.OPTED_OUT].includes(status) ? true : null
+  }
+
+  function updatePrivacyControls() {
+    const applies = usStatus()
+    for (const button of document.querySelectorAll('[data-ad-privacy]')) {
+      button.hidden = button.hasAttribute('data-ad-us-privacy') ? applies !== true : applies === true
+    }
+  }
+
+  function refreshPrivacyControls() {
+    if (scriptPromise) view.googlefc.callbackQueue.push({ INITIAL_US_STATES_OPT_OUT_DATA_READY: updatePrivacyControls })
+  }
+
   function loadScript(settings) {
     return scriptPromise ??= new Promise(resolve => {
       view.googlefc ??= {}
       view.googlefc.callbackQueue ??= []
+      view.googlefc.usstatesoptout ??= {}
+      view.googlefc.usstatesoptout.overrideDnsLink = true
+      view.googlefc.callbackQueue.push({ INITIAL_US_STATES_OPT_OUT_DATA_READY: updatePrivacyControls })
       const script = document.createElement('script')
       script.id = 'h3-adsense-script'
       script.async = true
@@ -58,6 +81,7 @@ export function createAdvertisingRuntime(view) {
 
   function mount(wrapper) {
     if (mounts.has(wrapper)) return mounts.get(wrapper)
+    const placementKey = () => `${view.location.pathname}:${wrapper.dataset.adPlacement}`
     let disposed = false
     let observer
     let statusObserver
@@ -82,6 +106,7 @@ export function createAdvertisingRuntime(view) {
       const currentSettings = allowed ? await config() : null
       if (disposed || !wrapper.isConnected) return
       if (!allowed || !eligible(currentSettings, wrapper) || currentSettings.client !== settings.client) { hide(); return }
+      if (requestedPlacements.has(placementKey())) { hide(); return }
       const unit = wrapper.querySelector('ins')
       if (!unit || unit.dataset.adsbygoogleStatus) return
       unit.dataset.adClient = settings.client
@@ -92,10 +117,12 @@ export function createAdvertisingRuntime(view) {
         if (unit.dataset.adStatus === 'filled') wrapper.dataset.adState = 'filled'
       })
       statusObserver.observe(unit, { attributes: true, attributeFilter: ['data-ad-status'] })
+      requestedPlacements.add(placementKey())
       try { (view.adsbygoogle ??= []).push({}) } catch { hide() }
     }
     void config().then(settings => {
       if (disposed || !wrapper.isConnected || !eligible(settings, wrapper)) return
+      if (requestedPlacements.has(placementKey())) { hide(); return }
       wrapper.hidden = false
       wrapper.dataset.adState = 'waiting'
       if (typeof view.IntersectionObserver !== 'function') { void request(settings); return }
@@ -117,20 +144,32 @@ export function createAdvertisingRuntime(view) {
     }
     if (!settings?.enabled || settings.origin !== view.location.origin) { showFallback(); return }
     if (!await loadScript(settings)) { showFallback(); return }
-    view.googlefc.callbackQueue.push({ CONSENT_API_READY: () => {
-      if (typeof view.googlefc.showRevocationMessage !== 'function') { showFallback(); return }
+    const open = () => {
+      updatePrivacyControls()
+      const applies = usStatus()
+      const us = view.googlefc.usstatesoptout
+      if (applies === true && typeof us.openConfirmationDialog !== 'function') { showFallback(); return }
+      if (applies !== true && typeof view.googlefc.showRevocationMessage !== 'function') { showFallback(); return }
       revoking = true
       for (const wrapper of active) { wrapper.hidden = true; wrapper.querySelector('ins')?.replaceChildren() }
-      view.googlefc.showRevocationMessage()
+      if (applies === true) us.openConfirmationDialog(() => {})
+      else view.googlefc.showRevocationMessage()
+    }
+    view.googlefc.callbackQueue.push({ CONSENT_API_READY: () => {
+      if (typeof view.googlefc.usstatesoptout?.getInitialUsStatesOptOutStatus === 'function') {
+        view.googlefc.callbackQueue.push({ INITIAL_US_STATES_OPT_OUT_DATA_READY: () => { if (usStatus() == null) showFallback(); else open() } })
+      } else open()
     } })
   }
 
   return {
     mount,
     privacy,
+    refreshPrivacyControls,
     mountStatic: () => {
       for (const wrapper of document.querySelectorAll('[data-ad-placement]')) mount(wrapper)
       for (const button of document.querySelectorAll('[data-ad-privacy]')) button.addEventListener('click', () => { void privacy(button) })
+      refreshPrivacyControls()
     },
   }
 }

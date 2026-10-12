@@ -4,11 +4,11 @@ import { createAdvertisingRuntime } from '../shared/advertising-runtime.mjs'
 const origin = 'https://awesome-minimax-h3-cases.zzskysilent.com'
 const settings = { enabled: true, origin, client: 'ca-pub-1234567890123456', slots: { catalog: '1234567890', tutorial: '0987654321' }, approvedPaths: ['/', '/en/', '/tutorials/good-guide/'] }
 const cleanups: Array<() => void> = []
-type QueueEntry = { CONSENT_DATA_READY?: () => void; CONSENT_API_READY?: () => void }
+type QueueEntry = { CONSENT_DATA_READY?: () => void; CONSENT_API_READY?: () => void; INITIAL_US_STATES_OPT_OUT_DATA_READY?: () => void }
 
 function setup(path = '/', config = settings) {
   const url = new URL(path, origin)
-  const fc = { callbackQueue: [] as QueueEntry[], showRevocationMessage: vi.fn() }
+  const fc = { callbackQueue: [] as QueueEntry[], showRevocationMessage: vi.fn(), usstatesoptout: undefined as undefined | { overrideDnsLink?: boolean; getInitialUsStatesOptOutStatus?: () => number; InitialUsStatesOptOutStatusEnum?: { DOES_NOT_APPLY: number; NOT_OPTED_OUT: number; OPTED_OUT: number }; openConfirmationDialog?: (callback: (optedOut: boolean) => void) => void } }
   const view = {
     document, location: url,
     fetch: vi.fn().mockResolvedValue({ ok: true, json: async () => config }),
@@ -64,6 +64,25 @@ describe('manual advertising requests', () => {
     await flush()
     expect(view.adsbygoogle).toHaveLength(1)
     expect(document.querySelectorAll('#h3-adsense-script')).toHaveLength(1)
+  })
+
+  it('does not refresh ads after a filter removes and restores the same placement', async () => {
+    const { runtime, wrapper, view, fc } = setup()
+    await flush(); loaded()
+    fc.callbackQueue.find(entry => entry.CONSENT_DATA_READY)?.CONSENT_DATA_READY?.()
+    await flush()
+    expect(view.adsbygoogle).toHaveLength(1)
+    cleanups.pop()?.()
+    wrapper.remove()
+    const restored = document.createElement('div')
+    restored.dataset.adPlacement = 'catalog'
+    restored.hidden = true
+    restored.innerHTML = '<ins class="adsbygoogle"></ins>'
+    document.body.append(restored)
+    cleanups.push(runtime.mount(restored))
+    await flush()
+    expect(view.adsbygoogle).toHaveLength(1)
+    expect(restored.hidden).toBe(true)
   })
 
   it('suppresses requests when the user refuses TCF storage consent', async () => {
@@ -142,6 +161,42 @@ describe('manual advertising requests', () => {
     second.wrapper.querySelector('ins')!.dataset.adStatus = 'unfilled'
     await flush()
     expect(second.wrapper.hidden).toBe(true)
+  })
+
+  it('shows a US opt-out entry and uses its confirmation API instead of EU revocation', async () => {
+    const { runtime, wrapper, fc } = setup()
+    const open = vi.fn()
+    fc.usstatesoptout = { getInitialUsStatesOptOutStatus: () => 2, InitialUsStatesOptOutStatusEnum: { DOES_NOT_APPLY: 1, NOT_OPTED_OUT: 2, OPTED_OUT: 3 }, openConfirmationDialog: open }
+    const nav = document.createElement('nav')
+    nav.innerHTML = '<button data-ad-privacy="en">Ad privacy choices</button><button data-ad-privacy="en" data-ad-us-privacy hidden>Do not sell or share my personal information</button><span data-ad-privacy-status></span>'
+    document.body.append(nav)
+    await flush(); loaded(); await flush()
+    for (const entry of [...fc.callbackQueue]) entry.INITIAL_US_STATES_OPT_OUT_DATA_READY?.()
+    expect(fc.usstatesoptout.overrideDnsLink).toBe(true)
+    expect(nav.querySelector<HTMLButtonElement>('[data-ad-us-privacy]')!.hidden).toBe(false)
+    expect(nav.querySelector<HTMLButtonElement>('button')!.hidden).toBe(true)
+    await runtime.privacy(nav.querySelector('[data-ad-us-privacy]')!)
+    fc.callbackQueue.find(entry => entry.CONSENT_API_READY)?.CONSENT_API_READY?.()
+    for (const entry of [...fc.callbackQueue]) entry.INITIAL_US_STATES_OPT_OUT_DATA_READY?.()
+    expect(open).toHaveBeenCalledOnce()
+    expect(fc.showRevocationMessage).not.toHaveBeenCalled()
+    expect(wrapper.hidden).toBe(true)
+  })
+
+  it('retains the EU entry when US rules do not apply', async () => {
+    const { runtime, fc } = setup()
+    fc.usstatesoptout = { getInitialUsStatesOptOutStatus: () => 1, InitialUsStatesOptOutStatusEnum: { DOES_NOT_APPLY: 1, NOT_OPTED_OUT: 2, OPTED_OUT: 3 }, openConfirmationDialog: vi.fn() }
+    const nav = document.createElement('nav')
+    nav.innerHTML = '<button data-ad-privacy="zh">广告隐私选择</button><button data-ad-privacy="zh" data-ad-us-privacy hidden>不出售或分享我的个人信息</button>'
+    document.body.append(nav)
+    await flush(); loaded(); await flush()
+    await runtime.privacy(nav.querySelector('button')!)
+    fc.callbackQueue.find(entry => entry.CONSENT_API_READY)?.CONSENT_API_READY?.()
+    for (const entry of [...fc.callbackQueue]) entry.INITIAL_US_STATES_OPT_OUT_DATA_READY?.()
+    expect(nav.querySelector<HTMLButtonElement>('button')!.hidden).toBe(false)
+    expect(nav.querySelector<HTMLButtonElement>('[data-ad-us-privacy]')!.hidden).toBe(true)
+    expect(fc.showRevocationMessage).toHaveBeenCalledOnce()
+    expect(fc.usstatesoptout.openConfirmationDialog).not.toHaveBeenCalled()
   })
 
   it('hides active units before reopening consent and explains disabled privacy controls', async () => {
