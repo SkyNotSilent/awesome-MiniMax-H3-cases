@@ -1,6 +1,6 @@
 # MiniMax H3 Cases & Guides — Complete Case and Tutorial Index
 
-Generated from data/cases.json and data/tutorial-guides.json. Total: 2355 cases and 25 tutorials. Complete verbatim public Prompts: 700.
+Generated from data/cases.json and data/tutorial-guides.json. Total: 2385 cases and 25 tutorials. Complete verbatim public Prompts: 708.
 
 ## Tutorials
 
@@ -92460,4 +92460,795 @@ A man #Image1  sits on a park bench. His neck stretches upward in surprise as a 
 - Chinese summary: 绿发动画角色在白色房间里坐着面向镜头，脚部进入近景，最后起身站立；另一段呈现黑发角色的对应动作。 原生视频规格为 15 秒 · 736×736。原帖未公开完整 Prompt，本库不反推或补写。
 - English summary: The primary green-haired anime character is seated in a bright white room, brings a foot toward the camera, then stands. The secondary black-haired character performs a matching pose change. The author explicitly attributes generation to MiniMax H3 and credits another author only for prompt inspiration, not for the work itself. No conflicting model mark is visible. No complete original Prompt is supplied. Native-video output: 15s · 736×736. The source did not publish a complete prompt, so this library does not infer or complete one.
 - Public prompt: not published completely by the source
+
+## Pixel cats battle at the harbor
+
+- ID: x-2102044318097903800
+- 中文标题: 港口里的像素猫格斗
+- English title: Pixel cats battle at the harbor
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102044318097903800/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102044318097903800/
+- Original source: https://x.com/IndoorIMU/status/2102044318097903800
+- Author: IMU | アイミュ 🎬
+- Published: 2026-09-21T14:36:34.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Action & VFX
+- Visual styles: Retro & vintage, Illustration
+- Scenes: Action & combat, Animals & creatures
+- Output: 14s, 1920×1080, landscape
+- Prompt provenance: creator-verbatim
+- Prompt completeness: complete
+- Chinese summary: 两只像素猫在港口对战，激光攻击后出现胜利画面。 原生视频规格为 14 秒 · 1920×1080。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: Two pixel-art cats fight at a harbor, with a laser attack followed by a victory screen. Native-video output: 14s · 1920×1080. The creator published the complete prompt, preserved here verbatim.
+- Complete verbatim public prompt:
+
+```text
+Use Image 1 as the absolute reference for Cat 1 and Image 2 for Cat 2. Keep both cats visually identical to their references throughout the entire video.
+Create a playful 15-second retro 8-bit arcade fighting-game battle at a pixel-art harbor. A large ship is visible in the background, with water, docks, and simple pixel-art harbor details.
+Fixed side-view 2D fighting-game camera, full-body character visibility, low-resolution pixel graphics, limited color palette, sprite-based animation, arcade-style UI, CRT scanlines, energetic retro animation.
+0–3 sec:
+Both cats stand facing each other in fighting stances on the harbor dock.
+A large pixel-art “ROUND 1” appears prominently in the center of the screen like a classic arcade fighting-game announcement. After a brief moment, it disappears and a large “FIGHT!” appears with a dramatic arcade-style flash, then disappears as the battle begins.
+The UI may show simple visual health bars, but do not display any timer, countdown, clock, numbers, scores, or other numerical information anywhere on screen. The only text visible during this sequence should be “ROUND 1” and “FIGHT!”
+3–5 sec:
+Cat 1 throws a small ball of yarn toward Cat 2.
+5–7 sec:
+Cat 2 sees the yarn and becomes extremely excited, happily jumping toward it with its paws outstretched. Cute pixel-art musical notes pop and bounce around Cat 2 to emphasize its excitement. Cat 1 calmly watches and prepares its attack.
+7–10 sec:
+Just as Cat 2 reaches the yarn, Cat 1 activates a powerful special move. Its eyes suddenly glow and fire two bright pixelated laser beams at Cat 2. Add dramatic pixel flashes, sparks, impact effects, and a brief arcade-style screen shake.
+10–12 sec:
+The laser hits Cat 2, sending it flying backward in a humorous exaggerated knockback animation. Its health bar reaches zero. No blood or gore.
+12–14 sec:
+Cat 1 performs a playful victory dance. It closes its eyes, crosses its front paws confidently, and repeatedly sways its hips from side to side while gently bouncing its body up and down in a cute, rhythmic 8-bit dance. Keep the entire body visible and make the movement exaggerated and clearly readable as a victory celebration.
+A large pixel-art “WIN!” appears during the victory dance while Cat 2 remains defeated in the background.
+```
+
+## Peeling wallpaper reveals the sky
+
+- ID: x-2102041528654876810
+- 中文标题: 揭开的墙纸露出天空
+- English title: Peeling wallpaper reveals the sky
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102041528654876810/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102041528654876810/
+- Original source: https://x.com/GlennHasABeard/status/2102041528654876810
+- Author: Glenn Williams
+- Published: 2026-09-21T14:25:29.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Local Generation & Workflow
+- Visual styles: not specified
+- Scenes: Daily life
+- Output: 15s, 3456×1920, landscape
+- Prompt provenance: creator-verbatim
+- Prompt completeness: complete
+- Chinese summary: 旧房间墙面出现一块逐渐揭开的区域，露出蓝天与白云。 原生视频规格为 15 秒 · 3456×1920。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A patch peels away from an old room's wall, revealing blue sky and clouds. Native-video output: 15s · 3456×1920. The creator published the complete prompt, preserved here verbatim.
+- Complete verbatim public prompt:
+
+```text
+the strip peels downward in one continuous curl, the paper crackling and flaking at the edge
+```
+
+## Two women talk beside a pool
+
+- ID: x-2102038352673566817
+- 中文标题: 泳池边的两人交流
+- English title: Two women talk beside a pool
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102038352673566817/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102038352673566817/
+- Original source: https://x.com/borusichion555/status/2102038352673566817
+- Author: 実写版『ボルシチ』公式アカウント@ここあんぬ
+- Published: 2026-09-21T14:12:51.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Character & Dialogue
+- Visual styles: not specified
+- Scenes: Dialogue & lip sync
+- Output: 10s, 1504×832, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 年轻女子与年长女子在室内泳池边面对面交谈。 原生视频规格为 10 秒 · 1504×832。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A younger woman and an older woman face each other and talk beside an indoor pool. Native-video output: 10s · 1504×832. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A silver-haired desktop character sneezes
+
+- ID: x-2102030213513461970
+- 中文标题: 桌面上的银发少女打喷嚏
+- English title: A silver-haired desktop character sneezes
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102030213513461970/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102030213513461970/
+- Original source: https://x.com/Mayz1169/status/2102030213513461970
+- Author: Kiki
+- Published: 2026-09-21T13:40:31.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Animation
+- Visual styles: not specified
+- Scenes: Daily life
+- Output: 9s, 1890×1080, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 银发动画角色出现在应用图标旁，闭眼打喷嚏后恢复表情。 原生视频规格为 9 秒 · 1890×1080。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A silver-haired animated character appears beside desktop icons, closes her eyes to sneeze and returns to her original expression. Native-video output: 9s · 1890×1080. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A fingertip taps glass mushrooms
+
+- ID: x-2102026855180046499
+- 中文标题: 指尖轻点玻璃蘑菇
+- English title: A fingertip taps glass mushrooms
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102026855180046499/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102026855180046499/
+- Original source: https://x.com/GlennHasABeard/status/2102026855180046499
+- Author: Glenn Williams
+- Published: 2026-09-21T13:27:10.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Music Video
+- Visual styles: not specified
+- Scenes: Nature & landscape
+- Output: 15s, 3780×2160, landscape
+- Prompt provenance: creator-verbatim
+- Prompt completeness: complete
+- Chinese summary: 一排透明蘑菇立在苔藓木头上，手指依次轻点。 原生视频规格为 15 秒 · 3780×2160。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: Transparent mushrooms stand on a mossy log while a fingertip taps them in sequence. Native-video output: 15s · 3780×2160. The creator published the complete prompt, preserved here verbatim.
+- Complete verbatim public prompt:
+
+```text
+one mushroom every one and a half seconds, each a slightly higher note, each shedding one drop
+```
+
+## A purple-armored legion assembles
+
+- ID: x-2102057559163101436
+- 中文标题: 紫色战甲军团的集结
+- English title: A purple-armored legion assembles
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102057559163101436/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102057559163101436/
+- Original source: https://x.com/Tech2Wild/status/2102057559163101436
+- Author: Tech2Wild
+- Published: 2026-09-21T15:29:11.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Showcase
+- Visual styles: not specified
+- Scenes: not specified
+- Output: 29s, 960×544, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 战甲人物特写切换到整齐排列的紫色装甲军团。 原生视频规格为 29 秒 · 960×544。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: An armored man's close-up cuts to rows of purple-armored figures gathering together. Native-video output: 29s · 960×544. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A train blockout compared with finished footage
+
+- ID: x-2102050397225705798
+- 中文标题: 灰模列车与成片的分屏对照
+- English title: A train blockout compared with finished footage
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102050397225705798/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102050397225705798/
+- Original source: https://x.com/ComfyUI/status/2102050397225705798
+- Author: ComfyUI
+- Published: 2026-09-21T15:00:43.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Local Generation & Workflow
+- Visual styles: not specified
+- Scenes: not specified
+- Output: 15s, 1080×1920, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 分屏展示列车灰模、参考人物与生成画面的变化。 原生视频规格为 15 秒 · 1080×1920。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: Split screens compare a train blockout, character references and the generated train footage. Native-video output: 15s · 1080×1920. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A skeleton and a mage with a potion bottle
+
+- ID: x-2102048235221340411
+- 中文标题: 骷髅与魔法学徒的药瓶实验
+- English title: A skeleton and a mage with a potion bottle
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102048235221340411/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102048235221340411/
+- Original source: https://x.com/ou_zhen599/status/2102048235221340411
+- Author: Loriel.AI
+- Published: 2026-09-21T14:52:08.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Local Generation & Workflow
+- Visual styles: not specified
+- Scenes: Fantasy
+- Output: 15s, 3840×2160, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 骷髅和年轻魔法师在烛光实验室里观察冒泡药瓶。 原生视频规格为 15 秒 · 3840×2160。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A skeleton and a young mage examine bubbling potion bottles in a candlelit laboratory. Native-video output: 15s · 3840×2160. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## Batman and Joker clash in hand-drawn action
+
+- ID: x-2102046046260023701
+- 中文标题: 蝙蝠侠与小丑的手绘交锋
+- English title: Batman and Joker clash in hand-drawn action
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102046046260023701/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102046046260023701/
+- Original source: https://x.com/aimikoda/status/2102046046260023701
+- Author: Kōda
+- Published: 2026-09-21T14:43:26.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Action & VFX
+- Visual styles: Anime, Illustration
+- Scenes: Action & combat
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 蝙蝠侠与绿发小丑在快速剪辑的手绘画面中交锋。 原生视频规格为 15 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: Batman and a green-haired Joker clash through rapidly cut hand-drawn action shots. Native-video output: 15s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A red-haired character walks through a futuristic space
+
+- ID: x-2102016602975981780
+- 中文标题: 红发角色在未来空间中行走
+- English title: A red-haired character walks through a futuristic space
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102016602975981780/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102016602975981780/
+- Original source: https://x.com/fumanfuku/status/2102016602975981780
+- Author: 不満福
+- Published: 2026-09-21T12:46:26.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Animation
+- Visual styles: Anime
+- Scenes: Sci-fi & space
+- Output: 15s, 1536×2240, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 红发动画人物在蓝色灯光的未来室内行走并转身。 原生视频规格为 15 秒 · 1536×2240。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A red-haired animated character walks and turns inside a futuristic room with blue lighting. Native-video output: 15s · 1536×2240. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A caped Shiba races toward a moonlit city
+
+- ID: x-2102012732853862781
+- 中文标题: 披风柴犬奔向月夜城市
+- English title: A caped Shiba races toward a moonlit city
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102012732853862781/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102012732853862781/
+- Original source: https://x.com/yoradino/status/2102012732853862781
+- Author: YOU RA
+- Published: 2026-09-21T12:31:03.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Showcase
+- Visual styles: not specified
+- Scenes: City & street
+- Output: 15s, 1024×768, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 披风柴犬从城市高处跑过街区，望向月夜天际线。 原生视频规格为 15 秒 · 1024×768。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A caped Shiba moves through a city and looks toward the moonlit skyline. Native-video output: 15s · 1024×768. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A red-coated figure and an armored partner in rain
+
+- ID: x-2101994498515734813
+- 中文标题: 雨夜中的红衣人物与钢甲搭档
+- English title: A red-coated figure and an armored partner in rain
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2101994498515734813/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2101994498515734813/
+- Original source: https://x.com/underwoodxie96/status/2101994498515734813
+- Author: underwood
+- Published: 2026-09-21T11:18:36.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Cinematic & Narrative
+- Visual styles: Cinematic realism, Dark & horror
+- Scenes: Fashion, City & street
+- Output: 15s, 1344×768, landscape
+- Prompt provenance: creator-verbatim
+- Prompt completeness: complete
+- Chinese summary: 红衣人物与高大的装甲伙伴在湿润夜巷中摆出姿态。 原生视频规格为 15 秒 · 1344×768。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A red-coated figure and a tall armored partner pose in a wet nighttime alley. Native-video output: 15s · 1344×768. The creator published the complete prompt, preserved here verbatim.
+- Complete verbatim public prompt:
+
+```text
+@ Image 1: Lock the two characters’ facial features, hairstyles, outfits, armor, props, height proportions, and overall dark-fantasy appearance. The character in the long red coat and the fully armored character must remain visually consistent throughout the entire sequence. Do not alter their armor structure, braids, facial features, costume details, or clothing colors.
+
+Use the rainy nighttime urban alley from the reference image as the primary setting. Create a stylish multi-pose fashion editorial sequence with the energy of a cinematic dark-fantasy trailer — cool, dynamic, highly polished, and grounded in realistic live-action photography.
+
+0–3s | Wide Shot | Low-Angle Eye-Level | 24mm | Slow Push-In
+Both characters stand in the middle of a wet alley at night. Neon signs and streetlights reflect across the rain-soaked pavement. The red-coated character stands slightly turned to the side, while the armored character stands tall behind him. His cape moves naturally in the wind. Establish a powerful, imposing presence from the opening shot.
+3–6s | Medium Close-Up | Eye-Level, Front-Side Angle | 50mm | Lateral Tracking Shot
+The red-coated character performs the first solo fashion pose. He turns his body slightly toward the camera, placing one hand inside his trouser pocket while allowing the mechanical arm to hang naturally at his side. He raises his gaze directly toward the camera with a cold, composed expression. Keep his face sharp and clearly visible throughout the camera movement.
+6–9s | Medium Shot | Low-Angle | 35mm | Orbiting Camera
+The armored character takes one step forward and raises one hand to adjust the cape over his shoulder. He then slightly lowers his head while looking directly into the camera. The metal armor reflects cool white light, while the chains and cape respond naturally to his movement with convincing weight and physical realism.
+9–12s | Two-Shot, Medium Framing | Slightly Low Front Angle | 50mm | Pull Back
+The two characters stand back-to-back in a coordinated combat-inspired pose. The red-coated character turns sideways and clenches one fist, while the armored character extends one arm toward the opposite side. Rainwater runs naturally across the armor and coat hems. Strong backlighting creates dramatic rim light around both silhouettes.
+12–15s | Two-Shot, Wide to Medium | Low Angle | 35mm | Slow Push-In + Final Freeze
+Both characters turn toward the camera at the same time. The red-coated character slightly raises his chin, while the armored character tightens his gauntleted fist. Their cape and long coat move naturally in the wind. End on a powerful, poster-like hero composition and hold the final frame clean, leaving enough negative space for a title or logo to be added in post-production.
+The overall visual style combines professional high-fashion photography with a dark-fantasy cinematic trailer aesthetic. Use cool blue ambient lighting accented by subtle red reflections, wet rain-soaked pavement, physically realistic metallic reflections, natural fabric movement, slight lens breathing, crisp skin and material details, and cinematic 24fps motion blur.
+
+The editing rhythm should follow a strong, driving drum beat. Transitions between poses should be connected through short, sharp, intentional character movements rather than abrupt jump cuts.
+Sound design: deep electronic percussion, distant nighttime city ambience, steady rainfall, subtle metallic chain sounds, and heavy armored footsteps. At the final hero freeze-frame, briefly pause or drop the music to emphasize the characters’ final pose.
+```
+
+## A dimensional rift becomes metallic lettering
+
+- ID: x-2101989866762354988
+- 中文标题: 空间裂隙凝成金属字样
+- English title: A dimensional rift becomes metallic lettering
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2101989866762354988/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2101989866762354988/
+- Original source: https://x.com/CharaspowerAI/status/2101989866762354988
+- Author: Pierrick Chevallier | IA
+- Published: 2026-09-21T11:00:11.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Action & VFX
+- Visual styles: Motion graphics
+- Scenes: Sci-fi & space
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: creator-verbatim
+- Prompt completeness: complete
+- Chinese summary: 白色能量在黑暗中撕开裂隙，最终形成发光的金属字样。 原生视频规格为 15 秒 · 2560×1440。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: White energy tears open a rift in darkness and ends in glowing metallic lettering. Native-video output: 15s · 2560×1440. The creator published the complete prompt, preserved here verbatim.
+- Complete verbatim public prompt:
+
+```text
+High-end sci-fi title sequence beginning with a razor-thin line of white energy slicing vertically through complete darkness. Space immediately begins deforming around it as metallic particles, dust and glowing fragments are violently pulled toward the opening. The line tears wider into a gigantic dimensional fracture filled with unstable plasma and gravitational distortion. The camera accelerates directly toward the rift, violently banking between fragments being stretched into luminous trails. Suddenly the dimensional tear snaps shut with enormous force, compressing all surrounding matter into four gigantic black-metal letterforms that slam together to reveal "RIFT". Brilliant energy remains trapped inside deep cracks across the typography while space visibly bends around its edges. The camera performs a fast orbital move before the title itself splits open along its center, releasing a catastrophic dimensional shockwave that tears through the frame. Sophisticated cosmic distortion, aggressive kinetic typography, premium superhero-film VFX.
+```
+
+## A cable-powered rush between towering walls
+
+- ID: x-2101989020217876712
+- 中文标题: 高墙间的绳索疾行
+- English title: A cable-powered rush between towering walls
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2101989020217876712/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2101989020217876712/
+- Original source: https://x.com/atlas_remake/status/2101989020217876712
+- Author: Atlas Remake
+- Published: 2026-09-21T10:56:50.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Animation
+- Visual styles: Anime
+- Scenes: Action & combat, City & street
+- Output: 14s, 2520×1440, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 动画人物借助绳索穿过高墙与建筑之间的狭窄空间。 原生视频规格为 14 秒 · 2520×1440。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: An animated figure uses cables to move between towering walls and buildings. Native-video output: 14s · 2520×1440. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## An orca surfaces beside a small boat
+
+- ID: x-2101988203175514273
+- 中文标题: 小艇旁浮出的虎鲸
+- English title: An orca surfaces beside a small boat
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2101988203175514273/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2101988203175514273/
+- Original source: https://x.com/MichaelGannotti/status/2101988203175514273
+- Author: Mike Gannotti 🔳
+- Published: 2026-09-21T10:53:35.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Showcase
+- Visual styles: not specified
+- Scenes: Nature & landscape
+- Output: 10s, 1344×768, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 男子俯身靠近水面，虎鲸在小艇旁露头后潜入水中。 原生视频规格为 10 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A man leans over the water as an orca surfaces beside a small boat and dives again. Native-video output: 10s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A man and a yellow robot flee through a rainy city
+
+- ID: x-2101986689115672910
+- 中文标题: 雨夜里人与黄色机器人的奔逃
+- English title: A man and a yellow robot flee through a rainy city
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2101986689115672910/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2101986689115672910/
+- Original source: https://x.com/MichaelGannotti/status/2101986689115672910
+- Author: Mike Gannotti 🔳
+- Published: 2026-09-21T10:47:34.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Action & VFX
+- Visual styles: not specified
+- Scenes: City & street, Sci-fi & space
+- Output: 10s, 1344×768, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 年轻男子与黄色机器人在霓虹雨夜中奔跑，后方机器人追来。 原生视频规格为 10 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A young man and a yellow robot run through a neon-lit rainy city with robots following behind. Native-video output: 10s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## Animated characters dance together
+
+- ID: x-2101985589507793162
+- 中文标题: 动画角色的群体舞蹈
+- English title: Animated characters dance together
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2101985589507793162/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2101985589507793162/
+- Original source: https://x.com/Ukiyo_il/status/2101985589507793162
+- Author: うきよ 🎴
+- Published: 2026-09-21T10:43:12.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Dance
+- Visual styles: not specified
+- Scenes: Dance
+- Output: 29s, 1920×1080, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 多名动画角色并排跳舞，画面切换到简化的花朵背景。 原生视频规格为 29 秒 · 1920×1080。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: Several animated characters dance in a row before the scene changes to a simplified floral background. Native-video output: 29s · 1920×1080. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## Flowers and flowing light in a vertical music visual
+
+- ID: x-2101982782700638244
+- 中文标题: 花朵与流光的竖屏乐曲画面
+- English title: Flowers and flowing light in a vertical music visual
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2101982782700638244/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2101982782700638244/
+- Original source: https://x.com/lyricloomhanora/status/2101982782700638244
+- Author: Lyric Loom Hanora
+- Published: 2026-09-21T10:32:03.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Music Video
+- Visual styles: Vertical short-form, Motion graphics
+- Scenes: not specified
+- Output: 59s, 720×1280, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 深色竖屏画面中，花朵和流动光带与歌词文字交织。 原生视频规格为 59 秒 · 720×1280。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: Flowers, flowing ribbons of light and lyric text overlap in a dark vertical music visual. Native-video output: 59s · 720×1280. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A desktop character holds up a love message
+
+- ID: x-2101981941985931596
+- 中文标题: 桌面角色举起爱心讯息
+- English title: A desktop character holds up a love message
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2101981941985931596/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2101981941985931596/
+- Original source: https://x.com/RoselieProject/status/2101981941985931596
+- Author: 星咲ロゼ:セイントロゼリィ
+- Published: 2026-09-21T10:28:42.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Animation
+- Visual styles: not specified
+- Scenes: Daily life
+- Output: 15s, 1280×720, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 粉发动画角色在桌面图标旁举起写有爱心讯息的纸张。 原生视频规格为 15 秒 · 1280×720。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A pink-haired animated character stands beside desktop icons and holds up a paper with a love message. Native-video output: 15s · 1280×720. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A pink fashion magazine comes to life
+
+- ID: x-2101981159970480258
+- 中文标题: 粉色时装杂志的动态拼贴
+- English title: A pink fashion magazine comes to life
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2101981159970480258/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2101981159970480258/
+- Original source: https://x.com/ImaStudio_ai/status/2101981159970480258
+- Author: Ima Studio
+- Published: 2026-09-21T10:25:36.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Music Video
+- Visual styles: Motion graphics, Stylized & experimental
+- Scenes: Fashion
+- Output: 16s, 3840×2160, landscape
+- Prompt provenance: creator-verbatim
+- Prompt completeness: complete
+- Chinese summary: 人物穿搭镜头与粉色杂志封面文字和拼贴设计交替。 原生视频规格为 16 秒 · 3840×2160。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: Fashion shots alternate with pink magazine-cover typography and collage layouts. Native-video output: 16s · 3840×2160. The creator published the complete prompt, preserved here verbatim.
+- Complete verbatim public prompt:
+
+```text
+Korean Pink Collage Fashion MV (15s, 16:9, 24fps)
+【1. Identity Lock】
+Absolute character consistency: Only one young Korean-style woman appears throughout the entire video. Strictly preserve the reference image’s facial features, skin tone, long dark-brown slightly wavy hair, bangs, facial structure, and body proportions.
+Overall vibe: Asian pop aesthetic, fresh sweet-cool energy, light Y2K influence, balancing cute charm with a polished fashion-editorial feel.
+Strict restrictions: No face swapping, no identity drift, no Westernized facial features, no masculine features, no background people, and no second character.
+【2. Outfit Beats】
+Style lock: Korean sweet-cool girl-group fashion, blending youthful femininity with a slightly mature edge.
+Outfit transition logic: Seamlessly switch outfits on camera cut points and musical beats. Wardrobe elements include fitted white or pink knit tops, light-blue denim, Y2K pleated skirts, platform boots, delicate mini bags, and Korean-style earrings.
+The character must remain highly consistent across every outfit change.
+【3. Motion Graphics】
+Visual theme: Pink Pattern Collage Pop.
+Main palette: Cream pink, soft pink, peach pink, creamy white, silver-gray, with small accents of black typography.
+2D graphic elements: Checkerboard patterns, polka dots, photobooth-style frames, geometric color blocks, and heart outlines.
+Avoid realistic 3D materials. Use flat, crisp, graphic 2D elements that slide, overlap, crop, and wipe across the frame dynamically.
+【4. Editorial Layout】
+Typography: Main titles: [NAME] / [SEOUL POP]
+Secondary labels: [SOFT CHIC] / [CUTE SIGNAL] / [TRENDY LOOK] / [KOREAN GIRL]
+Layout style: Use oversized background typography, text inside geometric frames, and small sticker-like labels.
+Arrange text horizontally, vertically, and diagonally with intentional offset layouts.
+Typography should change rapidly with the cuts while always remaining clear and never covering the character’s face.
+
+【5. 13-Cut Fast-Paced Trailer Storyboard | 115–125 BPM】
+Cut 1 (0s): Extreme close-up. She slightly lifts her chin and looks directly into the camera. The background is filled with solid pink and an oversized [NAME] title, creating an immediate beauty hook.
+Cut 2 (1s): Medium shot. She takes half a step forward and lightly holds her bag strap. The background switches to a pink-and-white checkerboard pattern.
+Cut 3 (2s): Full-body shot. Flash outfit transition from a white top into a pink skirt look. She turns back toward camera and freezes briefly.
+Cut 4 (3s): Close shot. Playful crouching pose with both hands near her face. Photobooth-style frames quickly slide into the composition.
+Cut 5 (4s): Close-up. Camera pushes in slightly for a sharp eye-contact moment. Polka-dot graphics fill the background.
+Cut 6 (5s): Medium shot. She turns and adjusts her long hair while large collage typography [SEOUL POP] pops across the frame.
+Cut 7 (6s): Low-angle shot. She reaches one hand toward the camera as pink graphic strips slice horizontally across the frame.
+Cut 8 (7s): Full-body shot. She shifts her weight and performs another flash outfit change featuring denim elements. The composition becomes cleaner with more negative space.
+Cut 9 (8s): Close-up. She looks down slightly, then raises her eyes and smiles softly. Multiple [CUTE SIGNAL] labels appear across the screen.
+Cut 10 (10s): Medium shot. She lightly holds the hem of her skirt while the background transforms into large geometric color-block sections.
+Cut 11 (11s): Medium shot. She gently touches her earrings with a small, refined gesture. Overlapping color planes shift slightly out of alignment.
+Cut 12 (12s): Wide shot. She turns sideways into a preparation pose while all fragmented graphic and typography elements begin converging toward the center.
+Cut 13 (13.5–15s): Hero Pose. She stands centered in her strongest fashion pose. Graphics, borders, typography, and collage elements perfectly assemble into one polished Korean fashion magazine cover. Hold the final composition for 0.5 seconds.
+```
+
+## Phone typing intercut with a woman's close-up
+
+- ID: x-2101980365028311283
+- 中文标题: 手机输入与人物特写的交替
+- English title: Phone typing intercut with a woman's close-up
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2101980365028311283/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2101980365028311283/
+- Original source: https://x.com/MaRuMusic_JP/status/2101980365028311283
+- Author: MaRu Music JP
+- Published: 2026-09-21T10:22:26.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Music Video
+- Visual styles: not specified
+- Scenes: Daily life
+- Output: 19s, 1080×1920, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 手指在手机上输入文字的镜头，与女子的近景交替出现。 原生视频规格为 19 秒 · 1080×1920。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: Shots of fingers typing on a phone alternate with close-ups of a woman. Native-video output: 19s · 1080×1920. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A high-angle selfie inside a cafe
+
+- ID: x-2101977039058440667
+- 中文标题: 咖啡馆里的高角度自拍
+- English title: A high-angle selfie inside a cafe
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2101977039058440667/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2101977039058440667/
+- Original source: https://x.com/underwoodxie96/status/2101977039058440667
+- Author: underwood
+- Published: 2026-09-21T10:09:13.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Advertising & Product
+- Visual styles: Photoreal, Vertical short-form
+- Scenes: Fashion, Product & advertising
+- Output: 15s, 768×1344, portrait
+- Prompt provenance: creator-verbatim
+- Prompt completeness: complete
+- Chinese summary: 戴眼镜的女子手持蓝色饮料杯，在咖啡馆里面对高角度镜头摆姿势。 原生视频规格为 15 秒 · 768×1344。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A woman with glasses holds a blue drink cup and poses beneath a high-angle camera in a cafe. Native-video output: 15s · 768×1344. The creator published the complete prompt, preserved here verbatim.
+- Complete verbatim public prompt:
+
+```text
+@Image1
+ locks the adult East Asian woman’s facial identity, long dark hair, gold oval glasses, black low-neck long dress, delicate gold necklace, red pointed high heels, blue Luckin Coffee cup, smartphone with a transparent case, and the overall overhead selfie composition. Preserve the café interior, dark furniture, gray wood-pattern floor, and high-angle viewpoint from the reference image. Do not add new accessories or extra people.  A single uninterrupted 15-second, 9:16 vertical, photorealistic smartphone selfie video. An adult East Asian woman stands beside a café seat, holding a blue Luckin Coffee drink in one hand and a smartphone in the other, performing a sequence of natural, playful, fashion-oriented poses under a high-angle selfie camera. Keep her facial identity, hairstyle, glasses, black dress, necklace, red high heels, coffee cup, and phone consistent throughout. The video should feel like a casual stylish front-camera selfie recorded inside a real café, with natural indoor lighting, subtle handheld movement, realistic skin texture, and slight hair motion caused by her gestures.  0:00–0:01.5｜Close-up｜High-angle overhead view｜24mm｜Subtle push-in: she looks up toward the smartphone camera and leans slightly closer, holding the blue coffee cup in one hand and the phone in the other. She looks directly into the lens with a playful smile, keeping the gold glasses and long dark hair clearly visible.  0:01.5–0:03.0｜Medium close-up｜High-angle three-quarter view｜28mm｜Small clockwise arc: she tilts her head and gives a playful wink, keeping the coffee cup naturally at her side. The black dress neckline, delicate gold necklace, and shoulder silhouette remain consistent with the reference image.  0:03.0–0:04.5｜Close-up｜High-angle side view｜35mm｜Short lateral slide: she turns her face slightly to one side with a mischievous smile. Her long hair slips forward over her shoulder, the glasses catch a soft café reflection, and the movement remains relaxed and natural.  0:04.5–0:06.0｜Medium shot｜High-angle overhead view｜28mm｜Smooth pull-back: she subtly adjusts her stance so the black dress, soft waist folds, coffee cup, and smartphone are all visible. Keep the red high heels partially visible near the bottom of the frame.  0:06.0–0:07.5｜Medium close-up｜High-angle top-down view｜24mm｜Small downward move and push-in: she raises the coffee cup slightly toward the camera as if presenting the drink, then returns it to chest level. Keep the lid, blue sleeve, straw, and cup shape intact without changing the product structure.  0:07.5–0:09.0｜Medium-wide full-body view｜High-angle overhead view｜24mm｜Smooth pull-back: she takes a small step to one side. Her red pointed heels become clearly visible on the gray floor, the long black skirt moves gently with the step, and her weight shifts naturally while the café furniture remains stable.  0:09.0–0:11.0｜Medium close-up｜High-angle overhead view｜35mm｜Slow leftward slide: she briefly looks down at the smartphone, then looks back up toward the camera with a playful smile. The phone remains correctly proportioned and naturally held in her hand.  0:11.0–0:13.0｜Close-up｜High-angle view with a slight rotational tilt｜50mm｜Small orbit and push-in: she gives another quick wink and briefly sticks out her tongue in a playful expression. Keep the glasses, eyes, lips, and facial proportions stable and natural. Do not exaggerate the expression.  0:13.0–0:15.0｜Medium shot to medium-wide full-body view｜High-angle overhead view｜28mm｜Slow pull-back into a stable hold: she returns to a mischievous smile, lowers the coffee cup and phone naturally to either side of her body, and settles with one foot slightly forward so the red heels create a clear visual accent. End on a high-angle selfie composition closely matching the reference image.  Keep the entire video as one continuous shot with no hard cuts, no jump edits, and no sudden changes in camera direction. Use realistic café ambience, subtle fabric movement, faint heel contact sounds, quiet phone handling sounds, and soft playful background music. Maintain a natural smartphone-camera look, realistic motion blur, warm indoor café lighting, and mild wide-angle perspective. Do not use anime rendering, studio flash, or exaggerated cinematic lighting.
+```
+
+## A street character reference compared with motion
+
+- ID: x-2101975736647299286
+- 中文标题: 街头人物参考图与动作对照
+- English title: A street character reference compared with motion
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2101975736647299286/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2101975736647299286/
+- Original source: https://x.com/nihonnoashita/status/2101975736647299286
+- Author: AI lady collection@生成AI
+- Published: 2026-09-21T10:04:03.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Showcase
+- Visual styles: not specified
+- Scenes: Fashion
+- Output: 5s, 576×1038, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 分屏展示同一名街头人物的静态参考与站姿动作。 原生视频规格为 5 秒 · 576×1038。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A split screen compares a street character's static reference image with moving poses. Native-video output: 5s · 576×1038. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## An animated theme song between starlight and phones
+
+- ID: x-2101975015440912738
+- 中文标题: 星夜与手机之间的动画主题曲
+- English title: An animated theme song between starlight and phones
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2101975015440912738/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2101975015440912738/
+- Original source: https://x.com/ChloeXChaCha/status/2101975015440912738
+- Author: Chloe Kao
+- Published: 2026-09-21T10:01:11.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Music Video
+- Visual styles: not specified
+- Scenes: Daily life
+- Output: 175s, 1925×1080, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 动画主题曲在星空画面、室内人物与手机互动之间切换。 原生视频规格为 175 秒 · 1925×1080。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: An animated theme-song video cuts between star-filled scenes, characters indoors and interactions with phones. Native-video output: 175s · 1925×1080. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## Robots clash in a neon-lit district
+
+- ID: x-2101974969962107357
+- 中文标题: 霓虹街区中的机器人交锋
+- English title: Robots clash in a neon-lit district
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2101974969962107357/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2101974969962107357/
+- Original source: https://x.com/ysf__ai/status/2101974969962107357
+- Author: ysf.ai | Synth Engine Studios
+- Published: 2026-09-21T10:01:00.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Action & VFX
+- Visual styles: not specified
+- Scenes: City & street, Sci-fi & space
+- Output: 39s, 2560×1440, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 机器人在霓虹街区中动作交锋，最终切到作品标志。 原生视频规格为 39 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: Robots exchange action in a neon-lit district before the video cuts to its production logo. Native-video output: 39s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A glowing orb in a witch's palm
+
+- ID: x-2101958579091886469
+- 中文标题: 女巫掌心的发光球体
+- English title: A glowing orb in a witch's palm
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2101958579091886469/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2101958579091886469/
+- Original source: https://x.com/ou_zhen599/status/2101958579091886469
+- Author: Loriel.AI
+- Published: 2026-09-21T08:55:52.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Local Generation & Workflow
+- Visual styles: not specified
+- Scenes: Fantasy
+- Output: 15s, 3840×2160, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 戴帽女巫在荒凉环境中托起发光球体，随后低头沉思。 原生视频规格为 15 秒 · 3840×2160。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A hat-wearing witch holds a glowing orb in a barren landscape and later lowers her gaze. Native-video output: 15s · 3840×2160. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A sword and spear duel over moonlit water
+
+- ID: x-2101944507407409414
+- 中文标题: 月下水面的刀枪对决
+- English title: A sword and spear duel over moonlit water
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2101944507407409414/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2101944507407409414/
+- Original source: https://x.com/Rolf7077/status/2101944507407409414
+- Author: Rolfie han
+- Published: 2026-09-21T07:59:57.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Action & VFX
+- Visual styles: not specified
+- Scenes: Action & combat
+- Output: 8s, 854×480, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 两名武者在月光水面上挥动长枪与刀刃交锋。 原生视频规格为 8 秒 · 854×480。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: Two fighters clash with a spear and a blade above moonlit water. Native-video output: 8s · 854×480. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## Guitar performance in monochrome
+
+- ID: x-2101914322771513491
+- 中文标题: 黑白影像中的吉他演奏
+- English title: Guitar performance in monochrome
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2101914322771513491/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2101914322771513491/
+- Original source: https://x.com/aihonobono2023/status/2101914322771513491
+- Author: ai honobono | AI Art, Fiction, Music
+- Published: 2026-09-21T06:00:00.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Music Video
+- Visual styles: not specified
+- Scenes: Music performance
+- Output: 231s, 1280×720, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 黑白乐曲画面在女子弹吉他的远景与面部特写之间切换。 原生视频规格为 231 秒 · 1280×720。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: A monochrome music video alternates between wider guitar-playing shots and the woman's close-up. Native-video output: 231s · 1280×720. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## Tom and Jerry invade a computer desktop
+
+- ID: x-2101913634293297466
+- 中文标题: 汤姆与杰瑞闯入电脑桌面
+- English title: Tom and Jerry invade a computer desktop
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2101913634293297466/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2101913634293297466/
+- Original source: https://x.com/Strength04_X/status/2101913634293297466
+- Author: M-studioAi
+- Published: 2026-09-21T05:57:16.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Animation
+- Visual styles: Stylized & experimental
+- Scenes: Daily life
+- Output: 10s, 2560×1440, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 汤姆与杰瑞出现在带应用图标的桌面画面中，展开追逐动作。 原生视频规格为 10 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。
+- English summary: Tom and Jerry appear in a desktop scene with app icons and begin a chase. Native-video output: 10s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## An outfit-changing character moves through city cards
+
+- ID: x-2101904919540429295
+- 中文标题: 换装人物穿梭城市导览卡片
+- English title: An outfit-changing character moves through city cards
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2101904919540429295/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2101904919540429295/
+- Original source: https://x.com/HoodyLiu/status/2101904919540429295
+- Author: Hoody
+- Published: 2026-09-21T05:22:38.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Local Generation & Workflow
+- Visual styles: Vertical short-form
+- Scenes: Fashion, City & street
+- Output: 12s, 768×1344, portrait
+- Prompt provenance: creator-verbatim
+- Prompt completeness: complete
+- Chinese summary: 人物从白色背景切换到不同城市导览界面，服装随场景改变。 原生视频规格为 12 秒 · 768×1344。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A character moves from a white backdrop into city-guide interfaces, changing outfits between scenes. Native-video output: 12s · 768×1344. The creator published the complete prompt, preserved here verbatim.
+- Complete verbatim public prompt:
+
+```text
+<Picture 1> defines Rei's opening outfit only: a fitted black satin mini dress with thin spaghetti straps, a lace-trimmed V-neckline, a small front bow with trailing ribbons, off-the-shoulder lace ruffle sleeves, a ruched bodice, a ruffled lace hem, bare legs and black pointed-toe stiletto pumps. Preserve the dress's silhouette, materials and front/back construction as shown. Use this outfit for the white-studio opening only; do not reproduce the character-sheet layout.
+
+<Picture 2> defines her Paris outfit, front-facing presentation pose, drink, sunglasses, city map and UI. <Picture 3> defines her Rome outfit, front/three-quarter presentation pose, props, city map and UI. <Picture 4> defines her Cairo outfit, presentation pose, shopping bags, city map and UI. <Picture 5> defines her Sydney outfit, front-facing finishing pose, city map and UI.
+
+<Picture 6> is an unmodified slightly turned standard face crop from the original Rei character card. It is the highest-priority facial identity reference for ALL outfits: preserve its eye shape and spacing, eyelids, nose, lips and natural proportions without beautification. Pictures 2–5 supply new city outfits and environments, never a substitute face. This is the same adult woman in different clothes throughout the entire video.
+
+<Video 1> is a black-and-white relative-depth reference for body movement, camera pullback and chronological timing only. Depth brightness represents distance, not skin color or face detail. Render natural full color using the pictures. A featureless face in the depth map must not become the back of Rei's head. Use the scene pictures to resolve which way her face and chest point after each turn.
+
+Generate ONE continuous 12-second vertical video. The timed Shot labels below are successive phases of this one output, not instructions to insert camera cuts. Keep the reference timeline at its original speed. Do not compress the opening to make room for the cities. Only Rei rotates during transformation; the camera must not orbit her. A back view is a brief passing orientation during a spin, never a held destination pose. Each completed transformation reveals her face and the FRONT of the new outfit, as in its corresponding picture. Change clothing, handheld props, city map and city-name UI together; do not change only the background while leaving the previous outfit.
+
+Shot 1 [0.00–2.50 seconds]: White studio and opening black sailor uniform from <Picture 1>. Rei looks at the phone held in front of her chest. Follow the opening camera pullback in <Video 1>. Her torso remains generally facing the camera; allow the original small phone and head gestures. This interval contains no full-body spin, no location pin yet, no city background and no wardrobe change.
+
+Shot 2 [2.50–3.15 seconds]: The red location pin appears above Rei. This event ONLY adds the pin. She continues looking at her phone in the white studio, still wearing the opening black sailor uniform. The pin does not trigger a spin or a scene change. Do not begin the transformation here.
+
+Shot 3 [3.15–4.05 seconds]: Follow the small preparatory side pivot in <Video 1>, then return toward the camera-facing starting orientation while holding the phone. This is the preparatory movement, not the rapid transformation spin. Retain the opening black sailor uniform, white background and red pin throughout this interval. No Paris map or summer outfit before 4.05 seconds.
+
+Shot 4 [4.05–6.00 seconds]: At 4.05 seconds begin the rapid transformation rotation following <Video 1>. Pass continuously through the side and back orientations without pausing. Around 4.25 seconds, during this rotation, change together into the Paris outfit, drink, sunglasses, map and navigation UI from <Picture 2>. By 4.50 seconds complete the rotation and reveal Rei FACING THE CAMERA, with her face and the front of her navy-and-ivory striped top visible. From 4.50 to 6.00 seconds remain in this front/three-quarter FRONT presentation, with the drink and sunglasses gesture from <Picture 2>. The cream full-length trousers, striped top and red neck scarf replace the opening black sailor uniform completely. No back-facing hold, no phone, no opening black sailor uniform during the Paris presentation. The top search bar and bottom location card both read 巴黎.
+
+Shot 5 [6.00–8.00 seconds]: Begin the next reference turn at 6.00 seconds. Around 6.25 seconds change outfit, props, city and UI to Rome from <Picture 3>. Complete the turn by 6.55 seconds into a front/three-quarter FRONT view showing Rei's face, sage-green midi dress with brown belt. Until 8.00 seconds use the Rome pose with the paper guide and warm Trajan column and Roman Forum map. Both city labels read 罗马. Back-facing frames occur only while the turn is in progress; no stopped back view after the turn.
+
+Shot 6 [8.00–10.00 seconds]: Begin the next reference turn at 8.00 seconds. Around 8.25 seconds change together to the ivory linen shirt, beige full-length trousers, ochre scarf, shopping bags, Cairo map and UI from <Picture 4>. By 8.55 seconds reveal her face and the front of the ivory linen shirt. Hold the front/three-quarter presentation with natural small movements until 10.00 seconds. Both city labels read 开罗. Keep the Cairo outfit and map together; do not introduce previous clothes or Sydney early.
+
+Shot 7 [10.00–12.00 seconds]: Begin the final reference turn at 10.00 seconds. Around 10.25 seconds replace the Cairo clothes and shopping bags, city and labels with the Sydney sky-blue overshirt, white T-shirt, navy knee-length shorts and white sneakers, Sydney Tower map and UI from <Picture 5>. By 10.55 seconds face the camera with the white T-shirt beneath the sky-blue overshirt visible, hands raised and one leg bent backward as in <Picture 5>. Keep this front-facing Sydney presentation with subtle natural movement through 12.00 seconds. Both city labels read 悉尼. No additional spin, destination or wardrobe change after this final reveal.
+
+Keep Rei's facial identity, natural body proportions, hair and bangs throughout. Clothing changes must not alter her face, age, body shape, hair color or hair length. Do not reproduce character-sheet panels, extra people, face closeups or depth-map gray colors. Do not reproduce the blank faces in Picture 1's full-body clothing views; Rei must have her normal face whenever her face is visible.
+
+Keep the city UI style consistent; update both location labels at each city change. No generated speech or music.
+
+The angle in Picture 6 describes identity only, NOT a fixed head pose. Face direction, expression, head tilt, hand gestures and full body movement follow Video 1, with each completed city presentation matching its corresponding scene picture.
+
+In Paris the sunglasses are opaque black and fully cover both eyes and eye sockets. Keep the sunglasses on throughout the Paris presentation. At the Rome transformation, switch to the accessories shown in Picture 3.
+```
 

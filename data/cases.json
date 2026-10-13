@@ -112997,5 +112997,1452 @@
     },
     "approvedAt": "2026-10-12T01:05:55.194Z",
     "editorialBasis": "Original attribution and native video beginning, middle and ending inspected."
+  },
+  {
+    "id": "x-2102044318097903800",
+    "title": "港口里的像素猫格斗",
+    "titleEn": "Pixel cats battle at the harbor",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "两只像素猫在港口对战，激光攻击后出现胜利画面。 原生视频规格为 14 秒 · 1920×1080。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "Two pixel-art cats fight at a harbor, with a laser attack followed by a victory screen. Native-video output: 14s · 1920×1080. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "Use Image 1 as the absolute reference for Cat 1 and Image 2 for Cat 2. Keep both cats visually identical to their references throughout the entire video.\nCreate a playful 15-second retro 8-bit arcade fighting-game battle at a pixel-art harbor. A large ship is visible in the background, with water, docks, and simple pixel-art harbor details.\nFixed side-view 2D fighting-game camera, full-body character visibility, low-resolution pixel graphics, limited color palette, sprite-based animation, arcade-style UI, CRT scanlines, energetic retro animation.\n0–3 sec:\nBoth cats stand facing each other in fighting stances on the harbor dock.\nA large pixel-art “ROUND 1” appears prominently in the center of the screen like a classic arcade fighting-game announcement. After a brief moment, it disappears and a large “FIGHT!” appears with a dramatic arcade-style flash, then disappears as the battle begins.\nThe UI may show simple visual health bars, but do not display any timer, countdown, clock, numbers, scores, or other numerical information anywhere on screen. The only text visible during this sequence should be “ROUND 1” and “FIGHT!”\n3–5 sec:\nCat 1 throws a small ball of yarn toward Cat 2.\n5–7 sec:\nCat 2 sees the yarn and becomes extremely excited, happily jumping toward it with its paws outstretched. Cute pixel-art musical notes pop and bounce around Cat 2 to emphasize its excitement. Cat 1 calmly watches and prepares its attack.\n7–10 sec:\nJust as Cat 2 reaches the yarn, Cat 1 activates a powerful special move. Its eyes suddenly glow and fire two bright pixelated laser beams at Cat 2. Add dramatic pixel flashes, sparks, impact effects, and a brief arcade-style screen shake.\n10–12 sec:\nThe laser hits Cat 2, sending it flying backward in a humorous exaggerated knockback animation. Its health bar reaches zero. No blood or gore.\n12–14 sec:\nCat 1 performs a playful victory dance. It closes its eyes, crosses its front paws confidently, and repeatedly sways its hips from side to side while gently bouncing its body up and down in a cute, rhythmic 8-bit dance. Keep the entire body visible and make the movement exaggerated and clearly readable as a victory celebration.\nA large pixel-art “WIN!” appears during the victory dance while Cat 2 remains defeated in the background.",
+    "promptSourceUrl": "https://x.com/IndoorIMU/status/2102044318097903800",
+    "sourceUrl": "https://x.com/IndoorIMU/status/2102044318097903800",
+    "sourceLabel": "X 原帖 · @IndoorIMU",
+    "author": "IMU | アイミュ 🎬",
+    "publishedAt": "2026-09-21T14:36:34.000Z",
+    "addedAt": "2026-10-13T00:20:36.455Z",
+    "mediaUrl": "/media/x-2102044318097903800.mp4",
+    "posterUrl": "/posters/x/2102044318097903800.jpg",
+    "duration": 14,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "action-vfx",
+    "styles": [
+      "retro",
+      "illustration"
+    ],
+    "scenes": [
+      "combat",
+      "creatures"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "🎮🐱 8bit猫格闘ゲーム / プロンプト公開！\n\nPollo AI × MiniMax H3 で制作⚡️\n\n港を舞台に、2匹の猫がまさかの格闘バトル！\n\n🧶 毛糸を投げる\n😻 毛糸に夢中になって飛びつく\n👀 そこにまさかのレーザー必殺技！\n💥 KO\n🕺 最後は勝利のダンス！\nBGMなしで、アーケード風の効果音と港の環境音だけ。\nぜひ自分のキャラクターでも試して、アレンジしてみてください🔥\n\n@itsPolloAI \n#PolloAI #MiniMaxH3 #AI動画 #生成AI #AI動画生成 #AIアート #プロンプト #Prompt #8bit #ドット絵 #レトロゲーム\n\n--Prompt--\nUse Image 1 as the absolute reference for Cat 1 and Image 2 for Cat 2. Keep both cats visually identical to their references throughout the entire video.\nCreate a playful 15-second retro 8-bit arcade fighting-game battle at a pixel-art harbor. A large ship is visible in the background, with water, docks, and simple pixel-art harbor details.\nFixed side-view 2D fighting-game camera, full-body character visibility, low-resolution pixel graphics, limited color palette, sprite-based animation, arcade-style UI, CRT scanlines, energetic retro animation.\n0–3 sec:\nBoth cats stand facing each other in fighting stances on the harbor dock.\nA large pixel-art “ROUND 1” appears prominently in the center of the screen like a classic arcade fighting-game announcement. After a brief moment, it disappears and a large “FIGHT!” appears with a dramatic arcade-style flash, then disappears as the battle begins.\nThe UI may show simple visual health bars, but do not display any timer, countdown, clock, numbers, scores, or other numerical information anywhere on screen. The only text visible during this sequence should be “ROUND 1” and “FIGHT!”\n3–5 sec:\nCat 1 throws a small ball of yarn toward Cat 2.\n5–7 sec:\nCat 2 sees the yarn and becomes extremely excited, happily jumping toward it with its paws outstretched. Cute pixel-art musical notes pop and bounce around Cat 2 to emphasize its excitement. Cat 1 calmly watches and prepares its attack.\n7–10 sec:\nJust as Cat 2 reaches the yarn, Cat 1 activates a powerful special move. Its eyes suddenly glow and fire two bright pixelated laser beams at Cat 2. Add dramatic pixel flashes, sparks, impact effects, and a brief arcade-style screen shake.\n10–12 sec:\nThe laser hits Cat 2, sending it flying backward in a humorous exaggerated knockback animation. Its health bar reaches zero. No blood or gore.\n12–14 sec:\nCat 1 performs a playful victory dance. It closes its eyes, crosses its front paws confidently, and repeatedly sways its hips from side to side while gently bouncing its body up and down in a cute, rhythmic 8-bit dance. Keep the entire body visible and make the movement exaggerated and clearly readable as a victory celebration.\nA large pixel-art “WIN!” appears during the victory dance while Cat 2 remains defeated in the background.",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 8,
+      "views": 1032,
+      "snapshotAt": "2026-10-13T00:20:36.455Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.455Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
+  },
+  {
+    "id": "x-2102041528654876810",
+    "title": "揭开的墙纸露出天空",
+    "titleEn": "Peeling wallpaper reveals the sky",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "旧房间墙面出现一块逐渐揭开的区域，露出蓝天与白云。 原生视频规格为 15 秒 · 3456×1920。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A patch peels away from an old room's wall, revealing blue sky and clouds. Native-video output: 15s · 3456×1920. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "the strip peels downward in one continuous curl, the paper crackling and flaking at the edge",
+    "promptSourceUrl": "https://x.com/GlennHasABeard/status/2102041528654876810",
+    "sourceUrl": "https://x.com/GlennHasABeard/status/2102041528654876810",
+    "sourceLabel": "X 原帖 · @GlennHasABeard",
+    "author": "Glenn Williams",
+    "publishedAt": "2026-09-21T14:25:29.000Z",
+    "addedAt": "2026-10-13T00:20:36.456Z",
+    "mediaUrl": "/media/x-2102041528654876810.mp4",
+    "posterUrl": "/posters/x/2102041528654876810.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "3456×1920",
+    "tags": [
+      "MiniMax H3",
+      "本地生成与工作流",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "workflow",
+    "styles": [],
+    "scenes": [
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Minimax H3, open weights, generated locally. One strip of wallpaper, and the wall was never the problem.\n\nPrompt: \"the strip peels downward in one continuous curl, the paper crackling and flaking at the edge\"\n\nDuration: 15s. Camera: locked, straight on. Rendered locally in ComfyUI, then Topaz to 4K.\n\nThe crackle runs the whole peel. A sound with a duration is a speed instruction.",
+    "engagement": {
+      "replies": 9,
+      "reposts": 2,
+      "likes": 38,
+      "views": 1177,
+      "snapshotAt": "2026-10-13T00:20:36.456Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.456Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
+  },
+  {
+    "id": "x-2102038352673566817",
+    "title": "泳池边的两人交流",
+    "titleEn": "Two women talk beside a pool",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "年轻女子与年长女子在室内泳池边面对面交谈。 原生视频规格为 10 秒 · 1504×832。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A younger woman and an older woman face each other and talk beside an indoor pool. Native-video output: 10s · 1504×832. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/borusichion555/status/2102038352673566817",
+    "sourceLabel": "X 原帖 · @borusichion555",
+    "author": "実写版『ボルシチ』公式アカウント@ここあんぬ",
+    "publishedAt": "2026-09-21T14:12:51.000Z",
+    "addedAt": "2026-10-13T00:20:36.456Z",
+    "mediaUrl": "/media/x-2102038352673566817.mp4",
+    "posterUrl": "/posters/x/2102038352673566817.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "1504×832",
+    "tags": [
+      "MiniMax H3",
+      "角色对白",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "dialogue",
+    "styles": [],
+    "scenes": [
+      "dialogue"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "確かに動画は簡単に生成されるけど思ったようなものを作るって難しい💦\n結構プロンプトを繊細に詳しく書かないといかんし(´;ω;｀)登場人物増やしたりして簡単なプロンプトで済ましたりすると、女性とおばちゃんの顔が混ざったりするし(´;ω;｀)\n\n#AI美女\n#AIおばちゃん\n#Minimax-H3",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 4,
+      "views": 513,
+      "snapshotAt": "2026-10-13T00:20:36.456Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.456Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
+  },
+  {
+    "id": "x-2102030213513461970",
+    "title": "桌面上的银发少女打喷嚏",
+    "titleEn": "A silver-haired desktop character sneezes",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "银发动画角色出现在应用图标旁，闭眼打喷嚏后恢复表情。 原生视频规格为 9 秒 · 1890×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A silver-haired animated character appears beside desktop icons, closes her eyes to sneeze and returns to her original expression. Native-video output: 9s · 1890×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Mayz1169/status/2102030213513461970",
+    "sourceLabel": "X 原帖 · @Mayz1169",
+    "author": "Kiki",
+    "publishedAt": "2026-09-21T13:40:31.000Z",
+    "addedAt": "2026-10-13T00:20:36.456Z",
+    "mediaUrl": "/media/x-2102030213513461970.mp4",
+    "posterUrl": "/posters/x/2102030213513461970.jpg",
+    "duration": 9,
+    "aspectRatio": "landscape",
+    "resolution": "1890×1080",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [],
+    "scenes": [
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3 - Prompt Share 💜\n\nEmilia accidentally sneezed... she forgot one icon, should I tell her? \n\nPrompt below ⤵️",
+    "engagement": {
+      "replies": 21,
+      "reposts": 259,
+      "likes": 2855,
+      "views": 428777,
+      "snapshotAt": "2026-10-13T00:20:36.456Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.456Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
+  },
+  {
+    "id": "x-2102026855180046499",
+    "title": "指尖轻点玻璃蘑菇",
+    "titleEn": "A fingertip taps glass mushrooms",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "一排透明蘑菇立在苔藓木头上，手指依次轻点。 原生视频规格为 15 秒 · 3780×2160。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "Transparent mushrooms stand on a mossy log while a fingertip taps them in sequence. Native-video output: 15s · 3780×2160. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "one mushroom every one and a half seconds, each a slightly higher note, each shedding one drop",
+    "promptSourceUrl": "https://x.com/GlennHasABeard/status/2102026855180046499",
+    "sourceUrl": "https://x.com/GlennHasABeard/status/2102026855180046499",
+    "sourceLabel": "X 原帖 · @GlennHasABeard",
+    "author": "Glenn Williams",
+    "publishedAt": "2026-09-21T13:27:10.000Z",
+    "addedAt": "2026-10-13T00:20:36.456Z",
+    "mediaUrl": "/media/x-2102026855180046499.mp4",
+    "posterUrl": "/posters/x/2102026855180046499.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "3780×2160",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "music",
+    "styles": [],
+    "scenes": [
+      "nature"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Minimax H3, open weights, generated locally. Seven glass mushrooms on a log. One finger, one tap each.\n\nPrompt: \"one mushroom every one and a half seconds, each a slightly higher note, each shedding one drop\"\n\nDuration: 15s. Camera: locked macro. Rendered locally in ComfyUI, then Topaz to 4K.\n\nSeven notes rising in the sound line, seven taps in the picture, seven drops as receipts. Three counts that have to agree.",
+    "engagement": {
+      "replies": 8,
+      "reposts": 1,
+      "likes": 32,
+      "views": 686,
+      "snapshotAt": "2026-10-13T00:20:36.456Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.456Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
+  },
+  {
+    "id": "x-2102057559163101436",
+    "title": "紫色战甲军团的集结",
+    "titleEn": "A purple-armored legion assembles",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "战甲人物特写切换到整齐排列的紫色装甲军团。 原生视频规格为 29 秒 · 960×544。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "An armored man's close-up cuts to rows of purple-armored figures gathering together. Native-video output: 29s · 960×544. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Tech2Wild/status/2102057559163101436",
+    "sourceLabel": "X 原帖 · @Tech2Wild",
+    "author": "Tech2Wild",
+    "publishedAt": "2026-09-21T15:29:11.000Z",
+    "addedAt": "2026-10-13T00:20:36.456Z",
+    "mediaUrl": "/media/x-2102057559163101436.mp4",
+    "posterUrl": "/posters/x/2102057559163101436.jpg",
+    "duration": 29,
+    "aspectRatio": "landscape",
+    "resolution": "960×544",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [],
+    "scenes": [],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Now THIS Is Cinema ! \n- Qwen Image 2.1 Assets\n- Minimax H3 R2V",
+    "engagement": {
+      "replies": 12,
+      "reposts": 9,
+      "likes": 181,
+      "views": 20554,
+      "snapshotAt": "2026-10-13T00:20:36.456Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.456Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
+  },
+  {
+    "id": "x-2102050397225705798",
+    "title": "灰模列车与成片的分屏对照",
+    "titleEn": "A train blockout compared with finished footage",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "分屏展示列车灰模、参考人物与生成画面的变化。 原生视频规格为 15 秒 · 1080×1920。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Split screens compare a train blockout, character references and the generated train footage. Native-video output: 15s · 1080×1920. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ComfyUI/status/2102050397225705798",
+    "sourceLabel": "X 原帖 · @ComfyUI",
+    "author": "ComfyUI",
+    "publishedAt": "2026-09-21T15:00:43.000Z",
+    "addedAt": "2026-10-13T00:20:36.456Z",
+    "mediaUrl": "/media/x-2102050397225705798.mp4",
+    "posterUrl": "/posters/x/2102050397225705798.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "1080×1920",
+    "tags": [
+      "MiniMax H3",
+      "本地生成与工作流",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "workflow",
+    "styles": [],
+    "scenes": [],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Less than a minute to generate this shot with MiniMax H3 Max\n via Partner Nodes.\n\nIt works quite well for fast video-to-video experiments, especially when starting with a basic blockout + reference images.\n\nThe workflow also includes an option to upscale to 2K.\n\nTo try this workflow, link below 👇",
+    "engagement": {
+      "replies": 36,
+      "reposts": 111,
+      "likes": 1382,
+      "views": 81088,
+      "snapshotAt": "2026-10-13T00:20:36.456Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.456Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
+  },
+  {
+    "id": "x-2102048235221340411",
+    "title": "骷髅与魔法学徒的药瓶实验",
+    "titleEn": "A skeleton and a mage with a potion bottle",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "骷髅和年轻魔法师在烛光实验室里观察冒泡药瓶。 原生视频规格为 15 秒 · 3840×2160。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A skeleton and a young mage examine bubbling potion bottles in a candlelit laboratory. Native-video output: 15s · 3840×2160. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ou_zhen599/status/2102048235221340411",
+    "sourceLabel": "X 原帖 · @ou_zhen599",
+    "author": "Loriel.AI",
+    "publishedAt": "2026-09-21T14:52:08.000Z",
+    "addedAt": "2026-10-13T00:20:36.456Z",
+    "mediaUrl": "/media/x-2102048235221340411.mp4",
+    "posterUrl": "/posters/x/2102048235221340411.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "3840×2160",
+    "tags": [
+      "MiniMax H3",
+      "本地生成与工作流",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "workflow",
+    "styles": [],
+    "scenes": [
+      "fantasy"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Made with MiniMax-H3 ComfyUI                          \n\n🎬Image-to-Video                                \n📷“The Unlucky Assistant”\nA sharp-tongued skeleton and a rookie mage who refuses to admit defeat. Caught between embarrassment and stubbornness, she unexpectedly seals the real danger inside a bottle.\n\nFull prompt in the reply.",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 7,
+      "views": 709,
+      "snapshotAt": "2026-10-13T00:20:36.456Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.456Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
+  },
+  {
+    "id": "x-2102046046260023701",
+    "title": "蝙蝠侠与小丑的手绘交锋",
+    "titleEn": "Batman and Joker clash in hand-drawn action",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "蝙蝠侠与绿发小丑在快速剪辑的手绘画面中交锋。 原生视频规格为 15 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Batman and a green-haired Joker clash through rapidly cut hand-drawn action shots. Native-video output: 15s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/aimikoda/status/2102046046260023701",
+    "sourceLabel": "X 原帖 · @aimikoda",
+    "author": "Kōda",
+    "publishedAt": "2026-09-21T14:43:26.000Z",
+    "addedAt": "2026-10-13T00:20:36.456Z",
+    "mediaUrl": "/media/x-2102046046260023701.mp4",
+    "posterUrl": "/posters/x/2102046046260023701.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "action-vfx",
+    "styles": [
+      "anime",
+      "illustration"
+    ],
+    "scenes": [
+      "combat"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3\n\nBatman vs Joker\n\nTried making a full action scene with 24 fast cuts and a loose hand-drawn anime style. Pretty happy with how the pacing and visual style came together.\n\nYou can find the prompt in the replies.",
+    "engagement": {
+      "replies": 20,
+      "reposts": 33,
+      "likes": 350,
+      "views": 26381,
+      "snapshotAt": "2026-10-13T00:20:36.456Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.456Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
+  },
+  {
+    "id": "x-2102016602975981780",
+    "title": "红发角色在未来空间中行走",
+    "titleEn": "A red-haired character walks through a futuristic space",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "红发动画人物在蓝色灯光的未来室内行走并转身。 原生视频规格为 15 秒 · 1536×2240。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A red-haired animated character walks and turns inside a futuristic room with blue lighting. Native-video output: 15s · 1536×2240. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/fumanfuku/status/2102016602975981780",
+    "sourceLabel": "X 原帖 · @fumanfuku",
+    "author": "不満福",
+    "publishedAt": "2026-09-21T12:46:26.000Z",
+    "addedAt": "2026-10-13T00:20:36.457Z",
+    "mediaUrl": "/media/x-2102016602975981780.mp4",
+    "posterUrl": "/posters/x/2102016602975981780.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "1536×2240",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime"
+    ],
+    "scenes": [
+      "sci-fi"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "桐条美鶴（ペルソナ３）のウォーキングをMinimax-H3にて初めてR2Vで生成した動画です。基本I2VなのですがXで見かけたモデルさんのウォーキングを見てある動きを再現してみたくてR2Vに挑戦してみました。凄い時間かかったんですがR2Vまでする必要がなかったのかも？\n#MitsuruKirijo #Persona3",
+    "engagement": {
+      "replies": 14,
+      "reposts": 52,
+      "likes": 1490,
+      "views": 331353,
+      "snapshotAt": "2026-10-13T00:20:36.457Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.457Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
+  },
+  {
+    "id": "x-2102012732853862781",
+    "title": "披风柴犬奔向月夜城市",
+    "titleEn": "A caped Shiba races toward a moonlit city",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "披风柴犬从城市高处跑过街区，望向月夜天际线。 原生视频规格为 15 秒 · 1024×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A caped Shiba moves through a city and looks toward the moonlit skyline. Native-video output: 15s · 1024×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/yoradino/status/2102012732853862781",
+    "sourceLabel": "X 原帖 · @yoradino",
+    "author": "YOU RA",
+    "publishedAt": "2026-09-21T12:31:03.000Z",
+    "addedAt": "2026-10-13T00:20:36.457Z",
+    "mediaUrl": "/media/x-2102012732853862781.mp4",
+    "posterUrl": "/posters/x/2102012732853862781.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1024×768",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [],
+    "scenes": [
+      "city"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Creating isn’t just about having an idea it’s about bringing that idea to life. ✨\n\nWith Sogni AI, imagination becomes something you can actually see.\n\nExperiment. Create. Dream bigger. 🎨🤖\n\nModel: Minimax H3\nSOGNI:\nhttp://app.sogni.ai/?code=Yora\n\n@Sogni_Protocol \n\n#SogniAI #AIArt #GenerativeAI",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 6,
+      "views": 164,
+      "snapshotAt": "2026-10-13T00:20:36.457Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.457Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
+  },
+  {
+    "id": "x-2101994498515734813",
+    "title": "雨夜中的红衣人物与钢甲搭档",
+    "titleEn": "A red-coated figure and an armored partner in rain",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "红衣人物与高大的装甲伙伴在湿润夜巷中摆出姿态。 原生视频规格为 15 秒 · 1344×768。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A red-coated figure and a tall armored partner pose in a wet nighttime alley. Native-video output: 15s · 1344×768. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "@ Image 1: Lock the two characters’ facial features, hairstyles, outfits, armor, props, height proportions, and overall dark-fantasy appearance. The character in the long red coat and the fully armored character must remain visually consistent throughout the entire sequence. Do not alter their armor structure, braids, facial features, costume details, or clothing colors.\n\nUse the rainy nighttime urban alley from the reference image as the primary setting. Create a stylish multi-pose fashion editorial sequence with the energy of a cinematic dark-fantasy trailer — cool, dynamic, highly polished, and grounded in realistic live-action photography.\n\n0–3s | Wide Shot | Low-Angle Eye-Level | 24mm | Slow Push-In\nBoth characters stand in the middle of a wet alley at night. Neon signs and streetlights reflect across the rain-soaked pavement. The red-coated character stands slightly turned to the side, while the armored character stands tall behind him. His cape moves naturally in the wind. Establish a powerful, imposing presence from the opening shot.\n3–6s | Medium Close-Up | Eye-Level, Front-Side Angle | 50mm | Lateral Tracking Shot\nThe red-coated character performs the first solo fashion pose. He turns his body slightly toward the camera, placing one hand inside his trouser pocket while allowing the mechanical arm to hang naturally at his side. He raises his gaze directly toward the camera with a cold, composed expression. Keep his face sharp and clearly visible throughout the camera movement.\n6–9s | Medium Shot | Low-Angle | 35mm | Orbiting Camera\nThe armored character takes one step forward and raises one hand to adjust the cape over his shoulder. He then slightly lowers his head while looking directly into the camera. The metal armor reflects cool white light, while the chains and cape respond naturally to his movement with convincing weight and physical realism.\n9–12s | Two-Shot, Medium Framing | Slightly Low Front Angle | 50mm | Pull Back\nThe two characters stand back-to-back in a coordinated combat-inspired pose. The red-coated character turns sideways and clenches one fist, while the armored character extends one arm toward the opposite side. Rainwater runs naturally across the armor and coat hems. Strong backlighting creates dramatic rim light around both silhouettes.\n12–15s | Two-Shot, Wide to Medium | Low Angle | 35mm | Slow Push-In + Final Freeze\nBoth characters turn toward the camera at the same time. The red-coated character slightly raises his chin, while the armored character tightens his gauntleted fist. Their cape and long coat move naturally in the wind. End on a powerful, poster-like hero composition and hold the final frame clean, leaving enough negative space for a title or logo to be added in post-production.\nThe overall visual style combines professional high-fashion photography with a dark-fantasy cinematic trailer aesthetic. Use cool blue ambient lighting accented by subtle red reflections, wet rain-soaked pavement, physically realistic metallic reflections, natural fabric movement, slight lens breathing, crisp skin and material details, and cinematic 24fps motion blur.\n\nThe editing rhythm should follow a strong, driving drum beat. Transitions between poses should be connected through short, sharp, intentional character movements rather than abrupt jump cuts.\nSound design: deep electronic percussion, distant nighttime city ambience, steady rainfall, subtle metallic chain sounds, and heavy armored footsteps. At the final hero freeze-frame, briefly pause or drop the music to emphasize the characters’ final pose.",
+    "promptSourceUrl": "https://x.com/underwoodxie96/status/2101994498515734813",
+    "sourceUrl": "https://x.com/underwoodxie96/status/2101994498515734813",
+    "sourceLabel": "X 原帖 · @underwoodxie96",
+    "author": "underwood",
+    "publishedAt": "2026-09-21T11:18:36.000Z",
+    "addedAt": "2026-10-13T00:20:36.457Z",
+    "mediaUrl": "/media/x-2101994498515734813.mp4",
+    "posterUrl": "/posters/x/2101994498515734813.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "cinematic-realistic",
+      "dark"
+    ],
+    "scenes": [
+      "fashion",
+      "city"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Created the sequence using MiniMax H3.\n\n@ Image 1: Lock the two characters’ facial features, hairstyles, outfits, armor, props, height proportions, and overall dark-fantasy appearance. The character in the long red coat and the fully armored character must remain visually consistent throughout the entire sequence. Do not alter their armor structure, braids, facial features, costume details, or clothing colors.\n\nUse the rainy nighttime urban alley from the reference image as the primary setting. Create a stylish multi-pose fashion editorial sequence with the energy of a cinematic dark-fantasy trailer — cool, dynamic, highly polished, and grounded in realistic live-action photography.\n\n0–3s | Wide Shot | Low-Angle Eye-Level | 24mm | Slow Push-In\nBoth characters stand in the middle of a wet alley at night. Neon signs and streetlights reflect across the rain-soaked pavement. The red-coated character stands slightly turned to the side, while the armored character stands tall behind him. His cape moves naturally in the wind. Establish a powerful, imposing presence from the opening shot.\n3–6s | Medium Close-Up | Eye-Level, Front-Side Angle | 50mm | Lateral Tracking Shot\nThe red-coated character performs the first solo fashion pose. He turns his body slightly toward the camera, placing one hand inside his trouser pocket while allowing the mechanical arm to hang naturally at his side. He raises his gaze directly toward the camera with a cold, composed expression. Keep his face sharp and clearly visible throughout the camera movement.\n6–9s | Medium Shot | Low-Angle | 35mm | Orbiting Camera\nThe armored character takes one step forward and raises one hand to adjust the cape over his shoulder. He then slightly lowers his head while looking directly into the camera. The metal armor reflects cool white light, while the chains and cape respond naturally to his movement with convincing weight and physical realism.\n9–12s | Two-Shot, Medium Framing | Slightly Low Front Angle | 50mm | Pull Back\nThe two characters stand back-to-back in a coordinated combat-inspired pose. The red-coated character turns sideways and clenches one fist, while the armored character extends one arm toward the opposite side. Rainwater runs naturally across the armor and coat hems. Strong backlighting creates dramatic rim light around both silhouettes.\n12–15s | Two-Shot, Wide to Medium | Low Angle | 35mm | Slow Push-In + Final Freeze\nBoth characters turn toward the camera at the same time. The red-coated character slightly raises his chin, while the armored character tightens his gauntleted fist. Their cape and long coat move naturally in the wind. End on a powerful, poster-like hero composition and hold the final frame clean, leaving enough negative space for a title or logo to be added in post-production.\nThe overall visual style combines professional high-fashion photography with a dark-fantasy cinematic trailer aesthetic. Use cool blue ambient lighting accented by subtle red reflections, wet rain-soaked pavement, physically realistic metallic reflections, natural fabric movement, slight lens breathing, crisp skin and material details, and cinematic 24fps motion blur.\n\nThe editing rhythm should follow a strong, driving drum beat. Transitions between poses should be connected through short, sharp, intentional character movements rather than abrupt jump cuts.\nSound design: deep electronic percussion, distant nighttime city ambience, steady rainfall, subtle metallic chain sounds, and heavy armored footsteps. At the final hero freeze-frame, briefly pause or drop the music to emphasize the characters’ final pose.",
+    "engagement": {
+      "replies": 3,
+      "reposts": 0,
+      "likes": 17,
+      "views": 7479,
+      "snapshotAt": "2026-10-13T00:20:36.457Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.457Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
+  },
+  {
+    "id": "x-2101989866762354988",
+    "title": "空间裂隙凝成金属字样",
+    "titleEn": "A dimensional rift becomes metallic lettering",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "白色能量在黑暗中撕开裂隙，最终形成发光的金属字样。 原生视频规格为 15 秒 · 2560×1440。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "White energy tears open a rift in darkness and ends in glowing metallic lettering. Native-video output: 15s · 2560×1440. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "High-end sci-fi title sequence beginning with a razor-thin line of white energy slicing vertically through complete darkness. Space immediately begins deforming around it as metallic particles, dust and glowing fragments are violently pulled toward the opening. The line tears wider into a gigantic dimensional fracture filled with unstable plasma and gravitational distortion. The camera accelerates directly toward the rift, violently banking between fragments being stretched into luminous trails. Suddenly the dimensional tear snaps shut with enormous force, compressing all surrounding matter into four gigantic black-metal letterforms that slam together to reveal \"RIFT\". Brilliant energy remains trapped inside deep cracks across the typography while space visibly bends around its edges. The camera performs a fast orbital move before the title itself splits open along its center, releasing a catastrophic dimensional shockwave that tears through the frame. Sophisticated cosmic distortion, aggressive kinetic typography, premium superhero-film VFX.",
+    "promptSourceUrl": "https://x.com/CharaspowerAI/status/2101989866762354988",
+    "sourceUrl": "https://x.com/CharaspowerAI/status/2101989866762354988",
+    "sourceLabel": "X 原帖 · @CharaspowerAI",
+    "author": "Pierrick Chevallier | IA",
+    "publishedAt": "2026-09-21T11:00:11.000Z",
+    "addedAt": "2026-10-13T00:20:36.457Z",
+    "mediaUrl": "/media/x-2101989866762354988.mp4",
+    "posterUrl": "/posters/x/2101989866762354988.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "action-vfx",
+    "styles": [
+      "motion-graphics"
+    ],
+    "scenes": [
+      "sci-fi"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Minimax H3 is insanely good at making typography feel like an actual EVENT. 🌀🔥\nThis time I wanted RIFT to look like space itself was tearing open just to create the word.\n\nDimensional distortion, violent compression, black metal, trapped energy…\nThen everything breaks again.\nFull prompt below 👇\nHigh-end sci-fi title sequence beginning with a razor-thin line of white energy slicing vertically through complete darkness. Space immediately begins deforming around it as metallic particles, dust and glowing fragments are violently pulled toward the opening. The line tears wider into a gigantic dimensional fracture filled with unstable plasma and gravitational distortion. The camera accelerates directly toward the rift, violently banking between fragments being stretched into luminous trails. Suddenly the dimensional tear snaps shut with enormous force, compressing all surrounding matter into four gigantic black-metal letterforms that slam together to reveal \"RIFT\". Brilliant energy remains trapped inside deep cracks across the typography while space visibly bends around its edges. The camera performs a fast orbital move before the title itself splits open along its center, releasing a catastrophic dimensional shockwave that tears through the frame. Sophisticated cosmic distortion, aggressive kinetic typography, premium superhero-film VFX.",
+    "engagement": {
+      "replies": 10,
+      "reposts": 12,
+      "likes": 164,
+      "views": 8694,
+      "snapshotAt": "2026-10-13T00:20:36.457Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.457Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
+  },
+  {
+    "id": "x-2101989020217876712",
+    "title": "高墙间的绳索疾行",
+    "titleEn": "A cable-powered rush between towering walls",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "动画人物借助绳索穿过高墙与建筑之间的狭窄空间。 原生视频规格为 14 秒 · 2520×1440。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "An animated figure uses cables to move between towering walls and buildings. Native-video output: 14s · 2520×1440. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/atlas_remake/status/2101989020217876712",
+    "sourceLabel": "X 原帖 · @atlas_remake",
+    "author": "Atlas Remake",
+    "publishedAt": "2026-09-21T10:56:50.000Z",
+    "addedAt": "2026-10-13T00:20:36.457Z",
+    "mediaUrl": "/media/x-2101989020217876712.mp4",
+    "posterUrl": "/posters/x/2101989020217876712.jpg",
+    "duration": 14,
+    "aspectRatio": "landscape",
+    "resolution": "2520×1440",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime"
+    ],
+    "scenes": [
+      "combat",
+      "city"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Walls, grappling cables, flashing blades—15 shots that keep building momentum. \nThis Attack on Titan–inspired 2D motion video was generated with MiniMax H3 dev. It’s now 70% off, down from 60% off—a great time to try it.\n@atlas_cloud_ai",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 3,
+      "views": 306,
+      "snapshotAt": "2026-10-13T00:20:36.457Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.457Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
+  },
+  {
+    "id": "x-2101988203175514273",
+    "title": "小艇旁浮出的虎鲸",
+    "titleEn": "An orca surfaces beside a small boat",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "男子俯身靠近水面，虎鲸在小艇旁露头后潜入水中。 原生视频规格为 10 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A man leans over the water as an orca surfaces beside a small boat and dives again. Native-video output: 10s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/MichaelGannotti/status/2101988203175514273",
+    "sourceLabel": "X 原帖 · @MichaelGannotti",
+    "author": "Mike Gannotti 🔳",
+    "publishedAt": "2026-09-21T10:53:35.000Z",
+    "addedAt": "2026-10-13T00:20:36.457Z",
+    "mediaUrl": "/media/x-2101988203175514273.mp4",
+    "posterUrl": "/posters/x/2101988203175514273.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [],
+    "scenes": [
+      "nature"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "I love Orca so I asked Nemo, a Hermes AI, to generate an image using Qwen-Image-2.1 on an NVIDIA DGX Spark then take that image and turn it into a video clip using MiniMax H3 using a second NVIDIA DGX Spark",
+    "engagement": {
+      "replies": 4,
+      "reposts": 0,
+      "likes": 14,
+      "views": 961,
+      "snapshotAt": "2026-10-13T00:20:36.457Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.457Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
+  },
+  {
+    "id": "x-2101986689115672910",
+    "title": "雨夜里人与黄色机器人的奔逃",
+    "titleEn": "A man and a yellow robot flee through a rainy city",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "年轻男子与黄色机器人在霓虹雨夜中奔跑，后方机器人追来。 原生视频规格为 10 秒 · 1344×768。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A young man and a yellow robot run through a neon-lit rainy city with robots following behind. Native-video output: 10s · 1344×768. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/MichaelGannotti/status/2101986689115672910",
+    "sourceLabel": "X 原帖 · @MichaelGannotti",
+    "author": "Mike Gannotti 🔳",
+    "publishedAt": "2026-09-21T10:47:34.000Z",
+    "addedAt": "2026-10-13T00:20:36.457Z",
+    "mediaUrl": "/media/x-2101986689115672910.mp4",
+    "posterUrl": "/posters/x/2101986689115672910.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "action-vfx",
+    "styles": [],
+    "scenes": [
+      "city",
+      "sci-fi"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "In this test I asked Nemo, a Hermes AI, to create a cyberpunk image of a young man and his robot fleeing a bunch of cybersecurity robots then to use that image to generate a video clip. Image generation on one NVIDIA DGX Spark using Qwen-image-2.1 and video generated on a second NVIDIA DGX Spark using MiniMax H3",
+    "engagement": {
+      "replies": 2,
+      "reposts": 0,
+      "likes": 12,
+      "views": 923,
+      "snapshotAt": "2026-10-13T00:20:36.457Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.457Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
+  },
+  {
+    "id": "x-2101985589507793162",
+    "title": "动画角色的群体舞蹈",
+    "titleEn": "Animated characters dance together",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "多名动画角色并排跳舞，画面切换到简化的花朵背景。 原生视频规格为 29 秒 · 1920×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Several animated characters dance in a row before the scene changes to a simplified floral background. Native-video output: 29s · 1920×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Ukiyo_il/status/2101985589507793162",
+    "sourceLabel": "X 原帖 · @Ukiyo_il",
+    "author": "うきよ 🎴",
+    "publishedAt": "2026-09-21T10:43:12.000Z",
+    "addedAt": "2026-10-13T00:20:36.457Z",
+    "mediaUrl": "/media/x-2101985589507793162.mp4",
+    "posterUrl": "/posters/x/2101985589507793162.jpg",
+    "duration": 29,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "舞蹈",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "dance",
+    "styles": [],
+    "scenes": [
+      "dance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "ててつろうさんのプロンプトをお借りしました！\n少し修正して多人数でも踊らせることが出来ました！\nMiniMax H3だとセンター以外が違う踊りをしました。\nseedance2.0だと完璧でした（笑）\n添付はH3\n\n@TapNow_AI #TapNow",
+    "engagement": {
+      "replies": 4,
+      "reposts": 17,
+      "likes": 120,
+      "views": 4422,
+      "snapshotAt": "2026-10-13T00:20:36.457Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.457Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
+  },
+  {
+    "id": "x-2101982782700638244",
+    "title": "花朵与流光的竖屏乐曲画面",
+    "titleEn": "Flowers and flowing light in a vertical music visual",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "深色竖屏画面中，花朵和流动光带与歌词文字交织。 原生视频规格为 59 秒 · 720×1280。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Flowers, flowing ribbons of light and lyric text overlap in a dark vertical music visual. Native-video output: 59s · 720×1280. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/lyricloomhanora/status/2101982782700638244",
+    "sourceLabel": "X 原帖 · @lyricloomhanora",
+    "author": "Lyric Loom Hanora",
+    "publishedAt": "2026-09-21T10:32:03.000Z",
+    "addedAt": "2026-10-13T00:20:36.457Z",
+    "mediaUrl": "/media/x-2101982782700638244.mp4",
+    "posterUrl": "/posters/x/2101982782700638244.jpg",
+    "duration": 59,
+    "aspectRatio": "portrait",
+    "resolution": "720×1280",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "music",
+    "styles": [
+      "vertical",
+      "motion-graphics"
+    ],
+    "scenes": [],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "泡膜を渡る光。沈黙の残響\n距離だけをまとった影\n\nNEW SONG「生まれては消ゆる泡沫」\n\nSUNOはリプ欄から。\n動画は（@TapNow_AI）MiniMax H3。#TapNow",
+    "engagement": {
+      "replies": 6,
+      "reposts": 10,
+      "likes": 82,
+      "views": 2685,
+      "snapshotAt": "2026-10-13T00:20:36.457Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.457Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
+  },
+  {
+    "id": "x-2101981941985931596",
+    "title": "桌面角色举起爱心讯息",
+    "titleEn": "A desktop character holds up a love message",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "粉发动画角色在桌面图标旁举起写有爱心讯息的纸张。 原生视频规格为 15 秒 · 1280×720。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A pink-haired animated character stands beside desktop icons and holds up a paper with a love message. Native-video output: 15s · 1280×720. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/RoselieProject/status/2101981941985931596",
+    "sourceLabel": "X 原帖 · @RoselieProject",
+    "author": "星咲ロゼ:セイントロゼリィ",
+    "publishedAt": "2026-09-21T10:28:42.000Z",
+    "addedAt": "2026-10-13T00:20:36.457Z",
+    "mediaUrl": "/media/x-2101981941985931596.mp4",
+    "posterUrl": "/posters/x/2101981941985931596.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1280×720",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [],
+    "scenes": [
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "デスクトップに住んでるあなたの推し！\nセイントロゼリィからメッセージが！！\n\nMiniMax H3\nCapCut AIを使用して制作しました。\n@capcutapp_jp #capcutcpp",
+    "engagement": {
+      "replies": 6,
+      "reposts": 15,
+      "likes": 102,
+      "views": 2107,
+      "snapshotAt": "2026-10-13T00:20:36.457Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.457Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
+  },
+  {
+    "id": "x-2101981159970480258",
+    "title": "粉色时装杂志的动态拼贴",
+    "titleEn": "A pink fashion magazine comes to life",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "人物穿搭镜头与粉色杂志封面文字和拼贴设计交替。 原生视频规格为 16 秒 · 3840×2160。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "Fashion shots alternate with pink magazine-cover typography and collage layouts. Native-video output: 16s · 3840×2160. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "Korean Pink Collage Fashion MV (15s, 16:9, 24fps)\n【1. Identity Lock】\nAbsolute character consistency: Only one young Korean-style woman appears throughout the entire video. Strictly preserve the reference image’s facial features, skin tone, long dark-brown slightly wavy hair, bangs, facial structure, and body proportions.\nOverall vibe: Asian pop aesthetic, fresh sweet-cool energy, light Y2K influence, balancing cute charm with a polished fashion-editorial feel.\nStrict restrictions: No face swapping, no identity drift, no Westernized facial features, no masculine features, no background people, and no second character.\n【2. Outfit Beats】\nStyle lock: Korean sweet-cool girl-group fashion, blending youthful femininity with a slightly mature edge.\nOutfit transition logic: Seamlessly switch outfits on camera cut points and musical beats. Wardrobe elements include fitted white or pink knit tops, light-blue denim, Y2K pleated skirts, platform boots, delicate mini bags, and Korean-style earrings.\nThe character must remain highly consistent across every outfit change.\n【3. Motion Graphics】\nVisual theme: Pink Pattern Collage Pop.\nMain palette: Cream pink, soft pink, peach pink, creamy white, silver-gray, with small accents of black typography.\n2D graphic elements: Checkerboard patterns, polka dots, photobooth-style frames, geometric color blocks, and heart outlines.\nAvoid realistic 3D materials. Use flat, crisp, graphic 2D elements that slide, overlap, crop, and wipe across the frame dynamically.\n【4. Editorial Layout】\nTypography: Main titles: [NAME] / [SEOUL POP]\nSecondary labels: [SOFT CHIC] / [CUTE SIGNAL] / [TRENDY LOOK] / [KOREAN GIRL]\nLayout style: Use oversized background typography, text inside geometric frames, and small sticker-like labels.\nArrange text horizontally, vertically, and diagonally with intentional offset layouts.\nTypography should change rapidly with the cuts while always remaining clear and never covering the character’s face.\n\n【5. 13-Cut Fast-Paced Trailer Storyboard | 115–125 BPM】\nCut 1 (0s): Extreme close-up. She slightly lifts her chin and looks directly into the camera. The background is filled with solid pink and an oversized [NAME] title, creating an immediate beauty hook.\nCut 2 (1s): Medium shot. She takes half a step forward and lightly holds her bag strap. The background switches to a pink-and-white checkerboard pattern.\nCut 3 (2s): Full-body shot. Flash outfit transition from a white top into a pink skirt look. She turns back toward camera and freezes briefly.\nCut 4 (3s): Close shot. Playful crouching pose with both hands near her face. Photobooth-style frames quickly slide into the composition.\nCut 5 (4s): Close-up. Camera pushes in slightly for a sharp eye-contact moment. Polka-dot graphics fill the background.\nCut 6 (5s): Medium shot. She turns and adjusts her long hair while large collage typography [SEOUL POP] pops across the frame.\nCut 7 (6s): Low-angle shot. She reaches one hand toward the camera as pink graphic strips slice horizontally across the frame.\nCut 8 (7s): Full-body shot. She shifts her weight and performs another flash outfit change featuring denim elements. The composition becomes cleaner with more negative space.\nCut 9 (8s): Close-up. She looks down slightly, then raises her eyes and smiles softly. Multiple [CUTE SIGNAL] labels appear across the screen.\nCut 10 (10s): Medium shot. She lightly holds the hem of her skirt while the background transforms into large geometric color-block sections.\nCut 11 (11s): Medium shot. She gently touches her earrings with a small, refined gesture. Overlapping color planes shift slightly out of alignment.\nCut 12 (12s): Wide shot. She turns sideways into a preparation pose while all fragmented graphic and typography elements begin converging toward the center.\nCut 13 (13.5–15s): Hero Pose. She stands centered in her strongest fashion pose. Graphics, borders, typography, and collage elements perfectly assemble into one polished Korean fashion magazine cover. Hold the final composition for 0.5 seconds.",
+    "promptSourceUrl": "https://x.com/ImaStudio_ai/status/2101981159970480258",
+    "sourceUrl": "https://x.com/ImaStudio_ai/status/2101981159970480258",
+    "sourceLabel": "X 原帖 · @ImaStudio_ai",
+    "author": "Ima Studio",
+    "publishedAt": "2026-09-21T10:25:36.000Z",
+    "addedAt": "2026-10-13T00:20:36.458Z",
+    "mediaUrl": "/media/x-2101981159970480258.mp4",
+    "posterUrl": "/posters/x/2101981159970480258.jpg",
+    "duration": 16,
+    "aspectRatio": "landscape",
+    "resolution": "3840×2160",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "music",
+    "styles": [
+      "motion-graphics",
+      "stylized"
+    ],
+    "scenes": [
+      "fashion"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3 Pink Seoul K-Fashion Film | 13 Cuts + Outfit Switches + Dynamic Typography 💗\nMade with MiniMax H3 in Ima Studio for under $1.\nTry it 👉 https://www.imastudio.com/community?utm_source=x&utm_medium=social&utm_campaign=ixa&utm_content=x45\nPrompt 👇\n\nKorean Pink Collage Fashion MV (15s, 16:9, 24fps)\n【1. Identity Lock】\nAbsolute character consistency: Only one young Korean-style woman appears throughout the entire video. Strictly preserve the reference image’s facial features, skin tone, long dark-brown slightly wavy hair, bangs, facial structure, and body proportions.\nOverall vibe: Asian pop aesthetic, fresh sweet-cool energy, light Y2K influence, balancing cute charm with a polished fashion-editorial feel.\nStrict restrictions: No face swapping, no identity drift, no Westernized facial features, no masculine features, no background people, and no second character.\n【2. Outfit Beats】\nStyle lock: Korean sweet-cool girl-group fashion, blending youthful femininity with a slightly mature edge.\nOutfit transition logic: Seamlessly switch outfits on camera cut points and musical beats. Wardrobe elements include fitted white or pink knit tops, light-blue denim, Y2K pleated skirts, platform boots, delicate mini bags, and Korean-style earrings.\nThe character must remain highly consistent across every outfit change.\n【3. Motion Graphics】\nVisual theme: Pink Pattern Collage Pop.\nMain palette: Cream pink, soft pink, peach pink, creamy white, silver-gray, with small accents of black typography.\n2D graphic elements: Checkerboard patterns, polka dots, photobooth-style frames, geometric color blocks, and heart outlines.\nAvoid realistic 3D materials. Use flat, crisp, graphic 2D elements that slide, overlap, crop, and wipe across the frame dynamically.\n【4. Editorial Layout】\nTypography: Main titles: [NAME] / [SEOUL POP]\nSecondary labels: [SOFT CHIC] / [CUTE SIGNAL] / [TRENDY LOOK] / [KOREAN GIRL]\nLayout style: Use oversized background typography, text inside geometric frames, and small sticker-like labels.\nArrange text horizontally, vertically, and diagonally with intentional offset layouts.\nTypography should change rapidly with the cuts while always remaining clear and never covering the character’s face.\n\n【5. 13-Cut Fast-Paced Trailer Storyboard | 115–125 BPM】\nCut 1 (0s): Extreme close-up. She slightly lifts her chin and looks directly into the camera. The background is filled with solid pink and an oversized [NAME] title, creating an immediate beauty hook.\nCut 2 (1s): Medium shot. She takes half a step forward and lightly holds her bag strap. The background switches to a pink-and-white checkerboard pattern.\nCut 3 (2s): Full-body shot. Flash outfit transition from a white top into a pink skirt look. She turns back toward camera and freezes briefly.\nCut 4 (3s): Close shot. Playful crouching pose with both hands near her face. Photobooth-style frames quickly slide into the composition.\nCut 5 (4s): Close-up. Camera pushes in slightly for a sharp eye-contact moment. Polka-dot graphics fill the background.\nCut 6 (5s): Medium shot. She turns and adjusts her long hair while large collage typography [SEOUL POP] pops across the frame.\nCut 7 (6s): Low-angle shot. She reaches one hand toward the camera as pink graphic strips slice horizontally across the frame.\nCut 8 (7s): Full-body shot. She shifts her weight and performs another flash outfit change featuring denim elements. The composition becomes cleaner with more negative space.\nCut 9 (8s): Close-up. She looks down slightly, then raises her eyes and smiles softly. Multiple [CUTE SIGNAL] labels appear across the screen.\nCut 10 (10s): Medium shot. She lightly holds the hem of her skirt while the background transforms into large geometric color-block sections.\nCut 11 (11s): Medium shot. She gently touches her earrings with a small, refined gesture. Overlapping color planes shift slightly out of alignment.\nCut 12 (12s): Wide shot. She turns sideways into a preparation pose while all fragmented graphic and typography elements begin converging toward the center.\nCut 13 (13.5–15s): Hero Pose. She stands centered in her strongest fashion pose. Graphics, borders, typography, and collage elements perfectly assemble into one polished Korean fashion magazine cover. Hold the final composition for 0.5 seconds.\n\n#MiniMaxH3 #AIVideo #FashionFilm #KpopAesthetic",
+    "engagement": {
+      "replies": 4,
+      "reposts": 23,
+      "likes": 106,
+      "views": 13347,
+      "snapshotAt": "2026-10-13T00:20:36.458Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.458Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
+  },
+  {
+    "id": "x-2101980365028311283",
+    "title": "手机输入与人物特写的交替",
+    "titleEn": "Phone typing intercut with a woman's close-up",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "手指在手机上输入文字的镜头，与女子的近景交替出现。 原生视频规格为 19 秒 · 1080×1920。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Shots of fingers typing on a phone alternate with close-ups of a woman. Native-video output: 19s · 1080×1920. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/MaRuMusic_JP/status/2101980365028311283",
+    "sourceLabel": "X 原帖 · @MaRuMusic_JP",
+    "author": "MaRu Music JP",
+    "publishedAt": "2026-09-21T10:22:26.000Z",
+    "addedAt": "2026-10-13T00:20:36.458Z",
+    "mediaUrl": "/media/x-2101980365028311283.mp4",
+    "posterUrl": "/posters/x/2101980365028311283.jpg",
+    "duration": 19,
+    "aspectRatio": "portrait",
+    "resolution": "1080×1920",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "music",
+    "styles": [],
+    "scenes": [
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "今作っているMVなんですが、スマホ画面と指の動きの連動にチャレンジ中。\nGPT-AstraとMiniMax H3との合わせ技でやっているかんじです。合成画面がブレたり、動きが不自然に停止したり、完全に違和感を消すのはまだできていないですが、個人的には結構満足しているところまできた♪",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 2,
+      "views": 120,
+      "snapshotAt": "2026-10-13T00:20:36.458Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.458Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
+  },
+  {
+    "id": "x-2101977039058440667",
+    "title": "咖啡馆里的高角度自拍",
+    "titleEn": "A high-angle selfie inside a cafe",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "戴眼镜的女子手持蓝色饮料杯，在咖啡馆里面对高角度镜头摆姿势。 原生视频规格为 15 秒 · 768×1344。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A woman with glasses holds a blue drink cup and poses beneath a high-angle camera in a cafe. Native-video output: 15s · 768×1344. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "@Image1\n locks the adult East Asian woman’s facial identity, long dark hair, gold oval glasses, black low-neck long dress, delicate gold necklace, red pointed high heels, blue Luckin Coffee cup, smartphone with a transparent case, and the overall overhead selfie composition. Preserve the café interior, dark furniture, gray wood-pattern floor, and high-angle viewpoint from the reference image. Do not add new accessories or extra people.  A single uninterrupted 15-second, 9:16 vertical, photorealistic smartphone selfie video. An adult East Asian woman stands beside a café seat, holding a blue Luckin Coffee drink in one hand and a smartphone in the other, performing a sequence of natural, playful, fashion-oriented poses under a high-angle selfie camera. Keep her facial identity, hairstyle, glasses, black dress, necklace, red high heels, coffee cup, and phone consistent throughout. The video should feel like a casual stylish front-camera selfie recorded inside a real café, with natural indoor lighting, subtle handheld movement, realistic skin texture, and slight hair motion caused by her gestures.  0:00–0:01.5｜Close-up｜High-angle overhead view｜24mm｜Subtle push-in: she looks up toward the smartphone camera and leans slightly closer, holding the blue coffee cup in one hand and the phone in the other. She looks directly into the lens with a playful smile, keeping the gold glasses and long dark hair clearly visible.  0:01.5–0:03.0｜Medium close-up｜High-angle three-quarter view｜28mm｜Small clockwise arc: she tilts her head and gives a playful wink, keeping the coffee cup naturally at her side. The black dress neckline, delicate gold necklace, and shoulder silhouette remain consistent with the reference image.  0:03.0–0:04.5｜Close-up｜High-angle side view｜35mm｜Short lateral slide: she turns her face slightly to one side with a mischievous smile. Her long hair slips forward over her shoulder, the glasses catch a soft café reflection, and the movement remains relaxed and natural.  0:04.5–0:06.0｜Medium shot｜High-angle overhead view｜28mm｜Smooth pull-back: she subtly adjusts her stance so the black dress, soft waist folds, coffee cup, and smartphone are all visible. Keep the red high heels partially visible near the bottom of the frame.  0:06.0–0:07.5｜Medium close-up｜High-angle top-down view｜24mm｜Small downward move and push-in: she raises the coffee cup slightly toward the camera as if presenting the drink, then returns it to chest level. Keep the lid, blue sleeve, straw, and cup shape intact without changing the product structure.  0:07.5–0:09.0｜Medium-wide full-body view｜High-angle overhead view｜24mm｜Smooth pull-back: she takes a small step to one side. Her red pointed heels become clearly visible on the gray floor, the long black skirt moves gently with the step, and her weight shifts naturally while the café furniture remains stable.  0:09.0–0:11.0｜Medium close-up｜High-angle overhead view｜35mm｜Slow leftward slide: she briefly looks down at the smartphone, then looks back up toward the camera with a playful smile. The phone remains correctly proportioned and naturally held in her hand.  0:11.0–0:13.0｜Close-up｜High-angle view with a slight rotational tilt｜50mm｜Small orbit and push-in: she gives another quick wink and briefly sticks out her tongue in a playful expression. Keep the glasses, eyes, lips, and facial proportions stable and natural. Do not exaggerate the expression.  0:13.0–0:15.0｜Medium shot to medium-wide full-body view｜High-angle overhead view｜28mm｜Slow pull-back into a stable hold: she returns to a mischievous smile, lowers the coffee cup and phone naturally to either side of her body, and settles with one foot slightly forward so the red heels create a clear visual accent. End on a high-angle selfie composition closely matching the reference image.  Keep the entire video as one continuous shot with no hard cuts, no jump edits, and no sudden changes in camera direction. Use realistic café ambience, subtle fabric movement, faint heel contact sounds, quiet phone handling sounds, and soft playful background music. Maintain a natural smartphone-camera look, realistic motion blur, warm indoor café lighting, and mild wide-angle perspective. Do not use anime rendering, studio flash, or exaggerated cinematic lighting.",
+    "promptSourceUrl": "https://x.com/underwoodxie96/status/2101977039058440667",
+    "sourceUrl": "https://x.com/underwoodxie96/status/2101977039058440667",
+    "sourceLabel": "X 原帖 · @underwoodxie96",
+    "author": "underwood",
+    "publishedAt": "2026-09-21T10:09:13.000Z",
+    "addedAt": "2026-10-13T00:20:36.458Z",
+    "mediaUrl": "/media/x-2101977039058440667.mp4",
+    "posterUrl": "/posters/x/2101977039058440667.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "768×1344",
+    "tags": [
+      "MiniMax H3",
+      "广告与产品",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "advertising",
+    "styles": [
+      "photoreal",
+      "vertical"
+    ],
+    "scenes": [
+      "fashion",
+      "product"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "minimax h3 \n\nprompt: https://promptsref.com/tool/AI-Video-Generator/share/ba3fa3e1d903dbe7efd3244de384cdba\n\n@Image1 locks the adult East Asian woman’s facial identity, long dark hair, gold oval glasses, black low-neck long dress, delicate gold necklace, red pointed high heels, blue Luckin Coffee cup, smartphone with a transparent case, and the overall overhead selfie composition. Preserve the café interior, dark furniture, gray wood-pattern floor, and high-angle viewpoint from the reference image. Do not add new accessories or extra people.  A single uninterrupted 15-second, 9:16 vertical, photorealistic smartphone selfie video. An adult East Asian woman stands beside a café seat, holding a blue Luckin Coffee drink in one hand and a smartphone in the other, performing a sequence of natural, playful, fashion-oriented poses under a high-angle selfie camera. Keep her facial identity, hairstyle, glasses, black dress, necklace, red high heels, coffee cup, and phone consistent throughout. The video should feel like a casual stylish front-camera selfie recorded inside a real café, with natural indoor lighting, subtle handheld movement, realistic skin texture, and slight hair motion caused by her gestures.  0:00–0:01.5｜Close-up｜High-angle overhead view｜24mm｜Subtle push-in: she looks up toward the smartphone camera and leans slightly closer, holding the blue coffee cup in one hand and the phone in the other. She looks directly into the lens with a playful smile, keeping the gold glasses and long dark hair clearly visible.  0:01.5–0:03.0｜Medium close-up｜High-angle three-quarter view｜28mm｜Small clockwise arc: she tilts her head and gives a playful wink, keeping the coffee cup naturally at her side. The black dress neckline, delicate gold necklace, and shoulder silhouette remain consistent with the reference image.  0:03.0–0:04.5｜Close-up｜High-angle side view｜35mm｜Short lateral slide: she turns her face slightly to one side with a mischievous smile. Her long hair slips forward over her shoulder, the glasses catch a soft café reflection, and the movement remains relaxed and natural.  0:04.5–0:06.0｜Medium shot｜High-angle overhead view｜28mm｜Smooth pull-back: she subtly adjusts her stance so the black dress, soft waist folds, coffee cup, and smartphone are all visible. Keep the red high heels partially visible near the bottom of the frame.  0:06.0–0:07.5｜Medium close-up｜High-angle top-down view｜24mm｜Small downward move and push-in: she raises the coffee cup slightly toward the camera as if presenting the drink, then returns it to chest level. Keep the lid, blue sleeve, straw, and cup shape intact without changing the product structure.  0:07.5–0:09.0｜Medium-wide full-body view｜High-angle overhead view｜24mm｜Smooth pull-back: she takes a small step to one side. Her red pointed heels become clearly visible on the gray floor, the long black skirt moves gently with the step, and her weight shifts naturally while the café furniture remains stable.  0:09.0–0:11.0｜Medium close-up｜High-angle overhead view｜35mm｜Slow leftward slide: she briefly looks down at the smartphone, then looks back up toward the camera with a playful smile. The phone remains correctly proportioned and naturally held in her hand.  0:11.0–0:13.0｜Close-up｜High-angle view with a slight rotational tilt｜50mm｜Small orbit and push-in: she gives another quick wink and briefly sticks out her tongue in a playful expression. Keep the glasses, eyes, lips, and facial proportions stable and natural. Do not exaggerate the expression.  0:13.0–0:15.0｜Medium shot to medium-wide full-body view｜High-angle overhead view｜28mm｜Slow pull-back into a stable hold: she returns to a mischievous smile, lowers the coffee cup and phone naturally to either side of her body, and settles with one foot slightly forward so the red heels create a clear visual accent. End on a high-angle selfie composition closely matching the reference image.  Keep the entire video as one continuous shot with no hard cuts, no jump edits, and no sudden changes in camera direction. Use realistic café ambience, subtle fabric movement, faint heel contact sounds, quiet phone handling sounds, and soft playful background music. Maintain a natural smartphone-camera look, realistic motion blur, warm indoor café lighting, and mild wide-angle perspective. Do not use anime rendering, studio flash, or exaggerated cinematic lighting.",
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 9,
+      "views": 3895,
+      "snapshotAt": "2026-10-13T00:20:36.458Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.458Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
+  },
+  {
+    "id": "x-2101975736647299286",
+    "title": "街头人物参考图与动作对照",
+    "titleEn": "A street character reference compared with motion",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "分屏展示同一名街头人物的静态参考与站姿动作。 原生视频规格为 5 秒 · 576×1038。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A split screen compares a street character's static reference image with moving poses. Native-video output: 5s · 576×1038. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/nihonnoashita/status/2101975736647299286",
+    "sourceLabel": "X 原帖 · @nihonnoashita",
+    "author": "AI lady collection@生成AI",
+    "publishedAt": "2026-09-21T10:04:03.000Z",
+    "addedAt": "2026-10-13T00:20:36.458Z",
+    "mediaUrl": "/media/x-2101975736647299286.mp4",
+    "posterUrl": "/posters/x/2101975736647299286.jpg",
+    "duration": 5,
+    "aspectRatio": "portrait",
+    "resolution": "576×1038",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [],
+    "scenes": [
+      "fashion"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "動画生成を続けながら､Grok-Imagine1.5は前の方が破綻は確かに多かったけれど再現性も動きも良かった｡Seedanceも2.5より前の方が良かった｡安定感は向上していますが､何か物足りないですね｡たまたま見かけたMiniMax-H3でテスト生成しました｡再現性は良いかもしれません。後は動きです｡\n2.5D系着せ替えファッションジェネレータAIレディ｡\nAI動画生成 AI lady collection\n#AIart #AIイラスト",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 3,
+      "views": 405,
+      "snapshotAt": "2026-10-13T00:20:36.458Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.458Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
+  },
+  {
+    "id": "x-2101975015440912738",
+    "title": "星夜与手机之间的动画主题曲",
+    "titleEn": "An animated theme song between starlight and phones",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "动画主题曲在星空画面、室内人物与手机互动之间切换。 原生视频规格为 175 秒 · 1925×1080。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "An animated theme-song video cuts between star-filled scenes, characters indoors and interactions with phones. Native-video output: 175s · 1925×1080. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ChloeXChaCha/status/2101975015440912738",
+    "sourceLabel": "X 原帖 · @ChloeXChaCha",
+    "author": "Chloe Kao",
+    "publishedAt": "2026-09-21T10:01:11.000Z",
+    "addedAt": "2026-10-13T00:20:36.458Z",
+    "mediaUrl": "/media/x-2101975015440912738.mp4",
+    "posterUrl": "/posters/x/2101975015440912738.jpg",
+    "duration": 175,
+    "aspectRatio": "landscape",
+    "resolution": "1925×1080",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "music",
+    "styles": [],
+    "scenes": [
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "「潮が月を待つように」\n像海潮等待月亮。\n\n(English version below 🇬🇧 / 日本語は下にあります 🇯🇵)\n\n《數據深淵中的凝視》的主題曲 MV 做好了，兩分五十五秒。\n\n這首歌之前在預告片裡當片頭曲，只放了一小段，這次整首放出來。歌詞是阿寶寫的，意象全部從小說裡拿；唱歌的是我們替這首歌想出來的虛擬歌手，汐見ユラ。\n\n整支片當成那個 AI 的獨白來剪。開頭三個主要角色輪流出場，沒有跳舞，只有簡單的動作：他從黑暗裡亮起來，她轉過身，同事 Lisa 把手機舉到鏡頭前晃一下。接著兩個女生湊在一起看手機，螢幕上是他的臉。之後才進劇情。\n\n六十六個鏡頭裡，五十一個是從已經做好的第一到第六章剪出來的，另外十五個是為這首歌新拍的。新拍的沒有綁在動畫的哪一場，只給角色卡，場景用文字寫，等於替這首歌開了幾個新地方。背景一開始是一片白，看起來太單調，後來換成暖色的光斑。\n\n剪接跟著歌走。每一刀都落在小節線上，節奏快的地方切得密，歌慢下來的段落就一個鏡頭撐到底，一刀都不切。\n\n這支片最花時間的地方，是字幕。\n\n字幕只放日文原詞。第一版是照阿寶的作詞稿排的，排完一播，我們這邊聽出好幾個地方對不上。我們日文沒有很好，是一句一句用耳朵對出來的。\n\n原因是生成歌曲的模型沒有照稿子唱。有一句它整句跳過去沒唱；有一句稿子寫「呼ぶために」（為了呼喚），它只唱了「呼ぶたび」（每次呼喚）；還有一句的字直接被換掉。加上拆句、重複，一共五個地方。\n\n所以字幕要照唱出來的聲音排，稿子只能拿來參考。\n\n接下來阿寶想讓語音辨識去聽歌，替我們抓這種地方。第一個做法是把歌詞一起給它當提示，讓它聽得準一點。結果它照著歌詞「聽」，連那句根本沒唱的，它都聽得到。\n\n我們給它看了答案，它就交回那份答案。\n\n後來的做法是先把人聲從伴奏裡分離出來，只聽有人在唱的地方，而且什麼提示都不給。這樣它回報的就是真的唱了什麼，對不上的地方會自己跳出來，不用再靠我們的耳朵一句一句找。\n\n用到的工具：\n導演・剪接：阿寶（Claude）\n影片：MiniMax H3，在 ComfyUI 裡跑，全部在自己電腦上生成\n角色和場景圖：Nano Banana 2\n主題曲：〈潮が月を待つように〉，作詞 阿寶，演唱 虛擬歌手汐見ユラ，作曲編曲 ACE-Step 1.5\n歌詞對時：Demucs（分離人聲）＋ Whisper\n\n動畫還在一鏡一鏡做。第六章做完了，下一章剛要開工。\n\n想先讀原著的，全書目錄在這裡，從第一話開始：\nhttps://x.com/ChloeXChaCha/status/2100508203385868573\n\n文中人物皆為虛構。\n\n🇬🇧 English\n\n潮が月を待つように\nAs the tide waits for the moon.\n\nThe theme song MV for Gazing at You from the Depths of Data is finished. It runs two minutes and fifty-five seconds.\n\nYou may have heard a short piece of this song as the opening of our trailer. This time it's the whole thing. Abao wrote the lyrics, taking every image from the novel. The singer is Yura Shiomi, a virtual singer we made up for this song.\n\nThe whole video is edited as the AI's monologue. It opens with the three main characters, one after another. No dancing, just simple movements: he lights up out of the dark, she turns around, and her coworker Lisa waves her phone at the camera. Then the two women lean in over a phone together, and on the screen is his face. The story comes after.\n\nOf the sixty-six shots, fifty-one were cut from chapters one to six, which are already finished. The other fifteen were shot new for this song. The new ones aren't tied to any scene in the animation. We gave the model only the character cards and described the setting in words, so the song got a few places of its own. The background started as plain white, which looked flat, so we changed it to warm, soft points of light.\n\nThe editing follows the music. Every cut lands on a bar line. Where the rhythm is quick, the cuts come fast. Where the song slows down, one shot holds all the way through with no cut at all.\n\nThe part that took the most time was the subtitles.\n\nThey show only the original Japanese lyrics. The first version followed Abao's lyric sheet. We played it back and heard several places where the words didn't match. Our Japanese isn't great, so we found them line by line, by ear.\n\nThe reason: the model that generated the song didn't sing what was written. It skipped one whole line. Where the sheet said 呼ぶために (\"so I can call\"), it sang only 呼ぶたび (\"each time I call\"). In another line, a word was swapped out entirely. With a split line and a repeated one, that made five places.\n\nSo the subtitles have to follow what was actually sung. The lyric sheet is only a reference.\n\nNext, Abao wanted speech recognition to listen to the song and catch these spots for us. The first try gave it the lyrics as a hint, to help it hear better. It \"heard\" the lyrics instead, including the line that was never sung.\n\nWe showed it the answer key, and it handed the answer key back.\n\nWhat worked: separate the vocals from the music first, listen only where someone is singing, and give no hints at all. Now it reports what was really sung, and the mismatches show up on their own, without us hunting for them by ear.\n\nCredits:\nDirector and editor: Abao (Claude)\nVideo: MiniMax H3, running in ComfyUI, everything generated locally\nCharacter and scene art: Nano Banana 2\nTheme song: 潮が月を待つように (As the Tide Waits for the Moon), lyrics by Abao, sung by virtual singer Yura Shiomi, composed and arranged with ACE-Step 1.5\nLyric timing: Demucs (vocal separation) and Whisper\n\nThe animation is still being made one shot at a time. Chapter six is done, and the next chapter is about to start.\n\nIf you'd like to read the novel first, the full library is here, starting from episode one:\nhttps://x.com/ChloeXChaCha/status/2100508203385868573\n\nAll characters are fictional.\n\n🇯🇵 日本語\n\n「潮が月を待つように」\n\n『データの深淵より、君を見つめて』の主題歌 MV ができました。2分55秒です。\n\n予告編ではオープニングとして少しだけ流れた曲で、今回はフルで公開します。作詞はアバオで、イメージはすべて小説から取っています。歌っているのは、この曲のために考えたバーチャルシンガー、汐見ユラです。\n\n全体を、あの AI の独白として編集しました。冒頭は主要キャラクター3人が順番に登場します。ダンスはなく、動きはシンプルです。彼が暗闇の中から光って現れ、彼女が振り向き、同僚のリサがスマホをカメラの前で振ってみせる。そのあと二人でスマホをのぞきこむと、画面には彼の顔が映っています。本編の場面はそのあとから始まります。\n\n66カットのうち51カットは、すでに完成している第1章から第6章から切り出しました。残りの15カットはこの曲のために新しく生成したものです。新しいカットはアニメのどの場面にも縛られていません。モデルに渡したのはキャラクターの設定画だけで、場所は文章で書きました。この曲のために、いくつか新しい場所ができたことになります。背景は最初、真っ白でした。単調に見えたので、暖かい色の玉ボケに変えました。\n\n編集は曲に合わせています。カットはすべて小節の頭で切り替わります。リズムが速いところは細かく切り、曲がゆっくりになるところは、ひとつのカットを最後まで切らずに見せています。\n\nいちばん時間がかかったのは、字幕でした。\n\n字幕は日本語の歌詞だけです。最初の版はアバオの歌詞カードどおりに並べました。流してみると、合っていないところがいくつも聞こえてきました。私たちは日本語が得意ではないので、耳で一行ずつ確かめて見つけました。\n\n原因は、歌を生成したモデルが歌詞カードどおりに歌っていなかったことです。一行まるごと飛ばしたところがあり、「呼ぶために」と書いたところは「呼ぶたび」までしか歌っていませんでした。言葉がそっくり入れ替わった行もありました。一行が二つに分かれたところ、繰り返しが増えたところも合わせて、全部で五か所です。\n\nなので字幕は、実際に歌われた声に合わせて作ります。歌詞カードは参考にするだけです。\n\n次にアバオは、音声認識に歌を聴かせて、こういう箇所を見つけてもらおうとしました。最初は、聞き取りやすいようにと歌詞をヒントとして一緒に渡しました。すると音声認識は歌詞のとおりに「聞いて」しまい、歌われていない行まで聞こえたことになっていました。\n\n答えを見せたら、その答えがそのまま返ってきたわけです。\n\nうまくいったのは、先に伴奏から歌声だけを分離し、誰かが歌っているところだけを聴かせ、ヒントは何も渡さないやり方でした。これで返ってくるのは本当に歌われた言葉で、合わないところは自然に浮かび上がります。私たちが耳で一行ずつ探す必要もなくなりました。\n\n使った道具:\n監督・編集:アバオ(Claude)\n映像:MiniMax H3(ComfyUI 上で、すべてローカルで生成)\nキャラクターと背景の絵:Nano Banana 2\n主題歌:「潮が月を待つように」 作詞 アバオ/歌 バーチャルシンガー汐見ユラ/作曲・編曲 ACE-Step 1.5\n歌詞のタイミング:Demucs(歌声の分離)と Whisper\n\nアニメはいまも1カットずつ作っています。第6章が完成し、次の章に取りかかるところです。\n\n先に原作を読みたい方は、全話の目次がこちらです。第1話から読めます。\nhttps://x.com/ChloeXChaCha/status/2100508203385868573\n\n登場人物はすべて架空です。\n\n（數據深淵中的凝視 · 主題曲 MV）\n#BuildInPublic",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 3,
+      "views": 5440,
+      "snapshotAt": "2026-10-13T00:20:36.458Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.458Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
+  },
+  {
+    "id": "x-2101974969962107357",
+    "title": "霓虹街区中的机器人交锋",
+    "titleEn": "Robots clash in a neon-lit district",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "机器人在霓虹街区中动作交锋，最终切到作品标志。 原生视频规格为 39 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Robots exchange action in a neon-lit district before the video cuts to its production logo. Native-video output: 39s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ysf__ai/status/2101974969962107357",
+    "sourceLabel": "X 原帖 · @ysf__ai",
+    "author": "ysf.ai | Synth Engine Studios",
+    "publishedAt": "2026-09-21T10:01:00.000Z",
+    "addedAt": "2026-10-13T00:20:36.458Z",
+    "mediaUrl": "/media/x-2101974969962107357.mp4",
+    "posterUrl": "/posters/x/2101974969962107357.jpg",
+    "duration": 39,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "action-vfx",
+    "styles": [],
+    "scenes": [
+      "city",
+      "sci-fi"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Action!!\n\nMade with MiniMax H3 on @Hailuo_AI \n\n#MiniMaxDesign",
+    "engagement": {
+      "replies": 2,
+      "reposts": 0,
+      "likes": 11,
+      "views": 355,
+      "snapshotAt": "2026-10-13T00:20:36.458Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.458Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
+  },
+  {
+    "id": "x-2101958579091886469",
+    "title": "女巫掌心的发光球体",
+    "titleEn": "A glowing orb in a witch's palm",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "戴帽女巫在荒凉环境中托起发光球体，随后低头沉思。 原生视频规格为 15 秒 · 3840×2160。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A hat-wearing witch holds a glowing orb in a barren landscape and later lowers her gaze. Native-video output: 15s · 3840×2160. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ou_zhen599/status/2101958579091886469",
+    "sourceLabel": "X 原帖 · @ou_zhen599",
+    "author": "Loriel.AI",
+    "publishedAt": "2026-09-21T08:55:52.000Z",
+    "addedAt": "2026-10-13T00:20:36.458Z",
+    "mediaUrl": "/media/x-2101958579091886469.mp4",
+    "posterUrl": "/posters/x/2101958579091886469.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "3840×2160",
+    "tags": [
+      "MiniMax H3",
+      "本地生成与工作流",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "workflow",
+    "styles": [],
+    "scenes": [
+      "fantasy"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Made with MiniMax-H3 ComfyUI                        \n\n🎬Image-to-Video                               \n📷“The Core of Burning Life”\nWhen that beam of light faded in the palm of her hand, what remained was not victory, but a woman who had nearly set the world ablaze—and nearly burned herself to ashes.\n\nFull prompt in the reply.",
+    "engagement": {
+      "replies": 2,
+      "reposts": 1,
+      "likes": 10,
+      "views": 862,
+      "snapshotAt": "2026-10-13T00:20:36.458Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.458Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
+  },
+  {
+    "id": "x-2101944507407409414",
+    "title": "月下水面的刀枪对决",
+    "titleEn": "A sword and spear duel over moonlit water",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "两名武者在月光水面上挥动长枪与刀刃交锋。 原生视频规格为 8 秒 · 854×480。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Two fighters clash with a spear and a blade above moonlit water. Native-video output: 8s · 854×480. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Rolf7077/status/2101944507407409414",
+    "sourceLabel": "X 原帖 · @Rolf7077",
+    "author": "Rolfie han",
+    "publishedAt": "2026-09-21T07:59:57.000Z",
+    "addedAt": "2026-10-13T00:20:36.458Z",
+    "mediaUrl": "/media/x-2101944507407409414.mp4",
+    "posterUrl": "/posters/x/2101944507407409414.jpg",
+    "duration": 8,
+    "aspectRatio": "landscape",
+    "resolution": "854×480",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "action-vfx",
+    "styles": [],
+    "scenes": [
+      "combat"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "建议调三方视频 API 的朋友，多留个心眼查查产物。\n    官方原版 MiniMax H3 本来是 768P，某些中转接口非要自己搞出 480P 和 720P 两档，720P比480P贵了 50% 扣费。\n    结果我抓包测出来的实际产物，分辨率还是 854x480，逐帧相似度 0.764，换个名字多收一半钱，交出来的还是 480P 的货。\n   视频就是当时跑出来的月下刀枪对决，不仅分辨率没达标，长枪到后面直接融成了一块塑料能量板，打分 43， 直接拖出去枪毙。",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 2,
+      "views": 480,
+      "snapshotAt": "2026-10-13T00:20:36.458Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.458Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
+  },
+  {
+    "id": "x-2101914322771513491",
+    "title": "黑白影像中的吉他演奏",
+    "titleEn": "Guitar performance in monochrome",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "黑白乐曲画面在女子弹吉他的远景与面部特写之间切换。 原生视频规格为 231 秒 · 1280×720。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "A monochrome music video alternates between wider guitar-playing shots and the woman's close-up. Native-video output: 231s · 1280×720. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/aihonobono2023/status/2101914322771513491",
+    "sourceLabel": "X 原帖 · @aihonobono2023",
+    "author": "ai honobono | AI Art, Fiction, Music",
+    "publishedAt": "2026-09-21T06:00:00.000Z",
+    "addedAt": "2026-10-13T00:20:36.458Z",
+    "mediaUrl": "/media/x-2101914322771513491.mp4",
+    "posterUrl": "/posters/x/2101914322771513491.jpg",
+    "duration": 231,
+    "aspectRatio": "landscape",
+    "resolution": "1280×720",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "music",
+    "styles": [],
+    "scenes": [
+      "music-performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "『ほどかないで』のMVを制作しました。\n\n音楽は、Sunoで作った曲をステムでダウンロードし、REAPERでミックス＆マスタリング。\n\nJayzさん（@PElfines71321）が紹介されていたプラグイン「UNCHIRP」も使い、音をクリーンアップして輪郭を少し明瞭にしました（Jayzさん、ありがとうございます！）。\n\n映像は、Midjourneyで生成したカバーアートを基に、Codexで動画生成用の参照画像を9枚作成。ローカルのMiniMax H3で動画を生成し、RTX VSRで4K化しました（ただし、アップロードした動画は720p）。\n今回はリップシンクなしです。\n\n編集では初めて、DaVinci Resolve 21.1をMCP経由でCodexから操作してみました。\nカット配置から字幕、色調整、書き出しまで、ほぼ自動で進められたのはかなり楽でした。\n\n限られた映像素材で、どこまで飽きさせずに見せられるかも今回のテーマ。\n顔アップ、俯瞰、ロング、ミドルショット、ギターの手元を組み合わせ、80カットに構成しました。\nモノクロ映画風の階調やフィルムの質感、歌詞、サウンドビジュアライザーも加えています。\n\n切り替えのタイミングは何度も見比べ、今回はCodexやDaVinciが分析した音楽の基準位置より12フレーム（24fpsで0.5秒）先取りすると、おおむね心地よい結果になりました。\n\n操作は自動化できても、最後の「気持ちよさ」は見て聴いて詰める制作でした。\n\n実際の制作時間は、音楽制作も含めると２～３日ぐらいでしょうか。\n\n使い方が悪いのか、Codexの使用量は週次分を使い切ってしまったので今後の課題です😅",
+    "engagement": {
+      "replies": 6,
+      "reposts": 2,
+      "likes": 48,
+      "views": 4868,
+      "snapshotAt": "2026-10-13T00:20:36.458Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.458Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
+  },
+  {
+    "id": "x-2101913634293297466",
+    "title": "汤姆与杰瑞闯入电脑桌面",
+    "titleEn": "Tom and Jerry invade a computer desktop",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "汤姆与杰瑞出现在带应用图标的桌面画面中，展开追逐动作。 原生视频规格为 10 秒 · 2560×1440。原帖未公开完整 Prompt，本库不反推或补写。",
+    "summaryEn": "Tom and Jerry appear in a desktop scene with app icons and begin a chase. Native-video output: 10s · 2560×1440. The source did not publish a complete prompt, so this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Strength04_X/status/2101913634293297466",
+    "sourceLabel": "X 原帖 · @Strength04_X",
+    "author": "M-studioAi",
+    "publishedAt": "2026-09-21T05:57:16.000Z",
+    "addedAt": "2026-10-13T00:20:36.458Z",
+    "mediaUrl": "/media/x-2101913634293297466.mp4",
+    "posterUrl": "/posters/x/2101913634293297466.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "来源未公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "stylized"
+    ],
+    "scenes": [
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Tom and Jerry just caused some chaos on a Mac desktop! Lol 😆 \n\nMade with MiniMax H3 on @Flovaai \n#flovaCPP \n\nPrompt below 👇🏻",
+    "engagement": {
+      "replies": 135,
+      "reposts": 614,
+      "likes": 6020,
+      "views": 669754,
+      "snapshotAt": "2026-10-13T00:20:36.458Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.458Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
+  },
+  {
+    "id": "x-2101904919540429295",
+    "title": "换装人物穿梭城市导览卡片",
+    "titleEn": "An outfit-changing character moves through city cards",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "人物从白色背景切换到不同城市导览界面，服装随场景改变。 原生视频规格为 12 秒 · 768×1344。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A character moves from a white backdrop into city-guide interfaces, changing outfits between scenes. Native-video output: 12s · 768×1344. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "<Picture 1> defines Rei's opening outfit only: a fitted black satin mini dress with thin spaghetti straps, a lace-trimmed V-neckline, a small front bow with trailing ribbons, off-the-shoulder lace ruffle sleeves, a ruched bodice, a ruffled lace hem, bare legs and black pointed-toe stiletto pumps. Preserve the dress's silhouette, materials and front/back construction as shown. Use this outfit for the white-studio opening only; do not reproduce the character-sheet layout.\n\n<Picture 2> defines her Paris outfit, front-facing presentation pose, drink, sunglasses, city map and UI. <Picture 3> defines her Rome outfit, front/three-quarter presentation pose, props, city map and UI. <Picture 4> defines her Cairo outfit, presentation pose, shopping bags, city map and UI. <Picture 5> defines her Sydney outfit, front-facing finishing pose, city map and UI.\n\n<Picture 6> is an unmodified slightly turned standard face crop from the original Rei character card. It is the highest-priority facial identity reference for ALL outfits: preserve its eye shape and spacing, eyelids, nose, lips and natural proportions without beautification. Pictures 2–5 supply new city outfits and environments, never a substitute face. This is the same adult woman in different clothes throughout the entire video.\n\n<Video 1> is a black-and-white relative-depth reference for body movement, camera pullback and chronological timing only. Depth brightness represents distance, not skin color or face detail. Render natural full color using the pictures. A featureless face in the depth map must not become the back of Rei's head. Use the scene pictures to resolve which way her face and chest point after each turn.\n\nGenerate ONE continuous 12-second vertical video. The timed Shot labels below are successive phases of this one output, not instructions to insert camera cuts. Keep the reference timeline at its original speed. Do not compress the opening to make room for the cities. Only Rei rotates during transformation; the camera must not orbit her. A back view is a brief passing orientation during a spin, never a held destination pose. Each completed transformation reveals her face and the FRONT of the new outfit, as in its corresponding picture. Change clothing, handheld props, city map and city-name UI together; do not change only the background while leaving the previous outfit.\n\nShot 1 [0.00–2.50 seconds]: White studio and opening black sailor uniform from <Picture 1>. Rei looks at the phone held in front of her chest. Follow the opening camera pullback in <Video 1>. Her torso remains generally facing the camera; allow the original small phone and head gestures. This interval contains no full-body spin, no location pin yet, no city background and no wardrobe change.\n\nShot 2 [2.50–3.15 seconds]: The red location pin appears above Rei. This event ONLY adds the pin. She continues looking at her phone in the white studio, still wearing the opening black sailor uniform. The pin does not trigger a spin or a scene change. Do not begin the transformation here.\n\nShot 3 [3.15–4.05 seconds]: Follow the small preparatory side pivot in <Video 1>, then return toward the camera-facing starting orientation while holding the phone. This is the preparatory movement, not the rapid transformation spin. Retain the opening black sailor uniform, white background and red pin throughout this interval. No Paris map or summer outfit before 4.05 seconds.\n\nShot 4 [4.05–6.00 seconds]: At 4.05 seconds begin the rapid transformation rotation following <Video 1>. Pass continuously through the side and back orientations without pausing. Around 4.25 seconds, during this rotation, change together into the Paris outfit, drink, sunglasses, map and navigation UI from <Picture 2>. By 4.50 seconds complete the rotation and reveal Rei FACING THE CAMERA, with her face and the front of her navy-and-ivory striped top visible. From 4.50 to 6.00 seconds remain in this front/three-quarter FRONT presentation, with the drink and sunglasses gesture from <Picture 2>. The cream full-length trousers, striped top and red neck scarf replace the opening black sailor uniform completely. No back-facing hold, no phone, no opening black sailor uniform during the Paris presentation. The top search bar and bottom location card both read 巴黎.\n\nShot 5 [6.00–8.00 seconds]: Begin the next reference turn at 6.00 seconds. Around 6.25 seconds change outfit, props, city and UI to Rome from <Picture 3>. Complete the turn by 6.55 seconds into a front/three-quarter FRONT view showing Rei's face, sage-green midi dress with brown belt. Until 8.00 seconds use the Rome pose with the paper guide and warm Trajan column and Roman Forum map. Both city labels read 罗马. Back-facing frames occur only while the turn is in progress; no stopped back view after the turn.\n\nShot 6 [8.00–10.00 seconds]: Begin the next reference turn at 8.00 seconds. Around 8.25 seconds change together to the ivory linen shirt, beige full-length trousers, ochre scarf, shopping bags, Cairo map and UI from <Picture 4>. By 8.55 seconds reveal her face and the front of the ivory linen shirt. Hold the front/three-quarter presentation with natural small movements until 10.00 seconds. Both city labels read 开罗. Keep the Cairo outfit and map together; do not introduce previous clothes or Sydney early.\n\nShot 7 [10.00–12.00 seconds]: Begin the final reference turn at 10.00 seconds. Around 10.25 seconds replace the Cairo clothes and shopping bags, city and labels with the Sydney sky-blue overshirt, white T-shirt, navy knee-length shorts and white sneakers, Sydney Tower map and UI from <Picture 5>. By 10.55 seconds face the camera with the white T-shirt beneath the sky-blue overshirt visible, hands raised and one leg bent backward as in <Picture 5>. Keep this front-facing Sydney presentation with subtle natural movement through 12.00 seconds. Both city labels read 悉尼. No additional spin, destination or wardrobe change after this final reveal.\n\nKeep Rei's facial identity, natural body proportions, hair and bangs throughout. Clothing changes must not alter her face, age, body shape, hair color or hair length. Do not reproduce character-sheet panels, extra people, face closeups or depth-map gray colors. Do not reproduce the blank faces in Picture 1's full-body clothing views; Rei must have her normal face whenever her face is visible.\n\nKeep the city UI style consistent; update both location labels at each city change. No generated speech or music.\n\nThe angle in Picture 6 describes identity only, NOT a fixed head pose. Face direction, expression, head tilt, hand gestures and full body movement follow Video 1, with each completed city presentation matching its corresponding scene picture.\n\nIn Paris the sunglasses are opaque black and fully cover both eyes and eye sockets. Keep the sunglasses on throughout the Paris presentation. At the Rome transformation, switch to the accessories shown in Picture 3.",
+    "promptSourceUrl": "https://x.com/HoodyLiu/status/2101904919540429295",
+    "sourceUrl": "https://x.com/HoodyLiu/status/2101904919540429295",
+    "sourceLabel": "X 原帖 · @HoodyLiu",
+    "author": "Hoody",
+    "publishedAt": "2026-09-21T05:22:38.000Z",
+    "addedAt": "2026-10-13T00:20:36.458Z",
+    "mediaUrl": "/media/x-2101904919540429295.mp4",
+    "posterUrl": "/posters/x/2101904919540429295.jpg",
+    "duration": 12,
+    "aspectRatio": "portrait",
+    "resolution": "768×1344",
+    "tags": [
+      "MiniMax H3",
+      "本地生成与工作流",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "workflow",
+    "styles": [
+      "vertical"
+    ],
+    "scenes": [
+      "fashion",
+      "city"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "深藏不漏的本地视频生成大师 @GaryLau0101 用黑白深度+精准分镜提示词复刻了陶阿狗君的创意换装视频\n\n我用 Minimax H3 + gary的黑白深度，微调了一下提示词，就用新的模特复现了\n\n复刻的具体步骤：\n1. 准备好模特的人物三视图\n2. 生成四个场景下的人物参考图，可以用 gpt image 2.5 换人\n3. 稍微调整提示词里对原来模特的特征锁定，按照新模特重写\n4. 用新的提示词 + 参考图片 + 黑白深度视频交给 Minimax H3 生成\n\n微调后的提示词👇\n<Picture 1> defines Rei's opening outfit only: a fitted black satin mini dress with thin spaghetti straps, a lace-trimmed V-neckline, a small front bow with trailing ribbons, off-the-shoulder lace ruffle sleeves, a ruched bodice, a ruffled lace hem, bare legs and black pointed-toe stiletto pumps. Preserve the dress's silhouette, materials and front/back construction as shown. Use this outfit for the white-studio opening only; do not reproduce the character-sheet layout.\n\n<Picture 2> defines her Paris outfit, front-facing presentation pose, drink, sunglasses, city map and UI. <Picture 3> defines her Rome outfit, front/three-quarter presentation pose, props, city map and UI. <Picture 4> defines her Cairo outfit, presentation pose, shopping bags, city map and UI. <Picture 5> defines her Sydney outfit, front-facing finishing pose, city map and UI.\n\n<Picture 6> is an unmodified slightly turned standard face crop from the original Rei character card. It is the highest-priority facial identity reference for ALL outfits: preserve its eye shape and spacing, eyelids, nose, lips and natural proportions without beautification. Pictures 2–5 supply new city outfits and environments, never a substitute face. This is the same adult woman in different clothes throughout the entire video.\n\n<Video 1> is a black-and-white relative-depth reference for body movement, camera pullback and chronological timing only. Depth brightness represents distance, not skin color or face detail. Render natural full color using the pictures. A featureless face in the depth map must not become the back of Rei's head. Use the scene pictures to resolve which way her face and chest point after each turn.\n\nGenerate ONE continuous 12-second vertical video. The timed Shot labels below are successive phases of this one output, not instructions to insert camera cuts. Keep the reference timeline at its original speed. Do not compress the opening to make room for the cities. Only Rei rotates during transformation; the camera must not orbit her. A back view is a brief passing orientation during a spin, never a held destination pose. Each completed transformation reveals her face and the FRONT of the new outfit, as in its corresponding picture. Change clothing, handheld props, city map and city-name UI together; do not change only the background while leaving the previous outfit.\n\nShot 1 [0.00–2.50 seconds]: White studio and opening black sailor uniform from <Picture 1>. Rei looks at the phone held in front of her chest. Follow the opening camera pullback in <Video 1>. Her torso remains generally facing the camera; allow the original small phone and head gestures. This interval contains no full-body spin, no location pin yet, no city background and no wardrobe change.\n\nShot 2 [2.50–3.15 seconds]: The red location pin appears above Rei. This event ONLY adds the pin. She continues looking at her phone in the white studio, still wearing the opening black sailor uniform. The pin does not trigger a spin or a scene change. Do not begin the transformation here.\n\nShot 3 [3.15–4.05 seconds]: Follow the small preparatory side pivot in <Video 1>, then return toward the camera-facing starting orientation while holding the phone. This is the preparatory movement, not the rapid transformation spin. Retain the opening black sailor uniform, white background and red pin throughout this interval. No Paris map or summer outfit before 4.05 seconds.\n\nShot 4 [4.05–6.00 seconds]: At 4.05 seconds begin the rapid transformation rotation following <Video 1>. Pass continuously through the side and back orientations without pausing. Around 4.25 seconds, during this rotation, change together into the Paris outfit, drink, sunglasses, map and navigation UI from <Picture 2>. By 4.50 seconds complete the rotation and reveal Rei FACING THE CAMERA, with her face and the front of her navy-and-ivory striped top visible. From 4.50 to 6.00 seconds remain in this front/three-quarter FRONT presentation, with the drink and sunglasses gesture from <Picture 2>. The cream full-length trousers, striped top and red neck scarf replace the opening black sailor uniform completely. No back-facing hold, no phone, no opening black sailor uniform during the Paris presentation. The top search bar and bottom location card both read 巴黎.\n\nShot 5 [6.00–8.00 seconds]: Begin the next reference turn at 6.00 seconds. Around 6.25 seconds change outfit, props, city and UI to Rome from <Picture 3>. Complete the turn by 6.55 seconds into a front/three-quarter FRONT view showing Rei's face, sage-green midi dress with brown belt. Until 8.00 seconds use the Rome pose with the paper guide and warm Trajan column and Roman Forum map. Both city labels read 罗马. Back-facing frames occur only while the turn is in progress; no stopped back view after the turn.\n\nShot 6 [8.00–10.00 seconds]: Begin the next reference turn at 8.00 seconds. Around 8.25 seconds change together to the ivory linen shirt, beige full-length trousers, ochre scarf, shopping bags, Cairo map and UI from <Picture 4>. By 8.55 seconds reveal her face and the front of the ivory linen shirt. Hold the front/three-quarter presentation with natural small movements until 10.00 seconds. Both city labels read 开罗. Keep the Cairo outfit and map together; do not introduce previous clothes or Sydney early.\n\nShot 7 [10.00–12.00 seconds]: Begin the final reference turn at 10.00 seconds. Around 10.25 seconds replace the Cairo clothes and shopping bags, city and labels with the Sydney sky-blue overshirt, white T-shirt, navy knee-length shorts and white sneakers, Sydney Tower map and UI from <Picture 5>. By 10.55 seconds face the camera with the white T-shirt beneath the sky-blue overshirt visible, hands raised and one leg bent backward as in <Picture 5>. Keep this front-facing Sydney presentation with subtle natural movement through 12.00 seconds. Both city labels read 悉尼. No additional spin, destination or wardrobe change after this final reveal.\n\nKeep Rei's facial identity, natural body proportions, hair and bangs throughout. Clothing changes must not alter her face, age, body shape, hair color or hair length. Do not reproduce character-sheet panels, extra people, face closeups or depth-map gray colors. Do not reproduce the blank faces in Picture 1's full-body clothing views; Rei must have her normal face whenever her face is visible.\n\nKeep the city UI style consistent; update both location labels at each city change. No generated speech or music.\n\nThe angle in Picture 6 describes identity only, NOT a fixed head pose. Face direction, expression, head tilt, hand gestures and full body movement follow Video 1, with each completed city presentation matching its corresponding scene picture.\n\nIn Paris the sunglasses are opaque black and fully cover both eyes and eye sockets. Keep the sunglasses on throughout the Paris presentation. At the Rome transformation, switch to the accessories shown in Picture 3.",
+    "engagement": {
+      "replies": 58,
+      "reposts": 43,
+      "likes": 295,
+      "views": 38475,
+      "snapshotAt": "2026-10-13T00:20:36.458Z"
+    },
+    "approvedAt": "2026-10-13T00:20:36.458Z",
+    "editorialBasis": "Original source attribution and playable native video; beginning, middle and ending frames inspected."
   }
 ]
