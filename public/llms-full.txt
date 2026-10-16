@@ -1,6 +1,6 @@
 # MiniMax H3 Cases & Guides — Complete Case and Tutorial Index
 
-Generated from data/cases.json and data/tutorial-guides.json. Total: 2662 cases and 25 tutorials. Complete verbatim public Prompts: 725.
+Generated from data/cases.json and data/tutorial-guides.json. Total: 2673 cases and 25 tutorials. Complete verbatim public Prompts: 726.
 
 ## Tutorials
 
@@ -99571,28 +99571,6 @@ it grows as one large spider web, center first, then spokes, then rings
 - English summary: An elf runs through an autumn woodland before appearing beside an armored companion. Native-video output: 159s · 960×544. A complete Prompt has not been collected here; this library does not infer or complete one.
 - Public prompt: not published completely by the source
 
-## A Speaker Steps to the Podium
-
-- ID: x-2110778147268681847
-- 中文标题: 旗帜之间的讲台演讲
-- English title: A Speaker Steps to the Podium
-- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2110778147268681847/
-- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2110778147268681847/
-- Original source: https://x.com/TheSuryanshD/status/2110778147268681847
-- Author: Suryansh
-- Published: 2026-10-15T17:01:41.000Z
-- Model: MiniMax H3（创作者标注）
-- Mode: Unknown
-- Category: Showcase
-- Visual styles: not specified
-- Scenes: not specified
-- Output: 25s, 1080×1080, square
-- Prompt provenance: not-published
-- Prompt completeness: not-published
-- Chinese summary: 一名女子走向讲台并开始演讲，画面两侧排列着旗帜。 原生视频规格为 25 秒 · 1080×1080。本库暂未收录完整 Prompt，不反推或补写。
-- English summary: A woman approaches a podium and begins speaking between rows of flags. Native-video output: 25s · 1080×1080. A complete Prompt has not been collected here; this library does not infer or complete one.
-- Public prompt: not published completely by the source
-
 ## Fantasy Figures and a Red-Eyed Shadow
 
 - ID: x-2110764844173381675
@@ -99832,5 +99810,273 @@ No dialogue.
 - Prompt completeness: not-published
 - Chinese summary: 校服少女在神社祈祷，随后出现街边角色介绍，片尾展示三位少女与《五秒告白》标题页。 原生视频规格为 62 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。
 - English summary: A schoolgirl prays at a shrine, followed by a character introduction on a street and a title card featuring three girls and Confession in 5 Seconds. Native-video output: 62s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Rotating Portrait in Traditional Dress
+
+- ID: x-2110729384818872347
+- 中文标题: 古风华服女子的环绕镜头
+- English title: A Rotating Portrait in Traditional Dress
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2110729384818872347/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2110729384818872347/
+- Original source: https://x.com/hiwise_aigc/status/2110729384818872347
+- Author: 启明破晓
+- Published: 2026-10-15T13:47:55.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Local Generation & Workflow
+- Visual styles: 3D / CG, Cinematic realism
+- Scenes: Fashion
+- Output: 3s, 1024×1024, square
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 一名身着金色华服、佩戴繁复头饰的女子在暗色花影背景前缓慢转身，画面从正面切至侧面后回到正面。作者说明视频使用本地部署的 MiniMax H3。 原生视频规格为 3 秒 · 1024×1024。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A woman in ornate gold traditional dress turns against a dark floral background, moving from a front view to a side view and back. The author says the video uses a local MiniMax H3 deployment. Native-video output: 3s · 1024×1024. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Quick Cooking Scene in an Apartment Kitchen
+
+- ID: x-2110714081384493112
+- 中文标题: 公寓厨房里的快速烹饪片段
+- English title: A Quick Cooking Scene in an Apartment Kitchen
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2110714081384493112/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2110714081384493112/
+- Original source: https://x.com/AnkitKumar65837/status/2110714081384493112
+- Author: Ankit Kumar
+- Published: 2026-10-15T12:47:06.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Local Generation & Workflow
+- Visual styles: not specified
+- Scenes: Food
+- Output: 15s, 1920×1080, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 一名穿白色上衣的长发女子在公寓厨房里准备食物并搅拌锅中内容。作者说明视频由 MiniMax H3 三步 Turbo LoRA 生成，之后使用 H3 latent upscaler 放大。 原生视频规格为 15 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A long-haired woman in a white shirt prepares food and stirs a pot in an apartment kitchen. The author says the video was generated with a three-step MiniMax H3 Turbo LoRA and then upscaled with the H3 latent upscaler. Native-video output: 15s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Paper Haunted House Rising from a Book
+
+- ID: x-2110712959731138605
+- 中文标题: 书页中升起的纸艺鬼屋
+- English title: A Paper Haunted House Rising from a Book
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2110712959731138605/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2110712959731138605/
+- Original source: https://x.com/GlennHasABeard/status/2110712959731138605
+- Author: Glenn Williams
+- Published: 2026-10-15T12:42:39.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Animation
+- Visual styles: Illustration, Stylized & experimental
+- Scenes: Fantasy
+- Output: 15s, 3456×1920, landscape
+- Prompt provenance: creator-verbatim
+- Prompt completeness: complete
+- Chinese summary: 烛光和旧书旁，一本平放的书打开后升起纸艺鬼屋与树形剪影，屋窗随后亮起。作者说明视频由本地 MiniMax H3 生成并经 Topaz 放大至 4K。 原生视频规格为 15 秒 · 3456×1920。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: Beside a candle and old books, a flat book opens into a paper haunted house and tree silhouette, and the windows light up. The author says the video was generated locally with MiniMax H3 and upscaled to 4K in Topaz. Native-video output: 15s · 3456×1920. The creator published the complete prompt, preserved here verbatim.
+- Complete verbatim public prompt:
+
+```text
+a small paper haunted house rises out of the pages as a pop-up
+```
+
+## A Synthetic Joe Rogan Podcast Clip
+
+- ID: x-2110708938253746477
+- 中文标题: 播客麦克风前的乔·罗根合成片段
+- English title: A Synthetic Joe Rogan Podcast Clip
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2110708938253746477/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2110708938253746477/
+- Original source: https://x.com/what_the_func/status/2110708938253746477
+- Author: Ed Zynda
+- Published: 2026-10-15T12:26:40.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Character & Dialogue
+- Visual styles: not specified
+- Scenes: Dialogue & lip sync
+- Output: 10s, 960×544, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 画面中，乔·罗根戴着耳机坐在播客麦克风前说话，旁边还有一格人物画面。作者称这是本地运行 MiniMax H3 制作的深度伪造视频。 原生视频规格为 10 秒 · 960×544。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: Joe Rogan appears wearing headphones and speaking into a podcast microphone, with a second video panel beside him. The author describes it as a locally made deepfake video using MiniMax H3. Native-video output: 10s · 960×544. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## From a Purple Nebula to Ocean Sunrise
+
+- ID: x-2110707246342754652
+- 中文标题: 紫色星云与海上日出的MV片段
+- English title: From a Purple Nebula to Ocean Sunrise
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2110707246342754652/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2110707246342754652/
+- Original source: https://x.com/AINetworkTech/status/2110707246342754652
+- Author: AI動画システムUEGAと制作・開発　武田
+- Published: 2026-10-15T12:19:57.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Music Video
+- Visual styles: not specified
+- Scenes: Nature & landscape, Sci-fi & space
+- Output: 227s, 2560×1440, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 音乐视频画面从紫色星云旋涡转向海面日出，随后出现暗色花影。作者称这支翻拍MV以 MiniMax H3 为基础，并提到 Suno V6 与 Opus 5.5。 原生视频规格为 227 秒 · 2560×1440。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: The music video moves from a purple spiral nebula to a sunrise over the sea, then to a dark floral image. The author describes the remake as based on MiniMax H3 and also mentions Suno V6 and Opus 5.5. Native-video output: 227s · 2560×1440. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A 360-Degree Orbit of a Blue-and-White-Clad Girl
+
+- ID: x-2110694351823331786
+- 中文标题: 蓝白衣少女的360度环绕
+- English title: A 360-Degree Orbit of a Blue-and-White-Clad Girl
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2110694351823331786/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2110694351823331786/
+- Original source: https://x.com/kugahara38/status/2110694351823331786
+- Author: 久我原
+- Published: 2026-10-15T11:28:42.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Animation
+- Visual styles: Anime
+- Scenes: not specified
+- Output: 7s, 1080×1600, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 白底画面中的蓝白衣少女持杖转身，视角从正面绕至背面再回到正面。作者将工具命名为 MiniMax-H3-360-Orbit，并说明它从静态图生成环绕视频。 原生视频规格为 7 秒 · 1080×1600。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A blue-and-white-clad girl holding a staff turns against a white background as the view orbits from the front to the back and returns. The author names the tool MiniMax-H3-360-Orbit and says it generates orbit videos from still images. Native-video output: 7s · 1080×1600. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## Streetwear Scenes with On-Screen Credits
+
+- ID: x-2110695369495748661
+- 中文标题: 街头时装与模型署名画面
+- English title: Streetwear Scenes with On-Screen Credits
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2110695369495748661/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2110695369495748661/
+- Original source: https://x.com/posi_posi8/status/2110695369495748661
+- Author: posi_posi
+- Published: 2026-10-15T11:32:45.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Local Generation & Workflow
+- Visual styles: not specified
+- Scenes: Fashion
+- Output: 102s, 1080×1920, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 短片呈现黑色街头服饰、黄色说明图卡和三名时装人物；画面下方的黄色字幕带列出制作工具。作者说明视频使用 MiniMax-H3，音乐与编舞使用其他工具。 原生视频规格为 102 秒 · 1080×1920。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: The clip shows black streetwear, a yellow explanatory graphic, and three fashion figures, with production-tool credits in a yellow on-screen strip. The author says the video uses MiniMax-H3, while other tools were used for music and choreography. Native-video output: 102s · 1080×1920. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Woman Greeting the Camera at a Newsstand
+
+- ID: x-2110687449504686491
+- 中文标题: 报摊前向镜头打招呼的女子
+- English title: A Woman Greeting the Camera at a Newsstand
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2110687449504686491/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2110687449504686491/
+- Original source: https://x.com/reiQjo/status/2110687449504686491
+- Author: 九条 玲
+- Published: 2026-10-15T11:01:17.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Showcase
+- Visual styles: not specified
+- Scenes: Daily life
+- Output: 15s, 720×1280, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 一名穿横条纹上衣和酒红色裙子的女子站在报摊前，指向报纸后抬手靠近镜头。作者明确标注该片为 MiniMax H3 生成的视频。 原生视频规格为 15 秒 · 720×1280。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A woman in a striped top and burgundy skirt stands at a newsstand, points to a newspaper, then raises her hand toward the camera. The author labels the clip as a MiniMax H3-generated video. Native-video output: 15s · 720×1280. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Halloween Selfie in a Festive Hall
+
+- ID: x-2110676029392220241
+- 中文标题: 万圣节大厅中的双人自拍
+- English title: A Halloween Selfie in a Festive Hall
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2110676029392220241/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2110676029392220241/
+- Original source: https://x.com/proto_jp/status/2110676029392220241
+- Author: PROTO@AiArt
+- Published: 2026-10-15T10:15:54.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Local Generation & Workflow
+- Visual styles: not specified
+- Scenes: Fantasy
+- Output: 10s, 1920×1080, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 戴眼镜的深发角色与金发角色穿着校服风格服饰，在装饰有南瓜与烟花的拱顶大厅中自拍，随后相互拥抱。作者标注使用本地 MiniMax H3。 原生视频规格为 10 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A bespectacled dark-haired character and a blond character in school-style uniforms take a selfie in a vaulted hall decorated with pumpkins and fireworks, then embrace. The author labels it as locally made with MiniMax H3. Native-video output: 10s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## Dance Motion in a Light Neutral Outfit
+
+- ID: x-2110674439902019653
+- 中文标题: 浅色套装女子的舞蹈动作
+- English title: Dance Motion in a Light Neutral Outfit
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2110674439902019653/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2110674439902019653/
+- Original source: https://x.com/AnkitKumar65837/status/2110674439902019653
+- Author: Ankit Kumar
+- Published: 2026-10-15T10:09:35.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Dance
+- Visual styles: not specified
+- Scenes: Dance
+- Output: 5s, 800×1440, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 一名穿宽松浅色套装的女子在明亮木地板房间中做舞蹈动作，手臂展开、转身并伸展身体。原帖推广并链接到 Better Human Motion MiniMax H3 LoRA。 原生视频规格为 5 秒 · 800×1440。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A woman in a loose light-colored outfit performs dance movements in a bright room with a wooden floor, extending her arms, turning, and stretching. The post promotes and links to a Better Human Motion MiniMax H3 LoRA. Native-video output: 5s · 800×1440. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Flowing Organza Gown in a Fashion Scene
+
+- ID: x-2110672924881633518
+- 中文标题: 轻纱礼服与流动布料的时装画面
+- English title: A Flowing Organza Gown in a Fashion Scene
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2110672924881633518/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2110672924881633518/
+- Original source: https://x.com/ModellixAI/status/2110672924881633518
+- Author: Modellix
+- Published: 2026-10-15T10:03:34.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Showcase
+- Visual styles: Commercial
+- Scenes: Fashion
+- Output: 15s, 1920×1080, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 一名女子穿着浅色薄纱礼服出现在城市街景中，随后画面转为布料环绕的时装海报并以 Modellix 字卡结束。作者称该片由 Modellix 上的 MiniMax H3 生成，画面也可见相应水印。 原生视频规格为 15 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A woman in a pale organza gown appears on a city street, then within a fashion poster surrounded by flowing fabric; the clip ends with a Modellix card. The author says it was generated with MiniMax H3 on Modellix, and the footage carries the corresponding watermark. Native-video output: 15s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## Sea Waves, a Woodblock Print, and an Ocean in an Eye
+
+- ID: x-2110654846340874461
+- 中文标题: 海浪、浮世绘与映着海潮的眼睛
+- English title: Sea Waves, a Woodblock Print, and an Ocean in an Eye
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2110654846340874461/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2110654846340874461/
+- Original source: https://x.com/geek_zard/status/2110654846340874461
+- Author: geekzard
+- Published: 2026-10-15T08:51:44.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Showcase
+- Visual styles: Photoreal, Illustration
+- Scenes: Nature & landscape
+- Output: 21s, 1344×768, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 画面先呈现富士山前的海浪，再转为日本木版画风格的巨浪，最后聚焦于映着海潮的眼睛。作者称这段 21 秒作品由 MiniMax H3 制作，并注明声音由 Mirelo 提供。 原生视频规格为 21 秒 · 1344×768。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: The clip moves from sea waves before Mount Fuji to a Japanese woodblock-style wave, then to an eye reflecting the ocean. The author says the 21-second piece was made with MiniMax H3 and credits Mirelo for the sound. Native-video output: 21s · 1344×768. A complete Prompt has not been collected here; this library does not infer or complete one.
 - Public prompt: not published completely by the source
 
