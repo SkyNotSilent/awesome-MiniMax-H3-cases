@@ -1,6 +1,6 @@
 # MiniMax H3 Cases & Guides — Complete Case and Tutorial Index
 
-Generated from data/cases.json and data/tutorial-guides.json. Total: 2673 cases and 25 tutorials. Complete verbatim public Prompts: 726.
+Generated from data/cases.json and data/tutorial-guides.json. Total: 2680 cases and 25 tutorials. Complete verbatim public Prompts: 726.
 
 ## Tutorials
 
@@ -100078,5 +100078,159 @@ a small paper haunted house rises out of the pages as a pop-up
 - Prompt completeness: not-published
 - Chinese summary: 画面先呈现富士山前的海浪，再转为日本木版画风格的巨浪，最后聚焦于映着海潮的眼睛。作者称这段 21 秒作品由 MiniMax H3 制作，并注明声音由 Mirelo 提供。 原生视频规格为 21 秒 · 1344×768。本库暂未收录完整 Prompt，不反推或补写。
 - English summary: The clip moves from sea waves before Mount Fuji to a Japanese woodblock-style wave, then to an eye reflecting the ocean. The author says the 21-second piece was made with MiniMax H3 and credits Mirelo for the sound. Native-video output: 21s · 1344×768. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Girl with Flowers Amid Falling Petals
+
+- ID: x-2111004225992028338
+- 中文标题: 樱花纷落中的捧花少女
+- English title: A Girl with Flowers Amid Falling Petals
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2111004225992028338/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2111004225992028338/
+- Original source: https://x.com/achuanmemo/status/2111004225992028338
+- Author: 阿川
+- Published: 2026-10-16T08:00:02.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Cinematic & Narrative
+- Visual styles: not specified
+- Scenes: not specified
+- Output: 15s, 1344×768, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 深色长发的少女穿着浅色校服，手捧花束站在飘落的花瓣中。原帖将其标为《薰香花朵凛然绽放》的 AI 同人短片，并注明 MiniMax H3 Max Turbo。 原生视频规格为 15 秒 · 1344×768。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A dark-haired girl in a light school uniform holds a bouquet amid falling petals. The post labels it an AI fan short for The Fragrant Flower Blooms with Dignity and credits MiniMax H3 Max Turbo. Native-video output: 15s · 1344×768. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A FreeVideo Demonstration Running H3 Locally
+
+- ID: x-2111001447689064756
+- 中文标题: FreeVideo 本地运行 H3 的演示片
+- English title: A FreeVideo Demonstration Running H3 Locally
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2111001447689064756/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2111001447689064756/
+- Original source: https://x.com/meng_shengyu/status/2111001447689064756
+- Author: Simon Meng
+- Published: 2026-10-16T07:49:00.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Local Generation & Workflow
+- Visual styles: not specified
+- Scenes: City & street
+- Output: 45s, 960×540, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 演示片先展示空中俯瞰的奇幻城市场景，并标注 FreeVideo 本地运行 MiniMax H3；随后出现 RTX 5090 生成用时字卡，片尾展示 FreeVideo 与 MiniMax H3 标识。原帖介绍该工具可在本地运行 H3 生成视频。 原生视频规格为 45 秒 · 960×540。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: The demonstration opens with an aerial fantasy cityscape labeled as MiniMax H3 running locally in FreeVideo, then shows an RTX 5090 timing card and closes with FreeVideo and MiniMax H3 branding. The post describes the tool's local H3 video generation. Native-video output: 45s · 960×540. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Snowy Scene and the Renoise Production Workflow
+
+- ID: x-2110999804071616774
+- 中文标题: 雪原片段与 Renoise 制作流程
+- English title: A Snowy Scene and the Renoise Production Workflow
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2110999804071616774/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2110999804071616774/
+- Original source: https://x.com/su_nagomi/status/2110999804071616774
+- Author: すーさん
+- Published: 2026-10-16T07:42:28.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Advertising & Product
+- Visual styles: not specified
+- Scenes: Nature & landscape
+- Output: 79s, 1920×1080, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 原帖作者介绍了为个人主页制作的介绍视频，并将其中画面署名为 Renoise（MiniMax H3），旁白、音乐和剪辑另有署名。视频从带 Renoise 标识的雪原镜头切换到生成界面，最后以 Renoise 片尾结束。 原生视频规格为 79 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: The author describes an introductory video made for their homepage and credits the footage to Renoise (MiniMax H3), with narration, music, and editing credited separately. The clip moves from a Renoise-branded snowy scene to the generation interface and ends with a Renoise outro. Native-video output: 79s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Path to the Coast at Sunset
+
+- ID: x-2110952739216015590
+- 中文标题: 夕阳下通向海岸的小径
+- English title: A Path to the Coast at Sunset
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2110952739216015590/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2110952739216015590/
+- Original source: https://x.com/Tesla_Lure/status/2110952739216015590
+- Author: Shihhan12
+- Published: 2026-10-16T04:35:27.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Local Generation & Workflow
+- Visual styles: not specified
+- Scenes: Nature & landscape
+- Output: 15s, 864×480, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 夕阳照在穿过草坡的小路上，镜头随后转向海面与海岸。作者称这段 15 秒带声音的视频由家中的 RTX 5080 本地运行 MiniMax H3 生成。 原生视频规格为 15 秒 · 864×480。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: Sunset falls across a path through grassy hills before the view opens onto the sea and coast. The author says the 15-second video with audio was generated locally with MiniMax H3 on an RTX 5080. Native-video output: 15s · 864×480. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## Pigeons Around Popcorn and a Laptop
+
+- ID: x-2110952201711657384
+- 中文标题: 围着爆米花和笔记本的鸽子
+- English title: Pigeons Around Popcorn and a Laptop
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2110952201711657384/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2110952201711657384/
+- Original source: https://x.com/MrDasCreates/status/2110952201711657384
+- Author: Mr Das
+- Published: 2026-10-16T04:33:19.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Showcase
+- Visual styles: not specified
+- Scenes: Animals & creatures, Daily life
+- Output: 15s, 1344×768, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 两只鸽子坐在洒落的爆米花旁，身边放着打开的笔记本电脑和饮料罐；随后鸽子靠近电脑。作者称这段喜剧短片由 MiniMax H3 制作。 原生视频规格为 15 秒 · 1344×768。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: Two pigeons sit beside spilled popcorn, an open laptop, and a drink can, then move toward the computer. The author says the comedy clip was made using MiniMax H3. Native-video output: 15s · 1344×768. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Silver-Haired Schoolgirl on a Blue Desktop
+
+- ID: x-2110951369699922313
+- 中文标题: 蓝色桌面前的银发校服少女
+- English title: A Silver-Haired Schoolgirl on a Blue Desktop
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2110951369699922313/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2110951369699922313/
+- Original source: https://x.com/achuanmemo/status/2110951369699922313
+- Author: 阿川
+- Published: 2026-10-16T04:30:00.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Cinematic & Narrative
+- Visual styles: not specified
+- Scenes: Daily life
+- Output: 15s, 1344×768, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 银发少女穿着带金色滚边的深蓝校服和红色蝴蝶结，出现在蓝色电脑桌面背景中；画面中她抬手触碰桌面图标。原帖将其标为《时不时说一句俄语来掩饰害羞的邻桌艾莉同学》AI 同人短片，并注明 MiniMax H3 Max Turbo。 原生视频规格为 15 秒 · 1344×768。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A silver-haired girl in a navy school uniform with gold trim and a red bow appears against a blue computer desktop, reaching toward its icons. The post labels it an AI fan short for Alya Sometimes Hides Her Feelings in Russian and credits MiniMax H3 Max Turbo. Native-video output: 15s · 1344×768. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Train Passing Through a Futuristic City
+
+- ID: x-2110878871776067843
+- 中文标题: 列车穿行于未来都市的科幻音乐录像
+- English title: A Train Passing Through a Futuristic City
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2110878871776067843/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2110878871776067843/
+- Original source: https://x.com/tsmooth2k1/status/2110878871776067843
+- Author: tsmooth2k1
+- Published: 2026-10-15T23:41:55.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Music Video
+- Visual styles: not specified
+- Scenes: Sci-fi & space, City & street
+- Output: 159s, 1920×1080, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 这支科幻音乐录像从昏暗的环形室内空间开始，随后出现列车穿过密集高楼的未来城市，片尾展示 McKinley Studios 字卡。作者称作品《MOVE WITH ME》由 MiniMax H3 制作。 原生视频规格为 159 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: The sci-fi music video opens in a dark circular interior, then shows a train passing through a dense futuristic city before ending on a McKinley Studios title card. The author says the 'MOVE WITH ME' video was created with MiniMax H3. Native-video output: 159s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.
 - Public prompt: not published completely by the source
 

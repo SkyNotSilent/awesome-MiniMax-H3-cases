@@ -128181,5 +128181,334 @@
     },
     "approvedAt": "2026-10-16T11:14:14.957Z",
     "editorialBasis": "原帖明确称 21 秒作品由 MiniMax H3 制作；同一原帖的三帧分别显示富士山前海浪、木版画风格海浪和眼中映出的海潮，且原帖另行署名声音来源。"
+  },
+  {
+    "id": "x-2111004225992028338",
+    "title": "樱花纷落中的捧花少女",
+    "titleEn": "A Girl with Flowers Amid Falling Petals",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "深色长发的少女穿着浅色校服，手捧花束站在飘落的花瓣中。原帖将其标为《薰香花朵凛然绽放》的 AI 同人短片，并注明 MiniMax H3 Max Turbo。 原生视频规格为 15 秒 · 1344×768。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A dark-haired girl in a light school uniform holds a bouquet amid falling petals. The post labels it an AI fan short for The Fragrant Flower Blooms with Dignity and credits MiniMax H3 Max Turbo. Native-video output: 15s · 1344×768. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/achuanmemo/status/2111004225992028338",
+    "sourceLabel": "X 原帖 · @achuanmemo",
+    "author": "阿川",
+    "publishedAt": "2026-10-16T08:00:02.000Z",
+    "addedAt": "2026-10-16T11:44:40.525Z",
+    "mediaUrl": "/media/x-2111004225992028338.mp4",
+    "posterUrl": "/posters/x/2111004225992028338.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [],
+    "scenes": [],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "花瓣飘过去，薫子的桌面要重新收拾了。\n\n《薫る花は凛と咲く》AI 同人短片 · MiniMax H3 Max Turbo",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 124,
+      "snapshotAt": "2026-10-16T11:44:40.525Z"
+    },
+    "approvedAt": "2026-10-16T11:44:40.525Z",
+    "editorialBasis": "原帖标题直接标明《薰香花朵凛然绽放》AI 同人短片与 MiniMax H3 Max Turbo；三帧显示捧花少女及飘落花瓣，原生视频可播放。"
+  },
+  {
+    "id": "x-2111001447689064756",
+    "title": "FreeVideo 本地运行 H3 的演示片",
+    "titleEn": "A FreeVideo Demonstration Running H3 Locally",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "演示片先展示空中俯瞰的奇幻城市场景，并标注 FreeVideo 本地运行 MiniMax H3；随后出现 RTX 5090 生成用时字卡，片尾展示 FreeVideo 与 MiniMax H3 标识。原帖介绍该工具可在本地运行 H3 生成视频。 原生视频规格为 45 秒 · 960×540。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "The demonstration opens with an aerial fantasy cityscape labeled as MiniMax H3 running locally in FreeVideo, then shows an RTX 5090 timing card and closes with FreeVideo and MiniMax H3 branding. The post describes the tool's local H3 video generation. Native-video output: 45s · 960×540. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/meng_shengyu/status/2111001447689064756",
+    "sourceLabel": "X 原帖 · @meng_shengyu",
+    "author": "Simon Meng",
+    "publishedAt": "2026-10-16T07:49:00.000Z",
+    "addedAt": "2026-10-16T11:44:40.525Z",
+    "mediaUrl": "/media/x-2111001447689064756.mp4",
+    "posterUrl": "/posters/x/2111001447689064756.jpg",
+    "duration": 45,
+    "aspectRatio": "landscape",
+    "resolution": "960×540",
+    "tags": [
+      "MiniMax H3",
+      "本地生成与工作流",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "workflow",
+    "styles": [],
+    "scenes": [
+      "city"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "8 GB of VRAM and 16 GB of memory, and you can run MiniMax M3.\n\nFreeVideo runs MiniMax H3 locally for video, down to 8 GB of VRAM\n\nRunning MiniMax H3 used to mean a big card or a cloud box. FreeVideo plugs a local inference engine into ComfyUI and schedules VRAM, RAM, and disk. The floor is 8 GB of VRAM and 16 GB of memory. If you already work in ComfyUI, drop a first frame or a prompt on the canvas you know, and the machine makes the clip. Drag the clip back and the prompt, seed, and settings come with it.\n\nMac is still an experimental preview. The docs say a 24 GB M5 takes about 42 minutes for 10 seconds at 1344×768. Older chips are slower.\n\n🔗 https://github.com/FlashML-org/FreeVideo\n🌐 https://freevideo-community.pages.dev/#gallery\n💻 https://github.com/FlashML-org/FreeVideo/releases/latest\n📄 https://arxiv.org/abs/2609.20744",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 102,
+      "snapshotAt": "2026-10-16T11:44:40.525Z"
+    },
+    "approvedAt": "2026-10-16T11:44:40.525Z",
+    "editorialBasis": "原帖明确称 FreeVideo 可本地运行 MiniMax H3 生成视频；所附演示片以 H3/FreeVideo 标识的奇幻城市画面开场，并展示运行耗时和片尾产品标识。"
+  },
+  {
+    "id": "x-2110999804071616774",
+    "title": "雪原片段与 Renoise 制作流程",
+    "titleEn": "A Snowy Scene and the Renoise Production Workflow",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "原帖作者介绍了为个人主页制作的介绍视频，并将其中画面署名为 Renoise（MiniMax H3），旁白、音乐和剪辑另有署名。视频从带 Renoise 标识的雪原镜头切换到生成界面，最后以 Renoise 片尾结束。 原生视频规格为 79 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "The author describes an introductory video made for their homepage and credits the footage to Renoise (MiniMax H3), with narration, music, and editing credited separately. The clip moves from a Renoise-branded snowy scene to the generation interface and ends with a Renoise outro. Native-video output: 79s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/su_nagomi/status/2110999804071616774",
+    "sourceLabel": "X 原帖 · @su_nagomi",
+    "author": "すーさん",
+    "publishedAt": "2026-10-16T07:42:28.000Z",
+    "addedAt": "2026-10-16T11:44:40.525Z",
+    "mediaUrl": "/media/x-2110999804071616774.mp4",
+    "posterUrl": "/posters/x/2110999804071616774.jpg",
+    "duration": 79,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "广告与产品",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "advertising",
+    "styles": [],
+    "scenes": [
+      "nature"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Renoiseの新機能ベータで、自分のホームページから紹介動画を作ってみました！🎬@renoiseai\n\n使ったのは Claude Code × Renoise\nClaude CodeにURLと指示を貼って頼むだけで、\n\n・映像：Renoise（MiniMax H3）\n・ナレーションの声：Renoise（Seed Audio）\n・BGM：Renoise（Lyria）\n・テロップ・ロゴ入れ・編集：Claude Code\n\n紹介動画だけでなく、この解説動画の編集もClaude Codeにお任せして編集ソフトは一回も開いてません！\n\n【使いやすかった点】\n・作る前に構成とクレジットの見積もりを出してくれるので安心\n・「冒頭に15秒持ってきて」「BGMは歌なしで」と話すだけで直してくれる\n・テロップ、音声は後入れなので編集がしやすい\n\n【直してほしい点】\n・生成の待ち時間が少し長い（ツール作るより長くなる）\n・「歌なし」で頼んだBGMに歌が入っていた（作り直しでOKに）\n\n面倒な作業はAIにお任せして、私は中身を考えることに集中！AIエージェントで制作が楽になりますね！",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 4,
+      "views": 255,
+      "snapshotAt": "2026-10-16T11:44:40.525Z"
+    },
+    "approvedAt": "2026-10-16T11:44:40.525Z",
+    "editorialBasis": "原帖明确把视频画面归于 Renoise（MiniMax H3），并区分旁白、音乐和剪辑；三帧显示雪原镜头、生成界面和 Renoise 片尾。"
+  },
+  {
+    "id": "x-2110952739216015590",
+    "title": "夕阳下通向海岸的小径",
+    "titleEn": "A Path to the Coast at Sunset",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "夕阳照在穿过草坡的小路上，镜头随后转向海面与海岸。作者称这段 15 秒带声音的视频由家中的 RTX 5080 本地运行 MiniMax H3 生成。 原生视频规格为 15 秒 · 864×480。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "Sunset falls across a path through grassy hills before the view opens onto the sea and coast. The author says the 15-second video with audio was generated locally with MiniMax H3 on an RTX 5080. Native-video output: 15s · 864×480. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Tesla_Lure/status/2110952739216015590",
+    "sourceLabel": "X 原帖 · @Tesla_Lure",
+    "author": "Shihhan12",
+    "publishedAt": "2026-10-16T04:35:27.000Z",
+    "addedAt": "2026-10-16T11:44:40.525Z",
+    "mediaUrl": "/media/x-2110952739216015590.mp4",
+    "posterUrl": "/posters/x/2110952739216015590.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "864×480",
+    "tags": [
+      "MiniMax H3",
+      "本地生成与工作流",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "workflow",
+    "styles": [],
+    "scenes": [
+      "nature"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "家裡的 RTX 5080 16GB 本地跑 MiniMax H3，生出 15 秒有聲影片。864×480、24fps，12 分 47 秒跑完，VRAM 吃到 13.7GB 沒爆。用的是社群剪過的 Q4 量化版加 ComfyUI。顯卡沒冒煙，我比較緊張。",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 86,
+      "snapshotAt": "2026-10-16T11:44:40.525Z"
+    },
+    "approvedAt": "2026-10-16T11:44:40.525Z",
+    "editorialBasis": "原帖明确说明本地运行 MiniMax H3 生成 15 秒带声音视频；三帧呈现夕阳小路、海岸与海面，原生视频可播放。"
+  },
+  {
+    "id": "x-2110952201711657384",
+    "title": "围着爆米花和笔记本的鸽子",
+    "titleEn": "Pigeons Around Popcorn and a Laptop",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "两只鸽子坐在洒落的爆米花旁，身边放着打开的笔记本电脑和饮料罐；随后鸽子靠近电脑。作者称这段喜剧短片由 MiniMax H3 制作。 原生视频规格为 15 秒 · 1344×768。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "Two pigeons sit beside spilled popcorn, an open laptop, and a drink can, then move toward the computer. The author says the comedy clip was made using MiniMax H3. Native-video output: 15s · 1344×768. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/MrDasCreates/status/2110952201711657384",
+    "sourceLabel": "X 原帖 · @MrDasCreates",
+    "author": "Mr Das",
+    "publishedAt": "2026-10-16T04:33:19.000Z",
+    "addedAt": "2026-10-16T11:44:40.525Z",
+    "mediaUrl": "/media/x-2110952201711657384.mp4",
+    "posterUrl": "/posters/x/2110952201711657384.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [],
+    "scenes": [
+      "creatures",
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "This AI video is an absolute comedy masterpiece 😂\n Made using MiniMax H3",
+    "engagement": {
+      "replies": 10,
+      "reposts": 2,
+      "likes": 17,
+      "views": 565,
+      "snapshotAt": "2026-10-16T11:44:40.525Z"
+    },
+    "approvedAt": "2026-10-16T11:44:40.525Z",
+    "editorialBasis": "原帖直接标注 Made using MiniMax H3；三帧显示两只鸽子、爆米花、笔记本电脑及饮料罐，原生视频可播放。"
+  },
+  {
+    "id": "x-2110951369699922313",
+    "title": "蓝色桌面前的银发校服少女",
+    "titleEn": "A Silver-Haired Schoolgirl on a Blue Desktop",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "银发少女穿着带金色滚边的深蓝校服和红色蝴蝶结，出现在蓝色电脑桌面背景中；画面中她抬手触碰桌面图标。原帖将其标为《时不时说一句俄语来掩饰害羞的邻桌艾莉同学》AI 同人短片，并注明 MiniMax H3 Max Turbo。 原生视频规格为 15 秒 · 1344×768。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A silver-haired girl in a navy school uniform with gold trim and a red bow appears against a blue computer desktop, reaching toward its icons. The post labels it an AI fan short for Alya Sometimes Hides Her Feelings in Russian and credits MiniMax H3 Max Turbo. Native-video output: 15s · 1344×768. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/achuanmemo/status/2110951369699922313",
+    "sourceLabel": "X 原帖 · @achuanmemo",
+    "author": "阿川",
+    "publishedAt": "2026-10-16T04:30:00.000Z",
+    "addedAt": "2026-10-16T11:44:40.525Z",
+    "mediaUrl": "/media/x-2110951369699922313.mp4",
+    "posterUrl": "/posters/x/2110951369699922313.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [],
+    "scenes": [
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "艾莉甩了一下头发，桌面就乱了。\n\n《时不时说一句俄语来掩饰害羞的邻桌艾莉同学》AI 同人短片 · MiniMax H3 Max Turbo",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 66,
+      "snapshotAt": "2026-10-16T11:44:40.525Z"
+    },
+    "approvedAt": "2026-10-16T11:44:40.525Z",
+    "editorialBasis": "原帖标题直接标明作品名、AI 同人短片及 MiniMax H3 Max Turbo；三帧显示银发校服少女和桌面图标，原生视频可播放。"
+  },
+  {
+    "id": "x-2110878871776067843",
+    "title": "列车穿行于未来都市的科幻音乐录像",
+    "titleEn": "A Train Passing Through a Futuristic City",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "这支科幻音乐录像从昏暗的环形室内空间开始，随后出现列车穿过密集高楼的未来城市，片尾展示 McKinley Studios 字卡。作者称作品《MOVE WITH ME》由 MiniMax H3 制作。 原生视频规格为 159 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "The sci-fi music video opens in a dark circular interior, then shows a train passing through a dense futuristic city before ending on a McKinley Studios title card. The author says the 'MOVE WITH ME' video was created with MiniMax H3. Native-video output: 159s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/tsmooth2k1/status/2110878871776067843",
+    "sourceLabel": "X 原帖 · @tsmooth2k1",
+    "author": "tsmooth2k1",
+    "publishedAt": "2026-10-15T23:41:55.000Z",
+    "addedAt": "2026-10-16T11:44:40.525Z",
+    "mediaUrl": "/media/x-2110878871776067843.mp4",
+    "posterUrl": "/posters/x/2110878871776067843.jpg",
+    "duration": 159,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "music",
+    "styles": [],
+    "scenes": [
+      "sci-fi",
+      "city"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "The signal is live. ⚡\n\n“MOVE WITH ME” — Official Music Video\n\nA cinematic sci-fi journey through a world waking from control. Created with MiniMax H3.\n\nWatch now: 4k [https://www.youtube.com/watch?v=qC62MWjxVi4]\n\n#MoveWithMe #McKinley #AIFilmmaking",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "views": 59,
+      "snapshotAt": "2026-10-16T11:44:40.526Z"
+    },
+    "approvedAt": "2026-10-16T11:44:40.525Z",
+    "editorialBasis": "原帖明确称官方音乐录像由 MiniMax H3 制作；三帧显示环形室内空间、未来都市列车和 McKinley Studios 片尾卡。"
   }
 ]
