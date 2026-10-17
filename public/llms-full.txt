@@ -1,6 +1,6 @@
 # MiniMax H3 Cases & Guides — Complete Case and Tutorial Index
 
-Generated from data/cases.json and data/tutorial-guides.json. Total: 2764 cases and 25 tutorials. Complete verbatim public Prompts: 728.
+Generated from data/cases.json and data/tutorial-guides.json. Total: 2801 cases and 25 tutorials. Complete verbatim public Prompts: 731.
 
 ## Tutorials
 
@@ -102088,5 +102088,957 @@ a small paper haunted house rises out of the pages as a pop-up
 - Prompt completeness: not-published
 - Chinese summary: 画面先呈现秋叶堆旁的动漫女孩，后切到制作对照卡，分别标注H3实拍预演、深度图和Seedance 2.5动漫成片，片尾出现Renoise标识。 原生视频规格为 61 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。
 - English summary: The clip opens on an anime girl beside a pile of autumn leaves, then shows a process card labeling an H3 live-action previz, a depth map, and a separate Seedance 2.5 anime final, before ending on the Renoise logo. Native-video output: 61s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Night Walk Through an ’80s Horror Scene
+
+- ID: x-2101736978039316493
+- 中文标题: 复古恐怖片中的夜行群像
+- English title: A Night Walk Through an ’80s Horror Scene
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2101736978039316493/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2101736978039316493/
+- Original source: https://x.com/wildmindai/status/2101736978039316493
+- Author: Wildminder
+- Published: 2026-09-20T18:15:18.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Cinematic & Narrative
+- Visual styles: not specified
+- Scenes: Dance, Animals & creatures
+- Output: 12s, 832×640, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 画面先呈现 LoRA 与无 LoRA 的对比，随后切入夜色中的舞者、沿街走来的群像，最后以怪物近景收尾。 原生视频规格为 12 秒 · 832×640。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: After a LoRA vs. no-LoRA comparison, the clip moves from a dancer at night to figures walking along a street, then ends on a creature close-up. Native-video output: 12s · 832×640. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Surprise Gift at a Time-Travel Wedding
+
+- ID: x-2111425591887249666
+- 中文标题: 穿越婚礼与意外贺礼
+- English title: A Surprise Gift at a Time-Travel Wedding
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2111425591887249666/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2111425591887249666/
+- Original source: https://x.com/eternityspring/status/2111425591887249666
+- Author: 烁皓
+- Published: 2026-10-17T11:54:24.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Cinematic & Narrative
+- Visual styles: not specified
+- Scenes: Daily life
+- Output: 110s, 1344×652, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 古装庭院中，一场婚礼迎来令人意外的贺礼；故事接着转到新人相见的红色婚礼场景。 原生视频规格为 110 秒 · 1344×652。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: At a wedding in a traditional courtyard, guests present an unexpected gift before the clip shifts to the bride and groom in red wedding attire. Native-video output: 110s · 1344×652. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## The Last Interview
+
+- ID: x-2111413899996131765
+- 中文标题: 最后一次访谈
+- English title: The Last Interview
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2111413899996131765/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2111413899996131765/
+- Original source: https://x.com/snicklink/status/2111413899996131765
+- Author: Snicklink
+- Published: 2026-10-17T11:07:56.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Character & Dialogue
+- Visual styles: not specified
+- Scenes: Dialogue & lip sync
+- Output: 243s, 1418×810, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 一名男子坐在工作台前接受访谈；画面从暗场显出室内场景，最后逐渐淡回黑暗。 原生视频规格为 243 秒 · 1418×810。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A man sits for an interview at a workbench; the room emerges from darkness before the image fades back to black. Native-video output: 243s · 1418×810. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Glance in a Wheat Garden
+
+- ID: x-2111412378521014711
+- 中文标题: 麦穗庭院里的回眸
+- English title: A Glance in a Wheat Garden
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2111412378521014711/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2111412378521014711/
+- Original source: https://x.com/ShionLuna_x/status/2111412378521014711
+- Author: Luna｜AIメモと日常
+- Published: 2026-10-17T11:01:53.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Showcase
+- Visual styles: not specified
+- Scenes: Nature & landscape
+- Output: 15s, 720×1280, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 一名女子在秋日庭院中手捧麦穗，转身望向镜头并伸手靠近画面。 原生视频规格为 15 秒 · 720×1280。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A woman holding wheat in an autumn garden turns toward the camera and reaches into the frame. Native-video output: 15s · 720×1280. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## Between the White Curtains
+
+- ID: x-2111412228071243925
+- 中文标题: 白帘之间
+- English title: Between the White Curtains
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2111412228071243925/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2111412228071243925/
+- Original source: https://x.com/reiQjo/status/2111412228071243925
+- Author: 九条 玲
+- Published: 2026-10-17T11:01:17.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Showcase
+- Visual styles: not specified
+- Scenes: Daily life
+- Output: 15s, 720×1280, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 一名女子在明亮的走廊里拉开白色窗帘，向镜头挥手致意。 原生视频规格为 15 秒 · 720×1280。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A woman opens white curtains in a bright hallway and waves toward the camera. Native-video output: 15s · 720×1280. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Silver Figure Against Bold Type
+
+- ID: x-2111412003554120007
+- 中文标题: 字影中的银甲身影
+- English title: A Silver Figure Against Bold Type
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2111412003554120007/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2111412003554120007/
+- Original source: https://x.com/CharaspowerAI/status/2111412003554120007
+- Author: Pierrick Chevallier | IA
+- Published: 2026-10-17T11:00:24.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Animation
+- Visual styles: Stylized & experimental, Motion graphics
+- Scenes: not specified
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 银发、机甲风格的人物向镜头伸手，随后以全身姿态出现；醒目的大字排版构成背景。 原生视频规格为 15 秒 · 2560×1440。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A silver-haired, armored character reaches toward the camera and then appears full-length against oversized typography. Native-video output: 15s · 2560×1440. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Mountain Becomes a Flame-Wielding Guardian
+
+- ID: x-2111407726223843786
+- 中文标题: 山岳化作燃焰守护者
+- English title: A Mountain Becomes a Flame-Wielding Guardian
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2111407726223843786/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2111407726223843786/
+- Original source: https://x.com/DeCat2025/status/2111407726223843786
+- Author: DeCat
+- Published: 2026-10-17T10:43:24.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Action & VFX
+- Visual styles: Cinematic realism, Dark & horror
+- Scenes: Fantasy
+- Output: 15s, 1536×672, landscape
+- Prompt provenance: creator-verbatim
+- Prompt completeness: complete
+- Chinese summary: 骑士面对裂开的山体，岩石逐渐组成巨大的石像守护者，最终挥起燃烧的巨剑。 原生视频规格为 15 秒 · 1536×672。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A knight faces a splitting mountain as the rock forms a colossal guardian that raises a blazing sword. Native-video output: 15s · 1536×672. The creator published the complete prompt, preserved here verbatim.
+- Complete verbatim public prompt:
+
+```text
+Epic dark fantasy, ultra-cinematic realism, enormous scale, dramatic physical transformation. A lone knight in battered silver armor stands on a rocky ridge facing a massive cracked mountain. The mountain dominates the horizon. Glowing orange fissures run through its stone surface. Heavy storm clouds, airborne dust, powerful backlighting.
+
+SHOT 1 | 0–3s | LOW WIDE ANGLE
+The knight plants his sword into the rock as the ground shudders. Across the valley, enormous cracks tear through the mountain. A deep rumble shakes loose entire cliffs. The knight looks up as the mountain begins to move.
+
+SHOT 2 | 3–6s | EXTREME WIDE AERIAL
+The mountain splits along massive geometric fractures. Two gigantic stone arms emerge from its sides and push against the valley floor. Its summit rises into a broad, armored head and torso. The mountain unfolds into a colossal stone guardian, towering above the surrounding peaks.
+
+SHOT 3 | 6–9s | GROUND-LEVEL UPWARD ANGLE
+The giant extends one enormous open stone hand toward the knight, palm facing upward. Orange energy streams from the guardian's palm toward the knight. The knight's armor begins glowing white-hot, his body and planted sword merging into one brilliant vertical column of fire.
+
+SHOT 4 | 9–12s | DYNAMIC THREE-QUARTER ANGLE
+The column of fire contracts into a gigantic blazing sword hovering above the knight's now-empty position. The stone guardian closes its enormous fingers around the sword's hilt. Flames explode outward as the guardian lifts the weapon high above its head.
+
+SHOT 5 | 12–15s | EXTREME LOW WIDE ANGLE
+The awakened mountain guardian stands fully upright, gripping the immense burning sword. It swings the blade once across the storm clouds.
+A gigantic arc of fire tears through the sky, illuminating the entire mountain range. The guardian freezes in a monumental victorious pose as thunder rolls.
+
+CUT TO BLACK.
+CAMERA, PHYSICS AND CONTINUITY
+Five distinct cinematic shots. One knight, one mountain, one stone guardian. The guardian forms entirely from the original mountain. The knight transforms completely into the sword; no second knight remains. Maintain correct relative scale and coherent spatial positions. Every movement has massive weight and momentum. Clear transformation stages, readable silhouettes, natural rock displacement, dust and debris responding to impacts.
+
+AUDIO AND RESTRICTIONS
+Deep subterranean rumbles, cracking stone, thunder, rising orchestral strings, colossal metallic resonance as the sword forms, thunderous final impact. No dialogue. No on-screen text. No extra creatures, no duplicate limbs, no floating disconnected body parts, no eyes appearing in the landscape.
+```
+
+## Four Takes on a Sword Duel
+
+- ID: x-2111395648910274978
+- 中文标题: 刀光里的四向对照
+- English title: Four Takes on a Sword Duel
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2111395648910274978/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2111395648910274978/
+- Original source: https://x.com/sankakuten91256/status/2111395648910274978
+- Author: さんかくてん
+- Published: 2026-10-17T09:55:25.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Model Comparison
+- Visual styles: not specified
+- Scenes: Action & combat
+- Output: 10s, 1920×1080, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 同一预演画面并排呈现 Kling 4.0、Seedance 2.0、Wan 3.0 Prime 与 H3 Max 的剑斗片段；H3 Max 一格可单独辨认，帖子说明只有 Wan 片段做过握刀修正。 原生视频规格为 10 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: One previs is compared across Kling 4.0, Seedance 2.0, Wan 3.0 Prime, and H3 Max. The H3 Max panel is distinct, and the post notes that only Wan received a grip correction. Native-video output: 10s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Mini English Sing-Along
+
+- ID: x-2111383994684367244
+- 中文标题: 迷你英语歌唱课
+- English title: A Mini English Sing-Along
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2111383994684367244/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2111383994684367244/
+- Original source: https://x.com/TK2Works/status/2111383994684367244
+- Author: トクツー
+- Published: 2026-10-17T09:09:06.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Music Video
+- Visual styles: Anime
+- Scenes: Music performance
+- Output: 30s, 1920×1080, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 两位紫发卡通角色轮流拿着麦克风唱歌，结尾并排坐在桌边；片头以“迷你英语课程”标题卡开场。 原生视频规格为 30 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: Two purple-haired cartoon characters take turns singing into a microphone and end seated together, after a “mini English lesson” title card. Native-video output: 30s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## From the Garage to a Neon Noodle Bar
+
+- ID: x-2111363045171597369
+- 中文标题: 从车库到霓虹面馆
+- English title: From the Garage to a Neon Noodle Bar
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2111363045171597369/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2111363045171597369/
+- Original source: https://x.com/niklaslenz_ai/status/2111363045171597369
+- Author: Niklas
+- Published: 2026-10-17T07:45:51.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Model Comparison
+- Visual styles: not specified
+- Scenes: Dialogue & lip sync, Food
+- Output: 24s, 1920×1080, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 车库里两人围着汽车交谈，接着转到霓虹灯映照的面馆；结尾卡片汇总 NVIDIA Sol 引擎在 RTX 5090 上的生成用时。 原生视频规格为 24 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: Two people talk beside a car before the clip shifts to a neon-lit noodle shop; an end card summarizes NVIDIA Sol timings on an RTX 5090. Native-video output: 24s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Long Walk from Street to Strawberries
+
+- ID: x-2111349088222634354
+- 中文标题: 街角与草莓间的长镜头
+- English title: A Long Walk from Street to Strawberries
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2111349088222634354/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2111349088222634354/
+- Original source: https://x.com/chujoakira/status/2111349088222634354
+- Author: あぼん
+- Published: 2026-10-17T06:50:24.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Music Video
+- Visual styles: not specified
+- Scenes: City & street, Nature & landscape
+- Output: 118s, 1920×1080, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 一位女子从城市街道走入庭园，结尾转为一篮鲜红草莓；作者称这是用 MiniMax H3 让参考人物长时间行走、尽量保持连贯的 MV/PV 实验。 原生视频规格为 118 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A woman walks from a city street into a garden before the video cuts to ripe strawberries. The author describes it as a MiniMax H3 MV/PV experiment in keeping a referenced person walking coherently over a long clip. Native-video output: 118s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Halloween Potion under the Milky Way
+
+- ID: x-2111332270196035918
+- 中文标题: 星空下的万圣节药剂
+- English title: A Halloween Potion under the Milky Way
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2111332270196035918/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2111332270196035918/
+- Original source: https://x.com/h7ga40/status/2111332270196035918
+- Author: 割り箸ポテチ
+- Published: 2026-10-17T05:43:34.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Animation
+- Visual styles: not specified
+- Scenes: Fantasy
+- Output: 38s, 1056×608, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 女巫举起发光药瓶，随后出现银河与奇幻角色；作者说明视频由本地 MiniMax-H3/ComfyUI 工作流生成，并将分段视频拼接，另行生成音频后手工编辑。 原生视频规格为 38 秒 · 1056×608。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A witch raises a glowing potion beneath the Milky Way before a fantasy character appears. The author says the video was generated locally with MiniMax-H3 via ComfyUI, assembled from four segments, then given separately generated audio and manual edits. Native-video output: 38s · 1056×608. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Green-Dress Beach Monologue
+
+- ID: x-2111326997268041901
+- 中文标题: 海边的绿裙独白
+- English title: A Green-Dress Beach Monologue
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2111326997268041901/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2111326997268041901/
+- Original source: https://x.com/bseti/status/2111326997268041901
+- Author: BUSET
+- Published: 2026-10-17T05:22:37.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Character & Dialogue
+- Visual styles: not specified
+- Scenes: Dialogue & lip sync
+- Output: 15s, 1056×608, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 一位身穿绿色连衣裙的女子在海边面对镜头说话并微笑；作者称该片段由本地 MiniMax H3 与 155 MB LoRA 制作，没有使用参考图。 原生视频规格为 15 秒 · 1056×608。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A woman in a green dress speaks to the camera and smiles by the sea. The author says the clip was made locally with MiniMax H3 and a 155 MB LoRA, without reference images. Native-video output: 15s · 1056×608. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Manga Girl Drawn in Pencil
+
+- ID: x-2111317280504098999
+- 中文标题: 铅笔下的漫画少女
+- English title: A Manga Girl Drawn in Pencil
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2111317280504098999/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2111317280504098999/
+- Original source: https://x.com/nilian/status/2111317280504098999
+- Author: Nima Nilian
+- Published: 2026-10-17T04:44:00.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Animation
+- Visual styles: not specified
+- Scenes: not specified
+- Output: 15s, 1080×608, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 铅笔从线稿逐步画出漫画少女，最后展示完整的黑白插画；作者明确标注使用 MiniMax H3 与 ComfyUI 创作。 原生视频规格为 15 秒 · 1080×608。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A pencil sketch gradually becomes a finished monochrome manga portrait. The author explicitly credits MiniMax H3 in ComfyUI. Native-video output: 15s · 1080×608. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## From Pencil Sketch to Illustration
+
+- ID: x-2111358692264386672
+- 中文标题: 从铅笔线稿到插画
+- English title: From Pencil Sketch to Illustration
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2111358692264386672/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2111358692264386672/
+- Original source: https://x.com/munou_ac/status/2111358692264386672
+- Author: てんねん
+- Published: 2026-10-17T07:28:34.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Animation
+- Visual styles: not specified
+- Scenes: not specified
+- Output: 15s, 1440×2560, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 一只手在纸上逐步画出动漫少女，结尾呈现完成的铅笔插画；作者称这种延时风格视频很有趣，并标注 MiniMax H3。 原生视频规格为 15 秒 · 1440×2560。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A hand gradually draws an anime girl on paper, ending on the finished pencil illustration. The author calls the timelapse-style video fun and identifies MiniMax H3. Native-video output: 15s · 1440×2560. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Turn through a Vivid Fantasy Portrait
+
+- ID: x-2111145144233906224
+- 中文标题: 绚烂幻想角色转身
+- English title: A Turn through a Vivid Fantasy Portrait
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2111145144233906224/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2111145144233906224/
+- Original source: https://x.com/Ada_Lovelace49/status/2111145144233906224
+- Author: さんぐらす❀
+- Published: 2026-10-16T17:20:00.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Animation
+- Visual styles: Anime
+- Scenes: Fantasy, City & street
+- Output: 3s, 1056×1280, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 高密度奇幻背景中，一位动漫角色从正面转向背面再转回；作者明确称视频由 MiniMax H3 360-Orbit 制作。 原生视频规格为 3 秒 · 1056×1280。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: An anime-style character turns away and back against a densely packed fantasy backdrop. The author explicitly credits MiniMax H3 360-Orbit. Native-video output: 3s · 1056×1280. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Turn with Feathered Ornaments
+
+- ID: x-2111136580304085194
+- 中文标题: 带羽翼饰物的回眸
+- English title: A Turn with Feathered Ornaments
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2111136580304085194/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2111136580304085194/
+- Original source: https://x.com/Ada_Lovelace49/status/2111136580304085194
+- Author: さんぐらす❀
+- Published: 2026-10-16T16:45:58.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Animation
+- Visual styles: Anime
+- Scenes: not specified
+- Output: 3s, 1024×1344, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 浅色长发角色穿着白色上衣与牛仔短裤，轻轻转身展示背后的羽翼饰物；作者称由 MiniMax H3 360-Orbit 制作，并另链到 360 度立体视觉作品。 原生视频规格为 3 秒 · 1024×1344。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A light-haired character in a white top and denim shorts turns to reveal small feathered ornaments. The author credits MiniMax H3 360-Orbit and separately links a 360-degree stereoscopic artifact. Native-video output: 3s · 1024×1344. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Streetwear Character’s Full-Body Dance
+
+- ID: x-2111398505642393988
+- 中文标题: 街头风角色全身舞
+- English title: A Streetwear Character’s Full-Body Dance
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2111398505642393988/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2111398505642393988/
+- Original source: https://x.com/Zone6Kyon/status/2111398505642393988
+- Author: ⁺◟ૈきょん◵🦥ˊ˗𓂃𓈒𓏸︎︎︎︎
+- Published: 2026-10-17T10:06:46.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Dance
+- Visual styles: Motion graphics
+- Scenes: Dance
+- Output: 7s, 720×1280, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 穿着宽松街头服饰的角色随节奏起舞，片中叠加霓虹边框与 Neo 字样；作者称这是 Gemini 与 MiniMax H3 的协作作品。 原生视频规格为 7 秒 · 720×1280。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A streetwear-clad character dances beneath neon frames and “Neo” title graphics. The author describes it as a Gemini collaboration with MiniMax H3. Native-video output: 7s · 720×1280. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## Festival Lanterns and Summer Fireworks
+
+- ID: x-2111112618811548121
+- 中文标题: 祭灯与夏日夜空
+- English title: Festival Lanterns and Summer Fireworks
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2111112618811548121/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2111112618811548121/
+- Original source: https://x.com/core_tan/status/2111112618811548121
+- Author: CALMDUST aka ちゃんこあ
+- Published: 2026-10-16T15:10:45.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Local Generation & Workflow
+- Visual styles: not specified
+- Scenes: Food
+- Output: 14s, 1920×1088, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 摊位灯笼下，身着浴衣的女子走过热闹的夜市；结尾转到河岸烟花。画面同时展示 MiniMax H3 WebUI 与 RefMod 工具界面，作者介绍可继续编辑的 RefMod 工作流。 原生视频规格为 14 秒 · 1920×1088。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A woman in a yukata walks through a lantern-lit festival market before the clip cuts to riverside fireworks. The video also shows the MiniMax H3 WebUI and RefMod interface as the author demonstrates an editable RefMod workflow. Native-video output: 14s · 1920×1088. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Continuous Follow through a Restaurant
+
+- ID: x-2111099659972399388
+- 中文标题: 餐厅里的连续跟拍
+- English title: A Continuous Follow through a Restaurant
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2111099659972399388/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2111099659972399388/
+- Original source: https://x.com/core_tan/status/2111099659972399388
+- Author: CALMDUST aka ちゃんこあ
+- Published: 2026-10-16T14:19:15.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Showcase
+- Visual styles: not specified
+- Scenes: Daily life
+- Output: 20s, 1376×768, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 镜头跟随服务员穿过狭窄通道进入餐厅，再走向桌边为客人上菜；帖子称这是 MiniMax H3 WebUI 的单镜头 Motion Context 样片，并指出约 12 秒处有接缝。 原生视频规格为 20 秒 · 1376×768。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: The camera follows a waiter through a narrow passage into a restaurant and toward a table as guests are served. The post calls it a one-cut Motion Context sample from the MiniMax H3 WebUI and notes a seam around 12 seconds. Native-video output: 20s · 1376×768. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Conversation in a Nighttime Diner
+
+- ID: x-2101584842387493234
+- 中文标题: 夜色餐桌间的对话
+- English title: A Conversation in a Nighttime Diner
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2101584842387493234/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2101584842387493234/
+- Original source: https://x.com/SD_Tutorial/status/2101584842387493234
+- Author: Stable Diffusion Tutorials
+- Published: 2026-09-20T08:10:46.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Local Generation & Workflow
+- Visual styles: not specified
+- Scenes: Daily life
+- Output: 14s, 960×544, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 夜色中的餐厅卡座里，一名男子与一名女子隔桌交谈，姿态和手势在连贯场景中变化；作者称这是 MiniMax H3 的无缝多镜头场景，并链接了相应的 ComfyUI 工作流。 原生视频规格为 14 秒 · 960×544。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A man and woman talk across a diner booth at night as their gestures shift through a continuous scene. The post describes it as a seamless multi-shot MiniMax H3 scene and links the corresponding ComfyUI workflow. Native-video output: 14s · 960×544. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Headphone-Wearing Cat on the Desktop
+
+- ID: x-2101868703482876376
+- 中文标题: 戴耳机的猫闯入桌面
+- English title: A Headphone-Wearing Cat on the Desktop
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2101868703482876376/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2101868703482876376/
+- Original source: https://x.com/Strength04_X/status/2101868703482876376
+- Author: M-studioAi
+- Published: 2026-09-21T02:58:44.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Animation
+- Visual styles: Stylized & experimental
+- Scenes: Daily life
+- Output: 10s, 1344×768, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 一只戴着耳机的猫在电脑桌面场景中活动，从电脑旁走到桌上物件之间，再回到笔记本电脑边；帖子标注这段由 MiniMax Hailuo H3 Max 在 ImagineArt 上生成。 原生视频规格为 10 秒 · 1344×768。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A headphone-wearing cat moves through a computer-desktop scene, stepping among desk items before settling beside the laptop again. The post marks the clip as generated with MiniMax Hailuo H3 Max on ImagineArt. Native-video output: 10s · 1344×768. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Turquoise-Haired Character Turns Around
+
+- ID: x-2101843853913608274
+- 中文标题: 青发角色转身回眸
+- English title: A Turquoise-Haired Character Turns Around
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2101843853913608274/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2101843853913608274/
+- Original source: https://x.com/Hemi3AI/status/2101843853913608274
+- Author: ヘミ
+- Published: 2026-09-21T01:19:59.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Animation
+- Visual styles: Anime
+- Scenes: not specified
+- Output: 15s, 480×864, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 青绿色长发角色穿着黑色服装，从背侧转身面对镜头；作者称这一版本在本地用 MiniMax H3 生成，并说明相机与姿势结构的灵感来自另一位创作者。 原生视频规格为 15 秒 · 480×864。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A turquoise-haired character in a black outfit turns from a rear-side view to face the camera. The author says this version was generated locally with MiniMax H3 and credits another creator for the camera-and-pose structure. Native-video output: 15s · 480×864. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## Astronauts in a Retro Science-Fiction World
+
+- ID: x-2101843352308142583
+- 中文标题: 复古科幻世界里的太空人
+- English title: Astronauts in a Retro Science-Fiction World
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2101843352308142583/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2101843352308142583/
+- Original source: https://x.com/wildmindai/status/2101843352308142583
+- Author: Wildminder
+- Published: 2026-09-21T01:18:00.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Cinematic & Narrative
+- Visual styles: Retro & vintage
+- Scenes: Sci-fi & space
+- Output: 17s, 1920×1080, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 太空人置身于异星地貌，随后出现穿银色服装的女性与舱外作业的太空人；作者介绍一款 MiniMax H3 1950 年代科幻 LoRA，并链接模型资源。 原生视频规格为 17 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: Astronauts move through an alien landscape, followed by a woman in a silver outfit and an astronaut working outside a spacecraft. The author presents a 1950s science-fiction LoRA for MiniMax H3 and links to the model. Native-video output: 17s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Truck Mishap on the Highway
+
+- ID: x-2101768993413410911
+- 中文标题: 公路上的双卡车意外
+- English title: A Truck Mishap on the Highway
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2101768993413410911/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2101768993413410911/
+- Original source: https://x.com/blizaine/status/2101768993413410911
+- Author: Blaine Brown
+- Published: 2026-09-20T20:22:31.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Showcase
+- Visual styles: not specified
+- Scenes: not specified
+- Output: 30s, 1280×704, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 红色罐车与蓝色品牌货车并行时，路面水流四散，随后一名男子从车旁走出；作者称这是本地生成的 30 秒 MiniMax H3 片段，使用融合的 Ref2VA/omni 模型流程。 原生视频规格为 30 秒 · 1280×704。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A red tanker and a blue branded truck travel side by side as water spills across the road, then a man steps out beside the vehicles. The author describes it as a locally generated 30-second MiniMax H3 clip made with a fused Ref2VA/omni workflow. Native-video output: 30s · 1280×704. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Walk-and-Talk After a Body Swap
+
+- ID: x-2101752664405209446
+- 中文标题: 身体互换后的放学路对话
+- English title: A Walk-and-Talk After a Body Swap
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2101752664405209446/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2101752664405209446/
+- Original source: https://x.com/irekawarimaniax/status/2101752664405209446
+- Author: クロエ
+- Published: 2026-09-20T19:17:38.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Character & Dialogue
+- Visual styles: not specified
+- Scenes: Dialogue & lip sync, Daily life
+- Output: 10s, 1056×608, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 两名高中生沿着住宅街道边走边交谈，镜头在两人之间切换。作者称这是本地使用 MiniMax H3 生成的身体互换题材 AI 视频，并说明采用 NanoBanana2 生成图像作为图生视频素材。 原生视频规格为 10 秒 · 1056×608。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: Two high-school students walk and talk along a residential street as the view cuts between them. The author identifies the AI video as locally generated with MiniMax H3 and says NanoBanana2-generated images were used as image-to-video sources. Native-video output: 10s · 1056×608. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Fast-Cut Montage of Dark Fantasy Characters
+
+- ID: x-2101750959651139705
+- 中文标题: 暗色奇幻角色的快速剪辑
+- English title: A Fast-Cut Montage of Dark Fantasy Characters
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2101750959651139705/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2101750959651139705/
+- Original source: https://x.com/aimikoda/status/2101750959651139705
+- Author: Kōda
+- Published: 2026-09-20T19:10:52.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Cinematic & Narrative
+- Visual styles: not specified
+- Scenes: Fantasy, Animals & creatures
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 一组暗色奇幻角色以快速剪辑呈现，包括巨大的有角生物与暗色场景中的女性角色；作者称使用 MiniMax H3 尝试了这些角色的快速剪辑蒙太奇。 原生视频规格为 15 秒 · 2560×1440。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A fast-cut sequence presents dark fantasy characters, including a large horned creature and a woman in a dark setting. The author says the montage was made with MiniMax H3. Native-video output: 15s · 2560×1440. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Tank Rolls Through the City
+
+- ID: x-2102329149306306599
+- 中文标题: 坦克驶过城市街道
+- English title: A Tank Rolls Through the City
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102329149306306599/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102329149306306599/
+- Original source: https://x.com/nanoka5124/status/2102329149306306599
+- Author: nanoka
+- Published: 2026-09-22T09:28:23.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Showcase
+- Visual styles: not specified
+- Scenes: City & street
+- Output: 24s, 1280×720, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 数名动漫风格的少女乘坐坦克穿过欧洲风格的城市街道，随后画面转为坦克受损、角色停在路旁；作者称这是本地使用 MiniMax H3 生成的坦克视频。 原生视频规格为 24 秒 · 1280×720。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: Anime-style characters ride a tank through a European-looking city street, followed by a damaged tank and characters beside the road. The author says the tank video was generated locally with MiniMax H3. Native-video output: 24s · 1280×720. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Multi-Angle Edit of an Octopus on a Building
+
+- ID: x-2102318276642553907
+- 中文标题: 章鱼攀上建筑的多视角改编
+- English title: A Multi-Angle Edit of an Octopus on a Building
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102318276642553907/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102318276642553907/
+- Original source: https://x.com/steftranquillin/status/2102318276642553907
+- Author: Stéphane
+- Published: 2026-09-22T08:45:10.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Model Comparison
+- Visual styles: not specified
+- Scenes: City & street, Animals & creatures
+- Output: 10s, 1080×1350, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 画面并列展示原始街景与 MiniMax H3 Max 生成的另一机位：巨型章鱼附着在建筑外墙，右侧结果从不同角度呈现同一场景。作者称使用 H3 Max 在 ImagineArt 中制作多视角效果。 原生视频规格为 10 秒 · 1080×1350。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A split-screen pairs the original street scene with a MiniMax H3 Max-generated camera angle of a giant octopus attached to a building. The author says the multi-angle effect was made with H3 Max in ImagineArt. Native-video output: 10s · 1080×1350. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Woolly Character Among Pumpkins
+
+- ID: x-2102311127501906032
+- 中文标题: 南瓜田里的羊毛角色
+- English title: A Woolly Character Among Pumpkins
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102311127501906032/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102311127501906032/
+- Original source: https://x.com/taya_mama_AI/status/2102311127501906032
+- Author: た〜や｜スキマ時間×AI副業ママ
+- Published: 2026-09-22T08:16:46.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Showcase
+- Visual styles: not specified
+- Scenes: Animals & creatures
+- Output: 8s, 1344×768, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 一只戴眼镜的黑色羊毛角色在南瓜间摆出不同姿势，配有季节主题文字；作者称视频使用 9 合 1 万圣节提示集创作，并标明 MiniMax H3 Max Turbo。 原生视频规格为 8 秒 · 1344×768。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A bespectacled black woolly character poses among pumpkins with seasonal text. The author says the video uses a 9-in-1 Halloween prompt set and identifies MiniMax H3 Max Turbo. Native-video output: 8s · 1344×768. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## An Outdoor Fit Check for a Blue-Haired Character
+
+- ID: x-2102452487978365379
+- 中文标题: 蓝发角色的户外穿搭
+- English title: An Outdoor Fit Check for a Blue-Haired Character
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102452487978365379/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102452487978365379/
+- Original source: https://x.com/aimikoda/status/2102452487978365379
+- Author: Kōda
+- Published: 2026-09-22T17:38:29.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Showcase
+- Visual styles: not specified
+- Scenes: Fashion
+- Output: 12s, 2560×1440, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 蓝发动画角色在店铺门前展示粉色上衣与短裤的穿搭，镜头在近景、全身与店面之间切换；作者将帖子标为 MiniMax H3 的 Fit Check。 原生视频规格为 12 秒 · 2560×1440。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A blue-haired animated character models a pink top and shorts outside a storefront, with cuts between close, full-body and storefront views. The author labels the post as a MiniMax H3 fit check. Native-video output: 12s · 2560×1440. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Three-Part Forest Walk and Conversation
+
+- ID: x-2102448683245502844
+- 中文标题: 林间同行的三段式对话
+- English title: A Three-Part Forest Walk and Conversation
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102448683245502844/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102448683245502844/
+- Original source: https://x.com/EndFolding79421/status/2102448683245502844
+- Author: FoldingEnd A.I.
+- Published: 2026-09-22T17:23:22.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Character & Dialogue
+- Visual styles: not specified
+- Scenes: Nature & landscape, Dialogue & lip sync
+- Output: 16s, 1376×768, landscape
+- Prompt provenance: creator-verbatim
+- Prompt completeness: complete
+- Chinese summary: 两位女性沿着林间小路并肩行走并交谈，镜头连续跟随她们完成三段衔接。作者称使用本地 MiniMax H3 与 ComfyUI 串接三个五秒片段，并公开完整提示词。 原生视频规格为 16 秒 · 1376×768。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: Two women walk and talk along a forest path in a continuous sequence. The author says three five-second clips were chained locally with MiniMax H3 and ComfyUI, and shares the complete prompt. Native-video output: 16s · 1376×768. The creator published the complete prompt, preserved here verbatim.
+- Complete verbatim public prompt:
+
+```text
+==============================
+SEGMENT 1 — SHOT (5 SECONDS)
+==============================
+
+subject_definitions:
+<Subject 1> is Grace, whose face, hair, body and outfit come entirely from <Picture 1>.
+
+summary:
+[reference generation] Grace walks alone through a forest, looking for someone.
+
+retention_analysis:
+Grace: fully_preserved - identical face, hair, body and clothing.
+
+detailed_description:
+[Shot 1] Realistic cinematic live-action, 16:9. A continuous medium tracking shot facing Grace as she walks along a forest trail. Natural overcast daylight.
+
+00:00-00:02:
+Grace walks toward the camera at a relaxed pace, looking slightly irritated. The camera tracks backward, keeping her waist-up.
+
+At 00:02.000:
+[speaking, English, young woman, slight Southern accent, irritated]
+"Where the hell is she?"
+
+00:03-00:05:
+Grace continues walking at the same pace, looking ahead. The camera maintains its position and distance. She is still walking at the end.
+
+overall_soundscape:
+Natural footsteps, forest ambience and dialogue.
+
+non_diegetic_music:
+N/A
+
+==============================
+SEGMENT 2 — CONTEXT (5 SECONDS)
+==============================
+
+subject_definitions:
+<Subject 1> is Grace, whose appearance comes from <Picture 1>.
+<Subject 2> is Linda, whose appearance and clothing come entirely from <Picture 2>.
+
+summary:
+[reference generation] Grace continues walking. Linda enters from offscreen and joins Grace. Both women walk together.
+
+retention_analysis:
+Grace: fully_preserved.
+Linda: fully_preserved - identical appearance and clothing from <Picture 2>.
+
+detailed_description:
+[Shot 1] Continue the existing cinematic tracking shot, matching the previous camera position, movement and lighting.
+
+00:00-00:03:
+Grace continues walking at exactly the same pace. The camera tracks backward at the same height and distance. No changes to the existing scenery or lighting.
+
+00:03-00:05:
+Linda walks naturally into frame from the side and joins Grace, matching her walking speed.
+
+At 00:03.500:
+[Linda speaking, English, young woman, warm conversational voice, playful]
+"Looking for me?"
+
+Both women remain in frame, still walking together as the segment ends.
+
+overall_soundscape:
+Continuous footsteps, forest ambience and natural dialogue.
+
+non_diegetic_music:
+N/A
+
+==============================
+SEGMENT 3 — CONTEXT (5 SECONDS)
+==============================
+
+subject_definitions:
+<Subject 1> is Grace, from <Picture 1>.
+<Subject 2> is Linda, from <Picture 2>.
+
+summary:
+[reference generation] Grace and Linda continue walking together, exchanging a short conversation.
+
+retention_analysis:
+Grace and Linda: fully_preserved - consistent faces, hair, clothing and body proportions.
+
+detailed_description:
+[Shot 1] Continue the existing uninterrupted cinematic tracking shot. Both women remain visible, walking side by side.
+
+00:00-00:02:
+Both women continue walking at the same speed. Maintain their positions, camera distance, lighting and natural movement.
+
+At 00:02.000:
+[Grace speaking, English, same slight Southern accent, curious and irritated]
+"Where have you been?"
+
+At 00:03.500:
+[Linda speaking, English, same warm conversational voice, amused]
+"Long story."
+
+00:04-00:05:
+Grace gives Linda an annoyed sideways glance. Linda smiles slightly. Both continue walking naturally.
+
+overall_soundscape:
+Continuous footsteps, forest ambience and natural dialogue.
+
+non_diegetic_music:
+N/A
+```
+
+## Frieren Turns a Sneeze into a New Spell
+
+- ID: x-2102397746003263554
+- 中文标题: 芙莉莲的喷嚏变成新魔法
+- English title: Frieren Turns a Sneeze into a New Spell
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102397746003263554/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102397746003263554/
+- Original source: https://x.com/Mayz1169/status/2102397746003263554
+- Author: Kiki
+- Published: 2026-09-22T14:00:57.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Animation
+- Visual styles: Anime
+- Scenes: Fantasy
+- Output: 10s, 1890×1080, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 绿色服装的精灵角色打了个喷嚏，动作与画面随片段推进而变化。作者以 MiniMax H3 提示词分享形式展示这段动画。 原生视频规格为 10 秒 · 1890×1080。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: An elf in green sneezes as the scene and action change through the clip. The author presents the video as a MiniMax H3 prompt-sharing example. Native-video output: 10s · 1890×1080. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Celestial Triptych in Motion
+
+- ID: x-2102393331137527976
+- 中文标题: 星辉中的三联人物影像
+- English title: A Celestial Triptych in Motion
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102393331137527976/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102393331137527976/
+- Original source: https://x.com/MO_IAI/status/2102393331137527976
+- Author: MO
+- Published: 2026-09-22T13:43:25.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Showcase
+- Visual styles: not specified
+- Scenes: not specified
+- Output: 15s, 768×1024, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 三联画面呈现人物置身于明亮、星辉般的环境中，镜头与光影持续变化。作者明确称作品由 MiniMax H3 在 OpenArt 上制作。 原生视频规格为 15 秒 · 768×1024。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A moving triptych places figures in luminous, celestial environments with changing camera views and light. The author says it was made with MiniMax H3 on OpenArt. Native-video output: 15s · 768×1024. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## Ocean Waves Form the Word TIDAL
+
+- ID: x-2102352395439120566
+- 中文标题: 巨浪凝成 TIDAL 字样
+- English title: Ocean Waves Form the Word TIDAL
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102352395439120566/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102352395439120566/
+- Original source: https://x.com/CharaspowerAI/status/2102352395439120566
+- Author: Pierrick Chevallier | IA
+- Published: 2026-09-22T11:00:45.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Action & VFX
+- Visual styles: not specified
+- Scenes: Nature & landscape
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: creator-verbatim
+- Prompt completeness: complete
+- Chinese summary: 两道巨大的海水墙相撞，旋转的浪流凝成 TIDAL 字样，随后标题炸散为水雾。作者称作品结合 MiniMax H3 与流体视觉特效，并在原帖附上完整提示词。 原生视频规格为 15 秒 · 2560×1440。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: Two enormous ocean walls collide and swirl into the word TIDAL before the title bursts into water and mist. The author describes a MiniMax H3 and fluid-VFX combination and includes the complete prompt in the post. Native-video output: 15s · 2560×1440. The creator published the complete prompt, preserved here verbatim.
+- Complete verbatim public prompt:
+
+```text
+Epic fluid-action title sequence beginning with an enormous black ocean suddenly splitting down the center as two mountain-sized walls of water rise on opposite sides of frame. The camera sweeps between them while billions of droplets rain downward and sunlight refracts through transparent liquid structures. Both walls violently collapse toward each other, creating a spectacular collision of water, foam and pressure that launches a liquid shockwave into the sky. The camera rapidly orbits the explosion as the suspended water is pulled into gigantic rotating streams. These streams twist, collide and sculpt themselves into the monumental word "TIDAL", every letter composed of violently circulating transparent seawater with white foam wrapped around its edges. The title holds for one massive hero moment before an invisible pressure pulse tears through it from left to right, detonating each letter sequentially into enormous explosions of water and mist. Photorealistic fluid simulation, colossal natural power, IMAX-scale cinematic VFX.
+```
+
+## Kinetic Typography for PONZ Creative
+
+- ID: x-2102337136574042333
+- 中文标题: PONZ Creative动态字体片头
+- English title: Kinetic Typography for PONZ Creative
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102337136574042333/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102337136574042333/
+- Original source: https://x.com/ponzponz15/status/2102337136574042333
+- Author: ぽんず | AI映像
+- Published: 2026-09-22T10:00:07.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Animation
+- Visual styles: Motion graphics
+- Scenes: not specified
+- Output: 15s, 832×480, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 黄色底色上的日文标题与简洁人物图形逐步组合，最终呈现 PONZ Creative School 标志。作者明确标注 MiniMax H3 Max on Flova。 原生视频规格为 15 秒 · 832×480。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: Japanese lettering and minimalist character graphics assemble over a yellow background, resolving into a PONZ Creative School title. The author identifies MiniMax H3 Max on Flova. Native-video output: 15s · 832×480. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Song-Driven Storyboard Ad Workflow
+
+- ID: x-2102333986291011844
+- 中文标题: 歌声与分镜驱动的 AI 商品广告
+- English title: A Song-Driven Storyboard Ad Workflow
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102333986291011844/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102333986291011844/
+- Original source: https://x.com/qwertyu_alex/status/2102333986291011844
+- Author: Alex | The AI Ads Guy
+- Published: 2026-09-22T09:47:36.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Local Generation & Workflow
+- Visual styles: not specified
+- Scenes: Product & advertising
+- Output: 38s, 720×1280, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 短视频展示一套 AI 歌曲广告制作流程：角色广告片段与分镜、音乐切分及节奏安排相结合。作者称工作流加入 MiniMax H3 Max 与 Suno 方法；画面中的流程图也标出 H3 Max 生成步骤。 原生视频规格为 38 秒 · 720×1280。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: The clip demonstrates an AI song-ad workflow combining character ad shots, storyboards, music slicing and timing. The author says it adds MiniMax H3 Max and a Suno method; the visible workflow diagram also names H3 Max as a generation step. Native-video output: 38s · 720×1280. A complete Prompt has not been collected here; this library does not infer or complete one.
 - Public prompt: not published completely by the source
 
