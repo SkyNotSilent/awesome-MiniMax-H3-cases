@@ -131402,5 +131402,1145 @@
     },
     "approvedAt": "2026-10-17T08:21:25.941Z",
     "editorialBasis": "浅色西装女性的正面肖像和多角度全身图，最后在黑背景中转身。"
+  },
+  {
+    "id": "x-2111232755849998786",
+    "title": "绿衣女子在彩灯房间中转身",
+    "titleEn": "A Woman in Green Turns in a Colorful Room",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "一名金发女子穿着深绿色装饰服装，在蓝绿色与橙色灯光交错的室内转身、摆动手臂。 原生视频规格为 15 秒 · 2560×1440。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A blonde woman in a dark green embellished outfit turns and moves her arms in a room lit with teal and orange tones. Native-video output: 15s · 2560×1440. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Undercover2009/status/2111232755849998786",
+    "sourceLabel": "X 原帖 · @Undercover2009",
+    "author": "🪄 Fran✨MagicA🖤",
+    "publishedAt": "2026-10-16T23:08:08.000Z",
+    "addedAt": "2026-10-17T09:40:23.115Z",
+    "mediaUrl": "/media/x-2111232755849998786.mp4",
+    "posterUrl": "/posters/x/2111232755849998786.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [],
+    "scenes": [
+      "fashion"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Listen on @AethrMusik   https://aethrmusik.com/track/wake-the-sleeping-magica\n\nVideo made with Minimax H3 on @magnific (i love it 🥰)",
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 3,
+      "views": 104,
+      "snapshotAt": "2026-10-17T09:40:23.115Z"
+    },
+    "approvedAt": "2026-10-17T09:40:23.115Z",
+    "editorialBasis": "深绿服装的金发女子在蓝绿色与橙色灯光间转身、摆臂。"
+  },
+  {
+    "id": "x-2111218495866151100",
+    "title": "石质竞技场中的角斗士",
+    "titleEn": "A Gladiator in a Stone Arena",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "角斗士站在石质竞技场中，持剑面对体型庞大的对手，画面呈现复古奇幻电影的场景。 原生视频规格为 12 秒 · 1152×640。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A gladiator stands in a stone arena with a sword facing a much larger opponent in a retro-fantasy scene. Native-video output: 12s · 1152×640. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/EndFolding79421/status/2111218495866151100",
+    "sourceLabel": "X 原帖 · @EndFolding79421",
+    "author": "FoldingEnd A.I.",
+    "publishedAt": "2026-10-16T22:11:28.000Z",
+    "addedAt": "2026-10-17T09:40:23.115Z",
+    "mediaUrl": "/media/x-2111218495866151100.mp4",
+    "posterUrl": "/posters/x/2111218495866151100.jpg",
+    "duration": 12,
+    "aspectRatio": "landscape",
+    "resolution": "1152×640",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "action-vfx",
+    "styles": [],
+    "scenes": [
+      "combat",
+      "creatures"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3 – Two 1980s LoRA Tests - Gladitor and American Wererat in London (8 steps 20 seconds)\n\nTesting two different LoRAs with two very different scenes.\n\nFirst up is Forgotten World's Retro Fantasy, featuring a gladiator in an ancient arena facing a giant monster. Going for that classic 1980s sword-and-sorcery movie look.\n\nLoRA: https://civitai.red/models/2988830/minimax-h3-forgotten-worlds-retro-fantasy?modelVersionId=3388934\n\nThe second is 1980s Horror Movies, with a 20-second werewolf transformation inspired by An American Werewolf in London. Complete with old-school transformation effects and a terrified girlfriend watching it happen.\n\nThat one turned out pretty good, except the werewolf looked more like a giant rat (my llm put in rounded ears instead of pointy). So I guess we're calling it An American Wererat in London. lol\n\nLoRA: https://civitai.red/models/1592586/1980s-horror-movies-lora?modelVersionId=3409492\n\nAnd yes, despite H3 being listed as having a 15-second maximum, you CAN generate 20-second and even 30-second videos with H3 using the right ComfyUI workflows. Of course, longer generations can have their own challenges, but it is possible.\n\nLink to 30 sec test: https://x.com/EndFolding79421/status/2088978559205360106?s=20\n\nBoth tested in ComfyUI with MiniMax H3. Really enjoying seeing what these 1980s style LoRAs can do.\n\nPrompt:\n\n1.  subject_definitions\n\n<Picture 1> — The Gladiator\n\nThe adult male gladiator from <Picture 1>. Preserve his exact facial identity and physical appearance. He wears simple, weathered leather gladiator armor with a leather loincloth, sandals, and a broad steel sword. His exposed muscular torso and arms have several old scars and fresh claw-like scratches. His face is sweaty, exhausted, and visibly frightened.\n\nsummary\n\nA dramatic 1980s sword-and-sorcery fantasy film scene inside an enormous ancient stone colosseum under blazing midday sunlight.\n\nA frightened gladiator stands alone in the dusty arena. A massive stone gateway opens, releasing a gigantic horned reptilian monster that charges directly toward him.\n\nAuthentic 1980s theatrical fantasy cinematography, elaborate practical creature effects, natural film softness, warm sunlit stone, realistic physical movement, and dramatic orchestral tension.\n\nintegrated_multimodal_description\n\n[00:00–00:03] — THE GLADIATOR\n\nMedium close-up of the gladiator standing in the middle of the arena beneath the blazing sun.\n\nSweat runs down his face and scarred chest. He grips his broad sword tightly, breathing heavily.\n\nHis expression is nervous and exhausted.\n\nHe suddenly looks toward something offscreen, his face tightening with dread.\n\nHARD CUT.\n\n[00:03–00:07] — THE GATE\n\nWide shot from behind the gladiator, revealing the enormous stone colosseum and a towering wooden gate across the arena.\n\nThe heavy gate slowly rises, scraping against ancient stone.\n\nBeyond the opening is deep darkness.\n\nDust drifts through the sunlight as the gladiator stands motionless in the foreground.\n\nA massive shape begins moving inside the darkness.\n\nHARD CUT.\n\n[00:07–00:10] — THE BEAST\n\nLow-angle wide shot facing the gateway.\n\nA gigantic horned reptilian monster suddenly bursts out of the darkness and charges across the arena.\n\nIts enormous muscular body moves with terrifying weight. Its thick forelegs pound the sand, sending up clouds of dust.\n\nThe creature has a broad horned skull, dark leathery skin, a heavy muscular neck, and a huge mouth lined with jagged teeth.\n\nIts thunderous roar echoes through the colosseum as it rushes toward the gladiator.\n\nHARD CUT.\n\n[00:10–00:12] — THE LAST STAND\n\nTight close-up of the gladiator.\n\nHis eyes widen in absolute terror.\n\nHe instinctively steps back, then raises his broad sword into a defensive fighting stance.\n\nHis hands tremble slightly as he braces himself.\n\nThe camera holds on his frightened, determined expression.\n\nCUT TO BLACK.\n\naudio\n\nDramatic early-1980s fantasy-adventure orchestral score with low strings, ominous brass, and rising percussion.\n\nHot desert wind, the heavy grinding of the arena gate, the monster's thunderous footsteps and roar, and the gladiator's frightened breathing.\n\nThe orchestral tension rises sharply as the monster charges, ending on a dramatic musical sting.\n\ncontinuity_rules\n\nOne gladiator and one enormous monster.\n\nPreserve the gladiator's facial identity, armor, sword, scars, and scratches.\n\nMaintain consistent arena geography, with the gateway directly ahead of the gladiator.\n\nThe creature has a consistent horned reptilian appearance and moves with heavy physical weight.\n\nFour cinematic shots with three hard cuts.\n\nAuthentic 1980s sword-and-sorcery theatrical-film appearance.\n\n2. subject_definitions\n\n<Picture 1> — THE BOYFRIEND\n\nThe adult man from <Picture 1>. Preserve his exact facial identity, hairstyle, body proportions, and clothing. He progressively transforms from a human into a monstrous werewolf.\n\n<Picture 2> — THE GIRLFRIEND\n\nThe adult woman from <Picture 2>. Preserve her exact facial identity, hairstyle, body proportions, and clothing. Her emotional performance progresses from casual familiarity to concern, shock, and overwhelming terror.\n\n<Picture 3> — THE WEREWOLF\n\nThe fully transformed werewolf from <Picture 3>. Preserve its exact creature design: enormous shaggy head, thick black-brown fur, broad wolf-like muzzle, powerful jaws, oversized irregular fangs, small rounded ears, predatory eyes, massive shoulders, and muscular forelegs.\n\nA huge four-legged creature with the physical appearance of an elaborate early-1980s practical-effects horror monster.\n\n## summary\n\nA 20-second cinematic horror sequence in the style of early-1980s werewolf movies.\n\nA woman returns home at night and discovers her boyfriend suffering on the living-room floor. He desperately warns her to stay away as his body begins transforming into an enormous werewolf.\n\nThe camera alternates between detailed physical transformation effects and the girlfriend's increasingly terrified reactions.\n\nThe completed werewolf rises from the darkness, turns toward her, and lunges.\n\nAuthentic 1980s theatrical horror cinematography, elaborate practical creature effects, mechanical prosthetic transformations, realistic physical deformation, expressive performances, and soft vintage film photography.\n\nThe entire house is dark, illuminated by cold blue moonlight filtering through closed curtains. Deep shadows dominate the room, with enough natural reflected light to reveal faces and transformation details.\n\n## integrated_multimodal_description\n\n[00:00–00:02] — ARRIVING HOME\n\nStatic medium-wide shot inside the dark suburban home, facing the front entrance.\n\nThe front door opens and the girlfriend enters from outside. Cold blue nighttime light briefly spills through the doorway.\n\nHARD CUT.\n\n[00:02–00:03] — THE KEYS\n\nClose-up of her hand tossing her keys onto the kitchen counter.\n\nGIRLFRIEND (casual, calling out):\n\"Babe, I'm home.\"\n\nHARD CUT.\n\n[00:03–00:07] — THE DISCOVERY\n\nThe camera follows her into the dark living room.\n\nCold blue moonlight filters through the closed curtains behind the living-room window, softly illuminating part of the floor.\n\nShe notices her boyfriend curled on the floor near the window, trembling and clutching his stomach.\n\nShe immediately starts toward him.\n\nHe suddenly raises his head, his face twisted in pain.\n\nBOYFRIEND (desperately shouting):\n\"STAY AWAY FROM ME!\"\n\nShe freezes in shock.\n\nHARD CUT.\n\n[00:07–00:10] — THE TRANSFORMATION BEGINS\n\nExtreme close-up of the boyfriend's hand pressed against the wooden floor.\n\nHis fingers visibly lengthen, knuckles enlarge, and fingernails thicken into curved black claws.\n\nCoarse dark fur spreads rapidly across his hands and forearms.\n\nQUICK CUT to his upper body.\n\nHis shoulders expand dramatically, stretching his shirt until the fabric tears across his back and chest.\n\nHis human cries deepen into strained animalistic growls.\n\nHARD CUT.\n\n[00:10–00:12] — HER HORROR\n\nTight close-up of the girlfriend retreating toward the corner of the living room.\n\nHer eyes widen as she watches the transformation.\n\nTears form in her eyes. Her lips tremble.\n\nShe whispers, barely able to speak:\n\n\"Oh my God...\"\n\nShe backs against the wall, breathing rapidly.\n\nHARD CUT.\n\n[00:12–00:16] — THE FACE TRANSFORMS\n\nExtreme close-up of the boyfriend's face.\n\nHis human eyes gradually change into intense animal eyes.\n\nHis jaw pushes forward, his cheekbones reshape, and his nose broadens into a wolf-like muzzle.\n\nHis teeth lengthen into large irregular fangs.\n\nThick dark fur spreads across his cheeks, forehead, and neck. His ears reshape into the small rounded animal ears of the creature in <Picture 3>.\n\nHis facial structure progressively becomes the enormous shaggy wolf-like head shown in <Picture 3>.\n\nThe transformation resembles elaborate mechanical prosthetic effects from a classic 1981 horror film.\n\nHARD CUT.\n\n[00:16–00:18] — THE BEAST RISES\n\nLow-angle wide shot of the dark living room.\n\nAgainst the cold blue moonlight filtering through the curtains, the enormous silhouette of the fully transformed werewolf slowly rises from the floor.\n\nIts massive shoulders and shaggy head emerge from the deep shadows.\n\nThe creature stands on four powerful limbs, towering over the nearby furniture.\n\nIt slowly turns its enormous head toward the girlfriend.\n\nA deep, threatening growl fills the room.\n\nHARD CUT.\n\n[00:18–00:19] — THE SCREAM\n\nExtreme close-up of the girlfriend crouched against the wall.\n\nTears stream down her face.\n\nShe stares upward at the monstrous creature, frozen in absolute terror.\n\nSuddenly she releases a piercing scream.\n\nHARD CUT.\n\n[00:19–00:20] — THE ATTACK\n\nThe girlfriend's point of view.\n\nThe enormous werewolf suddenly lunges directly toward the camera.\n\nIts huge shaggy face, open jaws, and irregular fangs rush forward, rapidly filling the frame.\n\nINSTANT CUT TO BLACK.\n\n## audio\n\nAuthentic early-1980s horror orchestral music with ominous low strings, eerie sustained synthesizer tones, and dramatic brass accents.\n\nThe music begins quietly as the girlfriend enters the house and gradually intensifies throughout the transformation.\n\nKeys striking the counter, soft footsteps, frightened breathing, fabric tearing, mechanical-sounding physical transformations, strained human cries becoming animalistic growls, and the girlfriend's quiet whimpering.\n\nThe music briefly drops as the completed werewolf turns toward her.\n\nHer final scream and the creature's sudden lunge are accompanied by a sharp orchestral horror sting.\n\nAbrupt silence at the final cut to black.\n\n## continuity_rules\n\nExactly two characters: the girlfriend and her boyfriend transforming into the werewolf.\n\nPreserve both human characters' facial identities, clothing, and physical appearances from their reference sheets.\n\nThe boyfriend's transformation progresses continuously from <Picture 1> into the completed creature shown in <Picture 3>.\n\nThe physical changes develop visibly through the hands, fingers, claws, arms, shoulders, clothing, eyes, jaw, muzzle, teeth, ears, and fur.\n\nThe completed werewolf matches <Picture 3>, including its enormous shaggy head, dark fur, broad muzzle, oversized irregular fangs, and powerful four-legged anatomy.\n\nMaintain the same dark suburban living room throughout.\n\nThe window with closed curtains provides cold blue nighttime illumination, casting soft blue highlights across the floor and deep shadows throughout the room.\n\nThe girlfriend retreats into a corner during the transformation and remains there until the final attack.\n\nAuthentic early-1980s practical-effects horror cinematography with realistic physical movement and natural photographic detail.",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 11,
+      "views": 974,
+      "snapshotAt": "2026-10-17T09:40:23.115Z"
+    },
+    "approvedAt": "2026-10-17T09:40:23.115Z",
+    "editorialBasis": "石墙围绕的竞技场里，角斗士持剑面对大型对手。"
+  },
+  {
+    "id": "x-2111212554479694026",
+    "title": "蓝发角饰角色坐在窗前",
+    "titleEn": "A Blue-Haired Character Sits by a Window",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "蓝发、带角饰的动画人物穿着蓝色红白十字制服坐在窗前，背景可见旗帜与室外景色。 原生视频规格为 15 秒 · 1440×2560。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A blue-haired anime-style character with horns wears a blue uniform with a red-and-white cross motif, seated by a window with an outdoor backdrop. Native-video output: 15s · 1440×2560. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/masayasan201911/status/2111212554479694026",
+    "sourceLabel": "X 原帖 · @masayasan201911",
+    "author": "ูุุุุุุุุุุุุุุุุุุ𐬯𐬀𐬠𐬀𐬔𐬎𐬠𐬛 𐬰𐬀𐬥𐬌𐬐𐬀🦋",
+    "publishedAt": "2026-10-16T21:47:52.000Z",
+    "addedAt": "2026-10-17T09:40:23.115Z",
+    "mediaUrl": "/media/x-2111212554479694026.mp4",
+    "posterUrl": "/posters/x/2111212554479694026.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "1440×2560",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime"
+    ],
+    "scenes": [],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "お、MiniMax H3をエンジンにしたら前よりはマシになった",
+    "engagement": {
+      "replies": 1,
+      "reposts": 1,
+      "likes": 7,
+      "views": 1306,
+      "snapshotAt": "2026-10-17T09:40:23.115Z"
+    },
+    "approvedAt": "2026-10-17T09:40:23.115Z",
+    "editorialBasis": "带角饰的蓝发角色穿蓝色红白十字制服，坐在窗景前。"
+  },
+  {
+    "id": "x-2111208555621843229",
+    "title": "雨夜楼顶的红刃女子",
+    "titleEn": "A Red-Bladed Figure on a Rainy Rooftop",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "身穿深色装甲的女子在雨夜楼顶持发光红刃移动，远处是灯火密集的城市街景。 原生视频规格为 10 秒 · 1056×608。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A woman in dark armor moves across a rainy rooftop with a glowing red blade against a dense, illuminated city skyline. Native-video output: 10s · 1056×608. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/redtoweler/status/2111208555621843229",
+    "sourceLabel": "X 原帖 · @redtoweler",
+    "author": "赤タオル",
+    "publishedAt": "2026-10-16T21:31:58.000Z",
+    "addedAt": "2026-10-17T09:40:23.115Z",
+    "mediaUrl": "/media/x-2111208555621843229.mp4",
+    "posterUrl": "/posters/x/2111208555621843229.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "1056×608",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "action-vfx",
+    "styles": [
+      "dark"
+    ],
+    "scenes": [
+      "city",
+      "combat"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Sword Assassin\n#MiniMax H3 #美しきアサシン",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 77,
+      "snapshotAt": "2026-10-17T09:40:23.115Z"
+    },
+    "approvedAt": "2026-10-17T09:40:23.115Z",
+    "editorialBasis": "深色装甲女子在雨夜楼顶持红色光刃，城市灯光映在湿地面上。"
+  },
+  {
+    "id": "x-2111190364128428172",
+    "title": "阳光沙漠中的战士相遇",
+    "titleEn": "A Meeting Between Warriors in a Sunlit Desert",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "男子躺在沙地上醒来，一名身穿金属护甲的女子从远处走近，最后站在他面前。 原生视频规格为 12 秒 · 1920×1088。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A man wakes on the sand as an armored woman approaches across the sunlit desert and stops before him. Native-video output: 12s · 1920×1088. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/EndFolding79421/status/2111190364128428172",
+    "sourceLabel": "X 原帖 · @EndFolding79421",
+    "author": "FoldingEnd A.I.",
+    "publishedAt": "2026-10-16T20:19:41.000Z",
+    "addedAt": "2026-10-17T09:40:23.115Z",
+    "mediaUrl": "/media/x-2111190364128428172.mp4",
+    "posterUrl": "/posters/x/2111190364128428172.jpg",
+    "duration": 12,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1088",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "retro"
+    ],
+    "scenes": [
+      "fantasy"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3 – Neon VHS Dreams 1980s Cinematic Style LoRA | \nGrowing up, I always enjoyed those cheesy old B-rate fantasy movies. One that stuck with me was Gor (1987). Cheesy? Absolutely. But memorable, at least to me.\n\nSo I decided to recreate a little scene inspired by that movie using MiniMax H3 and the Neon VHS Dreams LoRA. Then I started experimenting with the rendering steps and resolutions to see what would happen.\n\nHere are three of the seven tests I ran:\n\n1. 8 steps — 1920×1088\n2. 20 steps — 1152×640\n2. 20 steps — 960×544\n\nWhat's interesting is that every test used the exact same fixed seed, prompt, and character sheets. The main things I changed were the resolution and, in some cases, the number of steps.\n\nAs you can see in the videos, the results were surprisingly different each time. I ended up running seven tests in total, mostly experimenting with dimensions to see what improved, what changed, and how the LoRA responded.\n\nIt's interesting how much the results can vary even when you're keeping almost everything else the same.\n\nLoRA: https://civitai.red/models/2987989/neon-vhs-dreams?modelVersionId=3399068\n\nPrompt:\n\n## subject_definitions\n\n<Picture 1> — The Man\n\nThe adult male character from <Picture 1>. Preserve his exact facial identity, hairstyle, body proportions, and barbarian armor.\n\n<Picture 2> — The Warrior Woman\n\nThe adult female character from <Picture 2>. Preserve her exact facial identity, hairstyle, body proportions, warrior costume, and accessories.\n\n## summary\n\nA cinematic live-action 1980s sword-and-sorcery fantasy scene set in a vast, sunlit desert with 2 suns.\n\nA confused man awakens on the sand and sits upright. He notices a beautiful warrior woman approaching through the shimmering desert heat. She stops directly before him, casting her shadow across his body.\n\nAuthentic 1980s theatrical fantasy cinematography, natural sunlight, warm desert colors, subtle vintage lens softness, realistic skin and costume textures, and clean photographic detail.\n\n## integrated_multimodal_description\n\n[00:00–00:03] — AWAKENING\n\nA medium shot of the man lying on the desert sand.\n\nHe slowly opens his eyes, pushes himself upright, and sits looking around in confusion.\n\nHe notices his unfamiliar armor, then squints toward something in the distance.\n\nHARD CUT.\n\n[00:03–00:07] — THE APPROACH\n\nThe man's seated point of view across the hot desert.\n\nThe warrior woman walks toward him from a distance.\n\nStrong natural heat shimmer distorts her distant silhouette, making her outline ripple and waver.\n\nAs she approaches, the atmospheric distortion gradually diminishes, revealing her face, hair, and warrior costume clearly.\n\nShe continues walking toward the camera.\n\nHARD CUT.\n\n[00:07–00:09] — THE SHADOW\n\nMedium close-up of the man sitting on the sand.\n\nThe woman's approaching shadow moves across him, partially blocking the sunlight.\n\nHe slowly raises his head, looking up at her with a bewildered expression.\n\nHARD CUT.\n\n[00:09–00:12] — THE ENCOUNTER\n\nA dramatic low, side-on medium-wide shot.\n\nThe warrior woman stands on the LEFT, looking down at the man.\n\nThe man sits on the sand on the RIGHT, leaning back slightly with one knee raised, looking up at her.\n\nShe stands confidently, studying him with a calm, serious expression.\n\nA gentle desert breeze moves her hair and costume.\n\nThe camera holds this composition until the end.\n\n## audio\n\nQuiet 1980s fantasy-adventure orchestral music with gentle strings and distant French horns, creating a mysterious and adventurous atmosphere.\n\nThe music remains subtle beneath the natural sounds of desert wind, footsteps in the sand, clothing movement, and the man's breathing.\n\n## continuity_rules\n\nExactly two characters, maintaining their appearance and costumes from the character sheets.\n\nConsistent desert landscape and afternoon sunlight.\n\nNatural heat shimmer as the woman approaches.\n\nThe man remains seated after waking.\n\nFour cinematic shots connected by three hard cuts.\n\nAuthentic 1980s theatrical fantasy-film appearance with clean photographic detail.",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 4,
+      "views": 388,
+      "snapshotAt": "2026-10-17T09:40:23.115Z"
+    },
+    "approvedAt": "2026-10-17T09:40:23.115Z",
+    "editorialBasis": "沙地上的男子与逐渐走近、身穿护甲的女子。"
+  },
+  {
+    "id": "x-2111189576417227106",
+    "title": "茅草屋村落中的人群会面",
+    "titleEn": "A Gathering in a Thatched-Roof Village",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "茅草屋与木栅围绕着土路，人群聚集在两侧，几名穿长袍的人站在村中交谈。 原生视频规格为 8 秒 · 1024×576。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "Thatched buildings and wooden fences line a dirt lane where a crowd gathers around several robed figures. Native-video output: 8s · 1024×576. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ricardozbar/status/2111189576417227106",
+    "sourceLabel": "X 原帖 · @ricardozbar",
+    "author": "Ricardo Barbieri",
+    "publishedAt": "2026-10-16T20:16:33.000Z",
+    "addedAt": "2026-10-17T09:40:23.115Z",
+    "mediaUrl": "/media/x-2111189576417227106.mp4",
+    "posterUrl": "/posters/x/2111189576417227106.jpg",
+    "duration": 8,
+    "aspectRatio": "landscape",
+    "resolution": "1024×576",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [],
+    "scenes": [
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "A late fifteenth-century high-ranking Kongolese political leader in a royal.. MiniMax H3 Turbo LoRa\nhttps://youtu.be/7SgqRS4yH8Q",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 41,
+      "snapshotAt": "2026-10-17T09:40:23.115Z"
+    },
+    "approvedAt": "2026-10-17T09:40:23.115Z",
+    "editorialBasis": "土路两旁的茅草屋、木栅与聚集交谈的人群。"
+  },
+  {
+    "id": "x-2111173464325574900",
+    "title": "并列画面中的角色身份对比",
+    "titleEn": "Character Identity Compared Side by Side",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "深色界面中左右并排显示V1与V1.5的动画角色片段，并以短文字说明两侧角色外观的差异。 原生视频规格为 21 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A dark interface presents paired V1 and V1.5 anime-style character clips with short captions describing differences in appearance. Native-video output: 21s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/SD_Tutorial/status/2111173464325574900",
+    "sourceLabel": "X 原帖 · @SD_Tutorial",
+    "author": "Stable Diffusion Tutorials",
+    "publishedAt": "2026-10-16T19:12:32.000Z",
+    "addedAt": "2026-10-17T09:40:23.115Z",
+    "mediaUrl": "/media/x-2111173464325574900.mp4",
+    "posterUrl": "/posters/x/2111173464325574900.jpg",
+    "duration": 21,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "模型对比",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "comparison",
+    "styles": [],
+    "scenes": [],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "New Minimax H3 🙂 Character Swap LoRA V1.5\n\nwhere V1 loses the reference identity or returns to the source appearance, while V1.5 retains more of the character.\n\nhttps://huggingface.co/akatz-ai/MiniMax-H3-Character-Swap-LoRA",
+    "engagement": {
+      "replies": 3,
+      "reposts": 23,
+      "likes": 280,
+      "views": 11448,
+      "snapshotAt": "2026-10-17T09:40:23.115Z"
+    },
+    "approvedAt": "2026-10-17T09:40:23.115Z",
+    "editorialBasis": "深色界面里的V1与V1.5并排角色片段及其说明文字。"
+  },
+  {
+    "id": "x-2111170013998792772",
+    "title": "昏暗走廊里的女子推开房门",
+    "titleEn": "A Woman Opens a Door in a Dim Hallway",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "一名穿浅色长裙的女子沿着昏暗走廊走向房门，推门后在门口露出惊讶神情。 原生视频规格为 15 秒 · 1920×1088。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A woman in a pale dress walks down a dim hallway, opens a door, and reacts with surprise in the doorway. Native-video output: 15s · 1920×1088. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Dokko57932483/status/2111170013998792772",
+    "sourceLabel": "X 原帖 · @Dokko57932483",
+    "author": "Stan_Katayama",
+    "publishedAt": "2026-10-16T18:58:49.000Z",
+    "addedAt": "2026-10-17T09:40:23.115Z",
+    "mediaUrl": "/media/x-2111170013998792772.mp4",
+    "posterUrl": "/posters/x/2111170013998792772.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1088",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "dark"
+    ],
+    "scenes": [
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "What could be hiding behind that door? 😱\n\nThere's only one way to find out!\n\nI'm currently working on a LoRa model for the MiniMax H3 with a \"cinematic\" look.",
+    "engagement": {
+      "replies": 2,
+      "reposts": 0,
+      "likes": 10,
+      "views": 505,
+      "snapshotAt": "2026-10-17T09:40:23.115Z"
+    },
+    "approvedAt": "2026-10-17T09:40:23.115Z",
+    "editorialBasis": "蓝绿色昏暗走廊、浅色长裙女子与打开的房门。"
+  },
+  {
+    "id": "x-2111166307521495295",
+    "title": "角色替换演示中的服装变化",
+    "titleEn": "A Costume Change in a Character-Swap Demo",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "片段先呈现背对镜头的格纹衬衫人物和右下角肖像，随后出现身穿历史风格服装的人物画面。 原生视频规格为 13 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "The clip first shows a person in a plaid shirt facing away with a portrait inset, then a figure in historical-style clothing. Native-video output: 13s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/linoy_tsaban/status/2111166307521495295",
+    "sourceLabel": "X 原帖 · @linoy_tsaban",
+    "author": "Linoy Tsaban",
+    "publishedAt": "2026-10-16T18:44:05.000Z",
+    "addedAt": "2026-10-17T09:40:23.115Z",
+    "mediaUrl": "/media/x-2111166307521495295.mp4",
+    "posterUrl": "/posters/x/2111166307521495295.jpg",
+    "duration": 13,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "本地生成与工作流",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "workflow",
+    "styles": [],
+    "scenes": [],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "such a good H3 LoRA!\nupdated the demo to use V1.5 🔥\n▶️https://huggingface.co/spaces/hugging-apps/minimax-h3-character-swap-lora",
+    "engagement": {
+      "replies": 3,
+      "reposts": 7,
+      "likes": 95,
+      "views": 4777,
+      "snapshotAt": "2026-10-17T09:40:23.115Z"
+    },
+    "approvedAt": "2026-10-17T09:40:23.115Z",
+    "editorialBasis": "格纹衬衫人物、右下角肖像与随后出现的历史服装人物。"
+  },
+  {
+    "id": "x-2111146191358742750",
+    "title": "夜色中交战的动画女英雄",
+    "titleEn": "An Animated Heroine in a Nighttime Battle",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "深色海面上出现白色巨兽，镜头转向电塔旁身穿蓝红白制服的动画女英雄，绿色光带划过夜空。 原生视频规格为 5 秒 · 1152×768。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A white creature appears over dark water before the scene shifts to an animated heroine in a blue, red, and white outfit by power towers as green streaks cross the night sky. Native-video output: 5s · 1152×768. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/m_heroine_freak/status/2111146191358742750",
+    "sourceLabel": "X 原帖 · @m_heroine_freak",
+    "author": "変身ヒロイン観測所 | DLSite販売中",
+    "publishedAt": "2026-10-16T17:24:09.000Z",
+    "addedAt": "2026-10-17T09:40:23.115Z",
+    "mediaUrl": "/media/x-2111146191358742750.mp4",
+    "posterUrl": "/posters/x/2111146191358742750.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "1152×768",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [],
+    "scenes": [
+      "fantasy"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "【アストライア】  \n次回予告\nアストライアvs呑光獣ルクシヴォア (後編) \n\nMiniMax H3で生成\n\n#変身ヒロイン #ヒロピン #AIart #巨大ヒロイン",
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 17,
+      "views": 1679,
+      "snapshotAt": "2026-10-17T09:40:23.116Z"
+    },
+    "approvedAt": "2026-10-17T09:40:23.115Z",
+    "editorialBasis": "深色海面上的白色巨兽、夜间电塔与蓝红白制服人物。"
+  },
+  {
+    "id": "x-2111142619485196322",
+    "title": "蓝色空间中漂浮的岩石群",
+    "titleEn": "A Floating Rock Formation in a Blue Scene",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "一团布满小型石像的岩石在蓝色空间中悬浮，周围的小像逐渐散开，画面上出现日文字幕。 原生视频规格为 6 秒 · 320×240。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A mass covered with small stone figures floats in a blue scene as figures drift around it and Japanese text appears. Native-video output: 6s · 320×240. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/7015/status/2111142619485196322",
+    "sourceLabel": "X 原帖 · @7015",
+    "author": "十姉妹 直日子",
+    "publishedAt": "2026-10-16T17:09:58.000Z",
+    "addedAt": "2026-10-17T09:40:23.116Z",
+    "mediaUrl": "/media/x-2111142619485196322.mp4",
+    "posterUrl": "/posters/x/2111142619485196322.jpg",
+    "duration": 6,
+    "aspectRatio": "landscape",
+    "resolution": "320×240",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [],
+    "scenes": [
+      "fantasy"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "幼稚園くらいの頃に見た悪夢をMiniMax H3で再現した。\nこんなのが「みんなのうた」っぽい番組で流れてた。\n今思えばグラディウスの1面終盤の浮いてる岩がモデルだと思う。\nこれに小さなお地蔵さんが浮いたり戻ったりしてた。",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 72,
+      "snapshotAt": "2026-10-17T09:40:23.116Z"
+    },
+    "approvedAt": "2026-10-17T09:40:23.116Z",
+    "editorialBasis": "蓝色背景中的悬浮岩石、小型石像与日文字幕。"
+  },
+  {
+    "id": "x-2111131303202681314",
+    "title": "绿色背景前的灰色针织裙人物",
+    "titleEn": "A Figure in a Gray Knit Dress Against Green",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "一名穿灰色高领针织无袖裙、内搭白色短袖的人物在绿色背景前做轻微姿势变化。 原生视频规格为 15 秒 · 544×960。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A person wearing a gray sleeveless cable-knit dress over a white short-sleeved shirt makes subtle pose changes against a green background. Native-video output: 15s · 544×960. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/aisima2046/status/2111131303202681314",
+    "sourceLabel": "X 原帖 · @aisima2046",
+    "author": "aisima2046",
+    "publishedAt": "2026-10-16T16:25:00.000Z",
+    "addedAt": "2026-10-17T09:40:23.116Z",
+    "mediaUrl": "/media/x-2111131303202681314.mp4",
+    "posterUrl": "/posters/x/2111131303202681314.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "544×960",
+    "tags": [
+      "MiniMax H3",
+      "舞蹈",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "dance",
+    "styles": [],
+    "scenes": [
+      "performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "非常稳定的一段跳舞提示词，只需要简单修改就行\nminimax H3 prompts:\n一段15秒的电影式风情视频，锁同一张参考图的脸、黑色低马尾、头顶黑框墨镜、灰色高领无袖针织毛衣裙、内搭白色短袖T恤、身后白色运动鞋，以及参考图中的跪坐姿势和纯色背景均匀柔光。开场她先低头看自己的腰，深呼吸两次，灰色高领针织衣随呼吸被胸顶紧再回落，麻花纹理绷开又松开。随后改走更慢的跪姿顶胯：左右送腰，胸的晃动比腰晚半拍，胸部弹跳幅度明显更大，重量感和软体回弹更明显，白色T恤袖口只是轻晃。镜头从膝盖以上小幅环绕到3/4侧，再推到锁骨和胸上沿，最后拉回眼睛，脸始终可辨。后段她用左手拇指和食指捏住灰色针织裙左侧下摆边缘，向外扒开一线，低头看自己，停半秒，松手让裙摆弹回贴住腿侧，没有往上掀，没有往下拉。最后上身还带着余震，跪姿抬头侧脸看镜头眨眼浅笑。整整15秒，照片级逼真，参考图纯色背景与均匀柔光，锁参考图的脸、发型、场景与光线。不站起来、不换衣服、不换场地、不解高领、不掀上衣、不脱鞋、不走光。",
+    "engagement": {
+      "replies": 1,
+      "reposts": 1,
+      "likes": 10,
+      "views": 1824,
+      "snapshotAt": "2026-10-17T09:40:23.116Z"
+    },
+    "approvedAt": "2026-10-17T09:40:23.116Z",
+    "editorialBasis": "灰色针织裙、白色短袖上衣与纯绿色背景。"
+  },
+  {
+    "id": "x-2111117463811428799",
+    "title": "人群穿过城市斑马线",
+    "titleEn": "A Crowd Crossing an Urban Crosswalk",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "测试展示页中的一段画面呈现多名行人从不同方向穿过城市斑马线，车辆停在路口两侧。 原生视频规格为 548 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "One test segment shows pedestrians crossing an urban crosswalk from different directions while vehicles wait on either side. Native-video output: 548s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/princedoesai/status/2111117463811428799",
+    "sourceLabel": "X 原帖 · @princedoesai",
+    "author": "Prince does AI",
+    "publishedAt": "2026-10-16T15:30:00.000Z",
+    "addedAt": "2026-10-17T09:40:23.116Z",
+    "mediaUrl": "/media/x-2111117463811428799.mp4",
+    "posterUrl": "/posters/x/2111117463811428799.jpg",
+    "duration": 548,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "模型对比",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "comparison",
+    "styles": [],
+    "scenes": [
+      "city"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "🚨 I threw 15 HARD video tests at MiniMax H3 on my own RTX 5090... and it PASSED 11 of them 🤯\n\nBut a mirror and a juggler broke it: 11 passed, 1 partly, 3 failed 👀\n\nFull test below 👇",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 0,
+      "views": 89,
+      "snapshotAt": "2026-10-17T09:40:23.116Z"
+    },
+    "approvedAt": "2026-10-17T09:40:23.116Z",
+    "editorialBasis": "城市斑马线上的双向行人、停靠车辆与测试编号标题。"
+  },
+  {
+    "id": "x-2111114971375640986",
+    "title": "霓虹城市上空的悬浮跑车",
+    "titleEn": "A Hovering Roadster Above a Neon City",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "粉色未来感跑车在霓虹城市街道上方悬浮，车底喷出蓝白色光束，随后出现竖起拇指的动画人物。 原生视频规格为 15 秒 · 1632×928。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A pink futuristic roadster hovers above a neon city street with blue-white beams beneath it, followed by a stylized character giving a thumbs-up. Native-video output: 15s · 1632×928. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/AI_EmeraldApple/status/2111114971375640986",
+    "sourceLabel": "X 原帖 · @AI_EmeraldApple",
+    "author": "Emerald Apple",
+    "publishedAt": "2026-10-16T15:20:06.000Z",
+    "addedAt": "2026-10-17T09:40:23.116Z",
+    "mediaUrl": "/media/x-2111114971375640986.mp4",
+    "posterUrl": "/posters/x/2111114971375640986.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1632×928",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [
+      "stylized"
+    ],
+    "scenes": [
+      "city",
+      "sci-fi"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Malfoid test-drives the new Tesla Roadster. She gives it a solid thumbs-up! \n\nOne thing I noticed with Minimax H3 is that the physics logic breaks down further when it is created in vertical mode. Probably because it limits the continuous context detail needed for internal physics reasoning.",
+    "engagement": {
+      "replies": 14,
+      "reposts": 20,
+      "likes": 183,
+      "views": 2564,
+      "snapshotAt": "2026-10-17T09:40:23.116Z"
+    },
+    "approvedAt": "2026-10-17T09:40:23.116Z",
+    "editorialBasis": "粉色悬浮跑车、霓虹街景、蓝白光束与竖起拇指的动画人物。"
+  },
+  {
+    "id": "x-2111111443856953537",
+    "title": "录音棚歌手与舞蹈排练镜头",
+    "titleEn": "A Studio Singer and Dance-Rehearsal Scenes",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "竖屏片段先呈现戴耳机在麦克风前演唱的女子，随后切到三名女子在手机镜头前排练，结尾定格为三人合照。 原生视频规格为 62 秒 · 1080×1920。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "The vertical clip opens with a woman singing at a studio microphone, cuts to three women rehearsing for a phone camera, and ends on a framed group portrait. Native-video output: 62s · 1080×1920. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/posi_posi8/status/2111111443856953537",
+    "sourceLabel": "X 原帖 · @posi_posi8",
+    "author": "posi_posi",
+    "publishedAt": "2026-10-16T15:06:05.000Z",
+    "addedAt": "2026-10-17T09:40:23.116Z",
+    "mediaUrl": "/media/x-2111111443856953537.mp4",
+    "posterUrl": "/posters/x/2111111443856953537.jpg",
+    "duration": 62,
+    "aspectRatio": "portrait",
+    "resolution": "1080×1920",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "music",
+    "styles": [],
+    "scenes": [
+      "music-performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Strataの解説動画のメイキング動画。\n（一日中、BGMとして聴いてたら実在する気がしてきた）\n\n動画：MiniMax-H3",
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 7,
+      "views": 851,
+      "snapshotAt": "2026-10-17T09:40:23.116Z"
+    },
+    "approvedAt": "2026-10-17T09:40:23.116Z",
+    "editorialBasis": "录音棚麦克风、三人舞蹈排练与结尾的合照画面。"
+  },
+  {
+    "id": "x-2111041059174404395",
+    "title": "雨中街道上的电影片段",
+    "titleEn": "A Film Excerpt on a Rainy City Street",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "竖屏电影片段以分集标题卡串联办公室人物和雨中街道场景，结尾两人共撑一把伞走过湿润的城市路面。 原生视频规格为 78 秒 · 720×1280。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "Episode title cards frame office scenes and a rainy sidewalk; the excerpt ends with two people sharing an umbrella on a wet city street. Native-video output: 78s · 720×1280. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Wolfdubaii/status/2111041059174404395",
+    "sourceLabel": "X 原帖 · @Wolfdubaii",
+    "author": "Wolfdubai",
+    "publishedAt": "2026-10-16T10:26:24.000Z",
+    "addedAt": "2026-10-17T09:40:23.116Z",
+    "mediaUrl": "/media/x-2111041059174404395.mp4",
+    "posterUrl": "/posters/x/2111041059174404395.jpg",
+    "duration": 78,
+    "aspectRatio": "portrait",
+    "resolution": "720×1280",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "vertical"
+    ],
+    "scenes": [
+      "city"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Is there someone else crazy like me , builded whole movie with minimax h3 for free \n,full movie 🎥👇\n#minimax",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "views": 68,
+      "snapshotAt": "2026-10-17T09:40:23.116Z"
+    },
+    "approvedAt": "2026-10-17T09:40:23.116Z",
+    "editorialBasis": "分集标题卡、办公室人物与雨中共撑一把伞的两人。"
+  },
+  {
+    "id": "x-2111023264302772281",
+    "title": "挑战获奖作品剪辑",
+    "titleEn": "A Montage of Challenge Winners",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "获奖作品剪辑呈现橙色发光空间中的胎儿形象、酒吧里的女子，以及漂浮有机形体环绕的服装人物。 原生视频规格为 40 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "The winners montage shows a fetus-like figure in a glowing orange scene, a woman in a bar, and a costumed figure among floating organic forms. Native-video output: 40s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Picsart/status/2111023264302772281",
+    "sourceLabel": "X 原帖 · @Picsart",
+    "author": "Picsart",
+    "publishedAt": "2026-10-16T09:15:41.000Z",
+    "addedAt": "2026-10-17T09:40:23.116Z",
+    "mediaUrl": "/media/x-2111023264302772281.mp4",
+    "posterUrl": "/posters/x/2111023264302772281.jpg",
+    "duration": 40,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [],
+    "scenes": [],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "The Picsart x MiniMax H3 Challenge winners are here! 🏆Five creators, $10,000 each, and some of the most creative AI video work we've seen. \n\nThank you to everyone who entered. Watch the winning entries in the video below! 💜",
+    "engagement": {
+      "replies": 7,
+      "reposts": 7,
+      "likes": 53,
+      "views": 3099,
+      "snapshotAt": "2026-10-17T09:40:23.116Z"
+    },
+    "approvedAt": "2026-10-17T09:40:23.116Z",
+    "editorialBasis": "橙色发光场景、酒吧人物与漂浮形体环绕的服装人物。"
+  },
+  {
+    "id": "x-2111022940888408153",
+    "title": "灰色背景前的说话头像",
+    "titleEn": "A Talking Portrait Against a Gray Background",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "镜头近距离呈现短发人物对着镜头说话，嘴部和表情持续变化，结尾可见泪痕。 原生视频规格为 9 秒 · 576×768。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A close-up portrait shows a short-haired person speaking to camera with changing mouth movements and expressions, ending with visible tears. Native-video output: 9s · 576×768. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/skysay_ai/status/2111022940888408153",
+    "sourceLabel": "X 原帖 · @skysay_ai",
+    "author": "Skysay.ai",
+    "publishedAt": "2026-10-16T09:14:24.000Z",
+    "addedAt": "2026-10-17T09:40:23.116Z",
+    "mediaUrl": "/media/x-2111022940888408153.mp4",
+    "posterUrl": "/posters/x/2111022940888408153.jpg",
+    "duration": 9,
+    "aspectRatio": "portrait",
+    "resolution": "576×768",
+    "tags": [
+      "MiniMax H3",
+      "本地生成与工作流",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "workflow",
+    "styles": [],
+    "scenes": [
+      "dialogue"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "HeyGen-style talking heads, but open-source and running on your own GPU.\n\nDrama 3 voice (laughs, tears, whispers) → MiniMax H3 lip-sync, one ComfyUI workflow. No API, no per-second pricing.\n\nDemo 👇 workflow + recipe:\nhttps://github.com/skysay-ai/drama3-h3-talking",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "views": 137,
+      "snapshotAt": "2026-10-17T09:40:23.116Z"
+    },
+    "approvedAt": "2026-10-17T09:40:23.116Z",
+    "editorialBasis": "灰色背景、短发人物的说话口型、表情变化与泪痕。"
+  },
+  {
+    "id": "x-2111016011369701501",
+    "title": "燃烧街道上的双机甲对战",
+    "titleEn": "Two Mechs Fighting on a Burning Street",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "白蓝配色机甲与黑红机甲在受损城市街道上对峙，周围有火焰与烟雾。 原生视频规格为 15 秒 · 832×480。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A white-and-blue mech faces a black-and-red mech on a damaged city street surrounded by flames and smoke. Native-video output: 15s · 832×480. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/TOSAN621429231/status/2111016011369701501",
+    "sourceLabel": "X 原帖 · @TOSAN621429231",
+    "author": "とさん",
+    "publishedAt": "2026-10-16T08:46:52.000Z",
+    "addedAt": "2026-10-17T09:40:23.116Z",
+    "mediaUrl": "/media/x-2111016011369701501.mp4",
+    "posterUrl": "/posters/x/2111016011369701501.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "832×480",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "action-vfx",
+    "styles": [],
+    "scenes": [
+      "sci-fi",
+      "combat"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "ローカルでMinimax H3試してるけど面白い\n正義ロボ、悪役ロボとしか指定してないのに大体ガンダムっぽいの出てきて草\n#MinimaxH3",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 100,
+      "snapshotAt": "2026-10-17T09:40:23.116Z"
+    },
+    "approvedAt": "2026-10-17T09:40:23.116Z",
+    "editorialBasis": "白蓝与黑红机甲、燃烧的街道和背景楼群。"
+  },
+  {
+    "id": "x-2110989312657391676",
+    "title": "棕榈海岸边的动漫跑者",
+    "titleEn": "An Anime Runner by a Palm-Lined Coast",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "橙发动漫人物穿蓝色上衣和浅色短裤，在棕榈树与海岸背景前沿小路跑步。 原生视频规格为 7 秒 · 640×1152。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "An orange-haired anime character in a blue top and light shorts runs along a path with palm trees and the coast behind her. Native-video output: 7s · 640×1152. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/theai4men/status/2110989312657391676",
+    "sourceLabel": "X 原帖 · @theai4men",
+    "author": "Ai4Men",
+    "publishedAt": "2026-10-16T07:00:47.000Z",
+    "addedAt": "2026-10-17T09:40:23.116Z",
+    "mediaUrl": "/media/x-2110989312657391676.mp4",
+    "posterUrl": "/posters/x/2110989312657391676.jpg",
+    "duration": 7,
+    "aspectRatio": "portrait",
+    "resolution": "640×1152",
+    "tags": [
+      "MiniMax H3",
+      "本地生成与工作流",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "workflow",
+    "styles": [
+      "anime"
+    ],
+    "scenes": [
+      "nature"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Frozen Mid-Fall: MiniMax H3 360 Orbit LoRA Test #minimaxh3 #ai360orbit #bullettime #frozentime #aivideo #loratest #comfyui",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 2,
+      "views": 53,
+      "snapshotAt": "2026-10-17T09:40:23.116Z"
+    },
+    "approvedAt": "2026-10-17T09:40:23.116Z",
+    "editorialBasis": "蓝色上衣、棕榈树、海岸背景与沿路奔跑的人物。"
+  },
+  {
+    "id": "x-2110978108790870401",
+    "title": "四格领奖画面的视角变化",
+    "titleEn": "Changing Views of an Award Presentation",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "四格布局重复呈现两名西装男子在舞台上领奖的片段，画面展示他们周围的不同视角。 原生视频规格为 31 秒 · 1526×2008。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A four-panel layout repeats a clip of two suited men receiving an award on stage from different viewpoints. Native-video output: 31s · 1526×2008. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/spmaker/status/2110978108790870401",
+    "sourceLabel": "X 原帖 · @spmaker",
+    "author": "むっちゃん",
+    "publishedAt": "2026-10-16T06:16:15.000Z",
+    "addedAt": "2026-10-17T09:40:23.116Z",
+    "mediaUrl": "/media/x-2110978108790870401.mp4",
+    "posterUrl": "/posters/x/2110978108790870401.jpg",
+    "duration": 31,
+    "aspectRatio": "portrait",
+    "resolution": "1526×2008",
+    "tags": [
+      "MiniMax H3",
+      "模型对比",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "comparison",
+    "styles": [],
+    "scenes": [
+      "performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Minimax-H3 ORB360-LoRa という画像に写っている物を360度カメラを回して動画を作成するAIモデルを試してみた。\n結果は、元々、静止している物は比較的上手くいくが、例えばジャンプ中の人は地面に落ちてばたばたしてしまう。\nまた、被写体中心にカメラを回すのが、なかなか難しい～",
+    "engagement": {
+      "replies": 2,
+      "reposts": 2,
+      "likes": 14,
+      "views": 342,
+      "snapshotAt": "2026-10-17T09:40:23.116Z"
+    },
+    "approvedAt": "2026-10-17T09:40:23.116Z",
+    "editorialBasis": "四个并列视窗、舞台上的两名西装男子与奖项。"
+  },
+  {
+    "id": "x-2110977173263896936",
+    "title": "舞蹈短片的制作步骤",
+    "titleEn": "Steps for a Dance Short",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "竖屏片段先显示歌词与剪辑步骤卡，随后出现三名穿着不同服装的女性角色同步舞蹈，结尾列出生成工具。 原生视频规格为 95 秒 · 1080×1920。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "The vertical clip opens with lyric and editing step cards, then shows three women in different outfits dancing together before an end card lists tools. Native-video output: 95s · 1080×1920. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/_sagyoai/status/2110977173263896936",
+    "sourceLabel": "X 原帖 · @_sagyoai",
+    "author": "さ🥺",
+    "publishedAt": "2026-10-16T06:12:32.000Z",
+    "addedAt": "2026-10-17T09:40:23.116Z",
+    "mediaUrl": "/media/x-2110977173263896936.mp4",
+    "posterUrl": "/posters/x/2110977173263896936.jpg",
+    "duration": 95,
+    "aspectRatio": "portrait",
+    "resolution": "1080×1920",
+    "tags": [
+      "MiniMax H3",
+      "舞蹈",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "dance",
+    "styles": [
+      "vertical"
+    ],
+    "scenes": [
+      "dance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Claude+Colab+Minimax H3+Codex\n音ハメダンスのショート動画の作り方\n人間がやること版",
+    "engagement": {
+      "replies": 3,
+      "reposts": 13,
+      "likes": 203,
+      "views": 10961,
+      "snapshotAt": "2026-10-17T09:40:23.116Z"
+    },
+    "approvedAt": "2026-10-17T09:40:23.116Z",
+    "editorialBasis": "歌词与剪辑步骤卡、三名舞者及结尾的生成工具文字。"
+  },
+  {
+    "id": "x-2110976093087818003",
+    "title": "剧院中的粉发人物与吉他镜头",
+    "titleEn": "A Pink-Haired Figure and Guitar Scenes in a Theater",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "音乐视频在古建筑与剧院镜头间切换，粉发眼镜人物出现在放映设备前，另有手指拨动吉他琴弦的近景。 原生视频规格为 274 秒 · 2560×1440。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "The music video cuts between an old building and theater scenes, a pink-haired figure by projection equipment, and a close-up of fingers playing guitar strings. Native-video output: 274s · 2560×1440. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/flutterwhat/status/2110976093087818003",
+    "sourceLabel": "X 原帖 · @flutterwhat",
+    "author": "Flutterwhat",
+    "publishedAt": "2026-10-16T06:08:15.000Z",
+    "addedAt": "2026-10-17T09:40:23.116Z",
+    "mediaUrl": "/media/x-2110976093087818003.mp4",
+    "posterUrl": "/posters/x/2110976093087818003.jpg",
+    "duration": 274,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "music",
+    "styles": [],
+    "scenes": [
+      "music-performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "\"Illusions of skill\" aka \"Unbounded\" \n\n| Logic Pro + Suno V6-Wild | Muse Spark + Wonder | Grok bot? | Minimax H3 Via @boneGPT SLOP CANNON V2 | Nano Banana 2 + Google Search | \n\nThe lyrics, as always...hand written, represent my feelings towards modern AI discourse. There will be no losers or winners in the end...None of it's (not real), but it's nothing more then then illusion of \"Feel\" \n\nCrooked until...\n\noutput isnt art. This isn't any form of art.",
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 6,
+      "views": 382,
+      "snapshotAt": "2026-10-17T09:40:23.116Z"
+    },
+    "approvedAt": "2026-10-17T09:40:23.116Z",
+    "editorialBasis": "古建筑、剧院中的粉发人物与拨动琴弦的手部特写。"
+  },
+  {
+    "id": "x-2110999336859455658",
+    "title": "秋叶场景的短片制作过程",
+    "titleEn": "A Short-Film Workflow with an Autumn Scene",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "画面先呈现秋叶堆旁的动漫女孩，后切到制作对照卡，分别标注H3实拍预演、深度图和Seedance 2.5动漫成片，片尾出现Renoise标识。 原生视频规格为 61 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "The clip opens on an anime girl beside a pile of autumn leaves, then shows a process card labeling an H3 live-action previz, a depth map, and a separate Seedance 2.5 anime final, before ending on the Renoise logo. Native-video output: 61s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/RishuaVR/status/2110999336859455658",
+    "sourceLabel": "X 原帖 · @RishuaVR",
+    "author": "Feliora",
+    "publishedAt": "2026-10-16T07:40:37.000Z",
+    "addedAt": "2026-10-17T09:40:23.116Z",
+    "mediaUrl": "/media/x-2110999336859455658.mp4",
+    "posterUrl": "/posters/x/2110999336859455658.jpg",
+    "duration": 61,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "本地生成与工作流",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "workflow",
+    "styles": [
+      "anime"
+    ],
+    "scenes": [],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "I typed, Claude ran Renoise AI, and this 17-second anime short came out.\n\nClaude made a live-action previz on MiniMax H3, turned it into a depth map, and Seedance 2.5 redrew it as anime from my two character sheets. Lyria did the music. Everything went through the @renoiseai MCP, and the edit happened in the Renoise cloud sandbox.\n\nWorkflow inspired by @tapehead_Lab.",
+    "engagement": {
+      "replies": 3,
+      "reposts": 0,
+      "likes": 3,
+      "views": 227,
+      "snapshotAt": "2026-10-17T09:40:23.116Z"
+    },
+    "approvedAt": "2026-10-17T09:40:23.116Z",
+    "editorialBasis": "秋叶堆旁的动漫人物，以及卡片中分别标注的H3实拍预演与Seedance 2.5动漫成片。"
   }
 ]
