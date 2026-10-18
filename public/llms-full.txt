@@ -1,6 +1,6 @@
 # MiniMax H3 Cases & Guides — Complete Case and Tutorial Index
 
-Generated from data/cases.json and data/tutorial-guides.json. Total: 2831 cases and 25 tutorials. Complete verbatim public Prompts: 736.
+Generated from data/cases.json and data/tutorial-guides.json. Total: 2835 cases and 25 tutorials. Complete verbatim public Prompts: 738.
 
 ## Tutorials
 
@@ -103730,5 +103730,118 @@ One continuous eight-second fantastical cinematic shot, starting exactly from th
 - Prompt completeness: not-published
 - Chinese summary: 一名角色在洗衣房裡拿著毛巾，隨後靠近鏡頭並抬起手。原帖標註這是以 MiniMax H3 生成的 AI 影片。 原生视频规格为 15 秒 · 720×1280。本库暂未收录完整 Prompt，不反推或补写。
 - English summary: A character holds a towel in a laundry room, then moves closer to the camera and raises a hand. The original post labels it as an AI-generated video made with MiniMax H3. Native-video output: 15s · 720×1280. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## A Tiny Storm in a Glass Sphere
+
+- ID: x-2111797222492819835
+- 中文标题: 玻璃球中的小小風暴
+- English title: A Tiny Storm in a Glass Sphere
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2111797222492819835/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2111797222492819835/
+- Original source: https://x.com/GlennHasABeard/status/2111797222492819835
+- Author: Glenn Williams
+- Published: 2026-10-18T12:31:07.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Local Generation & Workflow
+- Visual styles: not specified
+- Scenes: not specified
+- Output: 15s, 3456×1920, landscape
+- Prompt provenance: creator-verbatim
+- Prompt completeness: complete
+- Chinese summary: 一間小屋映在透明玻璃球中，雨水落在球內；薄霧散去後，微型風景清晰呈現。 原生视频规格为 15 秒 · 3456×1920。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A tiny house sits inside a clear glass sphere as rain falls around it; a passing wipe clears the fog to reveal the miniature scene. Native-video output: 15s · 3456×1920. The creator published the complete prompt, preserved here verbatim.
+- Complete verbatim public prompt:
+
+```text
+inside the clear glass a tiny storm is raining on a tiny house
+```
+
+## Lyrics Above the Night City
+
+- ID: x-2111798327436263632
+- 中文标题: 夜城上空的歌詞
+- English title: Lyrics Above the Night City
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2111798327436263632/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2111798327436263632/
+- Original source: https://x.com/h3nrixd/status/2111798327436263632
+- Author: henrixd
+- Published: 2026-10-18T12:35:31.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Music Video
+- Visual styles: not specified
+- Scenes: City & street
+- Output: 332s, 1920×1080, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 畫面從昏暗華麗的室內轉到夜間城市，歌詞浮現在城市夜景上，最後進入星空。原帖分別標註歌曲為 Suno V6、影片為 ComfyUI / MiniMax H3。 原生视频规格为 332 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: The video moves from a dim ornate interior to a nighttime city with lyrics overlaid, then ends beneath a starry sky. The post credits Suno V6 for the song and ComfyUI / MiniMax H3 for the video. Native-video output: 332s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: not published completely by the source
+
+## The Sky Pulled Open by Machinery
+
+- ID: x-2111799484069847266
+- 中文标题: 被機械臂揭開的天空
+- English title: The Sky Pulled Open by Machinery
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2111799484069847266/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2111799484069847266/
+- Original source: https://x.com/DeCat2025/status/2111799484069847266
+- Author: DeCat
+- Published: 2026-10-18T12:40:06.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Action & VFX
+- Visual styles: not specified
+- Scenes: City & street, Sci-fi & space
+- Output: 15s, 768×1024, portrait
+- Prompt provenance: creator-verbatim
+- Prompt completeness: complete
+- Chinese summary: 未來城市上空出現巨型機械爪，逐片扯開天空，露出深處的工業裝置；最後城市被巨大旋轉機械球體包圍。 原生视频规格为 15 秒 · 768×1024。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: Above a futuristic city, enormous mechanical claws pull away sections of the sky to reveal machinery; the city ends enclosed within a vast rotating sphere. Native-video output: 15s · 768×1024. The creator published the complete prompt, preserved here verbatim.
+- Complete verbatim public prompt:
+
+```text
+Photorealistic science fiction, enormous cinematic scale.
+
+SHOT 1 | 0–3s | STREET LEVEL
+A busy futuristic city under a beautiful blue sky. Suddenly an enormous rectangular shadow slides across the skyscrapers.
+
+SHOT 2 | 3–6s | UPWARD POV
+Gigantic mechanical claws descend from above the clouds and grip an invisible rectangular section of the sky.
+
+SHOT 3 | 6–9s | WIDE ANGLE
+The claws pull downward. The blue sky tears away as a massive rigid panel, revealing black industrial machinery behind it.
+
+SHOT 4 | 9–12s | ROOFTOP CAMERA
+Multiple sky panels detach in succession. Their enormous shadows race across the city while giant maintenance arms move between the exposed sections.
+
+SHOT 5 | 12–15s | EXTREME WIDE
+The camera rises above the city, revealing its entire horizon enclosed inside an unimaginably large mechanical sphere. A vast central mechanism begins rotating.
+
+Grounded scale, immense machinery, realistic shadows and atmospheric perspective, thunderous metallic sound. No dialogue, no text.
+```
+
+## A Miniature Motorcycle in a Palm
+
+- ID: x-2111803311133479116
+- 中文标题: 掌心裡的微型摩托
+- English title: A Miniature Motorcycle in a Palm
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2111803311133479116/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2111803311133479116/
+- Original source: https://x.com/NavSha/status/2111803311133479116
+- Author: Navneet Sharma ⚡️
+- Published: 2026-10-18T12:55:19.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Showcase
+- Visual styles: not specified
+- Scenes: not specified
+- Output: 30s, 1920×1080, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 一名微型騎士騎著摩托車，在手掌間穿梭；畫面短暫轉到煎鍋旁的另一輛小摩托，最後回到坐在掌心的騎士。 原生视频规格为 30 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A tiny rider moves on a motorcycle across an open palm; the scene briefly shifts to another miniature bike beside a frying pan, then returns to the rider seated in a hand. Native-video output: 30s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.
 - Public prompt: not published completely by the source
 

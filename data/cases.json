@@ -135748,5 +135748,192 @@
     },
     "approvedAt": "2026-10-18T12:33:27.470Z",
     "editorialBasis": "The original post labels the clip as an AI-generated MiniMax H3 video; the video depicts a character holding a towel in a laundry room and turning toward the camera."
+  },
+  {
+    "id": "x-2111797222492819835",
+    "title": "玻璃球中的小小風暴",
+    "titleEn": "A Tiny Storm in a Glass Sphere",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "一間小屋映在透明玻璃球中，雨水落在球內；薄霧散去後，微型風景清晰呈現。 原生视频规格为 15 秒 · 3456×1920。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A tiny house sits inside a clear glass sphere as rain falls around it; a passing wipe clears the fog to reveal the miniature scene. Native-video output: 15s · 3456×1920. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "inside the clear glass a tiny storm is raining on a tiny house",
+    "promptSourceUrl": "https://x.com/GlennHasABeard/status/2111797222492819835",
+    "sourceUrl": "https://x.com/GlennHasABeard/status/2111797222492819835",
+    "sourceLabel": "X 原帖 · @GlennHasABeard",
+    "author": "Glenn Williams",
+    "publishedAt": "2026-10-18T12:31:07.000Z",
+    "addedAt": "2026-10-18T13:35:33.601Z",
+    "mediaUrl": "/media/x-2111797222492819835.mp4",
+    "posterUrl": "/posters/x/2111797222492819835.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "3456×1920",
+    "tags": [
+      "MiniMax H3",
+      "本地生成与工作流",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "workflow",
+    "styles": [],
+    "scenes": [],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Minimax H3, open weights, generated locally. Polished the crystal ball. Forecast is local.\n\nPrompt: \"inside the clear glass a tiny storm is raining on a tiny house\"\n\nDuration: 15s. Camera: locked, table height. Rendered locally in ComfyUI, then Topaz to 4K.\n\nOne wipe, left to right, and the fog clears behind the cloth. The reveal follows the tool.",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 12,
+      "views": 278,
+      "snapshotAt": "2026-10-18T13:35:33.601Z"
+    },
+    "approvedAt": "2026-10-18T13:35:33.601Z",
+    "editorialBasis": "原帖明確將影片歸因於本機 MiniMax H3；畫面呈現玻璃球中的小屋與雨景。"
+  },
+  {
+    "id": "x-2111798327436263632",
+    "title": "夜城上空的歌詞",
+    "titleEn": "Lyrics Above the Night City",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "畫面從昏暗華麗的室內轉到夜間城市，歌詞浮現在城市夜景上，最後進入星空。原帖分別標註歌曲為 Suno V6、影片為 ComfyUI / MiniMax H3。 原生视频规格为 332 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "The video moves from a dim ornate interior to a nighttime city with lyrics overlaid, then ends beneath a starry sky. The post credits Suno V6 for the song and ComfyUI / MiniMax H3 for the video. Native-video output: 332s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/h3nrixd/status/2111798327436263632",
+    "sourceLabel": "X 原帖 · @h3nrixd",
+    "author": "henrixd",
+    "publishedAt": "2026-10-18T12:35:31.000Z",
+    "addedAt": "2026-10-18T13:35:33.601Z",
+    "mediaUrl": "/media/x-2111798327436263632.mp4",
+    "posterUrl": "/posters/x/2111798327436263632.jpg",
+    "duration": 332,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "music",
+    "styles": [],
+    "scenes": [
+      "city"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Dance Here Anyway\n\nSong: Suno V6\nVideo: ComfyUI / Minimax H3\n\nWe made a mind.",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 20,
+      "snapshotAt": "2026-10-18T13:35:33.601Z"
+    },
+    "approvedAt": "2026-10-18T13:35:33.601Z",
+    "editorialBasis": "The post attributes the video to ComfyUI / MiniMax H3 and separately credits Suno V6 for the song; the video shows a lyric-led nighttime city sequence."
+  },
+  {
+    "id": "x-2111799484069847266",
+    "title": "被機械臂揭開的天空",
+    "titleEn": "The Sky Pulled Open by Machinery",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "未來城市上空出現巨型機械爪，逐片扯開天空，露出深處的工業裝置；最後城市被巨大旋轉機械球體包圍。 原生视频规格为 15 秒 · 768×1024。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "Above a futuristic city, enormous mechanical claws pull away sections of the sky to reveal machinery; the city ends enclosed within a vast rotating sphere. Native-video output: 15s · 768×1024. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "Photorealistic science fiction, enormous cinematic scale.\n\nSHOT 1 | 0–3s | STREET LEVEL\nA busy futuristic city under a beautiful blue sky. Suddenly an enormous rectangular shadow slides across the skyscrapers.\n\nSHOT 2 | 3–6s | UPWARD POV\nGigantic mechanical claws descend from above the clouds and grip an invisible rectangular section of the sky.\n\nSHOT 3 | 6–9s | WIDE ANGLE\nThe claws pull downward. The blue sky tears away as a massive rigid panel, revealing black industrial machinery behind it.\n\nSHOT 4 | 9–12s | ROOFTOP CAMERA\nMultiple sky panels detach in succession. Their enormous shadows race across the city while giant maintenance arms move between the exposed sections.\n\nSHOT 5 | 12–15s | EXTREME WIDE\nThe camera rises above the city, revealing its entire horizon enclosed inside an unimaginably large mechanical sphere. A vast central mechanism begins rotating.\n\nGrounded scale, immense machinery, realistic shadows and atmospheric perspective, thunderous metallic sound. No dialogue, no text.",
+    "promptSourceUrl": "https://x.com/DeCat2025/status/2111799484069847266",
+    "sourceUrl": "https://x.com/DeCat2025/status/2111799484069847266",
+    "sourceLabel": "X 原帖 · @DeCat2025",
+    "author": "DeCat",
+    "publishedAt": "2026-10-18T12:40:06.000Z",
+    "addedAt": "2026-10-18T13:35:33.601Z",
+    "mediaUrl": "/media/x-2111799484069847266.mp4",
+    "posterUrl": "/posters/x/2111799484069847266.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "768×1024",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "action-vfx",
+    "styles": [],
+    "scenes": [
+      "city",
+      "sci-fi"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "The sky is being replaced \nMINIMAX H3 | @Hailuo_AI\n\nPhotorealistic science fiction, enormous cinematic scale.\n\nSHOT 1 | 0–3s | STREET LEVEL\nA busy futuristic city under a beautiful blue sky. Suddenly an enormous rectangular shadow slides across the skyscrapers.\n\nSHOT 2 | 3–6s | UPWARD POV\nGigantic mechanical claws descend from above the clouds and grip an invisible rectangular section of the sky.\n\nSHOT 3 | 6–9s | WIDE ANGLE\nThe claws pull downward. The blue sky tears away as a massive rigid panel, revealing black industrial machinery behind it.\n\nSHOT 4 | 9–12s | ROOFTOP CAMERA\nMultiple sky panels detach in succession. Their enormous shadows race across the city while giant maintenance arms move between the exposed sections.\n\nSHOT 5 | 12–15s | EXTREME WIDE\nThe camera rises above the city, revealing its entire horizon enclosed inside an unimaginably large mechanical sphere. A vast central mechanism begins rotating.\n\nGrounded scale, immense machinery, realistic shadows and atmospheric perspective, thunderous metallic sound. No dialogue, no text.",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 1,
+      "views": 56,
+      "snapshotAt": "2026-10-18T13:35:33.601Z"
+    },
+    "approvedAt": "2026-10-18T13:35:33.601Z",
+    "editorialBasis": "原帖明確標註 MiniMax H3；影片呈現機械爪撕開天空並揭露城市外的巨大機械結構。"
+  },
+  {
+    "id": "x-2111803311133479116",
+    "title": "掌心裡的微型摩托",
+    "titleEn": "A Miniature Motorcycle in a Palm",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "一名微型騎士騎著摩托車，在手掌間穿梭；畫面短暫轉到煎鍋旁的另一輛小摩托，最後回到坐在掌心的騎士。 原生视频规格为 30 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A tiny rider moves on a motorcycle across an open palm; the scene briefly shifts to another miniature bike beside a frying pan, then returns to the rider seated in a hand. Native-video output: 30s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/NavSha/status/2111803311133479116",
+    "sourceLabel": "X 原帖 · @NavSha",
+    "author": "Navneet Sharma ⚡️",
+    "publishedAt": "2026-10-18T12:55:19.000Z",
+    "addedAt": "2026-10-18T13:35:33.602Z",
+    "mediaUrl": "/media/x-2111803311133479116.mp4",
+    "posterUrl": "/posters/x/2111803311133479116.jpg",
+    "duration": 30,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [],
+    "scenes": [],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "had a lot of fun making this video! \n\nused GPT Image for character design based on myself🙈, ACE-Step for music and MiniMax H3 for video generation.",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 0,
+      "views": 43,
+      "snapshotAt": "2026-10-18T13:35:33.602Z"
+    },
+    "approvedAt": "2026-10-18T13:35:33.602Z",
+    "editorialBasis": "The creator credits MiniMax H3 for video generation, GPT Image for character design and ACE-Step for music; the clip depicts a miniature motorcyclist in a hand."
   }
 ]
