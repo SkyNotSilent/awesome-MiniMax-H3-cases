@@ -135649,5 +135649,104 @@
     },
     "approvedAt": "2026-10-18T05:30:02.912Z",
     "editorialBasis": "原帖将 MiniMax H3 明确归于视频生成，将 Yue2 归于音乐、Qwen 3.8 27B 归于提示词整理、HiDream O1 归于角色和世界参考；随后使用 DaVinci Resolve 基础剪辑。"
+  },
+  {
+    "id": "x-2111756578311561243",
+    "title": "星潮溫室：發光水母掠過雨夜街巷",
+    "titleEn": "A Luminous Jellyfish Drifts Above a Rainy Street",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "透明水母內映著發光雨林，漂浮在雨後的東亞老城街巷上方。作者說明動態由本機 ComfyUI 搭配 MiniMax H3 生成；畫面中可見短暫的橫向殘影效果。 原生视频规格为 8 秒 · 960×544。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A transparent jellyfish containing a glowing greenhouse drifts above a rain-wet East Asian street. The creator says the motion was generated locally with ComfyUI and MiniMax H3; a brief sequence of lateral trails is visible. Native-video output: 8s · 960×544. The creator's complete Prompt is preserved verbatim.",
+    "prompt": "One continuous eight-second fantastical cinematic shot, starting exactly from the supplied image of the giant translucent jellyfish greenhouse floating over a wet ancient East Asian street at night. The camera begins moving immediately at the first frame, making a smooth slow clockwise horizontal arc of about sixty degrees around the floating greenhouse while keeping a low camera height and a level horizon. Show real depth parallax: nearby eaves and wet paving slide more quickly than the distant bridge, while the jellyfish's curved membrane changes perspective gradually. Keep the jellyfish large and recognizable; do not turn this into a flat spinning picture or roll the horizon. The canopy gently breathes, fine tentacles sway and stardust drifts downward. Preserve the continuous mixed-media scene: realistic wet architecture at the left, dimensional stylized animation through the next area, cel-shaded hand-drawn forms toward the right-middle, and watercolor paper and ink textures at the far right, blending in one unbroken world. Preserve the deep blue night, amber and turquoise greenhouse illumination and their reflections on nearby eaves, mist and puddles; stable exposure throughout. All structures stay intact and the greenhouse is a single entity. The base shot is smooth and clear, with no cuts, text, titles or extra objects. Audio: very soft nighttime air, distant water and delicate glasslike shimmer, no voices and no sharp impact sounds.",
+    "sourceUrl": "https://x.com/eikoung/status/2111756578311561243",
+    "sourceLabel": "X 原帖 · @eikoung",
+    "author": "紅",
+    "publishedAt": "2026-10-18T09:49:37.000Z",
+    "addedAt": "2026-10-18T12:33:27.468Z",
+    "mediaUrl": "/media/x-2111756578311561243.mp4",
+    "posterUrl": "/posters/x/2111756578311561243.jpg",
+    "duration": 8,
+    "aspectRatio": "landscape",
+    "resolution": "960×544",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "X 原帖",
+      "公开 Prompt"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "cinematic-realistic",
+      "illustration"
+    ],
+    "scenes": [
+      "city",
+      "fantasy"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "《星潮溫室》｜四種風格，一個連續世界 🪼✨\n\n讓一座發光雨林住進透明水母，漂過雨夜古鎮。寫實、3D、2D動畫與水彩在同一畫面裡接續融合，再加入骨牌般由左往右傳遞的局部推移與三層殘影，最後恢復清楚。\n\nAI創作／8秒試片。\n\n實際工具：\n• 生圖與四風格參考圖編輯：OpenAI內建 image_gen（確切模型版本未提供）；本次未用Qwen2.1生圖。\n• 動態：本機 ComfyUI＋MiniMax H3，RTX3090 24GB。\n• H3主模型：minimax_h3_fl2va_pruned_int8_convrot.safetensors。\n• 編碼器：qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors。\n• VAE：minimax_h3_video_vae_int8_convrot.safetensors／minimax_h3_audio_vae_fp32.safetensors。\n• LoRA：minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors，8步，seed2026101811。\n• 骨牌式殘影：Python OpenCV／NumPy後製，18區段依序推移，最多26px位移，延遲3／6／10幀的三層殘影。它是影像特效，不是實體骨牌模擬。\n• 輸出：FFmpeg，原生960×544、24fps、192幀、精確8.000秒，H264／yuv420p、AAC48kHz雙聲道。聲音沿用H3生成環境聲，沒有新增配音或外部下載配樂。\n\n實測判斷：抽幀可見局部推移與殘影接力，末段恢復清楚；轉動幅度偏小，尚未證實完成提示詞要求的60度空間環繞。四風格分界偏柔和，不宣稱嚴格各佔四分之一。驗收包含抽幀與完整音視訊解碼，未完成主觀完整聽審。殘影由後製控制，不能全歸功於H3提示詞。\n\n完整初始生圖提示詞：\nUse case: stylized-concept. 創作一張橫式、電影感的超現實幻想藝術作品，題名概念為「星潮溫室」，畫面不出現文字。雨後的東亞老城深夜，一隻如大教堂般巨大的透明水母低空漂浮在街道上方，水母傘體既是有機薄膜，也是精密弧形玻璃溫室，內部清楚可見一整座微型發光雨林：高聳蕨類、銀白根系、青綠螢光苔蘚與幾朵琥珀色花。傘體外緣帶少量紫紅與金色生物光，長觸鬚垂入街巷，末端漸漸分解成細小星塵，部分星塵在積水上形成短暫星座。低機位廣角，主水母完整、偏上方佔畫面約一半，兩側老屋簷口、電線和遠方街道形成強烈空間縱深，前景以濕石板與水窪引導視線，整體構圖簡潔、主體鮮明，尺度震撼而寧靜。風格融合真實城市攝影的濕潤材質、精緻3D玻璃與植物體積，以及只在星塵和少量觸鬚輪廓中出現的手繪2D筆觸，三種媒材在同一世界自然交融，不分割畫面、不做三聯畫。水母與雨林的青綠、琥珀發光必須真實照亮附近屋簷、玻璃窗與霧氣，在積水中產生隨距離衰減、被石縫打斷的彩色反射；深藍夜色保留，避免全圖泛亮。細膩薄膜折射、凝結水珠、植物層次、輕薄體積霧與克制的顆粒。避免火焰、火箭、汽車、密集裝飾、過曝白色光核、廉價霓虹濾鏡、文字、標誌和浮水印。\n\n完整四風格編輯提示詞（參考上面的初始圖）：\n將參考圖片改為「同一張完整主圖內，四種媒材分區混合」的幻想藝術。保持原圖橫式構圖、單一低機位透視、同一隻巨型透明雨林水母、同一條雨夜古鎮街道和同一座遠橋；每個物件的位置、輪廓與空間連續跨越風格區域。整張畫面由左到右約四等份：最左25%採寫實電影攝影，真實濕石材、玻璃折射與光學細節；第二個25%採明確風格化的3D動畫電影，立體幾何、柔和圓潤材質和乾淨體積光；第三個25%採日系2D賽璐璐動畫，清晰墨線、平塗色塊與分層陰影；最右25%採透明水彩，明顯紙紋、顏料暈染、破碎筆觸和水彩留白。四種風格必須在同一隻水母、同一條街道、同一片積水上接續改變，交界以窄幅自然漸變融合，讓人看得出材質從寫實到立體動畫、再到線稿平塗與紙上水彩的變化。整體維持深藍夜色、青綠與琥珀色發光，光線真實照亮屋簷並映入濕地面，四區的色調和主要明暗一致。重點是單一場景的媒材轉換，不是四張圖拼貼；禁止四格、禁止2×2、禁止重複水母或街道、禁止分隔線或畫框、禁止文字標籤與浮水印。\n\n完整H3影片提示詞：\nOne continuous eight-second fantastical cinematic shot, starting exactly from the supplied image of the giant translucent jellyfish greenhouse floating over a wet ancient East Asian street at night. The camera begins moving immediately at the first frame, making a smooth slow clockwise horizontal arc of about sixty degrees around the floating greenhouse while keeping a low camera height and a level horizon. Show real depth parallax: nearby eaves and wet paving slide more quickly than the distant bridge, while the jellyfish's curved membrane changes perspective gradually. Keep the jellyfish large and recognizable; do not turn this into a flat spinning picture or roll the horizon. The canopy gently breathes, fine tentacles sway and stardust drifts downward. Preserve the continuous mixed-media scene: realistic wet architecture at the left, dimensional stylized animation through the next area, cel-shaded hand-drawn forms toward the right-middle, and watercolor paper and ink textures at the far right, blending in one unbroken world. Preserve the deep blue night, amber and turquoise greenhouse illumination and their reflections on nearby eaves, mist and puddles; stable exposure throughout. All structures stay intact and the greenhouse is a single entity. The base shot is smooth and clear, with no cuts, text, titles or extra objects. Audio: very soft nighttime air, distant water and delicate glasslike shimmer, no voices and no sharp impact sounds.\n\n實際流程JSON（省略編輯器標題；保留全部class_type、inputs及節點連結。01-960x544.png是首圖檔名；不是GUI畫布JSON。附後製參數，模型／環境不同不保證逐像素重現）：\n{\"h3_api_graph\":{\"119\":{\"class_type\":\"VAELoader\",\"inputs\":{\"vae_name\":\"minimax_h3_video_vae_int8_convrot.safetensors\"}},\"120\":{\"class_type\":\"VAELoader\",\"inputs\":{\"vae_name\":\"minimax_h3_audio_vae_fp32.safetensors\"}},\"127\":{\"class_type\":\"UNETLoader\",\"inputs\":{\"unet_name\":\"minimax_h3_fl2va_pruned_int8_convrot.safetensors\",\"weight_dtype\":\"default\"}},\"128\":{\"class_type\":\"CLIPLoader\",\"inputs\":{\"clip_name\":\"qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors\",\"type\":\"minimax\",\"device\":\"default\"}},\"142\":{\"class_type\":\"LoraLoaderModelOnly\",\"inputs\":{\"model\":[\"127\",0],\"lora_name\":\"minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors\",\"strength_model\":1}},\"141\":{\"class_type\":\"LoadImage\",\"inputs\":{\"image\":\"01-960x544.png\"}},\"131\":{\"class_type\":\"MiniMaxH3ImageToVideo\",\"inputs\":{\"clip\":[\"128\",0],\"vae\":[\"119\",0],\"prompt\":\"One continuous eight-second fantastical cinematic shot, starting exactly from the supplied image of the giant translucent jellyfish greenhouse floating over a wet ancient East Asian street at night. The camera begins moving immediately at the first frame, making a smooth slow clockwise horizontal arc of about sixty degrees around the floating greenhouse while keeping a low camera height and a level horizon. Show real depth parallax: nearby eaves and wet paving slide more quickly than the distant bridge, while the jellyfish's curved membrane changes perspective gradually. Keep the jellyfish large and recognizable; do not turn this into a flat spinning picture or roll the horizon. The canopy gently breathes, fine tentacles sway and stardust drifts downward. Preserve the continuous mixed-media scene: realistic wet architecture at the left, dimensional stylized animation through the next area, cel-shaded hand-drawn forms toward the right-middle, and watercolor paper and ink textures at the far right, blending in one unbroken world. Preserve the deep blue night, amber and turquoise greenhouse illumination and their reflections on nearby eaves, mist and puddles; stable exposure throughout. All structures stay intact and the greenhouse is a single entity. The base shot is smooth and clear, with no cuts, text, titles or extra objects. Audio: very soft nighttime air, distant water and delicate glasslike shimmer, no voices and no sharp impact sounds.\",\"width\":960,\"height\":544,\"length\":192,\"first_frame\":[\"141\",0]}},\"129\":{\"class_type\":\"RandomNoise\",\"inputs\":{\"noise_seed\":2026101811}},\"123\":{\"class_type\":\"KSamplerSelect\",\"inputs\":{\"sampler_name\":\"res_multistep\"}},\"124\":{\"class_type\":\"BasicScheduler\",\"inputs\":{\"model\":[\"142\",0],\"scheduler\":\"simple\",\"steps\":8,\"denoise\":1}},\"126\":{\"class_type\":\"BasicGuider\",\"inputs\":{\"model\":[\"142\",0],\"conditioning\":[\"131\",0]}},\"125\":{\"class_type\":\"SamplerCustomAdvanced\",\"inputs\":{\"noise\":[\"129\",0],\"guider\":[\"126\",0],\"sampler\":[\"123\",0],\"sigmas\":[\"124\",0],\"latent_image\":[\"131\",1]}},\"122\":{\"class_type\":\"VAEDecode\",\"inputs\":{\"samples\":[\"125\",0],\"vae\":[\"119\",0]}},\"121\":{\"class_type\":\"VAEDecodeAudio\",\"inputs\":{\"samples\":[\"125\",0],\"vae\":[\"120\",0]}},\"130\":{\"class_type\":\"CreateVideo\",\"inputs\":{\"images\":[\"122\",0],\"fps\":24,\"audio\":[\"121\",0],\"bit_depth\":8,\"color_space\":\"sRGB\",\"codec\":\"none\"}},\"92\":{\"class_type\":\"SaveVideo\",\"inputs\":{\"video\":[\"130\",0],\"filename_prefix\":\"orbit-base\",\"format\":\"mp4\",\"format.codec\":\"auto\"}}},\"postprocess\":{\"fps\":24,\"frames\":192,\"width\":960,\"height\":544,\"chain_sections\":18,\"first_section_seconds\":1.0,\"last_section_seconds\":5.7,\"section_pulse_sigma_seconds\":0.19,\"section_edge_feather_kernel_pixels\":25,\"section_edge_feather_sigma_pixels\":5,\"top_displacement_pixels\":26,\"bottom_fraction\":0.5,\"vertical_displacement_pixels\":8,\"temporal_echoes\":[{\"lag_frames\":3,\"delay_seconds\":0.13,\"offset_pixels\":12,\"opacity\":0.34},{\"lag_frames\":6,\"delay_seconds\":0.28,\"offset_pixels\":25,\"opacity\":0.22},{\"lag_frames\":10,\"delay_seconds\":0.44,\"offset_pixels\":40,\"opacity\":0.12}],\"echo_sigma_seconds\":0.24,\"start_and_end_unmodified_before_encoding\":true,\"method\":\"Local sequential displacement field and three edge-weighted temporal echoes; no literal domino objects\"},\"input_image\":\"01-960x544.png (same composition, proportional resize and minimal padding from source.png)\",\"output\":{\"duration_seconds\":8,\"fps\":24,\"frames\":192,\"width\":960,\"height\":544,\"video\":\"H264/yuv420p\",\"audio\":\"AAC48kHz stereo\",\"faststart\":true},\"source_image_tool\":\"OpenAI built-in image_gen; exact backend model version not exposed\",\"verification\":\"Sampled visual checks and full audiovisual decode; no complete subjective listening;60degree orbit not established\"}\n\n#AIArt #MiniMaxH3 #ComfyUI #幻想藝術 #星潮溫室",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 3,
+      "views": 395,
+      "snapshotAt": "2026-10-18T12:33:27.468Z"
+    },
+    "approvedAt": "2026-10-18T12:33:27.468Z",
+    "editorialBasis": "The creator explicitly attributes the motion to MiniMax H3; the video depicts a transparent jellyfish containing a glowing greenhouse above a wet night street.",
+    "promptSourceUrl": "https://x.com/eikoung/status/2111756578311561243"
+  },
+  {
+    "id": "x-2111774749114462302",
+    "title": "洗衣房裡的一段輕柔日常",
+    "titleEn": "A Quiet Moment in a Laundry Room",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "一名角色在洗衣房裡拿著毛巾，隨後靠近鏡頭並抬起手。原帖標註這是以 MiniMax H3 生成的 AI 影片。 原生视频规格为 15 秒 · 720×1280。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A character holds a towel in a laundry room, then moves closer to the camera and raises a hand. The original post labels it as an AI-generated video made with MiniMax H3. Native-video output: 15s · 720×1280. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ShionLuna_x/status/2111774749114462302",
+    "sourceLabel": "X 原帖 · @ShionLuna_x",
+    "author": "Luna｜AIメモと日常",
+    "publishedAt": "2026-10-18T11:01:49.000Z",
+    "addedAt": "2026-10-18T12:33:27.470Z",
+    "mediaUrl": "/media/x-2111774749114462302.mp4",
+    "posterUrl": "/posters/x/2111774749114462302.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "720×1280",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [],
+    "scenes": [
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "ぽかぽかね / まわるひなたを\n\n※AI生成動画（MiniMax H3）",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 2,
+      "views": 70,
+      "snapshotAt": "2026-10-18T12:33:27.470Z"
+    },
+    "approvedAt": "2026-10-18T12:33:27.470Z",
+    "editorialBasis": "The original post labels the clip as an AI-generated MiniMax H3 video; the video depicts a character holding a towel in a laundry room and turning toward the camera."
   }
 ]
