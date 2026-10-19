@@ -8,7 +8,7 @@ import { matchesAddedDate } from './updates'
 import App from './App'
 import { startGoogleLogin } from './account-navigation'
 vi.mock('./account-navigation', () => ({ startGoogleLogin: vi.fn() }))
-import { languagePreferenceKey } from './i18n'
+import { languagePreferenceKey, provenanceLabel } from './i18n'
 
 vi.mock('../data/cases.json', async (importOriginal) => {
   const original = await importOriginal<typeof import('../data/cases.json')>()
@@ -110,12 +110,27 @@ describe('case-first routes', () => {
 
     expect(Number(document.querySelector('.intro-proof-cases strong')?.textContent)).toBeGreaterThan(0)
     expect(document.querySelector('.intro-proof-cases em')).toHaveTextContent('完整公开 Prompt')
-    expect(document.querySelector('.intro-proof-cases em')).toHaveTextContent('来源未公开完整 Prompt')
+    expect(document.querySelector('.intro-proof-cases em')).toHaveTextContent('暂未收录完整 Prompt')
     expect(document.querySelector('.intro-proof-update strong')).toHaveTextContent('DAILY')
     expect(screen.getByText('每天持续更新')).toBeInTheDocument()
     expect(screen.getByText('持续发现 · 核验 · 发布')).toBeInTheDocument()
     expect(document.querySelector('.intro-proof-connection path')).toBeInTheDocument()
     expect(screen.getByText(/个真实案例，每天持续增长/)).toBeInTheDocument()
+  })
+
+  it.each([
+    ['/', '暂未收录完整 Prompt'],
+    ['/en/', 'COMPLETE PROMPT NOT COLLECTED'],
+  ])('describes the missing Prompt as not collected on %s', (path, label) => {
+    renderAt(path)
+    expect(document.querySelector('.intro-proof-cases em')).toHaveTextContent(label)
+  })
+
+  it.each([
+    ['zh', '本库暂未收录'],
+    ['en', 'Not collected in this library'],
+  ] as const)('labels missing Prompt provenance as not collected in %s', (language, label) => {
+    expect(provenanceLabel('not-published', language)).toBe(label)
   })
 
   it('dismisses the intro immediately when the visitor interacts', () => {
@@ -574,14 +589,14 @@ describe('case-first routes', () => {
     )
   })
 
-  it('shows video and source details without inventing a prompt when the source did not publish one', () => {
+  it('shows video and source details when a complete prompt has not been collected', () => {
     const view = renderAt('/')
     fireEvent.change(screen.getByPlaceholderText('搜索案例、场景或创作者…'), {
       target: { value: 'YukYuk' },
     })
     fireEvent.click(screen.getByRole('button', { name: '查看 同提示词 H3 与 Seedance 对比 详情' }))
 
-    expect(screen.getByText('来源未公开 Prompt；本页只展示视频和公开信息。')).toBeInTheDocument()
+    expect(screen.getByText('本库暂未收录完整 Prompt；本页展示视频和公开信息。')).toBeInTheDocument()
     expect(screen.queryByRole('button', { name: '复制 Prompt' })).not.toBeInTheDocument()
     expect(view.container.querySelector('.dialog-copy pre')).not.toBeInTheDocument()
     expect(screen.getByText('正在加载站内视频…')).toBeInTheDocument()
@@ -936,7 +951,7 @@ describe('language isolation', () => {
     })
     fireEvent.click(screen.getByRole('button', { name: 'View details for Same Prompt: H3 vs Seedance 2' }))
 
-    expect(screen.getByText('The source did not publish a prompt. This page shows the video and public details only.')).toBeInTheDocument()
+    expect(screen.getByText('A complete Prompt has not been collected here. This page shows the video and public details only.')).toBeInTheDocument()
     expect(screen.queryByRole('button', { name: 'Copy Prompt' })).not.toBeInTheDocument()
     expect(view.container.querySelector('.dialog-copy pre')).not.toBeInTheDocument()
     expect(document.body.textContent).not.toMatch(/[\u3400-\u9fff]/u)

@@ -101,7 +101,7 @@ export const copy = {
       caseEyebrow: '01 / 案例规模',
       caseLabel: '可播放视频案例',
       promptAvailableLabel: '完整公开 Prompt',
-      promptUnavailableLabel: '来源未公开完整 Prompt',
+      promptUnavailableLabel: '暂未收录完整 Prompt',
       updateEyebrow: '02 / 更新节奏',
       updateValue: 'DAILY',
       updateLabel: '每天持续更新',
@@ -185,7 +185,7 @@ export const copy = {
       prompt: '原始 Prompt',
       promptPublished: '来源公开',
       promptNotice: '以下内容按来源原文呈现。',
-      promptUnavailable: '来源未公开 Prompt；本页只展示视频和公开信息。',
+      promptUnavailable: '本库暂未收录完整 Prompt；本页展示视频和公开信息。',
       copy: '复制 Prompt',
       copied: '已复制',
       promptSource: '查看 Prompt 原帖',
@@ -294,7 +294,7 @@ export const copy = {
       caseEyebrow: '01 / COLLECTION SCALE',
       caseLabel: 'PLAYABLE VIDEO CASES',
       promptAvailableLabel: 'COMPLETE PUBLIC PROMPTS',
-      promptUnavailableLabel: 'WITHOUT A COMPLETE PUBLIC PROMPT',
+      promptUnavailableLabel: 'COMPLETE PROMPT NOT COLLECTED',
       updateEyebrow: '02 / UPDATE RHYTHM',
       updateValue: 'DAILY',
       updateLabel: 'UPDATED EVERY DAY',
@@ -378,7 +378,7 @@ export const copy = {
       prompt: 'Original Prompt',
       promptPublished: 'Published by source',
       promptNotice: 'Shown exactly as published by the source.',
-      promptUnavailable: 'The source did not publish a prompt. This page shows the video and public details only.',
+      promptUnavailable: 'A complete Prompt has not been collected here. This page shows the video and public details only.',
       copy: 'Copy Prompt',
       copied: 'Copied',
       promptSource: 'View Prompt source',
@@ -568,13 +568,13 @@ export function metadataValue(value: string, language: Language) {
 const provenanceZh: Record<VideoCase['promptProvenance'], string> = {
   'official-verbatim': '官方原文',
   'creator-verbatim': '创作者原文',
-  'not-published': '来源未公开',
+  'not-published': '本库暂未收录',
 }
 
 const provenanceEn: Record<VideoCase['promptProvenance'], string> = {
   'official-verbatim': 'Official verbatim',
   'creator-verbatim': 'Creator verbatim',
-  'not-published': 'Not published by source',
+  'not-published': 'Not collected in this library',
 }
 
 export function provenanceLabel(value: VideoCase['promptProvenance'], language: Language) {

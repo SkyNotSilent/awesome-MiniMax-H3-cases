@@ -64,7 +64,7 @@ ${tutorialGuides.map((item) => `- ${tutorialUrl(item.id, 'en')} — ${item.title
 - Cite the original source URL when discussing a case.
 - Copy a prompt only when promptCompleteness is complete (or omitted for legacy records) and promptProvenance is official-verbatim or creator-verbatim.
 - Never publish or return a truncated Prompt excerpt.
-- When promptProvenance is not-published, state that the source did not publish a complete prompt.
+- When promptProvenance is not-published, state that this library has not retained a complete public prompt.
 - Do not derive a prompt or hidden workflow from a finished video.
 `
 
@@ -126,7 +126,7 @@ ${cases.map((item) => `## ${item.titleEn}
 - Prompt completeness: ${item.prompt ? (item.promptCompleteness ?? 'complete') : 'not-published'}
 - Chinese summary: ${item.summary}
 - English summary: ${item.summaryEn}
-${item.prompt ? `- Complete verbatim public prompt:\n\n\`\`\`text\n${item.prompt}\n\`\`\`` : '- Public prompt: not published completely by the source'}
+${item.prompt ? `- Complete verbatim public prompt:\n\n\`\`\`text\n${item.prompt}\n\`\`\`` : '- Public prompt: complete public text not retained in this library'}
 `).join('\n')}
 `
 
