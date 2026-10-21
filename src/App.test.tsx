@@ -9,6 +9,8 @@ import App from './App'
 import { startGoogleLogin } from './account-navigation'
 vi.mock('./account-navigation', () => ({ startGoogleLogin: vi.fn() }))
 import { languagePreferenceKey, provenanceLabel } from './i18n'
+import type { TutorialGuide } from './types'
+import { selectTutorialSpotlights } from './tutorial-spotlight'
 
 vi.mock('../data/cases.json', async (importOriginal) => {
   const original = await importOriginal<typeof import('../data/cases.json')>()
@@ -43,7 +45,7 @@ function releaseChip() {
 const latestUpdateSummary = [
   projectStats.latestUpdate.casesAdded ? `新增 ${projectStats.latestUpdate.casesAdded} 个案例` : '',
   projectStats.latestUpdate.promptsAdded ? `${projectStats.latestUpdate.promptsAdded} 条完整 Prompt` : '',
-  projectStats.latestUpdate.tutorialsAdded ? `${projectStats.latestUpdate.tutorialsAdded} 篇教程` : '',
+  projectStats.latestUpdate.tutorialsAdded ? `新增 ${projectStats.latestUpdate.tutorialsAdded} 篇教程` : '',
 ].filter(Boolean).slice(0, 2).join(' · ')
 const latestTutorials = tutorialGuides.filter(item => matchesAddedDate(item.addedAt, 'release', latestReleaseWindow(tutorialGuides.map(guide => guide.addedAt).sort().at(-1)) ?? {}))
 const projectTutorials = tutorialGuides.filter(item => item.guideType === 'project' && item.evidence.status === 'active')
@@ -637,7 +639,8 @@ describe('case-first routes', () => {
     expect(screen.getByRole('heading', { name: '直接做一个作品' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '更多教程' })).toBeInTheDocument()
     expect(within(screen.getByRole('region', { name: '第一次使用 H3' })).getByRole('link', { name: /NVIDIA/ })).toHaveAttribute('href', '/tutorials/official-deployment/')
-    expect(document.querySelectorAll('.foundation-route-card')).toHaveLength(projectTutorials.length)
+    const spotlightIds = new Set(selectTutorialSpotlights(tutorialGuides as unknown as TutorialGuide[], Date.now()).map((item) => item.id))
+    expect(document.querySelectorAll('.foundation-route-card')).toHaveLength(tutorialGuides.filter((item) => item.evidence.status === 'active' && (item.guideType === 'project' || spotlightIds.has(item.id))).length)
     expect(screen.getAllByRole('link', { name: /阅读全文/ }).length).toBeGreaterThan(10)
     expect(screen.getByRole('button', { name: '长文 2' })).toHaveAttribute('aria-pressed', 'false')
     expect(screen.queryByRole('heading', { name: '先看 MiniMax H3 的真实效果。' })).not.toBeInTheDocument()
@@ -715,9 +718,11 @@ describe('case-first routes', () => {
 
     expect(releaseChip()).toHaveAttribute('aria-pressed', 'true')
     expect(releaseChip()).toHaveTextContent(`本次新增${latestTutorials.length}`)
-    expect(screen.getByRole('heading', { name: '直接做一个作品' })).toBeInTheDocument()
+    const releaseSpotlightIds = new Set(selectTutorialSpotlights(latestTutorials as unknown as TutorialGuide[], Date.now()).map((item) => item.id))
+    const releasePractical = latestTutorials.filter((item) => item.evidence.status === 'active' && (item.guideType === 'project' || item.guideType === 'setup' || releaseSpotlightIds.has(item.id)))
+    expect(screen.getByRole('heading', { name: releasePractical.some((item) => item.guideType === 'setup') ? '入门与实战教程' : '直接做一个作品' })).toBeInTheDocument()
     expect(screen.getAllByText('新收录')).toHaveLength(latestTutorials.length)
-    expect(document.querySelectorAll('.foundation-route-card')).toHaveLength(latestTutorials.filter(item => item.guideType === 'project' && item.evidence.status === 'active').length)
+    expect(document.querySelectorAll('.foundation-route-card')).toHaveLength(releasePractical.length)
     expect(window.location.search).toBe('?added=release')
     expect(window.localStorage.getItem('minimax-h3-tutorials-seen-through-v2')).toBeNull()
 
@@ -845,7 +850,7 @@ describe('case-first routes', () => {
 
   it('filters tutorials by source format and keeps the choice in the URL', () => {
     renderAt('/tutorials/')
-    fireEvent.click(screen.getByRole('button', { name: '开源仓库 4' }))
+    fireEvent.click(screen.getByRole('button', { name: `开源仓库 ${tutorialGuides.filter((item) => item.source.platform === 'github').length}` }))
     expect(window.location.search).toContain('format=repository')
     expect(screen.getByRole('heading', { name: 'Mac 从零运行 H3：纯 C + Metal' })).toBeInTheDocument()
     expect(screen.queryByRole('heading', { name: '从零装机到第一条带声视频' })).not.toBeInTheDocument()

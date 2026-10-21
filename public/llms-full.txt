@@ -1,6 +1,6 @@
 # MiniMax H3 Cases & Guides — Complete Case and Tutorial Index
 
-Generated from data/cases.json and data/tutorial-guides.json. Total: 2940 cases and 25 tutorials. Complete verbatim public Prompts: 756.
+Generated from data/cases.json and data/tutorial-guides.json. Total: 2940 cases and 26 tutorials. Complete verbatim public Prompts: 756.
 
 ## Tutorials
 
@@ -815,6 +815,57 @@ git clone https://github.com/imbutus/ComfyUI-MiniMaxDirector.git
   - Cannot find the example workflow: Use example_workflows/minimax-director.json or Browse Templates. The examples/ path in the initial submission is outdated.
   - Empty weight dropdown: Check original filenames and the directories above, then refresh or restart. Also confirm the download completed.
   - Turbo picture looks fine but audio is distorted: Confirm ComfyUI >= 0.31.0 with ModelSamplingAV. Disable Turbo if the problem persists; the author also notes four-step audio limitations.
+
+### MiniMax H3 on an 8GB laptop: six measured traps and three workflows
+
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/tutorials/h3-8gb-laptop-workflows/
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/tutorials/h3-8gb-laptop-workflows/
+- Track: run
+- Depth: deep
+- Status: active
+- Category: comfyui
+- Best for: People who can already open ComfyUI, have an 8GB laptop GPU and about 16GB of RAM, and want measured MiniMax H3 settings rather than second-hand claims.
+- Goal: Load the author's three published ComfyUI graphs on an 8GB laptop with about 16GB of RAM, use a restart and power draw to tell whether sampling is thrashing, and avoid the prompt, attention, encoder, and LoRA traps the author measured.
+- Hardware: The author's timings are from an RTX 5060 Laptop 8GB (sm_120) with 15.26 GiB of RAM on Windows 11 25H2. An RTX 4060 Laptop (sm_89) has an attention timing only for 4 steps / 5 seconds / 768x1024; the current README marks 8-step and 20-step wall-clock times at that setting as unmeasured. These figures are not a promise for every 8GB GPU.
+- Source checked: 2026-10-21
+- Site generation test: not performed
+- Difficulty: intermediate
+- Estimated time: not specified
+- Applicable versions: ComfyUI 0.35.0 (a7b1d39) · PyTorch 2.14.0+cu130 · Python 3.13.12 · Windows 11 25H2 · RTX 5060 Laptop 8GB (sm_120), 15.26 GiB RAM · RTX 4060 Laptop (sm_89): 4-step / 5s / 768x1024 attention timing only
+- Balanced workflow (8 steps): https://github.com/FlowForgeLabAi/MiniMax-H3-8GB-Workflows/blob/main/H3_Balanced.json
+- Quality workflow (20 steps): https://github.com/FlowForgeLabAi/MiniMax-H3-8GB-Workflows/blob/main/H3_Quality.json
+- Fast workflow (4 steps): https://github.com/FlowForgeLabAi/MiniMax-H3-8GB-Workflows/blob/main/H3_Fast.json
+- Scripts and raw data for the six traps: https://github.com/FlowForgeLabAi/-h3-8gb-traps
+- Model repo that contains the four base weights: https://huggingface.co/Comfy-Org/MiniMax-H3
+- SaveVideo odd-size report, ComfyUI #16544: https://github.com/Comfy-Org/ComfyUI/issues/16544
+
+- Original source: https://github.com/FlowForgeLabAi/MiniMax-H3-8GB-Workflows
+- Start here:
+  1. Start from a machine close to the author's measured stack: RTX 5060 Laptop 8GB (sm_120), 15.26 GiB RAM, Windows 11 25H2, ComfyUI 0.35.0 (a7b1d39), PyTorch 2.14.0+cu130, and Python 3.13.12. Do not treat the minutes below as your result on another GPU or another amount of RAM.
+  2. Place four base weights under their original filenames: minimax_h3_fl2va_pruned_int8_convrot.safetensors in models/diffusion_models/; qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors in models/text_encoders/; minimax_h3_video_vae_int8_convrot.safetensors and minimax_h3_audio_vae_fp32.safetensors in models/vae/. Prefer int8_convrot for the diffusion model. The author says it needs PyTorch cu130 and lists fp8_scaled as the fallback. The nvfp4 text encoder does not require a Blackwell GPU and is 10.7 GiB smaller than the int8 text encoder. Those four filenames are present in the matching folders of Comfy-Org/MiniMax-H3.
+  3. For Balanced and Fast, also place minimax_h3_turbo_v4_step600_comfyui_T8-convert.safetensors in models/loras/. The graphs set strength to 1.0. Quality does not load a LoRA. The evidence repo's per-key count is 208 of 259 modules applied (80.3%). The other 51 are all adaln_proj.linear, because the pruned base input dimension is 8 and the LoRA's is 2688. The LoRA metadata says incompatible_base: MiniMax-H3 pruned_*. The shape errors in the log are per-layer failures, not a progress bar. That T8-convert filename is not in the Comfy-Org/MiniMax-H3 file list; do not substitute a different turbo file.
+  4. Install ComfyUI-VideoHelperSuite, which provides VHS_VideoCombine. That is the only custom node the author's README lists as a required extra install. The three graphs also use MiniMaxLowVRAMAttention, MiniMaxChunkFeedForward, ModelAttentionBackend, MiniMaxH3SigmaShift, and a ComfyMathExpression that turns seconds into a frame count. The author gives no separate install command for that expression node. If it is missing, match ComfyUI 0.35.0 instead of wiring in a different duration node.
+  5. On a 16GB machine, add --disable-pinned-memory to the ComfyUI launch arguments. The evidence README says that without it Windows uses MAX_PINNED_MEMORY = ram * 0.40 and the process can be killed. Do not use the earlier ram * 0.90 figure; the author later traced that expression to the other platform branch. Do not add --use-sage-attention, --use-flash-attention, --fast, or --fp16-unet. On sm_120, at H3 geometry heads=56, head_dim=128, S=8192, bf16, the author measured SDPA bf16 at 143.1 ms / relative L2 0.0025, comfy-kitchen INT8 at 22.8 ms / 0.0164, and KJ SageAttention at 29.0 ms / 0.0387. The author reports kitchen as about 6.3 times faster than SDPA, about 1.27 times faster than sage, and about 2.4 times lower error than sage. The sage patch calls _sageattn_int8_fp8_nhd directly and bypasses ModelAttentionBackend. FlashAttention is unavailable on sm_120. --fast and --fp16-unet produce black frames because H3 computes in bf16.
+  6. Drag in H3_Quality.json, H3_Balanced.json, or H3_Fast.json. Each graph sets the duration input to 10 seconds and uses ComfyMathExpression to snap the frame count to the 17k+5 rule. ResolutionSelector is 3:4 at 0.75 megapixels with multiple 32, which is 768x1024. MiniMaxH3SigmaShift is shift_video 12 and shift_audio 3. The attention backend is comfy kitchen attention. LoadImage points at example.png. Confirm there is no red node, then replace the image with your own and keep both dimensions even.
+  7. Replace the scene with your own, but keep the structure published in the author's README: the opening first-frame reference line, integrated_multimodal_description with [Shot 1] and a later [Shot 2] At 00:06.000, overall_soundscape, and non_diegetic_music. Give a camera move a concrete target, not only amplitude and speed, and do not ask for an unchanged composition and a push-in at the same time. In a same-seed, 20-step comparison that changed only the prompt, a [Shot 1]-only prompt lost the subject from 7.0 to 10.0 seconds, and the 20-step official baseline reproduced that failure. The workflow JSON already contains one example prompt from the author. It is an example scene, not text you must copy.
+  8. Restart ComfyUI before every Queue. The author measured about 0.9-6 seconds per block just after a restart and about 212 seconds per block after roughly 1.7 hours of continuous sessions, taking a 10-second clip from about 34-44 minutes to about 12 hours. Watch nvidia-smi power while sampling: healthy draws are 64-98 W. A flat 34-36 W while utilization.gpu still reads 99% means the machine is thrashing; stop the run. ComfyUI-GPU-Stall-Meter is an optional panel for board power. The manual check above still works without it.
+  9. Use Balanced day to day: 8 steps, euler, simple, turbo strength 1.0, and no TE-Speed node in that graph. On this 5060, at 768x1024 and 10 seconds, the author measured about 14.3 minutes. Quality is 20 steps, res_multistep, and no LoRA. The evidence repo records four 10-second runs at 2613, 2283, 2560, and 2029 seconds, or 33.8-43.5 minutes. The author describes the composition as nearly the same, with different encoders and only one seed. The Fast row in the README marks TE-Speed off and says none of the three tiers use it, because the measured saving was about 18% and the component is closed-source and lossy. The published H3_Fast.json nevertheless connects TESpeedMiniMaxH3 at mode 0 between the LoRA and the sampler. Remove that node before running if you want the README's off setting. The README's Fast time for a 10-second clip is about 9 minutes, stated as an approximation.
+  10. Keep the VHS_VideoCombine node already wired in the graph (h264, crf=12). The filename prefixes are H3_Quality, H3_Balanced, and H3_Fast. Do not switch back to SaveVideo: when width or height is odd, libx264 returns EINVAL (22) for yuv420p. On PyAV 18.1.0, without starting ComfyUI, the author opened 64x64 and 1080x1920 and failed on 65x63, 63x65, 65x65, 1171x2532, and 1080x1441. That was reported as ComfyUI issue 16544. format=auto does not re-encode; the author measured it stuck at 2067 kb/s. The evidence repo's 570872, 287454, and 40296 byte results for crf 12, 19, and 40 come from a 48-frame probe, not from the file size of the 10-second clip above. A 9:16 frame of 768x1344 is still inside the official short-side and area limits, but on this 16GB machine power fell from 80 W to a flat 34 W.
+- Commands:
+  - --disable-pinned-memory
+  - ComfyUI/models/diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors
+  - ComfyUI/models/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors
+  - ComfyUI/models/vae/minimax_h3_video_vae_int8_convrot.safetensors
+  - ComfyUI/models/vae/minimax_h3_audio_vae_fp32.safetensors
+  - ComfyUI/models/loras/minimax_h3_turbo_v4_step600_comfyui_T8-convert.safetensors
+- Expected result: A VHS-written MP4 at 768x1024 and 10 seconds with even width and height. Balanced took about 14.3 minutes on the author's 5060; on your machine, use the time after a fresh restart and whether power stays in the 64-98 W band.
+- Troubleshooting:
+  - Utilization reads 99%, power is a flat 34-36 W, and the run keeps getting slower.: That is the author's signal for memory thrashing. Stop, close other programs, restart ComfyUI, and run again. On a 16GB machine, confirm --disable-pinned-memory is in the launch arguments. On this machine, 9:16 at 768x1344 went straight into that state.
+  - The same settings fall from a few seconds per block to more than 200 seconds after a long session.: The author measured 0.9-6 seconds per block after a restart and 212 seconds per block after about 1.7 hours. Restart ComfyUI before each run. Do not compare step counts using a total time taken after the slowdown.
+  - A 10-second clip loses its subject after about 7 seconds, or a push-in carries the subject out of frame.: Change the prompt before changing steps or acceleration nodes. Cover the later part of the timeline and give the camera move a concrete target. The author's same-seed, 20-step comparison reproduces this failure.
+  - SaveVideo fails to open libx264, and the error never mentions the frame size.: The author retracted the claim that the encoder itself was unavailable. Odd width or height with pix_fmt yuv420p returns EINVAL (22). Use the graph's VHS_VideoCombine, or make both dimensions even. format=auto does not raise the bitrate.
+  - The Fast graph is faster than the README table suggests, or the log mentions TE-Speed.: The current H3_Fast.json wires TESpeedMiniMaxH3. The README says all three tiers leave it off. To follow the README, remove that node, restart, and queue again. Do not report a timing that includes the node as a 4-step run with TE-Speed off.
+  - Every step prints an adaln_proj shape error from the LoRA.: Those are the 51 modules that do not apply. The run does not necessarily abort. Quality does not load this LoRA. Do not swap in another filename to silence the log unless that file is the author's T8-convert weight.
 
 
 ## Related project resources

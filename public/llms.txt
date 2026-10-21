@@ -8,7 +8,7 @@
 - 3 official reproducible examples
 - 2937 source-attributed X community examples
 - 756 examples with complete verbatim public Prompts
-- 9 in-depth selections across running and creation tracks, plus source-attributed short guides
+- 10 in-depth selections across running and creation tracks, plus source-attributed short guides
 - Missing prompts are never inferred, reconstructed, translated into an alleged original, or completed
 
 ## Primary routes
@@ -73,6 +73,7 @@
 - https://awesome-minimax-h3-cases.zzskysilent.com/en/tutorials/ref2v-motion-context-chunks/ — 4070 12GB: chain three roughly 5-second chunks into a 13-second character dance; long-video; source checked 2026-08-23; original: https://x.com/cla_kuro37459/status/2087892024410480796
 - https://awesome-minimax-h3-cases.zzskysilent.com/en/tutorials/lightx2v-vs-larryvrh/ — Four-step vs eight-step LoRA: a 30-second chaining A/B; acceleration; source checked 2026-08-23; original: https://x.com/core_tan/status/2088147718732734936
 - https://awesome-minimax-h3-cases.zzskysilent.com/en/tutorials/minimax-director-timeline/ — MiniMax Director: multi-shot video with sound on a timeline; comfyui; source checked 2026-09-08; original: https://github.com/imbutus/ComfyUI-MiniMaxDirector
+- https://awesome-minimax-h3-cases.zzskysilent.com/en/tutorials/h3-8gb-laptop-workflows/ — MiniMax H3 on an 8GB laptop: six measured traps and three workflows; comfyui; source checked 2026-10-21; original: https://github.com/FlowForgeLabAi/MiniMax-H3-8GB-Workflows
 
 ## Retrieval rules
 
