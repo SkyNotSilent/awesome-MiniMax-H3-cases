@@ -139614,5 +139614,1355 @@
       "snapshotAt": "2026-10-20T11:05:56.636Z"
     },
     "approvedAt": "2026-10-20T11:05:56.636Z"
+  },
+  {
+    "id": "x-2102736678939222154",
+    "title": "绿幕女孩与发光环形空间",
+    "titleEn": "A green-screen girl beside glowing rings",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "左侧的绿幕女孩与右侧发光环形空间并列，镜头穿过环形结构，光球、闪电与光线条纹在女孩周围展开。 原生视频规格为 15 秒 · 1440×1280。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A green-screen girl appears beside a glowing ring space as the camera flies through it, with a moving light, lightning, and streaks around her. Native-video output: 15s · 1440×1280. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/aicreataro/status/2102736678939222154",
+    "sourceLabel": "X 原帖 · @aicreataro",
+    "author": "aicreataro",
+    "publishedAt": "2026-09-23T12:27:45.000Z",
+    "addedAt": "2026-10-21T00:16:37.317Z",
+    "mediaUrl": "/media/x-2102736678939222154.mp4",
+    "posterUrl": "/posters/x/2102736678939222154.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1440×1280",
+    "tags": [
+      "MiniMax H3",
+      "本地生成与工作流",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "workflow",
+    "styles": [
+      "motion-graphics"
+    ],
+    "scenes": [],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Opus 5.5にAfter Effectsを操作させるテスト、その2。\n今回はカメラワークと3D空間。\n\n■ベース\nMiniMax H3で、グリーンバックの女の子を10秒だけ\n\n■AEでやらせたこと\n・AEの3D機能だけで、キューブやリングの空間を組む\n・カメラが1本の軌道で飛び抜ける（加速・減速・ロール・ズームまで）\n・光の球を照明として走らせて、通ったところだけ照らす\n・リングを曲の拍で点灯、稲妻や光の筋も追加\n・女の子をキーイングして、3D空間の奥に配置\n\n■わかったこと\n・カメラワークもいける。数値で指示するより「ここで速く」「ここでゆっくり」で通じる\n・グリーンバックで作っておけば、AIの素材が色々と使えそう。\n\n左がH3の素材、右がAEの後です。",
+    "engagement": {
+      "replies": 3,
+      "reposts": 17,
+      "likes": 115,
+      "views": 9634,
+      "snapshotAt": "2026-10-21T00:16:37.317Z"
+    },
+    "approvedAt": "2026-10-21T00:16:37.317Z",
+    "editorialBasis": "The creator identifies the girl as MiniMax H3 material and the surrounding camera effects as After Effects work; both halves remain visible."
+  },
+  {
+    "id": "x-2102735883019366843",
+    "title": "头盔探险者穿越岩石溪流",
+    "titleEn": "A helmeted explorer moves through a rocky stream",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "身穿沙色装备的头盔人物沿着岩石溪流前行，镜头先从身后跟随，随后靠近面罩中的面部。 原生视频规格为 45 秒 · 3104×1642。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A helmeted figure in tan gear moves along a rocky stream; the camera follows from behind before closing in on the face behind the visor. Native-video output: 45s · 3104×1642. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/MartinNebelong/status/2102735883019366843",
+    "sourceLabel": "X 原帖 · @MartinNebelong",
+    "author": "Martin Nebelong",
+    "publishedAt": "2026-09-23T12:24:36.000Z",
+    "addedAt": "2026-10-21T00:16:37.318Z",
+    "mediaUrl": "/media/x-2102735883019366843.mp4",
+    "posterUrl": "/posters/x/2102735883019366843.jpg",
+    "duration": 45,
+    "aspectRatio": "landscape",
+    "resolution": "3104×1642",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [],
+    "scenes": [
+      "nature"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Gaussian splats in Blender 5.3! Had to take it for a quick spin ofc - here with a scene I did using a generated image, Minimax H3-Max camera control through http://fal.ai - converted to Gaussian splats with @KIRI_Engine_App.\n\nIt is possible to relight scenes with Gaussian Splats too, but it was pretty sloggish for me, even on a 5090. Could probably get better results with some optimization.\n\nIt is kinda crazy to see this unfold - from image, to video, to 3d to dynamic generative worlds.",
+    "engagement": {
+      "replies": 14,
+      "reposts": 44,
+      "likes": 345,
+      "views": 23303,
+      "snapshotAt": "2026-10-21T00:16:37.318Z"
+    },
+    "approvedAt": "2026-10-21T00:16:37.318Z",
+    "editorialBasis": "The creator attributes camera control to MiniMax H3-Max and describes a Gaussian-splat conversion; the moving figure remains the focus of the scene."
+  },
+  {
+    "id": "x-2102734741334356032",
+    "title": "女仆伸手整理桌面图标",
+    "titleEn": "A maid reaches across desktop icons",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "粉发女仆出现在铺满应用图标的桌面中，弯身伸手整理图标，随后回到面向观众的姿态。 原生视频规格为 9 秒 · 1890×1080。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A pink-haired maid appears on a desktop filled with app icons, bends to reach across them, then returns to face the viewer. Native-video output: 9s · 1890×1080. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Mayz1169/status/2102734741334356032",
+    "sourceLabel": "X 原帖 · @Mayz1169",
+    "author": "Kiki",
+    "publishedAt": "2026-09-23T12:20:03.000Z",
+    "addedAt": "2026-10-21T00:16:37.318Z",
+    "mediaUrl": "/media/x-2102734741334356032.mp4",
+    "posterUrl": "/posters/x/2102734741334356032.jpg",
+    "duration": 9,
+    "aspectRatio": "landscape",
+    "resolution": "1890×1080",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime"
+    ],
+    "scenes": [
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "maybe cleaning my desktop wasn’t such a good idea 😭\n\ncreated with MiniMax H3 on @renoiseai \n\nPrompt below ⤵️",
+    "engagement": {
+      "replies": 1,
+      "reposts": 9,
+      "likes": 91,
+      "views": 9926,
+      "snapshotAt": "2026-10-21T00:16:37.318Z"
+    },
+    "approvedAt": "2026-10-21T00:16:37.318Z",
+    "editorialBasis": "The creator attributes the animated maid scene to MiniMax H3 on Renoise.ai."
+  },
+  {
+    "id": "x-2102733546456748467",
+    "title": "银发角色跟随参考镜头动作",
+    "titleEn": "A silver-haired character follows a reference camera move",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "银发动漫角色身穿红白服装，在浅灰背景前抬起双手，随后一手扶腰、另一手指向一侧。 原生视频规格为 4 秒 · 832×1504。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A silver-haired anime character in red and white raises both hands, then rests one hand at her waist and points to the side against a pale gray background. Native-video output: 4s · 832×1504. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/fnoji/status/2102733546456748467",
+    "sourceLabel": "X 原帖 · @fnoji",
+    "author": "えふのじ",
+    "publishedAt": "2026-09-23T12:15:19.000Z",
+    "addedAt": "2026-10-21T00:37:48.393Z",
+    "mediaUrl": "/media/x-2102733546456748467.mp4",
+    "posterUrl": "/posters/x/2102733546456748467.jpg",
+    "duration": 4,
+    "aspectRatio": "portrait",
+    "resolution": "832×1504",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime"
+    ],
+    "scenes": [
+      "performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3で参照映像をベースにカメラやキャラクターの動きを微調整するのは普通に出来るっぽい\nカメラを指定してないトレースだとこう\n\n雰囲気モーショントレースに失敗しそうでカメラ360度回したりするのは難しい気はするけど",
+    "engagement": {
+      "replies": 0,
+      "reposts": 3,
+      "likes": 52,
+      "views": 2960,
+      "snapshotAt": "2026-10-21T00:37:48.393Z"
+    },
+    "approvedAt": "2026-10-21T00:37:48.393Z",
+    "editorialBasis": "作者将参考视频和镜头跟踪效果与 MiniMax H3 联系起来。视频展示角色动作和镜头变化，未见 H3 标识。"
+  },
+  {
+    "id": "x-2102751289172209992",
+    "title": "装甲少女跃动在手机图标间",
+    "titleEn": "An armored girl among phone icons",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "手机桌面上的装甲动漫角色在应用图标间跃动，画面切换到太阳系壁纸后停在角色身旁。 原生视频规格为 15 秒 · 1440×2560。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "An armored anime character moves among phone app icons before the view shifts to a solar-system wallpaper and settles beside the character. Native-video output: 15s · 1440×2560. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/kurahu_capten/status/2102751289172209992",
+    "sourceLabel": "X 原帖 · @kurahu_capten",
+    "author": "kurahu@AIart",
+    "publishedAt": "2026-09-23T13:25:49.000Z",
+    "addedAt": "2026-10-21T00:37:48.394Z",
+    "mediaUrl": "/media/x-2102751289172209992.mp4",
+    "posterUrl": "/posters/x/2102751289172209992.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "1440×2560",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [],
+    "scenes": [],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Good night. Let’s do our best again starting tomorrow.✨\n\nAI video created with MiniMax H3 Max via TopView.\nPrompt ⬇️",
+    "engagement": {
+      "replies": 3,
+      "reposts": 4,
+      "likes": 38,
+      "views": 3187,
+      "snapshotAt": "2026-10-21T00:37:48.394Z"
+    },
+    "approvedAt": "2026-10-21T00:37:48.394Z",
+    "editorialBasis": "作者明确标注该 AI 视频由 MiniMax H3 制作，并经 TopView 生成。"
+  },
+  {
+    "id": "x-2102649806095344065",
+    "title": "月蚀绮谭的暗色与流光",
+    "titleEn": "Dark armor and flowing color for Gesshoku Kitan",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "影片从暗色头盔特写转到彩色液体般的光带流过桌面，最后以《月蚀绮谭》同人作品标题收尾。 原生视频规格为 236 秒 · 1080×1920。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "The video moves from a close view of a dark helmet to a colorful liquid-like ribbon flowing across a table, then ends on a title card for the fan-made Gesshoku Kitan project. Native-video output: 236s · 1080×1920. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/H1NATApapa/status/2102649806095344065",
+    "sourceLabel": "X 原帖 · @H1NATApapa",
+    "author": "よーすけ｜3交代工場勤務のAIアニメーター",
+    "publishedAt": "2026-09-23T06:42:33.000Z",
+    "addedAt": "2026-10-21T00:37:48.394Z",
+    "mediaUrl": "/media/x-2102649806095344065.mp4",
+    "posterUrl": "/posters/x/2102649806095344065.jpg",
+    "duration": 236,
+    "aspectRatio": "portrait",
+    "resolution": "1080×1920",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "music",
+    "styles": [],
+    "scenes": [],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "話題のClaude Opus 5.5を使ってみました。\n\n月蝕綺譚のタイトル曲に、最初から最後まで画をつけた3分56秒のファンメイドMVです。\n\n夕暮れの里から始まって、月が喰われる夜を越えて、朝が来るまでの一晩。\n\nいままで作った紹介映像やPVのうち、反応がよかった見せ方だけを集めました。\n里ごとのコマ割り、必殺技のカットイン、曲が止まる所に一語だけ置く型。\n\n動く素材がまだ無い石舟斎と金鬼は、公式の立ち絵をもとに新しく描いて動かしてもらいました。\n\n構成を考えるところから組み立てまで、Opus 5.5のAI秘書に任せました。私は見て「最初に掴みがほしい」「ここは変」と言うだけです。\n\n※非公式のファンメイドです。公式ではありません。\n\n====\n\n音楽：「月蝕綺譚」タイトル曲（メインテーマ）\n素材：月蝕綺譚 公式配布（お披露目動画・必殺カットイン・背景画・正典）\n画像：GPT Image 2.5\n動画：MiniMax H3 Max Turbo\n背景の拡大：Real-ESRGAN\n編集：Claude Code（Claude Opus 5.5）\n\n#月蝕綺譚",
+    "engagement": {
+      "replies": 0,
+      "reposts": 1,
+      "likes": 3,
+      "views": 288,
+      "snapshotAt": "2026-10-21T00:37:48.394Z"
+    },
+    "approvedAt": "2026-10-21T00:37:48.394Z",
+    "editorialBasis": "作者把视频生成环节明确标注为 MiniMax H3 Max Turbo；其他素材和后期工具也单独列出。"
+  },
+  {
+    "id": "x-2112678076895138199",
+    "title": "奶泡中的小幽灵",
+    "titleEn": "A tiny ghost in latte foam",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "牛奶倒入咖啡后，白色奶泡铺开并形成一个眨眼的小幽灵，俯拍镜头保持固定。 原生视频规格为 15 秒 · 3456×1920。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "Milk pours into coffee as white foam spreads into a tiny ghost that blinks once, shown from a steady top-down view. Native-video output: 15s · 3456×1920. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "the white foam spreads across the top into a little ghost with two dark eyes that blinks once",
+    "promptSourceUrl": "https://x.com/GlennHasABeard/status/2112678076895138199",
+    "sourceUrl": "https://x.com/GlennHasABeard/status/2112678076895138199",
+    "sourceLabel": "X 原帖 · @GlennHasABeard",
+    "author": "Glenn Williams",
+    "publishedAt": "2026-10-20T22:51:19.000Z",
+    "addedAt": "2026-10-21T00:37:48.394Z",
+    "mediaUrl": "/media/x-2112678076895138199.mp4",
+    "posterUrl": "/posters/x/2112678076895138199.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "3456×1920",
+    "tags": [
+      "MiniMax H3",
+      "本地生成与工作流",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "workflow",
+    "styles": [],
+    "scenes": [
+      "food"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Minimax H3, open weights, generated locally. Latte art, unsupervised.\n\nPrompt: \"the white foam spreads across the top into a little ghost with two dark eyes that blinks once\"\n\nDuration: 15s. Camera: locked, top-down. Rendered locally in ComfyUI, then Topaz to 4K.\n\nLatte art is a pour, not a drawing, so the ghost comes out of the stream itself. The eyes are bare coffee, which keeps them flat.",
+    "engagement": {
+      "replies": 4,
+      "reposts": 1,
+      "likes": 13,
+      "views": 336,
+      "snapshotAt": "2026-10-21T00:37:48.394Z"
+    },
+    "approvedAt": "2026-10-21T00:37:48.394Z",
+    "editorialBasis": "作者明确标注 MiniMax H3，并在原帖中提供完整提示词。"
+  },
+  {
+    "id": "x-2103121759096668418",
+    "title": "霓虹立方体中的人物",
+    "titleEn": "A figure inside neon cubes",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "一段由 MiniMax H3 生成的短片被转成立方体画面，在霓虹空间中加入环绕与残像效果。 原生视频规格为 15 秒 · 1080×960。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A short MiniMax H3 source clip becomes a field of cubes, with orbiting and echo effects in a neon space. Native-video output: 15s · 1080×960. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/aicreataro/status/2103121759096668418",
+    "sourceLabel": "X 原帖 · @aicreataro",
+    "author": "aicreataro",
+    "publishedAt": "2026-09-24T13:57:56.000Z",
+    "addedAt": "2026-10-21T00:37:48.394Z",
+    "mediaUrl": "/media/x-2103121759096668418.mp4",
+    "posterUrl": "/posters/x/2103121759096668418.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1080×960",
+    "tags": [
+      "MiniMax H3",
+      "本地生成与工作流",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "workflow",
+    "styles": [],
+    "scenes": [],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Opus 5.5にBlenderを操作させて、AI動画を加工するテスト。\n\n■ベース\nMiniMax H3 で15秒を1本\n\n■Blenderでやらせたこと\n・全フレームの奥行きを推定して、映像を約1万個のキューブに置き換え\n・時間を止めて回り込む／残像を並べる／万華鏡／重力で崩して巻き戻す、を4拍ごとに\n・周りにネオンの空間を作って、暗い状態から場面ごとに点灯\n\n■わかったこと\n・固定カメラ1台のAI映像でも、3Dにすれば回り込める\n・.blendで残るので、あとから人の手で直せる\n・光を盛りすぎると主役が埋もれる。そこは人が見て止めないとダメ\n\nBlenderは「映像の中に入れる」感じでしょうか。AIで作った素材を、AIでは撮れない画にできるのは面白いですね。ただ、文字とかあまり上手くいってないので、もっと使える人が使うと全然凄いんだろうなと思いました。",
+    "engagement": {
+      "replies": 2,
+      "reposts": 11,
+      "likes": 94,
+      "views": 11567,
+      "snapshotAt": "2026-10-21T00:37:48.394Z"
+    },
+    "approvedAt": "2026-10-21T00:37:48.394Z",
+    "editorialBasis": "作者说明基础素材由 MiniMax H3 生成，并展示 Blender 后期处理。"
+  },
+  {
+    "id": "x-2103098276857925871",
+    "title": "芙宁娜的喷嚏",
+    "titleEn": "Furina sneezes",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "电脑桌面应用图标中的芙宁娜打了个喷嚏，随后做出反应。 原生视频规格为 9 秒 · 1344×768。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "Furina sneezes among the desktop app icons, then reacts. Native-video output: 9s · 1344×768. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Mayz1169/status/2103098276857925871",
+    "sourceLabel": "X 原帖 · @Mayz1169",
+    "author": "Kiki",
+    "publishedAt": "2026-09-24T12:24:37.000Z",
+    "addedAt": "2026-10-21T00:37:48.394Z",
+    "mediaUrl": "/media/x-2103098276857925871.mp4",
+    "posterUrl": "/posters/x/2103098276857925871.jpg",
+    "duration": 9,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime"
+    ],
+    "scenes": [
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3 - Prompt Share 💦\n\nFurina accidentally sneezed... I saw nothing lol\n\ncreated on @renoiseai\n\nPrompt below ⤵️",
+    "engagement": {
+      "replies": 2,
+      "reposts": 4,
+      "likes": 53,
+      "views": 6395,
+      "snapshotAt": "2026-10-21T00:37:48.394Z"
+    },
+    "approvedAt": "2026-10-21T00:37:48.394Z",
+    "editorialBasis": "作者标注 MiniMax H3 并指向 RenoiseAI；原帖提示词未完整提供。"
+  },
+  {
+    "id": "x-2103101105354002700",
+    "title": "白色大厅中的舞步",
+    "titleEn": "A dance in the white hall",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "一名动漫角色在明亮的大厅中起舞，镜头从正面转向俯视，再拉回远景。 原生视频规格为 15 秒 · 3840×2160。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "An anime character dances in a bright hall as the view shifts overhead and then pulls back. Native-video output: 15s · 3840×2160. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/sorastg524/status/2103101105354002700",
+    "sourceLabel": "X 原帖 · @sorastg524",
+    "author": "sorastg524",
+    "publishedAt": "2026-09-24T12:35:51.000Z",
+    "addedAt": "2026-10-21T00:37:48.394Z",
+    "mediaUrl": "/media/x-2103101105354002700.mp4",
+    "posterUrl": "/posters/x/2103101105354002700.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "3840×2160",
+    "tags": [
+      "MiniMax H3",
+      "舞蹈",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "dance",
+    "styles": [
+      "anime"
+    ],
+    "scenes": [
+      "dance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "#AIart #MiniMaxH3MaxTurbo #Video2X\n実験的カメラワークテスト 16:9版\n（MiniMax H3 Max Turbo 出力動画+Video2X anime4k-v4-a+a）",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 15,
+      "views": 448,
+      "snapshotAt": "2026-10-21T00:37:48.394Z"
+    },
+    "approvedAt": "2026-10-21T00:37:48.394Z",
+    "editorialBasis": "作者明确标注 MiniMax H3 Max Turbo 输出，并说明经过 Video2X 处理。"
+  },
+  {
+    "id": "x-2103082919552274536",
+    "title": "柱廊中的镜头实验",
+    "titleEn": "Camera moves through a colonnade",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "一名动漫角色在柱廊空间中舞动，镜头逐渐靠近人物并转为广角。 原生视频规格为 15 秒 · 768×1344。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "An anime character moves through a colonnade as the camera closes in and then widens. Native-video output: 15s · 768×1344. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/sorastg524/status/2103082919552274536",
+    "sourceLabel": "X 原帖 · @sorastg524",
+    "author": "sorastg524",
+    "publishedAt": "2026-09-24T11:23:36.000Z",
+    "addedAt": "2026-10-21T00:37:48.394Z",
+    "mediaUrl": "/media/x-2103082919552274536.mp4",
+    "posterUrl": "/posters/x/2103082919552274536.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "768×1344",
+    "tags": [
+      "MiniMax H3",
+      "舞蹈",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "dance",
+    "styles": [
+      "anime"
+    ],
+    "scenes": [
+      "dance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "#AIart #MiniMaxH3MaxTurbo \n実験的カメラワークテスト\n（MiniMax H3 Max Turbo 出力動画ポン出し）",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 8,
+      "views": 368,
+      "snapshotAt": "2026-10-21T00:37:48.394Z"
+    },
+    "approvedAt": "2026-10-21T00:37:48.394Z",
+    "editorialBasis": "作者明确标注该片为 MiniMax H3 Max Turbo 原始输出。"
+  },
+  {
+    "id": "x-2103072512149946851",
+    "title": "厨师的复仇",
+    "titleEn": "The chef’s revenge",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "厨房里，一只小动物端来蛋糕，蛋糕滑落到厨师头上，最后留下满地狼藉。 原生视频规格为 15 秒 · 1344×768。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A small animal carries a cake through a kitchen; it falls onto the chef, leaving a messy aftermath. Native-video output: 15s · 1344×768. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/awesome_visuals/status/2103072512149946851",
+    "sourceLabel": "X 原帖 · @awesome_visuals",
+    "author": "awesome_visuals",
+    "publishedAt": "2026-09-24T10:42:14.000Z",
+    "addedAt": "2026-10-21T00:37:48.394Z",
+    "mediaUrl": "/media/x-2103072512149946851.mp4",
+    "posterUrl": "/posters/x/2103072512149946851.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "stylized"
+    ],
+    "scenes": [
+      "food"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "the chef's revenge.\n\nmade with MiniMax H3 Max @Hailuo_AI",
+    "engagement": {
+      "replies": 7,
+      "reposts": 5,
+      "likes": 65,
+      "views": 14862,
+      "snapshotAt": "2026-10-21T00:37:48.394Z"
+    },
+    "approvedAt": "2026-10-21T00:37:48.394Z",
+    "editorialBasis": "作者明确标注 MiniMax H3 Max 制作。"
+  },
+  {
+    "id": "x-2102597320361586742",
+    "title": "少女面前的文字变成蛋糕",
+    "titleEn": "Letters become a cake",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "书桌前的少女看着文字在空中浮现，随后变成一块装饰着奶油和水果的蛋糕。 原生视频规格为 15 秒 · 1664×960。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "Letters rise in three dimensions before a student at her desk, then transform into a cake. Native-video output: 15s · 1664×960. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/yudotanaka/status/2102597320361586742",
+    "sourceLabel": "X 原帖 · @yudotanaka",
+    "author": "田中勇道 | AI画像・動画生成",
+    "publishedAt": "2026-09-23T03:14:00.000Z",
+    "addedAt": "2026-10-21T00:37:48.395Z",
+    "mediaUrl": "/media/x-2102597320361586742.mp4",
+    "posterUrl": "/posters/x/2102597320361586742.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1664×960",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [
+      "anime"
+    ],
+    "scenes": [
+      "food",
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "不意に言霊を動画化したくなったので、GPT Image 2.5＋MiniMax H3 Maxで立体文字→ケーキの動画生成。やっぱりMiniMax H3は文字の破綻が起きづらいので良いですね。しかも生成速度も早い。\n@pixverse　#pixversecpp",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 3,
+      "views": 336,
+      "snapshotAt": "2026-10-21T00:37:48.395Z"
+    },
+    "approvedAt": "2026-10-21T00:37:48.395Z",
+    "editorialBasis": "作者は GPT Image 2.5 と MiniMax H3 Max を使った生成と説明している。"
+  },
+  {
+    "id": "x-2103498783770194089",
+    "title": "控制台旁的疲惫守卫",
+    "titleEn": "A tired keeper at the console",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "一只疲惫的卡通角色守在控制台旁，随后另一位角色走进房间，最后出现一排相似身影。 原生视频规格为 10 秒 · 2560×1440。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A tired cartoon figure guards a console as another character enters, followed by a row of similar figures. Native-video output: 10s · 2560×1440. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/bonnyxen/status/2103498783770194089",
+    "sourceLabel": "X 原帖 · @bonnyxen",
+    "author": "Bonny",
+    "publishedAt": "2026-09-25T14:56:05.000Z",
+    "addedAt": "2026-10-21T00:37:48.395Z",
+    "mediaUrl": "/media/x-2103498783770194089.mp4",
+    "posterUrl": "/posters/x/2103498783770194089.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "stylized"
+    ],
+    "scenes": [
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "OPUS 5.5 TOOK 12 HOURS. MINIMAX H3 MADE THIS FROM ONE PROMPT IN 5 MINUTES\n\nno iterations, no storyboard, barely any directing\n\nClaude's version is better and editable because it built the animation in code. H3 gave me a finished 10-second clip, so it's not a clean benchmark\n\nstill, H3 starts at $0.08 per second and a full 15-second 2K video with native stereo audio costs $1.95\n\nif the lazy first try already looks like this, imagine what happens when people actually learn how to direct it",
+    "engagement": {
+      "replies": 3,
+      "reposts": 1,
+      "likes": 36,
+      "views": 2214,
+      "snapshotAt": "2026-10-21T00:37:48.395Z"
+    },
+    "approvedAt": "2026-10-21T00:37:48.395Z",
+    "editorialBasis": "作者明确表示这段短片由 MiniMax H3 根据一个提示生成。"
+  },
+  {
+    "id": "x-2103464588348108939",
+    "title": "雪原上的兔将军",
+    "titleEn": "Rabbit generals on the snowy plain",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "兔子武将率领骑兵冲过雪原，画面最后停在游戏标题与战场场景。 原生视频规格为 132 秒 · 1294×720。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "Rabbit generals lead mounted fighters across a snowy field before the scene closes on a game title. Native-video output: 132s · 1294×720. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/KanaWorks_AI/status/2103464588348108939",
+    "sourceLabel": "X 原帖 · @KanaWorks_AI",
+    "author": "KANA｜東京AI映像",
+    "publishedAt": "2026-09-25T12:40:13.000Z",
+    "addedAt": "2026-10-21T00:37:48.395Z",
+    "mediaUrl": "/media/x-2103464588348108939.mp4",
+    "posterUrl": "/posters/x/2103464588348108939.jpg",
+    "duration": 132,
+    "aspectRatio": "landscape",
+    "resolution": "1294×720",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "action-vfx",
+    "styles": [
+      "stylized"
+    ],
+    "scenes": [
+      "combat",
+      "fantasy"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Opus 5.5 × Three.js × MiniMax H3\n「三国兎将志・白雷興兵」\n\n逃げる曹操を、兎が追う\n紅の袍を捨て、髯を断ち――\n三国演義「割鬚棄袍」の名場面を、兎将KANAの騎馬無双で駆け抜けろ🐰\n\nCode：Claude Opus 5.5 \nVideo:  MInimax H3 @capcutapp_jp",
+    "engagement": {
+      "replies": 2,
+      "reposts": 8,
+      "likes": 74,
+      "views": 5239,
+      "snapshotAt": "2026-10-21T00:37:48.395Z"
+    },
+    "approvedAt": "2026-10-21T00:37:48.395Z",
+    "editorialBasis": "作者将代码归于 Opus 5.5，并将主片标注为 MiniMax H3。"
+  },
+  {
+    "id": "x-2103459468528824434",
+    "title": "霓虹舞台上的独舞",
+    "titleEn": "A solo dance on a neon stage",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "一名舞者在深色舞台上随节奏起舞，几何霓虹灯光在身后闪烁。 原生视频规格为 15 秒 · 1344×768。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A dancer moves across a dark stage as geometric neon lights flash behind him. Native-video output: 15s · 1344×768. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/PaulRaimi11/status/2103459468528824434",
+    "sourceLabel": "X 原帖 · @PaulRaimi11",
+    "author": "Paul Raimi💊",
+    "publishedAt": "2026-09-25T12:19:52.000Z",
+    "addedAt": "2026-10-21T01:19:04.781Z",
+    "mediaUrl": "/media/x-2103459468528824434.mp4",
+    "posterUrl": "/posters/x/2103459468528824434.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "舞蹈",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "dance",
+    "styles": [
+      "dark",
+      "stylized"
+    ],
+    "scenes": [
+      "dance",
+      "performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "A dance video generated with Minimax H3 Max (\"/minimax/h3-max/text-to-video\") via @tempo’s Mercator tool.\n\nWhat makes this especially interesting is the infrastructure underneath it.\n\n@mpp and @x402 are power technologies for machine-to-machine payments, making it easier for AI agents and applications to access tools and services that would otherwise be difficult or cumbersome to reach.\n\nWe’re moving toward a world where AI agents can access and pay for capabilities on their own. 🤖⚡",
+    "engagement": {
+      "replies": 1,
+      "reposts": 0,
+      "likes": 2,
+      "views": 193,
+      "snapshotAt": "2026-10-21T01:19:04.781Z"
+    },
+    "approvedAt": "2026-10-21T01:19:04.781Z",
+    "editorialBasis": "作者说明这段舞蹈视频由 MiniMax H3 Max 生成。"
+  },
+  {
+    "id": "x-2103440888525681066",
+    "title": "户外小路上的奇幻身影",
+    "titleEn": "A fantastical figure on an outdoor path",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "镜头从户外小路和远处的行人切换到工作台旁的圆头小人，呈现一段音乐视频片段。 原生视频规格为 15 秒 · 1280×720。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "The view shifts from a person on an outdoor path to a round-headed figure at a worktable in a music video sequence. Native-video output: 15s · 1280×720. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/tapehead_Lab/status/2103440888525681066",
+    "sourceLabel": "X 原帖 · @tapehead_Lab",
+    "author": "tapehead.lab",
+    "publishedAt": "2026-09-25T11:06:02.000Z",
+    "addedAt": "2026-10-21T01:19:04.781Z",
+    "mediaUrl": "/media/x-2103440888525681066.mp4",
+    "posterUrl": "/posters/x/2103440888525681066.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1280×720",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "music",
+    "styles": [],
+    "scenes": [
+      "nature",
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "新しいMVを作っています🎬\nmInimax h3-max-turboのおかげで、作り方が変わる",
+    "engagement": {
+      "replies": 3,
+      "reposts": 8,
+      "likes": 131,
+      "views": 12967,
+      "snapshotAt": "2026-10-21T01:19:04.781Z"
+    },
+    "approvedAt": "2026-10-21T01:19:04.781Z",
+    "editorialBasis": "作者将新的 MV 制作变化归因于 MiniMax H3 Max Turbo。"
+  },
+  {
+    "id": "x-2103838758265127070",
+    "title": "汴梁水巷的繁华景象",
+    "titleEn": "Bustling waterways of Bianliang",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "石桥横跨繁忙的水道，两岸密集的古建筑沿着河流延伸。 原生视频规格为 21 秒 · 2520×1440。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A stone bridge crosses a busy waterway lined with dense historic buildings. Native-video output: 21s · 2520×1440. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/MindfulReturn/status/2103838758265127070",
+    "sourceLabel": "X 原帖 · @MindfulReturn",
+    "author": "MindfulReturn 身心修复局",
+    "publishedAt": "2026-09-26T13:27:02.000Z",
+    "addedAt": "2026-10-21T01:19:04.782Z",
+    "mediaUrl": "/media/x-2103838758265127070.mp4",
+    "posterUrl": "/posters/x/2103838758265127070.jpg",
+    "duration": 21,
+    "aspectRatio": "landscape",
+    "resolution": "2520×1440",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [],
+    "scenes": [
+      "city"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "来看看全盛时期的大宋汴梁\n生成自 12G 显卡的 MiniMax H3",
+    "engagement": {
+      "replies": 7,
+      "reposts": 13,
+      "likes": 101,
+      "views": 21106,
+      "snapshotAt": "2026-10-21T01:19:04.782Z"
+    },
+    "approvedAt": "2026-10-21T01:19:04.782Z",
+    "editorialBasis": "作者说明画面由 MiniMax H3 生成。"
+  },
+  {
+    "id": "x-2103828594053325201",
+    "title": "咖啡馆里的相亲对话",
+    "titleEn": "A matchmaking conversation in a café",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "一对男女在咖啡馆交谈，镜头在两人的近景之间切换，呈现一段关于婚后分工的对话。 原生视频规格为 13 秒 · 1260×720。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A man and woman talk in a café as the view cuts between them during a conversation about expectations after marriage. Native-video output: 13s · 1260×720. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "2026年，上海。一个男人与一个女人在咖啡馆，喝咖啡，聊天。\n\n近景，女人问: \"有房吗？\"\n近景，男人说：”有“\n近景，女人问: \"有车吗？\"\n近景，男人说：”有\"\n特写，女人说: \"基础条件可以，但我还有几个条件。\"\n特写，女人继续说: \"婚后我们单住，你的父母不能过来住，你的工资全部上交，家务你全包\"\n特写，男人说：”那你呢？\"\n特写，女人问: \"我只负责享受。\"\n特写，男人说：”那我还不如养条狗，要你干嘛？\"\n\n注意，不要加字幕。",
+    "promptSourceUrl": "https://x.com/tangpanqing/status/2103828594053325201",
+    "sourceUrl": "https://x.com/tangpanqing/status/2103828594053325201",
+    "sourceLabel": "X 原帖 · @tangpanqing",
+    "author": "汤光头",
+    "publishedAt": "2026-09-26T12:46:38.000Z",
+    "addedAt": "2026-10-21T01:19:04.782Z",
+    "mediaUrl": "/media/x-2103828594053325201.mp4",
+    "posterUrl": "/posters/x/2103828594053325201.jpg",
+    "duration": 13,
+    "aspectRatio": "landscape",
+    "resolution": "1260×720",
+    "tags": [
+      "MiniMax H3",
+      "角色对白",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "dialogue",
+    "styles": [],
+    "scenes": [
+      "dialogue",
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "来来来，3分钟创作一个爆火短视频\n\n模型MiniMax H3 工具 http://PixStag.com\n\n提示词，直接复制走：\n\n2026年，上海。一个男人与一个女人在咖啡馆，喝咖啡，聊天。\n\n近景，女人问: \"有房吗？\"\n近景，男人说：”有“\n近景，女人问: \"有车吗？\"\n近景，男人说：”有\"\n特写，女人说: \"基础条件可以，但我还有几个条件。\"\n特写，女人继续说: \"婚后我们单住，你的父母不能过来住，你的工资全部上交，家务你全包\"\n特写，男人说：”那你呢？\"\n特写，女人问: \"我只负责享受。\"\n特写，男人说：”那我还不如养条狗，要你干嘛？\"\n\n注意，不要加字幕。",
+    "engagement": {
+      "replies": 10,
+      "reposts": 11,
+      "likes": 73,
+      "views": 16899,
+      "snapshotAt": "2026-10-21T01:19:04.782Z"
+    },
+    "approvedAt": "2026-10-21T01:19:04.782Z",
+    "editorialBasis": "作者标注 MiniMax H3，并在原帖中公开完整提示词。"
+  },
+  {
+    "id": "x-2103825546581004353",
+    "title": "玻璃楼宇间的穿行视角",
+    "titleEn": "A moving view among glass towers",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "镜头在高耸的玻璃与钢结构之间移动，展示建筑外立面的层叠线条。 原生视频规格为 15 秒 · 576×1024。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "The view moves among tall glass and steel structures, revealing layered lines across the building façades. Native-video output: 15s · 576×1024. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ilovek8s/status/2103825546581004353",
+    "sourceLabel": "X 原帖 · @ilovek8s",
+    "author": "ilovelife",
+    "publishedAt": "2026-09-26T12:34:32.000Z",
+    "addedAt": "2026-10-21T01:19:04.782Z",
+    "mediaUrl": "/media/x-2103825546581004353.mp4",
+    "posterUrl": "/posters/x/2103825546581004353.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "576×1024",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [],
+    "scenes": [
+      "city"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "兄弟们，单纯的生成图片已经满足不了我了，所以我开始玩minimax H3, 这里面好几个问题困扰着我：\n1、开源版本没有2k, 使用三方超分工具， 一个15秒的视频要几十分钟\n2、提示词走qwen 3.8 27B越狱版，图片走qwen image 2.1本身也没有无限制，但是minimax H3会拒绝\n3、prompt还是重要，好多想法没法落地，生出的视频都是一坨狗屎",
+    "engagement": {
+      "replies": 31,
+      "reposts": 34,
+      "likes": 726,
+      "views": 122338,
+      "snapshotAt": "2026-10-21T01:19:04.782Z"
+    },
+    "approvedAt": "2026-10-21T01:19:04.782Z",
+    "editorialBasis": "作者说明其开始使用 MiniMax H3 制作视频，并讨论生成与放大处理。"
+  },
+  {
+    "id": "x-2104196238040293687",
+    "title": "红花盛开的公路上行驶的摩托车",
+    "titleEn": "A motorcycle rides along a flower-lined road",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "一辆摩托车沿着红色花朵盛开的乡间道路行驶，远处是连绵山丘。 原生视频规格为 15 秒 · 1728×960。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A motorcycle travels along a rural road lined with red flowers, with hills in the distance. Native-video output: 15s · 1728×960. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/AI6377546630069/status/2104196238040293687",
+    "sourceLabel": "X 原帖 · @AI6377546630069",
+    "author": "AIの鐘（ べる）",
+    "publishedAt": "2026-09-27T13:07:31.000Z",
+    "addedAt": "2026-10-21T01:20:47.912Z",
+    "mediaUrl": "/media/x-2104196238040293687.mp4",
+    "posterUrl": "/posters/x/2104196238040293687.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1728×960",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [],
+    "scenes": [
+      "nature"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "彼岸花が見頃の時期ですがお天気がねぇ・・😔　\n\nMiniMax H3",
+    "engagement": {
+      "replies": 0,
+      "reposts": 3,
+      "likes": 36,
+      "views": 648,
+      "snapshotAt": "2026-10-21T01:20:47.912Z"
+    },
+    "approvedAt": "2026-10-21T01:20:47.912Z",
+    "editorialBasis": "作者标注 MiniMax H3。"
+  },
+  {
+    "id": "x-2104175733052715153",
+    "title": "绿幕前的紫发角色",
+    "titleEn": "A purple-haired character poses against green",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "紫发动漫角色在纯绿色背景前连续变换姿势，展示一段动作测试。 原生视频规格为 15 秒 · 864×1088。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A purple-haired anime character changes poses against a plain green background in a motion test. Native-video output: 15s · 864×1088. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/IsekaiBardGuild/status/2104175733052715153",
+    "sourceLabel": "X 原帖 · @IsekaiBardGuild",
+    "author": "AI Bard Guild",
+    "publishedAt": "2026-09-27T11:46:03.000Z",
+    "addedAt": "2026-10-21T01:20:47.912Z",
+    "mediaUrl": "/media/x-2104175733052715153.mp4",
+    "posterUrl": "/posters/x/2104175733052715153.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "864×1088",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [
+      "anime"
+    ],
+    "scenes": [
+      "performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3 物理テスト 2",
+    "engagement": {
+      "replies": 0,
+      "reposts": 19,
+      "likes": 346,
+      "views": 7434,
+      "snapshotAt": "2026-10-21T01:20:47.912Z"
+    },
+    "approvedAt": "2026-10-21T01:20:47.912Z",
+    "editorialBasis": "作者将这段视频标为 MiniMax H3 物理测试。"
+  },
+  {
+    "id": "x-2104158356692726219",
+    "title": "按摩椅卖场中的南小鸟",
+    "titleEn": "Kotori in a massage chair showroom",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "南小鸟坐在卖场展示的按摩椅上，椅子运行时她向后倚靠并露出不同表情。 原生视频规格为 14 秒 · 720×934。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "Kotori sits in a showroom massage chair, reclining and changing expression as the chair operates. Native-video output: 14s · 720×934. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/sac25252/status/2104158356692726219",
+    "sourceLabel": "X 原帖 · @sac25252",
+    "author": "sac@AIイラスト",
+    "publishedAt": "2026-09-27T10:37:00.000Z",
+    "addedAt": "2026-10-21T01:20:47.912Z",
+    "mediaUrl": "/media/x-2104158356692726219.mp4",
+    "posterUrl": "/posters/x/2104158356692726219.jpg",
+    "duration": 14,
+    "aspectRatio": "portrait",
+    "resolution": "720×934",
+    "tags": [
+      "MiniMax H3",
+      "角色对白",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "dialogue",
+    "styles": [
+      "anime",
+      "vertical"
+    ],
+    "scenes": [
+      "dialogue"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3 音声は消してます\nラブライブ 南ことり #lovelive #MiniMax",
+    "engagement": {
+      "replies": 13,
+      "reposts": 176,
+      "likes": 2666,
+      "views": 252997,
+      "snapshotAt": "2026-10-21T01:20:47.913Z"
+    },
+    "approvedAt": "2026-10-21T01:20:47.912Z",
+    "editorialBasis": "作者标注 MiniMax H3，并指明角色来自 Love Live。"
+  },
+  {
+    "id": "x-2104522096931951099",
+    "title": "酒店劫案预告片",
+    "titleEn": "A hotel heist trailer",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "夜色中的酒店场景串联人物与劫案动作，画面穿插醒目的片中标题字卡。 原生视频规格为 35 秒 · 1080×1080。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A nighttime hotel setting links characters and heist action, punctuated by prominent title cards within the video. Native-video output: 35s · 1080×1080. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/MonetizationDon/status/2104522096931951099",
+    "sourceLabel": "X 原帖 · @MonetizationDon",
+    "author": "LAPTOP LIFESTYLE BLOGGER",
+    "publishedAt": "2026-09-28T10:42:22.000Z",
+    "addedAt": "2026-10-21T01:20:47.913Z",
+    "mediaUrl": "/media/x-2104522096931951099.mp4",
+    "posterUrl": "/posters/x/2104522096931951099.jpg",
+    "duration": 35,
+    "aspectRatio": "square",
+    "resolution": "1080×1080",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [],
+    "scenes": [
+      "city",
+      "combat"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "AI  INFLUENCERS/ AI AVATARS ARE ENTERING THEIR MOVIE ERA. \n\nThis is where MiniMax H3 gets really interesting.\n\nCreators are using it to push AI video beyond individual clips and into full cinematic trailers — complete with dramatic storytelling, dialogue, action and, especially, impressive in-video typography.\n\nSo I decided to put it to the test.\n\nI took my Alexa Grey AI influencer and turned her into the lead of a fictional SWAT/heist mini-series.\n\nThe workflow?\n\nCharacter → Story → Storyboard → MiniMax H3 → Trailer\n\nYou can feed MiniMax H3 up to 9 creative references— including a storyboard—and give it a detailed prompt describing exactly how you want the trailer to unfold.\n\nThen it starts connecting the pieces:\n\n🎬 Characters\n🎥 Camera movement\n💥 Action\n🗣️ Dialogue\n🔊 Sound\n🔤 Typography\n🎞️ Transitions\n\nAnd that typography is a big deal.\n\nInstead of generating the video and adding every title afterward, you can actually build the movie-trailer typography into the creative direction.\n\nFor this trailer, I wanted the text to feel like part of the movie itself:\n\nONE HOTEL.\nONE HEIST.\nNO WAY IN.\nNO WAY OUT.\n\nAnd finally:\n\nAGENT ALEXA GREY — SHADOWS NEVER DIE.\n\nGive the model the right creative direction, the right references and a strong storyboard, and you can go from an AI avatar to something that feels like a real cinematic trailer concept.\n\nThis is where AI video is heading:\n\nYou're not just generating shots anymore.\nYou're directing the entire trailer.\n\nThis trailer was created with MiniMax H3 in @DomoAI_ \n\n#DomoAI           #DomoAICPP",
+    "engagement": {
+      "replies": 47,
+      "reposts": 112,
+      "likes": 180,
+      "views": 2565,
+      "snapshotAt": "2026-10-21T01:20:47.913Z"
+    },
+    "approvedAt": "2026-10-21T01:20:47.913Z",
+    "editorialBasis": "作者说明该预告片由 MiniMax H3 在 DomoAI 中制作。"
+  },
+  {
+    "id": "x-2104518897424548018",
+    "title": "停车场里的激烈对决",
+    "titleEn": "A fight in an underground garage",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "身穿深色连帽衫的女子在地下停车场接连躲闪和反击，地面随着冲击出现裂纹。 原生视频规格为 15 秒 · 2560×1440。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A woman in a dark hoodie dodges and counters attackers in an underground garage as impacts crack the concrete. Native-video output: 15s · 2560×1440. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "15 sec | 16:9 | One continuous generation | Korean dialogue | No BGM | No subtitles\n\nSTYLE:\nUltra-photorealistic live-action AAA supernatural martial arts. Real actors, real environment, grounded physical VFX.\n\nCHARACTER LOCK:\nSO-YEON, 160cm, messy black hair, black hoodie, sweatpants, Converse. Natural skin texture, sweat, pores, micro-expressions. Same actress throughout. One human only.\n\nLOCATION:\nNighttime underground parking garage. Wet concrete, fluorescent lights, concrete pillars, scooters, shopping carts, puddles, exposed pipes.\n\nSOUND:\nKorean dialogue, footsteps, breathing, impacts, metal rattling, fluorescent hum. No music.\n\nCOMBAT:\nUnarmed Sanda + Muay Thai clinch + Silat. Continuous flow: evade → redirect → knee → elbow → sweep → pivot → throw. Six attackers engage simultaneously. Two bystanders react naturally.\n\nFAULT-LINE PHYSICS:\nHeavy foot plants and slams create realistic cracks from the exact impact point. Visible vibration, dust, debris movement. No glow, aura, particles, energy waves, speed trails, or magic.\n\n00:00–03:00 — CORNERED\nSix men surround So-Yeon beside a scooter. One grabs her hoodie. A delivery worker warns, \"도망가요!\" Terrified, So-Yeon whispers, \"그만해...\" The leader swings. She instinctively ducks.\n\n03:00–07:00 — FIRST IMPACT\nShe catches his wrist, pivots, and knees his stomach. Her sneaker plants hard. A thin crack shoots across the wet concrete. The leader crashes into a shopping cart and knocks into two others. Everyone freezes. A thug shouts, \"뭐야, 저년!\" The remaining men rush her.\n\n07:00–11:00 — CHAOS\nShe slips a punch and elbows one attacker into a pillar. Redirects another into a puddle. Sweeps a third to the ground. 0.2-second micro slow motion: cracks spread, water ripples, dust falls. Immediate speed return. Bystanders pull each other behind a parked car.\n\n11:00–15:00 — THE LAST MAN\nThe final attacker grabs her from behind. She becomes completely still. Her foot plants hard. Concrete cracks sharply. She redirects and throws him onto a parking line. Dense fractures spread. The delivery worker cautiously asks, \"괜찮아요?\" She nods, still frightened, and walks away across the cracked concrete. Fluorescent lights flicker from the vibration.\n\nCAMERA:\nClose handheld pursuit, reactive movement, occasional wider shots during group combat. Low angles for impacts and fractures, natural focus hunting, slight operator mistakes. No impossible moves or heroic posing.\n\nREALISM LOCK:\nAttackers hesitate, collide, and react naturally. Bystanders panic and move. So-Yeon looks confused by her strength. Every piece of damage has a visible physical cause. No supernatural visual effects.",
+    "promptSourceUrl": "https://x.com/chatgptpaglu/status/2104518897424548018",
+    "sourceUrl": "https://x.com/chatgptpaglu/status/2104518897424548018",
+    "sourceLabel": "X 原帖 · @chatgptpaglu",
+    "author": "yusra.",
+    "publishedAt": "2026-09-28T10:29:39.000Z",
+    "addedAt": "2026-10-21T01:20:47.913Z",
+    "mediaUrl": "/media/x-2104518897424548018.mp4",
+    "posterUrl": "/posters/x/2104518897424548018.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "action-vfx",
+    "styles": [],
+    "scenes": [
+      "combat"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Created with MiniMax H3 on @Hailuo_AI\n\nPrompt:\n\n15 sec | 16:9 | One continuous generation | Korean dialogue | No BGM | No subtitles\n\nSTYLE:\nUltra-photorealistic live-action AAA supernatural martial arts. Real actors, real environment, grounded physical VFX.\n\nCHARACTER LOCK:\nSO-YEON, 160cm, messy black hair, black hoodie, sweatpants, Converse. Natural skin texture, sweat, pores, micro-expressions. Same actress throughout. One human only.\n\nLOCATION:\nNighttime underground parking garage. Wet concrete, fluorescent lights, concrete pillars, scooters, shopping carts, puddles, exposed pipes.\n\nSOUND:\nKorean dialogue, footsteps, breathing, impacts, metal rattling, fluorescent hum. No music.\n\nCOMBAT:\nUnarmed Sanda + Muay Thai clinch + Silat. Continuous flow: evade → redirect → knee → elbow → sweep → pivot → throw. Six attackers engage simultaneously. Two bystanders react naturally.\n\nFAULT-LINE PHYSICS:\nHeavy foot plants and slams create realistic cracks from the exact impact point. Visible vibration, dust, debris movement. No glow, aura, particles, energy waves, speed trails, or magic.\n\n00:00–03:00 — CORNERED\nSix men surround So-Yeon beside a scooter. One grabs her hoodie. A delivery worker warns, \"도망가요!\" Terrified, So-Yeon whispers, \"그만해...\" The leader swings. She instinctively ducks.\n\n03:00–07:00 — FIRST IMPACT\nShe catches his wrist, pivots, and knees his stomach. Her sneaker plants hard. A thin crack shoots across the wet concrete. The leader crashes into a shopping cart and knocks into two others. Everyone freezes. A thug shouts, \"뭐야, 저년!\" The remaining men rush her.\n\n07:00–11:00 — CHAOS\nShe slips a punch and elbows one attacker into a pillar. Redirects another into a puddle. Sweeps a third to the ground. 0.2-second micro slow motion: cracks spread, water ripples, dust falls. Immediate speed return. Bystanders pull each other behind a parked car.\n\n11:00–15:00 — THE LAST MAN\nThe final attacker grabs her from behind. She becomes completely still. Her foot plants hard. Concrete cracks sharply. She redirects and throws him onto a parking line. Dense fractures spread. The delivery worker cautiously asks, \"괜찮아요?\" She nods, still frightened, and walks away across the cracked concrete. Fluorescent lights flicker from the vibration.\n\nCAMERA:\nClose handheld pursuit, reactive movement, occasional wider shots during group combat. Low angles for impacts and fractures, natural focus hunting, slight operator mistakes. No impossible moves or heroic posing.\n\nREALISM LOCK:\nAttackers hesitate, collide, and react naturally. Bystanders panic and move. So-Yeon looks confused by her strength. Every piece of damage has a visible physical cause. No supernatural visual effects.",
+    "engagement": {
+      "replies": 50,
+      "reposts": 4,
+      "likes": 69,
+      "views": 2141,
+      "snapshotAt": "2026-10-21T01:20:47.913Z"
+    },
+    "approvedAt": "2026-10-21T01:20:47.913Z",
+    "editorialBasis": "作者说明该片由 MiniMax H3 生成，并在原帖中发布完整提示词。"
+  },
+  {
+    "id": "x-2104905952457789939",
+    "title": "东京街头查看手机的女子",
+    "titleEn": "A woman checking her phone on a Tokyo street",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "一名女子在东京街头行走，随后低头查看手机，片尾出现日文标签。 原生视频规格为 10 秒 · 768×1376。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A woman walks along a Tokyo street, then looks at her phone before Japanese hashtags appear at the end. Native-video output: 10s · 768×1376. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ArisaIzmy877877/status/2104905952457789939",
+    "sourceLabel": "X 原帖 · @ArisaIzmy877877",
+    "author": "ArisaIzmy",
+    "publishedAt": "2026-09-29T12:07:40.000Z",
+    "addedAt": "2026-10-21T01:34:24.456Z",
+    "mediaUrl": "/media/x-2104905952457789939.mp4",
+    "posterUrl": "/posters/x/2104905952457789939.jpg",
+    "duration": 10,
+    "aspectRatio": "portrait",
+    "resolution": "768×1376",
+    "tags": [
+      "MiniMax H3",
+      "本地生成与工作流",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "workflow",
+    "styles": [],
+    "scenes": [
+      "city",
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "歩きスマホ禁止!  \nMiniMax H3, Singularity_ref2va+Turbo_v4+realism_people\n#aigirl #MinimaxH3 #ComfyUI",
+    "engagement": {
+      "replies": 2,
+      "reposts": 3,
+      "likes": 37,
+      "views": 3527,
+      "snapshotAt": "2026-10-21T01:34:24.457Z"
+    },
+    "approvedAt": "2026-10-21T01:34:24.456Z",
+    "editorialBasis": "原作者说明画面由 MiniMax H3 生成。"
+  },
+  {
+    "id": "x-2104901946847244451",
+    "title": "桌面背景中的魔女眨眼",
+    "titleEn": "A witch winks on a desktop backdrop",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "戴着尖顶帽的动漫魔女出现在桌面背景中，打喷嚏后与图标互动并在片尾眨眼。 原生视频规格为 12 秒 · 1890×1080。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "An anime witch in a pointed hat appears on a desktop backdrop, sneezes, interacts with an icon, and winks at the end. Native-video output: 12s · 1890×1080. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Mayz1169/status/2104901946847244451",
+    "sourceLabel": "X 原帖 · @Mayz1169",
+    "author": "Kiki",
+    "publishedAt": "2026-09-29T11:51:45.000Z",
+    "addedAt": "2026-10-21T01:34:24.457Z",
+    "mediaUrl": "/media/x-2104901946847244451.mp4",
+    "posterUrl": "/posters/x/2104901946847244451.jpg",
+    "duration": 12,
+    "aspectRatio": "landscape",
+    "resolution": "1890×1080",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime"
+    ],
+    "scenes": [
+      "fantasy"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Elaina accidentally sneezed... I saw nothing lol\n\nmade with MiniMax H3 on @renoiseai\n\nprompt below ⬇️",
+    "engagement": {
+      "replies": 3,
+      "reposts": 6,
+      "likes": 58,
+      "views": 3423,
+      "snapshotAt": "2026-10-21T01:34:24.457Z"
+    },
+    "approvedAt": "2026-10-21T01:34:24.457Z",
+    "editorialBasis": "原作者说明视频使用 MiniMax H3 制作。"
+  },
+  {
+    "id": "x-2105299010596872515",
+    "title": "街景角色替换的移动视角",
+    "titleEn": "A moving view of a character swap on a street",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "四格画面并列展示默认模型与街景动漫角色，镜头从正面逐渐转向侧面。 原生视频规格为 5 秒 · 2800×1696。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A four-panel comparison pairs a default model with an anime character in a street scene as the view turns from the front toward the side. Native-video output: 5s · 2800×1696. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/toyxyz3/status/2105299010596872515",
+    "sourceLabel": "X 原帖 · @toyxyz3",
+    "author": "toyxyz",
+    "publishedAt": "2026-09-30T14:09:33.000Z",
+    "addedAt": "2026-10-21T01:34:24.457Z",
+    "mediaUrl": "/media/x-2105299010596872515.mp4",
+    "posterUrl": "/posters/x/2105299010596872515.jpg",
+    "duration": 5,
+    "aspectRatio": "landscape",
+    "resolution": "2800×1696",
+    "tags": [
+      "MiniMax H3",
+      "本地生成与工作流",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "workflow",
+    "styles": [
+      "anime"
+    ],
+    "scenes": [
+      "city"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax-H3-Character-Swap-LoRA Camera move test #comfyui",
+    "engagement": {
+      "replies": 4,
+      "reposts": 44,
+      "likes": 594,
+      "views": 56485,
+      "snapshotAt": "2026-10-21T01:34:24.457Z"
+    },
+    "approvedAt": "2026-10-21T01:34:24.457Z",
+    "editorialBasis": "原作者将视频标注为 MiniMax-H3 Character-Swap-LoRA 镜头移动测试。"
   }
 ]
