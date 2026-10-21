@@ -4158,5 +4158,347 @@
       "kind": "markdown",
       "capturedAt": "2026-09-13T12:45:30.752Z"
     }
+  },
+  {
+    "guideType": "setup",
+    "contribution": {
+      "issueUrl": "https://github.com/SkyNotSilent/awesome-MiniMax-H3-cases/issues/18",
+      "authorUrl": "https://github.com/FlowForgeLabAi"
+    },
+    "id": "h3-8gb-laptop-workflows",
+    "contentType": "community",
+    "category": "comfyui",
+    "title": {
+      "zh": "8GB 笔记本上的 MiniMax H3：六个实测陷阱与三档工作流",
+      "en": "MiniMax H3 on an 8GB laptop: six measured traps and three workflows"
+    },
+    "outcome": {
+      "zh": "在约 16GB 内存的 8GB 笔记本上放入作者公布的三份 ComfyUI 工作流，用重启和功耗判断采样有没有换页，并避开作者已经测过的提示词、注意力、编码器和 LoRA 陷阱。",
+      "en": "Load the author's three published ComfyUI graphs on an 8GB laptop with about 16GB of RAM, use a restart and power draw to tell whether sampling is thrashing, and avoid the prompt, attention, encoder, and LoRA traps the author measured."
+    },
+    "audience": {
+      "zh": "已经能打开 ComfyUI、手里是 8GB 笔记本 GPU 和大约 16GB 内存、希望按实测而不是按传闻跑 MiniMax H3 的人。",
+      "en": "People who can already open ComfyUI, have an 8GB laptop GPU and about 16GB of RAM, and want measured MiniMax H3 settings rather than second-hand claims."
+    },
+    "hardware": {
+      "zh": "作者的计时来自 RTX 5060 Laptop 8GB（sm_120）加 15.26 GiB 内存、Windows 11 25H2。RTX 4060 Laptop（sm_89）只有 4 步 / 5 秒 / 768×1024 的注意力计时；该设置下的 8 步和 20 步墙钟，现行 README 写明未测。这些数字不是所有 8GB 显卡的承诺。",
+      "en": "The author's timings are from an RTX 5060 Laptop 8GB (sm_120) with 15.26 GiB of RAM on Windows 11 25H2. An RTX 4060 Laptop (sm_89) has an attention timing only for 4 steps / 5 seconds / 768x1024; the current README marks 8-step and 20-step wall-clock times at that setting as unmeasured. These figures are not a promise for every 8GB GPU."
+    },
+    "prerequisites": {
+      "zh": [
+        "ComfyUI 能启动。作者核验的版本是 0.35.0（a7b1d39）、PyTorch 2.14.0+cu130、Python 3.13.12。",
+        "能下载并按原始文件名放置模型；Quality 以外的两档还需要作者点名的那份 turbo LoRA。",
+        "16GB 内存机器要能在启动参数里加上 --disable-pinned-memory，并在采样时查看 nvidia-smi 功耗。"
+      ],
+      "en": [
+        "A ComfyUI install that starts. The author checked ComfyUI 0.35.0 (a7b1d39), PyTorch 2.14.0+cu130, and Python 3.13.12.",
+        "Enough disk space to download the models and keep their original filenames. The two tiers other than Quality also need the turbo LoRA named by the author.",
+        "On a 16GB machine, a way to add --disable-pinned-memory to the launch arguments and to read nvidia-smi power during sampling."
+      ]
+    },
+    "steps": {
+      "zh": [
+        "先确认机器接近作者的实测环境：RTX 5060 Laptop 8GB（sm_120）、15.26 GiB 内存、Windows 11 25H2、ComfyUI 0.35.0（a7b1d39）、PyTorch 2.14.0+cu130、Python 3.13.12。换显卡或换内存后，不要把下面的分钟数当成自己的成绩。",
+        "按原始文件名放置四个基础权重：minimax_h3_fl2va_pruned_int8_convrot.safetensors 放入 models/diffusion_models/；qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors 放入 models/text_encoders/；minimax_h3_video_vae_int8_convrot.safetensors 和 minimax_h3_audio_vae_fp32.safetensors 放入 models/vae/。主模型优先 int8_convrot，作者写明它需要 PyTorch cu130，跑不起来再退 fp8_scaled。nvfp4 文本编码器不要求 Blackwell，并且比 int8 文本编码器小 10.7 GiB。这四个文件名能在 Comfy-Org/MiniMax-H3 的对应子目录里对上。",
+        "Balanced 和 Fast 再把 minimax_h3_turbo_v4_step600_comfyui_T8-convert.safetensors 放入 models/loras/，图中强度是 1.0。Quality 不加载 LoRA。证据仓库的逐 key 比对是：259 个模块里 208 个能套上（80.3%），51 个不能，全部是 adaln_proj.linear，因为 pruned 基座输入维是 8，LoRA 是 2688。LoRA 元数据自述 incompatible_base: MiniMax-H3 pruned_*。日志里的形状错误是每步每层的失败，不是进度条。Comfy-Org/MiniMax-H3 的文件列表里没有这个 T8-convert 文件名，不要用另一个 turbo 文件顶替。",
+        "安装提供 VHS_VideoCombine 的 ComfyUI-VideoHelperSuite。作者 README 只把这个节点包列为必须另装的自定义节点。三份图还会用到 MiniMaxLowVRAMAttention、MiniMaxChunkFeedForward、ModelAttentionBackend、MiniMaxH3SigmaShift，以及把秒数收成帧数的 ComfyMathExpression。作者没有为后面这个节点另给安装命令；如果它报红，先对照 ComfyUI 0.35.0，不要另接一个时长节点。",
+        "16GB 内存机器的启动参数加上 --disable-pinned-memory。证据仓库写明，不关时 Windows 分支是 MAX_PINNED_MEMORY = ram * 0.40，进程可能被杀掉。不要沿用早先文本里的 ram * 0.90，那是作者后来对照源码删掉的另一平台分支。不要加 --use-sage-attention、--use-flash-attention、--fast 或 --fp16-unet。作者在 sm_120、H3 几何 heads=56、head_dim=128、S=8192、bf16 上测得 SDPA bf16 为 143.1 ms / 相对 L2 0.0025，comfy-kitchen INT8 为 22.8 ms / 0.0164，KJ SageAttention 为 29.0 ms / 0.0387；作者据此写 kitchen 比 SDPA 快约 6.3 倍、比 sage 快约 1.27 倍，误差约低 2.4 倍。Sage 补丁直接调用 _sageattn_int8_fp8_nhd，会绕过 ModelAttentionBackend。FlashAttention 在 sm_120 上不可用；--fast 和 --fp16-unet 会打出全黑帧，因为 H3 计算是 bf16。",
+        "把 H3_Quality.json、H3_Balanced.json 或 H3_Fast.json 拖进 ComfyUI。三份图的时长输入都是 10 秒，并用 ComfyMathExpression 收成 17k+5 的帧数；ResolutionSelector 是 3:4、0.75、倍数 32，也就是 768×1024。MiniMaxH3SigmaShift 是 shift_video 12、shift_audio 3。注意力后端是 comfy kitchen attention。LoadImage 指向 example.png。先确认没有红节点，再换成自己的图，并保持宽高都是偶数。",
+        "提示词换成自己的场景，但保留作者 README 公布的结构：首帧引用行、integrated_multimodal_description 中的 [Shot 1] 以及后段 [Shot 2] At 00:06.000、overall_soundscape、non_diegetic_music。运镜要写到具体落点，不能只有幅度和速度；不要同时要求构图不变和推镜。作者用同 seed、同 20 步、只改提示词的对照，测到只写 [Shot 1] 时 7.0–10.0 秒主体消失，而且 20 步官方基线就能复现。工作流 JSON 里已有作者的一段示例提示词，那是示例场景，不是必须照抄的文本。",
+        "每次 Queue 之前重启一次 ComfyUI。作者测到刚重启约 0.9–6 秒/block，连续运行约 1.7 小时后约 212 秒/block，10 秒片从大约 34–44 分钟变成大约 12 小时。采样时看 nvidia-smi 功耗：正常是 64–98 W；平线 34–36 W 且 utilization.gpu 仍显示 99% 就是在换页，应停掉。可选的 ComfyUI-GPU-Stall-Meter 用来读板载功耗，不装也不影响上面的手工判断。",
+        "日常用 Balanced：8 步、euler、simple、turbo 强度 1.0，图中没有 TE-Speed 节点。作者在这台 5060 上、768×1024、10 秒测得约 14.3 分钟。Quality 是 20 步、res_multistep、无 LoRA；证据仓库记录四次 10 秒耗时为 2613、2283、2560、2029 秒，也就是 33.8–43.5 分钟。作者认为构图接近，但两次输出编码器不同，而且只有一个 seed。Fast 的 README 表格把 TE-Speed 写成关，并说三档都不用它，因为实测只值约 18%，而且是闭源有损项；当前 H3_Fast.json 里 TESpeedMiniMaxH3 却以 mode 0 接在 LoRA 和采样器之间。要按 README 的「关闭」来跑，先去掉这个节点。README 把 Fast 的 10 秒成片写成大约 9 分钟，这是约数。",
+        "输出用图里已经接好的 VHS_VideoCombine（h264，crf=12）。文件前缀分别是 H3_Quality、H3_Balanced、H3_Fast。不要改回 SaveVideo：宽或高为奇数时，libx264 在 yuv420p 下返回 EINVAL(22)。作者用 PyAV 18.1.0、不启动 ComfyUI 测过 64x64 和 1080x1920 能打开，65x63、63x65、65x65、1171x2532、1080x1441 失败，并报给 ComfyUI #16544。format=auto 不重编码，作者测得码率停在 2067 kb/s。证据仓库里 crf=12 / 19 / 40 的 570872、287454、40296 字节来自一段 48 帧探针，不是上面那条 10 秒片的文件大小。9:16 的 768×1344 仍在官方短边和面积限制内，但这台 16GB 机器上功耗会从 80 W 掉到平线 34 W。"
+      ],
+      "en": [
+        "Start from a machine close to the author's measured stack: RTX 5060 Laptop 8GB (sm_120), 15.26 GiB RAM, Windows 11 25H2, ComfyUI 0.35.0 (a7b1d39), PyTorch 2.14.0+cu130, and Python 3.13.12. Do not treat the minutes below as your result on another GPU or another amount of RAM.",
+        "Place four base weights under their original filenames: minimax_h3_fl2va_pruned_int8_convrot.safetensors in models/diffusion_models/; qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors in models/text_encoders/; minimax_h3_video_vae_int8_convrot.safetensors and minimax_h3_audio_vae_fp32.safetensors in models/vae/. Prefer int8_convrot for the diffusion model. The author says it needs PyTorch cu130 and lists fp8_scaled as the fallback. The nvfp4 text encoder does not require a Blackwell GPU and is 10.7 GiB smaller than the int8 text encoder. Those four filenames are present in the matching folders of Comfy-Org/MiniMax-H3.",
+        "For Balanced and Fast, also place minimax_h3_turbo_v4_step600_comfyui_T8-convert.safetensors in models/loras/. The graphs set strength to 1.0. Quality does not load a LoRA. The evidence repo's per-key count is 208 of 259 modules applied (80.3%). The other 51 are all adaln_proj.linear, because the pruned base input dimension is 8 and the LoRA's is 2688. The LoRA metadata says incompatible_base: MiniMax-H3 pruned_*. The shape errors in the log are per-layer failures, not a progress bar. That T8-convert filename is not in the Comfy-Org/MiniMax-H3 file list; do not substitute a different turbo file.",
+        "Install ComfyUI-VideoHelperSuite, which provides VHS_VideoCombine. That is the only custom node the author's README lists as a required extra install. The three graphs also use MiniMaxLowVRAMAttention, MiniMaxChunkFeedForward, ModelAttentionBackend, MiniMaxH3SigmaShift, and a ComfyMathExpression that turns seconds into a frame count. The author gives no separate install command for that expression node. If it is missing, match ComfyUI 0.35.0 instead of wiring in a different duration node.",
+        "On a 16GB machine, add --disable-pinned-memory to the ComfyUI launch arguments. The evidence README says that without it Windows uses MAX_PINNED_MEMORY = ram * 0.40 and the process can be killed. Do not use the earlier ram * 0.90 figure; the author later traced that expression to the other platform branch. Do not add --use-sage-attention, --use-flash-attention, --fast, or --fp16-unet. On sm_120, at H3 geometry heads=56, head_dim=128, S=8192, bf16, the author measured SDPA bf16 at 143.1 ms / relative L2 0.0025, comfy-kitchen INT8 at 22.8 ms / 0.0164, and KJ SageAttention at 29.0 ms / 0.0387. The author reports kitchen as about 6.3 times faster than SDPA, about 1.27 times faster than sage, and about 2.4 times lower error than sage. The sage patch calls _sageattn_int8_fp8_nhd directly and bypasses ModelAttentionBackend. FlashAttention is unavailable on sm_120. --fast and --fp16-unet produce black frames because H3 computes in bf16.",
+        "Drag in H3_Quality.json, H3_Balanced.json, or H3_Fast.json. Each graph sets the duration input to 10 seconds and uses ComfyMathExpression to snap the frame count to the 17k+5 rule. ResolutionSelector is 3:4 at 0.75 megapixels with multiple 32, which is 768x1024. MiniMaxH3SigmaShift is shift_video 12 and shift_audio 3. The attention backend is comfy kitchen attention. LoadImage points at example.png. Confirm there is no red node, then replace the image with your own and keep both dimensions even.",
+        "Replace the scene with your own, but keep the structure published in the author's README: the opening first-frame reference line, integrated_multimodal_description with [Shot 1] and a later [Shot 2] At 00:06.000, overall_soundscape, and non_diegetic_music. Give a camera move a concrete target, not only amplitude and speed, and do not ask for an unchanged composition and a push-in at the same time. In a same-seed, 20-step comparison that changed only the prompt, a [Shot 1]-only prompt lost the subject from 7.0 to 10.0 seconds, and the 20-step official baseline reproduced that failure. The workflow JSON already contains one example prompt from the author. It is an example scene, not text you must copy.",
+        "Restart ComfyUI before every Queue. The author measured about 0.9-6 seconds per block just after a restart and about 212 seconds per block after roughly 1.7 hours of continuous sessions, taking a 10-second clip from about 34-44 minutes to about 12 hours. Watch nvidia-smi power while sampling: healthy draws are 64-98 W. A flat 34-36 W while utilization.gpu still reads 99% means the machine is thrashing; stop the run. ComfyUI-GPU-Stall-Meter is an optional panel for board power. The manual check above still works without it.",
+        "Use Balanced day to day: 8 steps, euler, simple, turbo strength 1.0, and no TE-Speed node in that graph. On this 5060, at 768x1024 and 10 seconds, the author measured about 14.3 minutes. Quality is 20 steps, res_multistep, and no LoRA. The evidence repo records four 10-second runs at 2613, 2283, 2560, and 2029 seconds, or 33.8-43.5 minutes. The author describes the composition as nearly the same, with different encoders and only one seed. The Fast row in the README marks TE-Speed off and says none of the three tiers use it, because the measured saving was about 18% and the component is closed-source and lossy. The published H3_Fast.json nevertheless connects TESpeedMiniMaxH3 at mode 0 between the LoRA and the sampler. Remove that node before running if you want the README's off setting. The README's Fast time for a 10-second clip is about 9 minutes, stated as an approximation.",
+        "Keep the VHS_VideoCombine node already wired in the graph (h264, crf=12). The filename prefixes are H3_Quality, H3_Balanced, and H3_Fast. Do not switch back to SaveVideo: when width or height is odd, libx264 returns EINVAL (22) for yuv420p. On PyAV 18.1.0, without starting ComfyUI, the author opened 64x64 and 1080x1920 and failed on 65x63, 63x65, 65x65, 1171x2532, and 1080x1441. That was reported as ComfyUI issue 16544. format=auto does not re-encode; the author measured it stuck at 2067 kb/s. The evidence repo's 570872, 287454, and 40296 byte results for crf 12, 19, and 40 come from a 48-frame probe, not from the file size of the 10-second clip above. A 9:16 frame of 768x1344 is still inside the official short-side and area limits, but on this 16GB machine power fell from 80 W to a flat 34 W."
+      ]
+    },
+    "commands": [
+      "--disable-pinned-memory",
+      "ComfyUI/models/diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+      "ComfyUI/models/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "ComfyUI/models/vae/minimax_h3_video_vae_int8_convrot.safetensors",
+      "ComfyUI/models/vae/minimax_h3_audio_vae_fp32.safetensors",
+      "ComfyUI/models/loras/minimax_h3_turbo_v4_step600_comfyui_T8-convert.safetensors"
+    ],
+    "commandItems": [
+      {
+        "kind": "command",
+        "value": "--disable-pinned-memory",
+        "platform": "shell"
+      },
+      {
+        "kind": "path",
+        "value": "ComfyUI/models/diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors"
+      },
+      {
+        "kind": "path",
+        "value": "ComfyUI/models/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors"
+      },
+      {
+        "kind": "path",
+        "value": "ComfyUI/models/vae/minimax_h3_video_vae_int8_convrot.safetensors"
+      },
+      {
+        "kind": "path",
+        "value": "ComfyUI/models/vae/minimax_h3_audio_vae_fp32.safetensors"
+      },
+      {
+        "kind": "path",
+        "value": "ComfyUI/models/loras/minimax_h3_turbo_v4_step600_comfyui_T8-convert.safetensors"
+      }
+    ],
+    "checks": {
+      "zh": [
+        "四个基础权重的下拉框显示的是上述原始文件名；对不上文件名时下拉为空，而不是自动换成别的权重。",
+        "拖入工作流后没有红节点，LoadImage 在你更换之前指向 example.png。",
+        "采样期间 nvidia-smi 功耗处在 64–98 W；如果落到平线 34–36 W，先停掉并重启，不要把这次耗时记成正常成绩。",
+        "输出前缀与所拖的那一档一致，并由图中的 VHS_VideoCombine 以 h264、crf=12 写出。"
+      ],
+      "en": [
+        "The loader dropdowns show the original filenames above. A mismatched filename leaves the dropdown empty instead of selecting a different weight.",
+        "After the graph is dropped in, no node is red, and LoadImage still points at example.png until you replace it.",
+        "During sampling, nvidia-smi power stays in the 64-98 W band. If it sits on a flat 34-36 W, stop and restart; do not record that run as a normal timing.",
+        "The output prefix matches the graph you dropped, and the wired VHS_VideoCombine writes h264 at crf=12."
+      ]
+    },
+    "caveats": {
+      "zh": [
+        "本站没有复跑这些工作流。分钟数、功耗和误差都是作者在点名的机器和版本上的测量。",
+        "RTX 4060 Laptop（sm_89）现行 README 只公布了 4 步 / 5 秒 / 768×1024 的注意力计时：pytorch attention 403.8 秒、comfy-kitchen 270.1 秒、sage 263.0 秒。这一组里 sage 比 kitchen 略快，不要把 sm_120 上「sage 更慢」直接套过去。作者的结论是 kitchen 仍比 pytorch 快约 1.5 倍，所以工作流继续用 kitchen。同一 768×1024 设置下的 8 步和 20 步墙钟，README 写明未测。证据仓库另有一条不同测试：4060 8GB 上 1024×576 / 243 帧、20 步用了 2762.89 秒，而 1344×768 / 362 帧在 1 步就 CUDA OOM。",
+        "H3_Quality.json 和 H3_Balanced.json 与 README 一致，不含 TE-Speed。H3_Fast.json 的节点标题和实际连线都包含 TESpeedMiniMaxH3，和 README 表格里的「关」不一致。按文件运行就会带上这个闭源节点。",
+        "5 秒、768×1024、kitchen、LoRA 1.0 的拟合 T ≈ 102 + 34.1 × 步数只覆盖 4/6/8/20 步（245.3、297.4、377.9、785.3 秒）。作者写明不能外推到 10 秒，并记录过一次把 10 秒跑成 38–43.5 分钟的结果误估成 28.7 分钟。",
+        "8 步和 20 步的画面对照被编码器差异污染，而且只有一个 seed。ref_image_size=max 作者未测，图里用的是 match。测过的时长只有 5 秒和 10 秒；官方训练区间大约是 124–362 帧。",
+        "三份图都打开了 ModelPatchTorchSettings 的 enable_fp16_accumulation。这不是 README 禁止的 --fp16-unet。"
+      ],
+      "en": [
+        "This site has not rerun these graphs. The minutes, power draws, and errors are the author's measurements on the named machines and versions.",
+        "For the RTX 4060 Laptop (sm_89), the current README publishes only the 4-step / 5-second / 768x1024 attention timing: pytorch attention 403.8 seconds, comfy-kitchen 270.1 seconds, and sage 263.0 seconds. In that trio sage is slightly faster than kitchen, so the sm_120 result that sage is slower does not transfer. The author's conclusion is that kitchen is still about 1.5 times faster than pytorch, and the graphs keep kitchen. Eight-step and 20-step wall-clock times at that same 768x1024 setting are marked unmeasured. A different test in the evidence repo says a 4060 8GB completed 1024x576 / 243 frames at 20 steps in 2762.89 seconds, while 1344x768 / 362 frames CUDA-OOM'd at 1 step.",
+        "H3_Quality.json and H3_Balanced.json match the README and contain no TE-Speed node. H3_Fast.json both titles and wires TESpeedMiniMaxH3, which disagrees with the README table's off mark. Queueing that file as published runs the closed-source node.",
+        "The fit T ≈ 102 + 34.1 × steps is only for 5 seconds, 768x1024, kitchen, and LoRA strength 1.0, across 4/6/8/20 steps (245.3, 297.4, 377.9, and 785.3 seconds). The author says not to extrapolate it to 10 seconds, and records predicting 28.7 minutes for a 10-second run that took 38-43.5 minutes.",
+        "The 8-step versus 20-step picture comparison is confounded by the encoder difference and uses one seed. ref_image_size=max is untested; the graphs use match. Only 5-second and 10-second clips were measured. The official trained range is about 124-362 frames.",
+        "All three graphs enable ModelPatchTorchSettings enable_fp16_accumulation. That is not the --fp16-unet flag the README tells you to avoid."
+      ]
+    },
+    "posterUrl": "/tutorial-posters/h3-8gb-laptop.svg",
+    "tags": [
+      "8GB",
+      "Laptop",
+      "ComfyUI",
+      "Measured"
+    ],
+    "relatedResourceIds": [
+      "official-minimax-h3",
+      "turbo-lora"
+    ],
+    "source": {
+      "platform": "github",
+      "url": "https://github.com/FlowForgeLabAi/MiniMax-H3-8GB-Workflows",
+      "author": "FlowForgeLabAi",
+      "authorProfileUrl": "https://github.com/FlowForgeLabAi",
+      "originalLanguage": "zh"
+    },
+    "verifiedAt": "2026-10-21",
+    "difficulty": "intermediate",
+    "hardwareProfiles": [
+      "vram-8"
+    ],
+    "expectedResult": {
+      "zh": "在 768×1024、10 秒、偶数宽高下得到一条 VHS 写出的 MP4。作者的 5060 上 Balanced 约 14.3 分钟；你的机器以重启后的单次耗时，以及功耗是否停在 64–98 W 为准。",
+      "en": "A VHS-written MP4 at 768x1024 and 10 seconds with even width and height. Balanced took about 14.3 minutes on the author's 5060; on your machine, use the time after a fresh restart and whether power stays in the 64-98 W band."
+    },
+    "troubleshooting": [
+      {
+        "problem": {
+          "zh": "利用率显示 99%，但功耗是平线 34–36 W，而且越跑越慢。",
+          "en": "Utilization reads 99%, power is a flat 34-36 W, and the run keeps getting slower."
+        },
+        "solution": {
+          "zh": "这是作者用来判断换页的信号。停掉，关掉其他程序，重启 ComfyUI 再跑。16GB 机器确认启动参数里有 --disable-pinned-memory。9:16 的 768×1344 在这台机器上会直接掉进这个状态。",
+          "en": "That is the author's signal for memory thrashing. Stop, close other programs, restart ComfyUI, and run again. On a 16GB machine, confirm --disable-pinned-memory is in the launch arguments. On this machine, 9:16 at 768x1344 went straight into that state."
+        }
+      },
+      {
+        "problem": {
+          "zh": "同样的设置，会话久了以后每个 block 从几秒变成两百多秒。",
+          "en": "The same settings fall from a few seconds per block to more than 200 seconds after a long session."
+        },
+        "solution": {
+          "zh": "作者测到刚重启是 0.9–6 秒/block，约 1.7 小时后是 212 秒/block。每次运行前重启 ComfyUI。不要用变慢之后的总时间去比较步数。",
+          "en": "The author measured 0.9-6 seconds per block after a restart and 212 seconds per block after about 1.7 hours. Restart ComfyUI before each run. Do not compare step counts using a total time taken after the slowdown."
+        }
+      },
+      {
+        "problem": {
+          "zh": "10 秒片子大约 7 秒后主体消失，或推镜把人推出画面。",
+          "en": "A 10-second clip loses its subject after about 7 seconds, or a push-in carries the subject out of frame."
+        },
+        "solution": {
+          "zh": "先改提示词，不要先改步数或加速节点。补上后段镜头，并给运镜一个具体落点。作者的同 seed、20 步对照能复现这个失败。",
+          "en": "Change the prompt before changing steps or acceleration nodes. Cover the later part of the timeline and give the camera move a concrete target. The author's same-seed, 20-step comparison reproduces this failure."
+        }
+      },
+      {
+        "problem": {
+          "zh": "SaveVideo 报 libx264 打不开，错误里却没有写尺寸。",
+          "en": "SaveVideo fails to open libx264, and the error never mentions the frame size."
+        },
+        "solution": {
+          "zh": "作者更正过「编码器不可用」的说法。宽或高为奇数、且 pix_fmt 为 yuv420p 时会返回 EINVAL(22)。使用图中的 VHS_VideoCombine，或把宽高都改成偶数。format=auto 不会提高码率。",
+          "en": "The author retracted the claim that the encoder itself was unavailable. Odd width or height with pix_fmt yuv420p returns EINVAL (22). Use the graph's VHS_VideoCombine, or make both dimensions even. format=auto does not raise the bitrate."
+        }
+      },
+      {
+        "problem": {
+          "zh": "Fast 工作流比 README 表格更「快」，或日志里出现 TE-Speed。",
+          "en": "The Fast graph is faster than the README table suggests, or the log mentions TE-Speed."
+        },
+        "solution": {
+          "zh": "当前 H3_Fast.json 连着 TESpeedMiniMaxH3。README 写的是三档关闭。要按 README 跑，先移除该节点并重启后再 Queue。不要把带上这个节点的耗时写成「4 步、无 TE-Speed」。",
+          "en": "The current H3_Fast.json wires TESpeedMiniMaxH3. The README says all three tiers leave it off. To follow the README, remove that node, restart, and queue again. Do not report a timing that includes the node as a 4-step run with TE-Speed off."
+        }
+      },
+      {
+        "problem": {
+          "zh": "LoRA 每一步都刷 adaln_proj 的形状错误。",
+          "en": "Every step prints an adaln_proj shape error from the LoRA."
+        },
+        "solution": {
+          "zh": "这是 51 个对不上的模块，运行不一定中止。Quality 不加载这份 LoRA。不要换成另一个文件名来消除报错，除非那份文件就是作者写的 T8-convert。",
+          "en": "Those are the 51 modules that do not apply. The run does not necessarily abort. Quality does not load this LoRA. Do not swap in another filename to silence the log unless that file is the author's T8-convert weight."
+        }
+      }
+    ],
+    "uninstall": {
+      "zh": [
+        "先保存自己改过的工作流和图片。停止 ComfyUI；如果 VideoHelperSuite 只为本篇安装，把它移出 custom_nodes 后重启。",
+        "模型文件仍留在 ComfyUI/models/。删掉 JSON 不会删除权重。可选的 ComfyUI-GPU-Stall-Meter 不装也不影响本篇的手工功耗判断。"
+      ],
+      "en": [
+        "Save any workflow or image you changed. Stop ComfyUI; if VideoHelperSuite was installed only for this guide, move it out of custom_nodes and restart.",
+        "Model files stay under ComfyUI/models/. Deleting the JSON does not delete the weights. The optional ComfyUI-GPU-Stall-Meter is not required for the manual power check."
+      ]
+    },
+    "sourceRefs": [
+      {
+        "title": "FlowForgeLabAi 8GB workflow README",
+        "url": "https://github.com/FlowForgeLabAi/MiniMax-H3-8GB-Workflows/blob/main/README.md"
+      },
+      {
+        "title": "FlowForgeLabAi 8GB workflow README (English)",
+        "url": "https://github.com/FlowForgeLabAi/MiniMax-H3-8GB-Workflows/blob/main/README.en.md"
+      },
+      {
+        "title": "Measured traps and raw timings",
+        "url": "https://github.com/FlowForgeLabAi/-h3-8gb-traps/blob/main/README.md"
+      },
+      {
+        "title": "Author correction of the Windows pinned-memory constant",
+        "url": "https://github.com/FlowForgeLabAi/-h3-8gb-traps/blob/main/verification-and-correction-2026-10-01.md"
+      },
+      {
+        "title": "ComfyUI issue 16544",
+        "url": "https://github.com/Comfy-Org/ComfyUI/issues/16544"
+      },
+      {
+        "title": "Original author submission 18",
+        "url": "https://github.com/SkyNotSilent/awesome-MiniMax-H3-cases/issues/18"
+      }
+    ],
+    "addedAt": "2026-10-21T02:25:34.571Z",
+    "learningTrack": "run",
+    "depth": "deep",
+    "recommendation": {
+      "zh": "8GB 笔记本先用 Balanced，并且每次运行前重启。作者把「哪些句子有测量、哪些没有」写进了同一套仓库；Fast 文件和 README 对 TE-Speed 的说法不一致，跑之前先看图里的节点。",
+      "en": "On an 8GB laptop, start with Balanced and restart before every run. The author keeps the measured claims and the open gaps in the same repositories. The Fast file and the README disagree about TE-Speed, so check that node before queueing."
+    },
+    "cost": {
+      "zh": "生成占用自己的 GPU、大约 16GB 内存和模型磁盘。作者没有为这篇收取费用；本站没有购买算力复跑。",
+      "en": "Rendering uses your own GPU, about 16GB of RAM, and disk space for the models. The author does not charge for this guide, and this site has not paid for a rerun."
+    },
+    "applicableVersions": [
+      "ComfyUI 0.35.0 (a7b1d39)",
+      "PyTorch 2.14.0+cu130",
+      "Python 3.13.12",
+      "Windows 11 25H2",
+      "RTX 5060 Laptop 8GB (sm_120), 15.26 GiB RAM",
+      "RTX 4060 Laptop (sm_89): 4-step / 5s / 768x1024 attention timing only"
+    ],
+    "materialsNote": {
+      "zh": "工作流 JSON、模型文件名和实测数字来自作者仓库。本站没有另行跑通这三档生成。turbo LoRA 的 T8-convert 文件名不在 Comfy-Org/MiniMax-H3 的文件列表里。",
+      "en": "The workflow JSON, model filenames, and measured figures come from the author's repositories. This site has not separately rendered the three tiers. The turbo LoRA's T8-convert filename is not in the Comfy-Org/MiniMax-H3 file list."
+    },
+    "learningResources": [
+      {
+        "label": {
+          "zh": "Balanced 工作流（8 步）",
+          "en": "Balanced workflow (8 steps)"
+        },
+        "url": "https://github.com/FlowForgeLabAi/MiniMax-H3-8GB-Workflows/blob/main/H3_Balanced.json",
+        "kind": "workflow"
+      },
+      {
+        "label": {
+          "zh": "Quality 工作流（20 步）",
+          "en": "Quality workflow (20 steps)"
+        },
+        "url": "https://github.com/FlowForgeLabAi/MiniMax-H3-8GB-Workflows/blob/main/H3_Quality.json",
+        "kind": "workflow"
+      },
+      {
+        "label": {
+          "zh": "Fast 工作流（4 步）",
+          "en": "Fast workflow (4 steps)"
+        },
+        "url": "https://github.com/FlowForgeLabAi/MiniMax-H3-8GB-Workflows/blob/main/H3_Fast.json",
+        "kind": "workflow"
+      },
+      {
+        "label": {
+          "zh": "六个陷阱的脚本和原始数据",
+          "en": "Scripts and raw data for the six traps"
+        },
+        "url": "https://github.com/FlowForgeLabAi/-h3-8gb-traps",
+        "kind": "documentation"
+      },
+      {
+        "label": {
+          "zh": "四个基础权重所在的模型仓库",
+          "en": "Model repo that contains the four base weights"
+        },
+        "url": "https://huggingface.co/Comfy-Org/MiniMax-H3",
+        "kind": "models"
+      },
+      {
+        "label": {
+          "zh": "SaveVideo 奇数尺寸问题 ComfyUI #16544",
+          "en": "SaveVideo odd-size report, ComfyUI #16544"
+        },
+        "url": "https://github.com/Comfy-Org/ComfyUI/issues/16544",
+        "kind": "documentation"
+      }
+    ],
+    "evidence": {
+      "sourceCheckedAt": "2026-10-21",
+      "basis": "author-docs",
+      "status": "active"
+    },
+    "nextGuideIds": [
+      "official-deployment",
+      "nvidia-comfyui"
+    ],
+    "original": {
+      "kind": "markdown",
+      "capturedAt": "2026-10-21T02:25:41.395Z"
+    }
   }
 ]

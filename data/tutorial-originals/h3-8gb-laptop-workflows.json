@@ -1,0 +1,1656 @@
+{
+  "tutorialId": "h3-8gb-laptop-workflows",
+  "kind": "markdown",
+  "language": "zh",
+  "capturedAt": "2026-10-21T02:25:41.395Z",
+  "source": {
+    "url": "https://github.com/FlowForgeLabAi/MiniMax-H3-8GB-Workflows",
+    "author": "FlowForgeLabAi",
+    "revision": "c96b566bab153e41c99d7a9506d8ec76daf42434",
+    "license": "MIT"
+  },
+  "sections": [
+    {
+      "url": "https://github.com/FlowForgeLabAi/MiniMax-H3-8GB-Workflows",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "中文"
+            },
+            {
+              "t": " · "
+            },
+            {
+              "href": "https://github.com/FlowForgeLabAi/MiniMax-H3-8GB-Workflows/blob/main/README.en.md",
+              "t": "English"
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "三档可直接运行的 ComfyUI 工作流，针对 "
+            },
+            {
+              "b": true,
+              "t": "8 GB 显存的笔记本 GPU"
+            },
+            {
+              "t": " 调过。\n每个参数的选择都有实测依据，出处见文末。"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "文件"
+              }
+            ],
+            [
+              {
+                "t": "步数"
+              }
+            ],
+            [
+              {
+                "t": "sampler"
+              }
+            ],
+            [
+              {
+                "t": "LoRA"
+              }
+            ],
+            [
+              {
+                "t": "TE-Speed"
+              }
+            ],
+            [
+              {
+                "t": "10 秒成片实测"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "c": true,
+                  "t": "H3_Quality.json"
+                }
+              ],
+              [
+                {
+                  "t": "20"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "res_multistep"
+                }
+              ],
+              [
+                {
+                  "t": "无"
+                }
+              ],
+              [
+                {
+                  "t": "关"
+                }
+              ],
+              [
+                {
+                  "b": true,
+                  "t": "33.8–43.5 分钟"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "b": true,
+                  "c": true,
+                  "t": "H3_Balanced.json"
+                }
+              ],
+              [
+                {
+                  "b": true,
+                  "t": "8"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "euler"
+                }
+              ],
+              [
+                {
+                  "t": "turbo @1.0"
+                }
+              ],
+              [
+                {
+                  "t": "关"
+                }
+              ],
+              [
+                {
+                  "b": true,
+                  "t": "14.3 分钟"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "H3_Fast.json"
+                }
+              ],
+              [
+                {
+                  "t": "4"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "euler"
+                }
+              ],
+              [
+                {
+                  "t": "turbo @1.0"
+                }
+              ],
+              [
+                {
+                  "t": "关"
+                }
+              ],
+              [
+                {
+                  "t": "约 9 分钟"
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "日常用 Balanced。"
+            },
+            {
+              "t": " 同 seed 对比下，8 步和 20 步的构图基本一致，时间只有 1/2.5。"
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "预览"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "Balanced（8 步）—— 推荐日常档"
+            },
+            {
+              "t": "，五个时间点：推近 → 手部特写 → 切镜 → 侧脸"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/tutorial-media/h3-8gb-laptop-workflows/md-90c9e7413699.webp",
+          "width": 1600,
+          "height": 427,
+          "alt": "H3_Balanced 预览"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "Quality（20 步）：[预览图](preview/H3_Quality.png) · Fast（4 步）：[预览图](preview/H3_Fast.png)"
+            }
+          ]
+        },
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "示例底图是作者的私人图，"
+            },
+            {
+              "b": true,
+              "t": "公开发布的工作流里 "
+            },
+            {
+              "b": true,
+              "c": true,
+              "t": "LoadImage"
+            },
+            {
+              "b": true,
+              "t": " 已改成 ComfyUI 自带的\n"
+            },
+            {
+              "b": true,
+              "c": true,
+              "t": "example.png"
+            },
+            {
+              "t": " —— 记得换成你自己的图。"
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "1. 你需要先准备这些模型"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "放到 ComfyUI 对应的 "
+            },
+            {
+              "c": true,
+              "t": "models/"
+            },
+            {
+              "t": " 子目录下："
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "用途"
+              }
+            ],
+            [
+              {
+                "t": "文件名"
+              }
+            ],
+            [
+              {
+                "t": "放哪里"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "主模型"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "minimax_h3_fl2va_pruned_int8_convrot.safetensors"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "models/diffusion_models/"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "文本编码器"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "models/text_encoders/"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "视频 VAE"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "minimax_h3_video_vae_int8_convrot.safetensors"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "models/vae/"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "音频 VAE"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "minimax_h3_audio_vae_fp32.safetensors"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "models/vae/"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "turbo LoRA"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "minimax_h3_turbo_v4_step600_comfyui_T8-convert.safetensors"
+                }
+              ],
+              [
+                {
+                  "c": true,
+                  "t": "models/loras/"
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "b": true,
+              "t": "量化格式说明"
+            },
+            {
+              "t": "：主模型优先用 "
+            },
+            {
+              "c": true,
+              "t": "int8_convrot"
+            },
+            {
+              "t": "（需要 PyTorch cu130）；用不了再退 "
+            },
+            {
+              "c": true,
+              "t": "fp8_scaled"
+            },
+            {
+              "t": "。\n文本编码器的 "
+            },
+            {
+              "c": true,
+              "t": "nvfp4_awq"
+            },
+            {
+              "t": " "
+            },
+            {
+              "b": true,
+              "t": "不需要 Blackwell 显卡"
+            },
+            {
+              "t": "，而且比 "
+            },
+            {
+              "c": true,
+              "t": "int8"
+            },
+            {
+              "t": " 版本小 10.7 GiB ——\n对 16 GB 内存的机器这是关键差别。\n\n"
+            },
+            {
+              "b": true,
+              "t": "Quality 档不带 LoRA"
+            },
+            {
+              "t": "，所以那份工作流不需要 LoRA 文件。"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "inlines": [
+            {
+              "t": "必须装的自定义节点"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "节点"
+              }
+            ],
+            [
+              {
+                "t": "来源"
+              }
+            ],
+            [
+              {
+                "t": "用途"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "c": true,
+                  "t": "MiniMaxLowVRAMAttention"
+                },
+                {
+                  "t": " / "
+                },
+                {
+                  "c": true,
+                  "t": "MiniMaxChunkFeedForward"
+                }
+              ],
+              [
+                {
+                  "t": "ComfyUI 内置"
+                }
+              ],
+              [
+                {
+                  "t": "降显存（源码级无损）"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "ModelAttentionBackend"
+                }
+              ],
+              [
+                {
+                  "t": "ComfyUI 内置"
+                }
+              ],
+              [
+                {
+                  "t": "切到 comfy-kitchen 注意力后端"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "VHS_VideoCombine"
+                }
+              ],
+              [
+                {
+                  "b": true,
+                  "t": "ComfyUI-VideoHelperSuite"
+                }
+              ],
+              [
+                {
+                  "t": "输出视频（见下方说明）"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "c": true,
+                  "t": "MiniMaxH3SigmaShift"
+                }
+              ],
+              [
+                {
+                  "t": "ComfyUI 内置"
+                }
+              ],
+              [
+                {
+                  "t": "显式控制 shift"
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "2. 启动参数"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "--disable-pinned-memory        ← 16 GB 内存机器【必须】"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "不要加"
+            },
+            {
+              "t": "："
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "--use-sage-attention"
+                },
+                {
+                  "t": " —— 在 sm_120 上比 kitchen 慢且误差大 2.4 倍，而且会让后端选择失效"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "--use-flash-attention"
+                },
+                {
+                  "t": " —— sm_120 上不可用"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "c": true,
+                  "t": "--fast"
+                },
+                {
+                  "t": " / "
+                },
+                {
+                  "c": true,
+                  "t": "--fp16-unet"
+                },
+                {
+                  "t": " —— H3 的计算 dtype 是 bf16，没有 fp16，会出全黑帧"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "3. 怎么用"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "把 json 拖进 ComfyUI 窗口"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "把 "
+                },
+                {
+                  "b": true,
+                  "c": true,
+                  "t": "LoadImage"
+                },
+                {
+                  "b": true,
+                  "t": " 换成你自己的图"
+                },
+                {
+                  "t": "（默认指向 ComfyUI 自带的 "
+                },
+                {
+                  "c": true,
+                  "t": "example.png"
+                },
+                {
+                  "t": "，只是个占位）"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "把提示词换成你自己的"
+                },
+                {
+                  "t": " —— 但"
+                },
+                {
+                  "b": true,
+                  "t": "保持这个结构"
+                },
+                {
+                  "t": "："
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] …… The camera pushes in with small amplitude\nat slow speed toward <具体落点>, and comes to rest at a medium shot. …… [Shot 2] At 00:06.000,\nthe camera cuts to ……\n\noverall_soundscape: ……\n\nnon_diegetic_music: ……"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "三个最容易踩的坑（都实测过）："
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "坑"
+              }
+            ],
+            [
+              {
+                "t": "后果"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "10 秒的片子只写 "
+                },
+                {
+                  "c": true,
+                  "t": "[Shot 1]"
+                }
+              ],
+              [
+                {
+                  "t": "后段没有内容可描述，"
+                },
+                {
+                  "b": true,
+                  "t": "模型会自己填空景"
+                },
+                {
+                  "t": "，主体消失"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "运镜只写幅度和速度、"
+                },
+                {
+                  "b": true,
+                  "t": "没有落点"
+                }
+              ],
+              [
+                {
+                  "t": "模型不知道推到哪停，"
+                },
+                {
+                  "b": true,
+                  "t": "一路推过头把主体推出画面"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "同时写「保持构图不变」和「推镜」"
+                }
+              ],
+              [
+                {
+                  "b": true,
+                  "t": "自相矛盾"
+                },
+                {
+                  "t": "，构图必然随运镜改变"
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "每次跑之前 "
+                },
+                {
+                  "b": true,
+                  "t": "重启 ComfyUI"
+                },
+                {
+                  "t": "（见下方第 5 节）"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "运行"
+                }
+              ]
+            }
+          ],
+          "start": 4
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "4. 分辨率：不要动那个「百万像素」数字"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "官方硬约束："
+            },
+            {
+              "b": true,
+              "t": "短边 ≤ 768、面积 ≤ 768×1344、32 的倍数"
+            },
+            {
+              "t": "。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "ResolutionSelector"
+            },
+            {
+              "t": " 的「百万像素」是"
+            },
+            {
+              "b": true,
+              "t": "陷阱"
+            },
+            {
+              "t": " —— 同一个 MP 在不同比例下短边不同："
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "比例"
+              }
+            ],
+            [
+              {
+                "t": "短边=768 时应填的 MP"
+              }
+            ],
+            [
+              {
+                "t": "实际输出"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "t": "1:1"
+                }
+              ],
+              [
+                {
+                  "t": "0.5625"
+                }
+              ],
+              [
+                {
+                  "t": "768×768"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "b": true,
+                  "t": "3:4（默认）"
+                }
+              ],
+              [
+                {
+                  "b": true,
+                  "t": "0.75"
+                }
+              ],
+              [
+                {
+                  "b": true,
+                  "t": "768×1024"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "4:3"
+                }
+              ],
+              [
+                {
+                  "t": "0.75"
+                }
+              ],
+              [
+                {
+                  "t": "1024×768"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "9:16"
+                }
+              ],
+              [
+                {
+                  "t": "0.959"
+                }
+              ],
+              [
+                {
+                  "t": "768×1344"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "16:9"
+                }
+              ],
+              [
+                {
+                  "t": "0.959"
+                }
+              ],
+              [
+                {
+                  "t": "1344×768"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "2:3"
+                }
+              ],
+              [
+                {
+                  "t": "0.844"
+                }
+              ],
+              [
+                {
+                  "t": "768×1152"
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "填 1.0 MP 配 3:4 会得到 896×1184 —— 短边 896 超出训练区间，画质反而更差。"
+            }
+          ]
+        },
+        {
+          "type": "quote",
+          "inlines": [
+            {
+              "t": "9:16 的 768×1344（0.984 MP）是"
+            },
+            {
+              "b": true,
+              "t": "合法上限"
+            },
+            {
+              "t": "，但在 16 GB 内存的机器上实测会掉进换页\n（GPU 功耗从 80 W 掉到平线 34 W）。内存够大再试。"
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "5. ⚠️ 每次运行前必须重启 ComfyUI"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "这是"
+            },
+            {
+              "b": true,
+              "t": "收益最大的单条建议"
+            },
+            {
+              "t": "，远超任何节点级优化："
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "ComfyUI 会话状态"
+              }
+            ],
+            [
+              {
+                "t": "每 block"
+              }
+            ],
+            [
+              {
+                "t": "10 秒成片"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "b": true,
+                  "t": "刚重启"
+                }
+              ],
+              [
+                {
+                  "b": true,
+                  "t": "0.9–6 秒"
+                }
+              ],
+              [
+                {
+                  "b": true,
+                  "t": "34–44 分钟"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "t": "连续运行约 1.7 小时后"
+                }
+              ],
+              [
+                {
+                  "b": true,
+                  "t": "212 秒"
+                }
+              ],
+              [
+                {
+                  "b": true,
+                  "t": "约 12 小时"
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "怎么判断自己在掉速"
+            },
+            {
+              "t": "：看 "
+            },
+            {
+              "c": true,
+              "t": "nvidia-smi"
+            },
+            {
+              "t": " 的"
+            },
+            {
+              "b": true,
+              "t": "功耗"
+            },
+            {
+              "t": "。"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "正常采样："
+                },
+                {
+                  "b": true,
+                  "t": "64–98 W"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "在换页："
+                },
+                {
+                  "b": true,
+                  "t": "平线 34–36 W"
+                },
+                {
+                  "t": "，而利用率仍显示 99%（那个计数器把搬运内存的核也算进去）"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "循环采样功耗，一旦变平线就停 —— 别等。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "这一步现在有工具了。"
+            },
+            {
+              "t": " 上面那个「循环采样功耗、变平线就停」的手工流程，已经做成了一个\nComfyUI 面板："
+            },
+            {
+              "href": "https://github.com/FlowForgeLabAi/ComfyUI-GPU-Stall-Meter",
+              "t": "ComfyUI-GPU-Stall-Meter"
+            },
+            {
+              "t": "\n—— 直接读板载功耗、SM 时钟和可用内存，自校准判定 "
+            },
+            {
+              "c": true,
+              "t": "idle / ok / stalled"
+            },
+            {
+              "t": "，可选在判定持续\n成立时中断运行（默认关）。不装也完全不影响，上面手工采样的做法依然有效。"
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "6. 关于输出节点为什么用 "
+            },
+            {
+              "c": true,
+              "t": "VHS_VideoCombine"
+            },
+            {
+              "t": " 而不是 "
+            },
+            {
+              "c": true,
+              "t": "SaveVideo"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "SaveVideo"
+            },
+            {
+              "t": " 有 "
+            },
+            {
+              "c": true,
+              "t": "crf"
+            },
+            {
+              "t": " 控件，但"
+            },
+            {
+              "b": true,
+              "t": "视频宽或高是奇数时它的重编码会失败"
+            },
+            {
+              "t": "："
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "text": "avcodec_open2(\"libx264\", {})   ← 连【空参数】都失败"
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "t": "原因是尺寸，不是编码器坏了。"
+            },
+            {
+              "t": " "
+            },
+            {
+              "c": true,
+              "t": "video_types.py"
+            },
+            {
+              "t": " 把帧的宽高原样交给 libx264，同时设\n"
+            },
+            {
+              "c": true,
+              "t": "pix_fmt = \"yuv420p\""
+            },
+            {
+              "t": " —— 而 "
+            },
+            {
+              "c": true,
+              "t": "yuv420p"
+            },
+            {
+              "t": " 的色度是 2×2 下采样，"
+            },
+            {
+              "b": true,
+              "t": "宽高必须都是偶数"
+            },
+            {
+              "t": "。libx264\n返回 "
+            },
+            {
+              "c": true,
+              "t": "EINVAL (22)"
+            },
+            {
+              "t": " 拒绝打开；PyAV 是在 "
+            },
+            {
+              "c": true,
+              "t": "encode()"
+            },
+            {
+              "t": " 里惰性打开的，所以最终只报一个完全没提\n尺寸的外部库错误。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "同一套 PyAV（18.1.0）、"
+            },
+            {
+              "b": true,
+              "t": "不启动 ComfyUI"
+            },
+            {
+              "t": " 实测："
+            },
+            {
+              "c": true,
+              "t": "64x64"
+            },
+            {
+              "t": "、"
+            },
+            {
+              "c": true,
+              "t": "1080x1920"
+            },
+            {
+              "t": " 正常；"
+            },
+            {
+              "c": true,
+              "t": "65x63"
+            },
+            {
+              "t": "、"
+            },
+            {
+              "c": true,
+              "t": "63x65"
+            },
+            {
+              "t": "、\n"
+            },
+            {
+              "c": true,
+              "t": "65x65"
+            },
+            {
+              "t": "、"
+            },
+            {
+              "c": true,
+              "t": "1171x2532"
+            },
+            {
+              "t": "、"
+            },
+            {
+              "c": true,
+              "t": "1080x1441"
+            },
+            {
+              "t": " 全部失败。我们的参考图是 "
+            },
+            {
+              "b": true,
+              "t": "1259 × 1672"
+            },
+            {
+              "t": "，宽为奇数。\n已上报为 "
+            },
+            {
+              "href": "https://github.com/Comfy-Org/ComfyUI/issues/16544",
+              "t": "ComfyUI #16544"
+            },
+            {
+              "t": "。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "format=auto"
+            },
+            {
+              "t": " 不是替代方案：它的语义是「保留上游流、不重编码」，"
+            },
+            {
+              "b": true,
+              "t": "改不了画质"
+            },
+            {
+              "t": "，实测码率\n被压在 2067 kb/s。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "c": true,
+              "t": "VHS_VideoCombine"
+            },
+            {
+              "t": " 调用外部 ffmpeg 可执行文件，"
+            },
+            {
+              "b": true,
+              "t": "crf 实测可用"
+            },
+            {
+              "t": "："
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "header": [
+            [
+              {
+                "t": "输出节点"
+              }
+            ],
+            [
+              {
+                "t": "同一条片子的码率"
+              }
+            ]
+          ],
+          "rows": [
+            [
+              [
+                {
+                  "c": true,
+                  "t": "SaveVideo"
+                },
+                {
+                  "t": "（auto）"
+                }
+              ],
+              [
+                {
+                  "t": "2067 kb/s"
+                }
+              ]
+            ],
+            [
+              [
+                {
+                  "b": true,
+                  "c": true,
+                  "t": "VHS_VideoCombine"
+                },
+                {
+                  "b": true,
+                  "t": "（crf=12）"
+                }
+              ],
+              [
+                {
+                  "b": true,
+                  "t": "10393 kb/s（×5.0）"
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "crf 越小画质越高、文件越大。"
+            },
+            {
+              "b": true,
+              "t": "12 ≈ 视觉无损"
+            },
+            {
+              "t": "；想让文件小一点，改到 18–20 也够用\n（同一段测试输入：crf=12 → 570 KB，crf=19 → 287 KB，crf=40 → 40 KB）。"
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "7. 已知限制"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "b": true,
+                  "t": "RTX 4060 Laptop (sm_89) 也已实测"
+                },
+                {
+                  "t": "（2026-09）：4 步 / 5 秒 / 768×1024 下，\n"
+                },
+                {
+                  "c": true,
+                  "t": "pytorch attention"
+                },
+                {
+                  "t": " 403.8 s · "
+                },
+                {
+                  "b": true,
+                  "c": true,
+                  "t": "comfy-kitchen"
+                },
+                {
+                  "b": true,
+                  "t": " 270.1 s"
+                },
+                {
+                  "t": " · sage 263.0 s。\n"
+                },
+                {
+                  "b": true,
+                  "t": "kitchen 在 4060 上同样比 pytorch 快 1.5×"
+                },
+                {
+                  "t": " —— 所以本工作流的后端选择无需按架构调整。\n仍未测：4060 上的 8 步 / 20 步耗时。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "测过的时长只有 5 秒和 10 秒。官方训练区间约 124–362 帧。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "三档"
+                },
+                {
+                  "b": true,
+                  "t": "都不使用 TE-Speed"
+                },
+                {
+                  "t": " —— 实测它只值 18%，而代价是闭源不可审计的有损项。"
+                }
+              ]
+            },
+            {
+              "depth": 0,
+              "inlines": [
+                {
+                  "t": "这些工作流不是「最优解」，是"
+                },
+                {
+                  "b": true,
+                  "t": "有证据支撑的合理起点"
+                },
+                {
+                  "t": "。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "divider"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "inlines": [
+            {
+              "t": "8. 依据出处"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "每条参数选择背后都有实测，完整证据、脚本和原始数据在："
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "b": true,
+              "href": "https://github.com/FlowForgeLabAi/-h3-8gb-traps",
+              "t": "https://github.com/FlowForgeLabAi/-h3-8gb-traps"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "t": "包含：kitchen vs sage vs SDPA 的注意力对照、LoRA 80.3% 应用率的逐 key 比对、\n输出节点探针（不加载模型，秒级出结果）、14 次运行的 33 字段 CSV。"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "title": "MiniMax H3 — 8 GB 显存工作流（三档）"
+}
