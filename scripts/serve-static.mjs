@@ -233,7 +233,7 @@ export async function createStaticServer({ distDir = DEFAULT_DIST_DIR, logger = 
   const distRoot = await realpath(resolve(distDir))
   const rootStats = await stat(distRoot)
   if (!rootStats.isDirectory()) throw new Error(`Static root is not a directory: ${distRoot}`)
-  resolveSiteOrigin({ production })
+  const siteOrigin = resolveSiteOrigin({ production })
   if (!['off', 'temporary', 'permanent'].includes(redirectMode)) throw new Error('SITE_REDIRECT_MODE_INVALID')
   if (production) {
     let buildMode
@@ -257,6 +257,15 @@ export async function createStaticServer({ distDir = DEFAULT_DIST_DIR, logger = 
       const target = parseRequestTarget(request.url)
       if (!target) {
         writeText(response, request.method, 400, '<!doctype html><title>400 Bad Request</title><h1>400 Bad Request</h1>')
+        return
+      }
+      if (request.headers.host === advertisingRootHost && target.decodedPath === '/') {
+        response.writeHead(308, {
+          Location: `${siteOrigin}/${target.search}`,
+          'Cache-Control': 'no-store',
+          'X-Content-Type-Options': 'nosniff',
+        })
+        response.end()
         return
       }
       const migrated = legacyPageRedirect({ host: request.headers.host, path: `${target.rawPath}${target.search}`, method: request.method, mode: redirectMode })
@@ -286,7 +295,7 @@ export async function createStaticServer({ distDir = DEFAULT_DIST_DIR, logger = 
 
       if (await redirectVideo(request, response, videoStore, target.decodedPath)) return
 
-      const requestedPath = resolve(distRoot, request.headers.host === advertisingRootHost && target.decodedPath === '/' ? 'domain.html' : `.${target.decodedPath}`)
+      const requestedPath = resolve(distRoot, `.${target.decodedPath}`)
       if (!isPathInside(distRoot, requestedPath)) {
         writeText(response, request.method, 403, '<!doctype html><title>403 Forbidden</title><h1>403 Forbidden</h1>')
         return
