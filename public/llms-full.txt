@@ -1,6 +1,6 @@
 # MiniMax H3 Cases & Guides — Complete Case and Tutorial Index
 
-Generated from data/cases.json and data/tutorial-guides.json. Total: 2940 cases and 26 tutorials. Complete verbatim public Prompts: 756.
+Generated from data/cases.json and data/tutorial-guides.json. Total: 2970 cases and 26 tutorials. Complete verbatim public Prompts: 758.
 
 ## Tutorials
 
@@ -106377,4 +106377,1024 @@ Attackers hesitate, collide, and react naturally. Bystanders panic and move. So-
 - Chinese summary: 四格画面并列展示默认模型与街景动漫角色，镜头从正面逐渐转向侧面。 原生视频规格为 5 秒 · 2800×1696。本库暂未收录完整 Prompt，不反推或补写。
 - English summary: A four-panel comparison pairs a default model with an anime character in a street scene as the view turns from the front toward the side. Native-video output: 5s · 2800×1696. A complete Prompt has not been collected here; this library does not infer or complete one.
 - Public prompt: complete public text not retained in this library
+
+## An animated hero enters the desktop
+
+- ID: x-2103354080546767312
+- 中文标题: 动画少年闯入桌面
+- English title: An animated hero enters the desktop
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2103354080546767312/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2103354080546767312/
+- Original source: https://x.com/Strength04_X/status/2103354080546767312
+- Author: M-studioAi
+- Published: 2026-09-25T05:21:05.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Animation
+- Visual styles: not specified
+- Scenes: not specified
+- Output: 10s, 1920×1080, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 动画少年在 Mac 桌面前探身挥动手臂，绿色光效围绕图标与窗口展开。 原生视频规格为 10 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: An animated hero leans into a Mac desktop and moves his arm as green effects surround its icons and windows. Native-video output: 10s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## Flashlight horror scenes through a haunted house
+
+- ID: x-2103337116922970498
+- 中文标题: 手电探照下的鬼屋连续镜头
+- English title: Flashlight horror scenes through a haunted house
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2103337116922970498/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2103337116922970498/
+- Original source: https://x.com/EndFolding79421/status/2103337116922970498
+- Author: FoldingEnd A.I.
+- Published: 2026-09-25T04:13:41.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Cinematic & Narrative
+- Visual styles: Cinematic realism, Dark & horror
+- Scenes: Fantasy, Animals & creatures
+- Output: 47s, 1376×768, landscape
+- Prompt provenance: creator-verbatim
+- Prompt completeness: complete
+- Chinese summary: 女子举着手机手电穿过昏暗走廊与房间，长发幽灵随后出现在她身后。视频将生成片段与工作流界面并置，展示角色和场景的连续衔接实验。 原生视频规格为 47 秒 · 1376×768。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A woman follows her phone flashlight through dark corridors and rooms before a long-haired ghost appears behind her. Generated scenes appear beside a workflow interface in a character and scene continuity experiment. Native-video output: 47s · 1376×768. The creator published the complete prompt, preserved here verbatim.
+- Complete verbatim public prompt:
+
+```text
+Part 1: subject_definitions:
+<Subject 1> Sally is the woman shown in <Picture 1>, the character reference sheet. Preserve her exact face, dark curly hair, white blouse, blue jeans, belt, white sneakers and natural body proportions.
+
+integrated_multimodal_description:
+
+CINEMATOGRAPHY:
+Authentic late-1980s/1990s supernatural horror cinematography, shot on a Panavision Panaflex Gold II with a vintage 35mm spherical lens. Natural optical softness, restrained organic film grain, gentle highlight roll-off, realistic motion blur and slightly imperfect handheld camera movement.
+
+Camera: Panavision Panaflex Gold II, vintage 35mm spherical lens, late-1980s/1990s theatrical horror-film appearance.
+Film: Natural optical softness, fine organic film grain, gentle highlight roll-off, realistic motion blur and imperfect handheld movement. No exaggerated noise or artificial sharpness.
+Lighting: Extremely low-key. Sally's iPhone flashlight is the only significant light source. The house is almost completely invisible beyond its beam. Subtle bounced light occasionally reveals her face.
+Color: Muted, slightly desaturated colors, deep natural blacks and realistic skin tones. No artificial blue moonlight or modern HDR.
+Audio: Realistic environmental horror sounds, unsettling silence and sudden scares. NO MUSIC.
+
+The abandoned house is almost completely BLACK. Sally's iPhone flashlight is the ONLY significant light source. Its narrow beam reveals small fragments of the environment. Natural reflected light occasionally illuminates Sally's face. Deep blacks, muted colors, natural skin texture. No plastic CGI appearance, artificial blue lighting, excessive sharpening, digital HDR or exaggerated noise.
+
+SHOT — 10 SECONDS:
+
+00:00–00:06:
+The camera follows closely behind Sally at shoulder height as she cautiously explores an abandoned house.
+
+She holds her iPhone upright, with its REAR FLASHLIGHT facing FORWARD into the darkness. The screen faces Sally.
+
+Her flashlight slowly sweeps across peeling wallpaper, an old portrait and a decaying wooden staircase.
+
+Everything outside the flashlight beam disappears into darkness.
+
+Sally walks slowly, listening to the floorboards creaking beneath her feet.
+
+00:06 — THE SOUND:
+A sudden, LOUD, HEAVY THUMP echoes from upstairs.
+
+SALLY IMMEDIATELY STOPS WALKING.
+
+00:06–00:10 — CLOSE-UP:
+CUT IMMEDIATELY to a tight, cinematic close-up of Sally's face as she turns toward the camera, looking past it toward the source of the noise.
+
+Her eyes widen. Her expression changes to genuine fear.
+
+She freezes completely, listening.
+
+Her lips part slightly. Her breathing becomes shallow and uneven.
+
+Her iPhone flashlight remains raised but trembles slightly in her hand. Its reflected light softly illuminates part of her frightened face.
+
+She does NOT scream, exaggerate her expression or immediately continue walking.
+
+HOLD THE CLOSE-UP.
+
+Sally remains completely stationary, listening for another sound.
+
+END FRAME:
+A tight close-up of Sally's frightened face, frozen in place, staring toward the staircase.
+
+AUDIO:
+Slow footsteps, creaking floorboards, one sudden heavy thump upstairs, abrupt silence, shallow frightened breathing.
+
+NO MUSIC. NO DIALOGUE.
+
+CRITICAL PERFORMANCE:
+Sally MUST stop walking immediately when she hears the thump.
+She must NOT gasp theatrically, raise both hands, continue forward or resume walking during this clip.
+Natural, restrained, believable human fear.
+
+Exactly ONE visible woman. No ghost or additional people. 16:9.
+
+Part 2:
+
+subject_definitions:
+<Subject 1> Sally is the woman shown in <Picture 1>. Preserve her exact face, curly hair, white blouse, jeans and body proportions.
+
+integrated_multimodal_description:
+
+CONTINUITY:
+Continue Sally's exploration from the previous clip. Maintain the same house, clothing, iPhone, lighting, film texture and realistic appearance.
+
+CINEMATOGRAPHY:
+Authentic 1990s supernatural horror film photographed on a Panavision Panaflex Gold II with vintage 35mm spherical optics. Natural optical softness, subtle organic grain, realistic motion blur, deep blacks and restrained colors.
+
+Camera: Panavision Panaflex Gold II, vintage 35mm spherical lens, late-1980s/1990s theatrical horror-film appearance.
+Film: Natural optical softness, fine organic film grain, gentle highlight roll-off, realistic motion blur and imperfect handheld movement. No exaggerated noise or artificial sharpness.
+Lighting: Extremely low-key. Sally's iPhone flashlight is the only significant light source. The house is almost completely invisible beyond its beam. Subtle bounced light occasionally reveals her face.
+Color: Muted, slightly desaturated colors, deep natural blacks and realistic skin tones. No artificial blue moonlight or modern HDR.
+Audio: Realistic environmental horror sounds, unsettling silence and sudden scares. NO MUSIC.
+
+The house remains almost completely black. Sally's iPhone flashlight is the ONLY significant illumination. No artificial fill, blue moonlight, plastic skin, HDR or excessive sharpening.
+
+SHOT — 10 SECONDS:
+
+CUT TO A NEW CAMERA ANGLE.
+
+The camera is positioned INSIDE a completely dark room, facing an old wooden doorway.
+
+At first, the viewer can barely distinguish the door from the surrounding darkness.
+
+The door slowly CREAKS OPEN.
+
+A narrow beam of light from Sally's iPhone enters the room, briefly shining toward the camera.
+
+Sally cautiously peers through the doorway.
+
+She steps inside, holding her iPhone upright with its REAR FLASHLIGHT pointing forward into the room.
+
+Her flashlight sweeps across dusty furniture, peeling wallpaper and an old wooden chair. Everything disappears back into darkness when the beam moves away.
+
+Suddenly, faint CHILDLIKE LAUGHTER echoes from somewhere behind Sally.
+
+She freezes.
+
+The laughter grows slightly louder for a moment, then abruptly stops.
+
+Sally quickly turns around, swinging her phone flashlight toward the doorway.
+
+NOTHING IS THERE.
+
+She nervously retreats toward the hallway.
+
+END FRAME:
+Sally is exiting the room into the dark hallway.
+
+AUDIO:
+Long wooden door creak, slow footsteps, anxious breathing, faint playful child's laughter from behind Sally, abrupt silence.
+
+NO MUSIC. NO DIALOGUE.
+
+Exactly ONE visible woman. Never show the child or any ghost. No additional people. Single-camera 16:9.
+
+Part 3:
+subject_definitions:
+<Subject 1> Sally is the woman shown in <Picture 1>. Preserve her exact face, curly hair, white blouse, jeans and body proportions.
+
+integrated_multimodal_description:
+
+CONTINUITY:
+Continue immediately as Sally exits the room into the dark hallway. Maintain her exact appearance, iPhone, house architecture and lighting.
+
+CINEMATOGRAPHY:
+Late-1980s/1990s theatrical horror, Panavision Panaflex Gold II, vintage 35mm spherical lens, natural optical softness, fine organic grain, realistic motion blur and subtle imperfect handheld camera movement.
+
+Camera: Panavision Panaflex Gold II, vintage 35mm spherical lens, late-1980s/1990s theatrical horror-film appearance.
+Film: Natural optical softness, fine organic film grain, gentle highlight roll-off, realistic motion blur and imperfect handheld movement. No exaggerated noise or artificial sharpness.
+Lighting: Extremely low-key. Sally's iPhone flashlight is the only significant light source. The house is almost completely invisible beyond its beam. Subtle bounced light occasionally reveals her face.
+Color: Muted, slightly desaturated colors, deep natural blacks and realistic skin tones. No artificial blue moonlight or modern HDR.
+Audio: Realistic environmental horror sounds, unsettling silence and sudden scares. NO MUSIC.
+
+Almost total darkness. Sally's iPhone flashlight is the ONLY significant light source. The rear flashlight points in the direction she is looking. The screen faces Sally. No artificial fill lighting, blue ambient light, plastic skin, digital HDR or excessive sharpness.
+
+SHOT — 5 SECONDS:
+
+00:00–00:02 — REAR TRACKING SHOT:
+The camera follows directly behind Sally as she cautiously walks away from the viewer down the dark hallway.
+
+Her iPhone flashlight illuminates only a narrow section of the passage ahead.
+
+SUDDENLY, a LOUD WOODEN DOOR SLAMS somewhere OFF-SCREEN.
+
+Sally immediately stops walking.
+
+00:02–00:03.5 — QUICK SIDE CLOSE-UP:
+HARD CUT to a tight SIDE-PROFILE shot of Sally.
+
+A plain, dark hallway WALL is directly behind her. NO DOORS ARE VISIBLE IN THIS SHOT.
+
+Startled by the noise, Sally violently whips her head toward its source.
+
+Her frightened face is clearly visible in profile. Her eyes widen, and her breathing catches.
+
+She freezes for a brief moment, listening.
+
+00:03.5–00:05 — REAR TRACKING SHOT:
+HARD CUT back to the camera directly BEHIND Sally.
+
+She turns forward again, away from the camera.
+
+Her iPhone flashlight illuminates the CLOSED WOODEN DOOR farther down the hallway.
+
+Sally hesitates, then cautiously begins walking toward it.
+
+END FRAME:
+Rear view of Sally approaching the closed door, with her iPhone flashlight pointing toward it.
+
+CRITICAL CAMERA AND GEOGRAPHY:
+The slamming door is NEVER SHOWN.
+
+Do not animate any visible door opening or closing.
+
+The door slam is an OFF-SCREEN SOUND EFFECT ONLY.
+
+During Sally's frightened reaction, show her exclusively from the SIDE, with a plain wall behind her.
+
+Never show a door behind Sally while she reacts.
+
+After her reaction, cut back to the original rear camera position as she turns forward and begins walking toward the closed door.
+
+AUDIO:
+Slow footsteps, one sudden LOUD WOODEN DOOR SLAM, Sally's startled gasp, frightened breathing and silence.
+
+Part 4: subject_definitions:
+<Subject 1> Sally is the woman shown in <Picture 1>. Preserve her exact face, curly hair, white blouse, blue jeans and natural body proportions.
+
+integrated_multimodal_description:
+
+CONTINUITY:
+Sally has reached the closed wooden door at the end of the dark hallway.
+
+CINEMATOGRAPHY:
+Authentic late-1980s/1990s supernatural horror cinematography. Panavision Panaflex Gold II, vintage 35mm spherical lens, subtle natural optical softness, fine organic film grain, gentle highlight roll-off, realistic motion blur and natural handheld imperfections.
+
+Camera: Panavision Panaflex Gold II, vintage 35mm spherical lens, late-1980s/1990s theatrical horror-film appearance.
+Film: Natural optical softness, fine organic film grain, gentle highlight roll-off, realistic motion blur and imperfect handheld movement. No exaggerated noise or artificial sharpness.
+Lighting: Extremely low-key. Sally's iPhone flashlight is the only significant light source. The house is almost completely invisible beyond its beam. Subtle bounced light occasionally reveals her face.
+Color: Muted, slightly desaturated colors, deep natural blacks and realistic skin tones. No artificial blue moonlight or modern HDR.
+Audio: Realistic environmental horror sounds, unsettling silence and sudden scares. NO MUSIC.
+
+Almost complete darkness. Sally's iPhone flashlight is the ONLY significant light source. Brief natural reflections illuminate her face and nearby objects. Everything outside the flashlight beam remains nearly invisible.
+
+No artificial blue lighting, bright backgrounds, glossy CGI, plastic skin, excessive sharpening, digital HDR or exaggerated grain.
+
+SHOT — 15 SECONDS:
+
+CAMERA POSITION:
+The camera is INSIDE the final room, approximately eight feet from the closed wooden door, facing directly toward it.
+
+00:00–00:04:
+The room is almost COMPLETELY BLACK.
+
+A faint metallic CLICK breaks the silence.
+
+The old door handle slowly turns.
+
+The door begins creaking open.
+
+A narrow beam from Sally's iPhone flashlight cuts through the darkness.
+
+00:04–00:08:
+The door slowly opens wider.
+
+Sally cautiously peers inside, her frightened face briefly illuminated by reflected light from her phone.
+
+She hesitates and listens.
+
+Sally carefully steps into the room, holding her iPhone upright. Its rear flashlight points forward, illuminating the room ahead.
+
+00:08–00:12:
+Sally slowly sweeps the flashlight across dusty furniture, peeling wallpaper and an old broken chair.
+
+The room appears completely EMPTY.
+
+The camera remains stationary, facing Sally and the OPEN DOORWAY behind her.
+
+Sally's flashlight briefly passes near the camera, creating a natural lens reflection.
+
+00:12–00:15:
+Sally exhales nervously.
+
+Believing the room is empty, she cautiously begins walking toward the camera.
+
+Her flashlight illuminates small sections of the floor and nearby walls.
+
+The OPEN DOORWAY remains clearly visible directly behind her.
+
+END FRAME:
+Sally is walking toward the camera, with the open doorway behind her. Maintain this exact camera position and room layout for the final clip.
+
+CRITICAL:
+Do not reveal or suggest the ghost in this clip. No silhouettes, shadows or movement in the doorway.
+
+AUDIO:
+Metal door handle clicking, prolonged wooden door creak, slow footsteps, nervous breathing, faint wind and unsettling silence.
+
+NO MUSIC. NO DIALOGUE.
+
+Exactly ONE visible woman. NO GHOST. No additional people. Single-camera 16:9.
+NO MUSIC. NO DIALOGUE.
+
+Exactly ONE visible woman. No ghost or additional people. 16:9.
+
+Part 5:
+subject_definitions:
+<Subject 1> Sally is the woman shown in <Picture 1>. Preserve her exact face, curly dark hair, white blouse, blue jeans and body proportions.
+
+<Subject 2> The Ghost is the supernatural woman shown in <Picture 2>. Preserve her corpse-pale face, extremely long tangled black hair, filthy white gown, skeletal hands and unnatural hovering posture.
+
+integrated_multimodal_description:
+
+CONTINUITY:
+Begin directly from the previous clip's final frame.
+
+The camera remains INSIDE the dark room, facing Sally and the open doorway behind her. Maintain identical architecture, camera framing, lighting and character appearance.
+
+CINEMATOGRAPHY:
+Authentic late-1980s/1990s supernatural horror film. Panavision Panaflex Gold II, vintage 35mm spherical lens, natural optical softness, fine organic grain, realistic motion blur and deep natural blacks.
+
+The room remains almost completely black. Sally's iPhone flashlight is the ONLY significant light source. Natural reflected flashlight illumination briefly reveals the Ghost.
+
+No supernatural glow, artificial blue lighting, plastic skin, excessive sharpening, digital HDR or exaggerated noise.
+
+FINAL SHOT — 5 SECONDS:
+
+00:00–00:02:
+Sally continues cautiously walking toward the camera, holding her iPhone flashlight.
+
+She nervously scans the apparently empty room.
+
+The open doorway remains visible directly behind her.
+
+THERE IS ABSOLUTELY NO GHOST VISIBLE YET.
+
+Only Sally's footsteps and nervous breathing can be heard.
+
+00:02–00:04:
+SUDDENLY, the audience notices the Ghost HOVERING SILENTLY directly behind Sally, framed by the open doorway.
+
+The Ghost is suspended approximately one foot above the floor.
+
+Her extremely long, tangled black hair hangs across her corpse-pale face. Her filthy white gown hangs motionless.
+
+Sally remains COMPLETELY UNAWARE of the Ghost.
+
+The Ghost slowly raises her head.
+
+Her hair parts slightly, revealing a horrifying, unnaturally wide SMILE.
+
+Her teeth are filthy, crooked, badly stained and decaying.
+
+Her eyes stare directly toward the camera.
+
+The smile grows increasingly disturbing.
+
+00:04–00:05 — JUMP SCARE:
+WITHOUT WARNING, the Ghost suddenly lunges forward toward Sally.
+
+Her mouth stretches into a terrifying, unnatural grin, revealing her stained and decaying teeth.
+
+An EXPLOSIVE SUPERNATURAL SHRIEK erupts.
+
+Sally violently flinches in terror.
+
+IMMEDIATE HARD CUT TO COMPLETE BLACK.
+
+CRITICAL:
+The Ghost appears ONLY during the final THREE SECONDS.
+
+Exactly TWO women: Sally and ONE Ghost. Never duplicate either character.
+
+The Ghost must match her reference sheet precisely. Her horrifying smile and stained teeth are essential.
+
+AUDIO:
+Slow footsteps, nervous breathing, unnatural silence, sudden explosive supernatural shriek.
+
+NO MUSIC. NO DIALOGUE.
+
+Single-camera 16:9.
+```
+
+## A blue-clad fighter faces purple energy
+
+- ID: x-2116771087703052788
+- 中文标题: 蓝衣格斗者与紫色能量对峙
+- English title: A blue-clad fighter faces purple energy
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2116771087703052788/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2116771087703052788/
+- Original source: https://x.com/javawock7618/status/2116771087703052788
+- Author: ジャヴァノ🍀ボカロP@初音ミク「w/39」10/12アルバムリリース
+- Published: 2026-11-01T05:55:29.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Action & VFX
+- Visual styles: not specified
+- Scenes: Action & combat
+- Output: 8s, 1680×960, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 蓝衣女子奔入工业房间，迎向周身环绕紫色能量的制服男子，镜头最后切到男子的近景。 原生视频规格为 8 秒 · 1680×960。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A blue-clad woman runs into an industrial room toward a uniformed man surrounded by purple energy, before a close-up of his face. Native-video output: 8s · 1680×960. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## A giant deer battle at a city crossing
+
+- ID: x-2116768950742921631
+- 中文标题: 十字路口的巨鹿战斗
+- English title: A giant deer battle at a city crossing
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2116768950742921631/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2116768950742921631/
+- Original source: https://x.com/Kashiko_AIart/status/2116768950742921631
+- Author: かし子🍩
+- Published: 2026-11-01T05:47:00.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Action & VFX
+- Visual styles: Stylized & experimental
+- Scenes: City & street, Action & combat
+- Output: 42s, 2560×1440, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 两名角色在城市十字路口迎战巨鹿，车辆与行人环境围绕战斗展开。作者以自己的 3D 游戏战斗画面为视频参考。 原生视频规格为 42 秒 · 2560×1440。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: Two characters confront a giant deer at a city intersection surrounded by traffic. The creator uses footage from their own 3D game battle as a video reference. Native-video output: 42s · 2560×1440. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## A moonlit pumpkin and skeleton dance
+
+- ID: x-2116765482875589027
+- 中文标题: 月光下的南瓜与骷髅舞会
+- English title: A moonlit pumpkin and skeleton dance
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2116765482875589027/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2116765482875589027/
+- Original source: https://x.com/ChristianKorb/status/2116765482875589027
+- Author: Christian Korb
+- Published: 2026-11-01T05:33:13.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Dance
+- Visual styles: not specified
+- Scenes: Dance, Animals & creatures
+- Output: 77s, 1080×1080, square
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 南瓜头角色与骷髅在大圆月前跳舞，紫色雾气与墓地构成万圣节场景。视频同时展示项目文本界面。 原生视频规格为 77 秒 · 1080×1080。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A pumpkin-headed figure and skeletons dance before a large moon amid purple fog and a graveyard, shown beside the project text interface. Native-video output: 77s · 1080×1080. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## A black-and-white monster music rough cut
+
+- ID: x-2116763572797923417
+- 中文标题: 黑白怪物舞曲粗剪
+- English title: A black-and-white monster music rough cut
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2116763572797923417/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2116763572797923417/
+- Original source: https://x.com/Cryptidzoo/status/2116763572797923417
+- Author: Cryptidzoo Interactive
+- Published: 2026-11-01T05:25:37.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Music Video
+- Visual styles: not specified
+- Scenes: Animals & creatures
+- Output: 196s, 1260×720, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 黑白影像以怪物舞曲片头开场，串联人物近景与实验室中的怪物场面。 原生视频规格为 196 秒 · 1260×720。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A black-and-white monster music rough cut moves from its title card to character close-ups and a monster in a laboratory. Native-video output: 196s · 1260×720. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## A camera and a snowy encounter
+
+- ID: x-2116758528992113025
+- 中文标题: 落雪中的相机与相逢
+- English title: A camera and a snowy encounter
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2116758528992113025/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2116758528992113025/
+- Original source: https://x.com/TanLuAI/status/2116758528992113025
+- Author: 探路AI
+- Published: 2026-11-01T05:05:35.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Cinematic & Narrative
+- Visual styles: not specified
+- Scenes: Nature & landscape, Daily life
+- Output: 15s, 1296×720, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 冬日短片从青年人物切到雪地里的相机，再转向飘雪中靠近的两人。作者说明使用一张故事板图片作为参考。 原生视频规格为 15 秒 · 1296×720。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A winter sequence moves from a young man to a camera over snow and two people drawing close under falling snow. The creator identifies one storyboard image as reference. Native-video output: 15s · 1296×720. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## A witch flies from a city street toward the moon
+
+- ID: x-2116757125561196740
+- 中文标题: 女巫从城市街头飞向月牙
+- English title: A witch flies from a city street toward the moon
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2116757125561196740/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2116757125561196740/
+- Original source: https://x.com/aoi_secret_jp/status/2116757125561196740
+- Author: Allie 🌸 AI Model
+- Published: 2026-11-01T05:00:00.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Cinematic & Narrative
+- Visual styles: not specified
+- Scenes: City & street, Fantasy
+- Output: 10s, 720×1260, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 身穿紫色服装的女巫在热闹街头跨上扫帚升空，最后飞向夜空中的月牙。 原生视频规格为 10 秒 · 720×1260。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A purple-clad witch rises on her broom from a busy city street and flies toward a crescent moon. Native-video output: 10s · 720×1260. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## Anime characters in a classroom
+
+- ID: x-2116747742500536665
+- 中文标题: 教室里的动画人物片段
+- English title: Anime characters in a classroom
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2116747742500536665/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2116747742500536665/
+- Original source: https://x.com/akibaAIilab/status/2116747742500536665
+- Author: あきばあい | 秋葉原IT戦略研究所
+- Published: 2026-11-01T04:22:43.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Animation
+- Visual styles: Anime
+- Scenes: Dialogue & lip sync, Daily life
+- Output: 43s, 864×480, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 短片串联教室中的几名女生、抱着头盔的白发女孩，以及教师身旁表情鲜明的学生。作者说明改编自自己的小说。 原生视频规格为 43 秒 · 864×480。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: The sequence moves between schoolgirls in a classroom, a white-haired girl holding a helmet, and an expressive student beside a teacher. The creator identifies it as an adaptation of their own novel. Native-video output: 43s · 864×480. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## Animal visitors enter a warmly lit cafe
+
+- ID: x-2116747057692283317
+- 中文标题: 动物访客走进温暖咖啡店
+- English title: Animal visitors enter a warmly lit cafe
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2116747057692283317/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2116747057692283317/
+- Original source: https://x.com/forever7943/status/2116747057692283317
+- Author: 逆天
+- Published: 2026-11-01T04:20:00.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Animation
+- Visual styles: not specified
+- Scenes: Animals & creatures, Daily life
+- Output: 15s, 768×1344, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 拟人化小动物拿着粉色菜单出现在咖啡店中，随后出现其他访客。原帖同时并列展示数段动物场景。 原生视频规格为 15 秒 · 768×1344。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: An anthropomorphic animal holds a pink menu in a warm cafe before other visitors appear. The source post displays several animal scenes side by side. Native-video output: 15s · 768×1344. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## An expedition through drifting ice
+
+- ID: x-2116743063687110724
+- 中文标题: 浮冰之间的探险航程
+- English title: An expedition through drifting ice
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2116743063687110724/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2116743063687110724/
+- Original source: https://x.com/aaronas700/status/2116743063687110724
+- Author: aaron700
+- Published: 2026-11-01T04:04:08.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Cinematic & Narrative
+- Visual styles: Dark & horror
+- Scenes: Nature & landscape
+- Output: 98s, 720×1280, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 探险船穿行于浮冰之间，两名身着厚外套的角色随后攀上冰壁。作者将这段冰原影像作为本地制作实验的一部分。 原生视频规格为 98 秒 · 720×1280。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: An expedition ship travels between icebergs before two bundled explorers climb an ice wall, in footage presented as part of a local filmmaking experiment. Native-video output: 98s · 720×1280. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## A neon chase for an ice-cold cola
+
+- ID: x-2116738473256505453
+- 中文标题: 为冰镇可乐展开的霓虹追逐
+- English title: A neon chase for an ice-cold cola
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2116738473256505453/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2116738473256505453/
+- Original source: https://x.com/woleswoosh/status/2116738473256505453
+- Author: FEY8ER
+- Published: 2026-11-01T03:45:53.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Advertising & Product
+- Visual styles: Commercial
+- Scenes: City & street, Product & advertising
+- Output: 28s, 1024×576, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 跑车穿过霓虹映照的湿润街道，人物飞奔追逐，最后转入可乐罐、冰块与液体飞溅的产品画面。 原生视频规格为 28 秒 · 1024×576。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A sports car races across neon-lit wet streets as a runner gives chase, before the sequence cuts to a cola can surrounded by ice and splashing liquid. Native-video output: 28s · 1024×576. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## An umbrella flight from a train platform
+
+- ID: x-2116729139252355492
+- 中文标题: 撑伞飞离列车站台
+- English title: An umbrella flight from a train platform
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2116729139252355492/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2116729139252355492/
+- Original source: https://x.com/Lab_Rossy/status/2116729139252355492
+- Author: ろしラボ | Rossy Laboratory
+- Published: 2026-11-01T03:08:48.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Action & VFX
+- Visual styles: not specified
+- Scenes: City & street
+- Output: 5s, 1344×768, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 西装男子站在列车旁，随后撑起雨伞，被带向站台上方的天空。 原生视频规格为 5 秒 · 1344×768。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A suited man stands beside a train before raising an umbrella and being carried into the sky above the platform. Native-video output: 5s · 1344×768. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## A dark fairy-tale procession at dusk
+
+- ID: x-2116727884601807064
+- 中文标题: 黄昏街道上的暗黑童话队伍
+- English title: A dark fairy-tale procession at dusk
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2116727884601807064/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2116727884601807064/
+- Original source: https://x.com/cryptoalforria/status/2116727884601807064
+- Author: Nani CryptoAlforria
+- Published: 2026-11-01T03:03:49.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Cinematic & Narrative
+- Visual styles: Dark & horror, Stylized & experimental
+- Scenes: Fantasy, Animals & creatures
+- Output: 10s, 1280×720, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 怪诞的人形与骷髅般的角色从破败建筑旁走入街道，在黄昏烟雾中向镜头靠近。 原生视频规格为 10 秒 · 1280×720。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: Strange humanoid and skeletal figures move past decaying buildings and approach the camera through a smoky street at dusk. Native-video output: 10s · 1280×720. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## A nine-tailed fox twirls on a neon street
+
+- ID: x-2116726937880072335
+- 中文标题: 霓虹街头旋转的九尾狐
+- English title: A nine-tailed fox twirls on a neon street
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2116726937880072335/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2116726937880072335/
+- Original source: https://x.com/aoi_secret_jp/status/2116726937880072335
+- Author: Allie 🌸 AI Model
+- Published: 2026-11-01T03:00:03.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Dance
+- Visual styles: not specified
+- Scenes: Dance, City & street
+- Output: 10s, 1080×1890, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 身穿红色和服的狐耳女子提着灯笼，在明亮的城市街头转身旋舞，身后的多条尾巴随之摆动。 原生视频规格为 10 秒 · 1080×1890。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A fox-eared woman in a red kimono holds a lantern and twirls on a brightly lit city street as multiple tails move behind her. Native-video output: 10s · 1080×1890. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## Green eyes behind a tarot haunted-house doorway
+
+- ID: x-2116722789629747675
+- 中文标题: 塔罗鬼屋门后的绿色双眼
+- English title: Green eyes behind a tarot haunted-house doorway
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2116722789629747675/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2116722789629747675/
+- Original source: https://x.com/UnfoldinJourney/status/2116722789629747675
+- Author: VESICA Theissen, PhD
+- Published: 2026-11-01T02:43:34.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Cinematic & Narrative
+- Visual styles: Dark & horror
+- Scenes: Fantasy
+- Output: 15s, 768×1344, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 塔罗风格的鬼屋画面逐渐靠近幽暗门口，黑暗中浮现绿色双眼，最后转入作者的片尾标识。 原生视频规格为 15 秒 · 768×1344。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A tarot-style haunted-house scene moves toward a dark doorway where green eyes appear, before the creator end title. Native-video output: 15s · 768×1344. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## Two fighters meet beside a nighttime railing
+
+- ID: x-2116716293445599277
+- 中文标题: 夜间栏杆旁的格斗角色相遇
+- English title: Two fighters meet beside a nighttime railing
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2116716293445599277/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2116716293445599277/
+- Original source: https://x.com/javawock7618/status/2116716293445599277
+- Author: ジャヴァノ🍀ボカロP@初音ミク「w/39」10/12アルバムリリース
+- Published: 2026-11-01T02:17:45.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Cinematic & Narrative
+- Visual styles: not specified
+- Scenes: Action & combat, City & street
+- Output: 7s, 1680×960, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 蓝衣格斗者在混凝土墙旁回望，身穿绿色服装与红色贝雷帽的角色随后靠近，两人在夜间栏杆旁对视。 原生视频规格为 7 秒 · 1680×960。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A blue-clad fighter looks back by a concrete wall as a green-clad fighter in a red beret approaches, before the two face each other beside a nighttime railing. Native-video output: 7s · 1680×960. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## Green potion smoke from a witch cauldron
+
+- ID: x-2116711825186468084
+- 中文标题: 女巫坩埚里的绿色烟雾
+- English title: Green potion smoke from a witch cauldron
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2116711825186468084/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2116711825186468084/
+- Original source: https://x.com/aoi_secret_jp/status/2116711825186468084
+- Author: Allie 🌸 AI Model
+- Published: 2026-11-01T02:00:00.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Advertising & Product
+- Visual styles: Commercial
+- Scenes: Fantasy
+- Output: 10s, 720×1260, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 女巫搅动散发绿色光芒的坩埚，随升起的烟雾张开双臂，最后靠近镜头。 原生视频规格为 10 秒 · 720×1260。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A witch stirs a glowing green cauldron, spreads her arms amid rising smoke, and leans toward the camera. Native-video output: 10s · 720×1260. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## A surreal figure among liquid metal
+
+- ID: x-2116709106979639762
+- 中文标题: 液态金属环绕的超现实人像
+- English title: A surreal figure among liquid metal
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2116709106979639762/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2116709106979639762/
+- Original source: https://x.com/breath_in_code/status/2116709106979639762
+- Author: LinacoWSL
+- Published: 2026-11-01T01:49:12.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Action & VFX
+- Visual styles: Stylized & experimental
+- Scenes: Fantasy
+- Output: 15s, 1344×768, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 女子置身悬浮的金属液滴与碎片之间，随后转身挥出蓝色光弧，画面最后转入剪影片尾。 原生视频规格为 15 秒 · 1344×768。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A woman stands among suspended liquid-metal droplets and fragments, then turns through a blue arc of light before a silhouette end card. Native-video output: 15s · 1344×768. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## Fantasy companions on mountain paths and in a teahouse
+
+- ID: x-2116707971275325600
+- 中文标题: 山路与茶屋间的奇幻旅伴
+- English title: Fantasy companions on mountain paths and in a teahouse
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2116707971275325600/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2116707971275325600/
+- Original source: https://x.com/WBK_SZ/status/2116707971275325600
+- Author: WBK
+- Published: 2026-11-01T01:44:41.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Animation
+- Visual styles: Anime
+- Scenes: Fantasy, Dialogue & lip sync
+- Output: 316s, 2560×1440, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 几名动画旅伴行走在山间小路，随后在茶屋相聚，并转入夜晚休息的片段。原帖说明由多个工具分工完成脚本、图像与视频。 原生视频规格为 316 秒 · 2560×1440。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: Animated fantasy companions travel along a mountain path, gather at a teahouse, and rest at night. The source describes separate tools for script, images and video. Native-video output: 316s · 2560×1440. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## A red-and-white fight before a temple
+
+- ID: x-2116701955640996334
+- 中文标题: 寺院前的红白格斗对决
+- English title: A red-and-white fight before a temple
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2116701955640996334/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2116701955640996334/
+- Original source: https://x.com/javawock7618/status/2116701955640996334
+- Author: ジャヴァノ🍀ボカロP@初音ミク「w/39」10/12アルバムリリース
+- Published: 2026-11-01T01:20:47.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Action & VFX
+- Visual styles: not specified
+- Scenes: Action & combat
+- Output: 10s, 1872×1056, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 白衣与红衣格斗者在夜间寺院前对峙，红衣角色出拳，最后一人倒地，另一人在旁俯身。 原生视频规格为 10 秒 · 1872×1056。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: White- and red-clad fighters confront each other before a temple at night; a punch leads to one fighter falling while the other crouches nearby. Native-video output: 10s · 1872×1056. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## Green cheerleader dance
+
+- ID: x-2116699149773185316
+- 中文标题: 绿衣啦啦队舞蹈
+- English title: Green cheerleader dance
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2116699149773185316/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2116699149773185316/
+- Original source: https://x.com/ykamochi/status/2116699149773185316
+- Author: KAMO@雑趣味系
+- Published: 2026-11-01T01:09:38.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Dance
+- Visual styles: not specified
+- Scenes: Dance, Human performance
+- Output: 5s, 640×640, square
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 绿衣舞者挥动黄色花球，在蓝色背景前变换手臂和腿部动作。 原生视频规格为 5 秒 · 640×640。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A dancer in green swings yellow pom-poms and changes her arm and leg positions against a blue backdrop. Native-video output: 5s · 640×640. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## Fantasy town game promo
+
+- ID: x-2116698368047300784
+- 中文标题: 幻想小镇游戏宣传片
+- English title: Fantasy town game promo
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2116698368047300784/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2116698368047300784/
+- Original source: https://x.com/MahjongNm/status/2116698368047300784
+- Author: なみもん/ゲーム、アプリ個人開発
+- Published: 2026-11-01T01:06:31.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Advertising & Product
+- Visual styles: Motion graphics, Dark & horror
+- Scenes: Fantasy
+- Output: 59s, 1280×720, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 宣传片从暗色线条图形转入幻想小镇俯瞰画面，以游戏标志收尾。 原生视频规格为 59 秒 · 1280×720。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A game promo moves from dark line graphics to an overhead fantasy town and closes with its logo. Native-video output: 59s · 1280×720. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## Comic cover brought into motion
+
+- ID: x-2116694998074957944
+- 中文标题: 漫画封面的角色动作
+- English title: Comic cover brought into motion
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2116694998074957944/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2116694998074957944/
+- Original source: https://x.com/ykamochi/status/2116694998074957944
+- Author: KAMO@雑趣味系
+- Published: 2026-11-01T00:53:08.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Animation
+- Visual styles: Illustration
+- Scenes: not specified
+- Output: 4s, 480×864, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 以已有同人漫画封面为参考，让画面中的角色抬臂并变换姿态。 原生视频规格为 4 秒 · 480×864。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: An animation of an existing fan-comic cover adds changing arm movements and poses to its characters. Native-video output: 4s · 480×864. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## Step-count comparison in a kitchen
+
+- ID: x-2116692662552236132
+- 中文标题: 厨师揉面场景的步数对比
+- English title: Step-count comparison in a kitchen
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2116692662552236132/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2116692662552236132/
+- Original source: https://x.com/eternityspring/status/2116692662552236132
+- Author: 烁皓
+- Published: 2026-11-01T00:43:51.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Model Comparison
+- Visual styles: not specified
+- Scenes: Food
+- Output: 10s, 1280×1480, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 厨师在蒸笼旁揉面，作者对比 H3 基础流程与加速 LoRA 流程的生成表现。 原生视频规格为 10 秒 · 1280×1480。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A chef kneads dough beside steaming baskets in a comparison of an H3 base workflow and an accelerated LoRA workflow. Native-video output: 10s · 1280×1480. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## Morning in a misty autumn forest
+
+- ID: x-2116685826751144237
+- 中文标题: 深秋雾林中的清晨
+- English title: Morning in a misty autumn forest
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2116685826751144237/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2116685826751144237/
+- Original source: https://x.com/breath_in_code/status/2116685826751144237
+- Author: LinacoWSL
+- Published: 2026-11-01T00:16:41.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Showcase
+- Visual styles: not specified
+- Scenes: Nature & landscape
+- Output: 15s, 1344×768, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 银发女子穿浅色外套走过雾气中的针叶林，呼出的白气与片尾标志衔接。 原生视频规格为 15 秒 · 1344×768。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A silver-haired woman in a beige coat walks through misty conifers, with visible breath leading into a closing logo. Native-video output: 15s · 1344×768. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## Snow spirit under moonlight
+
+- ID: x-2116681625492996259
+- 中文标题: 月夜雪地中的雪女
+- English title: Snow spirit under moonlight
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2116681625492996259/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2116681625492996259/
+- Original source: https://x.com/aoi_secret_jp/status/2116681625492996259
+- Author: Allie 🌸 AI Model
+- Published: 2026-11-01T00:00:00.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Showcase
+- Visual styles: not specified
+- Scenes: Nature & landscape, Fantasy
+- Output: 8s, 720×1260, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 白衣雪女站在月夜雪地，风吹动衣袖与发丝，镜头转向人物近景。 原生视频规格为 8 秒 · 720×1260。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A snow spirit in white stands in a moonlit landscape as wind moves her sleeves and hair before a closer view. Native-video output: 8s · 720×1260. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## Halloween ghost transformation
+
+- ID: x-2116678875119776155
+- 中文标题: 幽灵造型的万圣节短片
+- English title: Halloween ghost transformation
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2116678875119776155/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2116678875119776155/
+- Original source: https://x.com/cryptoalforria/status/2116678875119776155
+- Author: Nani CryptoAlforria
+- Published: 2026-10-31T23:49:04.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Showcase
+- Visual styles: not specified
+- Scenes: Human performance
+- Output: 6s, 1280×720, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 白色幽灵造型转向戴墨镜的人物，最后出现南瓜图形与品牌标志。 原生视频规格为 6 秒 · 1280×720。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A white ghost costume gives way to a figure in sunglasses before a pumpkin graphic and brand logo close the clip. Native-video output: 6s · 1280×720. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## Skeletal clown emerging from smoke
+
+- ID: x-2116671776377778508
+- 中文标题: 黑烟中的骷髅小丑
+- English title: Skeletal clown emerging from smoke
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2116671776377778508/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2116671776377778508/
+- Original source: https://x.com/cryptoalforria/status/2116671776377778508
+- Author: Nani CryptoAlforria
+- Published: 2026-10-31T23:20:52.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Showcase
+- Visual styles: Dark & horror
+- Scenes: Animals & creatures, Human performance
+- Output: 8s, 720×1280, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 骷髅小丑从黑烟中现身，夸张领饰与服装随着人物动作展开。 原生视频规格为 8 秒 · 720×1280。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A skeletal clown emerges from black smoke, revealing an exaggerated ruff and costume as it moves. Native-video output: 8s · 720×1280. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## A cat tail behind the pumpkin
+
+- ID: x-2116648246953074840
+- 中文标题: 南瓜灯后的猫尾
+- English title: A cat tail behind the pumpkin
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2116648246953074840/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2116648246953074840/
+- Original source: https://x.com/GlennHasABeard/status/2116648246953074840
+- Author: Glenn Williams
+- Published: 2026-10-31T21:47:22.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Local Generation & Workflow
+- Visual styles: not specified
+- Scenes: Animals & creatures
+- Output: 15s, 3456×1920, landscape
+- Prompt provenance: creator-verbatim
+- Prompt completeness: complete
+- Chinese summary: 黑猫始终藏在门廊南瓜灯后，只让尾巴绕向瓜柄，再缓缓滑回后方。 原生视频规格为 15 秒 · 3456×1920。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A black cat stays hidden behind a jack-o-lantern on a porch step while its tail curls toward the stem and slides back behind it. Native-video output: 15s · 3456×1920. The creator published the complete prompt, preserved here verbatim.
+- Complete verbatim public prompt:
+
+```text
+curls around the pumpkin's stem, holds, and slides away back down behind it
+```
 
