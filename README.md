@@ -3,6 +3,9 @@
 <a href="https://awesome-minimax-h3-cases.zzskysilent.com/en/"><img src="./public/icon.svg" alt="MiniMax H3 Cases & Guides" width="104" height="104"></a>
 
 # MiniMax H3 Cases & Guides
+- [PromptImage](https://promptimage.cloud) - Free AI image & video studio with a prompt library (signup credits, multi-model). Freemium
+- [TeslaWraps](https://teslawraps.design) - Browser Tesla Paint Shop wrap designer — core editing + PNG export free without account; optional AI credit…
+- [GrokVideo Studio](https://grokvideogenerator.dev) - Independent web app for text/image-to-video via Grok Imagine API (Free Trial, 20 credits). Not an official …
 
 <!-- project-stats:start -->
 **A source-attributed MiniMax H3 library with 2940 playable videos, 756 complete public Prompts, and 26 practical guides.**
