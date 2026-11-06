@@ -714,6 +714,8 @@ describe('case-first routes', () => {
   })
 
   it('shows the latest tutorial release and upgrades an old snapshot URL', () => {
+    // Keep the release fixture inside the 14-day author spotlight window.
+    vi.spyOn(Date, 'now').mockReturnValue(Math.max(...latestTutorials.map(item => Date.parse(item.addedAt))))
     renderAt('/tutorials/?added=unseen&since=2026-08-22T00%3A00%3A00.000Z')
 
     expect(releaseChip()).toHaveAttribute('aria-pressed', 'true')
