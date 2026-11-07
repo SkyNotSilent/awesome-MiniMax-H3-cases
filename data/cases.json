@@ -149589,5 +149589,1318 @@
     },
     "approvedAt": "2026-11-06T15:00:24.512Z",
     "editorialBasis": "Diner and red monster-truck scenes compare RelayVSR and RTX upscaling of MiniMax H3 clips, showing differences in detail and stability. The original caption names MiniMax H3."
+  },
+  {
+    "id": "x-2103334215597097346",
+    "title": "彩色光带揭幕艾露莎",
+    "titleEn": "Erza revealed by ribbons of light",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "彩色光带从靴边向上环绕红发剑士，最终绽放为明亮的全身角色亮相。 原生视频规格为 15 秒 · 2560×1440。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "Colored light ribbons rise around a red-haired swordswoman and burst into a luminous full-body reveal. Native-video output: 15s · 2560×1440. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/aimikoda/status/2103334215597097346",
+    "sourceLabel": "X 原帖 · @aimikoda",
+    "author": "Kōda",
+    "publishedAt": "2026-09-25T04:02:09.000Z",
+    "addedAt": "2026-11-07T06:47:51.748Z",
+    "mediaUrl": "/media/x-2103334215597097346.mp4",
+    "posterUrl": "/posters/x/2103334215597097346.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime"
+    ],
+    "scenes": [
+      "fantasy"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3\n\nI can't help myself when it comes to making these.\n\nA flowing ribbon, layered color and dynamic light play reveal the character from feet to face before exploding into the final hero shot. The whole visual language adapts to your character.\n\nFeaturing Erza Scarlet.\nTry it with your own! Prompt below 👇",
+    "engagement": {
+      "replies": 11,
+      "reposts": 19,
+      "likes": 306,
+      "views": 15684,
+      "snapshotAt": "2026-11-07T06:47:51.748Z"
+    },
+    "approvedAt": "2026-11-07T06:47:51.748Z",
+    "editorialBasis": "Colored light ribbons rise around a red-haired swordswoman and burst into a luminous full-body reveal. The original caption names MiniMax H3."
+  },
+  {
+    "id": "x-2103311025240207683",
+    "title": "分离文本编码的 H3 生成演示",
+    "titleEn": "H3 generation with separate text encoding",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "ComfyUI 录屏展示双人竖屏视频，作者分享将文本编码移至另一台电脑的生成流程。 原生视频规格为 17 秒 · 1440×1080。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A ComfyUI screen recording shows a two-person portrait clip while the creator explains moving text encoding to a second computer. Native-video output: 17s · 1440×1080. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Isichan_Hitori/status/2103311025240207683",
+    "sourceLabel": "X 原帖 · @Isichan_Hitori",
+    "author": "石ちゃん🎤LLMでアプリ開発",
+    "publishedAt": "2026-09-25T02:30:00.000Z",
+    "addedAt": "2026-11-07T06:47:51.748Z",
+    "mediaUrl": "/media/x-2103311025240207683.mp4",
+    "posterUrl": "/posters/x/2103311025240207683.jpg",
+    "duration": 17,
+    "aspectRatio": "landscape",
+    "resolution": "1440×1080",
+    "tags": [
+      "MiniMax H3",
+      "本地生成与工作流",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "workflow",
+    "styles": [],
+    "scenes": [
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "【 ComfyUIの速度安定化 】\n〜テキストエンコーダーを追い出しちゃった件〜\n\nMiniMax H3 新規プロンプト1本目922秒 → 383秒\n約2.4倍の遅延が改善しました‼\n\nきっかけは前回の投稿の @studio_yebisu さんの一言。\n「え、テキストエンコーダー外に置いたってこと？」\n試してみたら、できました。\n\nText Encoderを別PCのRTX 3060＋2070Sに出して、結果だけ本体へ送ります。\n\n〈サーバーPC〉\n RTX 3060（12GB）＋RTX 2070S（8GB）にText Encoder（15GB）\n\n〈本体PC〉\nRTX 5090　ComfyUIのModel＋VAE\n\n〈流れ〉\n① 本体のプロンプト（と参照画像）→サーバーPCへ\n② サーバーPCの3060＋2070Sで Text Encode\n③ サーバーPCのテンソル→本体へ\n④ 本体が受け取って画像・動画を生成\n本体GPUにはText Encoderを載せません。\n\n1本目：ComfyUIが新しいプロンプトをText Encoderで読み込む為、VRAMが溢れやすいです。\n（自分の環境でもプロンプトガチャをやってるとよく遭遇します💦）\n\n2本目以降：キャッシュの再利用でText Encode自体を省略できます。\n\nこの効果はプロンプトを変えた1本目に出ます。\n\nMiniMax H3（768×1376 15秒）では\n1本目　922秒 → 383秒（VRAM溢れて劇遅が改善）\n2本目　約315秒 → 約315秒\n\n「最高速度を上げる」ではなくて「最悪の待ち時間を潰して速度を安定させる」効果がありました。\n\n手順は後日の投稿で出します。\n\n最後に @studio_yebisu さん、\n面白いアイデアをありがとうございました🙏\n#ComfyUIネタ 02",
+    "engagement": {
+      "replies": 6,
+      "reposts": 7,
+      "likes": 249,
+      "views": 155742,
+      "snapshotAt": "2026-11-07T06:47:51.748Z"
+    },
+    "approvedAt": "2026-11-07T06:47:51.748Z",
+    "editorialBasis": "A ComfyUI screen recording shows a two-person portrait clip while the creator explains moving text encoding to a second computer. The original caption names MiniMax H3."
+  },
+  {
+    "id": "x-2103055859953922232",
+    "title": "夜祭人像的 VAE 并排对照",
+    "titleEn": "Side-by-side VAE comparison at a night festival",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "浴衣女子在夜祭灯光下举起糖果并微笑，左右画面展示 FP16 与 INT8 VAE 的同场景结果。 原生视频规格为 15 秒 · 1440×1440。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A woman in a floral yukata raises a candied fruit and smiles in a night-festival clip shown side by side with FP16 and INT8 VAE labels. Native-video output: 15s · 1440×1440. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/kentdhani/status/2103055859953922232",
+    "sourceLabel": "X 原帖 · @kentdhani",
+    "author": "Kent Dhani",
+    "publishedAt": "2026-09-24T09:36:04.000Z",
+    "addedAt": "2026-11-07T06:47:51.748Z",
+    "mediaUrl": "/media/x-2103055859953922232.mp4",
+    "posterUrl": "/posters/x/2103055859953922232.jpg",
+    "duration": 15,
+    "aspectRatio": "square",
+    "resolution": "1440×1440",
+    "tags": [
+      "MiniMax H3",
+      "模型对比",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "comparison",
+    "styles": [],
+    "scenes": [
+      "fashion",
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "I tried Kijai's latest INT8 VAE for Minimax H3\n\nIts 2.3x faster with no visible quality loss! \n\nDetails below👇",
+    "engagement": {
+      "replies": 7,
+      "reposts": 31,
+      "likes": 433,
+      "views": 41600,
+      "snapshotAt": "2026-11-07T06:47:51.748Z"
+    },
+    "approvedAt": "2026-11-07T06:47:51.748Z",
+    "editorialBasis": "A woman in a floral yukata raises a candied fruit and smiles in a night-festival clip shown side by side with FP16 and INT8 VAE labels. The original caption names MiniMax H3."
+  },
+  {
+    "id": "x-2102966384003350874",
+    "title": "霓虹轮廓勾勒角色亮相",
+    "titleEn": "Neon outlines reveal an anime character",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "彩色线条从靴子沿人物轮廓向上描绘，粉发角色最终出现在多边形边框中。 原生视频规格为 15 秒 · 2560×1440。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "Colored lines trace upward from a character’s boots before a pink-haired figure appears within angular neon borders. Native-video output: 15s · 2560×1440. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/aimikoda/status/2102966384003350874",
+    "sourceLabel": "X 原帖 · @aimikoda",
+    "author": "Kōda",
+    "publishedAt": "2026-09-24T03:40:31.000Z",
+    "addedAt": "2026-11-07T06:47:51.748Z",
+    "mediaUrl": "/media/x-2102966384003350874.mp4",
+    "posterUrl": "/posters/x/2102966384003350874.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime",
+      "motion-graphics"
+    ],
+    "scenes": [
+      "performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3\n\nAnother Character PV\n\nThis time, animated lines trace your character's silhouette. Shapes, colors and the whole visual style adapt to your character. Try it with your own!\n\nPrompt below 👇",
+    "engagement": {
+      "replies": 38,
+      "reposts": 51,
+      "likes": 786,
+      "views": 42527,
+      "snapshotAt": "2026-11-07T06:47:51.748Z"
+    },
+    "approvedAt": "2026-11-07T06:47:51.748Z",
+    "editorialBasis": "Colored lines trace upward from a character’s boots before a pink-haired figure appears within angular neon borders. The original caption names MiniMax H3."
+  },
+  {
+    "id": "x-2102964324243255509",
+    "title": "女服务员的一晚忙碌",
+    "titleEn": "A waitress’s busy evening shift",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "餐厅里的女服务员穿梭于客人与厨房之间，短片以连续场景呈现她的忙碌班次。 原生视频规格为 75 秒 · 1080×1080。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A waitress moves between diners and the kitchen in a restaurant story built around her busy evening shift. Native-video output: 75s · 1080×1080. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/MonetizationDon/status/2102964324243255509",
+    "sourceLabel": "X 原帖 · @MonetizationDon",
+    "author": "LAPTOP LIFESTYLE BLOGGER",
+    "publishedAt": "2026-09-24T03:32:20.000Z",
+    "addedAt": "2026-11-07T06:47:51.748Z",
+    "mediaUrl": "/media/x-2102964324243255509.mp4",
+    "posterUrl": "/posters/x/2102964324243255509.jpg",
+    "duration": 75,
+    "aspectRatio": "square",
+    "resolution": "1080×1080",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "cinematic-realistic"
+    ],
+    "scenes": [
+      "food",
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Meet Elana, a hardworking waitress.\n\ni decided to make a simple AI video about a waitress\n\nBut I didn’t want it to be another “girl walking around a restaurant” video.\n\nSo I gave Elana an actual story.\n\nShe starts her shift, takes orders, runs back and forth between the tables and kitchen, nearly drops everything, catches a few glasses at the last second… and somehow makes it through the night.\n\nI used GPT Image 2.5 to build the visuals and keep the characters and scenes consistent, then brought everything into \n@DomoAI_  and used MiniMax H3 to turn those images into a proper story with movement, action, sounds, and cinematic camera shots.\n\nThe goal wasn’t just to make an AI waitress.\n\nIt was to make you actually follow her shift.\nCreated with @DomoAI_\n\nCheck the step-by-step method of how I made it in the comment section 👇👇👇\n#DomoAI   #DomoAICPP",
+    "engagement": {
+      "replies": 59,
+      "reposts": 95,
+      "likes": 231,
+      "views": 1869,
+      "snapshotAt": "2026-11-07T06:47:51.748Z"
+    },
+    "approvedAt": "2026-11-07T06:47:51.748Z",
+    "editorialBasis": "A waitress moves between diners and the kitchen in a restaurant story built around her busy evening shift. The original caption names MiniMax H3."
+  },
+  {
+    "id": "x-2102924450446602301",
+    "title": "河畔慢跑的轻量 VAE 对照",
+    "titleEn": "Riverside jogging in a lightweight VAE comparison",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "屏幕录制并排展示夕阳水边的慢跑画面，作者用同类场景对照 H3 的 VAE 版本。 原生视频规格为 7 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A screen recording places sunset jogging clips side by side to illustrate the creator’s H3 VAE comparison. Native-video output: 7s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/yonsan434343/status/2102924450446602301",
+    "sourceLabel": "X 原帖 · @yonsan434343",
+    "author": "ヨンサン｜不登校系AI講師　43歳の今",
+    "publishedAt": "2026-09-24T00:53:54.000Z",
+    "addedAt": "2026-11-07T06:47:51.748Z",
+    "mediaUrl": "/media/x-2102924450446602301.mp4",
+    "posterUrl": "/posters/x/2102924450446602301.jpg",
+    "duration": 7,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "模型对比",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "comparison",
+    "styles": [],
+    "scenes": [
+      "nature"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3、まだ速くなりました✨\nComfyUIの公式が出していた情報を発見して検証！\n\n前回の「ターボLoRA＋スパース化」で速くした状態から、\nComfyUIを最新版に更新して、VAEを軽量版に替えたところ\n約5秒の動画1本が\n56.4秒 → 43.0秒 に(´∀｀)\n\n更に24％短縮です✨\n\n同じ条件で3本ずつ測って、どれも10秒以上縮んでいました。\n縮んだのは主に最後の「仕上げ」の工程で、16.6秒 → 6.0秒。\n動画が長いほど効いてきて、10秒の動画なら仕上げだけで28.5秒 → 10.0秒です。\n\nこっちは65％短縮！\n\nしかも軽量版のVAEは2.8GB。今までの5.2GBより小さいという(;´･ω･)\n\n画質は並べて見ても差が分からないレベルでした。\n新旧を並べたページはリプへ👇",
+    "engagement": {
+      "replies": 5,
+      "reposts": 15,
+      "likes": 312,
+      "views": 46152,
+      "snapshotAt": "2026-11-07T06:47:51.748Z"
+    },
+    "approvedAt": "2026-11-07T06:47:51.748Z",
+    "editorialBasis": "A screen recording places sunset jogging clips side by side to illustrate the creator’s H3 VAE comparison. The original caption names MiniMax H3."
+  },
+  {
+    "id": "x-2102807178189164870",
+    "title": "拼贴日记里的无厘头一天",
+    "titleEn": "A surreal day in a collage diary",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "人物眼部特写、托腮女子与食物图案组成复古拼贴，镜头最终拉远展示整张纸面。 原生视频规格为 15 秒 · 1344×768。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A retro collage moves from an eye close-up to a woman resting her chin among food illustrations before pulling back to the full page. Native-video output: 15s · 1344×768. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/AIwithNatalia/status/2102807178189164870",
+    "sourceLabel": "X 原帖 · @AIwithNatalia",
+    "author": "Natalia",
+    "publishedAt": "2026-09-23T17:07:54.000Z",
+    "addedAt": "2026-11-07T06:47:51.748Z",
+    "mediaUrl": "/media/x-2102807178189164870.mp4",
+    "posterUrl": "/posters/x/2102807178189164870.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "illustration",
+      "retro"
+    ],
+    "scenes": [],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Some days make absolutely no sense.\nBut I guess that’s just the way things go. 🌟\n\nCreated with MiniMax H3 on @FishCreativeHQ",
+    "engagement": {
+      "replies": 37,
+      "reposts": 6,
+      "likes": 83,
+      "views": 20557,
+      "snapshotAt": "2026-11-07T06:47:51.748Z"
+    },
+    "approvedAt": "2026-11-07T06:47:51.748Z",
+    "editorialBasis": "A retro collage moves from an eye close-up to a woman resting her chin among food illustrations before pulling back to the full page. The original caption names MiniMax H3."
+  },
+  {
+    "id": "x-2102662408271692102",
+    "title": "不知火舞与桌面图标",
+    "titleEn": "Mai Shiranui and desktop icons",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "不知火舞在桌面壁纸前挥扇转身，图标与角色动作共同构成动态桌面场景。 原生视频规格为 20 秒 · 2752×1536。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "Mai Shiranui turns with her fan against a desktop wallpaper, combining character motion with an arrangement of application icons. Native-video output: 20s · 2752×1536. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] 2D-animated, retro arcade fighting-game character art style blended with a clean macOS desktop scene, exactly as established in <Picture 1>: an arc-shaped light-band wallpaper sweeps from deep blue-violet at the lower left to orange-red and magenta at the upper right over a mirror-like reflective ground; two vertical columns of glossy rounded-square application icons stand on the left half — each icon is a clean pictogram with NO text label beneath it: the first column shows from top to bottom a blue smiling face, a red-yellow-green ring around a blue center dot, a white \"N\" block in a dark frame, a light-blue infinity-style ribbon, a dark tile with blue letters, an amber tile with yellow script, a purple tile with white letters, and green arcs inside a circle; the second column shows two white chat bubbles on green, a penguin on white, a white paper plane on blue gradient, four colored squares in a grid, a blue-green spiral ring, a red play triangle, colorful pinwheel petals, and a white \"A\" brushstroke on blue — on the right stands the brown high-ponytail young woman with white horn-like hair ornaments, wearing a red high-slit qipao-style fighting outfit with a large white waist knot trailing red-floral ribbons and white-tassel beads in her hair, black fingerless gloves and red-black heeled sandals; she holds an open white fan with red trim hanging behind her hip while one hand rests on her waist, gazing back over her shoulder. The camera pushes in with small amplitude at slow speed as she pivots from the回眸 stance into a low crouch, orange-yellow fire ribbons beginning to swirl around her feet and embers spiraling upward past her shoulders. [Shot 2] At 00:04.500, the camera cuts to a wider shot of the full desktop as she explodes out of the crouch into a dramatic backbend spin — one leg planted, the other extended far to the side-rear, torso twisted and arched backward, ponytail flaring wide in the motion — and roars <d>[Japanese] 超必殺・忍蜂！</d> A ring of glowing shuriken erupts from her spinning body and orbits outward like a whirlpool across the center of the screen; as the blades sweep through the icon columns, open fans launch from her wrist in rapid succession and strike the icons one by one — each struck icon wobbles violently, peels off its grid position, and tumbles downward with motion blur past the reflective ground out of frame, trailing orange-yellow sparks. The final shuriken detonates at the center of the grid as a white-blue light bloom, shaking the whole desktop loose; every remaining icon rains down in a cascade while her spin finishes in a low landing, one hand extended forward, palm up. [Shot 3] At 00:10.500, the camera cuts to a medium close-up of the young woman across the now-empty center of the screen; her expression stays calm and unbothered, lips pressed into a confident smirk while embers drift past her shoulder. She slowly raises her open fan beside her face and says <d>[Japanese] 花蝶扇。</d> Orange-yellow flame begins to gather along the fan's ribs like liquid fire pooling on silk, the light reflecting off her white waist knot and red-floral ribbons as tiny sparks orbit her wrist. [Shot 4] At 00:13.500, the shot cuts back to the full desktop as she sweeps the burning fan in a wide graceful arc through another spin; ribbons of orange-yellow flame unfurl from the fan like butterfly wings trailing behind her, and each ribbon's tip hooks one falling icon from below the frame, reeling it smoothly up into its exact original grid position — every lock-in flashing a small white-blue light bloom with a sharp click as the icons seat crisply back into place, restoring both columns perfectly. The last ribbon curls around the final icon and dissolves into sparks that spiral back into her fan as she closes it with a snap at her hip. [Shot 5] At 00:17.000, the camera cuts to a low-angle hero shot as she settles into her classic pose from <Picture 1>: side-turned stance with weight on the rear leg, one hand on her waist, the closed fan held elegantly beside her face, chin tilted down in a cold confident glare while her ribbons and hair flare outward in the residual wind. The camera pulls out with small amplitude at slow speed, revealing the fully restored desktop around her; drifting orange sparks fade to black as she holds the pose until the end of the video.\n\noverall_soundscape: Low flame crackle builds under a rumbling charge, then an explosive whoosh on the backbend spin — rapid shuriken whistles and fan-snap cracks striking icons one after another — followed by cascading rattling clatters as icons tumble out of frame and a sharp white-blue burst pop. A crisp fan snap and a soft confident breath carry across the empty desktop during the calm close-up. Rising flame hiss gathers along the fan's ribs, then graceful silk-ribbon whooshes sweep through the spin while crisp snap-back clicks land one after another as each icon locks into place with tiny light-bloom pops, ending with a low resonant boom under guttering ember crackle.\n\nnon_diegetic_music: Driving taiko drums with fast electronic percussion at a high tempo building to a hard hit on the shuriken barrage, dropping out to sparse sustained synth and a single koto pluck during the calm close-up, then returning for one final strong downbeat as she locks her classic pose.",
+    "promptSourceUrl": "https://x.com/aidavid125/status/2102662408271692102",
+    "sourceUrl": "https://x.com/aidavid125/status/2102662408271692102",
+    "sourceLabel": "X 原帖 · @aidavid125",
+    "author": "大卫叔的AI旅程",
+    "publishedAt": "2026-09-23T07:32:38.000Z",
+    "addedAt": "2026-11-07T06:47:51.748Z",
+    "mediaUrl": "/media/x-2102662408271692102.mp4",
+    "posterUrl": "/posters/x/2102662408271692102.jpg",
+    "duration": 20,
+    "aspectRatio": "landscape",
+    "resolution": "2752×1536",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "action-vfx",
+    "styles": [
+      "anime",
+      "retro"
+    ],
+    "scenes": [
+      "combat"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "卧槽，牛逼了。\n同样的提示词效果居然不一般。💪💪\n\n工具：MiniMax H3，也可以使用在线工具如：https://PixStag.com\n\n不知火舞第一弹V2👇\n\n第一弹提示词：\n---\nFor the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] 2D-animated, retro arcade fighting-game character art style blended with a clean macOS desktop scene, exactly as established in <Picture 1>: an arc-shaped light-band wallpaper sweeps from deep blue-violet at the lower left to orange-red and magenta at the upper right over a mirror-like reflective ground; two vertical columns of glossy rounded-square application icons stand on the left half — each icon is a clean pictogram with NO text label beneath it: the first column shows from top to bottom a blue smiling face, a red-yellow-green ring around a blue center dot, a white \"N\" block in a dark frame, a light-blue infinity-style ribbon, a dark tile with blue letters, an amber tile with yellow script, a purple tile with white letters, and green arcs inside a circle; the second column shows two white chat bubbles on green, a penguin on white, a white paper plane on blue gradient, four colored squares in a grid, a blue-green spiral ring, a red play triangle, colorful pinwheel petals, and a white \"A\" brushstroke on blue — on the right stands the brown high-ponytail young woman with white horn-like hair ornaments, wearing a red high-slit qipao-style fighting outfit with a large white waist knot trailing red-floral ribbons and white-tassel beads in her hair, black fingerless gloves and red-black heeled sandals; she holds an open white fan with red trim hanging behind her hip while one hand rests on her waist, gazing back over her shoulder. The camera pushes in with small amplitude at slow speed as she pivots from the回眸 stance into a low crouch, orange-yellow fire ribbons beginning to swirl around her feet and embers spiraling upward past her shoulders. [Shot 2] At 00:04.500, the camera cuts to a wider shot of the full desktop as she explodes out of the crouch into a dramatic backbend spin — one leg planted, the other extended far to the side-rear, torso twisted and arched backward, ponytail flaring wide in the motion — and roars <d>[Japanese] 超必殺・忍蜂！</d> A ring of glowing shuriken erupts from her spinning body and orbits outward like a whirlpool across the center of the screen; as the blades sweep through the icon columns, open fans launch from her wrist in rapid succession and strike the icons one by one — each struck icon wobbles violently, peels off its grid position, and tumbles downward with motion blur past the reflective ground out of frame, trailing orange-yellow sparks. The final shuriken detonates at the center of the grid as a white-blue light bloom, shaking the whole desktop loose; every remaining icon rains down in a cascade while her spin finishes in a low landing, one hand extended forward, palm up. [Shot 3] At 00:10.500, the camera cuts to a medium close-up of the young woman across the now-empty center of the screen; her expression stays calm and unbothered, lips pressed into a confident smirk while embers drift past her shoulder. She slowly raises her open fan beside her face and says <d>[Japanese] 花蝶扇。</d> Orange-yellow flame begins to gather along the fan's ribs like liquid fire pooling on silk, the light reflecting off her white waist knot and red-floral ribbons as tiny sparks orbit her wrist. [Shot 4] At 00:13.500, the shot cuts back to the full desktop as she sweeps the burning fan in a wide graceful arc through another spin; ribbons of orange-yellow flame unfurl from the fan like butterfly wings trailing behind her, and each ribbon's tip hooks one falling icon from below the frame, reeling it smoothly up into its exact original grid position — every lock-in flashing a small white-blue light bloom with a sharp click as the icons seat crisply back into place, restoring both columns perfectly. The last ribbon curls around the final icon and dissolves into sparks that spiral back into her fan as she closes it with a snap at her hip. [Shot 5] At 00:17.000, the camera cuts to a low-angle hero shot as she settles into her classic pose from <Picture 1>: side-turned stance with weight on the rear leg, one hand on her waist, the closed fan held elegantly beside her face, chin tilted down in a cold confident glare while her ribbons and hair flare outward in the residual wind. The camera pulls out with small amplitude at slow speed, revealing the fully restored desktop around her; drifting orange sparks fade to black as she holds the pose until the end of the video.\n\noverall_soundscape: Low flame crackle builds under a rumbling charge, then an explosive whoosh on the backbend spin — rapid shuriken whistles and fan-snap cracks striking icons one after another — followed by cascading rattling clatters as icons tumble out of frame and a sharp white-blue burst pop. A crisp fan snap and a soft confident breath carry across the empty desktop during the calm close-up. Rising flame hiss gathers along the fan's ribs, then graceful silk-ribbon whooshes sweep through the spin while crisp snap-back clicks land one after another as each icon locks into place with tiny light-bloom pops, ending with a low resonant boom under guttering ember crackle.\n\nnon_diegetic_music: Driving taiko drums with fast electronic percussion at a high tempo building to a hard hit on the shuriken barrage, dropping out to sparse sustained synth and a single koto pluck during the calm close-up, then returning for one final strong downbeat as she locks her classic pose.\n---",
+    "engagement": {
+      "replies": 3,
+      "reposts": 38,
+      "likes": 439,
+      "views": 53883,
+      "snapshotAt": "2026-11-07T06:47:51.748Z"
+    },
+    "approvedAt": "2026-11-07T06:47:51.748Z",
+    "editorialBasis": "Mai Shiranui turns with her fan against a desktop wallpaper, combining character motion with an arrangement of application icons. The original caption names MiniMax H3."
+  },
+  {
+    "id": "x-2102661505166594488",
+    "title": "菲伦整理桌面图标",
+    "titleEn": "Fern rearranges desktop icons",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "紫发魔法师菲伦在桌面前抬手施法，应用图标随动作重新排列。 原生视频规格为 9 秒 · 1890×1080。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "The purple-haired mage Fern gestures in front of a desktop as application icons rearrange around her. Native-video output: 9s · 1890×1080. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Mayz1169/status/2102661505166594488",
+    "sourceLabel": "X 原帖 · @Mayz1169",
+    "author": "Kiki",
+    "publishedAt": "2026-09-23T07:29:03.000Z",
+    "addedAt": "2026-11-07T06:47:51.748Z",
+    "mediaUrl": "/media/x-2102661505166594488.mp4",
+    "posterUrl": "/posters/x/2102661505166594488.jpg",
+    "duration": 9,
+    "aspectRatio": "landscape",
+    "resolution": "1890×1080",
+    "tags": [
+      "MiniMax H3",
+      "动画",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "animation",
+    "styles": [
+      "anime"
+    ],
+    "scenes": [
+      "fantasy"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3 - Prompt Share 💜\n\nFern thought she fixed everything... should I tell her she missed one? \n\nPrompt below ⤵️",
+    "engagement": {
+      "replies": 14,
+      "reposts": 152,
+      "likes": 1660,
+      "views": 431525,
+      "snapshotAt": "2026-11-07T06:47:51.748Z"
+    },
+    "approvedAt": "2026-11-07T06:47:51.748Z",
+    "editorialBasis": "The purple-haired mage Fern gestures in front of a desktop as application icons rearrange around her. The original caption names MiniMax H3."
+  },
+  {
+    "id": "x-2102656273112326609",
+    "title": "果冻角色的节拍特效对照",
+    "titleEn": "Beat-driven effects around a jelly character",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "自动售货机旁的粉色果冻角色出现在原片与特效版的并排画面中，粒子和图案随节奏变化。 原生视频规格为 15 秒 · 1440×1280。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A pink jelly character by a vending machine appears in a side-by-side original and effects comparison with changing particles and graphic patterns. Native-video output: 15s · 1440×1280. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/aicreataro/status/2102656273112326609",
+    "sourceLabel": "X 原帖 · @aicreataro",
+    "author": "aicreataro",
+    "publishedAt": "2026-09-23T07:08:15.000Z",
+    "addedAt": "2026-11-07T06:47:51.748Z",
+    "mediaUrl": "/media/x-2102656273112326609.mp4",
+    "posterUrl": "/posters/x/2102656273112326609.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1440×1280",
+    "tags": [
+      "MiniMax H3",
+      "模型对比",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "comparison",
+    "styles": [
+      "stylized",
+      "motion-graphics"
+    ],
+    "scenes": [
+      "creatures"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Opus 5.5にAfter Effectsを操作させて、AI動画を加工するテスト。\n\n■ベース\nMiniMax H3 で15秒を1本\n\n■AEでやらせたこと\n・カットの切れ目を拍に合わせて速さを調整\n・区間ごとにエフェクトを1つずつ（粒子／光線／万華鏡／データモッシュなど）\n\n■わかったこと\n・結構雑な指示でもいい感じにできてしまう\n・.aepで残るので、あとから人の手で直せる\n・エフェクト、プラグインも結構使える。\n\nソフトを学ぶのももちろん大切だと思いチャレンジしてますが、学びを飛び越えてしまう恐ろしさもあり、悩ましいですね。でもきっとベースを知っているかいないかで、使い方も変わってくるような。でも、それも超越してくるのか。、、！",
+    "engagement": {
+      "replies": 9,
+      "reposts": 53,
+      "likes": 463,
+      "views": 50481,
+      "snapshotAt": "2026-11-07T06:47:51.749Z"
+    },
+    "approvedAt": "2026-11-07T06:47:51.748Z",
+    "editorialBasis": "A pink jelly character by a vending machine appears in a side-by-side original and effects comparison with changing particles and graphic patterns. The original caption names MiniMax H3."
+  },
+  {
+    "id": "x-2102640272027095263",
+    "title": "复古飞船的系统故障",
+    "titleEn": "System failure aboard a retro spaceship",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "宇航员操作飞船控制台，老式显示器亮起故障文字，镜头转向舱内人物。 原生视频规格为 15 秒 · 1344×768。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "An astronaut works the controls of a retro spacecraft before a monitor displays a system failure and the scene shifts to a crew member inside. Native-video output: 15s · 1344×768. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ChrisGwinnLA/status/2102640272027095263",
+    "sourceLabel": "X 原帖 · @ChrisGwinnLA",
+    "author": "Christopher Gwinn | Grindhouse Glitch",
+    "publishedAt": "2026-09-23T06:04:40.000Z",
+    "addedAt": "2026-11-07T06:47:51.749Z",
+    "mediaUrl": "/media/x-2102640272027095263.mp4",
+    "posterUrl": "/posters/x/2102640272027095263.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "retro"
+    ],
+    "scenes": [
+      "sci-fi"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Here's what happens when you accidentally hit the generate button before entering the prompt (I had only pasted in a fill-in-the blanks basic prompt formula - didn't even have a chance to add the genre or basic plot) or attaching your reference images... 😄😄\n\nMiniMax H3 weird Sci-Fi trailer.",
+    "engagement": {
+      "replies": 13,
+      "reposts": 3,
+      "likes": 58,
+      "views": 2471,
+      "snapshotAt": "2026-11-07T06:47:51.749Z"
+    },
+    "approvedAt": "2026-11-07T06:47:51.749Z",
+    "editorialBasis": "An astronaut works the controls of a retro spacecraft before a monitor displays a system failure and the scene shifts to a crew member inside. The original caption names MiniMax H3."
+  },
+  {
+    "id": "x-2102611185472614491",
+    "title": "夕阳下的跑鞋广告",
+    "titleEn": "Running shoes in the sunset",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "从系鞋带特写到拱廊下的跑步镜头，最后以悬浮跑鞋展示产品轮廓。 原生视频规格为 15 秒 · 1344×768。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A lace-tying close-up leads to a run through an arched walkway and a floating shoe product shot. Native-video output: 15s · 1344×768. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "Cinematic 15-second luxury running-shoe commercial, golden-hour photorealism, 24fps, shallow depth of field, warm sunset color grade.\nShot 1 (0–3s): Extreme close-up of a woman’s hands tying white On Cloud running shoes with visible Cloudtec pods on the midsole. Soft golden sunlight, wooden boardwalk texture, navy heel collar, mesh upper. Slow, tactile motion. Whispered VO: “This is how it feels.”\nShot 2 (3–7s): Medium-wide tracking shot of an athletic woman with dark ponytail, black tank and navy tights, running left-to-right on a wooden waterfront promenade. Background: steel arch bridge and Manhattan-style skyline at sunset, river reflecting orange and pink light. Fluid, powerful stride, slight motion blur on hair and shoes.\nShot 3 (7–10s): Front-on tracking shot as she runs toward camera through a long, repeating concrete arched underpass. Strong side lighting creates rhythmic stripes of light and shadow across the floor. Determined expression, ponytail swinging.\nShot 4 (10–13s): Tight facial close-up, golden rim light on cheekbones and hair, focused green-brown eyes, slight sheen of sweat, black tank straps visible. Subtle camera push-in.\nShot 5 (13–15s): Hero product shot — the same white On Cloud shoe floating and slowly rotating in mid-air against a blurred sunset city skyline. Cloudtec pods catch the light. Clean, premium, almost weightless.",
+    "promptSourceUrl": "https://x.com/Zyrellix/status/2102611185472614491",
+    "sourceUrl": "https://x.com/Zyrellix/status/2102611185472614491",
+    "sourceLabel": "X 原帖 · @Zyrellix",
+    "author": "Zyrella",
+    "publishedAt": "2026-09-23T04:09:05.000Z",
+    "addedAt": "2026-11-07T06:47:51.749Z",
+    "mediaUrl": "/media/x-2102611185472614491.mp4",
+    "posterUrl": "/posters/x/2102611185472614491.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1344×768",
+    "tags": [
+      "MiniMax H3",
+      "广告与产品",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "advertising",
+    "styles": [
+      "cinematic-realistic",
+      "photoreal"
+    ],
+    "scenes": [
+      "product",
+      "city"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Luxury in every step Cinematic motion premium details and effortless performance.\n\nMade with MiniMax H3\n\nPrompt:\n\nCinematic 15-second luxury running-shoe commercial, golden-hour photorealism, 24fps, shallow depth of field, warm sunset color grade.\nShot 1 (0–3s): Extreme close-up of a woman’s hands tying white On Cloud running shoes with visible Cloudtec pods on the midsole. Soft golden sunlight, wooden boardwalk texture, navy heel collar, mesh upper. Slow, tactile motion. Whispered VO: “This is how it feels.”\nShot 2 (3–7s): Medium-wide tracking shot of an athletic woman with dark ponytail, black tank and navy tights, running left-to-right on a wooden waterfront promenade. Background: steel arch bridge and Manhattan-style skyline at sunset, river reflecting orange and pink light. Fluid, powerful stride, slight motion blur on hair and shoes.\nShot 3 (7–10s): Front-on tracking shot as she runs toward camera through a long, repeating concrete arched underpass. Strong side lighting creates rhythmic stripes of light and shadow across the floor. Determined expression, ponytail swinging.\nShot 4 (10–13s): Tight facial close-up, golden rim light on cheekbones and hair, focused green-brown eyes, slight sheen of sweat, black tank straps visible. Subtle camera push-in.\nShot 5 (13–15s): Hero product shot — the same white On Cloud shoe floating and slowly rotating in mid-air against a blurred sunset city skyline. Cloudtec pods catch the light. Clean, premium, almost weightless.",
+    "engagement": {
+      "replies": 47,
+      "reposts": 6,
+      "likes": 153,
+      "views": 13766,
+      "snapshotAt": "2026-11-07T06:47:51.749Z"
+    },
+    "approvedAt": "2026-11-07T06:47:51.749Z",
+    "editorialBasis": "A lace-tying close-up leads to a run through an arched walkway and a floating shoe product shot. The original caption names MiniMax H3."
+  },
+  {
+    "id": "x-2102606723760501043",
+    "title": "紫色首尔时装预告",
+    "titleEn": "Violet Seoul fashion teaser",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "同一女性在城市与楼梯场景中切换造型，紫色时装排版贯穿整段预告。 原生视频规格为 16 秒 · 3840×2160。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A woman changes looks across city and staircase scenes surrounded by violet fashion typography. Native-video output: 16s · 3840×2160. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "Create a 15-second, 16:9, 24fps live-action K-pop Fashion Reveal Trailer with EXACTLY 13 distinct cuts.\nSTYLE: K-pop comeback teaser × Korean girl-group center × high-end fashion campaign × dynamic editorial graphics × idol concept film.\nTHEME: VIOLET RUSH\nABBR: VR\nTAGLINE: PRETTY MOVES DIFFERENT.\nCHARACTER LOCK:\nUse the uploaded girl as the ONLY identity reference. Exactly ONE adult East Asian woman throughout. Preserve the same face, facial proportions, skin tone, age, slim body proportions, and long dark-brown/black-brown hair in every shot. Identity must never change. Do not inherit the reference outfit. She is a 22–25-year-old Korean girl-group center / Seoul it-girl: pretty, youthful, sexy-cute, glossy, playful, confident, chic, feminine, slightly rebellious, very camera-aware. No background people, duplicates, face drift, body drift, blonde/short hair.\nHAIR/MAKEUP:\nLong softly wavy dark-brown hair, airy and glossy. Natural hair movement only. Clean Korean idol makeup: luminous real skin, fine eyeliner, soft aegyo-sal, subtle glitter eyes, glossy nude-pink/rose lips, natural blush.\nCOLOR:\nViolet purple, electric blue, silver, black, pearl white; soft pink, chrome, icy-blue accents. Premium Y2K Seoul nightlife, NOT cyberpunk.\nLOOKS:\n01 Silver sequined mini dress + short black jacket + black knee-high boots.\n02 Icy/cobalt cropped top + dark-gray low-rise denim mini skirt + silver waist chain.\n03 Pale-pink cropped knit + pink-white plaid mini skirt + small hair clip.\n04 Black cropped leather jacket + black camisole + asymmetric mini skirt + metal chain.\n05 White fitted crop top + silver mini skirt + light silver shrug.\n06 Final deep-violet/black-violet fitted shimmering evening mini dress.\nGRAPHICS:\n55% live-action fashion film, 45% motion graphics. Use giant typography, magazine crops, photo cards, film strips, chrome type, Korean poster text, contact sheets, partial checkerboard, thin grids, stars, subtle flash frames. Maximum 1–2 main graphic elements per cut. Never cover her face.\nTEXT ONLY:\nV / R, VIOLET RUSH, PRETTY MOVES DIFFERENT., SEOUL GIRL, MAIN CHARACTER, LOOK 01–06, 오늘도 주인공, 서울의 밤, 더 예쁜 나.\n13 CUTS:\n01 0.0–0.6s: black screen, huge “V”, then “R” on beat, violet-silver flash.\n02 0.6–1.4s: LOOK01, mirrored elevator, sunglasses, head down → doors open → eyes up, fast push-in. “VIOLET RUSH”.\n03 1.4–2.2s: LOOK01 face close-up, lower sunglasses slightly, direct eye contact, faint smile. “MAIN CHARACTER”.\n04 2.2–3.2s: LOOK02, Seoul neon street, walk then look back, natural hair swing, low angle. “서울의 밤”.\n05 3.2–4.1s: LOOK02 medium close-up, reach toward lens then retract, silver contact-sheet wipe.\n06 4.1–5.1s: LOOK03, pink photo booth, slight hip shift, wink, soft smile. “PRETTY?” → “ALWAYS.”\n07 5.1–6.1s: LOOK03 close-up, flash-photo feeling, loose hair beside face, photo cards pop in/out.\n08 6.1–7.2s: LOOK04, luxury hotel staircase, walk down one step, hand on railing, low angle, sweet expression switches to cold. “SWITCH MODE”.\n09 7.2–8.2s: LOOK04 rapid editorial split: leather detail / face / full body. Same single woman only, not three people.\n10 8.2–9.3s: LOOK05, K-pop beauty backstage, adjust earring in mirror, then look through reflection. Chrome “READY”.\n11 9.3–10.4s: LOOK05 backstage corridor, one step toward camera, light hair swing, film strips on both sides. “오늘도 주인공”.\n12 10.4–12.1s: LOOK06, Seoul rooftop at blue hour, wind in hair, turn away → look back → face camera. “PRETTY MOVES DIFFERENT.”\n13 12.1–15.0s: FINAL HERO, LOOK06, midnight Seoul rooftop. She stands centered while photo booth cards, silver magazine pages, Seoul frames, film strips, face crops, fashion covers and chrome frames reappear around her without covering her. Beat: V → R → VIOLET RUSH. Then “더 예쁜 나”. Final lockup: “VIOLET RUSH / SEOUL AFTER DARK”. Slight chin lift, strong eye contact. Hold final 0.5s completely still.\nPERFORMANCE:\nNo dancing. Use idol-style micro-actions only: eyebrow raise, look-back, light wink, hair flip, shoulder turn, small step, touch earring, adjust skirt, reach toward camera, sweet smile → cold stare → confident hero pose.\nEDITING:\nFast beat-synced hard cuts, clean push-ins, low angles, close-ups, medium shots and full-body shots. Energy comes from outfit switches, scene changes, eye contact and graphics.\nSTRICT:\nONE WOMAN ONLY. No face change, identity drift, extra people, duplicated body, outfit morphing, partial outfit changes, deformed hands, plastic skin, heavy Western glam, dancing, cyberpunk HUD, subtitles, logos, watermarks, video UI, unreadable text.\nFINAL FEEL:\nSame K-pop Girl × 6 Idol Looks × Seoul Nightlife × Violet/Silver/Black × 13 Fast Cuts × Fashion Graphics × Main Character Energy.",
+    "promptSourceUrl": "https://x.com/ImaStudio_ai/status/2102606723760501043",
+    "sourceUrl": "https://x.com/ImaStudio_ai/status/2102606723760501043",
+    "sourceLabel": "X 原帖 · @ImaStudio_ai",
+    "author": "Ima Studio",
+    "publishedAt": "2026-09-23T03:51:22.000Z",
+    "addedAt": "2026-11-07T06:47:51.749Z",
+    "mediaUrl": "/media/x-2102606723760501043.mp4",
+    "posterUrl": "/posters/x/2102606723760501043.jpg",
+    "duration": 16,
+    "aspectRatio": "landscape",
+    "resolution": "3840×2160",
+    "tags": [
+      "MiniMax H3",
+      "广告与产品",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "advertising",
+    "styles": [
+      "commercial",
+      "motion-graphics"
+    ],
+    "scenes": [
+      "fashion",
+      "city"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "MiniMax H3 K-pop fashion trailer test.\n13 cuts. 1 girl. 6 outfit switches. Dynamic typography. Full Seoul idol energy.\nBuilt in Ima Studio for under $1.\nTry it 👉\nhttps://www.imastudio.com/community?utm_source=x&utm_medium=social&utm_campaign=ixa&utm_content=x48\nPrompt ↓\n\nCreate a 15-second, 16:9, 24fps live-action K-pop Fashion Reveal Trailer with EXACTLY 13 distinct cuts.\nSTYLE: K-pop comeback teaser × Korean girl-group center × high-end fashion campaign × dynamic editorial graphics × idol concept film.\nTHEME: VIOLET RUSH\nABBR: VR\nTAGLINE: PRETTY MOVES DIFFERENT.\nCHARACTER LOCK:\nUse the uploaded girl as the ONLY identity reference. Exactly ONE adult East Asian woman throughout. Preserve the same face, facial proportions, skin tone, age, slim body proportions, and long dark-brown/black-brown hair in every shot. Identity must never change. Do not inherit the reference outfit. She is a 22–25-year-old Korean girl-group center / Seoul it-girl: pretty, youthful, sexy-cute, glossy, playful, confident, chic, feminine, slightly rebellious, very camera-aware. No background people, duplicates, face drift, body drift, blonde/short hair.\nHAIR/MAKEUP:\nLong softly wavy dark-brown hair, airy and glossy. Natural hair movement only. Clean Korean idol makeup: luminous real skin, fine eyeliner, soft aegyo-sal, subtle glitter eyes, glossy nude-pink/rose lips, natural blush.\nCOLOR:\nViolet purple, electric blue, silver, black, pearl white; soft pink, chrome, icy-blue accents. Premium Y2K Seoul nightlife, NOT cyberpunk.\nLOOKS:\n01 Silver sequined mini dress + short black jacket + black knee-high boots.\n02 Icy/cobalt cropped top + dark-gray low-rise denim mini skirt + silver waist chain.\n03 Pale-pink cropped knit + pink-white plaid mini skirt + small hair clip.\n04 Black cropped leather jacket + black camisole + asymmetric mini skirt + metal chain.\n05 White fitted crop top + silver mini skirt + light silver shrug.\n06 Final deep-violet/black-violet fitted shimmering evening mini dress.\nGRAPHICS:\n55% live-action fashion film, 45% motion graphics. Use giant typography, magazine crops, photo cards, film strips, chrome type, Korean poster text, contact sheets, partial checkerboard, thin grids, stars, subtle flash frames. Maximum 1–2 main graphic elements per cut. Never cover her face.\nTEXT ONLY:\nV / R, VIOLET RUSH, PRETTY MOVES DIFFERENT., SEOUL GIRL, MAIN CHARACTER, LOOK 01–06, 오늘도 주인공, 서울의 밤, 더 예쁜 나.\n13 CUTS:\n01 0.0–0.6s: black screen, huge “V”, then “R” on beat, violet-silver flash.\n02 0.6–1.4s: LOOK01, mirrored elevator, sunglasses, head down → doors open → eyes up, fast push-in. “VIOLET RUSH”.\n03 1.4–2.2s: LOOK01 face close-up, lower sunglasses slightly, direct eye contact, faint smile. “MAIN CHARACTER”.\n04 2.2–3.2s: LOOK02, Seoul neon street, walk then look back, natural hair swing, low angle. “서울의 밤”.\n05 3.2–4.1s: LOOK02 medium close-up, reach toward lens then retract, silver contact-sheet wipe.\n06 4.1–5.1s: LOOK03, pink photo booth, slight hip shift, wink, soft smile. “PRETTY?” → “ALWAYS.”\n07 5.1–6.1s: LOOK03 close-up, flash-photo feeling, loose hair beside face, photo cards pop in/out.\n08 6.1–7.2s: LOOK04, luxury hotel staircase, walk down one step, hand on railing, low angle, sweet expression switches to cold. “SWITCH MODE”.\n09 7.2–8.2s: LOOK04 rapid editorial split: leather detail / face / full body. Same single woman only, not three people.\n10 8.2–9.3s: LOOK05, K-pop beauty backstage, adjust earring in mirror, then look through reflection. Chrome “READY”.\n11 9.3–10.4s: LOOK05 backstage corridor, one step toward camera, light hair swing, film strips on both sides. “오늘도 주인공”.\n12 10.4–12.1s: LOOK06, Seoul rooftop at blue hour, wind in hair, turn away → look back → face camera. “PRETTY MOVES DIFFERENT.”\n13 12.1–15.0s: FINAL HERO, LOOK06, midnight Seoul rooftop. She stands centered while photo booth cards, silver magazine pages, Seoul frames, film strips, face crops, fashion covers and chrome frames reappear around her without covering her. Beat: V → R → VIOLET RUSH. Then “더 예쁜 나”. Final lockup: “VIOLET RUSH / SEOUL AFTER DARK”. Slight chin lift, strong eye contact. Hold final 0.5s completely still.\nPERFORMANCE:\nNo dancing. Use idol-style micro-actions only: eyebrow raise, look-back, light wink, hair flip, shoulder turn, small step, touch earring, adjust skirt, reach toward camera, sweet smile → cold stare → confident hero pose.\nEDITING:\nFast beat-synced hard cuts, clean push-ins, low angles, close-ups, medium shots and full-body shots. Energy comes from outfit switches, scene changes, eye contact and graphics.\nSTRICT:\nONE WOMAN ONLY. No face change, identity drift, extra people, duplicated body, outfit morphing, partial outfit changes, deformed hands, plastic skin, heavy Western glam, dancing, cyberpunk HUD, subtitles, logos, watermarks, video UI, unreadable text.\nFINAL FEEL:\nSame K-pop Girl × 6 Idol Looks × Seoul Nightlife × Violet/Silver/Black × 13 Fast Cuts × Fashion Graphics × Main Character Energy.\n\n#MiniMaxH3 #AIFilm #KpopVisual #AICreative #ImaStudio",
+    "engagement": {
+      "replies": 2,
+      "reposts": 14,
+      "likes": 51,
+      "views": 6891,
+      "snapshotAt": "2026-11-07T06:47:51.749Z"
+    },
+    "approvedAt": "2026-11-07T06:47:51.749Z",
+    "editorialBasis": "A woman changes looks across city and staircase scenes surrounded by violet fashion typography. The original caption names MiniMax H3."
+  },
+  {
+    "id": "x-2102597137649566047",
+    "title": "草地上的蜂鸟来客",
+    "titleEn": "A hummingbird visits on the grass",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "女子躺在阳光下的草地上，蜂鸟在她身前飞动，她低头注视这位小访客。 原生视频规格为 11 秒 · 768×1344。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A woman reclines on sunlit grass while a hummingbird flits near her and she looks down at it. Native-video output: 11s · 768×1344. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/Luna_R4ze/status/2102597137649566047",
+    "sourceLabel": "X 原帖 · @Luna_R4ze",
+    "author": "LunaRaze",
+    "publishedAt": "2026-09-23T03:13:16.000Z",
+    "addedAt": "2026-11-07T06:47:51.750Z",
+    "mediaUrl": "/media/x-2102597137649566047.mp4",
+    "posterUrl": "/posters/x/2102597137649566047.jpg",
+    "duration": 11,
+    "aspectRatio": "portrait",
+    "resolution": "768×1344",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [],
+    "scenes": [
+      "nature",
+      "creatures"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Inspired by @ToshiArte, https://Sogni.ai helped to produce this on MiniMax H3. Does the hummingbird steal the show or look a little cartoony?",
+    "engagement": {
+      "replies": 15,
+      "reposts": 2,
+      "likes": 40,
+      "views": 797,
+      "snapshotAt": "2026-11-07T06:47:51.750Z"
+    },
+    "approvedAt": "2026-11-07T06:47:51.750Z",
+    "editorialBasis": "A woman reclines on sunlit grass while a hummingbird flits near her and she looks down at it. The original caption names MiniMax H3."
+  },
+  {
+    "id": "x-2102543631752274065",
+    "title": "城堡前的赫尔加挥斧",
+    "titleEn": "Helga swings an axe outside a castle",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "白发战士在城堡前举起战斧，动作短暂展开后回到相近的起始姿态。 原生视频规格为 5 秒 · 1024×1024。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A white-haired warrior lifts and swings an axe in front of a castle before returning to a similar starting pose. Native-video output: 5s · 1024×1024. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/kensuiya/status/2102543631752274065",
+    "sourceLabel": "X 原帖 · @kensuiya",
+    "author": "けんすい屋【巨乳マッチョLOVE】",
+    "publishedAt": "2026-09-22T23:40:39.000Z",
+    "addedAt": "2026-11-07T06:47:51.750Z",
+    "mediaUrl": "/media/x-2102543631752274065.mp4",
+    "posterUrl": "/posters/x/2102543631752274065.jpg",
+    "duration": 5,
+    "aspectRatio": "square",
+    "resolution": "1024×1024",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "action-vfx",
+    "styles": [],
+    "scenes": [
+      "combat",
+      "fantasy"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "女戦士ヘルガの戦闘シーン。ループ動画っぽくなるように動きを少なめに設定したほうが画質が良く安定する。\nMiniMax H3 20step、5秒の生成に13分。GTX4070 12GB。 REF2VA、解像度1024x1024。",
+    "engagement": {
+      "replies": 3,
+      "reposts": 8,
+      "likes": 64,
+      "views": 2089,
+      "snapshotAt": "2026-11-07T06:47:51.750Z"
+    },
+    "approvedAt": "2026-11-07T06:47:51.750Z",
+    "editorialBasis": "A white-haired warrior lifts and swings an axe in front of a castle before returning to a similar starting pose. The original caption names MiniMax H3."
+  },
+  {
+    "id": "x-2102499038109299068",
+    "title": "蜡封信件荡起木桌涟漪",
+    "titleEn": "A sealed letter sends ripples through a desk",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "封好的信封静置在木桌上，环状波纹从信件周围向桌面扩散。 原生视频规格为 15 秒 · 864×480。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A sealed envelope rests on a wooden desk as circular ripples spread outward through the surface. Native-video output: 15s · 864×480. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "slow rings ripple through the envelope and out across the desk surface, the wood grain rising and falling like water",
+    "promptSourceUrl": "https://x.com/GlennHasABeard/status/2102499038109299068",
+    "sourceUrl": "https://x.com/GlennHasABeard/status/2102499038109299068",
+    "sourceLabel": "X 原帖 · @GlennHasABeard",
+    "author": "Glenn Williams",
+    "publishedAt": "2026-09-22T20:43:27.000Z",
+    "addedAt": "2026-11-07T06:47:51.750Z",
+    "mediaUrl": "/media/x-2102499038109299068.mp4",
+    "posterUrl": "/posters/x/2102499038109299068.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "864×480",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "action-vfx",
+    "styles": [],
+    "scenes": [
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Minimax H3, open weights, generated locally. Sealed. The desk felt it.\n\nPrompt: \"slow rings ripple through the envelope and out across the desk surface, the wood grain rising and falling like water\"\n\nDuration: 15s. Camera: locked, desk height. Rendered locally in ComfyUI, then Topaz to 4K.\n\nThe inkwell bobbing is the proof. Give the impossible thing a witness that reacts.",
+    "engagement": {
+      "replies": 3,
+      "reposts": 1,
+      "likes": 28,
+      "views": 632,
+      "snapshotAt": "2026-11-07T06:47:51.750Z"
+    },
+    "approvedAt": "2026-11-07T06:47:51.750Z",
+    "editorialBasis": "A sealed envelope rests on a wooden desk as circular ripples spread outward through the surface. The original caption names MiniMax H3."
+  },
+  {
+    "id": "x-2102495812232335384",
+    "title": "夜之城里的角色漫游",
+    "titleEn": "A character journey through Night City",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "霓虹城市与昏暗室内交替出现，角色穿行于受《赛博朋克 2077》启发的场景。 原生视频规格为 240 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "Neon streets and dim interiors alternate as a character moves through scenes inspired by Cyberpunk 2077. Native-video output: 240s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/AI_EmeraldApple/status/2102495812232335384",
+    "sourceLabel": "X 原帖 · @AI_EmeraldApple",
+    "author": "Emerald Apple",
+    "publishedAt": "2026-09-22T20:30:38.000Z",
+    "addedAt": "2026-11-07T06:47:51.750Z",
+    "mediaUrl": "/media/x-2102495812232335384.mp4",
+    "posterUrl": "/posters/x/2102495812232335384.jpg",
+    "duration": 240,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "本地生成与工作流",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "workflow",
+    "styles": [
+      "dark"
+    ],
+    "scenes": [
+      "city",
+      "sci-fi"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Fully offline\n\nAll local AI open-weights based production.\nVideo: Minimax H3, AI agent: Qwen 27B, music: Stable Audio 3... \n\nI used various screenshots from the Cyberpunk 2077 game to put my pfp character, Emerald Apple, into the \"game world\" that's not generic Cyberpunk but looks like Night City from the game. \n\n... and it's only been about 3 years since the AI boom started.\n\nI can't imagine what will be possible just 3 years from now, in 2029. \n\nAs people know, I'm always skeptical of cloud AI models... while they are powerful, I hate that it keeps changing, \"improving\" to the point that if you needed to recreate something you made on a cloud model before, you no longer can. Then there is the lack of freedom due to censorship and regulation issues.\n\nUnless your AI is all local, you don't own the means of production... You are only renting it, and the landlords can evict you at any time for generating the wrong thing... things that go against the thought police orthodoxy.\n\nThis is why the powers that be... the corpos and international governmental agencies have started a war against open-source AI tools under the guise of safety and ethical regulations.",
+    "engagement": {
+      "replies": 11,
+      "reposts": 10,
+      "likes": 113,
+      "views": 3880,
+      "snapshotAt": "2026-11-07T06:47:51.750Z"
+    },
+    "approvedAt": "2026-11-07T06:47:51.750Z",
+    "editorialBasis": "Neon streets and dim interiors alternate as a character moves through scenes inspired by Cyberpunk 2077. The original caption names MiniMax H3."
+  },
+  {
+    "id": "x-2102460451259133966",
+    "title": "雨夜与酒杯构成悬疑片头",
+    "titleEn": "A noir title sequence of rain and glass",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "雨滴玻璃、红色酒杯和暗巷依次入镜，最终出现 VELVET STATIC 片名。 原生视频规格为 15 秒 · 2560×1440。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "Rain-speckled glass, a red drink and a dark alley lead into the title VELVET STATIC. Native-video output: 15s · 2560×1440. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/umesh_ai/status/2102460451259133966",
+    "sourceLabel": "X 原帖 · @umesh_ai",
+    "author": "Umesh",
+    "publishedAt": "2026-09-22T18:10:08.000Z",
+    "addedAt": "2026-11-07T06:47:51.750Z",
+    "mediaUrl": "/media/x-2102460451259133966.mp4",
+    "posterUrl": "/posters/x/2102460451259133966.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "2560×1440",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [
+      "dark"
+    ],
+    "scenes": [
+      "city"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "This feels like cinema!\n\nA title sequence prompt with MiniMax H3 ⤵️",
+    "engagement": {
+      "replies": 12,
+      "reposts": 3,
+      "likes": 82,
+      "views": 4991,
+      "snapshotAt": "2026-11-07T06:47:51.750Z"
+    },
+    "approvedAt": "2026-11-07T06:47:51.750Z",
+    "editorialBasis": "Rain-speckled glass, a red drink and a dark alley lead into the title VELVET STATIC. The original caption names MiniMax H3."
+  },
+  {
+    "id": "x-2102443755240407287",
+    "title": "落叶堆里藏着小泳池",
+    "titleEn": "An autumn leaf pile hides a tiny pool",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "穿芥末黄毛衣的女子跳入落叶堆，露出下方的蓝色充气泳池，随后戴着墨镜竖起拇指。 原生视频规格为 15 秒 · 480×832。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "A woman in a mustard sweater jumps into leaves, revealing a blue inflatable pool, then pops up in sunglasses with a thumbs-up. Native-video output: 15s · 480×832. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "A cheerful young adult in a cozy mustard sweater stands on a leafy suburban sidewalk beside a perfect pile of orange and red autumn leaves. They beam at the camera and announce “Happy first day of fall!” with delighted confidence, then take one proud step and leap into the pile. The leaves burst outward to reveal a tiny blue inflatable kiddie pool underneath; the person pops up from the pool wearing oversized sunglasses, gives a big thumbs-up, and grins as a few leaves drift onto their head. Warm golden afternoon light, cheerful autumn colors, playful physical comedy, expressive face, clear readable action, one continuous locked-off wide shot, crisp comic timing, natural body motion, upbeat seasonal mood, 24fps film motion with clean detail.",
+    "promptSourceUrl": "https://x.com/amynys/status/2102443755240407287",
+    "sourceUrl": "https://x.com/amynys/status/2102443755240407287",
+    "sourceLabel": "X 原帖 · @amynys",
+    "author": "Amy G",
+    "publishedAt": "2026-09-22T17:03:47.000Z",
+    "addedAt": "2026-11-07T06:47:51.750Z",
+    "mediaUrl": "/media/x-2102443755240407287.mp4",
+    "posterUrl": "/posters/x/2102443755240407287.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "480×832",
+    "tags": [
+      "MiniMax H3",
+      "动作特效",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "action-vfx",
+    "styles": [],
+    "scenes": [
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Happy first day of fall.\n\nTeam cooler nights or team pumpkin spice?\n\nUsed Minimax H3 Max Turbo on @openart_ai using my android phone. #Openart \n\n(See comments for details)\n\nPrompt:\n\nA cheerful young adult in a cozy mustard sweater stands on a leafy suburban sidewalk beside a perfect pile of orange and red autumn leaves. They beam at the camera and announce “Happy first day of fall!” with delighted confidence, then take one proud step and leap into the pile. The leaves burst outward to reveal a tiny blue inflatable kiddie pool underneath; the person pops up from the pool wearing oversized sunglasses, gives a big thumbs-up, and grins as a few leaves drift onto their head. Warm golden afternoon light, cheerful autumn colors, playful physical comedy, expressive face, clear readable action, one continuous locked-off wide shot, crisp comic timing, natural body motion, upbeat seasonal mood, 24fps film motion with clean detail.",
+    "engagement": {
+      "replies": 24,
+      "reposts": 3,
+      "likes": 42,
+      "views": 844,
+      "snapshotAt": "2026-11-07T06:47:51.750Z"
+    },
+    "approvedAt": "2026-11-07T06:47:51.750Z",
+    "editorialBasis": "A woman in a mustard sweater jumps into leaves, revealing a blue inflatable pool, then pops up in sunglasses with a thumbs-up. The original caption names MiniMax H3."
+  },
+  {
+    "id": "x-2102426880016253191",
+    "title": "梨园春色中的戏曲身段",
+    "titleEn": "Opera gestures in a colorful fantasy portrait",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "华丽戏曲人物挥动双手，服饰与靠旗随动作展开，镜头逐步靠近。 原生视频规格为 18 秒 · 1890×1080。原帖完整公开了 Prompt，本页按原文保留。",
+    "summaryEn": "An elaborately dressed opera performer gestures as costume details and flags move while the camera draws closer. Native-video output: 18s · 1890×1080. The creator published the complete prompt, preserved here verbatim.",
+    "prompt": "演员做着京剧传统戏曲动作，表现京剧艺术，服装和靠旗飘动，人物双手戏剧性地挥舞，镜头慢慢推进。",
+    "promptSourceUrl": "https://x.com/PixelAigc/status/2102426880016253191",
+    "sourceUrl": "https://x.com/PixelAigc/status/2102426880016253191",
+    "sourceLabel": "X 原帖 · @PixelAigc",
+    "author": "PixelAIGC",
+    "publishedAt": "2026-09-22T15:56:44.000Z",
+    "addedAt": "2026-11-07T06:47:51.750Z",
+    "mediaUrl": "/media/x-2102426880016253191.mp4",
+    "posterUrl": "/posters/x/2102426880016253191.jpg",
+    "duration": 18,
+    "aspectRatio": "landscape",
+    "resolution": "1890×1080",
+    "tags": [
+      "MiniMax H3",
+      "模型对比",
+      "公开 Prompt",
+      "X 原帖"
+    ],
+    "category": "comparison",
+    "styles": [],
+    "scenes": [
+      "performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "creator-verbatim",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "太惊艳了！\nQwen Image 2.1 + MiniMax H3 Design\n中国传统京剧四大名旦\n梨园春色，太美了\n\nprompt 视频提示词：\n\n演员做着京剧传统戏曲动作，表现京剧艺术，服装和靠旗飘动，人物双手戏剧性地挥舞，镜头慢慢推进。\n\n生图提示词：\n\n这幅由 Artgerm 设计的作品展现了中国戏曲的奇幻艺术风格，描绘了一位身着传统戏曲服饰、极具美感的女性，并运用了鲜明的色彩对比。边上题字“梨园春色”",
+    "engagement": {
+      "replies": 12,
+      "reposts": 8,
+      "likes": 41,
+      "views": 4472,
+      "snapshotAt": "2026-11-07T06:47:51.750Z"
+    },
+    "approvedAt": "2026-11-07T06:47:51.750Z",
+    "editorialBasis": "An elaborately dressed opera performer gestures as costume details and flags move while the camera draws closer. The original caption names MiniMax H3."
+  },
+  {
+    "id": "x-2102422062791078333",
+    "title": "一杯咖啡里的悬疑",
+    "titleEn": "Suspense over a cup of coffee",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "热气从桌上的咖啡升起，一只手掠过杯边，女子最终举杯直视镜头。 原生视频规格为 15 秒 · 3840×2160。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "Steam rises from a coffee cup, a hand passes near it, and a woman lifts the cup while looking toward the camera. Native-video output: 15s · 3840×2160. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ou_zhen599/status/2102422062791078333",
+    "sourceLabel": "X 原帖 · @ou_zhen599",
+    "author": "Loriel.AI",
+    "publishedAt": "2026-09-22T15:37:35.000Z",
+    "addedAt": "2026-11-07T06:47:51.750Z",
+    "mediaUrl": "/media/x-2102422062791078333.mp4",
+    "posterUrl": "/posters/x/2102422062791078333.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "3840×2160",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [],
+    "scenes": [
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Made with MiniMax-H3 ComfyUI                              \n\n🎬Image-to-Video                                  \n📷“Don’t Leave Any Evidence”\nA woman, a cup of coffee that someone had tampered with, and a tiny bullet casing plucked from a hidden crevice in the sofa. She had done almost nothing, yet she had already taken control of the entire room.\n\nFull prompt in the reply.",
+    "engagement": {
+      "replies": 1,
+      "reposts": 1,
+      "likes": 7,
+      "views": 722,
+      "snapshotAt": "2026-11-07T06:47:51.750Z"
+    },
+    "approvedAt": "2026-11-07T06:47:51.750Z",
+    "editorialBasis": "Steam rises from a coffee cup, a hand passes near it, and a woman lifts the cup while looking toward the camera. The original caption names MiniMax H3."
+  },
+  {
+    "id": "x-2102418100608291114",
+    "title": "暖光玩具屋里的小机器人",
+    "titleEn": "A little robot in a sunlit toy room",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "履带小机器人坐在散落的玩具之间，窗边暖光照着它的屏幕面孔。 原生视频规格为 10 秒 · 864×480。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A small tracked robot sits among scattered toys as warm window light falls across its screen-like face. Native-video output: 10s · 864×480. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/CEs7J0Mfn8x37k5/status/2102418100608291114",
+    "sourceLabel": "X 原帖 · @CEs7J0Mfn8x37k5",
+    "author": "熊のターさん",
+    "publishedAt": "2026-09-22T15:21:50.000Z",
+    "addedAt": "2026-11-07T06:47:51.750Z",
+    "mediaUrl": "/media/x-2102418100608291114.mp4",
+    "posterUrl": "/posters/x/2102418100608291114.jpg",
+    "duration": 10,
+    "aspectRatio": "landscape",
+    "resolution": "864×480",
+    "tags": [
+      "MiniMax H3",
+      "本地生成与工作流",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "workflow",
+    "styles": [],
+    "scenes": [
+      "sci-fi"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "新しいMac-m6に乗り換え中。local-MiniMax H3で制作",
+    "engagement": {
+      "replies": 0,
+      "reposts": 0,
+      "likes": 3,
+      "views": 187,
+      "snapshotAt": "2026-11-07T06:47:51.750Z"
+    },
+    "approvedAt": "2026-11-07T06:47:51.750Z",
+    "editorialBasis": "A small tracked robot sits among scattered toys as warm window light falls across its screen-like face. The original caption names MiniMax H3."
+  },
+  {
+    "id": "x-2102414326086898014",
+    "title": "TOKENS BURN 动画音乐短片",
+    "titleEn": "TOKENS BURN: a day at the computer",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "动画男子从卧室场景转到电脑前，生活片段组成一支音乐短片。 原生视频规格为 136 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "An animated man appears in a bedroom and then at a computer as everyday scenes form a music video. Native-video output: 136s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/NeoAIForecast/status/2102414326086898014",
+    "sourceLabel": "X 原帖 · @NeoAIForecast",
+    "author": "Neo",
+    "publishedAt": "2026-09-22T15:06:50.000Z",
+    "addedAt": "2026-11-07T06:47:51.750Z",
+    "mediaUrl": "/media/x-2102414326086898014.mp4",
+    "posterUrl": "/posters/x/2102414326086898014.jpg",
+    "duration": 136,
+    "aspectRatio": "landscape",
+    "resolution": "1920×1080",
+    "tags": [
+      "MiniMax H3",
+      "音乐视频",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "music",
+    "styles": [],
+    "scenes": [
+      "daily-life"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "TOKENS BURN 🎵\n\nBy @NeoAIForecast\n\nMusic video generated on a Single Nvidia DGX Spark\nwith MiniMax H3",
+    "engagement": {
+      "replies": 4,
+      "reposts": 3,
+      "likes": 37,
+      "views": 5332,
+      "snapshotAt": "2026-11-07T06:47:51.750Z"
+    },
+    "approvedAt": "2026-11-07T06:47:51.750Z",
+    "editorialBasis": "An animated man appears in a bedroom and then at a computer as everyday scenes form a music video. The original caption names MiniMax H3."
+  },
+  {
+    "id": "x-2102418200503959894",
+    "title": "状元郎视角穿过古城",
+    "titleEn": "A scholar’s view across an ancient city",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "第一视角在人群前接过红色包裹，随后来到城楼高处俯瞰古城。 原生视频规格为 15 秒 · 1280×720。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A first-person view receives a red bundle before rising to a high terrace overlooking an ancient city. Native-video output: 15s · 1280×720. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/eternityspring/status/2102418200503959894",
+    "sourceLabel": "X 原帖 · @eternityspring",
+    "author": "烁皓",
+    "publishedAt": "2026-09-22T15:22:14.000Z",
+    "addedAt": "2026-11-07T06:47:51.750Z",
+    "mediaUrl": "/media/x-2102418200503959894.mp4",
+    "posterUrl": "/posters/x/2102418200503959894.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "1280×720",
+    "tags": [
+      "MiniMax H3",
+      "综合展示",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "showcase",
+    "styles": [],
+    "scenes": [
+      "city"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "再来个五毛钱电费版的“状元郎”\n也是用 Qwen Image 2.1 生成的分镜图\n\nMiniMax H3 直出不带背景音乐的15s视频\n再配上《八千里路明月照（戏腔版）》的bgm\n\n不得不说开源模型的进步空间还有很多\n具体提示词↓",
+    "engagement": {
+      "replies": 12,
+      "reposts": 3,
+      "likes": 34,
+      "views": 9912,
+      "snapshotAt": "2026-11-07T06:47:51.750Z"
+    },
+    "approvedAt": "2026-11-07T06:47:51.750Z",
+    "editorialBasis": "A first-person view receives a red bundle before rising to a high terrace overlooking an ancient city. The original caption names MiniMax H3."
+  },
+  {
+    "id": "x-2102414303425155488",
+    "title": "透明舞台上的三人齐舞",
+    "titleEn": "Three dancers on a translucent stage",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "三名舞者在浅色透明舞台中变换队形，背后呈现醒目的大字排版。 原生视频规格为 15 秒 · 832×480。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "Three dancers change formation on a pale translucent stage with large typography behind them. Native-video output: 15s · 832×480. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/applete77191758/status/2102414303425155488",
+    "sourceLabel": "X 原帖 · @applete77191758",
+    "author": "appletea 🍎アップルティ☕丨AI動画制作",
+    "publishedAt": "2026-09-22T15:06:45.000Z",
+    "addedAt": "2026-11-07T06:47:51.750Z",
+    "mediaUrl": "/media/x-2102414303425155488.mp4",
+    "posterUrl": "/posters/x/2102414303425155488.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "832×480",
+    "tags": [
+      "MiniMax H3",
+      "舞蹈",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "dance",
+    "styles": [],
+    "scenes": [
+      "dance",
+      "performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "後ろになんかパネル置いて文字表示させたらいい感じかも。\nTopviewのMinimax H3 maxで生成しました。\nプロンプトはリプ欄👇️\n\n@TopviewAIJP",
+    "engagement": {
+      "replies": 5,
+      "reposts": 1,
+      "likes": 27,
+      "views": 16137,
+      "snapshotAt": "2026-11-07T06:47:51.750Z"
+    },
+    "approvedAt": "2026-11-07T06:47:51.750Z",
+    "editorialBasis": "Three dancers change formation on a pale translucent stage with large typography behind them. The original caption names MiniMax H3."
+  },
+  {
+    "id": "x-2102403591340519908",
+    "title": "黑衣双人组领舞",
+    "titleEn": "A duo leads a black-clad dance scene",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "两位黑衣女子站在人群前随音乐摆动，后方整齐队列构成舞台背景。 原生视频规格为 15 秒 · 768×1344。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "Two women in black move to the music in front of an orderly crowd. Native-video output: 15s · 768×1344. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/apaajadesainin/status/2102403591340519908",
+    "sourceLabel": "X 原帖 · @apaajadesainin",
+    "author": "KemenGambar",
+    "publishedAt": "2026-09-22T14:24:11.000Z",
+    "addedAt": "2026-11-07T06:47:51.750Z",
+    "mediaUrl": "/media/x-2102403591340519908.mp4",
+    "posterUrl": "/posters/x/2102403591340519908.jpg",
+    "duration": 15,
+    "aspectRatio": "portrait",
+    "resolution": "768×1344",
+    "tags": [
+      "MiniMax H3",
+      "舞蹈",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "dance",
+    "styles": [],
+    "scenes": [
+      "dance",
+      "performance"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Agent Duo Cantik Follow the Trend made with Flova use Minimax H3 \n#Flovaai @Flovaai @Flovaai_Japan\n\nthis is just the best of several generations of slop 😂",
+    "engagement": {
+      "replies": 2,
+      "reposts": 1,
+      "likes": 7,
+      "views": 345,
+      "snapshotAt": "2026-11-07T06:47:51.750Z"
+    },
+    "approvedAt": "2026-11-07T06:47:51.750Z",
+    "editorialBasis": "Two women in black move to the music in front of an orderly crowd. The original caption names MiniMax H3."
+  },
+  {
+    "id": "x-2102402035467387281",
+    "title": "雪原侦察车的身份识别",
+    "titleEn": "Recognition beside a snowbound reconnaissance vehicle",
+    "model": "MiniMax H3（创作者标注）",
+    "mode": "Unknown",
+    "summary": "女子在雪山飞船旁靠近受损侦察车，随后站到车辆控制台前。 原生视频规格为 15 秒 · 3840×2160。本库暂未收录完整 Prompt，不反推或补写。",
+    "summaryEn": "A woman approaches a damaged reconnaissance vehicle beneath a spacecraft in snowy mountains and moves to its controls. Native-video output: 15s · 3840×2160. A complete Prompt has not been collected here; this library does not infer or complete one.",
+    "prompt": null,
+    "sourceUrl": "https://x.com/ou_zhen599/status/2102402035467387281",
+    "sourceLabel": "X 原帖 · @ou_zhen599",
+    "author": "Loriel.AI",
+    "publishedAt": "2026-09-22T14:18:00.000Z",
+    "addedAt": "2026-11-07T06:47:51.750Z",
+    "mediaUrl": "/media/x-2102402035467387281.mp4",
+    "posterUrl": "/posters/x/2102402035467387281.jpg",
+    "duration": 15,
+    "aspectRatio": "landscape",
+    "resolution": "3840×2160",
+    "tags": [
+      "MiniMax H3",
+      "电影叙事",
+      "暂未收录完整 Prompt",
+      "X 原帖"
+    ],
+    "category": "cinematic",
+    "styles": [],
+    "scenes": [
+      "sci-fi",
+      "nature"
+    ],
+    "inputTypes": [
+      "unknown"
+    ],
+    "promptProvenance": "not-published",
+    "sourceType": "x",
+    "verified": false,
+    "sourceCaption": "Made with MiniMax-H3 ComfyUI                            \n\n🎬Image-to-Video                                 \n📷“Snowland Recognition”\nA woman attempts to reactivate a damaged reconnaissance vehicle, but during a close-range identification scan, she discovers that what is truly being reactivated is not the machine, but her own dormant administrative privileges.\n\nFull prompt in the reply.",
+    "engagement": {
+      "replies": 2,
+      "reposts": 0,
+      "likes": 5,
+      "views": 823,
+      "snapshotAt": "2026-11-07T06:47:51.750Z"
+    },
+    "approvedAt": "2026-11-07T06:47:51.750Z",
+    "editorialBasis": "A woman approaches a damaged reconnaissance vehicle beneath a spacecraft in snowy mountains and moves to its controls. The original caption names MiniMax H3."
   }
 ]

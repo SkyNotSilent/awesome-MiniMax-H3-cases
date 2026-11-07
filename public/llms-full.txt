@@ -1,6 +1,6 @@
 # MiniMax H3 Cases & Guides — Complete Case and Tutorial Index
 
-Generated from data/cases.json and data/tutorial-guides.json. Total: 3118 cases and 26 tutorials. Complete verbatim public Prompts: 775.
+Generated from data/cases.json and data/tutorial-guides.json. Total: 3145 cases and 26 tutorials. Complete verbatim public Prompts: 781.
 
 ## Tutorials
 
@@ -111104,5 +111104,677 @@ A stressed-out office monkey in a suit furiously types on a computer, then pound
 - Prompt completeness: not-published
 - Chinese summary: 餐馆角色与红色巨轮车片段并列展示两种放大处理，保留 MiniMax H3 原片运动并对照细节与稳定性。 原生视频规格为 74 秒 · 3840×2160。本库暂未收录完整 Prompt，不反推或补写。
 - English summary: Diner and red monster-truck scenes compare RelayVSR and RTX upscaling of MiniMax H3 clips, showing differences in detail and stability. Native-video output: 74s · 3840×2160. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## Erza revealed by ribbons of light
+
+- ID: x-2103334215597097346
+- 中文标题: 彩色光带揭幕艾露莎
+- English title: Erza revealed by ribbons of light
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2103334215597097346/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2103334215597097346/
+- Original source: https://x.com/aimikoda/status/2103334215597097346
+- Author: Kōda
+- Published: 2026-09-25T04:02:09.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Animation
+- Visual styles: Anime
+- Scenes: Fantasy
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 彩色光带从靴边向上环绕红发剑士，最终绽放为明亮的全身角色亮相。 原生视频规格为 15 秒 · 2560×1440。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: Colored light ribbons rise around a red-haired swordswoman and burst into a luminous full-body reveal. Native-video output: 15s · 2560×1440. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## H3 generation with separate text encoding
+
+- ID: x-2103311025240207683
+- 中文标题: 分离文本编码的 H3 生成演示
+- English title: H3 generation with separate text encoding
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2103311025240207683/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2103311025240207683/
+- Original source: https://x.com/Isichan_Hitori/status/2103311025240207683
+- Author: 石ちゃん🎤LLMでアプリ開発
+- Published: 2026-09-25T02:30:00.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Local Generation & Workflow
+- Visual styles: not specified
+- Scenes: Daily life
+- Output: 17s, 1440×1080, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: ComfyUI 录屏展示双人竖屏视频，作者分享将文本编码移至另一台电脑的生成流程。 原生视频规格为 17 秒 · 1440×1080。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A ComfyUI screen recording shows a two-person portrait clip while the creator explains moving text encoding to a second computer. Native-video output: 17s · 1440×1080. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## Side-by-side VAE comparison at a night festival
+
+- ID: x-2103055859953922232
+- 中文标题: 夜祭人像的 VAE 并排对照
+- English title: Side-by-side VAE comparison at a night festival
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2103055859953922232/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2103055859953922232/
+- Original source: https://x.com/kentdhani/status/2103055859953922232
+- Author: Kent Dhani
+- Published: 2026-09-24T09:36:04.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Model Comparison
+- Visual styles: not specified
+- Scenes: Fashion, Daily life
+- Output: 15s, 1440×1440, square
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 浴衣女子在夜祭灯光下举起糖果并微笑，左右画面展示 FP16 与 INT8 VAE 的同场景结果。 原生视频规格为 15 秒 · 1440×1440。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A woman in a floral yukata raises a candied fruit and smiles in a night-festival clip shown side by side with FP16 and INT8 VAE labels. Native-video output: 15s · 1440×1440. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## Neon outlines reveal an anime character
+
+- ID: x-2102966384003350874
+- 中文标题: 霓虹轮廓勾勒角色亮相
+- English title: Neon outlines reveal an anime character
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102966384003350874/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102966384003350874/
+- Original source: https://x.com/aimikoda/status/2102966384003350874
+- Author: Kōda
+- Published: 2026-09-24T03:40:31.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Animation
+- Visual styles: Anime, Motion graphics
+- Scenes: Human performance
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 彩色线条从靴子沿人物轮廓向上描绘，粉发角色最终出现在多边形边框中。 原生视频规格为 15 秒 · 2560×1440。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: Colored lines trace upward from a character’s boots before a pink-haired figure appears within angular neon borders. Native-video output: 15s · 2560×1440. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## A waitress’s busy evening shift
+
+- ID: x-2102964324243255509
+- 中文标题: 女服务员的一晚忙碌
+- English title: A waitress’s busy evening shift
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102964324243255509/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102964324243255509/
+- Original source: https://x.com/MonetizationDon/status/2102964324243255509
+- Author: LAPTOP LIFESTYLE BLOGGER
+- Published: 2026-09-24T03:32:20.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Cinematic & Narrative
+- Visual styles: Cinematic realism
+- Scenes: Food, Daily life
+- Output: 75s, 1080×1080, square
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 餐厅里的女服务员穿梭于客人与厨房之间，短片以连续场景呈现她的忙碌班次。 原生视频规格为 75 秒 · 1080×1080。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A waitress moves between diners and the kitchen in a restaurant story built around her busy evening shift. Native-video output: 75s · 1080×1080. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## Riverside jogging in a lightweight VAE comparison
+
+- ID: x-2102924450446602301
+- 中文标题: 河畔慢跑的轻量 VAE 对照
+- English title: Riverside jogging in a lightweight VAE comparison
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102924450446602301/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102924450446602301/
+- Original source: https://x.com/yonsan434343/status/2102924450446602301
+- Author: ヨンサン｜不登校系AI講師　43歳の今
+- Published: 2026-09-24T00:53:54.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Model Comparison
+- Visual styles: not specified
+- Scenes: Nature & landscape
+- Output: 7s, 1920×1080, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 屏幕录制并排展示夕阳水边的慢跑画面，作者用同类场景对照 H3 的 VAE 版本。 原生视频规格为 7 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A screen recording places sunset jogging clips side by side to illustrate the creator’s H3 VAE comparison. Native-video output: 7s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## A surreal day in a collage diary
+
+- ID: x-2102807178189164870
+- 中文标题: 拼贴日记里的无厘头一天
+- English title: A surreal day in a collage diary
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102807178189164870/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102807178189164870/
+- Original source: https://x.com/AIwithNatalia/status/2102807178189164870
+- Author: Natalia
+- Published: 2026-09-23T17:07:54.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Animation
+- Visual styles: Illustration, Retro & vintage
+- Scenes: not specified
+- Output: 15s, 1344×768, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 人物眼部特写、托腮女子与食物图案组成复古拼贴，镜头最终拉远展示整张纸面。 原生视频规格为 15 秒 · 1344×768。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A retro collage moves from an eye close-up to a woman resting her chin among food illustrations before pulling back to the full page. Native-video output: 15s · 1344×768. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## Mai Shiranui and desktop icons
+
+- ID: x-2102662408271692102
+- 中文标题: 不知火舞与桌面图标
+- English title: Mai Shiranui and desktop icons
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102662408271692102/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102662408271692102/
+- Original source: https://x.com/aidavid125/status/2102662408271692102
+- Author: 大卫叔的AI旅程
+- Published: 2026-09-23T07:32:38.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Action & VFX
+- Visual styles: Anime, Retro & vintage
+- Scenes: Action & combat
+- Output: 20s, 2752×1536, landscape
+- Prompt provenance: creator-verbatim
+- Prompt completeness: complete
+- Chinese summary: 不知火舞在桌面壁纸前挥扇转身，图标与角色动作共同构成动态桌面场景。 原生视频规格为 20 秒 · 2752×1536。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: Mai Shiranui turns with her fan against a desktop wallpaper, combining character motion with an arrangement of application icons. Native-video output: 20s · 2752×1536. The creator published the complete prompt, preserved here verbatim.
+- Complete verbatim public prompt:
+
+```text
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description: [Shot 1] 2D-animated, retro arcade fighting-game character art style blended with a clean macOS desktop scene, exactly as established in <Picture 1>: an arc-shaped light-band wallpaper sweeps from deep blue-violet at the lower left to orange-red and magenta at the upper right over a mirror-like reflective ground; two vertical columns of glossy rounded-square application icons stand on the left half — each icon is a clean pictogram with NO text label beneath it: the first column shows from top to bottom a blue smiling face, a red-yellow-green ring around a blue center dot, a white "N" block in a dark frame, a light-blue infinity-style ribbon, a dark tile with blue letters, an amber tile with yellow script, a purple tile with white letters, and green arcs inside a circle; the second column shows two white chat bubbles on green, a penguin on white, a white paper plane on blue gradient, four colored squares in a grid, a blue-green spiral ring, a red play triangle, colorful pinwheel petals, and a white "A" brushstroke on blue — on the right stands the brown high-ponytail young woman with white horn-like hair ornaments, wearing a red high-slit qipao-style fighting outfit with a large white waist knot trailing red-floral ribbons and white-tassel beads in her hair, black fingerless gloves and red-black heeled sandals; she holds an open white fan with red trim hanging behind her hip while one hand rests on her waist, gazing back over her shoulder. The camera pushes in with small amplitude at slow speed as she pivots from the回眸 stance into a low crouch, orange-yellow fire ribbons beginning to swirl around her feet and embers spiraling upward past her shoulders. [Shot 2] At 00:04.500, the camera cuts to a wider shot of the full desktop as she explodes out of the crouch into a dramatic backbend spin — one leg planted, the other extended far to the side-rear, torso twisted and arched backward, ponytail flaring wide in the motion — and roars <d>[Japanese] 超必殺・忍蜂！</d> A ring of glowing shuriken erupts from her spinning body and orbits outward like a whirlpool across the center of the screen; as the blades sweep through the icon columns, open fans launch from her wrist in rapid succession and strike the icons one by one — each struck icon wobbles violently, peels off its grid position, and tumbles downward with motion blur past the reflective ground out of frame, trailing orange-yellow sparks. The final shuriken detonates at the center of the grid as a white-blue light bloom, shaking the whole desktop loose; every remaining icon rains down in a cascade while her spin finishes in a low landing, one hand extended forward, palm up. [Shot 3] At 00:10.500, the camera cuts to a medium close-up of the young woman across the now-empty center of the screen; her expression stays calm and unbothered, lips pressed into a confident smirk while embers drift past her shoulder. She slowly raises her open fan beside her face and says <d>[Japanese] 花蝶扇。</d> Orange-yellow flame begins to gather along the fan's ribs like liquid fire pooling on silk, the light reflecting off her white waist knot and red-floral ribbons as tiny sparks orbit her wrist. [Shot 4] At 00:13.500, the shot cuts back to the full desktop as she sweeps the burning fan in a wide graceful arc through another spin; ribbons of orange-yellow flame unfurl from the fan like butterfly wings trailing behind her, and each ribbon's tip hooks one falling icon from below the frame, reeling it smoothly up into its exact original grid position — every lock-in flashing a small white-blue light bloom with a sharp click as the icons seat crisply back into place, restoring both columns perfectly. The last ribbon curls around the final icon and dissolves into sparks that spiral back into her fan as she closes it with a snap at her hip. [Shot 5] At 00:17.000, the camera cuts to a low-angle hero shot as she settles into her classic pose from <Picture 1>: side-turned stance with weight on the rear leg, one hand on her waist, the closed fan held elegantly beside her face, chin tilted down in a cold confident glare while her ribbons and hair flare outward in the residual wind. The camera pulls out with small amplitude at slow speed, revealing the fully restored desktop around her; drifting orange sparks fade to black as she holds the pose until the end of the video.
+
+overall_soundscape: Low flame crackle builds under a rumbling charge, then an explosive whoosh on the backbend spin — rapid shuriken whistles and fan-snap cracks striking icons one after another — followed by cascading rattling clatters as icons tumble out of frame and a sharp white-blue burst pop. A crisp fan snap and a soft confident breath carry across the empty desktop during the calm close-up. Rising flame hiss gathers along the fan's ribs, then graceful silk-ribbon whooshes sweep through the spin while crisp snap-back clicks land one after another as each icon locks into place with tiny light-bloom pops, ending with a low resonant boom under guttering ember crackle.
+
+non_diegetic_music: Driving taiko drums with fast electronic percussion at a high tempo building to a hard hit on the shuriken barrage, dropping out to sparse sustained synth and a single koto pluck during the calm close-up, then returning for one final strong downbeat as she locks her classic pose.
+```
+
+## Fern rearranges desktop icons
+
+- ID: x-2102661505166594488
+- 中文标题: 菲伦整理桌面图标
+- English title: Fern rearranges desktop icons
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102661505166594488/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102661505166594488/
+- Original source: https://x.com/Mayz1169/status/2102661505166594488
+- Author: Kiki
+- Published: 2026-09-23T07:29:03.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Animation
+- Visual styles: Anime
+- Scenes: Fantasy
+- Output: 9s, 1890×1080, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 紫发魔法师菲伦在桌面前抬手施法，应用图标随动作重新排列。 原生视频规格为 9 秒 · 1890×1080。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: The purple-haired mage Fern gestures in front of a desktop as application icons rearrange around her. Native-video output: 9s · 1890×1080. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## Beat-driven effects around a jelly character
+
+- ID: x-2102656273112326609
+- 中文标题: 果冻角色的节拍特效对照
+- English title: Beat-driven effects around a jelly character
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102656273112326609/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102656273112326609/
+- Original source: https://x.com/aicreataro/status/2102656273112326609
+- Author: aicreataro
+- Published: 2026-09-23T07:08:15.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Model Comparison
+- Visual styles: Stylized & experimental, Motion graphics
+- Scenes: Animals & creatures
+- Output: 15s, 1440×1280, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 自动售货机旁的粉色果冻角色出现在原片与特效版的并排画面中，粒子和图案随节奏变化。 原生视频规格为 15 秒 · 1440×1280。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A pink jelly character by a vending machine appears in a side-by-side original and effects comparison with changing particles and graphic patterns. Native-video output: 15s · 1440×1280. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## System failure aboard a retro spaceship
+
+- ID: x-2102640272027095263
+- 中文标题: 复古飞船的系统故障
+- English title: System failure aboard a retro spaceship
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102640272027095263/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102640272027095263/
+- Original source: https://x.com/ChrisGwinnLA/status/2102640272027095263
+- Author: Christopher Gwinn | Grindhouse Glitch
+- Published: 2026-09-23T06:04:40.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Cinematic & Narrative
+- Visual styles: Retro & vintage
+- Scenes: Sci-fi & space
+- Output: 15s, 1344×768, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 宇航员操作飞船控制台，老式显示器亮起故障文字，镜头转向舱内人物。 原生视频规格为 15 秒 · 1344×768。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: An astronaut works the controls of a retro spacecraft before a monitor displays a system failure and the scene shifts to a crew member inside. Native-video output: 15s · 1344×768. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## Running shoes in the sunset
+
+- ID: x-2102611185472614491
+- 中文标题: 夕阳下的跑鞋广告
+- English title: Running shoes in the sunset
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102611185472614491/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102611185472614491/
+- Original source: https://x.com/Zyrellix/status/2102611185472614491
+- Author: Zyrella
+- Published: 2026-09-23T04:09:05.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Advertising & Product
+- Visual styles: Cinematic realism, Photoreal
+- Scenes: Product & advertising, City & street
+- Output: 15s, 1344×768, landscape
+- Prompt provenance: creator-verbatim
+- Prompt completeness: complete
+- Chinese summary: 从系鞋带特写到拱廊下的跑步镜头，最后以悬浮跑鞋展示产品轮廓。 原生视频规格为 15 秒 · 1344×768。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A lace-tying close-up leads to a run through an arched walkway and a floating shoe product shot. Native-video output: 15s · 1344×768. The creator published the complete prompt, preserved here verbatim.
+- Complete verbatim public prompt:
+
+```text
+Cinematic 15-second luxury running-shoe commercial, golden-hour photorealism, 24fps, shallow depth of field, warm sunset color grade.
+Shot 1 (0–3s): Extreme close-up of a woman’s hands tying white On Cloud running shoes with visible Cloudtec pods on the midsole. Soft golden sunlight, wooden boardwalk texture, navy heel collar, mesh upper. Slow, tactile motion. Whispered VO: “This is how it feels.”
+Shot 2 (3–7s): Medium-wide tracking shot of an athletic woman with dark ponytail, black tank and navy tights, running left-to-right on a wooden waterfront promenade. Background: steel arch bridge and Manhattan-style skyline at sunset, river reflecting orange and pink light. Fluid, powerful stride, slight motion blur on hair and shoes.
+Shot 3 (7–10s): Front-on tracking shot as she runs toward camera through a long, repeating concrete arched underpass. Strong side lighting creates rhythmic stripes of light and shadow across the floor. Determined expression, ponytail swinging.
+Shot 4 (10–13s): Tight facial close-up, golden rim light on cheekbones and hair, focused green-brown eyes, slight sheen of sweat, black tank straps visible. Subtle camera push-in.
+Shot 5 (13–15s): Hero product shot — the same white On Cloud shoe floating and slowly rotating in mid-air against a blurred sunset city skyline. Cloudtec pods catch the light. Clean, premium, almost weightless.
+```
+
+## Violet Seoul fashion teaser
+
+- ID: x-2102606723760501043
+- 中文标题: 紫色首尔时装预告
+- English title: Violet Seoul fashion teaser
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102606723760501043/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102606723760501043/
+- Original source: https://x.com/ImaStudio_ai/status/2102606723760501043
+- Author: Ima Studio
+- Published: 2026-09-23T03:51:22.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Advertising & Product
+- Visual styles: Commercial, Motion graphics
+- Scenes: Fashion, City & street
+- Output: 16s, 3840×2160, landscape
+- Prompt provenance: creator-verbatim
+- Prompt completeness: complete
+- Chinese summary: 同一女性在城市与楼梯场景中切换造型，紫色时装排版贯穿整段预告。 原生视频规格为 16 秒 · 3840×2160。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A woman changes looks across city and staircase scenes surrounded by violet fashion typography. Native-video output: 16s · 3840×2160. The creator published the complete prompt, preserved here verbatim.
+- Complete verbatim public prompt:
+
+```text
+Create a 15-second, 16:9, 24fps live-action K-pop Fashion Reveal Trailer with EXACTLY 13 distinct cuts.
+STYLE: K-pop comeback teaser × Korean girl-group center × high-end fashion campaign × dynamic editorial graphics × idol concept film.
+THEME: VIOLET RUSH
+ABBR: VR
+TAGLINE: PRETTY MOVES DIFFERENT.
+CHARACTER LOCK:
+Use the uploaded girl as the ONLY identity reference. Exactly ONE adult East Asian woman throughout. Preserve the same face, facial proportions, skin tone, age, slim body proportions, and long dark-brown/black-brown hair in every shot. Identity must never change. Do not inherit the reference outfit. She is a 22–25-year-old Korean girl-group center / Seoul it-girl: pretty, youthful, sexy-cute, glossy, playful, confident, chic, feminine, slightly rebellious, very camera-aware. No background people, duplicates, face drift, body drift, blonde/short hair.
+HAIR/MAKEUP:
+Long softly wavy dark-brown hair, airy and glossy. Natural hair movement only. Clean Korean idol makeup: luminous real skin, fine eyeliner, soft aegyo-sal, subtle glitter eyes, glossy nude-pink/rose lips, natural blush.
+COLOR:
+Violet purple, electric blue, silver, black, pearl white; soft pink, chrome, icy-blue accents. Premium Y2K Seoul nightlife, NOT cyberpunk.
+LOOKS:
+01 Silver sequined mini dress + short black jacket + black knee-high boots.
+02 Icy/cobalt cropped top + dark-gray low-rise denim mini skirt + silver waist chain.
+03 Pale-pink cropped knit + pink-white plaid mini skirt + small hair clip.
+04 Black cropped leather jacket + black camisole + asymmetric mini skirt + metal chain.
+05 White fitted crop top + silver mini skirt + light silver shrug.
+06 Final deep-violet/black-violet fitted shimmering evening mini dress.
+GRAPHICS:
+55% live-action fashion film, 45% motion graphics. Use giant typography, magazine crops, photo cards, film strips, chrome type, Korean poster text, contact sheets, partial checkerboard, thin grids, stars, subtle flash frames. Maximum 1–2 main graphic elements per cut. Never cover her face.
+TEXT ONLY:
+V / R, VIOLET RUSH, PRETTY MOVES DIFFERENT., SEOUL GIRL, MAIN CHARACTER, LOOK 01–06, 오늘도 주인공, 서울의 밤, 더 예쁜 나.
+13 CUTS:
+01 0.0–0.6s: black screen, huge “V”, then “R” on beat, violet-silver flash.
+02 0.6–1.4s: LOOK01, mirrored elevator, sunglasses, head down → doors open → eyes up, fast push-in. “VIOLET RUSH”.
+03 1.4–2.2s: LOOK01 face close-up, lower sunglasses slightly, direct eye contact, faint smile. “MAIN CHARACTER”.
+04 2.2–3.2s: LOOK02, Seoul neon street, walk then look back, natural hair swing, low angle. “서울의 밤”.
+05 3.2–4.1s: LOOK02 medium close-up, reach toward lens then retract, silver contact-sheet wipe.
+06 4.1–5.1s: LOOK03, pink photo booth, slight hip shift, wink, soft smile. “PRETTY?” → “ALWAYS.”
+07 5.1–6.1s: LOOK03 close-up, flash-photo feeling, loose hair beside face, photo cards pop in/out.
+08 6.1–7.2s: LOOK04, luxury hotel staircase, walk down one step, hand on railing, low angle, sweet expression switches to cold. “SWITCH MODE”.
+09 7.2–8.2s: LOOK04 rapid editorial split: leather detail / face / full body. Same single woman only, not three people.
+10 8.2–9.3s: LOOK05, K-pop beauty backstage, adjust earring in mirror, then look through reflection. Chrome “READY”.
+11 9.3–10.4s: LOOK05 backstage corridor, one step toward camera, light hair swing, film strips on both sides. “오늘도 주인공”.
+12 10.4–12.1s: LOOK06, Seoul rooftop at blue hour, wind in hair, turn away → look back → face camera. “PRETTY MOVES DIFFERENT.”
+13 12.1–15.0s: FINAL HERO, LOOK06, midnight Seoul rooftop. She stands centered while photo booth cards, silver magazine pages, Seoul frames, film strips, face crops, fashion covers and chrome frames reappear around her without covering her. Beat: V → R → VIOLET RUSH. Then “더 예쁜 나”. Final lockup: “VIOLET RUSH / SEOUL AFTER DARK”. Slight chin lift, strong eye contact. Hold final 0.5s completely still.
+PERFORMANCE:
+No dancing. Use idol-style micro-actions only: eyebrow raise, look-back, light wink, hair flip, shoulder turn, small step, touch earring, adjust skirt, reach toward camera, sweet smile → cold stare → confident hero pose.
+EDITING:
+Fast beat-synced hard cuts, clean push-ins, low angles, close-ups, medium shots and full-body shots. Energy comes from outfit switches, scene changes, eye contact and graphics.
+STRICT:
+ONE WOMAN ONLY. No face change, identity drift, extra people, duplicated body, outfit morphing, partial outfit changes, deformed hands, plastic skin, heavy Western glam, dancing, cyberpunk HUD, subtitles, logos, watermarks, video UI, unreadable text.
+FINAL FEEL:
+Same K-pop Girl × 6 Idol Looks × Seoul Nightlife × Violet/Silver/Black × 13 Fast Cuts × Fashion Graphics × Main Character Energy.
+```
+
+## A hummingbird visits on the grass
+
+- ID: x-2102597137649566047
+- 中文标题: 草地上的蜂鸟来客
+- English title: A hummingbird visits on the grass
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102597137649566047/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102597137649566047/
+- Original source: https://x.com/Luna_R4ze/status/2102597137649566047
+- Author: LunaRaze
+- Published: 2026-09-23T03:13:16.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Showcase
+- Visual styles: not specified
+- Scenes: Nature & landscape, Animals & creatures
+- Output: 11s, 768×1344, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 女子躺在阳光下的草地上，蜂鸟在她身前飞动，她低头注视这位小访客。 原生视频规格为 11 秒 · 768×1344。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A woman reclines on sunlit grass while a hummingbird flits near her and she looks down at it. Native-video output: 11s · 768×1344. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## Helga swings an axe outside a castle
+
+- ID: x-2102543631752274065
+- 中文标题: 城堡前的赫尔加挥斧
+- English title: Helga swings an axe outside a castle
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102543631752274065/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102543631752274065/
+- Original source: https://x.com/kensuiya/status/2102543631752274065
+- Author: けんすい屋【巨乳マッチョLOVE】
+- Published: 2026-09-22T23:40:39.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Action & VFX
+- Visual styles: not specified
+- Scenes: Action & combat, Fantasy
+- Output: 5s, 1024×1024, square
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 白发战士在城堡前举起战斧，动作短暂展开后回到相近的起始姿态。 原生视频规格为 5 秒 · 1024×1024。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A white-haired warrior lifts and swings an axe in front of a castle before returning to a similar starting pose. Native-video output: 5s · 1024×1024. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## A sealed letter sends ripples through a desk
+
+- ID: x-2102499038109299068
+- 中文标题: 蜡封信件荡起木桌涟漪
+- English title: A sealed letter sends ripples through a desk
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102499038109299068/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102499038109299068/
+- Original source: https://x.com/GlennHasABeard/status/2102499038109299068
+- Author: Glenn Williams
+- Published: 2026-09-22T20:43:27.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Action & VFX
+- Visual styles: not specified
+- Scenes: Daily life
+- Output: 15s, 864×480, landscape
+- Prompt provenance: creator-verbatim
+- Prompt completeness: complete
+- Chinese summary: 封好的信封静置在木桌上，环状波纹从信件周围向桌面扩散。 原生视频规格为 15 秒 · 864×480。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A sealed envelope rests on a wooden desk as circular ripples spread outward through the surface. Native-video output: 15s · 864×480. The creator published the complete prompt, preserved here verbatim.
+- Complete verbatim public prompt:
+
+```text
+slow rings ripple through the envelope and out across the desk surface, the wood grain rising and falling like water
+```
+
+## A character journey through Night City
+
+- ID: x-2102495812232335384
+- 中文标题: 夜之城里的角色漫游
+- English title: A character journey through Night City
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102495812232335384/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102495812232335384/
+- Original source: https://x.com/AI_EmeraldApple/status/2102495812232335384
+- Author: Emerald Apple
+- Published: 2026-09-22T20:30:38.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Local Generation & Workflow
+- Visual styles: Dark & horror
+- Scenes: City & street, Sci-fi & space
+- Output: 240s, 1920×1080, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 霓虹城市与昏暗室内交替出现，角色穿行于受《赛博朋克 2077》启发的场景。 原生视频规格为 240 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: Neon streets and dim interiors alternate as a character moves through scenes inspired by Cyberpunk 2077. Native-video output: 240s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## A noir title sequence of rain and glass
+
+- ID: x-2102460451259133966
+- 中文标题: 雨夜与酒杯构成悬疑片头
+- English title: A noir title sequence of rain and glass
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102460451259133966/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102460451259133966/
+- Original source: https://x.com/umesh_ai/status/2102460451259133966
+- Author: Umesh
+- Published: 2026-09-22T18:10:08.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Cinematic & Narrative
+- Visual styles: Dark & horror
+- Scenes: City & street
+- Output: 15s, 2560×1440, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 雨滴玻璃、红色酒杯和暗巷依次入镜，最终出现 VELVET STATIC 片名。 原生视频规格为 15 秒 · 2560×1440。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: Rain-speckled glass, a red drink and a dark alley lead into the title VELVET STATIC. Native-video output: 15s · 2560×1440. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## An autumn leaf pile hides a tiny pool
+
+- ID: x-2102443755240407287
+- 中文标题: 落叶堆里藏着小泳池
+- English title: An autumn leaf pile hides a tiny pool
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102443755240407287/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102443755240407287/
+- Original source: https://x.com/amynys/status/2102443755240407287
+- Author: Amy G
+- Published: 2026-09-22T17:03:47.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Action & VFX
+- Visual styles: not specified
+- Scenes: Daily life
+- Output: 15s, 480×832, portrait
+- Prompt provenance: creator-verbatim
+- Prompt completeness: complete
+- Chinese summary: 穿芥末黄毛衣的女子跳入落叶堆，露出下方的蓝色充气泳池，随后戴着墨镜竖起拇指。 原生视频规格为 15 秒 · 480×832。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: A woman in a mustard sweater jumps into leaves, revealing a blue inflatable pool, then pops up in sunglasses with a thumbs-up. Native-video output: 15s · 480×832. The creator published the complete prompt, preserved here verbatim.
+- Complete verbatim public prompt:
+
+```text
+A cheerful young adult in a cozy mustard sweater stands on a leafy suburban sidewalk beside a perfect pile of orange and red autumn leaves. They beam at the camera and announce “Happy first day of fall!” with delighted confidence, then take one proud step and leap into the pile. The leaves burst outward to reveal a tiny blue inflatable kiddie pool underneath; the person pops up from the pool wearing oversized sunglasses, gives a big thumbs-up, and grins as a few leaves drift onto their head. Warm golden afternoon light, cheerful autumn colors, playful physical comedy, expressive face, clear readable action, one continuous locked-off wide shot, crisp comic timing, natural body motion, upbeat seasonal mood, 24fps film motion with clean detail.
+```
+
+## Opera gestures in a colorful fantasy portrait
+
+- ID: x-2102426880016253191
+- 中文标题: 梨园春色中的戏曲身段
+- English title: Opera gestures in a colorful fantasy portrait
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102426880016253191/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102426880016253191/
+- Original source: https://x.com/PixelAigc/status/2102426880016253191
+- Author: PixelAIGC
+- Published: 2026-09-22T15:56:44.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Model Comparison
+- Visual styles: not specified
+- Scenes: Human performance
+- Output: 18s, 1890×1080, landscape
+- Prompt provenance: creator-verbatim
+- Prompt completeness: complete
+- Chinese summary: 华丽戏曲人物挥动双手，服饰与靠旗随动作展开，镜头逐步靠近。 原生视频规格为 18 秒 · 1890×1080。原帖完整公开了 Prompt，本页按原文保留。
+- English summary: An elaborately dressed opera performer gestures as costume details and flags move while the camera draws closer. Native-video output: 18s · 1890×1080. The creator published the complete prompt, preserved here verbatim.
+- Complete verbatim public prompt:
+
+```text
+演员做着京剧传统戏曲动作，表现京剧艺术，服装和靠旗飘动，人物双手戏剧性地挥舞，镜头慢慢推进。
+```
+
+## Suspense over a cup of coffee
+
+- ID: x-2102422062791078333
+- 中文标题: 一杯咖啡里的悬疑
+- English title: Suspense over a cup of coffee
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102422062791078333/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102422062791078333/
+- Original source: https://x.com/ou_zhen599/status/2102422062791078333
+- Author: Loriel.AI
+- Published: 2026-09-22T15:37:35.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Cinematic & Narrative
+- Visual styles: not specified
+- Scenes: Daily life
+- Output: 15s, 3840×2160, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 热气从桌上的咖啡升起，一只手掠过杯边，女子最终举杯直视镜头。 原生视频规格为 15 秒 · 3840×2160。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: Steam rises from a coffee cup, a hand passes near it, and a woman lifts the cup while looking toward the camera. Native-video output: 15s · 3840×2160. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## A little robot in a sunlit toy room
+
+- ID: x-2102418100608291114
+- 中文标题: 暖光玩具屋里的小机器人
+- English title: A little robot in a sunlit toy room
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102418100608291114/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102418100608291114/
+- Original source: https://x.com/CEs7J0Mfn8x37k5/status/2102418100608291114
+- Author: 熊のターさん
+- Published: 2026-09-22T15:21:50.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Local Generation & Workflow
+- Visual styles: not specified
+- Scenes: Sci-fi & space
+- Output: 10s, 864×480, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 履带小机器人坐在散落的玩具之间，窗边暖光照着它的屏幕面孔。 原生视频规格为 10 秒 · 864×480。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A small tracked robot sits among scattered toys as warm window light falls across its screen-like face. Native-video output: 10s · 864×480. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## TOKENS BURN: a day at the computer
+
+- ID: x-2102414326086898014
+- 中文标题: TOKENS BURN 动画音乐短片
+- English title: TOKENS BURN: a day at the computer
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102414326086898014/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102414326086898014/
+- Original source: https://x.com/NeoAIForecast/status/2102414326086898014
+- Author: Neo
+- Published: 2026-09-22T15:06:50.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Music Video
+- Visual styles: not specified
+- Scenes: Daily life
+- Output: 136s, 1920×1080, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 动画男子从卧室场景转到电脑前，生活片段组成一支音乐短片。 原生视频规格为 136 秒 · 1920×1080。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: An animated man appears in a bedroom and then at a computer as everyday scenes form a music video. Native-video output: 136s · 1920×1080. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## A scholar’s view across an ancient city
+
+- ID: x-2102418200503959894
+- 中文标题: 状元郎视角穿过古城
+- English title: A scholar’s view across an ancient city
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102418200503959894/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102418200503959894/
+- Original source: https://x.com/eternityspring/status/2102418200503959894
+- Author: 烁皓
+- Published: 2026-09-22T15:22:14.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Showcase
+- Visual styles: not specified
+- Scenes: City & street
+- Output: 15s, 1280×720, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 第一视角在人群前接过红色包裹，随后来到城楼高处俯瞰古城。 原生视频规格为 15 秒 · 1280×720。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A first-person view receives a red bundle before rising to a high terrace overlooking an ancient city. Native-video output: 15s · 1280×720. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## Three dancers on a translucent stage
+
+- ID: x-2102414303425155488
+- 中文标题: 透明舞台上的三人齐舞
+- English title: Three dancers on a translucent stage
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102414303425155488/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102414303425155488/
+- Original source: https://x.com/applete77191758/status/2102414303425155488
+- Author: appletea 🍎アップルティ☕丨AI動画制作
+- Published: 2026-09-22T15:06:45.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Dance
+- Visual styles: not specified
+- Scenes: Dance, Human performance
+- Output: 15s, 832×480, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 三名舞者在浅色透明舞台中变换队形，背后呈现醒目的大字排版。 原生视频规格为 15 秒 · 832×480。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: Three dancers change formation on a pale translucent stage with large typography behind them. Native-video output: 15s · 832×480. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## A duo leads a black-clad dance scene
+
+- ID: x-2102403591340519908
+- 中文标题: 黑衣双人组领舞
+- English title: A duo leads a black-clad dance scene
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102403591340519908/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102403591340519908/
+- Original source: https://x.com/apaajadesainin/status/2102403591340519908
+- Author: KemenGambar
+- Published: 2026-09-22T14:24:11.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Dance
+- Visual styles: not specified
+- Scenes: Dance, Human performance
+- Output: 15s, 768×1344, portrait
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 两位黑衣女子站在人群前随音乐摆动，后方整齐队列构成舞台背景。 原生视频规格为 15 秒 · 768×1344。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: Two women in black move to the music in front of an orderly crowd. Native-video output: 15s · 768×1344. A complete Prompt has not been collected here; this library does not infer or complete one.
+- Public prompt: complete public text not retained in this library
+
+## Recognition beside a snowbound reconnaissance vehicle
+
+- ID: x-2102402035467387281
+- 中文标题: 雪原侦察车的身份识别
+- English title: Recognition beside a snowbound reconnaissance vehicle
+- Chinese page: https://awesome-minimax-h3-cases.zzskysilent.com/cases/x-2102402035467387281/
+- English page: https://awesome-minimax-h3-cases.zzskysilent.com/en/cases/x-2102402035467387281/
+- Original source: https://x.com/ou_zhen599/status/2102402035467387281
+- Author: Loriel.AI
+- Published: 2026-09-22T14:18:00.000Z
+- Model: MiniMax H3（创作者标注）
+- Mode: Unknown
+- Category: Cinematic & Narrative
+- Visual styles: not specified
+- Scenes: Sci-fi & space, Nature & landscape
+- Output: 15s, 3840×2160, landscape
+- Prompt provenance: not-published
+- Prompt completeness: not-published
+- Chinese summary: 女子在雪山飞船旁靠近受损侦察车，随后站到车辆控制台前。 原生视频规格为 15 秒 · 3840×2160。本库暂未收录完整 Prompt，不反推或补写。
+- English summary: A woman approaches a damaged reconnaissance vehicle beneath a spacecraft in snowy mountains and moves to its controls. Native-video output: 15s · 3840×2160. A complete Prompt has not been collected here; this library does not infer or complete one.
 - Public prompt: complete public text not retained in this library
 
